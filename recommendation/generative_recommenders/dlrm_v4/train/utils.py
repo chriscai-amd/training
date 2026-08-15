@@ -2617,7 +2617,16 @@ def streaming_train_eval_loop(
             # all-reduce only fires on the cadence, gated by the rank-identical
             # global_step inside the method, so it stays in lockstep.
             metric_logger.maybe_log_mlperf_train_loss(aux_losses, every=mlperf_loss_every)
-            if train_batch_idx % metric_log_frequency == 0:
+            # Cadence is keyed on the GLOBAL train step, not `train_batch_idx`:
+            # the latter resets to 0 per window, so `% metric_log_frequency` was
+            # true on batch 0 of every window and the cadence collapsed to
+            # "once per window" for windows shorter than the frequency. Since
+            # compute_and_log also resets the perf accumulators, that produced
+            # report intervals of wildly unequal length (1..N steps) whose
+            # step_ms/sps are not comparable to each other. global_step["train"]
+            # is incremented once per batch in update() on every rank, so this
+            # gate stays rank-identical and the AUC all-gather cannot desync.
+            if metric_logger.global_step["train"] % metric_log_frequency == 0:
                 metric_logger.compute_and_log(
                     mode="train",
                     additional_logs={

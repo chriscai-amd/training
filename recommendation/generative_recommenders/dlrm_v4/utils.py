@@ -1572,7 +1572,10 @@ _GPU_PEAK_FLOPS_TABLE: Dict[str, Dict[str, float]] = {
     # Per-GPU peak TFLOPS by dtype. Values from vendor datasheets / Primus-DLRM
     # peak_table. Used as the denominator in MFU/HFU. Keyed by case-insensitive
     # substring of torch.cuda.get_device_name(0).
-    "MI355X": {"bf16": 2300e12, "fp32": 575e12},
+    # MI355X and MI350X are the same CDNA4 silicon (256 CU); the MI355X's 1.4 kW
+    # liquid-cooled envelope clocks it to 2.4 GHz vs 2.2 GHz, hence 2.5 vs 2.3
+    # PFLOPS dense BF16. Values here are dense, never the 2:4-sparsity numbers.
+    "MI355X": {"bf16": 2500e12, "fp32": 575e12},
     "MI350X": {"bf16": 2300e12, "fp32": 575e12},
     "MI300X": {"bf16": 1300e12, "fp32": 653e12},
     "MI325X": {"bf16": 1300e12, "fp32": 653e12},

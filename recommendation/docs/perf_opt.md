@@ -71,3 +71,15 @@ rocm-smi --setperflevel auto      # restore boost
 every launch, auto-restores `auto` if it finds a `perf_determinism`/`manual`/`low`
 lock, and warns (to reset from the host) if it lacks permission inside the
 container. **Always sanity-check `sclk ≈ 2000+ MHz` before trusting a benchmark.**
+
+---
+
+## Evaluation log
+
+Running record of measured runs — **one row per hardware platform / config**,
+appended as new platforms and stacks are evaluated. All rows: yambda-5b, TRITON
+HSTU kernel, bf16, aggregate average over steady-state steps.
+
+| date | hardware / host | software stack (pinned) | run config | sharding plan (placement) | throughput | MFU / HFU | trace |
+|---|---|---|---|---|---|---|---|
+| 2026-08-14 | 8× **NVIDIA B200** (`sm_100`), 183 GiB HBM<br>driver 580.126.09<br>SLURM, 1 node<br>data on node-local NVMe | `nvcr.io/nvidia/pytorch:26.04-py3`<br>torch `2.12.0a0+0291f960b6.nv26.04`<br>CUDA 13.2 / cuDNN 9.21 / NCCL 2.29.7<br>Triton 3.6.0, torchrec 1.4.0, py 3.12.3<br>fbgemm_gpu src `10b77573`, repo `aed6a43` | **MLPerf config** — bs 1024/rank → 8192 global<br>`START_TS=0`, `HBM_CAP_GB` 90<br>`max_seq_len` 4096, no eval/ckpt<br>`NUM_TRAIN_TS=27`, 100 steps, ran to completion | **8 TW + 3 CW**, pinned to the bs-512 plan via<br>`EMB_SHARDING_OVERRIDES`; `EMB_PLACEMENT=auto`<br><br>**HBM** (`fused`) — 422.5 GB, 0 DDR<br>`user_x_artist` CW 191.1<br>`user_x_album` CW 76.5<br>`item_x_hour` CW 76.5<br>`user_x_hour` TW 45.9<br>`item_id` TW 18.0<br>`album_id` TW 6.4<br>`user_x_is_organic` TW 3.8<br>`artist_id` TW 2.5<br>`uid` TW 1.9<br><br>**DDR** (`fused_uvm_caching`) — 28.0 HBM cache / 137.6 DDR<br>`user_x_artist_x_hour` TW 15.6 + **76.4 DDR**<br>`artist_x_hour` TW 12.5 + **61.2 DDR**<br><br>per-rank HBM: r0 **73.7** (peak), r1 71.1, r2 69.7,<br>r3 69.2, r4 65.3, r5 37.4, r6 35.0, r7 31.9<br>DDR only on r6 (76.4) and r7 (61.2) | avg **12,969** `global_sps`<br>min **10,818** / max **14,980**<br>**631.7** `ms/step` avg<br>steps 40–100 | **22.75%** / **9.10%**<br>511.8 / 204.7 tflops/gpu<br>`fill` 40.0% mean (33.8–42.6) | [`trace/b200/trace_step52.json.gz`](../trace/b200/trace_step52.json.gz)<br>8 ranks stitched, CPU+GPU<br>460,175 events, 8.7 MB<br>5 steps from 52; **crosses the<br>ts 23→24 window boundary** |

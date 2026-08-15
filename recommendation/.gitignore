@@ -4,6 +4,10 @@ exps/
 ckpts/
 results/
 
+# Raw per-rank profiler traces (inputs to scripts/stitch_traces.py). Only the
+# stitched trace/**/trace_step*.json.gz is tracked -- it contains the same events.
+trace/**/trace_step*_rank*.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

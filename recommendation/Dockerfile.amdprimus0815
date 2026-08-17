@@ -1,0 +1,106 @@
+# Single-GPU gfx1250 (MI450 eng sample) path using amdprimus/amdprimus:0815.
+# The stock Dockerfile targets MI350X/gfx950 + rocm/primus:v26.3; that torch
+# build cannot launch kernels on this node. This image keeps the working
+# amdprimus torch and builds fbgemm_gpu for gfx1250.
+FROM amdprimus/amdprimus:0815
+
+ENV PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+WORKDIR /workspace/recommendation
+
+# Keep the image's native torch (2.11.0+rocm7.14, gfx1250-capable). Install the
+# remaining recommendation stack; torchrec/fbgemm must not pull a CUDA torch.
+RUN pip install --upgrade pip && \
+    pip install --no-deps \
+        "git+https://github.com/pytorch/torchrec.git@v2026.06.01.00" && \
+    pip install \
+        polars-u64-idx==1.33.1 \
+        gin-config \
+        absl-py \
+        datasets \
+        huggingface_hub \
+        pyre-extensions \
+        iopath \
+        typing-inspect \
+        psutil \
+        tqdm \
+        pyyaml \
+        lightning-utilities \
+        xxhash \
+        pandas \
+        pyarrow \
+        tensorboard && \
+    pip install --no-deps \
+        torchmetrics==1.0.3 \
+        tensordict && \
+    pip install --no-deps "git+https://github.com/mlcommons/logging.git@6.0.0-rc6"
+
+# fbgemm_gpu from source for gfx1250 against the image torch. ~30-60 min.
+# amdprimus ships ROCm via the torch wheel's _rocm_sdk_devel (not /opt/rocm).
+ENV BUILD_ROCM_VERSION=7.14 \
+    PYTORCH_ROCM_ARCH=gfx1250 \
+    ROCM_HOME=/opt/venv/lib/python3.12/site-packages/_rocm_sdk_devel \
+    HIP_ROOT_DIR=/opt/venv/lib/python3.12/site-packages/_rocm_sdk_devel
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        git build-essential libtbb-dev libnuma-dev libssl-dev ninja-build && \
+    rm -rf /var/lib/apt/lists/* && \
+    git clone --recursive https://github.com/pytorch/FBGEMM.git /tmp/FBGEMM && \
+    cd /tmp/FBGEMM && \
+    git checkout 10b775730212923f65f7b78f79b6a01d80cf3c29 && \
+    git submodule update --init --recursive && \
+    cd fbgemm_gpu && \
+    # At this commit Fbgemm.cmake omits the fp16/bf16 convert sources and relies
+    # on PyTorch's bundled FBGEMM to export them. The MI350X path works because
+    # rocm/primus torch is built -DUSE_FBGEMM; amdprimus torch 2.11 exports no
+    # fbgemm::Float16ToFloat_avx2, so fbgemm.so fails to load. Build them here
+    # instead (this is the source list upstream HEAD ships).
+    sed -i \
+      -e 's|"${FBGEMM}/src/QuantUtils.cc"|"${FBGEMM}/src/FbgemmBfloat16Convert.cc"\n  "${FBGEMM}/src/FbgemmFloat16Convert.cc"\n  "${FBGEMM}/src/QuantUtils.cc"|' \
+      -e 's|"${FBGEMM}/src/QuantUtilsAvx2.cc"|"${FBGEMM}/src/FbgemmBfloat16ConvertAvx2.cc"\n  "${FBGEMM}/src/FbgemmFloat16ConvertAvx2.cc"\n  "${FBGEMM}/src/QuantUtilsAvx2.cc"|' \
+      -e 's|"${FBGEMM}/src/QuantUtilsAvx512.cc"|"${FBGEMM}/src/FbgemmBfloat16ConvertAvx512.cc"\n  "${FBGEMM}/src/FbgemmFloat16ConvertAvx512.cc"\n  "${FBGEMM}/src/QuantUtilsAvx512.cc"|' \
+      cmake/Fbgemm.cmake && \
+    grep -c 'Convert' cmake/Fbgemm.cmake && \
+    # gfx1250 is RDNA (wave32), not CDNA (wave64). cuda_prelude.cuh sets the
+    # HOST-side kWarpSize to a "stop-gap" 64 for ROCm while device compilation
+    # correctly uses 32 (__GFX9__ undefined here). The TBE backward then launches
+    # dim3(kThreadGroupSize=64, kMaxThreads/at::cuda::warp_size()=32) = 2048
+    # threads and dies on the 1024/block limit. We build for one arch only, so
+    # pin the host constexpr to 32 to match the device.
+    perl -0pi -e 's/(#elif defined\(__HIP_DEVICE_COMPILE__\)\nstatic constexpr int32_t kWarpSize = 32;\n#else\nstatic constexpr int32_t kWarpSize = )64;/${1}32;/' \
+      include/fbgemm_gpu/utils/cuda_prelude.cuh && \
+    grep -A1 '#else' include/fbgemm_gpu/utils/cuda_prelude.cuh | grep -m1 'kWarpSize = 32' && \
+    # Same wave32 story on the codegen side: it emits kThreadGroupSize template
+    # configs from items_per_warp//4, and hardcodes 256 (=> 64) for ROCm. Leaving
+    # it at 256 makes the generated instantiations disagree with the kWarpSize=32
+    # call sites above (undefined symbol at load). 128 => 32, matching the device.
+    sed -i 's|env.globals\["items_per_warp"\] = 128 if args.is_rocm is False else 256|env.globals["items_per_warp"] = 128|' \
+      codegen/genscript/jinja_environment.py && \
+    grep -m1 'items_per_warp"\] = 128$' codegen/genscript/jinja_environment.py && \
+    grep -v -E '^(fairscale|torch|torchvision|torchaudio)([<>=!]|$)' requirements.txt > /tmp/req.txt && \
+    pip install -r /tmp/req.txt && \
+    python setup.py -j 32 bdist_wheel \
+        --build-target=default \
+        --build-variant=rocm \
+        -DHIP_ROOT_DIR=${HIP_ROOT_DIR} \
+        -DAMDGPU_TARGETS=gfx1250 && \
+    pip install --force-reinstall --no-deps dist/fbgemm_gpu_nightly_rocm*.whl && \
+    cd / && rm -rf /tmp/FBGEMM
+
+# tensordict is installed --no-deps (so pip cannot pull a CUDA torch), which
+# also skips its non-torch runtime deps; all three are imported at module load.
+# Kept in its own layer to avoid invalidating the fbgemm build above.
+RUN pip install pyvers cloudpickle orjson
+
+RUN python -c "import torch, fbgemm_gpu, torchrec, polars, xxhash, gin; \
+print('torch', torch.__version__, '| hip', getattr(torch.version, 'hip', None))"
+
+COPY . /workspace/recommendation
+
+ENV PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
+    HSTU_HAMMER_KERNEL=TRITON \
+    DLRM_DATA_PATH=/data/mlperf_dlrm_v4
+
+CMD ["bash"]

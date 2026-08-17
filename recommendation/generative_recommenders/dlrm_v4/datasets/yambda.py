@@ -1000,6 +1000,25 @@ class DLRMv4YambdaDataset(DLRMv4RandomDataset):
             for (name, keys, n, salt) in self._cross_specs
         }
 
+        # When EMBEDDING_ROW_SCALE < 1, embedding tables are smaller than the
+        # raw catalog ids. Wrap base ids into the scaled vocabulary so TBE
+        # lookups stay in-range. Cross ids are already hashed into the scaled
+        # caps via yambda_5b_cross_specs() / xxhash_cross(..., n, ...).
+        from generative_recommenders.dlrm_v4.configs import yambda_5b_table_rows
+
+        _rows = yambda_5b_table_rows()
+        _item_n = int(_rows["item_id"])
+        _artist_n = int(_rows["artist_id"])
+        _album_n = int(_rows["album_id"])
+        _uid_n = int(_rows["uid"])
+        uid = int(uid) % _uid_n
+        items = (items.astype(np.int64, copy=False) % _item_n)
+        artists = (artists.astype(np.int64, copy=False) % _artist_n)
+        albums = (albums.astype(np.int64, copy=False) % _album_n)
+        target_item = int(target_item) % _item_n
+        target_artist = int(target_artist) % _artist_n
+        target_album = int(target_album) % _album_n
+
         # ---- Truncate UIH to fit max_seq_len budget ----
         uih_seq_len_budget = (
             self._max_seq_len

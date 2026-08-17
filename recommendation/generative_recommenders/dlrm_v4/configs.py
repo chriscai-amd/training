@@ -38,10 +38,32 @@ HSTU_EMBEDDING_DIM = 512  # final DLRMv4 model
 HASH_SIZE = 10_000_000
 HASH_SIZE_1B = 1_000_000_000
 
+# Scale all yambda-5b embedding row counts by this factor (env override).
+# Default 1.0 preserves the reference tables (~600 GiB FP32 weights). On a
+# single ~432 GiB GPU set e.g. EMBEDDING_ROW_SCALE=0.25 so tables fit in HBM
+# for e2e smoke. Cross features already hash into num_embeddings; base id
+# features are modulo-wrapped in the dataset when scale < 1.
+def _embedding_row_scale() -> float:
+    try:
+        return float(os.environ.get("EMBEDDING_ROW_SCALE", "1.0"))
+    except ValueError:
+        return 1.0
+
+
+def scale_embedding_rows(n: int) -> int:
+    """Apply EMBEDDING_ROW_SCALE; keep at least 2 rows for TorchRec."""
+    s = _embedding_row_scale()
+    if s >= 0.999999:
+        return int(n)
+    return max(2, int(n * s))
+
+
 # (name, keys, num_embeddings, salt) — single source of truth for both
 # get_embedding_table_config("yambda-5b") and the dataset's cross-hash inputs.
 # Sizes mirror Primus-DLRM/configs/bench_onetrans_large_5b_cross_feat_shampoo.yaml.
-YAMBDA_5B_CROSS_SPECS = [
+# num_embeddings here are the UNSCALED reference sizes; callers that need the
+# live (possibly scaled) caps should use yambda_5b_cross_specs().
+YAMBDA_5B_CROSS_SPECS_BASE = [
     ("user_x_artist",        ("uid", "artist_id"),                  100_000_000, 0),
     ("user_x_album",         ("uid", "album_id"),                    40_000_000, 0),
     ("user_x_hour",          ("uid", "hour_of_day"),                 24_000_000, 0),
@@ -50,6 +72,38 @@ YAMBDA_5B_CROSS_SPECS = [
     ("user_x_is_organic",    ("uid", "is_organic"),                   2_000_000, 0),
     ("user_x_artist_x_hour", ("uid", "artist_id", "hour_of_day"),    40_000_000, 0),
 ]
+
+
+def yambda_5b_cross_specs():
+    """Cross-feature specs with EMBEDDING_ROW_SCALE applied to num_embeddings."""
+    return [
+        (name, keys, scale_embedding_rows(n), salt)
+        for (name, keys, n, salt) in YAMBDA_5B_CROSS_SPECS_BASE
+    ]
+
+
+# Back-compat alias: most call sites import YAMBDA_5B_CROSS_SPECS. Keep it as a
+# scaled snapshot evaluated at import time so existing `from ... import
+# YAMBDA_5B_CROSS_SPECS` keeps working. Prefer yambda_5b_cross_specs() when the
+# env may change after import (tests).
+YAMBDA_5B_CROSS_SPECS = yambda_5b_cross_specs()
+
+# Unscaled base-id table sizes (item/artist/album/uid). Scaled at table-build
+# time and exposed for dataset-side modulo wrapping.
+YAMBDA_5B_BASE_TABLE_ROWS = {
+    "item_id": 9_390_624,
+    "artist_id": 1_293_395,
+    "album_id": 3_367_692,
+    "uid": 1_000_001,
+}
+
+
+def yambda_5b_table_rows() -> Dict[str, int]:
+    """All yambda-5b table row counts after EMBEDDING_ROW_SCALE."""
+    rows = {k: scale_embedding_rows(v) for k, v in YAMBDA_5B_BASE_TABLE_ROWS.items()}
+    for name, _keys, n, _salt in yambda_5b_cross_specs():
+        rows[name] = n
+    return rows
 
 
 @gin.configurable
@@ -760,37 +814,51 @@ def _build_embedding_table_config(
         }
     elif "yambda" in dataset:
         assert dataset in ["yambda-5b"]
+        # Apply EMBEDDING_ROW_SCALE so a single-GPU box can shrink tables to
+        # fit HBM (reference FP32 weights are ~600 GiB — larger than one
+        # 432 GiB MI450). Cross hashes and dataset-side modulo use the same
+        # scaled caps via yambda_5b_table_rows() / yambda_5b_cross_specs().
+        rows = yambda_5b_table_rows()
+        scale = _embedding_row_scale()
+        if scale < 0.999999:
+            cross_total = sum(n for _name, _keys, n, _salt in yambda_5b_cross_specs())
+            print(
+                f"[embedding-scale] EMBEDDING_ROW_SCALE={scale} -> "
+                f"item_id={rows['item_id']}, artist_id={rows['artist_id']}, "
+                f"album_id={rows['album_id']}, uid={rows['uid']}, "
+                f"cross_rows={cross_total}"
+            )
         tables: Dict[str, EmbeddingConfig] = {
             "item_id": EmbeddingConfig(
-                num_embeddings=9_390_624,
+                num_embeddings=rows["item_id"],
                 embedding_dim=DIM,
                 name="item_id",
                 data_type=DataType.FP32,
                 feature_names=["item_id", "item_candidate_id"],
             ),
             "artist_id": EmbeddingConfig(
-                num_embeddings=1_293_395,
+                num_embeddings=rows["artist_id"],
                 embedding_dim=DIM,
                 name="artist_id",
                 data_type=DataType.FP32,
                 feature_names=["artist_id", "item_candidate_artist_id"],
             ),
             "album_id": EmbeddingConfig(
-                num_embeddings=3_367_692,
+                num_embeddings=rows["album_id"],
                 embedding_dim=DIM,
                 name="album_id",
                 data_type=DataType.FP32,
                 feature_names=["album_id", "item_candidate_album_id"],
             ),
             "uid": EmbeddingConfig(
-                num_embeddings=1_000_001,
+                num_embeddings=rows["uid"],
                 embedding_dim=DIM,
                 name="uid",
                 data_type=DataType.FP32,
                 feature_names=["uid"],
             ),
         }
-        for name, _keys, num_embeddings, _salt in YAMBDA_5B_CROSS_SPECS:
+        for name, _keys, num_embeddings, _salt in yambda_5b_cross_specs():
             tables[name] = EmbeddingConfig(
                 num_embeddings=num_embeddings,
                 embedding_dim=DIM,

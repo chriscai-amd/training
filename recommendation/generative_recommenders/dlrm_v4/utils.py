@@ -1745,7 +1745,7 @@ def get_dataset(
             },
         )
     if name == "yambda-5b":
-        from generative_recommenders.dlrm_v4.configs import YAMBDA_5B_CROSS_SPECS
+        from generative_recommenders.dlrm_v4.configs import yambda_5b_cross_specs
 
         return (
             DLRMv4YambdaDataset,
@@ -1775,7 +1775,7 @@ def get_dataset(
                 # runs at sample-construction time), so switching needs no
                 # rebuild. Override via $HISTORY_STRATEGY.
                 "history_strategy": history_strategy,
-                "cross_specs": YAMBDA_5B_CROSS_SPECS,
+                "cross_specs": yambda_5b_cross_specs(),
                 # Temporal-streaming knobs (only used under --mode
                 # streaming-train-eval; ignored by the default train-eval path).
                 "streaming_window_seconds": streaming_window_seconds,

@@ -1373,9 +1373,9 @@ def _log_unique_embedding_diag(
         return
     global _EMB_DIAG_NBATCH
     try:
-        from generative_recommenders.dlrm_v4.configs import YAMBDA_5B_CROSS_SPECS
+        from generative_recommenders.dlrm_v4.configs import yambda_5b_cross_specs
 
-        cross_caps = {name: n for (name, _k, n, _s) in YAMBDA_5B_CROSS_SPECS}
+        cross_caps = {name: n for (name, _k, n, _s) in yambda_5b_cross_specs()}
 
         def _table_of(key: str):
             # cross tables match by exact name; resolve BEFORE substring fallbacks

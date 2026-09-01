@@ -78,7 +78,7 @@ def _install_nonfinite_hooks(module: torch.nn.Module) -> None:
         )
 
     def _count_forward(
-        _mod: torch.nn.Module, _inp: object, _out: object
+        _mod: torch.nn.Module, _inp: object
     ) -> None:  # pyre-ignore[2]
         forwards[0] += 1
 

@@ -1584,6 +1584,28 @@ _GPU_PEAK_FLOPS_TABLE: Dict[str, Dict[str, float]] = {
     "A100":   {"bf16": 312e12,  "fp32": 19.5e12},
 }
 
+# Matched on gcnArchName, because these parts report a generic marketing name
+# ("AMD Radeon Graphics") that carries no model information.
+#
+# gfx1250 = MI450-series (SKU M4500001, 256 WGPs, 432 GiB, Wave32), rated at
+# 3500 TFLOPS dense BF16 *matrix* and 315 TFLOPS FP32. Note 315 TFLOPS is only
+# the VECTOR FP16 rate, ~11x below the matrix rate, so it is the wrong
+# denominator for a GEMM.
+#
+# The values below are 90% of those peaks — the usual allowance for the fraction
+# of peak a real kernel can reach. A measured square-GEMM sweep on this stack
+# currently returns only ~75 TFLOP/s bf16 (mi450_logs/peak_bf16_gemm.py), ~2% of
+# peak, because the BLAS has no matrix-core kernel for this arch yet (bf16 is
+# just 1.46x fp32; ~5700 FLOP/clock/WGP would be needed at 2.4 GHz) and the A0
+# sample clocks at 1.1 GHz rather than 2.4. That measured number is deliberately
+# NOT used as the denominator: it reflects today's kernel quality, not the
+# hardware, so normalizing against it would flatter the model and would silently
+# change meaning every time a kernel improves. MFU/HFU here are therefore against
+# the silicon, and will read ~1% until matrix-core GEMMs land.
+_GPU_PEAK_FLOPS_BY_ARCH: Dict[str, Dict[str, float]] = {
+    "gfx1250": {"bf16": 0.90 * 3500e12, "fp32": 0.90 * 315e12},
+}
+
 
 def get_gpu_peak_flops(dtype: str = "bf16") -> float:
     """Peak FLOPS for the current GPU at the given dtype.
@@ -1597,6 +1619,17 @@ def get_gpu_peak_flops(dtype: str = "bf16") -> float:
     for gpu_key, peaks in _GPU_PEAK_FLOPS_TABLE.items():
         if gpu_key in name:
             return peaks.get(dtype, peaks["bf16"])
+    arch = getattr(torch.cuda.get_device_properties(0), "gcnArchName", "") or ""
+    for arch_key, peaks in _GPU_PEAK_FLOPS_BY_ARCH.items():
+        if arch_key in arch:
+            peak = peaks.get(dtype, peaks["bf16"])
+            logger.warning(
+                f"Peak FLOPS for {arch}: {peak / 1e12:.0f} TF {dtype} "
+                "(90% of datasheet matrix peak). This stack has no matrix-core "
+                "GEMM kernel for this arch yet (~75 TF measured), so MFU/HFU "
+                "will read ~1% until those land."
+            )
+            return peak
     logger.warning(
         f"Unknown GPU for peak FLOPS: {name}; defaulting to MI350X bf16 (2300 TF)"
     )

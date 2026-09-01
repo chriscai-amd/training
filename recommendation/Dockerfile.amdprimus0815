@@ -94,8 +94,43 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Kept in its own layer to avoid invalidating the fbgemm build above.
 RUN pip install pyvers cloudpickle orjson
 
-RUN python -c "import torch, fbgemm_gpu, torchrec, polars, xxhash, gin; \
-print('torch', torch.__version__, '| hip', getattr(torch.version, 'hip', None))"
+# Optional Triton override, for bisecting the gfx1250 op-kernel hangs (see
+# docs/mi450.md). Empty keeps the image's Triton, which is what the recorded
+# results are against; a commit swaps in an upstream source build:
+#
+#   docker build -f Dockerfile.amdprimus0815 \
+#     --build-arg TRITON_COMMIT=76940ad348795521b3dc9f6c79acd7309ff924e3 ...
+#
+# No default commit on purpose. Upstream `main` is not strictly better here: it
+# still hangs `test_concat_2D_jagged_large_tensor` and additionally hangs
+# `position_test::..._large_tensor`, which the image's 3.6.0 completes.
+#
+# Deliberately the last pip layer. Rebuilding it must not invalidate the ~30-60
+# min fbgemm build above, and installing Triton before the other packages would
+# let a later resolution pull a CUDA torch over the ROCm one. A source build is
+# used rather than the PyPI wheel because that wheel segfaults when
+# `triton._C.libtriton` is dlopened after libtorch on this image.
+ARG TRITON_COMMIT=""
+RUN if [ -n "${TRITON_COMMIT}" ]; then \
+        pip uninstall -y triton && \
+        git clone https://github.com/triton-lang/triton.git /opt/triton-custom && \
+        cd /opt/triton-custom && \
+        git checkout "${TRITON_COMMIT}" && \
+        pip install -r python/requirements.txt && \
+        MAX_JOBS=64 pip install -e . && \
+        if [ -d python/triton_kernels ]; then \
+            pip install -e python/triton_kernels --no-deps; \
+        fi; \
+    else \
+        echo "[triton] keeping the image's Triton (no TRITON_COMMIT given)"; \
+    fi
+
+# torch.version.hip is the tripwire: every install above is arranged so pip
+# cannot replace the ROCm torch with a PyPI CUDA build, and this is what catches
+# it if one ever does. Triton is printed because it is now a build input.
+RUN python -c "import torch, triton, fbgemm_gpu, torchrec, polars, xxhash, gin; \
+assert torch.version.hip is not None, torch.__version__; \
+print('torch', torch.__version__, '| hip', torch.version.hip, '| triton', triton.__version__)"
 
 COPY . /workspace/recommendation
 

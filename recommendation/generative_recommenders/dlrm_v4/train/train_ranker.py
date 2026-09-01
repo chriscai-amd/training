@@ -34,6 +34,154 @@ from torchrec.test_utils import get_free_port
 logger: logging.Logger = logging.getLogger(__name__)
 
 
+def _iter_tensors(obj: object):  # pyre-ignore[3]
+    if isinstance(obj, torch.Tensor):
+        yield obj
+    elif isinstance(obj, (list, tuple)):
+        for item in obj:
+            yield from _iter_tensors(item)
+    elif isinstance(obj, dict):
+        for item in obj.values():
+            yield from _iter_tensors(item)
+
+
+def _install_nonfinite_hooks(module: torch.nn.Module) -> None:
+    """Log the first submodule whose forward emits a non-finite value.
+
+    Diagnostic for the gfx1250 NaN: hooks fire child-before-parent, so the first
+    line logged names the innermost producer. Each site reports whether the
+    model's parameters were *already* non-finite, which separates a poisoned
+    weight (NaN arrived via a previous backward) from a forward that produced
+    NaN out of finite inputs. Gated by DEBUG_NAN_HOOKS because the scan forces a
+    device sync on every module output.
+    """
+    reported: set[str] = set()
+    # Counts root-module forwards so a report can be dated to a step. A table
+    # that is already non-finite at forward 1 was poisoned at init or by the
+    # sharding/init path, never by a backward.
+    forwards: list[int] = [0]
+    swept: list[bool] = [False]
+
+    # Opt-in (DEBUG_NAN_HOOKS=2): sweeping every embedding table before the
+    # first forward has itself wedged the GPU on gfx1250, so it is not on the
+    # default diagnostic path.
+    if os.environ.get("DEBUG_NAN_HOOKS") == "2":
+        bad_at_init = [
+            pname
+            for pname, param in module.named_parameters()
+            if param.is_floating_point() and not torch.isfinite(param.data).all()
+        ]
+        logger.warning(
+            "[nan-hook] non-finite params before any forward: %d%s",
+            len(bad_at_init),
+            (" e.g. " + ", ".join(bad_at_init[:3])) if bad_at_init else "",
+        )
+
+    def _count_forward(
+        _mod: torch.nn.Module, _inp: object, _out: object
+    ) -> None:  # pyre-ignore[2]
+        forwards[0] += 1
+
+    module.register_forward_pre_hook(_count_forward)
+
+    def _make_hook(name: str):  # pyre-ignore[3]
+        def hook(
+            _mod: torch.nn.Module, _inp: object, out: object
+        ) -> None:  # pyre-ignore[2]
+            if name in reported:
+                return
+            for idx, tensor in enumerate(_iter_tensors(out)):
+                if not tensor.is_floating_point() or tensor.numel() == 0:
+                    continue
+                if torch.isfinite(tensor).all():
+                    continue
+                reported.add(name)
+                # Sweeping every embedding table is expensive and has wedged
+                # the GPU, so do it once for the whole run, on the first hit.
+                if swept[0]:
+                    params_note = "params not re-swept"
+                else:
+                    swept[0] = True
+                    bad_params = [
+                        pname
+                        for pname, param in module.named_parameters()
+                        if param.is_floating_point()
+                        and not torch.isfinite(param.data).all()
+                    ]
+                    params_note = "non-finite params: %d%s" % (
+                        len(bad_params),
+                        (" e.g. " + ", ".join(bad_params[:3])) if bad_params else "",
+                    )
+                logger.error(
+                    "[nan-hook] forward %d: non-finite output from %s (%s), "
+                    "output #%d shape %s; %s",
+                    forwards[0],
+                    name,
+                    type(_mod).__name__,
+                    idx,
+                    tuple(tensor.shape),
+                    params_note,
+                )
+                return
+
+        return hook
+
+    for name, submodule in module.named_modules():
+        submodule.register_forward_hook(_make_hook(name or "<root>"))
+
+
+def _install_nonfinite_backward_hooks(module: torch.nn.Module) -> None:
+    """Log the module that *manufactures* the first non-finite gradient.
+
+    A NaN gradient propagates, so most reports are downstream noise. The
+    producer is the module whose grad_output is finite while its grad_input is
+    not: it was handed good gradients and returned bad ones. That is the
+    criterion applied here, which on the gfx1250 NaN should name the offending
+    Triton backward rather than everything below it.
+    """
+    reported: set[str] = set()
+
+    def _all_finite(grads: object) -> bool:
+        return all(
+            torch.isfinite(t).all()
+            for t in _iter_tensors(grads)
+            if t.is_floating_point() and t.numel() > 0
+        )
+
+    def _make_hook(name: str):  # pyre-ignore[3]
+        def hook(
+            _mod: torch.nn.Module, grad_input: object, grad_output: object
+        ) -> None:  # pyre-ignore[2]
+            if name in reported:
+                return
+            out_ok = _all_finite(grad_output)
+            in_ok = _all_finite(grad_input)
+            if out_ok and not in_ok:
+                reported.add(name)
+                logger.error(
+                    "[nan-bwd] PRODUCER: %s (%s) returned non-finite grad_input "
+                    "from finite grad_output",
+                    name,
+                    type(_mod).__name__,
+                )
+            elif not out_ok and name not in reported:
+                reported.add(name)
+                logger.error(
+                    "[nan-bwd] downstream: %s (%s) already received non-finite "
+                    "grad_output",
+                    name,
+                    type(_mod).__name__,
+                )
+
+        return hook
+
+    for name, submodule in module.named_modules():
+        try:
+            submodule.register_full_backward_hook(_make_hook(name or "<root>"))
+        except (RuntimeError, AttributeError) as exc:
+            logger.warning("[nan-bwd] cannot hook %s: %s", name, exc)
+
+
 SUPPORTED_CONFIGS = {
     "debug": "debug.gin",
     "kuairand-1k": "kuairand_1k.gin",
@@ -166,6 +314,10 @@ def _main_func(
     # expose get_num_flops_per_sample, in which case MetricsLogger silently
     # drops the tflops fields from the perf line.
     inner_model = model.module if hasattr(model, "module") else model
+    if os.environ.get("DEBUG_NAN_HOOKS", "0") != "0":
+        logger.warning("[nan-hook] installing non-finite output hooks (slow)")
+        _install_nonfinite_hooks(inner_model)
+        _install_nonfinite_backward_hooks(inner_model)
     num_flops_per_sample = (
         float(inner_model.get_num_flops_per_sample())
         if hasattr(inner_model, "get_num_flops_per_sample")

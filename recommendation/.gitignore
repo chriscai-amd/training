@@ -8,6 +8,12 @@ results/
 # stitched traces/**/trace_step*.json.gz is tracked -- it contains the same events.
 traces/**/trace_step*_rank*.json
 
+# Per-run eval metrics written next to the entry point
+streaming_eval_metrics.jsonl
+
+# GPU coredumps from a memory-access fault: sized like allocated VRAM (36 GB seen)
+gpucore.*.gpu
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

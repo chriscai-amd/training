@@ -103,6 +103,42 @@ def is_amd_mi350() -> bool:
     return "gfx950" in arch
 
 
+def _fused_rng_ln_mul_dropout_is_broken() -> bool:
+    """Triton 3.8 miscompiles the fused-RNG layer-norm-mul-dropout backward on
+    gfx1250, so the separated-RNG path has to be used there instead.
+
+    ``_ln_mul_dropout_bwd_dx_du`` dies with
+    ``HSA_STATUS_ERROR_MEMORY_APERTURE_VIOLATION`` whenever dropout is active
+    (``dropout_ratio > 0`` and training); with dropout off the same launch is
+    fine, and Triton 3.6.0/3.7.1 are fine either way. It is not the pipelining
+    defect that ``common.clamp_num_stages`` handles -- forcing num_stages 1, 2
+    or 3 faults identically -- and ``FAST_DROPOUT`` does not avoid it either.
+    See docs/mi450.md row 4c.
+
+    Kept separate from is_amd_mi350() because this is a compiler workaround
+    rather than a hardware preference: gfx1250 may well want the separated path
+    on its own merits, but that is a performance question to settle on a version
+    that is not miscompiling.
+    """
+    if not torch.cuda.is_available():
+        return False
+    if getattr(torch.version, "hip", None) is None:
+        return False
+    try:
+        arch = torch.cuda.get_device_properties(0).gcnArchName or ""
+    except (AssertionError, RuntimeError, AttributeError):
+        return False
+    if "gfx1250" not in arch:
+        return False
+    try:
+        import triton
+
+        major, minor = (int(p) for p in triton.__version__.split(".")[:2])
+    except (ImportError, AttributeError, ValueError):
+        return False
+    return (major, minor) >= (3, 8)
+
+
 def use_separated_rng_ln_mul_dropout() -> bool:
     """Hardware that should use the autotuned, multi-row ``_ln_mul_dropout_fwd_rng``
     kernel with a precomputed dropout mask instead of the legacy single-row,
@@ -111,8 +147,14 @@ def use_separated_rng_ln_mul_dropout() -> bool:
     Blackwell datacenter GPUs (sm_100-103) and AMD MI350 (gfx950) both prefer the
     separated-RNG path: it batches rows per program and lets the backward reuse the
     same mask, which is a large win over launching one program per row.
+
+    gfx1250 on Triton >= 3.8 is forced onto it for correctness, not performance.
     """
-    return is_sm100_plus() or is_amd_mi350()
+    return (
+        is_sm100_plus()
+        or is_amd_mi350()
+        or _fused_rng_ln_mul_dropout_is_broken()
+    )
 
 
 def copy_if_different_ptr(dst: torch.Tensor, src: torch.Tensor) -> None:

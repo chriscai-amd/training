@@ -45,10 +45,13 @@ export PYTORCH_CUDA_ALLOC_CONF="${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:T
 # split/concat kernels on tensors above its 2 GiB narrowing cutoff. Disabling it
 # makes the reproducer pass; see docs/mi450.md. Set to 1 to reproduce the hang.
 export AMDGCN_USE_BUFFER_OPS="${AMDGCN_USE_BUFFER_OPS:-0}"
-# A GPU memory-access fault writes a coredump the size of allocated VRAM (36 GB
-# observed, into the repo). Off by default; set to 1 when a dump is actually
-# wanted.
+# A GPU memory-access fault writes a coredump the size of allocated VRAM (9-36 GB
+# observed). HSA_ENABLE_COREDUMP=0 does NOT suppress it on this runtime, so also
+# steer the file out of the repo -- the runtime's own message points at
+# HSA_COREDUMP_PATTERN. Both are set: the first in case a newer runtime honours
+# it, the second so the dump never lands in the working tree either way.
 export HSA_ENABLE_COREDUMP="${HSA_ENABLE_COREDUMP:-0}"
+export HSA_COREDUMP_PATTERN="${HSA_COREDUMP_PATTERN:-/tmp/gpucore.%p.gpu}"
 export DLRM_DATA_PATH
 export PYTHONPATH="/workspace/recommendation:${PYTHONPATH:-}"
 
@@ -72,7 +75,10 @@ docker run --rm \
   -e NUM_TRAIN_BATCHES -e NUM_EVAL_BATCHES \
   -e EVAL_EVERY_N_WINDOWS -e EVAL_EVERY_DATA_PCT -e AUC_THRESHOLD \
   -e RUN_NAME -e NCCL_SOCKET_IFNAME -e PYTORCH_CUDA_ALLOC_CONF -e PYTHONPATH \
-  -e AMDGCN_USE_BUFFER_OPS -e DEBUG_NAN_HOOKS -e HSA_ENABLE_COREDUMP \
+  -e AMDGCN_USE_BUFFER_OPS -e DEBUG_NAN_HOOKS \
+  -e HSA_ENABLE_COREDUMP -e HSA_COREDUMP_PATTERN \
+  -e AMD_SERIALIZE_KERNEL -e HIP_LAUNCH_BLOCKING -e TRITON_PRINT_AUTOTUNING \
+  -e AMD_LOG_LEVEL \
   -w /workspace/recommendation \
   "$IMG" \
   python -m generative_recommenders.dlrm_v4.train.train_ranker \

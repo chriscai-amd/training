@@ -47,6 +47,51 @@ try:
 except ImportError:
     HAS_TLX = False
 
+def _pipelining_is_broken() -> bool:
+    """Return True iff Triton software pipelining miscompiles on this stack.
+
+    Triton 3.8.0 on ROCm/gfx1250 miscompiles pipelined loops: with
+    ``num_stages >= 2`` the HSTU attention forward faults ("Memory access fault
+    ... on address (nil)") or returns garbage, while ``num_stages == 1`` is
+    bit-comparable to 3.6.0 across every shape tested. The trigger is not
+    specific to attention -- the jagged and layer-norm kernels autotune to
+    ``num_stages=3`` and the run faults in them too -- so the clamp is applied
+    to every autotuned kernel rather than one file. 3.6.0 and 3.7.1 are
+    unaffected and keep their original staging.
+
+    Set TRITON_ALLOW_PIPELINING=1 to keep the original num_stages, which is how
+    a newer Triton build is re-checked for the defect, or =0 to force the clamp
+    on a version that does not get it by default.
+
+    See docs/mi450.md row 4 and scripts/repro_gfx1250_blockptr_dot.py.
+    """
+    override = os.environ.get("TRITON_ALLOW_PIPELINING")
+    if override is not None:
+        return override == "0"
+    if not torch.version.hip:
+        return False
+    try:
+        major, minor = (int(x) for x in triton.__version__.split(".")[:2])
+    except ValueError:
+        return False
+    return (major, minor) >= (3, 8)
+
+
+_NO_PIPELINING: bool = _pipelining_is_broken()
+
+
+def clamp_num_stages(configs: List[triton.Config]) -> List[triton.Config]:
+    """Force num_stages=1 on every config when pipelining is unsafe.
+
+    Mutates in place rather than rebuilding so per-config extras -- pre_hook in
+    particular, which some backward configs require -- are preserved.
+    """
+    if _NO_PIPELINING:
+        for config in configs:
+            config.num_stages = 1
+    return configs
+
+
 try:
     from generative_recommenders.fb.triton_cc.utils import triton_cc
     from hammer.ops.triton.utils import triton_autotune
@@ -78,7 +123,7 @@ except ImportError:
             return Autotuner(
                 fn,
                 fn.arg_names,
-                configs,
+                clamp_num_stages(configs),
                 key,
                 reset_to_zero,
                 restore_value,

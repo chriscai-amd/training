@@ -113,7 +113,7 @@ def _fused_rng_ln_mul_dropout_is_broken() -> bool:
     fine, and Triton 3.6.0/3.7.1 are fine either way. It is not the pipelining
     defect that ``common.clamp_num_stages`` handles -- forcing num_stages 1, 2
     or 3 faults identically -- and ``FAST_DROPOUT`` does not avoid it either.
-    See docs/mi450.md row 4c.
+    See docs/mi450.md defect 4c.
 
     Kept separate from is_amd_mi350() because this is a compiler workaround
     rather than a hardware preference: gfx1250 may well want the separated path

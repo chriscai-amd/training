@@ -4,8 +4,8 @@ Standalone -- pure Triton + torch, no repo or fbgemm imports. Exact on Triton
 3.6.0 and 3.7.1, wrong on 3.8.0+git4cff872c, same torch/ROCm in all three.
 
 This is the mechanism behind the HSTU attention failure on 3.8.0 (docs/mi450.md
-row 4). `_hstu_attn_fwd` runs its inner loop at num_stages=2 and builds K as a
-transposed view
+defect 4). `_hstu_attn_fwd` runs its inner loop at num_stages=2 and builds K as
+a transposed view
 
     tl.make_block_ptr(base=K, shape=(BLOCK_D_Q, seq_len), strides=(1, stride_kn),
                       block_shape=(BLOCK_D_Q, BLOCK_N), order=(0, 1))

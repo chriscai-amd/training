@@ -2566,7 +2566,7 @@ def streaming_train_eval_loop(
             # Off by default. The [lr-warmup] line only fires once, so a run that
             # dies mid-window otherwise gives no indication of how far it got --
             # which is the difference between "faults immediately" and "faults at
-            # batch 351" when chasing the MI450 defects (docs/mi450.md row 4d).
+            # batch 351" when chasing the MI450 defects (docs/mi450.md defect 4d).
             _progress_every = int(os.environ.get("PROGRESS_EVERY", "0"))
             if _progress_every and rank == 0 and train_batch_idx % _progress_every == 0:
                 print(f"[progress] train_batch_idx={train_batch_idx}", flush=True)

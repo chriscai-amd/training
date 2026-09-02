@@ -63,7 +63,7 @@ def _pipelining_is_broken() -> bool:
     a newer Triton build is re-checked for the defect, or =0 to force the clamp
     on a version that does not get it by default.
 
-    See docs/mi450.md row 4 and scripts/repro_gfx1250_blockptr_dot.py.
+    See docs/mi450.md defect 4 and scripts/repro_gfx1250_pipeliner.py.
     """
     override = os.environ.get("TRITON_ALLOW_PIPELINING")
     if override is not None:

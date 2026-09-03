@@ -174,39 +174,22 @@ def _ln_mul_dropout_fwd_rng(
     block_id = tl.program_id(0)
     start_row = block_id * BLOCK_N
 
-    # Create block pointers for X, U, and Y
-    X_block_ptr = tl.make_block_ptr(
-        base=X,
-        shape=(N, D),
-        strides=(stride_x, 1),
-        offsets=(start_row, 0),
-        block_shape=(BLOCK_N, BLOCK_D),
-        order=(1, 0),
-    )
-
-    U_block_ptr = tl.make_block_ptr(
-        base=U,
-        shape=(N, D),
-        strides=(stride_u, 1),
-        offsets=(start_row, 0),
-        block_shape=(BLOCK_N, BLOCK_D),
-        order=(1, 0),
-    )
-
-    # Load data blocks
-    x_block = tl.load(X_block_ptr, boundary_check=(0, 1), padding_option="zero").to(
-        tl.float32
-    )
-    u_block = tl.load(U_block_ptr, boundary_check=(0, 1), padding_option="zero").to(
-        tl.float32
-    )
-
     cols = tl.arange(0, BLOCK_D)
     col_mask = cols < D
     rows = start_row + tl.arange(0, BLOCK_N)
     row_mask = rows < N
-    # Pre-compute 2D mask for reuse in dropout and masked operations
     mask_2d = row_mask[:, None] & col_mask[None, :]
+
+    x_block = tl.load(
+        X + rows[:, None] * stride_x + cols[None, :],
+        mask=mask_2d,
+        other=0.0,
+    ).to(tl.float32)
+    u_block = tl.load(
+        U + rows[:, None] * stride_u + cols[None, :],
+        mask=mask_2d,
+        other=0.0,
+    ).to(tl.float32)
 
     # Pre-compute inv_D to replace divisions with multiplications (optimization)
     inv_D = 1.0 / D
@@ -280,85 +263,49 @@ def _ln_mul_dropout_fwd_rng(
             y = tl.where(y_keep, y * dropout_scale, 0.0)
 
     if CONCAT_U and CONCAT_X:
-        Y_block_ptr_u = tl.make_block_ptr(
-            base=Y,
-            shape=(N, 3 * D),
-            strides=(stride_y, 1),
-            offsets=(start_row, 0),
-            block_shape=(BLOCK_N, BLOCK_D),
-            order=(1, 0),
+        tl.store(
+            Y + rows[:, None] * stride_y + cols[None, :],
+            u_block.to(Y.dtype.element_ty),
+            mask=mask_2d,
         )
-
-        Y_block_ptr_x = tl.make_block_ptr(
-            base=Y,
-            shape=(N, 3 * D),
-            strides=(stride_y, 1),
-            offsets=(start_row, D),
-            block_shape=(BLOCK_N, BLOCK_D),
-            order=(1, 0),
+        tl.store(
+            Y + rows[:, None] * stride_y + (cols + D)[None, :],
+            x_block.to(Y.dtype.element_ty),
+            mask=mask_2d,
         )
-
-        Y_block_ptr_y = tl.make_block_ptr(
-            base=Y,
-            shape=(N, 3 * D),
-            strides=(stride_y, 1),
-            offsets=(start_row, 2 * D),
-            block_shape=(BLOCK_N, BLOCK_D),
-            order=(1, 0),
+        tl.store(
+            Y + rows[:, None] * stride_y + (cols + 2 * D)[None, :],
+            y.to(Y.dtype.element_ty),
+            mask=mask_2d,
         )
-
-        tl.store(Y_block_ptr_u, u_block.to(Y.dtype.element_ty), boundary_check=(0, 1))
-        tl.store(Y_block_ptr_x, x_block.to(Y.dtype.element_ty), boundary_check=(0, 1))
-        tl.store(Y_block_ptr_y, y.to(Y.dtype.element_ty), boundary_check=(0, 1))
     elif CONCAT_U:
-        Y_block_ptr_u = tl.make_block_ptr(
-            base=Y,
-            shape=(N, 2 * D),
-            strides=(stride_y, 1),
-            offsets=(start_row, 0),
-            block_shape=(BLOCK_N, BLOCK_D),
-            order=(1, 0),
+        tl.store(
+            Y + rows[:, None] * stride_y + cols[None, :],
+            u_block.to(Y.dtype.element_ty),
+            mask=mask_2d,
         )
-        Y_block_ptr_y = tl.make_block_ptr(
-            base=Y,
-            shape=(N, 2 * D),
-            strides=(stride_y, 1),
-            offsets=(start_row, D),
-            block_shape=(BLOCK_N, BLOCK_D),
-            order=(1, 0),
+        tl.store(
+            Y + rows[:, None] * stride_y + (cols + D)[None, :],
+            y.to(Y.dtype.element_ty),
+            mask=mask_2d,
         )
-        tl.store(Y_block_ptr_u, u_block.to(Y.dtype.element_ty), boundary_check=(0, 1))
-        tl.store(Y_block_ptr_y, y.to(Y.dtype.element_ty), boundary_check=(0, 1))
     elif CONCAT_X:
-        Y_block_ptr_x = tl.make_block_ptr(
-            base=Y,
-            shape=(N, 2 * D),
-            strides=(stride_y, 1),
-            offsets=(start_row, 0),
-            block_shape=(BLOCK_N, BLOCK_D),
-            order=(1, 0),
+        tl.store(
+            Y + rows[:, None] * stride_y + cols[None, :],
+            x_block.to(Y.dtype.element_ty),
+            mask=mask_2d,
         )
-        Y_block_ptr_y = tl.make_block_ptr(
-            base=Y,
-            shape=(N, 2 * D),
-            strides=(stride_y, 1),
-            offsets=(start_row, D),
-            block_shape=(BLOCK_N, BLOCK_D),
-            order=(1, 0),
+        tl.store(
+            Y + rows[:, None] * stride_y + (cols + D)[None, :],
+            y.to(Y.dtype.element_ty),
+            mask=mask_2d,
         )
-        tl.store(Y_block_ptr_x, x_block.to(Y.dtype.element_ty), boundary_check=(0, 1))
-        tl.store(Y_block_ptr_y, y.to(Y.dtype.element_ty), boundary_check=(0, 1))
     else:
-        Y_block_ptr = tl.make_block_ptr(
-            base=Y,
-            shape=(N, D),
-            strides=(stride_y, 1),
-            offsets=(start_row, 0),
-            block_shape=(BLOCK_N, BLOCK_D),
-            order=(1, 0),
+        tl.store(
+            Y + rows[:, None] * stride_y + cols[None, :],
+            y.to(Y.dtype.element_ty),
+            mask=mask_2d,
         )
-
-        tl.store(Y_block_ptr, y.to(Y.dtype.element_ty), boundary_check=(0, 1))
 
 
 @triton.jit

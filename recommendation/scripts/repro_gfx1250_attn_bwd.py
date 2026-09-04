@@ -78,13 +78,14 @@ def _layout(
     rng: torch.Generator,
     fixed=None,
     contextual: int = CONTEXTUAL_SEQ_LEN,
+    batch: int = BATCH,
 ):
     """One yambda-5b-shaped batch: per-row history plus a single target."""
     if fixed is not None:
         lengths = torch.tensor(fixed, dtype=torch.int64, device=device)
     else:
         uih = torch.randint(
-            MIN_HISTORY, HISTORY_LENGTH, (BATCH,), generator=rng, dtype=torch.int64
+            MIN_HISTORY, HISTORY_LENGTH, (batch,), generator=rng, dtype=torch.int64
         ).to(device)
         lengths = uih + MAX_TARGETS + contextual
     offsets = torch.zeros((lengths.numel() + 1,), dtype=torch.int64, device=device)
@@ -215,6 +216,21 @@ def main() -> int:
         help="comma-separated per-row sequence lengths (incl. target and "
         "contextual tokens); replays one fixed layout instead of sampling",
     )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=BATCH,
+        help="rows per layout. 8 is the e2e default; 128 is where defect [3] "
+        "turns train_loss non-finite within ~50 steps",
+    )
+    parser.add_argument(
+        "--check-finite",
+        action="store_true",
+        help="check the forward output and dq/dk/dv for non-finite values each "
+        "step and stop at the first one. This is the defect [3] probe: the "
+        "inputs are bounded in [-0.1, 0.1], so a finite result is the only "
+        "correct answer and no reference is needed to call it wrong",
+    )
     args = parser.parse_args()
 
     if os.environ.get("AMDGCN_USE_BUFFER_OPS") != "0":
@@ -239,7 +255,7 @@ def main() -> int:
     )
     for step in range(args.iters):
         offsets, num_targets, max_seq, total, lengths = _layout(
-            device, rng, fixed, contextual=args.contextual
+            device, rng, fixed, contextual=args.contextual, batch=args.batch_size
         )
         if args.no_targets:
             num_targets = None
@@ -297,6 +313,27 @@ def main() -> int:
             )
         if args.layout == "guarded" and not _check_guards(extra, step):
             return 1
+        if args.check_finite:
+            named = [("out", out)] if args.part in ("both", "fwd") else []
+            if args.part in ("both", "bwd"):
+                named += [("dq", dq), ("dk", dk), ("dv", dv)]
+            bad = [(n, t) for n, t in named if not torch.isfinite(t).all()]
+            if bad:
+                print(
+                    f"!! NON-FINITE step={step} N={total} max_seq={max_seq} "
+                    f"batch={args.batch_size} lengths={lengths.tolist()}",
+                    flush=True,
+                )
+                for name, t in bad:
+                    f = torch.isfinite(t)
+                    print(
+                        f"   {name}: {int((~f).sum())} of {t.numel()} non-finite "
+                        f"({100.0 * float((~f).sum()) / t.numel():.4f}%), "
+                        f"nan={int(torch.isnan(t).sum())} "
+                        f"inf={int(torch.isinf(t).sum())}",
+                        flush=True,
+                    )
+                return 1
     torch.cuda.synchronize()
     print(f"-- {tag}: PASS ({args.iters} iterations)", flush=True)
     return 0

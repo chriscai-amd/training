@@ -179,14 +179,19 @@ def _ln_mul_dropout_fwd_rng(
     rows = start_row + tl.arange(0, BLOCK_N)
     row_mask = rows < N
     mask_2d = row_mask[:, None] & col_mask[None, :]
+    # `rows` is int32 and `stride_y` (=3*D=1536 at the production shape) is
+    # specialized to i32, so `rows * stride_y` overflows at row 1_398_102 and
+    # the store lands ~4.29 GB below Y. Widen once and use it for every
+    # pointer, exactly as the dropout-mask pointer below already did.
+    rows_i64 = rows.to(tl.int64)
 
     x_block = tl.load(
-        X + rows[:, None] * stride_x + cols[None, :],
+        X + rows_i64[:, None] * stride_x + cols[None, :],
         mask=mask_2d,
         other=0.0,
     ).to(tl.float32)
     u_block = tl.load(
-        U + rows[:, None] * stride_u + cols[None, :],
+        U + rows_i64[:, None] * stride_u + cols[None, :],
         mask=mask_2d,
         other=0.0,
     ).to(tl.float32)
@@ -227,8 +232,8 @@ def _ln_mul_dropout_fwd_rng(
         u_block = silu_u_block
 
     if TRAINING:
-        # Reuse rows (as int64 for pointer arithmetic) and pre-computed mask_2d
-        row_offsets_i64 = rows.to(tl.int64)
+        # Reuse the widened rows and the pre-computed mask_2d
+        row_offsets_i64 = rows_i64
         # Pre-compute loop-invariant values
         dropout_scale = 1.0 / (1.0 - dropout_ratio)
         offsets = row_offsets_i64[:, None] * stride_mask + cols[None, :]
@@ -264,45 +269,45 @@ def _ln_mul_dropout_fwd_rng(
 
     if CONCAT_U and CONCAT_X:
         tl.store(
-            Y + rows[:, None] * stride_y + cols[None, :],
+            Y + rows_i64[:, None] * stride_y + cols[None, :],
             u_block.to(Y.dtype.element_ty),
             mask=mask_2d,
         )
         tl.store(
-            Y + rows[:, None] * stride_y + (cols + D)[None, :],
+            Y + rows_i64[:, None] * stride_y + (cols + D)[None, :],
             x_block.to(Y.dtype.element_ty),
             mask=mask_2d,
         )
         tl.store(
-            Y + rows[:, None] * stride_y + (cols + 2 * D)[None, :],
+            Y + rows_i64[:, None] * stride_y + (cols + 2 * D)[None, :],
             y.to(Y.dtype.element_ty),
             mask=mask_2d,
         )
     elif CONCAT_U:
         tl.store(
-            Y + rows[:, None] * stride_y + cols[None, :],
+            Y + rows_i64[:, None] * stride_y + cols[None, :],
             u_block.to(Y.dtype.element_ty),
             mask=mask_2d,
         )
         tl.store(
-            Y + rows[:, None] * stride_y + (cols + D)[None, :],
+            Y + rows_i64[:, None] * stride_y + (cols + D)[None, :],
             y.to(Y.dtype.element_ty),
             mask=mask_2d,
         )
     elif CONCAT_X:
         tl.store(
-            Y + rows[:, None] * stride_y + cols[None, :],
+            Y + rows_i64[:, None] * stride_y + cols[None, :],
             x_block.to(Y.dtype.element_ty),
             mask=mask_2d,
         )
         tl.store(
-            Y + rows[:, None] * stride_y + (cols + D)[None, :],
+            Y + rows_i64[:, None] * stride_y + (cols + D)[None, :],
             y.to(Y.dtype.element_ty),
             mask=mask_2d,
         )
     else:
         tl.store(
-            Y + rows[:, None] * stride_y + cols[None, :],
+            Y + rows_i64[:, None] * stride_y + cols[None, :],
             y.to(Y.dtype.element_ty),
             mask=mask_2d,
         )

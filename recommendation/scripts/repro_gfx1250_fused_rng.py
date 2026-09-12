@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reproduce the gfx1250 fused-RNG layer-norm/dropout backward fault.
 
-This is defect 4c in docs/mi450.md.  Run one mode per process because the
+This is defect 4c in docs/mi450_a0/mi450_a0.md.  Run one mode per process because the
 dropout-on case is expected to terminate with a recoverable GPU memory-aperture
 violation on AMD Triton 3.8.0+git4cff872c.
 

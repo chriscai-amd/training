@@ -43,7 +43,7 @@ export NCCL_SOCKET_IFNAME="${NCCL_SOCKET_IFNAME:-lo}"
 export PYTORCH_CUDA_ALLOC_CONF="${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}"
 # gfx1250: the AMD backend's buffer-op pass group hangs the GPU in the jagged
 # split/concat kernels on tensors above its 2 GiB narrowing cutoff. Disabling it
-# makes the reproducer pass; see docs/mi450.md. Set to 1 to reproduce the hang.
+# makes the reproducer pass; see docs/mi450_a0/mi450_a0.md. Set to 1 to reproduce the hang.
 export AMDGCN_USE_BUFFER_OPS="${AMDGCN_USE_BUFFER_OPS:-0}"
 # A GPU memory-access fault writes a coredump the size of allocated VRAM (9-36 GB
 # observed). HSA_ENABLE_COREDUMP=0 does NOT suppress it on this runtime, so also

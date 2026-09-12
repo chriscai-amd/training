@@ -6,7 +6,7 @@
 #   Unscaled tables are 293,051,712 rows x 2048 B = 560.04 GiB (dim 512, fp32,
 #   plus 1.09 GiB row-wise Adagrad state) = 1.30x the 432 GiB device. Production
 #   only fits by sharding across 8-32 ranks. At 0.25: 73,262,927 rows = 140.01
-#   GiB, which is the "~140 GB" figure in docs/mi450.md.
+#   GiB, which is the "~140 GB" figure in docs/mi450_a0/mi450_a0.md.
 #   This DOES change the model, not just its footprint: the vocabulary is
 #   quartered and ids are modulo-wrapped into it (configs.py:817-827,
 #   datasets/yambda.py:1003). Accuracy is therefore NOT directly comparable to
@@ -34,7 +34,7 @@
 #
 # NON-TRAJECTORY OPERATIONAL SETTINGS (these do not change what the model learns):
 #   AMDGCN_USE_BUFFER_OPS=0  MANDATORY. Buffer ops wedge the node (defect [1] in
-#                            docs/mi450.md) and cost a reboot.
+#                            docs/mi450_a0/mi450_a0.md) and cost a reboot.
 #   SKIP_EVAL_EPOCH_PCT      yambda_5b.gin:757 states outright that the 0.025
 #                            default is the GBS=8192 value and is "NOT correct
 #                            for other GBS. Set this per run alongside
@@ -55,7 +55,7 @@
 #   scripts/run_prod_convergence_1gpu.sh <log>           # full convergence run
 #
 # Runs inside the EXISTING container (default triton-7ff97e-test), which carries
-# the Triton 7ff97e3109 build docs/mi450.md pins. A fresh `docker run` of the
+# the Triton 7ff97e3109 build docs/mi450_a0/mi450_a0.md pins. A fresh `docker run` of the
 # base image would get a different Triton.
 set -uo pipefail
 

@@ -31,7 +31,7 @@ WHAT IT FOUND (2026-09-09, gfx1250 A0, Triton 7ff97e3109)
 1. The allocation reproduces standalone: 602 VGPRs, **zero spills**, with
    ``v_and_b32 v82 /*v594*/, 31, v0`` defined before the first ``v_wmma`` and
    read back after the last across 66 static ``s_set_vgpr_msb`` mode changes.
-   ``docs/mi450.md`` previously recorded no standalone reproducer at all.
+   ``docs/mi450_a0/mi450_a0.md`` previously recorded no standalone reproducer at all.
 2. **The corollary was NOT confirmed.** Under clean launch conditions that
    kernel is bit-exact over 200 iterations x 6 repeats. An extended-VGPR carrier
    alone does not produce wrong numbers.

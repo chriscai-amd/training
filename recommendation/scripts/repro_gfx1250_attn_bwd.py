@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Standalone gfx1250 reproducer for the ``_hstu_attn_bwd`` memory-access fault.
 
-This is defect 6 in docs/mi450.md reduced to a single Triton kernel. Default
+This is defect 6 in docs/mi450_a0/mi450_a0.md reduced to a single Triton kernel. Default
 invocation faults in about 15 seconds on Triton main @ 7ff97e3109::
 
     AMDGCN_USE_BUFFER_OPS=0 AMD_SERIALIZE_KERNEL=3 \
@@ -15,7 +15,7 @@ over the existing single-shot op tests is the *variation* -- every step brings
 different jagged extents, the way the real dataloader feeds the trainer -- and
 enough steps for the fault to land (tens to a few hundred).
 
-How the blame was narrowed (each claim is a run in docs/mi450.md defect [6]):
+How the blame was narrowed (each claim is a run in docs/mi450_a0/mi450_a0.md defect [6]):
 
   * ``--part fwd`` is clean for 2000 iterations; ``--part bwd`` faults. So the
     forward kernel is not implicated, the backward one is.

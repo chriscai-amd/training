@@ -6,7 +6,7 @@ true e2e shape.** It is checked in as a *control*: it is the strongest statement
 available that defect [3]'s `nan` does not reduce to the attention kernel in
 isolation. Read the pass as evidence, not as a missing feature.
 
-Defect [3] in docs/mi450.md is `train_loss=nan`, which at batch 128 appears
+Defect [3] in docs/mi450_a0/mi450_a0.md is `train_loss=nan`, which at batch 128 appears
 within ~50 steps in most runs while the PyTorch kernels stay finite. This script
 takes the attention op standalone and checks it two ways on identical inputs.
 

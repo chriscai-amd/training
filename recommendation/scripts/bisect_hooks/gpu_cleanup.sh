@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Reset the GPU to idle between bisect runs (docs/mi450.md [6]).
+# Reset the GPU to idle between bisect runs (docs/mi450_a0/mi450_a0.md [6]).
 #
 # After a memory-access fault the rank process stays wedged and its dataloader
 # workers are orphaned, and both keep holding HBM -- a following run then starts

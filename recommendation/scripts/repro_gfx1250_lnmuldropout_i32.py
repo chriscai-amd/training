@@ -53,7 +53,7 @@ WHY IT IS SILENT RATHER THAN A FAULT
 holds the ~140 GiB embedding table. `Y - 4.29 GB` therefore lands inside other
 live allocations rather than in unmapped memory: no page fault, no traceback,
 just other tensors quietly overwritten with bf16 activations. That is the
-signature of docs/mi450.md defect [3] (`train_loss=nan` with no fault, reached
+signature of docs/mi450_a0/mi450_a0.md defect [3] (`train_loss=nan` with no fault, reached
 through poisoned embedding tables).
 
 WHY IT LOOKS LIKE A BATCH-SIZE BUG
@@ -271,7 +271,7 @@ def _print_env() -> None:
 
 
 def _require_buffer_ops_off() -> None:
-    """Buffer ops wedge this node (docs/mi450.md defect [1]) and cost a reboot."""
+    """Buffer ops wedge this node (docs/mi450_a0/mi450_a0.md defect [1]) and cost a reboot."""
     val = os.environ.get("AMDGCN_USE_BUFFER_OPS")
     if val != "0":
         raise RuntimeError(

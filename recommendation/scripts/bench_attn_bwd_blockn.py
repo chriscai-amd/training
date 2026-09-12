@@ -1,6 +1,6 @@
 """Time the HSTU attention backward at a chosen pinned BLOCK_N.
 
-Quantifies the throughput cost of pinning BLOCK_N=64 on gfx1250 (docs/mi450.md
+Quantifies the throughput cost of pinning BLOCK_N=64 on gfx1250 (docs/mi450_a0/mi450_a0.md
 row 2). One BLOCK_N per process, so a fault in the 128 case cannot take the 64
 measurement with it.
 """

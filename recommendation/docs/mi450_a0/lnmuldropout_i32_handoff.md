@@ -10,7 +10,7 @@ because the symptom looked like a miscompile. It is not one — the generated co
 faithfully implements what the kernel source asks for, and the kernel source
 asks for a 32-bit multiply.
 
-**Reproducer:** [`scripts/repro_gfx1250_lnmuldropout_i32.py`](../scripts/repro_gfx1250_lnmuldropout_i32.py)
+**Reproducer:** [`scripts/repro_gfx1250_lnmuldropout_i32.py`](../../scripts/repro_gfx1250_lnmuldropout_i32.py)
 — torch + triton only, no repo import, no fbgemm, no dataset, deterministic,
 cannot fault.
 
@@ -248,7 +248,7 @@ never converged on a single cause.
    went `nan` at 190 after a last finite 0.13981 @ 180.
 
    Two readings to guard against: `run_stop status="aborted"` is the MLPerf
-   convergence verdict, not a crash — every run in `mi450.md` reports it,
+   convergence verdict, not a crash — every run in `mi450_a0.md` reports it,
    including the clean batch-128 ones; and eval AUC 0.4994 reflects 614,400
    samples of a 5B corpus at `dense_lr=2.5e-08` inside a 24,000-step warmup.
 

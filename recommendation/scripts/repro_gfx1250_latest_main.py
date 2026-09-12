@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reproduce the gfx1250 first-step memory-access fault without yambda data.
 
-This is defect 6 in docs/mi450.md. Isolated HSTU layers pass; the e2e trainer
+This is defect 6 in docs/mi450_a0/mi450_a0.md. Isolated HSTU layers pass; the e2e trainer
 dies at ``gstep=0`` right after the first TBE HIP warning. This script walks
 the same first-step kernel mix the trainer runs — TBE lookup, jagged concat of
 contextual tokens, timestamp/position embeddings, then the HSTU encoder —

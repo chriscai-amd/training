@@ -1,4 +1,4 @@
-# Per-op kernel bisect hook for the gfx1250 memory-access fault (docs/mi450.md [6]).
+# Per-op kernel bisect hook for the gfx1250 memory-access fault (docs/mi450_a0/mi450_a0.md [6]).
 #
 # The trainer spawns its rank processes with start_method="spawn", so a monkeypatch
 # applied in the launcher process is lost. sitecustomize is imported by every

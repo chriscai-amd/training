@@ -1,12 +1,12 @@
 # gfx1250 A0: standalone extended-VGPR codegen reproducer, and a separate multi-stream fault
 
-Two results from an attempt to build a standalone reproducer for `docs/mi450.md`
+Two results from an attempt to build a standalone reproducer for `docs/mi450_a0/mi450_a0.md`
 defect [3] (`train_loss=nan` at `BATCH_SIZE=128`), following
 [raikonenfnu/training#3](https://github.com/raikonenfnu/training/issues/3).
 They go to different teams, and the second is **not** the first.
 
 1. **A standalone kernel that synthesizes issue #3's allocation** — `torch` +
-   `triton` only, no repo import, no dataset. Previously `docs/mi450.md` recorded
+   `triton` only, no repo import, no dataset. Previously `docs/mi450_a0/mi450_a0.md` recorded
    *"None, and three probes actively failed to find one"*. This closes that gap
    for the **codegen**, and is checkable without a GPU dispatch.
 2. **A separate, reproducible page fault** under high register pressure with

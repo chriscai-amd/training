@@ -128,10 +128,14 @@ def _layer_norm_fwd(
     col_mask = cols < D
     rows = start_row + tl.arange(0, BLOCK_N)
     row_mask = rows < N
+    # Widen the row index before it is multiplied by a stride: the product
+    # `rows * stride` overflows int32 past 2**31 elements and wraps negative,
+    # while `row_mask` above still passes on the unwrapped id.
+    rows_i64 = rows.to(tl.int64)
     mask_2d = row_mask[:, None] & col_mask[None, :]
 
     x_block = tl.load(
-        X + rows[:, None] * stride_x + cols[None, :],
+        X + rows_i64[:, None] * stride_x + cols[None, :],
         mask=mask_2d,
         other=0.0,
     ).to(tl.float32)
@@ -161,7 +165,7 @@ def _layer_norm_fwd(
     y = x_mean * rstd
 
     tl.store(
-        Y + rows[:, None] * stride_y + cols[None, :],
+        Y + rows_i64[:, None] * stride_y + cols[None, :],
         y.to(Y.dtype.element_ty),
         mask=mask_2d,
     )
@@ -202,10 +206,14 @@ def _weighted_layer_norm_fwd(
 
     rows = start_row + tl.arange(0, BLOCK_N)
     row_mask = rows < N
+    # Widen the row index before it is multiplied by a stride: the product
+    # `rows * stride` overflows int32 past 2**31 elements and wraps negative,
+    # while `row_mask` above still passes on the unwrapped id.
+    rows_i64 = rows.to(tl.int64)
     mask_2d = row_mask[:, None] & col_mask[None, :]
 
     x_block = tl.load(
-        X + rows[:, None] * stride_x + cols[None, :],
+        X + rows_i64[:, None] * stride_x + cols[None, :],
         mask=mask_2d,
         other=0.0,
     ).to(tl.float32)
@@ -239,7 +247,7 @@ def _weighted_layer_norm_fwd(
         y = tl.sigmoid(y) * x_block
 
     tl.store(
-        Y + rows[:, None] * stride_y + cols[None, :],
+        Y + rows_i64[:, None] * stride_y + cols[None, :],
         y.to(Y.dtype.element_ty),
         mask=mask_2d,
     )
@@ -336,15 +344,19 @@ def _weighted_layer_norm_bwd_dx(
 
         rows = start_row + tl.arange(0, BLOCK_N)
         row_mask = rows < N
+        # Widen the row index before it is multiplied by a stride: the product
+        # `rows * stride` overflows int32 past 2**31 elements and wraps negative,
+        # while `row_mask` above still passes on the unwrapped id.
+        rows_i64 = rows.to(tl.int64)
         mask_2d = row_mask[:, None] & col_mask[None, :]
 
         x_block = tl.load(
-            X + rows[:, None] * stride_x + cols[None, :],
+            X + rows_i64[:, None] * stride_x + cols[None, :],
             mask=mask_2d,
             other=0.0,
         ).to(tl.float32)
         dy_block = tl.load(
-            DY + rows[:, None] * stride_dy + cols[None, :],
+            DY + rows_i64[:, None] * stride_dy + cols[None, :],
             mask=mask_2d,
             other=0.0,
         ).to(tl.float32)
@@ -382,7 +394,7 @@ def _weighted_layer_norm_bwd_dx(
 
             dx = dy_block * sigmoid_layer_norm + dx
             tl.store(
-                DX + rows[:, None] * stride_dx + cols[None, :],
+                DX + rows_i64[:, None] * stride_dx + cols[None, :],
                 dx.to(DX.dtype.element_ty),
                 mask=mask_2d,
             )
@@ -395,7 +407,7 @@ def _weighted_layer_norm_bwd_dx(
             c2 = tl.expand_dims(c2, 1)
             dx = (wdy - (xhat * c1 + c2)) * rstd
             tl.store(
-                DX + rows[:, None] * stride_dx + cols[None, :],
+                DX + rows_i64[:, None] * stride_dx + cols[None, :],
                 dx.to(DX.dtype.element_ty),
                 mask=mask_2d,
             )
@@ -811,10 +823,14 @@ def _weighted_rms_norm_fwd(
 
     rows = start_row + tl.arange(0, BLOCK_N)
     row_mask = rows < N
+    # Widen the row index before it is multiplied by a stride: the product
+    # `rows * stride` overflows int32 past 2**31 elements and wraps negative,
+    # while `row_mask` above still passes on the unwrapped id.
+    rows_i64 = rows.to(tl.int64)
     mask_2d = row_mask[:, None] & col_mask[None, :]
 
     x_block = tl.load(
-        X + rows[:, None] * stride_x + cols[None, :],
+        X + rows_i64[:, None] * stride_x + cols[None, :],
         mask=mask_2d,
         other=0.0,
     ).to(tl.float32)
@@ -836,7 +852,7 @@ def _weighted_rms_norm_fwd(
         y = fast_dividef(y, 1.0 + tl.exp(-y))
 
     tl.store(
-        Y + rows[:, None] * stride_y + cols[None, :],
+        Y + rows_i64[:, None] * stride_y + cols[None, :],
         y.to(Y.dtype.element_ty),
         mask=mask_2d,
     )
@@ -948,15 +964,19 @@ def _weighted_rms_norm_bwd(
 
         rows = start_row + tl.arange(0, BLOCK_N)
         row_mask = rows < N
+        # Widen the row index before it is multiplied by a stride: the product
+        # `rows * stride` overflows int32 past 2**31 elements and wraps negative,
+        # while `row_mask` above still passes on the unwrapped id.
+        rows_i64 = rows.to(tl.int64)
         mask_2d = row_mask[:, None] & col_mask[None, :]
 
         x_block = tl.load(
-            X + rows[:, None] * stride_x + cols[None, :],
+            X + rows_i64[:, None] * stride_x + cols[None, :],
             mask=mask_2d,
             other=0.0,
         ).to(tl.float32)
         dy_block = tl.load(
-            DY + rows[:, None] * stride_dy + cols[None, :],
+            DY + rows_i64[:, None] * stride_dy + cols[None, :],
             mask=mask_2d,
             other=0.0,
         ).to(tl.float32)
@@ -985,7 +1005,7 @@ def _weighted_rms_norm_bwd(
 
         # Write dx
         tl.store(
-            DX + rows[:, None] * stride_dx + cols[None, :],
+            DX + rows_i64[:, None] * stride_dx + cols[None, :],
             dx.to(DX.dtype.element_ty),
             mask=mask_2d,
         )

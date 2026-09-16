@@ -80,7 +80,9 @@ docker run --rm \
   -e HSA_ENABLE_COREDUMP -e HSA_COREDUMP_PATTERN \
   -e AMD_SERIALIZE_KERNEL -e HIP_LAUNCH_BLOCKING -e TRITON_PRINT_AUTOTUNING \
   -e AMD_LOG_LEVEL \
-  -e PROGRESS_EVERY \
+  -e PROGRESS_EVERY -e METRIC_LOG_FREQ \
+  -e GPU_MAX_HW_QUEUES -e HSA_XNACK -e HSA_ENABLE_SDMA \
+  -e EC_INDEX_DEDUP \
   -w /workspace/recommendation \
   "$IMG" \
   python -m generative_recommenders.dlrm_v4.train.train_ranker \

@@ -17,6 +17,8 @@
 
 from typing import List, Optional, Tuple
 
+import os
+
 import torch
 
 # @manual=//triton:triton
@@ -2434,9 +2436,24 @@ def _get_bw_pinned_configs() -> List[triton.Config]:
             if "gfx1250" in arch and version >= (3, 8):
                 # BLOCK_N=128 reaches the 1024-VGPR ceiling and intermittently
                 # corrupts a store address. 64 uses 758 VGPRs without spilling.
+                #
+                # MEASURED 2026-09-16 on gfx1250 / triton 3.8.0, via
+                # scripts/probe_gfx1250_bwd_vgpr.py. The comment above does not
+                # match this toolchain, and lowering BLOCK_N does NOT fix the
+                # wild store:
+                #     BLOCK_N=64  ->  917 VGPRs, 0 spills, occupancy 1
+                #     BLOCK_N=32  ->  760 VGPRs, 0 spills, occupancy 1
+                # So "758 VGPRs" describes BLOCK_N=32, not 64 -- the pin looks
+                # one step short of what it was written for. But 32 still faults
+                # 2/2 within 600s on the two-stream arm (repro_gfx1250_fast_fault
+                # --rows 400000 --streams 2), same as 64 at 3/3 in ~25s. Cutting
+                # register pressure 917 -> 760 does not suppress the corruption,
+                # so register pressure alone is not the mechanism.
+                # Set HSTU_BWD_BLOCK_N to sweep this while bisecting.
                 block_n = 64
         except (AssertionError, AttributeError, RuntimeError, ValueError):
             pass
+        block_n = int(os.environ.get("HSTU_BWD_BLOCK_N", block_n))
         return [
             # --- yambda bs=1024, L=2048 winner (from capture log) ---
             triton.Config(

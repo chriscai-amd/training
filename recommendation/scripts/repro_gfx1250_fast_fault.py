@@ -1,35 +1,61 @@
 #!/usr/bin/env python3
-"""Fastest known reproducer for the gfx1250 wild store -- docs/mi450_b0/mi450_b0.md section 3.
+"""Fast reproducers for the gfx1250 wild store -- docs/mi450_b0/mi450_b0.md section 3.
 
-    --rows 400000 --streams 2   ==>  hard fault in ~25s, 3/3 runs
+    --rows 1200000 --batch 1024 --streams 1 --seconds 240
+        ==> SINGLE-STREAM hard fault in _hstu_attn_bwd, 2 of 5 runs within ~4 min
 
-Two independent HSTU fwd+bwd loops, each on its own torch.cuda.Stream() in its own
+    --rows 400000 --streams 2   ==>  hard fault in ~25s, 3/3 runs (TWO streams)
+
+Each loop is an independent HSTU fwd+bwd on its own torch.cuda.Stream() in its own
 thread, sharing nothing but the GPU. The fault is the same wild-store signature as
 the step-1370 nan: HSA_STATUS_ERROR_MEMORY_APERTURE_VIOLATION, and in dmesg the
 GC_UTCL2 / TCP (0x8) / RW: 0x1 triple.
 
-SCOPE -- read before reporting anything from this. This is a TWO-STREAM fault. The
-e2e that NaNs at step 1370 is single-stream (use_pipeline=False), and this script
-has NOT been shown to reproduce the same defect, only the same signature. Neither
-available serializer can test that here: AMD_SERIALIZE_KERNEL=3 and a per-thread
-torch.cuda.synchronize() both leave the two threads free to overlap across HSA
-queues, and both still fault (measured). Use it to give a vendor a 25-second
-repro; use repro_gfx1250_nondeterminism.py for evidence about the 1370 nan.
+WHICH ARM TO USE. Prefer the single-stream arm: the e2e that NaNs at step 1370 is
+single-stream (use_pipeline=False), so --streams 1 is the only fast arm in the same
+concurrency regime. The two-stream arm is ~6x faster but is a DIFFERENT regime and
+has not been shown to be the same defect, only the same signature -- and neither
+available serializer can decide that, because AMD_SERIALIZE_KERNEL=3 and a
+per-thread torch.cuda.synchronize() both leave the two threads free to overlap
+across HSA queues (both still fault, measured).
 
-Measured on heliosr-1b112-a30-4, 2026-09-16:
-    --rows 400000 --streams 2                  FAULT at ~400 iters, 24-31s, 3/3
-    --rows 400000 --streams 2 --sync           FAULT (control is invalid, see above)
-    --rows 400000 --streams 2, SERIALIZE=3     FAULT (control is invalid, see above)
-    --rows 400000 --streams 1                  clean, 4986 iters / 319s
-    --rows 400000 --streams 1 --ballast 8      clean, 4039 iters / 259s
-    --rows 2800000 --streams 1                 clean, 342 iters / 363s (~1 fault
-                                               interval -- proves nothing either way)
+WHAT TURNS THE SINGLE-STREAM FAULT ON. Not row count, not footprint, not total
+work. AUTOTUNE_MAX_SEQ_LEN = prev_power_of_2(max_seq_len) is a constexpr kernel
+argument, so each bucket compiles a separate _hstu_attn_bwd binary. The fault
+appears only when that bucket is >= 2048 AND there are many concurrent sequences:
 
-The single-stream arms are why --ballast exists and why it is not the answer: 8 GiB
-of dead allocation changes nothing, so the defect is not footprint-sensitive.
+    rows      batch   msl    bucket   seqs   result
+    400000     1024    718      512   1024   clean, 4986 iters / 319s
+    900000     1024   1617     1024   1024   clean, 1838 iters / 337s
+    1060000    1024   1905     1024   1024   clean,  890 iters / 207s
+    1200000    2048   1138     1024   2048   clean,  979 iters / 204s
+    1200000    1024   2156     2048   1024   FAULT  (<50 iters; ~650 iters), then
+                                             clean 979, clean 972  -> 2 of 5
+    1600000    1024   2875     2048   1024   clean,  460 iters (underpowered)
+    2400000    2048   2149     2048   2048   clean,  334 iters (underpowered)
+    2800000    1024   4096     4096   1024   FAULT (the original plain arm)
+    400000      128   4096     4096    128   clean, 1270 iters / 232s  <- bucket is
+                                             high but only 128 sequences: high VGPR
+                                             alone is not enough, concurrency is
+                                             also required
+    400000     1024    718      512   1024   clean + 8 GiB ballast, 4039 iters/259s
+                                             -> not footprint-sensitive
 
-  --rows N        jagged rows (default 400000 -- 7x smaller than the plain arm)
-  --streams N     independent loops, each on its own stream (2 = the fast arm)
+That boundary lands on a known sore spot. _get_bw_pinned_configs() in
+ops/triton/triton_hstu_attention.py already drops BLOCK_N 128->64 for gfx1250:
+"BLOCK_N=128 reaches the 1024-VGPR ceiling and intermittently corrupts a store
+address. 64 uses 758 VGPRs without spilling." We still fault with that pin in
+place, at exactly the bucket where the specialization changes. See
+scripts/probe_gfx1250_bwd_vgpr.py for the per-bucket n_regs / n_spills census.
+
+Note the arms marked "underpowered": at roughly 1 fault per few hundred iterations,
+a clean run of 334 or 460 iterations is not evidence of anything. Only compare
+configs by iterations completed, not by wall clock.
+
+  --rows N        jagged rows (default 400000)
+  --batch B       sequences (default 1024). Controls max_seq_len for a given N, so
+                  it controls the autotune bucket -- see the table above.
+  --streams N     independent loops, each on its own stream (1 = e2e regime)
   --seconds S     give up after S seconds (default 300)
   --ballast GB    allocate GB and never touch it; pure address-space footprint
   --sync          torch.cuda.synchronize() every iteration, per thread

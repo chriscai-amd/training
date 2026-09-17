@@ -490,13 +490,20 @@ hs/env_str.key     = "HISTORY_STRATEGY"
 hs/env_str.default = "interleaved"
 
 # Anchor-eligibility floor: a LISTEN event becomes a trainable/eval anchor once
-# the user has >= MIN_HISTORY prior events. Decoupled from history_length (which
-# is only the gather/truncation cap) — jagged attention handles short UIH, so we
-# no longer need a full history_length of context to include a sample. The legacy
-# behavior (require a full history_length, which dropped ~60% of users) is
-# MIN_HISTORY=4086; the default below (0) includes ~all users AND their
-# cold-start first event (zero prior context). Positions/anchor-ts caches are
-# keyed by (L, MIN_HISTORY) so floors don't collide. Override via $MIN_HISTORY.
+# the user has >= MIN_HISTORY prior events.
+# The default is 4086 == history_length: require a full history of context,
+# which is the MLPerf-scored setting. It drops ~60% of users, and it means
+# anchors are full-length by construction -- MIN_HISTORY does NOT produce short
+# UIH rows at the default.
+# Technically decoupled from history_length (which is only the gather/truncation
+# cap), since jagged attention handles short UIH: MIN_HISTORY=0 would include
+# ~all users AND their cold-start first event (zero prior context), and
+# MIN_HISTORY=64 is what scripts/run_smoke_shrink_1gpu.sh uses for the retired
+# batch-8 bring-up path. Neither is MLPerf-valid; do not use them for a scored
+# run. Positions/anchor-ts caches are keyed by (L, MIN_HISTORY) so floors don't
+# collide -- positions_L<L>.npy when MIN_HISTORY == L, else
+# positions_L<L>_m<MIN_HISTORY>.npy, so the file a run opens tells you which
+# floor it actually used. Override via $MIN_HISTORY.
 get_dataset.min_history = @mh/env_int()
 mh/env_int.key     = "MIN_HISTORY"
 mh/env_int.default = 4086

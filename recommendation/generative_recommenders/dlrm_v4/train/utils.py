@@ -2588,6 +2588,27 @@ def streaming_train_eval_loop(
             _apply_lr_warmup(metric_logger.global_step["train"])
             optimizer.zero_grad()
             sample.to(device)
+            # Module-level non-finite probe (env-gated by NAN_MODULE_PROBE=1).
+            # Installed lazily here so the hooks exist before THIS step's forward.
+            # It never synchronizes: it accumulates into device-resident int32
+            # counters, issues one non_blocking D2H after the forward (pump), and
+            # reads the PREVIOUS step's copy -- which is why report_if_bad() runs
+            # before set_step(). Run e's per-step .item() moved the onset from
+            # step 11 to step 5, so a probe that syncs cannot be trusted here.
+            _pr = None
+            if os.environ.get("NAN_MODULE_PROBE") == "1":
+                try:
+                    import sys as _sys
+                    _d = "/workspace/recommendation/scripts"
+                    if _d not in _sys.path:
+                        _sys.path.insert(0, _d)
+                    import nan_module_probe as _nmp
+
+                    _pr = _nmp.install(model)
+                    _pr.report_if_bad()
+                    _pr.set_step(metric_logger.global_step["train"] + 1)
+                except Exception as _e:  # never break the run for the instrument
+                    print(f"[module-probe] install error: {_e}", flush=True)
             (
                 _,
                 _,
@@ -2599,6 +2620,35 @@ def streaming_train_eval_loop(
                 sample.uih_features_kjt,
                 sample.candidates_features_kjt,
             )
+            # NaN capture hook (env-gated by NAN_CAPTURE_STEP; no-op otherwise).
+            # Placed BEFORE backward so a non-finite term found here proves the
+            # FORWARD produced it, not the optimizer or a prior step's update.
+            # global_step["train"] is bumped later in update(), so +1 aligns the
+            # number here with the "Step N train_loss=" line in the log.
+            if os.environ.get("NAN_CAPTURE_STEP") or os.environ.get(
+                "NAN_CAPTURE_ON_FIRST"
+            ):
+                try:
+                    import sys as _sys
+                    _d = "/workspace/recommendation/scripts"
+                    if _d not in _sys.path:
+                        _sys.path.insert(0, _d)
+                    import nan_capture as _nc
+
+                    _gs = metric_logger.global_step["train"] + 1
+                    _nc.step_hook(
+                        _gs,
+                        sample,
+                        model,
+                        aux_losses,
+                        mt_target_preds,
+                        mt_target_labels,
+                        mt_target_weights,
+                    )
+                except Exception as _e:  # never break the run for the instrument
+                    print(f"[nan-capture] hook error: {_e}", flush=True)
+            if _pr is not None:
+                _pr.pump()  # async D2H; read next step. No sync here.
             # pyre-ignore
             sum(aux_losses.values()).backward()
             # Gradient clipping for the streaming path. Clips dense params (the

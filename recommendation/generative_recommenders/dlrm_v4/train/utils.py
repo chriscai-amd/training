@@ -2377,6 +2377,21 @@ def streaming_train_eval_loop(
             grad_clip_norm,
         )
 
+    # Diagnostic only: inspect custom-op boundaries and save the first bad
+    # operation for standalone replay. Normal training adds no GPU checks.
+    from generative_recommenders.dlrm_v4.train.nan_tripwire import install_from_env
+
+    tripwire = install_from_env()
+    _tripwire_defer = int(os.environ.get("NAN_TRIPWIRE_DEFER_STEPS", "0"))
+    if tripwire is not None and _tripwire_defer > 1 and _tripwire_defer != metric_log_frequency:
+        raise ValueError("NAN_TRIPWIRE_DEFER_STEPS must match METRIC_LOG_FREQ")
+    _dense_diagnostic_params = {}
+    if tripwire is not None:
+        _dense_ids = {id(p) for pg in optimizer.param_groups for p in pg["params"]}
+        _dense_diagnostic_params = {
+            name: p for name, p in model.named_parameters() if id(p) in _dense_ids
+        }
+
     def _window_iter(ts: int, skip_samples: int = 0):
         # TRAIN-only iterator: both branches exclude held-out eval users via
         # train_window_indices / set_ts(train_only=True). (Eval uses the fixed
@@ -2586,6 +2601,12 @@ def streaming_train_eval_loop(
             # uses the warmed LR (the dense optimizer reads it at .step() below).
             # No-op when lr_warmup_steps=0.
             _apply_lr_warmup(metric_logger.global_step["train"])
+            if tripwire is not None:
+                tripwire.begin(
+                    metric_logger.global_step["train"] + 1,
+                    train_ts=train_ts,
+                    batch_idx=train_batch_idx,
+                )
             optimizer.zero_grad()
             sample.to(device)
             # Exact rolling pre-step state, including all TBE weights/moments.
@@ -2613,7 +2634,9 @@ def streaming_train_eval_loop(
             if os.environ.get("NAN_MODULE_PROBE") == "1":
                 try:
                     import sys as _sys
-                    _d = "/workspace/recommendation/scripts"
+                    from pathlib import Path as _Path
+
+                    _d = str(_Path(__file__).resolve().parents[3] / "scripts")
                     if _d not in _sys.path:
                         _sys.path.insert(0, _d)
                     import nan_module_probe as _nmp
@@ -2634,6 +2657,9 @@ def streaming_train_eval_loop(
                 sample.uih_features_kjt,
                 sample.candidates_features_kjt,
             )
+            # Full-state capture has priority at completed phase boundaries.
+            # Either diagnostic may terminate; simultaneous captures are not
+            # guaranteed (operation exceptions can also occur inside backward).
             if _replay is not None:
                 _replay.after_forward(
                     aux_losses, mt_target_preds, mt_target_labels, mt_target_weights,
@@ -2648,7 +2674,9 @@ def streaming_train_eval_loop(
             ):
                 try:
                     import sys as _sys
-                    _d = "/workspace/recommendation/scripts"
+                    from pathlib import Path as _Path
+
+                    _d = str(_Path(__file__).resolve().parents[3] / "scripts")
                     if _d not in _sys.path:
                         _sys.path.insert(0, _d)
                     import nan_capture as _nc
@@ -2668,10 +2696,25 @@ def streaming_train_eval_loop(
             if _pr is not None:
                 _pr.pump()  # async D2H; read next step. No sync here.
                 _pr.pause()  # subsequent eval forwards must not inherit this step
+            if tripwire is not None:
+                tripwire.watch("loss", aux_losses)
+                if _tripwire_defer <= 1 and os.environ.get("NAN_TRIPWIRE_CHECK_FORWARD", "0") == "1":
+                    tripwire.check("forward")
             # pyre-ignore
             sum(aux_losses.values()).backward()
             if _replay is not None:
                 _replay.after_backward()
+            if tripwire is not None:
+                if tripwire.active and not any(
+                    p.grad is not None for p in _dense_diagnostic_params.values()
+                ):
+                    raise RuntimeError("NaN diagnostic found no dense gradients to check")
+                tripwire.watch(
+                    "dense_grads",
+                    {name: p.grad for name, p in _dense_diagnostic_params.items()},
+                )
+                if _tripwire_defer <= 1:
+                    tripwire.check("backward")
             # Gradient clipping for the streaming path. Clips dense params (the
             # sparse embedding tables use a fused optimizer and are unaffected,
             # same as the non-streaming path's clip_grad_norm_). OFF by default
@@ -2682,6 +2725,11 @@ def streaming_train_eval_loop(
                     model.parameters(), max_norm=grad_clip_norm
                 )
             optimizer.step()
+            if tripwire is not None:
+                tripwire.watch("dense_parameters", _dense_diagnostic_params)
+                if _tripwire_defer <= 1:
+                    tripwire.check("optimizer")
+                    tripwire.end()
             metric_logger.update(
                 mode="train",
                 predictions=mt_target_preds,
@@ -2712,6 +2760,9 @@ def streaming_train_eval_loop(
                         "losses": aux_losses,
                     },
                 )
+                if tripwire is not None and _tripwire_defer > 1:
+                    tripwire.check("metric_boundary")
+                    tripwire.end()
             if _pr is not None:
                 # Also poll after normal metric logging so a bad final training
                 # step can be reported without requiring another forward.
@@ -3032,10 +3083,16 @@ def streaming_train_eval_loop(
     # when MLPerf logging is off.
     total_train_samples = 0
     if mlperf_logger is not None or skip_eval_epoch_pct > 0:
+        _total_fn = getattr(dataset.dataset, "total_train_anchors", None)
         _idx_fn = getattr(
             dataset.dataset, "train_window_indices", None
         ) or getattr(dataset.dataset, "window_indices", None)
-        if _idx_fn is not None:
+        if callable(_total_fn) and train_ts_list and eval_interval_steps == 0:
+            # The windows are contiguous. Count their union with the dataset's
+            # existing split-aware pass instead of rescanning every anchor once
+            # per window; the epoch denominator and training sequence agree.
+            total_train_samples = int(_total_fn(train_ts_list[0], len(train_ts_list)))
+        elif _idx_fn is not None:
             for _ts in train_ts_list:
                 total_train_samples += int(_idx_fn(_ts).size)
         if rank == 0:

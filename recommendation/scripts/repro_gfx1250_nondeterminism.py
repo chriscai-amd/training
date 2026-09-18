@@ -187,10 +187,12 @@ if a.backward:
         xg.grad = None
         for v in w.values():
             v.grad = None
-        y = run(HammerKernel.TRITON, grad=True)
+        y = run(HammerKernel.TRITON, grad=True, _x=xg)
         if a.sync_between:
             torch.cuda.synchronize()
         y.sum().backward()
+        if xg.grad is None:
+            raise RuntimeError("backward produced no input gradient; dx determinism was not checked")
         if a.sync_between:
             torch.cuda.synchronize()
         # Only `dx` is required to repeat bit-exactly. The WEIGHT gradients are

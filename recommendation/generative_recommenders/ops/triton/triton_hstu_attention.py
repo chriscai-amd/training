@@ -2430,30 +2430,31 @@ def _get_bw_pinned_configs() -> List[triton.Config]:
     # Keep pre_hook=_bwd_pre_hook on every entry (the bwd configs require it).
     if torch.version.hip:
         block_n = 128
+        use_vgpr_workaround = False
         try:
             arch = torch.cuda.get_device_properties(0).gcnArchName or ""
             version = tuple(int(part) for part in triton.__version__.split(".")[:2])
             if "gfx1250" in arch and version >= (3, 8):
-                # BLOCK_N=128 reaches the 1024-VGPR ceiling and intermittently
-                # corrupts a store address. 64 uses 758 VGPRs without spilling.
-                #
-                # MEASURED 2026-09-16 on gfx1250 / triton 3.8.0, via
-                # scripts/probe_gfx1250_bwd_vgpr.py. The comment above does not
-                # match this toolchain, and lowering BLOCK_N does NOT fix the
-                # wild store:
-                #     BLOCK_N=64  ->  917 VGPRs, 0 spills, occupancy 1
-                #     BLOCK_N=32  ->  760 VGPRs, 0 spills, occupancy 1
-                # So "758 VGPRs" describes BLOCK_N=32, not 64 -- the pin looks
-                # one step short of what it was written for. But 32 still faults
-                # 2/2 within 600s on the two-stream arm (repro_gfx1250_fast_fault
-                # --rows 400000 --streams 2), same as 64 at 3/3 in ~25s. Cutting
-                # register pressure 917 -> 760 does not suppress the corruption,
-                # so register pressure alone is not the mechanism.
-                # Set HSTU_BWD_BLOCK_N to sweep this while bisecting.
+                # Preserve the existing gfx1250 tile pin. The register limit
+                # below addresses corruption reproduced with captured gradients.
                 block_n = 64
+                use_vgpr_workaround = True
         except (AssertionError, AttributeError, RuntimeError, ValueError):
             pass
         block_n = int(os.environ.get("HSTU_BWD_BLOCK_N", block_n))
+        compiler_options = {}
+        if use_vgpr_workaround:
+            # Captured query-gradient corruption was suppressed by limiting
+            # VGPRs to 256, avoiding extended VGPR use. This forces spills and
+            # may reduce throughput; the underlying failure remains unresolved.
+            # Opt in with HSTU_BWD_MAX_VGPR=256 on B0; unset/0 preserves
+            # the uncapped A0 baseline. Both steppings report gfx1250, so the
+            # architecture cannot choose the investigation arm for us.
+            max_vgpr = int(os.environ.get("HSTU_BWD_MAX_VGPR", "0"))
+            if max_vgpr < 0:
+                raise ValueError("HSTU_BWD_MAX_VGPR must be nonnegative")
+            if max_vgpr:
+                compiler_options["llvm_fn_attrs"] = f"amdgpu-num-vgpr={max_vgpr}"
         return [
             # --- yambda bs=1024, L=2048 winner (from capture log) ---
             triton.Config(
@@ -2464,6 +2465,7 @@ def _get_bw_pinned_configs() -> List[triton.Config]:
                     "waves_per_eu": 0,
                     "SEQUENCE_PARALLEL": False,
                     "UNROLL": 1,
+                    **compiler_options,
                 },
                 num_stages=1,
                 num_warps=4,

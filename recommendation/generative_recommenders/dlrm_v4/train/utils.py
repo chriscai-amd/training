@@ -2588,13 +2588,27 @@ def streaming_train_eval_loop(
             _apply_lr_warmup(metric_logger.global_step["train"])
             optimizer.zero_grad()
             sample.to(device)
+            # Exact rolling pre-step state, including all TBE weights/moments.
+            # Deliberately synchronous, fail-closed, and disabled by default.
+            _replay = None
+            if os.environ.get("NAN_REPLAY_DIR"):
+                import sys as _sys
+                from pathlib import Path as _Path
+
+                _scripts = str(_Path(__file__).resolve().parents[3] / "scripts")
+                if _scripts not in _sys.path:
+                    _sys.path.insert(0, _scripts)
+                import nan_replay_capture as _nrc
+
+                _replay = _nrc.before_step(
+                    model, optimizer, metric_logger.global_step["train"] + 1,
+                    sample, grad_clip_norm,
+                )
             # Module-level non-finite probe (env-gated by NAN_MODULE_PROBE=1).
             # Installed lazily here so the hooks exist before THIS step's forward.
-            # It never synchronizes: it accumulates into device-resident int32
-            # counters, issues one non_blocking D2H after the forward (pump), and
-            # reads the PREVIOUS step's copy -- which is why report_if_bad() runs
-            # before set_step(). Run e's per-step .item() moved the onset from
-            # step 11 to step 5, so a probe that syncs cannot be trusted here.
+            # Device-side checks and event-gated nonblocking D2H snapshots avoid
+            # adding a device synchronization to the step path. Report only
+            # completed snapshots; instrumentation can still perturb scheduling.
             _pr = None
             if os.environ.get("NAN_MODULE_PROBE") == "1":
                 try:
@@ -2616,13 +2630,17 @@ def streaming_train_eval_loop(
                 mt_target_preds,
                 mt_target_labels,
                 mt_target_weights,
-            ) = model.forward(
+            ) = (model if _pr is not None else model.forward)(
                 sample.uih_features_kjt,
                 sample.candidates_features_kjt,
             )
+            if _replay is not None:
+                _replay.after_forward(
+                    aux_losses, mt_target_preds, mt_target_labels, mt_target_weights,
+                )
             # NaN capture hook (env-gated by NAN_CAPTURE_STEP; no-op otherwise).
-            # Placed BEFORE backward so a non-finite term found here proves the
-            # FORWARD produced it, not the optimizer or a prior step's update.
+            # Placed BEFORE backward to capture the loss before this step's
+            # update. A prior fused embedding update can still be its origin.
             # global_step["train"] is bumped later in update(), so +1 aligns the
             # number here with the "Step N train_loss=" line in the log.
             if os.environ.get("NAN_CAPTURE_STEP") or os.environ.get(
@@ -2649,8 +2667,11 @@ def streaming_train_eval_loop(
                     print(f"[nan-capture] hook error: {_e}", flush=True)
             if _pr is not None:
                 _pr.pump()  # async D2H; read next step. No sync here.
+                _pr.pause()  # subsequent eval forwards must not inherit this step
             # pyre-ignore
             sum(aux_losses.values()).backward()
+            if _replay is not None:
+                _replay.after_backward()
             # Gradient clipping for the streaming path. Clips dense params (the
             # sparse embedding tables use a fused optimizer and are unaffected,
             # same as the non-streaming path's clip_grad_norm_). OFF by default
@@ -2691,6 +2712,10 @@ def streaming_train_eval_loop(
                         "losses": aux_losses,
                     },
                 )
+            if _pr is not None:
+                # Also poll after normal metric logging so a bad final training
+                # step can be reported without requiring another forward.
+                _pr.report_if_bad()
             train_batch_idx += 1
             if output_trace:
                 assert profiler is not None

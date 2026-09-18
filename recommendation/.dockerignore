@@ -1,0 +1,15 @@
+# GPU/CPU core dumps -- tens of GB, never belong in the build context
+core
+core.*
+gpucore.*
+*.gpucore
+# Run artifacts and logs
+runs/
+*.log
+mi450_logs/
+# Data and caches
+dlrm_data/
+triton_cache/
+__pycache__/
+*.pyc
+.git/

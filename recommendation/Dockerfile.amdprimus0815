@@ -2,7 +2,8 @@
 # The stock Dockerfile targets MI350X/gfx950 + rocm/primus:v26.3; that torch
 # build cannot launch kernels on this node. This image keeps the working
 # amdprimus torch and builds fbgemm_gpu for gfx1250.
-FROM amdprimus/amdprimus:0815
+ARG BASE_IMAGE=amdprimus/amdprimus:0815
+FROM ${BASE_IMAGE}
 
 ENV PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \

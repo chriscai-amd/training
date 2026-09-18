@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-09-18T07:53:32.409089+00:00",
+  "host_root": "/home/chcai/dlrm_data/nan_replay_post_ac_20260918_0730",
+  "container_root": "/data/mlperf_dlrm_v4/nan_replay_post_ac_20260918_0730",
+  "total_bytes": 36158352092,
+  "files": [
+    {
+      "relative_path": "boundaries_saved/boundary-2946-1789717407684763312-current-r0-s101-0003-triton_addmm_bwd-finite.pt",
+      "size_bytes": 12043727597,
+      "sha256": "b59c9d2f2541a675c3220be26da0374dc6075a2c78c948388e638c99dc113c9a"
+    },
+    {
+      "relative_path": "boundaries_saved/boundary-2946-1789717407684763312-current-r0-s101-0004-triton_weighted_layer_norm_bwd-finite.pt",
+      "size_bytes": 6035448449,
+      "sha256": "b3b49ce8906405cc093b68870998f6c340ea2f93a658f39ba6b21b1bf300e8ad"
+    },
+    {
+      "relative_path": "boundaries_saved/boundary-2946-1789717407684763312-current-r1-s101-0003-triton_addmm_bwd-finite.pt",
+      "size_bytes": 12043727597,
+      "sha256": "593b0329dfeb0e11d994d7b73b93e8ba7557d24b33c707e68c99e85bac2fdc4e"
+    },
+    {
+      "relative_path": "boundaries_saved/boundary-2946-1789717407684763312-current-r1-s101-0004-triton_weighted_layer_norm_bwd-finite.pt",
+      "size_bytes": 6035448449,
+      "sha256": "cf5b09f32ba55ff28d325382b1300de97c039cba7612228a2a277236d078646d"
+    }
+  ],
+  "remote_tensor_backup": false,
+  "notes": [
+    "Git tracks this manifest and small reports only.",
+    "The original full-state failure capture has its own capture_step_000101_manifest.json."
+  ]
+}

@@ -58,6 +58,8 @@ def main():
     parser.add_argument("capture", type=Path)
     parser.add_argument("--mode", choices=("current", "previous", "both"), default="both")
     parser.add_argument("--repeats", type=int, default=2)
+    parser.add_argument("--verify-every-repeat", action="store_true",
+                        help="Compare all restored state bytes and controls before every attempt")
     parser.add_argument("--report", type=Path)
     parser.add_argument("--backward-probe-dir", type=Path,
                         help="Capture first extreme/nonfinite GEMM or layer-norm backward boundary")
@@ -229,6 +231,7 @@ def main():
             probe = install_backward_probe(model, args.backward_probe_dir)
             report["backward_probe_config"] = {
                 "target": probe.target, "abs_threshold": probe.abs_threshold,
+                "save_all": probe.save_all,
                 "chunk_bytes": probe.chunk_bytes, "max_capture_bytes": probe.max_bytes,
             }
         modes = ("current", "previous") if args.mode == "both" else (args.mode,)
@@ -252,15 +255,22 @@ def main():
                 restore_snapshot(args.capture / "state", large, boundary=mode)
                 torch.cuda.synchronize()
                 rebuild_inputs(mode)
-                if repeat == 0:
+                if repeat == 0 or args.verify_every_repeat:
                     phase("verify_restored_bytes")
                     attempt["restore_large_comparison"] = compare_snapshot(args.capture / "state", large, boundary=mode)
                     attempt["restore_small_comparison"] = compare_small_state(small, frame["small_state"])
+                    _, restored_controls = collect_state(model, optimizer)
+                    attempt["restored_control_differences"] = differences(frame["controls"], restored_controls)
                     if not (attempt["restore_large_comparison"]["equal"] and attempt["restore_small_comparison"]["equal"]):
                         report["attempts"].append(attempt)
                         write_json(report_path, report)
                         raise RuntimeError("Restoration byte verification failed; replay is invalid")
+                    if attempt["restored_control_differences"]:
+                        raise RuntimeError("Restored controls differ; replay is invalid")
                 restore_rng(frame["rng"])
+                attempt["restored_rng_differences"] = differences(frame["rng"], capture_rng())
+                if attempt["restored_rng_differences"]:
+                    raise RuntimeError("Restored RNG differs; replay is invalid")
                 if mode == "previous":
                     prev_output = forward("previous")
                     prev_observed = observe_forward(prev_output)

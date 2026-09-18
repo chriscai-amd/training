@@ -1,0 +1,5 @@
+device     : AMD Radeon Graphics
+torch      : 2.11.0+rocm7.14.0a20260625 | hip 7.14.60850
+triton     : 3.8.0 | /opt/triton-custom/python/triton/__init__.py
+matmul     : finite=True  0.13s
+triton JIT : max_err=0  compile+run=0.6s

@@ -1,0 +1,72 @@
+{
+  "all_files_verified": true,
+  "buffer_bytes_per_reader": 67108864,
+  "completed_utc": "2026-09-18T07:32:48.610884+00:00",
+  "duration_seconds": 102.742,
+  "extra_files": [],
+  "file_count": 6,
+  "files": [
+    {
+      "expected_sha256": "d6af463a0d0071d4d9dc070512094c73d395097002ac930f180d400876b9857c",
+      "expected_size_bytes": 76,
+      "path": "COMPLETE.json",
+      "sha256": "d6af463a0d0071d4d9dc070512094c73d395097002ac930f180d400876b9857c",
+      "size_bytes": 76,
+      "source_unchanged_while_reading": true,
+      "verified": true
+    },
+    {
+      "expected_sha256": "ea434bcf17b0e613f35119fd10fa2d2182472b8378f19b341096581616ee0969",
+      "expected_size_bytes": 1133561039,
+      "path": "capture.pt",
+      "sha256": "ea434bcf17b0e613f35119fd10fa2d2182472b8378f19b341096581616ee0969",
+      "size_bytes": 1133561039,
+      "source_unchanged_while_reading": true,
+      "verified": true
+    },
+    {
+      "expected_sha256": "70be1b811b14e3d32e971e91655d0433fe046d2c66d7b4bcfd45538765ff62f6",
+      "expected_size_bytes": 38390,
+      "path": "context.json",
+      "sha256": "70be1b811b14e3d32e971e91655d0433fe046d2c66d7b4bcfd45538765ff62f6",
+      "size_bytes": 38390,
+      "source_unchanged_while_reading": true,
+      "verified": true
+    },
+    {
+      "expected_sha256": "d0ed367fb6c0ceea36c4232580e44137582287e14980333f064a8d2c8c50cda9",
+      "expected_size_bytes": 5823,
+      "path": "state/manifest.json",
+      "sha256": "d0ed367fb6c0ceea36c4232580e44137582287e14980333f064a8d2c8c50cda9",
+      "size_bytes": 5823,
+      "source_unchanged_while_reading": true,
+      "verified": true
+    },
+    {
+      "expected_sha256": "f4949b4f3432f682e1d0a053d5b1d23e54524b1871ca4aa5b3407e37284d8e95",
+      "expected_size_bytes": 332704600,
+      "path": "state/previous.undo",
+      "sha256": "f4949b4f3432f682e1d0a053d5b1d23e54524b1871ca4aa5b3407e37284d8e95",
+      "size_bytes": 332704600,
+      "source_unchanged_while_reading": true,
+      "verified": true
+    },
+    {
+      "expected_sha256": "b4d29ebdaf53925aa4f85a361c773c357dde36eef2ed3922bdb723a71a799d94",
+      "expected_size_bytes": 150042474496,
+      "path": "state/storage-000000.bin",
+      "sha256": "b4d29ebdaf53925aa4f85a361c773c357dde36eef2ed3922bdb723a71a799d94",
+      "size_bytes": 150042474496,
+      "source_unchanged_while_reading": true,
+      "verified": true
+    }
+  ],
+  "gpu_accessed": false,
+  "manifest_path": "/home/chcai/training/recommendation/docs/mi450_a0/capture_step_000101_manifest.json",
+  "max_parallel_readers": 2,
+  "missing_files": [],
+  "source_root": "/home/chcai/dlrm_data/nan_replay_long_20260918_0520/capture_step_000101",
+  "started_utc": "2026-09-18T07:31:05.868602+00:00",
+  "total_bytes_read": 151508784424,
+  "verification": "post_ac_full_sha256"
+}

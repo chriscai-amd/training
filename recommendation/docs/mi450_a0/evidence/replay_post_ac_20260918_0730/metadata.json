@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-09-18T07:36:44.935209+00:00",
+  "purpose": "Replay captured step101 after second AC with layer1 GEMM/LN extreme-value probe",
+  "capture": "/home/chcai/dlrm_data/nan_replay_long_20260918_0520/capture_step_000101",
+  "git_head": "b93a8b37977ab83c968893ed0bf1ae872e08e4a9",
+  "capture_git_head": null,
+  "container": "triton-7ff97e-20260910",
+  "image_id": "sha256:7dcd1177dac976c9af2da3e1eeaa9e2d119827879c1873c2dda97ac3b0b287d7",
+  "triton_commit": "7ff97e310935b4a79794878dbc911f9af25d38d9",
+  "boot_id": "893e2301-265e-40d5-8fb9-0d7693d7d375",
+  "health_probe": {
+    "exit": 0,
+    "matmul_finite": true,
+    "triton_add_max_error": 0
+  },
+  "driver_options": {
+    "gpu_recovery": 0,
+    "halt_if_hws_hang": 0
+  },
+  "service": "mi450-replay-boundaries-20260918-0730.service",
+  "report": "/home/chcai/dlrm_data/nan_replay_post_ac_20260918_0730/replay_report.json"
+}

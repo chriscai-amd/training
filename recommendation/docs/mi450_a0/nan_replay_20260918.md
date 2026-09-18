@@ -1,14 +1,18 @@
 # Full-state NaN capture and replay, 2026-09-18
 
-**Updated 2026-09-18:** the capture-enabled run caught nonfinite gradients
-at step **101** and saved complete adjacent pre-step states. Direct replay
-subsequently hung with AMDGPU/MES failures before producing a numerical verdict.
-The evidence is preserved. Neither the first corrupting operation nor a fix is
-established. At the latest host check, **06:57 UTC**, the replay had exited 143
-and VRAM had drained to 0.2 GB, but the monitor still reported 100% GFX / ~858 W.
-Successful compute recovery remains unverified. The complete failure artifact
-now has a [full SHA-256 inventory](capture_step_000101_manifest.json); it is
-still stored locally only.
+**Updated 2026-09-18 after the second AC cycle:** the capture-enabled run caught
+nonfinite gradients at step **101** and saved complete adjacent pre-step states.
+The first direct replay hung with AMDGPU/MES failures. After recovery, the health
+probe and four direct step-101 attempts completed: forward outputs matched the
+capture exactly and gradients remained finite. The first replay pair showed an
+unexplained roughly 10,000-fold change in the maximum gradient entering the
+layer-1 GEMM. The next pair, with full restoration verification and saved
+operation tensors, had byte-identical GEMM inputs and outputs. Two isolated
+layer-norm replays also matched the saved outputs exactly. Neither the original
+NaN nor its culprit is reproduced. See the [second-AC experiment and resume
+record](nan_replay_post_ac_20260918_0730.md) for evidence and limitations.
+The complete failure artifact passed another full SHA-256 check after recovery;
+it and the operation tensor dumps are still stored locally only.
 
 The post-AC long run **reproduced NaN at global step 775**, after 774 finite
 losses, at batch 1024 / `START_TS=0`. The run was stopped at step 797
@@ -78,8 +82,10 @@ with healthy outputs.
 require both complete relevant state and deterministic execution. This recorder
 preserves model/input/optimizer/default-RNG state, but not allocator history,
 concurrent execution timing or GPU/driver state. Healthy backward transitions
-already show small numerical nondeterminism. The actual step-101 replay hung
-before completing, so repeatable one-step reproduction is still unproven.
+already show small numerical nondeterminism. Step-101 replay completed after the
+second AC cycle with exact forward outputs and finite gradients, so repeatable
+one-step NaN reproduction is still unproven. The separate large backward
+discrepancy in the first post-recovery pair remains unexplained.
 
 `scripts/replay_training_step.py` rebuilds the same model without dataloaders.
 It initializes TorchRec's lazy input-distribution metadata from the captured
@@ -266,10 +272,14 @@ Defaults are target `_stu_layers.1.`, threshold `1e20`, 64 MiB copy chunks and
 are clipped or changed. CPU checks passed extreme finite `1e37` input detection,
 pre-call snapshot fidelity despite input mutation, BF16 pointer attribution,
 nonfinite outputs, strided/aliased scans/copies, layer filtering and unchanged
-Python/NumPy/Torch RNG. GPU validation is pending recovery.
+Python/NumPy/Torch RNG. Subsequent GPU validation captured finite calls and
+replayed the isolated layer norm successfully; no bad operation was captured.
+`NAN_BACKWARD_SAVE_ALL=1` additionally persists finite selected calls for tensor
+comparison, while `--verify-every-repeat` checks restoration on every attempt.
 
-After shared-host recovery and a successful stack-health check, the prepared
-diagnostic command is:
+The initial diagnostic command below was prepared before the second AC cycle.
+For the completed runs and fresh-output resume commands, use the
+[second-AC record](nan_replay_post_ac_20260918_0730.md).
 
 ```bash
 docker exec -w /workspace/recommendation \
@@ -283,7 +293,8 @@ docker exec -w /workspace/recommendation \
 
 Replay now persists progress before restoration, forward and backward, catches
 probe stops with a dump path and actual frame/phase, and registers SIGUSR1 for
-Python stack diagnostics. A completed boundary dump exits 86. Model-source
+Python stack diagnostics. A completed anomaly dump exits 86; a finite dump in
+save-all mode continues execution. Model-source
 hash checks remain enabled; these diagnostic wrappers do not edit kernel source.
 
 If the GEMM inherits extreme `duvqk`, move the same pre-call capture upstream

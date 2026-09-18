@@ -3,6 +3,7 @@
 Install after constructing the model and before its next forward. The default
 target is layer 1; NAN_BACKWARD_TARGET is a parameter-name substring (``*`` means
 all layers). NAN_BACKWARD_ABS_THRESHOLD defaults to 1e20.
+NAN_BACKWARD_SAVE_ALL=1 also persists finite selected calls for comparisons.
 NAN_BACKWARD_CHUNK_MIB defaults to 64 and
 NAN_BACKWARD_MAX_CAPTURE_GIB to 32. The latter is a hard per-operation host-copy
 limit, never a truncation limit.
@@ -269,6 +270,7 @@ class BackwardBoundaryProbe:
         self.directory.mkdir(parents=True, exist_ok=True)
         self.target = os.environ.get("NAN_BACKWARD_TARGET", "_stu_layers.1.")
         self.abs_threshold = float(os.environ.get("NAN_BACKWARD_ABS_THRESHOLD", "1e20"))
+        self.save_all = os.environ.get("NAN_BACKWARD_SAVE_ALL") == "1"
         self.chunk_bytes = int(os.environ.get("NAN_BACKWARD_CHUNK_MIB", "64")) << 20
         self.max_bytes = int(os.environ.get("NAN_BACKWARD_MAX_CAPTURE_GIB", "32")) << 30
         if self.chunk_bytes <= 0 or self.max_bytes <= 0:
@@ -300,6 +302,7 @@ class BackwardBoundaryProbe:
             self._install_wrappers()
             self._emit({"event": "installed", "target": self.target,
                         "abs_threshold": self.abs_threshold,
+                        "save_all": self.save_all,
                         "layers": list(self._layers), "chunk_bytes": self.chunk_bytes,
                         "max_capture_bytes": self.max_bytes})
         except BaseException:
@@ -446,13 +449,24 @@ class BackwardBoundaryProbe:
                          {**event, "bad_inputs": [], "bad_outputs": bad_outputs,
                           "extreme_inputs": [], "extreme_outputs": extreme_outputs,
                           "operation_executed": True})
+        if self.save_all:
+            self._save(operation, owner["layer"], "finite", pre, copied_output,
+                       {**event, "bad_inputs": [], "bad_outputs": [],
+                        "extreme_inputs": [], "extreme_outputs": [],
+                        "operation_executed": True})
         # All CPU copies are local and fall out of scope here. No rolling cache
         # retains operation tensors, even across calls in the same backward.
         return output
 
     def _freeze(self, operation, layer, stage, inputs, outputs, event):
         self.failed = True
-        filename = f"boundary-{self.session}-{self.call:04d}-{operation}-{stage}.pt"
+        target = self._save(operation, layer, stage, inputs, outputs, event)
+        raise BoundaryAnomalyError(target, operation, layer, stage)
+
+    def _save(self, operation, layer, stage, inputs, outputs, event):
+        frame = self.attempt
+        identity = f"{frame['mode']}-r{frame['repeat']}-s{frame['step']}"
+        filename = f"boundary-{self.session}-{identity}-{self.call:04d}-{operation}-{stage}.pt"
         target = self.directory / filename
         temporary = target.with_suffix(".pt.tmp")
         payload = {
@@ -474,8 +488,8 @@ class BackwardBoundaryProbe:
             os.close(fd)
         self._emit({"event": "dump_complete", **event, "stage": stage, "dump": str(target)})
         os.fsync(self._events.fileno())
-        print(f"[nan-boundary] saved {stage} failure: {layer} / {operation}: {target}", flush=True)
-        raise BoundaryAnomalyError(target, operation, layer, stage)
+        print(f"[nan-boundary] saved {stage} boundary: {layer} / {operation}: {target}", flush=True)
+        return target
 
     def close(self) -> None:
         if self.closed:

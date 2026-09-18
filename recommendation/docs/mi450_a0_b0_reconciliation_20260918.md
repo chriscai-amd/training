@@ -125,7 +125,7 @@ current replay guard enforces the model-source subset only.
 The original B0 checkout at `/home/chcai/training` and its local edits remain
 untouched. The reconciliation is in `/home/chcai/training-mi450-reconcile`,
 branch `chcai/mi450-a0-b0-reconcile-20260918`. The shared branch for both hosts
-is `chcai/mi450_a0`. The existing B0 container still
+is `chcai/mi450`. The existing B0 container still
 mounts the original checkout. Validation uses a separate candidate copy under
 `/tmp/mi450-reconcile-validation/recommendation` inside that container.
 

@@ -124,7 +124,8 @@ current replay guard enforces the model-source subset only.
 
 The original B0 checkout at `/home/chcai/training` and its local edits remain
 untouched. The reconciliation is in `/home/chcai/training-mi450-reconcile`,
-branch `chcai/mi450-a0-b0-reconcile-20260918`. The existing B0 container still
+branch `chcai/mi450-a0-b0-reconcile-20260918`. The shared branch for both hosts
+is `chcai/mi450_a0`. The existing B0 container still
 mounts the original checkout. Validation uses a separate candidate copy under
 `/tmp/mi450-reconcile-validation/recommendation` inside that container.
 
@@ -134,7 +135,7 @@ It includes the original patch/source snapshots, capture hashes, continuation
 notes, pending checker/staged-replay proposals, and verified native archives.
 Large captures stay at their recorded paths. The experimental fused checker
 and output-backward stage runner remain saved proposals outside this merge.
-No reset, reboot, long training run, or remote push is part of reconciliation.
+No reset, reboot, or long training run was performed during reconciliation.
 
 ## Validation
 

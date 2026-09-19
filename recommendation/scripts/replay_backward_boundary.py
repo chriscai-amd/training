@@ -70,8 +70,29 @@ def _tensors(tree):
         raise TypeError(f"Unsupported dump argument: {type(tree)}")
 
 
+def require_pristine_input_snapshot(payload):
+    """Reject fault-time inputs that cannot reproduce the original operation.
+
+    Legacy boundary dumps predate this marker and contain pre-call snapshots.
+    The training monitor also permits pre-call input faults: it stops before
+    execution and explicitly certifies that snapshot as pristine. Post-call
+    snapshots remain useful raw evidence but are not exact replay inputs.
+    """
+    event = payload.get("event", {})
+    pristine = payload.get("input_snapshot_pristine")
+    monitor = payload.get("format") == "training_backward_monitor_v1"
+    if (pristine is False or event.get("input_snapshot_pristine") is False
+            or (monitor and (payload.get("stage") != "input" or pristine is not True))):
+        raise ValueError(
+            "Post-call input snapshots cannot establish pristine inputs for original-call "
+            "replay; use a pristine pre-call boundary capture. Pre-call scalar checks "
+            "do not prove that input bytes were unchanged during execution."
+        )
+
+
 def bind_inputs(payload):
     """Bind the two supported public APIs without importing any GPU kernels."""
+    require_pristine_input_snapshot(payload)
     operation = payload.get("operation")
     if operation not in _ARGUMENTS:
         raise ValueError(f"Unsupported operation: {operation!r}")
@@ -574,6 +595,7 @@ def replay_gpu(payload, *, repeats=3, chunk_bytes=64 << 20, max_bytes=32 << 30,
                threshold=1e20, rows="suspicious", max_rows=4096, row_chunk=64, progress=None):
     """Replay full operations only. Caller restores stack environment first."""
     torch = _torch()
+    values = bind_inputs(payload)
     operation = payload["operation"]
     module_name = "triton_addmm" if operation == "triton_addmm_bwd" else "triton_layer_norm"
     module = importlib.import_module("generative_recommenders.ops.triton." + module_name)
@@ -582,7 +604,7 @@ def replay_gpu(payload, *, repeats=3, chunk_bytes=64 << 20, max_bytes=32 << 30,
     expected = [output_digest(t, chunk_bytes, threshold) for t in captured] if captured is not None else None
     # Select from pristine CPU evidence once. Fresh GPU outputs are compared on
     # those exact rows, without scanning/FP64-casting a full GPU tensor.
-    selection = select_rows(payload, bind_inputs(payload), rows, max_rows, threshold, chunk_bytes)
+    selection = select_rows(payload, values, rows, max_rows, threshold, chunk_bytes)
     result = []
     first = None
 

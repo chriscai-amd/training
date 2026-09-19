@@ -3,6 +3,8 @@
 Install after constructing the model and before its next forward. The default
 target is layer 1; NAN_BACKWARD_TARGET is a parameter-name substring (``*`` means
 all layers). NAN_BACKWARD_ABS_THRESHOLD defaults to 1e20.
+The output backward's incoming-gradient GEMM and layer-norm/multiply/dropout
+are captured separately, before the existing preprocess GEMM/layer-norm probes.
 NAN_BACKWARD_SAVE_ALL=1 also persists finite selected calls for comparisons.
 NAN_BACKWARD_CHUNK_MIB defaults to 64 and
 NAN_BACKWARD_MAX_CAPTURE_GIB to 32. The latter is a hard per-operation host-copy
@@ -249,20 +251,60 @@ def _pointer(tensor: torch.Tensor):
             tuple(tensor.shape), tuple(tensor.stride()))
 
 
+def _execution_controls():
+    """Read operation-local arithmetic settings without initializing CUDA."""
+    matmul = torch.backends.cuda.matmul
+    return {
+        "autocast": {device: {"enabled": torch.is_autocast_enabled(device),
+                              "dtype": str(torch.get_autocast_dtype(device))}
+                     for device in ("cpu", "cuda")},
+        "float32_matmul_precision": torch.get_float32_matmul_precision(),
+        "allow_tf32": matmul.allow_tf32,
+        "allow_fp16_reduced_precision_reduction": matmul.allow_fp16_reduced_precision_reduction,
+        "allow_bf16_reduced_precision_reduction": matmul.allow_bf16_reduced_precision_reduction,
+    }
+
+
+class _OutputTorchProxy:
+    """Intercept only a scoped output backward; never change global torch.mm."""
+
+    def __init__(self, original, probe):
+        self._original = original
+        self._probe = probe
+
+    def __getattr__(self, name):
+        return getattr(self._original, name)
+
+    def mm(self, *args, **kwargs):
+        return self._probe._output_mm(self._original.mm, args, kwargs)
+
+
+def _output_grad_mm_signature(dout, output_weight):
+    # The capture names the original (untransposed) weight so standalone replay
+    # can execute dout @ output_weight.T. This function is only a signature.
+    raise AssertionError("Signature placeholder must not execute")
+
+
 class BackwardBoundaryProbe:
+    _PREPROCESS_OPERATIONS = ("triton_addmm_bwd", "triton_weighted_layer_norm_bwd")
     _OPERATIONS = {
         "triton_addmm_bwd": ("w", ("d_normed_x", "d_uvqk_weight", "d_uvqk_bias")),
         "triton_weighted_layer_norm_bwd":
             ("weight", ("d_x", "d_norm_weight", "d_norm_bias")),
+        "hstu_output_grad_mm": ("output_weight", ("dy",)),
+        "triton_layer_norm_mul_dropout_bwd":
+            ("weight", ("d_attn", "d_u", "d_norm_weight", "d_norm_bias", "y")),
     }
 
     def __init__(self, model: torch.nn.Module, directory: str | Path,
-                 *, preprocess_module=None, compute_module=None):
+                 *, preprocess_module=None, compute_module=None, output_module=None):
         # Injectable modules support CPU mock tests without importing GPU ops.
         self.preprocess = preprocess_module or importlib.import_module(
             "generative_recommenders.ops.triton.triton_hstu_preprocess_and_attention")
         self.compute = compute_module or importlib.import_module(
             "generative_recommenders.ops.hstu_compute")
+        self.output = output_module or importlib.import_module(
+            "generative_recommenders.ops.triton.triton_hstu_linear")
         from nan_replay_state import _walk_modules
 
         self.model = model
@@ -303,6 +345,8 @@ class BackwardBoundaryProbe:
             self._emit({"event": "installed", "target": self.target,
                         "abs_threshold": self.abs_threshold,
                         "save_all": self.save_all,
+                        "operations": list(self._OPERATIONS),
+                        "output_group_norm_captured": False,
                         "layers": list(self._layers), "chunk_bytes": self.chunk_bytes,
                         "max_capture_bytes": self.max_bytes})
         except BaseException:
@@ -337,11 +381,14 @@ class BackwardBoundaryProbe:
         if getattr(original, "_nan_backward_probe", None) is not None:
             raise BoundaryProbeError(f"A backward boundary probe already wraps {name}")
         replacement._nan_backward_probe = self
-        self._patches.append((module, name, original, replacement))
+        descriptor = inspect.getattr_static(module, name)
+        if isinstance(descriptor, staticmethod):
+            replacement = staticmethod(replacement)
+        self._patches.append((module, name, descriptor, replacement))
         setattr(module, name, replacement)
 
-    def _install_wrappers(self):
-        original = self.compute.triton_hstu_preprocess_and_attention
+    def _install_forward_wrapper(self, name, parameters):
+        original = getattr(self.compute, name)
         signature = inspect.signature(original)
 
         @functools.wraps(original)
@@ -349,14 +396,9 @@ class BackwardBoundaryProbe:
             bound = signature.bind(*args, **kwargs)
             stack = getattr(self._local, "layers", [])
             if not stack:
-                raise BoundaryProbeError("Preprocess forward executed outside a mapped STU layer")
+                raise BoundaryProbeError(f"{name} forward executed outside a mapped STU layer")
             layer = stack[-1]
-            for argument, parameter in (
-                ("norm_weight", "_input_norm_weight"),
-                ("norm_bias", "_input_norm_bias"),
-                ("uvqk_weight", "_uvqk_weight"),
-                ("uvqk_bias", "_uvqk_beta"),
-            ):
+            for argument, parameter in parameters:
                 tensor = bound.arguments.get(argument)
                 if isinstance(tensor, torch.Tensor):
                     self._pointers[_pointer(tensor)] = {
@@ -365,8 +407,21 @@ class BackwardBoundaryProbe:
                     }
             return original(*args, **kwargs)
 
-        self._patch(self.compute, "triton_hstu_preprocess_and_attention", forward)
-        for operation in self._OPERATIONS:
+        self._patch(self.compute, name, forward)
+
+    def _install_wrappers(self):
+        self._install_forward_wrapper("triton_hstu_preprocess_and_attention", (
+            ("norm_weight", "_input_norm_weight"),
+            ("norm_bias", "_input_norm_bias"),
+            ("uvqk_weight", "_uvqk_weight"),
+            ("uvqk_bias", "_uvqk_beta"),
+        ))
+        self._install_forward_wrapper("triton_hstu_compute_output", (
+            ("norm_weight", "_output_norm_weight"),
+            ("norm_bias", "_output_norm_bias"),
+            ("output_weight", "_output_weight"),
+        ))
+        for operation in self._PREPROCESS_OPERATIONS:
             original_op = getattr(self.preprocess, operation)
             signature_op = inspect.signature(original_op)
 
@@ -379,6 +434,71 @@ class BackwardBoundaryProbe:
             self._patch(self.preprocess, operation,
                         make_wrapper(operation, original_op, signature_op))
 
+        self._install_output_wrappers()
+
+    def _install_output_wrappers(self):
+        function_class = self.output.HSTUComputeOutputFunction
+        original_backward = function_class.backward
+        original_norm = self.output.triton_layer_norm_mul_dropout_bwd
+        norm_signature = inspect.signature(original_norm)
+        self._output_mm_signature = inspect.signature(_output_grad_mm_signature)
+
+        @functools.wraps(original_backward)
+        def backward(ctx, dout):
+            if getattr(self._local, "output_backward", None) is not None:
+                raise BoundaryProbeError("Nested HSTU output backward is unsupported")
+            output_weight = ctx.saved_tensors[6]
+            scope = {"dout": dout, "output_weight": output_weight,
+                     "grad_mm_calls": 0, "norm_calls": 0, "dy": None}
+            self._local.output_backward = scope
+            try:
+                result = original_backward(ctx, dout)
+                if scope["grad_mm_calls"] != 1 or (
+                        not ctx.group_norm and scope["norm_calls"] != 1):
+                    raise BoundaryProbeError("HSTU output backward did not execute the expected stages")
+                return result
+            finally:
+                self._local.output_backward = None
+
+        @functools.wraps(original_norm)
+        def norm_backward(*args, **kwargs):
+            scope = getattr(self._local, "output_backward", None)
+            if scope is None:
+                return original_norm(*args, **kwargs)
+            bound = norm_signature.bind(*args, **kwargs)
+            bound.apply_defaults()
+            if scope["norm_calls"] or bound.arguments["dy"] is not scope["dy"]:
+                raise BoundaryProbeError("Output layer norm did not consume the captured GEMM result")
+            scope["norm_calls"] += 1
+            return self._run("triton_layer_norm_mul_dropout_bwd", original_norm,
+                             norm_signature, (), dict(bound.arguments))
+
+        self._patch(self.output, "torch", _OutputTorchProxy(self.output.torch, self))
+        self._patch(self.output, "triton_layer_norm_mul_dropout_bwd", norm_backward)
+        self._patch(function_class, "backward", backward)
+
+    def _output_mm(self, function, args, kwargs):
+        scope = getattr(self._local, "output_backward", None)
+        if scope is None or scope["grad_mm_calls"]:
+            return function(*args, **kwargs)
+        # Fail explicitly if the production backward changes its first GEMM.
+        # The second GEMM (d_output_weight) passes through unchanged.
+        if (kwargs or len(args) != 2 or args[0] is not scope["dout"]
+                or not isinstance(args[1], torch.Tensor)
+                or _pointer(args[1].t()) != _pointer(scope["output_weight"])):
+            raise BoundaryProbeError("Unexpected incoming-gradient GEMM in HSTU output backward")
+        scope["grad_mm_calls"] += 1
+
+        def execute(dout, output_weight):
+            # Execute the exact intercepted call once; the transposed operand
+            # is still the original view, not a separately prepared replay.
+            return (function(*args, **kwargs),)
+
+        output = self._run("hstu_output_grad_mm", execute, self._output_mm_signature,
+                           (), {"dout": args[0], "output_weight": scope["output_weight"]})
+        scope["dy"] = output[0]
+        return output[0]
+
     def set_attempt(self, mode: str, repeat: int, step: int) -> None:
         if self.closed or self.failed:
             raise BoundaryProbeError("Cannot reuse a closed or failed boundary probe")
@@ -386,7 +506,8 @@ class BackwardBoundaryProbe:
         self.call = 0
         self._pointers.clear()
         for layer, module in self._layers.items():
-            for name in ("_input_norm_weight", "_input_norm_bias", "_uvqk_weight", "_uvqk_beta"):
+            for name in ("_input_norm_weight", "_input_norm_bias", "_uvqk_weight", "_uvqk_beta",
+                         "_output_norm_weight", "_output_norm_bias", "_output_weight"):
                 tensor = getattr(module, name, None)
                 if isinstance(tensor, torch.Tensor):
                     self._pointers[_pointer(tensor)] = {
@@ -414,15 +535,26 @@ class BackwardBoundaryProbe:
             return function(*args, **kwargs)
 
         start = time.monotonic()
+        event["execution_controls"] = _execution_controls()
+        capture_started = time.time()
         pre, input_bytes = _cpu_copy_tree(
             {"args": args, "kwargs": kwargs}, self.chunk_bytes, self.max_bytes)
+        capture_completed = time.time()
         saved_bound = signature.bind(*pre["args"], **pre["kwargs"])
         input_specs = _source_specs(bound.arguments)
         input_summary = _summaries(saved_bound.arguments, self.chunk_bytes, input_specs,
                                    self.abs_threshold)
         bad_inputs = [item["name"] for item in input_summary if not item["finite"]]
         extreme_inputs = [item["name"] for item in input_summary if item["extreme_count"]]
-        event.update(inputs=input_summary, input_bytes=input_bytes)
+        event.update(inputs=input_summary, input_bytes=input_bytes, input_observation={
+            "source": "pristine_pre_call_cpu_snapshot",
+            "scope": "all floating-point and complex logical input elements",
+            "source_devices_synchronized_before_copy": True,
+            "capture_started_unix_time": capture_started,
+            "capture_completed_unix_time": capture_completed,
+            "scan_completed_unix_time": time.time(),
+            "operation_started": False,
+        })
         self._emit({"event": "before", **event})
         if bad_inputs or extreme_inputs:
             self._freeze(operation, owner["layer"], "input", pre, None,
@@ -473,6 +605,7 @@ class BackwardBoundaryProbe:
             "format_version": 1, "session": self.session, "attempt": self.attempt,
             "operation": operation, "layer": layer, "stage": stage,
             "args": inputs["args"], "kwargs": inputs["kwargs"], "outputs": outputs,
+            "execution_controls": event["execution_controls"],
             "event": event,
             "note": "Inputs are independent pre-call CPU storage copies; load only as a trusted local artifact.",
         }
@@ -495,7 +628,7 @@ class BackwardBoundaryProbe:
         if self.closed:
             return
         for module, name, original, replacement in reversed(self._patches):
-            if getattr(module, name) is replacement:
+            if inspect.getattr_static(module, name) is replacement:
                 setattr(module, name, original)
         for handle in self._handles:
             handle.remove()

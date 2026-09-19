@@ -1,0 +1,191 @@
+{
+  "format": "native_override_both_trace_full_payload_join_v1",
+  "status": "BOTH_CONTROLLED_RUNS_HAVE_VERIFIED_SUBSTITUTION_AND_EXACT_ZERO_DX_FAILURE",
+  "trace_and_substitution_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/native_override_both_trace_substitution_independent_v1/both_arms_trace_substitution_certificate_v1.json",
+    "bytes": 53158,
+    "sha256": "8884f25cfe9392709a4c938007a4e53ab768b48fde2af631c918409af6d0344d"
+  },
+  "trace_audit_lifecycle": {
+    "exit_code": 0,
+    "tool_chunk": "cd2c69",
+    "session_returned": false
+  },
+  "arms": [
+    {
+      "mode": "original",
+      "full_CPU_certificate": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/direct_projection_dx_native_original_override_hipblaslt_fixed460_argtrace1000_v1_full_failure_independent_v1.json",
+        "bytes": 45047,
+        "sha256": "08bcaf5b9ba9658c4dedbd06c9b2d5e6fa20d78b52e27409456150ad2a766115"
+      },
+      "trace_certificate": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/native_original45_trace_substitution_independent_v1/terminal_trace_copy.jsonl",
+        "bytes": 89638,
+        "sha256": "0f3fcf9da6a18fb7d9b749a4b4fdf6847cad25f2d39059e5604ad171bd8e72db"
+      },
+      "matching_exact_artifacts": [
+        "run_report",
+        "environment",
+        "root_terminal",
+        "run_log",
+        "failure_payload_full_path_size_sha256"
+      ],
+      "failed_call": 45,
+      "numerical_summary": {
+        "failed_call": 45,
+        "prior_passing_calls": 44,
+        "wrong_finite_DX_count": 102,
+        "DX_shape": [
+          1959558,
+          512
+        ],
+        "DX_stride": [
+          512,
+          1
+        ],
+        "DX_storage_offset": 0,
+        "DX_statistics": {
+          "elements": 1003293696,
+          "positive_zero_count": 1003293594,
+          "negative_zero_count": 0,
+          "nonzero_including_nonfinite_count": 102,
+          "nonfinite_count": 0,
+          "infinity_count": 0,
+          "nan_count": 0,
+          "subnormal_count": 0,
+          "extreme_count": 0,
+          "max_abs_finite": 0.048583984375,
+          "unique_raw_bitpatterns": 89
+        },
+        "all_input_backing_bytes_unchanged": true,
+        "W_backing_bytes_match_pinned_original": true,
+        "W_finite": true,
+        "all_4013174784_pristine_and_current_DZ_elements_positive_zero": true,
+        "existing_first_wrong_output_retained_without_rerun": true,
+        "packed_model_counts": {
+          "wrong_elements": 102,
+          "restricted_matched_elements": 102,
+          "restricted_unique_elements": 87,
+          "restricted_ambiguous_elements": 15,
+          "groups": 41,
+          "restricted_matched_groups": 39,
+          "restricted_unique_groups": 39
+        }
+      },
+      "independent_zero_check": {
+        "nonzero_magnitude_bits_count": 102,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "maximum_magnitude_bits": 15687,
+        "maximum_abs_if_finite": 0.048583984375,
+        "failed": true,
+        "oracle": "All numerical zeros; signed zeros accepted and subnormal/nonfinite bits rejected"
+      },
+      "failure_payload": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/direct_projection_dx_native_original_override_hipblaslt_fixed460_argtrace1000_v1_failure.pt",
+        "bytes": 18063491905,
+        "sha256": "32b9683055ad74876d837830db2063d4bd680aca211cb97432ec7e35da276171",
+        "stable_during_wholefile_read": true
+      },
+      "packed_W_candidate_certificate": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/direct_projection_dx_native_original_override_hipblaslt_fixed460_argtrace1000_v1_packed_W_candidates_independent_v1.json",
+        "bytes": 92627,
+        "sha256": "d5dfd94d14120991a46eef53fd67c873bd1a0615adce20f5c6fa3fc5e9188e1b"
+      },
+      "payload_current_size_equal": true,
+      "failure_payload_hash_recomputed_here": false
+    },
+    {
+      "mode": "a_reuse_off",
+      "full_CPU_certificate": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_full_failure_independent_v1.json",
+        "bytes": 48073,
+        "sha256": "da7091ee9f611e63f249b2083131bd847c3c51b91bae7af2452da3a8dbd4e3fb"
+      },
+      "trace_certificate": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/native_override_both_trace_substitution_independent_v1/a_reuse_off_terminal_trace_copy.jsonl",
+        "bytes": 960828,
+        "sha256": "1b6aeeefd2215365e5cb6b030666139ac7397d1d985021b5d12408b777c47a7d"
+      },
+      "matching_exact_artifacts": [
+        "run_report",
+        "environment",
+        "root_terminal",
+        "run_log",
+        "failure_payload_full_path_size_sha256"
+      ],
+      "failed_call": 516,
+      "numerical_summary": {
+        "failed_call": 516,
+        "prior_passing_calls": 515,
+        "wrong_finite_DX_count": 113,
+        "DX_shape": [
+          1959558,
+          512
+        ],
+        "DX_stride": [
+          512,
+          1
+        ],
+        "DX_storage_offset": 0,
+        "DX_statistics": {
+          "elements": 1003293696,
+          "positive_zero_count": 1003293583,
+          "negative_zero_count": 0,
+          "nonzero_including_nonfinite_count": 113,
+          "nonfinite_count": 0,
+          "infinity_count": 0,
+          "nan_count": 0,
+          "subnormal_count": 0,
+          "extreme_count": 0,
+          "max_abs_finite": 0.04833984375,
+          "unique_raw_bitpatterns": 91
+        },
+        "all_input_backing_bytes_unchanged": true,
+        "W_backing_bytes_match_pinned_original": true,
+        "W_finite": true,
+        "all_4013174784_pristine_and_current_DZ_elements_positive_zero": true,
+        "existing_first_wrong_output_retained_without_rerun": true,
+        "packed_model_counts": {
+          "wrong_elements": 113,
+          "restricted_matched_elements": 113,
+          "restricted_unique_elements": 97,
+          "restricted_ambiguous_elements": 16,
+          "groups": 43,
+          "restricted_matched_groups": 43,
+          "restricted_unique_groups": 39
+        }
+      },
+      "independent_zero_check": {
+        "nonzero_magnitude_bits_count": 113,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "maximum_magnitude_bits": 15686,
+        "maximum_abs_if_finite": 0.04833984375,
+        "failed": true,
+        "oracle": "All numerical zeros; signed zeros accepted and subnormal/nonfinite bits rejected"
+      },
+      "failure_payload": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_failure.pt",
+        "bytes": 18063491905,
+        "sha256": "6ead4e032620898c9342b5cc26be831e210700c708b7a801f08b55a9e91439bd",
+        "stable_during_wholefile_read": true
+      },
+      "packed_W_candidate_certificate": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_packed_W_candidates_independent_v1.json",
+        "bytes": 103099,
+        "sha256": "c8c5fe1b8c1d2b1aed236286f7e36fc3bccd4ce9ecbc92af58cba4eb43b9e7bf"
+      },
+      "payload_current_size_equal": true,
+      "failure_payload_hash_recomputed_here": false
+    }
+  ],
+  "conclusion": "OriginalverifiedELF failed45 with102finitewrongDX; verifiedELFwithonly392A-reusehintbitscleared failed516 with113finitewrongDX. All retained inputs are independently certified finite/zero and unchanged. The hint removal did not eliminate failure in this controlled run.",
+  "limits": [
+    "Full tensor/storage reads and packed-W recomputation belong to linked history_context certificates; this join rereads their JSON and verifies exact artifact identities, without tensor read or fullpayload rehash.",
+    "The loader proves verified hostbytes supplied to successfulmoduleload and launchedreplacementhandles, not on-deviceinstructionbytes or historical loaded identities.",
+    "The later failure onset in one run does not estimate failure probability, prove improvement, or identify a corrupt instruction/circuit/commoncause.",
+    "Packed-W value compatibility is an observation; it does not prove actual register or memory-source provenance."
+  ]
+}

@@ -1,0 +1,925 @@
+{
+  "format": "single_DW196_zero_DY_full_failure_independent_v1",
+  "status": "EXACT_ZERO_SINGLE_MATRIX_MULTIPLICATION_VIOLATION_CONFIRMED",
+  "artifact_integrity_review": "PASS",
+  "created_utc": "2026-09-19T08:55:40.444986+00:00",
+  "audit_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/audit_step405_single_DW196_failure_independent_v1.py",
+    "bytes": 14085,
+    "sha256": "0ae94fcbba896dfa03253bba8f9a716cb90a2fc64334d582850505addb4c20dd",
+    "stable_during_wholefile_read": true
+  },
+  "raw_ZIP_helper": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/audit_step405_linear_zero_failure_independent_v1.py",
+    "bytes": 25482,
+    "sha256": "93dcdc836a6f14bd6dc28228b0e1d52ba3dc93f5e7f38ece63ec7a5f09ddee3b",
+    "stable_during_wholefile_read": true
+  },
+  "method": "CPU-only read-only mmap, restricted metadata decoding, whole-file and complete-storage SHA256, full BF16 bit histograms. No Torch import, HIP action, rerun, or live device inspection.",
+  "files": {
+    "failure": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1_failure.pt",
+      "bytes": 10712109223,
+      "sha256": "d65dd676bf70b5ddfd6f830f93f2d5c687186db1a15e29ebf4bdaf7188b77020",
+      "stable_during_wholefile_read": true
+    },
+    "run_report": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1.json",
+      "bytes": 477741,
+      "sha256": "32604ead77f233164e5a810fbdd230dce1bc1bdaeb28139e70af47539b7941ad",
+      "stable_during_wholefile_read": true
+    },
+    "run_log": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1.log",
+      "bytes": 34648,
+      "sha256": "8bb4cf7ec120df24abf4d04f42ef8d023a305425b23158189b9621c7d809bbfd",
+      "stable_during_wholefile_read": true
+    },
+    "original_bundle": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+      "bytes": 3570835225,
+      "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a",
+      "stable_during_wholefile_read": true
+    },
+    "coordinates": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1_wrong_DW_coordinates_independent_v1.json",
+      "bytes": 251806,
+      "sha256": "31249ebf927eb5c0dbe3f48dd631cbb3b7eabc9bae276267e23edec1e22f6de2",
+      "stable_during_wholefile_read": true
+    },
+    "previous_Addmm55_full_certificate": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_addmm_zero_workspace1_argtrace1000_v1_full_failure_independent_v1.json",
+      "bytes": 48207,
+      "sha256": "1803095d08d93f91d4dbc3dcffcc4f02ac4e882602dbe4133994289dff85fa6f",
+      "stable_during_wholefile_read": true
+    },
+    "source_freeze": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_frozen_sources_v1.sha256",
+      "bytes": 3023,
+      "sha256": "ae19a82675bb94b2761800259451c0586d7b0f0d98a8d6b898122e5664c44b75",
+      "stable_during_wholefile_read": true
+    }
+  },
+  "summary": {
+    "operation": "torch.mm(DY.T, X).T",
+    "iteration": 196,
+    "prior_passing_calls": 195,
+    "raw_DW_shape": [
+      256,
+      512
+    ],
+    "raw_DW_stride": [
+      1,
+      256
+    ],
+    "wrong_finite_elements": 512,
+    "wrong_columns": [
+      258,
+      322
+    ],
+    "wrong_rows": "All256rows in bothcolumns",
+    "wrong_column_offsets_within_N_tile128": [
+      2,
+      66
+    ],
+    "N_tile_start": 256,
+    "output_BF16_statistics": {
+      "elements": 131072,
+      "positive_zero_count": 130560,
+      "negative_zero_count": 0,
+      "nonzero_including_nonfinite_count": 512,
+      "nonfinite_count": 0,
+      "infinity_count": 0,
+      "nan_count": 0,
+      "subnormal_count": 7,
+      "extreme_count": 0,
+      "max_abs_finite": 2.624079549227609e-33,
+      "unique_raw_bitpatterns": 455
+    },
+    "column322_equals_256_times_column258_rows": 251,
+    "all_original_prepared_current_X_and_mat2_backing_bytes_match": true,
+    "all_prepared_current_DY_elements_positive_zero": true,
+    "existing_first_failed_output_preserved_without_rerun": true,
+    "forward_DX_DB_autograd_DDP_optimizer_not_executed_by_callable": true
+  },
+  "deterministic_oracle": "raw_DW[i,j]=sum_k X[k,i]*DY[k,j]. Finite retainedX and1190067712exactpositivezeroDY elements require every product and sum to be numerical zero, with signedzero accepted; all512nonzero values violate the oracle.",
+  "all12_storage_inventory": {
+    "0": {
+      "zip_member": "archive/data/0",
+      "bytes": 1190067712,
+      "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+      "file_data_offset": 185344,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": false,
+      "BF16_bits": {
+        "elements": 595033856,
+        "positive_zero_count": 0,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 595033856,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0048828125,
+        "unique_raw_bitpatterns": 3661
+      }
+    },
+    "1": {
+      "zip_member": "archive/data/1",
+      "bytes": 262144,
+      "sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+      "file_data_offset": 1190253120,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": false,
+      "BF16_bits": {
+        "elements": 131072,
+        "positive_zero_count": 0,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 131072,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.2236328125,
+        "unique_raw_bitpatterns": 2784
+      }
+    },
+    "2": {
+      "zip_member": "archive/data/2",
+      "bytes": 2380135424,
+      "sha256": "8982a8bba7aa6ae843a589a2ff671d3b62adb2a9359609c1988e8cfcdf1cecea",
+      "file_data_offset": 1190515328,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": false,
+      "BF16_bits": {
+        "elements": 1190067712,
+        "positive_zero_count": 0,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 1190067712,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.000885009765625,
+        "unique_raw_bitpatterns": 11090
+      }
+    },
+    "3": {
+      "zip_member": "archive/data/3",
+      "bytes": 1024,
+      "sha256": "28065527f4a807ce73a59b47d6bfe95e32be578b9280f1ddf52eba3f1830f5f2",
+      "file_data_offset": 3570650816,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": false,
+      "BF16_bits": {
+        "elements": 512,
+        "positive_zero_count": 0,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 512,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.01806640625,
+        "unique_raw_bitpatterns": 404
+      }
+    },
+    "4": {
+      "zip_member": "archive/data/4",
+      "bytes": 262144,
+      "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9",
+      "file_data_offset": 3570651904,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": false,
+      "BF16_bits": {
+        "elements": 131072,
+        "positive_zero_count": 0,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 131072,
+        "nonfinite_count": 640,
+        "infinity_count": 0,
+        "nan_count": 640,
+        "subnormal_count": 0,
+        "extreme_count": 384,
+        "max_abs_finite": 1.02204329643401e+31,
+        "unique_raw_bitpatterns": 3169
+      }
+    },
+    "5": {
+      "zip_member": "archive/data/5",
+      "bytes": 1190067712,
+      "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+      "file_data_offset": 3570914112,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": true,
+      "BF16_bits": {
+        "elements": 595033856,
+        "positive_zero_count": 0,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 595033856,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0048828125,
+        "unique_raw_bitpatterns": 3661
+      }
+    },
+    "6": {
+      "zip_member": "archive/data/6",
+      "bytes": 262144,
+      "sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+      "file_data_offset": 4760981952,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": true,
+      "BF16_bits": {
+        "elements": 131072,
+        "positive_zero_count": 0,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 131072,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.2236328125,
+        "unique_raw_bitpatterns": 2784
+      }
+    },
+    "7": {
+      "zip_member": "archive/data/7",
+      "bytes": 2380135424,
+      "sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+      "file_data_offset": 4761244224,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": false,
+      "BF16_bits": {
+        "elements": 1190067712,
+        "positive_zero_count": 1190067712,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 0,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0,
+        "unique_raw_bitpatterns": 1
+      }
+    },
+    "8": {
+      "zip_member": "archive/data/8",
+      "bytes": 1190067712,
+      "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+      "file_data_offset": 7141379776,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": true,
+      "BF16_bits": {
+        "elements": 595033856,
+        "positive_zero_count": 0,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 595033856,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0048828125,
+        "unique_raw_bitpatterns": 3661
+      }
+    },
+    "9": {
+      "zip_member": "archive/data/9",
+      "bytes": 262144,
+      "sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+      "file_data_offset": 8331447616,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": true,
+      "BF16_bits": {
+        "elements": 131072,
+        "positive_zero_count": 0,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 131072,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.2236328125,
+        "unique_raw_bitpatterns": 2784
+      }
+    },
+    "10": {
+      "zip_member": "archive/data/10",
+      "bytes": 2380135424,
+      "sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+      "file_data_offset": 8331709888,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": true,
+      "BF16_bits": {
+        "elements": 1190067712,
+        "positive_zero_count": 1190067712,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 0,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0,
+        "unique_raw_bitpatterns": 1
+      }
+    },
+    "11": {
+      "zip_member": "archive/data/11",
+      "bytes": 262144,
+      "sha256": "f1b8aaa9d42c9f01a307898556f2cc56af7c63a80773c5947eab4e907f5cb756",
+      "file_data_offset": 10711845440,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": false,
+      "BF16_bits": {
+        "elements": 131072,
+        "positive_zero_count": 130560,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 512,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 7,
+        "extreme_count": 0,
+        "max_abs_finite": 2.624079549227609e-33,
+        "unique_raw_bitpatterns": 455
+      }
+    }
+  },
+  "independent_original_digest": {
+    "tensors": {
+      "/pristine_inputs/x": {
+        "shape": [
+          2324351,
+          256
+        ],
+        "stride": [
+          256,
+          1
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 0,
+        "logical_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0048828125
+      },
+      "/pristine_inputs/mat2": {
+        "shape": [
+          256,
+          512
+        ],
+        "stride": [
+          1,
+          256
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 1,
+        "logical_sha256": "b289a1d919400d101d58acde0c4f22e6521737d28a49826ef7041ff4ac407527",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.2236328125
+      },
+      "/pristine_inputs/dy": {
+        "shape": [
+          2324351,
+          512
+        ],
+        "stride": [
+          512,
+          1
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 2,
+        "logical_sha256": "8982a8bba7aa6ae843a589a2ff671d3b62adb2a9359609c1988e8cfcdf1cecea",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.000885009765625
+      }
+    },
+    "raw_storages": [
+      {
+        "bytes": 1190067712,
+        "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225"
+      },
+      {
+        "bytes": 262144,
+        "sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022"
+      },
+      {
+        "bytes": 2380135424,
+        "sha256": "8982a8bba7aa6ae843a589a2ff671d3b62adb2a9359609c1988e8cfcdf1cecea"
+      }
+    ]
+  },
+  "independent_prepared_digest": {
+    "tensors": {
+      "/pristine_inputs/x": {
+        "shape": [
+          2324351,
+          256
+        ],
+        "stride": [
+          256,
+          1
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 0,
+        "logical_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0048828125
+      },
+      "/pristine_inputs/mat2": {
+        "shape": [
+          256,
+          512
+        ],
+        "stride": [
+          1,
+          256
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 1,
+        "logical_sha256": "b289a1d919400d101d58acde0c4f22e6521737d28a49826ef7041ff4ac407527",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.2236328125
+      },
+      "/pristine_inputs/dy": {
+        "shape": [
+          2324351,
+          512
+        ],
+        "stride": [
+          512,
+          1
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 2,
+        "logical_sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0
+      }
+    },
+    "raw_storages": [
+      {
+        "bytes": 1190067712,
+        "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225"
+      },
+      {
+        "bytes": 262144,
+        "sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022"
+      },
+      {
+        "bytes": 2380135424,
+        "sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379"
+      }
+    ]
+  },
+  "independent_current_input_digest": {
+    "tensors": {
+      "/pristine_inputs/x": {
+        "shape": [
+          2324351,
+          256
+        ],
+        "stride": [
+          256,
+          1
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 0,
+        "logical_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0048828125
+      },
+      "/pristine_inputs/mat2": {
+        "shape": [
+          256,
+          512
+        ],
+        "stride": [
+          1,
+          256
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 1,
+        "logical_sha256": "b289a1d919400d101d58acde0c4f22e6521737d28a49826ef7041ff4ac407527",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.2236328125
+      },
+      "/pristine_inputs/dy": {
+        "shape": [
+          2324351,
+          512
+        ],
+        "stride": [
+          512,
+          1
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 2,
+        "logical_sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0
+      }
+    },
+    "raw_storages": [
+      {
+        "bytes": 1190067712,
+        "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225"
+      },
+      {
+        "bytes": 262144,
+        "sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022"
+      },
+      {
+        "bytes": 2380135424,
+        "sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379"
+      }
+    ]
+  },
+  "independent_output_digest": {
+    "tensors": {
+      "/raw_dw": {
+        "shape": [
+          256,
+          512
+        ],
+        "stride": [
+          1,
+          256
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 0,
+        "logical_sha256": "d6b2ae984905abc427863674dd454eca5905db7e355534d6f38136805972bb20",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 2.624079549227609e-33
+      }
+    },
+    "raw_storages": [
+      {
+        "bytes": 262144,
+        "sha256": "f1b8aaa9d42c9f01a307898556f2cc56af7c63a80773c5947eab4e907f5cb756"
+      }
+    ]
+  },
+  "all_independent_digests_match_observed_and_saved": true,
+  "all_five_embedded_original_storage_hashes_match_prior_full_bundle_audit": true,
+  "embedded_original_capture_metadata_matches_bundle": true,
+  "independent_output_checks": {
+    "failed": true,
+    "zero_dy": true,
+    "outputs": {
+      "raw_dw": {
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "nonzero_including_nonfinite_count": 512,
+        "max_abs_finite": 2.624079549227609e-33
+      }
+    }
+  },
+  "source_inventory": {
+    "/workspace/recommendation/scripts/replay_additional_linear_capture.py": {
+      "path": "/home/chcai/training/recommendation/scripts/replay_additional_linear_capture.py",
+      "bytes": 37139,
+      "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f",
+      "stable_during_wholefile_read": true
+    },
+    "/workspace/recommendation/scripts/replay_backward_boundary.py": {
+      "path": "/home/chcai/training/recommendation/scripts/replay_backward_boundary.py",
+      "bytes": 47094,
+      "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970",
+      "stable_during_wholefile_read": true
+    },
+    "/workspace/recommendation/scripts/replay_hstu_output_boundary.py": {
+      "path": "/home/chcai/training/recommendation/scripts/replay_hstu_output_boundary.py",
+      "bytes": 31162,
+      "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01",
+      "stable_during_wholefile_read": true
+    },
+    "/workspace/recommendation/scripts/stress_addmm_backward_boundary.py": {
+      "path": "/home/chcai/training/recommendation/scripts/stress_addmm_backward_boundary.py",
+      "bytes": 37705,
+      "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb",
+      "stable_during_wholefile_read": true
+    },
+    "/workspace/recommendation/scripts/stress_hstu_output_boundary.py": {
+      "path": "/home/chcai/training/recommendation/scripts/stress_hstu_output_boundary.py",
+      "bytes": 24294,
+      "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12",
+      "stable_during_wholefile_read": true
+    },
+    "/workspace/recommendation/scripts/nan_backward_boundaries.py": {
+      "path": "/home/chcai/training/recommendation/scripts/nan_backward_boundaries.py",
+      "bytes": 31280,
+      "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44",
+      "stable_during_wholefile_read": true
+    },
+    "/workspace/recommendation/scripts/audit_training_arithmetic_bounds.py": {
+      "path": "/home/chcai/training/recommendation/scripts/audit_training_arithmetic_bounds.py",
+      "bytes": 16614,
+      "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5",
+      "stable_during_wholefile_read": true
+    },
+    "/workspace/recommendation/scripts/audit_training_gradient_flow.py": {
+      "path": "/home/chcai/training/recommendation/scripts/audit_training_gradient_flow.py",
+      "bytes": 25133,
+      "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c",
+      "stable_during_wholefile_read": true
+    },
+    "repro_linear_dw_saved_orientation.py": {
+      "path": "/home/chcai/training/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+      "bytes": 7068,
+      "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331",
+      "stable_during_wholefile_read": true
+    }
+  },
+  "all_source_hashes_before_at_failure_after_current_match": true,
+  "frozen_files": [
+    {
+      "path": "/home/chcai/training/recommendation/scripts/replay_additional_linear_capture.py",
+      "bytes": 37139,
+      "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/replay_backward_boundary.py",
+      "bytes": 47094,
+      "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/replay_hstu_output_boundary.py",
+      "bytes": 31162,
+      "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/stress_addmm_backward_boundary.py",
+      "bytes": 37705,
+      "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/stress_hstu_output_boundary.py",
+      "bytes": 24294,
+      "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/nan_backward_boundaries.py",
+      "bytes": 31280,
+      "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/audit_training_arithmetic_bounds.py",
+      "bytes": 16614,
+      "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/audit_training_gradient_flow.py",
+      "bytes": 25133,
+      "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/trace_projection_hip_launches_v2.cpp",
+      "bytes": 10647,
+      "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/trace_projection_hip_launches_v2.so",
+      "bytes": 84624,
+      "sha256": "ca847493973d76a572798a7a5ad70c961123e7fd8c03a64bad349aa2d18c13e6",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/extract_step405_linear_replay_root_v1.py",
+      "bytes": 3063,
+      "sha256": "764e5fc26cb3df7d7726ce628861612e80e621d999b55c1e45d6eccb946c6474",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_extraction_root_v1.json",
+      "bytes": 2041,
+      "sha256": "75fb1830c51b7e9771f5df5f6cbcd6a8578caddc46f0584b591d26ff2267948e",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+      "bytes": 3570835225,
+      "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+      "bytes": 94391,
+      "sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+      "bytes": 7068,
+      "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/test_repro_linear_dw_saved_orientation.py",
+      "bytes": 4659,
+      "sha256": "90165cd6e82c438ec04bc9ab6ef967c936cf867630a3fdd930bdedc8d6be7531",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/linear_saved_orientation_cpu_v1.log",
+      "bytes": 1276,
+      "sha256": "43d8fc7fd689842b23109247096837b496d22c77e21e0be3d2a3599edd6bcc60",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/direct_linear_dw_saved_orientation_independent_review_v1.json",
+      "bytes": 4469,
+      "sha256": "9c5749de60d3cd3a99c94966641c7aa12ecdc4ae194218f3f473219257db12d8",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_actual_bundle_CPU_v1.json",
+      "bytes": 6908,
+      "sha256": "3d5d8e2143062c1f8b28f412d80b217e52e417cca35c9ffcc23b7ea7cd6df80f",
+      "stable_during_wholefile_read": true
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1.sh",
+      "bytes": 1349,
+      "sha256": "9256ddfaef339b3b9febffb9239f09f71015fc10b94031e9b7c4e8e6ff3a3bbc",
+      "stable_during_wholefile_read": true
+    }
+  ],
+  "injected_callable_provenance": {
+    "operation": "torch.mm(DY.T, X).T",
+    "injected_callable": "execute_saved_orientation",
+    "source_sha256_before": {
+      "/workspace/recommendation/scripts/replay_additional_linear_capture.py": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f",
+      "/workspace/recommendation/scripts/replay_backward_boundary.py": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970",
+      "/workspace/recommendation/scripts/replay_hstu_output_boundary.py": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01",
+      "/workspace/recommendation/scripts/stress_addmm_backward_boundary.py": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb",
+      "/workspace/recommendation/scripts/stress_hstu_output_boundary.py": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12",
+      "/workspace/recommendation/scripts/nan_backward_boundaries.py": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44",
+      "/workspace/recommendation/scripts/audit_training_arithmetic_bounds.py": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5",
+      "/workspace/recommendation/scripts/audit_training_gradient_flow.py": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c",
+      "repro_linear_dw_saved_orientation.py": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+    },
+    "capture": {
+      "path": "/data/mlperf_dlrm_v4/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+      "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+    },
+    "context": {
+      "path": "/data/mlperf_dlrm_v4/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+      "sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d"
+    },
+    "restored_environment": {
+      "environment_overrides": {},
+      "effective_allocator_environment": {
+        "PYTORCH_ALLOC_CONF": null,
+        "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True"
+      },
+      "mandatory_environment_overrides": {
+        "AMDGCN_USE_BUFFER_OPS": "0",
+        "TRITON_FULL_AUTOTUNE": "0",
+        "TRITON_ALLOW_PIPELINING": "0"
+      },
+      "mandatory_environment_differences": {},
+      "inherited_modern_allocator_alias_removed": null,
+      "effective_HIPBLASLT_TENSILE_LIBPATH": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250"
+    },
+    "versions": {
+      "python": "3.12.3",
+      "torch": "2.11.0+rocm7.14.0a20260625",
+      "hip": "7.14.60850",
+      "torch_distribution": "2.11.0+rocm7.14.0a20260625",
+      "triton_distribution": "3.8.0+git7ff97e31",
+      "numpy_distribution": "2.4.1",
+      "triton": "3.8.0"
+    },
+    "transformation": {
+      "zero_dy": true,
+      "mode": "zero_dy_exact_oracle",
+      "original_inputs_nonfinite": false,
+      "scope": "Only logical DY is zeroed; complete CPU storage clone preserves aliases and unused bytes."
+    },
+    "prepared_digest": {
+      "tensors": {
+        "/pristine_inputs/x": {
+          "shape": [
+            2324351,
+            256
+          ],
+          "stride": [
+            256,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "storage_offset": 0,
+          "storage_index": 0,
+          "logical_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+          "nonfinite_count": 0,
+          "extreme_count": 0,
+          "max_abs_finite": 0.0048828125
+        },
+        "/pristine_inputs/mat2": {
+          "shape": [
+            256,
+            512
+          ],
+          "stride": [
+            1,
+            256
+          ],
+          "dtype": "torch.bfloat16",
+          "storage_offset": 0,
+          "storage_index": 1,
+          "logical_sha256": "b289a1d919400d101d58acde0c4f22e6521737d28a49826ef7041ff4ac407527",
+          "nonfinite_count": 0,
+          "extreme_count": 0,
+          "max_abs_finite": 0.2236328125
+        },
+        "/pristine_inputs/dy": {
+          "shape": [
+            2324351,
+            512
+          ],
+          "stride": [
+            512,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "storage_offset": 0,
+          "storage_index": 2,
+          "logical_sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+          "nonfinite_count": 0,
+          "extreme_count": 0,
+          "max_abs_finite": 0.0
+        }
+      },
+      "raw_storages": [
+        {
+          "bytes": 1190067712,
+          "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225"
+        },
+        {
+          "bytes": 262144,
+          "sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022"
+        },
+        {
+          "bytes": 2380135424,
+          "sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379"
+        }
+      ]
+    }
+  },
+  "injected_function_interpretation": "Expected frozen-harness callback execute_saved_orientation supplied by pinned wrapper81e9abc...; not a fault injection. Source executes one torch.mm(DY.T,X).T percall and preserves output stride.",
+  "lifecycle_attributed_to_parent": {
+    "session_id": 74939,
+    "exit_code": 1,
+    "reap_chunk": "6e500f",
+    "live_exit_independently_observed": false
+  },
+  "limits": [
+    "This proves retained wrong values at the isolated matrix multiplication boundary; native solution and executed instructions require separate launch/code evidence.",
+    "Original retained training raw gradients are observations, not independent mathematical references.",
+    "Complete retained-input equality does not exclude transient internal or untracked device writes.",
+    "The shared two-column spacing and approximate256ratio with Addmm55 are output-pattern observations, not a proved common cause.",
+    "First failing call196 is an intermittent observation and not a failure-rate estimate."
+  ],
+  "seconds": 18.85300749099406
+}

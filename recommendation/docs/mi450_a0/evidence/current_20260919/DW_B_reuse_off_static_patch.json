@@ -1,0 +1,7700 @@
+{
+  "format": "DW_mechanism_review_static_feasibility_v1",
+  "status": "CPU_STATIC_PASS_NO_GPU_RUN",
+  "sources": {
+    "auditor": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/DW_mechanism_review_v1/audit_and_prepare_DW_B_reuse_off.py",
+      "bytes": 8203,
+      "sha256": "c96e2680d64b65af6ac16df4d8b82d052634b69212bdf643a11ff5f9f19c1b41"
+    },
+    "ELF": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/verified_unbundle.elf",
+      "bytes": 335000,
+      "sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3"
+    },
+    "assembly": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/DW_full_kernel.s",
+      "bytes": 4281628,
+      "sha256": "114a11bd3f27c2fdd77751aaee78172320611331b983440c3e4c7fd5087fecd3"
+    },
+    "WMMA_records": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/DW_static_WMMA_records_v1.json",
+      "bytes": 350911,
+      "sha256": "b82c6996b050c41d38b9ae4802d05ffdcc2780510725b5573bb5fa14d23f4507"
+    },
+    "objdump": {
+      "path": "/opt/rocm-10.1.0a20260811/lib/llvm/bin/llvm-objdump",
+      "bytes": 1157640,
+      "sha256": "4b6823f059b07f8683be319361e349159ee0c7029d98f0b0cf4fb69fec7ff30e"
+    },
+    "llvm_mc": {
+      "path": "/opt/rocm-10.1.0a20260811/lib/llvm/bin/llvm-mc",
+      "bytes": 114176,
+      "sha256": "2d99290e7a3dd53e09020347b01327ee8f6ef1155cf78a3c34fa52977cc9d13e"
+    }
+  },
+  "B_reuse_off": {
+    "derived_ELF": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/DW_mechanism_review_v1/DW_MT256x128x64_B_reuse_off_STATIC_ONLY.elf",
+      "bytes": 335000,
+      "sha256": "d57129bfbd851f78ba148a2af82d0379704e3e3c2e5ef85190f8b4ecc8091a33"
+    },
+    "derived_assembly": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/DW_mechanism_review_v1/DW_MT256x128x64_B_reuse_off_STATIC_ONLY.s",
+      "bytes": 4277366,
+      "sha256": "0799bbbb4a628f57c138c3c521e3f73ec227e89d2f895f83ef6b8dfdf5226b00"
+    },
+    "changed_byte_count": 280,
+    "changed_bit_count": 280,
+    "mutation": "Clear only first instruction word bit14 at 280 native DW WMMAs.",
+    "all_other_ELF_bytes_unchanged": true,
+    "section_comparison": {
+      ".note": true,
+      ".note.gnu.build-id": true,
+      ".dynsym": true,
+      ".gnu.hash": true,
+      ".hash": true,
+      ".dynstr": true,
+      ".rodata": true,
+      ".text": false,
+      ".dynamic": true,
+      ".comment": true,
+      ".symtab": true,
+      ".shstrtab": true,
+      ".strtab": true
+    },
+    "instruction_count_before_and_after": 46658,
+    "all_addresses_and_nonmodifier_instruction_text_unchanged": true,
+    "objdump_command": [
+      "/opt/rocm-10.1.0a20260811/lib/llvm/bin/llvm-objdump",
+      "-d",
+      "--mcpu=gfx1250",
+      "--start-address=0x4700",
+      "--stop-address=0x44700",
+      "/home/chcai/mi450_logs/root_cause_20260919/DW_mechanism_review_v1/DW_MT256x128x64_B_reuse_off_STATIC_ONLY.elf"
+    ],
+    "objdump_exit": 0,
+    "changes": [
+      {
+        "instruction_address": 27068,
+        "file_byte_offset": 22973,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 27244,
+        "file_byte_offset": 23149,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 27412,
+        "file_byte_offset": 23317,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 27580,
+        "file_byte_offset": 23485,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 27772,
+        "file_byte_offset": 23677,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 27932,
+        "file_byte_offset": 23837,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 27968,
+        "file_byte_offset": 23873,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28044,
+        "file_byte_offset": 23949,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28084,
+        "file_byte_offset": 23989,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28112,
+        "file_byte_offset": 24017,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28136,
+        "file_byte_offset": 24041,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28160,
+        "file_byte_offset": 24065,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28184,
+        "file_byte_offset": 24089,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28208,
+        "file_byte_offset": 24113,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28264,
+        "file_byte_offset": 24169,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28296,
+        "file_byte_offset": 24201,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28328,
+        "file_byte_offset": 24233,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28360,
+        "file_byte_offset": 24265,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28392,
+        "file_byte_offset": 24297,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28424,
+        "file_byte_offset": 24329,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28456,
+        "file_byte_offset": 24361,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28496,
+        "file_byte_offset": 24401,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28504,
+        "file_byte_offset": 24409,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28524,
+        "file_byte_offset": 24429,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28648,
+        "file_byte_offset": 24553,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28772,
+        "file_byte_offset": 24677,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 28896,
+        "file_byte_offset": 24801,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 29020,
+        "file_byte_offset": 24925,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 29336,
+        "file_byte_offset": 25241,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 29512,
+        "file_byte_offset": 25417,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 29680,
+        "file_byte_offset": 25585,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 29848,
+        "file_byte_offset": 25753,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30040,
+        "file_byte_offset": 25945,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30200,
+        "file_byte_offset": 26105,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30236,
+        "file_byte_offset": 26141,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30312,
+        "file_byte_offset": 26217,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30352,
+        "file_byte_offset": 26257,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30380,
+        "file_byte_offset": 26285,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30404,
+        "file_byte_offset": 26309,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30428,
+        "file_byte_offset": 26333,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30452,
+        "file_byte_offset": 26357,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30476,
+        "file_byte_offset": 26381,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30532,
+        "file_byte_offset": 26437,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30564,
+        "file_byte_offset": 26469,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30596,
+        "file_byte_offset": 26501,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30628,
+        "file_byte_offset": 26533,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30660,
+        "file_byte_offset": 26565,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30692,
+        "file_byte_offset": 26597,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30724,
+        "file_byte_offset": 26629,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30764,
+        "file_byte_offset": 26669,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30772,
+        "file_byte_offset": 26677,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30792,
+        "file_byte_offset": 26697,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 30916,
+        "file_byte_offset": 26821,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 31040,
+        "file_byte_offset": 26945,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 31164,
+        "file_byte_offset": 27069,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 31288,
+        "file_byte_offset": 27193,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 31692,
+        "file_byte_offset": 27597,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 31948,
+        "file_byte_offset": 27853,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32204,
+        "file_byte_offset": 28109,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32348,
+        "file_byte_offset": 28253,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32496,
+        "file_byte_offset": 28401,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32636,
+        "file_byte_offset": 28541,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32668,
+        "file_byte_offset": 28573,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32732,
+        "file_byte_offset": 28637,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32764,
+        "file_byte_offset": 28669,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32796,
+        "file_byte_offset": 28701,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32828,
+        "file_byte_offset": 28733,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32852,
+        "file_byte_offset": 28757,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32876,
+        "file_byte_offset": 28781,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32900,
+        "file_byte_offset": 28805,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32960,
+        "file_byte_offset": 28865,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 32992,
+        "file_byte_offset": 28897,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33024,
+        "file_byte_offset": 28929,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33056,
+        "file_byte_offset": 28961,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33088,
+        "file_byte_offset": 28993,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33120,
+        "file_byte_offset": 29025,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33152,
+        "file_byte_offset": 29057,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33192,
+        "file_byte_offset": 29097,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33200,
+        "file_byte_offset": 29105,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33208,
+        "file_byte_offset": 29113,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33216,
+        "file_byte_offset": 29121,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33224,
+        "file_byte_offset": 29129,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33232,
+        "file_byte_offset": 29137,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33240,
+        "file_byte_offset": 29145,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33564,
+        "file_byte_offset": 29469,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33728,
+        "file_byte_offset": 29633,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 33884,
+        "file_byte_offset": 29789,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34040,
+        "file_byte_offset": 29945,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34212,
+        "file_byte_offset": 30117,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34360,
+        "file_byte_offset": 30265,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34384,
+        "file_byte_offset": 30289,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34432,
+        "file_byte_offset": 30337,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34456,
+        "file_byte_offset": 30361,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34480,
+        "file_byte_offset": 30385,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34504,
+        "file_byte_offset": 30409,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34528,
+        "file_byte_offset": 30433,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34552,
+        "file_byte_offset": 30457,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34576,
+        "file_byte_offset": 30481,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34632,
+        "file_byte_offset": 30537,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34664,
+        "file_byte_offset": 30569,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34696,
+        "file_byte_offset": 30601,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34728,
+        "file_byte_offset": 30633,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34760,
+        "file_byte_offset": 30665,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34792,
+        "file_byte_offset": 30697,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34824,
+        "file_byte_offset": 30729,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34864,
+        "file_byte_offset": 30769,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34872,
+        "file_byte_offset": 30777,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34892,
+        "file_byte_offset": 30797,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34944,
+        "file_byte_offset": 30849,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 34996,
+        "file_byte_offset": 30901,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 35048,
+        "file_byte_offset": 30953,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 35100,
+        "file_byte_offset": 31005,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 35364,
+        "file_byte_offset": 31269,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 35548,
+        "file_byte_offset": 31453,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 35732,
+        "file_byte_offset": 31637,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 35876,
+        "file_byte_offset": 31781,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36024,
+        "file_byte_offset": 31929,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36164,
+        "file_byte_offset": 32069,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36196,
+        "file_byte_offset": 32101,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36260,
+        "file_byte_offset": 32165,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36292,
+        "file_byte_offset": 32197,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36324,
+        "file_byte_offset": 32229,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36356,
+        "file_byte_offset": 32261,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36380,
+        "file_byte_offset": 32285,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36404,
+        "file_byte_offset": 32309,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36428,
+        "file_byte_offset": 32333,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36488,
+        "file_byte_offset": 32393,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36520,
+        "file_byte_offset": 32425,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36552,
+        "file_byte_offset": 32457,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36584,
+        "file_byte_offset": 32489,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36616,
+        "file_byte_offset": 32521,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36648,
+        "file_byte_offset": 32553,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36680,
+        "file_byte_offset": 32585,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36720,
+        "file_byte_offset": 32625,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36728,
+        "file_byte_offset": 32633,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36736,
+        "file_byte_offset": 32641,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36744,
+        "file_byte_offset": 32649,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36752,
+        "file_byte_offset": 32657,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36760,
+        "file_byte_offset": 32665,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 36768,
+        "file_byte_offset": 32673,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 37184,
+        "file_byte_offset": 33089,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 37348,
+        "file_byte_offset": 33253,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 37504,
+        "file_byte_offset": 33409,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 37660,
+        "file_byte_offset": 33565,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 37832,
+        "file_byte_offset": 33737,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 37980,
+        "file_byte_offset": 33885,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38004,
+        "file_byte_offset": 33909,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38052,
+        "file_byte_offset": 33957,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38076,
+        "file_byte_offset": 33981,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38100,
+        "file_byte_offset": 34005,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38124,
+        "file_byte_offset": 34029,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38148,
+        "file_byte_offset": 34053,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38172,
+        "file_byte_offset": 34077,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38196,
+        "file_byte_offset": 34101,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38252,
+        "file_byte_offset": 34157,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38284,
+        "file_byte_offset": 34189,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38316,
+        "file_byte_offset": 34221,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38348,
+        "file_byte_offset": 34253,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38380,
+        "file_byte_offset": 34285,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38412,
+        "file_byte_offset": 34317,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38444,
+        "file_byte_offset": 34349,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38484,
+        "file_byte_offset": 34389,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38492,
+        "file_byte_offset": 34397,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38500,
+        "file_byte_offset": 34405,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38508,
+        "file_byte_offset": 34413,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38516,
+        "file_byte_offset": 34421,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38524,
+        "file_byte_offset": 34429,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38532,
+        "file_byte_offset": 34437,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38712,
+        "file_byte_offset": 34617,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 38868,
+        "file_byte_offset": 34773,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39012,
+        "file_byte_offset": 34917,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39156,
+        "file_byte_offset": 35061,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39304,
+        "file_byte_offset": 35209,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39432,
+        "file_byte_offset": 35337,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39440,
+        "file_byte_offset": 35345,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39456,
+        "file_byte_offset": 35361,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39464,
+        "file_byte_offset": 35369,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39472,
+        "file_byte_offset": 35377,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39480,
+        "file_byte_offset": 35385,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39488,
+        "file_byte_offset": 35393,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39496,
+        "file_byte_offset": 35401,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39504,
+        "file_byte_offset": 35409,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39520,
+        "file_byte_offset": 35425,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39528,
+        "file_byte_offset": 35433,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39536,
+        "file_byte_offset": 35441,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39544,
+        "file_byte_offset": 35449,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39552,
+        "file_byte_offset": 35457,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39560,
+        "file_byte_offset": 35465,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39568,
+        "file_byte_offset": 35473,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39584,
+        "file_byte_offset": 35489,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39592,
+        "file_byte_offset": 35497,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39600,
+        "file_byte_offset": 35505,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39608,
+        "file_byte_offset": 35513,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39616,
+        "file_byte_offset": 35521,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39624,
+        "file_byte_offset": 35529,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 39632,
+        "file_byte_offset": 35537,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 47628,
+        "file_byte_offset": 43533,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 47792,
+        "file_byte_offset": 43697,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 47948,
+        "file_byte_offset": 43853,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48104,
+        "file_byte_offset": 44009,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48276,
+        "file_byte_offset": 44181,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48424,
+        "file_byte_offset": 44329,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48448,
+        "file_byte_offset": 44353,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48496,
+        "file_byte_offset": 44401,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48520,
+        "file_byte_offset": 44425,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48544,
+        "file_byte_offset": 44449,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48568,
+        "file_byte_offset": 44473,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48592,
+        "file_byte_offset": 44497,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48616,
+        "file_byte_offset": 44521,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48640,
+        "file_byte_offset": 44545,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48696,
+        "file_byte_offset": 44601,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48728,
+        "file_byte_offset": 44633,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48760,
+        "file_byte_offset": 44665,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48792,
+        "file_byte_offset": 44697,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48824,
+        "file_byte_offset": 44729,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48856,
+        "file_byte_offset": 44761,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48888,
+        "file_byte_offset": 44793,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48928,
+        "file_byte_offset": 44833,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48936,
+        "file_byte_offset": 44841,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48944,
+        "file_byte_offset": 44849,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48952,
+        "file_byte_offset": 44857,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48960,
+        "file_byte_offset": 44865,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48968,
+        "file_byte_offset": 44873,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 48976,
+        "file_byte_offset": 44881,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49156,
+        "file_byte_offset": 45061,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49312,
+        "file_byte_offset": 45217,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49456,
+        "file_byte_offset": 45361,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49600,
+        "file_byte_offset": 45505,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49748,
+        "file_byte_offset": 45653,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49876,
+        "file_byte_offset": 45781,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49884,
+        "file_byte_offset": 45789,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49900,
+        "file_byte_offset": 45805,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49908,
+        "file_byte_offset": 45813,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49916,
+        "file_byte_offset": 45821,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49924,
+        "file_byte_offset": 45829,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49932,
+        "file_byte_offset": 45837,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49940,
+        "file_byte_offset": 45845,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49948,
+        "file_byte_offset": 45853,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49964,
+        "file_byte_offset": 45869,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49972,
+        "file_byte_offset": 45877,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49980,
+        "file_byte_offset": 45885,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49988,
+        "file_byte_offset": 45893,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 49996,
+        "file_byte_offset": 45901,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 50004,
+        "file_byte_offset": 45909,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 50012,
+        "file_byte_offset": 45917,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 50028,
+        "file_byte_offset": 45933,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 50036,
+        "file_byte_offset": 45941,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 50044,
+        "file_byte_offset": 45949,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 50052,
+        "file_byte_offset": 45957,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 50060,
+        "file_byte_offset": 45965,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 50068,
+        "file_byte_offset": 45973,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 50076,
+        "file_byte_offset": 45981,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62712,
+        "file_byte_offset": 58617,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62720,
+        "file_byte_offset": 58625,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62728,
+        "file_byte_offset": 58633,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62736,
+        "file_byte_offset": 58641,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62744,
+        "file_byte_offset": 58649,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62752,
+        "file_byte_offset": 58657,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62760,
+        "file_byte_offset": 58665,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62776,
+        "file_byte_offset": 58681,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62784,
+        "file_byte_offset": 58689,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62792,
+        "file_byte_offset": 58697,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62800,
+        "file_byte_offset": 58705,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62808,
+        "file_byte_offset": 58713,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62816,
+        "file_byte_offset": 58721,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62824,
+        "file_byte_offset": 58729,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62840,
+        "file_byte_offset": 58745,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62848,
+        "file_byte_offset": 58753,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62856,
+        "file_byte_offset": 58761,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62864,
+        "file_byte_offset": 58769,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62872,
+        "file_byte_offset": 58777,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62880,
+        "file_byte_offset": 58785,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62888,
+        "file_byte_offset": 58793,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62904,
+        "file_byte_offset": 58809,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62912,
+        "file_byte_offset": 58817,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62920,
+        "file_byte_offset": 58825,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62928,
+        "file_byte_offset": 58833,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62936,
+        "file_byte_offset": 58841,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62944,
+        "file_byte_offset": 58849,
+        "before": 64,
+        "after": 0
+      },
+      {
+        "instruction_address": 62952,
+        "file_byte_offset": 58857,
+        "before": 64,
+        "after": 0
+      }
+    ]
+  },
+  "WMMA_operand_census": {
+    "D": {
+      "[0, 7]": 10,
+      "[8, 15]": 10,
+      "[16, 23]": 10,
+      "[24, 31]": 10,
+      "[32, 39]": 10,
+      "[40, 47]": 10,
+      "[48, 55]": 10,
+      "[56, 63]": 10,
+      "[64, 71]": 10,
+      "[72, 79]": 10,
+      "[80, 87]": 10,
+      "[88, 95]": 10,
+      "[96, 103]": 10,
+      "[104, 111]": 10,
+      "[112, 119]": 10,
+      "[120, 127]": 10,
+      "[128, 135]": 10,
+      "[136, 143]": 10,
+      "[144, 151]": 10,
+      "[152, 159]": 10,
+      "[160, 167]": 10,
+      "[168, 175]": 10,
+      "[176, 183]": 10,
+      "[184, 191]": 10,
+      "[192, 199]": 10,
+      "[200, 207]": 10,
+      "[208, 215]": 10,
+      "[216, 223]": 10,
+      "[224, 231]": 10,
+      "[232, 239]": 10,
+      "[240, 247]": 10,
+      "[248, 255]": 10
+    },
+    "A": {
+      "[284, 291]": 40,
+      "[292, 299]": 40,
+      "[300, 307]": 40,
+      "[308, 315]": 40,
+      "[316, 323]": 40,
+      "[324, 331]": 40,
+      "[332, 339]": 40,
+      "[340, 347]": 40
+    },
+    "B": {
+      "[478, 485]": 72,
+      "[486, 493]": 72,
+      "[494, 501]": 72,
+      "[502, 509]": 72,
+      "[476, 483]": 8,
+      "[484, 491]": 8,
+      "[492, 499]": 8,
+      "[500, 507]": 8
+    },
+    "C": {
+      "None": 32,
+      "[0, 7]": 9,
+      "[8, 15]": 9,
+      "[16, 23]": 9,
+      "[24, 31]": 9,
+      "[32, 39]": 9,
+      "[40, 47]": 9,
+      "[48, 55]": 9,
+      "[56, 63]": 9,
+      "[64, 71]": 9,
+      "[72, 79]": 9,
+      "[80, 87]": 9,
+      "[88, 95]": 9,
+      "[96, 103]": 9,
+      "[104, 111]": 9,
+      "[112, 119]": 9,
+      "[120, 127]": 9,
+      "[128, 135]": 9,
+      "[136, 143]": 9,
+      "[144, 151]": 9,
+      "[152, 159]": 9,
+      "[160, 167]": 9,
+      "[168, 175]": 9,
+      "[176, 183]": 9,
+      "[184, 191]": 9,
+      "[192, 199]": 9,
+      "[200, 207]": 9,
+      "[208, 215]": 9,
+      "[216, 223]": 9,
+      "[224, 231]": 9,
+      "[232, 239]": 9,
+      "[240, 247]": 9,
+      "[248, 255]": 9
+    }
+  },
+  "B_fragment_zero_move_candidate": {
+    "status": "ENCODING_VALIDATED_NOT_PATCHED_NOT_RUN",
+    "instruction_count_per_opcode": {
+      "v_perm_b32": 320,
+      "ds_load_b128": 18,
+      "ds_load_b64": 1,
+      "v_cndmask_b32_e64": 64
+    },
+    "B_vperm_count": 320,
+    "B_tail_mask_count": 64,
+    "B_permutation_and_mask_native_instructions_are_all_8_bytes": true,
+    "zero_move_8_byte_encodings": [
+      {
+        "encoded_destination": 220,
+        "physical_destination_if_DST_MSB1": 476,
+        "hex": "dc0081d580000102"
+      },
+      {
+        "encoded_destination": 221,
+        "physical_destination_if_DST_MSB1": 477,
+        "hex": "dd0081d580000102"
+      },
+      {
+        "encoded_destination": 222,
+        "physical_destination_if_DST_MSB1": 478,
+        "hex": "de0081d580000102"
+      },
+      {
+        "encoded_destination": 223,
+        "physical_destination_if_DST_MSB1": 479,
+        "hex": "df0081d580000102"
+      },
+      {
+        "encoded_destination": 224,
+        "physical_destination_if_DST_MSB1": 480,
+        "hex": "e00081d580000102"
+      },
+      {
+        "encoded_destination": 225,
+        "physical_destination_if_DST_MSB1": 481,
+        "hex": "e10081d580000102"
+      },
+      {
+        "encoded_destination": 226,
+        "physical_destination_if_DST_MSB1": 482,
+        "hex": "e20081d580000102"
+      },
+      {
+        "encoded_destination": 227,
+        "physical_destination_if_DST_MSB1": 483,
+        "hex": "e30081d580000102"
+      },
+      {
+        "encoded_destination": 228,
+        "physical_destination_if_DST_MSB1": 484,
+        "hex": "e40081d580000102"
+      },
+      {
+        "encoded_destination": 229,
+        "physical_destination_if_DST_MSB1": 485,
+        "hex": "e50081d580000102"
+      },
+      {
+        "encoded_destination": 230,
+        "physical_destination_if_DST_MSB1": 486,
+        "hex": "e60081d580000102"
+      },
+      {
+        "encoded_destination": 231,
+        "physical_destination_if_DST_MSB1": 487,
+        "hex": "e70081d580000102"
+      },
+      {
+        "encoded_destination": 232,
+        "physical_destination_if_DST_MSB1": 488,
+        "hex": "e80081d580000102"
+      },
+      {
+        "encoded_destination": 233,
+        "physical_destination_if_DST_MSB1": 489,
+        "hex": "e90081d580000102"
+      },
+      {
+        "encoded_destination": 234,
+        "physical_destination_if_DST_MSB1": 490,
+        "hex": "ea0081d580000102"
+      },
+      {
+        "encoded_destination": 235,
+        "physical_destination_if_DST_MSB1": 491,
+        "hex": "eb0081d580000102"
+      },
+      {
+        "encoded_destination": 236,
+        "physical_destination_if_DST_MSB1": 492,
+        "hex": "ec0081d580000102"
+      },
+      {
+        "encoded_destination": 237,
+        "physical_destination_if_DST_MSB1": 493,
+        "hex": "ed0081d580000102"
+      },
+      {
+        "encoded_destination": 238,
+        "physical_destination_if_DST_MSB1": 494,
+        "hex": "ee0081d580000102"
+      },
+      {
+        "encoded_destination": 239,
+        "physical_destination_if_DST_MSB1": 495,
+        "hex": "ef0081d580000102"
+      },
+      {
+        "encoded_destination": 240,
+        "physical_destination_if_DST_MSB1": 496,
+        "hex": "f00081d580000102"
+      },
+      {
+        "encoded_destination": 241,
+        "physical_destination_if_DST_MSB1": 497,
+        "hex": "f10081d580000102"
+      },
+      {
+        "encoded_destination": 242,
+        "physical_destination_if_DST_MSB1": 498,
+        "hex": "f20081d580000102"
+      },
+      {
+        "encoded_destination": 243,
+        "physical_destination_if_DST_MSB1": 499,
+        "hex": "f30081d580000102"
+      },
+      {
+        "encoded_destination": 244,
+        "physical_destination_if_DST_MSB1": 500,
+        "hex": "f40081d580000102"
+      },
+      {
+        "encoded_destination": 245,
+        "physical_destination_if_DST_MSB1": 501,
+        "hex": "f50081d580000102"
+      },
+      {
+        "encoded_destination": 246,
+        "physical_destination_if_DST_MSB1": 502,
+        "hex": "f60081d580000102"
+      },
+      {
+        "encoded_destination": 247,
+        "physical_destination_if_DST_MSB1": 503,
+        "hex": "f70081d580000102"
+      },
+      {
+        "encoded_destination": 248,
+        "physical_destination_if_DST_MSB1": 504,
+        "hex": "f80081d580000102"
+      },
+      {
+        "encoded_destination": 249,
+        "physical_destination_if_DST_MSB1": 505,
+        "hex": "f90081d580000102"
+      },
+      {
+        "encoded_destination": 250,
+        "physical_destination_if_DST_MSB1": 506,
+        "hex": "fa0081d580000102"
+      },
+      {
+        "encoded_destination": 251,
+        "physical_destination_if_DST_MSB1": 507,
+        "hex": "fb0081d580000102"
+      },
+      {
+        "encoded_destination": 252,
+        "physical_destination_if_DST_MSB1": 508,
+        "hex": "fc0081d580000102"
+      },
+      {
+        "encoded_destination": 253,
+        "physical_destination_if_DST_MSB1": 509,
+        "hex": "fd0081d580000102"
+      }
+    ],
+    "permutation_writes": [
+      {
+        "line": 1891,
+        "address": 26976,
+        "instruction": "v_perm_b32 v222 /*v478*/, v0 /*v512*/, v254 /*v510*/, s66",
+        "words": [
+          3594780894,
+          17562880
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          478,
+          478
+        ]
+      },
+      {
+        "line": 1893,
+        "address": 26988,
+        "instruction": "v_perm_b32 v223 /*v479*/, v4 /*v516*/, v2 /*v514*/, s66",
+        "words": [
+          3594780895,
+          17433860
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          479,
+          479
+        ]
+      },
+      {
+        "line": 1894,
+        "address": 26996,
+        "instruction": "v_perm_b32 v224 /*v480*/, v8 /*v520*/, v6 /*v518*/, s66",
+        "words": [
+          3594780896,
+          17435912
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          480,
+          480
+        ]
+      },
+      {
+        "line": 1895,
+        "address": 27004,
+        "instruction": "v_perm_b32 v225 /*v481*/, v12 /*v524*/, v10 /*v522*/, s66",
+        "words": [
+          3594780897,
+          17437964
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          481,
+          481
+        ]
+      },
+      {
+        "line": 1896,
+        "address": 27012,
+        "instruction": "v_perm_b32 v226 /*v482*/, v16 /*v528*/, v14 /*v526*/, s66",
+        "words": [
+          3594780898,
+          17440016
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          482,
+          482
+        ]
+      },
+      {
+        "line": 1897,
+        "address": 27020,
+        "instruction": "v_perm_b32 v227 /*v483*/, v20 /*v532*/, v18 /*v530*/, s66",
+        "words": [
+          3594780899,
+          17442068
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          483,
+          483
+        ]
+      },
+      {
+        "line": 1898,
+        "address": 27028,
+        "instruction": "v_perm_b32 v228 /*v484*/, v24 /*v536*/, v22 /*v534*/, s66",
+        "words": [
+          3594780900,
+          17444120
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          484,
+          484
+        ]
+      },
+      {
+        "line": 1899,
+        "address": 27036,
+        "instruction": "v_perm_b32 v229 /*v485*/, v28 /*v540*/, v26 /*v538*/, s66",
+        "words": [
+          3594780901,
+          17446172
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          485,
+          485
+        ]
+      },
+      {
+        "line": 1991,
+        "address": 27676,
+        "instruction": "v_perm_b32 v230 /*v486*/, v0 /*v512*/, v254 /*v510*/, s67",
+        "words": [
+          3594780902,
+          17825024
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          486,
+          486
+        ]
+      },
+      {
+        "line": 1993,
+        "address": 27688,
+        "instruction": "v_perm_b32 v231 /*v487*/, v4 /*v516*/, v2 /*v514*/, s67",
+        "words": [
+          3594780903,
+          17696004
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          487,
+          487
+        ]
+      },
+      {
+        "line": 1994,
+        "address": 27696,
+        "instruction": "v_perm_b32 v232 /*v488*/, v8 /*v520*/, v6 /*v518*/, s67",
+        "words": [
+          3594780904,
+          17698056
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          488,
+          488
+        ]
+      },
+      {
+        "line": 1995,
+        "address": 27704,
+        "instruction": "v_perm_b32 v233 /*v489*/, v12 /*v524*/, v10 /*v522*/, s67",
+        "words": [
+          3594780905,
+          17700108
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          489,
+          489
+        ]
+      },
+      {
+        "line": 1996,
+        "address": 27712,
+        "instruction": "v_perm_b32 v234 /*v490*/, v16 /*v528*/, v14 /*v526*/, s67",
+        "words": [
+          3594780906,
+          17702160
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          490,
+          490
+        ]
+      },
+      {
+        "line": 1997,
+        "address": 27720,
+        "instruction": "v_perm_b32 v235 /*v491*/, v20 /*v532*/, v18 /*v530*/, s67",
+        "words": [
+          3594780907,
+          17704212
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          491,
+          491
+        ]
+      },
+      {
+        "line": 1998,
+        "address": 27728,
+        "instruction": "v_perm_b32 v236 /*v492*/, v24 /*v536*/, v22 /*v534*/, s67",
+        "words": [
+          3594780908,
+          17706264
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          492,
+          492
+        ]
+      },
+      {
+        "line": 1999,
+        "address": 27736,
+        "instruction": "v_perm_b32 v237 /*v493*/, v28 /*v540*/, v26 /*v538*/, s67",
+        "words": [
+          3594780909,
+          17708316
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          493,
+          493
+        ]
+      },
+      {
+        "line": 2001,
+        "address": 27748,
+        "instruction": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, v255 /*v511*/, s66",
+        "words": [
+          3594780910,
+          17563393
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          494,
+          494
+        ]
+      },
+      {
+        "line": 2003,
+        "address": 27760,
+        "instruction": "v_perm_b32 v239 /*v495*/, v5 /*v517*/, v3 /*v515*/, s66",
+        "words": [
+          3594780911,
+          17434373
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          495,
+          495
+        ]
+      },
+      {
+        "line": 2012,
+        "address": 27808,
+        "instruction": "v_perm_b32 v240 /*v496*/, v9 /*v521*/, v7 /*v519*/, s66",
+        "words": [
+          3594780912,
+          17436425
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          496,
+          496
+        ]
+      },
+      {
+        "line": 2013,
+        "address": 27816,
+        "instruction": "v_perm_b32 v241 /*v497*/, v13 /*v525*/, v11 /*v523*/, s66",
+        "words": [
+          3594780913,
+          17438477
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          497,
+          497
+        ]
+      },
+      {
+        "line": 2014,
+        "address": 27824,
+        "instruction": "v_perm_b32 v242 /*v498*/, v17 /*v529*/, v15 /*v527*/, s66",
+        "words": [
+          3594780914,
+          17440529
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          498,
+          498
+        ]
+      },
+      {
+        "line": 2015,
+        "address": 27832,
+        "instruction": "v_perm_b32 v243 /*v499*/, v21 /*v533*/, v19 /*v531*/, s66",
+        "words": [
+          3594780915,
+          17442581
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          499,
+          499
+        ]
+      },
+      {
+        "line": 2016,
+        "address": 27840,
+        "instruction": "v_perm_b32 v244 /*v500*/, v25 /*v537*/, v23 /*v535*/, s66",
+        "words": [
+          3594780916,
+          17444633
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          500,
+          500
+        ]
+      },
+      {
+        "line": 2017,
+        "address": 27848,
+        "instruction": "v_perm_b32 v245 /*v501*/, v29 /*v541*/, v27 /*v539*/, s66",
+        "words": [
+          3594780917,
+          17446685
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          501,
+          501
+        ]
+      },
+      {
+        "line": 2019,
+        "address": 27860,
+        "instruction": "v_perm_b32 v246 /*v502*/, v1 /*v513*/, v255 /*v511*/, s67",
+        "words": [
+          3594780918,
+          17825537
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          502,
+          502
+        ]
+      },
+      {
+        "line": 2021,
+        "address": 27872,
+        "instruction": "v_perm_b32 v247 /*v503*/, v5 /*v517*/, v3 /*v515*/, s67",
+        "words": [
+          3594780919,
+          17696517
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          503,
+          503
+        ]
+      },
+      {
+        "line": 2022,
+        "address": 27880,
+        "instruction": "v_perm_b32 v248 /*v504*/, v9 /*v521*/, v7 /*v519*/, s67",
+        "words": [
+          3594780920,
+          17698569
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          504,
+          504
+        ]
+      },
+      {
+        "line": 2023,
+        "address": 27888,
+        "instruction": "v_perm_b32 v249 /*v505*/, v13 /*v525*/, v11 /*v523*/, s67",
+        "words": [
+          3594780921,
+          17700621
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          505,
+          505
+        ]
+      },
+      {
+        "line": 2024,
+        "address": 27896,
+        "instruction": "v_perm_b32 v250 /*v506*/, v17 /*v529*/, v15 /*v527*/, s67",
+        "words": [
+          3594780922,
+          17702673
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          506,
+          506
+        ]
+      },
+      {
+        "line": 2025,
+        "address": 27904,
+        "instruction": "v_perm_b32 v251 /*v507*/, v21 /*v533*/, v19 /*v531*/, s67",
+        "words": [
+          3594780923,
+          17704725
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          507,
+          507
+        ]
+      },
+      {
+        "line": 2026,
+        "address": 27912,
+        "instruction": "v_perm_b32 v252 /*v508*/, v25 /*v537*/, v23 /*v535*/, s67",
+        "words": [
+          3594780924,
+          17706777
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          508,
+          508
+        ]
+      },
+      {
+        "line": 2027,
+        "address": 27920,
+        "instruction": "v_perm_b32 v253 /*v509*/, v29 /*v541*/, v27 /*v539*/, s67",
+        "words": [
+          3594780925,
+          17708829
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          509,
+          509
+        ]
+      },
+      {
+        "line": 2251,
+        "address": 29244,
+        "instruction": "v_perm_b32 v222 /*v478*/, v0 /*v512*/, v254 /*v510*/, s66",
+        "words": [
+          3594780894,
+          17562880
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          478,
+          478
+        ]
+      },
+      {
+        "line": 2253,
+        "address": 29256,
+        "instruction": "v_perm_b32 v223 /*v479*/, v4 /*v516*/, v2 /*v514*/, s66",
+        "words": [
+          3594780895,
+          17433860
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          479,
+          479
+        ]
+      },
+      {
+        "line": 2254,
+        "address": 29264,
+        "instruction": "v_perm_b32 v224 /*v480*/, v8 /*v520*/, v6 /*v518*/, s66",
+        "words": [
+          3594780896,
+          17435912
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          480,
+          480
+        ]
+      },
+      {
+        "line": 2255,
+        "address": 29272,
+        "instruction": "v_perm_b32 v225 /*v481*/, v12 /*v524*/, v10 /*v522*/, s66",
+        "words": [
+          3594780897,
+          17437964
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          481,
+          481
+        ]
+      },
+      {
+        "line": 2256,
+        "address": 29280,
+        "instruction": "v_perm_b32 v226 /*v482*/, v16 /*v528*/, v14 /*v526*/, s66",
+        "words": [
+          3594780898,
+          17440016
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          482,
+          482
+        ]
+      },
+      {
+        "line": 2257,
+        "address": 29288,
+        "instruction": "v_perm_b32 v227 /*v483*/, v20 /*v532*/, v18 /*v530*/, s66",
+        "words": [
+          3594780899,
+          17442068
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          483,
+          483
+        ]
+      },
+      {
+        "line": 2258,
+        "address": 29296,
+        "instruction": "v_perm_b32 v228 /*v484*/, v24 /*v536*/, v22 /*v534*/, s66",
+        "words": [
+          3594780900,
+          17444120
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          484,
+          484
+        ]
+      },
+      {
+        "line": 2259,
+        "address": 29304,
+        "instruction": "v_perm_b32 v229 /*v485*/, v28 /*v540*/, v26 /*v538*/, s66",
+        "words": [
+          3594780901,
+          17446172
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          485,
+          485
+        ]
+      },
+      {
+        "line": 2351,
+        "address": 29944,
+        "instruction": "v_perm_b32 v230 /*v486*/, v0 /*v512*/, v254 /*v510*/, s67",
+        "words": [
+          3594780902,
+          17825024
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          486,
+          486
+        ]
+      },
+      {
+        "line": 2353,
+        "address": 29956,
+        "instruction": "v_perm_b32 v231 /*v487*/, v4 /*v516*/, v2 /*v514*/, s67",
+        "words": [
+          3594780903,
+          17696004
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          487,
+          487
+        ]
+      },
+      {
+        "line": 2354,
+        "address": 29964,
+        "instruction": "v_perm_b32 v232 /*v488*/, v8 /*v520*/, v6 /*v518*/, s67",
+        "words": [
+          3594780904,
+          17698056
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          488,
+          488
+        ]
+      },
+      {
+        "line": 2355,
+        "address": 29972,
+        "instruction": "v_perm_b32 v233 /*v489*/, v12 /*v524*/, v10 /*v522*/, s67",
+        "words": [
+          3594780905,
+          17700108
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          489,
+          489
+        ]
+      },
+      {
+        "line": 2356,
+        "address": 29980,
+        "instruction": "v_perm_b32 v234 /*v490*/, v16 /*v528*/, v14 /*v526*/, s67",
+        "words": [
+          3594780906,
+          17702160
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          490,
+          490
+        ]
+      },
+      {
+        "line": 2357,
+        "address": 29988,
+        "instruction": "v_perm_b32 v235 /*v491*/, v20 /*v532*/, v18 /*v530*/, s67",
+        "words": [
+          3594780907,
+          17704212
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          491,
+          491
+        ]
+      },
+      {
+        "line": 2358,
+        "address": 29996,
+        "instruction": "v_perm_b32 v236 /*v492*/, v24 /*v536*/, v22 /*v534*/, s67",
+        "words": [
+          3594780908,
+          17706264
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          492,
+          492
+        ]
+      },
+      {
+        "line": 2359,
+        "address": 30004,
+        "instruction": "v_perm_b32 v237 /*v493*/, v28 /*v540*/, v26 /*v538*/, s67",
+        "words": [
+          3594780909,
+          17708316
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          493,
+          493
+        ]
+      },
+      {
+        "line": 2361,
+        "address": 30016,
+        "instruction": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, v255 /*v511*/, s66",
+        "words": [
+          3594780910,
+          17563393
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          494,
+          494
+        ]
+      },
+      {
+        "line": 2363,
+        "address": 30028,
+        "instruction": "v_perm_b32 v239 /*v495*/, v5 /*v517*/, v3 /*v515*/, s66",
+        "words": [
+          3594780911,
+          17434373
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          495,
+          495
+        ]
+      },
+      {
+        "line": 2372,
+        "address": 30076,
+        "instruction": "v_perm_b32 v240 /*v496*/, v9 /*v521*/, v7 /*v519*/, s66",
+        "words": [
+          3594780912,
+          17436425
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          496,
+          496
+        ]
+      },
+      {
+        "line": 2373,
+        "address": 30084,
+        "instruction": "v_perm_b32 v241 /*v497*/, v13 /*v525*/, v11 /*v523*/, s66",
+        "words": [
+          3594780913,
+          17438477
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          497,
+          497
+        ]
+      },
+      {
+        "line": 2374,
+        "address": 30092,
+        "instruction": "v_perm_b32 v242 /*v498*/, v17 /*v529*/, v15 /*v527*/, s66",
+        "words": [
+          3594780914,
+          17440529
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          498,
+          498
+        ]
+      },
+      {
+        "line": 2375,
+        "address": 30100,
+        "instruction": "v_perm_b32 v243 /*v499*/, v21 /*v533*/, v19 /*v531*/, s66",
+        "words": [
+          3594780915,
+          17442581
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          499,
+          499
+        ]
+      },
+      {
+        "line": 2376,
+        "address": 30108,
+        "instruction": "v_perm_b32 v244 /*v500*/, v25 /*v537*/, v23 /*v535*/, s66",
+        "words": [
+          3594780916,
+          17444633
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          500,
+          500
+        ]
+      },
+      {
+        "line": 2377,
+        "address": 30116,
+        "instruction": "v_perm_b32 v245 /*v501*/, v29 /*v541*/, v27 /*v539*/, s66",
+        "words": [
+          3594780917,
+          17446685
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          501,
+          501
+        ]
+      },
+      {
+        "line": 2379,
+        "address": 30128,
+        "instruction": "v_perm_b32 v246 /*v502*/, v1 /*v513*/, v255 /*v511*/, s67",
+        "words": [
+          3594780918,
+          17825537
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          502,
+          502
+        ]
+      },
+      {
+        "line": 2381,
+        "address": 30140,
+        "instruction": "v_perm_b32 v247 /*v503*/, v5 /*v517*/, v3 /*v515*/, s67",
+        "words": [
+          3594780919,
+          17696517
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          503,
+          503
+        ]
+      },
+      {
+        "line": 2382,
+        "address": 30148,
+        "instruction": "v_perm_b32 v248 /*v504*/, v9 /*v521*/, v7 /*v519*/, s67",
+        "words": [
+          3594780920,
+          17698569
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          504,
+          504
+        ]
+      },
+      {
+        "line": 2383,
+        "address": 30156,
+        "instruction": "v_perm_b32 v249 /*v505*/, v13 /*v525*/, v11 /*v523*/, s67",
+        "words": [
+          3594780921,
+          17700621
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          505,
+          505
+        ]
+      },
+      {
+        "line": 2384,
+        "address": 30164,
+        "instruction": "v_perm_b32 v250 /*v506*/, v17 /*v529*/, v15 /*v527*/, s67",
+        "words": [
+          3594780922,
+          17702673
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          506,
+          506
+        ]
+      },
+      {
+        "line": 2385,
+        "address": 30172,
+        "instruction": "v_perm_b32 v251 /*v507*/, v21 /*v533*/, v19 /*v531*/, s67",
+        "words": [
+          3594780923,
+          17704725
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          507,
+          507
+        ]
+      },
+      {
+        "line": 2386,
+        "address": 30180,
+        "instruction": "v_perm_b32 v252 /*v508*/, v25 /*v537*/, v23 /*v535*/, s67",
+        "words": [
+          3594780924,
+          17706777
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          508,
+          508
+        ]
+      },
+      {
+        "line": 2387,
+        "address": 30188,
+        "instruction": "v_perm_b32 v253 /*v509*/, v29 /*v541*/, v27 /*v539*/, s67",
+        "words": [
+          3594780925,
+          17708829
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          509,
+          509
+        ]
+      },
+      {
+        "line": 2625,
+        "address": 31604,
+        "instruction": "v_perm_b32 v222 /*v478*/, v32 /*v544*/, v30 /*v542*/, s66",
+        "words": [
+          3594780894,
+          17448224
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          478,
+          478
+        ]
+      },
+      {
+        "line": 2626,
+        "address": 31612,
+        "instruction": "v_perm_b32 v223 /*v479*/, v36 /*v548*/, v34 /*v546*/, s66",
+        "words": [
+          3594780895,
+          17450276
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          479,
+          479
+        ]
+      },
+      {
+        "line": 2627,
+        "address": 31620,
+        "instruction": "v_perm_b32 v224 /*v480*/, v40 /*v552*/, v38 /*v550*/, s66",
+        "words": [
+          3594780896,
+          17452328
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          480,
+          480
+        ]
+      },
+      {
+        "line": 2628,
+        "address": 31628,
+        "instruction": "v_perm_b32 v225 /*v481*/, v44 /*v556*/, v42 /*v554*/, s66",
+        "words": [
+          3594780897,
+          17454380
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          481,
+          481
+        ]
+      },
+      {
+        "line": 2629,
+        "address": 31636,
+        "instruction": "v_perm_b32 v226 /*v482*/, v48 /*v560*/, v46 /*v558*/, s66",
+        "words": [
+          3594780898,
+          17456432
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          482,
+          482
+        ]
+      },
+      {
+        "line": 2630,
+        "address": 31644,
+        "instruction": "v_perm_b32 v227 /*v483*/, v52 /*v564*/, v50 /*v562*/, s66",
+        "words": [
+          3594780899,
+          17458484
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          483,
+          483
+        ]
+      },
+      {
+        "line": 2631,
+        "address": 31652,
+        "instruction": "v_perm_b32 v228 /*v484*/, v56 /*v568*/, v54 /*v566*/, s66",
+        "words": [
+          3594780900,
+          17460536
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          484,
+          484
+        ]
+      },
+      {
+        "line": 2632,
+        "address": 31660,
+        "instruction": "v_perm_b32 v229 /*v485*/, v60 /*v572*/, v58 /*v570*/, s66",
+        "words": [
+          3594780901,
+          17462588
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          485,
+          485
+        ]
+      },
+      {
+        "line": 2741,
+        "address": 32412,
+        "instruction": "v_perm_b32 v230 /*v486*/, v32 /*v544*/, v30 /*v542*/, s67",
+        "words": [
+          3594780902,
+          17710368
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          486,
+          486
+        ]
+      },
+      {
+        "line": 2742,
+        "address": 32420,
+        "instruction": "v_perm_b32 v231 /*v487*/, v36 /*v548*/, v34 /*v546*/, s67",
+        "words": [
+          3594780903,
+          17712420
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          487,
+          487
+        ]
+      },
+      {
+        "line": 2743,
+        "address": 32428,
+        "instruction": "v_perm_b32 v232 /*v488*/, v40 /*v552*/, v38 /*v550*/, s67",
+        "words": [
+          3594780904,
+          17714472
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          488,
+          488
+        ]
+      },
+      {
+        "line": 2744,
+        "address": 32436,
+        "instruction": "v_perm_b32 v233 /*v489*/, v44 /*v556*/, v42 /*v554*/, s67",
+        "words": [
+          3594780905,
+          17716524
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          489,
+          489
+        ]
+      },
+      {
+        "line": 2745,
+        "address": 32444,
+        "instruction": "v_perm_b32 v234 /*v490*/, v48 /*v560*/, v46 /*v558*/, s67",
+        "words": [
+          3594780906,
+          17718576
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          490,
+          490
+        ]
+      },
+      {
+        "line": 2746,
+        "address": 32452,
+        "instruction": "v_perm_b32 v235 /*v491*/, v52 /*v564*/, v50 /*v562*/, s67",
+        "words": [
+          3594780907,
+          17720628
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          491,
+          491
+        ]
+      },
+      {
+        "line": 2747,
+        "address": 32460,
+        "instruction": "v_perm_b32 v236 /*v492*/, v56 /*v568*/, v54 /*v566*/, s67",
+        "words": [
+          3594780908,
+          17722680
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          492,
+          492
+        ]
+      },
+      {
+        "line": 2748,
+        "address": 32468,
+        "instruction": "v_perm_b32 v237 /*v493*/, v60 /*v572*/, v58 /*v570*/, s67",
+        "words": [
+          3594780909,
+          17724732
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          493,
+          493
+        ]
+      },
+      {
+        "line": 2749,
+        "address": 32476,
+        "instruction": "v_perm_b32 v238 /*v494*/, v33 /*v545*/, v31 /*v543*/, s66",
+        "words": [
+          3594780910,
+          17448737
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          494,
+          494
+        ]
+      },
+      {
+        "line": 2750,
+        "address": 32484,
+        "instruction": "v_perm_b32 v239 /*v495*/, v37 /*v549*/, v35 /*v547*/, s66",
+        "words": [
+          3594780911,
+          17450789
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          495,
+          495
+        ]
+      },
+      {
+        "line": 2757,
+        "address": 32520,
+        "instruction": "v_perm_b32 v240 /*v496*/, v41 /*v553*/, v39 /*v551*/, s66",
+        "words": [
+          3594780912,
+          17452841
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          496,
+          496
+        ]
+      },
+      {
+        "line": 2758,
+        "address": 32528,
+        "instruction": "v_perm_b32 v241 /*v497*/, v45 /*v557*/, v43 /*v555*/, s66",
+        "words": [
+          3594780913,
+          17454893
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          497,
+          497
+        ]
+      },
+      {
+        "line": 2759,
+        "address": 32536,
+        "instruction": "v_perm_b32 v242 /*v498*/, v49 /*v561*/, v47 /*v559*/, s66",
+        "words": [
+          3594780914,
+          17456945
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          498,
+          498
+        ]
+      },
+      {
+        "line": 2760,
+        "address": 32544,
+        "instruction": "v_perm_b32 v243 /*v499*/, v53 /*v565*/, v51 /*v563*/, s66",
+        "words": [
+          3594780915,
+          17458997
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          499,
+          499
+        ]
+      },
+      {
+        "line": 2761,
+        "address": 32552,
+        "instruction": "v_perm_b32 v244 /*v500*/, v57 /*v569*/, v55 /*v567*/, s66",
+        "words": [
+          3594780916,
+          17461049
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          500,
+          500
+        ]
+      },
+      {
+        "line": 2762,
+        "address": 32560,
+        "instruction": "v_perm_b32 v245 /*v501*/, v61 /*v573*/, v59 /*v571*/, s66",
+        "words": [
+          3594780917,
+          17463101
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          501,
+          501
+        ]
+      },
+      {
+        "line": 2763,
+        "address": 32568,
+        "instruction": "v_perm_b32 v246 /*v502*/, v33 /*v545*/, v31 /*v543*/, s67",
+        "words": [
+          3594780918,
+          17710881
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          502,
+          502
+        ]
+      },
+      {
+        "line": 2764,
+        "address": 32576,
+        "instruction": "v_perm_b32 v247 /*v503*/, v37 /*v549*/, v35 /*v547*/, s67",
+        "words": [
+          3594780919,
+          17712933
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          503,
+          503
+        ]
+      },
+      {
+        "line": 2765,
+        "address": 32584,
+        "instruction": "v_perm_b32 v248 /*v504*/, v41 /*v553*/, v39 /*v551*/, s67",
+        "words": [
+          3594780920,
+          17714985
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          504,
+          504
+        ]
+      },
+      {
+        "line": 2766,
+        "address": 32592,
+        "instruction": "v_perm_b32 v249 /*v505*/, v45 /*v557*/, v43 /*v555*/, s67",
+        "words": [
+          3594780921,
+          17717037
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          505,
+          505
+        ]
+      },
+      {
+        "line": 2767,
+        "address": 32600,
+        "instruction": "v_perm_b32 v250 /*v506*/, v49 /*v561*/, v47 /*v559*/, s67",
+        "words": [
+          3594780922,
+          17719089
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          506,
+          506
+        ]
+      },
+      {
+        "line": 2768,
+        "address": 32608,
+        "instruction": "v_perm_b32 v251 /*v507*/, v53 /*v565*/, v51 /*v563*/, s67",
+        "words": [
+          3594780923,
+          17721141
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          507,
+          507
+        ]
+      },
+      {
+        "line": 2769,
+        "address": 32616,
+        "instruction": "v_perm_b32 v252 /*v508*/, v57 /*v569*/, v55 /*v567*/, s67",
+        "words": [
+          3594780924,
+          17723193
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          508,
+          508
+        ]
+      },
+      {
+        "line": 2770,
+        "address": 32624,
+        "instruction": "v_perm_b32 v253 /*v509*/, v61 /*v573*/, v59 /*v571*/, s67",
+        "words": [
+          3594780925,
+          17725245
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          509,
+          509
+        ]
+      },
+      {
+        "line": 2912,
+        "address": 33472,
+        "instruction": "v_perm_b32 v222 /*v478*/, v0 /*v512*/, v254 /*v510*/, s66",
+        "words": [
+          3594780894,
+          17562880
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          478,
+          478
+        ]
+      },
+      {
+        "line": 2914,
+        "address": 33484,
+        "instruction": "v_perm_b32 v223 /*v479*/, v4 /*v516*/, v2 /*v514*/, s66",
+        "words": [
+          3594780895,
+          17433860
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          479,
+          479
+        ]
+      },
+      {
+        "line": 2915,
+        "address": 33492,
+        "instruction": "v_perm_b32 v224 /*v480*/, v8 /*v520*/, v6 /*v518*/, s66",
+        "words": [
+          3594780896,
+          17435912
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          480,
+          480
+        ]
+      },
+      {
+        "line": 2916,
+        "address": 33500,
+        "instruction": "v_perm_b32 v225 /*v481*/, v12 /*v524*/, v10 /*v522*/, s66",
+        "words": [
+          3594780897,
+          17437964
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          481,
+          481
+        ]
+      },
+      {
+        "line": 2917,
+        "address": 33508,
+        "instruction": "v_perm_b32 v226 /*v482*/, v16 /*v528*/, v14 /*v526*/, s66",
+        "words": [
+          3594780898,
+          17440016
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          482,
+          482
+        ]
+      },
+      {
+        "line": 2918,
+        "address": 33516,
+        "instruction": "v_perm_b32 v227 /*v483*/, v20 /*v532*/, v18 /*v530*/, s66",
+        "words": [
+          3594780899,
+          17442068
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          483,
+          483
+        ]
+      },
+      {
+        "line": 2919,
+        "address": 33524,
+        "instruction": "v_perm_b32 v228 /*v484*/, v24 /*v536*/, v22 /*v534*/, s66",
+        "words": [
+          3594780900,
+          17444120
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          484,
+          484
+        ]
+      },
+      {
+        "line": 2920,
+        "address": 33532,
+        "instruction": "v_perm_b32 v229 /*v485*/, v28 /*v540*/, v26 /*v538*/, s66",
+        "words": [
+          3594780901,
+          17446172
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          485,
+          485
+        ]
+      },
+      {
+        "line": 3000,
+        "address": 34116,
+        "instruction": "v_perm_b32 v230 /*v486*/, v0 /*v512*/, v254 /*v510*/, s67",
+        "words": [
+          3594780902,
+          17825024
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          486,
+          486
+        ]
+      },
+      {
+        "line": 3002,
+        "address": 34128,
+        "instruction": "v_perm_b32 v231 /*v487*/, v4 /*v516*/, v2 /*v514*/, s67",
+        "words": [
+          3594780903,
+          17696004
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          487,
+          487
+        ]
+      },
+      {
+        "line": 3003,
+        "address": 34136,
+        "instruction": "v_perm_b32 v232 /*v488*/, v8 /*v520*/, v6 /*v518*/, s67",
+        "words": [
+          3594780904,
+          17698056
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          488,
+          488
+        ]
+      },
+      {
+        "line": 3004,
+        "address": 34144,
+        "instruction": "v_perm_b32 v233 /*v489*/, v12 /*v524*/, v10 /*v522*/, s67",
+        "words": [
+          3594780905,
+          17700108
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          489,
+          489
+        ]
+      },
+      {
+        "line": 3005,
+        "address": 34152,
+        "instruction": "v_perm_b32 v234 /*v490*/, v16 /*v528*/, v14 /*v526*/, s67",
+        "words": [
+          3594780906,
+          17702160
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          490,
+          490
+        ]
+      },
+      {
+        "line": 3006,
+        "address": 34160,
+        "instruction": "v_perm_b32 v235 /*v491*/, v20 /*v532*/, v18 /*v530*/, s67",
+        "words": [
+          3594780907,
+          17704212
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          491,
+          491
+        ]
+      },
+      {
+        "line": 3007,
+        "address": 34168,
+        "instruction": "v_perm_b32 v236 /*v492*/, v24 /*v536*/, v22 /*v534*/, s67",
+        "words": [
+          3594780908,
+          17706264
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          492,
+          492
+        ]
+      },
+      {
+        "line": 3008,
+        "address": 34176,
+        "instruction": "v_perm_b32 v237 /*v493*/, v28 /*v540*/, v26 /*v538*/, s67",
+        "words": [
+          3594780909,
+          17708316
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          493,
+          493
+        ]
+      },
+      {
+        "line": 3010,
+        "address": 34188,
+        "instruction": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, v255 /*v511*/, s66",
+        "words": [
+          3594780910,
+          17563393
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          494,
+          494
+        ]
+      },
+      {
+        "line": 3012,
+        "address": 34200,
+        "instruction": "v_perm_b32 v239 /*v495*/, v5 /*v517*/, v3 /*v515*/, s66",
+        "words": [
+          3594780911,
+          17434373
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          495,
+          495
+        ]
+      },
+      {
+        "line": 3018,
+        "address": 34236,
+        "instruction": "v_perm_b32 v240 /*v496*/, v9 /*v521*/, v7 /*v519*/, s66",
+        "words": [
+          3594780912,
+          17436425
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          496,
+          496
+        ]
+      },
+      {
+        "line": 3019,
+        "address": 34244,
+        "instruction": "v_perm_b32 v241 /*v497*/, v13 /*v525*/, v11 /*v523*/, s66",
+        "words": [
+          3594780913,
+          17438477
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          497,
+          497
+        ]
+      },
+      {
+        "line": 3020,
+        "address": 34252,
+        "instruction": "v_perm_b32 v242 /*v498*/, v17 /*v529*/, v15 /*v527*/, s66",
+        "words": [
+          3594780914,
+          17440529
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          498,
+          498
+        ]
+      },
+      {
+        "line": 3021,
+        "address": 34260,
+        "instruction": "v_perm_b32 v243 /*v499*/, v21 /*v533*/, v19 /*v531*/, s66",
+        "words": [
+          3594780915,
+          17442581
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          499,
+          499
+        ]
+      },
+      {
+        "line": 3022,
+        "address": 34268,
+        "instruction": "v_perm_b32 v244 /*v500*/, v25 /*v537*/, v23 /*v535*/, s66",
+        "words": [
+          3594780916,
+          17444633
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          500,
+          500
+        ]
+      },
+      {
+        "line": 3023,
+        "address": 34276,
+        "instruction": "v_perm_b32 v245 /*v501*/, v29 /*v541*/, v27 /*v539*/, s66",
+        "words": [
+          3594780917,
+          17446685
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          501,
+          501
+        ]
+      },
+      {
+        "line": 3025,
+        "address": 34288,
+        "instruction": "v_perm_b32 v246 /*v502*/, v1 /*v513*/, v255 /*v511*/, s67",
+        "words": [
+          3594780918,
+          17825537
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          502,
+          502
+        ]
+      },
+      {
+        "line": 3027,
+        "address": 34300,
+        "instruction": "v_perm_b32 v247 /*v503*/, v5 /*v517*/, v3 /*v515*/, s67",
+        "words": [
+          3594780919,
+          17696517
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          503,
+          503
+        ]
+      },
+      {
+        "line": 3028,
+        "address": 34308,
+        "instruction": "v_perm_b32 v248 /*v504*/, v9 /*v521*/, v7 /*v519*/, s67",
+        "words": [
+          3594780920,
+          17698569
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          504,
+          504
+        ]
+      },
+      {
+        "line": 3029,
+        "address": 34316,
+        "instruction": "v_perm_b32 v249 /*v505*/, v13 /*v525*/, v11 /*v523*/, s67",
+        "words": [
+          3594780921,
+          17700621
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          505,
+          505
+        ]
+      },
+      {
+        "line": 3030,
+        "address": 34324,
+        "instruction": "v_perm_b32 v250 /*v506*/, v17 /*v529*/, v15 /*v527*/, s67",
+        "words": [
+          3594780922,
+          17702673
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          506,
+          506
+        ]
+      },
+      {
+        "line": 3031,
+        "address": 34332,
+        "instruction": "v_perm_b32 v251 /*v507*/, v21 /*v533*/, v19 /*v531*/, s67",
+        "words": [
+          3594780923,
+          17704725
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          507,
+          507
+        ]
+      },
+      {
+        "line": 3032,
+        "address": 34340,
+        "instruction": "v_perm_b32 v252 /*v508*/, v25 /*v537*/, v23 /*v535*/, s67",
+        "words": [
+          3594780924,
+          17706777
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          508,
+          508
+        ]
+      },
+      {
+        "line": 3033,
+        "address": 34348,
+        "instruction": "v_perm_b32 v253 /*v509*/, v29 /*v541*/, v27 /*v539*/, s67",
+        "words": [
+          3594780925,
+          17708829
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          509,
+          509
+        ]
+      },
+      {
+        "line": 3185,
+        "address": 35276,
+        "instruction": "v_perm_b32 v222 /*v478*/, v32 /*v544*/, v30 /*v542*/, s66",
+        "words": [
+          3594780894,
+          17448224
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          478,
+          478
+        ]
+      },
+      {
+        "line": 3186,
+        "address": 35284,
+        "instruction": "v_perm_b32 v223 /*v479*/, v36 /*v548*/, v34 /*v546*/, s66",
+        "words": [
+          3594780895,
+          17450276
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          479,
+          479
+        ]
+      },
+      {
+        "line": 3187,
+        "address": 35292,
+        "instruction": "v_perm_b32 v224 /*v480*/, v40 /*v552*/, v38 /*v550*/, s66",
+        "words": [
+          3594780896,
+          17452328
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          480,
+          480
+        ]
+      },
+      {
+        "line": 3188,
+        "address": 35300,
+        "instruction": "v_perm_b32 v225 /*v481*/, v44 /*v556*/, v42 /*v554*/, s66",
+        "words": [
+          3594780897,
+          17454380
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          481,
+          481
+        ]
+      },
+      {
+        "line": 3189,
+        "address": 35308,
+        "instruction": "v_perm_b32 v226 /*v482*/, v48 /*v560*/, v46 /*v558*/, s66",
+        "words": [
+          3594780898,
+          17456432
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          482,
+          482
+        ]
+      },
+      {
+        "line": 3190,
+        "address": 35316,
+        "instruction": "v_perm_b32 v227 /*v483*/, v52 /*v564*/, v50 /*v562*/, s66",
+        "words": [
+          3594780899,
+          17458484
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          483,
+          483
+        ]
+      },
+      {
+        "line": 3191,
+        "address": 35324,
+        "instruction": "v_perm_b32 v228 /*v484*/, v56 /*v568*/, v54 /*v566*/, s66",
+        "words": [
+          3594780900,
+          17460536
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          484,
+          484
+        ]
+      },
+      {
+        "line": 3192,
+        "address": 35332,
+        "instruction": "v_perm_b32 v229 /*v485*/, v60 /*v572*/, v58 /*v570*/, s66",
+        "words": [
+          3594780901,
+          17462588
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          485,
+          485
+        ]
+      },
+      {
+        "line": 3277,
+        "address": 35940,
+        "instruction": "v_perm_b32 v230 /*v486*/, v32 /*v544*/, v30 /*v542*/, s67",
+        "words": [
+          3594780902,
+          17710368
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          486,
+          486
+        ]
+      },
+      {
+        "line": 3278,
+        "address": 35948,
+        "instruction": "v_perm_b32 v231 /*v487*/, v36 /*v548*/, v34 /*v546*/, s67",
+        "words": [
+          3594780903,
+          17712420
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          487,
+          487
+        ]
+      },
+      {
+        "line": 3279,
+        "address": 35956,
+        "instruction": "v_perm_b32 v232 /*v488*/, v40 /*v552*/, v38 /*v550*/, s67",
+        "words": [
+          3594780904,
+          17714472
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          488,
+          488
+        ]
+      },
+      {
+        "line": 3280,
+        "address": 35964,
+        "instruction": "v_perm_b32 v233 /*v489*/, v44 /*v556*/, v42 /*v554*/, s67",
+        "words": [
+          3594780905,
+          17716524
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          489,
+          489
+        ]
+      },
+      {
+        "line": 3281,
+        "address": 35972,
+        "instruction": "v_perm_b32 v234 /*v490*/, v48 /*v560*/, v46 /*v558*/, s67",
+        "words": [
+          3594780906,
+          17718576
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          490,
+          490
+        ]
+      },
+      {
+        "line": 3282,
+        "address": 35980,
+        "instruction": "v_perm_b32 v235 /*v491*/, v52 /*v564*/, v50 /*v562*/, s67",
+        "words": [
+          3594780907,
+          17720628
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          491,
+          491
+        ]
+      },
+      {
+        "line": 3283,
+        "address": 35988,
+        "instruction": "v_perm_b32 v236 /*v492*/, v56 /*v568*/, v54 /*v566*/, s67",
+        "words": [
+          3594780908,
+          17722680
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          492,
+          492
+        ]
+      },
+      {
+        "line": 3284,
+        "address": 35996,
+        "instruction": "v_perm_b32 v237 /*v493*/, v60 /*v572*/, v58 /*v570*/, s67",
+        "words": [
+          3594780909,
+          17724732
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          493,
+          493
+        ]
+      },
+      {
+        "line": 3285,
+        "address": 36004,
+        "instruction": "v_perm_b32 v238 /*v494*/, v33 /*v545*/, v31 /*v543*/, s66",
+        "words": [
+          3594780910,
+          17448737
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          494,
+          494
+        ]
+      },
+      {
+        "line": 3286,
+        "address": 36012,
+        "instruction": "v_perm_b32 v239 /*v495*/, v37 /*v549*/, v35 /*v547*/, s66",
+        "words": [
+          3594780911,
+          17450789
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          495,
+          495
+        ]
+      },
+      {
+        "line": 3293,
+        "address": 36048,
+        "instruction": "v_perm_b32 v240 /*v496*/, v41 /*v553*/, v39 /*v551*/, s66",
+        "words": [
+          3594780912,
+          17452841
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          496,
+          496
+        ]
+      },
+      {
+        "line": 3294,
+        "address": 36056,
+        "instruction": "v_perm_b32 v241 /*v497*/, v45 /*v557*/, v43 /*v555*/, s66",
+        "words": [
+          3594780913,
+          17454893
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          497,
+          497
+        ]
+      },
+      {
+        "line": 3295,
+        "address": 36064,
+        "instruction": "v_perm_b32 v242 /*v498*/, v49 /*v561*/, v47 /*v559*/, s66",
+        "words": [
+          3594780914,
+          17456945
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          498,
+          498
+        ]
+      },
+      {
+        "line": 3296,
+        "address": 36072,
+        "instruction": "v_perm_b32 v243 /*v499*/, v53 /*v565*/, v51 /*v563*/, s66",
+        "words": [
+          3594780915,
+          17458997
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          499,
+          499
+        ]
+      },
+      {
+        "line": 3297,
+        "address": 36080,
+        "instruction": "v_perm_b32 v244 /*v500*/, v57 /*v569*/, v55 /*v567*/, s66",
+        "words": [
+          3594780916,
+          17461049
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          500,
+          500
+        ]
+      },
+      {
+        "line": 3298,
+        "address": 36088,
+        "instruction": "v_perm_b32 v245 /*v501*/, v61 /*v573*/, v59 /*v571*/, s66",
+        "words": [
+          3594780917,
+          17463101
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          501,
+          501
+        ]
+      },
+      {
+        "line": 3299,
+        "address": 36096,
+        "instruction": "v_perm_b32 v246 /*v502*/, v33 /*v545*/, v31 /*v543*/, s67",
+        "words": [
+          3594780918,
+          17710881
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          502,
+          502
+        ]
+      },
+      {
+        "line": 3300,
+        "address": 36104,
+        "instruction": "v_perm_b32 v247 /*v503*/, v37 /*v549*/, v35 /*v547*/, s67",
+        "words": [
+          3594780919,
+          17712933
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          503,
+          503
+        ]
+      },
+      {
+        "line": 3301,
+        "address": 36112,
+        "instruction": "v_perm_b32 v248 /*v504*/, v41 /*v553*/, v39 /*v551*/, s67",
+        "words": [
+          3594780920,
+          17714985
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          504,
+          504
+        ]
+      },
+      {
+        "line": 3302,
+        "address": 36120,
+        "instruction": "v_perm_b32 v249 /*v505*/, v45 /*v557*/, v43 /*v555*/, s67",
+        "words": [
+          3594780921,
+          17717037
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          505,
+          505
+        ]
+      },
+      {
+        "line": 3303,
+        "address": 36128,
+        "instruction": "v_perm_b32 v250 /*v506*/, v49 /*v561*/, v47 /*v559*/, s67",
+        "words": [
+          3594780922,
+          17719089
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          506,
+          506
+        ]
+      },
+      {
+        "line": 3304,
+        "address": 36136,
+        "instruction": "v_perm_b32 v251 /*v507*/, v53 /*v565*/, v51 /*v563*/, s67",
+        "words": [
+          3594780923,
+          17721141
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          507,
+          507
+        ]
+      },
+      {
+        "line": 3305,
+        "address": 36144,
+        "instruction": "v_perm_b32 v252 /*v508*/, v57 /*v569*/, v55 /*v567*/, s67",
+        "words": [
+          3594780924,
+          17723193
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          508,
+          508
+        ]
+      },
+      {
+        "line": 3306,
+        "address": 36152,
+        "instruction": "v_perm_b32 v253 /*v509*/, v61 /*v573*/, v59 /*v571*/, s67",
+        "words": [
+          3594780925,
+          17725245
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          509,
+          509
+        ]
+      },
+      {
+        "line": 3477,
+        "address": 37092,
+        "instruction": "v_perm_b32 v222 /*v478*/, v0 /*v512*/, v254 /*v510*/, s66",
+        "words": [
+          3594780894,
+          17562880
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          478,
+          478
+        ]
+      },
+      {
+        "line": 3479,
+        "address": 37104,
+        "instruction": "v_perm_b32 v223 /*v479*/, v4 /*v516*/, v2 /*v514*/, s66",
+        "words": [
+          3594780895,
+          17433860
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          479,
+          479
+        ]
+      },
+      {
+        "line": 3480,
+        "address": 37112,
+        "instruction": "v_perm_b32 v224 /*v480*/, v8 /*v520*/, v6 /*v518*/, s66",
+        "words": [
+          3594780896,
+          17435912
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          480,
+          480
+        ]
+      },
+      {
+        "line": 3481,
+        "address": 37120,
+        "instruction": "v_perm_b32 v225 /*v481*/, v12 /*v524*/, v10 /*v522*/, s66",
+        "words": [
+          3594780897,
+          17437964
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          481,
+          481
+        ]
+      },
+      {
+        "line": 3482,
+        "address": 37128,
+        "instruction": "v_perm_b32 v226 /*v482*/, v16 /*v528*/, v14 /*v526*/, s66",
+        "words": [
+          3594780898,
+          17440016
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          482,
+          482
+        ]
+      },
+      {
+        "line": 3483,
+        "address": 37136,
+        "instruction": "v_perm_b32 v227 /*v483*/, v20 /*v532*/, v18 /*v530*/, s66",
+        "words": [
+          3594780899,
+          17442068
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          483,
+          483
+        ]
+      },
+      {
+        "line": 3484,
+        "address": 37144,
+        "instruction": "v_perm_b32 v228 /*v484*/, v24 /*v536*/, v22 /*v534*/, s66",
+        "words": [
+          3594780900,
+          17444120
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          484,
+          484
+        ]
+      },
+      {
+        "line": 3485,
+        "address": 37152,
+        "instruction": "v_perm_b32 v229 /*v485*/, v28 /*v540*/, v26 /*v538*/, s66",
+        "words": [
+          3594780901,
+          17446172
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          485,
+          485
+        ]
+      },
+      {
+        "line": 3565,
+        "address": 37736,
+        "instruction": "v_perm_b32 v230 /*v486*/, v0 /*v512*/, v254 /*v510*/, s67",
+        "words": [
+          3594780902,
+          17825024
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          486,
+          486
+        ]
+      },
+      {
+        "line": 3567,
+        "address": 37748,
+        "instruction": "v_perm_b32 v231 /*v487*/, v4 /*v516*/, v2 /*v514*/, s67",
+        "words": [
+          3594780903,
+          17696004
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          487,
+          487
+        ]
+      },
+      {
+        "line": 3568,
+        "address": 37756,
+        "instruction": "v_perm_b32 v232 /*v488*/, v8 /*v520*/, v6 /*v518*/, s67",
+        "words": [
+          3594780904,
+          17698056
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          488,
+          488
+        ]
+      },
+      {
+        "line": 3569,
+        "address": 37764,
+        "instruction": "v_perm_b32 v233 /*v489*/, v12 /*v524*/, v10 /*v522*/, s67",
+        "words": [
+          3594780905,
+          17700108
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          489,
+          489
+        ]
+      },
+      {
+        "line": 3570,
+        "address": 37772,
+        "instruction": "v_perm_b32 v234 /*v490*/, v16 /*v528*/, v14 /*v526*/, s67",
+        "words": [
+          3594780906,
+          17702160
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          490,
+          490
+        ]
+      },
+      {
+        "line": 3571,
+        "address": 37780,
+        "instruction": "v_perm_b32 v235 /*v491*/, v20 /*v532*/, v18 /*v530*/, s67",
+        "words": [
+          3594780907,
+          17704212
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          491,
+          491
+        ]
+      },
+      {
+        "line": 3572,
+        "address": 37788,
+        "instruction": "v_perm_b32 v236 /*v492*/, v24 /*v536*/, v22 /*v534*/, s67",
+        "words": [
+          3594780908,
+          17706264
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          492,
+          492
+        ]
+      },
+      {
+        "line": 3573,
+        "address": 37796,
+        "instruction": "v_perm_b32 v237 /*v493*/, v28 /*v540*/, v26 /*v538*/, s67",
+        "words": [
+          3594780909,
+          17708316
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          493,
+          493
+        ]
+      },
+      {
+        "line": 3575,
+        "address": 37808,
+        "instruction": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, v255 /*v511*/, s66",
+        "words": [
+          3594780910,
+          17563393
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          494,
+          494
+        ]
+      },
+      {
+        "line": 3577,
+        "address": 37820,
+        "instruction": "v_perm_b32 v239 /*v495*/, v5 /*v517*/, v3 /*v515*/, s66",
+        "words": [
+          3594780911,
+          17434373
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          495,
+          495
+        ]
+      },
+      {
+        "line": 3583,
+        "address": 37856,
+        "instruction": "v_perm_b32 v240 /*v496*/, v9 /*v521*/, v7 /*v519*/, s66",
+        "words": [
+          3594780912,
+          17436425
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          496,
+          496
+        ]
+      },
+      {
+        "line": 3584,
+        "address": 37864,
+        "instruction": "v_perm_b32 v241 /*v497*/, v13 /*v525*/, v11 /*v523*/, s66",
+        "words": [
+          3594780913,
+          17438477
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          497,
+          497
+        ]
+      },
+      {
+        "line": 3585,
+        "address": 37872,
+        "instruction": "v_perm_b32 v242 /*v498*/, v17 /*v529*/, v15 /*v527*/, s66",
+        "words": [
+          3594780914,
+          17440529
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          498,
+          498
+        ]
+      },
+      {
+        "line": 3586,
+        "address": 37880,
+        "instruction": "v_perm_b32 v243 /*v499*/, v21 /*v533*/, v19 /*v531*/, s66",
+        "words": [
+          3594780915,
+          17442581
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          499,
+          499
+        ]
+      },
+      {
+        "line": 3587,
+        "address": 37888,
+        "instruction": "v_perm_b32 v244 /*v500*/, v25 /*v537*/, v23 /*v535*/, s66",
+        "words": [
+          3594780916,
+          17444633
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          500,
+          500
+        ]
+      },
+      {
+        "line": 3588,
+        "address": 37896,
+        "instruction": "v_perm_b32 v245 /*v501*/, v29 /*v541*/, v27 /*v539*/, s66",
+        "words": [
+          3594780917,
+          17446685
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          501,
+          501
+        ]
+      },
+      {
+        "line": 3590,
+        "address": 37908,
+        "instruction": "v_perm_b32 v246 /*v502*/, v1 /*v513*/, v255 /*v511*/, s67",
+        "words": [
+          3594780918,
+          17825537
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          502,
+          502
+        ]
+      },
+      {
+        "line": 3592,
+        "address": 37920,
+        "instruction": "v_perm_b32 v247 /*v503*/, v5 /*v517*/, v3 /*v515*/, s67",
+        "words": [
+          3594780919,
+          17696517
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          503,
+          503
+        ]
+      },
+      {
+        "line": 3593,
+        "address": 37928,
+        "instruction": "v_perm_b32 v248 /*v504*/, v9 /*v521*/, v7 /*v519*/, s67",
+        "words": [
+          3594780920,
+          17698569
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          504,
+          504
+        ]
+      },
+      {
+        "line": 3594,
+        "address": 37936,
+        "instruction": "v_perm_b32 v249 /*v505*/, v13 /*v525*/, v11 /*v523*/, s67",
+        "words": [
+          3594780921,
+          17700621
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          505,
+          505
+        ]
+      },
+      {
+        "line": 3595,
+        "address": 37944,
+        "instruction": "v_perm_b32 v250 /*v506*/, v17 /*v529*/, v15 /*v527*/, s67",
+        "words": [
+          3594780922,
+          17702673
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          506,
+          506
+        ]
+      },
+      {
+        "line": 3596,
+        "address": 37952,
+        "instruction": "v_perm_b32 v251 /*v507*/, v21 /*v533*/, v19 /*v531*/, s67",
+        "words": [
+          3594780923,
+          17704725
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          507,
+          507
+        ]
+      },
+      {
+        "line": 3597,
+        "address": 37960,
+        "instruction": "v_perm_b32 v252 /*v508*/, v25 /*v537*/, v23 /*v535*/, s67",
+        "words": [
+          3594780924,
+          17706777
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          508,
+          508
+        ]
+      },
+      {
+        "line": 3598,
+        "address": 37968,
+        "instruction": "v_perm_b32 v253 /*v509*/, v29 /*v541*/, v27 /*v539*/, s67",
+        "words": [
+          3594780925,
+          17708829
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          509,
+          509
+        ]
+      },
+      {
+        "line": 3700,
+        "address": 38624,
+        "instruction": "v_perm_b32 v222 /*v478*/, v32 /*v544*/, v30 /*v542*/, s66",
+        "words": [
+          3594780894,
+          17448224
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          478,
+          478
+        ]
+      },
+      {
+        "line": 3701,
+        "address": 38632,
+        "instruction": "v_perm_b32 v223 /*v479*/, v36 /*v548*/, v34 /*v546*/, s66",
+        "words": [
+          3594780895,
+          17450276
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          479,
+          479
+        ]
+      },
+      {
+        "line": 3702,
+        "address": 38640,
+        "instruction": "v_perm_b32 v224 /*v480*/, v40 /*v552*/, v38 /*v550*/, s66",
+        "words": [
+          3594780896,
+          17452328
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          480,
+          480
+        ]
+      },
+      {
+        "line": 3703,
+        "address": 38648,
+        "instruction": "v_perm_b32 v225 /*v481*/, v44 /*v556*/, v42 /*v554*/, s66",
+        "words": [
+          3594780897,
+          17454380
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          481,
+          481
+        ]
+      },
+      {
+        "line": 3704,
+        "address": 38656,
+        "instruction": "v_perm_b32 v226 /*v482*/, v48 /*v560*/, v46 /*v558*/, s66",
+        "words": [
+          3594780898,
+          17456432
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          482,
+          482
+        ]
+      },
+      {
+        "line": 3705,
+        "address": 38664,
+        "instruction": "v_perm_b32 v227 /*v483*/, v52 /*v564*/, v50 /*v562*/, s66",
+        "words": [
+          3594780899,
+          17458484
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          483,
+          483
+        ]
+      },
+      {
+        "line": 3706,
+        "address": 38672,
+        "instruction": "v_perm_b32 v228 /*v484*/, v56 /*v568*/, v54 /*v566*/, s66",
+        "words": [
+          3594780900,
+          17460536
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          484,
+          484
+        ]
+      },
+      {
+        "line": 3707,
+        "address": 38680,
+        "instruction": "v_perm_b32 v229 /*v485*/, v60 /*v572*/, v58 /*v570*/, s66",
+        "words": [
+          3594780901,
+          17462588
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          485,
+          485
+        ]
+      },
+      {
+        "line": 3781,
+        "address": 39220,
+        "instruction": "v_perm_b32 v230 /*v486*/, v32 /*v544*/, v30 /*v542*/, s67",
+        "words": [
+          3594780902,
+          17710368
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          486,
+          486
+        ]
+      },
+      {
+        "line": 3782,
+        "address": 39228,
+        "instruction": "v_perm_b32 v231 /*v487*/, v36 /*v548*/, v34 /*v546*/, s67",
+        "words": [
+          3594780903,
+          17712420
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          487,
+          487
+        ]
+      },
+      {
+        "line": 3783,
+        "address": 39236,
+        "instruction": "v_perm_b32 v232 /*v488*/, v40 /*v552*/, v38 /*v550*/, s67",
+        "words": [
+          3594780904,
+          17714472
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          488,
+          488
+        ]
+      },
+      {
+        "line": 3784,
+        "address": 39244,
+        "instruction": "v_perm_b32 v233 /*v489*/, v44 /*v556*/, v42 /*v554*/, s67",
+        "words": [
+          3594780905,
+          17716524
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          489,
+          489
+        ]
+      },
+      {
+        "line": 3785,
+        "address": 39252,
+        "instruction": "v_perm_b32 v234 /*v490*/, v48 /*v560*/, v46 /*v558*/, s67",
+        "words": [
+          3594780906,
+          17718576
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          490,
+          490
+        ]
+      },
+      {
+        "line": 3786,
+        "address": 39260,
+        "instruction": "v_perm_b32 v235 /*v491*/, v52 /*v564*/, v50 /*v562*/, s67",
+        "words": [
+          3594780907,
+          17720628
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          491,
+          491
+        ]
+      },
+      {
+        "line": 3787,
+        "address": 39268,
+        "instruction": "v_perm_b32 v236 /*v492*/, v56 /*v568*/, v54 /*v566*/, s67",
+        "words": [
+          3594780908,
+          17722680
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          492,
+          492
+        ]
+      },
+      {
+        "line": 3788,
+        "address": 39276,
+        "instruction": "v_perm_b32 v237 /*v493*/, v60 /*v572*/, v58 /*v570*/, s67",
+        "words": [
+          3594780909,
+          17724732
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          493,
+          493
+        ]
+      },
+      {
+        "line": 3789,
+        "address": 39284,
+        "instruction": "v_perm_b32 v238 /*v494*/, v33 /*v545*/, v31 /*v543*/, s66",
+        "words": [
+          3594780910,
+          17448737
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          494,
+          494
+        ]
+      },
+      {
+        "line": 3790,
+        "address": 39292,
+        "instruction": "v_perm_b32 v239 /*v495*/, v37 /*v549*/, v35 /*v547*/, s66",
+        "words": [
+          3594780911,
+          17450789
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          495,
+          495
+        ]
+      },
+      {
+        "line": 3794,
+        "address": 39316,
+        "instruction": "v_perm_b32 v240 /*v496*/, v41 /*v553*/, v39 /*v551*/, s66",
+        "words": [
+          3594780912,
+          17452841
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          496,
+          496
+        ]
+      },
+      {
+        "line": 3795,
+        "address": 39324,
+        "instruction": "v_perm_b32 v241 /*v497*/, v45 /*v557*/, v43 /*v555*/, s66",
+        "words": [
+          3594780913,
+          17454893
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          497,
+          497
+        ]
+      },
+      {
+        "line": 3796,
+        "address": 39332,
+        "instruction": "v_perm_b32 v242 /*v498*/, v49 /*v561*/, v47 /*v559*/, s66",
+        "words": [
+          3594780914,
+          17456945
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          498,
+          498
+        ]
+      },
+      {
+        "line": 3797,
+        "address": 39340,
+        "instruction": "v_perm_b32 v243 /*v499*/, v53 /*v565*/, v51 /*v563*/, s66",
+        "words": [
+          3594780915,
+          17458997
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          499,
+          499
+        ]
+      },
+      {
+        "line": 3798,
+        "address": 39348,
+        "instruction": "v_perm_b32 v244 /*v500*/, v57 /*v569*/, v55 /*v567*/, s66",
+        "words": [
+          3594780916,
+          17461049
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          500,
+          500
+        ]
+      },
+      {
+        "line": 3799,
+        "address": 39356,
+        "instruction": "v_perm_b32 v245 /*v501*/, v61 /*v573*/, v59 /*v571*/, s66",
+        "words": [
+          3594780917,
+          17463101
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          501,
+          501
+        ]
+      },
+      {
+        "line": 3800,
+        "address": 39364,
+        "instruction": "v_perm_b32 v246 /*v502*/, v33 /*v545*/, v31 /*v543*/, s67",
+        "words": [
+          3594780918,
+          17710881
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          502,
+          502
+        ]
+      },
+      {
+        "line": 3801,
+        "address": 39372,
+        "instruction": "v_perm_b32 v247 /*v503*/, v37 /*v549*/, v35 /*v547*/, s67",
+        "words": [
+          3594780919,
+          17712933
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          503,
+          503
+        ]
+      },
+      {
+        "line": 3802,
+        "address": 39380,
+        "instruction": "v_perm_b32 v248 /*v504*/, v41 /*v553*/, v39 /*v551*/, s67",
+        "words": [
+          3594780920,
+          17714985
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          504,
+          504
+        ]
+      },
+      {
+        "line": 3803,
+        "address": 39388,
+        "instruction": "v_perm_b32 v249 /*v505*/, v45 /*v557*/, v43 /*v555*/, s67",
+        "words": [
+          3594780921,
+          17717037
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          505,
+          505
+        ]
+      },
+      {
+        "line": 3804,
+        "address": 39396,
+        "instruction": "v_perm_b32 v250 /*v506*/, v49 /*v561*/, v47 /*v559*/, s67",
+        "words": [
+          3594780922,
+          17719089
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          506,
+          506
+        ]
+      },
+      {
+        "line": 3805,
+        "address": 39404,
+        "instruction": "v_perm_b32 v251 /*v507*/, v53 /*v565*/, v51 /*v563*/, s67",
+        "words": [
+          3594780923,
+          17721141
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          507,
+          507
+        ]
+      },
+      {
+        "line": 3806,
+        "address": 39412,
+        "instruction": "v_perm_b32 v252 /*v508*/, v57 /*v569*/, v55 /*v567*/, s67",
+        "words": [
+          3594780924,
+          17723193
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          508,
+          508
+        ]
+      },
+      {
+        "line": 3807,
+        "address": 39420,
+        "instruction": "v_perm_b32 v253 /*v509*/, v61 /*v573*/, v59 /*v571*/, s67",
+        "words": [
+          3594780925,
+          17725245
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          509,
+          509
+        ]
+      },
+      {
+        "line": 5246,
+        "address": 47536,
+        "instruction": "v_perm_b32 v222 /*v478*/, v0 /*v512*/, v254 /*v510*/, s66",
+        "words": [
+          3594780894,
+          17562880
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          478,
+          478
+        ]
+      },
+      {
+        "line": 5248,
+        "address": 47548,
+        "instruction": "v_perm_b32 v223 /*v479*/, v4 /*v516*/, v2 /*v514*/, s66",
+        "words": [
+          3594780895,
+          17433860
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          479,
+          479
+        ]
+      },
+      {
+        "line": 5249,
+        "address": 47556,
+        "instruction": "v_perm_b32 v224 /*v480*/, v8 /*v520*/, v6 /*v518*/, s66",
+        "words": [
+          3594780896,
+          17435912
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          480,
+          480
+        ]
+      },
+      {
+        "line": 5250,
+        "address": 47564,
+        "instruction": "v_perm_b32 v225 /*v481*/, v12 /*v524*/, v10 /*v522*/, s66",
+        "words": [
+          3594780897,
+          17437964
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          481,
+          481
+        ]
+      },
+      {
+        "line": 5251,
+        "address": 47572,
+        "instruction": "v_perm_b32 v226 /*v482*/, v16 /*v528*/, v14 /*v526*/, s66",
+        "words": [
+          3594780898,
+          17440016
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          482,
+          482
+        ]
+      },
+      {
+        "line": 5252,
+        "address": 47580,
+        "instruction": "v_perm_b32 v227 /*v483*/, v20 /*v532*/, v18 /*v530*/, s66",
+        "words": [
+          3594780899,
+          17442068
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          483,
+          483
+        ]
+      },
+      {
+        "line": 5253,
+        "address": 47588,
+        "instruction": "v_perm_b32 v228 /*v484*/, v24 /*v536*/, v22 /*v534*/, s66",
+        "words": [
+          3594780900,
+          17444120
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          484,
+          484
+        ]
+      },
+      {
+        "line": 5254,
+        "address": 47596,
+        "instruction": "v_perm_b32 v229 /*v485*/, v28 /*v540*/, v26 /*v538*/, s66",
+        "words": [
+          3594780901,
+          17446172
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          485,
+          485
+        ]
+      },
+      {
+        "line": 5334,
+        "address": 48180,
+        "instruction": "v_perm_b32 v230 /*v486*/, v0 /*v512*/, v254 /*v510*/, s67",
+        "words": [
+          3594780902,
+          17825024
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          486,
+          486
+        ]
+      },
+      {
+        "line": 5336,
+        "address": 48192,
+        "instruction": "v_perm_b32 v231 /*v487*/, v4 /*v516*/, v2 /*v514*/, s67",
+        "words": [
+          3594780903,
+          17696004
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          487,
+          487
+        ]
+      },
+      {
+        "line": 5337,
+        "address": 48200,
+        "instruction": "v_perm_b32 v232 /*v488*/, v8 /*v520*/, v6 /*v518*/, s67",
+        "words": [
+          3594780904,
+          17698056
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          488,
+          488
+        ]
+      },
+      {
+        "line": 5338,
+        "address": 48208,
+        "instruction": "v_perm_b32 v233 /*v489*/, v12 /*v524*/, v10 /*v522*/, s67",
+        "words": [
+          3594780905,
+          17700108
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          489,
+          489
+        ]
+      },
+      {
+        "line": 5339,
+        "address": 48216,
+        "instruction": "v_perm_b32 v234 /*v490*/, v16 /*v528*/, v14 /*v526*/, s67",
+        "words": [
+          3594780906,
+          17702160
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          490,
+          490
+        ]
+      },
+      {
+        "line": 5340,
+        "address": 48224,
+        "instruction": "v_perm_b32 v235 /*v491*/, v20 /*v532*/, v18 /*v530*/, s67",
+        "words": [
+          3594780907,
+          17704212
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          491,
+          491
+        ]
+      },
+      {
+        "line": 5341,
+        "address": 48232,
+        "instruction": "v_perm_b32 v236 /*v492*/, v24 /*v536*/, v22 /*v534*/, s67",
+        "words": [
+          3594780908,
+          17706264
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          492,
+          492
+        ]
+      },
+      {
+        "line": 5342,
+        "address": 48240,
+        "instruction": "v_perm_b32 v237 /*v493*/, v28 /*v540*/, v26 /*v538*/, s67",
+        "words": [
+          3594780909,
+          17708316
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          493,
+          493
+        ]
+      },
+      {
+        "line": 5344,
+        "address": 48252,
+        "instruction": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, v255 /*v511*/, s66",
+        "words": [
+          3594780910,
+          17563393
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          494,
+          494
+        ]
+      },
+      {
+        "line": 5346,
+        "address": 48264,
+        "instruction": "v_perm_b32 v239 /*v495*/, v5 /*v517*/, v3 /*v515*/, s66",
+        "words": [
+          3594780911,
+          17434373
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          495,
+          495
+        ]
+      },
+      {
+        "line": 5352,
+        "address": 48300,
+        "instruction": "v_perm_b32 v240 /*v496*/, v9 /*v521*/, v7 /*v519*/, s66",
+        "words": [
+          3594780912,
+          17436425
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          496,
+          496
+        ]
+      },
+      {
+        "line": 5353,
+        "address": 48308,
+        "instruction": "v_perm_b32 v241 /*v497*/, v13 /*v525*/, v11 /*v523*/, s66",
+        "words": [
+          3594780913,
+          17438477
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          497,
+          497
+        ]
+      },
+      {
+        "line": 5354,
+        "address": 48316,
+        "instruction": "v_perm_b32 v242 /*v498*/, v17 /*v529*/, v15 /*v527*/, s66",
+        "words": [
+          3594780914,
+          17440529
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          498,
+          498
+        ]
+      },
+      {
+        "line": 5355,
+        "address": 48324,
+        "instruction": "v_perm_b32 v243 /*v499*/, v21 /*v533*/, v19 /*v531*/, s66",
+        "words": [
+          3594780915,
+          17442581
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          499,
+          499
+        ]
+      },
+      {
+        "line": 5356,
+        "address": 48332,
+        "instruction": "v_perm_b32 v244 /*v500*/, v25 /*v537*/, v23 /*v535*/, s66",
+        "words": [
+          3594780916,
+          17444633
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          500,
+          500
+        ]
+      },
+      {
+        "line": 5357,
+        "address": 48340,
+        "instruction": "v_perm_b32 v245 /*v501*/, v29 /*v541*/, v27 /*v539*/, s66",
+        "words": [
+          3594780917,
+          17446685
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          501,
+          501
+        ]
+      },
+      {
+        "line": 5359,
+        "address": 48352,
+        "instruction": "v_perm_b32 v246 /*v502*/, v1 /*v513*/, v255 /*v511*/, s67",
+        "words": [
+          3594780918,
+          17825537
+        ],
+        "lexical_msb_before": 70,
+        "first_VGPR_range": [
+          502,
+          502
+        ]
+      },
+      {
+        "line": 5361,
+        "address": 48364,
+        "instruction": "v_perm_b32 v247 /*v503*/, v5 /*v517*/, v3 /*v515*/, s67",
+        "words": [
+          3594780919,
+          17696517
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          503,
+          503
+        ]
+      },
+      {
+        "line": 5362,
+        "address": 48372,
+        "instruction": "v_perm_b32 v248 /*v504*/, v9 /*v521*/, v7 /*v519*/, s67",
+        "words": [
+          3594780920,
+          17698569
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          504,
+          504
+        ]
+      },
+      {
+        "line": 5363,
+        "address": 48380,
+        "instruction": "v_perm_b32 v249 /*v505*/, v13 /*v525*/, v11 /*v523*/, s67",
+        "words": [
+          3594780921,
+          17700621
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          505,
+          505
+        ]
+      },
+      {
+        "line": 5364,
+        "address": 48388,
+        "instruction": "v_perm_b32 v250 /*v506*/, v17 /*v529*/, v15 /*v527*/, s67",
+        "words": [
+          3594780922,
+          17702673
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          506,
+          506
+        ]
+      },
+      {
+        "line": 5365,
+        "address": 48396,
+        "instruction": "v_perm_b32 v251 /*v507*/, v21 /*v533*/, v19 /*v531*/, s67",
+        "words": [
+          3594780923,
+          17704725
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          507,
+          507
+        ]
+      },
+      {
+        "line": 5366,
+        "address": 48404,
+        "instruction": "v_perm_b32 v252 /*v508*/, v25 /*v537*/, v23 /*v535*/, s67",
+        "words": [
+          3594780924,
+          17706777
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          508,
+          508
+        ]
+      },
+      {
+        "line": 5367,
+        "address": 48412,
+        "instruction": "v_perm_b32 v253 /*v509*/, v29 /*v541*/, v27 /*v539*/, s67",
+        "words": [
+          3594780925,
+          17708829
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          509,
+          509
+        ]
+      },
+      {
+        "line": 5469,
+        "address": 49068,
+        "instruction": "v_perm_b32 v222 /*v478*/, v32 /*v544*/, v30 /*v542*/, s66",
+        "words": [
+          3594780894,
+          17448224
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          478,
+          478
+        ]
+      },
+      {
+        "line": 5470,
+        "address": 49076,
+        "instruction": "v_perm_b32 v223 /*v479*/, v36 /*v548*/, v34 /*v546*/, s66",
+        "words": [
+          3594780895,
+          17450276
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          479,
+          479
+        ]
+      },
+      {
+        "line": 5471,
+        "address": 49084,
+        "instruction": "v_perm_b32 v224 /*v480*/, v40 /*v552*/, v38 /*v550*/, s66",
+        "words": [
+          3594780896,
+          17452328
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          480,
+          480
+        ]
+      },
+      {
+        "line": 5472,
+        "address": 49092,
+        "instruction": "v_perm_b32 v225 /*v481*/, v44 /*v556*/, v42 /*v554*/, s66",
+        "words": [
+          3594780897,
+          17454380
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          481,
+          481
+        ]
+      },
+      {
+        "line": 5473,
+        "address": 49100,
+        "instruction": "v_perm_b32 v226 /*v482*/, v48 /*v560*/, v46 /*v558*/, s66",
+        "words": [
+          3594780898,
+          17456432
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          482,
+          482
+        ]
+      },
+      {
+        "line": 5474,
+        "address": 49108,
+        "instruction": "v_perm_b32 v227 /*v483*/, v52 /*v564*/, v50 /*v562*/, s66",
+        "words": [
+          3594780899,
+          17458484
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          483,
+          483
+        ]
+      },
+      {
+        "line": 5475,
+        "address": 49116,
+        "instruction": "v_perm_b32 v228 /*v484*/, v56 /*v568*/, v54 /*v566*/, s66",
+        "words": [
+          3594780900,
+          17460536
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          484,
+          484
+        ]
+      },
+      {
+        "line": 5476,
+        "address": 49124,
+        "instruction": "v_perm_b32 v229 /*v485*/, v60 /*v572*/, v58 /*v570*/, s66",
+        "words": [
+          3594780901,
+          17462588
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          485,
+          485
+        ]
+      },
+      {
+        "line": 5550,
+        "address": 49664,
+        "instruction": "v_perm_b32 v230 /*v486*/, v32 /*v544*/, v30 /*v542*/, s67",
+        "words": [
+          3594780902,
+          17710368
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          486,
+          486
+        ]
+      },
+      {
+        "line": 5551,
+        "address": 49672,
+        "instruction": "v_perm_b32 v231 /*v487*/, v36 /*v548*/, v34 /*v546*/, s67",
+        "words": [
+          3594780903,
+          17712420
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          487,
+          487
+        ]
+      },
+      {
+        "line": 5552,
+        "address": 49680,
+        "instruction": "v_perm_b32 v232 /*v488*/, v40 /*v552*/, v38 /*v550*/, s67",
+        "words": [
+          3594780904,
+          17714472
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          488,
+          488
+        ]
+      },
+      {
+        "line": 5553,
+        "address": 49688,
+        "instruction": "v_perm_b32 v233 /*v489*/, v44 /*v556*/, v42 /*v554*/, s67",
+        "words": [
+          3594780905,
+          17716524
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          489,
+          489
+        ]
+      },
+      {
+        "line": 5554,
+        "address": 49696,
+        "instruction": "v_perm_b32 v234 /*v490*/, v48 /*v560*/, v46 /*v558*/, s67",
+        "words": [
+          3594780906,
+          17718576
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          490,
+          490
+        ]
+      },
+      {
+        "line": 5555,
+        "address": 49704,
+        "instruction": "v_perm_b32 v235 /*v491*/, v52 /*v564*/, v50 /*v562*/, s67",
+        "words": [
+          3594780907,
+          17720628
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          491,
+          491
+        ]
+      },
+      {
+        "line": 5556,
+        "address": 49712,
+        "instruction": "v_perm_b32 v236 /*v492*/, v56 /*v568*/, v54 /*v566*/, s67",
+        "words": [
+          3594780908,
+          17722680
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          492,
+          492
+        ]
+      },
+      {
+        "line": 5557,
+        "address": 49720,
+        "instruction": "v_perm_b32 v237 /*v493*/, v60 /*v572*/, v58 /*v570*/, s67",
+        "words": [
+          3594780909,
+          17724732
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          493,
+          493
+        ]
+      },
+      {
+        "line": 5558,
+        "address": 49728,
+        "instruction": "v_perm_b32 v238 /*v494*/, v33 /*v545*/, v31 /*v543*/, s66",
+        "words": [
+          3594780910,
+          17448737
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          494,
+          494
+        ]
+      },
+      {
+        "line": 5559,
+        "address": 49736,
+        "instruction": "v_perm_b32 v239 /*v495*/, v37 /*v549*/, v35 /*v547*/, s66",
+        "words": [
+          3594780911,
+          17450789
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          495,
+          495
+        ]
+      },
+      {
+        "line": 5563,
+        "address": 49760,
+        "instruction": "v_perm_b32 v240 /*v496*/, v41 /*v553*/, v39 /*v551*/, s66",
+        "words": [
+          3594780912,
+          17452841
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          496,
+          496
+        ]
+      },
+      {
+        "line": 5564,
+        "address": 49768,
+        "instruction": "v_perm_b32 v241 /*v497*/, v45 /*v557*/, v43 /*v555*/, s66",
+        "words": [
+          3594780913,
+          17454893
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          497,
+          497
+        ]
+      },
+      {
+        "line": 5565,
+        "address": 49776,
+        "instruction": "v_perm_b32 v242 /*v498*/, v49 /*v561*/, v47 /*v559*/, s66",
+        "words": [
+          3594780914,
+          17456945
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          498,
+          498
+        ]
+      },
+      {
+        "line": 5566,
+        "address": 49784,
+        "instruction": "v_perm_b32 v243 /*v499*/, v53 /*v565*/, v51 /*v563*/, s66",
+        "words": [
+          3594780915,
+          17458997
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          499,
+          499
+        ]
+      },
+      {
+        "line": 5567,
+        "address": 49792,
+        "instruction": "v_perm_b32 v244 /*v500*/, v57 /*v569*/, v55 /*v567*/, s66",
+        "words": [
+          3594780916,
+          17461049
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          500,
+          500
+        ]
+      },
+      {
+        "line": 5568,
+        "address": 49800,
+        "instruction": "v_perm_b32 v245 /*v501*/, v61 /*v573*/, v59 /*v571*/, s66",
+        "words": [
+          3594780917,
+          17463101
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          501,
+          501
+        ]
+      },
+      {
+        "line": 5569,
+        "address": 49808,
+        "instruction": "v_perm_b32 v246 /*v502*/, v33 /*v545*/, v31 /*v543*/, s67",
+        "words": [
+          3594780918,
+          17710881
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          502,
+          502
+        ]
+      },
+      {
+        "line": 5570,
+        "address": 49816,
+        "instruction": "v_perm_b32 v247 /*v503*/, v37 /*v549*/, v35 /*v547*/, s67",
+        "words": [
+          3594780919,
+          17712933
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          503,
+          503
+        ]
+      },
+      {
+        "line": 5571,
+        "address": 49824,
+        "instruction": "v_perm_b32 v248 /*v504*/, v41 /*v553*/, v39 /*v551*/, s67",
+        "words": [
+          3594780920,
+          17714985
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          504,
+          504
+        ]
+      },
+      {
+        "line": 5572,
+        "address": 49832,
+        "instruction": "v_perm_b32 v249 /*v505*/, v45 /*v557*/, v43 /*v555*/, s67",
+        "words": [
+          3594780921,
+          17717037
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          505,
+          505
+        ]
+      },
+      {
+        "line": 5573,
+        "address": 49840,
+        "instruction": "v_perm_b32 v250 /*v506*/, v49 /*v561*/, v47 /*v559*/, s67",
+        "words": [
+          3594780922,
+          17719089
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          506,
+          506
+        ]
+      },
+      {
+        "line": 5574,
+        "address": 49848,
+        "instruction": "v_perm_b32 v251 /*v507*/, v53 /*v565*/, v51 /*v563*/, s67",
+        "words": [
+          3594780923,
+          17721141
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          507,
+          507
+        ]
+      },
+      {
+        "line": 5575,
+        "address": 49856,
+        "instruction": "v_perm_b32 v252 /*v508*/, v57 /*v569*/, v55 /*v567*/, s67",
+        "words": [
+          3594780924,
+          17723193
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          508,
+          508
+        ]
+      },
+      {
+        "line": 5576,
+        "address": 49864,
+        "instruction": "v_perm_b32 v253 /*v509*/, v61 /*v573*/, v59 /*v571*/, s67",
+        "words": [
+          3594780925,
+          17725245
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          509,
+          509
+        ]
+      },
+      {
+        "line": 7139,
+        "address": 58240,
+        "instruction": "v_perm_b32 v220 /*v476*/, v254 /*v510*/, v252 /*v508*/, s66",
+        "words": [
+          3594780892,
+          17562110
+        ],
+        "lexical_msb_before": 69,
+        "first_VGPR_range": [
+          476,
+          476
+        ]
+      },
+      {
+        "line": 7141,
+        "address": 58252,
+        "instruction": "v_perm_b32 v221 /*v477*/, v2 /*v514*/, v0 /*v512*/, s66",
+        "words": [
+          3594780893,
+          17432834
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          477,
+          477
+        ]
+      },
+      {
+        "line": 7142,
+        "address": 58260,
+        "instruction": "v_perm_b32 v222 /*v478*/, v6 /*v518*/, v4 /*v516*/, s66",
+        "words": [
+          3594780894,
+          17434886
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          478,
+          478
+        ]
+      },
+      {
+        "line": 7143,
+        "address": 58268,
+        "instruction": "v_perm_b32 v223 /*v479*/, v10 /*v522*/, v8 /*v520*/, s66",
+        "words": [
+          3594780895,
+          17436938
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          479,
+          479
+        ]
+      },
+      {
+        "line": 7144,
+        "address": 58276,
+        "instruction": "v_perm_b32 v224 /*v480*/, v14 /*v526*/, v12 /*v524*/, s66",
+        "words": [
+          3594780896,
+          17438990
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          480,
+          480
+        ]
+      },
+      {
+        "line": 7145,
+        "address": 58284,
+        "instruction": "v_perm_b32 v225 /*v481*/, v18 /*v530*/, v16 /*v528*/, s66",
+        "words": [
+          3594780897,
+          17441042
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          481,
+          481
+        ]
+      },
+      {
+        "line": 7146,
+        "address": 58292,
+        "instruction": "v_perm_b32 v226 /*v482*/, v22 /*v534*/, v20 /*v532*/, s66",
+        "words": [
+          3594780898,
+          17443094
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          482,
+          482
+        ]
+      },
+      {
+        "line": 7147,
+        "address": 58300,
+        "instruction": "v_perm_b32 v227 /*v483*/, v26 /*v538*/, v24 /*v536*/, s66",
+        "words": [
+          3594780899,
+          17445146
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          483,
+          483
+        ]
+      },
+      {
+        "line": 7149,
+        "address": 58312,
+        "instruction": "v_perm_b32 v228 /*v484*/, v254 /*v510*/, v252 /*v508*/, s67",
+        "words": [
+          3594780900,
+          17824254
+        ],
+        "lexical_msb_before": 69,
+        "first_VGPR_range": [
+          484,
+          484
+        ]
+      },
+      {
+        "line": 7151,
+        "address": 58324,
+        "instruction": "v_perm_b32 v229 /*v485*/, v2 /*v514*/, v0 /*v512*/, s67",
+        "words": [
+          3594780901,
+          17694978
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          485,
+          485
+        ]
+      },
+      {
+        "line": 7152,
+        "address": 58332,
+        "instruction": "v_perm_b32 v230 /*v486*/, v6 /*v518*/, v4 /*v516*/, s67",
+        "words": [
+          3594780902,
+          17697030
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          486,
+          486
+        ]
+      },
+      {
+        "line": 7153,
+        "address": 58340,
+        "instruction": "v_perm_b32 v231 /*v487*/, v10 /*v522*/, v8 /*v520*/, s67",
+        "words": [
+          3594780903,
+          17699082
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          487,
+          487
+        ]
+      },
+      {
+        "line": 7154,
+        "address": 58348,
+        "instruction": "v_perm_b32 v232 /*v488*/, v14 /*v526*/, v12 /*v524*/, s67",
+        "words": [
+          3594780904,
+          17701134
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          488,
+          488
+        ]
+      },
+      {
+        "line": 7155,
+        "address": 58356,
+        "instruction": "v_perm_b32 v233 /*v489*/, v18 /*v530*/, v16 /*v528*/, s67",
+        "words": [
+          3594780905,
+          17703186
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          489,
+          489
+        ]
+      },
+      {
+        "line": 7156,
+        "address": 58364,
+        "instruction": "v_perm_b32 v234 /*v490*/, v22 /*v534*/, v20 /*v532*/, s67",
+        "words": [
+          3594780906,
+          17705238
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          490,
+          490
+        ]
+      },
+      {
+        "line": 7157,
+        "address": 58372,
+        "instruction": "v_perm_b32 v235 /*v491*/, v26 /*v538*/, v24 /*v536*/, s67",
+        "words": [
+          3594780907,
+          17707290
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          491,
+          491
+        ]
+      },
+      {
+        "line": 7159,
+        "address": 58384,
+        "instruction": "v_perm_b32 v236 /*v492*/, v255 /*v511*/, v253 /*v509*/, s66",
+        "words": [
+          3594780908,
+          17562623
+        ],
+        "lexical_msb_before": 69,
+        "first_VGPR_range": [
+          492,
+          492
+        ]
+      },
+      {
+        "line": 7161,
+        "address": 58396,
+        "instruction": "v_perm_b32 v237 /*v493*/, v3 /*v515*/, v1 /*v513*/, s66",
+        "words": [
+          3594780909,
+          17433347
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          493,
+          493
+        ]
+      },
+      {
+        "line": 7162,
+        "address": 58404,
+        "instruction": "v_perm_b32 v238 /*v494*/, v7 /*v519*/, v5 /*v517*/, s66",
+        "words": [
+          3594780910,
+          17435399
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          494,
+          494
+        ]
+      },
+      {
+        "line": 7163,
+        "address": 58412,
+        "instruction": "v_perm_b32 v239 /*v495*/, v11 /*v523*/, v9 /*v521*/, s66",
+        "words": [
+          3594780911,
+          17437451
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          495,
+          495
+        ]
+      },
+      {
+        "line": 7164,
+        "address": 58420,
+        "instruction": "v_perm_b32 v240 /*v496*/, v15 /*v527*/, v13 /*v525*/, s66",
+        "words": [
+          3594780912,
+          17439503
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          496,
+          496
+        ]
+      },
+      {
+        "line": 7165,
+        "address": 58428,
+        "instruction": "v_perm_b32 v241 /*v497*/, v19 /*v531*/, v17 /*v529*/, s66",
+        "words": [
+          3594780913,
+          17441555
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          497,
+          497
+        ]
+      },
+      {
+        "line": 7166,
+        "address": 58436,
+        "instruction": "v_perm_b32 v242 /*v498*/, v23 /*v535*/, v21 /*v533*/, s66",
+        "words": [
+          3594780914,
+          17443607
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          498,
+          498
+        ]
+      },
+      {
+        "line": 7167,
+        "address": 58444,
+        "instruction": "v_perm_b32 v243 /*v499*/, v27 /*v539*/, v25 /*v537*/, s66",
+        "words": [
+          3594780915,
+          17445659
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          499,
+          499
+        ]
+      },
+      {
+        "line": 7169,
+        "address": 58456,
+        "instruction": "v_perm_b32 v244 /*v500*/, v255 /*v511*/, v253 /*v509*/, s67",
+        "words": [
+          3594780916,
+          17824767
+        ],
+        "lexical_msb_before": 69,
+        "first_VGPR_range": [
+          500,
+          500
+        ]
+      },
+      {
+        "line": 7171,
+        "address": 58468,
+        "instruction": "v_perm_b32 v245 /*v501*/, v3 /*v515*/, v1 /*v513*/, s67",
+        "words": [
+          3594780917,
+          17695491
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          501,
+          501
+        ]
+      },
+      {
+        "line": 7172,
+        "address": 58476,
+        "instruction": "v_perm_b32 v246 /*v502*/, v7 /*v519*/, v5 /*v517*/, s67",
+        "words": [
+          3594780918,
+          17697543
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          502,
+          502
+        ]
+      },
+      {
+        "line": 7173,
+        "address": 58484,
+        "instruction": "v_perm_b32 v247 /*v503*/, v11 /*v523*/, v9 /*v521*/, s67",
+        "words": [
+          3594780919,
+          17699595
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          503,
+          503
+        ]
+      },
+      {
+        "line": 7174,
+        "address": 58492,
+        "instruction": "v_perm_b32 v248 /*v504*/, v15 /*v527*/, v13 /*v525*/, s67",
+        "words": [
+          3594780920,
+          17701647
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          504,
+          504
+        ]
+      },
+      {
+        "line": 7175,
+        "address": 58500,
+        "instruction": "v_perm_b32 v249 /*v505*/, v19 /*v531*/, v17 /*v529*/, s67",
+        "words": [
+          3594780921,
+          17703699
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          505,
+          505
+        ]
+      },
+      {
+        "line": 7176,
+        "address": 58508,
+        "instruction": "v_perm_b32 v250 /*v506*/, v23 /*v535*/, v21 /*v533*/, s67",
+        "words": [
+          3594780922,
+          17705751
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          506,
+          506
+        ]
+      },
+      {
+        "line": 7177,
+        "address": 58516,
+        "instruction": "v_perm_b32 v251 /*v507*/, v27 /*v539*/, v25 /*v537*/, s67",
+        "words": [
+          3594780923,
+          17707803
+        ],
+        "lexical_msb_before": 74,
+        "first_VGPR_range": [
+          507,
+          507
+        ]
+      }
+    ],
+    "tail_conditional_mask_writes": [
+      {
+        "line": 7275,
+        "address": 59208,
+        "instruction": "v_cndmask_b32_e64 v220 /*v476*/, v220 /*v476*/, 0, s68",
+        "words": [
+          3573612764,
+          17891804
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          476,
+          476
+        ]
+      },
+      {
+        "line": 7276,
+        "address": 59216,
+        "instruction": "v_cndmask_b32_e64 v228 /*v484*/, v228 /*v484*/, 0, s68",
+        "words": [
+          3573612772,
+          17891812
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          484,
+          484
+        ]
+      },
+      {
+        "line": 7277,
+        "address": 59224,
+        "instruction": "v_cndmask_b32_e64 v236 /*v492*/, v236 /*v492*/, 0, s68",
+        "words": [
+          3573612780,
+          17891820
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          492,
+          492
+        ]
+      },
+      {
+        "line": 7278,
+        "address": 59232,
+        "instruction": "v_cndmask_b32_e64 v244 /*v500*/, v244 /*v500*/, 0, s68",
+        "words": [
+          3573612788,
+          17891828
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          500,
+          500
+        ]
+      },
+      {
+        "line": 7279,
+        "address": 59240,
+        "instruction": "v_cndmask_b32_e64 v221 /*v477*/, v221 /*v477*/, 0, s68",
+        "words": [
+          3573612765,
+          17891805
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          477,
+          477
+        ]
+      },
+      {
+        "line": 7280,
+        "address": 59248,
+        "instruction": "v_cndmask_b32_e64 v229 /*v485*/, v229 /*v485*/, 0, s68",
+        "words": [
+          3573612773,
+          17891813
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          485,
+          485
+        ]
+      },
+      {
+        "line": 7281,
+        "address": 59256,
+        "instruction": "v_cndmask_b32_e64 v237 /*v493*/, v237 /*v493*/, 0, s68",
+        "words": [
+          3573612781,
+          17891821
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          493,
+          493
+        ]
+      },
+      {
+        "line": 7282,
+        "address": 59264,
+        "instruction": "v_cndmask_b32_e64 v245 /*v501*/, v245 /*v501*/, 0, s68",
+        "words": [
+          3573612789,
+          17891829
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          501,
+          501
+        ]
+      },
+      {
+        "line": 7288,
+        "address": 59300,
+        "instruction": "v_cndmask_b32_e64 v222 /*v478*/, v222 /*v478*/, 0, s68",
+        "words": [
+          3573612766,
+          17891806
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          478,
+          478
+        ]
+      },
+      {
+        "line": 7289,
+        "address": 59308,
+        "instruction": "v_cndmask_b32_e64 v230 /*v486*/, v230 /*v486*/, 0, s68",
+        "words": [
+          3573612774,
+          17891814
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          486,
+          486
+        ]
+      },
+      {
+        "line": 7290,
+        "address": 59316,
+        "instruction": "v_cndmask_b32_e64 v238 /*v494*/, v238 /*v494*/, 0, s68",
+        "words": [
+          3573612782,
+          17891822
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          494,
+          494
+        ]
+      },
+      {
+        "line": 7291,
+        "address": 59324,
+        "instruction": "v_cndmask_b32_e64 v246 /*v502*/, v246 /*v502*/, 0, s68",
+        "words": [
+          3573612790,
+          17891830
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          502,
+          502
+        ]
+      },
+      {
+        "line": 7292,
+        "address": 59332,
+        "instruction": "v_cndmask_b32_e64 v223 /*v479*/, v223 /*v479*/, 0, s68",
+        "words": [
+          3573612767,
+          17891807
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          479,
+          479
+        ]
+      },
+      {
+        "line": 7293,
+        "address": 59340,
+        "instruction": "v_cndmask_b32_e64 v231 /*v487*/, v231 /*v487*/, 0, s68",
+        "words": [
+          3573612775,
+          17891815
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          487,
+          487
+        ]
+      },
+      {
+        "line": 7294,
+        "address": 59348,
+        "instruction": "v_cndmask_b32_e64 v239 /*v495*/, v239 /*v495*/, 0, s68",
+        "words": [
+          3573612783,
+          17891823
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          495,
+          495
+        ]
+      },
+      {
+        "line": 7295,
+        "address": 59356,
+        "instruction": "v_cndmask_b32_e64 v247 /*v503*/, v247 /*v503*/, 0, s68",
+        "words": [
+          3573612791,
+          17891831
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          503,
+          503
+        ]
+      },
+      {
+        "line": 7301,
+        "address": 59392,
+        "instruction": "v_cndmask_b32_e64 v224 /*v480*/, v224 /*v480*/, 0, s68",
+        "words": [
+          3573612768,
+          17891808
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          480,
+          480
+        ]
+      },
+      {
+        "line": 7302,
+        "address": 59400,
+        "instruction": "v_cndmask_b32_e64 v232 /*v488*/, v232 /*v488*/, 0, s68",
+        "words": [
+          3573612776,
+          17891816
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          488,
+          488
+        ]
+      },
+      {
+        "line": 7303,
+        "address": 59408,
+        "instruction": "v_cndmask_b32_e64 v240 /*v496*/, v240 /*v496*/, 0, s68",
+        "words": [
+          3573612784,
+          17891824
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          496,
+          496
+        ]
+      },
+      {
+        "line": 7304,
+        "address": 59416,
+        "instruction": "v_cndmask_b32_e64 v248 /*v504*/, v248 /*v504*/, 0, s68",
+        "words": [
+          3573612792,
+          17891832
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          504,
+          504
+        ]
+      },
+      {
+        "line": 7305,
+        "address": 59424,
+        "instruction": "v_cndmask_b32_e64 v225 /*v481*/, v225 /*v481*/, 0, s68",
+        "words": [
+          3573612769,
+          17891809
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          481,
+          481
+        ]
+      },
+      {
+        "line": 7306,
+        "address": 59432,
+        "instruction": "v_cndmask_b32_e64 v233 /*v489*/, v233 /*v489*/, 0, s68",
+        "words": [
+          3573612777,
+          17891817
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          489,
+          489
+        ]
+      },
+      {
+        "line": 7307,
+        "address": 59440,
+        "instruction": "v_cndmask_b32_e64 v241 /*v497*/, v241 /*v497*/, 0, s68",
+        "words": [
+          3573612785,
+          17891825
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          497,
+          497
+        ]
+      },
+      {
+        "line": 7308,
+        "address": 59448,
+        "instruction": "v_cndmask_b32_e64 v249 /*v505*/, v249 /*v505*/, 0, s68",
+        "words": [
+          3573612793,
+          17891833
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          505,
+          505
+        ]
+      },
+      {
+        "line": 7314,
+        "address": 59484,
+        "instruction": "v_cndmask_b32_e64 v226 /*v482*/, v226 /*v482*/, 0, s68",
+        "words": [
+          3573612770,
+          17891810
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          482,
+          482
+        ]
+      },
+      {
+        "line": 7315,
+        "address": 59492,
+        "instruction": "v_cndmask_b32_e64 v234 /*v490*/, v234 /*v490*/, 0, s68",
+        "words": [
+          3573612778,
+          17891818
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          490,
+          490
+        ]
+      },
+      {
+        "line": 7316,
+        "address": 59500,
+        "instruction": "v_cndmask_b32_e64 v242 /*v498*/, v242 /*v498*/, 0, s68",
+        "words": [
+          3573612786,
+          17891826
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          498,
+          498
+        ]
+      },
+      {
+        "line": 7317,
+        "address": 59508,
+        "instruction": "v_cndmask_b32_e64 v250 /*v506*/, v250 /*v506*/, 0, s68",
+        "words": [
+          3573612794,
+          17891834
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          506,
+          506
+        ]
+      },
+      {
+        "line": 7318,
+        "address": 59516,
+        "instruction": "v_cndmask_b32_e64 v227 /*v483*/, v227 /*v483*/, 0, s68",
+        "words": [
+          3573612771,
+          17891811
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          483,
+          483
+        ]
+      },
+      {
+        "line": 7319,
+        "address": 59524,
+        "instruction": "v_cndmask_b32_e64 v235 /*v491*/, v235 /*v491*/, 0, s68",
+        "words": [
+          3573612779,
+          17891819
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          491,
+          491
+        ]
+      },
+      {
+        "line": 7320,
+        "address": 59532,
+        "instruction": "v_cndmask_b32_e64 v243 /*v499*/, v243 /*v499*/, 0, s68",
+        "words": [
+          3573612787,
+          17891827
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          499,
+          499
+        ]
+      },
+      {
+        "line": 7321,
+        "address": 59540,
+        "instruction": "v_cndmask_b32_e64 v251 /*v507*/, v251 /*v507*/, 0, s68",
+        "words": [
+          3573612795,
+          17891835
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          507,
+          507
+        ]
+      },
+      {
+        "line": 7697,
+        "address": 61700,
+        "instruction": "v_cndmask_b32_e64 v220 /*v476*/, v220 /*v476*/, v62 /*v574*/, s68",
+        "words": [
+          3573612764,
+          17989084
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          476,
+          476
+        ]
+      },
+      {
+        "line": 7701,
+        "address": 61724,
+        "instruction": "v_cndmask_b32_e64 v221 /*v477*/, v221 /*v477*/, v63 /*v575*/, s68",
+        "words": [
+          3573612765,
+          17989597
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          477,
+          477
+        ]
+      },
+      {
+        "line": 7707,
+        "address": 61760,
+        "instruction": "v_cndmask_b32_e64 v222 /*v478*/, v222 /*v478*/, v64 /*v576*/, s68",
+        "words": [
+          3573612766,
+          17990110
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          478,
+          478
+        ]
+      },
+      {
+        "line": 7711,
+        "address": 61784,
+        "instruction": "v_cndmask_b32_e64 v223 /*v479*/, v223 /*v479*/, v65 /*v577*/, s68",
+        "words": [
+          3573612767,
+          17990623
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          479,
+          479
+        ]
+      },
+      {
+        "line": 7717,
+        "address": 61820,
+        "instruction": "v_cndmask_b32_e64 v224 /*v480*/, v224 /*v480*/, v66 /*v578*/, s68",
+        "words": [
+          3573612768,
+          17991136
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          480,
+          480
+        ]
+      },
+      {
+        "line": 7721,
+        "address": 61844,
+        "instruction": "v_cndmask_b32_e64 v225 /*v481*/, v225 /*v481*/, v67 /*v579*/, s68",
+        "words": [
+          3573612769,
+          17991649
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          481,
+          481
+        ]
+      },
+      {
+        "line": 7727,
+        "address": 61880,
+        "instruction": "v_cndmask_b32_e64 v226 /*v482*/, v226 /*v482*/, v68 /*v580*/, s68",
+        "words": [
+          3573612770,
+          17992162
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          482,
+          482
+        ]
+      },
+      {
+        "line": 7731,
+        "address": 61904,
+        "instruction": "v_cndmask_b32_e64 v227 /*v483*/, v227 /*v483*/, v69 /*v581*/, s68",
+        "words": [
+          3573612771,
+          17992675
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          483,
+          483
+        ]
+      },
+      {
+        "line": 7742,
+        "address": 61960,
+        "instruction": "v_cndmask_b32_e64 v228 /*v484*/, v228 /*v484*/, v62 /*v574*/, s68",
+        "words": [
+          3573612772,
+          17989092
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          484,
+          484
+        ]
+      },
+      {
+        "line": 7746,
+        "address": 61984,
+        "instruction": "v_cndmask_b32_e64 v229 /*v485*/, v229 /*v485*/, v63 /*v575*/, s68",
+        "words": [
+          3573612773,
+          17989605
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          485,
+          485
+        ]
+      },
+      {
+        "line": 7752,
+        "address": 62020,
+        "instruction": "v_cndmask_b32_e64 v230 /*v486*/, v230 /*v486*/, v64 /*v576*/, s68",
+        "words": [
+          3573612774,
+          17990118
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          486,
+          486
+        ]
+      },
+      {
+        "line": 7756,
+        "address": 62044,
+        "instruction": "v_cndmask_b32_e64 v231 /*v487*/, v231 /*v487*/, v65 /*v577*/, s68",
+        "words": [
+          3573612775,
+          17990631
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          487,
+          487
+        ]
+      },
+      {
+        "line": 7762,
+        "address": 62080,
+        "instruction": "v_cndmask_b32_e64 v232 /*v488*/, v232 /*v488*/, v66 /*v578*/, s68",
+        "words": [
+          3573612776,
+          17991144
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          488,
+          488
+        ]
+      },
+      {
+        "line": 7766,
+        "address": 62104,
+        "instruction": "v_cndmask_b32_e64 v233 /*v489*/, v233 /*v489*/, v67 /*v579*/, s68",
+        "words": [
+          3573612777,
+          17991657
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          489,
+          489
+        ]
+      },
+      {
+        "line": 7772,
+        "address": 62140,
+        "instruction": "v_cndmask_b32_e64 v234 /*v490*/, v234 /*v490*/, v68 /*v580*/, s68",
+        "words": [
+          3573612778,
+          17992170
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          490,
+          490
+        ]
+      },
+      {
+        "line": 7776,
+        "address": 62164,
+        "instruction": "v_cndmask_b32_e64 v235 /*v491*/, v235 /*v491*/, v69 /*v581*/, s68",
+        "words": [
+          3573612779,
+          17992683
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          491,
+          491
+        ]
+      },
+      {
+        "line": 7787,
+        "address": 62220,
+        "instruction": "v_cndmask_b32_e64 v236 /*v492*/, v236 /*v492*/, v62 /*v574*/, s68",
+        "words": [
+          3573612780,
+          17989100
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          492,
+          492
+        ]
+      },
+      {
+        "line": 7791,
+        "address": 62244,
+        "instruction": "v_cndmask_b32_e64 v237 /*v493*/, v237 /*v493*/, v63 /*v575*/, s68",
+        "words": [
+          3573612781,
+          17989613
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          493,
+          493
+        ]
+      },
+      {
+        "line": 7797,
+        "address": 62280,
+        "instruction": "v_cndmask_b32_e64 v238 /*v494*/, v238 /*v494*/, v64 /*v576*/, s68",
+        "words": [
+          3573612782,
+          17990126
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          494,
+          494
+        ]
+      },
+      {
+        "line": 7801,
+        "address": 62304,
+        "instruction": "v_cndmask_b32_e64 v239 /*v495*/, v239 /*v495*/, v65 /*v577*/, s68",
+        "words": [
+          3573612783,
+          17990639
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          495,
+          495
+        ]
+      },
+      {
+        "line": 7807,
+        "address": 62340,
+        "instruction": "v_cndmask_b32_e64 v240 /*v496*/, v240 /*v496*/, v66 /*v578*/, s68",
+        "words": [
+          3573612784,
+          17991152
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          496,
+          496
+        ]
+      },
+      {
+        "line": 7811,
+        "address": 62364,
+        "instruction": "v_cndmask_b32_e64 v241 /*v497*/, v241 /*v497*/, v67 /*v579*/, s68",
+        "words": [
+          3573612785,
+          17991665
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          497,
+          497
+        ]
+      },
+      {
+        "line": 7817,
+        "address": 62400,
+        "instruction": "v_cndmask_b32_e64 v242 /*v498*/, v242 /*v498*/, v68 /*v580*/, s68",
+        "words": [
+          3573612786,
+          17992178
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          498,
+          498
+        ]
+      },
+      {
+        "line": 7821,
+        "address": 62424,
+        "instruction": "v_cndmask_b32_e64 v243 /*v499*/, v243 /*v499*/, v69 /*v581*/, s68",
+        "words": [
+          3573612787,
+          17992691
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          499,
+          499
+        ]
+      },
+      {
+        "line": 7832,
+        "address": 62480,
+        "instruction": "v_cndmask_b32_e64 v244 /*v500*/, v244 /*v500*/, v62 /*v574*/, s68",
+        "words": [
+          3573612788,
+          17989108
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          500,
+          500
+        ]
+      },
+      {
+        "line": 7836,
+        "address": 62504,
+        "instruction": "v_cndmask_b32_e64 v245 /*v501*/, v245 /*v501*/, v63 /*v575*/, s68",
+        "words": [
+          3573612789,
+          17989621
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          501,
+          501
+        ]
+      },
+      {
+        "line": 7842,
+        "address": 62540,
+        "instruction": "v_cndmask_b32_e64 v246 /*v502*/, v246 /*v502*/, v64 /*v576*/, s68",
+        "words": [
+          3573612790,
+          17990134
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          502,
+          502
+        ]
+      },
+      {
+        "line": 7846,
+        "address": 62564,
+        "instruction": "v_cndmask_b32_e64 v247 /*v503*/, v247 /*v503*/, v65 /*v577*/, s68",
+        "words": [
+          3573612791,
+          17990647
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          503,
+          503
+        ]
+      },
+      {
+        "line": 7852,
+        "address": 62600,
+        "instruction": "v_cndmask_b32_e64 v248 /*v504*/, v248 /*v504*/, v66 /*v578*/, s68",
+        "words": [
+          3573612792,
+          17991160
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          504,
+          504
+        ]
+      },
+      {
+        "line": 7856,
+        "address": 62624,
+        "instruction": "v_cndmask_b32_e64 v249 /*v505*/, v249 /*v505*/, v67 /*v579*/, s68",
+        "words": [
+          3573612793,
+          17991673
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          505,
+          505
+        ]
+      },
+      {
+        "line": 7862,
+        "address": 62660,
+        "instruction": "v_cndmask_b32_e64 v250 /*v506*/, v250 /*v506*/, v68 /*v580*/, s68",
+        "words": [
+          3573612794,
+          17992186
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          506,
+          506
+        ]
+      },
+      {
+        "line": 7866,
+        "address": 62684,
+        "instruction": "v_cndmask_b32_e64 v251 /*v507*/, v251 /*v507*/, v69 /*v581*/, s68",
+        "words": [
+          3573612795,
+          17992699
+        ],
+        "lexical_msb_before": 73,
+        "first_VGPR_range": [
+          507,
+          507
+        ]
+      }
+    ],
+    "other_overlapping_writes": [
+      {
+        "line": 4120,
+        "address": 41008,
+        "instruction": "ds_load_b128 v[220:223] /*v[476:479]*/, v19 /*v275*/ offset:144",
+        "words": [
+          3690725520,
+          3690987539
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          476,
+          479
+        ]
+      },
+      {
+        "line": 4121,
+        "address": 41016,
+        "instruction": "ds_load_b128 v[224:227] /*v[480:483]*/, v19 /*v275*/ offset:1152",
+        "words": [
+          3690726528,
+          3758096403
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          480,
+          483
+        ]
+      },
+      {
+        "line": 4122,
+        "address": 41024,
+        "instruction": "ds_load_b128 v[228:231] /*v[484:487]*/, v19 /*v275*/ offset:1168",
+        "words": [
+          3690726544,
+          3825205267
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          484,
+          487
+        ]
+      },
+      {
+        "line": 4123,
+        "address": 41032,
+        "instruction": "ds_load_b128 v[232:235] /*v[488:491]*/, v19 /*v275*/ offset:160",
+        "words": [
+          3690725536,
+          3892314131
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          488,
+          491
+        ]
+      },
+      {
+        "line": 4124,
+        "address": 41040,
+        "instruction": "ds_load_b128 v[236:239] /*v[492:495]*/, v19 /*v275*/ offset:176",
+        "words": [
+          3690725552,
+          3959422995
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          492,
+          495
+        ]
+      },
+      {
+        "line": 4125,
+        "address": 41048,
+        "instruction": "ds_load_b128 v[240:243] /*v[496:499]*/, v19 /*v275*/ offset:1184",
+        "words": [
+          3690726560,
+          4026531859
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          496,
+          499
+        ]
+      },
+      {
+        "line": 4126,
+        "address": 41056,
+        "instruction": "ds_load_b128 v[244:247] /*v[500:503]*/, v19 /*v275*/ offset:1200",
+        "words": [
+          3690726576,
+          4093640723
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          500,
+          503
+        ]
+      },
+      {
+        "line": 4127,
+        "address": 41064,
+        "instruction": "ds_load_b128 v[248:251] /*v[504:507]*/, v19 /*v275*/ offset:192",
+        "words": [
+          3690725568,
+          4160749587
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          504,
+          507
+        ]
+      },
+      {
+        "line": 4128,
+        "address": 41072,
+        "instruction": "ds_load_b128 v[252:255] /*v[508:511]*/, v19 /*v275*/ offset:208",
+        "words": [
+          3690725584,
+          4227858451
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          508,
+          511
+        ]
+      },
+      {
+        "line": 4683,
+        "address": 44300,
+        "instruction": "ds_load_b128 v[220:223] /*v[476:479]*/, v19 /*v275*/ offset:144",
+        "words": [
+          3690725520,
+          3690987539
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          476,
+          479
+        ]
+      },
+      {
+        "line": 4684,
+        "address": 44308,
+        "instruction": "ds_load_b128 v[224:227] /*v[480:483]*/, v19 /*v275*/ offset:1152",
+        "words": [
+          3690726528,
+          3758096403
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          480,
+          483
+        ]
+      },
+      {
+        "line": 4685,
+        "address": 44316,
+        "instruction": "ds_load_b128 v[228:231] /*v[484:487]*/, v19 /*v275*/ offset:1168",
+        "words": [
+          3690726544,
+          3825205267
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          484,
+          487
+        ]
+      },
+      {
+        "line": 4686,
+        "address": 44324,
+        "instruction": "ds_load_b128 v[232:235] /*v[488:491]*/, v19 /*v275*/ offset:160",
+        "words": [
+          3690725536,
+          3892314131
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          488,
+          491
+        ]
+      },
+      {
+        "line": 4687,
+        "address": 44332,
+        "instruction": "ds_load_b128 v[236:239] /*v[492:495]*/, v19 /*v275*/ offset:176",
+        "words": [
+          3690725552,
+          3959422995
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          492,
+          495
+        ]
+      },
+      {
+        "line": 4688,
+        "address": 44340,
+        "instruction": "ds_load_b128 v[240:243] /*v[496:499]*/, v19 /*v275*/ offset:1184",
+        "words": [
+          3690726560,
+          4026531859
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          496,
+          499
+        ]
+      },
+      {
+        "line": 4689,
+        "address": 44348,
+        "instruction": "ds_load_b128 v[244:247] /*v[500:503]*/, v19 /*v275*/ offset:1200",
+        "words": [
+          3690726576,
+          4093640723
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          500,
+          503
+        ]
+      },
+      {
+        "line": 4690,
+        "address": 44356,
+        "instruction": "ds_load_b128 v[248:251] /*v[504:507]*/, v19 /*v275*/ offset:192",
+        "words": [
+          3690725568,
+          4160749587
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          504,
+          507
+        ]
+      },
+      {
+        "line": 4691,
+        "address": 44364,
+        "instruction": "ds_load_b128 v[252:255] /*v[508:511]*/, v19 /*v275*/ offset:208",
+        "words": [
+          3690725584,
+          4227858451
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          508,
+          511
+        ]
+      },
+      {
+        "line": 7049,
+        "address": 57544,
+        "instruction": "ds_load_b64 v[252:253] /*v[508:509]*/, v27 /*v283*/",
+        "words": [
+          3654811648,
+          4227858459
+        ],
+        "lexical_msb_before": 65,
+        "first_VGPR_range": [
+          508,
+          509
+        ]
+      }
+    ],
+    "assembler_command": [
+      "/opt/rocm-10.1.0a20260811/lib/llvm/bin/llvm-mc",
+      "-triple=amdgcn-amd-amdhsa",
+      "-mcpu=gfx1250",
+      "-show-encoding",
+      "/home/chcai/mi450_logs/root_cause_20260919/DW_mechanism_review_v1/B_fragment_zero_moves_encoding_probe.s"
+    ],
+    "assembler_exit": 0,
+    "minimum_followup": "Use a full CFG/reaching-definition audit before certifying every dynamic B read is dominated by a zero write. Tail B-fragment registers are v476:v507, shifted from main v478:v509; tail conditional masks cannot be silently ignored. Other overlapping LDS loads in earlier textual epilogues must not be blindly zeroed."
+  },
+  "limits": [
+    "No GPU run, dynamic code text observation, or runtime B/accumulator capture was performed.",
+    "Effective-register census follows lexical s_set_vgpr_msb state and disassembler comments; it is not a CFG proof.",
+    "Reuse bit removal preserves the encoded algebra but may change timing, so PASS is bounded evidence rather than a unique hardware mechanism.",
+    "The inherited ELF build-id is unchanged; the complete derivative SHA256 is its identity.",
+    "Existing projection native loader is hard-coded to a different symbol and ELF hashes; it cannot run this DW ELF unchanged.",
+    "Literal 0 as a WMMA B operand was rejected by llvm-mc; the initial encoding_probe.s error is preserved."
+  ]
+}

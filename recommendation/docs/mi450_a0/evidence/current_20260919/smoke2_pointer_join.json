@@ -1,0 +1,2159 @@
+{
+  "format": "private_DW_smoke_scalar_pointer_full_CPU_join_independent_v1",
+  "status": "PASS",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/audit_private_DW_smoke_join_independent_v1.py",
+    "bytes": 9988,
+    "sha256": "74be220336c671d9a3f12d7e82e8f5fc276fa03982f78f099e20d96df2ced1ee"
+  },
+  "inputs": {
+    "metadata": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/private_DW_smoke_metadata_independent_v2.json",
+      "bytes": 14897,
+      "sha256": "dae40cfb144628c558459fbc00b61573820e43a91c770a410d055816a6e6f9e9"
+    },
+    "metadata_source": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/audit_private_DW_smoke_metadata_independent_v2.py",
+      "bytes": 5753,
+      "sha256": "a7c1487aeb506d5954e89ff7ff5759462ac88dfe66ac19b9b21e983e8f6f6224"
+    },
+    "scalar": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/private_DW_smoke_scalar_stage_independent_v1.json",
+      "bytes": 551463,
+      "sha256": "5948ae1843a4ba76f7bf6aeddd3fdd74fcf213d36ae213ba3be6184780965a2f"
+    },
+    "scalar_source": {
+      "path": "/home/chcai/training/recommendation/scripts/audit_projection_scalar_queue_capture.py",
+      "bytes": 16514,
+      "sha256": "84b5c85b544db9b1a5d5d697fceb97af7b08291466973b6164343fad709b5922"
+    },
+    "full_CPU": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/private_DW_training_smoke_step1_payload_root_v1.json",
+      "bytes": 625470,
+      "sha256": "32565d7adb99a982012c37e9adcb8edc14b858dd62fb643ce776a5deed87a5bb"
+    },
+    "full_CPU_source": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/audit_private_DW_projection_payload_root_v1.py",
+      "bytes": 16482,
+      "sha256": "feb2cbabb1f3d67bb1aaf3bd6b58f596c279b456a7388ea9dd179a7be7219832"
+    },
+    "root_trace": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/private_DW_training_smoke_trace_root_v1.json",
+      "bytes": 44901,
+      "sha256": "f32b45c80b3641e4d9f4e3739a439225920da4f2e34f155ea4aa9d0212899369"
+    },
+    "root_trace_source": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/audit_private_DW_training_trace_root_v1.py",
+      "bytes": 3546,
+      "sha256": "61781a4959c2e8a2101d01c10c0e0fd418b650115db4f2c7bd698dfd0e6a26c0"
+    },
+    "kernel_metadata": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_lower_vgpr_native_selection_static_v1/candidate102_kernel_metadata.json",
+      "bytes": 7105,
+      "sha256": "b1e887bf2ec8b7ba62f6fe5151fd34ec5fe281e68a3b488225dfcab457591360"
+    },
+    "trace": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_2_v1_hip.jsonl",
+      "bytes": 252758,
+      "sha256": "7f9a387a7b7bacba69f7961aea97bc35ec03197e0ce6674a6fe90291136c9988"
+    },
+    "events": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_2_v1/boundaries/events.jsonl",
+      "bytes": 553874,
+      "sha256": "9f39623a69555d26a41d4b0fab67ebad34be8c8e114146cf18d0291d737564db"
+    }
+  },
+  "payload": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_2_v1/boundaries/linear-deferred-163747-1789809569916320047-s1-finite.pt",
+    "bytes": 23469148365,
+    "sha256_from_root_full_CPU": "ee6afbdfd18049cd05381983d9f6e310f4bb94933a1a57147ce6a1197bc18855",
+    "whole_file_rehashed_here": false
+  },
+  "full_CPU_totals_joined": {
+    "logical_views": 534,
+    "storages": 465,
+    "nonfinite_views": 0,
+    "extreme_views": 0,
+    "input_bytes_exact": true,
+    "gradient_bytes_exact": true
+  },
+  "scalar_stage_counts": {
+    "endpoint_to_batch": {
+      "rows": 367,
+      "nan_aware_mismatches": 0,
+      "raw_FP64_comparable_rows": 367,
+      "raw_FP64_mismatches": 0
+    },
+    "batch_to_returned": {
+      "rows": 367,
+      "nan_aware_mismatches": 0,
+      "raw_FP64_comparable_rows": 367,
+      "raw_FP64_mismatches": 0
+    },
+    "returned_to_native_summary": {
+      "rows": 367,
+      "nan_aware_mismatches": 0,
+      "raw_FP64_comparable_rows": 367,
+      "raw_FP64_mismatches": 0
+    },
+    "returned_to_final_summary": {
+      "rows": 367,
+      "nan_aware_mismatches": 0,
+      "raw_FP64_comparable_rows": 367,
+      "raw_FP64_mismatches": 0
+    },
+    "final_dense_CPU_to_endpoint": {
+      "rows": 138,
+      "nan_aware_mismatches": 0,
+      "raw_FP64_comparable_rows": 138,
+      "raw_FP64_mismatches": 0
+    },
+    "final_dense_CPU_to_batch": {
+      "rows": 138,
+      "nan_aware_mismatches": 0,
+      "raw_FP64_comparable_rows": 138,
+      "raw_FP64_mismatches": 0
+    },
+    "final_dense_CPU_to_returned": {
+      "rows": 138,
+      "nan_aware_mismatches": 0,
+      "raw_FP64_comparable_rows": 138,
+      "raw_FP64_mismatches": 0
+    },
+    "final_dense_CPU_to_native_summary": {
+      "rows": 138,
+      "nan_aware_mismatches": 0,
+      "raw_FP64_comparable_rows": 138,
+      "raw_FP64_mismatches": 0
+    }
+  },
+  "mapped_scalar_CPU_views": 163,
+  "unmapped_same_observation_rows": 204,
+  "scalar_CPU_joins": [
+    {
+      "enqueue_index": 1,
+      "name": "x",
+      "CPU_view": "forward_inputs/x",
+      "matched_values": {
+        "min": -0.000946044921875,
+        "max": 0.00250244140625,
+        "max_abs_finite": 0.00250244140625,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 1,
+      "name": "weight",
+      "CPU_view": "forward_inputs/weight",
+      "matched_values": {
+        "min": -0.21611042320728302,
+        "max": 0.2240990847349167,
+        "max_abs_finite": 0.2240990847349167,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 1,
+      "name": "bias",
+      "CPU_view": "forward_inputs/bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 2,
+      "name": "",
+      "CPU_view": "forward_output",
+      "matched_values": {
+        "min": -0.00174713134765625,
+        "max": 0.0017852783203125,
+        "max_abs_finite": 0.0017852783203125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 13,
+      "name": "x",
+      "CPU_view": "projection_boundary/inputs_before/x",
+      "matched_values": {
+        "min": -5.0,
+        "max": 4.90625,
+        "max_abs_finite": 5.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 13,
+      "name": "w",
+      "CPU_view": "projection_boundary/inputs_before/w",
+      "matched_values": {
+        "min": -0.04833984375,
+        "max": 0.04833984375,
+        "max_abs_finite": 0.04833984375,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 13,
+      "name": "dz",
+      "CPU_view": "projection_boundary/inputs_before/dz",
+      "matched_values": {
+        "min": -1.2852251529693604e-07,
+        "max": 1.0896474123001099e-07,
+        "max_abs_finite": 1.2852251529693604e-07,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 14,
+      "name": "d_normed_x",
+      "CPU_view": "projection_boundary/outputs/dx",
+      "matched_values": {
+        "min": -7.078051567077637e-08,
+        "max": 6.984919309616089e-08,
+        "max_abs_finite": 7.078051567077637e-08,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 14,
+      "name": "d_uvqk_weight",
+      "CPU_view": "projection_boundary/outputs/dw",
+      "matched_values": {
+        "min": -0.00016689300537109375,
+        "max": 0.000202178955078125,
+        "max_abs_finite": 0.000202178955078125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 14,
+      "name": "d_uvqk_bias",
+      "CPU_view": "projection_boundary/outputs/db",
+      "matched_values": {
+        "min": -6.198883056640625e-05,
+        "max": 3.838539123535156e-05,
+        "max_abs_finite": 6.198883056640625e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 48,
+      "name": "x",
+      "CPU_view": "pristine_inputs/x",
+      "matched_values": {
+        "min": -0.000946044921875,
+        "max": 0.00250244140625,
+        "max_abs_finite": 0.00250244140625,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 48,
+      "name": "mat2",
+      "CPU_view": "pristine_inputs/mat2",
+      "matched_values": {
+        "min": -0.2158203125,
+        "max": 0.2236328125,
+        "max_abs_finite": 0.2236328125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 48,
+      "name": "dy",
+      "CPU_view": "pristine_inputs/dy",
+      "matched_values": {
+        "min": -0.00067138671875,
+        "max": 0.00080108642578125,
+        "max_abs_finite": 0.00080108642578125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 49,
+      "name": "bias",
+      "CPU_view": "stages/raw_small/bias",
+      "matched_values": {
+        "min": -0.390625,
+        "max": 0.515625,
+        "max_abs_finite": 0.515625,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 49,
+      "name": "dx",
+      "CPU_view": "stages/raw_dx",
+      "matched_values": {
+        "min": -0.00081634521484375,
+        "max": 0.000873565673828125,
+        "max_abs_finite": 0.000873565673828125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 49,
+      "name": "dmat2",
+      "CPU_view": "stages/raw_small/dmat2",
+      "matched_values": {
+        "min": -0.0009765625,
+        "max": 0.00128936767578125,
+        "max_abs_finite": 0.00128936767578125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 50,
+      "name": "x",
+      "CPU_view": "post_node_inputs/x",
+      "matched_values": {
+        "min": -0.000946044921875,
+        "max": 0.00250244140625,
+        "max_abs_finite": 0.00250244140625,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 50,
+      "name": "mat2",
+      "CPU_view": "post_node_inputs/mat2",
+      "matched_values": {
+        "min": -0.2158203125,
+        "max": 0.2236328125,
+        "max_abs_finite": 0.2236328125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 50,
+      "name": "dy",
+      "CPU_view": "post_node_inputs/dy",
+      "matched_values": {
+        "min": -0.00067138671875,
+        "max": 0.00080108642578125,
+        "max_abs_finite": 0.00080108642578125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 55,
+      "name": "gradient",
+      "CPU_view": "stages/parameter_pre_weight",
+      "matched_values": {
+        "min": -0.0009765625,
+        "max": 0.00128936767578125,
+        "max_abs_finite": 0.00128936767578125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 57,
+      "name": "gradient",
+      "CPU_view": "stages/parameter_post_weight",
+      "matched_values": {
+        "min": -0.0009765625,
+        "max": 0.00128936767578125,
+        "max_abs_finite": 0.00128936767578125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 60,
+      "name": "gradient",
+      "CPU_view": "stages/parameter_pre_bias",
+      "matched_values": {
+        "min": -0.390625,
+        "max": 0.515625,
+        "max_abs_finite": 0.515625,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 62,
+      "name": "gradient",
+      "CPU_view": "stages/parameter_post_bias",
+      "matched_values": {
+        "min": -0.390625,
+        "max": 0.515625,
+        "max_abs_finite": 0.515625,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 64,
+      "name": "weight",
+      "CPU_view": "stages/after_backward_return/weight",
+      "matched_values": {
+        "min": -0.0009765625,
+        "max": 0.00128936767578125,
+        "max_abs_finite": 0.00128936767578125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 64,
+      "name": "bias",
+      "CPU_view": "stages/after_backward_return/bias",
+      "matched_values": {
+        "min": -0.390625,
+        "max": 0.515625,
+        "max_abs_finite": 0.515625,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_multitask_module._prediction_module.0.weight",
+      "CPU_view": "final_dense/parameters/_multitask_module._prediction_module.0.weight",
+      "matched_values": {
+        "min": -0.07654635608196259,
+        "max": 0.07654650509357452,
+        "max_abs_finite": 0.07654650509357452,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_multitask_module._prediction_module.0.bias",
+      "CPU_view": "final_dense/parameters/_multitask_module._prediction_module.0.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_multitask_module._prediction_module.1.weight",
+      "CPU_view": "final_dense/parameters/_multitask_module._prediction_module.1.weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_multitask_module._prediction_module.1.bias",
+      "CPU_view": "final_dense/parameters/_multitask_module._prediction_module.1.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_multitask_module._prediction_module.2.weight",
+      "CPU_view": "final_dense/parameters/_multitask_module._prediction_module.2.weight",
+      "matched_values": {
+        "min": -0.10808444023132324,
+        "max": 0.10655859857797623,
+        "max_abs_finite": 0.10808444023132324,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_multitask_module._prediction_module.2.bias",
+      "CPU_view": "final_dense/parameters/_multitask_module._prediction_module.2.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.0._uvqk_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.0._uvqk_weight",
+      "matched_values": {
+        "min": -0.0484122596681118,
+        "max": 0.0484122633934021,
+        "max_abs_finite": 0.0484122633934021,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.0._uvqk_beta",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.0._uvqk_beta",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.0._input_norm_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.0._input_norm_weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.0._input_norm_bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.0._input_norm_bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.0._output_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.0._output_weight",
+      "matched_values": {
+        "min": -0.05412638187408447,
+        "max": 0.05412619933485985,
+        "max_abs_finite": 0.05412638187408447,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.0._output_norm_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.0._output_norm_weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.0._output_norm_bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.0._output_norm_bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.1._uvqk_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.1._uvqk_weight",
+      "matched_values": {
+        "min": -0.048412248492240906,
+        "max": 0.04841211438179016,
+        "max_abs_finite": 0.048412248492240906,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.1._uvqk_beta",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.1._uvqk_beta",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.1._input_norm_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.1._input_norm_weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.1._input_norm_bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.1._input_norm_bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.1._output_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.1._output_weight",
+      "matched_values": {
+        "min": -0.05412638187408447,
+        "max": 0.05412629619240761,
+        "max_abs_finite": 0.05412638187408447,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.1._output_norm_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.1._output_norm_weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.1._output_norm_bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.1._output_norm_bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.2._uvqk_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.2._uvqk_weight",
+      "matched_values": {
+        "min": -0.04841219633817673,
+        "max": 0.04841223731637001,
+        "max_abs_finite": 0.04841223731637001,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.2._uvqk_beta",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.2._uvqk_beta",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.2._input_norm_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.2._input_norm_weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.2._input_norm_bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.2._input_norm_bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.2._output_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.2._output_weight",
+      "matched_values": {
+        "min": -0.05412650853395462,
+        "max": 0.05412653461098671,
+        "max_abs_finite": 0.05412653461098671,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.2._output_norm_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.2._output_norm_weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._stu_module._stu_layers.2._output_norm_bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._stu_module._stu_layers.2._output_norm_bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._batched_contextual_linear_weights",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._batched_contextual_linear_weights",
+      "matched_values": {
+        "min": -0.23829634487628937,
+        "max": 0.2103075087070465,
+        "max_abs_finite": 0.23829634487628937,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._batched_contextual_linear_bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._batched_contextual_linear_bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.0.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.0.weight",
+      "matched_values": {
+        "min": -0.21874019503593445,
+        "max": 0.22088268399238586,
+        "max_abs_finite": 0.22088268399238586,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.0.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.0.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.1.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.1.weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.1.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.1.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.2.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.2.weight",
+      "matched_values": {
+        "min": -0.2063930332660675,
+        "max": 0.22911930084228516,
+        "max_abs_finite": 0.22911930084228516,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.2.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.2.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.3.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.3.weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.3.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.3.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.0.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.0.weight",
+      "matched_values": {
+        "min": -0.18682415783405304,
+        "max": 0.17062008380889893,
+        "max_abs_finite": 0.18682415783405304,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.0.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.0.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.1.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.1.weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.1.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.1.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.2.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.2.weight",
+      "matched_values": {
+        "min": -0.21611042320728302,
+        "max": 0.2240990847349167,
+        "max_abs_finite": 0.2240990847349167,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.2.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.2.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.3.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.3.weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.3.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.3.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._action_encoder._action_embedding_table",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._action_encoder._action_embedding_table",
+      "matched_values": {
+        "min": -0.1709047108888626,
+        "max": 0.24217092990875244,
+        "max_abs_finite": 0.24217092990875244,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._action_encoder._target_action_embedding_table",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._action_encoder._target_action_embedding_table",
+      "matched_values": {
+        "min": -0.24088691174983978,
+        "max": 0.20519526302814484,
+        "max_abs_finite": 0.24088691174983978,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.0.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.0.weight",
+      "matched_values": {
+        "min": -0.36398786306381226,
+        "max": 0.2919251024723053,
+        "max_abs_finite": 0.36398786306381226,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.0.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.0.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.1.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.1.weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.1.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.1.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.2.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.2.weight",
+      "matched_values": {
+        "min": -0.21194688975811005,
+        "max": 0.23728621006011963,
+        "max_abs_finite": 0.23728621006011963,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.2.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.2.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.3.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.3.weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.3.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.3.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._output_postprocessor._layer_norm.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._output_postprocessor._layer_norm.weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._output_postprocessor._layer_norm.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._output_postprocessor._layer_norm.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._output_postprocessor._time_feature_combiner.weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._output_postprocessor._time_feature_combiner.weight",
+      "matched_values": {
+        "min": -0.20676180720329285,
+        "max": 0.20173823833465576,
+        "max_abs_finite": 0.20676180720329285,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._output_postprocessor._time_feature_combiner.bias",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._output_postprocessor._time_feature_combiner.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._positional_encoder._position_embeddings_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._positional_encoder._position_embeddings_weight",
+      "matched_values": {
+        "min": -0.01104852743446827,
+        "max": 0.01104853767901659,
+        "max_abs_finite": 0.01104853767901659,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_hstu_transducer._positional_encoder._timestamp_embeddings_weight",
+      "CPU_view": "final_dense/parameters/_hstu_transducer._positional_encoder._timestamp_embeddings_weight",
+      "matched_values": {
+        "min": -0.022097043693065643,
+        "max": 0.022097071632742882,
+        "max_abs_finite": 0.022097071632742882,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_item_embedding_mlp.0.weight",
+      "CPU_view": "final_dense/parameters/_item_embedding_mlp.0.weight",
+      "matched_values": {
+        "min": -0.05412645637989044,
+        "max": 0.05412641167640686,
+        "max_abs_finite": 0.05412645637989044,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_item_embedding_mlp.0.bias",
+      "CPU_view": "final_dense/parameters/_item_embedding_mlp.0.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_item_embedding_mlp.1.weight",
+      "CPU_view": "final_dense/parameters/_item_embedding_mlp.1.weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_item_embedding_mlp.1.bias",
+      "CPU_view": "final_dense/parameters/_item_embedding_mlp.1.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_item_embedding_mlp.2.weight",
+      "CPU_view": "final_dense/parameters/_item_embedding_mlp.2.weight",
+      "matched_values": {
+        "min": -0.07654453814029694,
+        "max": 0.07654611021280289,
+        "max_abs_finite": 0.07654611021280289,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_item_embedding_mlp.2.bias",
+      "CPU_view": "final_dense/parameters/_item_embedding_mlp.2.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_item_embedding_mlp.3.weight",
+      "CPU_view": "final_dense/parameters/_item_embedding_mlp.3.weight",
+      "matched_values": {
+        "min": 1.0,
+        "max": 1.0,
+        "max_abs_finite": 1.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "parameters/_item_embedding_mlp.3.bias",
+      "CPU_view": "final_dense/parameters/_item_embedding_mlp.3.bias",
+      "matched_values": {
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs_finite": 0.0,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_multitask_module._prediction_module.0.weight",
+      "CPU_view": "final_dense/gradients/_multitask_module._prediction_module.0.weight",
+      "matched_values": {
+        "min": -0.006074287462979555,
+        "max": 0.006715785712003708,
+        "max_abs_finite": 0.006715785712003708,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_multitask_module._prediction_module.0.bias",
+      "CPU_view": "final_dense/gradients/_multitask_module._prediction_module.0.bias",
+      "matched_values": {
+        "min": -0.012283588759601116,
+        "max": 0.011112520471215248,
+        "max_abs_finite": 0.012283588759601116,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_multitask_module._prediction_module.1.weight",
+      "CPU_view": "final_dense/gradients/_multitask_module._prediction_module.1.weight",
+      "matched_values": {
+        "min": -0.0005975202075205743,
+        "max": 0.0005191100062802434,
+        "max_abs_finite": 0.0005975202075205743,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_multitask_module._prediction_module.1.bias",
+      "CPU_view": "final_dense/gradients/_multitask_module._prediction_module.1.bias",
+      "matched_values": {
+        "min": -0.0002832018071785569,
+        "max": 0.0002992037043441087,
+        "max_abs_finite": 0.0002992037043441087,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_multitask_module._prediction_module.2.weight",
+      "CPU_view": "final_dense/gradients/_multitask_module._prediction_module.2.weight",
+      "matched_values": {
+        "min": -0.003679100191220641,
+        "max": 0.03834087774157524,
+        "max_abs_finite": 0.03834087774157524,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_multitask_module._prediction_module.2.bias",
+      "CPU_view": "final_dense/gradients/_multitask_module._prediction_module.2.bias",
+      "matched_values": {
+        "min": 0.10573950409889221,
+        "max": 0.10573950409889221,
+        "max_abs_finite": 0.10573950409889221,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.0._uvqk_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.0._uvqk_weight",
+      "matched_values": {
+        "min": -0.000293731689453125,
+        "max": 0.0002536773681640625,
+        "max_abs_finite": 0.000293731689453125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.0._uvqk_beta",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.0._uvqk_beta",
+      "matched_values": {
+        "min": -9.632110595703125e-05,
+        "max": 7.82012939453125e-05,
+        "max_abs_finite": 9.632110595703125e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.0._input_norm_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.0._input_norm_weight",
+      "matched_values": {
+        "min": -5.53131103515625e-05,
+        "max": 3.981590270996094e-05,
+        "max_abs_finite": 5.53131103515625e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.0._input_norm_bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.0._input_norm_bias",
+      "matched_values": {
+        "min": -3.504753112792969e-05,
+        "max": 2.8848648071289062e-05,
+        "max_abs_finite": 3.504753112792969e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.0._output_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.0._output_weight",
+      "matched_values": {
+        "min": -0.0002079010009765625,
+        "max": 0.0001583099365234375,
+        "max_abs_finite": 0.0002079010009765625,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.0._output_norm_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.0._output_norm_weight",
+      "matched_values": {
+        "min": -6.723403930664062e-05,
+        "max": 2.193450927734375e-05,
+        "max_abs_finite": 6.723403930664062e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.0._output_norm_bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.0._output_norm_bias",
+      "matched_values": {
+        "min": -4.172325134277344e-05,
+        "max": 2.8967857360839844e-05,
+        "max_abs_finite": 4.172325134277344e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.1._uvqk_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.1._uvqk_weight",
+      "matched_values": {
+        "min": -0.00019168853759765625,
+        "max": 0.000213623046875,
+        "max_abs_finite": 0.000213623046875,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.1._uvqk_beta",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.1._uvqk_beta",
+      "matched_values": {
+        "min": -5.7220458984375e-05,
+        "max": 7.05718994140625e-05,
+        "max_abs_finite": 7.05718994140625e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.1._input_norm_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.1._input_norm_weight",
+      "matched_values": {
+        "min": -3.528594970703125e-05,
+        "max": 3.314018249511719e-05,
+        "max_abs_finite": 3.528594970703125e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.1._input_norm_bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.1._input_norm_bias",
+      "matched_values": {
+        "min": -2.7894973754882812e-05,
+        "max": 2.777576446533203e-05,
+        "max_abs_finite": 2.7894973754882812e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.1._output_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.1._output_weight",
+      "matched_values": {
+        "min": -0.0001583099365234375,
+        "max": 0.0001220703125,
+        "max_abs_finite": 0.0001583099365234375,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.1._output_norm_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.1._output_norm_weight",
+      "matched_values": {
+        "min": -3.790855407714844e-05,
+        "max": 2.8967857360839844e-05,
+        "max_abs_finite": 3.790855407714844e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.1._output_norm_bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.1._output_norm_bias",
+      "matched_values": {
+        "min": -2.7060508728027344e-05,
+        "max": 2.5272369384765625e-05,
+        "max_abs_finite": 2.7060508728027344e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.2._uvqk_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.2._uvqk_weight",
+      "matched_values": {
+        "min": -0.00016689300537109375,
+        "max": 0.000202178955078125,
+        "max_abs_finite": 0.000202178955078125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.2._uvqk_beta",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.2._uvqk_beta",
+      "matched_values": {
+        "min": -6.198883056640625e-05,
+        "max": 3.838539123535156e-05,
+        "max_abs_finite": 6.198883056640625e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.2._input_norm_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.2._input_norm_weight",
+      "matched_values": {
+        "min": -4.601478576660156e-05,
+        "max": 5.125999450683594e-05,
+        "max_abs_finite": 5.125999450683594e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.2._input_norm_bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.2._input_norm_bias",
+      "matched_values": {
+        "min": -3.695487976074219e-05,
+        "max": 3.409385681152344e-05,
+        "max_abs_finite": 3.695487976074219e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.2._output_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.2._output_weight",
+      "matched_values": {
+        "min": -0.0001277923583984375,
+        "max": 0.0001354217529296875,
+        "max_abs_finite": 0.0001354217529296875,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.2._output_norm_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.2._output_norm_weight",
+      "matched_values": {
+        "min": -3.314018249511719e-05,
+        "max": 1.895427703857422e-05,
+        "max_abs_finite": 3.314018249511719e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._stu_module._stu_layers.2._output_norm_bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._stu_module._stu_layers.2._output_norm_bias",
+      "matched_values": {
+        "min": -2.7179718017578125e-05,
+        "max": 2.562999725341797e-05,
+        "max_abs_finite": 2.7179718017578125e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._batched_contextual_linear_weights",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._batched_contextual_linear_weights",
+      "matched_values": {
+        "min": -5.075708031654358e-08,
+        "max": 5.075708031654358e-08,
+        "max_abs_finite": 5.075708031654358e-08,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._batched_contextual_linear_bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._batched_contextual_linear_bias",
+      "matched_values": {
+        "min": -3.62396240234375e-05,
+        "max": 3.0517578125e-05,
+        "max_abs_finite": 3.62396240234375e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.0.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.0.weight",
+      "matched_values": {
+        "min": -0.0001621246337890625,
+        "max": 0.00016307830810546875,
+        "max_abs_finite": 0.00016307830810546875,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.0.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.0.bias",
+      "matched_values": {
+        "min": -0.244140625,
+        "max": 0.25,
+        "max_abs_finite": 0.25,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.1.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.1.weight",
+      "matched_values": {
+        "min": -1.3936003597336821e-05,
+        "max": 2.548215888964478e-05,
+        "max_abs_finite": 2.548215888964478e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.1.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.1.bias",
+      "matched_values": {
+        "min": -8.625027840025723e-05,
+        "max": 6.195669993758202e-05,
+        "max_abs_finite": 8.625027840025723e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.2.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.2.weight",
+      "matched_values": {
+        "min": -0.0002689361572265625,
+        "max": 0.0003528594970703125,
+        "max_abs_finite": 0.0003528594970703125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.2.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.2.bias",
+      "matched_values": {
+        "min": -0.39453125,
+        "max": 0.51953125,
+        "max_abs_finite": 0.51953125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.3.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.3.weight",
+      "matched_values": {
+        "min": -0.00015967099170666188,
+        "max": 0.00015678833005949855,
+        "max_abs_finite": 0.00015967099170666188,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.3.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.3.bias",
+      "matched_values": {
+        "min": -0.0012489014770835638,
+        "max": 0.0016465544467791915,
+        "max_abs_finite": 0.0016465544467791915,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.0.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.0.weight",
+      "matched_values": {
+        "min": -0.0005950927734375,
+        "max": 0.000591278076171875,
+        "max_abs_finite": 0.0005950927734375,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.0.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.0.bias",
+      "matched_values": {
+        "min": -0.2353515625,
+        "max": 0.33984375,
+        "max_abs_finite": 0.33984375,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.1.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.1.weight",
+      "matched_values": {
+        "min": -0.00015291388262994587,
+        "max": 0.00011740405898308381,
+        "max_abs_finite": 0.00015291388262994587,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.1.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.1.bias",
+      "matched_values": {
+        "min": -0.000157433794811368,
+        "max": 0.00016131669690366834,
+        "max_abs_finite": 0.00016131669690366834,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.2.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.2.weight",
+      "matched_values": {
+        "min": -0.0009765625,
+        "max": 0.00128936767578125,
+        "max_abs_finite": 0.00128936767578125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.2.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.2.bias",
+      "matched_values": {
+        "min": -0.390625,
+        "max": 0.515625,
+        "max_abs_finite": 0.515625,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.3.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.3.weight",
+      "matched_values": {
+        "min": -0.00029425014508888125,
+        "max": 0.0002885069989133626,
+        "max_abs_finite": 0.00029425014508888125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.3.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._additional_embedding_mlp.3.bias",
+      "matched_values": {
+        "min": -0.0012489014770835638,
+        "max": 0.0016465544467791915,
+        "max_abs_finite": 0.0016465544467791915,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._action_encoder._action_embedding_table",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._action_encoder._action_embedding_table",
+      "matched_values": {
+        "min": -0.0006453600362874568,
+        "max": 0.0010456594172865152,
+        "max_abs_finite": 0.0010456594172865152,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._action_encoder._target_action_embedding_table",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._action_encoder._target_action_embedding_table",
+      "matched_values": {
+        "min": -0.044824227690696716,
+        "max": 0.0374005064368248,
+        "max_abs_finite": 0.044824227690696716,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.0.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.0.weight",
+      "matched_values": {
+        "min": -0.01385498046875,
+        "max": 0.0162353515625,
+        "max_abs_finite": 0.0162353515625,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.0.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.0.bias",
+      "matched_values": {
+        "min": -0.0673828125,
+        "max": 0.052490234375,
+        "max_abs_finite": 0.0673828125,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.1.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.1.weight",
+      "matched_values": {
+        "min": -0.000976938521489501,
+        "max": 0.0008760867640376091,
+        "max_abs_finite": 0.000976938521489501,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.1.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.1.bias",
+      "matched_values": {
+        "min": -0.0006083186017349362,
+        "max": 0.0004587637376971543,
+        "max_abs_finite": 0.0006083186017349362,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.2.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.2.weight",
+      "matched_values": {
+        "min": -0.0067138671875,
+        "max": 0.0087890625,
+        "max_abs_finite": 0.0087890625,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.2.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.2.bias",
+      "matched_values": {
+        "min": -0.057861328125,
+        "max": 0.076171875,
+        "max_abs_finite": 0.076171875,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.3.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.3.weight",
+      "matched_values": {
+        "min": -0.0024330182932317257,
+        "max": 0.001996335107833147,
+        "max_abs_finite": 0.0024330182932317257,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.3.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._input_preprocessor._action_embedding_mlp.3.bias",
+      "matched_values": {
+        "min": -0.0012489014770835638,
+        "max": 0.0016465544467791915,
+        "max_abs_finite": 0.0016465544467791915,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._output_postprocessor._layer_norm.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._output_postprocessor._layer_norm.weight",
+      "matched_values": {
+        "min": -0.0031975838355720043,
+        "max": 0.0034269129391759634,
+        "max_abs_finite": 0.0034269129391759634,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._output_postprocessor._layer_norm.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._output_postprocessor._layer_norm.bias",
+      "matched_values": {
+        "min": -0.002737433183938265,
+        "max": 0.0021627768874168396,
+        "max_abs_finite": 0.002737433183938265,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._output_postprocessor._time_feature_combiner.weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._output_postprocessor._time_feature_combiner.weight",
+      "matched_values": {
+        "min": -0.008056640625,
+        "max": 0.0069580078125,
+        "max_abs_finite": 0.008056640625,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._output_postprocessor._time_feature_combiner.bias",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._output_postprocessor._time_feature_combiner.bias",
+      "matched_values": {
+        "min": -0.00010585784912109375,
+        "max": 8.7738037109375e-05,
+        "max_abs_finite": 0.00010585784912109375,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._positional_encoder._position_embeddings_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._positional_encoder._position_embeddings_weight",
+      "matched_values": {
+        "min": -5.5342912673950195e-05,
+        "max": 7.271766662597656e-05,
+        "max_abs_finite": 7.271766662597656e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_hstu_transducer._positional_encoder._timestamp_embeddings_weight",
+      "CPU_view": "final_dense/gradients/_hstu_transducer._positional_encoder._timestamp_embeddings_weight",
+      "matched_values": {
+        "min": -5.521149068954401e-05,
+        "max": 7.275453390320763e-05,
+        "max_abs_finite": 7.275453390320763e-05,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_item_embedding_mlp.0.weight",
+      "CPU_view": "final_dense/gradients/_item_embedding_mlp.0.weight",
+      "matched_values": {
+        "min": -0.0034732965286821127,
+        "max": 0.003466001944616437,
+        "max_abs_finite": 0.0034732965286821127,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_item_embedding_mlp.0.bias",
+      "CPU_view": "final_dense/gradients/_item_embedding_mlp.0.bias",
+      "matched_values": {
+        "min": -1.835160493850708,
+        "max": 1.9850916862487793,
+        "max_abs_finite": 1.9850916862487793,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_item_embedding_mlp.1.weight",
+      "CPU_view": "final_dense/gradients/_item_embedding_mlp.1.weight",
+      "matched_values": {
+        "min": -0.0006598393083550036,
+        "max": 0.0005660663591697812,
+        "max_abs_finite": 0.0006598393083550036,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_item_embedding_mlp.1.bias",
+      "CPU_view": "final_dense/gradients/_item_embedding_mlp.1.bias",
+      "matched_values": {
+        "min": -0.0010614794446155429,
+        "max": 0.0009932080283761024,
+        "max_abs_finite": 0.0010614794446155429,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_item_embedding_mlp.2.weight",
+      "CPU_view": "final_dense/gradients/_item_embedding_mlp.2.weight",
+      "matched_values": {
+        "min": -0.006023137830197811,
+        "max": 0.008304729126393795,
+        "max_abs_finite": 0.008304729126393795,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_item_embedding_mlp.2.bias",
+      "CPU_view": "final_dense/gradients/_item_embedding_mlp.2.bias",
+      "matched_values": {
+        "min": -4.134030342102051,
+        "max": 5.693447589874268,
+        "max_abs_finite": 5.693447589874268,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_item_embedding_mlp.3.weight",
+      "CPU_view": "final_dense/gradients/_item_embedding_mlp.3.weight",
+      "matched_values": {
+        "min": -0.003197637153789401,
+        "max": 0.0034268791787326336,
+        "max_abs_finite": 0.0034268791787326336,
+        "finite": true,
+        "extreme": false
+      }
+    },
+    {
+      "enqueue_index": 67,
+      "name": "gradients/_item_embedding_mlp.3.bias",
+      "CPU_view": "final_dense/gradients/_item_embedding_mlp.3.bias",
+      "matched_values": {
+        "min": -0.013315822929143906,
+        "max": 0.018034592270851135,
+        "max_abs_finite": 0.018034592270851135,
+        "finite": true,
+        "extreme": false
+      }
+    }
+  ],
+  "selected_Linear_DW": {
+    "pid": 163747,
+    "launch_id": 47,
+    "kernel": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1",
+    "pointers": {
+      "A": "0x736b83fa8800",
+      "B": "0x736e8ecffc00",
+      "D": "0x73b94054be00",
+      "C": "0x73b94054be00"
+    },
+    "all_ABCD_matches_in_complete_trace": 1,
+    "output_pointer_only_matching_launch_ids": [
+      43,
+      47
+    ],
+    "fields": {
+      "Gemm info": 1,
+      "kernel info0": 1,
+      "kernel info1": 1073807361,
+      "numWG": 256,
+      "SizesFree0": 256,
+      "SizesFree1": 512,
+      "SizesFree2": 1,
+      "SizesSum0": 1415093,
+      "D": "0x73b94054be00",
+      "C": "0x73b94054be00",
+      "A": "0x736b83fa8800",
+      "B": "0x736e8ecffc00",
+      "strideD0": 256,
+      "strideD1": 0,
+      "strideC0": 256,
+      "strideC1": 0,
+      "strideA0": 256,
+      "strideA1": 0,
+      "strideB0": 512,
+      "strideB1": 0,
+      "alpha": 1.0,
+      "beta": 0.0,
+      "AddressScaleAlphaVec": "0x0",
+      "bias": "0x0",
+      "biasType": 0,
+      "StrideBias": 0,
+      "activationAlpha": 0.0,
+      "activationBeta": 0.0,
+      "activationType": 0,
+      "batchOffsetD": 0,
+      "batchOffsetC": 0,
+      "batchOffsetA": 0,
+      "batchOffsetB": 0
+    },
+    "grid_or_global": [
+      16384,
+      1,
+      1
+    ],
+    "block_or_local": [
+      64,
+      1,
+      1
+    ],
+    "packet_sha256": "3c5e7689cef00682e7307faa183255e8912c0be2cccd63a512490f8878cd1468"
+  },
+  "limits": [
+    "All A/B/C/D pointers and dimensions are required: the same output address was reused by earlier launch43.",
+    "Saved pointer metadata joins host API launch47 to the selected raw DW boundary; no on-device instruction or internal operand-read certificate.",
+    "The root full CPU audit supplies the23.47GB whole-file hash and raw-value scans; this join rereads small artifacts and the complete host trace only.",
+    "163 scalar rows have retained same-observation CPU tensor counterparts;204 other rows lack such full tensors.",
+    "Finite values and exact downstream propagation in this bounded smoke are not an exact-gradient or training-fix guarantee."
+  ]
+}

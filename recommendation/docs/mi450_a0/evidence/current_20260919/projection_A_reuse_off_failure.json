@@ -1,0 +1,1719 @@
+{
+  "format": "native_A_reuse_off_ELF_projection_zero_full_failure_independent_v1",
+  "status": "EXACT_ZERO_DX_VIOLATION_CONFIRMED",
+  "artifact_integrity_review": "PASS",
+  "created_utc": "2026-09-19T08:48:44.415294+00:00",
+  "audit_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/audit_native_a_reuse_off516_payload_independent_v1.py",
+    "bytes": 16828,
+    "sha256": "216967292610ef8faf53b9be3950002aff64d59044e164d0f289bde9501bcdc5",
+    "stable_during_wholefile_read": true
+  },
+  "raw_ZIP_helper": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/audit_step405_linear_zero_failure_independent_v1.py",
+    "bytes": 25482,
+    "sha256": "93dcdc836a6f14bd6dc28228b0e1d52ba3dc93f5e7f38ece63ec7a5f09ddee3b",
+    "stable_during_wholefile_read": true
+  },
+  "method": "CPU-only restricted abstract metadata decoding and complete read-only ZIP storage hashing/BF16 bit histograms via NumPy; no Torch, HIP, live device inspection, or GPU replay.",
+  "artifacts": {
+    "failure": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_failure.pt",
+      "bytes": 18063491905,
+      "sha256": "6ead4e032620898c9342b5cc26be831e210700c708b7a801f08b55a9e91439bd",
+      "stable_during_wholefile_read": true
+    },
+    "run_report": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1.json",
+      "bytes": 878763,
+      "sha256": "4073ba73a67730f46503af816a98658420dd3d9a1913b4653a3ebf8629cc6661",
+      "stable_during_wholefile_read": true
+    },
+    "environment": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_environment.json",
+      "bytes": 3611,
+      "sha256": "69ba0bc54aed363cdea14fdce2bea3a7ed993b3db2289c374db0faa7a7d83f31",
+      "stable_during_wholefile_read": true
+    },
+    "run_log": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1.log",
+      "bytes": 21728,
+      "sha256": "fd297791b5d39cdc1e34d5f25b637507e0c9d8cf74dbc9660b57abb62d3813dc",
+      "stable_during_wholefile_read": true
+    },
+    "retained_W_bundle": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/direct_dx_zero_actualW_source_v1.pt",
+      "bytes": 2100457,
+      "sha256": "8d77dd0db4330ed098389b57804cbb55b8f82c4840ae591e04a60491abbac112",
+      "stable_during_wholefile_read": true
+    },
+    "packed_W_candidates": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_packed_W_candidates_independent_v1.json",
+      "bytes": 103099,
+      "sha256": "c8c5fe1b8c1d2b1aed236286f7e36fc3bccd4ce9ecbc92af58cba4eb43b9e7bf",
+      "stable_during_wholefile_read": true
+    },
+    "root_terminal": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_root_terminal.json",
+      "bytes": 2704,
+      "sha256": "3107cb692de9a938355013ebbdaf74f6c91cc43c491ac6ee6c90878b88ebd90b",
+      "stable_during_wholefile_read": true
+    }
+  },
+  "summary": {
+    "failed_call": 516,
+    "prior_passing_calls": 515,
+    "wrong_finite_DX_count": 113,
+    "DX_shape": [
+      1959558,
+      512
+    ],
+    "DX_stride": [
+      512,
+      1
+    ],
+    "DX_storage_offset": 0,
+    "DX_statistics": {
+      "elements": 1003293696,
+      "positive_zero_count": 1003293583,
+      "negative_zero_count": 0,
+      "nonzero_including_nonfinite_count": 113,
+      "nonfinite_count": 0,
+      "infinity_count": 0,
+      "nan_count": 0,
+      "subnormal_count": 0,
+      "extreme_count": 0,
+      "max_abs_finite": 0.04833984375,
+      "unique_raw_bitpatterns": 91
+    },
+    "all_input_backing_bytes_unchanged": true,
+    "W_backing_bytes_match_pinned_original": true,
+    "W_finite": true,
+    "all_4013174784_pristine_and_current_DZ_elements_positive_zero": true,
+    "existing_first_wrong_output_retained_without_rerun": true,
+    "packed_model_counts": {
+      "wrong_elements": 113,
+      "restricted_matched_elements": 113,
+      "restricted_unique_elements": 97,
+      "restricted_ambiguous_elements": 16,
+      "groups": 43,
+      "restricted_matched_groups": 43,
+      "restricted_unique_groups": 39
+    }
+  },
+  "mathematical_oracle": "DX[r,c]=sum_k DZ[r,k]*W[c,k]. Every DZ element is exactly positive zero and every W element is finite, so every exact product and sum is numerical zero. Signed zeros are allowed; any nonzero BF16 magnitude is a decisive violation.",
+  "all_retained_storage_inventory": {
+    "0": {
+      "zip_member": "archive/data/0",
+      "bytes": 2097152,
+      "sha256": "c54f83af34b940a0d34c5571c0c0f7f29b5565ddd2c1b7ab60995223ad2a67a7",
+      "file_data_offset": 9344,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": false,
+      "BF16_bits": {
+        "elements": 1048576,
+        "positive_zero_count": 0,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 1048576,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.04833984375,
+        "unique_raw_bitpatterns": 3176
+      }
+    },
+    "1": {
+      "zip_member": "archive/data/1",
+      "bytes": 8026349568,
+      "sha256": "a7d815f891447ad7f0fcf1dc1e9c9c2347b8ec96f2f20deed0129db834302870",
+      "file_data_offset": 2106624,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": false,
+      "BF16_bits": {
+        "elements": 4013174784,
+        "positive_zero_count": 4013174784,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 0,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0,
+        "unique_raw_bitpatterns": 1
+      }
+    },
+    "2": {
+      "zip_member": "archive/data/2",
+      "bytes": 2097152,
+      "sha256": "c54f83af34b940a0d34c5571c0c0f7f29b5565ddd2c1b7ab60995223ad2a67a7",
+      "file_data_offset": 8028456320,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": true,
+      "BF16_bits": {
+        "elements": 1048576,
+        "positive_zero_count": 0,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 1048576,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.04833984375,
+        "unique_raw_bitpatterns": 3176
+      }
+    },
+    "3": {
+      "zip_member": "archive/data/3",
+      "bytes": 8026349568,
+      "sha256": "a7d815f891447ad7f0fcf1dc1e9c9c2347b8ec96f2f20deed0129db834302870",
+      "file_data_offset": 8030553600,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": true,
+      "BF16_bits": {
+        "elements": 4013174784,
+        "positive_zero_count": 4013174784,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 0,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0,
+        "unique_raw_bitpatterns": 1
+      }
+    },
+    "4": {
+      "zip_member": "archive/data/4",
+      "bytes": 2006587392,
+      "sha256": "0f782be946ffff80bec8e5bbebee5983622e6760acefb56a4d09488ed0397945",
+      "file_data_offset": 16056903296,
+      "all_backing_bytes_hashed": true,
+      "statistics_reused_from_identical_complete_hash": false,
+      "BF16_bits": {
+        "elements": 1003293696,
+        "positive_zero_count": 1003293583,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 113,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.04833984375,
+        "unique_raw_bitpatterns": 91
+      }
+    }
+  },
+  "independent_pristine_input_digests": {
+    "inputs": {
+      "w": {
+        "shape": [
+          512,
+          2048
+        ],
+        "stride": [
+          2048,
+          1
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 0,
+        "logical_sha256": "c54f83af34b940a0d34c5571c0c0f7f29b5565ddd2c1b7ab60995223ad2a67a7",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.04833984375,
+        "is_conj": false,
+        "is_neg": false
+      },
+      "dz": {
+        "shape": [
+          1959558,
+          2048
+        ],
+        "stride": [
+          2048,
+          1
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 1,
+        "logical_sha256": "a7d815f891447ad7f0fcf1dc1e9c9c2347b8ec96f2f20deed0129db834302870",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0,
+        "is_conj": false,
+        "is_neg": false
+      }
+    },
+    "raw_storages": [
+      {
+        "bytes": 2097152,
+        "sha256": "c54f83af34b940a0d34c5571c0c0f7f29b5565ddd2c1b7ab60995223ad2a67a7"
+      },
+      {
+        "bytes": 8026349568,
+        "sha256": "a7d815f891447ad7f0fcf1dc1e9c9c2347b8ec96f2f20deed0129db834302870"
+      }
+    ]
+  },
+  "independent_current_input_digests": {
+    "inputs": {
+      "w": {
+        "shape": [
+          512,
+          2048
+        ],
+        "stride": [
+          2048,
+          1
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 0,
+        "logical_sha256": "c54f83af34b940a0d34c5571c0c0f7f29b5565ddd2c1b7ab60995223ad2a67a7",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.04833984375,
+        "is_conj": false,
+        "is_neg": false
+      },
+      "dz": {
+        "shape": [
+          1959558,
+          2048
+        ],
+        "stride": [
+          2048,
+          1
+        ],
+        "dtype": "torch.bfloat16",
+        "storage_offset": 0,
+        "storage_index": 1,
+        "logical_sha256": "a7d815f891447ad7f0fcf1dc1e9c9c2347b8ec96f2f20deed0129db834302870",
+        "nonfinite_count": 0,
+        "extreme_count": 0,
+        "max_abs_finite": 0.0,
+        "is_conj": false,
+        "is_neg": false
+      }
+    },
+    "raw_storages": [
+      {
+        "bytes": 2097152,
+        "sha256": "c54f83af34b940a0d34c5571c0c0f7f29b5565ddd2c1b7ab60995223ad2a67a7"
+      },
+      {
+        "bytes": 8026349568,
+        "sha256": "a7d815f891447ad7f0fcf1dc1e9c9c2347b8ec96f2f20deed0129db834302870"
+      }
+    ]
+  },
+  "all_digests_match_recorded": true,
+  "independent_DX_zero_check": {
+    "nonzero_magnitude_bits_count": 113,
+    "infinity_count": 0,
+    "nan_count": 0,
+    "maximum_magnitude_bits": 15686,
+    "maximum_abs_if_finite": 0.04833984375,
+    "failed": true,
+    "oracle": "All numerical zeros; signed zeros accepted and subnormal/nonfinite bits rejected"
+  },
+  "all_nonzero_locations": [
+    {
+      "coordinate": [
+        1571280,
+        130
+      ],
+      "flat_index": 804495490,
+      "storage_byte_offset": 1608990980,
+      "bits_hex": "0x3d05",
+      "raw_bytes_little_endian_hex": "053d",
+      "value": 0.032470703125
+    },
+    {
+      "coordinate": [
+        1571280,
+        162
+      ],
+      "flat_index": 804495522,
+      "storage_byte_offset": 1608991044,
+      "bits_hex": "0xbd13",
+      "raw_bytes_little_endian_hex": "13bd",
+      "value": -0.035888671875
+    },
+    {
+      "coordinate": [
+        1571280,
+        194
+      ],
+      "flat_index": 804495554,
+      "storage_byte_offset": 1608991108,
+      "bits_hex": "0xbd0c",
+      "raw_bytes_little_endian_hex": "0cbd",
+      "value": -0.0341796875
+    },
+    {
+      "coordinate": [
+        1571280,
+        226
+      ],
+      "flat_index": 804495586,
+      "storage_byte_offset": 1608991172,
+      "bits_hex": "0xbd39",
+      "raw_bytes_little_endian_hex": "39bd",
+      "value": -0.045166015625
+    },
+    {
+      "coordinate": [
+        1573200,
+        2
+      ],
+      "flat_index": 805478402,
+      "storage_byte_offset": 1610956804,
+      "bits_hex": "0x3d42",
+      "raw_bytes_little_endian_hex": "423d",
+      "value": 0.04736328125
+    },
+    {
+      "coordinate": [
+        1573200,
+        34
+      ],
+      "flat_index": 805478434,
+      "storage_byte_offset": 1610956868,
+      "bits_hex": "0xbc60",
+      "raw_bytes_little_endian_hex": "60bc",
+      "value": -0.013671875
+    },
+    {
+      "coordinate": [
+        1573200,
+        66
+      ],
+      "flat_index": 805478466,
+      "storage_byte_offset": 1610956932,
+      "bits_hex": "0xbd15",
+      "raw_bytes_little_endian_hex": "15bd",
+      "value": -0.036376953125
+    },
+    {
+      "coordinate": [
+        1573200,
+        98
+      ],
+      "flat_index": 805478498,
+      "storage_byte_offset": 1610956996,
+      "bits_hex": "0x3cf2",
+      "raw_bytes_little_endian_hex": "f23c",
+      "value": 0.029541015625
+    },
+    {
+      "coordinate": [
+        1574160,
+        66
+      ],
+      "flat_index": 805969986,
+      "storage_byte_offset": 1611939972,
+      "bits_hex": "0xbd40",
+      "raw_bytes_little_endian_hex": "40bd",
+      "value": -0.046875
+    },
+    {
+      "coordinate": [
+        1588560,
+        258
+      ],
+      "flat_index": 813342978,
+      "storage_byte_offset": 1626685956,
+      "bits_hex": "0x3d0e",
+      "raw_bytes_little_endian_hex": "0e3d",
+      "value": 0.03466796875
+    },
+    {
+      "coordinate": [
+        1588560,
+        290
+      ],
+      "flat_index": 813343010,
+      "storage_byte_offset": 1626686020,
+      "bits_hex": "0x3cb3",
+      "raw_bytes_little_endian_hex": "b33c",
+      "value": 0.0218505859375
+    },
+    {
+      "coordinate": [
+        1588560,
+        322
+      ],
+      "flat_index": 813343042,
+      "storage_byte_offset": 1626686084,
+      "bits_hex": "0x3cd0",
+      "raw_bytes_little_endian_hex": "d03c",
+      "value": 0.025390625
+    },
+    {
+      "coordinate": [
+        1588560,
+        354
+      ],
+      "flat_index": 813343074,
+      "storage_byte_offset": 1626686148,
+      "bits_hex": "0xbccb",
+      "raw_bytes_little_endian_hex": "cbbc",
+      "value": -0.0247802734375
+    },
+    {
+      "coordinate": [
+        1590480,
+        162
+      ],
+      "flat_index": 814325922,
+      "storage_byte_offset": 1628651844,
+      "bits_hex": "0xbb99",
+      "raw_bytes_little_endian_hex": "99bb",
+      "value": -0.004669189453125
+    },
+    {
+      "coordinate": [
+        1590480,
+        194
+      ],
+      "flat_index": 814325954,
+      "storage_byte_offset": 1628651908,
+      "bits_hex": "0x3d2c",
+      "raw_bytes_little_endian_hex": "2c3d",
+      "value": 0.0419921875
+    },
+    {
+      "coordinate": [
+        1590480,
+        226
+      ],
+      "flat_index": 814325986,
+      "storage_byte_offset": 1628651972,
+      "bits_hex": "0xbd19",
+      "raw_bytes_little_endian_hex": "19bd",
+      "value": -0.037353515625
+    },
+    {
+      "coordinate": [
+        1590480,
+        386
+      ],
+      "flat_index": 814326146,
+      "storage_byte_offset": 1628652292,
+      "bits_hex": "0x3d33",
+      "raw_bytes_little_endian_hex": "333d",
+      "value": 0.043701171875
+    },
+    {
+      "coordinate": [
+        1590480,
+        418
+      ],
+      "flat_index": 814326178,
+      "storage_byte_offset": 1628652356,
+      "bits_hex": "0xbbb6",
+      "raw_bytes_little_endian_hex": "b6bb",
+      "value": -0.00555419921875
+    },
+    {
+      "coordinate": [
+        1590480,
+        450
+      ],
+      "flat_index": 814326210,
+      "storage_byte_offset": 1628652420,
+      "bits_hex": "0xbd34",
+      "raw_bytes_little_endian_hex": "34bd",
+      "value": -0.0439453125
+    },
+    {
+      "coordinate": [
+        1590480,
+        482
+      ],
+      "flat_index": 814326242,
+      "storage_byte_offset": 1628652484,
+      "bits_hex": "0xbcfa",
+      "raw_bytes_little_endian_hex": "fabc",
+      "value": -0.030517578125
+    },
+    {
+      "coordinate": [
+        1590720,
+        258
+      ],
+      "flat_index": 814448898,
+      "storage_byte_offset": 1628897796,
+      "bits_hex": "0x3d17",
+      "raw_bytes_little_endian_hex": "173d",
+      "value": 0.036865234375
+    },
+    {
+      "coordinate": [
+        1590720,
+        290
+      ],
+      "flat_index": 814448930,
+      "storage_byte_offset": 1628897860,
+      "bits_hex": "0xbc89",
+      "raw_bytes_little_endian_hex": "89bc",
+      "value": -0.0167236328125
+    },
+    {
+      "coordinate": [
+        1590720,
+        322
+      ],
+      "flat_index": 814448962,
+      "storage_byte_offset": 1628897924,
+      "bits_hex": "0xbd1f",
+      "raw_bytes_little_endian_hex": "1fbd",
+      "value": -0.038818359375
+    },
+    {
+      "coordinate": [
+        1590720,
+        354
+      ],
+      "flat_index": 814448994,
+      "storage_byte_offset": 1628897988,
+      "bits_hex": "0x3ce2",
+      "raw_bytes_little_endian_hex": "e23c",
+      "value": 0.027587890625
+    },
+    {
+      "coordinate": [
+        1590720,
+        482
+      ],
+      "flat_index": 814449122,
+      "storage_byte_offset": 1628898244,
+      "bits_hex": "0x3cdb",
+      "raw_bytes_little_endian_hex": "db3c",
+      "value": 0.0267333984375
+    },
+    {
+      "coordinate": [
+        1591440,
+        130
+      ],
+      "flat_index": 814817410,
+      "storage_byte_offset": 1629634820,
+      "bits_hex": "0xbca7",
+      "raw_bytes_little_endian_hex": "a7bc",
+      "value": -0.0203857421875
+    },
+    {
+      "coordinate": [
+        1591440,
+        162
+      ],
+      "flat_index": 814817442,
+      "storage_byte_offset": 1629634884,
+      "bits_hex": "0xbc93",
+      "raw_bytes_little_endian_hex": "93bc",
+      "value": -0.0179443359375
+    },
+    {
+      "coordinate": [
+        1591440,
+        194
+      ],
+      "flat_index": 814817474,
+      "storage_byte_offset": 1629634948,
+      "bits_hex": "0xbd17",
+      "raw_bytes_little_endian_hex": "17bd",
+      "value": -0.036865234375
+    },
+    {
+      "coordinate": [
+        1591440,
+        226
+      ],
+      "flat_index": 814817506,
+      "storage_byte_offset": 1629635012,
+      "bits_hex": "0xbaa8",
+      "raw_bytes_little_endian_hex": "a8ba",
+      "value": -0.00128173828125
+    },
+    {
+      "coordinate": [
+        1592400,
+        130
+      ],
+      "flat_index": 815308930,
+      "storage_byte_offset": 1630617860,
+      "bits_hex": "0x3c5a",
+      "raw_bytes_little_endian_hex": "5a3c",
+      "value": 0.0133056640625
+    },
+    {
+      "coordinate": [
+        1592400,
+        162
+      ],
+      "flat_index": 815308962,
+      "storage_byte_offset": 1630617924,
+      "bits_hex": "0xbbe9",
+      "raw_bytes_little_endian_hex": "e9bb",
+      "value": -0.007110595703125
+    },
+    {
+      "coordinate": [
+        1592400,
+        226
+      ],
+      "flat_index": 815309026,
+      "storage_byte_offset": 1630618052,
+      "bits_hex": "0x3ba5",
+      "raw_bytes_little_endian_hex": "a53b",
+      "value": 0.005035400390625
+    },
+    {
+      "coordinate": [
+        1592880,
+        2
+      ],
+      "flat_index": 815554562,
+      "storage_byte_offset": 1631109124,
+      "bits_hex": "0x3c4d",
+      "raw_bytes_little_endian_hex": "4d3c",
+      "value": 0.01251220703125
+    },
+    {
+      "coordinate": [
+        1592880,
+        34
+      ],
+      "flat_index": 815554594,
+      "storage_byte_offset": 1631109188,
+      "bits_hex": "0xbd1a",
+      "raw_bytes_little_endian_hex": "1abd",
+      "value": -0.03759765625
+    },
+    {
+      "coordinate": [
+        1592880,
+        66
+      ],
+      "flat_index": 815554626,
+      "storage_byte_offset": 1631109252,
+      "bits_hex": "0xbd38",
+      "raw_bytes_little_endian_hex": "38bd",
+      "value": -0.044921875
+    },
+    {
+      "coordinate": [
+        1592880,
+        98
+      ],
+      "flat_index": 815554658,
+      "storage_byte_offset": 1631109316,
+      "bits_hex": "0xbd27",
+      "raw_bytes_little_endian_hex": "27bd",
+      "value": -0.040771484375
+    },
+    {
+      "coordinate": [
+        1592880,
+        322
+      ],
+      "flat_index": 815554882,
+      "storage_byte_offset": 1631109764,
+      "bits_hex": "0xbcc8",
+      "raw_bytes_little_endian_hex": "c8bc",
+      "value": -0.0244140625
+    },
+    {
+      "coordinate": [
+        1592880,
+        482
+      ],
+      "flat_index": 815555042,
+      "storage_byte_offset": 1631110084,
+      "bits_hex": "0x3cdb",
+      "raw_bytes_little_endian_hex": "db3c",
+      "value": 0.0267333984375
+    },
+    {
+      "coordinate": [
+        1594320,
+        386
+      ],
+      "flat_index": 816292226,
+      "storage_byte_offset": 1632584452,
+      "bits_hex": "0xbd2b",
+      "raw_bytes_little_endian_hex": "2bbd",
+      "value": -0.041748046875
+    },
+    {
+      "coordinate": [
+        1594560,
+        130
+      ],
+      "flat_index": 816414850,
+      "storage_byte_offset": 1632829700,
+      "bits_hex": "0x3d2d",
+      "raw_bytes_little_endian_hex": "2d3d",
+      "value": 0.042236328125
+    },
+    {
+      "coordinate": [
+        1594560,
+        162
+      ],
+      "flat_index": 816414882,
+      "storage_byte_offset": 1632829764,
+      "bits_hex": "0x3cf0",
+      "raw_bytes_little_endian_hex": "f03c",
+      "value": 0.029296875
+    },
+    {
+      "coordinate": [
+        1594560,
+        194
+      ],
+      "flat_index": 816414914,
+      "storage_byte_offset": 1632829828,
+      "bits_hex": "0x3c85",
+      "raw_bytes_little_endian_hex": "853c",
+      "value": 0.0162353515625
+    },
+    {
+      "coordinate": [
+        1594800,
+        162
+      ],
+      "flat_index": 816537762,
+      "storage_byte_offset": 1633075524,
+      "bits_hex": "0xbbe9",
+      "raw_bytes_little_endian_hex": "e9bb",
+      "value": -0.007110595703125
+    },
+    {
+      "coordinate": [
+        1594800,
+        194
+      ],
+      "flat_index": 816537794,
+      "storage_byte_offset": 1633075588,
+      "bits_hex": "0x3cc3",
+      "raw_bytes_little_endian_hex": "c33c",
+      "value": 0.0238037109375
+    },
+    {
+      "coordinate": [
+        1594800,
+        258
+      ],
+      "flat_index": 816537858,
+      "storage_byte_offset": 1633075716,
+      "bits_hex": "0xbadb",
+      "raw_bytes_little_endian_hex": "dbba",
+      "value": -0.00167083740234375
+    },
+    {
+      "coordinate": [
+        1594800,
+        290
+      ],
+      "flat_index": 816537890,
+      "storage_byte_offset": 1633075780,
+      "bits_hex": "0x3d06",
+      "raw_bytes_little_endian_hex": "063d",
+      "value": 0.03271484375
+    },
+    {
+      "coordinate": [
+        1594800,
+        322
+      ],
+      "flat_index": 816537922,
+      "storage_byte_offset": 1633075844,
+      "bits_hex": "0x3c89",
+      "raw_bytes_little_endian_hex": "893c",
+      "value": 0.0167236328125
+    },
+    {
+      "coordinate": [
+        1594800,
+        354
+      ],
+      "flat_index": 816537954,
+      "storage_byte_offset": 1633075908,
+      "bits_hex": "0x3bf7",
+      "raw_bytes_little_endian_hex": "f73b",
+      "value": 0.007537841796875
+    },
+    {
+      "coordinate": [
+        1594800,
+        482
+      ],
+      "flat_index": 816538082,
+      "storage_byte_offset": 1633076164,
+      "bits_hex": "0xbbdf",
+      "raw_bytes_little_endian_hex": "dfbb",
+      "value": -0.006805419921875
+    },
+    {
+      "coordinate": [
+        1596240,
+        226
+      ],
+      "flat_index": 817275106,
+      "storage_byte_offset": 1634550212,
+      "bits_hex": "0x3d12",
+      "raw_bytes_little_endian_hex": "123d",
+      "value": 0.03564453125
+    },
+    {
+      "coordinate": [
+        1596720,
+        66
+      ],
+      "flat_index": 817520706,
+      "storage_byte_offset": 1635041412,
+      "bits_hex": "0xbc6a",
+      "raw_bytes_little_endian_hex": "6abc",
+      "value": -0.0142822265625
+    },
+    {
+      "coordinate": [
+        1598640,
+        130
+      ],
+      "flat_index": 818503810,
+      "storage_byte_offset": 1637007620,
+      "bits_hex": "0x3c77",
+      "raw_bytes_little_endian_hex": "773c",
+      "value": 0.01507568359375
+    },
+    {
+      "coordinate": [
+        1598640,
+        162
+      ],
+      "flat_index": 818503842,
+      "storage_byte_offset": 1637007684,
+      "bits_hex": "0x3caa",
+      "raw_bytes_little_endian_hex": "aa3c",
+      "value": 0.020751953125
+    },
+    {
+      "coordinate": [
+        1598640,
+        194
+      ],
+      "flat_index": 818503874,
+      "storage_byte_offset": 1637007748,
+      "bits_hex": "0xbc70",
+      "raw_bytes_little_endian_hex": "70bc",
+      "value": -0.0146484375
+    },
+    {
+      "coordinate": [
+        1598640,
+        226
+      ],
+      "flat_index": 818503906,
+      "storage_byte_offset": 1637007812,
+      "bits_hex": "0x3c95",
+      "raw_bytes_little_endian_hex": "953c",
+      "value": 0.0181884765625
+    },
+    {
+      "coordinate": [
+        1619040,
+        130
+      ],
+      "flat_index": 828948610,
+      "storage_byte_offset": 1657897220,
+      "bits_hex": "0x3d46",
+      "raw_bytes_little_endian_hex": "463d",
+      "value": 0.04833984375
+    },
+    {
+      "coordinate": [
+        1619040,
+        162
+      ],
+      "flat_index": 828948642,
+      "storage_byte_offset": 1657897284,
+      "bits_hex": "0x3d0a",
+      "raw_bytes_little_endian_hex": "0a3d",
+      "value": 0.03369140625
+    },
+    {
+      "coordinate": [
+        1619040,
+        194
+      ],
+      "flat_index": 828948674,
+      "storage_byte_offset": 1657897348,
+      "bits_hex": "0xbc69",
+      "raw_bytes_little_endian_hex": "69bc",
+      "value": -0.01422119140625
+    },
+    {
+      "coordinate": [
+        1619040,
+        226
+      ],
+      "flat_index": 828948706,
+      "storage_byte_offset": 1657897412,
+      "bits_hex": "0x3d42",
+      "raw_bytes_little_endian_hex": "423d",
+      "value": 0.04736328125
+    },
+    {
+      "coordinate": [
+        1619040,
+        258
+      ],
+      "flat_index": 828948738,
+      "storage_byte_offset": 1657897476,
+      "bits_hex": "0xbd23",
+      "raw_bytes_little_endian_hex": "23bd",
+      "value": -0.039794921875
+    },
+    {
+      "coordinate": [
+        1619040,
+        354
+      ],
+      "flat_index": 828948834,
+      "storage_byte_offset": 1657897668,
+      "bits_hex": "0xbd3f",
+      "raw_bytes_little_endian_hex": "3fbd",
+      "value": -0.046630859375
+    },
+    {
+      "coordinate": [
+        1620960,
+        2
+      ],
+      "flat_index": 829931522,
+      "storage_byte_offset": 1659863044,
+      "bits_hex": "0x3c77",
+      "raw_bytes_little_endian_hex": "773c",
+      "value": 0.01507568359375
+    },
+    {
+      "coordinate": [
+        1620960,
+        34
+      ],
+      "flat_index": 829931554,
+      "storage_byte_offset": 1659863108,
+      "bits_hex": "0xbd38",
+      "raw_bytes_little_endian_hex": "38bd",
+      "value": -0.044921875
+    },
+    {
+      "coordinate": [
+        1620960,
+        66
+      ],
+      "flat_index": 829931586,
+      "storage_byte_offset": 1659863172,
+      "bits_hex": "0x3b61",
+      "raw_bytes_little_endian_hex": "613b",
+      "value": 0.0034332275390625
+    },
+    {
+      "coordinate": [
+        1620960,
+        98
+      ],
+      "flat_index": 829931618,
+      "storage_byte_offset": 1659863236,
+      "bits_hex": "0x3d44",
+      "raw_bytes_little_endian_hex": "443d",
+      "value": 0.0478515625
+    },
+    {
+      "coordinate": [
+        1620960,
+        386
+      ],
+      "flat_index": 829931906,
+      "storage_byte_offset": 1659863812,
+      "bits_hex": "0x3a86",
+      "raw_bytes_little_endian_hex": "863a",
+      "value": 0.0010223388671875
+    },
+    {
+      "coordinate": [
+        1620960,
+        418
+      ],
+      "flat_index": 829931938,
+      "storage_byte_offset": 1659863876,
+      "bits_hex": "0xbd26",
+      "raw_bytes_little_endian_hex": "26bd",
+      "value": -0.04052734375
+    },
+    {
+      "coordinate": [
+        1620960,
+        450
+      ],
+      "flat_index": 829931970,
+      "storage_byte_offset": 1659863940,
+      "bits_hex": "0xbcaf",
+      "raw_bytes_little_endian_hex": "afbc",
+      "value": -0.0213623046875
+    },
+    {
+      "coordinate": [
+        1620960,
+        482
+      ],
+      "flat_index": 829932002,
+      "storage_byte_offset": 1659864004,
+      "bits_hex": "0xbbdf",
+      "raw_bytes_little_endian_hex": "dfbb",
+      "value": -0.006805419921875
+    },
+    {
+      "coordinate": [
+        1622880,
+        2
+      ],
+      "flat_index": 830914562,
+      "storage_byte_offset": 1661829124,
+      "bits_hex": "0x3ba7",
+      "raw_bytes_little_endian_hex": "a73b",
+      "value": 0.005096435546875
+    },
+    {
+      "coordinate": [
+        1622880,
+        34
+      ],
+      "flat_index": 830914594,
+      "storage_byte_offset": 1661829188,
+      "bits_hex": "0xbc6c",
+      "raw_bytes_little_endian_hex": "6cbc",
+      "value": -0.014404296875
+    },
+    {
+      "coordinate": [
+        1622880,
+        66
+      ],
+      "flat_index": 830914626,
+      "storage_byte_offset": 1661829252,
+      "bits_hex": "0xbc8d",
+      "raw_bytes_little_endian_hex": "8dbc",
+      "value": -0.0172119140625
+    },
+    {
+      "coordinate": [
+        1622880,
+        98
+      ],
+      "flat_index": 830914658,
+      "storage_byte_offset": 1661829316,
+      "bits_hex": "0x3baf",
+      "raw_bytes_little_endian_hex": "af3b",
+      "value": 0.005340576171875
+    },
+    {
+      "coordinate": [
+        1622880,
+        130
+      ],
+      "flat_index": 830914690,
+      "storage_byte_offset": 1661829380,
+      "bits_hex": "0xbbac",
+      "raw_bytes_little_endian_hex": "acbb",
+      "value": -0.0052490234375
+    },
+    {
+      "coordinate": [
+        1622880,
+        162
+      ],
+      "flat_index": 830914722,
+      "storage_byte_offset": 1661829444,
+      "bits_hex": "0x3ce9",
+      "raw_bytes_little_endian_hex": "e93c",
+      "value": 0.0284423828125
+    },
+    {
+      "coordinate": [
+        1622880,
+        194
+      ],
+      "flat_index": 830914754,
+      "storage_byte_offset": 1661829508,
+      "bits_hex": "0x3cf8",
+      "raw_bytes_little_endian_hex": "f83c",
+      "value": 0.0302734375
+    },
+    {
+      "coordinate": [
+        1622880,
+        226
+      ],
+      "flat_index": 830914786,
+      "storage_byte_offset": 1661829572,
+      "bits_hex": "0x3cf0",
+      "raw_bytes_little_endian_hex": "f03c",
+      "value": 0.029296875
+    },
+    {
+      "coordinate": [
+        1624800,
+        2
+      ],
+      "flat_index": 831897602,
+      "storage_byte_offset": 1663795204,
+      "bits_hex": "0x3b67",
+      "raw_bytes_little_endian_hex": "673b",
+      "value": 0.0035247802734375
+    },
+    {
+      "coordinate": [
+        1624800,
+        98
+      ],
+      "flat_index": 831897698,
+      "storage_byte_offset": 1663795396,
+      "bits_hex": "0x3bd1",
+      "raw_bytes_little_endian_hex": "d13b",
+      "value": 0.006378173828125
+    },
+    {
+      "coordinate": [
+        1624800,
+        386
+      ],
+      "flat_index": 831897986,
+      "storage_byte_offset": 1663795972,
+      "bits_hex": "0xbcd0",
+      "raw_bytes_little_endian_hex": "d0bc",
+      "value": -0.025390625
+    },
+    {
+      "coordinate": [
+        1624800,
+        418
+      ],
+      "flat_index": 831898018,
+      "storage_byte_offset": 1663796036,
+      "bits_hex": "0x3d2a",
+      "raw_bytes_little_endian_hex": "2a3d",
+      "value": 0.04150390625
+    },
+    {
+      "coordinate": [
+        1624800,
+        450
+      ],
+      "flat_index": 831898050,
+      "storage_byte_offset": 1663796100,
+      "bits_hex": "0xbcea",
+      "raw_bytes_little_endian_hex": "eabc",
+      "value": -0.028564453125
+    },
+    {
+      "coordinate": [
+        1624800,
+        482
+      ],
+      "flat_index": 831898082,
+      "storage_byte_offset": 1663796164,
+      "bits_hex": "0x3bd4",
+      "raw_bytes_little_endian_hex": "d43b",
+      "value": 0.0064697265625
+    },
+    {
+      "coordinate": [
+        1627200,
+        2
+      ],
+      "flat_index": 833126402,
+      "storage_byte_offset": 1666252804,
+      "bits_hex": "0x3c91",
+      "raw_bytes_little_endian_hex": "913c",
+      "value": 0.0177001953125
+    },
+    {
+      "coordinate": [
+        1627200,
+        34
+      ],
+      "flat_index": 833126434,
+      "storage_byte_offset": 1666252868,
+      "bits_hex": "0xbce5",
+      "raw_bytes_little_endian_hex": "e5bc",
+      "value": -0.0279541015625
+    },
+    {
+      "coordinate": [
+        1627200,
+        98
+      ],
+      "flat_index": 833126498,
+      "storage_byte_offset": 1666252996,
+      "bits_hex": "0xbd24",
+      "raw_bytes_little_endian_hex": "24bd",
+      "value": -0.0400390625
+    },
+    {
+      "coordinate": [
+        1627200,
+        290
+      ],
+      "flat_index": 833126690,
+      "storage_byte_offset": 1666253380,
+      "bits_hex": "0x3c34",
+      "raw_bytes_little_endian_hex": "343c",
+      "value": 0.010986328125
+    },
+    {
+      "coordinate": [
+        1627200,
+        322
+      ],
+      "flat_index": 833126722,
+      "storage_byte_offset": 1666253444,
+      "bits_hex": "0xbc40",
+      "raw_bytes_little_endian_hex": "40bc",
+      "value": -0.01171875
+    },
+    {
+      "coordinate": [
+        1643520,
+        290
+      ],
+      "flat_index": 841482530,
+      "storage_byte_offset": 1682965060,
+      "bits_hex": "0x3d0d",
+      "raw_bytes_little_endian_hex": "0d3d",
+      "value": 0.034423828125
+    },
+    {
+      "coordinate": [
+        1647360,
+        130
+      ],
+      "flat_index": 843448450,
+      "storage_byte_offset": 1686896900,
+      "bits_hex": "0xbbac",
+      "raw_bytes_little_endian_hex": "acbb",
+      "value": -0.0052490234375
+    },
+    {
+      "coordinate": [
+        1647360,
+        162
+      ],
+      "flat_index": 843448482,
+      "storage_byte_offset": 1686896964,
+      "bits_hex": "0x3ce9",
+      "raw_bytes_little_endian_hex": "e93c",
+      "value": 0.0284423828125
+    },
+    {
+      "coordinate": [
+        1647360,
+        194
+      ],
+      "flat_index": 843448514,
+      "storage_byte_offset": 1686897028,
+      "bits_hex": "0x3cf8",
+      "raw_bytes_little_endian_hex": "f83c",
+      "value": 0.0302734375
+    },
+    {
+      "coordinate": [
+        1647360,
+        226
+      ],
+      "flat_index": 843448546,
+      "storage_byte_offset": 1686897092,
+      "bits_hex": "0x3cf0",
+      "raw_bytes_little_endian_hex": "f03c",
+      "value": 0.029296875
+    },
+    {
+      "coordinate": [
+        1649760,
+        66
+      ],
+      "flat_index": 844677186,
+      "storage_byte_offset": 1689354372,
+      "bits_hex": "0xbcb0",
+      "raw_bytes_little_endian_hex": "b0bc",
+      "value": -0.021484375
+    },
+    {
+      "coordinate": [
+        1649760,
+        162
+      ],
+      "flat_index": 844677282,
+      "storage_byte_offset": 1689354564,
+      "bits_hex": "0x3d0a",
+      "raw_bytes_little_endian_hex": "0a3d",
+      "value": 0.03369140625
+    },
+    {
+      "coordinate": [
+        1649760,
+        194
+      ],
+      "flat_index": 844677314,
+      "storage_byte_offset": 1689354628,
+      "bits_hex": "0xbc69",
+      "raw_bytes_little_endian_hex": "69bc",
+      "value": -0.01422119140625
+    },
+    {
+      "coordinate": [
+        1651680,
+        2
+      ],
+      "flat_index": 845660162,
+      "storage_byte_offset": 1691320324,
+      "bits_hex": "0x3c77",
+      "raw_bytes_little_endian_hex": "773c",
+      "value": 0.01507568359375
+    },
+    {
+      "coordinate": [
+        1651680,
+        34
+      ],
+      "flat_index": 845660194,
+      "storage_byte_offset": 1691320388,
+      "bits_hex": "0xbd38",
+      "raw_bytes_little_endian_hex": "38bd",
+      "value": -0.044921875
+    },
+    {
+      "coordinate": [
+        1651680,
+        66
+      ],
+      "flat_index": 845660226,
+      "storage_byte_offset": 1691320452,
+      "bits_hex": "0x3b61",
+      "raw_bytes_little_endian_hex": "613b",
+      "value": 0.0034332275390625
+    },
+    {
+      "coordinate": [
+        1651680,
+        98
+      ],
+      "flat_index": 845660258,
+      "storage_byte_offset": 1691320516,
+      "bits_hex": "0x3d44",
+      "raw_bytes_little_endian_hex": "443d",
+      "value": 0.0478515625
+    },
+    {
+      "coordinate": [
+        1651680,
+        386
+      ],
+      "flat_index": 845660546,
+      "storage_byte_offset": 1691321092,
+      "bits_hex": "0x3a86",
+      "raw_bytes_little_endian_hex": "863a",
+      "value": 0.0010223388671875
+    },
+    {
+      "coordinate": [
+        1651680,
+        418
+      ],
+      "flat_index": 845660578,
+      "storage_byte_offset": 1691321156,
+      "bits_hex": "0xbd26",
+      "raw_bytes_little_endian_hex": "26bd",
+      "value": -0.04052734375
+    },
+    {
+      "coordinate": [
+        1651680,
+        450
+      ],
+      "flat_index": 845660610,
+      "storage_byte_offset": 1691321220,
+      "bits_hex": "0xbcaf",
+      "raw_bytes_little_endian_hex": "afbc",
+      "value": -0.0213623046875
+    },
+    {
+      "coordinate": [
+        1651680,
+        482
+      ],
+      "flat_index": 845660642,
+      "storage_byte_offset": 1691321284,
+      "bits_hex": "0xbbdf",
+      "raw_bytes_little_endian_hex": "dfbb",
+      "value": -0.006805419921875
+    },
+    {
+      "coordinate": [
+        1653600,
+        130
+      ],
+      "flat_index": 846643330,
+      "storage_byte_offset": 1693286660,
+      "bits_hex": "0x3c8e",
+      "raw_bytes_little_endian_hex": "8e3c",
+      "value": 0.017333984375
+    },
+    {
+      "coordinate": [
+        1653600,
+        162
+      ],
+      "flat_index": 846643362,
+      "storage_byte_offset": 1693286724,
+      "bits_hex": "0xbb62",
+      "raw_bytes_little_endian_hex": "62bb",
+      "value": -0.003448486328125
+    },
+    {
+      "coordinate": [
+        1653600,
+        194
+      ],
+      "flat_index": 846643394,
+      "storage_byte_offset": 1693286788,
+      "bits_hex": "0xbc64",
+      "raw_bytes_little_endian_hex": "64bc",
+      "value": -0.013916015625
+    },
+    {
+      "coordinate": [
+        1653600,
+        226
+      ],
+      "flat_index": 846643426,
+      "storage_byte_offset": 1693286852,
+      "bits_hex": "0xbcc9",
+      "raw_bytes_little_endian_hex": "c9bc",
+      "value": -0.0245361328125
+    },
+    {
+      "coordinate": [
+        1653600,
+        354
+      ],
+      "flat_index": 846643554,
+      "storage_byte_offset": 1693287108,
+      "bits_hex": "0x3d12",
+      "raw_bytes_little_endian_hex": "123d",
+      "value": 0.03564453125
+    },
+    {
+      "coordinate": [
+        1655280,
+        34
+      ],
+      "flat_index": 847503394,
+      "storage_byte_offset": 1695006788,
+      "bits_hex": "0xbb82",
+      "raw_bytes_little_endian_hex": "82bb",
+      "value": -0.00396728515625
+    },
+    {
+      "coordinate": [
+        1655520,
+        66
+      ],
+      "flat_index": 847626306,
+      "storage_byte_offset": 1695252612,
+      "bits_hex": "0x3c48",
+      "raw_bytes_little_endian_hex": "483c",
+      "value": 0.01220703125
+    },
+    {
+      "coordinate": [
+        1673760,
+        34
+      ],
+      "flat_index": 856965154,
+      "storage_byte_offset": 1713930308,
+      "bits_hex": "0xbc60",
+      "raw_bytes_little_endian_hex": "60bc",
+      "value": -0.013671875
+    },
+    {
+      "coordinate": [
+        1673760,
+        386
+      ],
+      "flat_index": 856965506,
+      "storage_byte_offset": 1713931012,
+      "bits_hex": "0xbd3a",
+      "raw_bytes_little_endian_hex": "3abd",
+      "value": -0.04541015625
+    }
+  ],
+  "bundle_provenance": {
+    "source_failure_path": "/data/mlperf_dlrm_v4/root_cause_20260919/addmm_resident_zero1000_v1_failure.pt",
+    "source_failure_bytes": 38139891024,
+    "source_failure_sha256": "cdf943b1c4ac0ee9bbc30b9472513c51629095d305d216044d083b30d041dd89",
+    "source_identity_verification": "One wholefile hash independently verified by linked full CPU certificate; export rechecks W backing hash without hashing38GB again.",
+    "independent_certificate_sha256": "4e40f782622c7a6c76130c3a71a9c72bc0910f6f06181bd2ea339060f236ba48",
+    "source_iteration": 38,
+    "W": "Actual retained current-at-failure complete backing bytes, equal to pristine prepared and original protected W.",
+    "DZ": "Generated numerical zero at the exact recorded complete contiguous layout; certificate verifies original prepared/failure DZ is entirely positive zero.",
+    "omitted_operations": [
+      "db=sum(DZ,dim=0)",
+      "dw=mm(X.T,DZ)"
+    ],
+    "scope": "Single DX matrix multiplication; no claim of original allocator history or surrounding workload."
+  },
+  "source_inventory": {
+    "scripts/stress_addmm_backward_boundary.py": {
+      "path": "/home/chcai/training/recommendation/scripts/stress_addmm_backward_boundary.py",
+      "bytes": 37705,
+      "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb",
+      "stable_during_wholefile_read": true
+    },
+    "scripts/replay_backward_boundary.py": {
+      "path": "/home/chcai/training/recommendation/scripts/replay_backward_boundary.py",
+      "bytes": 47094,
+      "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970",
+      "stable_during_wholefile_read": true
+    },
+    "scripts/replay_hstu_output_boundary.py": {
+      "path": "/home/chcai/training/recommendation/scripts/replay_hstu_output_boundary.py",
+      "bytes": 31162,
+      "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01",
+      "stable_during_wholefile_read": true
+    },
+    "scripts/stress_hstu_output_boundary.py": {
+      "path": "/home/chcai/training/recommendation/scripts/stress_hstu_output_boundary.py",
+      "bytes": 24294,
+      "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12",
+      "stable_during_wholefile_read": true
+    },
+    "scripts/nan_backward_boundaries.py": {
+      "path": "/home/chcai/training/recommendation/scripts/nan_backward_boundaries.py",
+      "bytes": 31280,
+      "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44",
+      "stable_during_wholefile_read": true
+    },
+    "generative_recommenders/ops/triton/triton_addmm.py": {
+      "path": "/home/chcai/training/recommendation/generative_recommenders/ops/triton/triton_addmm.py",
+      "bytes": 61706,
+      "sha256": "21d1c0d12e44f7e22d2255366538ef389a8af72d9af6ed640783a0b1b76ec71a",
+      "stable_during_wholefile_read": true
+    },
+    "generative_recommenders/ops/utils.py": {
+      "path": "/home/chcai/training/recommendation/generative_recommenders/ops/utils.py",
+      "bytes": 5661,
+      "sha256": "d40c96827438ab1a995d97ecbe1cf7d45b8840247887481f0ba21a485c33d7d2",
+      "stable_during_wholefile_read": true
+    },
+    "generative_recommenders/common.py": {
+      "path": "/home/chcai/training/recommendation/generative_recommenders/common.py",
+      "bytes": 16112,
+      "sha256": "daa381563b771a3b8bc96f5e621f25b2bc49c2a67be088dacff25c9bf03fef9f",
+      "stable_during_wholefile_read": true
+    },
+    "scripts/repro_projection_dx_zero.py": {
+      "path": "/home/chcai/training/recommendation/scripts/repro_projection_dx_zero.py",
+      "bytes": 15948,
+      "sha256": "49d0e58e32fd3583f500655525b03eaaad8579bb72b842c98f695eab0aaf9614",
+      "stable_during_wholefile_read": true
+    }
+  },
+  "all_source_hashes_before_failure_after_current_match": true,
+  "launch_environment": {
+    "format": "native_projection_override_launch_environment_v1",
+    "launch_name": "direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1",
+    "environment": {
+      "HIPBLASLT_TENSILE_LIBPATH": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250",
+      "TRITON_CACHE_DIR": "/data/mlperf_dlrm_v4/triton_cache_7ff97e",
+      "PYTORCH_ROCM_ARCH": "gfx1250",
+      "LD_LIBRARY_PATH": "/opt/rccl-gfx1250/lib:/opt/venv/lib/python3.12/site-packages/_rocm_sdk_devel/lib:/opt/venv/lib/python3.12/site-packages/_rocm_sdk_devel/lib/rocm_sysdeps/lib:",
+      "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
+      "AMDGCN_USE_BUFFER_OPS": "0",
+      "TRITON_FULL_AUTOTUNE": "0",
+      "TRITON_ALLOW_PIPELINING": "0",
+      "TENSILE_STREAMK_FIXED_GRID": "460",
+      "LD_PRELOAD": "/data/mlperf_dlrm_v4/root_cause_20260919/native_override_CPU_v2/replace_projection_native_elf.so",
+      "PROJECTION_NATIVE_OVERRIDE": "a_reuse_off",
+      "PROJECTION_NATIVE_OVERRIDE_ELF": "/data/mlperf_dlrm_v4/root_cause_20260919/native_override_CPU_v2/MT128x240x128.matrix_A_reuse_off.static_only.elf",
+      "PROJECTION_HIP_LAUNCH_TRACE": "/data/mlperf_dlrm_v4/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_hip.jsonl"
+    },
+    "verified_launch_files": {
+      "/data/mlperf_dlrm_v4/root_cause_20260919/native_override_CPU_v2/replace_projection_native_elf.so": {
+        "sha256": "b78990e5916befc749b5e8db4afa5900eed9c1c92cde998b7152e35a6ae3a133",
+        "bytes": 139128
+      },
+      "/data/mlperf_dlrm_v4/root_cause_20260919/native_override_CPU_v2/MT128x240x128.matrix_A_reuse_off.static_only.elf": {
+        "sha256": "7d3fe969381c072e1c28d18491ab1f5ea1de51b186c73cbad3cda32c406db69d",
+        "bytes": 23585704
+      },
+      "/data/mlperf_dlrm_v4/root_cause_20260919/direct_dx_zero_actualW_source_v1.pt": {
+        "sha256": "8d77dd0db4330ed098389b57804cbb55b8f82c4840ae591e04a60491abbac112",
+        "bytes": 2100457
+      },
+      "/workspace/recommendation/scripts/repro_projection_dx_zero.py": {
+        "sha256": "49d0e58e32fd3583f500655525b03eaaad8579bb72b842c98f695eab0aaf9614",
+        "bytes": 15948
+      }
+    },
+    "arguments": [
+      "scripts/repro_projection_dx_zero.py",
+      "--gpu",
+      "--bundle",
+      "/data/mlperf_dlrm_v4/root_cause_20260919/direct_dx_zero_actualW_source_v1.pt",
+      "--backend",
+      "hipblaslt",
+      "--repeats",
+      "1000",
+      "--cpu-threads",
+      "8",
+      "--report",
+      "/data/mlperf_dlrm_v4/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1.json",
+      "--failure-dump",
+      "/data/mlperf_dlrm_v4/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_failure.pt"
+    ],
+    "outputs": {
+      "report": "/data/mlperf_dlrm_v4/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1.json",
+      "failure": "/data/mlperf_dlrm_v4/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_failure.pt",
+      "trace": "/data/mlperf_dlrm_v4/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_hip.jsonl",
+      "environment": "/data/mlperf_dlrm_v4/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_environment.json"
+    },
+    "scope": "Controlled ELF override with original retained W and exact-zero DZ. Require successful exact-target replacement and launch-handle/212-byte argument trace audit before numerical conclusions."
+  },
+  "trace_controls_scope": "The environment selects the A-reuse-off ELF override and fixed460. Actual loaded image, replacement handle, and native arguments are verified by the separate terminal trace/control certificate.",
+  "terminal_lifecycle": {
+    "source": "Root terminal artifact and parent message",
+    "session_id": 54526,
+    "exit_code": 1,
+    "reap_chunk": "406059",
+    "live_reap_independently_observed_here": false
+  },
+  "limits": [
+    "Complete retained input equality does not exclude transient internal or untracked device mutation.",
+    "The exact-zero violation identifies this direct DX boundary, not the faulty instruction or a shared cause with other kernels.",
+    "Packed-W value correspondence uses an earlier fixed search domain and does not identify executed register data.",
+    "A failure with A-reuse disabled shows the A-reuse hints are not necessary for an error under these controls; it does not identify a faulty instruction or estimate failure frequency.",
+    "The initial38GBsource failure is linked through pinned retainedWbundle provenance; it is not rehashed here."
+  ],
+  "seconds": 27.893420207998133
+}

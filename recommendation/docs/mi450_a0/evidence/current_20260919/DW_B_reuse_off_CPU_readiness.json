@@ -1,0 +1,342 @@
+{
+  "format": "linear_DW_native_override_CPU_readiness_v1",
+  "status": "PASS_CPU_41_CASES_PENDING_INDEPENDENT_REVIEW_AND_GPU_CONTROL",
+  "source": {
+    "path": "/home/chcai/training/recommendation/scripts/replace_linear_dw_native_elf_v1.cpp",
+    "bytes": 13810,
+    "sha256": "0a86b9b9df1c36fa740377c359dcb5ca3bb686f4f6f9db45bfa432c7d9401add"
+  },
+  "test_source": {
+    "path": "/home/chcai/training/recommendation/scripts/test_replace_linear_dw_native_elf_v1.py",
+    "bytes": 17519,
+    "sha256": "5a395cd399739394c82f65555a80f6ddc6308a9f9715bd29dec71abe9ebe1546"
+  },
+  "compiled_loader": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/replace_linear_dw_native_elf_v1.so",
+    "bytes": 139120,
+    "sha256": "deea178e8158746ff70a2b2ffaa3225d4e30c3be8a7296b120955604204ce22f"
+  },
+  "full_CPU_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/DW_mechanism_review_v1/CPU_test_report_v1.json",
+    "bytes": 23713,
+    "sha256": "83141c2859d9109aade019f6dcbe4b4e442389745d6133513f7997aafe1e182f"
+  },
+  "source_derivation_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/DW_mechanism_review_v1/source_derivation_manifest_v1.json",
+    "bytes": 1908,
+    "sha256": "6584cd5ab0b1a2b685d45a65130bf763b6a63824569f5daf9c62286d78617cb0"
+  },
+  "B_reuse_off_static_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/DW_mechanism_review_v1/static_certificate.json",
+    "bytes": 178621,
+    "sha256": "5ee4fbe01c5d8b0b50c2b17d26ef436f3095836507cba674f3290f041b5a78a0"
+  },
+  "source_semantics_equivalence": {
+    "exact_text_equal_to_reviewed_projection_v2_after_only_named_substitutions": true,
+    "substitutions": [
+      "header comment",
+      "internal composed-tracer aliases",
+      "LINEAR_DW_NATIVE_OVERRIDE opt-in names",
+      "diagnostic label",
+      "b_reuse_off arm spelling",
+      "exact target DW symbol",
+      "exact original/derived ELF SHA256",
+      "335000-byte ELF size"
+    ],
+    "all_other_source_text_unchanged": true
+  },
+  "original_projection_sources_and_frozen_tracer_unchanged": {
+    "/home/chcai/training/recommendation/scripts/replace_projection_native_elf.cpp": {
+      "bytes": 13818,
+      "sha256": "9dc22775badbe029517fc75a16f4ddacb329942f80b5d7a4fb33030537072066"
+    },
+    "/home/chcai/training/recommendation/scripts/test_replace_projection_native_elf.py": {
+      "bytes": 16674,
+      "sha256": "2651a8ab54ed93a9d230dfb0eac108513874e57758caf5444beb4977bfca288b"
+    },
+    "/home/chcai/training/recommendation/scripts/trace_projection_hip_launches_v2.cpp": {
+      "bytes": 10647,
+      "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+    }
+  },
+  "native_artifacts": {
+    "DW_B_reuse_off.elf": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_artifacts_v1/DW_B_reuse_off.elf",
+      "bytes": 335000,
+      "sha256": "d57129bfbd851f78ba148a2af82d0379704e3e3c2e5ef85190f8b4ecc8091a33"
+    },
+    "DW_kernel_metadata.json": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_artifacts_v1/DW_kernel_metadata.json",
+      "bytes": 7099,
+      "sha256": "b8ee1f792b59a5d3aa4da70e005387cf65d138589e8f246826562082cf6e32ab"
+    },
+    "DW_original.elf": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_artifacts_v1/DW_original.elf",
+      "bytes": 335000,
+      "sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3"
+    }
+  },
+  "CPU_run": {
+    "tool_exit_code": 0,
+    "tool_chunk": "71fefb",
+    "test_log": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/DW_mechanism_review_v1/CPU_tests_v1.log",
+      "bytes": 209,
+      "sha256": "610d85538be1373c756784ef2d1099669b27fb40888f690306b6bf9621a5cc62"
+    },
+    "case_count": 41,
+    "all_prior_37_mock_cases_retained": true,
+    "additional_cases": [
+      "wrong_arm_reverse",
+      "nonzero_autotune",
+      "nonzero_pipeline",
+      "projection_arm_spelling"
+    ],
+    "HIP_provider": "CPU mock linked directly; no real HIP runtime dependency",
+    "GPU_initialized": false,
+    "outer_process_device_masks": {
+      "HIP_VISIBLE_DEVICES": "",
+      "ROCR_VISIBLE_DEVICES": "",
+      "CUDA_VISIBLE_DEVICES": "",
+      "GPU_DEVICE_ORDINAL": "unset",
+      "LD_PRELOAD": "unset"
+    },
+    "inner_process_preload": "Only newly compiled DW interposer, resolving original HIP APIs to the CPU mock",
+    "compiler_flags": [
+      "-Wall",
+      "-Wextra",
+      "-Werror"
+    ],
+    "mock_launch_argument_bytes": 172,
+    "metadata_aligned_segment_bytes": 176,
+    "first_HIP500_forwarded_without_module_load": true,
+    "owned_image_load_once_and_replacement_handle_launch_verified": true
+  },
+  "compiled_loader_needed_libraries": [
+    "libcrypto.so.3",
+    "libstdc++.so.6",
+    "libgcc_s.so.1",
+    "libc.so.6",
+    "ld-linux-x86-64.so.2"
+  ],
+  "verified_CPU_trace_files": [
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/success_original.trace.jsonl",
+      "bytes": 12541,
+      "sha256": "7d9cba1fdcb1e4df7dfe5a8f67050f7a7a3991064d911e1c3197d8201bd54c1e"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/success_b_reuse_off.trace.jsonl",
+      "bytes": 12553,
+      "sha256": "b57eb1d417d28e0a25207d44328b3d6c6add86504cd0094a366948d57e761caa"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/disabled.trace.jsonl",
+      "bytes": 8189,
+      "sha256": "e58f98356145ea2bb9779941e5e71761aa0ed110613d9899655a2cbcf4e6dcd8"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/near_only.trace.jsonl",
+      "bytes": 2230,
+      "sha256": "bbe1c45ca0036db3588ae494eaa1a1d4b99531c1127d82d30059017f38b1ca0a"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/concurrent.trace.jsonl",
+      "bytes": 29633,
+      "sha256": "0dc8a11ad3c7e669a72b3d4bbc53eca66dd6e7f04fd93093a9265be59ff2b3b1"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/original_error.trace.jsonl",
+      "bytes": 2146,
+      "sha256": "faf199aa3930398bc1d52f2291f85fc4d8aff43698cdbd2316b85882a0313ffe"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/lookup_miss_then_success.trace.jsonl",
+      "bytes": 10140,
+      "sha256": "f5cc66db2ea205da608bff9aaf373e9dd405f2087fd54a4b8dce80426b633685"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/original_null.trace.jsonl",
+      "bytes": 2107,
+      "sha256": "bb8dd4976793c49dde8c77226ebbcd85423a93442b274bc867a15190e96f679e"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/load_error.trace.jsonl",
+      "bytes": 2776,
+      "sha256": "ccb677045f7707a02d28402fd5c3cb6bfc901321ed887f71cd328440aa68b1d7"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/load_null.trace.jsonl",
+      "bytes": 2775,
+      "sha256": "daac439d24b9ea476ac8a55250ff282b3bfa370f2dea97501b2488a6f1439b06"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/load_alias.trace.jsonl",
+      "bytes": 2778,
+      "sha256": "7ccb8cd52e1ae2f7682a277e5331bc6e7ecff34d68d7c954c49734f3518bbd2c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/load_mutates.trace.jsonl",
+      "bytes": 2780,
+      "sha256": "5e473a5b653ab720f0a75e70b098be247f521d0d03a9166704d25d347440d235"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/replacement_get_error.trace.jsonl",
+      "bytes": 3911,
+      "sha256": "7600400b6aa82943d4872720e7751c553df69bb2c9b9faff6a190241b86e41ce"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/replacement_null.trace.jsonl",
+      "bytes": 3910,
+      "sha256": "1d0b7eb8b0e5ede02ce922105340b4b946b0a3dfa091e7b37bf6475bf365e890"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/replacement_alias.trace.jsonl",
+      "bytes": 3915,
+      "sha256": "51b607c129c460a4587f36a0ecf52cf43fbe948a9efae026cddff8d13f0bb4da"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/context_error.trace.jsonl",
+      "bytes": 2506,
+      "sha256": "300abf11a1c41880144059e35293e87522f52ef7f8c00c04ab9fba560281cef5"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/device_error.trace.jsonl",
+      "bytes": 2506,
+      "sha256": "ccd540815b5929179c29d7c0267110c002f7b4f4066635b22d64af5f446217b4"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/reentrant.trace.jsonl",
+      "bytes": 2513,
+      "sha256": "e65eb943d57e796cab0b7e8351dfb3b360c7174d8230d044a29be7fd7c7f49dc"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/env_changed.trace.jsonl",
+      "bytes": 5200,
+      "sha256": "ac080df8227fcef947566493fa16df18883f511ed0a2d65d2817dfa26132806e"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/context_changed.trace.jsonl",
+      "bytes": 5186,
+      "sha256": "477c3be05b4aa22c046dcd8eb9a6dbe230e5364c9bfa4797f4ae209d552b8c24"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/device_changed.trace.jsonl",
+      "bytes": 5186,
+      "sha256": "19c56506bc353a5f7492695495d584604548138a0c23ba9a8bd233dee126f749"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/control_changed.trace.jsonl",
+      "bytes": 5185,
+      "sha256": "050f479d4f124f791727dc59b75f8bca626628d27aa6abea5bc87bdb590804e6"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/handle_changed.trace.jsonl",
+      "bytes": 6233,
+      "sha256": "a6c6336889757f46eb6eec36bd898821b0e56a6883c93a5510f0eceb3cadbd9a"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/module_changed.trace.jsonl",
+      "bytes": 6233,
+      "sha256": "29541dd00a38c1dbabe9e337f6f60c3a9a8a92e145827d0a7587d4f45752e943"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/bypass.trace.jsonl",
+      "bytes": 5192,
+      "sha256": "f4ee38b3420a7048fdf40c2fb7ff1fac24d38dbd5233226b570c8fca383f494a"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/unload.trace.jsonl",
+      "bytes": 5184,
+      "sha256": "46b2895ad7ec3a197595a14a20e80a1bfd94e196311da28a3ae7d94b282ffe7e"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/reset.trace.jsonl",
+      "bytes": 5193,
+      "sha256": "29debafb78585f22775b79d09933c91e6bb7c202c7196ebf57f766a60fe31b0d"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/fork.trace.jsonl",
+      "bytes": 4121,
+      "sha256": "aaf0fc46054376d8fcdd9deece7823c85f05b8ce8691d7f64e7688d24f4c925d"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/bad_hash.trace.jsonl",
+      "bytes": 2477,
+      "sha256": "78b8981cb7dfbe5f41e7868d7ea5fb8658fb8aa86c2f2c3279d4a13448b56596"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/wrong_arm.trace.jsonl",
+      "bytes": 2488,
+      "sha256": "1e9a7903627f7d916fbed9928e1e6c79a3c69c5a7bc3d56103c6cd0d6f200ad8"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/missing_file.trace.jsonl",
+      "bytes": 2087,
+      "sha256": "51f02863ac309bf7825c350f59306f39ba74b127ea67766addda23ab7d5d565c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/wrong_arm_reverse.trace.jsonl",
+      "bytes": 2491,
+      "sha256": "87b3a9e1dccecd118a25723803cadc449cd71d8fe39355e53efc9edebebaa64e"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/wrong_size.trace.jsonl",
+      "bytes": 2108,
+      "sha256": "cbfb661c7f611174c51d8334607567d6c03651710db3f96058ebfa508bdac4d7"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/bad_mode.trace.jsonl",
+      "bytes": 1045,
+      "sha256": "7c49028f015b2266b3196488a6eb7995a9f1d8dbdb2ff458f9f9899c88908d31"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/missing_mode.trace.jsonl",
+      "bytes": 1048,
+      "sha256": "a8ea5a4a44921740d57e78f3e1ebd4782d5307c4c4dd019c6ad68404eb952705"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/missing_path.trace.jsonl",
+      "bytes": 1069,
+      "sha256": "17ee0277583cb22bba4ae098f47e0ffe6dd5ef751a2e8e6ec11826206651b68a"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/missing_zero.trace.jsonl",
+      "bytes": 1065,
+      "sha256": "35bacc3838beb1dcd479816520ed68ada6c489d4f739127007f4494256595c72"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/nonzero_autotune.trace.jsonl",
+      "bytes": 1064,
+      "sha256": "11d041ce2dce3b3ea38a5bd775174b43871799feb29d9154e85b986c505ebb2b"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/nonzero_pipeline.trace.jsonl",
+      "bytes": 1067,
+      "sha256": "4c27afca4e23eac865bca7ff65e3d159dcc5dd148d32d2fec20a1ec345869f63"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/projection_arm_spelling.trace.jsonl",
+      "bytes": 1052,
+      "sha256": "58b2205cf8f0d58ea0860c1abbc3b82769a34d1cba8f79de532545b0f87744da"
+    }
+  ],
+  "launch_configuration": {
+    "LD_PRELOAD": "/data/mlperf_dlrm_v4/root_cause_20260919/DW_native_override_CPU_v1/replace_linear_dw_native_elf_v1.so",
+    "LINEAR_DW_NATIVE_OVERRIDE": [
+      "original",
+      "b_reuse_off"
+    ],
+    "LINEAR_DW_NATIVE_OVERRIDE_ELF": {
+      "original": "/data/mlperf_dlrm_v4/root_cause_20260919/DW_native_override_artifacts_v1/DW_original.elf",
+      "b_reuse_off": "/data/mlperf_dlrm_v4/root_cause_20260919/DW_native_override_artifacts_v1/DW_B_reuse_off.elf"
+    },
+    "PROJECTION_HIP_LAUNCH_TRACE": "Retains frozen tracer environment key; choose new absolute trace output per arm."
+  },
+  "limits": [
+    "This author review and CPU mock test do not replace independent review. All agent slots were occupied when requested.",
+    "No GPU launch occurred in this subtask. Passing CPU mocks do not prove GPU module-load behavior or numerical correctness.",
+    "Root must freeze launcher/context/sources, ensure ordinary solution103 selection and trace actual owned-ELF substitution for every target launch.",
+    "The B-zero fragment mutation remains an unpatched follow-up requiring CFG/reaching-definition coverage."
+  ]
+}

@@ -1,0 +1,907 @@
+{
+  "format": "private_DW_catalog_control_independent_certificate_v1",
+  "status": "PASS1000_RETAINED_EXACT_ZERO_RECORDS_PRIVATE_CONTEXT_NATIVE102_AND_PROVENANCE",
+  "created_utc": "2026-09-19T09:21:01.768045+00:00",
+  "terminal_lifecycle_root_attestation": {
+    "format": "private_DW_catalog_control_root_terminal_v1",
+    "session_id": 29071,
+    "exit_code": 0,
+    "reap_chunk": "de20cc",
+    "status": "PASS",
+    "completed_exact_zero_checks": 1000,
+    "seconds": 96.0365637740033,
+    "full_input_bytes_unchanged": true,
+    "prepared_input_digests_equal_to_failing_control": true,
+    "source_files_unchanged": true,
+    "actual_private_library_path": "/data/mlperf_dlrm_v4/root_cause_20260919/dw_solution102_private_catalog_v1/gfx1250",
+    "report_sha256": "f8da5d6152712a8e80fd4d0a40445f7326616d0078c40ea0d6e5999fc06621f3",
+    "limits": [
+      "Native selection requires trace audit.",
+      "Alternative kernel changes code, tile, grid and register allocation together.",
+      "This bounded zero-DY pass does not establish correctness for all inputs or a complete training fix."
+    ]
+  },
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_private_catalog_control_independent_v1/audit_private_catalog_control_v1.py",
+    "bytes": 23702,
+    "sha256": "9e3136d461a261285c32648605b92faee6d8167e23231433533d35aed4b5b046"
+  },
+  "artifacts": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_private_catalog_workspace1_argtrace1000_v1_root_terminal.json",
+      "bytes": 812,
+      "sha256": "892029605945c2fd5474e0282d7a83fe2423d9f2019f5f451d177cdba3b08448"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_zero_private_catalog_workspace1_argtrace1000_v1.json",
+      "bytes": 856384,
+      "sha256": "f8da5d6152712a8e80fd4d0a40445f7326616d0078c40ea0d6e5999fc06621f3"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_private_catalog_workspace1_argtrace1000_v1.log",
+      "bytes": 169256,
+      "sha256": "f75ee3584478a8ea2da06453e042a6e67e3dd30c901aefac2fea791a9b9463a1"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1.json",
+      "bytes": 477741,
+      "sha256": "32604ead77f233164e5a810fbdd230dce1bc1bdaeb28139e70af47539b7941ad"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_private_DW_launch_manifest_v1.json",
+      "bytes": 1832,
+      "sha256": "aebdd30b84b81f83d1af86100d32f9b79a3d90f12663426248d7a15ef0ca6c3c"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_private_DW_frozen_sources_v1.sha256",
+      "bytes": 4866,
+      "sha256": "c76cc97ea662ddddfe0bde54e9cae5da36b56f116538ff614472480f291b045f"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_private_DW_control_sources_v1.tar.gz",
+      "bytes": 187356,
+      "sha256": "e715a7f1f47944a05fa97d3fa9f9d015ffcdc598ac352863b00c1574a3b77f45"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_private_DW_context_provenance_v1.json",
+      "bytes": 882,
+      "sha256": "d0d815242f9f92b76056b5657d4d540b9734f550bbf10c20cc2d47c9526f73d0"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_zero_private_catalog_workspace1_argtrace1000_v1_environment.json",
+      "bytes": 991,
+      "sha256": "4fe2e029142bcc6178182961108a9c32ee0cc23b52be19809c00809541396008"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_zero_private_catalog_workspace1_argtrace1000_v1_loaded_libraries.json",
+      "bytes": 1106,
+      "sha256": "b2dab2fd0e80f25a7304cff1e60423dab55c30384bf7b4397808b0ac941c2749"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/run_single_DW_private_catalog_control_root_v1.py",
+      "bytes": 2147,
+      "sha256": "6e41f9b31e7915e74d1a9769c708dba0bdd3311280fd6af45f094a72fc9e9815"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_private_catalog_workspace1_argtrace1000_v1.sh",
+      "bytes": 1092,
+      "sha256": "832ea0959da926bf5ee11455186cef5f8084af570cc7c54ea3730af878127d6a"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+      "bytes": 7068,
+      "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_zero_private_catalog_workspace1_argtrace1000_v1_hip.jsonl",
+      "bytes": 1759895,
+      "sha256": "7aac18931e7d937e3cfe4d5060f65d75ff2afb90eab0916b630688cabae5d274"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_lower_vgpr_native_selection_static_v1/candidate102_kernel_metadata.json",
+      "bytes": 7105,
+      "sha256": "b1e887bf2ec8b7ba62f6fe5151fd34ec5fe281e68a3b488225dfcab457591360"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_lower_vgpr_native_selection_static_v1/selection_certificate_v1.json",
+      "bytes": 28923,
+      "sha256": "73ffac8d726cc8fc1a675bb7b51554cd65ebd540c50029a3126a15103527be52"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/single_DW196_trace_archive_independent_v1/trace_archive_certificate_v1.json",
+      "bytes": 18601,
+      "sha256": "b5948f04b7d8c76114575e78c3e67feef5d868e1a9c31c82f06c4d4855f89b7c"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/solution102_control_numeric_trace_independent_v1/numeric_trace_certificate_v1.json",
+      "bytes": 8486,
+      "sha256": "8bc8438538df702555c0186161c474a0ed498144af06d7583b940b3ee3fde2c3"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_private_catalog_path_resolution_static_v1/path_resolution_certificate_v1.json",
+      "bytes": 7850,
+      "sha256": "422c2757a3d8ab8a2098216a58a0470aa324304ea19b13deed08fdfbd5918cfc"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/manifest.json",
+      "bytes": 440838,
+      "sha256": "307ef5b7449920b06b2e549fb306d6f0a22bdb1bbdbfa7a19a825f79db5cf3cd"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_private_catalog_control_independent_v1/postrun_catalog_fileonly_result_v1.json",
+      "bytes": 3070,
+      "sha256": "8765cd944c004b80134b71e7fb3bfb3dba1fed0ca26f5b7d87f0b69ccd16ab88"
+    }
+  ],
+  "numeric": {
+    "operation": "torch.mm(DY.T, X).T",
+    "passing_calls": 1000,
+    "runtime_seconds": 96.0365637740033,
+    "all1000_retained_output_checks_zero": true,
+    "all1000_log_rows_exactly_match_report": true,
+    "configured_zero_DY": true,
+    "final_input_bytes_match_prepared": true,
+    "failure_payload_absent": true,
+    "oracle": "Frozen scanner tests every BF16 magnitude bit excluding sign; both signed zeros pass, while subnormals, other nonzeros, infinities and NaNs fail.",
+    "oracle_record_counts": {
+      "nonfinite_count": 0,
+      "extreme_count": 0,
+      "nonzero_including_nonfinite_count": 0,
+      "max_abs_finite": 0.0
+    },
+    "generic_interpretation_field": "No configured replay trigger; passing magnitude checks do not establish exact arithmetic correctness.",
+    "generic_interpretation_note": "Inherited generic magnitude-check wording is weaker than the actual configured zero-DY bitwise zero test; this certificate describes the executed branch."
+  },
+  "input_and_configuration_identity": {
+    "failing_control_completed_calls": 196,
+    "capture": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+      "bytes": 3570835225,
+      "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+    },
+    "prepared_digest_exact_match": {
+      "tensors": {
+        "/pristine_inputs/x": {
+          "shape": [
+            2324351,
+            256
+          ],
+          "stride": [
+            256,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "storage_offset": 0,
+          "storage_index": 0,
+          "logical_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+          "nonfinite_count": 0,
+          "extreme_count": 0,
+          "max_abs_finite": 0.0048828125
+        },
+        "/pristine_inputs/mat2": {
+          "shape": [
+            256,
+            512
+          ],
+          "stride": [
+            1,
+            256
+          ],
+          "dtype": "torch.bfloat16",
+          "storage_offset": 0,
+          "storage_index": 1,
+          "logical_sha256": "b289a1d919400d101d58acde0c4f22e6521737d28a49826ef7041ff4ac407527",
+          "nonfinite_count": 0,
+          "extreme_count": 0,
+          "max_abs_finite": 0.2236328125
+        },
+        "/pristine_inputs/dy": {
+          "shape": [
+            2324351,
+            512
+          ],
+          "stride": [
+            512,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "storage_offset": 0,
+          "storage_index": 2,
+          "logical_sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+          "nonfinite_count": 0,
+          "extreme_count": 0,
+          "max_abs_finite": 0.0
+        }
+      },
+      "raw_storages": [
+        {
+          "bytes": 1190067712,
+          "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225"
+        },
+        {
+          "bytes": 262144,
+          "sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022"
+        },
+        {
+          "bytes": 2380135424,
+          "sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379"
+        }
+      ]
+    },
+    "equal_configuration_fields": [
+      "operation",
+      "injected_callable",
+      "source_sha256_before",
+      "capture",
+      "versions",
+      "transformation",
+      "prepared_digest"
+    ],
+    "equal_runtime_fields": [
+      "versions",
+      "device",
+      "route",
+      "metadata",
+      "resource_plan",
+      "source_sha256_before",
+      "arguments",
+      "captured_blas_preference",
+      "blas_preference_before",
+      "injected_function",
+      "conditional_raw_dw_bound",
+      "forward_to_backward_cast_value_bridge"
+    ],
+    "only_configuration_differences": [
+      "context path/hash identifies labeled derivative",
+      "restored_environment.effective_HIPBLASLT_TENSILE_LIBPATH"
+    ],
+    "derived_context": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_private_DW_derived_context_v1.json",
+      "bytes": 94377,
+      "sha256": "49ffca4209e3cc86817f42aeb080d88a882d302e5319678d077978ce07af9c1a"
+    },
+    "context_provenance": {
+      "format": "private_DW_derived_replay_context_v1",
+      "original": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+      "original_sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d",
+      "derived": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_private_DW_derived_context_v1.json",
+      "derived_sha256": "49ffca4209e3cc86817f42aeb080d88a882d302e5319678d077978ce07af9c1a",
+      "only_structured_change": {
+        "path": "environment/HIPBLASLT_TENSILE_LIBPATH",
+        "before": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250",
+        "after": "/data/mlperf_dlrm_v4/root_cause_20260919/dw_solution102_private_catalog_v1/gfx1250"
+      },
+      "private_manifest_sha256": "307ef5b7449920b06b2e549fb306d6f0a22bdb1bbdbfa7a19a825f79db5cf3cd"
+    },
+    "only_context_structured_change": {
+      "path": "environment/HIPBLASLT_TENSILE_LIBPATH",
+      "before": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250",
+      "after": "/data/mlperf_dlrm_v4/root_cause_20260919/dw_solution102_private_catalog_v1/gfx1250"
+    }
+  },
+  "private_catalog": {
+    "actual_restored_library_path": "/data/mlperf_dlrm_v4/root_cause_20260919/dw_solution102_private_catalog_v1/gfx1250",
+    "manifest": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/manifest.json",
+      "bytes": 440838,
+      "sha256": "307ef5b7449920b06b2e549fb306d6f0a22bdb1bbdbfa7a19a825f79db5cf3cd"
+    },
+    "postrun_complete_inventory": {
+      "actual_private_library_path": "/data/mlperf_dlrm_v4/root_cause_20260919/dw_solution102_private_catalog_v1/gfx1250",
+      "derived_catalog": {
+        "bytes": 2686,
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/dw_solution102_private_catalog_v1/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib",
+        "sha256": "3585e31939c0f2cf199d596b357c0f864aefcb29742ad13dd6ec6fb68432b962"
+      },
+      "derived_regular_files": 1,
+      "installed_library_path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250",
+      "manifest": {
+        "bytes": 440838,
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/dw_solution102_private_catalog_v1/manifest.json",
+        "sha256": "307ef5b7449920b06b2e549fb306d6f0a22bdb1bbdbfa7a19a825f79db5cf3cd"
+      },
+      "master": {
+        "bytes": 4746,
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/dw_solution102_private_catalog_v1/gfx1250/TensileLibrary_lazy_gfx1250.dat.zlib",
+        "sha256": "908c9fb056975e44f27aa675238e7a5751943f50f1bb0312c05f33337f5fa402"
+      },
+      "native_dw_code_object": {
+        "bytes": 60748,
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/dw_solution102_private_catalog_v1/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+        "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+      },
+      "original_symlinks": 401,
+      "preparation_source": {
+        "bytes": 15472,
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/dw_solution102_private_catalog_v1/prepare_private_catalog.py",
+        "sha256": "a8eeaa42ccdafd174c9e72f2056fa500053b03cdd066cf05eb23aea5131aa84e"
+      },
+      "scope": "Only the selected BF16 Contraction_l_Ailk_Bjlk_Cijk_Dijk catalog matching table redirects 103 to 102 across varying sizes. Both solution definitions and all native objects remain unchanged. This is not a global VGPR policy or a validated training fix.",
+      "verified_inventory_files": 402
+    },
+    "postrun_file_only_execution": {
+      "exit_code": 0,
+      "reaped_chunk": "f1551b",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/linear_projection_solution102_wrapper_cpu_review_v1/audit_production_catalog_fileonly_v1.py",
+        "bytes": 2818,
+        "sha256": "349c38fd9f8d7a7af6cdfba49a8a88da9d54cd76dce933156f5ed6833d0de6c1"
+      }
+    },
+    "controller_environment": {
+      "HIPBLASLT_TENSILE_LIBPATH": "/data/mlperf_dlrm_v4/root_cause_20260919/dw_solution102_private_catalog_v1/gfx1250",
+      "TRITON_CACHE_DIR": "/data/mlperf_dlrm_v4/triton_cache_7ff97e",
+      "PYTORCH_ROCM_ARCH": "gfx1250",
+      "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
+      "AMDGCN_USE_BUFFER_OPS": "0",
+      "TRITON_FULL_AUTOTUNE": "0",
+      "TRITON_ALLOW_PIPELINING": "0",
+      "HIPBLASLT_WORKSPACE_SIZE": "1",
+      "LD_PRELOAD": "/data/mlperf_dlrm_v4/root_cause_20260919/trace_projection_hip_launches_v2.so",
+      "PROJECTION_HIP_LAUNCH_TRACE": "/data/mlperf_dlrm_v4/root_cause_20260919/step405_linear_single_dw_zero_private_catalog_workspace1_argtrace1000_v1_hip.jsonl"
+    },
+    "required_absent_environment": [
+      "HIPBLASLT_TUNING_OVERRIDE_FILE",
+      "TENSILE_SOLUTION_INDEX",
+      "TENSILE_STREAMK_FIXED_GRID",
+      "TENSILE_STREAMK_DATA_PARALLEL",
+      "CUBLASLT_WORKSPACE_SIZE",
+      "PYTORCH_ALLOC_CONF"
+    ],
+    "saved_metadata_library_path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250",
+    "saved_metadata_note": "Original capture metadata is deliberately retained; its old library path is provenance, not the restored worker environment. restored_blas_preference changes only the BLAS backend preference.",
+    "consumption_evidence": "Fresh-process private environment survives context restoration; manifest and derivative are pinned; installed loader uses lexical private child resolution; exact solution102 dispatch occurs with all other selectors absent. The launch trace does not record catalog file-open syscalls."
+  },
+  "native_trace": {
+    "file": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_zero_private_catalog_workspace1_argtrace1000_v1_hip.jsonl",
+      "bytes": 1759895,
+      "sha256": "7aac18931e7d937e3cfe4d5060f65d75ff2afb90eab0916b630688cabae5d274"
+    },
+    "read_method": "Read-only file access by sudo Python auditor; original bytes/permissions unchanged.",
+    "event_counts": {
+      "get_function_return": 2,
+      "launch_begin": 1000,
+      "launch_return": 1000
+    },
+    "pid": 163072,
+    "function_lookup_errors": [
+      500,
+      0
+    ],
+    "successful_lookup": {
+      "pid": 163072,
+      "monotonic_ns": 57148040864480,
+      "event": "get_function_return",
+      "module": "0x2b383ba0",
+      "function": "0x2db0eff0",
+      "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1",
+      "hip_error": 0
+    },
+    "lookup_note": "Same candidate102 symbol first returns500 from one module, then succeeds from another; every recorded launch uses the successful function. No candidate103 lookup or launch occurs.",
+    "global_solution_index": 102,
+    "kernel_name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1",
+    "launch_count": 1000,
+    "all_launch_returns_hip_success": true,
+    "workgroups": 256,
+    "local_threads": 64,
+    "global_threads": 16384,
+    "static_VGPR": 252,
+    "static_SGPR": 93,
+    "static_LDS_bytes": 8192,
+    "launch_dynamic_shared_bytes": 0,
+    "declared_packet_bytes": 172,
+    "aligned_kernarg_segment_bytes": 176,
+    "declared_fields": 33,
+    "identical_packet_count": 1000,
+    "decoded_fields": {
+      "Gemm info": 1,
+      "kernel info0": 1,
+      "kernel info1": 1073807361,
+      "numWG": 256,
+      "SizesFree0": 256,
+      "SizesFree1": 512,
+      "SizesFree2": 1,
+      "SizesSum0": 2324351,
+      "D": "0x7662f6640000",
+      "C": "0x7662f6640000",
+      "A": "0x76dc92c00000",
+      "B": "0x76dcd9aefe00",
+      "strideD0": 256,
+      "strideD1": 0,
+      "strideC0": 256,
+      "strideC1": 0,
+      "strideA0": 256,
+      "strideA1": 0,
+      "strideB0": 512,
+      "strideB1": 0,
+      "alpha": 1.0,
+      "beta": 0.0,
+      "AddressScaleAlphaVec": "0x0",
+      "bias": "0x0",
+      "biasType": 0,
+      "StrideBias": 0,
+      "activationAlpha": 0.0,
+      "activationBeta": 0.0,
+      "activationType": 0,
+      "batchOffsetD": 0,
+      "batchOffsetC": 0,
+      "batchOffsetA": 0,
+      "batchOffsetB": 0
+    },
+    "failed196_packet_differences": {
+      "kernel info0": [
+        18874369,
+        1
+      ],
+      "kernel info1": [
+        1073807368,
+        1073807361
+      ],
+      "numWG": [
+        4,
+        256
+      ],
+      "D": [
+        "0x73025a640000",
+        "0x7662f6640000"
+      ],
+      "C": [
+        "0x73025a640000",
+        "0x7662f6640000"
+      ],
+      "A": [
+        "0x737bf6c00000",
+        "0x76dc92c00000"
+      ],
+      "B": [
+        "0x737c3daefe00",
+        "0x76dcd9aefe00"
+      ]
+    },
+    "tuning_override102_packet_differences": {
+      "D": [
+        "0x775fde640000",
+        "0x7662f6640000"
+      ],
+      "C": [
+        "0x775fde640000",
+        "0x7662f6640000"
+      ],
+      "A": [
+        "0x77d97ac00000",
+        "0x76dc92c00000"
+      ],
+      "B": [
+        "0x77d9c1aefe00",
+        "0x76dcd9aefe00"
+      ]
+    },
+    "solution103_fallback_observed": false
+  },
+  "provenance": {
+    "frozen_current_file_count": 31,
+    "frozen_current_files": [
+      {
+        "path": "/home/chcai/training/recommendation/scripts/replay_additional_linear_capture.py",
+        "bytes": 37139,
+        "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/replay_backward_boundary.py",
+        "bytes": 47094,
+        "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/replay_hstu_output_boundary.py",
+        "bytes": 31162,
+        "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/stress_addmm_backward_boundary.py",
+        "bytes": 37705,
+        "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/stress_hstu_output_boundary.py",
+        "bytes": 24294,
+        "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/nan_backward_boundaries.py",
+        "bytes": 31280,
+        "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/audit_training_arithmetic_bounds.py",
+        "bytes": 16614,
+        "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/audit_training_gradient_flow.py",
+        "bytes": 25133,
+        "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/trace_projection_hip_launches_v2.cpp",
+        "bytes": 10647,
+        "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/trace_projection_hip_launches_v2.so",
+        "bytes": 84624,
+        "sha256": "ca847493973d76a572798a7a5ad70c961123e7fd8c03a64bad349aa2d18c13e6"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/extract_step405_linear_replay_root_v1.py",
+        "bytes": 3063,
+        "sha256": "764e5fc26cb3df7d7726ce628861612e80e621d999b55c1e45d6eccb946c6474"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_extraction_root_v1.json",
+        "bytes": 2041,
+        "sha256": "75fb1830c51b7e9771f5df5f6cbcd6a8578caddc46f0584b591d26ff2267948e"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+        "bytes": 3570835225,
+        "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+        "bytes": 94391,
+        "sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+        "bytes": 7068,
+        "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/test_repro_linear_dw_saved_orientation.py",
+        "bytes": 4659,
+        "sha256": "90165cd6e82c438ec04bc9ab6ef967c936cf867630a3fdd930bdedc8d6be7531"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/linear_saved_orientation_cpu_v1.log",
+        "bytes": 1276,
+        "sha256": "43d8fc7fd689842b23109247096837b496d22c77e21e0be3d2a3599edd6bcc60"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/direct_linear_dw_saved_orientation_independent_review_v1.json",
+        "bytes": 4469,
+        "sha256": "9c5749de60d3cd3a99c94966641c7aa12ecdc4ae194218f3f473219257db12d8"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_actual_bundle_CPU_v1.json",
+        "bytes": 6908,
+        "sha256": "3d5d8e2143062c1f8b28f412d80b217e52e417cca35c9ffcc23b7ea7cd6df80f"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/prepare_private_DW_control_root_v1.py",
+        "bytes": 5327,
+        "sha256": "93db14bcde7cca78c722f55dfbd6840a371201bd25b2ca4a0fa91f17c203ea18"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_private_catalog_workspace1_argtrace1000_v1.sh",
+        "bytes": 1092,
+        "sha256": "832ea0959da926bf5ee11455186cef5f8084af570cc7c54ea3730af878127d6a"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/run_single_DW_private_catalog_control_root_v1.py",
+        "bytes": 2147,
+        "sha256": "6e41f9b31e7915e74d1a9769c708dba0bdd3311280fd6af45f094a72fc9e9815"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_private_DW_derived_context_v1.json",
+        "bytes": 94377,
+        "sha256": "49ffca4209e3cc86817f42aeb080d88a882d302e5319678d077978ce07af9c1a"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_private_DW_context_provenance_v1.json",
+        "bytes": 882,
+        "sha256": "d0d815242f9f92b76056b5657d4d540b9734f550bbf10c20cc2d47c9526f73d0"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/manifest.json",
+        "bytes": 440838,
+        "sha256": "307ef5b7449920b06b2e549fb306d6f0a22bdb1bbdbfa7a19a825f79db5cf3cd"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/prepare_private_catalog.py",
+        "bytes": 15472,
+        "sha256": "a8eeaa42ccdafd174c9e72f2056fa500053b03cdd066cf05eb23aea5131aa84e"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/validation.json",
+        "bytes": 919,
+        "sha256": "2fc35532010d6a8fbaf3b403c80be9673761ee82300e4644df048f41c9fbc059"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib",
+        "bytes": 2686,
+        "sha256": "3585e31939c0f2cf199d596b357c0f864aefcb29742ad13dd6ec6fb68432b962"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/private_DW_catalog_root_verification_v1.json",
+        "bytes": 919,
+        "sha256": "2fc35532010d6a8fbaf3b403c80be9673761ee82300e4644df048f41c9fbc059"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/dw_solution102_private_catalog_independent_v1.json",
+        "bytes": 7885,
+        "sha256": "bed7c7c18b6aecedd3d7562992daac8150597a473e0fc8225cc308ae93ca623d"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/private_DW_catalog_transform_independent_v1.json",
+        "bytes": 5206,
+        "sha256": "6e34f964c6129e2f2c29bbf1cfcb0988943958874ffeb1bdb0043493fd11b2d1"
+      }
+    ],
+    "archive_member_count": 30,
+    "archive_members": [
+      {
+        "name": "training/recommendation/scripts/replay_additional_linear_capture.py",
+        "bytes": 37139,
+        "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f"
+      },
+      {
+        "name": "training/recommendation/scripts/replay_backward_boundary.py",
+        "bytes": 47094,
+        "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970"
+      },
+      {
+        "name": "training/recommendation/scripts/replay_hstu_output_boundary.py",
+        "bytes": 31162,
+        "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01"
+      },
+      {
+        "name": "training/recommendation/scripts/stress_addmm_backward_boundary.py",
+        "bytes": 37705,
+        "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb"
+      },
+      {
+        "name": "training/recommendation/scripts/stress_hstu_output_boundary.py",
+        "bytes": 24294,
+        "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12"
+      },
+      {
+        "name": "training/recommendation/scripts/nan_backward_boundaries.py",
+        "bytes": 31280,
+        "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44"
+      },
+      {
+        "name": "training/recommendation/scripts/audit_training_arithmetic_bounds.py",
+        "bytes": 16614,
+        "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5"
+      },
+      {
+        "name": "training/recommendation/scripts/audit_training_gradient_flow.py",
+        "bytes": 25133,
+        "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c"
+      },
+      {
+        "name": "training/recommendation/scripts/trace_projection_hip_launches_v2.cpp",
+        "bytes": 10647,
+        "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+      },
+      {
+        "name": "dlrm_data/root_cause_20260919/extract_step405_linear_replay_root_v1.py",
+        "bytes": 3063,
+        "sha256": "764e5fc26cb3df7d7726ce628861612e80e621d999b55c1e45d6eccb946c6474"
+      },
+      {
+        "name": "dlrm_data/root_cause_20260919/step405_linear_saved_operands_extraction_root_v1.json",
+        "bytes": 2041,
+        "sha256": "75fb1830c51b7e9771f5df5f6cbcd6a8578caddc46f0584b591d26ff2267948e"
+      },
+      {
+        "name": "dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+        "bytes": 94391,
+        "sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d"
+      },
+      {
+        "name": "training/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+        "bytes": 7068,
+        "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+      },
+      {
+        "name": "training/recommendation/scripts/test_repro_linear_dw_saved_orientation.py",
+        "bytes": 4659,
+        "sha256": "90165cd6e82c438ec04bc9ab6ef967c936cf867630a3fdd930bdedc8d6be7531"
+      },
+      {
+        "name": "mi450_logs/root_cause_20260919/linear_saved_orientation_cpu_v1.log",
+        "bytes": 1276,
+        "sha256": "43d8fc7fd689842b23109247096837b496d22c77e21e0be3d2a3599edd6bcc60"
+      },
+      {
+        "name": "mi450_logs/root_cause_20260919/direct_linear_dw_saved_orientation_independent_review_v1.json",
+        "bytes": 4469,
+        "sha256": "9c5749de60d3cd3a99c94966641c7aa12ecdc4ae194218f3f473219257db12d8"
+      },
+      {
+        "name": "dlrm_data/root_cause_20260919/step405_linear_single_dw_actual_bundle_CPU_v1.json",
+        "bytes": 6908,
+        "sha256": "3d5d8e2143062c1f8b28f412d80b217e52e417cca35c9ffcc23b7ea7cd6df80f"
+      },
+      {
+        "name": "mi450_logs/root_cause_20260919/prepare_private_DW_control_root_v1.py",
+        "bytes": 5327,
+        "sha256": "93db14bcde7cca78c722f55dfbd6840a371201bd25b2ca4a0fa91f17c203ea18"
+      },
+      {
+        "name": "mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_private_catalog_workspace1_argtrace1000_v1.sh",
+        "bytes": 1092,
+        "sha256": "832ea0959da926bf5ee11455186cef5f8084af570cc7c54ea3730af878127d6a"
+      },
+      {
+        "name": "dlrm_data/root_cause_20260919/run_single_DW_private_catalog_control_root_v1.py",
+        "bytes": 2147,
+        "sha256": "6e41f9b31e7915e74d1a9769c708dba0bdd3311280fd6af45f094a72fc9e9815"
+      },
+      {
+        "name": "dlrm_data/root_cause_20260919/step405_linear_private_DW_derived_context_v1.json",
+        "bytes": 94377,
+        "sha256": "49ffca4209e3cc86817f42aeb080d88a882d302e5319678d077978ce07af9c1a"
+      },
+      {
+        "name": "dlrm_data/root_cause_20260919/step405_linear_private_DW_context_provenance_v1.json",
+        "bytes": 882,
+        "sha256": "d0d815242f9f92b76056b5657d4d540b9734f550bbf10c20cc2d47c9526f73d0"
+      },
+      {
+        "name": "dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/manifest.json",
+        "bytes": 440838,
+        "sha256": "307ef5b7449920b06b2e549fb306d6f0a22bdb1bbdbfa7a19a825f79db5cf3cd"
+      },
+      {
+        "name": "dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/prepare_private_catalog.py",
+        "bytes": 15472,
+        "sha256": "a8eeaa42ccdafd174c9e72f2056fa500053b03cdd066cf05eb23aea5131aa84e"
+      },
+      {
+        "name": "dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/validation.json",
+        "bytes": 919,
+        "sha256": "2fc35532010d6a8fbaf3b403c80be9673761ee82300e4644df048f41c9fbc059"
+      },
+      {
+        "name": "dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib",
+        "bytes": 2686,
+        "sha256": "3585e31939c0f2cf199d596b357c0f864aefcb29742ad13dd6ec6fb68432b962"
+      },
+      {
+        "name": "mi450_logs/root_cause_20260919/private_DW_catalog_root_verification_v1.json",
+        "bytes": 919,
+        "sha256": "2fc35532010d6a8fbaf3b403c80be9673761ee82300e4644df048f41c9fbc059"
+      },
+      {
+        "name": "mi450_logs/root_cause_20260919/dw_solution102_private_catalog_independent_v1.json",
+        "bytes": 7885,
+        "sha256": "bed7c7c18b6aecedd3d7562992daac8150597a473e0fc8225cc308ae93ca623d"
+      },
+      {
+        "name": "mi450_logs/root_cause_20260919/private_DW_catalog_transform_independent_v1.json",
+        "bytes": 5206,
+        "sha256": "6e34f964c6129e2f2c29bbf1cfcb0988943958874ffeb1bdb0043493fd11b2d1"
+      },
+      {
+        "name": "step405_linear_private_DW_frozen_sources_v1.sha256",
+        "bytes": 4866,
+        "sha256": "c76cc97ea662ddddfe0bde54e9cae5da36b56f116538ff614472480f291b045f"
+      }
+    ],
+    "runtime_sources_before_after_current_match": [
+      {
+        "path": "/home/chcai/training/recommendation/scripts/replay_additional_linear_capture.py",
+        "bytes": 37139,
+        "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/replay_backward_boundary.py",
+        "bytes": 47094,
+        "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/replay_hstu_output_boundary.py",
+        "bytes": 31162,
+        "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/stress_addmm_backward_boundary.py",
+        "bytes": 37705,
+        "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/stress_hstu_output_boundary.py",
+        "bytes": 24294,
+        "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/nan_backward_boundaries.py",
+        "bytes": 31280,
+        "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/audit_training_arithmetic_bounds.py",
+        "bytes": 16614,
+        "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/audit_training_gradient_flow.py",
+        "bytes": 25133,
+        "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c"
+      },
+      {
+        "path": "/home/chcai/training/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+        "bytes": 7068,
+        "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+      }
+    ],
+    "launch_manifest_status_is_prelaunch_record": "GPU_NOT_RUN",
+    "native_library_controller_records": [
+      {
+        "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/Kernels.so-000-gfx1250.hsaco",
+        "sha256": "58b6378c3e32a9e0452f2ff06f295c4c63c9e4110a9c216d61e68f95b8d2d3ca"
+      },
+      {
+        "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+        "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+      },
+      {
+        "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblas.so.3",
+        "sha256": "6200e50325b06b81bd5689e52a130f825f8f6e39388f5466a983989b1611d114"
+      },
+      {
+        "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblaslt.so.1",
+        "sha256": "88b273588dd7374065569efa72b6ccbcdd92c1ceaf599d0600c93e91a64aacd4"
+      },
+      {
+        "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/librocblas.so.5",
+        "sha256": "4dae8974205c74e73d96770b8f045320c6798863108f06c2242b20987abdb6ac"
+      }
+    ],
+    "independently_rehashed_native_files": [
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/projection_streamk_runtime_library_audit_v2/libhipblaslt.so.1",
+        "bytes": 8406320,
+        "sha256": "88b273588dd7374065569efa72b6ccbcdd92c1ceaf599d0600c93e91a64aacd4"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/projection_native_loaded_objects_v1/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+        "bytes": 60748,
+        "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/projection_native_loaded_objects_v1/Kernels.so-000-gfx1250.hsaco",
+        "bytes": 9155640,
+        "sha256": "58b6378c3e32a9e0452f2ff06f295c4c63c9e4110a9c216d61e68f95b8d2d3ca"
+      }
+    ]
+  },
+  "source_semantics_review": [
+    "Controller asserts private environment path and manifest digest, mandatory zeros, workspace1 and absence of alternate selectors before invoking the frozen driver.",
+    "Driver restores labeled derived context before loading Torch, capture or BLAS runtime; saved execution metadata restores backend preference and backward controls, not a library path.",
+    "Each injected call computes only torch.mm(DY.T,X).T and verifies the saved column-major DW layout. No forward, DX or DB is dispatched by this callable.",
+    "Frozen preparation clones complete storage, rejects nonfinite protected inputs and aliasing with DY, then zeros logical DY only.",
+    "Frozen replay verifies prepared logical/layout/raw digests after device restore; checks all DW values and input version counters every call; rechecks complete input bytes at final call and fails on disagreement.",
+    "Loaded-library sidecar is produced by controller finally from its own maps and file hashes. This external auditor reads only retained files and performs no process inspection.",
+    "All31 frozen files and30 archive members match. Input capture and compiled trace interposer are separately included in the freeze and directly hashed, while the archive omits .pt/.so payloads."
+  ],
+  "limitations": [
+    "Per-call output tensors were not retained on this passing run; this audit independently checks retained zero-check records/logs, source semantics and trace packets, not a new CPU rescan of those outputs.",
+    "Original input bundle is independently fully rehashed; prepared tensor digests equal the previously independently audited failing196 control. No Torch deserialization or new tensor scan occurs here.",
+    "Final device-input equality is the frozen runtime full-byte check result, not an external reread of device memory.",
+    "Private catalog consumption is supported jointly by environment, file identity, static loader path mechanics and exact target dispatch. No direct catalog-open trace or on-device instruction-byte proof was captured.",
+    "Only cached libhipblaslt and two native objects are independently rehashed here; the other two BLAS library hashes remain controller-recorded.",
+    "Postrun catalog validation is a file-only observation after completion and does not establish continuous filesystem immutability during execution.",
+    "Candidate102 changes tile, LDS, grid, code and scheduling along with VGPR count. These results do not isolate VGPR count as causal or establish a complete training fix, all-input correctness or failure-rate estimate."
+  ],
+  "guards": {
+    "no_Torch_import": true,
+    "no_native_load_or_compile": true,
+    "no_GPU_action": true,
+    "no_live_process_inspection": true,
+    "no_frozen_or_runtime_file_edits": true
+  }
+}

@@ -1,0 +1,421 @@
+{
+  "format": "single_DW196_trace_archive_independent_v1",
+  "status": "PASS_TERMINAL_TRACE_SOURCE_ARCHIVE_JOIN",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/audit_single_DW196_trace_archive_independent_v1.py",
+    "bytes": 10798,
+    "sha256": "d2b39ab5e2c522d82dee6ba445ceea5f3a6b602d329edfd1c8a1b84d61abce2f"
+  },
+  "run_report": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1.json",
+    "bytes": 477741,
+    "sha256": "32604ead77f233164e5a810fbdd230dce1bc1bdaeb28139e70af47539b7941ad"
+  },
+  "run_log": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1.log",
+    "bytes": 34648,
+    "sha256": "8bb4cf7ec120df24abf4d04f42ef8d023a305425b23158189b9621c7d809bbfd"
+  },
+  "root_terminal_trace": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1_trace_root_v1.json",
+    "bytes": 9466,
+    "sha256": "a4436119b6a124b49226a8320d1d58021c642c138e4c78341e3e5f54ae57df4c"
+  },
+  "terminal_lifecycle_root_attestation": {
+    "session_id": 74939,
+    "exit_code": 1,
+    "reap_chunk": "6e500f"
+  },
+  "operation": "torch.mm(DY.T, X).T",
+  "injected_callable": "execute_saved_orientation",
+  "source_hashes_before_after_current_equal": true,
+  "sources_checked": [
+    {
+      "path": "/home/chcai/training/recommendation/scripts/replay_additional_linear_capture.py",
+      "bytes": 37139,
+      "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/replay_backward_boundary.py",
+      "bytes": 47094,
+      "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/replay_hstu_output_boundary.py",
+      "bytes": 31162,
+      "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/stress_addmm_backward_boundary.py",
+      "bytes": 37705,
+      "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/stress_hstu_output_boundary.py",
+      "bytes": 24294,
+      "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/nan_backward_boundaries.py",
+      "bytes": 31280,
+      "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/audit_training_arithmetic_bounds.py",
+      "bytes": 16614,
+      "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/audit_training_gradient_flow.py",
+      "bytes": 25133,
+      "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+      "bytes": 7068,
+      "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+    }
+  ],
+  "runtime_reported_result": {
+    "failed_call": 196,
+    "prior_passing_checks": 195,
+    "wrong_finite_values": 512,
+    "maximum_abs": 2.624079549227609e-33,
+    "final_inputs_checked": true
+  },
+  "failure_payload_external": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1_failure.pt",
+    "sha256": "d65dd676bf70b5ddfd6f830f93f2d5c687186db1a15e29ebf4bdaf7188b77020",
+    "bytes": 10712109223,
+    "storage_bytes": 10711921152
+  },
+  "trace": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/single_DW196_trace_archive_independent_v1/terminal_trace_copy.jsonl",
+    "bytes": 345473,
+    "sha256": "c1ce7394cb8ab4ef178f07d94d25a86bb7a29f2e3202f52f654b98c9d5e98c34"
+  },
+  "trace_original_path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1_hip.jsonl",
+  "trace_read_method": "Read-only sudo cat; no permissions or original bytes changed",
+  "trace_event_counts": {
+    "get_function_return": 2,
+    "launch_begin": 196,
+    "launch_return": 196
+  },
+  "kernel_name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+  "successful_function_lookup": {
+    "pid": 161652,
+    "monotonic_ns": 55833957639214,
+    "event": "get_function_return",
+    "module": "0x261d2070",
+    "function": "0x28a6b8e0",
+    "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+    "hip_error": 0
+  },
+  "native_launches": 196,
+  "workgroups": 4,
+  "all_launch_returns_hip_success": true,
+  "all_196_packets_identical": true,
+  "declared_bytes": 172,
+  "aligned_bytes": 176,
+  "declared_fields": 33,
+  "all_declared_fields_captured": true,
+  "decoded_fields": {
+    "Gemm info": 1,
+    "kernel info0": 18874369,
+    "kernel info1": 1073807368,
+    "numWG": 4,
+    "SizesFree0": 256,
+    "SizesFree1": 512,
+    "SizesFree2": 1,
+    "SizesSum0": 2324351,
+    "D": "0x73025a640000",
+    "C": "0x73025a640000",
+    "A": "0x737bf6c00000",
+    "B": "0x737c3daefe00",
+    "strideD0": 256,
+    "strideD1": 0,
+    "strideC0": 256,
+    "strideC1": 0,
+    "strideA0": 256,
+    "strideA1": 0,
+    "strideB0": 512,
+    "strideB1": 0,
+    "alpha": 1.0,
+    "beta": 0.0,
+    "AddressScaleAlphaVec": "0x0",
+    "bias": "0x0",
+    "biasType": 0,
+    "StrideBias": 0,
+    "activationAlpha": 0.0,
+    "activationBeta": 0.0,
+    "activationType": 0,
+    "batchOffsetD": 0,
+    "batchOffsetC": 0,
+    "batchOffsetA": 0,
+    "batchOffsetB": 0
+  },
+  "Addmm55_DW_packet_comparison": {
+    "differences": {
+      "D": [
+        "0x704996640c00",
+        "0x73025a640000"
+      ],
+      "C": [
+        "0x704996640c00",
+        "0x73025a640000"
+      ],
+      "A": [
+        "0x70c332c00000",
+        "0x737bf6c00000"
+      ],
+      "B": [
+        "0x70c379aefe00",
+        "0x737c3daefe00"
+      ]
+    },
+    "all_nonpointer_fields_equal": true
+  },
+  "pinned_metadata": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/DW_kernel_metadata.json",
+    "bytes": 7099,
+    "sha256": "b8ee1f792b59a5d3aa4da70e005387cf65d138589e8f246826562082cf6e32ab"
+  },
+  "prior_static_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/static_and_trace_certificate_v1.json",
+    "bytes": 16749,
+    "sha256": "076e4d5c0f83c8030ff029f5ad2e21a251660285ebcb9253b4d69e097e0f6ccb"
+  },
+  "static_VGPR_count": 676,
+  "launch_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_launch_manifest_v1.json",
+    "bytes": 1007,
+    "sha256": "1907923503ef4d51718f99ba870911411ab67229ac867f85154de47fd66e76d5"
+  },
+  "source_freeze": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_frozen_sources_v1.sha256",
+    "bytes": 3023,
+    "sha256": "ae19a82675bb94b2761800259451c0586d7b0f0d98a8d6b898122e5664c44b75"
+  },
+  "frozen_file_entries": 20,
+  "current_small_files_hashed": [
+    {
+      "path": "/home/chcai/training/recommendation/scripts/replay_additional_linear_capture.py",
+      "bytes": 37139,
+      "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/replay_backward_boundary.py",
+      "bytes": 47094,
+      "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/replay_hstu_output_boundary.py",
+      "bytes": 31162,
+      "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/stress_addmm_backward_boundary.py",
+      "bytes": 37705,
+      "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/stress_hstu_output_boundary.py",
+      "bytes": 24294,
+      "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/nan_backward_boundaries.py",
+      "bytes": 31280,
+      "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/audit_training_arithmetic_bounds.py",
+      "bytes": 16614,
+      "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/audit_training_gradient_flow.py",
+      "bytes": 25133,
+      "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/trace_projection_hip_launches_v2.cpp",
+      "bytes": 10647,
+      "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/trace_projection_hip_launches_v2.so",
+      "bytes": 84624,
+      "sha256": "ca847493973d76a572798a7a5ad70c961123e7fd8c03a64bad349aa2d18c13e6"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/extract_step405_linear_replay_root_v1.py",
+      "bytes": 3063,
+      "sha256": "764e5fc26cb3df7d7726ce628861612e80e621d999b55c1e45d6eccb946c6474"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_extraction_root_v1.json",
+      "bytes": 2041,
+      "sha256": "75fb1830c51b7e9771f5df5f6cbcd6a8578caddc46f0584b591d26ff2267948e"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+      "bytes": 94391,
+      "sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+      "bytes": 7068,
+      "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/scripts/test_repro_linear_dw_saved_orientation.py",
+      "bytes": 4659,
+      "sha256": "90165cd6e82c438ec04bc9ab6ef967c936cf867630a3fdd930bdedc8d6be7531"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/linear_saved_orientation_cpu_v1.log",
+      "bytes": 1276,
+      "sha256": "43d8fc7fd689842b23109247096837b496d22c77e21e0be3d2a3599edd6bcc60"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/direct_linear_dw_saved_orientation_independent_review_v1.json",
+      "bytes": 4469,
+      "sha256": "9c5749de60d3cd3a99c94966641c7aa12ecdc4ae194218f3f473219257db12d8"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_actual_bundle_CPU_v1.json",
+      "bytes": 6908,
+      "sha256": "3d5d8e2143062c1f8b28f412d80b217e52e417cca35c9ffcc23b7ea7cd6df80f"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1.sh",
+      "bytes": 1349,
+      "sha256": "9256ddfaef339b3b9febffb9239f09f71015fc10b94031e9b7c4e8e6ff3a3bbc"
+    }
+  ],
+  "external_bundle_reference": [
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+      "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a",
+      "bytes": 3570835225,
+      "rehash_here": false
+    }
+  ],
+  "source_archive": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_single_dw_sources_v1.tar.gz",
+    "bytes": 110232,
+    "sha256": "fb48a58fcaef4f48bad2fa1efa037ebdbfde7925e087da43502db7afe13ee2b0"
+  },
+  "archive_regular_members_checked": [
+    {
+      "name": "training/recommendation/scripts/replay_additional_linear_capture.py",
+      "bytes": 37139,
+      "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f"
+    },
+    {
+      "name": "training/recommendation/scripts/replay_backward_boundary.py",
+      "bytes": 47094,
+      "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970"
+    },
+    {
+      "name": "training/recommendation/scripts/replay_hstu_output_boundary.py",
+      "bytes": 31162,
+      "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01"
+    },
+    {
+      "name": "training/recommendation/scripts/stress_addmm_backward_boundary.py",
+      "bytes": 37705,
+      "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb"
+    },
+    {
+      "name": "training/recommendation/scripts/stress_hstu_output_boundary.py",
+      "bytes": 24294,
+      "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12"
+    },
+    {
+      "name": "training/recommendation/scripts/nan_backward_boundaries.py",
+      "bytes": 31280,
+      "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44"
+    },
+    {
+      "name": "training/recommendation/scripts/audit_training_arithmetic_bounds.py",
+      "bytes": 16614,
+      "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5"
+    },
+    {
+      "name": "training/recommendation/scripts/audit_training_gradient_flow.py",
+      "bytes": 25133,
+      "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c"
+    },
+    {
+      "name": "training/recommendation/scripts/trace_projection_hip_launches_v2.cpp",
+      "bytes": 10647,
+      "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+    },
+    {
+      "name": "dlrm_data/root_cause_20260919/extract_step405_linear_replay_root_v1.py",
+      "bytes": 3063,
+      "sha256": "764e5fc26cb3df7d7726ce628861612e80e621d999b55c1e45d6eccb946c6474"
+    },
+    {
+      "name": "dlrm_data/root_cause_20260919/step405_linear_saved_operands_extraction_root_v1.json",
+      "bytes": 2041,
+      "sha256": "75fb1830c51b7e9771f5df5f6cbcd6a8578caddc46f0584b591d26ff2267948e"
+    },
+    {
+      "name": "dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+      "bytes": 94391,
+      "sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d"
+    },
+    {
+      "name": "training/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+      "bytes": 7068,
+      "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+    },
+    {
+      "name": "training/recommendation/scripts/test_repro_linear_dw_saved_orientation.py",
+      "bytes": 4659,
+      "sha256": "90165cd6e82c438ec04bc9ab6ef967c936cf867630a3fdd930bdedc8d6be7531"
+    },
+    {
+      "name": "mi450_logs/root_cause_20260919/linear_saved_orientation_cpu_v1.log",
+      "bytes": 1276,
+      "sha256": "43d8fc7fd689842b23109247096837b496d22c77e21e0be3d2a3599edd6bcc60"
+    },
+    {
+      "name": "mi450_logs/root_cause_20260919/direct_linear_dw_saved_orientation_independent_review_v1.json",
+      "bytes": 4469,
+      "sha256": "9c5749de60d3cd3a99c94966641c7aa12ecdc4ae194218f3f473219257db12d8"
+    },
+    {
+      "name": "dlrm_data/root_cause_20260919/step405_linear_single_dw_actual_bundle_CPU_v1.json",
+      "bytes": 6908,
+      "sha256": "3d5d8e2143062c1f8b28f412d80b217e52e417cca35c9ffcc23b7ea7cd6df80f"
+    },
+    {
+      "name": "mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1.sh",
+      "bytes": 1349,
+      "sha256": "9256ddfaef339b3b9febffb9239f09f71015fc10b94031e9b7c4e8e6ff3a3bbc"
+    },
+    {
+      "name": "step405_linear_single_dw_frozen_sources_v1.sha256",
+      "bytes": 3023,
+      "sha256": "ae19a82675bb94b2761800259451c0586d7b0f0d98a8d6b898122e5664c44b75"
+    }
+  ],
+  "guards": {
+    "pure_CPU_file_audit": true,
+    "Torch_imported": false,
+    "native_load_or_compile": false,
+    "GPU_actions": false
+  },
+  "limits": [
+    "Numerical counts come from the runtime report; the independent full10.7GB CPU audit is separate. This audit does not reread tensor bytes.",
+    "The launch tracer records named hipModule launches and host returns. It does not capture on-device instruction bytes, internal reads, or every possible device writer.",
+    "The single saved-orientation MM producer is verified by the pinned source and prior12CPUtests. The raw_dw label names the frozen checking harness.",
+    "Original training405 saved pointer metadata is historical; it is not current replay pointer ownership.",
+    "Identical nonpointer packets and named kernel connect direct196 to Addmm55 replays; the training405 kernel was not natively traced.",
+    "High VGPR count and retained value patterns do not identify a corrupting instruction or common cause."
+  ]
+}

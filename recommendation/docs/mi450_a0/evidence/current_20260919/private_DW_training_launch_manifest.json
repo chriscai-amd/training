@@ -1,0 +1,60 @@
+{
+  "format": "private_DW_training_root_launch_manifest_v1",
+  "repository_head": "a7c1e8b319517e62b8fb0c2265b68f3a42a3e00a",
+  "launchers": [
+    "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_2_v1.sh",
+    "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_1000_v1.sh"
+  ],
+  "files": {
+    "/home/chcai/training/recommendation/scripts/capture_additional_linear.py": "ef0a270e556fa520cf9195042270aaba71fa83752a061e7e070591af264838f9",
+    "/home/chcai/training/recommendation/scripts/capture_training_backward.py": "3aadf4c87380d6e1613c46bc50279a0961cff7430843a4435f5cdb550fe75d8d",
+    "/home/chcai/training/recommendation/scripts/nan_backward_boundaries.py": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44",
+    "/home/chcai/training/recommendation/scripts/nan_backward_training_probe.py": "8c1f8767e8fd7c202317cab83fbc839c5a21c9b599038c56cc435aac68e219a6",
+    "/home/chcai/training/recommendation/scripts/nan_backward_training_batched.py": "ed494a67f1ba940371b70545fbb710dc86c56c4e0690d71c2b0892a4f53e4020",
+    "/home/chcai/training/recommendation/scripts/nan_backward_training_extended.py": "766008f2df633f8f7a4359d5ebb419db274e30b44b21b5d351f157484ddec2e3",
+    "/home/chcai/training/recommendation/scripts/nan_backward_training_upstream.py": "0c985d740578085d4f64fad2d05bcf5c25e94ad492aad49599803ba24ca81ea4",
+    "/home/chcai/training/recommendation/scripts/nan_backward_training_all_layers.py": "f25bd8bba4d687b40e2b6f6f11423f8bb526e4c98adca33d43faca24c323d066",
+    "/home/chcai/training/recommendation/scripts/nan_backward_training_deferred.py": "5af39b2673b2468994f8d8e9130a9037a71711a0aedb11eb04aef7734e6c83ce",
+    "/home/chcai/training/recommendation/scripts/nan_replay_capture.py": "5d7f07f37d4b255ac190f8f030e51ba09ae267c219a00aed04aa64962ab829f8",
+    "/home/chcai/training/recommendation/scripts/nan_replay_state.py": "e5a482b13bc6d53c00d90318de9d52d149b35ae12f77d8f476d3e28ff6ec5817",
+    "/home/chcai/training/recommendation/scripts/capture_additional_linear_deferred.py": "f1d6fbffe1b7f1bb1df66ab6347a8cefb64fabd892dbb5d63ebaaeaea584d81e",
+    "/home/chcai/training/recommendation/scripts/test_capture_additional_linear_deferred.py": "a75676e4742c885fefb6befc38fa52ffe44d7ca7e0e7993965185ef63accd3ec",
+    "/home/chcai/training/recommendation/scripts/capture_linear_projection_deferred.py": "2cf870a06afbe0ba04163583574c1bc48112cc9fbd752395bb76889163356ef5",
+    "/home/chcai/training/recommendation/scripts/test_capture_linear_projection_deferred.py": "0addabe88d107c48b0a6247efead3a9a028f2551b494b69165bb1eee16db5e73",
+    "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_deferred_uncapped_start0_2_v2.sh": "df3b6fa74b79fdac2c1556e29a2efc35a407cf1156ae80ef1d6bda5762f30c8b",
+    "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_deferred_uncapped_start0_1000_v2.sh": "64458df71d64d431952c48a4aea5e3b6c3d3869eefee056c01100171a0935a35",
+    "/home/chcai/training/recommendation/scripts/capture_linear_projection_mitigated.py": "d3f1850a1f75a26645399e881f083b4cde067fb2325a0f69b798a36d295e25b6",
+    "/home/chcai/training/recommendation/scripts/test_capture_linear_projection_mitigated.py": "11792f71de268e14680b8a15b583027a0400ba5249a2dfaf87f7bcebdf741e94",
+    "/home/chcai/mi450_logs/root_cause_20260919/linear_projection_mitigated_root_cpu_v1.log": "d2023da07c717eb890dbbd1c3f9ba05819e15d2c033be0d454c308648f15afcf",
+    "/home/chcai/dlrm_data/root_cause_20260919/linear_projection_mitigated_independent_cpu_review_v1.json": "8f254d9cc437dfd79eba780488f73861f7e37039b1de5ab7847a0957db0a8861",
+    "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_deferred_cap256_bn1_workspace1_start0_2_v4.sh": "8b796b31a7582b4a096098755762a814ff19f4a42eb5e39f7370d6bbddcdd163",
+    "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_deferred_cap256_bn1_workspace1_start0_1000_v4.sh": "3208ab19ade8604b49fc701e1583973c7902ff1691e661c9f205217d0f625c7a",
+    "/home/chcai/training/recommendation/scripts/capture_linear_projection_diagnostics.py": "6a53a0c684144e60a16d716563ed5308304b35b9ee5113e5d95cb9a36fef6c57",
+    "/home/chcai/training/recommendation/scripts/test_capture_linear_projection_diagnostics.py": "a19d11b72fd5102102b684d68ff7671191b337929b11122025f3cb352d917914",
+    "/home/chcai/mi450_logs/root_cause_20260919/linear_projection_diagnostics_implementation_cpu_v1.json": "8d618def9adad235dbd5a649832cbbab2311c6ae94e40ea739d6fa166cc8c988",
+    "/home/chcai/mi450_logs/root_cause_20260919/linear_projection_diagnostics_root_cpu_v1.log": "cca27676cd4c9c152823cfbf7c45d4e8e8ad9476b8ae57f9c7f97a6ce4db4da8",
+    "/home/chcai/mi450_logs/root_cause_20260919/linear_projection_diagnostics_root_review_v1.json": "8b4c15ab01bec3f292b25c241a5fa8ad42f55c9061d456506ab4b9a8542165bf",
+    "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1.sh": "253bede79854e8e6567e7f3e2ffef1486e966e2bb9bf6829afe07aeeca10202f",
+    "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_2_v1.sh": "1205a5795bb43fad56e16bb09494f4653923c152072037f5c592f20c2b01bc30",
+    "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_1000_v1.sh": "84478228d109b50d3aaa5fd65f0e8461e42927ea9a66c446d564d82b0f9dbca5",
+    "/home/chcai/mi450_logs/root_cause_20260919/prepare_private_DW_training_root_v1.py": "b406d92a76ad4981a20a65decc300e9a9489afe6063f5824c88dda64388b8824",
+    "/home/chcai/training/recommendation/scripts/capture_linear_projection_solution102_diagnostics.py": "bb16bfa585928a0cd8d9b979f12cab3a805b03ada8dcf34212798efaef5dc435",
+    "/home/chcai/training/recommendation/scripts/test_capture_linear_projection_solution102_diagnostics.py": "260c33049d11c59ca0974196b3c6db8c7984172ef9148d6a49a1a0d5bc421b4e",
+    "/home/chcai/training/recommendation/scripts/trace_projection_hip_launches_v2.cpp": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195",
+    "/home/chcai/dlrm_data/root_cause_20260919/trace_projection_hip_launches_v2.so": "ca847493973d76a572798a7a5ad70c961123e7fd8c03a64bad349aa2d18c13e6",
+    "/home/chcai/dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/manifest.json": "307ef5b7449920b06b2e549fb306d6f0a22bdb1bbdbfa7a19a825f79db5cf3cd",
+    "/home/chcai/dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/prepare_private_catalog.py": "a8eeaa42ccdafd174c9e72f2056fa500053b03cdd066cf05eb23aea5131aa84e"
+  },
+  "freeze_sha256": "b695adebbdf2903b09435d3396e4d92cf74b7eb9c9fc561c0320a859276725a0",
+  "archive": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/linear_projection_private_DW_training_sources_v1.tar.gz",
+    "bytes": 162124,
+    "sha256": "c8867c01011bde9f1bb4cc77a88a10eabcc6823bc02e13df0df607cae87de98d"
+  },
+  "limits": [
+    "Combined experiment: cap256/BN1/workspace1 and one private DW catalog redirect.",
+    "The original diagnostic queue, actual scalar stages and first-flag stop rules are retained.",
+    "The native launch trace is new to training and records host API arguments without GPU synchronization.",
+    "Two-step smoke saves finite step1; long run saves finite step1000 if reached. Any earlier flag saves and stops."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "format": "private_DW_training_smoke_root_terminal_v1",
+  "run": "train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_2_v1",
+  "session_id": 79063,
+  "exit_code": 0,
+  "reap_chunk": "2e4226",
+  "outcome": {
+    "status": "bounded_complete",
+    "requested_steps": 2,
+    "last_attempted_step": 2,
+    "completed_steps": 2,
+    "trainer_exit_code": 42,
+    "seconds": 73.41923946500174
+  },
+  "full_payload_audit": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/private_DW_training_smoke_step1_payload_root_v1.json",
+    "sha256": "32565d7adb99a982012c37e9adcb8edc14b858dd62fb643ce776a5deed87a5bb",
+    "payload_sha256": "ee6afbdfd18049cd05381983d9f6e310f4bb94933a1a57147ce6a1197bc18855",
+    "payload_bytes": 23469148365,
+    "totals": {
+      "logical_views": 534,
+      "storages": 465,
+      "nonfinite_views": 0,
+      "extreme_views": 0,
+      "input_bytes_exact": true,
+      "gradient_bytes_exact": true
+    },
+    "session_id": 35564,
+    "exit_code": 0,
+    "reap_chunk": "00497b"
+  },
+  "trace_audit": "/home/chcai/mi450_logs/root_cause_20260919/private_DW_training_smoke_trace_root_v1.json",
+  "limits": [
+    "Two successful steps are a smoke test, not long-run NaN resolution.",
+    "Combined mitigation changes several components; native DW replacement is traced separately."
+  ]
+}

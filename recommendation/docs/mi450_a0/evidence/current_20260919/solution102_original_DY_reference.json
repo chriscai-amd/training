@@ -1,0 +1,252 @@
+{
+  "format": "solution102_original_DW_full_CPU_reference_root_v1",
+  "status": "AUDITED",
+  "input_bundle_sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a",
+  "observed_artifact_sha256": "c17652dd41a91acfad20c3119f95c8815fee87525220efbadc350745fe2470c4",
+  "all_reduction_terms_per_output": 2324351,
+  "outputs_checked": 131072,
+  "observed_all_finite": true,
+  "observed_max_abs": 2.0623207092285156e-05,
+  "reference_FP64_max_abs": 2.0571815630537885e-05,
+  "maximum_absolute_difference": 5.786662636858106e-08,
+  "rms_absolute_difference": 5.903752840731131e-09,
+  "different_from_CPU_FP64_reference_converted_BF16": 1357,
+  "mismatch_examples": [
+    {
+      "coordinate": [
+        0,
+        4
+      ],
+      "observed": 6.548361852765083e-09,
+      "reference_FP64": 6.572642090113017e-09,
+      "CPU_reference_converted_BF16": 6.577465683221817e-09
+    },
+    {
+      "coordinate": [
+        0,
+        74
+      ],
+      "observed": -1.0128132998943329e-08,
+      "reference_FP64": -1.0096093295024527e-08,
+      "CPU_reference_converted_BF16": -1.0069925338029861e-08
+    },
+    {
+      "coordinate": [
+        0,
+        181
+      ],
+      "observed": 1.73225998878479e-07,
+      "reference_FP64": 1.7373346992057848e-07,
+      "CPU_reference_converted_BF16": 1.7415732145309448e-07
+    },
+    {
+      "coordinate": [
+        0,
+        189
+      ],
+      "observed": 2.1792948246002197e-07,
+      "reference_FP64": 2.184017100874018e-07,
+      "CPU_reference_converted_BF16": 2.1886080503463745e-07
+    },
+    {
+      "coordinate": [
+        0,
+        476
+      ],
+      "observed": -8.940696716308594e-08,
+      "reference_FP64": -8.91656341725973e-08,
+      "CPU_reference_converted_BF16": -8.89413058757782e-08
+    },
+    {
+      "coordinate": [
+        0,
+        507
+      ],
+      "observed": -3.688037395477295e-07,
+      "reference_FP64": -3.6786356556058226e-07,
+      "CPU_reference_converted_BF16": -3.6694109439849854e-07
+    },
+    {
+      "coordinate": [
+        1,
+        118
+      ],
+      "observed": 2.153683453798294e-08,
+      "reference_FP64": 2.1603825423113537e-08,
+      "CPU_reference_converted_BF16": 2.1653249859809875e-08
+    },
+    {
+      "coordinate": [
+        1,
+        254
+      ],
+      "observed": -8.940696716308594e-08,
+      "reference_FP64": -8.914138279396056e-08,
+      "CPU_reference_converted_BF16": -8.89413058757782e-08
+    },
+    {
+      "coordinate": [
+        1,
+        419
+      ],
+      "observed": 3.6135315895080566e-07,
+      "reference_FP64": 3.623082041788564e-07,
+      "CPU_reference_converted_BF16": 3.632158041000366e-07
+    },
+    {
+      "coordinate": [
+        1,
+        499
+      ],
+      "observed": 3.7834979593753815e-09,
+      "reference_FP64": 3.80447570410535e-09,
+      "CPU_reference_converted_BF16": 3.812601789832115e-09
+    },
+    {
+      "coordinate": [
+        2,
+        4
+      ],
+      "observed": -1.0505318641662598e-06,
+      "reference_FP64": -1.0467923338519708e-06,
+      "CPU_reference_converted_BF16": -1.043081283569336e-06
+    },
+    {
+      "coordinate": [
+        2,
+        12
+      ],
+      "observed": -1.1175870895385742e-06,
+      "reference_FP64": -1.1138448645370768e-06,
+      "CPU_reference_converted_BF16": -1.1101365089416504e-06
+    },
+    {
+      "coordinate": [
+        2,
+        33
+      ],
+      "observed": 8.195638656616211e-08,
+      "reference_FP64": 8.219137323181458e-08,
+      "CPU_reference_converted_BF16": 8.242204785346985e-08
+    },
+    {
+      "coordinate": [
+        2,
+        62
+      ],
+      "observed": -1.816079020500183e-08,
+      "reference_FP64": -1.8070812709593153e-08,
+      "CPU_reference_converted_BF16": -1.8044374883174896e-08
+    },
+    {
+      "coordinate": [
+        2,
+        64
+      ],
+      "observed": 5.960464477539062e-07,
+      "reference_FP64": 5.97911754894389e-07,
+      "CPU_reference_converted_BF16": 5.997717380523682e-07
+    },
+    {
+      "coordinate": [
+        2,
+        136
+      ],
+      "observed": 1.9208528101444244e-09,
+      "reference_FP64": 1.9601313936249434e-09,
+      "CPU_reference_converted_BF16": 1.964508555829525e-09
+    },
+    {
+      "coordinate": [
+        2,
+        190
+      ],
+      "observed": 2.0712614059448242e-06,
+      "reference_FP64": 2.07877198906888e-06,
+      "CPU_reference_converted_BF16": 2.086162567138672e-06
+    },
+    {
+      "coordinate": [
+        2,
+        456
+      ],
+      "observed": -7.562339305877686e-07,
+      "reference_FP64": -7.543500098978658e-07,
+      "CPU_reference_converted_BF16": -7.525086402893066e-07
+    },
+    {
+      "coordinate": [
+        2,
+        490
+      ],
+      "observed": -8.419156074523926e-07,
+      "reference_FP64": -8.400159847858782e-07,
+      "CPU_reference_converted_BF16": -8.381903171539307e-07
+    },
+    {
+      "coordinate": [
+        3,
+        23
+      ],
+      "observed": 5.0067901611328125e-06,
+      "reference_FP64": 5.021720291241857e-06,
+      "CPU_reference_converted_BF16": 5.036592483520508e-06
+    }
+  ],
+  "selected_previously_corrupt_coordinates": [
+    {
+      "coordinate": [
+        2,
+        128
+      ],
+      "observed": -5.145557224750519e-08,
+      "reference_FP64": -5.1456734951664515e-08,
+      "conservative_reference_FP64_error_bound": 1.4586752364239874e-14,
+      "CPU_reference_converted_BF16": -5.145557224750519e-08
+    },
+    {
+      "coordinate": [
+        0,
+        128
+      ],
+      "observed": -4.172325134277344e-07,
+      "reference_FP64": -4.174869764526242e-07,
+      "conservative_reference_FP64_error_bound": 1.4786785151948722e-14,
+      "CPU_reference_converted_BF16": -4.172325134277344e-07
+    },
+    {
+      "coordinate": [
+        0,
+        129
+      ],
+      "observed": -1.3560056686401367e-06,
+      "reference_FP64": -1.359088314461327e-06,
+      "conservative_reference_FP64_error_bound": 1.3594225965791257e-14,
+      "CPU_reference_converted_BF16": -1.3560056686401367e-06
+    },
+    {
+      "coordinate": [
+        0,
+        0
+      ],
+      "observed": 3.814697265625e-06,
+      "reference_FP64": 3.827161943324043e-06,
+      "conservative_reference_FP64_error_bound": 1.2390015968093565e-14,
+      "CPU_reference_converted_BF16": 3.814697265625e-06
+    }
+  ],
+  "CPU_reference_max_error_bound": 2.612754613060522e-14,
+  "reference_artifact": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/solution102_original_DW_full_CPU_reference_root_v1.pt",
+    "bytes": 3410141,
+    "sha256": "a038f43dae74a3a0fe8f5f46ee53a433259cd523a994c6ed0f9a42ef13b3170c"
+  },
+  "seconds": 8.105658160005987,
+  "source_sha256": "1aded828a3abf0581d34fbccd5f54400b6935b358af37d9e3f569f52447906e3",
+  "limits": [
+    "Full CPU FP64 reference uses ordinary FP64 multiplication/accumulation, not exact integer summation for every coordinate.",
+    "Error bound assumes ordinary IEEE FP64 accumulation and includes rounding in the nonnegative reference sum.",
+    "CPU FP64-to-BF16 conversion is reported for comparison; it is not claimed to be a mathematically exact BF16 oracle for every tie.",
+    "This is one original-DY observation, separate from1000zero-DYchecks; no training fix is inferred."
+  ]
+}

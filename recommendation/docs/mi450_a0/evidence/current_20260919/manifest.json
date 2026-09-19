@@ -1,0 +1,178 @@
+{
+  "format": "A0_curated_primary_evidence_v1",
+  "files": [
+    {
+      "file": "training405_full_payload.json",
+      "source": "/home/chcai/dlrm_data/root_cause_20260919/mitigated_projection_diagnostics_step405_payload_root_v1.json",
+      "bytes": 788852,
+      "sha256": "b8c0989b7a62c38618f5c2951f6d2de25ca3bbf6f4e5e76468c92c1e309bb409"
+    },
+    {
+      "file": "training405_exact_dots.json",
+      "source": "/home/chcai/dlrm_data/root_cause_20260919/step405_selected_linear_dots_independent_v1.json",
+      "bytes": 9510,
+      "sha256": "5bfbac075b22b8e4171b12f1f105bf8d7a081c3493ecde64f24691bf58e7c69d"
+    },
+    {
+      "file": "single_DW196_full_failure.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1_full_failure_independent_v1.json",
+      "bytes": 33966,
+      "sha256": "a35a739d558c70c8440ae439812dd4440412638b727ec8b79ad8e1b251071f06"
+    },
+    {
+      "file": "single_DW196_trace.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/single_DW196_trace_archive_independent_v1/trace_archive_certificate_v1.json",
+      "bytes": 18601,
+      "sha256": "b5948f04b7d8c76114575e78c3e67feef5d868e1a9c31c82f06c4d4855f89b7c"
+    },
+    {
+      "file": "private_DW_control1000.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/step405_private_catalog_control_independent_v1/private_catalog_control_certificate_v1.json",
+      "bytes": 42930,
+      "sha256": "57476d89a32b44eeaf8e7ae092beb3336d200d26b78233fe48aa3fba10744728"
+    },
+    {
+      "file": "solution102_original_DY_reference.json",
+      "source": "/home/chcai/dlrm_data/root_cause_20260919/solution102_original_DW_full_CPU_reference_root_v1.json",
+      "bytes": 7149,
+      "sha256": "3d7fc4e1dc3486c4dde16215c02068e37c78e74b56b92653b82690ccdac2c5e7"
+    },
+    {
+      "file": "smoke2_terminal.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_2_v1_root_terminal.json",
+      "bytes": 1333,
+      "sha256": "67273ddb8e5f157982f9ee238e122b9c6815129d48dd77cb185149cac04815c7"
+    },
+    {
+      "file": "smoke2_scalar_stages.json",
+      "source": "/home/chcai/dlrm_data/root_cause_20260919/private_DW_smoke_scalar_stage_independent_v1.json",
+      "bytes": 551463,
+      "sha256": "5948ae1843a4ba76f7bf6aeddd3fdd74fcf213d36ae213ba3be6184780965a2f"
+    },
+    {
+      "file": "smoke2_pointer_join.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/private_DW_smoke_join_independent_v1.json",
+      "bytes": 72966,
+      "sha256": "c984169bd3f3774b9a0d87b1cfeea683f85bf7d57118364384c75b1be66c7d76"
+    },
+    {
+      "file": "smoke2_context_archive.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/private_DW_training_smoke_context_independent_v1/smoke_context_certificate_v1.json",
+      "bytes": 85870,
+      "sha256": "bd0a43ae59855fef9e5d1060d41d7447d2e32762a3de988814ae2b0b822f77ee"
+    },
+    {
+      "file": "DW_failing_kernel_metadata.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/DW_kernel_metadata.json",
+      "bytes": 7099,
+      "sha256": "b8ee1f792b59a5d3aa4da70e005387cf65d138589e8f246826562082cf6e32ab"
+    },
+    {
+      "file": "DW_solution102_kernel_metadata.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/step405_lower_vgpr_native_selection_static_v1/candidate102_kernel_metadata.json",
+      "bytes": 7105,
+      "sha256": "b1e887bf2ec8b7ba62f6fe5151fd34ec5fe281e68a3b488225dfcab457591360"
+    },
+    {
+      "file": "projection_A_reuse_off_failure.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/direct_projection_dx_native_a_reuse_off_override_hipblaslt_fixed460_argtrace1000_v1_full_failure_independent_v1.json",
+      "bytes": 48073,
+      "sha256": "da7091ee9f611e63f249b2083131bd847c3c51b91bae7af2452da3a8dbd4e3fb"
+    },
+    {
+      "file": "projection_ELF_control_trace_payload_join.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/native_override_both_trace_substitution_independent_v1/both_arms_trace_payload_join_v1.json",
+      "bytes": 8270,
+      "sha256": "d069c00d61440f9dd73f972ae541ff94c8d56b27e3b23f9f5eae6740ebdc277a"
+    },
+    {
+      "file": "attention_only_K_exact_zero_failure.json",
+      "source": "/home/chcai/mi450_logs/a0_docs_archive_20260919_session_wrap_v1/recommendation/docs/mi450_a0/evidence/deterministic_trace_20260919/only_k_failure_cpu_analysis.json",
+      "bytes": 22490,
+      "sha256": "54ebe9831628e676d902faec74149c2078aa302b9b1b15c571d891d0bd23d992"
+    },
+    {
+      "file": "DW_B_reuse_off_CPU_readiness.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/DW_mechanism_review_v1/loader_CPU_readiness_certificate_v1.json",
+      "bytes": 15186,
+      "sha256": "5f6c4f1c082e5c2e6adae8b2c13395e051ef9ae021e8a70bef1e879313f05d7f"
+    },
+    {
+      "file": "DW_B_reuse_off_static_patch.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/DW_mechanism_review_v1/static_certificate.json",
+      "bytes": 178621,
+      "sha256": "5ee4fbe01c5d8b0b50c2b17d26ef436f3095836507cba674f3290f041b5a78a0"
+    },
+    {
+      "file": "private_DW_training_smoke2.sh",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_2_v1.sh",
+      "bytes": 1990,
+      "sha256": "1205a5795bb43fad56e16bb09494f4653923c152072037f5c592f20c2b01bc30"
+    },
+    {
+      "file": "private_DW_training1000.sh",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_1000_v1.sh",
+      "bytes": 2005,
+      "sha256": "84478228d109b50d3aaa5fd65f0e8461e42927ea9a66c446d564d82b0f9dbca5"
+    },
+    {
+      "file": "private_DW_training_frozen_sources.sha256",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/linear_projection_private_DW_training_frozen_sources_v1.sha256",
+      "bytes": 5914,
+      "sha256": "b695adebbdf2903b09435d3396e4d92cf74b7eb9c9fc561c0320a859276725a0"
+    },
+    {
+      "file": "private_DW_training_launch_manifest.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/linear_projection_private_DW_training_launch_manifest_v1.json",
+      "bytes": 7445,
+      "sha256": "8041204b0fedd745edeb2fc98928e9b4495607b7c26eaa84b3d0038daa80b378"
+    },
+    {
+      "file": "private_DW_catalog_manifest.json",
+      "source": "/home/chcai/dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/manifest.json",
+      "bytes": 440838,
+      "sha256": "307ef5b7449920b06b2e549fb306d6f0a22bdb1bbdbfa7a19a825f79db5cf3cd"
+    },
+    {
+      "file": "prepare_private_catalog.py",
+      "source": "/home/chcai/dlrm_data/root_cause_20260919/dw_solution102_private_catalog_v1/prepare_private_catalog.py",
+      "bytes": 15472,
+      "sha256": "a8eeaa42ccdafd174c9e72f2056fa500053b03cdd066cf05eb23aea5131aa84e"
+    },
+    {
+      "file": "single_DW_zero_reproducer.sh",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1.sh",
+      "bytes": 1349,
+      "sha256": "9256ddfaef339b3b9febffb9239f09f71015fc10b94031e9b7c4e8e6ff3a3bbc"
+    },
+    {
+      "file": "private_DW_zero_control.sh",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_private_catalog_workspace1_argtrace1000_v1.sh",
+      "bytes": 1092,
+      "sha256": "832ea0959da926bf5ee11455186cef5f8084af570cc7c54ea3730af878127d6a"
+    },
+    {
+      "file": "status_training.py",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/status_private_DW_training_root_v1.py",
+      "bytes": 4661,
+      "sha256": "3166d9f3a1606f2938d6986d882f5fd6007f372a7fb78d67f003c70959fae745"
+    },
+    {
+      "file": "current_training_snapshot.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/private_DW_training_wrap_snapshot_root_v3.json",
+      "bytes": 3828,
+      "sha256": "80983420715052dd53790dcd300ac9efb3a1315e046d58ae195244c50d027503"
+    }
+  ],
+  "historical_archive": "/home/chcai/mi450_logs/a0_docs_archive_20260919_session_wrap_v1",
+  "historical_archive_manifest_sha256": "58d611577c06ba2786a41e573e933e51f8f80b3692b7fcdd2d1b6df9f10f7b1b",
+  "historical_files": 2137,
+  "historical_bytes": 159260334,
+  "limits": [
+    "Only primary certificates and current launch controls are copied into the repository.",
+    "Full captures, native binaries, complete traces and past writeups remain at recorded A0 host paths.",
+    "Host-specific launchers preserve their original absolute paths and require the frozen source/artifact inventory."
+  ],
+  "session_handoff": "/home/chcai/mi450_logs/root_cause_20260919/session_wrap_handoff_root_v1.md",
+  "session_handoff_sha256": "d337db05aaadc05a6c7887d8abc34759c5a315717866eb35500d367272ac2020"
+}

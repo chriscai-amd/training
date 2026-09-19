@@ -1,0 +1,140 @@
+{
+  "format": "private_DW_training_status_snapshot_v1",
+  "snapshot_utc": "2026-09-19T09:31:11.400065+00:00",
+  "boot_id": "45f0372c-a473-46a8-be5b-40a3ca47ea76",
+  "run": "train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_1000_v1",
+  "directory": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_1000_v1",
+  "capture_session": "166143-1789809794573130348",
+  "outcome": {
+    "status": "running",
+    "requested_steps": 1000,
+    "last_attempted_step": 0,
+    "completed_steps": 0
+  },
+  "last_observed_attempt": 149,
+  "last_resolved_backward_scan": 148,
+  "last_backward_complete_event": 148,
+  "flagged_scans": [],
+  "event_counts": {
+    "installed": 1,
+    "deferred_installed": 1,
+    "scan_queued": 2086,
+    "comparison_queued": 1788,
+    "deferred_flush": 148,
+    "attempt_backward_complete": 148
+  },
+  "files": {
+    "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_1000_v1/boundaries/events.jsonl": {
+      "bytes": 40910690,
+      "seconds_since_write": 0.8429296016693115
+    },
+    "/home/chcai/mi450_logs/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_1000_v1.log": {
+      "bytes": 21757,
+      "seconds_since_write": 42.09412932395935
+    },
+    "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_1000_v1_hip.jsonl": {
+      "bytes": 15235493,
+      "seconds_since_write": 0.8666458129882812
+    }
+  },
+  "kfd_owners": [
+    {
+      "host_pid": 620922,
+      "namespace_pids": [
+        620922,
+        165815
+      ],
+      "command": "python",
+      "start_ticks": "5779270"
+    },
+    {
+      "host_pid": 621340,
+      "namespace_pids": [
+        621340,
+        166143
+      ],
+      "command": "python",
+      "start_ticks": "5779456"
+    },
+    {
+      "host_pid": 623269,
+      "namespace_pids": [
+        623269,
+        167592
+      ],
+      "command": "pt_data_worker",
+      "start_ticks": "5780572"
+    },
+    {
+      "host_pid": 623270,
+      "namespace_pids": [
+        623270,
+        167593
+      ],
+      "command": "pt_data_worker",
+      "start_ticks": "5780575"
+    },
+    {
+      "host_pid": 623271,
+      "namespace_pids": [
+        623271,
+        167594
+      ],
+      "command": "pt_data_worker",
+      "start_ticks": "5780579"
+    },
+    {
+      "host_pid": 623272,
+      "namespace_pids": [
+        623272,
+        167595
+      ],
+      "command": "pt_data_worker",
+      "start_ticks": "5780582"
+    },
+    {
+      "host_pid": 623315,
+      "namespace_pids": [
+        623315,
+        167605
+      ],
+      "command": "pt_data_worker",
+      "start_ticks": "5780727"
+    },
+    {
+      "host_pid": 623316,
+      "namespace_pids": [
+        623316,
+        167606
+      ],
+      "command": "pt_data_worker",
+      "start_ticks": "5780730"
+    },
+    {
+      "host_pid": 623318,
+      "namespace_pids": [
+        623318,
+        167607
+      ],
+      "command": "pt_data_worker",
+      "start_ticks": "5780732"
+    },
+    {
+      "host_pid": 623319,
+      "namespace_pids": [
+        623319,
+        167608
+      ],
+      "command": "pt_data_worker",
+      "start_ticks": "5780735"
+    }
+  ],
+  "kfd_owner_errors": [],
+  "retained_frames": [],
+  "limits": [
+    "A live outcome.json keeps its initial counters until terminal update; do not use its zero counters as progress.",
+    "Backward completion is not an independently observed completed optimizer step.",
+    "This is a timestamped file/process snapshot; it does not establish a terminal result or numerical correctness of every tensor.",
+    "KFD-owning dataloader children can inherit descriptors from the same single training workload."
+  ]
+}

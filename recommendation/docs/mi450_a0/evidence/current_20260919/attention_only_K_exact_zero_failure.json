@@ -1,0 +1,853 @@
+{
+  "compiled_kernels": [
+    {
+      "device": 0,
+      "hash": "1893b16cf8605dac8bb0b42c56d1e9fd331c8a20ac6aa82218013d90757c7966",
+      "metadata": {
+        "AMDGCN_USE_BUFFER_OPS": "false",
+        "allow_flush_denorm": false,
+        "allowed_dot_input_precisions": [
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "gfx1250",
+        "backend_name": "hip",
+        "debug": false,
+        "default_dot_input_precision": "ieee",
+        "deprecated_fp8_dot_operand_dtypes": [],
+        "enable_fp_fusion": true,
+        "extern_libs": [
+          [
+            "ocml",
+            "/opt/triton-custom/python/triton/backends/amd/lib/ocml.bc"
+          ],
+          [
+            "ockl",
+            "/opt/triton-custom/python/triton/backends/amd/lib/ockl.bc"
+          ]
+        ],
+        "fpsan_homomorphic_casts": false,
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "1893b16cf8605dac8bb0b42c56d1e9fd331c8a20ac6aa82218013d90757c7966",
+        "instrumentation_mode": "",
+        "kpack": 1,
+        "launch_cooperative_grid": false,
+        "llvm_fn_attrs": [],
+        "matrix_instr_nonkdim": 16,
+        "max_num_imprecise_acc_default": 0,
+        "name": "_hstu_attn_bwd",
+        "num_ctas": 1,
+        "num_stages": 1,
+        "num_warps": 4,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "sanitize_overflow": true,
+        "schedule_hint": "",
+        "shared": 16384,
+        "supported_fp8_dtypes": [
+          "fp8e4b8",
+          "fp8e4nv",
+          "fp8e5",
+          "fp8e5b16"
+        ],
+        "target": "GPUTarget(backend='hip', arch='gfx1250', warp_size=32)",
+        "tensordesc_meta": [],
+        "triton_version": "3.8.0",
+        "warp_size": 32,
+        "waves_per_eu": 0
+      },
+      "n_regs": 654,
+      "n_spills": 0,
+      "name": "_hstu_attn_bwd"
+    }
+  ],
+  "created_utc": "2026-09-19T01:19:24.220078+00:00",
+  "cuda_initialized": false,
+  "format": "only_k_nonzero_attention_failure_cpu_analysis_v1",
+  "input_verification": {
+    "exact_zero_logical_inputs": [
+      "q",
+      "v",
+      "dout"
+    ],
+    "independent_logical_and_complete_backing_bytes_unchanged": true,
+    "k_finite_nonzero": true,
+    "k_logical_sha256_matches_original_capture": true,
+    "pristine_digests": {
+      "inputs": {
+        "dout": {
+          "dtype": "torch.bfloat16",
+          "extreme_count": 0,
+          "is_conj": false,
+          "is_neg": false,
+          "logical_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+          "max_abs_finite": 0.0,
+          "nonfinite_count": 0,
+          "shape": [
+            88512,
+            4,
+            128
+          ],
+          "storage_index": 1,
+          "storage_offset": 0,
+          "stride": [
+            512,
+            128,
+            1
+          ]
+        },
+        "k": {
+          "dtype": "torch.bfloat16",
+          "extreme_count": 0,
+          "is_conj": false,
+          "is_neg": false,
+          "logical_sha256": "0a023732913358648568f313542573f0bf89116438815ba3ca8ea680fd5d0e6f",
+          "max_abs_finite": 3.359375,
+          "nonfinite_count": 0,
+          "shape": [
+            88512,
+            4,
+            128
+          ],
+          "storage_index": 0,
+          "storage_offset": 1536,
+          "stride": [
+            2048,
+            128,
+            1
+          ]
+        },
+        "num_targets": {
+          "dtype": "torch.int64",
+          "extreme_count": 0,
+          "is_conj": false,
+          "is_neg": false,
+          "logical_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+          "max_abs_finite": 1.0,
+          "nonfinite_count": 0,
+          "shape": [
+            32
+          ],
+          "storage_index": 3,
+          "storage_offset": 0,
+          "stride": [
+            1
+          ]
+        },
+        "q": {
+          "dtype": "torch.bfloat16",
+          "extreme_count": 0,
+          "is_conj": false,
+          "is_neg": false,
+          "logical_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+          "max_abs_finite": 0.0,
+          "nonfinite_count": 0,
+          "shape": [
+            88512,
+            4,
+            128
+          ],
+          "storage_index": 0,
+          "storage_offset": 1024,
+          "stride": [
+            2048,
+            128,
+            1
+          ]
+        },
+        "seq_offsets": {
+          "dtype": "torch.int64",
+          "extreme_count": 0,
+          "is_conj": false,
+          "is_neg": false,
+          "logical_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+          "max_abs_finite": 88512.0,
+          "nonfinite_count": 0,
+          "shape": [
+            33
+          ],
+          "storage_index": 2,
+          "storage_offset": 0,
+          "stride": [
+            1
+          ]
+        },
+        "sort_by_length_indices": {
+          "dtype": "torch.int64",
+          "extreme_count": 0,
+          "is_conj": false,
+          "is_neg": false,
+          "logical_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+          "max_abs_finite": 31.0,
+          "nonfinite_count": 0,
+          "shape": [
+            32
+          ],
+          "storage_index": 4,
+          "storage_offset": 0,
+          "stride": [
+            1
+          ]
+        },
+        "v": {
+          "dtype": "torch.bfloat16",
+          "extreme_count": 0,
+          "is_conj": false,
+          "is_neg": false,
+          "logical_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+          "max_abs_finite": 0.0,
+          "nonfinite_count": 0,
+          "shape": [
+            88512,
+            4,
+            128
+          ],
+          "storage_index": 0,
+          "storage_offset": 512,
+          "stride": [
+            2048,
+            128,
+            1
+          ]
+        }
+      },
+      "raw_storages": [
+        {
+          "bytes": 362545152,
+          "sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3"
+        },
+        {
+          "bytes": 90636288,
+          "sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88"
+        },
+        {
+          "bytes": 264,
+          "sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd"
+        },
+        {
+          "bytes": 256,
+          "sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836"
+        },
+        {
+          "bytes": 256,
+          "sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b"
+        }
+      ]
+    },
+    "unused_U_padding_scope": "Not zeroed by these interventions; original unused backing bytes remain present and were checked unchanged."
+  },
+  "interpretation": [
+    "Production kernel produced nonzero DQ with logical Q,V,dOut all zero and finite nonzero captured K; DK and DV remained zero.",
+    "This tests logical input values; unused packed U/padding backing is retained, not globally zeroed.",
+    "A vector match is a data-reuse clue only; a no-match result excludes only the specified exact aligned transforms and does not establish the failure mechanism."
+  ],
+  "interventions": {
+    "dout_zero": true,
+    "dq_init": "production",
+    "dq_layout": "captured",
+    "input_check": "failure",
+    "input_preparation": {
+      "cloned_complete_input_backings": true,
+      "cloned_input_storage_bytes": 453182216,
+      "logical_inputs_zeroed": [
+        "q",
+        "v",
+        "dout"
+      ],
+      "original_capture_tensors_modified": false,
+      "qkv_zero_scope": "selected logical Q/K/V fields only; unselected fields, unused packed U columns and padding retain pristine bytes",
+      "selected_zero_inputs": [
+        "q",
+        "v"
+      ]
+    },
+    "prehook_check": true,
+    "qkv_zero": false,
+    "sentinel": 7.0,
+    "synchronize": "none",
+    "zero_input": [
+      "q",
+      "v"
+    ]
+  },
+  "iteration": 85,
+  "k_vector_search": {
+    "method": "Exact BF16 uint16 bits after FP32 multiply by the named FP32 scalar and BF16 round; identity compares unchanged bits. No approximate tolerance.",
+    "scales": {
+      "alpha": 0.08838834764831843,
+      "alpha_over_N": 2.9830694447626876e-05,
+      "identity": 1.0,
+      "one_over_N": 0.0003374957813027337
+    },
+    "scope": "Every complete 16-feature-aligned K block across all rows/heads; every complete aligned 16-element erroneous DQ vector; feature order preserved.",
+    "total_block_scale_comparisons": 22659072,
+    "total_matches": 0,
+    "vectors": [
+      {
+        "observed_dq_vector": {
+          "feature_start": 32,
+          "feature_stop_exclusive": 48,
+          "head": 1,
+          "row": 55082,
+          "values": [
+            -0.00860595703125,
+            0.01263427734375,
+            -0.0179443359375,
+            -0.037109375,
+            -0.03955078125,
+            0.01397705078125,
+            0.037353515625,
+            -0.00640869140625,
+            -0.01336669921875,
+            -0.00970458984375,
+            -0.06689453125,
+            -0.0244140625,
+            0.031982421875,
+            0.004669189453125,
+            0.01544189453125,
+            -0.051513671875
+          ]
+        },
+        "observed_uint16_hex": [
+          "0xbc0d",
+          "0x3c4f",
+          "0xbc93",
+          "0xbd18",
+          "0xbd22",
+          "0x3c65",
+          "0x3d19",
+          "0xbbd2",
+          "0xbc5b",
+          "0xbc1f",
+          "0xbd89",
+          "0xbcc8",
+          "0x3d03",
+          "0x3b99",
+          "0x3c7d",
+          "0xbd53"
+        ],
+        "scales": {
+          "alpha": {
+            "anchor_candidates": 2026,
+            "blocks_scanned": 2832384,
+            "matches": [],
+            "scale": 0.08838834764831843
+          },
+          "alpha_over_N": {
+            "anchor_candidates": 0,
+            "blocks_scanned": 2832384,
+            "matches": [],
+            "scale": 2.9830694447626876e-05
+          },
+          "identity": {
+            "anchor_candidates": 103,
+            "blocks_scanned": 2832384,
+            "matches": [],
+            "scale": 1.0
+          },
+          "one_over_N": {
+            "anchor_candidates": 0,
+            "blocks_scanned": 2832384,
+            "matches": [],
+            "scale": 0.0003374957813027337
+          }
+        }
+      },
+      {
+        "observed_dq_vector": {
+          "feature_start": 96,
+          "feature_stop_exclusive": 112,
+          "head": 1,
+          "row": 55082,
+          "values": [
+            0.00946044921875,
+            0.001220703125,
+            -0.017333984375,
+            0.0079345703125,
+            0.00836181640625,
+            0.003753662109375,
+            -0.0098876953125,
+            0.020263671875,
+            -0.000156402587890625,
+            0.01611328125,
+            0.0164794921875,
+            -0.01348876953125,
+            -0.035888671875,
+            -0.00714111328125,
+            0.0341796875,
+            -8.630752563476562e-05
+          ]
+        },
+        "observed_uint16_hex": [
+          "0x3c1b",
+          "0x3aa0",
+          "0xbc8e",
+          "0x3c02",
+          "0x3c09",
+          "0x3b76",
+          "0xbc22",
+          "0x3ca6",
+          "0xb924",
+          "0x3c84",
+          "0x3c87",
+          "0xbc5d",
+          "0xbd13",
+          "0xbbea",
+          "0x3d0c",
+          "0xb8b5"
+        ],
+        "scales": {
+          "alpha": {
+            "anchor_candidates": 959,
+            "blocks_scanned": 2832384,
+            "matches": [],
+            "scale": 0.08838834764831843
+          },
+          "alpha_over_N": {
+            "anchor_candidates": 0,
+            "blocks_scanned": 2832384,
+            "matches": [],
+            "scale": 2.9830694447626876e-05
+          },
+          "identity": {
+            "anchor_candidates": 127,
+            "blocks_scanned": 2832384,
+            "matches": [],
+            "scale": 1.0
+          },
+          "one_over_N": {
+            "anchor_candidates": 0,
+            "blocks_scanned": 2832384,
+            "matches": [],
+            "scale": 0.0003374957813027337
+          }
+        }
+      }
+    ]
+  },
+  "kernel_variant": {
+    "preserves_dq_calculation": true,
+    "variant": "production"
+  },
+  "outputs": {
+    "dk": {
+      "affected_rows": 0,
+      "coordinates_complete": true,
+      "counts": {
+        "finite_nonzero": 0,
+        "nan": 0,
+        "negative_infinity": 0,
+        "negative_zero": 0,
+        "positive_infinity": 0,
+        "positive_zero": 45318144
+      },
+      "elements": 45318144,
+      "max_abs_finite": 0.0,
+      "nonzero_bf16_bit_histogram": {},
+      "nonzero_including_nonfinite": 0,
+      "nonzero_locations": [],
+      "shape": [
+        88512,
+        4,
+        128
+      ],
+      "storage_offset": 1536,
+      "stride": [
+        2048,
+        128,
+        1
+      ]
+    },
+    "dq": {
+      "affected_rows": 1,
+      "coordinates_complete": true,
+      "counts": {
+        "finite_nonzero": 32,
+        "nan": 0,
+        "negative_infinity": 0,
+        "negative_zero": 0,
+        "positive_infinity": 0,
+        "positive_zero": 45318112
+      },
+      "elements": 45318144,
+      "max_abs_finite": 0.06689453125,
+      "nonzero_bf16_bit_histogram": {
+        "0x3aa0": 1,
+        "0x3b76": 1,
+        "0x3b99": 1,
+        "0x3c02": 1,
+        "0x3c09": 1,
+        "0x3c1b": 1,
+        "0x3c4f": 1,
+        "0x3c65": 1,
+        "0x3c7d": 1,
+        "0x3c84": 1,
+        "0x3c87": 1,
+        "0x3ca6": 1,
+        "0x3d03": 1,
+        "0x3d0c": 1,
+        "0x3d19": 1,
+        "0xb8b5": 1,
+        "0xb924": 1,
+        "0xbbd2": 1,
+        "0xbbea": 1,
+        "0xbc0d": 1,
+        "0xbc1f": 1,
+        "0xbc22": 1,
+        "0xbc5b": 1,
+        "0xbc5d": 1,
+        "0xbc8e": 1,
+        "0xbc93": 1,
+        "0xbcc8": 1,
+        "0xbd13": 1,
+        "0xbd18": 1,
+        "0xbd22": 1,
+        "0xbd53": 1,
+        "0xbd89": 1
+      },
+      "nonzero_including_nonfinite": 32,
+      "nonzero_locations": [
+        {
+          "bf16_bits": "0xbc0d",
+          "feature": 32,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.00860595703125
+        },
+        {
+          "bf16_bits": "0x3c4f",
+          "feature": 33,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.01263427734375
+        },
+        {
+          "bf16_bits": "0xbc93",
+          "feature": 34,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.0179443359375
+        },
+        {
+          "bf16_bits": "0xbd18",
+          "feature": 35,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.037109375
+        },
+        {
+          "bf16_bits": "0xbd22",
+          "feature": 36,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.03955078125
+        },
+        {
+          "bf16_bits": "0x3c65",
+          "feature": 37,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.01397705078125
+        },
+        {
+          "bf16_bits": "0x3d19",
+          "feature": 38,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.037353515625
+        },
+        {
+          "bf16_bits": "0xbbd2",
+          "feature": 39,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.00640869140625
+        },
+        {
+          "bf16_bits": "0xbc5b",
+          "feature": 40,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.01336669921875
+        },
+        {
+          "bf16_bits": "0xbc1f",
+          "feature": 41,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.00970458984375
+        },
+        {
+          "bf16_bits": "0xbd89",
+          "feature": 42,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.06689453125
+        },
+        {
+          "bf16_bits": "0xbcc8",
+          "feature": 43,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.0244140625
+        },
+        {
+          "bf16_bits": "0x3d03",
+          "feature": 44,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.031982421875
+        },
+        {
+          "bf16_bits": "0x3b99",
+          "feature": 45,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.004669189453125
+        },
+        {
+          "bf16_bits": "0x3c7d",
+          "feature": 46,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.01544189453125
+        },
+        {
+          "bf16_bits": "0xbd53",
+          "feature": 47,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.051513671875
+        },
+        {
+          "bf16_bits": "0x3c1b",
+          "feature": 96,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.00946044921875
+        },
+        {
+          "bf16_bits": "0x3aa0",
+          "feature": 97,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.001220703125
+        },
+        {
+          "bf16_bits": "0xbc8e",
+          "feature": 98,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.017333984375
+        },
+        {
+          "bf16_bits": "0x3c02",
+          "feature": 99,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.0079345703125
+        },
+        {
+          "bf16_bits": "0x3c09",
+          "feature": 100,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.00836181640625
+        },
+        {
+          "bf16_bits": "0x3b76",
+          "feature": 101,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.003753662109375
+        },
+        {
+          "bf16_bits": "0xbc22",
+          "feature": 102,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.0098876953125
+        },
+        {
+          "bf16_bits": "0x3ca6",
+          "feature": 103,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.020263671875
+        },
+        {
+          "bf16_bits": "0xb924",
+          "feature": 104,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.000156402587890625
+        },
+        {
+          "bf16_bits": "0x3c84",
+          "feature": 105,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.01611328125
+        },
+        {
+          "bf16_bits": "0x3c87",
+          "feature": 106,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.0164794921875
+        },
+        {
+          "bf16_bits": "0xbc5d",
+          "feature": 107,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.01348876953125
+        },
+        {
+          "bf16_bits": "0xbd13",
+          "feature": 108,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.035888671875
+        },
+        {
+          "bf16_bits": "0xbbea",
+          "feature": 109,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -0.00714111328125
+        },
+        {
+          "bf16_bits": "0x3d0c",
+          "feature": 110,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": 0.0341796875
+        },
+        {
+          "bf16_bits": "0xb8b5",
+          "feature": 111,
+          "head": 1,
+          "row": 55082,
+          "sequence": 19,
+          "sequence_position": 2528,
+          "value": -8.630752563476562e-05
+        }
+      ],
+      "shape": [
+        88512,
+        4,
+        128
+      ],
+      "storage_offset": 1024,
+      "stride": [
+        2048,
+        128,
+        1
+      ]
+    },
+    "dv": {
+      "affected_rows": 0,
+      "coordinates_complete": true,
+      "counts": {
+        "finite_nonzero": 0,
+        "nan": 0,
+        "negative_infinity": 0,
+        "negative_zero": 0,
+        "positive_infinity": 0,
+        "positive_zero": 45318144
+      },
+      "elements": 45318144,
+      "max_abs_finite": 0.0,
+      "nonzero_bf16_bit_histogram": {},
+      "nonzero_including_nonfinite": 0,
+      "nonzero_locations": [],
+      "shape": [
+        88512,
+        4,
+        128
+      ],
+      "storage_offset": 512,
+      "stride": [
+        2048,
+        128,
+        1
+      ]
+    }
+  },
+  "pre_hook_observation": {
+    "calls": 85,
+    "checked_elements": 3852042240,
+    "zero_checks": 85,
+    "zero_failures": 0
+  },
+  "run_report": "/data/mlperf_dlrm_v4/deterministic_trace_20260919/raw_only_k.json",
+  "run_report_sha256": "2addced4daaf5f9f88a8f8f351714f9019a26dd46c603bb262c2d6c58e2a6c35",
+  "seconds": 3.6884611929999664,
+  "source_artifact": "/data/mlperf_dlrm_v4/deterministic_trace_20260919/only_k_failure.pt",
+  "source_sha256": "ea43916b1987fab5b34c2eb2d712970f94682b65886b84505a98e51f404334b4"
+}

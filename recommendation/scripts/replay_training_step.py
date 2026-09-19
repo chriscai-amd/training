@@ -145,6 +145,26 @@ def main():
         "capture": str(args.capture), "stage": payload["stage"],
         "versions": versions, "changed_source": changed, "attempts": [],
         "backward_probe_dir": str(args.backward_probe_dir) if args.backward_probe_dir else None,
+        "replay_source_sha256": {
+            str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in sorted(root.rglob("*.py"))
+            if path.parts[len(root.parts)] in ("generative_recommenders", "scripts")
+        },
+        "effective_environment": {
+            key: os.environ.get(key) for key in (
+                "HSTU_BWD_MAX_VGPR", "HSTU_BWD_BLOCK_N", "TRITON_FULL_AUTOTUNE",
+                "AMDGCN_USE_BUFFER_OPS", "TRITON_ALLOW_PIPELINING",
+                "AMD_SERIALIZE_KERNEL", "PYTORCH_ALLOC_CONF", "PYTORCH_CUDA_ALLOC_CONF",
+            )
+        },
+        "attention_backward_configs": [
+            {"kwargs": dict(config.kwargs), "num_warps": config.num_warps,
+             "num_stages": config.num_stages,
+             "pre_hook": getattr(config.pre_hook, "__name__", None)}
+            for config in getattr(getattr(sys.modules.get(
+                "generative_recommenders.ops.triton.triton_hstu_attention"
+            ), "_hstu_attn_bwd", None), "configs", [])
+        ],
     }
     report_path = args.report or args.capture / "replay_report.json"
     probe = None
@@ -306,6 +326,22 @@ def main():
                     phase("scan_current_gradients")
                     attempt["bad_gradients"] = [name for name, p in model.named_parameters()
                                                 if p.grad is not None and nonfinite_names(p.grad)]
+                    if probe is not None:
+                        # Record finite growth too: a finite gradient scan alone
+                        # would miss the huge values preceding the first NaN.
+                        # Reuse the bounded CPU diagnostic and avoid full-size
+                        # abs/isfinite temporaries on the GPU.
+                        from nan_backward_boundaries import _cpu_copy_tree, _source_specs, _summaries
+                        profile = []
+                        for name, parameter in model.named_parameters():
+                            if parameter.grad is None:
+                                continue
+                            gradient = {name: parameter.grad}
+                            copied, _ = _cpu_copy_tree(gradient, probe.chunk_bytes, probe.max_bytes)
+                            profile.extend(_summaries(copied, probe.chunk_bytes,
+                                                      _source_specs(gradient), probe.abs_threshold))
+                            del copied
+                        attempt["gradient_profile"] = profile
                 del output
                 torch.cuda.synchronize()
                 attempt["seconds"] = time.monotonic() - start

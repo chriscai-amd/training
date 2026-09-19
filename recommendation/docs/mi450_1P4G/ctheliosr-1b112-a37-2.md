@@ -25,7 +25,7 @@ is an extrapolation; that batch size was not run.
 Companion investigations:
 [MI450 A0](../mi450_a0/mi450_a0.md),
 [MI450 B0](../mi450_b0/mi450_b0.md), and
-[A0/B0 reconciliation](../mi450_a0_b0_reconciliation_20260918.md).
+[current A0 controls and evidence](../mi450_a0/mi450_a0.md#stack-and-controls).
 
 ## Start here
 

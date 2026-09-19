@@ -32,7 +32,7 @@ and diagnostics have not been validated by these runs.
 Companion records: [the other 1P4G host](ctheliosr-1b112-a37-2.md),
 [A0](../mi450_a0/mi450_a0.md),
 [B0](../mi450_b0/mi450_b0.md), and
-[the A0/B0 reconciliation guide](../mi450_a0_b0_reconciliation_20260918.md).
+[current A0 controls and evidence](../mi450_a0/mi450_a0.md#stack-and-controls).
 Unless stated otherwise, artifact paths below are **host-local**, relative to
 `/home/chcai/mi450_fullmodel_20260919/`; the large logs, images, wheels and
 dataset are not embedded in this document.

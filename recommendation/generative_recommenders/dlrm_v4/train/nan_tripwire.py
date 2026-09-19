@@ -35,6 +35,15 @@ NAN_TRIPWIRE_POISON_CONTEXTUAL_SPLIT_B=1 prefills only active dense-A=8 / jagged
 zero-prefix split B outputs with NaN immediately before the original copy kernel.
 This diagnostic tests whether the split overwrites every B element. It changes
 memory traffic and allocation contents; it is not a production correction.
+
+NAN_TRIPWIRE_FUSED_VALUE_CHECK=1 checks supported GPU tensors with a fused Triton
+kernel and one byte of temporary status per 4096 elements. Unsupported inputs
+use the existing Torch checks. The default remains disabled, and the report
+records checker settings and identities of the compiled kernels actually used.
+
+NAN_TRIPWIRE_OUTPUT_BACKWARD_STAGES=1 observes the original HSTU output backward's
+gradient GEMM and normalization stages. Stage captures retain their original
+inputs/outputs plus parent class replay context; they require the stage replayer.
 """
 
 from __future__ import annotations
@@ -196,6 +205,54 @@ def _capture_runtime_state() -> dict[str, Any]:
     }
 
 
+class _OutputBackwardStages:
+    """One original invocation; only scalar checks run between its operations."""
+
+    def __init__(self, tripwire, name, identity):
+        self.tripwire = tripwire
+        self.name = name
+        self.identity = identity
+        self.events = []
+
+    def begin(self, name, inputs, settings):
+        return name, inputs, settings, self.tripwire._observe(inputs)
+
+    def end(self, token, outputs):
+        name, inputs, settings, observation = token
+        self.tripwire._record(f"{self.name}.{name}", "backward", inputs, outputs, observation)
+        event = self.tripwire.events[-1]
+        event["stage"] = {
+            "format_version": 1, "name": name,
+            "replay_semantics": "original invocation stage; use the stage replayer",
+        }
+        event["invocation"] = dict(self.identity)
+        if event["payload"] is not None:
+            event["payload"]["stage"] = {
+                **event["stage"], "identity": dict(self.identity), "settings": dict(settings),
+            }
+        self.events.append(event)
+
+    def finish(self, parent):
+        # Attach to the already-detached payload itself: _detach copies dicts.
+        # Parent tensors share backing storage; there are no intermediate clones.
+        for event in self.events:
+            event["parent"] = {
+                key: parent[key] for key in ("sequence", "step", "name", "direction", "inputs", "outputs")
+            }
+            event["parent"]["completed"] = parent.get("completed", True)
+            if "exception" in parent:
+                event["parent"]["exception"] = parent["exception"]
+            if event["payload"] is not None:
+                event["payload"]["stage"].update({
+                    "parent_inputs": parent["payload"]["inputs"],
+                    "parent_outputs": parent["payload"]["outputs"],
+                    "parent_replay": parent["payload"]["replay"],
+                    "parent_completed": parent.get("completed", True),
+                })
+                if "exception" in parent:
+                    event["payload"]["stage"]["parent_exception"] = parent["exception"]
+
+
 class NaNTripwire:
     def __init__(
         self,
@@ -213,6 +270,8 @@ class NaNTripwire:
         finite_chunk_elements: int = 0,
         max_abs: float | None = None,
         poison_contextual_split_b: bool = False,
+        fused_value_check: bool = False,
+        output_backward_stages: bool = False,
     ) -> None:
         if defer_steps < 1:
             raise ValueError("NAN_TRIPWIRE_DEFER_STEPS must be positive")
@@ -245,6 +304,14 @@ class NaNTripwire:
         self.finite_chunk_elements = finite_chunk_elements
         self.max_abs = max_abs
         self.poison_contextual_split_b = poison_contextual_split_b
+        self.fused_value_check = fused_value_check
+        self._fused_checker = None
+        self.output_backward_stages = output_backward_stages
+        self._output_forward_sequence = 0
+        self._output_backward_sequence = 0
+        self._output_forward_step = None
+        self._output_forward_order = 0
+        self._output_weight_ids = {}
         self.poison_contextual_split_b_calls = 0
         self._split_poison_handle: tuple[Any, str, Any] | None = None
         self.active = False
@@ -278,9 +345,21 @@ class NaNTripwire:
                 info = {"name": name, **_tensor_meta(tensor)}
                 if (tensor.is_floating_point() or tensor.is_complex()) and tensor.numel():
                     info["flag_index"] = len(flags)
-                    flags.append(_all_finite(tensor, self.finite_chunk_elements))
-                    if self.max_abs is not None:
-                        bound_flags.append(_all_within_bound(tensor, self.max_abs, self.finite_chunk_elements))
+                    checked = None
+                    if self.fused_value_check:
+                        if self._fused_checker is None:
+                            from generative_recommenders.dlrm_v4.train.fused_value_checker import FusedValueChecker
+                            self._fused_checker = FusedValueChecker(enabled=True)
+                        checked = self._fused_checker.try_check(tensor, self.max_abs)
+                    if checked is None:
+                        flags.append(_all_finite(tensor, self.finite_chunk_elements))
+                        if self.max_abs is not None:
+                            bound_flags.append(_all_within_bound(tensor, self.max_abs, self.finite_chunk_elements))
+                    else:
+                        finite, within_bound = checked
+                        flags.append(finite)
+                        if self.max_abs is not None:
+                            bound_flags.append(within_bound)
                 metadata.append(info)
         return flags, bound_flags, metadata
 
@@ -371,12 +450,71 @@ class NaNTripwire:
                     replay["python_rng_state"] = random.getstate()
                     if torch.cuda.is_initialized():
                         replay["cuda_rng_state"] = torch.cuda.get_rng_state()
-                result = _fn(ctx, *args, **kwargs)
+                stages = None
+                identity = None
+                if self.output_backward_stages and name.endswith("triton_hstu_linear.HSTUComputeOutputFunction"):
+                    if _direction == "forward":
+                        weight = named_args["output_weight"]
+                        key = (str(weight.device), weight.untyped_storage().data_ptr(),
+                               weight.storage_offset(), tuple(weight.shape), tuple(weight.stride()))
+                        if self._output_forward_step != self.step:
+                            self._output_forward_step, self._output_forward_order = self.step, 0
+                        identity = {
+                            "forward_sequence": self._output_forward_sequence,
+                            "forward_step": self.step, "forward_order": self._output_forward_order,
+                            "observed_weight_ordinal": self._output_weight_ids.setdefault(key, len(self._output_weight_ids)),
+                            "output_weight": _tensor_meta(weight),
+                            "identity_basis": "observed forward order and weight storage; not a named module path",
+                        }
+                        self._output_forward_sequence += 1
+                        self._output_forward_order += 1
+                        ctx._nan_tripwire_output_identity = identity
+                    else:
+                        identity = dict(getattr(ctx, "_nan_tripwire_output_identity", {}))
+                        identity["backward_sequence"] = self._output_backward_sequence
+                        self._output_backward_sequence += 1
+                        stages = _OutputBackwardStages(self, name, identity)
+                        # replay['ctx'] was captured before installing this callable.
+                        ctx._nan_tripwire_output_stages = stages
+                try:
+                    result = _fn(ctx, *args, **kwargs)
+                except BaseException as error:
+                    if stages is not None:
+                        try:
+                            # Completed stages remain useful even when a later
+                            # operation raises. There is no parent return value.
+                            self._record(
+                                name, _direction, inputs, None, input_observation, replay
+                            )
+                            parent = self.events[-1]
+                            parent.update(
+                                invocation=identity,
+                                completed=False,
+                                exception={
+                                    "type": f"{type(error).__module__}.{type(error).__qualname__}",
+                                    "message": str(error),
+                                },
+                            )
+                            stages.finish(parent)
+                        except Exception:
+                            # Diagnostics must not replace the original failure.
+                            logger.warning(
+                                "[nan-tripwire] could not retain partial output backward provenance",
+                                exc_info=True,
+                            )
+                    raise
+                finally:
+                    if stages is not None:
+                        ctx.__dict__.pop("_nan_tripwire_output_stages", None)
                 if _direction == "forward":
                     replay["ctx_after_forward"] = dict(ctx.__dict__)
                 self._record(
                     name, _direction, inputs, result, input_observation, replay
                 )
+                if identity is not None:
+                    self.events[-1]["invocation"] = identity
+                if stages is not None:
+                    stages.finish(self.events[-1])
                 return result
 
             wrapped._nan_tripwire = True
@@ -439,7 +577,7 @@ class NaNTripwire:
                 ):
                     self.patch_function(value)
         logger.warning(
-            "[nan-tripwire] enabled at step %d..%s; %d functions; retain_payload=%s; defer_steps=%d; finite_chunk_elements=%d; max_abs=%s; poison_contextual_split_b=%s; capture limit %.1f GiB",
+            "[nan-tripwire] enabled at step %d..%s; %d functions; retain_payload=%s; defer_steps=%d; finite_chunk_elements=%d; max_abs=%s; poison_contextual_split_b=%s; fused_value_check=%s; output_backward_stages=%s; capture limit %.1f GiB",
             self.start_step,
             self.end_step,
             len(self.handles) // 2,
@@ -448,6 +586,8 @@ class NaNTripwire:
             self.finite_chunk_elements,
             self.max_abs,
             self.poison_contextual_split_b,
+            self.fused_value_check,
+            self.output_backward_stages,
             self.capture_limit_bytes / 1024**3,
         )
 
@@ -538,17 +678,24 @@ class NaNTripwire:
         report_path = self.directory / f"{stem}.json"
         capture_path = self.directory / f"{stem}.pt"
         if selected["payload"] is not None:
-            for field in ("inputs", "outputs"):
-                current_tensors = dict(_tensors(selected["payload"][field]))
-                for info in selected[field]:
-                    tensor = current_tensors[info["name"]]
-                    current_version = None if tensor.is_inference() else tensor._version
-                    info["version_at_capture"] = current_version
-                    info["version_changed"] = (
-                        info["version"] != current_version
-                        if info["version"] is not None and current_version is not None
-                        else None
-                    )
+            retained = [(selected, selected["payload"])]
+            if "stage" in selected:
+                stage = selected["payload"]["stage"]
+                retained.append((selected["parent"], {
+                    "inputs": stage["parent_inputs"], "outputs": stage["parent_outputs"],
+                }))
+            for event, payload in retained:
+                for field in ("inputs", "outputs"):
+                    current_tensors = dict(_tensors(payload[field]))
+                    for info in event[field]:
+                        tensor = current_tensors[info["name"]]
+                        current_version = None if tensor.is_inference() else tensor._version
+                        info["version_at_capture"] = current_version
+                        info["version_changed"] = (
+                            info["version"] != current_version
+                            if info["version"] is not None and current_version is not None
+                            else None
+                        )
         report = {
             "step": selected["step"],
             "check_step": self.step,
@@ -580,6 +727,9 @@ class NaNTripwire:
             "max_abs": self.max_abs,
             "poison_contextual_split_b": self.poison_contextual_split_b,
             "poison_contextual_split_b_calls": self.poison_contextual_split_b_calls,
+            "fused_value_check": self.fused_value_check,
+            "fused_value_checker": self._fused_checker.metadata() if self._fused_checker is not None else None,
+            "output_backward_stages": self.output_backward_stages,
             "capture_timing": (
                 "references retained; storage copied at phase boundary"
                 if self.retain_payload else "payload retention disabled; metadata only"
@@ -677,6 +827,8 @@ def install_from_env() -> NaNTripwire | None:
         finite_chunk_elements=int(os.environ.get("NAN_TRIPWIRE_FINITE_CHUNK_ELEMENTS", "0")),
         max_abs=float(max_abs) if max_abs else None,
         poison_contextual_split_b=os.environ.get("NAN_TRIPWIRE_POISON_CONTEXTUAL_SPLIT_B", "0") == "1",
+        fused_value_check=os.environ.get("NAN_TRIPWIRE_FUSED_VALUE_CHECK", "0") == "1",
+        output_backward_stages=os.environ.get("NAN_TRIPWIRE_OUTPUT_BACKWARD_STAGES", "0") == "1",
     )
     tripwire.install()
     return tripwire

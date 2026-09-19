@@ -2291,7 +2291,36 @@ class HSTUComputeOutputFunction(torch.autograd.Function):
             random_mask = ctx.saved_tensors[next_idx]
         else:
             random_mask = None
+        stages = getattr(ctx, "_nan_tripwire_output_stages", None)
+        if stages is not None:
+            mm_observation = stages.begin(
+                "gradient_mm", {"dout": dout, "output_weight": output_weight}, {}
+            )
         dy = torch.mm(dout, output_weight.t())
+        if stages is not None:
+            stages.end(mm_observation, {"dy": dy})
+            norm_inputs = {
+                "dy": dy, "x": attn, "u": u, "weight": norm_weight,
+                "bias": norm_bias, "mean": mean, "rstd": rstd,
+            }
+            norm_settings = {
+                "BLOCK_D": ctx.BLOCK_D, "num_warps": ctx.num_warps,
+                "eps": ctx.eps, "training": ctx.training,
+                "dropout_ratio": ctx.dropout_ratio, "seed": ctx.seed,
+                "silu_u": ctx.silu_u, "compute_y": ctx.recompute_y_in_backward,
+            }
+            if ctx.group_norm:
+                norm_settings.update(
+                    BLOCK_H=ctx.BLOCK_H, concat_ux=ctx.concat_u and ctx.concat_x,
+                    num_heads=ctx.num_heads, linear_dim=ctx.linear_dim,
+                )
+            else:
+                norm_inputs["random_mask"] = random_mask
+                norm_settings.update(
+                    concat_u=ctx.concat_u, concat_x=ctx.concat_x,
+                    mul_u_activation_type=ctx.mul_u_activation_type,
+                )
+            norm_observation = stages.begin("norm", norm_inputs, norm_settings)
 
         if ctx.group_norm:
             dattn, du, d_norm_weight, d_norm_bias, y = (
@@ -2341,6 +2370,11 @@ class HSTUComputeOutputFunction(torch.autograd.Function):
                     random_mask=random_mask,
                 )
             )
+        if stages is not None:
+            stages.end(norm_observation, {
+                "dattn": dattn, "du": du, "d_norm_weight": d_norm_weight,
+                "d_norm_bias": d_norm_bias, "y": y,
+            })
         if not ctx.recompute_y_in_backward:
             y = saved_y
         d_output_weight = torch.mm(y.t(), dout)

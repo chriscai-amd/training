@@ -9,6 +9,11 @@ outputs. Both stages poison DX and both partial arrays before every DX launch;
 the helper stage also poisons final parameter gradients before reduction.
 With --check-before-reduction, the helper additionally probes DX and both
 partials immediately after DX returns, retaining only compact probe results.
+--check-partials-before-reduction probes only the two partial arrays at that
+boundary; DX still receives the normal final helper check. The two options are
+mutually exclusive. With 2,048 partial tiles, partial-only checks scan 8 MiB,
+avoiding an extra 2.35 GiB DX scan at the default full size, but still change
+execution timing.
 The inputs are synthetic:
 bounded random BF16 X, unit weights, zero bias, actual production forward
 statistics, and exactly zero DY. All three backward outputs must equal zero.
@@ -45,8 +50,11 @@ def arguments(argv=None):
     parser.add_argument('--rows', type=int, default=2468813)
     parser.add_argument('--repeat', type=int, default=1000)
     parser.add_argument('--check-every', type=int, default=10)
-    parser.add_argument('--check-before-reduction', action='store_true',
-                        help='helper only: also probe DX and partial gradients before reduction')
+    before_reduction = parser.add_mutually_exclusive_group()
+    before_reduction.add_argument('--check-before-reduction', action='store_true',
+                                  help='helper only: also probe DX and partial gradients before reduction')
+    before_reduction.add_argument('--check-partials-before-reduction', action='store_true',
+                                  help='helper only: probe partial gradients before reduction without an extra DX scan')
     parser.add_argument('--seed', type=int, default=947)
     parser.add_argument('--report', type=Path, required=True)
     args = parser.parse_args(argv)
@@ -54,8 +62,8 @@ def arguments(argv=None):
         parser.error('rows, repeat, and check-every must be positive')
     if args.max_vgpr is not None and args.max_vgpr < 1:
         parser.error('max-vgpr must be positive')
-    if args.check_before_reduction and args.stage != 'helper':
-        parser.error('--check-before-reduction requires --stage helper')
+    if (args.check_before_reduction or args.check_partials_before_reduction) and args.stage != 'helper':
+        parser.error('before-reduction checks require --stage helper')
     for protected in (Path(__file__),):
         if args.report.resolve() == protected.resolve() or (
             args.report.exists() and protected.exists() and args.report.samefile(protected)
@@ -180,6 +188,7 @@ def compact_failure(torch, args, report, failures, pending, inputs, snapshots, b
     payload = {'format_version': 1, 'diagnostic': 'weighted_ln_zero_dy', 'seed': args.seed,
                'stage': args.stage, 'tile_num': report['tile_num'],
                'check_before_reduction': report.get('check_before_reduction', False),
+               'check_partials_before_reduction': report.get('check_partials_before_reduction', False),
                'partial_tile_input_mapping': 'row=(tile + k*tile_num)*BLOCK_N + lane for 0<=row<N; tiles with tile*BLOCK_N>=N have no input rows',
                'shape': [args.rows, 512], 'block_n': args.block_n, 'input_sample_rows': rows,
                'outputs': evidence, 'inputs': sampled, 'input_mutations': mutations,
@@ -270,13 +279,17 @@ def direct_dx(torch, kernel, inputs, config, tiles, report):
     return dx, partial_dw, partial_db
 
 
-def append_before_reduction_probes(torch, pending, report, dx, partial_dw, partial_db):
+def append_before_reduction_probes(torch, pending, report, dx, partial_dw, partial_db, *, partials_only=False):
     """Read the live DX results without retaining any full production allocation."""
-    report['phase'] = 'bounded_before_reduction_zero_checks'
+    names = ('partial_d_norm_weight', 'partial_d_norm_bias')
+    values = (partial_dw, partial_db)
+    if not partials_only:
+        names, values = ('d_x', *names), (dx, *values)
+    report['phase'] = ('bounded_before_reduction_partial_zero_checks' if partials_only
+                       else 'bounded_before_reduction_zero_checks')
     pending.append({
         'iteration': report['iteration'], 'observation_point': 'before_reduction',
-        'outputs': {name: zero_probe(torch, value) for name, value in zip(
-            ('d_x', 'partial_d_norm_weight', 'partial_d_norm_bias'), (dx, partial_dw, partial_db))},
+        'outputs': {name: zero_probe(torch, value) for name, value in zip(names, values)},
     })
     report['phase'] = 'input_norm_helper_reduction'
 
@@ -391,12 +404,17 @@ def run(args, report, publish):
         report['checked_outputs'] = list(names)
         pending = []
         after_dx = None
-        if args.check_before_reduction:
-            report['checked_before_reduction_outputs'] = ['d_x', 'partial_d_norm_weight', 'partial_d_norm_bias']
-            report['checked_before_reduction_shapes'] = [[args.rows, 512], [tiles, 512], [tiles, 512]]
+        before_reduction = args.check_before_reduction or args.check_partials_before_reduction
+        if before_reduction:
+            report['checked_before_reduction_outputs'] = ['partial_d_norm_weight', 'partial_d_norm_bias']
+            report['checked_before_reduction_shapes'] = [[tiles, 512], [tiles, 512]]
+            if args.check_before_reduction:
+                report['checked_before_reduction_outputs'].insert(0, 'd_x')
+                report['checked_before_reduction_shapes'].insert(0, [args.rows, 512])
 
             def after_dx(*values):
-                append_before_reduction_probes(torch, pending, report, *values)
+                append_before_reduction_probes(torch, pending, report, *values,
+                                              partials_only=args.check_partials_before_reduction)
 
         scope = (helper_launch_scope(triton, layer_norm, configs, report, after_dx=after_dx)
                  if args.stage == 'helper' else nullcontext())
@@ -414,12 +432,12 @@ def run(args, report, publish):
                         raise ValueError('production output shape/dtype/device changed: ' + name)
                 probes = {name: zero_probe(torch, value) for name, value in zip(names, outputs)}
                 item = {'iteration': iteration, 'outputs': probes}
-                if args.check_before_reduction:
+                if before_reduction:
                     item['observation_point'] = 'after_helper'
                     observed = sum(record['iteration'] == iteration and record.get('observation_point') == 'before_reduction'
                                    for record in pending)
                     if observed != 1:
-                        raise RuntimeError(f'expected one before-reduction DX check, observed {observed}')
+                        raise RuntimeError(f'expected one before-reduction observation, observed {observed}')
                 pending.append(item)
                 del item
                 del outputs, probes
@@ -437,7 +455,7 @@ def run(args, report, publish):
                          'output_failures': [failure for failure in failures
                                              if failure.get('observation_point') != 'before_reduction'],
                          'input_bytes_unchanged': byte_checks, 'tracked_input_changes': tracked}
-                if args.check_before_reduction:
+                if before_reduction:
                     check['before_reduction_failures'] = [failure for failure in failures
                                                           if failure.get('observation_point') == 'before_reduction']
                     check['before_reduction_checked_iterations'] = [record['iteration'] for record in pending
@@ -447,7 +465,7 @@ def run(args, report, publish):
                     'PASS' if iteration == args.repeat else 'RUNNING'), phase='checkpoint')
                 if failed:
                     report['positive_reproducer'] = bool(failures)
-                    if args.check_before_reduction:
+                    if before_reduction:
                         report['positive_before_reduction'] = bool(check['before_reduction_failures'])
                     report['failure_scope'] = ('nonzero gradient observed; input mutation also observed'
                                                if failures and (tracked or not all(byte_checks.values()))
@@ -477,6 +495,7 @@ def main():
               'block_n': args.block_n, 'max_vgpr': args.max_vgpr, 'repeat': args.repeat,
               'check_every': args.check_every, 'seed': args.seed, 'chunk_elements': CHUNK_ELEMENTS, 'checks': [],
               'check_before_reduction': args.check_before_reduction,
+              'check_partials_before_reduction': args.check_partials_before_reduction,
               'poison': 'NaN before every DX/partial write; helper final gradients also poisoned before reduction',
               'expected_uncapped_bn8_dx_hash': EXPECTED_BN8_HASH,
               'limitations': ['synthetic zero-gradient input; passing does not validate nonzero-gradient training',

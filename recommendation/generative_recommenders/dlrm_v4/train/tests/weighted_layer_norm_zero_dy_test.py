@@ -191,6 +191,71 @@ class DirectDXTest(unittest.TestCase):
 
 
 class HelperScopeTest(unittest.TestCase):
+    def test_partial_only_checks_find_bad_partials_without_scanning_dx_and_restore_wrappers(self):
+        pending, report = [], report_fixture()
+        report.update(check_before_reduction=False, check_partials_before_reduction=True)
+        order, observed, weak_outputs = [], [], []
+
+        def dx_launch(*args, **kwargs):
+            order.append("dx")
+            for index in (0, 2, 3):
+                args[index].zero_()
+                weak_outputs.append(weakref.ref(args[index]))
+            args[2][3, 263] = float("nan")
+            args[3][4, 5] = -7
+            return compiled("dx")
+
+        def after_dx(dx, dw, db):
+            order.append("before_reduction")
+            probe = control.zero_probe
+
+            def partial_probe(torch_module, value):
+                self.assertIsNot(value, dx)
+                self.assertTrue(value is dw or value is db)
+                observed.append(id(value))
+                return probe(torch_module, value)
+
+            with patch.object(control, "zero_probe", new=partial_probe):
+                control.append_before_reduction_probes(torch, pending, report, dx, dw, db, partials_only=True)
+            self.assertEqual(observed, [id(dw), id(db)])
+
+        def reduction_launch(*args, **kwargs):
+            order.append("reduction")
+            self.assertEqual(len(pending), 1)
+            # Deliberately hide bad partials from the final-output oracle and
+            # overwrite them later; the pre-reduction evidence must survive.
+            for value in args[:4]:
+                value.zero_()
+            return compiled("reduction")
+
+        dx, reduction = FakeKernel(dx_launch), FakeKernel(reduction_launch)
+        original_configs = (dx.configs, reduction.configs)
+        module = SimpleNamespace(_weighted_layer_norm_bwd_dx=dx, _layer_norm_bwd_dwdb=reduction)
+        helper = production_cpu_helper(module)
+        with patch.object(torch.cuda, "get_device_properties", return_value=SimpleNamespace(multi_processor_count=1)):
+            with control.helper_launch_scope(FAKE_TRITON, module, control.launch_configs(8), report, after_dx=after_dx):
+                outputs = helper(**inputs_fixture(), learnable=True, eps=1e-6, BLOCK_D=512)
+        self.assertEqual(order, ["dx", "before_reduction", "reduction"])
+        self.assertEqual(set(pending[0]["outputs"]), {"partial_d_norm_weight", "partial_d_norm_bias"})
+        failures = control.scalar_rows(torch, pending)
+        self.assertEqual([(failure["output"], failure["first_coordinate"], failure["first_value"])
+                          for failure in failures], [
+            ("partial_d_norm_weight", [3, 263], "nan"),
+            ("partial_d_norm_bias", [4, 5], -7.0),
+        ])
+        self.assertTrue(all(failure["observation_point"] == "before_reduction" for failure in failures))
+        final_probes = {name: control.zero_probe(torch, value) for name, value in zip(
+            ("d_x", "d_norm_weight", "d_norm_bias"), outputs)}
+        self.assertEqual(control.scalar_rows(torch, [{"iteration": 7, "outputs": final_probes}]), [])
+        del outputs
+        self.assertTrue(all(reference() is None for reference in weak_outputs))
+        self.assertIs(dx.fn.run, dx_launch)
+        self.assertIs(reduction.fn.run, reduction_launch)
+        self.assertIs(dx.configs, original_configs[0])
+        self.assertIs(reduction.configs, original_configs[1])
+        self.assertEqual(dx.cache, {"old key": "old winner"})
+        self.assertEqual(reduction.cache, {"old key": "old winner"})
+
     def test_real_public_helper_poisoning_callback_order_and_no_retained_allocations(self):
         inputs, pending, report = inputs_fixture(), [], report_fixture()
         order, weak_outputs = [], []
@@ -296,12 +361,13 @@ class HelperScopeTest(unittest.TestCase):
 
 
 class CompactEvidenceTest(unittest.TestCase):
-    def write_artifact(self, directory, pending, *, stage="helper", inputs=None, snapshots=None):
+    def write_artifact(self, directory, pending, *, stage="helper", inputs=None, snapshots=None, partials_only=False):
         inputs = inputs or inputs_fixture()
         snapshots = snapshots or {name: value.clone() for name, value in inputs.items()}
         args = SimpleNamespace(rows=inputs["x"].shape[0], block_n=8, seed=947, stage=stage,
                                report=Path(directory) / "report.json")
         report = report_fixture()
+        report.update(check_before_reduction=not partials_only, check_partials_before_reduction=partials_only)
         report["tile_num"] = control.tile_count(args.rows, 1)
         failures = control.scalar_rows(torch, pending)
         checks = {name: bool(control.all_input_bytes_equal(torch, value, snapshots[name]))
@@ -345,6 +411,27 @@ class CompactEvidenceTest(unittest.TestCase):
             "tile": 3, "has_input_rows": True, "representative_input_row": 24,
         })
         self.assertEqual(float(evidence["sample"][0, 263]), float("inf"))
+
+    def test_partial_only_payload_retains_mode_boundary_and_tile_mapping(self):
+        pending, report = [], report_fixture()
+        partial_dw, partial_db = torch.zeros((8, 512)), torch.zeros((8, 512))
+        partial_db[3, 263] = float("nan")
+        # A non-tensor DX sentinel proves this boundary never reads DX.
+        control.append_before_reduction_probes(torch, pending, report, object(), partial_dw, partial_db,
+                                              partials_only=True)
+        partial_db.zero_()
+        with tempfile.TemporaryDirectory() as directory:
+            _, artifact = self.write_artifact(directory, pending, partials_only=True)
+        self.assertFalse(artifact["check_before_reduction"])
+        self.assertTrue(artifact["check_partials_before_reduction"])
+        self.assertEqual(artifact["input_sample_rows"], [23, 24, 25])
+        evidence, = artifact["outputs"]
+        self.assertEqual(evidence["observation_point"], "before_reduction")
+        self.assertEqual(evidence["output"], "partial_d_norm_bias")
+        self.assertEqual(evidence["partial_tile_provenance"], {
+            "tile": 3, "has_input_rows": True, "representative_input_row": 24,
+        })
+        self.assertTrue(torch.isnan(evidence["sample"][0, 263]))
 
     def test_inactive_partial_tile_does_not_claim_an_unrelated_input_row(self):
         # Production creates seven partial tiles for N=31, but BLOCK_N=8 only
@@ -404,10 +491,22 @@ class ArgumentsTest(unittest.TestCase):
     def test_before_reduction_is_optional_and_helper_only(self):
         args = control.arguments(["--stage", "helper", "--block-n", "8", "--report", "report.json"])
         self.assertFalse(args.check_before_reduction)
+        self.assertFalse(args.check_partials_before_reduction)
         args = control.arguments(["--stage", "helper", "--block-n", "8", "--report", "report.json", "--check-before-reduction"])
         self.assertTrue(args.check_before_reduction)
         with redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):
             control.arguments(["--stage", "dx", "--block-n", "8", "--report", "report.json", "--check-before-reduction"])
+
+    def test_partial_only_checks_are_helper_only_and_exclude_full_boundary_checks(self):
+        base = ["--stage", "helper", "--block-n", "8", "--report", "report.json"]
+        args = control.arguments([*base, "--check-partials-before-reduction"])
+        self.assertTrue(args.check_partials_before_reduction)
+        self.assertFalse(args.check_before_reduction)
+        for argv in ([*base, "--check-partials-before-reduction", "--check-before-reduction"],
+                     ["--stage", "dx", "--block-n", "8", "--report", "report.json",
+                      "--check-partials-before-reduction"]):
+            with self.subTest(argv=argv), redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):
+                control.arguments(argv)
 
     def test_vgpr_cap_affects_dx_only_and_requires_hip(self):
         original = control.launch_configs(8)

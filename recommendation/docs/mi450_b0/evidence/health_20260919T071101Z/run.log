@@ -1,0 +1,10 @@
+{"torch": "2.11.0+rocm7.14.0a20260625", "hip": "7.14.60850", "device": "gfx1250", "oracle": "all output columns equal sampled integer row index", "iterations_per_arm": 1000}
+{"mode": "index_select", "d": 16, "bad": 241, "iterations": 1000}
+{"mode": "gather", "d": 16, "bad": 251, "iterations": 1000}
+{"mode": "index_select", "d": 4, "bad": 0, "iterations": 1000}
+{"mode": "gather", "d": 4, "bad": 0, "iterations": 1000}
+Traceback (most recent call last):
+  File "/validation/debug_nan/resume_20260919/gather_health.py", line 21, in <module>
+    assert all(r['bad']==0 for r in results)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

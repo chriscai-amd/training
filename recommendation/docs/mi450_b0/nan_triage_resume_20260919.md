@@ -1,5 +1,11 @@
 # NaN triage continuation, 2026-09-19
 
+**Latest result, 07:11 UTC: the GPU health control fails at width 16.**
+`index_select` reports **241/1,000** unequal iterations and `gather`
+**251/1,000**; both width-4 arms pass. Kernel logs are unchanged and no failing
+tensor payload was saved. The weighted-LN GPU controls and finer capture
+remain unrun after this failed gate.
+
 The training NaN remains unattributed. The strongest isolated numerical defect
 is still weighted input-layer-norm backward with `BLOCK_N=8`: zero incoming
 gradients produce NaNs with unchanged input-byte checkpoints. Its `BLOCK_N=1`
@@ -33,11 +39,47 @@ hashes** in the initial continuation snapshot. CUDA was not initialized by
 these checks. The current loaded driver reports `gpu_recovery=0` and
 `halt_if_hws_hang=1`; VBIOS remains `113-M4500001-650D`.
 
-At preparation time, an unrelated host `tensile_client` GEMM benchmark owns
-the single GPU. The owner changed from PID 29169 to 36002 as that work
-continued. No GPU experiment in this continuation has run yet. GPU health
-must be checked after exclusive access is available. The other workload and
-`mi450_c` container have not been changed.
+During preparation, an unrelated host `tensile_client` GEMM benchmark owned
+the single GPU, with successive worker PIDs. It was not launched by this
+investigation. At **07:10:39 UTC**, privileged ownership checks found no
+process on `/dev/kfd` or the render node: the benchmark had already exited,
+so the instruction to stop it required no termination.
+Its exact completion time and initiator are unknown. The other workload and
+`mi450_c` container have not been changed by this investigation.
+
+## Latest GPU health control
+
+`health_20260919T071101021851Z/` ran **07:11:01–07:11:02.449157 UTC** and
+exited **1** at the script's final assertion.
+
+Checked-in evidence: [outcome and hashes](evidence/health_20260919T071101Z/outcome.json)
+and [exact probe log](evidence/health_20260919T071101Z/run.log).
+
+| Arm, execution order | Unequal iterations / total |
+|---|---:|
+| `index_select`, width 16 | **241 / 1,000** |
+| `gather`, width 16 | **251 / 1,000** |
+| `index_select`, width 4 | **0 / 1,000** |
+| `gather`, width 4 | **0 / 1,000** |
+
+Seed is 11; source has 2,347,656 rows of exact integer indices represented
+as float32, and each iteration selects 16,384 indices. All output columns
+should equal the selected row index. A bad iteration means at least one
+unequal element; these are not counts of bad elements, rows or NaNs.
+
+Privileged `/dev/kfd` and renderD128–135 ownership checks are empty before
+and after, with no continuous ownership monitor. Boot is unchanged and
+the before/after kernel logs are byte-identical, with **zero new lines**.
+No investigator reset or reboot was issued.
+
+The script generates source, random indices and expected values on GPU,
+then checks equality on GPU. No failing tensors or CPU reference were
+preserved. The result does not distinguish source construction, indexing,
+the equality check or an underlying execution defect; it does not establish
+NaNs or causality with training or the preceding `tensile_client` workload.
+Width also changes allocation size, so vectorization is not isolated.
+The next health diagnostic needs to save source/index/output values and
+verify their exact mapping on CPU before attributing the corrupting primitive.
 
 ## What is established
 
@@ -97,12 +139,17 @@ Use the exact runtime and mandatory environment in
 work must remain serial. Verify privileged `/dev/kfd`/render-node ownership;
 `amd-smi process` previously missed a live training owner.
 
-1. Run the four existing D16/D4 gather/index-select health controls after the
-   other benchmark releases the GPU.
-2. Run the prepared forward control with `--statistics-mode saved`, then
+1. The four-arm health control has run and failed. Preserve a failing
+   source/index/output, validate source and mapping on CPU, and determine
+   whether the current health failure is reproducible. Re-establish GPU
+   readiness before continuing the numerical controls and training capture.
+2. After that gate passes, run the prepared forward control with `--statistics-mode saved`, then
    `recompute`, each in a fresh process. Preserve actual launch configuration.
    Explicit matching `--block-n`/`--num-warps` arms are needed to compare the
    same configuration: production's autotune key omits statistics mode.
+   The current forward CLI accepts block sizes 1/8; production also offers
+   2/4. If either wins autotuning, extend the diagnostic selector before
+   claiming a comparison at that exact configuration.
 3. Re-establish the positive BN8 helper case, then run
    `--check-partials-before-reduction`. Bad partials before reduction narrow
    the observed defect to the DX/partial-production boundary. Clean partials
@@ -151,6 +198,11 @@ Root:
   artifact hashes and explicit sample/mapping limits.
 - `prepared_capture_command.json`: exact next finer-capture command and
   prerequisites, explicitly marked not run.
+- `health_20260919T071101021851Z/`: failed health log, exact command, terminal
+  state/outcome, empty ownership snapshots, unchanged boot IDs, identical
+  kernel logs and empty ordered delta. No failing tensor payload exists.
+- `continuation_outcome.json`: current failed-health status; its earlier
+  GPU-waiting version is preserved separately.
 - `run_control.py`: exact-environment launcher for one health, forward or
   backward arm; refuses to launch when privileged GPU ownership checks find
   another process. Use `--describe` to inspect the command without launching.

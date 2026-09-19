@@ -1,0 +1,69 @@
+{
+  "status": "HEALTH_CONTROL_FAILED",
+  "start_label_utc": "2026-09-19T07:11:01.021851Z",
+  "finished_utc": "2026-09-19T07:11:02.449157+00:00",
+  "exit_code": 1,
+  "stack_and_oracle": {
+    "torch": "2.11.0+rocm7.14.0a20260625",
+    "hip": "7.14.60850",
+    "device": "gfx1250",
+    "oracle": "all output columns equal sampled integer row index",
+    "iterations_per_arm": 1000
+  },
+  "arms": [
+    {
+      "mode": "index_select",
+      "d": 16,
+      "bad": 241,
+      "iterations": 1000
+    },
+    {
+      "mode": "gather",
+      "d": 16,
+      "bad": 251,
+      "iterations": 1000
+    },
+    {
+      "mode": "index_select",
+      "d": 4,
+      "bad": 0,
+      "iterations": 1000
+    },
+    {
+      "mode": "gather",
+      "d": 4,
+      "bad": 0,
+      "iterations": 1000
+    }
+  ],
+  "bad_unit": "iterations with at least one output unequal to the GPU-generated expected tensor; not element or row counts",
+  "boot_id_before": "5769c84c-01bc-4bc4-88fb-d86335f24270",
+  "boot_id_after": "5769c84c-01bc-4bc4-88fb-d86335f24270",
+  "boot_unchanged": true,
+  "dmesg_new_lines": 0,
+  "dmesg_files_byte_identical": true,
+  "gpu_owners_before": [],
+  "gpu_owners_after": [],
+  "source": "/home/chcai/runs/mi450_b0_0910_7ff_start0_20260918/debug_nan/resume_20260919/gather_health.py",
+  "source_sha256": "5ee99165e049f4e47ce9c0eb34de2ef1f7c004f693b6ca0090049c12536f1645",
+  "saved_failing_tensors": false,
+  "limitations": [
+    "GPU-generated source, indices, expected outputs and GPU equality check were not independently CPU-validated.",
+    "No failing source/index/output payload was preserved; this does not isolate the corrupting primitive.",
+    "Ownership was checked before and after, not continuously throughout the test.",
+    "No causal link to the earlier tensile_client benchmark or training NaN is established.",
+    "No investigator reset/reboot or workload termination was issued in this continuation."
+  ],
+  "artifact_sha256": {
+    "run.log": "886b2e17bd59de68ef27d8e4bae5e6a8d67b92bc720103e47ceaecd41d242f33",
+    "command.json": "659be2c68a48e69f247a7b1497ff380794547b42005b4dcee3bba9869faa1749",
+    "state.json": "c7395af9256496b57124eeed5992d54f95e77b34357809dfafcb95c7679a2fad",
+    "gpu_owners.before.json": "c00d4af82190df97e29445b7e877e903349c124cacb29a21e2497c9357da1c9e",
+    "gpu_owners.after.json": "c00d4af82190df97e29445b7e877e903349c124cacb29a21e2497c9357da1c9e",
+    "boot_id.before.txt": "a1170d0760bd138253ae630fab68992ca3993e9692c62000ee1c9683cb6e9e25",
+    "boot_id.after.txt": "a1170d0760bd138253ae630fab68992ca3993e9692c62000ee1c9683cb6e9e25",
+    "dmesg.before.txt": "0ab9ff7f1e3f71841227a18be3d0e5e8a8f3acd518e9a9d830541dfbb0a76be8",
+    "dmesg.after.txt": "0ab9ff7f1e3f71841227a18be3d0e5e8a8f3acd518e9a9d830541dfbb0a76be8",
+    "dmesg.delta_ordered.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

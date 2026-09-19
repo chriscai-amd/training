@@ -16,6 +16,7 @@
 
 # pyre-strict
 
+from contextlib import nullcontext
 from typing import Optional, Tuple
 
 import torch
@@ -30,6 +31,8 @@ from generative_recommenders.ops.triton.triton_hstu_attention import (
     triton_hstu_attention_fwd,
 )
 from generative_recommenders.ops.triton.triton_layer_norm import (
+    _layer_norm_bwd_dwdb,
+    _weighted_layer_norm_bwd_dx,
     compute_BLOCK_D,
     triton_weighted_layer_norm_bwd,
     triton_weighted_layer_norm_fwd,
@@ -251,23 +254,49 @@ class _HSTUPreprocessAndAttentionFunction(torch.autograd.Function):
             num_softmax_heads=ctx.num_softmax_heads,
         )
         torch.ops.aten.silu_backward(dsilu_u, u, grad_input=du)
+        stages = getattr(ctx, "_nan_tripwire_preprocess_stages", None)
+        if stages is not None:
+            projection_observation = stages.begin(
+                "input_projection", {"x": normed_x, "w": uvqk_weight, "dz": duvqk},
+                {"is_y_1d": ctx.uvqk_bias_1d},
+            )
         d_normed_x, d_uvqk_weight, d_uvqk_bias = triton_addmm_bwd(
             x=normed_x,
             w=uvqk_weight,
             dz=duvqk,
             is_y_1d=ctx.uvqk_bias_1d,
         )
-        d_x, d_norm_weight, d_norm_bias = triton_weighted_layer_norm_bwd(
-            dy=d_normed_x,
-            x=x,
-            weight=norm_weight,
-            bias=norm_bias,
-            mean=x_mean,
-            rstd=x_rstd,
-            learnable=True,
-            eps=ctx.norm_eps,
-            BLOCK_D=ctx.norm_BLOCK_D,
-        )
+        if stages is not None:
+            stages.end(projection_observation, {
+                "d_normed_x": d_normed_x, "d_uvqk_weight": d_uvqk_weight,
+                "d_uvqk_bias": d_uvqk_bias,
+            })
+            norm_observation = stages.begin(
+                "input_norm", {
+                    "dy": d_normed_x, "x": x, "weight": norm_weight,
+                    "bias": norm_bias, "mean": x_mean, "rstd": x_rstd,
+                },
+                {"learnable": True, "eps": ctx.norm_eps, "BLOCK_D": ctx.norm_BLOCK_D},
+            )
+        with (stages.capture_launches(
+            {"dx": _weighted_layer_norm_bwd_dx, "reduction": _layer_norm_bwd_dwdb},
+            scope="original input_norm helper invocation",
+        ) if stages is not None else nullcontext()) as launch_metadata:
+            d_x, d_norm_weight, d_norm_bias = triton_weighted_layer_norm_bwd(
+                dy=d_normed_x,
+                x=x,
+                weight=norm_weight,
+                bias=norm_bias,
+                mean=x_mean,
+                rstd=x_rstd,
+                learnable=True,
+                eps=ctx.norm_eps,
+                BLOCK_D=ctx.norm_BLOCK_D,
+            )
+        if stages is not None:
+            stages.end(norm_observation, {
+                "d_x": d_x, "d_norm_weight": d_norm_weight, "d_norm_bias": d_norm_bias,
+            }, launch_metadata=launch_metadata)
         # pyre-ignore[7]
         return (
             d_x,

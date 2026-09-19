@@ -17,6 +17,7 @@
 #!/usr/bin/env python3
 
 
+import os
 from typing import List, Optional, Tuple
 
 import torch
@@ -291,14 +292,31 @@ def _layer_norm_bwd_dx(
     tl.store(DX + cols, dx, mask=mask)
 
 
-@triton_autotune(
-    configs=pinned_or_full(
+def _get_weighted_layer_norm_bwd_dx_configs() -> List[triton.Config]:
+    """Optional import-time DX pin; zero keeps the existing autotune policy.
+
+    This is a candidate mitigation for observed gfx1250 BLOCK_N=8 corruption,
+    not a validated training fix. It does not change forward or DW/DB configs.
+    """
+    block_n = os.environ.get("WEIGHTED_LN_BWD_BLOCK_N", "0")
+    if block_n not in ("0", "1", "8"):
+        raise ValueError(
+            "WEIGHTED_LN_BWD_BLOCK_N must be 0 (default), 1, or 8; "
+            f"got {block_n!r}"
+        )
+    if block_n != "0":
+        return [triton.Config({"BLOCK_N": int(block_n)}, num_warps=1)]
+    return pinned_or_full(
         [
             triton.Config({"BLOCK_N": 1}, num_warps=1),  # bs=32 winner
             triton.Config({"BLOCK_N": 8}, num_warps=1),  # bs=1024 winner
         ],
         _get_layer_norm_fwd_configs,
-    ),
+    )
+
+
+@triton_autotune(
+    configs=_get_weighted_layer_norm_bwd_dx_configs(),
     key=["BLOCK_D"],
 )
 @triton.jit

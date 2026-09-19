@@ -20,6 +20,7 @@ HIP gfx1250 with Triton >= 3.8. The register cap is now explicitly opt-in.
 | Setting | A0 current baseline | B0 capped investigation |
 |---|---|---|
 | `HSTU_BWD_MAX_VGPR` | Unset or `0` | **`256`** |
+| `WEIGHTED_LN_BWD_BLOCK_N` | Unset or `0`, original autotuning | **`1`** in the current component-isolation arm; combined training candidate still fails |
 | `HSTU_BWD_BLOCK_N` | Unset, effective 64 | Unset, effective 64 |
 | `TRITON_FULL_AUTOTUNE` | `0` | `0`; full autotuning bypasses the cap |
 | `AMDGCN_USE_BUFFER_OPS` | `0` | `0` |
@@ -31,6 +32,15 @@ Set these before importing model/Triton modules; decorators construct the
 kernel configs at import time. Other architectures and older Triton retain
 their existing pinned configurations. The B0 cap suppresses the captured
 attention-gradient corruption but has already failed longer training runs.
+
+September 19 adds `WEIGHTED_LN_BWD_BLOCK_N`: unset/`0` preserves the existing
+weighted input-LN backward selection. Explicit `1` or `8` pins only its DX
+kernel, overriding `TRITON_FULL_AUTOTUNE` for that kernel; forward and parameter
+reduction configurations are unchanged. B0's exact-zero-DY helper reproducer
+fails with `8`, passes 1,000 iterations with `1`, and fails again when restored
+to `8`. **It is insufficient for training:** BN1 + attention cap256 still
+reports NaN at sampled steps **60/70** after finite **50**. The 3,000-step training target
+and A0 hardware validation remain outstanding.
 
 Earlier B0 source snapshots defaulted to 256. For those runs, an absent
 `HSTU_BWD_MAX_VGPR` does not mean uncapped. Read the saved effective kernel

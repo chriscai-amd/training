@@ -44,11 +44,16 @@ records checker settings and identities of the compiled kernels actually used.
 NAN_TRIPWIRE_OUTPUT_BACKWARD_STAGES=1 observes the original HSTU output backward's
 gradient GEMM and normalization stages. Stage captures retain their original
 inputs/outputs plus parent class replay context; they require the stage replayer.
+
+NAN_TRIPWIRE_PREPROCESS_BACKWARD_STAGES=1 observes the original fused HSTU
+preprocess backward's input projection and input normalization. It records the
+normalization kernels actually launched, without replaying the parent operation.
 """
 
 from __future__ import annotations
 
 import functools
+from contextlib import contextmanager
 import inspect
 import json
 import logging
@@ -58,11 +63,17 @@ from pathlib import Path
 import random
 import re
 import sys
+import threading
 from typing import Any
 
 import torch
 
 logger = logging.getLogger(__name__)
+
+# JIT .run methods are shared across invocations and tripwire instances. Hold
+# this through restoration so concurrent capture scopes cannot restore each
+# other's wrappers out of order. Reentrancy permits nested same-thread scopes.
+_LAUNCH_CAPTURE_LOCK = threading.RLock()
 
 _DEFAULT_MODULES = (
     "triton_hstu_preprocess_and_attention",
@@ -217,7 +228,7 @@ class _OutputBackwardStages:
     def begin(self, name, inputs, settings):
         return name, inputs, settings, self.tripwire._observe(inputs)
 
-    def end(self, token, outputs):
+    def end(self, token, outputs, *, launch_metadata=None):
         name, inputs, settings, observation = token
         self.tripwire._record(f"{self.name}.{name}", "backward", inputs, outputs, observation)
         event = self.tripwire.events[-1]
@@ -226,11 +237,67 @@ class _OutputBackwardStages:
             "replay_semantics": "original invocation stage; use the stage replayer",
         }
         event["invocation"] = dict(self.identity)
+        if launch_metadata is not None:
+            event["stage"]["launch_metadata"] = launch_metadata
         if event["payload"] is not None:
             event["payload"]["stage"] = {
                 **event["stage"], "identity": dict(self.identity), "settings": dict(settings),
             }
         self.events.append(event)
+
+    @contextmanager
+    def capture_launches(self, kernels, *, scope):
+        """Retain metadata from original JIT launches, including the final tune winner."""
+        metadata = {"format_version": 1, "scope": scope}
+        handles = []
+        config_keys = (
+            "BLOCK_N", "BLOCK_D", "num_warps", "num_stages", "num_ctas",
+            "maxnreg", "llvm_fn_attrs", "waves_per_eu", "enable_fp_fusion",
+        )
+        with _LAUNCH_CAPTURE_LOCK:
+            try:
+                for label, kernel in kernels.items():
+                    target = kernel
+                    while hasattr(getattr(target, "fn", None), "run"):
+                        target = target.fn
+                    original = target.run
+
+                    def run(*args, _original=original, _label=label, **kwargs):
+                        compiled = _original(*args, **kwargs)
+                        if not kwargs.get("warmup", False):
+                            count = metadata.get(_label, {}).get("launch_count", 0) + 1
+                            try:
+                                values = compiled.metadata
+                                values = values._asdict() if hasattr(values, "_asdict") else values
+                                if not isinstance(values, dict):
+                                    values = vars(values)
+                                config = {
+                                    key: kwargs[key] if key in kwargs else values[key]
+                                    for key in config_keys if key in kwargs or key in values
+                                }
+                                metadata[_label] = json.loads(json.dumps({
+                                    "source": "last non-warmup compiled launch in scope",
+                                    "launch_count": count,
+                                    "kernel_name": compiled.name,
+                                    "compiled_hash": compiled.hash,
+                                    "registers": getattr(compiled, "n_regs", None),
+                                    "spills": getattr(compiled, "n_spills", None),
+                                    "launch_config": config,
+                                    "compiled_metadata": values,
+                                }, default=str))
+                            except Exception as error:
+                                # Metadata extraction must not change a successful launch.
+                                metadata[_label] = {
+                                    "launch_count": count, "capture_error": repr(error),
+                                }
+                        return compiled
+
+                    target.run = run
+                    handles.append((target, original))
+                yield metadata
+            finally:
+                for target, original in reversed(handles):
+                    target.run = original
 
     def finish(self, parent):
         # Attach to the already-detached payload itself: _detach copies dicts.
@@ -272,6 +339,7 @@ class NaNTripwire:
         poison_contextual_split_b: bool = False,
         fused_value_check: bool = False,
         output_backward_stages: bool = False,
+        preprocess_backward_stages: bool = False,
     ) -> None:
         if defer_steps < 1:
             raise ValueError("NAN_TRIPWIRE_DEFER_STEPS must be positive")
@@ -312,6 +380,12 @@ class NaNTripwire:
         self._output_forward_step = None
         self._output_forward_order = 0
         self._output_weight_ids = {}
+        self.preprocess_backward_stages = preprocess_backward_stages
+        self._preprocess_forward_sequence = 0
+        self._preprocess_backward_sequence = 0
+        self._preprocess_forward_step = None
+        self._preprocess_forward_order = 0
+        self._preprocess_weight_ids = {}
         self.poison_contextual_split_b_calls = 0
         self._split_poison_handle: tuple[Any, str, Any] | None = None
         self.active = False
@@ -452,6 +526,8 @@ class NaNTripwire:
                         replay["cuda_rng_state"] = torch.cuda.get_rng_state()
                 stages = None
                 identity = None
+                stage_attribute = None
+                stage_family = "output"
                 if self.output_backward_stages and name.endswith("triton_hstu_linear.HSTUComputeOutputFunction"):
                     if _direction == "forward":
                         weight = named_args["output_weight"]
@@ -475,7 +551,33 @@ class NaNTripwire:
                         self._output_backward_sequence += 1
                         stages = _OutputBackwardStages(self, name, identity)
                         # replay['ctx'] was captured before installing this callable.
+                        stage_attribute = "_nan_tripwire_output_stages"
                         ctx._nan_tripwire_output_stages = stages
+                elif self.preprocess_backward_stages and name.endswith("triton_hstu_preprocess_and_attention._HSTUPreprocessAndAttentionFunction"):
+                    stage_family = "preprocess"
+                    if _direction == "forward":
+                        weight = named_args["uvqk_weight"]
+                        key = (str(weight.device), weight.untyped_storage().data_ptr(),
+                               weight.storage_offset(), tuple(weight.shape), tuple(weight.stride()))
+                        if self._preprocess_forward_step != self.step:
+                            self._preprocess_forward_step, self._preprocess_forward_order = self.step, 0
+                        identity = {
+                            "forward_sequence": self._preprocess_forward_sequence,
+                            "forward_step": self.step, "forward_order": self._preprocess_forward_order,
+                            "observed_weight_ordinal": self._preprocess_weight_ids.setdefault(key, len(self._preprocess_weight_ids)),
+                            "uvqk_weight": _tensor_meta(weight),
+                            "identity_basis": "observed preprocess forward order and weight storage; not a named module path",
+                        }
+                        self._preprocess_forward_sequence += 1
+                        self._preprocess_forward_order += 1
+                        ctx._nan_tripwire_preprocess_identity = identity
+                    else:
+                        identity = dict(getattr(ctx, "_nan_tripwire_preprocess_identity", {}))
+                        identity["backward_sequence"] = self._preprocess_backward_sequence
+                        self._preprocess_backward_sequence += 1
+                        stages = _OutputBackwardStages(self, name, identity)
+                        stage_attribute = "_nan_tripwire_preprocess_stages"
+                        ctx._nan_tripwire_preprocess_stages = stages
                 try:
                     result = _fn(ctx, *args, **kwargs)
                 except BaseException as error:
@@ -499,13 +601,14 @@ class NaNTripwire:
                         except Exception:
                             # Diagnostics must not replace the original failure.
                             logger.warning(
-                                "[nan-tripwire] could not retain partial output backward provenance",
+                                "[nan-tripwire] could not retain partial %s backward provenance",
+                                stage_family,
                                 exc_info=True,
                             )
                     raise
                 finally:
                     if stages is not None:
-                        ctx.__dict__.pop("_nan_tripwire_output_stages", None)
+                        ctx.__dict__.pop(stage_attribute, None)
                 if _direction == "forward":
                     replay["ctx_after_forward"] = dict(ctx.__dict__)
                 self._record(
@@ -577,7 +680,7 @@ class NaNTripwire:
                 ):
                     self.patch_function(value)
         logger.warning(
-            "[nan-tripwire] enabled at step %d..%s; %d functions; retain_payload=%s; defer_steps=%d; finite_chunk_elements=%d; max_abs=%s; poison_contextual_split_b=%s; fused_value_check=%s; output_backward_stages=%s; capture limit %.1f GiB",
+            "[nan-tripwire] enabled at step %d..%s; %d functions; retain_payload=%s; defer_steps=%d; finite_chunk_elements=%d; max_abs=%s; poison_contextual_split_b=%s; fused_value_check=%s; output_backward_stages=%s; preprocess_backward_stages=%s; capture limit %.1f GiB",
             self.start_step,
             self.end_step,
             len(self.handles) // 2,
@@ -588,6 +691,7 @@ class NaNTripwire:
             self.poison_contextual_split_b,
             self.fused_value_check,
             self.output_backward_stages,
+            self.preprocess_backward_stages,
             self.capture_limit_bytes / 1024**3,
         )
 
@@ -713,6 +817,7 @@ class NaNTripwire:
                 or name in (
                     "PYTORCH_CUDA_ALLOC_CONF", "PYTORCH_ALLOC_CONF",
                     "AMD_SERIALIZE_KERNEL", "AMD_LOG_LEVEL", "HSA_ENABLE_COREDUMP",
+                    "WEIGHTED_LN_BWD_BLOCK_N",
                 )
             },
             "selected_sequence": selected["sequence"],
@@ -730,6 +835,7 @@ class NaNTripwire:
             "fused_value_check": self.fused_value_check,
             "fused_value_checker": self._fused_checker.metadata() if self._fused_checker is not None else None,
             "output_backward_stages": self.output_backward_stages,
+            "preprocess_backward_stages": self.preprocess_backward_stages,
             "capture_timing": (
                 "references retained; storage copied at phase boundary"
                 if self.retain_payload else "payload retention disabled; metadata only"
@@ -829,6 +935,7 @@ def install_from_env() -> NaNTripwire | None:
         poison_contextual_split_b=os.environ.get("NAN_TRIPWIRE_POISON_CONTEXTUAL_SPLIT_B", "0") == "1",
         fused_value_check=os.environ.get("NAN_TRIPWIRE_FUSED_VALUE_CHECK", "0") == "1",
         output_backward_stages=os.environ.get("NAN_TRIPWIRE_OUTPUT_BACKWARD_STAGES", "0") == "1",
+        preprocess_backward_stages=os.environ.get("NAN_TRIPWIRE_PREPROCESS_BACKWARD_STAGES", "0") == "1",
     )
     tripwire.install()
     return tripwire

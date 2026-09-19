@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
-"""Independent zero-input oracle for recomputed weighted layer-norm forward.
+"""Independent zero-input oracle for weighted layer-norm forward.
 
 Calls the production public forward helper with zero BF16 X, unit weight,
-zero bias, eps=1e-6, and no supplied statistics. Expected Y and mean are exactly
-zero (either sign); float32 rstd must be finite and within 1e-3 of 1000, with
-no relative tolerance. The tolerance permits about 16 float32 ULPs at 1000.
+zero bias and eps=1e-6. The default recomputes statistics: expected Y and mean
+are exactly zero (either sign); float32 rstd must be finite and within 1e-3 of
+1000, with no relative tolerance (about 16 float32 ULPs at 1000).
+--statistics-mode saved supplies mean=0 and rstd=1000, exercising the forward
+path used to recompute normalized X during HSTU backward. Its copied statistics
+must match those exact constants. Only Y is poisoned in saved mode because the
+kernel reads the copied mean/rstd; all five original inputs have byte guards.
 Omitting --block-n and --num-warps preserves production autotuning; specifying
 either filters only that field in the existing production configurations.
 NaN poisoning is included in autotuner benchmark calls and can affect their
@@ -39,6 +43,8 @@ def arguments(argv=None):
     parser.add_argument('--source-root', type=Path, required=True, help='production recommendation/ directory')
     parser.add_argument('--block-n', type=int, choices=(1, 8))
     parser.add_argument('--num-warps', type=int, choices=(1, 2, 4, 8))
+    parser.add_argument('--statistics-mode', choices=('recompute', 'saved'), default='recompute',
+                        help='saved matches the normalized-X recomputation path in HSTU backward')
     parser.add_argument('--rows', type=int, default=2468813)
     parser.add_argument('--repeat', type=int, default=1000)
     parser.add_argument('--check-every', type=int, default=10)
@@ -145,7 +151,10 @@ def record_launch(report, compiled, kwargs):
 
 
 @contextmanager
-def forward_launch_scope(module, block_n, report, *, num_warps=None):
+def forward_launch_scope(module, block_n, report, *, num_warps=None, statistics_mode='recompute'):
+    if statistics_mode not in ('recompute', 'saved'):
+        raise ValueError(f'unknown statistics mode: {statistics_mode}')
+    recompute_statistics = statistics_mode == 'recompute'
     kernel = module._weighted_layer_norm_fwd
     report['production_configs'] = [config_record(config) for config in kernel.configs]
     saved_configs, saved_cache = kernel.configs, dict(kernel.cache)
@@ -168,9 +177,12 @@ def forward_launch_scope(module, block_n, report, *, num_warps=None):
         def launch(*positional, **kwargs):
             warmup = kwargs.get('warmup', False)
             if not warmup:
-                if not kwargs.get('TRAINING') or not kwargs.get('COMPUTE_MEAN_AND_RSTD') or kwargs.get('IS_SWISH'):
-                    raise ValueError('expected ordinary weighted forward with recomputed statistics')
-                for index in (1, 4, 5):
+                if (not kwargs.get('TRAINING') or kwargs.get('IS_SWISH')
+                        or kwargs.get('COMPUTE_MEAN_AND_RSTD') is not recompute_statistics):
+                    raise ValueError(f'expected ordinary weighted forward with {statistics_mode} statistics')
+                # In saved mode Mean/Rstd are kernel inputs already copied by
+                # the public helper. Poisoning them would manufacture a NaN.
+                for index in ((1, 4, 5) if recompute_statistics else (1,)):
                     positional[index].fill_(float('nan'))
             compiled = original_run(*positional, **kwargs)
             if not warmup:
@@ -202,11 +214,13 @@ def compact_failure(torch, args, report, failures, pending, inputs, snapshots, b
         mutations[name] = {'different_bytes': count, 'first_byte_offset': index}
         if name == 'x':
             rows.add(index // inputs[name].element_size() // FEATURES)
+        elif name in ('mean', 'rstd'):
+            rows.add(index // inputs[name].element_size())
     rows = sorted({row + delta for row in rows for delta in (-1, 0, 1)
                    if 0 <= row + delta < args.rows})[:32] or [0]
     indices = torch.tensor(rows, dtype=torch.int64, device=inputs['x'].device)
-    sampled = {name: {'at_checkpoint': (value.index_select(0, indices) if name == 'x' else value).detach().cpu(),
-                      'initial_snapshot': (snapshots[name].index_select(0, indices) if name == 'x' else snapshots[name]).detach().cpu()}
+    sampled = {name: {'at_checkpoint': (value.index_select(0, indices) if name in ('x', 'mean', 'rstd') else value).detach().cpu(),
+                      'initial_snapshot': (snapshots[name].index_select(0, indices) if name in ('x', 'mean', 'rstd') else snapshots[name]).detach().cpu()}
                for name, value in inputs.items()}
     evidence = []
     for failure in failures[:32]:
@@ -214,6 +228,7 @@ def compact_failure(torch, args, report, failures, pending, inputs, snapshots, b
         evidence.append({**failure, 'sample': item['outputs'][failure['output']]['sample'].detach().cpu(),
                          'sample_meaning': 'first failing Y row' if failure['output'] == 'y' else 'first failing scalar row statistic'})
     payload = {'format_version': 1, 'diagnostic': report['diagnostic'], 'oracle': report['oracle'],
+               'statistics_mode': args.statistics_mode,
                'shape': [args.rows, FEATURES], 'input_sample_rows': rows, 'inputs': sampled,
                'input_mutations': mutations, 'outputs': evidence, 'source': report['source'],
                'actual_compiled_launches': report['actual_compiled_launches'],
@@ -269,11 +284,15 @@ def run(args, report, publish):
         inputs = {'x': torch.zeros((args.rows, FEATURES), device='cuda', dtype=torch.bfloat16),
                   'weight': torch.ones(FEATURES, device='cuda', dtype=torch.bfloat16),
                   'bias': torch.zeros(FEATURES, device='cuda', dtype=torch.bfloat16)}
+        if args.statistics_mode == 'saved':
+            inputs['mean'] = torch.zeros(args.rows, device='cuda', dtype=torch.float32)
+            inputs['rstd'] = torch.full((args.rows,), RSTD_EXPECTED, device='cuda', dtype=torch.float32)
+        rstd_atol = 0 if args.statistics_mode == 'saved' else RSTD_ATOL
         snapshots = {name: value.clone() for name, value in inputs.items()}
         versions = {name: value._version for name, value in inputs.items()}
         report['input_bytes'] = sum(value.numel() * value.element_size() for value in inputs.values())
         report['snapshot_bytes'] = report['input_bytes']
-        setup = {name: oracle_probe(torch, value, 1 if name == 'weight' else 0, 0)
+        setup = {name: oracle_probe(torch, value, RSTD_EXPECTED if name == 'rstd' else (1 if name == 'weight' else 0), 0)
                  for name, value in inputs.items()}
         setup_counts = torch.stack([probe['count'] for probe in setup.values()]).cpu().tolist()
         report['setup_bad_elements'] = dict(zip(setup, setup_counts))
@@ -284,7 +303,8 @@ def run(args, report, publish):
             return 1
         pending = []
         started = time.monotonic()
-        with forward_launch_scope(layer_norm, args.block_n, report, num_warps=args.num_warps):
+        with forward_launch_scope(layer_norm, args.block_n, report, num_warps=args.num_warps,
+                                  statistics_mode=args.statistics_mode):
             for iteration in range(1, args.repeat + 1):
                 report.update(iteration=iteration, phase='weighted_forward', last_compiled_hash=None)
                 prior_launches = report['observed_launch_count']
@@ -298,9 +318,14 @@ def run(args, report, publish):
                                            or value.dtype != dtype or value.device != inputs['x'].device
                                            for value, shape, dtype in zip(outputs, expected_shapes, expected_dtypes)):
                     raise ValueError('production forward output structure/shape/dtype/device changed')
+                if args.statistics_mode == 'saved':
+                    original_stats = {inputs[name].untyped_storage().data_ptr() for name in ('mean', 'rstd')}
+                    returned_stats = {value.untyped_storage().data_ptr() for value in outputs[1:]}
+                    if len(returned_stats) != 2 or not original_stats.isdisjoint(returned_stats):
+                        raise ValueError('public helper must return fresh nonaliasing saved-statistic copies')
                 pending.append({'iteration': iteration, 'compiled_hash': report['last_compiled_hash'],
                                 'outputs': {name: oracle_probe(torch, value, RSTD_EXPECTED if name == 'rstd' else 0,
-                                                                RSTD_ATOL if name == 'rstd' else 0)
+                                                                rstd_atol if name == 'rstd' else 0)
                                             for name, value in zip(OUTPUTS, outputs)}})
                 del outputs
                 if iteration % args.check_every and iteration != args.repeat:
@@ -342,13 +367,17 @@ def main():
               'phase': 'initialization', 'iteration': 0, 'iterations_completed': 0,
               'rows': args.rows, 'features': FEATURES, 'dtype': 'torch.bfloat16', 'eps': EPS,
               'block_n_filter': args.block_n, 'num_warps_filter': args.num_warps,
+              'statistics_mode': args.statistics_mode,
               'repeat': args.repeat, 'check_every': args.check_every,
               'oracle': {'y': {'expected': 0, 'atol': 0}, 'mean': {'expected': 0, 'atol': 0},
-                         'rstd': {'expected': RSTD_EXPECTED, 'atol': RSTD_ATOL, 'rtol': 0, 'finite_required': True}},
-              'poison': 'Y/Mean/Rstd filled with NaN before every nonwarmup recomputing weighted forward launch',
+                         'rstd': {'expected': RSTD_EXPECTED, 'atol': 0 if args.statistics_mode == 'saved' else RSTD_ATOL,
+                                  'rtol': 0, 'finite_required': True}},
+              'poison': ('Y filled with NaN; copied Mean/Rstd preserved as kernel inputs' if args.statistics_mode == 'saved'
+                         else 'Y/Mean/Rstd filled with NaN before every nonwarmup recomputing weighted forward launch'),
               'observed_launch_count': 0, 'actual_compiled_launches': [], 'checks': [],
               'chunk_elements': CHUNK_ELEMENTS,
               'limitations': ['zero-input control does not validate nonzero-input training',
+                              'saved mode tunes in a fresh process; training may reuse a winner selected by recompute mode because the autotune key omits the statistics mode',
                               'poisoning affects autotune timing and may change selected configuration',
                               'only final helper outputs are checked; autotune candidates can overwrite earlier results',
                               'input bytes checked at checkpoints; intermediate changes that revert are not excluded',

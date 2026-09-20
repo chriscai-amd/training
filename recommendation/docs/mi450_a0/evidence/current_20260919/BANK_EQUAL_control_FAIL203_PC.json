@@ -1,0 +1,2380 @@
+{
+  "status": "PASS_COMPLETE_ARM_SPECIFIC_PC_AND_WRONG_SOURCE_WAVE_CONTEXT",
+  "GPU_actions": false,
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_BANK_EQUAL_STREAM_CPU_PEER_v1/audit_bank_equal_companions_v1.py",
+    "bytes": 6649,
+    "sha256": "593f5df999fe06c1b841886177623685d74c148a4453cd54cbd1aa095194a95b"
+  },
+  "record_reader": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_BANK_EQUAL_RECORD_CPU_PEER_v1/inspect_bank_equal_record_independent_v1.py",
+    "bytes": 14431,
+    "sha256": "2702486083cf0bfefffd66025468fa9d9b01534e339a00967aa96ec3017d332d"
+  },
+  "arm": "bank81_control",
+  "invocations_scanned": 203,
+  "wave_samples": 3248,
+  "metadata_failure_calls": [],
+  "class_counts": {
+    "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 2768,
+    "EXACT_INSTRUCTION_BOUNDARY": 480
+  },
+  "reference_counts": {
+    "0x00007088d99a0138": 3248
+  },
+  "module_bias_counts": {
+    "0x0007088d9980000": 3248
+  },
+  "exact_boundary_PC_context": {
+    "0x71f0": {
+      "instruction": "s_wait_dscnt 0x0",
+      "samples": 40,
+      "valid_metadata_samples": 40,
+      "passing_samples": 40,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7fc8": {
+      "instruction": "ds_load_b128 v[108:111] /*v[364:367]*/, v26 /*v282*/ offset:2048",
+      "samples": 32,
+      "valid_metadata_samples": 32,
+      "passing_samples": 32,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7a38": {
+      "instruction": "v_wmma_f32_16x16x32_bf16 v[240:247], v[76:83] /*v[332:339]*/, v[246:253] /*v[502:509]*/, v[240:247]",
+      "samples": 32,
+      "valid_metadata_samples": 32,
+      "passing_samples": 32,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7724": {
+      "instruction": "v_wmma_f32_16x16x32_bf16 v[120:127], v[84:91] /*v[340:347]*/, v[230:237] /*v[486:493]*/, v[120:127]",
+      "samples": 16,
+      "valid_metadata_samples": 16,
+      "passing_samples": 16,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7740": {
+      "instruction": "s_set_vgpr_msb 0x8105",
+      "samples": 16,
+      "valid_metadata_samples": 16,
+      "passing_samples": 16,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x71f8": {
+      "instruction": "v_perm_b32 v28 /*v284*/, v96 /*v352*/, v92 /*v348*/, s66",
+      "samples": 28,
+      "valid_metadata_samples": 28,
+      "passing_samples": 28,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7ab4": {
+      "instruction": "v_wmma_f32_16x16x32_bf16 v[248:255], v[84:91] /*v[340:347]*/, v[246:253] /*v[502:509]*/, v[248:255]",
+      "samples": 44,
+      "valid_metadata_samples": 44,
+      "passing_samples": 44,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7914": {
+      "instruction": "s_wait_loadcnt 0x17",
+      "samples": 14,
+      "valid_metadata_samples": 14,
+      "passing_samples": 14,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x791c": {
+      "instruction": "ds_store_b128 v24 /*v280*/, v[82:85] /*v[594:597]*/ offset:10240",
+      "samples": 7,
+      "valid_metadata_samples": 7,
+      "passing_samples": 7,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7918": {
+      "instruction": "s_set_vgpr_msb 0x8109",
+      "samples": 7,
+      "valid_metadata_samples": 7,
+      "passing_samples": 7,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x81f0": {
+      "instruction": "s_cbranch_scc0 label_LoopBeginL",
+      "samples": 28,
+      "valid_metadata_samples": 28,
+      "passing_samples": 28,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7a50": {
+      "instruction": "s_set_vgpr_msb 0x981",
+      "samples": 5,
+      "valid_metadata_samples": 5,
+      "passing_samples": 5,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7a58": {
+      "instruction": "buffer_load_b128 v[110:113] /*v[622:625]*/, v12 /*v268*/, s[24:27], null offen",
+      "samples": 5,
+      "valid_metadata_samples": 5,
+      "passing_samples": 5,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7a64": {
+      "instruction": "s_wait_loadcnt 0x17",
+      "samples": 5,
+      "valid_metadata_samples": 5,
+      "passing_samples": 5,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7a48": {
+      "instruction": "ds_store_b128 v24 /*v280*/, v[110:113] /*v[622:625]*/ offset:24576",
+      "samples": 5,
+      "valid_metadata_samples": 5,
+      "passing_samples": 5,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7218": {
+      "instruction": "v_perm_b32 v32 /*v288*/, v128 /*v384*/, v124 /*v380*/, s66",
+      "samples": 5,
+      "valid_metadata_samples": 5,
+      "passing_samples": 5,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7250": {
+      "instruction": "v_perm_b32 v224 /*v480*/, v8 /*v520*/, v6 /*v518*/, s66",
+      "samples": 5,
+      "valid_metadata_samples": 5,
+      "passing_samples": 5,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7260": {
+      "instruction": "v_perm_b32 v226 /*v482*/, v16 /*v528*/, v14 /*v526*/, s66",
+      "samples": 5,
+      "valid_metadata_samples": 5,
+      "passing_samples": 5,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7208": {
+      "instruction": "v_perm_b32 v30 /*v286*/, v112 /*v368*/, v108 /*v364*/, s66",
+      "samples": 5,
+      "valid_metadata_samples": 5,
+      "passing_samples": 5,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7d48": {
+      "instruction": "v_perm_b32 v54 /*v310*/, v177 /*v433*/, v173 /*v429*/, s67",
+      "samples": 20,
+      "valid_metadata_samples": 20,
+      "passing_samples": 20,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7ccc": {
+      "instruction": "v_wmma_f32_16x16x32_bf16 v[8:15], v[36:43] /*v[292:299]*/, v[222:229] /*v[478:485]*/, v[8:15]",
+      "samples": 5,
+      "valid_metadata_samples": 5,
+      "passing_samples": 5,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7cdc": {
+      "instruction": "ds_store_b128 v25 /*v281*/, v[146:149] /*v[658:661]*/ offset:10240",
+      "samples": 5,
+      "valid_metadata_samples": 5,
+      "passing_samples": 5,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7ce4": {
+      "instruction": "s_set_vgpr_msb 0x981",
+      "samples": 5,
+      "valid_metadata_samples": 5,
+      "passing_samples": 5,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7cc0": {
+      "instruction": "v_perm_b32 v53 /*v309*/, v169 /*v425*/, v165 /*v421*/, s67",
+      "samples": 5,
+      "valid_metadata_samples": 5,
+      "passing_samples": 5,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7434": {
+      "instruction": "v_perm_b32 v74 /*v330*/, v146 /*v402*/, v142 /*v398*/, s67",
+      "samples": 4,
+      "valid_metadata_samples": 4,
+      "passing_samples": 4,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7464": {
+      "instruction": "v_perm_b32 v80 /*v336*/, v131 /*v387*/, v127 /*v383*/, s66",
+      "samples": 4,
+      "valid_metadata_samples": 4,
+      "passing_samples": 4,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7474": {
+      "instruction": "v_perm_b32 v82 /*v338*/, v147 /*v403*/, v143 /*v399*/, s66",
+      "samples": 4,
+      "valid_metadata_samples": 4,
+      "passing_samples": 4,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x742c": {
+      "instruction": "v_perm_b32 v73 /*v329*/, v138 /*v394*/, v134 /*v390*/, s67",
+      "samples": 4,
+      "valid_metadata_samples": 4,
+      "passing_samples": 4,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x81ec": {
+      "instruction": "s_cmp_eq_i32 s12, 2",
+      "samples": 28,
+      "valid_metadata_samples": 28,
+      "passing_samples": 28,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7840": {
+      "instruction": "s_barrier_signal -1",
+      "samples": 16,
+      "valid_metadata_samples": 16,
+      "passing_samples": 16,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7be8": {
+      "instruction": "s_wait_alu depctr_vm_vsrc(0)",
+      "samples": 3,
+      "valid_metadata_samples": 3,
+      "passing_samples": 3,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7bf8": {
+      "instruction": "s_wait_loadcnt 0x17",
+      "samples": 6,
+      "valid_metadata_samples": 6,
+      "passing_samples": 6,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7bec": {
+      "instruction": "buffer_load_b128 v[134:137] /*v[646:649]*/, v18 /*v274*/, s[28:31], null offen",
+      "samples": 3,
+      "valid_metadata_samples": 3,
+      "passing_samples": 3,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x8038": {
+      "instruction": "s_set_vgpr_msb 0x4105",
+      "samples": 12,
+      "valid_metadata_samples": 12,
+      "passing_samples": 12,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x78a8": {
+      "instruction": "s_set_vgpr_msb 0x981",
+      "samples": 6,
+      "valid_metadata_samples": 6,
+      "passing_samples": 6,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x78bc": {
+      "instruction": "s_wait_xcnt 0x0",
+      "samples": 6,
+      "valid_metadata_samples": 6,
+      "passing_samples": 6,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7790": {
+      "instruction": "ds_load_b64 v[42:43] /*v[554:555]*/, v27 /*v283*/ offset:9728",
+      "samples": 2,
+      "valid_metadata_samples": 2,
+      "passing_samples": 2,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x77a0": {
+      "instruction": "s_set_vgpr_msb 0x8105",
+      "samples": 2,
+      "valid_metadata_samples": 2,
+      "passing_samples": 2,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x77b0": {
+      "instruction": "ds_load_b64 v[46:47] /*v[558:559]*/, v27 /*v283*/ offset:12288",
+      "samples": 2,
+      "valid_metadata_samples": 2,
+      "passing_samples": 2,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7780": {
+      "instruction": "s_set_vgpr_msb 0x8105",
+      "samples": 2,
+      "valid_metadata_samples": 2,
+      "passing_samples": 2,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7aac": {
+      "instruction": "s_wait_xcnt 0x0",
+      "samples": 6,
+      "valid_metadata_samples": 6,
+      "passing_samples": 6,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7ab0": {
+      "instruction": "s_set_vgpr_msb 0x8105",
+      "samples": 2,
+      "valid_metadata_samples": 2,
+      "passing_samples": 2,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7c48": {
+      "instruction": "v_perm_b32 v38 /*v294*/, v176 /*v432*/, v172 /*v428*/, s67",
+      "samples": 4,
+      "valid_metadata_samples": 4,
+      "passing_samples": 4,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7c58": {
+      "instruction": "v_perm_b32 v40 /*v296*/, v192 /*v448*/, v188 /*v444*/, s67",
+      "samples": 2,
+      "valid_metadata_samples": 2,
+      "passing_samples": 2,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7c50": {
+      "instruction": "v_perm_b32 v39 /*v295*/, v184 /*v440*/, v180 /*v436*/, s67",
+      "samples": 2,
+      "valid_metadata_samples": 2,
+      "passing_samples": 2,
+      "arithmetic_failure_samples": 0,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7874": {
+      "instruction": "s_wait_loadcnt 0x17",
+      "samples": 2,
+      "valid_metadata_samples": 2,
+      "passing_samples": 0,
+      "arithmetic_failure_samples": 2,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7878": {
+      "instruction": "s_set_vgpr_msb 0x8109",
+      "samples": 2,
+      "valid_metadata_samples": 2,
+      "passing_samples": 0,
+      "arithmetic_failure_samples": 2,
+      "wrong_source_wave_samples": 0
+    },
+    "0x8114": {
+      "instruction": "ds_load_b64 v[12:13] /*v[524:525]*/, v27 /*v283*/ offset:1792",
+      "samples": 4,
+      "valid_metadata_samples": 4,
+      "passing_samples": 0,
+      "arithmetic_failure_samples": 4,
+      "wrong_source_wave_samples": 4
+    },
+    "0x81b8": {
+      "instruction": "v_wmma_f32_16x16x32_bf16 v[208:215], v[44:51] /*v[300:307]*/, v[246:253] /*v[502:509]*/, v[208:215]",
+      "samples": 4,
+      "valid_metadata_samples": 4,
+      "passing_samples": 0,
+      "arithmetic_failure_samples": 4,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7f08": {
+      "instruction": "v_perm_b32 v240 /*v496*/, v41 /*v553*/, v39 /*v551*/, s66",
+      "samples": 3,
+      "valid_metadata_samples": 3,
+      "passing_samples": 0,
+      "arithmetic_failure_samples": 3,
+      "wrong_source_wave_samples": 0
+    },
+    "0x7f04": {
+      "instruction": "s_barrier_wait 0xffff",
+      "samples": 1,
+      "valid_metadata_samples": 1,
+      "passing_samples": 0,
+      "arithmetic_failure_samples": 1,
+      "wrong_source_wave_samples": 0
+    }
+  },
+  "per_call_class_counts": [
+    {
+      "iteration": 1,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 2,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 3,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 4,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 5,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 6,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 7,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 8,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 9,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 10,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 11,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 12,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 13,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 14,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 15,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 16,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 17,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 18,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 19,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 20,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 21,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 22,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 23,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 24,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 25,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 26,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 27,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 28,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 29,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 30,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 31,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 32,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 33,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 34,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 35,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 36,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 37,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 38,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 39,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 40,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 41,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 42,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 43,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 44,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 45,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 46,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 47,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 48,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 49,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 50,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 51,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 52,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 53,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 54,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 55,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 56,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 57,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 58,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 59,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 60,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 61,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 62,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 63,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 64,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 65,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 66,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 67,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 68,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 69,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 70,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 71,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 72,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 73,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 74,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 75,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 76,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 77,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 78,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 79,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 80,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 81,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 82,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 83,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 84,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 85,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 86,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 87,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 88,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 89,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 90,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 91,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 92,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 93,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 94,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 95,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 96,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 97,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 98,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 99,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 100,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 101,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 102,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 103,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 104,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 105,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 106,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 107,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 108,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 109,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 110,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 111,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 112,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 113,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 114,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 115,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 116,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 117,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 118,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 119,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 120,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 121,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 122,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 123,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 124,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 125,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 126,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 127,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 128,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 129,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 130,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 131,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 132,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 133,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 134,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 135,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 136,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 137,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 138,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 139,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 140,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 141,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 142,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 143,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 144,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 145,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 146,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 147,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 148,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 149,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 150,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 151,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 152,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 153,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 154,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 155,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 156,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 157,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 158,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 159,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 160,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 161,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 162,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 163,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 164,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 165,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 166,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 167,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 168,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 169,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 170,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 171,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 172,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 173,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 174,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 175,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 176,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 177,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 178,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 179,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 180,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 181,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 182,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 183,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 184,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 185,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 186,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 187,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 188,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 189,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 190,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 191,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 192,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 193,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 194,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 195,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 196,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 197,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 198,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 199,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 200,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 201,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 202,
+      "metadata_valid": true,
+      "arithmetic_failed": false,
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "wrong_source_waves": []
+    },
+    {
+      "iteration": 203,
+      "metadata_valid": true,
+      "arithmetic_failed": true,
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "wrong_source_waves": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    }
+  ],
+  "selected_instruction_heads": [
+    "0x80cc",
+    "0x80d4",
+    "0x80ec",
+    "0x80f4",
+    "0x810c",
+    "0x8114",
+    "0x812c",
+    "0x8134",
+    "0x814c",
+    "0x8154",
+    "0x816c",
+    "0x8174",
+    "0x818c",
+    "0x8194"
+  ],
+  "selected_window_hits": [
+    {
+      "iteration": 203,
+      "group": 1,
+      "wave": 0,
+      "metadata_valid": true,
+      "arithmetic_failed": true,
+      "wrong_source_wave": true,
+      "TTMP64": "0x00007088d9988114",
+      "S_GETPC64": "0x00007088d99a0138",
+      "normalized_PC": "0x000000000008114",
+      "matching_instruction": "ds_load_b64 v[12:13] /*v[524:525]*/, v27 /*v283*/ offset:1792"
+    },
+    {
+      "iteration": 203,
+      "group": 1,
+      "wave": 1,
+      "metadata_valid": true,
+      "arithmetic_failed": true,
+      "wrong_source_wave": true,
+      "TTMP64": "0x00007088d9988114",
+      "S_GETPC64": "0x00007088d99a0138",
+      "normalized_PC": "0x000000000008114",
+      "matching_instruction": "ds_load_b64 v[12:13] /*v[524:525]*/, v27 /*v283*/ offset:1792"
+    },
+    {
+      "iteration": 203,
+      "group": 1,
+      "wave": 2,
+      "metadata_valid": true,
+      "arithmetic_failed": true,
+      "wrong_source_wave": true,
+      "TTMP64": "0x00007088d9988114",
+      "S_GETPC64": "0x00007088d99a0138",
+      "normalized_PC": "0x000000000008114",
+      "matching_instruction": "ds_load_b64 v[12:13] /*v[524:525]*/, v27 /*v283*/ offset:1792"
+    },
+    {
+      "iteration": 203,
+      "group": 1,
+      "wave": 3,
+      "metadata_valid": true,
+      "arithmetic_failed": true,
+      "wrong_source_wave": true,
+      "TTMP64": "0x00007088d9988114",
+      "S_GETPC64": "0x00007088d99a0138",
+      "normalized_PC": "0x000000000008114",
+      "matching_instruction": "ds_load_b64 v[12:13] /*v[524:525]*/, v27 /*v283*/ offset:1792"
+    }
+  ],
+  "selected_window_active_bank": "0x81",
+  "shared_setup_copy_cave_hits": [],
+  "limits": [
+    "Every retained invocation and all16 wave snapshots are included; invalid metadata stays explicitly marked.",
+    "Last-visible TTMP does not date the underlying trap, expose earlier hidden events, or exclude later events.",
+    "A matching instruction boundary is a sampled return/resume location, not attribution to a corrupting instruction.",
+    "Nonmatching PCs remain unassigned. Zero TTMP is permitted and does not prove no trap.",
+    "Cave and return-preload descriptions use executed CFG bank81; the linear disassembler resets its displayed bank at the added branches.",
+    "Asynchronous LDS completion and trap restart can differ from the synchronous sentinel; no repair or common training cause is inferred."
+  ],
+  "independent_stream": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_BANK_EQUAL_STREAM_CPU_PEER_v1/bank81_control_complete_stream_metadata_pairs_independent_review_v1.json",
+    "bytes": 2932386,
+    "sha256": "d8b722486b781f643ee6511b0b0760adfaff1340b9b62b301b36c4833b5a54d4"
+  },
+  "CPU_readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_BANK_EQUAL_STREAM_CPU_PEER_v1/BANK_EQUAL_terminal_wrapper_CPU_readiness_v1.json",
+    "bytes": 4022,
+    "sha256": "b7f494abf9deef021a2e648a289d7c444ab4634cd7968018746df4ffcae02125"
+  },
+  "instruction_boundary_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_BANK_EQUAL_ELF_PEER_v1/bank81_control_fresh_independent_disassembly_v1.s",
+    "bytes": 4287013,
+    "sha256": "c585e00b437dbdecd98dd00e3a1ddf66ef3e79c0e22851e99bf002dde730d563"
+  },
+  "independent_candidate_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_BANK_EQUAL_ELF_PEER_v1/BANK_EQUAL_matched_ELF_pair_independent_review_v1.json",
+    "bytes": 24402,
+    "sha256": "feed742db40396921b8d1373cb297732fc2f0ee85cbb3058b99eb575106a1725"
+  }
+}

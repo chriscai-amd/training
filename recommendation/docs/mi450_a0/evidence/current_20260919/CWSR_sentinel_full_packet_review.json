@@ -1,0 +1,2416 @@
+{
+  "status": "PASS_INDEPENDENT_COMPLETE_40WORD_SENTINEL_PACKET_AND_CALL_RETENTION_REVIEW",
+  "GPU_actions": false,
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/audit_sentinel_packets_independent_v1.py",
+    "bytes": 14596,
+    "sha256": "24dfda17a3687b6b12b7f2bb932ef08ccc8e466803d2c8bba9d46740bbd74d03"
+  },
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_root_v1/launch_manifest_sentinel_v1.json",
+    "bytes": 144896,
+    "sha256": "094d67381d46874044043c40e3672a5b168cd06089398342f2a4ca9b7d6df5ea"
+  },
+  "native_join": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_root_v1/native_join_root_v1.json",
+    "bytes": 15585,
+    "sha256": "9ed67383738b1a68eab7daace4a76ca7e3db2e4d5b1604a4fa61a16c138efe62"
+  },
+  "wrapper_terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_root_v1/sentinel_terminal.json",
+    "bytes": 267,
+    "sha256": "1775326b1da35ad0b6327a2cddfbe1e0730d5d1a77745da117fa494a4360637b"
+  },
+  "host_summary": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/result.json",
+    "bytes": 124281,
+    "sha256": "261d627bc2aab1bb7ba2b59a7a00c6cbde641d24deff98c5e4ec55464deb6573"
+  },
+  "host_call_journal": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/hip_calls.jsonl",
+    "bytes": 30678,
+    "sha256": "20d2f4f330f1e3acb5cfb6a47ace40649d551eb204c79465d7bbb9932e36c77a"
+  },
+  "frozen_host": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/run_sentinel_host_v1.py",
+    "bytes": 21231,
+    "sha256": "be1582e96b7dad21991a562a6d4aec2664d331bd30ae64e1117cbd2d045ace89"
+  },
+  "frozen_configuration": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/sentinel_host_configuration_v2.json",
+    "bytes": 4898,
+    "sha256": "4a7fd0b589959eec2f3c1f73fd86afacca18affb732d122df624bf0f7e4f2554"
+  },
+  "frozen_module": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/sentinel_shader_root_v2.hsaco",
+    "bytes": 32152,
+    "sha256": "4f840df38a5d815abe50824f37dedbde4bf48fffdec6ca84530cd631f69e5484"
+  },
+  "complete_raw_artifacts": [
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_00_00_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_00_00_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_00_00_0/output.bin",
+      "bytes": 160,
+      "sha256": "f2dd7627a5785611211a7d44f3a17de2b8c2641620685fb48adb8bbc7225e02f"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_01_00_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_01_00_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_01_00_1/output.bin",
+      "bytes": 160,
+      "sha256": "8aab15f3cfc3c5c73c28a38f6d699b54688dc4e03f5f89710a829a881a48369c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_02_41_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_02_41_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_02_41_0/output.bin",
+      "bytes": 160,
+      "sha256": "5f8e81a2f8d397e331c45b62ac5062a3a14012395f5b0a8e3cc9223e5a98631c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_03_41_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_03_41_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_03_41_1/output.bin",
+      "bytes": 160,
+      "sha256": "d969e797ec58afdd7ef5ece3e1dc6cc8e845e1173a9c862cee5188a084eba50d"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_04_45_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_04_45_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_04_45_0/output.bin",
+      "bytes": 160,
+      "sha256": "6b7fe138a0caa58f8b2013d1f016bda294dfd6d81890f86963c8782a4be046ff"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_05_45_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_05_45_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_05_45_1/output.bin",
+      "bytes": 160,
+      "sha256": "360c5ee2f3db8f9153bbafa813bd2fc47c23686e7e507d64f426468225e56eef"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_06_82_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_06_82_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_06_82_0/output.bin",
+      "bytes": 160,
+      "sha256": "fe1726b5b88c13078b53baf61f4fe56f6dd3542a1faf410d98e97b0fee0e2ac5"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_07_82_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_07_82_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_07_82_1/output.bin",
+      "bytes": 160,
+      "sha256": "213aba2df9a96b734aa563cd4218bdfd6a070f2f3a5c93c177adc912e3ec36c5"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_08_05_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_08_05_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_08_05_0/output.bin",
+      "bytes": 160,
+      "sha256": "3f4db778280ee5d80571724c9bd3af1a7d5acd619e0722eec24d91ddc9bb6253"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_09_05_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_09_05_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_09_05_1/output.bin",
+      "bytes": 160,
+      "sha256": "c2ad1a7076a9830191b403eae65fcba6c946c0834055cf5a4772bd85b21a6c73"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_10_81_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_10_81_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_10_81_0/output.bin",
+      "bytes": 160,
+      "sha256": "bb358db121b56dbe6c103e67d816588223c673d92127751429989846b0d2256a"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_11_81_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_11_81_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_11_81_1/output.bin",
+      "bytes": 160,
+      "sha256": "abadd1f5ece67355de97daa23e6a7a1fe21bbcfa76afd84124cd833d142e5ae3"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_12_85_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_12_85_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_12_85_0/output.bin",
+      "bytes": 160,
+      "sha256": "b83eb99648ab522755a84e58c39f0de396ff6a5f4d769bf8b8dc3238a523b3b6"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_13_85_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_13_85_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_13_85_1/output.bin",
+      "bytes": 160,
+      "sha256": "2c9fcf86cf25b6e396ea398373f909f0bb99b6865993e7fef384418b388aa9e7"
+    }
+  ],
+  "fully_scanned_output_words": 560,
+  "fully_scanned_prefill_bytes": 4480,
+  "packets": [
+    {
+      "ordinal": 0,
+      "kernel_symbol": "sentinel_00_0",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_00_00_0/output.bin",
+        "bytes": 160,
+        "sha256": "f2dd7627a5785611211a7d44f3a17de2b8c2641620685fb48adb8bbc7225e02f"
+      },
+      "mode_low_byte": 0,
+      "explicit_shader_trap": false,
+      "classification": "UNCHANGED",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x00",
+      "observed_MODE_19_12_before": "0x00",
+      "observed_MODE_19_12_after": "0x00",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465b288",
+      "returned_TTMP0": "0x00000000",
+      "returned_TTMP1": "0x00000000",
+      "TTMP_full64_equals_intended_PC": false,
+      "TTMP_low57_equals_intended_PC_low57": false,
+      "TTMP_low48_equals_intended_PC_low48": false,
+      "changed_tags": [],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000000",
+        "0x00000000",
+        "0x020000f0",
+        "0x020000f0",
+        "0x00010040",
+        "0x00010040",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465b288",
+        "0x000071bf",
+        "0x00000000",
+        "0x00000000",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 1,
+        "destination_VGPR": 1,
+        "lane": 0,
+        "distinct_registers": false,
+        "all_after_tags_match_conditional_copy": true
+      }
+    },
+    {
+      "ordinal": 1,
+      "kernel_symbol": "sentinel_00_1",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_01_00_1/output.bin",
+        "bytes": 160,
+        "sha256": "8aab15f3cfc3c5c73c28a38f6d699b54688dc4e03f5f89710a829a881a48369c"
+      },
+      "mode_low_byte": 0,
+      "explicit_shader_trap": true,
+      "classification": "UNCHANGED",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x00",
+      "observed_MODE_19_12_before": "0x00",
+      "observed_MODE_19_12_after": "0x00",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465b888",
+      "returned_TTMP0": "0xb465b888",
+      "returned_TTMP1": "0x000071bf",
+      "TTMP_full64_equals_intended_PC": true,
+      "TTMP_low57_equals_intended_PC_low57": true,
+      "TTMP_low48_equals_intended_PC_low48": true,
+      "changed_tags": [],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000000",
+        "0x00000001",
+        "0x020000f0",
+        "0x020000f0",
+        "0x00010040",
+        "0x00010440",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465b888",
+        "0x000071bf",
+        "0xb465b888",
+        "0x000071bf",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 1,
+        "destination_VGPR": 1,
+        "lane": 0,
+        "distinct_registers": false,
+        "all_after_tags_match_conditional_copy": true
+      }
+    },
+    {
+      "ordinal": 2,
+      "kernel_symbol": "sentinel_41_0",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_02_41_0/output.bin",
+        "bytes": 160,
+        "sha256": "5f8e81a2f8d397e331c45b62ac5062a3a14012395f5b0a8e3cc9223e5a98631c"
+      },
+      "mode_low_byte": 65,
+      "explicit_shader_trap": false,
+      "classification": "UNCHANGED",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x05",
+      "observed_MODE_19_12_before": "0x05",
+      "observed_MODE_19_12_after": "0x05",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465be8c",
+      "returned_TTMP0": "0x00000000",
+      "returned_TTMP1": "0x00000000",
+      "TTMP_full64_equals_intended_PC": false,
+      "TTMP_low57_equals_intended_PC_low57": false,
+      "TTMP_low48_equals_intended_PC_low48": false,
+      "changed_tags": [],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000041",
+        "0x00000000",
+        "0x020050f0",
+        "0x020050f0",
+        "0x00010040",
+        "0x00010040",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465be8c",
+        "0x000071bf",
+        "0x00000000",
+        "0x00000000",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 257,
+        "destination_VGPR": 257,
+        "lane": 0,
+        "distinct_registers": false,
+        "all_after_tags_match_conditional_copy": true
+      }
+    },
+    {
+      "ordinal": 3,
+      "kernel_symbol": "sentinel_41_1",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_03_41_1/output.bin",
+        "bytes": 160,
+        "sha256": "d969e797ec58afdd7ef5ece3e1dc6cc8e845e1173a9c862cee5188a084eba50d"
+      },
+      "mode_low_byte": 65,
+      "explicit_shader_trap": true,
+      "classification": "UNCHANGED",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x05",
+      "observed_MODE_19_12_before": "0x05",
+      "observed_MODE_19_12_after": "0x05",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465c48c",
+      "returned_TTMP0": "0xb465c48c",
+      "returned_TTMP1": "0x000071bf",
+      "TTMP_full64_equals_intended_PC": true,
+      "TTMP_low57_equals_intended_PC_low57": true,
+      "TTMP_low48_equals_intended_PC_low48": true,
+      "changed_tags": [],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000041",
+        "0x00000001",
+        "0x020050f0",
+        "0x020050f0",
+        "0x00010040",
+        "0x00010440",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465c48c",
+        "0x000071bf",
+        "0xb465c48c",
+        "0x000071bf",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 257,
+        "destination_VGPR": 257,
+        "lane": 0,
+        "distinct_registers": false,
+        "all_after_tags_match_conditional_copy": true
+      }
+    },
+    {
+      "ordinal": 4,
+      "kernel_symbol": "sentinel_45_0",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_04_45_0/output.bin",
+        "bytes": 160,
+        "sha256": "6b7fe138a0caa58f8b2013d1f016bda294dfd6d81890f86963c8782a4be046ff"
+      },
+      "mode_low_byte": 69,
+      "explicit_shader_trap": false,
+      "classification": "UNCHANGED",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x15",
+      "observed_MODE_19_12_before": "0x15",
+      "observed_MODE_19_12_after": "0x15",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465ca8c",
+      "returned_TTMP0": "0x00000000",
+      "returned_TTMP1": "0x00000000",
+      "TTMP_full64_equals_intended_PC": false,
+      "TTMP_low57_equals_intended_PC_low57": false,
+      "TTMP_low48_equals_intended_PC_low48": false,
+      "changed_tags": [],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000045",
+        "0x00000000",
+        "0x020150f0",
+        "0x020150f0",
+        "0x00010040",
+        "0x00010040",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465ca8c",
+        "0x000071bf",
+        "0x00000000",
+        "0x00000000",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 257,
+        "destination_VGPR": 257,
+        "lane": 0,
+        "distinct_registers": false,
+        "all_after_tags_match_conditional_copy": true
+      }
+    },
+    {
+      "ordinal": 5,
+      "kernel_symbol": "sentinel_45_1",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_05_45_1/output.bin",
+        "bytes": 160,
+        "sha256": "360c5ee2f3db8f9153bbafa813bd2fc47c23686e7e507d64f426468225e56eef"
+      },
+      "mode_low_byte": 69,
+      "explicit_shader_trap": true,
+      "classification": "UNCHANGED",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x15",
+      "observed_MODE_19_12_before": "0x15",
+      "observed_MODE_19_12_after": "0x15",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465d08c",
+      "returned_TTMP0": "0xb465d08c",
+      "returned_TTMP1": "0x000071bf",
+      "TTMP_full64_equals_intended_PC": true,
+      "TTMP_low57_equals_intended_PC_low57": true,
+      "TTMP_low48_equals_intended_PC_low48": true,
+      "changed_tags": [],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000045",
+        "0x00000001",
+        "0x020150f0",
+        "0x020150f0",
+        "0x00010040",
+        "0x00010440",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465d08c",
+        "0x000071bf",
+        "0xb465d08c",
+        "0x000071bf",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 257,
+        "destination_VGPR": 257,
+        "lane": 0,
+        "distinct_registers": false,
+        "all_after_tags_match_conditional_copy": true
+      }
+    },
+    {
+      "ordinal": 6,
+      "kernel_symbol": "sentinel_82_0",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_06_82_0/output.bin",
+        "bytes": 160,
+        "sha256": "fe1726b5b88c13078b53baf61f4fe56f6dd3542a1faf410d98e97b0fee0e2ac5"
+      },
+      "mode_low_byte": 130,
+      "explicit_shader_trap": false,
+      "classification": "UNCHANGED",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x0a",
+      "observed_MODE_19_12_before": "0x0a",
+      "observed_MODE_19_12_after": "0x0a",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465d68c",
+      "returned_TTMP0": "0x00000000",
+      "returned_TTMP1": "0x00000000",
+      "TTMP_full64_equals_intended_PC": false,
+      "TTMP_low57_equals_intended_PC_low57": false,
+      "TTMP_low48_equals_intended_PC_low48": false,
+      "changed_tags": [],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000082",
+        "0x00000000",
+        "0x0200a0f0",
+        "0x0200a0f0",
+        "0x00010040",
+        "0x00010040",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465d68c",
+        "0x000071bf",
+        "0x00000000",
+        "0x00000000",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 513,
+        "destination_VGPR": 513,
+        "lane": 0,
+        "distinct_registers": false,
+        "all_after_tags_match_conditional_copy": true
+      }
+    },
+    {
+      "ordinal": 7,
+      "kernel_symbol": "sentinel_82_1",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_07_82_1/output.bin",
+        "bytes": 160,
+        "sha256": "213aba2df9a96b734aa563cd4218bdfd6a070f2f3a5c93c177adc912e3ec36c5"
+      },
+      "mode_low_byte": 130,
+      "explicit_shader_trap": true,
+      "classification": "UNCHANGED",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x0a",
+      "observed_MODE_19_12_before": "0x0a",
+      "observed_MODE_19_12_after": "0x0a",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465dc8c",
+      "returned_TTMP0": "0xb465dc8c",
+      "returned_TTMP1": "0x000071bf",
+      "TTMP_full64_equals_intended_PC": true,
+      "TTMP_low57_equals_intended_PC_low57": true,
+      "TTMP_low48_equals_intended_PC_low48": true,
+      "changed_tags": [],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000082",
+        "0x00000001",
+        "0x0200a0f0",
+        "0x0200a0f0",
+        "0x00010040",
+        "0x00010440",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465dc8c",
+        "0x000071bf",
+        "0xb465dc8c",
+        "0x000071bf",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 513,
+        "destination_VGPR": 513,
+        "lane": 0,
+        "distinct_registers": false,
+        "all_after_tags_match_conditional_copy": true
+      }
+    },
+    {
+      "ordinal": 8,
+      "kernel_symbol": "sentinel_05_0",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_08_05_0/output.bin",
+        "bytes": 160,
+        "sha256": "3f4db778280ee5d80571724c9bd3af1a7d5acd619e0722eec24d91ddc9bb6253"
+      },
+      "mode_low_byte": 5,
+      "explicit_shader_trap": false,
+      "classification": "UNCHANGED",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x14",
+      "observed_MODE_19_12_before": "0x14",
+      "observed_MODE_19_12_after": "0x14",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465e288",
+      "returned_TTMP0": "0x00000000",
+      "returned_TTMP1": "0x00000000",
+      "TTMP_full64_equals_intended_PC": false,
+      "TTMP_low57_equals_intended_PC_low57": false,
+      "TTMP_low48_equals_intended_PC_low48": false,
+      "changed_tags": [],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000005",
+        "0x00000000",
+        "0x020140f0",
+        "0x020140f0",
+        "0x00010040",
+        "0x00010040",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465e288",
+        "0x000071bf",
+        "0x00000000",
+        "0x00000000",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 257,
+        "destination_VGPR": 1,
+        "lane": 0,
+        "distinct_registers": true,
+        "all_after_tags_match_conditional_copy": false
+      }
+    },
+    {
+      "ordinal": 9,
+      "kernel_symbol": "sentinel_05_1",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_09_05_1/output.bin",
+        "bytes": 160,
+        "sha256": "c2ad1a7076a9830191b403eae65fcba6c946c0834055cf5a4772bd85b21a6c73"
+      },
+      "mode_low_byte": 5,
+      "explicit_shader_trap": true,
+      "classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x14",
+      "observed_MODE_19_12_before": "0x14",
+      "observed_MODE_19_12_after": "0x14",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465e888",
+      "returned_TTMP0": "0xb465e888",
+      "returned_TTMP1": "0x000071bf",
+      "TTMP_full64_equals_intended_PC": true,
+      "TTMP_low57_equals_intended_PC_low57": true,
+      "TTMP_low48_equals_intended_PC_low48": true,
+      "changed_tags": [
+        {
+          "vgpr": 1,
+          "lane": 0,
+          "before": "0x11000000",
+          "after": "0x22000000"
+        }
+      ],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000005",
+        "0x00000001",
+        "0x020140f0",
+        "0x020140f0",
+        "0x00010040",
+        "0x00010440",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x22000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465e888",
+        "0x000071bf",
+        "0xb465e888",
+        "0x000071bf",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 257,
+        "destination_VGPR": 1,
+        "lane": 0,
+        "distinct_registers": true,
+        "all_after_tags_match_conditional_copy": true
+      }
+    },
+    {
+      "ordinal": 10,
+      "kernel_symbol": "sentinel_81_0",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_10_81_0/output.bin",
+        "bytes": 160,
+        "sha256": "bb358db121b56dbe6c103e67d816588223c673d92127751429989846b0d2256a"
+      },
+      "mode_low_byte": 129,
+      "explicit_shader_trap": false,
+      "classification": "UNCHANGED",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x06",
+      "observed_MODE_19_12_before": "0x06",
+      "observed_MODE_19_12_after": "0x06",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465ee8c",
+      "returned_TTMP0": "0x00000000",
+      "returned_TTMP1": "0x00000000",
+      "TTMP_full64_equals_intended_PC": false,
+      "TTMP_low57_equals_intended_PC_low57": false,
+      "TTMP_low48_equals_intended_PC_low48": false,
+      "changed_tags": [],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000081",
+        "0x00000000",
+        "0x020060f0",
+        "0x020060f0",
+        "0x00010040",
+        "0x00010040",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465ee8c",
+        "0x000071bf",
+        "0x00000000",
+        "0x00000000",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 257,
+        "destination_VGPR": 513,
+        "lane": 0,
+        "distinct_registers": true,
+        "all_after_tags_match_conditional_copy": false
+      }
+    },
+    {
+      "ordinal": 11,
+      "kernel_symbol": "sentinel_81_1",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_11_81_1/output.bin",
+        "bytes": 160,
+        "sha256": "abadd1f5ece67355de97daa23e6a7a1fe21bbcfa76afd84124cd833d142e5ae3"
+      },
+      "mode_low_byte": 129,
+      "explicit_shader_trap": true,
+      "classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x06",
+      "observed_MODE_19_12_before": "0x06",
+      "observed_MODE_19_12_after": "0x06",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465f48c",
+      "returned_TTMP0": "0xb465f48c",
+      "returned_TTMP1": "0x000071bf",
+      "TTMP_full64_equals_intended_PC": true,
+      "TTMP_low57_equals_intended_PC_low57": true,
+      "TTMP_low48_equals_intended_PC_low48": true,
+      "changed_tags": [
+        {
+          "vgpr": 513,
+          "lane": 0,
+          "before": "0x33000000",
+          "after": "0x22000000"
+        }
+      ],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000081",
+        "0x00000001",
+        "0x020060f0",
+        "0x020060f0",
+        "0x00010040",
+        "0x00010440",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x22000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465f48c",
+        "0x000071bf",
+        "0xb465f48c",
+        "0x000071bf",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 257,
+        "destination_VGPR": 513,
+        "lane": 0,
+        "distinct_registers": true,
+        "all_after_tags_match_conditional_copy": true
+      }
+    },
+    {
+      "ordinal": 12,
+      "kernel_symbol": "sentinel_85_0",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_12_85_0/output.bin",
+        "bytes": 160,
+        "sha256": "b83eb99648ab522755a84e58c39f0de396ff6a5f4d769bf8b8dc3238a523b3b6"
+      },
+      "mode_low_byte": 133,
+      "explicit_shader_trap": false,
+      "classification": "UNCHANGED",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x16",
+      "observed_MODE_19_12_before": "0x16",
+      "observed_MODE_19_12_after": "0x16",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb465fa8c",
+      "returned_TTMP0": "0x00000000",
+      "returned_TTMP1": "0x00000000",
+      "TTMP_full64_equals_intended_PC": false,
+      "TTMP_low57_equals_intended_PC_low57": false,
+      "TTMP_low48_equals_intended_PC_low48": false,
+      "changed_tags": [],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000085",
+        "0x00000000",
+        "0x020160f0",
+        "0x020160f0",
+        "0x00010040",
+        "0x00010040",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb465fa8c",
+        "0x000071bf",
+        "0x00000000",
+        "0x00000000",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 257,
+        "destination_VGPR": 513,
+        "lane": 0,
+        "distinct_registers": true,
+        "all_after_tags_match_conditional_copy": false
+      }
+    },
+    {
+      "ordinal": 13,
+      "kernel_symbol": "sentinel_85_1",
+      "packet": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_CWSR_sentinel_run_v1/case_13_85_1/output.bin",
+        "bytes": 160,
+        "sha256": "2c9fcf86cf25b6e396ea398373f909f0bb99b6865993e7fef384418b388aa9e7"
+      },
+      "mode_low_byte": 133,
+      "explicit_shader_trap": true,
+      "classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "packet_structure_valid": true,
+      "packet_case_fields_match": true,
+      "constant_word_checks": [
+        {
+          "word": 0,
+          "expected": "0x53545250",
+          "observed": "0x53545250",
+          "equal": true
+        },
+        {
+          "word": 1,
+          "expected": "0x00000001",
+          "observed": "0x00000001",
+          "equal": true
+        },
+        {
+          "word": 32,
+          "expected": "0x434f4d50",
+          "observed": "0x434f4d50",
+          "equal": true
+        },
+        {
+          "word": 33,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 34,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 35,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 36,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 37,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 38,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        },
+        {
+          "word": 39,
+          "expected": "0xa5a5a5a5",
+          "observed": "0xa5a5a5a5",
+          "equal": true
+        }
+      ],
+      "initialization_valid": true,
+      "before_tags_equal_expected": true,
+      "requested_MODE_19_12": "0x16",
+      "observed_MODE_19_12_before": "0x16",
+      "observed_MODE_19_12_after": "0x16",
+      "MODE_bank_field_restored": true,
+      "trap_enabled_before": true,
+      "trap_enabled_after": true,
+      "EXEC_before": "0xffffffff",
+      "EXEC_after": "0xffffffff",
+      "EXEC_preserved": true,
+      "EXEC_both_full_wave32": true,
+      "intended_return_PC": "0x000071bfb466008c",
+      "returned_TTMP0": "0xb466008c",
+      "returned_TTMP1": "0x000071bf",
+      "TTMP_full64_equals_intended_PC": true,
+      "TTMP_low57_equals_intended_PC_low57": true,
+      "TTMP_low48_equals_intended_PC_low48": true,
+      "changed_tags": [
+        {
+          "vgpr": 513,
+          "lane": 0,
+          "before": "0x33000000",
+          "after": "0x22000000"
+        }
+      ],
+      "raw_words": [
+        "0x53545250",
+        "0x00000001",
+        "0x00000085",
+        "0x00000001",
+        "0x020160f0",
+        "0x020160f0",
+        "0x00010040",
+        "0x00010440",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x33000000",
+        "0x33000001",
+        "0x33000010",
+        "0x11000000",
+        "0x11000001",
+        "0x11000010",
+        "0x22000000",
+        "0x22000001",
+        "0x22000010",
+        "0x22000000",
+        "0x33000001",
+        "0x33000010",
+        "0xb466008c",
+        "0x000071bf",
+        "0xb466008c",
+        "0x000071bf",
+        "0xffffffff",
+        "0xffffffff",
+        "0x434f4d50",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5",
+        "0xa5a5a5a5"
+      ],
+      "conditional_copy": {
+        "source_VGPR": 257,
+        "destination_VGPR": 513,
+        "lane": 0,
+        "distinct_registers": true,
+        "all_after_tags_match_conditional_copy": true
+      }
+    }
+  ],
+  "mode_comparisons": [
+    {
+      "mode": "0x00",
+      "MODE_19_12": "0x00",
+      "expected_entry_source_VGPR": 1,
+      "expected_entry_destination_VGPR": 1,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "UNCHANGED",
+      "shader_trap_changed_tags": [],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    },
+    {
+      "mode": "0x41",
+      "MODE_19_12": "0x05",
+      "expected_entry_source_VGPR": 257,
+      "expected_entry_destination_VGPR": 257,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "UNCHANGED",
+      "shader_trap_changed_tags": [],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    },
+    {
+      "mode": "0x45",
+      "MODE_19_12": "0x15",
+      "expected_entry_source_VGPR": 257,
+      "expected_entry_destination_VGPR": 257,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "UNCHANGED",
+      "shader_trap_changed_tags": [],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    },
+    {
+      "mode": "0x82",
+      "MODE_19_12": "0x0a",
+      "expected_entry_source_VGPR": 513,
+      "expected_entry_destination_VGPR": 513,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "UNCHANGED",
+      "shader_trap_changed_tags": [],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    },
+    {
+      "mode": "0x05",
+      "MODE_19_12": "0x14",
+      "expected_entry_source_VGPR": 257,
+      "expected_entry_destination_VGPR": 1,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "shader_trap_changed_tags": [
+        {
+          "vgpr": 1,
+          "lane": 0,
+          "before": "0x11000000",
+          "after": "0x22000000"
+        }
+      ],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    },
+    {
+      "mode": "0x81",
+      "MODE_19_12": "0x06",
+      "expected_entry_source_VGPR": 257,
+      "expected_entry_destination_VGPR": 513,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "shader_trap_changed_tags": [
+        {
+          "vgpr": 513,
+          "lane": 0,
+          "before": "0x33000000",
+          "after": "0x22000000"
+        }
+      ],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    },
+    {
+      "mode": "0x85",
+      "MODE_19_12": "0x16",
+      "expected_entry_source_VGPR": 257,
+      "expected_entry_destination_VGPR": 513,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "shader_trap_changed_tags": [
+        {
+          "vgpr": 513,
+          "lane": 0,
+          "before": "0x33000000",
+          "after": "0x22000000"
+        }
+      ],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    }
+  ],
+  "limits": [
+    "Fixed packet offsets and tags are root's interface; shader store/ISA provenance is supplied by its separate independent ELF review.",
+    "The PC mask diagnostics are reported without assuming a legacy48-bit or57-bit TTMP encoding; full raw words remain available.",
+    "Host API journals are source-bound producer records, not an independent external hardware trace.",
+    "A controlled shader-trap result does not establish trap occurrence or the same timing in the original failing workload.",
+    "No-shader-trap controls can still receive asynchronous traps."
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "status": "PASS_WITH_EXPLICIT_SECONDARY_VCC_COMPLETENESS_NOTE",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_scalar_peer_v1/review_scalar_path_recurrence_v1.py",
+    "bytes": 14037,
+    "sha256": "4b03e7b0148a9df4661c0b9081c39925d5efa7af90e7ab1d2394bc87e5f6a655"
+  },
+  "reviewed_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_consumers_CPU_v1/trace_v513_mainloop_scalar_v2.py",
+    "bytes": 13700,
+    "sha256": "148a248a186e85e97c3e143088ed15ee1189c4268d8eada228c14da268fec0e2"
+  },
+  "reviewed_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_consumers_CPU_v1/v513_consumer_scalar_path_and_lane0_K_v2.json",
+    "bytes": 118109,
+    "sha256": "ade90c6d59db6341ab0d655d01eaa8a42367d62f596a3fc542e3776b3ad76c76"
+  },
+  "inherited_prologue_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_mechanism_v1/prove_raw_export_packet_path_v2.py",
+    "bytes": 20296,
+    "sha256": "b92e4e46d9097a383f1ce1526aac169c00945072460815604f242bfa511292f1"
+  },
+  "inherited_prologue_extended_sha256": "eff23e6728bba78a2aaa6f502e19a0be987e906db6b4957579089adc16dff7bb",
+  "method": "Independent label/operand parser, closed-form control-flow interval recurrence, descriptor integer algebra, and 128-thread first-B-slot byte coverage. Author trace() was not executed or imported.",
+  "initial_contexts": 16,
+  "first_consumer_visits": 1,
+  "repeated_consumer_visits": 36314,
+  "common_suffix_visits": 36315,
+  "independently_checked_reduced_PC_counts_per_group": 299,
+  "reported_reduced_steps_per_group": 1307692,
+  "tail_pass_s12": [
+    63,
+    31
+  ],
+  "disassembly_unprinted_branch_aliases": [
+    {
+      "pc": "0x8fbc",
+      "omitted_alias": "label_GSU_3",
+      "printed_alias": "label_OptNLL_End",
+      "target": "0xb964",
+      "taken": false
+    },
+    {
+      "pc": "0xc578",
+      "omitted_alias": "label_SkipTailLoopL",
+      "printed_alias": "label_TailLoopEndL",
+      "target": "0xf608",
+      "taken": false
+    }
+  ],
+  "conditional_FAIL91_matches_at_0x7540": [
+    {
+      "k": 171713,
+      "site_visit": 2683,
+      "s12": 33634,
+      "v513_definition_pc": "0x80b4"
+    },
+    {
+      "k": 205633,
+      "site_visit": 3213,
+      "s12": 33104,
+      "v513_definition_pc": "0x80b4"
+    },
+    {
+      "k": 354433,
+      "site_visit": 5538,
+      "s12": 30779,
+      "v513_definition_pc": "0x80b4"
+    }
+  ],
+  "groups": [
+    {
+      "group": 0,
+      "initial_A": 32752,
+      "initial_B": 65520,
+      "wrap_A": -1190002688,
+      "wrap_B": -2380005376,
+      "reset_A": -16,
+      "reset_B": -16,
+      "tail_A": 1190035440,
+      "tail_B": 2380070896,
+      "independent_lane0_LDS_byte_to_global_B": [
+        {
+          "wave": 0,
+          "LDS_byte": 33028,
+          "relative_K": 1,
+          "N": 2
+        },
+        {
+          "wave": 1,
+          "LDS_byte": 33028,
+          "relative_K": 1,
+          "N": 2
+        },
+        {
+          "wave": 2,
+          "LDS_byte": 33156,
+          "relative_K": 1,
+          "N": 66
+        },
+        {
+          "wave": 3,
+          "LDS_byte": 33156,
+          "relative_K": 1,
+          "N": 66
+        }
+      ]
+    },
+    {
+      "group": 1,
+      "initial_A": 32752,
+      "initial_B": 65776,
+      "wrap_A": -1190002688,
+      "wrap_B": -2380005376,
+      "reset_A": -16,
+      "reset_B": 240,
+      "tail_A": 1190035440,
+      "tail_B": 2380071152,
+      "independent_lane0_LDS_byte_to_global_B": [
+        {
+          "wave": 0,
+          "LDS_byte": 33028,
+          "relative_K": 1,
+          "N": 130
+        },
+        {
+          "wave": 1,
+          "LDS_byte": 33028,
+          "relative_K": 1,
+          "N": 130
+        },
+        {
+          "wave": 2,
+          "LDS_byte": 33156,
+          "relative_K": 1,
+          "N": 194
+        },
+        {
+          "wave": 3,
+          "LDS_byte": 33156,
+          "relative_K": 1,
+          "N": 194
+        }
+      ]
+    },
+    {
+      "group": 2,
+      "initial_A": 32752,
+      "initial_B": 66032,
+      "wrap_A": -1190002688,
+      "wrap_B": -2380005376,
+      "reset_A": -16,
+      "reset_B": 496,
+      "tail_A": 1190035440,
+      "tail_B": 2380071408,
+      "independent_lane0_LDS_byte_to_global_B": [
+        {
+          "wave": 0,
+          "LDS_byte": 33028,
+          "relative_K": 1,
+          "N": 258
+        },
+        {
+          "wave": 1,
+          "LDS_byte": 33028,
+          "relative_K": 1,
+          "N": 258
+        },
+        {
+          "wave": 2,
+          "LDS_byte": 33156,
+          "relative_K": 1,
+          "N": 322
+        },
+        {
+          "wave": 3,
+          "LDS_byte": 33156,
+          "relative_K": 1,
+          "N": 322
+        }
+      ]
+    },
+    {
+      "group": 3,
+      "initial_A": 32752,
+      "initial_B": 66288,
+      "wrap_A": -1190002688,
+      "wrap_B": -2380005376,
+      "reset_A": -16,
+      "reset_B": 752,
+      "tail_A": 1190035440,
+      "tail_B": 2380071664,
+      "independent_lane0_LDS_byte_to_global_B": [
+        {
+          "wave": 0,
+          "LDS_byte": 33028,
+          "relative_K": 1,
+          "N": 386
+        },
+        {
+          "wave": 1,
+          "LDS_byte": 33028,
+          "relative_K": 1,
+          "N": 386
+        },
+        {
+          "wave": 2,
+          "LDS_byte": 33156,
+          "relative_K": 1,
+          "N": 450
+        },
+        {
+          "wave": 3,
+          "LDS_byte": 33156,
+          "relative_K": 1,
+          "N": 450
+        }
+      ]
+    }
+  ],
+  "closed_form_CFG_intervals": [
+    {
+      "begin": "0x69bc",
+      "end_exclusive": "0x71e4",
+      "visits": 1
+    },
+    {
+      "begin": "0x71f0",
+      "end_exclusive": "0x7abc",
+      "visits": 36314
+    },
+    {
+      "begin": "0x7abc",
+      "end_exclusive": "0x81f4",
+      "visits": 36315
+    },
+    {
+      "begin": "0x81f4",
+      "end_exclusive": "0x8fcc",
+      "visits": 1
+    },
+    {
+      "begin": "0x8fe4",
+      "end_exclusive": "0x8fec",
+      "visits": 1
+    },
+    {
+      "begin": "0x9004",
+      "end_exclusive": "0x9024",
+      "visits": 1
+    },
+    {
+      "begin": "0x903c",
+      "end_exclusive": "0x905c",
+      "visits": 1
+    },
+    {
+      "begin": "0x9074",
+      "end_exclusive": "0x9098",
+      "visits": 1
+    },
+    {
+      "begin": "0xb964",
+      "end_exclusive": "0xc3cc",
+      "visits": 1
+    },
+    {
+      "begin": "0xc3e8",
+      "end_exclusive": "0xc438",
+      "visits": 1
+    },
+    {
+      "begin": "0xc454",
+      "end_exclusive": "0xc4a8",
+      "visits": 1
+    },
+    {
+      "begin": "0xc570",
+      "end_exclusive": "0xe030",
+      "visits": 1
+    },
+    {
+      "begin": "0xe030",
+      "end_exclusive": "0xf608",
+      "visits": 2
+    }
+  ],
+  "secondary_VCC_note": {
+    "omitted_secondary_writes": [
+      "0xe15c",
+      "0xe170"
+    ],
+    "executed_subsequent_scalar_VCC_reads": [],
+    "result_impact": "None on current scalar control or descriptor arithmetic; frozen v2 wording must not imply these secondary writes were poisoned."
+  },
+  "limits": [
+    "Exact packet architectural path; inherited prologue interpreter is a shared prior dependency.",
+    "Conditional matching is restricted to lane0 low16 v513 in the first-phase layout; tail packing remains unmapped here.",
+    "No physical read timing, hardware corruption location, or stale/remapped operand delivery is measured or excluded.",
+    "No GPU outputs, runtime states, or live experiment files were read."
+  ]
+}

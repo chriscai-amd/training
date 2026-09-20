@@ -1,0 +1,4347 @@
+{
+  "status": "PASS_ALL3_EXECUTED_BANK81_WINDOWS_SURVIVE_TO_REPEATED_V513_USE",
+  "reviewer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_all3_surviving_windows_CPU_v1/certify_all3_windows_v2.py",
+    "bytes": 6284,
+    "sha256": "3b6c71b9dc2fc080faf220ed9886abb0993e03a2355f512a710d53875f514894"
+  },
+  "three_arm_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_design_v1/inline_zero_bank_history_three_arm_CPU_ELF_certificate_v1.json",
+    "bytes": 11812,
+    "sha256": "4f89a79ea4d2606153b20130d4e3ce0be2e6a36157361d9fd4f289028a122966"
+  },
+  "scalar_path_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_consumers_CPU_v1/v513_consumer_scalar_path_and_lane0_K_v2.json",
+    "bytes": 118109,
+    "sha256": "ade90c6d59db6341ab0d655d01eaa8a42367d62f596a3fc542e3776b3ad76c76"
+  },
+  "v1_failure": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_all3_surviving_windows_CPU_v1/v1_attempt_failure_record.json",
+    "bytes": 206,
+    "sha256": "1b0387a1a80bf18c5c1374beecf30fe0a3afccd95b954c9c8b43f940602ffa1d"
+  },
+  "arms": [
+    {
+      "arm": "bank1_control",
+      "ELF": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_design_v1/DW_bank1_control.elf",
+        "bytes": 335000,
+        "sha256": "aca1aa60c441b019361099553232f5c011aad1d053505b9cad69d45348851faf"
+      },
+      "disassembly": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_design_v1/bank1_control_full_text_disassembly_v1.s",
+        "bytes": 4657045,
+        "sha256": "d33e404faec3128cd24c74212810a43dee976e855d568625d6a3f337a2fbe806"
+      },
+      "route_rows": [
+        {
+          "pc": 32944,
+          "instruction": "s_set_vgpr_msb 0x4181",
+          "words": [
+            3213246849
+          ]
+        },
+        {
+          "pc": 32948,
+          "instruction": "ds_load_b64 v[0:1] /*v[512:513]*/, v27 /*v283*/ offset:256",
+          "words": [
+            3654811904,
+            27
+          ]
+        },
+        {
+          "pc": 32956,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 32960,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[128:135], v[28:35] /*v[284:291]*/, v[238:245] /*v[494:501]*/, v[128:135]",
+          "words": [
+            3428974720,
+            503569692
+          ]
+        },
+        {
+          "pc": 32968,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 32972,
+          "instruction": "ds_load_b64 v[2:3] /*v[514:515]*/, v27 /*v283*/ offset:512",
+          "words": [
+            3654812160,
+            33554459
+          ]
+        },
+        {
+          "pc": 32980,
+          "instruction": "ds_load_b64 v[4:5] /*v[516:517]*/, v27 /*v283*/ offset:768",
+          "words": [
+            3654812416,
+            67108891
+          ]
+        },
+        {
+          "pc": 32988,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 32992,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[136:143], v[36:43] /*v[292:299]*/, v[238:245] /*v[494:501]*/, v[136:143]",
+          "words": [
+            3428974728,
+            505666852
+          ]
+        },
+        {
+          "pc": 33000,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33004,
+          "instruction": "ds_load_b64 v[6:7] /*v[518:519]*/, v27 /*v283*/ offset:1024",
+          "words": [
+            3654812672,
+            100663323
+          ]
+        },
+        {
+          "pc": 33012,
+          "instruction": "ds_load_b64 v[8:9] /*v[520:521]*/, v27 /*v283*/ offset:1280",
+          "words": [
+            3654812928,
+            134217755
+          ]
+        },
+        {
+          "pc": 33020,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33024,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[144:151], v[44:51] /*v[300:307]*/, v[238:245] /*v[494:501]*/, v[144:151]",
+          "words": [
+            3428974736,
+            507764012
+          ]
+        },
+        {
+          "pc": 33032,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33036,
+          "instruction": "ds_load_b64 v[10:11] /*v[522:523]*/, v27 /*v283*/ offset:1536",
+          "words": [
+            3654813184,
+            167772187
+          ]
+        },
+        {
+          "pc": 33044,
+          "instruction": "ds_load_b64 v[12:13] /*v[524:525]*/, v27 /*v283*/ offset:1792",
+          "words": [
+            3654813440,
+            201326619
+          ]
+        },
+        {
+          "pc": 33052,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33056,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[152:159], v[52:59] /*v[308:315]*/, v[238:245] /*v[494:501]*/, v[152:159]",
+          "words": [
+            3428974744,
+            509861172
+          ]
+        },
+        {
+          "pc": 33064,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33068,
+          "instruction": "ds_load_b64 v[14:15] /*v[526:527]*/, v27 /*v283*/ offset:4096",
+          "words": [
+            3654815744,
+            234881051
+          ]
+        },
+        {
+          "pc": 33076,
+          "instruction": "ds_load_b64 v[16:17] /*v[528:529]*/, v27 /*v283*/ offset:4352",
+          "words": [
+            3654816000,
+            268435483
+          ]
+        },
+        {
+          "pc": 33084,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33088,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[160:167], v[60:67] /*v[316:323]*/, v[238:245] /*v[494:501]*/, v[160:167]",
+          "words": [
+            3428974752,
+            511958332
+          ]
+        },
+        {
+          "pc": 33096,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33100,
+          "instruction": "ds_load_b64 v[18:19] /*v[530:531]*/, v27 /*v283*/ offset:4608",
+          "words": [
+            3654816256,
+            301989915
+          ]
+        },
+        {
+          "pc": 33108,
+          "instruction": "ds_load_b64 v[20:21] /*v[532:533]*/, v27 /*v283*/ offset:4864",
+          "words": [
+            3654816512,
+            335544347
+          ]
+        },
+        {
+          "pc": 33116,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33120,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[168:175], v[68:75] /*v[324:331]*/, v[238:245] /*v[494:501]*/, v[168:175]",
+          "words": [
+            3428974760,
+            514055492
+          ]
+        },
+        {
+          "pc": 33128,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33132,
+          "instruction": "ds_load_b64 v[22:23] /*v[534:535]*/, v27 /*v283*/ offset:5120",
+          "words": [
+            3654816768,
+            369098779
+          ]
+        },
+        {
+          "pc": 33140,
+          "instruction": "ds_load_b64 v[24:25] /*v[536:537]*/, v27 /*v283*/ offset:5376",
+          "words": [
+            3654817024,
+            402653211
+          ]
+        },
+        {
+          "pc": 33148,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33152,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[176:183], v[76:83] /*v[332:339]*/, v[238:245] /*v[494:501]*/, v[176:183]",
+          "words": [
+            3428974768,
+            516152652
+          ]
+        },
+        {
+          "pc": 33160,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33164,
+          "instruction": "ds_load_b64 v[26:27] /*v[538:539]*/, v27 /*v283*/ offset:5632",
+          "words": [
+            3654817280,
+            436207643
+          ]
+        },
+        {
+          "pc": 33172,
+          "instruction": "ds_load_b64 v[28:29] /*v[540:541]*/, v27 /*v283*/ offset:5888",
+          "words": [
+            3654817536,
+            469762075
+          ]
+        },
+        {
+          "pc": 33180,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33184,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[184:191], v[84:91] /*v[340:347]*/, v[238:245] /*v[494:501]*/, v[184:191]",
+          "words": [
+            3428974776,
+            518249812
+          ]
+        },
+        {
+          "pc": 33192,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[192:199], v[28:35] /*v[284:291]*/, v[246:253] /*v[502:509]*/, v[192:199]",
+          "words": [
+            3428974784,
+            520351004
+          ]
+        },
+        {
+          "pc": 33200,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[200:207], v[36:43] /*v[292:299]*/, v[246:253] /*v[502:509]*/, v[200:207]",
+          "words": [
+            3428974792,
+            522448164
+          ]
+        },
+        {
+          "pc": 33208,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[208:215], v[44:51] /*v[300:307]*/, v[246:253] /*v[502:509]*/, v[208:215]",
+          "words": [
+            3428974800,
+            524545324
+          ]
+        },
+        {
+          "pc": 33216,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[216:223], v[52:59] /*v[308:315]*/, v[246:253] /*v[502:509]*/, v[216:223]",
+          "words": [
+            3428974808,
+            526642484
+          ]
+        },
+        {
+          "pc": 33224,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[224:231], v[60:67] /*v[316:323]*/, v[246:253] /*v[502:509]*/, v[224:231]",
+          "words": [
+            3428974816,
+            528739644
+          ]
+        },
+        {
+          "pc": 33232,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[232:239], v[68:75] /*v[324:331]*/, v[246:253] /*v[502:509]*/, v[232:239]",
+          "words": [
+            3428974824,
+            530836804
+          ]
+        },
+        {
+          "pc": 33240,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[240:247], v[76:83] /*v[332:339]*/, v[246:253] /*v[502:509]*/, v[240:247]",
+          "words": [
+            3428974832,
+            532933964
+          ]
+        },
+        {
+          "pc": 33248,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[248:255], v[84:91] /*v[340:347]*/, v[246:253] /*v[502:509]*/, v[248:255]",
+          "words": [
+            3428974840,
+            535031124
+          ]
+        },
+        {
+          "pc": 33256,
+          "instruction": "s_sub_co_u32 s12, s12, 1",
+          "words": [
+            2156691724
+          ]
+        },
+        {
+          "pc": 33260,
+          "instruction": "s_cmp_eq_i32 s12, 2",
+          "words": [
+            3204481548
+          ]
+        },
+        {
+          "pc": 33264,
+          "instruction": "s_cbranch_scc0 label_LoopBeginL",
+          "words": [
+            3215064063
+          ]
+        },
+        {
+          "pc": 29168,
+          "instruction": "s_wait_dscnt 0x0",
+          "words": [
+            3217424384
+          ]
+        },
+        {
+          "pc": 29172,
+          "instruction": "s_set_vgpr_msb 0x45",
+          "words": [
+            3213230149
+          ]
+        },
+        {
+          "pc": 29176,
+          "instruction": "v_perm_b32 v28 /*v284*/, v96 /*v352*/, v92 /*v348*/, s66",
+          "words": [
+            3594780700,
+            17480032
+          ]
+        },
+        {
+          "pc": 29184,
+          "instruction": "v_perm_b32 v29 /*v285*/, v104 /*v360*/, v100 /*v356*/, s66",
+          "words": [
+            3594780701,
+            17484136
+          ]
+        },
+        {
+          "pc": 29192,
+          "instruction": "v_perm_b32 v30 /*v286*/, v112 /*v368*/, v108 /*v364*/, s66",
+          "words": [
+            3594780702,
+            17488240
+          ]
+        },
+        {
+          "pc": 29200,
+          "instruction": "v_perm_b32 v31 /*v287*/, v120 /*v376*/, v116 /*v372*/, s66",
+          "words": [
+            3594780703,
+            17492344
+          ]
+        },
+        {
+          "pc": 29208,
+          "instruction": "v_perm_b32 v32 /*v288*/, v128 /*v384*/, v124 /*v380*/, s66",
+          "words": [
+            3594780704,
+            17496448
+          ]
+        },
+        {
+          "pc": 29216,
+          "instruction": "v_perm_b32 v33 /*v289*/, v136 /*v392*/, v132 /*v388*/, s66",
+          "words": [
+            3594780705,
+            17500552
+          ]
+        },
+        {
+          "pc": 29224,
+          "instruction": "v_perm_b32 v34 /*v290*/, v144 /*v400*/, v140 /*v396*/, s66",
+          "words": [
+            3594780706,
+            17504656
+          ]
+        },
+        {
+          "pc": 29232,
+          "instruction": "v_perm_b32 v35 /*v291*/, v152 /*v408*/, v148 /*v404*/, s66",
+          "words": [
+            3594780707,
+            17508760
+          ]
+        },
+        {
+          "pc": 29240,
+          "instruction": "s_set_vgpr_msb 0x4546",
+          "words": [
+            3213247814
+          ]
+        },
+        {
+          "pc": 29244,
+          "instruction": "v_perm_b32 v222 /*v478*/, v0 /*v512*/, v254 /*v510*/, s66",
+          "words": [
+            3594780894,
+            17562880
+          ]
+        },
+        {
+          "pc": 29252,
+          "instruction": "s_set_vgpr_msb 0x464a",
+          "words": [
+            3213248074
+          ]
+        },
+        {
+          "pc": 29256,
+          "instruction": "v_perm_b32 v223 /*v479*/, v4 /*v516*/, v2 /*v514*/, s66",
+          "words": [
+            3594780895,
+            17433860
+          ]
+        },
+        {
+          "pc": 29264,
+          "instruction": "v_perm_b32 v224 /*v480*/, v8 /*v520*/, v6 /*v518*/, s66",
+          "words": [
+            3594780896,
+            17435912
+          ]
+        },
+        {
+          "pc": 29272,
+          "instruction": "v_perm_b32 v225 /*v481*/, v12 /*v524*/, v10 /*v522*/, s66",
+          "words": [
+            3594780897,
+            17437964
+          ]
+        },
+        {
+          "pc": 29280,
+          "instruction": "v_perm_b32 v226 /*v482*/, v16 /*v528*/, v14 /*v526*/, s66",
+          "words": [
+            3594780898,
+            17440016
+          ]
+        },
+        {
+          "pc": 29288,
+          "instruction": "v_perm_b32 v227 /*v483*/, v20 /*v532*/, v18 /*v530*/, s66",
+          "words": [
+            3594780899,
+            17442068
+          ]
+        },
+        {
+          "pc": 29296,
+          "instruction": "v_perm_b32 v228 /*v484*/, v24 /*v536*/, v22 /*v534*/, s66",
+          "words": [
+            3594780900,
+            17444120
+          ]
+        },
+        {
+          "pc": 29304,
+          "instruction": "v_perm_b32 v229 /*v485*/, v28 /*v540*/, v26 /*v538*/, s66",
+          "words": [
+            3594780901,
+            17446172
+          ]
+        },
+        {
+          "pc": 29312,
+          "instruction": "s_set_vgpr_msb 0x4a45",
+          "words": [
+            3213249093
+          ]
+        },
+        {
+          "pc": 29316,
+          "instruction": "v_perm_b32 v36 /*v292*/, v96 /*v352*/, v92 /*v348*/, s67",
+          "words": [
+            3594780708,
+            17742176
+          ]
+        },
+        {
+          "pc": 29324,
+          "instruction": "v_perm_b32 v37 /*v293*/, v104 /*v360*/, v100 /*v356*/, s67",
+          "words": [
+            3594780709,
+            17746280
+          ]
+        },
+        {
+          "pc": 29332,
+          "instruction": "s_set_vgpr_msb 0x4505",
+          "words": [
+            3213247749
+          ]
+        },
+        {
+          "pc": 29336,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[0:7], v[28:35] /*v[284:291]*/, v[222:229] /*v[478:485]*/, v[0:7]",
+          "words": [
+            3428974592,
+            470007068
+          ]
+        },
+        {
+          "pc": 29344,
+          "instruction": "s_set_vgpr_msb 0x541",
+          "words": [
+            3213231425
+          ]
+        },
+        {
+          "pc": 29348,
+          "instruction": "ds_load_b128 v[156:159] /*v[412:415]*/, v26 /*v282*/ offset:16384",
+          "words": [
+            3690741760,
+            2617245722
+          ]
+        },
+        {
+          "pc": 29356,
+          "instruction": "ds_load_b128 v[160:163] /*v[416:419]*/, v26 /*v282*/ offset:16896",
+          "words": [
+            3690742272,
+            2684354586
+          ]
+        },
+        {
+          "pc": 29364,
+          "instruction": "s_cmp_eq_u32 s12, s55",
+          "words": [
+            3204855564
+          ]
+        },
+        {
+          "pc": 29368,
+          "instruction": "s_cselect_b32 s68, s60, s64",
+          "words": [
+            2554609724
+          ]
+        },
+        {
+          "pc": 29372,
+          "instruction": "s_cselect_b32 s69, s61, 0",
+          "words": [
+            2554691645
+          ]
+        },
+        {
+          "pc": 29376,
+          "instruction": "s_set_vgpr_msb 0x4145",
+          "words": [
+            3213246789
+          ]
+        },
+        {
+          "pc": 29380,
+          "instruction": "v_perm_b32 v38 /*v294*/, v112 /*v368*/, v108 /*v364*/, s67",
+          "words": [
+            3594780710,
+            17750384
+          ]
+        },
+        {
+          "pc": 29388,
+          "instruction": "v_perm_b32 v39 /*v295*/, v120 /*v376*/, v116 /*v372*/, s67",
+          "words": [
+            3594780711,
+            17754488
+          ]
+        },
+        {
+          "pc": 29396,
+          "instruction": "v_perm_b32 v40 /*v296*/, v128 /*v384*/, v124 /*v380*/, s67",
+          "words": [
+            3594780712,
+            17758592
+          ]
+        },
+        {
+          "pc": 29404,
+          "instruction": "v_perm_b32 v41 /*v297*/, v136 /*v392*/, v132 /*v388*/, s67",
+          "words": [
+            3594780713,
+            17762696
+          ]
+        },
+        {
+          "pc": 29412,
+          "instruction": "v_perm_b32 v42 /*v298*/, v144 /*v400*/, v140 /*v396*/, s67",
+          "words": [
+            3594780714,
+            17766800
+          ]
+        },
+        {
+          "pc": 29420,
+          "instruction": "v_perm_b32 v43 /*v299*/, v152 /*v408*/, v148 /*v404*/, s67",
+          "words": [
+            3594780715,
+            17770904
+          ]
+        },
+        {
+          "pc": 29428,
+          "instruction": "v_perm_b32 v44 /*v300*/, v97 /*v353*/, v93 /*v349*/, s66",
+          "words": [
+            3594780716,
+            17480545
+          ]
+        },
+        {
+          "pc": 29436,
+          "instruction": "v_perm_b32 v45 /*v301*/, v105 /*v361*/, v101 /*v357*/, s66",
+          "words": [
+            3594780717,
+            17484649
+          ]
+        },
+        {
+          "pc": 29444,
+          "instruction": "v_perm_b32 v46 /*v302*/, v113 /*v369*/, v109 /*v365*/, s66",
+          "words": [
+            3594780718,
+            17488753
+          ]
+        },
+        {
+          "pc": 29452,
+          "instruction": "v_perm_b32 v47 /*v303*/, v121 /*v377*/, v117 /*v373*/, s66",
+          "words": [
+            3594780719,
+            17492857
+          ]
+        },
+        {
+          "pc": 29460,
+          "instruction": "v_perm_b32 v48 /*v304*/, v129 /*v385*/, v125 /*v381*/, s66",
+          "words": [
+            3594780720,
+            17496961
+          ]
+        },
+        {
+          "pc": 29468,
+          "instruction": "v_perm_b32 v49 /*v305*/, v137 /*v393*/, v133 /*v389*/, s66",
+          "words": [
+            3594780721,
+            17501065
+          ]
+        },
+        {
+          "pc": 29476,
+          "instruction": "v_perm_b32 v50 /*v306*/, v145 /*v401*/, v141 /*v397*/, s66",
+          "words": [
+            3594780722,
+            17505169
+          ]
+        },
+        {
+          "pc": 29484,
+          "instruction": "v_perm_b32 v51 /*v307*/, v153 /*v409*/, v149 /*v405*/, s66",
+          "words": [
+            3594780723,
+            17509273
+          ]
+        },
+        {
+          "pc": 29492,
+          "instruction": "v_perm_b32 v52 /*v308*/, v97 /*v353*/, v93 /*v349*/, s67",
+          "words": [
+            3594780724,
+            17742689
+          ]
+        },
+        {
+          "pc": 29500,
+          "instruction": "v_perm_b32 v53 /*v309*/, v105 /*v361*/, v101 /*v357*/, s67",
+          "words": [
+            3594780725,
+            17746793
+          ]
+        },
+        {
+          "pc": 29508,
+          "instruction": "s_set_vgpr_msb 0x4505",
+          "words": [
+            3213247749
+          ]
+        },
+        {
+          "pc": 29512,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[8:15], v[36:43] /*v[292:299]*/, v[222:229] /*v[478:485]*/, v[8:15]",
+          "words": [
+            3428974600,
+            472104228
+          ]
+        },
+        {
+          "pc": 29520,
+          "instruction": "s_set_vgpr_msb 0x541",
+          "words": [
+            3213231425
+          ]
+        },
+        {
+          "pc": 29524,
+          "instruction": "ds_load_b128 v[164:167] /*v[420:423]*/, v26 /*v282*/ offset:17408",
+          "words": [
+            3690742784,
+            2751463450
+          ]
+        },
+        {
+          "pc": 29532,
+          "instruction": "s_add_co_u32 s24, s24, s68",
+          "words": [
+            2149073944
+          ]
+        },
+        {
+          "pc": 29536,
+          "instruction": "s_add_co_ci_u32 s25, s25, s69",
+          "words": [
+            2182694169
+          ]
+        },
+        {
+          "pc": 29540,
+          "instruction": "s_sub_co_u32 s56, s56, s68",
+          "words": [
+            2159559736
+          ]
+        },
+        {
+          "pc": 29544,
+          "instruction": "s_set_vgpr_msb 0x4145",
+          "words": [
+            3213246789
+          ]
+        },
+        {
+          "pc": 29548,
+          "instruction": "v_perm_b32 v54 /*v310*/, v113 /*v369*/, v109 /*v365*/, s67",
+          "words": [
+            3594780726,
+            17750897
+          ]
+        },
+        {
+          "pc": 29556,
+          "instruction": "v_perm_b32 v55 /*v311*/, v121 /*v377*/, v117 /*v373*/, s67",
+          "words": [
+            3594780727,
+            17755001
+          ]
+        },
+        {
+          "pc": 29564,
+          "instruction": "v_perm_b32 v56 /*v312*/, v129 /*v385*/, v125 /*v381*/, s67",
+          "words": [
+            3594780728,
+            17759105
+          ]
+        },
+        {
+          "pc": 29572,
+          "instruction": "v_perm_b32 v57 /*v313*/, v137 /*v393*/, v133 /*v389*/, s67",
+          "words": [
+            3594780729,
+            17763209
+          ]
+        },
+        {
+          "pc": 29580,
+          "instruction": "v_perm_b32 v58 /*v314*/, v145 /*v401*/, v141 /*v397*/, s67",
+          "words": [
+            3594780730,
+            17767313
+          ]
+        },
+        {
+          "pc": 29588,
+          "instruction": "v_perm_b32 v59 /*v315*/, v153 /*v409*/, v149 /*v405*/, s67",
+          "words": [
+            3594780731,
+            17771417
+          ]
+        },
+        {
+          "pc": 29596,
+          "instruction": "v_perm_b32 v60 /*v316*/, v98 /*v354*/, v94 /*v350*/, s66",
+          "words": [
+            3594780732,
+            17481058
+          ]
+        },
+        {
+          "pc": 29604,
+          "instruction": "v_perm_b32 v61 /*v317*/, v106 /*v362*/, v102 /*v358*/, s66",
+          "words": [
+            3594780733,
+            17485162
+          ]
+        },
+        {
+          "pc": 29612,
+          "instruction": "v_perm_b32 v62 /*v318*/, v114 /*v370*/, v110 /*v366*/, s66",
+          "words": [
+            3594780734,
+            17489266
+          ]
+        },
+        {
+          "pc": 29620,
+          "instruction": "v_perm_b32 v63 /*v319*/, v122 /*v378*/, v118 /*v374*/, s66",
+          "words": [
+            3594780735,
+            17493370
+          ]
+        },
+        {
+          "pc": 29628,
+          "instruction": "v_perm_b32 v64 /*v320*/, v130 /*v386*/, v126 /*v382*/, s66",
+          "words": [
+            3594780736,
+            17497474
+          ]
+        },
+        {
+          "pc": 29636,
+          "instruction": "v_perm_b32 v65 /*v321*/, v138 /*v394*/, v134 /*v390*/, s66",
+          "words": [
+            3594780737,
+            17501578
+          ]
+        },
+        {
+          "pc": 29644,
+          "instruction": "v_perm_b32 v66 /*v322*/, v146 /*v402*/, v142 /*v398*/, s66",
+          "words": [
+            3594780738,
+            17505682
+          ]
+        },
+        {
+          "pc": 29652,
+          "instruction": "v_perm_b32 v67 /*v323*/, v154 /*v410*/, v150 /*v406*/, s66",
+          "words": [
+            3594780739,
+            17509786
+          ]
+        },
+        {
+          "pc": 29660,
+          "instruction": "v_perm_b32 v68 /*v324*/, v98 /*v354*/, v94 /*v350*/, s67",
+          "words": [
+            3594780740,
+            17743202
+          ]
+        },
+        {
+          "pc": 29668,
+          "instruction": "v_perm_b32 v69 /*v325*/, v106 /*v362*/, v102 /*v358*/, s67",
+          "words": [
+            3594780741,
+            17747306
+          ]
+        },
+        {
+          "pc": 29676,
+          "instruction": "s_set_vgpr_msb 0x4505",
+          "words": [
+            3213247749
+          ]
+        },
+        {
+          "pc": 29680,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[16:23], v[44:51] /*v[300:307]*/, v[222:229] /*v[478:485]*/, v[16:23]",
+          "words": [
+            3428974608,
+            474201388
+          ]
+        },
+        {
+          "pc": 29688,
+          "instruction": "s_set_vgpr_msb 0x541",
+          "words": [
+            3213231425
+          ]
+        },
+        {
+          "pc": 29692,
+          "instruction": "ds_load_b128 v[168:171] /*v[424:427]*/, v26 /*v282*/ offset:17920",
+          "words": [
+            3690743296,
+            2818572314
+          ]
+        },
+        {
+          "pc": 29700,
+          "instruction": "s_sub_co_ci_u32 s57, s57, s69",
+          "words": [
+            2193179961
+          ]
+        },
+        {
+          "pc": 29704,
+          "instruction": "s_cmp_eq_u32 s57, 0",
+          "words": [
+            3204874297
+          ]
+        },
+        {
+          "pc": 29708,
+          "instruction": "s_cselect_b32 s26, s56, -1",
+          "words": [
+            2551890232
+          ]
+        },
+        {
+          "pc": 29712,
+          "instruction": "s_set_vgpr_msb 0x4145",
+          "words": [
+            3213246789
+          ]
+        },
+        {
+          "pc": 29716,
+          "instruction": "v_perm_b32 v70 /*v326*/, v114 /*v370*/, v110 /*v366*/, s67",
+          "words": [
+            3594780742,
+            17751410
+          ]
+        },
+        {
+          "pc": 29724,
+          "instruction": "v_perm_b32 v71 /*v327*/, v122 /*v378*/, v118 /*v374*/, s67",
+          "words": [
+            3594780743,
+            17755514
+          ]
+        },
+        {
+          "pc": 29732,
+          "instruction": "v_perm_b32 v72 /*v328*/, v130 /*v386*/, v126 /*v382*/, s67",
+          "words": [
+            3594780744,
+            17759618
+          ]
+        },
+        {
+          "pc": 29740,
+          "instruction": "v_perm_b32 v73 /*v329*/, v138 /*v394*/, v134 /*v390*/, s67",
+          "words": [
+            3594780745,
+            17763722
+          ]
+        },
+        {
+          "pc": 29748,
+          "instruction": "v_perm_b32 v74 /*v330*/, v146 /*v402*/, v142 /*v398*/, s67",
+          "words": [
+            3594780746,
+            17767826
+          ]
+        },
+        {
+          "pc": 29756,
+          "instruction": "v_perm_b32 v75 /*v331*/, v154 /*v410*/, v150 /*v406*/, s67",
+          "words": [
+            3594780747,
+            17771930
+          ]
+        },
+        {
+          "pc": 29764,
+          "instruction": "v_perm_b32 v76 /*v332*/, v99 /*v355*/, v95 /*v351*/, s66",
+          "words": [
+            3594780748,
+            17481571
+          ]
+        },
+        {
+          "pc": 29772,
+          "instruction": "v_perm_b32 v77 /*v333*/, v107 /*v363*/, v103 /*v359*/, s66",
+          "words": [
+            3594780749,
+            17485675
+          ]
+        },
+        {
+          "pc": 29780,
+          "instruction": "v_perm_b32 v78 /*v334*/, v115 /*v371*/, v111 /*v367*/, s66",
+          "words": [
+            3594780750,
+            17489779
+          ]
+        },
+        {
+          "pc": 29788,
+          "instruction": "v_perm_b32 v79 /*v335*/, v123 /*v379*/, v119 /*v375*/, s66",
+          "words": [
+            3594780751,
+            17493883
+          ]
+        },
+        {
+          "pc": 29796,
+          "instruction": "v_perm_b32 v80 /*v336*/, v131 /*v387*/, v127 /*v383*/, s66",
+          "words": [
+            3594780752,
+            17497987
+          ]
+        },
+        {
+          "pc": 29804,
+          "instruction": "v_perm_b32 v81 /*v337*/, v139 /*v395*/, v135 /*v391*/, s66",
+          "words": [
+            3594780753,
+            17502091
+          ]
+        },
+        {
+          "pc": 29812,
+          "instruction": "v_perm_b32 v82 /*v338*/, v147 /*v403*/, v143 /*v399*/, s66",
+          "words": [
+            3594780754,
+            17506195
+          ]
+        },
+        {
+          "pc": 29820,
+          "instruction": "v_perm_b32 v83 /*v339*/, v155 /*v411*/, v151 /*v407*/, s66",
+          "words": [
+            3594780755,
+            17510299
+          ]
+        },
+        {
+          "pc": 29828,
+          "instruction": "v_perm_b32 v84 /*v340*/, v99 /*v355*/, v95 /*v351*/, s67",
+          "words": [
+            3594780756,
+            17743715
+          ]
+        },
+        {
+          "pc": 29836,
+          "instruction": "v_perm_b32 v85 /*v341*/, v107 /*v363*/, v103 /*v359*/, s67",
+          "words": [
+            3594780757,
+            17747819
+          ]
+        },
+        {
+          "pc": 29844,
+          "instruction": "s_set_vgpr_msb 0x4505",
+          "words": [
+            3213247749
+          ]
+        },
+        {
+          "pc": 29848,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[24:31], v[52:59] /*v[308:315]*/, v[222:229] /*v[478:485]*/, v[24:31]",
+          "words": [
+            3428974616,
+            476298548
+          ]
+        },
+        {
+          "pc": 29856,
+          "instruction": "s_set_vgpr_msb 0x541",
+          "words": [
+            3213231425
+          ]
+        },
+        {
+          "pc": 29860,
+          "instruction": "ds_load_b128 v[172:175] /*v[428:431]*/, v26 /*v282*/ offset:18432",
+          "words": [
+            3690743808,
+            2885681178
+          ]
+        },
+        {
+          "pc": 29868,
+          "instruction": "s_and_b32 s8, s26, 0x7f",
+          "words": [
+            2332622618,
+            127
+          ]
+        },
+        {
+          "pc": 29876,
+          "instruction": "s_lshl_b32 s8, s8, 25",
+          "words": [
+            2215155976
+          ]
+        },
+        {
+          "pc": 29880,
+          "instruction": "s_and_b32 s25, s25, 0x1ffffff",
+          "words": [
+            2333736729,
+            33554431
+          ]
+        },
+        {
+          "pc": 29888,
+          "instruction": "s_set_vgpr_msb 0x4145",
+          "words": [
+            3213246789
+          ]
+        },
+        {
+          "pc": 29892,
+          "instruction": "v_perm_b32 v86 /*v342*/, v115 /*v371*/, v111 /*v367*/, s67",
+          "words": [
+            3594780758,
+            17751923
+          ]
+        },
+        {
+          "pc": 29900,
+          "instruction": "v_perm_b32 v87 /*v343*/, v123 /*v379*/, v119 /*v375*/, s67",
+          "words": [
+            3594780759,
+            17756027
+          ]
+        },
+        {
+          "pc": 29908,
+          "instruction": "v_perm_b32 v88 /*v344*/, v131 /*v387*/, v127 /*v383*/, s67",
+          "words": [
+            3594780760,
+            17760131
+          ]
+        },
+        {
+          "pc": 29916,
+          "instruction": "v_perm_b32 v89 /*v345*/, v139 /*v395*/, v135 /*v391*/, s67",
+          "words": [
+            3594780761,
+            17764235
+          ]
+        },
+        {
+          "pc": 29924,
+          "instruction": "v_perm_b32 v90 /*v346*/, v147 /*v403*/, v143 /*v399*/, s67",
+          "words": [
+            3594780762,
+            17768339
+          ]
+        },
+        {
+          "pc": 29932,
+          "instruction": "v_perm_b32 v91 /*v347*/, v155 /*v411*/, v151 /*v407*/, s67",
+          "words": [
+            3594780763,
+            17772443
+          ]
+        },
+        {
+          "pc": 29940,
+          "instruction": "s_set_vgpr_msb 0x4546",
+          "words": [
+            3213247814
+          ]
+        },
+        {
+          "pc": 29944,
+          "instruction": "v_perm_b32 v230 /*v486*/, v0 /*v512*/, v254 /*v510*/, s67",
+          "words": [
+            3594780902,
+            17825024
+          ]
+        },
+        {
+          "pc": 29952,
+          "instruction": "s_set_vgpr_msb 0x464a",
+          "words": [
+            3213248074
+          ]
+        },
+        {
+          "pc": 29956,
+          "instruction": "v_perm_b32 v231 /*v487*/, v4 /*v516*/, v2 /*v514*/, s67",
+          "words": [
+            3594780903,
+            17696004
+          ]
+        },
+        {
+          "pc": 29964,
+          "instruction": "v_perm_b32 v232 /*v488*/, v8 /*v520*/, v6 /*v518*/, s67",
+          "words": [
+            3594780904,
+            17698056
+          ]
+        },
+        {
+          "pc": 29972,
+          "instruction": "v_perm_b32 v233 /*v489*/, v12 /*v524*/, v10 /*v522*/, s67",
+          "words": [
+            3594780905,
+            17700108
+          ]
+        },
+        {
+          "pc": 29980,
+          "instruction": "v_perm_b32 v234 /*v490*/, v16 /*v528*/, v14 /*v526*/, s67",
+          "words": [
+            3594780906,
+            17702160
+          ]
+        },
+        {
+          "pc": 29988,
+          "instruction": "v_perm_b32 v235 /*v491*/, v20 /*v532*/, v18 /*v530*/, s67",
+          "words": [
+            3594780907,
+            17704212
+          ]
+        },
+        {
+          "pc": 29996,
+          "instruction": "v_perm_b32 v236 /*v492*/, v24 /*v536*/, v22 /*v534*/, s67",
+          "words": [
+            3594780908,
+            17706264
+          ]
+        },
+        {
+          "pc": 30004,
+          "instruction": "v_perm_b32 v237 /*v493*/, v28 /*v540*/, v26 /*v538*/, s67",
+          "words": [
+            3594780909,
+            17708316
+          ]
+        },
+        {
+          "pc": 30012,
+          "instruction": "s_set_vgpr_msb 0x4a46",
+          "words": [
+            3213249094
+          ]
+        },
+        {
+          "pc": 30016,
+          "instruction": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, 0, s66",
+          "words": [
+            3594780910,
+            17367297
+          ]
+        }
+      ],
+      "v257_v513_writes_on_route": [
+        {
+          "pc": "0x80b4",
+          "registers": [
+            513
+          ],
+          "instruction": "ds_load_b64 v[0:1] /*v[512:513]*/, v27 /*v283*/ offset:256"
+        }
+      ],
+      "control_transfers": [
+        "0x81f0"
+      ],
+      "conditional_v257_to_v513_windows": [
+        {
+          "setter_pc": "0x80c8",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x80cc",
+            "0x80d4"
+          ]
+        },
+        {
+          "setter_pc": "0x80e8",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x80ec",
+            "0x80f4"
+          ]
+        },
+        {
+          "setter_pc": "0x8108",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x810c",
+            "0x8114"
+          ]
+        },
+        {
+          "setter_pc": "0x8128",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x812c",
+            "0x8134"
+          ]
+        },
+        {
+          "setter_pc": "0x8148",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x814c",
+            "0x8154"
+          ]
+        },
+        {
+          "setter_pc": "0x8168",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x816c",
+            "0x8174"
+          ]
+        },
+        {
+          "setter_pc": "0x8188",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x818c",
+            "0x8194"
+          ]
+        }
+      ],
+      "scalar_preceded_loop_entry_history": [
+        {
+          "setter_pc": "0x71f4",
+          "prior_active_low": "0x5",
+          "history": "0x0",
+          "reason": "Loop-entry setter follows scalar dscnt wait; its history is not a VALU-return fixup site."
+        }
+      ]
+    },
+    {
+      "arm": "bank2_steady",
+      "ELF": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_design_v1/DW_bank2_steady.elf",
+        "bytes": 335000,
+        "sha256": "61b561c31183a9762a0583ae8c0431950e49bbc3a176a488c0e83d8632aef01d"
+      },
+      "disassembly": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_design_v1/bank2_steady_full_text_disassembly_v1.s",
+        "bytes": 4657044,
+        "sha256": "7938015803a43ecce06339fbc59c6dc634b2b91bc966bf9cc8d13793e462a2aa"
+      },
+      "route_rows": [
+        {
+          "pc": 32944,
+          "instruction": "s_set_vgpr_msb 0x4181",
+          "words": [
+            3213246849
+          ]
+        },
+        {
+          "pc": 32948,
+          "instruction": "ds_load_b64 v[0:1] /*v[512:513]*/, v27 /*v283*/ offset:256",
+          "words": [
+            3654811904,
+            27
+          ]
+        },
+        {
+          "pc": 32956,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 32960,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[128:135], v[28:35] /*v[284:291]*/, v[238:245] /*v[494:501]*/, v[128:135]",
+          "words": [
+            3428974720,
+            503569692
+          ]
+        },
+        {
+          "pc": 32968,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 32972,
+          "instruction": "ds_load_b64 v[2:3] /*v[514:515]*/, v27 /*v283*/ offset:512",
+          "words": [
+            3654812160,
+            33554459
+          ]
+        },
+        {
+          "pc": 32980,
+          "instruction": "ds_load_b64 v[4:5] /*v[516:517]*/, v27 /*v283*/ offset:768",
+          "words": [
+            3654812416,
+            67108891
+          ]
+        },
+        {
+          "pc": 32988,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 32992,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[136:143], v[36:43] /*v[292:299]*/, v[238:245] /*v[494:501]*/, v[136:143]",
+          "words": [
+            3428974728,
+            505666852
+          ]
+        },
+        {
+          "pc": 33000,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33004,
+          "instruction": "ds_load_b64 v[6:7] /*v[518:519]*/, v27 /*v283*/ offset:1024",
+          "words": [
+            3654812672,
+            100663323
+          ]
+        },
+        {
+          "pc": 33012,
+          "instruction": "ds_load_b64 v[8:9] /*v[520:521]*/, v27 /*v283*/ offset:1280",
+          "words": [
+            3654812928,
+            134217755
+          ]
+        },
+        {
+          "pc": 33020,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33024,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[144:151], v[44:51] /*v[300:307]*/, v[238:245] /*v[494:501]*/, v[144:151]",
+          "words": [
+            3428974736,
+            507764012
+          ]
+        },
+        {
+          "pc": 33032,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33036,
+          "instruction": "ds_load_b64 v[10:11] /*v[522:523]*/, v27 /*v283*/ offset:1536",
+          "words": [
+            3654813184,
+            167772187
+          ]
+        },
+        {
+          "pc": 33044,
+          "instruction": "ds_load_b64 v[12:13] /*v[524:525]*/, v27 /*v283*/ offset:1792",
+          "words": [
+            3654813440,
+            201326619
+          ]
+        },
+        {
+          "pc": 33052,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33056,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[152:159], v[52:59] /*v[308:315]*/, v[238:245] /*v[494:501]*/, v[152:159]",
+          "words": [
+            3428974744,
+            509861172
+          ]
+        },
+        {
+          "pc": 33064,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33068,
+          "instruction": "ds_load_b64 v[14:15] /*v[526:527]*/, v27 /*v283*/ offset:4096",
+          "words": [
+            3654815744,
+            234881051
+          ]
+        },
+        {
+          "pc": 33076,
+          "instruction": "ds_load_b64 v[16:17] /*v[528:529]*/, v27 /*v283*/ offset:4352",
+          "words": [
+            3654816000,
+            268435483
+          ]
+        },
+        {
+          "pc": 33084,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33088,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[160:167], v[60:67] /*v[316:323]*/, v[238:245] /*v[494:501]*/, v[160:167]",
+          "words": [
+            3428974752,
+            511958332
+          ]
+        },
+        {
+          "pc": 33096,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33100,
+          "instruction": "ds_load_b64 v[18:19] /*v[530:531]*/, v27 /*v283*/ offset:4608",
+          "words": [
+            3654816256,
+            301989915
+          ]
+        },
+        {
+          "pc": 33108,
+          "instruction": "ds_load_b64 v[20:21] /*v[532:533]*/, v27 /*v283*/ offset:4864",
+          "words": [
+            3654816512,
+            335544347
+          ]
+        },
+        {
+          "pc": 33116,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33120,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[168:175], v[68:75] /*v[324:331]*/, v[238:245] /*v[494:501]*/, v[168:175]",
+          "words": [
+            3428974760,
+            514055492
+          ]
+        },
+        {
+          "pc": 33128,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33132,
+          "instruction": "ds_load_b64 v[22:23] /*v[534:535]*/, v27 /*v283*/ offset:5120",
+          "words": [
+            3654816768,
+            369098779
+          ]
+        },
+        {
+          "pc": 33140,
+          "instruction": "ds_load_b64 v[24:25] /*v[536:537]*/, v27 /*v283*/ offset:5376",
+          "words": [
+            3654817024,
+            402653211
+          ]
+        },
+        {
+          "pc": 33148,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33152,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[176:183], v[76:83] /*v[332:339]*/, v[238:245] /*v[494:501]*/, v[176:183]",
+          "words": [
+            3428974768,
+            516152652
+          ]
+        },
+        {
+          "pc": 33160,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33164,
+          "instruction": "ds_load_b64 v[26:27] /*v[538:539]*/, v27 /*v283*/ offset:5632",
+          "words": [
+            3654817280,
+            436207643
+          ]
+        },
+        {
+          "pc": 33172,
+          "instruction": "ds_load_b64 v[28:29] /*v[540:541]*/, v27 /*v283*/ offset:5888",
+          "words": [
+            3654817536,
+            469762075
+          ]
+        },
+        {
+          "pc": 33180,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33184,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[184:191], v[84:91] /*v[340:347]*/, v[238:245] /*v[494:501]*/, v[184:191]",
+          "words": [
+            3428974776,
+            518249812
+          ]
+        },
+        {
+          "pc": 33192,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[192:199], v[28:35] /*v[284:291]*/, v[246:253] /*v[502:509]*/, v[192:199]",
+          "words": [
+            3428974784,
+            520351004
+          ]
+        },
+        {
+          "pc": 33200,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[200:207], v[36:43] /*v[292:299]*/, v[246:253] /*v[502:509]*/, v[200:207]",
+          "words": [
+            3428974792,
+            522448164
+          ]
+        },
+        {
+          "pc": 33208,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[208:215], v[44:51] /*v[300:307]*/, v[246:253] /*v[502:509]*/, v[208:215]",
+          "words": [
+            3428974800,
+            524545324
+          ]
+        },
+        {
+          "pc": 33216,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[216:223], v[52:59] /*v[308:315]*/, v[246:253] /*v[502:509]*/, v[216:223]",
+          "words": [
+            3428974808,
+            526642484
+          ]
+        },
+        {
+          "pc": 33224,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[224:231], v[60:67] /*v[316:323]*/, v[246:253] /*v[502:509]*/, v[224:231]",
+          "words": [
+            3428974816,
+            528739644
+          ]
+        },
+        {
+          "pc": 33232,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[232:239], v[68:75] /*v[324:331]*/, v[246:253] /*v[502:509]*/, v[232:239]",
+          "words": [
+            3428974824,
+            530836804
+          ]
+        },
+        {
+          "pc": 33240,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[240:247], v[76:83] /*v[332:339]*/, v[246:253] /*v[502:509]*/, v[240:247]",
+          "words": [
+            3428974832,
+            532933964
+          ]
+        },
+        {
+          "pc": 33248,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[248:255], v[84:91] /*v[340:347]*/, v[246:253] /*v[502:509]*/, v[248:255]",
+          "words": [
+            3428974840,
+            535031124
+          ]
+        },
+        {
+          "pc": 33256,
+          "instruction": "s_sub_co_u32 s12, s12, 1",
+          "words": [
+            2156691724
+          ]
+        },
+        {
+          "pc": 33260,
+          "instruction": "s_cmp_eq_i32 s12, 2",
+          "words": [
+            3204481548
+          ]
+        },
+        {
+          "pc": 33264,
+          "instruction": "s_cbranch_scc0 label_LoopBeginL",
+          "words": [
+            3215064063
+          ]
+        },
+        {
+          "pc": 29168,
+          "instruction": "s_wait_dscnt 0x0",
+          "words": [
+            3217424384
+          ]
+        },
+        {
+          "pc": 29172,
+          "instruction": "s_set_vgpr_msb 0x45",
+          "words": [
+            3213230149
+          ]
+        },
+        {
+          "pc": 29176,
+          "instruction": "v_perm_b32 v28 /*v284*/, v96 /*v352*/, v92 /*v348*/, s66",
+          "words": [
+            3594780700,
+            17480032
+          ]
+        },
+        {
+          "pc": 29184,
+          "instruction": "v_perm_b32 v29 /*v285*/, v104 /*v360*/, v100 /*v356*/, s66",
+          "words": [
+            3594780701,
+            17484136
+          ]
+        },
+        {
+          "pc": 29192,
+          "instruction": "v_perm_b32 v30 /*v286*/, v112 /*v368*/, v108 /*v364*/, s66",
+          "words": [
+            3594780702,
+            17488240
+          ]
+        },
+        {
+          "pc": 29200,
+          "instruction": "v_perm_b32 v31 /*v287*/, v120 /*v376*/, v116 /*v372*/, s66",
+          "words": [
+            3594780703,
+            17492344
+          ]
+        },
+        {
+          "pc": 29208,
+          "instruction": "v_perm_b32 v32 /*v288*/, v128 /*v384*/, v124 /*v380*/, s66",
+          "words": [
+            3594780704,
+            17496448
+          ]
+        },
+        {
+          "pc": 29216,
+          "instruction": "v_perm_b32 v33 /*v289*/, v136 /*v392*/, v132 /*v388*/, s66",
+          "words": [
+            3594780705,
+            17500552
+          ]
+        },
+        {
+          "pc": 29224,
+          "instruction": "v_perm_b32 v34 /*v290*/, v144 /*v400*/, v140 /*v396*/, s66",
+          "words": [
+            3594780706,
+            17504656
+          ]
+        },
+        {
+          "pc": 29232,
+          "instruction": "v_perm_b32 v35 /*v291*/, v152 /*v408*/, v148 /*v404*/, s66",
+          "words": [
+            3594780707,
+            17508760
+          ]
+        },
+        {
+          "pc": 29240,
+          "instruction": "s_set_vgpr_msb 0x4546",
+          "words": [
+            3213247814
+          ]
+        },
+        {
+          "pc": 29244,
+          "instruction": "v_perm_b32 v222 /*v478*/, v0 /*v512*/, v254 /*v510*/, s66",
+          "words": [
+            3594780894,
+            17562880
+          ]
+        },
+        {
+          "pc": 29252,
+          "instruction": "s_set_vgpr_msb 0x464a",
+          "words": [
+            3213248074
+          ]
+        },
+        {
+          "pc": 29256,
+          "instruction": "v_perm_b32 v223 /*v479*/, v4 /*v516*/, v2 /*v514*/, s66",
+          "words": [
+            3594780895,
+            17433860
+          ]
+        },
+        {
+          "pc": 29264,
+          "instruction": "v_perm_b32 v224 /*v480*/, v8 /*v520*/, v6 /*v518*/, s66",
+          "words": [
+            3594780896,
+            17435912
+          ]
+        },
+        {
+          "pc": 29272,
+          "instruction": "v_perm_b32 v225 /*v481*/, v12 /*v524*/, v10 /*v522*/, s66",
+          "words": [
+            3594780897,
+            17437964
+          ]
+        },
+        {
+          "pc": 29280,
+          "instruction": "v_perm_b32 v226 /*v482*/, v16 /*v528*/, v14 /*v526*/, s66",
+          "words": [
+            3594780898,
+            17440016
+          ]
+        },
+        {
+          "pc": 29288,
+          "instruction": "v_perm_b32 v227 /*v483*/, v20 /*v532*/, v18 /*v530*/, s66",
+          "words": [
+            3594780899,
+            17442068
+          ]
+        },
+        {
+          "pc": 29296,
+          "instruction": "v_perm_b32 v228 /*v484*/, v24 /*v536*/, v22 /*v534*/, s66",
+          "words": [
+            3594780900,
+            17444120
+          ]
+        },
+        {
+          "pc": 29304,
+          "instruction": "v_perm_b32 v229 /*v485*/, v28 /*v540*/, v26 /*v538*/, s66",
+          "words": [
+            3594780901,
+            17446172
+          ]
+        },
+        {
+          "pc": 29312,
+          "instruction": "s_set_vgpr_msb 0x4a45",
+          "words": [
+            3213249093
+          ]
+        },
+        {
+          "pc": 29316,
+          "instruction": "v_perm_b32 v36 /*v292*/, v96 /*v352*/, v92 /*v348*/, s67",
+          "words": [
+            3594780708,
+            17742176
+          ]
+        },
+        {
+          "pc": 29324,
+          "instruction": "v_perm_b32 v37 /*v293*/, v104 /*v360*/, v100 /*v356*/, s67",
+          "words": [
+            3594780709,
+            17746280
+          ]
+        },
+        {
+          "pc": 29332,
+          "instruction": "s_set_vgpr_msb 0x4505",
+          "words": [
+            3213247749
+          ]
+        },
+        {
+          "pc": 29336,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[0:7], v[28:35] /*v[284:291]*/, v[222:229] /*v[478:485]*/, v[0:7]",
+          "words": [
+            3428974592,
+            470007068
+          ]
+        },
+        {
+          "pc": 29344,
+          "instruction": "s_set_vgpr_msb 0x541",
+          "words": [
+            3213231425
+          ]
+        },
+        {
+          "pc": 29348,
+          "instruction": "ds_load_b128 v[156:159] /*v[412:415]*/, v26 /*v282*/ offset:16384",
+          "words": [
+            3690741760,
+            2617245722
+          ]
+        },
+        {
+          "pc": 29356,
+          "instruction": "ds_load_b128 v[160:163] /*v[416:419]*/, v26 /*v282*/ offset:16896",
+          "words": [
+            3690742272,
+            2684354586
+          ]
+        },
+        {
+          "pc": 29364,
+          "instruction": "s_cmp_eq_u32 s12, s55",
+          "words": [
+            3204855564
+          ]
+        },
+        {
+          "pc": 29368,
+          "instruction": "s_cselect_b32 s68, s60, s64",
+          "words": [
+            2554609724
+          ]
+        },
+        {
+          "pc": 29372,
+          "instruction": "s_cselect_b32 s69, s61, 0",
+          "words": [
+            2554691645
+          ]
+        },
+        {
+          "pc": 29376,
+          "instruction": "s_set_vgpr_msb 0x4145",
+          "words": [
+            3213246789
+          ]
+        },
+        {
+          "pc": 29380,
+          "instruction": "v_perm_b32 v38 /*v294*/, v112 /*v368*/, v108 /*v364*/, s67",
+          "words": [
+            3594780710,
+            17750384
+          ]
+        },
+        {
+          "pc": 29388,
+          "instruction": "v_perm_b32 v39 /*v295*/, v120 /*v376*/, v116 /*v372*/, s67",
+          "words": [
+            3594780711,
+            17754488
+          ]
+        },
+        {
+          "pc": 29396,
+          "instruction": "v_perm_b32 v40 /*v296*/, v128 /*v384*/, v124 /*v380*/, s67",
+          "words": [
+            3594780712,
+            17758592
+          ]
+        },
+        {
+          "pc": 29404,
+          "instruction": "v_perm_b32 v41 /*v297*/, v136 /*v392*/, v132 /*v388*/, s67",
+          "words": [
+            3594780713,
+            17762696
+          ]
+        },
+        {
+          "pc": 29412,
+          "instruction": "v_perm_b32 v42 /*v298*/, v144 /*v400*/, v140 /*v396*/, s67",
+          "words": [
+            3594780714,
+            17766800
+          ]
+        },
+        {
+          "pc": 29420,
+          "instruction": "v_perm_b32 v43 /*v299*/, v152 /*v408*/, v148 /*v404*/, s67",
+          "words": [
+            3594780715,
+            17770904
+          ]
+        },
+        {
+          "pc": 29428,
+          "instruction": "v_perm_b32 v44 /*v300*/, v97 /*v353*/, v93 /*v349*/, s66",
+          "words": [
+            3594780716,
+            17480545
+          ]
+        },
+        {
+          "pc": 29436,
+          "instruction": "v_perm_b32 v45 /*v301*/, v105 /*v361*/, v101 /*v357*/, s66",
+          "words": [
+            3594780717,
+            17484649
+          ]
+        },
+        {
+          "pc": 29444,
+          "instruction": "v_perm_b32 v46 /*v302*/, v113 /*v369*/, v109 /*v365*/, s66",
+          "words": [
+            3594780718,
+            17488753
+          ]
+        },
+        {
+          "pc": 29452,
+          "instruction": "v_perm_b32 v47 /*v303*/, v121 /*v377*/, v117 /*v373*/, s66",
+          "words": [
+            3594780719,
+            17492857
+          ]
+        },
+        {
+          "pc": 29460,
+          "instruction": "v_perm_b32 v48 /*v304*/, v129 /*v385*/, v125 /*v381*/, s66",
+          "words": [
+            3594780720,
+            17496961
+          ]
+        },
+        {
+          "pc": 29468,
+          "instruction": "v_perm_b32 v49 /*v305*/, v137 /*v393*/, v133 /*v389*/, s66",
+          "words": [
+            3594780721,
+            17501065
+          ]
+        },
+        {
+          "pc": 29476,
+          "instruction": "v_perm_b32 v50 /*v306*/, v145 /*v401*/, v141 /*v397*/, s66",
+          "words": [
+            3594780722,
+            17505169
+          ]
+        },
+        {
+          "pc": 29484,
+          "instruction": "v_perm_b32 v51 /*v307*/, v153 /*v409*/, v149 /*v405*/, s66",
+          "words": [
+            3594780723,
+            17509273
+          ]
+        },
+        {
+          "pc": 29492,
+          "instruction": "v_perm_b32 v52 /*v308*/, v97 /*v353*/, v93 /*v349*/, s67",
+          "words": [
+            3594780724,
+            17742689
+          ]
+        },
+        {
+          "pc": 29500,
+          "instruction": "v_perm_b32 v53 /*v309*/, v105 /*v361*/, v101 /*v357*/, s67",
+          "words": [
+            3594780725,
+            17746793
+          ]
+        },
+        {
+          "pc": 29508,
+          "instruction": "s_set_vgpr_msb 0x4505",
+          "words": [
+            3213247749
+          ]
+        },
+        {
+          "pc": 29512,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[8:15], v[36:43] /*v[292:299]*/, v[222:229] /*v[478:485]*/, v[8:15]",
+          "words": [
+            3428974600,
+            472104228
+          ]
+        },
+        {
+          "pc": 29520,
+          "instruction": "s_set_vgpr_msb 0x541",
+          "words": [
+            3213231425
+          ]
+        },
+        {
+          "pc": 29524,
+          "instruction": "ds_load_b128 v[164:167] /*v[420:423]*/, v26 /*v282*/ offset:17408",
+          "words": [
+            3690742784,
+            2751463450
+          ]
+        },
+        {
+          "pc": 29532,
+          "instruction": "s_add_co_u32 s24, s24, s68",
+          "words": [
+            2149073944
+          ]
+        },
+        {
+          "pc": 29536,
+          "instruction": "s_add_co_ci_u32 s25, s25, s69",
+          "words": [
+            2182694169
+          ]
+        },
+        {
+          "pc": 29540,
+          "instruction": "s_sub_co_u32 s56, s56, s68",
+          "words": [
+            2159559736
+          ]
+        },
+        {
+          "pc": 29544,
+          "instruction": "s_set_vgpr_msb 0x4145",
+          "words": [
+            3213246789
+          ]
+        },
+        {
+          "pc": 29548,
+          "instruction": "v_perm_b32 v54 /*v310*/, v113 /*v369*/, v109 /*v365*/, s67",
+          "words": [
+            3594780726,
+            17750897
+          ]
+        },
+        {
+          "pc": 29556,
+          "instruction": "v_perm_b32 v55 /*v311*/, v121 /*v377*/, v117 /*v373*/, s67",
+          "words": [
+            3594780727,
+            17755001
+          ]
+        },
+        {
+          "pc": 29564,
+          "instruction": "v_perm_b32 v56 /*v312*/, v129 /*v385*/, v125 /*v381*/, s67",
+          "words": [
+            3594780728,
+            17759105
+          ]
+        },
+        {
+          "pc": 29572,
+          "instruction": "v_perm_b32 v57 /*v313*/, v137 /*v393*/, v133 /*v389*/, s67",
+          "words": [
+            3594780729,
+            17763209
+          ]
+        },
+        {
+          "pc": 29580,
+          "instruction": "v_perm_b32 v58 /*v314*/, v145 /*v401*/, v141 /*v397*/, s67",
+          "words": [
+            3594780730,
+            17767313
+          ]
+        },
+        {
+          "pc": 29588,
+          "instruction": "v_perm_b32 v59 /*v315*/, v153 /*v409*/, v149 /*v405*/, s67",
+          "words": [
+            3594780731,
+            17771417
+          ]
+        },
+        {
+          "pc": 29596,
+          "instruction": "v_perm_b32 v60 /*v316*/, v98 /*v354*/, v94 /*v350*/, s66",
+          "words": [
+            3594780732,
+            17481058
+          ]
+        },
+        {
+          "pc": 29604,
+          "instruction": "v_perm_b32 v61 /*v317*/, v106 /*v362*/, v102 /*v358*/, s66",
+          "words": [
+            3594780733,
+            17485162
+          ]
+        },
+        {
+          "pc": 29612,
+          "instruction": "v_perm_b32 v62 /*v318*/, v114 /*v370*/, v110 /*v366*/, s66",
+          "words": [
+            3594780734,
+            17489266
+          ]
+        },
+        {
+          "pc": 29620,
+          "instruction": "v_perm_b32 v63 /*v319*/, v122 /*v378*/, v118 /*v374*/, s66",
+          "words": [
+            3594780735,
+            17493370
+          ]
+        },
+        {
+          "pc": 29628,
+          "instruction": "v_perm_b32 v64 /*v320*/, v130 /*v386*/, v126 /*v382*/, s66",
+          "words": [
+            3594780736,
+            17497474
+          ]
+        },
+        {
+          "pc": 29636,
+          "instruction": "v_perm_b32 v65 /*v321*/, v138 /*v394*/, v134 /*v390*/, s66",
+          "words": [
+            3594780737,
+            17501578
+          ]
+        },
+        {
+          "pc": 29644,
+          "instruction": "v_perm_b32 v66 /*v322*/, v146 /*v402*/, v142 /*v398*/, s66",
+          "words": [
+            3594780738,
+            17505682
+          ]
+        },
+        {
+          "pc": 29652,
+          "instruction": "v_perm_b32 v67 /*v323*/, v154 /*v410*/, v150 /*v406*/, s66",
+          "words": [
+            3594780739,
+            17509786
+          ]
+        },
+        {
+          "pc": 29660,
+          "instruction": "v_perm_b32 v68 /*v324*/, v98 /*v354*/, v94 /*v350*/, s67",
+          "words": [
+            3594780740,
+            17743202
+          ]
+        },
+        {
+          "pc": 29668,
+          "instruction": "v_perm_b32 v69 /*v325*/, v106 /*v362*/, v102 /*v358*/, s67",
+          "words": [
+            3594780741,
+            17747306
+          ]
+        },
+        {
+          "pc": 29676,
+          "instruction": "s_set_vgpr_msb 0x4505",
+          "words": [
+            3213247749
+          ]
+        },
+        {
+          "pc": 29680,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[16:23], v[44:51] /*v[300:307]*/, v[222:229] /*v[478:485]*/, v[16:23]",
+          "words": [
+            3428974608,
+            474201388
+          ]
+        },
+        {
+          "pc": 29688,
+          "instruction": "s_set_vgpr_msb 0x541",
+          "words": [
+            3213231425
+          ]
+        },
+        {
+          "pc": 29692,
+          "instruction": "ds_load_b128 v[168:171] /*v[424:427]*/, v26 /*v282*/ offset:17920",
+          "words": [
+            3690743296,
+            2818572314
+          ]
+        },
+        {
+          "pc": 29700,
+          "instruction": "s_sub_co_ci_u32 s57, s57, s69",
+          "words": [
+            2193179961
+          ]
+        },
+        {
+          "pc": 29704,
+          "instruction": "s_cmp_eq_u32 s57, 0",
+          "words": [
+            3204874297
+          ]
+        },
+        {
+          "pc": 29708,
+          "instruction": "s_cselect_b32 s26, s56, -1",
+          "words": [
+            2551890232
+          ]
+        },
+        {
+          "pc": 29712,
+          "instruction": "s_set_vgpr_msb 0x4145",
+          "words": [
+            3213246789
+          ]
+        },
+        {
+          "pc": 29716,
+          "instruction": "v_perm_b32 v70 /*v326*/, v114 /*v370*/, v110 /*v366*/, s67",
+          "words": [
+            3594780742,
+            17751410
+          ]
+        },
+        {
+          "pc": 29724,
+          "instruction": "v_perm_b32 v71 /*v327*/, v122 /*v378*/, v118 /*v374*/, s67",
+          "words": [
+            3594780743,
+            17755514
+          ]
+        },
+        {
+          "pc": 29732,
+          "instruction": "v_perm_b32 v72 /*v328*/, v130 /*v386*/, v126 /*v382*/, s67",
+          "words": [
+            3594780744,
+            17759618
+          ]
+        },
+        {
+          "pc": 29740,
+          "instruction": "v_perm_b32 v73 /*v329*/, v138 /*v394*/, v134 /*v390*/, s67",
+          "words": [
+            3594780745,
+            17763722
+          ]
+        },
+        {
+          "pc": 29748,
+          "instruction": "v_perm_b32 v74 /*v330*/, v146 /*v402*/, v142 /*v398*/, s67",
+          "words": [
+            3594780746,
+            17767826
+          ]
+        },
+        {
+          "pc": 29756,
+          "instruction": "v_perm_b32 v75 /*v331*/, v154 /*v410*/, v150 /*v406*/, s67",
+          "words": [
+            3594780747,
+            17771930
+          ]
+        },
+        {
+          "pc": 29764,
+          "instruction": "v_perm_b32 v76 /*v332*/, v99 /*v355*/, v95 /*v351*/, s66",
+          "words": [
+            3594780748,
+            17481571
+          ]
+        },
+        {
+          "pc": 29772,
+          "instruction": "v_perm_b32 v77 /*v333*/, v107 /*v363*/, v103 /*v359*/, s66",
+          "words": [
+            3594780749,
+            17485675
+          ]
+        },
+        {
+          "pc": 29780,
+          "instruction": "v_perm_b32 v78 /*v334*/, v115 /*v371*/, v111 /*v367*/, s66",
+          "words": [
+            3594780750,
+            17489779
+          ]
+        },
+        {
+          "pc": 29788,
+          "instruction": "v_perm_b32 v79 /*v335*/, v123 /*v379*/, v119 /*v375*/, s66",
+          "words": [
+            3594780751,
+            17493883
+          ]
+        },
+        {
+          "pc": 29796,
+          "instruction": "v_perm_b32 v80 /*v336*/, v131 /*v387*/, v127 /*v383*/, s66",
+          "words": [
+            3594780752,
+            17497987
+          ]
+        },
+        {
+          "pc": 29804,
+          "instruction": "v_perm_b32 v81 /*v337*/, v139 /*v395*/, v135 /*v391*/, s66",
+          "words": [
+            3594780753,
+            17502091
+          ]
+        },
+        {
+          "pc": 29812,
+          "instruction": "v_perm_b32 v82 /*v338*/, v147 /*v403*/, v143 /*v399*/, s66",
+          "words": [
+            3594780754,
+            17506195
+          ]
+        },
+        {
+          "pc": 29820,
+          "instruction": "v_perm_b32 v83 /*v339*/, v155 /*v411*/, v151 /*v407*/, s66",
+          "words": [
+            3594780755,
+            17510299
+          ]
+        },
+        {
+          "pc": 29828,
+          "instruction": "v_perm_b32 v84 /*v340*/, v99 /*v355*/, v95 /*v351*/, s67",
+          "words": [
+            3594780756,
+            17743715
+          ]
+        },
+        {
+          "pc": 29836,
+          "instruction": "v_perm_b32 v85 /*v341*/, v107 /*v363*/, v103 /*v359*/, s67",
+          "words": [
+            3594780757,
+            17747819
+          ]
+        },
+        {
+          "pc": 29844,
+          "instruction": "s_set_vgpr_msb 0x4505",
+          "words": [
+            3213247749
+          ]
+        },
+        {
+          "pc": 29848,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[24:31], v[52:59] /*v[308:315]*/, v[222:229] /*v[478:485]*/, v[24:31]",
+          "words": [
+            3428974616,
+            476298548
+          ]
+        },
+        {
+          "pc": 29856,
+          "instruction": "s_set_vgpr_msb 0x541",
+          "words": [
+            3213231425
+          ]
+        },
+        {
+          "pc": 29860,
+          "instruction": "ds_load_b128 v[172:175] /*v[428:431]*/, v26 /*v282*/ offset:18432",
+          "words": [
+            3690743808,
+            2885681178
+          ]
+        },
+        {
+          "pc": 29868,
+          "instruction": "s_and_b32 s8, s26, 0x7f",
+          "words": [
+            2332622618,
+            127
+          ]
+        },
+        {
+          "pc": 29876,
+          "instruction": "s_lshl_b32 s8, s8, 25",
+          "words": [
+            2215155976
+          ]
+        },
+        {
+          "pc": 29880,
+          "instruction": "s_and_b32 s25, s25, 0x1ffffff",
+          "words": [
+            2333736729,
+            33554431
+          ]
+        },
+        {
+          "pc": 29888,
+          "instruction": "s_set_vgpr_msb 0x4145",
+          "words": [
+            3213246789
+          ]
+        },
+        {
+          "pc": 29892,
+          "instruction": "v_perm_b32 v86 /*v342*/, v115 /*v371*/, v111 /*v367*/, s67",
+          "words": [
+            3594780758,
+            17751923
+          ]
+        },
+        {
+          "pc": 29900,
+          "instruction": "v_perm_b32 v87 /*v343*/, v123 /*v379*/, v119 /*v375*/, s67",
+          "words": [
+            3594780759,
+            17756027
+          ]
+        },
+        {
+          "pc": 29908,
+          "instruction": "v_perm_b32 v88 /*v344*/, v131 /*v387*/, v127 /*v383*/, s67",
+          "words": [
+            3594780760,
+            17760131
+          ]
+        },
+        {
+          "pc": 29916,
+          "instruction": "v_perm_b32 v89 /*v345*/, v139 /*v395*/, v135 /*v391*/, s67",
+          "words": [
+            3594780761,
+            17764235
+          ]
+        },
+        {
+          "pc": 29924,
+          "instruction": "v_perm_b32 v90 /*v346*/, v147 /*v403*/, v143 /*v399*/, s67",
+          "words": [
+            3594780762,
+            17768339
+          ]
+        },
+        {
+          "pc": 29932,
+          "instruction": "v_perm_b32 v91 /*v347*/, v155 /*v411*/, v151 /*v407*/, s67",
+          "words": [
+            3594780763,
+            17772443
+          ]
+        },
+        {
+          "pc": 29940,
+          "instruction": "s_set_vgpr_msb 0x4546",
+          "words": [
+            3213247814
+          ]
+        },
+        {
+          "pc": 29944,
+          "instruction": "v_perm_b32 v230 /*v486*/, v0 /*v512*/, v254 /*v510*/, s67",
+          "words": [
+            3594780902,
+            17825024
+          ]
+        },
+        {
+          "pc": 29952,
+          "instruction": "s_set_vgpr_msb 0x464a",
+          "words": [
+            3213248074
+          ]
+        },
+        {
+          "pc": 29956,
+          "instruction": "v_perm_b32 v231 /*v487*/, v4 /*v516*/, v2 /*v514*/, s67",
+          "words": [
+            3594780903,
+            17696004
+          ]
+        },
+        {
+          "pc": 29964,
+          "instruction": "v_perm_b32 v232 /*v488*/, v8 /*v520*/, v6 /*v518*/, s67",
+          "words": [
+            3594780904,
+            17698056
+          ]
+        },
+        {
+          "pc": 29972,
+          "instruction": "v_perm_b32 v233 /*v489*/, v12 /*v524*/, v10 /*v522*/, s67",
+          "words": [
+            3594780905,
+            17700108
+          ]
+        },
+        {
+          "pc": 29980,
+          "instruction": "v_perm_b32 v234 /*v490*/, v16 /*v528*/, v14 /*v526*/, s67",
+          "words": [
+            3594780906,
+            17702160
+          ]
+        },
+        {
+          "pc": 29988,
+          "instruction": "v_perm_b32 v235 /*v491*/, v20 /*v532*/, v18 /*v530*/, s67",
+          "words": [
+            3594780907,
+            17704212
+          ]
+        },
+        {
+          "pc": 29996,
+          "instruction": "v_perm_b32 v236 /*v492*/, v24 /*v536*/, v22 /*v534*/, s67",
+          "words": [
+            3594780908,
+            17706264
+          ]
+        },
+        {
+          "pc": 30004,
+          "instruction": "v_perm_b32 v237 /*v493*/, v28 /*v540*/, v26 /*v538*/, s67",
+          "words": [
+            3594780909,
+            17708316
+          ]
+        },
+        {
+          "pc": 30012,
+          "instruction": "s_set_vgpr_msb 0x4a4a",
+          "words": [
+            3213249098
+          ]
+        },
+        {
+          "pc": 30016,
+          "instruction": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, 0, s66",
+          "words": [
+            3594780910,
+            17367297
+          ]
+        }
+      ],
+      "v257_v513_writes_on_route": [
+        {
+          "pc": "0x80b4",
+          "registers": [
+            513
+          ],
+          "instruction": "ds_load_b64 v[0:1] /*v[512:513]*/, v27 /*v283*/ offset:256"
+        }
+      ],
+      "control_transfers": [
+        "0x81f0"
+      ],
+      "conditional_v257_to_v513_windows": [
+        {
+          "setter_pc": "0x80c8",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x80cc",
+            "0x80d4"
+          ]
+        },
+        {
+          "setter_pc": "0x80e8",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x80ec",
+            "0x80f4"
+          ]
+        },
+        {
+          "setter_pc": "0x8108",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x810c",
+            "0x8114"
+          ]
+        },
+        {
+          "setter_pc": "0x8128",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x812c",
+            "0x8134"
+          ]
+        },
+        {
+          "setter_pc": "0x8148",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x814c",
+            "0x8154"
+          ]
+        },
+        {
+          "setter_pc": "0x8168",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x816c",
+            "0x8174"
+          ]
+        },
+        {
+          "setter_pc": "0x8188",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x818c",
+            "0x8194"
+          ]
+        }
+      ],
+      "scalar_preceded_loop_entry_history": [
+        {
+          "setter_pc": "0x71f4",
+          "prior_active_low": "0x5",
+          "history": "0x0",
+          "reason": "Loop-entry setter follows scalar dscnt wait; its history is not a VALU-return fixup site."
+        }
+      ]
+    },
+    {
+      "arm": "bank0_transition",
+      "ELF": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_design_v1/DW_bank0_transition.elf",
+        "bytes": 335000,
+        "sha256": "8c41e905f09345347eda5c12289f3d2f2816936ca351eca84002e88b65d6978d"
+      },
+      "disassembly": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_design_v1/bank0_transition_full_text_disassembly_v1.s",
+        "bytes": 4657048,
+        "sha256": "16b41249a2e1bd62a22ccf433f94fb137dd32550ff2496a530c52135259e6afe"
+      },
+      "route_rows": [
+        {
+          "pc": 32944,
+          "instruction": "s_set_vgpr_msb 0x4181",
+          "words": [
+            3213246849
+          ]
+        },
+        {
+          "pc": 32948,
+          "instruction": "ds_load_b64 v[0:1] /*v[512:513]*/, v27 /*v283*/ offset:256",
+          "words": [
+            3654811904,
+            27
+          ]
+        },
+        {
+          "pc": 32956,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 32960,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[128:135], v[28:35] /*v[284:291]*/, v[238:245] /*v[494:501]*/, v[128:135]",
+          "words": [
+            3428974720,
+            503569692
+          ]
+        },
+        {
+          "pc": 32968,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 32972,
+          "instruction": "ds_load_b64 v[2:3] /*v[514:515]*/, v27 /*v283*/ offset:512",
+          "words": [
+            3654812160,
+            33554459
+          ]
+        },
+        {
+          "pc": 32980,
+          "instruction": "ds_load_b64 v[4:5] /*v[516:517]*/, v27 /*v283*/ offset:768",
+          "words": [
+            3654812416,
+            67108891
+          ]
+        },
+        {
+          "pc": 32988,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 32992,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[136:143], v[36:43] /*v[292:299]*/, v[238:245] /*v[494:501]*/, v[136:143]",
+          "words": [
+            3428974728,
+            505666852
+          ]
+        },
+        {
+          "pc": 33000,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33004,
+          "instruction": "ds_load_b64 v[6:7] /*v[518:519]*/, v27 /*v283*/ offset:1024",
+          "words": [
+            3654812672,
+            100663323
+          ]
+        },
+        {
+          "pc": 33012,
+          "instruction": "ds_load_b64 v[8:9] /*v[520:521]*/, v27 /*v283*/ offset:1280",
+          "words": [
+            3654812928,
+            134217755
+          ]
+        },
+        {
+          "pc": 33020,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33024,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[144:151], v[44:51] /*v[300:307]*/, v[238:245] /*v[494:501]*/, v[144:151]",
+          "words": [
+            3428974736,
+            507764012
+          ]
+        },
+        {
+          "pc": 33032,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33036,
+          "instruction": "ds_load_b64 v[10:11] /*v[522:523]*/, v27 /*v283*/ offset:1536",
+          "words": [
+            3654813184,
+            167772187
+          ]
+        },
+        {
+          "pc": 33044,
+          "instruction": "ds_load_b64 v[12:13] /*v[524:525]*/, v27 /*v283*/ offset:1792",
+          "words": [
+            3654813440,
+            201326619
+          ]
+        },
+        {
+          "pc": 33052,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33056,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[152:159], v[52:59] /*v[308:315]*/, v[238:245] /*v[494:501]*/, v[152:159]",
+          "words": [
+            3428974744,
+            509861172
+          ]
+        },
+        {
+          "pc": 33064,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33068,
+          "instruction": "ds_load_b64 v[14:15] /*v[526:527]*/, v27 /*v283*/ offset:4096",
+          "words": [
+            3654815744,
+            234881051
+          ]
+        },
+        {
+          "pc": 33076,
+          "instruction": "ds_load_b64 v[16:17] /*v[528:529]*/, v27 /*v283*/ offset:4352",
+          "words": [
+            3654816000,
+            268435483
+          ]
+        },
+        {
+          "pc": 33084,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33088,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[160:167], v[60:67] /*v[316:323]*/, v[238:245] /*v[494:501]*/, v[160:167]",
+          "words": [
+            3428974752,
+            511958332
+          ]
+        },
+        {
+          "pc": 33096,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33100,
+          "instruction": "ds_load_b64 v[18:19] /*v[530:531]*/, v27 /*v283*/ offset:4608",
+          "words": [
+            3654816256,
+            301989915
+          ]
+        },
+        {
+          "pc": 33108,
+          "instruction": "ds_load_b64 v[20:21] /*v[532:533]*/, v27 /*v283*/ offset:4864",
+          "words": [
+            3654816512,
+            335544347
+          ]
+        },
+        {
+          "pc": 33116,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33120,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[168:175], v[68:75] /*v[324:331]*/, v[238:245] /*v[494:501]*/, v[168:175]",
+          "words": [
+            3428974760,
+            514055492
+          ]
+        },
+        {
+          "pc": 33128,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33132,
+          "instruction": "ds_load_b64 v[22:23] /*v[534:535]*/, v27 /*v283*/ offset:5120",
+          "words": [
+            3654816768,
+            369098779
+          ]
+        },
+        {
+          "pc": 33140,
+          "instruction": "ds_load_b64 v[24:25] /*v[536:537]*/, v27 /*v283*/ offset:5376",
+          "words": [
+            3654817024,
+            402653211
+          ]
+        },
+        {
+          "pc": 33148,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33152,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[176:183], v[76:83] /*v[332:339]*/, v[238:245] /*v[494:501]*/, v[176:183]",
+          "words": [
+            3428974768,
+            516152652
+          ]
+        },
+        {
+          "pc": 33160,
+          "instruction": "s_set_vgpr_msb 0x581",
+          "words": [
+            3213231489
+          ]
+        },
+        {
+          "pc": 33164,
+          "instruction": "ds_load_b64 v[26:27] /*v[538:539]*/, v27 /*v283*/ offset:5632",
+          "words": [
+            3654817280,
+            436207643
+          ]
+        },
+        {
+          "pc": 33172,
+          "instruction": "ds_load_b64 v[28:29] /*v[540:541]*/, v27 /*v283*/ offset:5888",
+          "words": [
+            3654817536,
+            469762075
+          ]
+        },
+        {
+          "pc": 33180,
+          "instruction": "s_set_vgpr_msb 0x8105",
+          "words": [
+            3213263109
+          ]
+        },
+        {
+          "pc": 33184,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[184:191], v[84:91] /*v[340:347]*/, v[238:245] /*v[494:501]*/, v[184:191]",
+          "words": [
+            3428974776,
+            518249812
+          ]
+        },
+        {
+          "pc": 33192,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[192:199], v[28:35] /*v[284:291]*/, v[246:253] /*v[502:509]*/, v[192:199]",
+          "words": [
+            3428974784,
+            520351004
+          ]
+        },
+        {
+          "pc": 33200,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[200:207], v[36:43] /*v[292:299]*/, v[246:253] /*v[502:509]*/, v[200:207]",
+          "words": [
+            3428974792,
+            522448164
+          ]
+        },
+        {
+          "pc": 33208,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[208:215], v[44:51] /*v[300:307]*/, v[246:253] /*v[502:509]*/, v[208:215]",
+          "words": [
+            3428974800,
+            524545324
+          ]
+        },
+        {
+          "pc": 33216,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[216:223], v[52:59] /*v[308:315]*/, v[246:253] /*v[502:509]*/, v[216:223]",
+          "words": [
+            3428974808,
+            526642484
+          ]
+        },
+        {
+          "pc": 33224,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[224:231], v[60:67] /*v[316:323]*/, v[246:253] /*v[502:509]*/, v[224:231]",
+          "words": [
+            3428974816,
+            528739644
+          ]
+        },
+        {
+          "pc": 33232,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[232:239], v[68:75] /*v[324:331]*/, v[246:253] /*v[502:509]*/, v[232:239]",
+          "words": [
+            3428974824,
+            530836804
+          ]
+        },
+        {
+          "pc": 33240,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[240:247], v[76:83] /*v[332:339]*/, v[246:253] /*v[502:509]*/, v[240:247]",
+          "words": [
+            3428974832,
+            532933964
+          ]
+        },
+        {
+          "pc": 33248,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[248:255], v[84:91] /*v[340:347]*/, v[246:253] /*v[502:509]*/, v[248:255]",
+          "words": [
+            3428974840,
+            535031124
+          ]
+        },
+        {
+          "pc": 33256,
+          "instruction": "s_sub_co_u32 s12, s12, 1",
+          "words": [
+            2156691724
+          ]
+        },
+        {
+          "pc": 33260,
+          "instruction": "s_cmp_eq_i32 s12, 2",
+          "words": [
+            3204481548
+          ]
+        },
+        {
+          "pc": 33264,
+          "instruction": "s_cbranch_scc0 label_LoopBeginL",
+          "words": [
+            3215064063
+          ]
+        },
+        {
+          "pc": 29168,
+          "instruction": "s_wait_dscnt 0x0",
+          "words": [
+            3217424384
+          ]
+        },
+        {
+          "pc": 29172,
+          "instruction": "s_set_vgpr_msb 0x45",
+          "words": [
+            3213230149
+          ]
+        },
+        {
+          "pc": 29176,
+          "instruction": "v_perm_b32 v28 /*v284*/, v96 /*v352*/, v92 /*v348*/, s66",
+          "words": [
+            3594780700,
+            17480032
+          ]
+        },
+        {
+          "pc": 29184,
+          "instruction": "v_perm_b32 v29 /*v285*/, v104 /*v360*/, v100 /*v356*/, s66",
+          "words": [
+            3594780701,
+            17484136
+          ]
+        },
+        {
+          "pc": 29192,
+          "instruction": "v_perm_b32 v30 /*v286*/, v112 /*v368*/, v108 /*v364*/, s66",
+          "words": [
+            3594780702,
+            17488240
+          ]
+        },
+        {
+          "pc": 29200,
+          "instruction": "v_perm_b32 v31 /*v287*/, v120 /*v376*/, v116 /*v372*/, s66",
+          "words": [
+            3594780703,
+            17492344
+          ]
+        },
+        {
+          "pc": 29208,
+          "instruction": "v_perm_b32 v32 /*v288*/, v128 /*v384*/, v124 /*v380*/, s66",
+          "words": [
+            3594780704,
+            17496448
+          ]
+        },
+        {
+          "pc": 29216,
+          "instruction": "v_perm_b32 v33 /*v289*/, v136 /*v392*/, v132 /*v388*/, s66",
+          "words": [
+            3594780705,
+            17500552
+          ]
+        },
+        {
+          "pc": 29224,
+          "instruction": "v_perm_b32 v34 /*v290*/, v144 /*v400*/, v140 /*v396*/, s66",
+          "words": [
+            3594780706,
+            17504656
+          ]
+        },
+        {
+          "pc": 29232,
+          "instruction": "v_perm_b32 v35 /*v291*/, v152 /*v408*/, v148 /*v404*/, s66",
+          "words": [
+            3594780707,
+            17508760
+          ]
+        },
+        {
+          "pc": 29240,
+          "instruction": "s_set_vgpr_msb 0x4546",
+          "words": [
+            3213247814
+          ]
+        },
+        {
+          "pc": 29244,
+          "instruction": "v_perm_b32 v222 /*v478*/, v0 /*v512*/, v254 /*v510*/, s66",
+          "words": [
+            3594780894,
+            17562880
+          ]
+        },
+        {
+          "pc": 29252,
+          "instruction": "s_set_vgpr_msb 0x464a",
+          "words": [
+            3213248074
+          ]
+        },
+        {
+          "pc": 29256,
+          "instruction": "v_perm_b32 v223 /*v479*/, v4 /*v516*/, v2 /*v514*/, s66",
+          "words": [
+            3594780895,
+            17433860
+          ]
+        },
+        {
+          "pc": 29264,
+          "instruction": "v_perm_b32 v224 /*v480*/, v8 /*v520*/, v6 /*v518*/, s66",
+          "words": [
+            3594780896,
+            17435912
+          ]
+        },
+        {
+          "pc": 29272,
+          "instruction": "v_perm_b32 v225 /*v481*/, v12 /*v524*/, v10 /*v522*/, s66",
+          "words": [
+            3594780897,
+            17437964
+          ]
+        },
+        {
+          "pc": 29280,
+          "instruction": "v_perm_b32 v226 /*v482*/, v16 /*v528*/, v14 /*v526*/, s66",
+          "words": [
+            3594780898,
+            17440016
+          ]
+        },
+        {
+          "pc": 29288,
+          "instruction": "v_perm_b32 v227 /*v483*/, v20 /*v532*/, v18 /*v530*/, s66",
+          "words": [
+            3594780899,
+            17442068
+          ]
+        },
+        {
+          "pc": 29296,
+          "instruction": "v_perm_b32 v228 /*v484*/, v24 /*v536*/, v22 /*v534*/, s66",
+          "words": [
+            3594780900,
+            17444120
+          ]
+        },
+        {
+          "pc": 29304,
+          "instruction": "v_perm_b32 v229 /*v485*/, v28 /*v540*/, v26 /*v538*/, s66",
+          "words": [
+            3594780901,
+            17446172
+          ]
+        },
+        {
+          "pc": 29312,
+          "instruction": "s_set_vgpr_msb 0x4a45",
+          "words": [
+            3213249093
+          ]
+        },
+        {
+          "pc": 29316,
+          "instruction": "v_perm_b32 v36 /*v292*/, v96 /*v352*/, v92 /*v348*/, s67",
+          "words": [
+            3594780708,
+            17742176
+          ]
+        },
+        {
+          "pc": 29324,
+          "instruction": "v_perm_b32 v37 /*v293*/, v104 /*v360*/, v100 /*v356*/, s67",
+          "words": [
+            3594780709,
+            17746280
+          ]
+        },
+        {
+          "pc": 29332,
+          "instruction": "s_set_vgpr_msb 0x4505",
+          "words": [
+            3213247749
+          ]
+        },
+        {
+          "pc": 29336,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[0:7], v[28:35] /*v[284:291]*/, v[222:229] /*v[478:485]*/, v[0:7]",
+          "words": [
+            3428974592,
+            470007068
+          ]
+        },
+        {
+          "pc": 29344,
+          "instruction": "s_set_vgpr_msb 0x541",
+          "words": [
+            3213231425
+          ]
+        },
+        {
+          "pc": 29348,
+          "instruction": "ds_load_b128 v[156:159] /*v[412:415]*/, v26 /*v282*/ offset:16384",
+          "words": [
+            3690741760,
+            2617245722
+          ]
+        },
+        {
+          "pc": 29356,
+          "instruction": "ds_load_b128 v[160:163] /*v[416:419]*/, v26 /*v282*/ offset:16896",
+          "words": [
+            3690742272,
+            2684354586
+          ]
+        },
+        {
+          "pc": 29364,
+          "instruction": "s_cmp_eq_u32 s12, s55",
+          "words": [
+            3204855564
+          ]
+        },
+        {
+          "pc": 29368,
+          "instruction": "s_cselect_b32 s68, s60, s64",
+          "words": [
+            2554609724
+          ]
+        },
+        {
+          "pc": 29372,
+          "instruction": "s_cselect_b32 s69, s61, 0",
+          "words": [
+            2554691645
+          ]
+        },
+        {
+          "pc": 29376,
+          "instruction": "s_set_vgpr_msb 0x4145",
+          "words": [
+            3213246789
+          ]
+        },
+        {
+          "pc": 29380,
+          "instruction": "v_perm_b32 v38 /*v294*/, v112 /*v368*/, v108 /*v364*/, s67",
+          "words": [
+            3594780710,
+            17750384
+          ]
+        },
+        {
+          "pc": 29388,
+          "instruction": "v_perm_b32 v39 /*v295*/, v120 /*v376*/, v116 /*v372*/, s67",
+          "words": [
+            3594780711,
+            17754488
+          ]
+        },
+        {
+          "pc": 29396,
+          "instruction": "v_perm_b32 v40 /*v296*/, v128 /*v384*/, v124 /*v380*/, s67",
+          "words": [
+            3594780712,
+            17758592
+          ]
+        },
+        {
+          "pc": 29404,
+          "instruction": "v_perm_b32 v41 /*v297*/, v136 /*v392*/, v132 /*v388*/, s67",
+          "words": [
+            3594780713,
+            17762696
+          ]
+        },
+        {
+          "pc": 29412,
+          "instruction": "v_perm_b32 v42 /*v298*/, v144 /*v400*/, v140 /*v396*/, s67",
+          "words": [
+            3594780714,
+            17766800
+          ]
+        },
+        {
+          "pc": 29420,
+          "instruction": "v_perm_b32 v43 /*v299*/, v152 /*v408*/, v148 /*v404*/, s67",
+          "words": [
+            3594780715,
+            17770904
+          ]
+        },
+        {
+          "pc": 29428,
+          "instruction": "v_perm_b32 v44 /*v300*/, v97 /*v353*/, v93 /*v349*/, s66",
+          "words": [
+            3594780716,
+            17480545
+          ]
+        },
+        {
+          "pc": 29436,
+          "instruction": "v_perm_b32 v45 /*v301*/, v105 /*v361*/, v101 /*v357*/, s66",
+          "words": [
+            3594780717,
+            17484649
+          ]
+        },
+        {
+          "pc": 29444,
+          "instruction": "v_perm_b32 v46 /*v302*/, v113 /*v369*/, v109 /*v365*/, s66",
+          "words": [
+            3594780718,
+            17488753
+          ]
+        },
+        {
+          "pc": 29452,
+          "instruction": "v_perm_b32 v47 /*v303*/, v121 /*v377*/, v117 /*v373*/, s66",
+          "words": [
+            3594780719,
+            17492857
+          ]
+        },
+        {
+          "pc": 29460,
+          "instruction": "v_perm_b32 v48 /*v304*/, v129 /*v385*/, v125 /*v381*/, s66",
+          "words": [
+            3594780720,
+            17496961
+          ]
+        },
+        {
+          "pc": 29468,
+          "instruction": "v_perm_b32 v49 /*v305*/, v137 /*v393*/, v133 /*v389*/, s66",
+          "words": [
+            3594780721,
+            17501065
+          ]
+        },
+        {
+          "pc": 29476,
+          "instruction": "v_perm_b32 v50 /*v306*/, v145 /*v401*/, v141 /*v397*/, s66",
+          "words": [
+            3594780722,
+            17505169
+          ]
+        },
+        {
+          "pc": 29484,
+          "instruction": "v_perm_b32 v51 /*v307*/, v153 /*v409*/, v149 /*v405*/, s66",
+          "words": [
+            3594780723,
+            17509273
+          ]
+        },
+        {
+          "pc": 29492,
+          "instruction": "v_perm_b32 v52 /*v308*/, v97 /*v353*/, v93 /*v349*/, s67",
+          "words": [
+            3594780724,
+            17742689
+          ]
+        },
+        {
+          "pc": 29500,
+          "instruction": "v_perm_b32 v53 /*v309*/, v105 /*v361*/, v101 /*v357*/, s67",
+          "words": [
+            3594780725,
+            17746793
+          ]
+        },
+        {
+          "pc": 29508,
+          "instruction": "s_set_vgpr_msb 0x4505",
+          "words": [
+            3213247749
+          ]
+        },
+        {
+          "pc": 29512,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[8:15], v[36:43] /*v[292:299]*/, v[222:229] /*v[478:485]*/, v[8:15]",
+          "words": [
+            3428974600,
+            472104228
+          ]
+        },
+        {
+          "pc": 29520,
+          "instruction": "s_set_vgpr_msb 0x541",
+          "words": [
+            3213231425
+          ]
+        },
+        {
+          "pc": 29524,
+          "instruction": "ds_load_b128 v[164:167] /*v[420:423]*/, v26 /*v282*/ offset:17408",
+          "words": [
+            3690742784,
+            2751463450
+          ]
+        },
+        {
+          "pc": 29532,
+          "instruction": "s_add_co_u32 s24, s24, s68",
+          "words": [
+            2149073944
+          ]
+        },
+        {
+          "pc": 29536,
+          "instruction": "s_add_co_ci_u32 s25, s25, s69",
+          "words": [
+            2182694169
+          ]
+        },
+        {
+          "pc": 29540,
+          "instruction": "s_sub_co_u32 s56, s56, s68",
+          "words": [
+            2159559736
+          ]
+        },
+        {
+          "pc": 29544,
+          "instruction": "s_set_vgpr_msb 0x4145",
+          "words": [
+            3213246789
+          ]
+        },
+        {
+          "pc": 29548,
+          "instruction": "v_perm_b32 v54 /*v310*/, v113 /*v369*/, v109 /*v365*/, s67",
+          "words": [
+            3594780726,
+            17750897
+          ]
+        },
+        {
+          "pc": 29556,
+          "instruction": "v_perm_b32 v55 /*v311*/, v121 /*v377*/, v117 /*v373*/, s67",
+          "words": [
+            3594780727,
+            17755001
+          ]
+        },
+        {
+          "pc": 29564,
+          "instruction": "v_perm_b32 v56 /*v312*/, v129 /*v385*/, v125 /*v381*/, s67",
+          "words": [
+            3594780728,
+            17759105
+          ]
+        },
+        {
+          "pc": 29572,
+          "instruction": "v_perm_b32 v57 /*v313*/, v137 /*v393*/, v133 /*v389*/, s67",
+          "words": [
+            3594780729,
+            17763209
+          ]
+        },
+        {
+          "pc": 29580,
+          "instruction": "v_perm_b32 v58 /*v314*/, v145 /*v401*/, v141 /*v397*/, s67",
+          "words": [
+            3594780730,
+            17767313
+          ]
+        },
+        {
+          "pc": 29588,
+          "instruction": "v_perm_b32 v59 /*v315*/, v153 /*v409*/, v149 /*v405*/, s67",
+          "words": [
+            3594780731,
+            17771417
+          ]
+        },
+        {
+          "pc": 29596,
+          "instruction": "v_perm_b32 v60 /*v316*/, v98 /*v354*/, v94 /*v350*/, s66",
+          "words": [
+            3594780732,
+            17481058
+          ]
+        },
+        {
+          "pc": 29604,
+          "instruction": "v_perm_b32 v61 /*v317*/, v106 /*v362*/, v102 /*v358*/, s66",
+          "words": [
+            3594780733,
+            17485162
+          ]
+        },
+        {
+          "pc": 29612,
+          "instruction": "v_perm_b32 v62 /*v318*/, v114 /*v370*/, v110 /*v366*/, s66",
+          "words": [
+            3594780734,
+            17489266
+          ]
+        },
+        {
+          "pc": 29620,
+          "instruction": "v_perm_b32 v63 /*v319*/, v122 /*v378*/, v118 /*v374*/, s66",
+          "words": [
+            3594780735,
+            17493370
+          ]
+        },
+        {
+          "pc": 29628,
+          "instruction": "v_perm_b32 v64 /*v320*/, v130 /*v386*/, v126 /*v382*/, s66",
+          "words": [
+            3594780736,
+            17497474
+          ]
+        },
+        {
+          "pc": 29636,
+          "instruction": "v_perm_b32 v65 /*v321*/, v138 /*v394*/, v134 /*v390*/, s66",
+          "words": [
+            3594780737,
+            17501578
+          ]
+        },
+        {
+          "pc": 29644,
+          "instruction": "v_perm_b32 v66 /*v322*/, v146 /*v402*/, v142 /*v398*/, s66",
+          "words": [
+            3594780738,
+            17505682
+          ]
+        },
+        {
+          "pc": 29652,
+          "instruction": "v_perm_b32 v67 /*v323*/, v154 /*v410*/, v150 /*v406*/, s66",
+          "words": [
+            3594780739,
+            17509786
+          ]
+        },
+        {
+          "pc": 29660,
+          "instruction": "v_perm_b32 v68 /*v324*/, v98 /*v354*/, v94 /*v350*/, s67",
+          "words": [
+            3594780740,
+            17743202
+          ]
+        },
+        {
+          "pc": 29668,
+          "instruction": "v_perm_b32 v69 /*v325*/, v106 /*v362*/, v102 /*v358*/, s67",
+          "words": [
+            3594780741,
+            17747306
+          ]
+        },
+        {
+          "pc": 29676,
+          "instruction": "s_set_vgpr_msb 0x4505",
+          "words": [
+            3213247749
+          ]
+        },
+        {
+          "pc": 29680,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[16:23], v[44:51] /*v[300:307]*/, v[222:229] /*v[478:485]*/, v[16:23]",
+          "words": [
+            3428974608,
+            474201388
+          ]
+        },
+        {
+          "pc": 29688,
+          "instruction": "s_set_vgpr_msb 0x541",
+          "words": [
+            3213231425
+          ]
+        },
+        {
+          "pc": 29692,
+          "instruction": "ds_load_b128 v[168:171] /*v[424:427]*/, v26 /*v282*/ offset:17920",
+          "words": [
+            3690743296,
+            2818572314
+          ]
+        },
+        {
+          "pc": 29700,
+          "instruction": "s_sub_co_ci_u32 s57, s57, s69",
+          "words": [
+            2193179961
+          ]
+        },
+        {
+          "pc": 29704,
+          "instruction": "s_cmp_eq_u32 s57, 0",
+          "words": [
+            3204874297
+          ]
+        },
+        {
+          "pc": 29708,
+          "instruction": "s_cselect_b32 s26, s56, -1",
+          "words": [
+            2551890232
+          ]
+        },
+        {
+          "pc": 29712,
+          "instruction": "s_set_vgpr_msb 0x4145",
+          "words": [
+            3213246789
+          ]
+        },
+        {
+          "pc": 29716,
+          "instruction": "v_perm_b32 v70 /*v326*/, v114 /*v370*/, v110 /*v366*/, s67",
+          "words": [
+            3594780742,
+            17751410
+          ]
+        },
+        {
+          "pc": 29724,
+          "instruction": "v_perm_b32 v71 /*v327*/, v122 /*v378*/, v118 /*v374*/, s67",
+          "words": [
+            3594780743,
+            17755514
+          ]
+        },
+        {
+          "pc": 29732,
+          "instruction": "v_perm_b32 v72 /*v328*/, v130 /*v386*/, v126 /*v382*/, s67",
+          "words": [
+            3594780744,
+            17759618
+          ]
+        },
+        {
+          "pc": 29740,
+          "instruction": "v_perm_b32 v73 /*v329*/, v138 /*v394*/, v134 /*v390*/, s67",
+          "words": [
+            3594780745,
+            17763722
+          ]
+        },
+        {
+          "pc": 29748,
+          "instruction": "v_perm_b32 v74 /*v330*/, v146 /*v402*/, v142 /*v398*/, s67",
+          "words": [
+            3594780746,
+            17767826
+          ]
+        },
+        {
+          "pc": 29756,
+          "instruction": "v_perm_b32 v75 /*v331*/, v154 /*v410*/, v150 /*v406*/, s67",
+          "words": [
+            3594780747,
+            17771930
+          ]
+        },
+        {
+          "pc": 29764,
+          "instruction": "v_perm_b32 v76 /*v332*/, v99 /*v355*/, v95 /*v351*/, s66",
+          "words": [
+            3594780748,
+            17481571
+          ]
+        },
+        {
+          "pc": 29772,
+          "instruction": "v_perm_b32 v77 /*v333*/, v107 /*v363*/, v103 /*v359*/, s66",
+          "words": [
+            3594780749,
+            17485675
+          ]
+        },
+        {
+          "pc": 29780,
+          "instruction": "v_perm_b32 v78 /*v334*/, v115 /*v371*/, v111 /*v367*/, s66",
+          "words": [
+            3594780750,
+            17489779
+          ]
+        },
+        {
+          "pc": 29788,
+          "instruction": "v_perm_b32 v79 /*v335*/, v123 /*v379*/, v119 /*v375*/, s66",
+          "words": [
+            3594780751,
+            17493883
+          ]
+        },
+        {
+          "pc": 29796,
+          "instruction": "v_perm_b32 v80 /*v336*/, v131 /*v387*/, v127 /*v383*/, s66",
+          "words": [
+            3594780752,
+            17497987
+          ]
+        },
+        {
+          "pc": 29804,
+          "instruction": "v_perm_b32 v81 /*v337*/, v139 /*v395*/, v135 /*v391*/, s66",
+          "words": [
+            3594780753,
+            17502091
+          ]
+        },
+        {
+          "pc": 29812,
+          "instruction": "v_perm_b32 v82 /*v338*/, v147 /*v403*/, v143 /*v399*/, s66",
+          "words": [
+            3594780754,
+            17506195
+          ]
+        },
+        {
+          "pc": 29820,
+          "instruction": "v_perm_b32 v83 /*v339*/, v155 /*v411*/, v151 /*v407*/, s66",
+          "words": [
+            3594780755,
+            17510299
+          ]
+        },
+        {
+          "pc": 29828,
+          "instruction": "v_perm_b32 v84 /*v340*/, v99 /*v355*/, v95 /*v351*/, s67",
+          "words": [
+            3594780756,
+            17743715
+          ]
+        },
+        {
+          "pc": 29836,
+          "instruction": "v_perm_b32 v85 /*v341*/, v107 /*v363*/, v103 /*v359*/, s67",
+          "words": [
+            3594780757,
+            17747819
+          ]
+        },
+        {
+          "pc": 29844,
+          "instruction": "s_set_vgpr_msb 0x4505",
+          "words": [
+            3213247749
+          ]
+        },
+        {
+          "pc": 29848,
+          "instruction": "v_wmma_f32_16x16x32_bf16 v[24:31], v[52:59] /*v[308:315]*/, v[222:229] /*v[478:485]*/, v[24:31]",
+          "words": [
+            3428974616,
+            476298548
+          ]
+        },
+        {
+          "pc": 29856,
+          "instruction": "s_set_vgpr_msb 0x541",
+          "words": [
+            3213231425
+          ]
+        },
+        {
+          "pc": 29860,
+          "instruction": "ds_load_b128 v[172:175] /*v[428:431]*/, v26 /*v282*/ offset:18432",
+          "words": [
+            3690743808,
+            2885681178
+          ]
+        },
+        {
+          "pc": 29868,
+          "instruction": "s_and_b32 s8, s26, 0x7f",
+          "words": [
+            2332622618,
+            127
+          ]
+        },
+        {
+          "pc": 29876,
+          "instruction": "s_lshl_b32 s8, s8, 25",
+          "words": [
+            2215155976
+          ]
+        },
+        {
+          "pc": 29880,
+          "instruction": "s_and_b32 s25, s25, 0x1ffffff",
+          "words": [
+            2333736729,
+            33554431
+          ]
+        },
+        {
+          "pc": 29888,
+          "instruction": "s_set_vgpr_msb 0x4145",
+          "words": [
+            3213246789
+          ]
+        },
+        {
+          "pc": 29892,
+          "instruction": "v_perm_b32 v86 /*v342*/, v115 /*v371*/, v111 /*v367*/, s67",
+          "words": [
+            3594780758,
+            17751923
+          ]
+        },
+        {
+          "pc": 29900,
+          "instruction": "v_perm_b32 v87 /*v343*/, v123 /*v379*/, v119 /*v375*/, s67",
+          "words": [
+            3594780759,
+            17756027
+          ]
+        },
+        {
+          "pc": 29908,
+          "instruction": "v_perm_b32 v88 /*v344*/, v131 /*v387*/, v127 /*v383*/, s67",
+          "words": [
+            3594780760,
+            17760131
+          ]
+        },
+        {
+          "pc": 29916,
+          "instruction": "v_perm_b32 v89 /*v345*/, v139 /*v395*/, v135 /*v391*/, s67",
+          "words": [
+            3594780761,
+            17764235
+          ]
+        },
+        {
+          "pc": 29924,
+          "instruction": "v_perm_b32 v90 /*v346*/, v147 /*v403*/, v143 /*v399*/, s67",
+          "words": [
+            3594780762,
+            17768339
+          ]
+        },
+        {
+          "pc": 29932,
+          "instruction": "v_perm_b32 v91 /*v347*/, v155 /*v411*/, v151 /*v407*/, s67",
+          "words": [
+            3594780763,
+            17772443
+          ]
+        },
+        {
+          "pc": 29940,
+          "instruction": "s_set_vgpr_msb 0x4546",
+          "words": [
+            3213247814
+          ]
+        },
+        {
+          "pc": 29944,
+          "instruction": "v_perm_b32 v230 /*v486*/, v0 /*v512*/, v254 /*v510*/, s67",
+          "words": [
+            3594780902,
+            17825024
+          ]
+        },
+        {
+          "pc": 29952,
+          "instruction": "s_set_vgpr_msb 0x464a",
+          "words": [
+            3213248074
+          ]
+        },
+        {
+          "pc": 29956,
+          "instruction": "v_perm_b32 v231 /*v487*/, v4 /*v516*/, v2 /*v514*/, s67",
+          "words": [
+            3594780903,
+            17696004
+          ]
+        },
+        {
+          "pc": 29964,
+          "instruction": "v_perm_b32 v232 /*v488*/, v8 /*v520*/, v6 /*v518*/, s67",
+          "words": [
+            3594780904,
+            17698056
+          ]
+        },
+        {
+          "pc": 29972,
+          "instruction": "v_perm_b32 v233 /*v489*/, v12 /*v524*/, v10 /*v522*/, s67",
+          "words": [
+            3594780905,
+            17700108
+          ]
+        },
+        {
+          "pc": 29980,
+          "instruction": "v_perm_b32 v234 /*v490*/, v16 /*v528*/, v14 /*v526*/, s67",
+          "words": [
+            3594780906,
+            17702160
+          ]
+        },
+        {
+          "pc": 29988,
+          "instruction": "v_perm_b32 v235 /*v491*/, v20 /*v532*/, v18 /*v530*/, s67",
+          "words": [
+            3594780907,
+            17704212
+          ]
+        },
+        {
+          "pc": 29996,
+          "instruction": "v_perm_b32 v236 /*v492*/, v24 /*v536*/, v22 /*v534*/, s67",
+          "words": [
+            3594780908,
+            17706264
+          ]
+        },
+        {
+          "pc": 30004,
+          "instruction": "v_perm_b32 v237 /*v493*/, v28 /*v540*/, v26 /*v538*/, s67",
+          "words": [
+            3594780909,
+            17708316
+          ]
+        },
+        {
+          "pc": 30012,
+          "instruction": "s_set_vgpr_msb 0x4a42",
+          "words": [
+            3213249090
+          ]
+        },
+        {
+          "pc": 30016,
+          "instruction": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, 0, s66",
+          "words": [
+            3594780910,
+            17367297
+          ]
+        }
+      ],
+      "v257_v513_writes_on_route": [
+        {
+          "pc": "0x80b4",
+          "registers": [
+            513
+          ],
+          "instruction": "ds_load_b64 v[0:1] /*v[512:513]*/, v27 /*v283*/ offset:256"
+        }
+      ],
+      "control_transfers": [
+        "0x81f0"
+      ],
+      "conditional_v257_to_v513_windows": [
+        {
+          "setter_pc": "0x80c8",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x80cc",
+            "0x80d4"
+          ]
+        },
+        {
+          "setter_pc": "0x80e8",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x80ec",
+            "0x80f4"
+          ]
+        },
+        {
+          "setter_pc": "0x8108",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x810c",
+            "0x8114"
+          ]
+        },
+        {
+          "setter_pc": "0x8128",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x812c",
+            "0x8134"
+          ]
+        },
+        {
+          "setter_pc": "0x8148",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x814c",
+            "0x8154"
+          ]
+        },
+        {
+          "setter_pc": "0x8168",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x816c",
+            "0x8174"
+          ]
+        },
+        {
+          "setter_pc": "0x8188",
+          "low_mode": "0x81",
+          "src0_bank": 1,
+          "dst_bank": 2,
+          "following_instruction_heads": [
+            "0x818c",
+            "0x8194"
+          ]
+        }
+      ],
+      "scalar_preceded_loop_entry_history": [
+        {
+          "setter_pc": "0x71f4",
+          "prior_active_low": "0x5",
+          "history": "0x0",
+          "reason": "Loop-entry setter follows scalar dscnt wait; its history is not a VALU-return fixup site."
+        }
+      ]
+    }
+  ],
+  "route_ranges_in_execution_order": [
+    [
+      "0x80b0",
+      "0x81f0"
+    ],
+    [
+      "0x71f0",
+      "0x7540"
+    ]
+  ],
+  "instructions_per_arm": 172,
+  "bank81_windows_after_load_per_arm": 7,
+  "dynamic_loop_branch_taken_count_per_group": 36314,
+  "finding": "All three arms preserve seven SRC0bank1/DSTbank2 windows after the reaching v513 load, with no following program write to v257 or v513 before7540. The taken loop route is bound to all four frozen scalar-group traces.",
+  "limits": [
+    "No actual trap or interrupted MODE is observed here.",
+    "The explicit dscnt0 wait occurs at71f0 after these windows; hardware completion/timing is outside this static certificate.",
+    "The low bank seed is the actual setter80b0. The loop-entry setter71f4 has history0 despite inherited low5, but follows scalar wait and is not a preceding-VALU fixup site.",
+    "No GPU operations, runtime outputs, device changes, commits or pushes."
+  ]
+}

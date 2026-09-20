@@ -1,0 +1,170 @@
+{
+  "status": "COMPLETE_EXACT_RESIDUAL_BOUND_AND_NECESSARY_SIGN_EXCLUSION",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_DY_row_scalar_CPU_v1/bound_training405_ordinary_residual_v1.py",
+    "bytes": 7813,
+    "sha256": "c101e4ab5af4e681a94fd7689b5f22d8b0778093257f862498478ceb87c8d501"
+  },
+  "parent_sign_search": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_DY_row_scalar_CPU_v1/training405_all_DY_rows_single_scalar_search_v1.json",
+    "bytes": 30716,
+    "sha256": "82f8cb52aae68d8a0d538beb3cf3f7bbe0646dffe03bc042e8e694bdba4074b3"
+  },
+  "curated_full_training_audit": {
+    "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/training405_full_payload.json",
+    "bytes": 788852,
+    "sha256": "b8c0989b7a62c38618f5c2951f6d2de25ca3bbf6f4e5e76468c92c1e309bb409"
+  },
+  "independently_scanned_operands": {
+    "X": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+      "member": "archive/data/0",
+      "bytes": 1190067712,
+      "offset": 105408,
+      "shape": [
+        2324351,
+        256
+      ],
+      "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+      "all_backing_bytes_rehashed": true,
+      "nonfinite": 0,
+      "zero_halfwords": 0,
+      "max_abs_BF16_bits": "0x3ba0",
+      "max_abs": {
+        "numerator": "5",
+        "denominator": "1024",
+        "decimal": 0.0048828125
+      }
+    },
+    "DY": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+      "member": "archive/data/2",
+      "bytes": 2380135424,
+      "offset": 1190435392,
+      "shape": [
+        2324351,
+        512
+      ],
+      "sha256": "8982a8bba7aa6ae843a589a2ff671d3b62adb2a9359609c1988e8cfcdf1cecea",
+      "all_backing_bytes_rehashed": true,
+      "nonfinite": 0,
+      "zero_halfwords": 0,
+      "max_abs_BF16_bits": "0x3a68",
+      "max_abs": {
+        "numerator": "29",
+        "denominator": "32768",
+        "decimal": 0.000885009765625
+      }
+    }
+  },
+  "contraction_terms": 2324351,
+  "omitted_changed_term_count": 1,
+  "ordinary_residual_bound": {
+    "numerator": "168515375",
+    "denominator": "16777216",
+    "decimal": 10.044299066066742
+  },
+  "simpler_strict_bound": 11,
+  "family": "For each M independently: BF16_RNE(s*DY[k,N]+r_N)=training405_DW[M,N] for all N128..255, for one original saved DY row k, one arbitrary finite real scalar s and arbitrary independent residuals |r_N| <= B.",
+  "exact_proof": [
+    "Every other original real contraction term has absolute value <= max|X|*max|DY|. Summing K-1 terms gives B=(K-1)*max|X|*max|DY|<11.",
+    "Every target BF16 RNE cell lies farther than B from zero. Thus any real value rounding to that target minus any permitted residual retains the target sign.",
+    "Consequently s*DY[k,N] must be nonzero with the target sign at every coordinate. The complete parent search already found no saved DY row matching those necessary signs for either scalar sign.",
+    "Therefore even independently chosen coordinate residuals inside the bound cannot rescue the rejected single-DY-row scalar model."
+  ],
+  "targets": [
+    {
+      "M": 0,
+      "N_half_open": [
+        128,
+        256
+      ],
+      "minimum_abs_target": {
+        "numerator": "6228385822654569508086218752",
+        "denominator": "1",
+        "decimal": 6.22838582265457e+27
+      },
+      "minimum_RNE_cell_distance_from_zero": {
+        "numerator": "6209043009540735441290919936",
+        "denominator": "1",
+        "decimal": 6.209043009540735e+27
+      },
+      "minimizing_N": [
+        254
+      ],
+      "exact_cell_distance_over_residual": {
+        "numerator": "104170455724354979297393082604978176",
+        "denominator": "168515375",
+        "decimal": 6.1816588382131295e+26
+      },
+      "necessary_sign_rejection_inherited": true,
+      "compatible_saved_DY_rows": 0,
+      "status": "NO_SAVED_DY_ROW_AND_SCALAR_WITH_ANY_COORDINATE_RESIDUAL_BOUNDED_BY_ORDINARY_TERMS"
+    },
+    {
+      "M": 1,
+      "N_half_open": [
+        128,
+        256
+      ],
+      "minimum_abs_target": {
+        "numerator": "22282920707136844948184236032",
+        "denominator": "1",
+        "decimal": 2.2282920707136845e+28
+      },
+      "minimum_RNE_cell_distance_from_zero": {
+        "numerator": "22205549454681508681003040768",
+        "denominator": "1",
+        "decimal": 2.220554945468151e+28
+      },
+      "minimizing_N": [
+        150
+      ],
+      "exact_cell_distance_over_residual": {
+        "numerator": "53221042799981983192437587374505984",
+        "denominator": "24073625",
+        "decimal": 2.2107614785883714e+27
+      },
+      "necessary_sign_rejection_inherited": true,
+      "compatible_saved_DY_rows": 0,
+      "status": "NO_SAVED_DY_ROW_AND_SCALAR_WITH_ANY_COORDINATE_RESIDUAL_BOUNDED_BY_ORDINARY_TERMS"
+    },
+    {
+      "M": 5,
+      "N_half_open": [
+        128,
+        256
+      ],
+      "minimum_abs_target": {
+        "numerator": "14391052956692545695702319104",
+        "denominator": "1",
+        "decimal": 1.4391052956692546e+28
+      },
+      "minimum_RNE_cell_distance_from_zero": {
+        "numerator": "14352367330464877562111721472",
+        "denominator": "1",
+        "decimal": 1.4352367330464878e+28
+      },
+      "minimizing_N": [
+        201
+      ],
+      "exact_cell_distance_over_residual": {
+        "numerator": "34398966687793233039014538181083136",
+        "denominator": "24073625",
+        "decimal": 1.4289068093315085e+27
+      },
+      "necessary_sign_rejection_inherited": true,
+      "compatible_saved_DY_rows": 0,
+      "status": "NO_SAVED_DY_ROW_AND_SCALAR_WITH_ANY_COORDINATE_RESIDUAL_BOUNDED_BY_ORDINARY_TERMS"
+    }
+  ],
+  "limits": [
+    "This is a real-arithmetic numerical family followed by one BF16-RNE cast, not an assignment of a kernel, instruction, or physical cause to the untraced training405 event.",
+    "The bound gives an exact contraction interpretation with one X coefficient replaced and every other operand unchanged. Arbitrary intermediate arithmetic faults or rounding models are not certified by this report.",
+    "Different k and scalar are allowed for each tested M. Multiple altered terms, coordinate remapping, varying scalar across N and output faults remain outside the tested family.",
+    "The640 NaNs are outside this finite-output argument. No common cause with later zero-DY historical-donor events is assumed.",
+    "All original X and DY backing bytes were independently hashed and scanned here. DW target identity and full DY sign exhaustion inherit the pinned parent report."
+  ],
+  "elapsed_seconds": 2.3914889190018584
+}

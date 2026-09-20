@@ -1,0 +1,316 @@
+{
+  "status": "PASS_INDEPENDENT_PUBLISHED_CDNA5_ENTRY_BANK_PRESERVATION_CONTRACT_REVIEW",
+  "GPU_actions": false,
+  "runtime_initialized": false,
+  "live_runtime_outputs_read": false,
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_contract_independent_CPU_v1/review_published_entry_contract_v2.py",
+    "bytes": 9561,
+    "sha256": "0e663c110ed91ab428a3f9c75919d82d0f6f84b42081f56162d18fcdc83a5251"
+  },
+  "author_supplement": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_trap_entry_contract_history_peer_v1/CDNA5_PDF_trap_entry_bank_contract_supplement_v1.json",
+    "bytes": 8937,
+    "sha256": "60c965381749d07ce4bcc4bf4903b5d2660e3cb476aaa7fd144185b07b39189a"
+  },
+  "PDF": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_trap_entry_contract_history_peer_v1/amd-instinct-cdna5-instruction-set-architecture.pdf",
+    "bytes": 3596954,
+    "sha256": "5fae9822405c04f3e380c38d55b27df5b19469b78d5dfdd87c319a712f0239a8"
+  },
+  "official_retrieval_provenance": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_trap_entry_contract_history_peer_v1/CDNA5_PDF_retrieval_pin_v1.json",
+    "bytes": 1189,
+    "sha256": "2e4b279197412d8b33b7f61e308311d989cb7337dfc600e1fc1b5bdc3b2884fc"
+  },
+  "independent_MuPDF_text": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_contract_independent_CPU_v1/CDNA5_independent_MuPDF_allpages_v1.txt",
+    "bytes": 1281956,
+    "sha256": "376b1ec12343da58b3b7fc27040e33d7eab679a483447cb3e19e7597fbc23f26"
+  },
+  "independent_extraction_execution": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_contract_independent_CPU_v1/MuPDF_extraction_execution_v1.json",
+    "bytes": 1047,
+    "sha256": "77e4ea75f6cc2304d1815972cc15dca1961ae58d7c04c81eb31542e8dc7e87a4"
+  },
+  "MuPDF_binary": {
+    "path": "/usr/bin/mutool",
+    "bytes": 44735344,
+    "sha256": "9203440040cc38ee412aeedbfe57f452d6b85709c5b1600ca6ab2aa05478ab73"
+  },
+  "retained_page_images": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_contract_independent_CPU_v1/CDNA5_page_26_v1.png",
+      "bytes": 186319,
+      "sha256": "a69bf480b633c962cf2c05d99008a1a1a184d7176995e31a35a75bb9e410d327"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_contract_independent_CPU_v1/CDNA5_page_30_v1.png",
+      "bytes": 172136,
+      "sha256": "eba2307dd2a2ccdaa232e87fe3168c2a3540be2660a4ab469d10e6f72ed4ebe5"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_contract_independent_CPU_v1/CDNA5_page_35_v1.png",
+      "bytes": 149320,
+      "sha256": "1db7b455b43b8052f9e2475e627143842c9de1d27b8890f8039282681b800975"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_contract_independent_CPU_v1/CDNA5_page_50_v1.png",
+      "bytes": 209601,
+      "sha256": "149a417580d00ed6680adb17b89b2ec8748e9478702a5c8345d0ae6fe8e3794b"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_contract_independent_CPU_v1/CDNA5_page_291_v1.png",
+      "bytes": 155347,
+      "sha256": "1637400a1b93cfa8ad7e6c988a84ee5bc7cc0e4a766e78fbe8d7e12dae41f085"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_contract_independent_CPU_v1/CDNA5_page_295_v1.png",
+      "bytes": 97611,
+      "sha256": "729e6947bb032bb56f43fdfb0ed22595df2cfb1c98082f6b4daa14c353a6f8f8"
+    }
+  ],
+  "visually_reviewed_pages": [
+    291,
+    50
+  ],
+  "all_832_pages_independently_extracted": true,
+  "positive_statements_checked": [
+    {
+      "pdf_page": 291,
+      "printed_page": 282,
+      "key": "bank_persistence",
+      "quote": "These VGPR MSBs remain in effect until the next S_SET_VGPR_MSB instruction or modification of the MODE hardware register."
+    },
+    {
+      "pdf_page": 291,
+      "printed_page": 282,
+      "key": "bank_operand_scope",
+      "quote": "The MSBs only applies to operands that are VGPRs. They are ignored for SGPR, inline constant and other operand types."
+    },
+    {
+      "pdf_page": 26,
+      "printed_page": 17,
+      "key": "per_wave_bank_state",
+      "quote": "There are 8 MODE register bits associated with each wave that are applied to vector instructions to supply the MSBits of the VGPR address:"
+    },
+    {
+      "pdf_page": 30,
+      "printed_page": 21,
+      "key": "privilege_definition",
+      "quote": "Privileged mode. Indicates that the wave is in the trap handler. Gives write access to TTMP registers."
+    },
+    {
+      "pdf_page": 35,
+      "printed_page": 26,
+      "key": "all_trap_entry_kinds",
+      "quote": "When a trap is taken (either user initiated, exception or host initiated), the shader hardware generates an S_TRAP instruction."
+    },
+    {
+      "pdf_page": 50,
+      "printed_page": 41,
+      "key": "entry_drain_and_state",
+      "quote": "<wait for outstanding instructions to finish> { TTMP1, TTMP0 } = {TrapID[3:0], zeros, PC[56:0]} // TrapID=0 unless the exception is \"S_TRAP\" PC = TBA (trap base address) PRIV = 1"
+    },
+    {
+      "pdf_page": 295,
+      "printed_page": 286,
+      "key": "detailed_entry_drain",
+      "quote": "\"Wait for all instructions to complete\";"
+    },
+    {
+      "pdf_page": 295,
+      "printed_page": 286,
+      "key": "detailed_entry_privilege",
+      "quote": "WAVE_STATUS.PRIV = 1'1U"
+    },
+    {
+      "pdf_page": 65,
+      "printed_page": 56,
+      "key": "LDS_completion",
+      "quote": "for reads or atomic-with-return, it means the return data is available in VGPRs."
+    },
+    {
+      "pdf_page": 647,
+      "printed_page": 638,
+      "key": "readlane_explicit_lane",
+      "quote": "D0.b32 = VGPR[lane][SRC0.u32]"
+    },
+    {
+      "pdf_page": 648,
+      "printed_page": 639,
+      "key": "readlane_EXEC_override",
+      "quote": "Overrides EXEC mask for the VGPR read."
+    },
+    {
+      "pdf_page": 648,
+      "printed_page": 639,
+      "key": "writelane_explicit_lane",
+      "quote": "VGPR[lane][VDST.u32] = S0.b32"
+    },
+    {
+      "pdf_page": 648,
+      "printed_page": 639,
+      "key": "writelane_EXEC_override",
+      "quote": "Overrides EXEC mask for the VGPR write."
+    }
+  ],
+  "closed_S_TRAP_summary": " Jump to the trap handler and pass in 4-bit TRAP id from SIMM[3:0]. <wait for outstanding instructions to finish> { TTMP1, TTMP0 } = {TrapID[3:0], zeros, PC[56:0]} // TrapID=0 unless the exception is \"S_TRAP\" PC = TBA (trap base address) PRIV = 1 Host traps cause the shader hardware to generate an S_TRAP instruction. Note: the save-PC points to the S_TRAP instruction. TRAPID 0 is reserved and should not be used. ",
+  "closed_S_TRAP_detail": " Enter the trap handler. This instruction may be generated internally as well in response to a host trap (TrapID = 0) or an exception. TrapID 0 is reserved for hardware use and should not be used in a shader-generated trap. Expression TrapID = SIMM16.u16[3 : 0].u8; \"Wait for all instructions to complete\"; // PC passed into trap handler points to S_TRAP itself, // *not* to the next instruction. { TTMP[1], TTMP[0] } = { TrapID[3 : 0], 12'0, PC[47 : 0] }; PC = TBA.i64; // trap base address WAVE_STATUS.PRIV = 1'1U ",
+  "whole_document_exception_screen": {
+    "method": "Search each trap/privileged/PRIV word with 160 characters on each side for exact bank-state terms.",
+    "matches": {
+      "VGPR_MSB": [],
+      "MSBs": [],
+      "bank": []
+    },
+    "inference_scope": "No matching documented exception found by this explicit screen; negative search is supporting evidence only."
+  },
+  "installed_entry_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/CWSR_exact_entry_all256_bank_and_lane_CPU_certificate_v1.json",
+    "bytes": 178763,
+    "sha256": "c66117faf1624377a01daa2fbc7994002f5d7e2669440e8fd89cefbc316b22c4"
+  },
+  "independently_recomputed_keycase_bank_mapping": [
+    {
+      "setter_immediate_low_byte": "0x01",
+      "MODE_19_12": "0x04",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "lane": 0,
+      "source_VGPR": 257,
+      "destination_VGPR": 1
+    },
+    {
+      "setter_immediate_low_byte": "0x05",
+      "MODE_19_12": "0x14",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "lane": 0,
+      "source_VGPR": 257,
+      "destination_VGPR": 1
+    },
+    {
+      "setter_immediate_low_byte": "0x81",
+      "MODE_19_12": "0x06",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "lane": 0,
+      "source_VGPR": 257,
+      "destination_VGPR": 513
+    },
+    {
+      "setter_immediate_low_byte": "0x85",
+      "MODE_19_12": "0x16",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "lane": 0,
+      "source_VGPR": 257,
+      "destination_VGPR": 513
+    },
+    {
+      "setter_immediate_low_byte": "0x46",
+      "MODE_19_12": "0x19",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "lane": 0,
+      "source_VGPR": 513,
+      "destination_VGPR": 257
+    },
+    {
+      "setter_immediate_low_byte": "0x4a",
+      "MODE_19_12": "0x29",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "lane": 0,
+      "source_VGPR": 513,
+      "destination_VGPR": 257
+    },
+    {
+      "setter_immediate_low_byte": "0x42",
+      "MODE_19_12": "0x09",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "lane": 0,
+      "source_VGPR": 513,
+      "destination_VGPR": 257
+    }
+  ],
+  "conclusions": [
+    "The explicit persistence rule plus the documented S_TRAP state transitions support preservation of incoming VGPR bank state until handler code changes MODE or executes another setter.",
+    "The same general bank rules apply to the early vector operands in the documented model. The inspected privilege definition and bank exceptions do not supply a privileged bypass.",
+    "This is a normative execution-model conclusion. It does not measure installed hardware behavior, prove a trap occurred in a failing invocation, or establish the original training NaN cause.",
+    "For the installed entry words inherited from the pinned full-byte certificate, low setter81/85 therefore predicts the lane0 v257-to-v513 copy under the published contract."
+  ],
+  "downstream_geometry_supplement": {
+    "prior_geometry": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_geometry_CPU_v1/conditional_CWSR_lane0_B_to_completed_failure_geometry_v1.json",
+      "bytes": 17523,
+      "sha256": "6314c44481aae6f0837e53be8a6e9688da8b16edf9202a35d7febf69b668446f"
+    },
+    "opportunity_windows": [
+      {
+        "setter_PC": "0x80c8",
+        "setter_low_byte": "0x81",
+        "following_instruction_PC": "0x80cc",
+        "next_setter_PC": "0x80dc",
+        "v513_redefined_in_open_interval": false
+      },
+      {
+        "setter_PC": "0x80e8",
+        "setter_low_byte": "0x81",
+        "following_instruction_PC": "0x80ec",
+        "next_setter_PC": "0x80fc",
+        "v513_redefined_in_open_interval": false
+      },
+      {
+        "setter_PC": "0x8108",
+        "setter_low_byte": "0x81",
+        "following_instruction_PC": "0x810c",
+        "next_setter_PC": "0x811c",
+        "v513_redefined_in_open_interval": false
+      },
+      {
+        "setter_PC": "0x8128",
+        "setter_low_byte": "0x81",
+        "following_instruction_PC": "0x812c",
+        "next_setter_PC": "0x813c",
+        "v513_redefined_in_open_interval": false
+      },
+      {
+        "setter_PC": "0x8148",
+        "setter_low_byte": "0x81",
+        "following_instruction_PC": "0x814c",
+        "next_setter_PC": "0x815c",
+        "v513_redefined_in_open_interval": false
+      },
+      {
+        "setter_PC": "0x8168",
+        "setter_low_byte": "0x81",
+        "following_instruction_PC": "0x816c",
+        "next_setter_PC": "0x817c",
+        "v513_redefined_in_open_interval": false
+      },
+      {
+        "setter_PC": "0x8188",
+        "setter_low_byte": "0x81",
+        "following_instruction_PC": "0x818c",
+        "next_setter_PC": "0x819c",
+        "v513_redefined_in_open_interval": false
+      }
+    ],
+    "refined_completion_condition": "If a trap is actually taken after the relevant LDS instruction and before the operand is overwritten, documented S_TRAP draining completes that LDS load before the early handler copy. The request need not arrive after the LDS load has already completed.",
+    "remaining_conditions": [
+      "Actual trap timing in a suitable bank window.",
+      "Destination survives to the relevant WMMA consumer.",
+      "Compatible events across all four affected waves for the full observed pattern."
+    ]
+  },
+  "limits": [
+    "Official download provenance is rehashed from the other agent; this review does not perform a second network retrieval.",
+    "PRIV has several documented privileges elsewhere, so its definition is not treated as an exhaustive list of all privilege effects.",
+    "Installed entry bytes, byte decoding and source-to-installed-module binding inherit the pinned independent entry certificate.",
+    "The 57-bit summary and legacy48-bit detailed PC forms differ in the manual; this does not alter the bank-preservation argument.",
+    "A hardware measurement remains required to distinguish conformance to this documented model from an undocumented reset or override."
+  ]
+}

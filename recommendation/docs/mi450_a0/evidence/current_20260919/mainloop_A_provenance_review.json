@@ -1,0 +1,649 @@
+{
+  "status": "PASS_INDEPENDENT_A_BYTE_MEMBERSHIP_AND_SYMBOLIC_TILE_PIPELINE",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_mainloop_A_provenance_peer_v1/review_mainloop_A_membership_and_pipeline_v3.py",
+    "bytes": 15484,
+    "sha256": "eac370992ee889351ac7005a408c35755d1e039814585da7acb23cdfb0ec42eb"
+  },
+  "author_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_mainloop_A_provenance_v1/repeated_phase_A_operand_K_membership_v1.json",
+    "bytes": 372586,
+    "sha256": "220870acd2698d30b64ebb62e5385b3a6eb40903ed295c195c93a68ab0e79859"
+  },
+  "author_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_mainloop_A_provenance_v1/map_repeated_phase_A_operands_v1.py",
+    "bytes": 8487,
+    "sha256": "5be73bb8075f89194eef67430f92245ac894b90d3589e5c756430794a4aa9d83"
+  },
+  "disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_pair_design_v1/v128_pair_fresh_disassembly_v1.s",
+    "bytes": 4287126,
+    "sha256": "6d857a306de1dbe8e8027dbfabaee1bfda8ce2ea4632d5680911d27f662ecdd0"
+  },
+  "independent_scalar_recurrence": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_scalar_peer_v1/scalar_path_K_descriptor_independent_review_v1.json",
+    "bytes": 7545,
+    "sha256": "11a49d0b8121a4650675562db7c89a5353d1d66c9b942d340b4fddb974a0f8e3"
+  },
+  "inherited_prologue_helper": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_donor_lifetime_v1/prove_first_accumulator_definition_v1.py",
+    "bytes": 7696,
+    "sha256": "761d34a82b860b03ff6b6f686b9bf8a2b7ccb8c961361a0f8560ef6e76376ae0"
+  },
+  "exact_author_context_objects_independently_reproduced": true,
+  "contexts_checked": 16,
+  "unique_LDS_bytes_per_group": 32768,
+  "distinct_K_M_pairs_per_fragment": 512,
+  "fragments_per_context": 8,
+  "independent_K1_rule": "A_register=284+8*strip, input_lane=j, half=1, M=128*(wave%2)+strip+8*j, j=0..15",
+  "all_staging_definitions_are_reviewed_A_buffer_prefetches": true,
+  "all_other_mainloop_LDS_writes_are_B_stores_in_disjoint_32768_to49151_range": true,
+  "all_A_stores_precede_same_register_refill": true,
+  "full_store_set_precedes_shared_DScnt_and_workgroup_barrier_before_fragment_loads": true,
+  "initial_pipeline_result": {
+    "prefetch": [
+      2
+    ],
+    "LDS": [
+      1
+    ],
+    "descriptor": 2,
+    "Atemp": [
+      1
+    ]
+  },
+  "initial_pipeline_events": [
+    {
+      "PC": "0x6a80",
+      "event": "descriptor_advance_64_K_rows",
+      "tile": 2
+    },
+    {
+      "PC": "0x6f7c",
+      "event": "store_current_prefetch",
+      "slot": 0,
+      "tile": 1
+    },
+    {
+      "PC": "0x6f8c",
+      "event": "prefetch",
+      "slot": 0,
+      "tile": 2
+    },
+    {
+      "PC": "0x6fa0",
+      "event": "store_current_prefetch",
+      "slot": 1,
+      "tile": 1
+    },
+    {
+      "PC": "0x6fb0",
+      "event": "prefetch",
+      "slot": 1,
+      "tile": 2
+    },
+    {
+      "PC": "0x6fc4",
+      "event": "store_current_prefetch",
+      "slot": 2,
+      "tile": 1
+    },
+    {
+      "PC": "0x6fd4",
+      "event": "prefetch",
+      "slot": 2,
+      "tile": 2
+    },
+    {
+      "PC": "0x6ff8",
+      "event": "store_current_prefetch",
+      "slot": 3,
+      "tile": 1
+    },
+    {
+      "PC": "0x7008",
+      "event": "prefetch",
+      "slot": 3,
+      "tile": 2
+    },
+    {
+      "PC": "0x701c",
+      "event": "store_current_prefetch",
+      "slot": 4,
+      "tile": 1
+    },
+    {
+      "PC": "0x702c",
+      "event": "prefetch",
+      "slot": 4,
+      "tile": 2
+    },
+    {
+      "PC": "0x7040",
+      "event": "store_current_prefetch",
+      "slot": 5,
+      "tile": 1
+    },
+    {
+      "PC": "0x7050",
+      "event": "prefetch",
+      "slot": 5,
+      "tile": 2
+    },
+    {
+      "PC": "0x7074",
+      "event": "store_current_prefetch",
+      "slot": 6,
+      "tile": 1
+    },
+    {
+      "PC": "0x7084",
+      "event": "prefetch",
+      "slot": 6,
+      "tile": 2
+    },
+    {
+      "PC": "0x7098",
+      "event": "store_current_prefetch",
+      "slot": 7,
+      "tile": 1
+    },
+    {
+      "PC": "0x70a8",
+      "event": "prefetch",
+      "slot": 7,
+      "tile": 2
+    },
+    {
+      "PC": "0x70bc",
+      "event": "store_current_prefetch",
+      "slot": 8,
+      "tile": 1
+    },
+    {
+      "PC": "0x70cc",
+      "event": "prefetch",
+      "slot": 8,
+      "tile": 2
+    },
+    {
+      "PC": "0x70f0",
+      "event": "store_current_prefetch",
+      "slot": 9,
+      "tile": 1
+    },
+    {
+      "PC": "0x7100",
+      "event": "prefetch",
+      "slot": 9,
+      "tile": 2
+    },
+    {
+      "PC": "0x7114",
+      "event": "store_current_prefetch",
+      "slot": 10,
+      "tile": 1
+    },
+    {
+      "PC": "0x7124",
+      "event": "prefetch",
+      "slot": 10,
+      "tile": 2
+    },
+    {
+      "PC": "0x7138",
+      "event": "store_current_prefetch",
+      "slot": 11,
+      "tile": 1
+    },
+    {
+      "PC": "0x7148",
+      "event": "prefetch",
+      "slot": 11,
+      "tile": 2
+    },
+    {
+      "PC": "0x716c",
+      "event": "store_current_prefetch",
+      "slot": 12,
+      "tile": 1
+    },
+    {
+      "PC": "0x717c",
+      "event": "prefetch",
+      "slot": 12,
+      "tile": 2
+    },
+    {
+      "PC": "0x7190",
+      "event": "store_current_prefetch",
+      "slot": 13,
+      "tile": 1
+    },
+    {
+      "PC": "0x71a0",
+      "event": "prefetch",
+      "slot": 13,
+      "tile": 2
+    },
+    {
+      "PC": "0x71b4",
+      "event": "store_current_prefetch",
+      "slot": 14,
+      "tile": 1
+    },
+    {
+      "PC": "0x71c4",
+      "event": "prefetch",
+      "slot": 14,
+      "tile": 2
+    },
+    {
+      "PC": "0x7ac4",
+      "event": "store_current_prefetch",
+      "slot": 15,
+      "tile": 1
+    },
+    {
+      "PC": "0x7ad4",
+      "event": "prefetch",
+      "slot": 15,
+      "tile": 2
+    },
+    {
+      "PC": "0x7f88",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7f90",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7fa8",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7fb0",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7fc8",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7fd0",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7fe8",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7ff0",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8008",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8010",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8028",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8030",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8048",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8060",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8078",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8090",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    }
+  ],
+  "symbolic_repeated_pipeline_result": {
+    "prefetch": [
+      2
+    ],
+    "LDS": [
+      1
+    ],
+    "descriptor": 2,
+    "Atemp": [
+      1
+    ]
+  },
+  "symbolic_repeated_pipeline_events": [
+    {
+      "PC": "0x735c",
+      "event": "descriptor_advance_64_K_rows",
+      "tile": 2
+    },
+    {
+      "PC": "0x7858",
+      "event": "store_current_prefetch",
+      "slot": 0,
+      "tile": 1
+    },
+    {
+      "PC": "0x7868",
+      "event": "prefetch",
+      "slot": 0,
+      "tile": 2
+    },
+    {
+      "PC": "0x787c",
+      "event": "store_current_prefetch",
+      "slot": 1,
+      "tile": 1
+    },
+    {
+      "PC": "0x788c",
+      "event": "prefetch",
+      "slot": 1,
+      "tile": 2
+    },
+    {
+      "PC": "0x78a0",
+      "event": "store_current_prefetch",
+      "slot": 2,
+      "tile": 1
+    },
+    {
+      "PC": "0x78b0",
+      "event": "prefetch",
+      "slot": 2,
+      "tile": 2
+    },
+    {
+      "PC": "0x78d4",
+      "event": "store_current_prefetch",
+      "slot": 3,
+      "tile": 1
+    },
+    {
+      "PC": "0x78e4",
+      "event": "prefetch",
+      "slot": 3,
+      "tile": 2
+    },
+    {
+      "PC": "0x78f8",
+      "event": "store_current_prefetch",
+      "slot": 4,
+      "tile": 1
+    },
+    {
+      "PC": "0x7908",
+      "event": "prefetch",
+      "slot": 4,
+      "tile": 2
+    },
+    {
+      "PC": "0x791c",
+      "event": "store_current_prefetch",
+      "slot": 5,
+      "tile": 1
+    },
+    {
+      "PC": "0x792c",
+      "event": "prefetch",
+      "slot": 5,
+      "tile": 2
+    },
+    {
+      "PC": "0x7950",
+      "event": "store_current_prefetch",
+      "slot": 6,
+      "tile": 1
+    },
+    {
+      "PC": "0x7960",
+      "event": "prefetch",
+      "slot": 6,
+      "tile": 2
+    },
+    {
+      "PC": "0x7974",
+      "event": "store_current_prefetch",
+      "slot": 7,
+      "tile": 1
+    },
+    {
+      "PC": "0x7984",
+      "event": "prefetch",
+      "slot": 7,
+      "tile": 2
+    },
+    {
+      "PC": "0x7998",
+      "event": "store_current_prefetch",
+      "slot": 8,
+      "tile": 1
+    },
+    {
+      "PC": "0x79a8",
+      "event": "prefetch",
+      "slot": 8,
+      "tile": 2
+    },
+    {
+      "PC": "0x79cc",
+      "event": "store_current_prefetch",
+      "slot": 9,
+      "tile": 1
+    },
+    {
+      "PC": "0x79dc",
+      "event": "prefetch",
+      "slot": 9,
+      "tile": 2
+    },
+    {
+      "PC": "0x79f0",
+      "event": "store_current_prefetch",
+      "slot": 10,
+      "tile": 1
+    },
+    {
+      "PC": "0x7a00",
+      "event": "prefetch",
+      "slot": 10,
+      "tile": 2
+    },
+    {
+      "PC": "0x7a14",
+      "event": "store_current_prefetch",
+      "slot": 11,
+      "tile": 1
+    },
+    {
+      "PC": "0x7a24",
+      "event": "prefetch",
+      "slot": 11,
+      "tile": 2
+    },
+    {
+      "PC": "0x7a48",
+      "event": "store_current_prefetch",
+      "slot": 12,
+      "tile": 1
+    },
+    {
+      "PC": "0x7a58",
+      "event": "prefetch",
+      "slot": 12,
+      "tile": 2
+    },
+    {
+      "PC": "0x7a6c",
+      "event": "store_current_prefetch",
+      "slot": 13,
+      "tile": 1
+    },
+    {
+      "PC": "0x7a7c",
+      "event": "prefetch",
+      "slot": 13,
+      "tile": 2
+    },
+    {
+      "PC": "0x7a90",
+      "event": "store_current_prefetch",
+      "slot": 14,
+      "tile": 1
+    },
+    {
+      "PC": "0x7aa0",
+      "event": "prefetch",
+      "slot": 14,
+      "tile": 2
+    },
+    {
+      "PC": "0x7ac4",
+      "event": "store_current_prefetch",
+      "slot": 15,
+      "tile": 1
+    },
+    {
+      "PC": "0x7ad4",
+      "event": "prefetch",
+      "slot": 15,
+      "tile": 2
+    },
+    {
+      "PC": "0x7f88",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7f90",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7fa8",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7fb0",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7fc8",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7fd0",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7fe8",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x7ff0",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8008",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8010",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8028",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8030",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8048",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8060",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8078",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    },
+    {
+      "PC": "0x8090",
+      "event": "load_next_A_fragment",
+      "tile": 1
+    }
+  ],
+  "repeated_visit_range": [
+    1,
+    36314
+  ],
+  "A_tile_Kbase_range": [
+    64,
+    2324096
+  ],
+  "A_K1_range": [
+    65,
+    2324097
+  ],
+  "conclusions": [
+    "Each repeated v128-family A fragment contains exactly Kbase+[0..31]\u00d7its16 M features, once each. Eight fragments partition128 M features per wave.",
+    "The independently parsed buffer/store/load ordering establishes the initial A tile64 and a symbolic q\u2192q+1 pipeline invariant across all36314 repeated visits.",
+    "The B lane0 low-half Kbase+1 from the separately reviewed scalar/byte proof is present at input_lane0..15,half1 of each first A register. This proves operand membership only."
+  ],
+  "limits": [
+    "The prologue values and scalar closed-form recurrence are inherited from pinned reviewed sources. The byte parser, coordinate mapping, staging lifetime inventory and symbolic tile pipeline are independent of the author A proof.",
+    "Wait/barrier instructions and architectural ordering are checked; actual asynchronous delivery, descriptor bounds and device timing are not simulated.",
+    "No independent WMMA lane-contraction emulator is claimed. Operand compatibility does not establish a unique faulty instruction or physical storage allocation.",
+    "This proof uses the paired-candidate disassembly. The separately reviewed exact candidate byte-binding certificate is required to transfer it to each runtime arm."
+  ]
+}

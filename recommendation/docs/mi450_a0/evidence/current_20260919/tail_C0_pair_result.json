@@ -1,0 +1,951 @@
+{
+  "format": "completed_tail_C0_pair_independent_result_binding_v1",
+  "status": "BOTH_ARMS_TERMINAL_ROOT_AND_INDEPENDENT_AUDITS_PASS",
+  "created_utc": "2026-09-19T23:55:39.854293+00:00",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_tail_czero_audit_v1/bind_completed_outcomes_v1.py",
+    "bytes": 5907,
+    "sha256": "09bc096a312ee60ecdd223ad22b65dc5d2941e21add353390e53d6d2c6ea495e"
+  },
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_tail_czero_pair_v1/launch_manifest_tail_czero_v1.json",
+    "bytes": 14677,
+    "sha256": "a353db419c8926645fa13357e4c1c3cef83cf5135a0d4c7b879125e77d74722f"
+  },
+  "arms": [
+    {
+      "arm": "accumulator_even_direct_store",
+      "iteration": 4,
+      "full_failure_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_tail_czero_failure_audit_v2/accumulator_even_direct_store_full_failure_v1.json",
+        "bytes": 1556038,
+        "sha256": "d513bf35f6e43bb910cf4e5ff72d32368ad6cabbb79f10ba6fcf19f120fe669d"
+      },
+      "independent_all_stream_pair_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_tail_czero_audit_v1/accumulator_even_direct_store_independent_stream_pairs_v1.json",
+        "bytes": 11714,
+        "sha256": "f58d58d0d10eb15b024baf0609bfe4da246d20e8e7d4f3e7c853dff8494f319f"
+      },
+      "root_terminal_native_verifier": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_tail_czero_pair_v1/accumulator_even_direct_store_joined_verification_v1.json",
+        "bytes": 4800,
+        "sha256": "37725f46b18611da9aaf36d31c9096fa0368b4553531fc76c0a0e6125825efc1"
+      },
+      "statistics": {
+        "elements": 65536,
+        "positive_zero_count": 65520,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 16,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 16,
+        "extreme_count": 0,
+        "max_abs_finite": 5.0446744715693415e-42,
+        "unique_raw_bitpatterns": 5
+      },
+      "full_failure_storage_count": 12,
+      "original_storage_count": 5,
+      "positive_zero_DY_elements": 1190067712,
+      "paired_classifications": 6144,
+      "aggregate_pair_counts": {
+        "v1": {
+          "both_zero": 2040,
+          "direct_nonzero_only": 0,
+          "normal_nonzero_only": 0,
+          "both_nonzero_equal": 8,
+          "both_nonzero_different": 0
+        },
+        "v2": {
+          "both_zero": 2048,
+          "direct_nonzero_only": 0,
+          "normal_nonzero_only": 0,
+          "both_nonzero_equal": 0,
+          "both_nonzero_different": 0
+        },
+        "v3": {
+          "both_zero": 2048,
+          "direct_nonzero_only": 0,
+          "normal_nonzero_only": 0,
+          "both_nonzero_equal": 0,
+          "both_nonzero_different": 0
+        }
+      },
+      "signed_zero_bit_differences": 0,
+      "negative_zero_words": 0
+    },
+    {
+      "arm": "accumulator_even_direct_store_tail_czero",
+      "iteration": 91,
+      "full_failure_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_tail_czero_failure_audit_v2/accumulator_even_direct_store_tail_czero_full_failure_v1.json",
+        "bytes": 1721166,
+        "sha256": "7e0f592e2a92b0c493e4a67d4397fad91f1a7e9083308430394fe4e9eb3b0198"
+      },
+      "independent_all_stream_pair_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_tail_czero_audit_v1/accumulator_even_direct_store_tail_czero_independent_stream_pairs_v1.json",
+        "bytes": 4990,
+        "sha256": "4675035622180126ea9de1e634ecf6a48191ea946f1a3bc7c0d7edb0705299f5"
+      },
+      "root_terminal_native_verifier": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_tail_czero_pair_v1/accumulator_even_direct_store_tail_czero_joined_verification_v1.json",
+        "bytes": 4828,
+        "sha256": "85dfa99e96f53f159a3420c194bb903686ee570f86e79089437c2b0cb0aef7de"
+      },
+      "statistics": {
+        "elements": 65536,
+        "positive_zero_count": 65280,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 256,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 1,
+        "extreme_count": 0,
+        "max_abs_finite": 2.4916718655509864e-33,
+        "unique_raw_bitpatterns": 253
+      },
+      "full_failure_storage_count": 12,
+      "original_storage_count": 5,
+      "positive_zero_DY_elements": 1190067712,
+      "paired_classifications": 139776,
+      "aggregate_pair_counts": {
+        "v1": {
+          "both_zero": 46592,
+          "direct_nonzero_only": 0,
+          "normal_nonzero_only": 0,
+          "both_nonzero_equal": 0,
+          "both_nonzero_different": 0
+        },
+        "v2": {
+          "both_zero": 46592,
+          "direct_nonzero_only": 0,
+          "normal_nonzero_only": 0,
+          "both_nonzero_equal": 0,
+          "both_nonzero_different": 0
+        },
+        "v3": {
+          "both_zero": 46592,
+          "direct_nonzero_only": 0,
+          "normal_nonzero_only": 0,
+          "both_nonzero_equal": 0,
+          "both_nonzero_different": 0
+        }
+      },
+      "signed_zero_bit_differences": 0,
+      "negative_zero_words": 0
+    }
+  ],
+  "baseline_fingerprint": {
+    "paired_v1_nonzero_count": 8,
+    "all_lane0": true,
+    "groups": [
+      0,
+      2
+    ],
+    "waves": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "all_pairs_bit_identical_historical_v257": true
+  },
+  "candidate_fingerprint": {
+    "retained_final_backing_sha256": "336e68e0099985c65ba2cf6c708a1c2abc82ed5285860537f6a9a4490c63a187",
+    "nonzero_raw_FP32_words": 256,
+    "columns": [
+      386,
+      450
+    ],
+    "original_rows": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28,
+      30,
+      32,
+      34,
+      36,
+      38,
+      40,
+      42,
+      44,
+      46,
+      48,
+      50,
+      52,
+      54,
+      56,
+      58,
+      60,
+      62,
+      64,
+      66,
+      68,
+      70,
+      72,
+      74,
+      76,
+      78,
+      80,
+      82,
+      84,
+      86,
+      88,
+      90,
+      92,
+      94,
+      96,
+      98,
+      100,
+      102,
+      104,
+      106,
+      108,
+      110,
+      112,
+      114,
+      116,
+      118,
+      120,
+      122,
+      124,
+      126,
+      128,
+      130,
+      132,
+      134,
+      136,
+      138,
+      140,
+      142,
+      144,
+      146,
+      148,
+      150,
+      152,
+      154,
+      156,
+      158,
+      160,
+      162,
+      164,
+      166,
+      168,
+      170,
+      172,
+      174,
+      176,
+      178,
+      180,
+      182,
+      184,
+      186,
+      188,
+      190,
+      192,
+      194,
+      196,
+      198,
+      200,
+      202,
+      204,
+      206,
+      208,
+      210,
+      212,
+      214,
+      216,
+      218,
+      220,
+      222,
+      224,
+      226,
+      228,
+      230,
+      232,
+      234,
+      236,
+      238,
+      240,
+      242,
+      244,
+      246,
+      248,
+      250,
+      252,
+      254
+    ],
+    "all128_right_values_exactly_256_times_left_FP32": true,
+    "word_pairs": [
+      {
+        "original_M": 0,
+        "left_bits": "0x01f1e000",
+        "right_bits": "0x05f1e000"
+      },
+      {
+        "original_M": 2,
+        "left_bits": "0x82dec000",
+        "right_bits": "0x86dec000"
+      },
+      {
+        "original_M": 4,
+        "left_bits": "0x020e5000",
+        "right_bits": "0x060e5000"
+      },
+      {
+        "original_M": 6,
+        "left_bits": "0x82e34000",
+        "right_bits": "0x86e34000"
+      },
+      {
+        "original_M": 8,
+        "left_bits": "0x81a20000",
+        "right_bits": "0x85a20000"
+      },
+      {
+        "original_M": 10,
+        "left_bits": "0x024f0000",
+        "right_bits": "0x064f0000"
+      },
+      {
+        "original_M": 12,
+        "left_bits": "0x8280d000",
+        "right_bits": "0x8680d000"
+      },
+      {
+        "original_M": 14,
+        "left_bits": "0x826d6000",
+        "right_bits": "0x866d6000"
+      },
+      {
+        "original_M": 16,
+        "left_bits": "0x8242a000",
+        "right_bits": "0x8642a000"
+      },
+      {
+        "original_M": 18,
+        "left_bits": "0x02232000",
+        "right_bits": "0x06232000"
+      },
+      {
+        "original_M": 20,
+        "left_bits": "0x820ee000",
+        "right_bits": "0x860ee000"
+      },
+      {
+        "original_M": 22,
+        "left_bits": "0x815da000",
+        "right_bits": "0x855da000"
+      },
+      {
+        "original_M": 24,
+        "left_bits": "0x82112000",
+        "right_bits": "0x86112000"
+      },
+      {
+        "original_M": 26,
+        "left_bits": "0x82472000",
+        "right_bits": "0x86472000"
+      },
+      {
+        "original_M": 28,
+        "left_bits": "0x81364000",
+        "right_bits": "0x85364000"
+      },
+      {
+        "original_M": 30,
+        "left_bits": "0x82bd0000",
+        "right_bits": "0x86bd0000"
+      },
+      {
+        "original_M": 32,
+        "left_bits": "0x02bac000",
+        "right_bits": "0x06bac000"
+      },
+      {
+        "original_M": 34,
+        "left_bits": "0x023e2000",
+        "right_bits": "0x063e2000"
+      },
+      {
+        "original_M": 36,
+        "left_bits": "0x0296c000",
+        "right_bits": "0x0696c000"
+      },
+      {
+        "original_M": 38,
+        "left_bits": "0x015c8000",
+        "right_bits": "0x055c8000"
+      },
+      {
+        "original_M": 40,
+        "left_bits": "0x816d6000",
+        "right_bits": "0x856d6000"
+      },
+      {
+        "original_M": 42,
+        "left_bits": "0x82e58000",
+        "right_bits": "0x86e58000"
+      },
+      {
+        "original_M": 44,
+        "left_bits": "0x81e58000",
+        "right_bits": "0x85e58000"
+      },
+      {
+        "original_M": 46,
+        "left_bits": "0x02f30000",
+        "right_bits": "0x06f30000"
+      },
+      {
+        "original_M": 48,
+        "left_bits": "0x82dda000",
+        "right_bits": "0x86dda000"
+      },
+      {
+        "original_M": 50,
+        "left_bits": "0x01c18000",
+        "right_bits": "0x05c18000"
+      },
+      {
+        "original_M": 52,
+        "left_bits": "0x016fa000",
+        "right_bits": "0x056fa000"
+      },
+      {
+        "original_M": 54,
+        "left_bits": "0x828b8000",
+        "right_bits": "0x868b8000"
+      },
+      {
+        "original_M": 56,
+        "left_bits": "0x8217e000",
+        "right_bits": "0x8617e000"
+      },
+      {
+        "original_M": 58,
+        "left_bits": "0x82dec000",
+        "right_bits": "0x86dec000"
+      },
+      {
+        "original_M": 60,
+        "left_bits": "0x02148000",
+        "right_bits": "0x06148000"
+      },
+      {
+        "original_M": 62,
+        "left_bits": "0x820ee000",
+        "right_bits": "0x860ee000"
+      },
+      {
+        "original_M": 64,
+        "left_bits": "0x822e6000",
+        "right_bits": "0x862e6000"
+      },
+      {
+        "original_M": 66,
+        "left_bits": "0x807a1000",
+        "right_bits": "0x84742000"
+      },
+      {
+        "original_M": 68,
+        "left_bits": "0x03136000",
+        "right_bits": "0x07136000"
+      },
+      {
+        "original_M": 70,
+        "left_bits": "0x80f42000",
+        "right_bits": "0x84f42000"
+      },
+      {
+        "original_M": 72,
+        "left_bits": "0x02bbe000",
+        "right_bits": "0x06bbe000"
+      },
+      {
+        "original_M": 74,
+        "left_bits": "0x03004000",
+        "right_bits": "0x07004000"
+      },
+      {
+        "original_M": 76,
+        "left_bits": "0x028dc000",
+        "right_bits": "0x068dc000"
+      },
+      {
+        "original_M": 78,
+        "left_bits": "0x82244000",
+        "right_bits": "0x86244000"
+      },
+      {
+        "original_M": 80,
+        "left_bits": "0x82b52000",
+        "right_bits": "0x86b52000"
+      },
+      {
+        "original_M": 82,
+        "left_bits": "0x0208b000",
+        "right_bits": "0x0608b000"
+      },
+      {
+        "original_M": 84,
+        "left_bits": "0x0288b000",
+        "right_bits": "0x0688b000"
+      },
+      {
+        "original_M": 86,
+        "left_bits": "0x01d02000",
+        "right_bits": "0x05d02000"
+      },
+      {
+        "original_M": 88,
+        "left_bits": "0x811c6000",
+        "right_bits": "0x851c6000"
+      },
+      {
+        "original_M": 90,
+        "left_bits": "0x03232000",
+        "right_bits": "0x07232000"
+      },
+      {
+        "original_M": 92,
+        "left_bits": "0x81406000",
+        "right_bits": "0x85406000"
+      },
+      {
+        "original_M": 94,
+        "left_bits": "0x82c06000",
+        "right_bits": "0x86c06000"
+      },
+      {
+        "original_M": 96,
+        "left_bits": "0x82924000",
+        "right_bits": "0x86924000"
+      },
+      {
+        "original_M": 98,
+        "left_bits": "0x81f54000",
+        "right_bits": "0x85f54000"
+      },
+      {
+        "original_M": 100,
+        "left_bits": "0x82bbe000",
+        "right_bits": "0x86bbe000"
+      },
+      {
+        "original_M": 102,
+        "left_bits": "0x026c4000",
+        "right_bits": "0x066c4000"
+      },
+      {
+        "original_M": 104,
+        "left_bits": "0x02879000",
+        "right_bits": "0x06879000"
+      },
+      {
+        "original_M": 106,
+        "left_bits": "0x01936000",
+        "right_bits": "0x05936000"
+      },
+      {
+        "original_M": 108,
+        "left_bits": "0x82b1c000",
+        "right_bits": "0x86b1c000"
+      },
+      {
+        "original_M": 110,
+        "left_bits": "0x01d6e000",
+        "right_bits": "0x05d6e000"
+      },
+      {
+        "original_M": 112,
+        "left_bits": "0x82a44000",
+        "right_bits": "0x86a44000"
+      },
+      {
+        "original_M": 114,
+        "left_bits": "0x02079000",
+        "right_bits": "0x06079000"
+      },
+      {
+        "original_M": 116,
+        "left_bits": "0x825da000",
+        "right_bits": "0x865da000"
+      },
+      {
+        "original_M": 118,
+        "left_bits": "0x8232e000",
+        "right_bits": "0x8632e000"
+      },
+      {
+        "original_M": 120,
+        "left_bits": "0x030d3000",
+        "right_bits": "0x070d3000"
+      },
+      {
+        "original_M": 122,
+        "left_bits": "0x01352000",
+        "right_bits": "0x05352000"
+      },
+      {
+        "original_M": 124,
+        "left_bits": "0x8283a000",
+        "right_bits": "0x8683a000"
+      },
+      {
+        "original_M": 126,
+        "left_bits": "0x81900000",
+        "right_bits": "0x85900000"
+      },
+      {
+        "original_M": 128,
+        "left_bits": "0x048e5000",
+        "right_bits": "0x088e5000"
+      },
+      {
+        "original_M": 130,
+        "left_bits": "0x04c84000",
+        "right_bits": "0x08c84000"
+      },
+      {
+        "original_M": 132,
+        "left_bits": "0x84b52000",
+        "right_bits": "0x88b52000"
+      },
+      {
+        "original_M": 134,
+        "left_bits": "0x84d26000",
+        "right_bits": "0x88d26000"
+      },
+      {
+        "original_M": 136,
+        "left_bits": "0x8327a000",
+        "right_bits": "0x8727a000"
+      },
+      {
+        "original_M": 138,
+        "left_bits": "0x045ec000",
+        "right_bits": "0x085ec000"
+      },
+      {
+        "original_M": 140,
+        "left_bits": "0x052e6000",
+        "right_bits": "0x092e6000"
+      },
+      {
+        "original_M": 142,
+        "left_bits": "0x8331c000",
+        "right_bits": "0x8731c000"
+      },
+      {
+        "original_M": 144,
+        "left_bits": "0x83043000",
+        "right_bits": "0x87043000"
+      },
+      {
+        "original_M": 146,
+        "left_bits": "0x83831000",
+        "right_bits": "0x87831000"
+      },
+      {
+        "original_M": 148,
+        "left_bits": "0x04610000",
+        "right_bits": "0x08610000"
+      },
+      {
+        "original_M": 150,
+        "left_bits": "0x0189d000",
+        "right_bits": "0x0589d000"
+      },
+      {
+        "original_M": 152,
+        "left_bits": "0x038ee000",
+        "right_bits": "0x078ee000"
+      },
+      {
+        "original_M": 154,
+        "left_bits": "0x844de000",
+        "right_bits": "0x884de000"
+      },
+      {
+        "original_M": 156,
+        "left_bits": "0x03894000",
+        "right_bits": "0x07894000"
+      },
+      {
+        "original_M": 158,
+        "left_bits": "0x84a7a000",
+        "right_bits": "0x88a7a000"
+      },
+      {
+        "original_M": 160,
+        "left_bits": "0x050ee000",
+        "right_bits": "0x090ee000"
+      },
+      {
+        "original_M": 162,
+        "left_bits": "0x83c4e000",
+        "right_bits": "0x87c4e000"
+      },
+      {
+        "original_M": 164,
+        "left_bits": "0x82a8c000",
+        "right_bits": "0x86a8c000"
+      },
+      {
+        "original_M": 166,
+        "left_bits": "0x84f0c000",
+        "right_bits": "0x88f0c000"
+      },
+      {
+        "original_M": 168,
+        "left_bits": "0x05268000",
+        "right_bits": "0x09268000"
+      },
+      {
+        "original_M": 170,
+        "left_bits": "0x8439a000",
+        "right_bits": "0x8839a000"
+      },
+      {
+        "original_M": 172,
+        "left_bits": "0x83ac2000",
+        "right_bits": "0x87ac2000"
+      },
+      {
+        "original_M": 174,
+        "left_bits": "0x83004000",
+        "right_bits": "0x87004000"
+      },
+      {
+        "original_M": 176,
+        "left_bits": "0x04912000",
+        "right_bits": "0x08912000"
+      },
+      {
+        "original_M": 178,
+        "left_bits": "0x84256000",
+        "right_bits": "0x88256000"
+      },
+      {
+        "original_M": 180,
+        "left_bits": "0x045fe000",
+        "right_bits": "0x085fe000"
+      },
+      {
+        "original_M": 182,
+        "left_bits": "0x03ea0000",
+        "right_bits": "0x07ea0000"
+      },
+      {
+        "original_M": 184,
+        "left_bits": "0x03778000",
+        "right_bits": "0x07778000"
+      },
+      {
+        "original_M": 186,
+        "left_bits": "0x053ac000",
+        "right_bits": "0x093ac000"
+      },
+      {
+        "original_M": 188,
+        "left_bits": "0x84c72000",
+        "right_bits": "0x88c72000"
+      },
+      {
+        "original_M": 190,
+        "left_bits": "0x83d26000",
+        "right_bits": "0x87d26000"
+      },
+      {
+        "original_M": 192,
+        "left_bits": "0x842d4000",
+        "right_bits": "0x882d4000"
+      },
+      {
+        "original_M": 194,
+        "left_bits": "0x0354a000",
+        "right_bits": "0x0754a000"
+      },
+      {
+        "original_M": 196,
+        "left_bits": "0x840ee000",
+        "right_bits": "0x880ee000"
+      },
+      {
+        "original_M": 198,
+        "left_bits": "0x83fd2000",
+        "right_bits": "0x87fd2000"
+      },
+      {
+        "original_M": 200,
+        "left_bits": "0x8503a000",
+        "right_bits": "0x8903a000"
+      },
+      {
+        "original_M": 202,
+        "left_bits": "0x84a20000",
+        "right_bits": "0x88a20000"
+      },
+      {
+        "original_M": 204,
+        "left_bits": "0x82016000",
+        "right_bits": "0x86016000"
+      },
+      {
+        "original_M": 206,
+        "left_bits": "0x84b0a000",
+        "right_bits": "0x88b0a000"
+      },
+      {
+        "original_M": 208,
+        "left_bits": "0x84658000",
+        "right_bits": "0x88658000"
+      },
+      {
+        "original_M": 210,
+        "left_bits": "0x84220000",
+        "right_bits": "0x88220000"
+      },
+      {
+        "original_M": 212,
+        "left_bits": "0x84b2e000",
+        "right_bits": "0x88b2e000"
+      },
+      {
+        "original_M": 214,
+        "left_bits": "0x03b64000",
+        "right_bits": "0x07b64000"
+      },
+      {
+        "original_M": 216,
+        "left_bits": "0x84990000",
+        "right_bits": "0x88990000"
+      },
+      {
+        "original_M": 218,
+        "left_bits": "0x83c96000",
+        "right_bits": "0x87c96000"
+      },
+      {
+        "original_M": 220,
+        "left_bits": "0x84a0e000",
+        "right_bits": "0x88a0e000"
+      },
+      {
+        "original_M": 222,
+        "left_bits": "0x8427a000",
+        "right_bits": "0x8827a000"
+      },
+      {
+        "original_M": 224,
+        "left_bits": "0x84af8000",
+        "right_bits": "0x88af8000"
+      },
+      {
+        "original_M": 226,
+        "left_bits": "0x054f0000",
+        "right_bits": "0x094f0000"
+      },
+      {
+        "original_M": 228,
+        "left_bits": "0x845ec000",
+        "right_bits": "0x885ec000"
+      },
+      {
+        "original_M": 230,
+        "left_bits": "0x04136000",
+        "right_bits": "0x08136000"
+      },
+      {
+        "original_M": 232,
+        "left_bits": "0x0504c000",
+        "right_bits": "0x0904c000"
+      },
+      {
+        "original_M": 234,
+        "left_bits": "0x83912000",
+        "right_bits": "0x87912000"
+      },
+      {
+        "original_M": 236,
+        "left_bits": "0x04268000",
+        "right_bits": "0x08268000"
+      },
+      {
+        "original_M": 238,
+        "left_bits": "0x83472000",
+        "right_bits": "0x87472000"
+      },
+      {
+        "original_M": 240,
+        "left_bits": "0x84d38000",
+        "right_bits": "0x88d38000"
+      },
+      {
+        "original_M": 242,
+        "left_bits": "0x04eb2000",
+        "right_bits": "0x08eb2000"
+      },
+      {
+        "original_M": 244,
+        "left_bits": "0x8456e000",
+        "right_bits": "0x8856e000"
+      },
+      {
+        "original_M": 246,
+        "left_bits": "0x848ee000",
+        "right_bits": "0x888ee000"
+      },
+      {
+        "original_M": 248,
+        "left_bits": "0x84a8c000",
+        "right_bits": "0x88a8c000"
+      },
+      {
+        "original_M": 250,
+        "left_bits": "0x04e22000",
+        "right_bits": "0x08e22000"
+      },
+      {
+        "original_M": 252,
+        "left_bits": "0x83e34000",
+        "right_bits": "0x87e34000"
+      },
+      {
+        "original_M": 254,
+        "left_bits": "0x04948000",
+        "right_bits": "0x08948000"
+      }
+    ],
+    "outside_all_paired_v1_v2_v3_slots": true,
+    "all_139776_targeted_pairs_both_positive_zero": true
+  },
+  "conclusions": [
+    "Fresh baseline reproduces historical-register fingerprint identically through both v1 routes.",
+    "Tail-C0 candidate ended on a separate output-support family at call91; the observed failure did not occur in the reset-target/paired accumulator block.",
+    "The candidate provides91 invocations without a targeted v1/v2/v3 symptom, truncated by the off-target failure. This is not a completed1000-call targeted pass and does not establish reset efficacy.",
+    "No repeated historical v1 event after reset was observed, so this experiment cannot yet distinguish earlier carried C from corruption at or after the final target operation.",
+    "The off-target raw output retains an exact FP32256 relationship across128 rows, stronger numeric information than earlier BF16 rounding-interval compatibility."
+  ],
+  "limits": [
+    "Both serial arms used separate transient events and process histories.",
+    "Literal-zero C changes operand dependency timing as well as discarded C data.",
+    "Complete input and output integrity does not certify transient hardware operand delivery or instruction fetch.",
+    "A physical fault site and a common cause with the original NaN remain unproven."
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "status": "ELEVEN_NUMERICAL_DONOR_MODELS_MATCH_UNIQUE_INPUT_VECTORS_NO_FINAL_TAIL_ROW_MATCH",
+  "created_utc": "2026-09-20T00:15:16.850218+00:00",
+  "GPU_actions": false,
+  "BF16_breadth_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_BF16_donor_breadth_v1/older_BF16_wave_donor_breadth_v1.json",
+    "bytes": 795135,
+    "sha256": "258a36234522a79c2ab6428a443723cf1bcbc7121da17c3a19dca3250c21b15b"
+  },
+  "raw_profile_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_donor_product_independent_v1/cross_agent_row_profile_binding_v1.json",
+    "bytes": 25582,
+    "sha256": "db75b21f1a859640213fa1c7d2b035786be11cfea87bc2dba7612f8a9df8eb50"
+  },
+  "cases": [
+    {
+      "name": "Addmm55",
+      "matching_rows": 542,
+      "k_min": 471929,
+      "k_max": 1573273,
+      "final63_valid_K_matches": 0,
+      "full_X_row_sha256": "d1a03842532d7bf5ba6fdacb05fc5624e9425c34f3d740f44fd1720d62181d02"
+    },
+    {
+      "name": "singleMM196",
+      "matching_rows": 1541,
+      "k_min": 841167,
+      "k_max": 1210096,
+      "final63_valid_K_matches": 0,
+      "full_X_row_sha256": "f2d4c1b52173bda8bcbf07bced6db8bc7c95e5d3066e278b6aadd2fe9b8598b5"
+    },
+    {
+      "name": "original75",
+      "matching_rows": 446,
+      "k_min": 841614,
+      "k_max": 1209777,
+      "final63_valid_K_matches": 0,
+      "full_X_row_sha256": "f2f431480b1eacafcbf29367f00daa2a50cf0608c1fe4efe3cf0f171adf3071a"
+    },
+    {
+      "name": "original561",
+      "matching_rows": 127,
+      "k_min": 1883400,
+      "k_max": 2230625,
+      "final63_valid_K_matches": 0,
+      "full_X_row_sha256": "9125cd1dbb13ba2d1c1fcc32371b429384d6f421b5498af18f12ab0207c0ebc2"
+    },
+    {
+      "name": "Boff154",
+      "matching_rows": 2612,
+      "k_min": 67813,
+      "k_max": 470991,
+      "final63_valid_K_matches": 0,
+      "full_X_row_sha256": "f59b4e00e7f7f2e3c61f90adf1b743542abb4c9e67f2f2949fbc5e07d53b87d7"
+    },
+    {
+      "name": "zero_fill56",
+      "matching_rows": 666,
+      "k_min": 841670,
+      "k_max": 1572526,
+      "final63_valid_K_matches": 0,
+      "full_X_row_sha256": "4b2be661dc9e595447781af475062e7bde247c816d1783dbc4b88f6961d001f7"
+    },
+    {
+      "name": "one_fill74",
+      "matching_rows": 588,
+      "k_min": 471565,
+      "k_max": 821209,
+      "final63_valid_K_matches": 0,
+      "full_X_row_sha256": "42b1cb116ae8a5014fd57b45c6fbce0d06a5f99fb08d33df9971a304d5f08a46"
+    },
+    {
+      "name": "rawpair_Boff778",
+      "matching_rows": 9842,
+      "k_min": 1246592,
+      "k_max": 2323631,
+      "final63_valid_K_matches": 0,
+      "full_X_row_sha256": "e4e36275a423a38b73af92256d4e3a1af1046fbc2bc7eaa7b0de3d6dba521949"
+    },
+    {
+      "name": "accpair_Boff197",
+      "matching_rows": 1889,
+      "k_min": 68987,
+      "k_max": 1209059,
+      "final63_valid_K_matches": 0,
+      "full_X_row_sha256": "60ead73bfc9a4380c45061092ae0bfdc657d2380e28950204fe3dd926a76ba5a"
+    },
+    {
+      "name": "tail_C0_FAIL91",
+      "matching_rows": 155,
+      "k_min": 67603,
+      "k_max": 469335,
+      "final63_valid_K_matches": 0,
+      "full_X_row_sha256": "dc792f720420d4878fe0169af855101db93f7b82157942f765b70aa01ffcdeea"
+    },
+    {
+      "name": "tail_C0_repeat_FAIL183",
+      "matching_rows": 417,
+      "k_min": 67174,
+      "k_max": 470646,
+      "final63_valid_K_matches": 0,
+      "full_X_row_sha256": "a0734260d46425529888dffd5df344e46a644f0ad2d486d210fe66d0b5834e1b"
+    }
+  ],
+  "valid_final_tail_K_interval_inclusive": [
+    2324288,
+    2324350
+  ],
+  "limits": [
+    "All matching rows from the exhaustive hash-bound catalog are included.",
+    "Absence of final-tail row matches localizes the numerical input pattern, not physical fault time. Stale or remapped A operand delivery later remains possible.",
+    "Each case has a unique matching full input vector but multiple K indices; K-loop phase is not uniquely identified."
+  ]
+}

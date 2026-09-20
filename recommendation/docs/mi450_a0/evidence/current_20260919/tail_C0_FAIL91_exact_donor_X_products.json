@@ -1,0 +1,3311 @@
+{
+  "format": "DW_FAIL91_wave_lane0_historical_v257_exact_donor_product_v1",
+  "status": "PASS",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_tail91_donor_product_v1/certify_exact_donor_product_v1.py",
+    "bytes": 12643,
+    "sha256": "be43b7b41e95cbe517294020629205097eb82ee2a289e2d8c16d9fa39c44fe6c"
+  },
+  "support_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_tail_czero_failure_mechanism_v1/FAIL91_support_and_final_WMMA_binding_v1.json",
+    "bytes": 181370,
+    "sha256": "a5914f2bdf08355b2453fdda9b41fff60649a76f1740e911fab92055abede9ec"
+  },
+  "final_report": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_persist_DW_tail_czero_accumulator_even_direct_store_tail_czero_v1.json",
+    "bytes": 504590,
+    "sha256": "59a37e6053f8a0b6f328edd282475668c38e8b9d0ed77615075567d553e31847"
+  },
+  "final_raw_record": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_persist_DW_tail_czero_accumulator_even_direct_store_tail_czero_v1.json.cpu_outputs.bin",
+    "stream_offset": 23592960,
+    "bytes": 262144,
+    "sha256": "336e68e0099985c65ba2cf6c708a1c2abc82ed5285860537f6a9a4490c63a187",
+    "complete_nonzero_support_rebuilt_from_raw_words": true
+  },
+  "historical_donor_proof": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_donor_lifetime_v1/first_accumulator_definition_exact_packet_v1.json",
+    "bytes": 417279,
+    "sha256": "f77235753cf0136ca94beb39fb3ce6329200d7091f59db124d2ad827459622d0"
+  },
+  "historical_donor_bindings_all16_contexts": [
+    {
+      "group": 0,
+      "wave": 0,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000810",
+      "product_BF16_bits": "0x0810"
+    },
+    {
+      "group": 0,
+      "wave": 1,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000a10",
+      "product_BF16_bits": "0x0a10"
+    },
+    {
+      "group": 0,
+      "wave": 2,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000c10",
+      "product_BF16_bits": "0x0c10"
+    },
+    {
+      "group": 0,
+      "wave": 3,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000e10",
+      "product_BF16_bits": "0x0e10"
+    },
+    {
+      "group": 1,
+      "wave": 0,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000810",
+      "product_BF16_bits": "0x0810"
+    },
+    {
+      "group": 1,
+      "wave": 1,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000a10",
+      "product_BF16_bits": "0x0a10"
+    },
+    {
+      "group": 1,
+      "wave": 2,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000c10",
+      "product_BF16_bits": "0x0c10"
+    },
+    {
+      "group": 1,
+      "wave": 3,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000e10",
+      "product_BF16_bits": "0x0e10"
+    },
+    {
+      "group": 2,
+      "wave": 0,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000810",
+      "product_BF16_bits": "0x0810"
+    },
+    {
+      "group": 2,
+      "wave": 1,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000a10",
+      "product_BF16_bits": "0x0a10"
+    },
+    {
+      "group": 2,
+      "wave": 2,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000c10",
+      "product_BF16_bits": "0x0c10"
+    },
+    {
+      "group": 2,
+      "wave": 3,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000e10",
+      "product_BF16_bits": "0x0e10"
+    },
+    {
+      "group": 3,
+      "wave": 0,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000810",
+      "product_BF16_bits": "0x0810"
+    },
+    {
+      "group": 3,
+      "wave": 1,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000a10",
+      "product_BF16_bits": "0x0a10"
+    },
+    {
+      "group": 3,
+      "wave": 2,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000c10",
+      "product_BF16_bits": "0x0c10"
+    },
+    {
+      "group": 3,
+      "wave": 3,
+      "donor_lane": 0,
+      "historical_v257_word": "0x00000e10",
+      "product_BF16_bits": "0x0e10"
+    }
+  ],
+  "model": "FP32_observed[M,N] == BF16(0x0810 + 0x0200*wave) * X[k,M]; wave=(M>=128)+2*(N==450)",
+  "donor_is_historical_lane0_within_wave": true,
+  "accumulator_lanes": [
+    0,
+    16
+  ],
+  "exact_arithmetic": "Integer IEEE decoding and Fraction division/product/equality; no floating-point tolerance or rounding used.",
+  "raw_FP32_words_exactly_proved": 256,
+  "distinct_even_M_coefficients": 128,
+  "inferred_coefficients": [
+    {
+      "M": 0,
+      "bits": "0x3957",
+      "exact": {
+        "integer": 215,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 2,
+      "bits": "0xba46",
+      "exact": {
+        "integer": -99,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 4,
+      "bits": "0x397d",
+      "exact": {
+        "integer": 253,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 6,
+      "bits": "0xba4a",
+      "exact": {
+        "integer": -101,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 8,
+      "bits": "0xb910",
+      "exact": {
+        "integer": -9,
+        "power_of_two": -16
+      }
+    },
+    {
+      "M": 10,
+      "bits": "0x39b8",
+      "exact": {
+        "integer": 23,
+        "power_of_two": -16
+      }
+    },
+    {
+      "M": 12,
+      "bits": "0xb9e5",
+      "exact": {
+        "integer": -229,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 14,
+      "bits": "0xb9d3",
+      "exact": {
+        "integer": -211,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 16,
+      "bits": "0xb9ad",
+      "exact": {
+        "integer": -173,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 18,
+      "bits": "0x3991",
+      "exact": {
+        "integer": 145,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 20,
+      "bits": "0xb97e",
+      "exact": {
+        "integer": -127,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 22,
+      "bits": "0xb8c5",
+      "exact": {
+        "integer": -197,
+        "power_of_two": -21
+      }
+    },
+    {
+      "M": 24,
+      "bits": "0xb981",
+      "exact": {
+        "integer": -129,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 26,
+      "bits": "0xb9b1",
+      "exact": {
+        "integer": -177,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 28,
+      "bits": "0xb8a2",
+      "exact": {
+        "integer": -81,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 30,
+      "bits": "0xba28",
+      "exact": {
+        "integer": -21,
+        "power_of_two": -15
+      }
+    },
+    {
+      "M": 32,
+      "bits": "0x3a26",
+      "exact": {
+        "integer": 83,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 34,
+      "bits": "0x39a9",
+      "exact": {
+        "integer": 169,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 36,
+      "bits": "0x3a06",
+      "exact": {
+        "integer": 67,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 38,
+      "bits": "0x38c4",
+      "exact": {
+        "integer": 49,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 40,
+      "bits": "0xb8d3",
+      "exact": {
+        "integer": -211,
+        "power_of_two": -21
+      }
+    },
+    {
+      "M": 42,
+      "bits": "0xba4c",
+      "exact": {
+        "integer": -51,
+        "power_of_two": -16
+      }
+    },
+    {
+      "M": 44,
+      "bits": "0xb94c",
+      "exact": {
+        "integer": -51,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 46,
+      "bits": "0x3a58",
+      "exact": {
+        "integer": 27,
+        "power_of_two": -15
+      }
+    },
+    {
+      "M": 48,
+      "bits": "0xba45",
+      "exact": {
+        "integer": -197,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 50,
+      "bits": "0x392c",
+      "exact": {
+        "integer": 43,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 52,
+      "bits": "0x38d5",
+      "exact": {
+        "integer": 213,
+        "power_of_two": -21
+      }
+    },
+    {
+      "M": 54,
+      "bits": "0xb9f8",
+      "exact": {
+        "integer": -31,
+        "power_of_two": -16
+      }
+    },
+    {
+      "M": 56,
+      "bits": "0xb987",
+      "exact": {
+        "integer": -135,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 58,
+      "bits": "0xba46",
+      "exact": {
+        "integer": -99,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 60,
+      "bits": "0x3984",
+      "exact": {
+        "integer": 33,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 62,
+      "bits": "0xb97e",
+      "exact": {
+        "integer": -127,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 64,
+      "bits": "0xb99b",
+      "exact": {
+        "integer": -155,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 66,
+      "bits": "0xb7d9",
+      "exact": {
+        "integer": -217,
+        "power_of_two": -23
+      }
+    },
+    {
+      "M": 68,
+      "bits": "0x3a83",
+      "exact": {
+        "integer": 131,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 70,
+      "bits": "0xb859",
+      "exact": {
+        "integer": -217,
+        "power_of_two": -22
+      }
+    },
+    {
+      "M": 72,
+      "bits": "0x3a27",
+      "exact": {
+        "integer": 167,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 74,
+      "bits": "0x3a64",
+      "exact": {
+        "integer": 57,
+        "power_of_two": -16
+      }
+    },
+    {
+      "M": 76,
+      "bits": "0x39fc",
+      "exact": {
+        "integer": 63,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 78,
+      "bits": "0xb992",
+      "exact": {
+        "integer": -73,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 80,
+      "bits": "0xba21",
+      "exact": {
+        "integer": -161,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 82,
+      "bits": "0x3973",
+      "exact": {
+        "integer": 243,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 84,
+      "bits": "0x39f3",
+      "exact": {
+        "integer": 243,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 86,
+      "bits": "0x3939",
+      "exact": {
+        "integer": 185,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 88,
+      "bits": "0xb88b",
+      "exact": {
+        "integer": -139,
+        "power_of_two": -21
+      }
+    },
+    {
+      "M": 90,
+      "bits": "0x3a91",
+      "exact": {
+        "integer": 145,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 92,
+      "bits": "0xb8ab",
+      "exact": {
+        "integer": -171,
+        "power_of_two": -21
+      }
+    },
+    {
+      "M": 94,
+      "bits": "0xba2b",
+      "exact": {
+        "integer": -171,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 96,
+      "bits": "0xba02",
+      "exact": {
+        "integer": -65,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 98,
+      "bits": "0xb95a",
+      "exact": {
+        "integer": -109,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 100,
+      "bits": "0xba27",
+      "exact": {
+        "integer": -167,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 102,
+      "bits": "0x39d2",
+      "exact": {
+        "integer": 105,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 104,
+      "bits": "0x39f1",
+      "exact": {
+        "integer": 241,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 106,
+      "bits": "0x3903",
+      "exact": {
+        "integer": 131,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 108,
+      "bits": "0xba1e",
+      "exact": {
+        "integer": -79,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 110,
+      "bits": "0x393f",
+      "exact": {
+        "integer": 191,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 112,
+      "bits": "0xba12",
+      "exact": {
+        "integer": -73,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 114,
+      "bits": "0x3971",
+      "exact": {
+        "integer": 241,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 116,
+      "bits": "0xb9c5",
+      "exact": {
+        "integer": -197,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 118,
+      "bits": "0xb99f",
+      "exact": {
+        "integer": -159,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 120,
+      "bits": "0x3a7b",
+      "exact": {
+        "integer": 251,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 122,
+      "bits": "0x38a1",
+      "exact": {
+        "integer": 161,
+        "power_of_two": -21
+      }
+    },
+    {
+      "M": 124,
+      "bits": "0xb9ea",
+      "exact": {
+        "integer": -117,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 126,
+      "bits": "0xb900",
+      "exact": {
+        "integer": -1,
+        "power_of_two": -13
+      }
+    },
+    {
+      "M": 128,
+      "bits": "0x39fd",
+      "exact": {
+        "integer": 253,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 130,
+      "bits": "0x3a32",
+      "exact": {
+        "integer": 89,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 132,
+      "bits": "0xba21",
+      "exact": {
+        "integer": -161,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 134,
+      "bits": "0xba3b",
+      "exact": {
+        "integer": -187,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 136,
+      "bits": "0xb895",
+      "exact": {
+        "integer": -149,
+        "power_of_two": -21
+      }
+    },
+    {
+      "M": 138,
+      "bits": "0x39c6",
+      "exact": {
+        "integer": 99,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 140,
+      "bits": "0x3a9b",
+      "exact": {
+        "integer": 155,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 142,
+      "bits": "0xb89e",
+      "exact": {
+        "integer": -79,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 144,
+      "bits": "0xb86b",
+      "exact": {
+        "integer": -235,
+        "power_of_two": -22
+      }
+    },
+    {
+      "M": 146,
+      "bits": "0xb8e9",
+      "exact": {
+        "integer": -233,
+        "power_of_two": -21
+      }
+    },
+    {
+      "M": 148,
+      "bits": "0x39c8",
+      "exact": {
+        "integer": 25,
+        "power_of_two": -16
+      }
+    },
+    {
+      "M": 150,
+      "bits": "0x36f5",
+      "exact": {
+        "integer": 245,
+        "power_of_two": -25
+      }
+    },
+    {
+      "M": 152,
+      "bits": "0x38fe",
+      "exact": {
+        "integer": 127,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 154,
+      "bits": "0xb9b7",
+      "exact": {
+        "integer": -183,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 156,
+      "bits": "0x38f4",
+      "exact": {
+        "integer": 61,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 158,
+      "bits": "0xba15",
+      "exact": {
+        "integer": -149,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 160,
+      "bits": "0x3a7e",
+      "exact": {
+        "integer": 127,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 162,
+      "bits": "0xb92f",
+      "exact": {
+        "integer": -175,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 164,
+      "bits": "0xb816",
+      "exact": {
+        "integer": -75,
+        "power_of_two": -21
+      }
+    },
+    {
+      "M": 166,
+      "bits": "0xba56",
+      "exact": {
+        "integer": -107,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 168,
+      "bits": "0x3a94",
+      "exact": {
+        "integer": 37,
+        "power_of_two": -15
+      }
+    },
+    {
+      "M": 170,
+      "bits": "0xb9a5",
+      "exact": {
+        "integer": -165,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 172,
+      "bits": "0xb919",
+      "exact": {
+        "integer": -153,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 174,
+      "bits": "0xb864",
+      "exact": {
+        "integer": -57,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 176,
+      "bits": "0x3a01",
+      "exact": {
+        "integer": 129,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 178,
+      "bits": "0xb993",
+      "exact": {
+        "integer": -147,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 180,
+      "bits": "0x39c7",
+      "exact": {
+        "integer": 199,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 182,
+      "bits": "0x3950",
+      "exact": {
+        "integer": 13,
+        "power_of_two": -16
+      }
+    },
+    {
+      "M": 184,
+      "bits": "0x38dc",
+      "exact": {
+        "integer": 55,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 186,
+      "bits": "0x3aa6",
+      "exact": {
+        "integer": 83,
+        "power_of_two": -16
+      }
+    },
+    {
+      "M": 188,
+      "bits": "0xba31",
+      "exact": {
+        "integer": -177,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 190,
+      "bits": "0xb93b",
+      "exact": {
+        "integer": -187,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 192,
+      "bits": "0xb99a",
+      "exact": {
+        "integer": -77,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 194,
+      "bits": "0x38bd",
+      "exact": {
+        "integer": 189,
+        "power_of_two": -21
+      }
+    },
+    {
+      "M": 196,
+      "bits": "0xb97e",
+      "exact": {
+        "integer": -127,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 198,
+      "bits": "0xb961",
+      "exact": {
+        "integer": -225,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 200,
+      "bits": "0xba6a",
+      "exact": {
+        "integer": -117,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 202,
+      "bits": "0xba10",
+      "exact": {
+        "integer": -9,
+        "power_of_two": -14
+      }
+    },
+    {
+      "M": 204,
+      "bits": "0xb766",
+      "exact": {
+        "integer": -115,
+        "power_of_two": -23
+      }
+    },
+    {
+      "M": 206,
+      "bits": "0xba1d",
+      "exact": {
+        "integer": -157,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 208,
+      "bits": "0xb9cc",
+      "exact": {
+        "integer": -51,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 210,
+      "bits": "0xb990",
+      "exact": {
+        "integer": -9,
+        "power_of_two": -15
+      }
+    },
+    {
+      "M": 212,
+      "bits": "0xba1f",
+      "exact": {
+        "integer": -159,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 214,
+      "bits": "0x3922",
+      "exact": {
+        "integer": 81,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 216,
+      "bits": "0xba08",
+      "exact": {
+        "integer": -17,
+        "power_of_two": -15
+      }
+    },
+    {
+      "M": 218,
+      "bits": "0xb933",
+      "exact": {
+        "integer": -179,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 220,
+      "bits": "0xba0f",
+      "exact": {
+        "integer": -143,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 222,
+      "bits": "0xb995",
+      "exact": {
+        "integer": -149,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 224,
+      "bits": "0xba1c",
+      "exact": {
+        "integer": -39,
+        "power_of_two": -16
+      }
+    },
+    {
+      "M": 226,
+      "bits": "0x3ab8",
+      "exact": {
+        "integer": 23,
+        "power_of_two": -14
+      }
+    },
+    {
+      "M": 228,
+      "bits": "0xb9c6",
+      "exact": {
+        "integer": -99,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 230,
+      "bits": "0x3983",
+      "exact": {
+        "integer": 131,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 232,
+      "bits": "0x3a6c",
+      "exact": {
+        "integer": 59,
+        "power_of_two": -16
+      }
+    },
+    {
+      "M": 234,
+      "bits": "0xb901",
+      "exact": {
+        "integer": -129,
+        "power_of_two": -20
+      }
+    },
+    {
+      "M": 236,
+      "bits": "0x3994",
+      "exact": {
+        "integer": 37,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 238,
+      "bits": "0xb8b1",
+      "exact": {
+        "integer": -177,
+        "power_of_two": -21
+      }
+    },
+    {
+      "M": 240,
+      "bits": "0xba3c",
+      "exact": {
+        "integer": -47,
+        "power_of_two": -16
+      }
+    },
+    {
+      "M": 242,
+      "bits": "0x3a51",
+      "exact": {
+        "integer": 209,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 244,
+      "bits": "0xb9bf",
+      "exact": {
+        "integer": -191,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 246,
+      "bits": "0xb9fe",
+      "exact": {
+        "integer": -127,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 248,
+      "bits": "0xba16",
+      "exact": {
+        "integer": -75,
+        "power_of_two": -17
+      }
+    },
+    {
+      "M": 250,
+      "bits": "0x3a49",
+      "exact": {
+        "integer": 201,
+        "power_of_two": -18
+      }
+    },
+    {
+      "M": 252,
+      "bits": "0xb94a",
+      "exact": {
+        "integer": -101,
+        "power_of_two": -19
+      }
+    },
+    {
+      "M": 254,
+      "bits": "0x3a04",
+      "exact": {
+        "integer": 33,
+        "power_of_two": -16
+      }
+    }
+  ],
+  "coefficient_abs_max": "23/16384",
+  "coefficient_abs_min": "245/33554432",
+  "saved_X": {
+    "artifact_path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+    "helper": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/audit_step405_linear_zero_failure_independent_v1.py",
+      "bytes": 25482,
+      "sha256": "93dcdc836a6f14bd6dc28228b0e1d52ba3dc93f5e7f38ece63ec7a5f09ddee3b"
+    },
+    "shape": [
+      2324351,
+      256
+    ],
+    "stride": [
+      256,
+      1
+    ],
+    "bytes": 1190067712,
+    "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+    "all_storage_bytes_rehashed": true,
+    "bundle_SHA_previously_certified_not_rehashed_here": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+  },
+  "all2324351_rows_searched": true,
+  "matching_rows": 155,
+  "search_stages": [
+    {
+      "M": 0,
+      "remaining_rows": 1582
+    },
+    {
+      "M": 2,
+      "remaining_rows": 155
+    },
+    {
+      "M": 4,
+      "remaining_rows": 155
+    },
+    {
+      "M": 6,
+      "remaining_rows": 155
+    },
+    {
+      "M": 8,
+      "remaining_rows": 155
+    },
+    {
+      "M": 10,
+      "remaining_rows": 155
+    },
+    {
+      "M": 12,
+      "remaining_rows": 155
+    },
+    {
+      "M": 14,
+      "remaining_rows": 155
+    },
+    {
+      "M": 16,
+      "remaining_rows": 155
+    },
+    {
+      "M": 18,
+      "remaining_rows": 155
+    },
+    {
+      "M": 20,
+      "remaining_rows": 155
+    },
+    {
+      "M": 22,
+      "remaining_rows": 155
+    },
+    {
+      "M": 24,
+      "remaining_rows": 155
+    },
+    {
+      "M": 26,
+      "remaining_rows": 155
+    },
+    {
+      "M": 28,
+      "remaining_rows": 155
+    },
+    {
+      "M": 30,
+      "remaining_rows": 155
+    },
+    {
+      "M": 32,
+      "remaining_rows": 155
+    },
+    {
+      "M": 34,
+      "remaining_rows": 155
+    },
+    {
+      "M": 36,
+      "remaining_rows": 155
+    },
+    {
+      "M": 38,
+      "remaining_rows": 155
+    },
+    {
+      "M": 40,
+      "remaining_rows": 155
+    },
+    {
+      "M": 42,
+      "remaining_rows": 155
+    },
+    {
+      "M": 44,
+      "remaining_rows": 155
+    },
+    {
+      "M": 46,
+      "remaining_rows": 155
+    },
+    {
+      "M": 48,
+      "remaining_rows": 155
+    },
+    {
+      "M": 50,
+      "remaining_rows": 155
+    },
+    {
+      "M": 52,
+      "remaining_rows": 155
+    },
+    {
+      "M": 54,
+      "remaining_rows": 155
+    },
+    {
+      "M": 56,
+      "remaining_rows": 155
+    },
+    {
+      "M": 58,
+      "remaining_rows": 155
+    },
+    {
+      "M": 60,
+      "remaining_rows": 155
+    },
+    {
+      "M": 62,
+      "remaining_rows": 155
+    },
+    {
+      "M": 64,
+      "remaining_rows": 155
+    },
+    {
+      "M": 66,
+      "remaining_rows": 155
+    },
+    {
+      "M": 68,
+      "remaining_rows": 155
+    },
+    {
+      "M": 70,
+      "remaining_rows": 155
+    },
+    {
+      "M": 72,
+      "remaining_rows": 155
+    },
+    {
+      "M": 74,
+      "remaining_rows": 155
+    },
+    {
+      "M": 76,
+      "remaining_rows": 155
+    },
+    {
+      "M": 78,
+      "remaining_rows": 155
+    },
+    {
+      "M": 80,
+      "remaining_rows": 155
+    },
+    {
+      "M": 82,
+      "remaining_rows": 155
+    },
+    {
+      "M": 84,
+      "remaining_rows": 155
+    },
+    {
+      "M": 86,
+      "remaining_rows": 155
+    },
+    {
+      "M": 88,
+      "remaining_rows": 155
+    },
+    {
+      "M": 90,
+      "remaining_rows": 155
+    },
+    {
+      "M": 92,
+      "remaining_rows": 155
+    },
+    {
+      "M": 94,
+      "remaining_rows": 155
+    },
+    {
+      "M": 96,
+      "remaining_rows": 155
+    },
+    {
+      "M": 98,
+      "remaining_rows": 155
+    },
+    {
+      "M": 100,
+      "remaining_rows": 155
+    },
+    {
+      "M": 102,
+      "remaining_rows": 155
+    },
+    {
+      "M": 104,
+      "remaining_rows": 155
+    },
+    {
+      "M": 106,
+      "remaining_rows": 155
+    },
+    {
+      "M": 108,
+      "remaining_rows": 155
+    },
+    {
+      "M": 110,
+      "remaining_rows": 155
+    },
+    {
+      "M": 112,
+      "remaining_rows": 155
+    },
+    {
+      "M": 114,
+      "remaining_rows": 155
+    },
+    {
+      "M": 116,
+      "remaining_rows": 155
+    },
+    {
+      "M": 118,
+      "remaining_rows": 155
+    },
+    {
+      "M": 120,
+      "remaining_rows": 155
+    },
+    {
+      "M": 122,
+      "remaining_rows": 155
+    },
+    {
+      "M": 124,
+      "remaining_rows": 155
+    },
+    {
+      "M": 126,
+      "remaining_rows": 155
+    },
+    {
+      "M": 128,
+      "remaining_rows": 155
+    },
+    {
+      "M": 130,
+      "remaining_rows": 155
+    },
+    {
+      "M": 132,
+      "remaining_rows": 155
+    },
+    {
+      "M": 134,
+      "remaining_rows": 155
+    },
+    {
+      "M": 136,
+      "remaining_rows": 155
+    },
+    {
+      "M": 138,
+      "remaining_rows": 155
+    },
+    {
+      "M": 140,
+      "remaining_rows": 155
+    },
+    {
+      "M": 142,
+      "remaining_rows": 155
+    },
+    {
+      "M": 144,
+      "remaining_rows": 155
+    },
+    {
+      "M": 146,
+      "remaining_rows": 155
+    },
+    {
+      "M": 148,
+      "remaining_rows": 155
+    },
+    {
+      "M": 150,
+      "remaining_rows": 155
+    },
+    {
+      "M": 152,
+      "remaining_rows": 155
+    },
+    {
+      "M": 154,
+      "remaining_rows": 155
+    },
+    {
+      "M": 156,
+      "remaining_rows": 155
+    },
+    {
+      "M": 158,
+      "remaining_rows": 155
+    },
+    {
+      "M": 160,
+      "remaining_rows": 155
+    },
+    {
+      "M": 162,
+      "remaining_rows": 155
+    },
+    {
+      "M": 164,
+      "remaining_rows": 155
+    },
+    {
+      "M": 166,
+      "remaining_rows": 155
+    },
+    {
+      "M": 168,
+      "remaining_rows": 155
+    },
+    {
+      "M": 170,
+      "remaining_rows": 155
+    },
+    {
+      "M": 172,
+      "remaining_rows": 155
+    },
+    {
+      "M": 174,
+      "remaining_rows": 155
+    },
+    {
+      "M": 176,
+      "remaining_rows": 155
+    },
+    {
+      "M": 178,
+      "remaining_rows": 155
+    },
+    {
+      "M": 180,
+      "remaining_rows": 155
+    },
+    {
+      "M": 182,
+      "remaining_rows": 155
+    },
+    {
+      "M": 184,
+      "remaining_rows": 155
+    },
+    {
+      "M": 186,
+      "remaining_rows": 155
+    },
+    {
+      "M": 188,
+      "remaining_rows": 155
+    },
+    {
+      "M": 190,
+      "remaining_rows": 155
+    },
+    {
+      "M": 192,
+      "remaining_rows": 155
+    },
+    {
+      "M": 194,
+      "remaining_rows": 155
+    },
+    {
+      "M": 196,
+      "remaining_rows": 155
+    },
+    {
+      "M": 198,
+      "remaining_rows": 155
+    },
+    {
+      "M": 200,
+      "remaining_rows": 155
+    },
+    {
+      "M": 202,
+      "remaining_rows": 155
+    },
+    {
+      "M": 204,
+      "remaining_rows": 155
+    },
+    {
+      "M": 206,
+      "remaining_rows": 155
+    },
+    {
+      "M": 208,
+      "remaining_rows": 155
+    },
+    {
+      "M": 210,
+      "remaining_rows": 155
+    },
+    {
+      "M": 212,
+      "remaining_rows": 155
+    },
+    {
+      "M": 214,
+      "remaining_rows": 155
+    },
+    {
+      "M": 216,
+      "remaining_rows": 155
+    },
+    {
+      "M": 218,
+      "remaining_rows": 155
+    },
+    {
+      "M": 220,
+      "remaining_rows": 155
+    },
+    {
+      "M": 222,
+      "remaining_rows": 155
+    },
+    {
+      "M": 224,
+      "remaining_rows": 155
+    },
+    {
+      "M": 226,
+      "remaining_rows": 155
+    },
+    {
+      "M": 228,
+      "remaining_rows": 155
+    },
+    {
+      "M": 230,
+      "remaining_rows": 155
+    },
+    {
+      "M": 232,
+      "remaining_rows": 155
+    },
+    {
+      "M": 234,
+      "remaining_rows": 155
+    },
+    {
+      "M": 236,
+      "remaining_rows": 155
+    },
+    {
+      "M": 238,
+      "remaining_rows": 155
+    },
+    {
+      "M": 240,
+      "remaining_rows": 155
+    },
+    {
+      "M": 242,
+      "remaining_rows": 155
+    },
+    {
+      "M": 244,
+      "remaining_rows": 155
+    },
+    {
+      "M": 246,
+      "remaining_rows": 155
+    },
+    {
+      "M": 248,
+      "remaining_rows": 155
+    },
+    {
+      "M": 250,
+      "remaining_rows": 155
+    },
+    {
+      "M": 252,
+      "remaining_rows": 155
+    },
+    {
+      "M": 254,
+      "remaining_rows": 155
+    }
+  ],
+  "matching_row_artifact": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_tail91_donor_product_v1/matching_saved_X_rows_v1.json",
+    "bytes": 60653,
+    "sha256": "c611e2fa52140251444f6f2ff7205db9e5303a1339081c22c13b7a333aff8238"
+  },
+  "exact_product_artifact": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_tail91_donor_product_v1/all256_exact_integer_product_proofs_v1.json",
+    "bytes": 97125,
+    "sha256": "8388d916a8e961ce9226a4a35534b1dbd633d920ab33c1af92d8d189d300814d"
+  },
+  "rejected_alternatives": [
+    {
+      "model": "same_accumulator_lane_v257_instead_of_wave_lane0",
+      "inferred_BF16": true,
+      "matching_row_count": 0,
+      "matching_rows": [],
+      "search_stages": [
+        {
+          "M": 0,
+          "remaining_rows": 1582
+        },
+        {
+          "M": 2,
+          "remaining_rows": 155
+        },
+        {
+          "M": 4,
+          "remaining_rows": 155
+        },
+        {
+          "M": 6,
+          "remaining_rows": 155
+        },
+        {
+          "M": 8,
+          "remaining_rows": 155
+        },
+        {
+          "M": 10,
+          "remaining_rows": 155
+        },
+        {
+          "M": 12,
+          "remaining_rows": 155
+        },
+        {
+          "M": 14,
+          "remaining_rows": 155
+        },
+        {
+          "M": 16,
+          "remaining_rows": 155
+        },
+        {
+          "M": 18,
+          "remaining_rows": 155
+        },
+        {
+          "M": 20,
+          "remaining_rows": 155
+        },
+        {
+          "M": 22,
+          "remaining_rows": 155
+        },
+        {
+          "M": 24,
+          "remaining_rows": 155
+        },
+        {
+          "M": 26,
+          "remaining_rows": 155
+        },
+        {
+          "M": 28,
+          "remaining_rows": 155
+        },
+        {
+          "M": 30,
+          "remaining_rows": 155
+        },
+        {
+          "M": 32,
+          "remaining_rows": 155
+        },
+        {
+          "M": 34,
+          "remaining_rows": 155
+        },
+        {
+          "M": 36,
+          "remaining_rows": 155
+        },
+        {
+          "M": 38,
+          "remaining_rows": 155
+        },
+        {
+          "M": 40,
+          "remaining_rows": 155
+        },
+        {
+          "M": 42,
+          "remaining_rows": 155
+        },
+        {
+          "M": 44,
+          "remaining_rows": 155
+        },
+        {
+          "M": 46,
+          "remaining_rows": 155
+        },
+        {
+          "M": 48,
+          "remaining_rows": 155
+        },
+        {
+          "M": 50,
+          "remaining_rows": 155
+        },
+        {
+          "M": 52,
+          "remaining_rows": 155
+        },
+        {
+          "M": 54,
+          "remaining_rows": 155
+        },
+        {
+          "M": 56,
+          "remaining_rows": 155
+        },
+        {
+          "M": 58,
+          "remaining_rows": 155
+        },
+        {
+          "M": 60,
+          "remaining_rows": 155
+        },
+        {
+          "M": 62,
+          "remaining_rows": 155
+        },
+        {
+          "M": 64,
+          "remaining_rows": 0
+        }
+      ],
+      "inferred_coefficients": [
+        {
+          "M": 0,
+          "bits": "0x3957"
+        },
+        {
+          "M": 2,
+          "bits": "0xba46"
+        },
+        {
+          "M": 4,
+          "bits": "0x397d"
+        },
+        {
+          "M": 6,
+          "bits": "0xba4a"
+        },
+        {
+          "M": 8,
+          "bits": "0xb910"
+        },
+        {
+          "M": 10,
+          "bits": "0x39b8"
+        },
+        {
+          "M": 12,
+          "bits": "0xb9e5"
+        },
+        {
+          "M": 14,
+          "bits": "0xb9d3"
+        },
+        {
+          "M": 16,
+          "bits": "0xb9ad"
+        },
+        {
+          "M": 18,
+          "bits": "0x3991"
+        },
+        {
+          "M": 20,
+          "bits": "0xb97e"
+        },
+        {
+          "M": 22,
+          "bits": "0xb8c5"
+        },
+        {
+          "M": 24,
+          "bits": "0xb981"
+        },
+        {
+          "M": 26,
+          "bits": "0xb9b1"
+        },
+        {
+          "M": 28,
+          "bits": "0xb8a2"
+        },
+        {
+          "M": 30,
+          "bits": "0xba28"
+        },
+        {
+          "M": 32,
+          "bits": "0x3a26"
+        },
+        {
+          "M": 34,
+          "bits": "0x39a9"
+        },
+        {
+          "M": 36,
+          "bits": "0x3a06"
+        },
+        {
+          "M": 38,
+          "bits": "0x38c4"
+        },
+        {
+          "M": 40,
+          "bits": "0xb8d3"
+        },
+        {
+          "M": 42,
+          "bits": "0xba4c"
+        },
+        {
+          "M": 44,
+          "bits": "0xb94c"
+        },
+        {
+          "M": 46,
+          "bits": "0x3a58"
+        },
+        {
+          "M": 48,
+          "bits": "0xba45"
+        },
+        {
+          "M": 50,
+          "bits": "0x392c"
+        },
+        {
+          "M": 52,
+          "bits": "0x38d5"
+        },
+        {
+          "M": 54,
+          "bits": "0xb9f8"
+        },
+        {
+          "M": 56,
+          "bits": "0xb987"
+        },
+        {
+          "M": 58,
+          "bits": "0xba46"
+        },
+        {
+          "M": 60,
+          "bits": "0x3984"
+        },
+        {
+          "M": 62,
+          "bits": "0xb97e"
+        },
+        {
+          "M": 64,
+          "bits": "0xb89b"
+        },
+        {
+          "M": 66,
+          "bits": "0xb6d9"
+        },
+        {
+          "M": 68,
+          "bits": "0x3983"
+        },
+        {
+          "M": 70,
+          "bits": "0xb759"
+        },
+        {
+          "M": 72,
+          "bits": "0x3927"
+        },
+        {
+          "M": 74,
+          "bits": "0x3964"
+        },
+        {
+          "M": 76,
+          "bits": "0x38fc"
+        },
+        {
+          "M": 78,
+          "bits": "0xb892"
+        },
+        {
+          "M": 80,
+          "bits": "0xb921"
+        },
+        {
+          "M": 82,
+          "bits": "0x3873"
+        },
+        {
+          "M": 84,
+          "bits": "0x38f3"
+        },
+        {
+          "M": 86,
+          "bits": "0x3839"
+        },
+        {
+          "M": 88,
+          "bits": "0xb78b"
+        },
+        {
+          "M": 90,
+          "bits": "0x3991"
+        },
+        {
+          "M": 92,
+          "bits": "0xb7ab"
+        },
+        {
+          "M": 94,
+          "bits": "0xb92b"
+        },
+        {
+          "M": 96,
+          "bits": "0xb902"
+        },
+        {
+          "M": 98,
+          "bits": "0xb85a"
+        },
+        {
+          "M": 100,
+          "bits": "0xb927"
+        },
+        {
+          "M": 102,
+          "bits": "0x38d2"
+        },
+        {
+          "M": 104,
+          "bits": "0x38f1"
+        },
+        {
+          "M": 106,
+          "bits": "0x3803"
+        },
+        {
+          "M": 108,
+          "bits": "0xb91e"
+        },
+        {
+          "M": 110,
+          "bits": "0x383f"
+        },
+        {
+          "M": 112,
+          "bits": "0xb912"
+        },
+        {
+          "M": 114,
+          "bits": "0x3871"
+        },
+        {
+          "M": 116,
+          "bits": "0xb8c5"
+        },
+        {
+          "M": 118,
+          "bits": "0xb89f"
+        },
+        {
+          "M": 120,
+          "bits": "0x397b"
+        },
+        {
+          "M": 122,
+          "bits": "0x37a1"
+        },
+        {
+          "M": 124,
+          "bits": "0xb8ea"
+        },
+        {
+          "M": 126,
+          "bits": "0xb800"
+        },
+        {
+          "M": 128,
+          "bits": "0x39fd"
+        },
+        {
+          "M": 130,
+          "bits": "0x3a32"
+        },
+        {
+          "M": 132,
+          "bits": "0xba21"
+        },
+        {
+          "M": 134,
+          "bits": "0xba3b"
+        },
+        {
+          "M": 136,
+          "bits": "0xb895"
+        },
+        {
+          "M": 138,
+          "bits": "0x39c6"
+        },
+        {
+          "M": 140,
+          "bits": "0x3a9b"
+        },
+        {
+          "M": 142,
+          "bits": "0xb89e"
+        },
+        {
+          "M": 144,
+          "bits": "0xb86b"
+        },
+        {
+          "M": 146,
+          "bits": "0xb8e9"
+        },
+        {
+          "M": 148,
+          "bits": "0x39c8"
+        },
+        {
+          "M": 150,
+          "bits": "0x36f5"
+        },
+        {
+          "M": 152,
+          "bits": "0x38fe"
+        },
+        {
+          "M": 154,
+          "bits": "0xb9b7"
+        },
+        {
+          "M": 156,
+          "bits": "0x38f4"
+        },
+        {
+          "M": 158,
+          "bits": "0xba15"
+        },
+        {
+          "M": 160,
+          "bits": "0x3a7e"
+        },
+        {
+          "M": 162,
+          "bits": "0xb92f"
+        },
+        {
+          "M": 164,
+          "bits": "0xb816"
+        },
+        {
+          "M": 166,
+          "bits": "0xba56"
+        },
+        {
+          "M": 168,
+          "bits": "0x3a94"
+        },
+        {
+          "M": 170,
+          "bits": "0xb9a5"
+        },
+        {
+          "M": 172,
+          "bits": "0xb919"
+        },
+        {
+          "M": 174,
+          "bits": "0xb864"
+        },
+        {
+          "M": 176,
+          "bits": "0x3a01"
+        },
+        {
+          "M": 178,
+          "bits": "0xb993"
+        },
+        {
+          "M": 180,
+          "bits": "0x39c7"
+        },
+        {
+          "M": 182,
+          "bits": "0x3950"
+        },
+        {
+          "M": 184,
+          "bits": "0x38dc"
+        },
+        {
+          "M": 186,
+          "bits": "0x3aa6"
+        },
+        {
+          "M": 188,
+          "bits": "0xba31"
+        },
+        {
+          "M": 190,
+          "bits": "0xb93b"
+        },
+        {
+          "M": 192,
+          "bits": "0xb89a"
+        },
+        {
+          "M": 194,
+          "bits": "0x37bd"
+        },
+        {
+          "M": 196,
+          "bits": "0xb87e"
+        },
+        {
+          "M": 198,
+          "bits": "0xb861"
+        },
+        {
+          "M": 200,
+          "bits": "0xb96a"
+        },
+        {
+          "M": 202,
+          "bits": "0xb910"
+        },
+        {
+          "M": 204,
+          "bits": "0xb666"
+        },
+        {
+          "M": 206,
+          "bits": "0xb91d"
+        },
+        {
+          "M": 208,
+          "bits": "0xb8cc"
+        },
+        {
+          "M": 210,
+          "bits": "0xb890"
+        },
+        {
+          "M": 212,
+          "bits": "0xb91f"
+        },
+        {
+          "M": 214,
+          "bits": "0x3822"
+        },
+        {
+          "M": 216,
+          "bits": "0xb908"
+        },
+        {
+          "M": 218,
+          "bits": "0xb833"
+        },
+        {
+          "M": 220,
+          "bits": "0xb90f"
+        },
+        {
+          "M": 222,
+          "bits": "0xb895"
+        },
+        {
+          "M": 224,
+          "bits": "0xb91c"
+        },
+        {
+          "M": 226,
+          "bits": "0x39b8"
+        },
+        {
+          "M": 228,
+          "bits": "0xb8c6"
+        },
+        {
+          "M": 230,
+          "bits": "0x3883"
+        },
+        {
+          "M": 232,
+          "bits": "0x396c"
+        },
+        {
+          "M": 234,
+          "bits": "0xb801"
+        },
+        {
+          "M": 236,
+          "bits": "0x3894"
+        },
+        {
+          "M": 238,
+          "bits": "0xb7b1"
+        },
+        {
+          "M": 240,
+          "bits": "0xb93c"
+        },
+        {
+          "M": 242,
+          "bits": "0x3951"
+        },
+        {
+          "M": 244,
+          "bits": "0xb8bf"
+        },
+        {
+          "M": 246,
+          "bits": "0xb8fe"
+        },
+        {
+          "M": 248,
+          "bits": "0xb916"
+        },
+        {
+          "M": 250,
+          "bits": "0x3949"
+        },
+        {
+          "M": 252,
+          "bits": "0xb84a"
+        },
+        {
+          "M": 254,
+          "bits": "0x3904"
+        }
+      ],
+      "changed_M_vs_wave_lane0": [
+        64,
+        66,
+        68,
+        70,
+        72,
+        74,
+        76,
+        78,
+        80,
+        82,
+        84,
+        86,
+        88,
+        90,
+        92,
+        94,
+        96,
+        98,
+        100,
+        102,
+        104,
+        106,
+        108,
+        110,
+        112,
+        114,
+        116,
+        118,
+        120,
+        122,
+        124,
+        126,
+        192,
+        194,
+        196,
+        198,
+        200,
+        202,
+        204,
+        206,
+        208,
+        210,
+        212,
+        214,
+        216,
+        218,
+        220,
+        222,
+        224,
+        226,
+        228,
+        230,
+        232,
+        234,
+        236,
+        238,
+        240,
+        242,
+        244,
+        246,
+        248,
+        250,
+        252,
+        254
+      ]
+    },
+    {
+      "model": "fixed_M_donor_per_column_0x0810_or_0x0c10",
+      "inferred_BF16": true,
+      "matching_row_count": 0,
+      "matching_rows": [],
+      "search_stages": [
+        {
+          "M": 0,
+          "remaining_rows": 1582
+        },
+        {
+          "M": 2,
+          "remaining_rows": 155
+        },
+        {
+          "M": 4,
+          "remaining_rows": 155
+        },
+        {
+          "M": 6,
+          "remaining_rows": 155
+        },
+        {
+          "M": 8,
+          "remaining_rows": 155
+        },
+        {
+          "M": 10,
+          "remaining_rows": 155
+        },
+        {
+          "M": 12,
+          "remaining_rows": 155
+        },
+        {
+          "M": 14,
+          "remaining_rows": 155
+        },
+        {
+          "M": 16,
+          "remaining_rows": 155
+        },
+        {
+          "M": 18,
+          "remaining_rows": 155
+        },
+        {
+          "M": 20,
+          "remaining_rows": 155
+        },
+        {
+          "M": 22,
+          "remaining_rows": 155
+        },
+        {
+          "M": 24,
+          "remaining_rows": 155
+        },
+        {
+          "M": 26,
+          "remaining_rows": 155
+        },
+        {
+          "M": 28,
+          "remaining_rows": 155
+        },
+        {
+          "M": 30,
+          "remaining_rows": 155
+        },
+        {
+          "M": 32,
+          "remaining_rows": 155
+        },
+        {
+          "M": 34,
+          "remaining_rows": 155
+        },
+        {
+          "M": 36,
+          "remaining_rows": 155
+        },
+        {
+          "M": 38,
+          "remaining_rows": 155
+        },
+        {
+          "M": 40,
+          "remaining_rows": 155
+        },
+        {
+          "M": 42,
+          "remaining_rows": 155
+        },
+        {
+          "M": 44,
+          "remaining_rows": 155
+        },
+        {
+          "M": 46,
+          "remaining_rows": 155
+        },
+        {
+          "M": 48,
+          "remaining_rows": 155
+        },
+        {
+          "M": 50,
+          "remaining_rows": 155
+        },
+        {
+          "M": 52,
+          "remaining_rows": 155
+        },
+        {
+          "M": 54,
+          "remaining_rows": 155
+        },
+        {
+          "M": 56,
+          "remaining_rows": 155
+        },
+        {
+          "M": 58,
+          "remaining_rows": 155
+        },
+        {
+          "M": 60,
+          "remaining_rows": 155
+        },
+        {
+          "M": 62,
+          "remaining_rows": 155
+        },
+        {
+          "M": 64,
+          "remaining_rows": 155
+        },
+        {
+          "M": 66,
+          "remaining_rows": 155
+        },
+        {
+          "M": 68,
+          "remaining_rows": 155
+        },
+        {
+          "M": 70,
+          "remaining_rows": 155
+        },
+        {
+          "M": 72,
+          "remaining_rows": 155
+        },
+        {
+          "M": 74,
+          "remaining_rows": 155
+        },
+        {
+          "M": 76,
+          "remaining_rows": 155
+        },
+        {
+          "M": 78,
+          "remaining_rows": 155
+        },
+        {
+          "M": 80,
+          "remaining_rows": 155
+        },
+        {
+          "M": 82,
+          "remaining_rows": 155
+        },
+        {
+          "M": 84,
+          "remaining_rows": 155
+        },
+        {
+          "M": 86,
+          "remaining_rows": 155
+        },
+        {
+          "M": 88,
+          "remaining_rows": 155
+        },
+        {
+          "M": 90,
+          "remaining_rows": 155
+        },
+        {
+          "M": 92,
+          "remaining_rows": 155
+        },
+        {
+          "M": 94,
+          "remaining_rows": 155
+        },
+        {
+          "M": 96,
+          "remaining_rows": 155
+        },
+        {
+          "M": 98,
+          "remaining_rows": 155
+        },
+        {
+          "M": 100,
+          "remaining_rows": 155
+        },
+        {
+          "M": 102,
+          "remaining_rows": 155
+        },
+        {
+          "M": 104,
+          "remaining_rows": 155
+        },
+        {
+          "M": 106,
+          "remaining_rows": 155
+        },
+        {
+          "M": 108,
+          "remaining_rows": 155
+        },
+        {
+          "M": 110,
+          "remaining_rows": 155
+        },
+        {
+          "M": 112,
+          "remaining_rows": 155
+        },
+        {
+          "M": 114,
+          "remaining_rows": 155
+        },
+        {
+          "M": 116,
+          "remaining_rows": 155
+        },
+        {
+          "M": 118,
+          "remaining_rows": 155
+        },
+        {
+          "M": 120,
+          "remaining_rows": 155
+        },
+        {
+          "M": 122,
+          "remaining_rows": 155
+        },
+        {
+          "M": 124,
+          "remaining_rows": 155
+        },
+        {
+          "M": 126,
+          "remaining_rows": 155
+        },
+        {
+          "M": 128,
+          "remaining_rows": 0
+        }
+      ],
+      "inferred_coefficients": [
+        {
+          "M": 0,
+          "bits": "0x3957"
+        },
+        {
+          "M": 2,
+          "bits": "0xba46"
+        },
+        {
+          "M": 4,
+          "bits": "0x397d"
+        },
+        {
+          "M": 6,
+          "bits": "0xba4a"
+        },
+        {
+          "M": 8,
+          "bits": "0xb910"
+        },
+        {
+          "M": 10,
+          "bits": "0x39b8"
+        },
+        {
+          "M": 12,
+          "bits": "0xb9e5"
+        },
+        {
+          "M": 14,
+          "bits": "0xb9d3"
+        },
+        {
+          "M": 16,
+          "bits": "0xb9ad"
+        },
+        {
+          "M": 18,
+          "bits": "0x3991"
+        },
+        {
+          "M": 20,
+          "bits": "0xb97e"
+        },
+        {
+          "M": 22,
+          "bits": "0xb8c5"
+        },
+        {
+          "M": 24,
+          "bits": "0xb981"
+        },
+        {
+          "M": 26,
+          "bits": "0xb9b1"
+        },
+        {
+          "M": 28,
+          "bits": "0xb8a2"
+        },
+        {
+          "M": 30,
+          "bits": "0xba28"
+        },
+        {
+          "M": 32,
+          "bits": "0x3a26"
+        },
+        {
+          "M": 34,
+          "bits": "0x39a9"
+        },
+        {
+          "M": 36,
+          "bits": "0x3a06"
+        },
+        {
+          "M": 38,
+          "bits": "0x38c4"
+        },
+        {
+          "M": 40,
+          "bits": "0xb8d3"
+        },
+        {
+          "M": 42,
+          "bits": "0xba4c"
+        },
+        {
+          "M": 44,
+          "bits": "0xb94c"
+        },
+        {
+          "M": 46,
+          "bits": "0x3a58"
+        },
+        {
+          "M": 48,
+          "bits": "0xba45"
+        },
+        {
+          "M": 50,
+          "bits": "0x392c"
+        },
+        {
+          "M": 52,
+          "bits": "0x38d5"
+        },
+        {
+          "M": 54,
+          "bits": "0xb9f8"
+        },
+        {
+          "M": 56,
+          "bits": "0xb987"
+        },
+        {
+          "M": 58,
+          "bits": "0xba46"
+        },
+        {
+          "M": 60,
+          "bits": "0x3984"
+        },
+        {
+          "M": 62,
+          "bits": "0xb97e"
+        },
+        {
+          "M": 64,
+          "bits": "0xb99b"
+        },
+        {
+          "M": 66,
+          "bits": "0xb7d9"
+        },
+        {
+          "M": 68,
+          "bits": "0x3a83"
+        },
+        {
+          "M": 70,
+          "bits": "0xb859"
+        },
+        {
+          "M": 72,
+          "bits": "0x3a27"
+        },
+        {
+          "M": 74,
+          "bits": "0x3a64"
+        },
+        {
+          "M": 76,
+          "bits": "0x39fc"
+        },
+        {
+          "M": 78,
+          "bits": "0xb992"
+        },
+        {
+          "M": 80,
+          "bits": "0xba21"
+        },
+        {
+          "M": 82,
+          "bits": "0x3973"
+        },
+        {
+          "M": 84,
+          "bits": "0x39f3"
+        },
+        {
+          "M": 86,
+          "bits": "0x3939"
+        },
+        {
+          "M": 88,
+          "bits": "0xb88b"
+        },
+        {
+          "M": 90,
+          "bits": "0x3a91"
+        },
+        {
+          "M": 92,
+          "bits": "0xb8ab"
+        },
+        {
+          "M": 94,
+          "bits": "0xba2b"
+        },
+        {
+          "M": 96,
+          "bits": "0xba02"
+        },
+        {
+          "M": 98,
+          "bits": "0xb95a"
+        },
+        {
+          "M": 100,
+          "bits": "0xba27"
+        },
+        {
+          "M": 102,
+          "bits": "0x39d2"
+        },
+        {
+          "M": 104,
+          "bits": "0x39f1"
+        },
+        {
+          "M": 106,
+          "bits": "0x3903"
+        },
+        {
+          "M": 108,
+          "bits": "0xba1e"
+        },
+        {
+          "M": 110,
+          "bits": "0x393f"
+        },
+        {
+          "M": 112,
+          "bits": "0xba12"
+        },
+        {
+          "M": 114,
+          "bits": "0x3971"
+        },
+        {
+          "M": 116,
+          "bits": "0xb9c5"
+        },
+        {
+          "M": 118,
+          "bits": "0xb99f"
+        },
+        {
+          "M": 120,
+          "bits": "0x3a7b"
+        },
+        {
+          "M": 122,
+          "bits": "0x38a1"
+        },
+        {
+          "M": 124,
+          "bits": "0xb9ea"
+        },
+        {
+          "M": 126,
+          "bits": "0xb900"
+        },
+        {
+          "M": 128,
+          "bits": "0x3bfd"
+        },
+        {
+          "M": 130,
+          "bits": "0x3c32"
+        },
+        {
+          "M": 132,
+          "bits": "0xbc21"
+        },
+        {
+          "M": 134,
+          "bits": "0xbc3b"
+        },
+        {
+          "M": 136,
+          "bits": "0xba95"
+        },
+        {
+          "M": 138,
+          "bits": "0x3bc6"
+        },
+        {
+          "M": 140,
+          "bits": "0x3c9b"
+        },
+        {
+          "M": 142,
+          "bits": "0xba9e"
+        },
+        {
+          "M": 144,
+          "bits": "0xba6b"
+        },
+        {
+          "M": 146,
+          "bits": "0xbae9"
+        },
+        {
+          "M": 148,
+          "bits": "0x3bc8"
+        },
+        {
+          "M": 150,
+          "bits": "0x38f5"
+        },
+        {
+          "M": 152,
+          "bits": "0x3afe"
+        },
+        {
+          "M": 154,
+          "bits": "0xbbb7"
+        },
+        {
+          "M": 156,
+          "bits": "0x3af4"
+        },
+        {
+          "M": 158,
+          "bits": "0xbc15"
+        },
+        {
+          "M": 160,
+          "bits": "0x3c7e"
+        },
+        {
+          "M": 162,
+          "bits": "0xbb2f"
+        },
+        {
+          "M": 164,
+          "bits": "0xba16"
+        },
+        {
+          "M": 166,
+          "bits": "0xbc56"
+        },
+        {
+          "M": 168,
+          "bits": "0x3c94"
+        },
+        {
+          "M": 170,
+          "bits": "0xbba5"
+        },
+        {
+          "M": 172,
+          "bits": "0xbb19"
+        },
+        {
+          "M": 174,
+          "bits": "0xba64"
+        },
+        {
+          "M": 176,
+          "bits": "0x3c01"
+        },
+        {
+          "M": 178,
+          "bits": "0xbb93"
+        },
+        {
+          "M": 180,
+          "bits": "0x3bc7"
+        },
+        {
+          "M": 182,
+          "bits": "0x3b50"
+        },
+        {
+          "M": 184,
+          "bits": "0x3adc"
+        },
+        {
+          "M": 186,
+          "bits": "0x3ca6"
+        },
+        {
+          "M": 188,
+          "bits": "0xbc31"
+        },
+        {
+          "M": 190,
+          "bits": "0xbb3b"
+        },
+        {
+          "M": 192,
+          "bits": "0xbb9a"
+        },
+        {
+          "M": 194,
+          "bits": "0x3abd"
+        },
+        {
+          "M": 196,
+          "bits": "0xbb7e"
+        },
+        {
+          "M": 198,
+          "bits": "0xbb61"
+        },
+        {
+          "M": 200,
+          "bits": "0xbc6a"
+        },
+        {
+          "M": 202,
+          "bits": "0xbc10"
+        },
+        {
+          "M": 204,
+          "bits": "0xb966"
+        },
+        {
+          "M": 206,
+          "bits": "0xbc1d"
+        },
+        {
+          "M": 208,
+          "bits": "0xbbcc"
+        },
+        {
+          "M": 210,
+          "bits": "0xbb90"
+        },
+        {
+          "M": 212,
+          "bits": "0xbc1f"
+        },
+        {
+          "M": 214,
+          "bits": "0x3b22"
+        },
+        {
+          "M": 216,
+          "bits": "0xbc08"
+        },
+        {
+          "M": 218,
+          "bits": "0xbb33"
+        },
+        {
+          "M": 220,
+          "bits": "0xbc0f"
+        },
+        {
+          "M": 222,
+          "bits": "0xbb95"
+        },
+        {
+          "M": 224,
+          "bits": "0xbc1c"
+        },
+        {
+          "M": 226,
+          "bits": "0x3cb8"
+        },
+        {
+          "M": 228,
+          "bits": "0xbbc6"
+        },
+        {
+          "M": 230,
+          "bits": "0x3b83"
+        },
+        {
+          "M": 232,
+          "bits": "0x3c6c"
+        },
+        {
+          "M": 234,
+          "bits": "0xbb01"
+        },
+        {
+          "M": 236,
+          "bits": "0x3b94"
+        },
+        {
+          "M": 238,
+          "bits": "0xbab1"
+        },
+        {
+          "M": 240,
+          "bits": "0xbc3c"
+        },
+        {
+          "M": 242,
+          "bits": "0x3c51"
+        },
+        {
+          "M": 244,
+          "bits": "0xbbbf"
+        },
+        {
+          "M": 246,
+          "bits": "0xbbfe"
+        },
+        {
+          "M": 248,
+          "bits": "0xbc16"
+        },
+        {
+          "M": 250,
+          "bits": "0x3c49"
+        },
+        {
+          "M": 252,
+          "bits": "0xbb4a"
+        },
+        {
+          "M": 254,
+          "bits": "0x3c04"
+        }
+      ],
+      "changed_M_vs_wave_lane0": [
+        128,
+        130,
+        132,
+        134,
+        136,
+        138,
+        140,
+        142,
+        144,
+        146,
+        148,
+        150,
+        152,
+        154,
+        156,
+        158,
+        160,
+        162,
+        164,
+        166,
+        168,
+        170,
+        172,
+        174,
+        176,
+        178,
+        180,
+        182,
+        184,
+        186,
+        188,
+        190,
+        192,
+        194,
+        196,
+        198,
+        200,
+        202,
+        204,
+        206,
+        208,
+        210,
+        212,
+        214,
+        216,
+        218,
+        220,
+        222,
+        224,
+        226,
+        228,
+        230,
+        232,
+        234,
+        236,
+        238,
+        240,
+        242,
+        244,
+        246,
+        248,
+        250,
+        252,
+        254
+      ]
+    }
+  ],
+  "older_search_domains": {
+    "common_scalar": "Earlier arbitrary-single-X-row search permitted one common scalar across M and targeted older BF16-visible failures, not FAIL91. It did not test this piecewise wave-dependent donor model.",
+    "two_row": "Earlier exhaustive two-row search DID include wave-dependent0x0810/0x0a10 donors and arbitrary k, but required second term4*X[k+8,M]. It targeted six older failures, not FAIL91.",
+    "contiguous": "Earlier contiguous search DID include wave-dependent donor, but its fixed block profile was X[64*b+1,M]+4*X[64*b+9,M] over cyclic contiguous intervals. It did not test one arbitrary-k term."
+  },
+  "limits": [
+    "Exact data representation, not proof of hardware causal delivery or the time of corruption.",
+    "Only even-M accumulator words are retained here. Odd-M predictions are not observed.",
+    "155 matching saved-X rows prevent unique k identification. Arithmetic matching must be constrained by independently proved WMMA lane/K mapping.",
+    "Historical donor binding uses architectural exact-packet proof; that proof does not guarantee physical hardware execution.",
+    "Rejected alternatives above fix specific donor choices. They do not exhaust all arbitrary real common scalars or multi-row sums."
+  ]
+}

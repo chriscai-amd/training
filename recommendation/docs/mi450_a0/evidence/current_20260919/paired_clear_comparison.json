@@ -1,0 +1,277 @@
+{
+  "format": "DW_paired_post_accumulation_clear_independent_causal_comparison_v1",
+  "status": "WITHIN_INVOCATION_DIRECT_FINGERPRINT_REMOVED_FROM_NORMAL_ROUTE_AFTER_V1_CLEAR",
+  "GPU_actions": false,
+  "sources": {
+    "control_full": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_paired_clear_failure_audit_v1/paired_vnop_full_failure_v1.json",
+      "sha256": "f4573cec6929dbf299684ff10497d8d16d3c2104e29e9b309d575d993d5dc736",
+      "bytes": 2395323
+    },
+    "clear_full": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_paired_clear_failure_audit_v1/paired_clear_full_failure_v1.json",
+      "sha256": "f0ef1bef661e299ffebc4b37ab0b3acffd8262a236621e0cbdc9c1ece776cb3c",
+      "bytes": 2381069
+    },
+    "control_stream": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_paired_clear_stream_audit_v1/paired_vnop_independent_stream_pairs_v1.json",
+      "sha256": "2236f677edddbc4d09403775c19b3e5bbd1dbf31e2fe0f9c2be3ee1793c37ee3",
+      "bytes": 164355
+    },
+    "clear_stream": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_paired_clear_stream_audit_v1/paired_clear_independent_stream_pairs_v1.json",
+      "sha256": "5d2fa6737412d0d7c87d88f9f040af72f23844d0812f34870e9b4ebb6213f993",
+      "bytes": 154758
+    }
+  },
+  "results": {
+    "control": {
+      "calls": 98,
+      "prior_all_zero_calls": 97,
+      "total_pairs": 150528,
+      "nonzero_words": 8,
+      "anomalous_v1_pairs": [
+        {
+          "group": 3,
+          "wave": 0,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            1,
+            384
+          ],
+          "normal_raw_coordinate": [
+            4,
+            384
+          ],
+          "direct_word": "0x00000810",
+          "normal_word": "0x00000810",
+          "historical_v257_word": "0x00000810"
+        },
+        {
+          "group": 3,
+          "wave": 1,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            65,
+            384
+          ],
+          "normal_raw_coordinate": [
+            68,
+            384
+          ],
+          "direct_word": "0x00000a10",
+          "normal_word": "0x00000a10",
+          "historical_v257_word": "0x00000a10"
+        },
+        {
+          "group": 3,
+          "wave": 2,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            1,
+            448
+          ],
+          "normal_raw_coordinate": [
+            4,
+            448
+          ],
+          "direct_word": "0x00000c10",
+          "normal_word": "0x00000c10",
+          "historical_v257_word": "0x00000c10"
+        },
+        {
+          "group": 3,
+          "wave": 3,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            65,
+            448
+          ],
+          "normal_raw_coordinate": [
+            68,
+            448
+          ],
+          "direct_word": "0x00000e10",
+          "normal_word": "0x00000e10",
+          "historical_v257_word": "0x00000e10"
+        }
+      ],
+      "v2_v3_all_zero": true,
+      "unpaired_nonzero_words": 0,
+      "surviving_sentinel_words_and_halfwords": 0,
+      "all_nonzero_support_agrees_between_full_and_independent_audits": true,
+      "normal_v1_positive_zero_after_clear_pairs": null
+    },
+    "clear": {
+      "calls": 87,
+      "prior_all_zero_calls": 86,
+      "total_pairs": 133632,
+      "nonzero_words": 9,
+      "anomalous_v1_pairs": [
+        {
+          "group": 0,
+          "wave": 0,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            1,
+            0
+          ],
+          "normal_raw_coordinate": [
+            4,
+            0
+          ],
+          "direct_word": "0x00000810",
+          "normal_word": "0x00000000",
+          "historical_v257_word": "0x00000810"
+        },
+        {
+          "group": 0,
+          "wave": 1,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            65,
+            0
+          ],
+          "normal_raw_coordinate": [
+            68,
+            0
+          ],
+          "direct_word": "0x00000a10",
+          "normal_word": "0x00000000",
+          "historical_v257_word": "0x00000a10"
+        },
+        {
+          "group": 0,
+          "wave": 2,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            1,
+            64
+          ],
+          "normal_raw_coordinate": [
+            4,
+            64
+          ],
+          "direct_word": "0x00000c10",
+          "normal_word": "0x00000000",
+          "historical_v257_word": "0x00000c10"
+        },
+        {
+          "group": 0,
+          "wave": 3,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            65,
+            64
+          ],
+          "normal_raw_coordinate": [
+            68,
+            64
+          ],
+          "direct_word": "0x00000e10",
+          "normal_word": "0x00000000",
+          "historical_v257_word": "0x00000e10"
+        },
+        {
+          "group": 1,
+          "wave": 0,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            1,
+            128
+          ],
+          "normal_raw_coordinate": [
+            4,
+            128
+          ],
+          "direct_word": "0x00000810",
+          "normal_word": "0x00000000",
+          "historical_v257_word": "0x00000810"
+        },
+        {
+          "group": 1,
+          "wave": 1,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            65,
+            128
+          ],
+          "normal_raw_coordinate": [
+            68,
+            128
+          ],
+          "direct_word": "0x00000a10",
+          "normal_word": "0x00000000",
+          "historical_v257_word": "0x00000a10"
+        },
+        {
+          "group": 1,
+          "wave": 2,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            1,
+            192
+          ],
+          "normal_raw_coordinate": [
+            4,
+            192
+          ],
+          "direct_word": "0x00000c10",
+          "normal_word": "0x00000000",
+          "historical_v257_word": "0x00000c10"
+        },
+        {
+          "group": 1,
+          "wave": 3,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            65,
+            192
+          ],
+          "normal_raw_coordinate": [
+            68,
+            192
+          ],
+          "direct_word": "0x00000e10",
+          "normal_word": "0x00000000",
+          "historical_v257_word": "0x00000e10"
+        },
+        {
+          "group": 3,
+          "wave": 1,
+          "lane": 0,
+          "direct_raw_coordinate": [
+            65,
+            384
+          ],
+          "normal_raw_coordinate": [
+            68,
+            384
+          ],
+          "direct_word": "0x00000a10",
+          "normal_word": "0x00000000",
+          "historical_v257_word": "0x00000a10"
+        }
+      ],
+      "v2_v3_all_zero": true,
+      "unpaired_nonzero_words": 0,
+      "surviving_sentinel_words_and_halfwords": 0,
+      "all_nonzero_support_agrees_between_full_and_independent_audits": true,
+      "normal_v1_positive_zero_after_clear_pairs": 512
+    }
+  },
+  "observations": [
+    "Control FAIL98 contains four equal historical-v257 v1 fingerprints through direct and normal routes.",
+    "Clear FAIL87 contains nine historical-v257 v1 fingerprints through the direct route; all nine corresponding later normal-route observations are positive zero.",
+    "The clear run has no remaining wrong normal-route or off-target words. All nonzeros are intentionally preserved pre-clear direct observations.",
+    "BF16-one prefill proves the later zero images are not untouched original zero slots.",
+    "Same-invocation disappearance after the explicit overwrite supports removable v1-carried state. The failure originates no later than the pre-clear observation or its delivery path."
+  ],
+  "limits": [
+    "Control and clear failures occur in different invocations and supports; no cross-run identity or rate comparison is assumed.",
+    "The experiment does not uniquely locate the physical register array, accumulator storage, register delivery, or origin instruction.",
+    "The control and clear instruction encodings can perturb physical behavior. A direct-path-only fault coincident with a separately clean later path is not ruled out by this run alone.",
+    "The GPU mathematical oracle reports failure because the intentional pre-clear observations retain corruption; it does not imply corruption survived the clear.",
+    "Retained full-storage equality does not certify transient internal operand reads."
+  ]
+}

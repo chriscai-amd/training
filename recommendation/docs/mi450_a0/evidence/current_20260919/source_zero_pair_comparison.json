@@ -1,0 +1,327 @@
+{
+  "status": "PASS_COMPOSITION_OF_TERMINAL_FAIL532_AND_PASS1000_EVIDENCE",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_result_comparison_v1/compare_terminal_source_zero_pair_v1.py",
+    "bytes": 13097,
+    "sha256": "ec2df0bbe297999dec6051dd475ec9dfc7a5764a4f357cca3a7dcc8b88f2fa0b"
+  },
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_pair_v1/launch_manifest_v513_zero_v1.json",
+    "bytes": 17255,
+    "sha256": "80bf8278d0970148a34007eb69fbc4bf999624e29a5e0df9ccbf72dbcf94d15f"
+  },
+  "runtime_configuration": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v513_zero_runtime_v1/configuration_v513_zero_v1.json",
+    "bytes": 8824,
+    "sha256": "76f1becb6c90944aba33eab4b4954306aab89834b3beac80bb0810a9c383a910"
+  },
+  "control_product_fit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_terminal_donor_fit_v1/v513_control_iteration532_exact_donor_models_v1.json",
+    "bytes": 1061281,
+    "sha256": "8d9d5b31d745df570491f636632e56354267e9e96408aa7300fd59c5663411de"
+  },
+  "control_product_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_terminal_donor_fit_peer_v1/control_FAIL532_independent_product_review_v1.json",
+    "bytes": 61307,
+    "sha256": "8632842dd5ade69fb251c8f7f2f4a85f123edacbf9db9803c7112843f7f31c9b"
+  },
+  "candidate_stream_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_terminal_pass_peer_v1/repeated_zero_PASS1000_independent_stream_review_v1.json",
+    "bytes": 108134,
+    "sha256": "1c774452867b0e6eb36b3e2339bbde4e3f1c76b3394795ab8100ed7a5b62cf04"
+  },
+  "source_zero_candidate_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_repeated_zero_peer_v1/repeated_v513_zero_independent_candidate_review_v1.json",
+    "bytes": 6174,
+    "sha256": "8eaaa29a401fe94b688137bcfe36c0e632d569e9cb4e35683d1286e8a512194a"
+  },
+  "scalar_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_scalar_peer_v1/scalar_path_K_descriptor_independent_review_v1.json",
+    "bytes": 7545,
+    "sha256": "11a49d0b8121a4650675562db7c89a5353d1d66c9b942d340b4fddb974a0f8e3"
+  },
+  "A_membership_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_mainloop_A_provenance_peer_v1/mainloop_A_membership_and_pipeline_independent_review_v2.json",
+    "bytes": 13792,
+    "sha256": "f414465076fd22df73dc885ce3a8037918dbc09f56db560e732f7d7ab424b941"
+  },
+  "tail_byte_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_scalar_peer_v1/tail_byte_provenance_independent_review_v1.json",
+    "bytes": 30684,
+    "sha256": "3837a63314b83759c3dce74860ab1b2af34b0da6b237637e7b1bca9396073fa1"
+  },
+  "candidate_byte_binding": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_consumers_CPU_v1/scalar_tail_proof_C0_candidate_bindings_v1.json",
+    "bytes": 11975,
+    "sha256": "0745bc02e68b929e8929d55b460459acb6ea1db9607614a95b6a6d4df8d64971"
+  },
+  "independent_streams": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_stream_audit_v1/v513_control_independent_stream_pairs_v1.json",
+      "bytes": 1184575,
+      "sha256": "174f85c1bcc01ee972b483c038d82d467302b5c90561f072e777f5b55982e4c0"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_stream_audit_v1/v513_repeated_zero_independent_stream_pairs_v1.json",
+      "bytes": 1860767,
+      "sha256": "41ee8b5b731c2622e10a00beac8e25334d44ddae2a9695cca6a0b79582d92a42"
+    }
+  ],
+  "native_joins": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_pair_v1/v513_control_joined_verification_v1.json",
+      "bytes": 15332,
+      "sha256": "f9b34d3a51b099f4c1c3c4b52ac8625cfb5bf0ef9ecaa64ab004a5cdef0b873a"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_pair_v1/v513_repeated_zero_joined_verification_v1.json",
+      "bytes": 23480,
+      "sha256": "edcadc8c0462bd10a9af2dc79ae2ed5455f4c1be5b69b7cf3916a80248d292c5"
+    }
+  ],
+  "terminal_records": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_pair_v1/v513_control_terminal.json",
+      "bytes": 271,
+      "sha256": "e58bbb0d8293593e4b53c8bde8afc78a2102ce07180565bbb27ce6a51eab16ee"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_pair_v1/v513_repeated_zero_terminal.json",
+      "bytes": 277,
+      "sha256": "ab5a4efcadffb21364db62b28231aae8461fb9df9d674e22f4fa3661dfe809c2"
+    }
+  ],
+  "control": {
+    "calls": 532,
+    "first_numeric_failure_call": 532,
+    "physical_nonzero_words": 288,
+    "unique_nonzero_true_sources": 256,
+    "equal_nonzero_direct_duplicates": 32,
+    "group": 1,
+    "source_columns": [
+      130,
+      194
+    ],
+    "donors": [
+      "0x0810",
+      "0x0a10",
+      "0x0c10",
+      "0x0e10"
+    ],
+    "models": [
+      {
+        "field": "normal_route_models",
+        "model": "old_wave_lane0",
+        "matching_rows": 552,
+        "rejected_observations": 0
+      },
+      {
+        "field": "normal_route_models",
+        "model": "tagged_wave_lane0",
+        "matching_rows": 0,
+        "rejected_observations": 236
+      },
+      {
+        "field": "all_observed_route_models",
+        "model": "old_wave_lane0",
+        "matching_rows": 552,
+        "rejected_observations": 0
+      },
+      {
+        "field": "all_observed_route_models",
+        "model": "tagged_wave_lane0",
+        "matching_rows": 0,
+        "rejected_observations": 236
+      },
+      {
+        "field": "normal_route_FP32_RNE_models",
+        "model": "old_wave_lane0_FP32_RNE",
+        "matching_rows": 552,
+        "rejected_observations": 0
+      },
+      {
+        "field": "normal_route_FP32_RNE_models",
+        "model": "tagged_wave_lane0_FP32_RNE",
+        "matching_rows": 0,
+        "rejected_observations": 236
+      },
+      {
+        "field": "all_observed_route_FP32_RNE_models",
+        "model": "old_wave_lane0_FP32_RNE",
+        "matching_rows": 552,
+        "rejected_observations": 0
+      },
+      {
+        "field": "all_observed_route_FP32_RNE_models",
+        "model": "tagged_wave_lane0_FP32_RNE",
+        "matching_rows": 0,
+        "rejected_observations": 236
+      }
+    ],
+    "matching_X_rows": 552,
+    "matching_X_row_range": [
+      472161,
+      821015
+    ],
+    "matching_full_X_row_sha256": "ceac7e43f008a63b1265971621c5c57e560bcf909431601ca639629b00e354f7",
+    "final_63_K_matches": [],
+    "conditional_repeated_0x7540_visits": [
+      {
+        "k": 472385,
+        "site_visit": 7381,
+        "s12": 28936,
+        "reaching_v513_definition": "0x80b4"
+      },
+      {
+        "k": 524033,
+        "site_visit": 8188,
+        "s12": 28129,
+        "reaching_v513_definition": "0x80b4"
+      },
+      {
+        "k": 533057,
+        "site_visit": 8329,
+        "s12": 27988,
+        "reaching_v513_definition": "0x80b4"
+      },
+      {
+        "k": 594177,
+        "site_visit": 9284,
+        "s12": 27033,
+        "reaching_v513_definition": "0x80b4"
+      },
+      {
+        "k": 645825,
+        "site_visit": 10091,
+        "s12": 26226,
+        "reaching_v513_definition": "0x80b4"
+      },
+      {
+        "k": 654849,
+        "site_visit": 10232,
+        "s12": 26085,
+        "reaching_v513_definition": "0x80b4"
+      },
+      {
+        "k": 748609,
+        "site_visit": 11697,
+        "s12": 24620,
+        "reaching_v513_definition": "0x80b4"
+      },
+      {
+        "k": 815297,
+        "site_visit": 12739,
+        "s12": 23578,
+        "reaching_v513_definition": "0x80b4"
+      }
+    ],
+    "pair_comparisons": 1089536,
+    "pair_classifications": {
+      "equal_positive_zero": 1089504,
+      "equal_nonzero": 32,
+      "equal_negative_zero": 0
+    },
+    "independent_product_checks": 600576
+  },
+  "repeated_zero": {
+    "calls": 1000,
+    "numeric_nonzero_words": 0,
+    "negative_zero_words": 0,
+    "complete_output_words_checked": 65536000,
+    "complete_prefill_halfwords_checked": 131072000,
+    "source_pairs_checked": 2048000,
+    "pair_sign_counts": {
+      "v128_positive_positive": 512000,
+      "v129_positive_positive": 512000,
+      "v130_positive_positive": 512000,
+      "v131_positive_positive": 512000
+    },
+    "signed_zero_anomalies": [],
+    "no_donor_fit": true
+  },
+  "controlled_change": {
+    "runtime_ELFs": [
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_v513_zero_native_artifacts_v1/DW_v513_control.elf",
+        "bytes": 335000,
+        "sha256": "c422ef9aa28418c3156b4031444cb78d0cece0e11cc0c6f213bdafa993edc279"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_v513_zero_native_artifacts_v1/DW_v513_repeated_zero.elf",
+        "bytes": 335000,
+        "sha256": "49d671f0956bf195fcf59dbd86c0b89afb0cba8ae4d9e49586d0ac30874cbfef"
+      }
+    ],
+    "changed_file_bytes": [
+      [
+        25924,
+        1,
+        128
+      ],
+      [
+        25925,
+        255,
+        254
+      ]
+    ],
+    "PC": "0x7540",
+    "source0_before": "v513",
+    "source0_after": "inline zero",
+    "visits_per_wave": 36314,
+    "contexts": 16,
+    "destination": "v494",
+    "all_other_ELF_bytes_identical": true,
+    "all320_WMMAs_identical": true,
+    "shared_final_v0_v7_C0": true,
+    "v128_final_accumulation_was_not_reset": true,
+    "historical_address_words_and_effective_load_addresses_unchanged": true,
+    "other_v513_consumers_and_observer_unchanged": true,
+    "same_packet_fields_except_process_device_pointers": {
+      "Gemm info": 1,
+      "kernel info0": 18874369,
+      "kernel info1": 1073807368,
+      "numWG": 4,
+      "SizesFree0": 256,
+      "SizesFree1": 512,
+      "SizesFree2": 1,
+      "SizesSum0": 2324351,
+      "strideD0": 256,
+      "strideD1": 0,
+      "strideC0": 256,
+      "strideC1": 0,
+      "strideA0": 256,
+      "strideA1": 0,
+      "strideB0": 512,
+      "strideB1": 0,
+      "alpha": 1.0,
+      "beta": 0.0,
+      "AddressScaleAlphaVec": "0x0",
+      "bias": "0x0",
+      "biasType": 0,
+      "StrideBias": 0,
+      "activationAlpha": 0.0,
+      "activationBeta": 0.0,
+      "activationType": 0,
+      "batchOffsetD": 0,
+      "batchOffsetC": 0,
+      "batchOffsetA": 0,
+      "batchOffsetB": 0
+    }
+  },
+  "findings": [
+    "The original-read control reproduced the original historical-address donor arithmetic in all256 nonzero true sources, with32 exact duplicate read observations.",
+    "All1000 candidate outputs were positive zero after independently verified BF16-one prefills. This is a bounded clean observation for replacing only the repeated0x7540 v513 source with inline zero.",
+    "The control one-row representation is architecturally compatible with eight repeated0x7540 visits under the pinned lane0 low-half and A-membership proofs. No matching X row lies in the final63 K rows.",
+    "Together these results support continued investigation of the repeated v513 consumption path. They do not establish the physical fault mechanism or a permanent correction."
+  ],
+  "limits": [
+    "Separate sequential processes do not observe the same transient event; one FAIL532 control and one PASS1000 intervention are not a failure-rate estimate or permanent-fix proof.",
+    "Inline zero removes a VGPR read dependency and may change instruction handling, bank routing, scheduling or timing. A read-related effect cannot be localized uniquely to the named register, permute instruction, physical storage, LDS delivery, WMMA, or observation path.",
+    "Numerical donor-product representation, architectural operand compatibility, and physical fault timing are distinct claims. Eight compatible K rows do not identify a unique transient occurrence.",
+    "Only final v0:v7 WMMA C is zero in both arms; the v128 observer accumulator was not reset. The comparison does not test clearing v128 accumulation.",
+    "PASS has no nonzero vector to fit and no full retained-input failure artifact. Final resident-input digest equality is producer-reported and pinned by the independent stream review.",
+    "Odd-M accumulators and2048 original sources overwritten by direct carriers remain unobserved. All observed route signs were explicitly checked.",
+    "The scalar, A membership and tail proofs check architectural ordering and byte provenance; they do not simulate physical asynchronous delivery or independently emulate WMMA lane contraction."
+  ]
+}

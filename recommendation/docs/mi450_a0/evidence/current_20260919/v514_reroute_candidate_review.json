@@ -1,0 +1,230 @@
+{
+  "status": "PASS_INDEPENDENT_ONE_BYTE_SOURCE_FIELD_ONLY_V514_REROUTE_CANDIDATE",
+  "GPU_actions": false,
+  "reviewer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_peer_v1/review_repeated_v514_candidate_v1.py",
+    "bytes": 9748,
+    "sha256": "42f6e68ab64b3a43d93769352b1164b8e47e9bd21f661f2427a2d14f98c67fdc"
+  },
+  "certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_c0_v514_reroute_design_v1/repeated_v514_source_CPU_design_certificate_v1.json",
+    "bytes": 10170,
+    "sha256": "5c55497549fcb54e6c2a76e7ba29595eafca2321fd040f8f89e80c59d4c665bb"
+  },
+  "baseline": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_pair_v0_C0_design_v1/v128_direct_v0_tail_C0_v1.elf",
+    "bytes": 335000,
+    "sha256": "c422ef9aa28418c3156b4031444cb78d0cece0e11cc0c6f213bdafa993edc279"
+  },
+  "candidate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_c0_v514_reroute_design_v1/DW_v128_c0_direct_repeated_v514_source_v1.elf",
+    "bytes": 335000,
+    "sha256": "78548372163245924d43b4bed622f08d2fb89fa601a1d3c51eb12387223147f3"
+  },
+  "text_section": {
+    "address": 18176,
+    "offset": 14080,
+    "bytes": 284712
+  },
+  "changed_file_bytes": [
+    [
+      25924,
+      1,
+      2
+    ]
+  ],
+  "only_changed_instruction": {
+    "before": {
+      "pc": 30016,
+      "text": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, v255 /*v511*/, s66",
+      "words": [
+        3594780910,
+        17563393
+      ]
+    },
+    "after": {
+      "pc": 30016,
+      "text": "v_perm_b32 v238 /*v494*/, v2 /*v514*/, v255 /*v511*/, s66",
+      "words": [
+        3594780910,
+        17563394
+      ]
+    }
+  },
+  "source0_before_code": 257,
+  "source0_after_VGPR_code": 258,
+  "source0_architectural_register_before": "v513 under inherited s_set_vgpr_msb source0 bank 2",
+  "source0_architectural_register_after": "v514 under the same source0 bank 2",
+  "source0_remains_a_VGPR_source": true,
+  "destination_source1_selector_opcode_and_all_other_encoding_fields_preserved": true,
+  "independent_assembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_peer_v1/independent_source_encoding_v1.s",
+    "bytes": 90,
+    "sha256": "10333e39f40c079542497663757f89ddf45f0edf2e4b7e1df578d23a1b835105"
+  },
+  "independent_MC_output": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_peer_v1/independent_source_encoding_v1.txt",
+    "bytes": 272,
+    "sha256": "599bef2153d6c51eb608bd54306ca17494f9b6da0478bcff060033ad87c1ce3e"
+  },
+  "fresh_disassemblies": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_peer_v1/baseline_independent_disassembly_v1.s",
+      "bytes": 4287113,
+      "sha256": "3843a289e37f33021a0f705b23e2c8cd8e70142a1bf1d2fca6859f106a1c10c3"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_peer_v1/candidate_independent_disassembly_v1.s",
+      "bytes": 4287134,
+      "sha256": "7520aa86359cca3fc39962eaf9739a88e2de2019227108e6b8b06a69161b170e"
+    }
+  ],
+  "every_disassembled_word_reconciled_to_ELF": true,
+  "preserved_instruction_positions_and_widths": 46786,
+  "unchanged_WMMA_instructions": 320,
+  "shared_v0_v7_tail_C0_unchanged": true,
+  "complete_observer_suffix_instructions_unchanged": 30138,
+  "bank_modes_waits_branches_effective_address_instructions_and_store_instructions_unchanged": true,
+  "other_v513_static_read_sites_unchanged": true,
+  "selected_v514_LDS_producer": "0x80cc",
+  "pair_map": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_pair_design_v1/same_invocation_v128_to_v131_pairs_v1.json",
+    "bytes": 1570035,
+    "sha256": "2681d32eca89c9be1e7c46e5e3ca0a4b3471a6fce5ac514637e02c947e74e4ef"
+  },
+  "inherited_baseline_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_v0_C0_peer_v1/matched_v128_v0_C0_independent_review_v1.json",
+    "bytes": 6551,
+    "sha256": "a6203aad67301003640686cbe244c450d014a61b8c57c0fa295fed61a1534166"
+  },
+  "inherited_scalar_path_proof": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_consumers_CPU_v1/v513_consumer_scalar_path_and_lane0_K_v2.json",
+    "bytes": 118109,
+    "sha256": "ade90c6d59db6341ab0d655d01eaa8a42367d62f596a3fc542e3776b3ad76c76"
+  },
+  "inherited_scalar_path_independent_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_scalar_peer_v1/scalar_path_K_descriptor_independent_review_v1.json",
+    "bytes": 7545,
+    "sha256": "11a49d0b8121a4650675562db7c89a5353d1d66c9b942d340b4fddb974a0f8e3"
+  },
+  "inherited_scalar_peer_status": "PASS_WITH_EXPLICIT_SECONDARY_VCC_COMPLETENESS_NOTE",
+  "inherited_dynamic_scope": {
+    "contexts": 16,
+    "visits_per_wave": 36314,
+    "destination_input_lane0_K_range": [
+      65,
+      2324097
+    ],
+    "K_stride": 64,
+    "selected_source_reaching_LDS_write": "0x80cc",
+    "former_source_reaching_LDS_write": "0x80b4",
+    "untouched_initial_site": "0x6c64",
+    "untouched_cleanup_sites": [
+      "0x858c",
+      "0x93b0",
+      "0xbc7c"
+    ],
+    "untouched_tail_site": "0xe41c"
+  },
+  "inherited_neighbor_zero_lifetime_and_product_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_neighbor_reroute_peer_v1/neighbor_zero_lifetime_and_products_independent_review_v1.json",
+    "bytes": 13372,
+    "sha256": "735e92bf4e9923044f62a5cc86ba6217004154c84fe25911875c53431fda9966"
+  },
+  "inherited_A_membership_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_mainloop_A_provenance_peer_v1/mainloop_A_membership_and_pipeline_independent_review_v2.json",
+    "bytes": 13792,
+    "sha256": "f414465076fd22df73dc885ce3a8037918dbc09f56db560e732f7d7ab424b941"
+  },
+  "destination_slot_preserved": "Source0.low16 still feeds v494.high16 at the original relative-K1 position and same N. The selected nominal v514 payload is relative-K2; because that payload is zero, this does not alter the zero oracle or move the destination contraction slot.",
+  "conditional_historical_bank_model": {
+    "counterpart": "v258",
+    "lane0_donor_BF16_bits": [
+      "0x1010",
+      "0x1210",
+      "0x1410",
+      "0x1610"
+    ],
+    "donor_ratio_to_original": [
+      65536,
+      1
+    ],
+    "actual_X_domain_predictions": [
+      {
+        "source_register": "v514",
+        "wave": 0,
+        "bank1_counterpart": "v258",
+        "lane0_historical_bits": "0x1010",
+        "exact_ratio_to_old_donor": [
+          65536,
+          1
+        ],
+        "actual_X_unique_values": 3661,
+        "FP32_RNE_zero_products": 0,
+        "FP32_RNE_subnormal_nonzero_products": 1,
+        "inexact_FP32_RNE_products": 0,
+        "all_products_finite": true
+      },
+      {
+        "source_register": "v514",
+        "wave": 1,
+        "bank1_counterpart": "v258",
+        "lane0_historical_bits": "0x1210",
+        "exact_ratio_to_old_donor": [
+          65536,
+          1
+        ],
+        "actual_X_unique_values": 3661,
+        "FP32_RNE_zero_products": 0,
+        "FP32_RNE_subnormal_nonzero_products": 0,
+        "inexact_FP32_RNE_products": 0,
+        "all_products_finite": true
+      },
+      {
+        "source_register": "v514",
+        "wave": 2,
+        "bank1_counterpart": "v258",
+        "lane0_historical_bits": "0x1410",
+        "exact_ratio_to_old_donor": [
+          65536,
+          1
+        ],
+        "actual_X_unique_values": 3661,
+        "FP32_RNE_zero_products": 0,
+        "FP32_RNE_subnormal_nonzero_products": 0,
+        "inexact_FP32_RNE_products": 0,
+        "all_products_finite": true
+      },
+      {
+        "source_register": "v514",
+        "wave": 3,
+        "bank1_counterpart": "v258",
+        "lane0_historical_bits": "0x1610",
+        "exact_ratio_to_old_donor": [
+          65536,
+          1
+        ],
+        "actual_X_unique_values": 3661,
+        "FP32_RNE_zero_products": 0,
+        "FP32_RNE_subnormal_nonzero_products": 0,
+        "inexact_FP32_RNE_products": 0,
+        "all_products_finite": true
+      }
+    ],
+    "recompute_from_X_not_scaled_old_words": true,
+    "old_rounded_scaling_exception_count": 6
+  },
+  "conclusions": [
+    "Exactly one source0 field at PC0x7540 changes from architectural v513 to v514, preserving the VGPR source kind.",
+    "Instruction width and every ELF byte except the single source-index byte are preserved.",
+    "All320 WMMAs, the final v0:v7 C0 instruction, and complete v128 observer suffix are identical.",
+    "Correct zero-DY arithmetic remains zero because both the original and selected B-packing inputs are architecturally zero."
+  ],
+  "limits": [
+    "The candidate is CPU-reviewed only; runtime package identity and complete source freeze are separate.",
+    "Architectural v513 is an ISA register designation and does not identify physical hardware storage.",
+    "The review inherits the separately checked scalar/LDS provenance. It does not independently rerun that trace.",
+    "The source identity and reaching LDS producer change; VGPR encoding alone does not guarantee identical physical routing or timing.",
+    "All other v513 consumers remain. Conditional v258 donor predictions must be recomputed from saved X, not scaled from previously rounded outputs; a bounded clean run cannot establish a permanent fix."
+  ]
+}

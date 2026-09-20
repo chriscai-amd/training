@@ -1,0 +1,361 @@
+{
+  "status": "COMPLETE_SOURCE1_INLINE_ZERO_CONTROL_FAIL123_CANDIDATE_FAIL57_MATCHED_COMPARISON",
+  "GPU_actions": false,
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_result_comparison_v1/compare_terminal_source1_zero_pair_v1.py",
+    "bytes": 12264,
+    "sha256": "c37d10356826e9fc67d77f1c6c9c86e8e278c7f512d7b109d767ba7b55b2bc68"
+  },
+  "frozen_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_pair_v1/launch_manifest_v511_source1_zero_v1.json",
+    "bytes": 24282,
+    "sha256": "77dd960c6136df20d4330d3cb1181fa3050b4f903dce2b67d65adf97a8eedbeb"
+  },
+  "configuration": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v511_source1_zero_runtime_v1/configuration_v511_source1_zero_v1.json",
+    "bytes": 9129,
+    "sha256": "446f481da8cde4fc379a1f4d28c7230d227d1a3f24bd0a3954a0073016956c8c"
+  },
+  "independent_candidate_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_peer_v1/source1_inline_zero_independent_candidate_review_v1.json",
+    "bytes": 9621,
+    "sha256": "5e2d5eab2ecded71c492f1ff2def051ea60f8c9761a624368e204f1145bc58ce"
+  },
+  "stream_binding": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_stream_audit_v1/runtime_binding_v1.json",
+    "bytes": 1429,
+    "sha256": "41abc61ff780bb58d5655f50a795584dd3a4d26fb92505c1a54af5b52a7b253f"
+  },
+  "source_inventory": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_pair_v1/source_inventory_v511_source1_zero_v1.json",
+    "bytes": 301475,
+    "sha256": "e3ca841b6a3309f4451f511110324ec386adf8ebcdc186b0b41d17668f175b09"
+  },
+  "source_file_count": 1214,
+  "rechecked_static_edit": {
+    "changed_ELF_bytes": [
+      [
+        25925,
+        255,
+        1
+      ],
+      [
+        25926,
+        11,
+        9
+      ]
+    ],
+    "PC": "0x7540",
+    "source1_before": "architectural v511",
+    "source1_after": "inline0",
+    "source0": "architectural v513 unchanged",
+    "all_other_ELF_bytes_unchanged": true,
+    "final_v0_v7_C0_preserved": true,
+    "v128_accumulator_state_not_reset": true,
+    "v128_v131_direct_and_normal_observer_preserved": true,
+    "direct_true_N_is_carrier_N_plus2": true,
+    "historical_v257_bits_unchanged": true,
+    "original_v257_donor_model_unchanged": true
+  },
+  "arms": [
+    {
+      "arm": "v513_control",
+      "outcome": "FAIL",
+      "iteration": 123,
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_pair_v1/v513_control_terminal.json",
+        "bytes": 271,
+        "sha256": "6d236707dff2785441fb22adb33f57564ed61cfcd5ec1043205a4280d9ce420c"
+      },
+      "native_join": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_pair_v1/v513_control_joined_verification_v1.json",
+        "bytes": 8142,
+        "sha256": "54f975a4840ef7fd803eaea31398615f6b1659717353b0cb7ef8280ebcfa9488"
+      },
+      "audits": {
+        "full_failure": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_failure_audit_v1/v513_control_full_failure_v1.json",
+          "bytes": 3866063,
+          "sha256": "b83cc843418d5811038d7cd2e4cce137316ecb19052e1eb2d993cd48354e5cbc"
+        },
+        "complete_stream": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_stream_audit_v1/v513_control_independent_stream_pairs_v1.json",
+          "bytes": 435101,
+          "sha256": "b4bcd66cfb05e130fe87a16ad533ba14e7145f5ddfdecc52f4a30867c230ce14"
+        },
+        "source_support": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_source_support_v1/v513_control_all_source_support_v1.json",
+          "bytes": 547461,
+          "sha256": "b0f12ca618374bf4c294bc80f62c25b08cb8d5d9340e5256b19a4e4b5777208d"
+        },
+        "donor_fit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_terminal_donor_fit_v1/v513_control_exact_donor_models_v1.json",
+          "bytes": 1040576,
+          "sha256": "af23981dd596afd34defcfb0bf126dba487a30df4d37925f1c6029c50ec7a0ad"
+        },
+        "independent_product_peer": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_terminal_donor_fit_peer_v1/v513_control_independent_product_review_v1.json",
+          "bytes": 28184,
+          "sha256": "e72b6e39eab3e05d1677ed579824ded38557fca702903f743cf2a0ba919621f2"
+        }
+      },
+      "owned_ELF_sha256": "c422ef9aa28418c3156b4031444cb78d0cece0e11cc0c6f213bdafa993edc279",
+      "all_retained_input_backing_bytes_verified": true,
+      "all_DY_halfwords_positive_zero": 1190067712,
+      "every_prefill_BF16_one_and_native_pointer_join_verified": true,
+      "statistics": {
+        "elements": 65536,
+        "positive_zero_count": 65248,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 288,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 3,
+        "extreme_count": 0,
+        "max_abs_finite": 2.7625057639804414e-33,
+        "unique_raw_bitpatterns": 248
+      },
+      "group": 2,
+      "true_source_columns": [
+        258,
+        322
+      ],
+      "nonzero_physical_words": 288,
+      "unique_nonzero_true_sources": 256,
+      "exact_nonzero_direct_duplicates": 32,
+      "every_retained_pair": {
+        "equal_positive_zero": 251872,
+        "equal_nonzero": 32,
+        "equal_negative_zero": 0
+      },
+      "total_pair_comparisons": 251904,
+      "all_three_subnormal_words_exact_donor_products": true,
+      "original_v257_donors": [
+        "0x0810",
+        "0x0a10",
+        "0x0c10",
+        "0x0e10"
+      ],
+      "exact_and_FP32_RNE_models_agree": true,
+      "normal_and_all_observed_route_models_agree": true,
+      "matching_saved_X_rows": 198,
+      "matching_K_range": [
+        471489,
+        840308
+      ],
+      "matching_K_mod64_equals1": [
+        471489,
+        479105,
+        486721,
+        494337,
+        501953,
+        509569,
+        517185,
+        524801,
+        532417,
+        540033,
+        547649,
+        555265,
+        562881,
+        570497,
+        578113,
+        585729,
+        593345,
+        600961,
+        608577,
+        616193,
+        623809,
+        631425,
+        639041,
+        646657,
+        654273,
+        661889,
+        669505,
+        677121,
+        684737,
+        692353,
+        699969,
+        707585,
+        774273,
+        810497
+      ],
+      "final63_K_matches": [],
+      "matching_full_X_row_sha256_counts": {
+        "2fc777da5bdfd1b95c27fe02d434bd013e09be16a94e15351bd5464502d1fda4": 198
+      },
+      "independent_product_checks": 215424,
+      "conditional_v258_diagnostics": [
+        {
+          "field": "normal_route_models",
+          "model": "neighbor_v258_wave_lane0",
+          "status": "NO_SAVED_X_ROW_MATCH",
+          "recovery_issue_count": 0,
+          "saved_X_search_performed": true
+        },
+        {
+          "field": "all_observed_route_models",
+          "model": "neighbor_v258_wave_lane0",
+          "status": "NO_SAVED_X_ROW_MATCH",
+          "recovery_issue_count": 0,
+          "saved_X_search_performed": true
+        },
+        {
+          "field": "normal_route_FP32_RNE_models",
+          "model": "neighbor_v258_wave_lane0_FP32_RNE",
+          "status": "NO_FP32_RNE_PRODUCT_REPRESENTATION_IN_ACTUAL_X_DOMAIN",
+          "recovery_issue_count": 240,
+          "saved_X_search_performed": false
+        },
+        {
+          "field": "all_observed_route_FP32_RNE_models",
+          "model": "neighbor_v258_wave_lane0_FP32_RNE",
+          "status": "NO_FP32_RNE_PRODUCT_REPRESENTATION_IN_ACTUAL_X_DOMAIN",
+          "recovery_issue_count": 240,
+          "saved_X_search_performed": false
+        }
+      ]
+    },
+    {
+      "arm": "v511_source1_zero",
+      "outcome": "FAIL",
+      "iteration": 57,
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_pair_v1/v511_source1_zero_terminal.json",
+        "bytes": 276,
+        "sha256": "bd2d6934a03bf176ca57c5cc2f50512e0764630f9845acb689d0559f94831b85"
+      },
+      "native_join": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_pair_v1/v511_source1_zero_joined_verification_v1.json",
+        "bytes": 6958,
+        "sha256": "102246fa4821671e4a645feb16aac6c39ae5e998aa6ba948ee4bf4f6be8663bf"
+      },
+      "audits": {
+        "full_failure": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_failure_audit_v1/v511_source1_zero_full_failure_v1.json",
+          "bytes": 3694782,
+          "sha256": "cc1903c4c99320d33606f99a0d568e83f385e52ad319829d19fedb551581b426"
+        },
+        "complete_stream": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_stream_audit_v1/v511_source1_zero_independent_stream_pairs_v1.json",
+          "bytes": 312739,
+          "sha256": "68eb766ba14475d67ca6696bb7b0cac34ad3a2d18a29bd3830199ae50a8e71a6"
+        },
+        "source_support": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_source_support_v1/v511_source1_zero_all_source_support_v1.json",
+          "bytes": 547500,
+          "sha256": "a552b9daa36eeeb0026819a4c9b30a582b464779d0505992c6d48dee1399cefb"
+        },
+        "donor_fit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_terminal_donor_fit_v1/v511_source1_zero_exact_donor_models_v1.json",
+          "bytes": 1030514,
+          "sha256": "ef9c57bcf1d984fb6e970a305b5641b2d4f0366a6d7cee2c20a3a3bbc669d405"
+        },
+        "independent_product_peer": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_terminal_donor_fit_peer_v1/v511_source1_zero_independent_product_review_v1.json",
+          "bytes": 18517,
+          "sha256": "ea0842cfbfd4eb3fffa639c42db2d3b95cba4ec17e10903e71c765429cc70174"
+        }
+      },
+      "owned_ELF_sha256": "aca1aa60c441b019361099553232f5c011aad1d053505b9cad69d45348851faf",
+      "all_retained_input_backing_bytes_verified": true,
+      "all_DY_halfwords_positive_zero": 1190067712,
+      "every_prefill_BF16_one_and_native_pointer_join_verified": true,
+      "statistics": {
+        "elements": 65536,
+        "positive_zero_count": 65248,
+        "negative_zero_count": 0,
+        "nonzero_including_nonfinite_count": 288,
+        "nonfinite_count": 0,
+        "infinity_count": 0,
+        "nan_count": 0,
+        "subnormal_count": 3,
+        "extreme_count": 0,
+        "max_abs_finite": 3.7916745780123706e-33,
+        "unique_raw_bitpatterns": 248
+      },
+      "group": 2,
+      "true_source_columns": [
+        258,
+        322
+      ],
+      "nonzero_physical_words": 288,
+      "unique_nonzero_true_sources": 256,
+      "exact_nonzero_direct_duplicates": 32,
+      "every_retained_pair": {
+        "equal_positive_zero": 116704,
+        "equal_nonzero": 32,
+        "equal_negative_zero": 0
+      },
+      "total_pair_comparisons": 116736,
+      "all_three_subnormal_words_exact_donor_products": true,
+      "original_v257_donors": [
+        "0x0810",
+        "0x0a10",
+        "0x0c10",
+        "0x0e10"
+      ],
+      "exact_and_FP32_RNE_models_agree": true,
+      "normal_and_all_observed_route_models_agree": true,
+      "matching_saved_X_rows": 100,
+      "matching_K_range": [
+        306,
+        66644
+      ],
+      "matching_K_mod64_equals1": [
+        21249,
+        43457,
+        65665
+      ],
+      "final63_K_matches": [],
+      "matching_full_X_row_sha256_counts": {
+        "c87a392d2a9e06b2919e565ecf3a3d995362a9ae17e8617b37ac371d6e83e2bb": 100
+      },
+      "independent_product_checks": 108800,
+      "conditional_v258_diagnostics": [
+        {
+          "field": "normal_route_models",
+          "model": "neighbor_v258_wave_lane0",
+          "status": "NO_SAVED_X_ROW_MATCH",
+          "recovery_issue_count": 0,
+          "saved_X_search_performed": true
+        },
+        {
+          "field": "all_observed_route_models",
+          "model": "neighbor_v258_wave_lane0",
+          "status": "NO_SAVED_X_ROW_MATCH",
+          "recovery_issue_count": 0,
+          "saved_X_search_performed": true
+        },
+        {
+          "field": "normal_route_FP32_RNE_models",
+          "model": "neighbor_v258_wave_lane0_FP32_RNE",
+          "status": "NO_FP32_RNE_PRODUCT_REPRESENTATION_IN_ACTUAL_X_DOMAIN",
+          "recovery_issue_count": 250,
+          "saved_X_search_performed": false
+        },
+        {
+          "field": "all_observed_route_FP32_RNE_models",
+          "model": "neighbor_v258_wave_lane0_FP32_RNE",
+          "status": "NO_FP32_RNE_PRODUCT_REPRESENTATION_IN_ACTUAL_X_DOMAIN",
+          "recovery_issue_count": 250,
+          "saved_X_search_performed": false
+        }
+      ]
+    }
+  ],
+  "findings": [
+    "Both arms retain independently audited exact-positive-zero DY, unchanged prepared input bytes and verified BF16-one prefill before every dispatch.",
+    "The candidate still exhibits the original-v257 wave-lane0 donor-product class through equal direct and normal observations after source1 at0x7540 is encoded as inline zero.",
+    "The second architectural VGPR operand at0x7540 is therefore unnecessary for this observed donor-event class in the tested kernel/setup.",
+    "The two failures fit different saved-X profiles and different sets of possible K. Their common numerical/source-geometry class does not mean they are the same invocation or uniquely locate corruption."
+  ],
+  "limits": [
+    "No physical register-read, register-file, accumulator-storage, execution-unit or fault-site localization follows from this architectural operand removal.",
+    "The edit can change dependencies, routing or timing; source0v513 and its other consumers remain. No instruction of fault is uniquely established.",
+    "Failure iterations123 and57 are observations from two bounded arms, not a failure-rate or comparative-performance estimate.",
+    "Conditionalv258 diagnostics remain separate comparison tests; this candidate does not reroute source0 or alter historical donor bits.",
+    "No NaN occurred in either zero-DY replay. No kernel or common cause is assigned to the original untraced training405 NaNs.",
+    "Both GPU launches and native verifiers were explicitly confirmed terminal/reaped by root before their result stages were read. No frozen input or source was modified."
+  ]
+}

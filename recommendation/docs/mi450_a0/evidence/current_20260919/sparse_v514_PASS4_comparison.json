@@ -1,0 +1,199 @@
+{
+  "status": "PASS_MATCHED_SPARSE_POSITIVE_OPERAND_DELIVERY_WITNESS",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_result_comparison_v1/compare_terminal_sparse_witness_pair_v1.py",
+    "bytes": 10455,
+    "sha256": "754b075fbdc3bc414eb0b0c4d7f9cd46f7cb7399e989194c2b7828742ecdd965"
+  },
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/launch_manifest_v514_sparse_witness_v1.json",
+    "bytes": 22006,
+    "sha256": "180dd07481f8320f50a946572ec7c72475c26f95ba2e2e6022608d8a5623bd02"
+  },
+  "native_verifier": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/verify_arm_v514_sparse_witness_v2.py",
+    "bytes": 14501,
+    "sha256": "40e63768a5104443ec2defd0dd5b47a6b137f27a57aea3d515a713f9fe37c2a1"
+  },
+  "numeric_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_peer_v1/sparse_positive_witness_independent_review_v1.json",
+    "bytes": 13003,
+    "sha256": "cbe1eef59699756b980943207078a6a7a799e0613c300258eb9c7d202fd3d57b"
+  },
+  "readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_failure_audit_v1/CPU_readiness_v1.json",
+    "bytes": 5200,
+    "sha256": "c01667d2955a4d36fd234226c0cec3aa41c57b778889b25486e07d5669d35d55"
+  },
+  "binding": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_failure_audit_v1/runtime_binding_v1.json",
+    "bytes": 1720,
+    "sha256": "a0f13951f3d66bbcbfb480aab158c17b774eace3b73b8a02ac31be089471a949"
+  },
+  "dependency_repair": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/native_verifier_packet_dependency_repair_v1.json",
+    "bytes": 1888,
+    "sha256": "bbea63d4adb296c02d14330fec93ddc022eb72f9c06d973b48fce81fdcaa3c21"
+  },
+  "dependency_repair_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_packet_peer_v1/packet_dependency_repair_independent_review_v1.json",
+    "bytes": 4190,
+    "sha256": "04216605090c4cb28a22f1926520aaee735f64839fa9528aaf47dfbddef62231"
+  },
+  "preserved_initial_native_failure": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/native_verifier_v2_missing_dependency_failure_v1.json",
+    "bytes": 1015,
+    "sha256": "c09b4a90abf6670a2ce1b3533b5375641cf2e69601880e62d2149ed68f84cdd2"
+  },
+  "arms": {
+    "v513_control": {
+      "full_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_failure_audit_v1/v513_control_complete_sparse_witness_audit_v1.json",
+        "bytes": 8681,
+        "sha256": "192e8904f6e998c61aedc4e4607634a10125cad2babe86926d1752205364aa0f"
+      },
+      "native_join": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/v513_control_joined_verification_v1.json",
+        "bytes": 8580,
+        "sha256": "aa15fd7a86a82af49dac37d9e66f64780a33c25add1b7481adb1bbe2ddc39cb8"
+      },
+      "report": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v513_control_v1.json",
+        "bytes": 392284,
+        "sha256": "d1d2b1b30522c5b1fea245efa25d32f20cdefe8bc52dd3ddf5ed88b4a5bcfa49"
+      },
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/v513_control_terminal.json",
+        "bytes": 271,
+        "sha256": "164e956cb30fe5fb1a5f55d907940e5e7d00cc9823b39a2d532269774cd08093"
+      },
+      "runtime_status": "PASS",
+      "invocations": 4,
+      "ELF_sha256": "c422ef9aa28418c3156b4031444cb78d0cece0e11cc0c6f213bdafa993edc279",
+      "complete_final_artifact": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v513_control_v1_final_inputs.pt",
+        "bytes": 3570849181,
+        "sha256": "9dbca615cbdfc8f2a5fece27fdd76ef02a62d9b2c425253678a1bc928b1278cc"
+      },
+      "output_stream": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v513_control_v1.json.cpu_outputs.bin",
+        "bytes": 1048576,
+        "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+      },
+      "prefill_stream": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v513_control_v1.json.cpu_prefills.bin",
+        "bytes": 1048576,
+        "sha256": "b168fd938548be8b95bd48a9450497841ee944d9af26dcd66167a2b2c29a9f8d"
+      },
+      "output_per_invocation_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+      "direct_and_normal_bits": "0x00000000",
+      "complete_output_words_checked": 262144,
+      "complete_prefill_halfwords_checked": 524288
+    },
+    "v514_repeated": {
+      "full_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_failure_audit_v1/v514_repeated_complete_sparse_witness_audit_v1.json",
+        "bytes": 8688,
+        "sha256": "ea40aa838cb15ebbda2fbc3cb7f91cae02e58666edaddb329912cc56f06f1eca"
+      },
+      "native_join": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/v514_repeated_joined_verification_v1.json",
+        "bytes": 8591,
+        "sha256": "35627850240c20ba4c51d98b9291ecdda562ef4aef6b870d096a897bb0afa8bc"
+      },
+      "report": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v514_repeated_v1.json",
+        "bytes": 392459,
+        "sha256": "3482b10959af4336c06e5fcb8341bf07e5dcd7d1010641eb9c52f1540ca89846"
+      },
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/v514_repeated_terminal.json",
+        "bytes": 272,
+        "sha256": "f215fcedad119ac1d9dbd5540c76eb0af0c34ca3cf7e32609ff6b1da7b3e2ba6"
+      },
+      "runtime_status": "PASS",
+      "invocations": 4,
+      "ELF_sha256": "78548372163245924d43b4bed622f08d2fb89fa601a1d3c51eb12387223147f3",
+      "complete_final_artifact": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v514_repeated_v1_final_inputs.pt",
+        "bytes": 3570849181,
+        "sha256": "78218f68eb32144abfac818a6bf4d1fd4caf9c6f16b8e996771c57f4eedd1368"
+      },
+      "output_stream": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v514_repeated_v1.json.cpu_outputs.bin",
+        "bytes": 1048576,
+        "sha256": "23a446d3a1924e48d1d7a049313c320a31957a4568c0867eabda7e806ce448dd"
+      },
+      "prefill_stream": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v514_repeated_v1.json.cpu_prefills.bin",
+        "bytes": 1048576,
+        "sha256": "b168fd938548be8b95bd48a9450497841ee944d9af26dcd66167a2b2c29a9f8d"
+      },
+      "output_per_invocation_sha256": "b4e15e1e8efedbb4c69bb09733e50d65ba5a87ea0c68be38da2e6e87286e2b8e",
+      "direct_and_normal_bits": "0x3f800000",
+      "complete_output_words_checked": 262144,
+      "complete_prefill_halfwords_checked": 524288
+    }
+  },
+  "matched_complete_input_backings": {
+    "x": {
+      "sha256": "30c06a6dd8e292bc09fda19e540915255c381d79f5ebf4e8600405398464a869",
+      "bytes": 1190067712,
+      "shape": [
+        2324351,
+        256
+      ],
+      "stride": [
+        256,
+        1
+      ]
+    },
+    "dy": {
+      "sha256": "d1ba5641fe417109ea61b2c4694b08fc883e5dd106c60fd2929cbd95c2aef341",
+      "bytes": 2380135424,
+      "shape": [
+        2324351,
+        512
+      ],
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "mat2": {
+      "sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+      "bytes": 262144,
+      "shape": [
+        256,
+        512
+      ],
+      "stride": [
+        1,
+        256
+      ]
+    }
+  },
+  "oracle": {
+    "control": "Every FP32 output word is positive zero.",
+    "v514": "FP32 one at byte offsets 0 and 1024; every other output word is positive zero.",
+    "two_observers": {
+      "direct_byte_offset": 0,
+      "normal_byte_offset": 1024,
+      "accumulator": "v128",
+      "group": 0,
+      "wave": 0,
+      "lane": 0,
+      "true_source_M": 0,
+      "true_source_N": 2
+    }
+  },
+  "inference": "The loaded v513-to-v514 source0 reroute produces the independently predicted arithmetic change for these sparse inputs, observed identically through the direct and normal routes in all four invocations per arm. This is a positive dynamic witness that the altered operand path can affect arithmetic in this kernel setup.",
+  "limits": [
+    "These eight sparse invocations do not establish that the historical address-donor corruption uses the same operand-delivery event, physical register read, or fault site.",
+    "They do not establish a fix, failure probability, or common cause with the original training NaN.",
+    "Native selected handles and exact host ELF identities are checked; on-device instruction fetch is not directly observed.",
+    "The complete retained inputs and producer before/after byte records do not exclude transient untracked input changes restored before finalization.",
+    "This comparison rechecks small provenance and complete stream identities and joins already completed full-input audits; it does not repeat the multi-gigabyte backing scans."
+  ]
+}

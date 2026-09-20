@@ -1,0 +1,479 @@
+{
+  "format": "raw56_failure_independent_static_source_binding_v1",
+  "status": "PASS",
+  "reviewer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_raw_failure_mechanism_audit_v1/audit_raw56_static_binding_v1.py",
+    "bytes": 9576,
+    "sha256": "af985afe81d0650de2606d1e3a060794711a75ea52374dafb227137fb50f9879"
+  },
+  "failure_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_raw_failure_audit_v1/raw_even_full_failure_v1.json",
+    "bytes": 143444,
+    "sha256": "6795fe74357979e9bb7381cb999ebcda017d8499a6b71461cc184bda8d5771f9"
+  },
+  "coordinates": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_raw_failure_audit_v1/raw_even_wrong_coordinates_v1.json",
+    "bytes": 4685,
+    "sha256": "d9cfd2e4ac72a9fb0ba722d299c59a5a58ec3171d707cad329b7b81bf0f4de42"
+  },
+  "packet_path": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_mechanism_v1/raw_export_exact_packet_path_and_EXEC_v2.json",
+    "bytes": 397752,
+    "sha256": "779bb760f8cdbebb55cd33e67422f75a16aa1cfa877611f9b4f365d55c1fa78d"
+  },
+  "historical_address_map": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_mechanism_v1/address_donor_hypothesis_exact_static_map_v1.json",
+    "bytes": 185997,
+    "sha256": "afc027dd9094f34d5c86ed0b1d195544c69db9db5cf49f123effb3763e96f97a"
+  },
+  "baseline_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_raw_export_audit_v1/base_fresh_disassembly_v1.s",
+    "bytes": 4277349,
+    "sha256": "20fa89aeefd7fef017bdf13e451d36c47c962e32c898aa3e44b66ab5557cc22d"
+  },
+  "raw_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_raw_export_audit_v1/even_fresh_disassembly_v1.s",
+    "bytes": 4277263,
+    "sha256": "a8bdcd31a9afec2df10851e57c5deb968a33272522dd0b3ebb73b2e235fcca9d"
+  },
+  "address_helper": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_raw_export_audit_v1/audit_output_addresses_v1.py",
+    "bytes": 8131,
+    "sha256": "69b827cdb6fbdd63ed83b7a4046b2268257333e8f123f1b3a3f5fa4f33bcc8ed"
+  },
+  "symbolic_helper": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_raw_export_audit_v1/audit_raw_export_bytes_v1.py",
+    "bytes": 11671,
+    "sha256": "52d708485c015c02ff2092fa3dddcc0ce21ff4b07eb0fa4443d45bc371a8c811"
+  },
+  "all65536_even_M_store_coordinates_reenumerated": true,
+  "all_nine_observed_words_accounted_for": true,
+  "words": [
+    {
+      "M": 8,
+      "N": 128,
+      "word": "0x00000810",
+      "group": 1,
+      "thread": 0,
+      "wave": 0,
+      "lane": 0,
+      "source_accumulator": 1,
+      "alpha_read_pc": "0x1fee0",
+      "raw_move_pc": "0x201e4",
+      "raw_move_source_and_destination": "v288",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 65552,
+      "arithmetic_region_v257": 2064,
+      "epilogue_v257": 128,
+      "architectural_prepack_expression": [
+        "v_pk_add_f32",
+        [
+          "LDS_load",
+          130508,
+          424
+        ],
+        [
+          "v_pk_mul_f32",
+          [
+            "LDS_load",
+            130524,
+            432
+          ],
+          [
+            "v_mul_f32_e32",
+            [
+              "constant",
+              "s52"
+            ],
+            [
+              "initial_register",
+              1
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "M": 8,
+      "N": 256,
+      "word": "0x00000810",
+      "group": 2,
+      "thread": 0,
+      "wave": 0,
+      "lane": 0,
+      "source_accumulator": 1,
+      "alpha_read_pc": "0x1fee0",
+      "raw_move_pc": "0x201e4",
+      "raw_move_source_and_destination": "v288",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 131088,
+      "arithmetic_region_v257": 2064,
+      "epilogue_v257": 256,
+      "architectural_prepack_expression": [
+        "v_pk_add_f32",
+        [
+          "LDS_load",
+          130508,
+          424
+        ],
+        [
+          "v_pk_mul_f32",
+          [
+            "LDS_load",
+            130524,
+            432
+          ],
+          [
+            "v_mul_f32_e32",
+            [
+              "constant",
+              "s52"
+            ],
+            [
+              "initial_register",
+              1
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "M": 8,
+      "N": 320,
+      "word": "0x00000c10",
+      "group": 2,
+      "thread": 64,
+      "wave": 2,
+      "lane": 0,
+      "source_accumulator": 1,
+      "alpha_read_pc": "0x1fee0",
+      "raw_move_pc": "0x201e4",
+      "raw_move_source_and_destination": "v288",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 163856,
+      "arithmetic_region_v257": 3088,
+      "epilogue_v257": 320,
+      "architectural_prepack_expression": [
+        "v_pk_add_f32",
+        [
+          "LDS_load",
+          130508,
+          424
+        ],
+        [
+          "v_pk_mul_f32",
+          [
+            "LDS_load",
+            130524,
+            432
+          ],
+          [
+            "v_mul_f32_e32",
+            [
+              "constant",
+              "s52"
+            ],
+            [
+              "initial_register",
+              1
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "M": 8,
+      "N": 384,
+      "word": "0x00000810",
+      "group": 3,
+      "thread": 0,
+      "wave": 0,
+      "lane": 0,
+      "source_accumulator": 1,
+      "alpha_read_pc": "0x1fee0",
+      "raw_move_pc": "0x201e4",
+      "raw_move_source_and_destination": "v288",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 196624,
+      "arithmetic_region_v257": 2064,
+      "epilogue_v257": 384,
+      "architectural_prepack_expression": [
+        "v_pk_add_f32",
+        [
+          "LDS_load",
+          130508,
+          424
+        ],
+        [
+          "v_pk_mul_f32",
+          [
+            "LDS_load",
+            130524,
+            432
+          ],
+          [
+            "v_mul_f32_e32",
+            [
+              "constant",
+              "s52"
+            ],
+            [
+              "initial_register",
+              1
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "M": 8,
+      "N": 448,
+      "word": "0x00000c10",
+      "group": 3,
+      "thread": 64,
+      "wave": 2,
+      "lane": 0,
+      "source_accumulator": 1,
+      "alpha_read_pc": "0x1fee0",
+      "raw_move_pc": "0x201e4",
+      "raw_move_source_and_destination": "v288",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 229392,
+      "arithmetic_region_v257": 3088,
+      "epilogue_v257": 448,
+      "architectural_prepack_expression": [
+        "v_pk_add_f32",
+        [
+          "LDS_load",
+          130508,
+          424
+        ],
+        [
+          "v_pk_mul_f32",
+          [
+            "LDS_load",
+            130524,
+            432
+          ],
+          [
+            "v_mul_f32_e32",
+            [
+              "constant",
+              "s52"
+            ],
+            [
+              "initial_register",
+              1
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "M": 136,
+      "N": 256,
+      "word": "0x00000a10",
+      "group": 2,
+      "thread": 32,
+      "wave": 1,
+      "lane": 0,
+      "source_accumulator": 1,
+      "alpha_read_pc": "0x1fee0",
+      "raw_move_pc": "0x201e4",
+      "raw_move_source_and_destination": "v288",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 131344,
+      "arithmetic_region_v257": 2576,
+      "epilogue_v257": 256,
+      "architectural_prepack_expression": [
+        "v_pk_add_f32",
+        [
+          "LDS_load",
+          130508,
+          424
+        ],
+        [
+          "v_pk_mul_f32",
+          [
+            "LDS_load",
+            130524,
+            432
+          ],
+          [
+            "v_mul_f32_e32",
+            [
+              "constant",
+              "s52"
+            ],
+            [
+              "initial_register",
+              1
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "M": 136,
+      "N": 320,
+      "word": "0x00000e10",
+      "group": 2,
+      "thread": 96,
+      "wave": 3,
+      "lane": 0,
+      "source_accumulator": 1,
+      "alpha_read_pc": "0x1fee0",
+      "raw_move_pc": "0x201e4",
+      "raw_move_source_and_destination": "v288",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 164112,
+      "arithmetic_region_v257": 3600,
+      "epilogue_v257": 320,
+      "architectural_prepack_expression": [
+        "v_pk_add_f32",
+        [
+          "LDS_load",
+          130508,
+          424
+        ],
+        [
+          "v_pk_mul_f32",
+          [
+            "LDS_load",
+            130524,
+            432
+          ],
+          [
+            "v_mul_f32_e32",
+            [
+              "constant",
+              "s52"
+            ],
+            [
+              "initial_register",
+              1
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "M": 136,
+      "N": 384,
+      "word": "0x00000a10",
+      "group": 3,
+      "thread": 32,
+      "wave": 1,
+      "lane": 0,
+      "source_accumulator": 1,
+      "alpha_read_pc": "0x1fee0",
+      "raw_move_pc": "0x201e4",
+      "raw_move_source_and_destination": "v288",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 196880,
+      "arithmetic_region_v257": 2576,
+      "epilogue_v257": 384,
+      "architectural_prepack_expression": [
+        "v_pk_add_f32",
+        [
+          "LDS_load",
+          130508,
+          424
+        ],
+        [
+          "v_pk_mul_f32",
+          [
+            "LDS_load",
+            130524,
+            432
+          ],
+          [
+            "v_mul_f32_e32",
+            [
+              "constant",
+              "s52"
+            ],
+            [
+              "initial_register",
+              1
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "M": 136,
+      "N": 448,
+      "word": "0x00000e10",
+      "group": 3,
+      "thread": 96,
+      "wave": 3,
+      "lane": 0,
+      "source_accumulator": 1,
+      "alpha_read_pc": "0x1fee0",
+      "raw_move_pc": "0x201e4",
+      "raw_move_source_and_destination": "v288",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 229648,
+      "arithmetic_region_v257": 3600,
+      "epilogue_v257": 448,
+      "architectural_prepack_expression": [
+        "v_pk_add_f32",
+        [
+          "LDS_load",
+          130508,
+          424
+        ],
+        [
+          "v_pk_mul_f32",
+          [
+            "LDS_load",
+            130524,
+            432
+          ],
+          [
+            "v_mul_f32_e32",
+            [
+              "constant",
+              "s52"
+            ],
+            [
+              "initial_register",
+              1
+            ]
+          ]
+        ]
+      ]
+    }
+  ],
+  "selected_epilogue_v257_writes": [],
+  "interpretation": [
+    "All nine raw observations select the original accumulator v1, the same prepack move and the first word of the same store instruction, always lane0.",
+    "Observed bits equal the earlier arithmetic-region v257 address offsets for each corresponding local thread.",
+    "The output-address setup overwrites v257 before alpha reads v1; contemporaneous v1-to-v257 alias at that alpha instruction would not produce these words.",
+    "This is an exact bit fingerprint and source-path binding, not proof of the time or physical mechanism of corruption."
+  ],
+  "limits": [
+    "Architectural dataflow and addresses are static; transient register delivery, epilogue, raw move, store, and copy faults are not excluded.",
+    "The raw export follows alpha/scale/bias instructions; it does not directly observe WMMA accumulator state.",
+    "No GPU actions. Source, captures and prior certificates remain unchanged."
+  ]
+}

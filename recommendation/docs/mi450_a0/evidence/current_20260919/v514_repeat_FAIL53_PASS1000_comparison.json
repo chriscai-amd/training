@@ -1,0 +1,289 @@
+{
+  "status": "PASS_TERMINAL_REPEAT_FAIL53_CONTROL_AND_PASS1000_V514_COMPARISON",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_repeat_result_comparison_v1/compare_repeat_FAIL_PASS_v1.py",
+    "bytes": 10716,
+    "sha256": "47c444ef43c5a82bf8aabc628ba8957e0eba076f862ba3ca7fa484a67b3cdd81"
+  },
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_repeat_pair_v1/launch_manifest_v514_reroute_v1.json",
+    "bytes": 19348,
+    "sha256": "ff55a488cce3957615d3d6cc619286e6aaffb92810feae95aeade93c8260f5ed"
+  },
+  "repeat_author_readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_repeat_pair_v1/CPU_package_source_readiness_v1.json",
+    "bytes": 10519,
+    "sha256": "6b5991ffe982e413d72845a1a12bcd2ad3fc19c92819610c5e4748dc599a5d29"
+  },
+  "control_fit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_repeat_terminal_donor_fit_v1/v513_control_exact_donor_models_v1.json",
+    "bytes": 1075554,
+    "sha256": "ff425612f340a263083c1c557aac64118b84d2c19088ba7aa79a1315cdc82219"
+  },
+  "control_product_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_repeat_terminal_donor_fit_peer_v1/v513_control_independent_product_review_v1.json",
+    "bytes": 62786,
+    "sha256": "cefc511e78b4737a651aa4a5dcc53d6362f5fbeda53c93c6f6e29746061a1810"
+  },
+  "candidate_PASS_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_repeat_terminal_pass_peer_v1/v514_repeated_PASS1000_independent_stream_review_v1.json",
+    "bytes": 108147,
+    "sha256": "37d9045b9f5bb82880ad1effd780f0efbbff7dbc57bc155bb5737050bbb8cc7a"
+  },
+  "native_joins": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_repeat_pair_v1/v513_control_joined_verification_v1.json",
+      "bytes": 6816,
+      "sha256": "f73cd2c031a628850e4841cce996ef76a8897ca5500981335246f2da1481eeca"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_repeat_pair_v1/v514_repeated_joined_verification_v1.json",
+      "bytes": 23578,
+      "sha256": "ef657bc0eb5ea097bd93f5aa29ef50c205e4ea2f5c4a35cf8f1dc8436a93521f"
+    }
+  ],
+  "terminal_records": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_repeat_pair_v1/v513_control_terminal.json",
+      "bytes": 271,
+      "sha256": "3eb74b3676583ea7ef8eb5d47ca7c20452973f4034117edd22d6c2e832d1c0ab"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_repeat_pair_v1/v514_repeated_terminal.json",
+      "bytes": 272,
+      "sha256": "9e5da5eca0e8cc2109fe526e6b446ccadee026a68e4a20ef0296b7ae61f2c459"
+    }
+  ],
+  "control": {
+    "disposition": "FAIL53",
+    "nonzero_physical_words": 288,
+    "nonzero_true_sources": 256,
+    "nonzero_equal_direct_duplicates": 32,
+    "group": 2,
+    "source_columns": [
+      258,
+      322
+    ],
+    "original_donors": [
+      "0x0810",
+      "0x0a10",
+      "0x0c10",
+      "0x0e10"
+    ],
+    "arithmetic_models": [
+      {
+        "field": "normal_route_models",
+        "model": "old_wave_lane0",
+        "status": "EXACT_MATCHES",
+        "matching_rows": 620,
+        "coefficient_rejections": 0
+      },
+      {
+        "field": "normal_route_models",
+        "model": "neighbor_v258_wave_lane0",
+        "status": "NO_SAVED_X_ROW_MATCH",
+        "matching_rows": 0,
+        "coefficient_rejections": 0
+      },
+      {
+        "field": "all_observed_route_models",
+        "model": "old_wave_lane0",
+        "status": "EXACT_MATCHES",
+        "matching_rows": 620,
+        "coefficient_rejections": 0
+      },
+      {
+        "field": "all_observed_route_models",
+        "model": "neighbor_v258_wave_lane0",
+        "status": "NO_SAVED_X_ROW_MATCH",
+        "matching_rows": 0,
+        "coefficient_rejections": 0
+      },
+      {
+        "field": "normal_route_FP32_RNE_models",
+        "model": "old_wave_lane0_FP32_RNE",
+        "status": "EXACT_MATCHES",
+        "matching_rows": 620,
+        "coefficient_rejections": 0
+      },
+      {
+        "field": "normal_route_FP32_RNE_models",
+        "model": "neighbor_v258_wave_lane0_FP32_RNE",
+        "status": "NO_FP32_RNE_PRODUCT_REPRESENTATION_IN_ACTUAL_X_DOMAIN",
+        "matching_rows": 0,
+        "coefficient_rejections": 248
+      },
+      {
+        "field": "all_observed_route_FP32_RNE_models",
+        "model": "old_wave_lane0_FP32_RNE",
+        "status": "EXACT_MATCHES",
+        "matching_rows": 620,
+        "coefficient_rejections": 0
+      },
+      {
+        "field": "all_observed_route_FP32_RNE_models",
+        "model": "neighbor_v258_wave_lane0_FP32_RNE",
+        "status": "NO_FP32_RNE_PRODUCT_REPRESENTATION_IN_ACTUAL_X_DOMAIN",
+        "matching_rows": 0,
+        "coefficient_rejections": 248
+      }
+    ],
+    "matching_X_rows": 620,
+    "matching_X_range": [
+      67162,
+      470650
+    ],
+    "matching_full_X_sha256": "6320ea9b0ca9eac41fd5d613f265ce37b760ad1f092506866789a373ae8fdf8c",
+    "conditional_repeated_K_candidates": [
+      {
+        "k": 154241,
+        "repeated_0x7540_visit": 2410
+      },
+      {
+        "k": 171585,
+        "repeated_0x7540_visit": 2681
+      },
+      {
+        "k": 200001,
+        "repeated_0x7540_visit": 3125
+      },
+      {
+        "k": 205505,
+        "repeated_0x7540_visit": 3211
+      },
+      {
+        "k": 311361,
+        "repeated_0x7540_visit": 4865
+      },
+      {
+        "k": 321281,
+        "repeated_0x7540_visit": 5020
+      },
+      {
+        "k": 354305,
+        "repeated_0x7540_visit": 5536
+      },
+      {
+        "k": 461185,
+        "repeated_0x7540_visit": 7206
+      }
+    ],
+    "final63_K_matches": [],
+    "independent_pair_comparisons": 108544,
+    "pair_classifications": {
+      "equal_positive_zero": 108512,
+      "equal_nonzero": 32,
+      "equal_negative_zero": 0
+    },
+    "independent_product_checks": 674560
+  },
+  "candidate": {
+    "disposition": "PASS1000",
+    "output_words_checked": 65536000,
+    "prefill_halfwords_checked": 131072000,
+    "source_pairs_checked": 2048000,
+    "negative_zero_words": 0,
+    "all_output_bits_positive_zero": true,
+    "signed_zero_anomalies": [],
+    "no_donor_fit": true
+  },
+  "controlled_change": {
+    "PC": "0x7540",
+    "source0_before": "v513",
+    "source0_after": "v514",
+    "changed_file_bytes": [
+      [
+        25924,
+        1,
+        2
+      ]
+    ],
+    "ELF_records": [
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_v514_reroute_native_artifacts_v1/DW_v513_control.elf",
+        "bytes": 335000,
+        "sha256": "c422ef9aa28418c3156b4031444cb78d0cece0e11cc0c6f213bdafa993edc279"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_v514_reroute_native_artifacts_v1/DW_v514_repeated.elf",
+        "bytes": 335000,
+        "sha256": "78548372163245924d43b4bed622f08d2fb89fa601a1d3c51eb12387223147f3"
+      }
+    ],
+    "all_other_ELF_bytes_identical": true,
+    "shared_final_v0_v7_C0": true,
+    "v128_final_accumulation_not_reset": true,
+    "same_packet_fields_except_process_pointers": {
+      "Gemm info": 1,
+      "kernel info0": 18874369,
+      "kernel info1": 1073807368,
+      "numWG": 4,
+      "SizesFree0": 256,
+      "SizesFree1": 512,
+      "SizesFree2": 1,
+      "SizesSum0": 2324351,
+      "strideD0": 256,
+      "strideD1": 0,
+      "strideC0": 256,
+      "strideC1": 0,
+      "strideA0": 256,
+      "strideA1": 0,
+      "strideB0": 512,
+      "strideB1": 0,
+      "alpha": 1.0,
+      "beta": 0.0,
+      "AddressScaleAlphaVec": "0x0",
+      "bias": "0x0",
+      "biasType": 0,
+      "StrideBias": 0,
+      "activationAlpha": 0.0,
+      "activationBeta": 0.0,
+      "activationType": 0,
+      "batchOffsetD": 0,
+      "batchOffsetC": 0,
+      "batchOffsetA": 0,
+      "batchOffsetB": 0
+    }
+  },
+  "chronological_context": [
+    {
+      "experiment": "source-zero pair",
+      "control": "FAIL532; original donor exact/RNE fit",
+      "candidate": "inline-zero source PASS1000",
+      "evidence": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_result_comparison_v1/terminal_v513_source_zero_pair_comparison_v1.json",
+        "bytes": 12719,
+        "sha256": "be5e103a0e33a943d14fc746b9b61b2df9f43f1ea5b753931f34a2706d50f07d"
+      }
+    },
+    {
+      "experiment": "first v514 pair",
+      "control": "PASS1000",
+      "candidate": "v514 PASS1000",
+      "evidence": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_result_comparison_v1/terminal_v514_reroute_both_PASS1000_comparison_v1.json",
+        "bytes": 7104,
+        "sha256": "df443bb110aaaf6b169490545eec8eb68f2c89d76af2080b459c3d47ac37638f"
+      }
+    },
+    {
+      "experiment": "fresh path-only v514 repeat",
+      "control": "FAIL53; original donor exact/RNE fit",
+      "candidate": "v514 PASS1000"
+    }
+  ],
+  "findings": [
+    "The unchanged original-source control reproduced the historical-v257 donor arithmetic at call53 after the preceding control process had passed1000 calls.",
+    "The v514 arm completed1000 calls with an independently checked positive-zero stream. It provides no event to fit to the conditional-v258 model.",
+    "These observations support continued investigation of the repeated source-read path while showing that control outcomes vary between processes. They do not by themselves establish suppression, a failure rate, a permanent fix or physical fault localization."
+  ],
+  "limits": [
+    "The runs are separate, sequential, bounded processes and stop on first failure. Outcomes are not pooled into a failure-rate or significance claim.",
+    "The prior controlPASS1000 remains relevant: a bounded clean run occurs with the original source too. EarlierFAIL532 and currentFAIL53 use the identical control ELF but different transient executions.",
+    "v514 preserves a VGPR source but changes source identity and its reaching LDS producer. Hardware routing, scheduling and timing may also differ.",
+    "The eight K candidates are conditional arithmetic/architectural matches, not measured hardware corruption times. The candidate has no nonzero donor vector.",
+    "PASS final resident-input equality is producer-reported; no full retained-input failure artifact exists for it.",
+    "Only final v0:v7 C is zero in both arms; v128 accumulation was not reset. Odd-M and overwritten original carrier coordinates remain unobserved."
+  ]
+}

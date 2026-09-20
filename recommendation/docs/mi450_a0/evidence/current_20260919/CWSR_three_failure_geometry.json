@@ -1,0 +1,600 @@
+{
+  "status": "PASS_CONDITIONAL_CWSR_V257_LANE0_TO_V513_GEOMETRY_AND_COMPLETED_PRODUCTS_MATCH",
+  "GPU_actions": false,
+  "live_runtime_outputs_read": false,
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_geometry_CPU_v1/correlate_lane0_B_geometry_v2.py",
+    "bytes": 15284,
+    "sha256": "dc376196a91979b9e22758aa7be0da29909592d69483d00936e5ca10cf9d206b"
+  },
+  "conditional_trap_copy_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/CWSR_exact_entry_all256_bank_and_lane_CPU_certificate_v1.json",
+    "bytes": 178763,
+    "sha256": "c66117faf1624377a01daa2fbc7994002f5d7e2669440e8fd89cefbc316b22c4"
+  },
+  "installed_CWSR": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_CWSR_gfx1250.bin",
+    "bytes": 5656,
+    "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+  },
+  "bank_ELF_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_peer_v1/inline_zero_bank_history_three_arm_independent_ELF_review_v1.json",
+    "bytes": 10357,
+    "sha256": "0308cca7c467b1bb313b3788f91b13ba30a893cd08cd3cd6633d905c90a6004b"
+  },
+  "inherited_fragment_theorem": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_CPU_v1/sparse_positive_witness_architectural_feasibility_v1.json",
+    "bytes": 103636,
+    "sha256": "7fcc52025d699e91223d01def1b67f06063b4d1ce8e69aa4021a60ffe4fad87d"
+  },
+  "pair_map": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_pair_design_v1/same_invocation_v128_to_v131_pairs_v1.json",
+    "bytes": 1570035,
+    "sha256": "2681d32eca89c9be1e7c46e5e3ca0a4b3471a6fce5ac514637e02c947e74e4ef"
+  },
+  "completed_source1_comparison": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_result_comparison_v1/terminal_source1_zero_FAIL123_FAIL57_comparison_v1.json",
+    "bytes": 14867,
+    "sha256": "3b63c98127a40b8eccd1654e92b8d340ece56f0fe5933684d1c839d4f43ff8f9"
+  },
+  "completed_bank_history_comparison": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_result_comparison_v1/terminal_bank_history_three_arm_comparison_v1.json",
+    "bytes": 23237,
+    "sha256": "8f76e00edf99d1987dae0bfb1f26f495de2c2d9c20dc5fdabf30a6a1bb4e996f"
+  },
+  "packing": [
+    {
+      "wave": 0,
+      "copied_v257_lane0_word": "0x00000810",
+      "B_v494_lane0_word": "0x08100000",
+      "BF16_donor": "0x0810",
+      "B_v502_lane0_word": "0x00000000",
+      "B_contraction_slot": [
+        0,
+        1
+      ]
+    },
+    {
+      "wave": 1,
+      "copied_v257_lane0_word": "0x00000a10",
+      "B_v494_lane0_word": "0x0a100000",
+      "BF16_donor": "0x0a10",
+      "B_v502_lane0_word": "0x00000000",
+      "B_contraction_slot": [
+        0,
+        1
+      ]
+    },
+    {
+      "wave": 2,
+      "copied_v257_lane0_word": "0x00000c10",
+      "B_v494_lane0_word": "0x0c100000",
+      "BF16_donor": "0x0c10",
+      "B_v502_lane0_word": "0x00000000",
+      "B_contraction_slot": [
+        0,
+        1
+      ]
+    },
+    {
+      "wave": 3,
+      "copied_v257_lane0_word": "0x00000e10",
+      "B_v494_lane0_word": "0x0e100000",
+      "BF16_donor": "0x0e10",
+      "B_v502_lane0_word": "0x00000000",
+      "B_contraction_slot": [
+        0,
+        1
+      ]
+    }
+  ],
+  "target_permutation": {
+    "PC": "0x7540",
+    "source0": "v513",
+    "source1": "inline0 (or zero-valued v511 in prior control)",
+    "output": "v494.high16",
+    "contraction_key": [
+      0,
+      1
+    ],
+    "second_v513_consumer": "0x75b0 uses high16, which remains zero"
+  },
+  "downstream_WMMA_consumers": [
+    {
+      "PC": "0x7744",
+      "C": "v[128:135]",
+      "A": "v[284:291]",
+      "B": "v[494:501]"
+    },
+    {
+      "PC": "0x7764",
+      "C": "v[136:143]",
+      "A": "v[292:299]",
+      "B": "v[494:501]"
+    },
+    {
+      "PC": "0x7784",
+      "C": "v[144:151]",
+      "A": "v[300:307]",
+      "B": "v[494:501]"
+    },
+    {
+      "PC": "0x77a4",
+      "C": "v[152:159]",
+      "A": "v[308:315]",
+      "B": "v[494:501]"
+    },
+    {
+      "PC": "0x77c4",
+      "C": "v[160:167]",
+      "A": "v[316:323]",
+      "B": "v[494:501]"
+    },
+    {
+      "PC": "0x77e4",
+      "C": "v[168:175]",
+      "A": "v[324:331]",
+      "B": "v[494:501]"
+    },
+    {
+      "PC": "0x7804",
+      "C": "v[176:183]",
+      "A": "v[332:339]",
+      "B": "v[494:501]"
+    },
+    {
+      "PC": "0x7824",
+      "C": "v[184:191]",
+      "A": "v[340:347]",
+      "B": "v[494:501]"
+    }
+  ],
+  "all_groups_and_waves_geometry": [
+    {
+      "group": 0,
+      "wave": 0,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 0,
+      "wave": 1,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 0,
+      "wave": 2,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 0,
+      "wave": 3,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 1,
+      "wave": 0,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 1,
+      "wave": 1,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 1,
+      "wave": 2,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 1,
+      "wave": 3,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 2,
+      "wave": 0,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 2,
+      "wave": 1,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 2,
+      "wave": 2,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 2,
+      "wave": 3,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 3,
+      "wave": 0,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 3,
+      "wave": 1,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 3,
+      "wave": 2,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    },
+    {
+      "group": 3,
+      "wave": 3,
+      "full_M_products": 128,
+      "visible_even_M_sources": 64,
+      "physical_raw_words": 72,
+      "direct_duplicates": 8,
+      "physical_words_by_output_lane": {
+        "0": 36,
+        "16": 36
+      }
+    }
+  ],
+  "suffix_setter81_opportunity_windows": [
+    {
+      "setter_PC": "0x80c8",
+      "setter_low_byte": "0x81",
+      "following_instruction_PC": "0x80cc",
+      "next_setter_PC": "0x80dc",
+      "v513_redefined_in_open_interval": false
+    },
+    {
+      "setter_PC": "0x80e8",
+      "setter_low_byte": "0x81",
+      "following_instruction_PC": "0x80ec",
+      "next_setter_PC": "0x80fc",
+      "v513_redefined_in_open_interval": false
+    },
+    {
+      "setter_PC": "0x8108",
+      "setter_low_byte": "0x81",
+      "following_instruction_PC": "0x810c",
+      "next_setter_PC": "0x811c",
+      "v513_redefined_in_open_interval": false
+    },
+    {
+      "setter_PC": "0x8128",
+      "setter_low_byte": "0x81",
+      "following_instruction_PC": "0x812c",
+      "next_setter_PC": "0x813c",
+      "v513_redefined_in_open_interval": false
+    },
+    {
+      "setter_PC": "0x8148",
+      "setter_low_byte": "0x81",
+      "following_instruction_PC": "0x814c",
+      "next_setter_PC": "0x815c",
+      "v513_redefined_in_open_interval": false
+    },
+    {
+      "setter_PC": "0x8168",
+      "setter_low_byte": "0x81",
+      "following_instruction_PC": "0x816c",
+      "next_setter_PC": "0x817c",
+      "v513_redefined_in_open_interval": false
+    },
+    {
+      "setter_PC": "0x8188",
+      "setter_low_byte": "0x81",
+      "following_instruction_PC": "0x818c",
+      "next_setter_PC": "0x819c",
+      "v513_redefined_in_open_interval": false
+    }
+  ],
+  "completed_failure_matches": [
+    {
+      "arm": "v513_control",
+      "failure_iteration": 123,
+      "audits": {
+        "full_failure": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_failure_audit_v1/v513_control_full_failure_v1.json",
+          "bytes": 3866063,
+          "sha256": "b83cc843418d5811038d7cd2e4cce137316ecb19052e1eb2d993cd48354e5cbc"
+        },
+        "complete_stream": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_stream_audit_v1/v513_control_independent_stream_pairs_v1.json",
+          "bytes": 435101,
+          "sha256": "b4bcd66cfb05e130fe87a16ad533ba14e7145f5ddfdecc52f4a30867c230ce14"
+        },
+        "source_support": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_source_support_v1/v513_control_all_source_support_v1.json",
+          "bytes": 547461,
+          "sha256": "b0f12ca618374bf4c294bc80f62c25b08cb8d5d9340e5256b19a4e4b5777208d"
+        },
+        "donor_fit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_terminal_donor_fit_v1/v513_control_exact_donor_models_v1.json",
+          "bytes": 1040576,
+          "sha256": "af23981dd596afd34defcfb0bf126dba487a30df4d37925f1c6029c50ec7a0ad"
+        },
+        "independent_product_peer": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_terminal_donor_fit_peer_v1/v513_control_independent_product_review_v1.json",
+          "bytes": 28184,
+          "sha256": "e72b6e39eab3e05d1677ed579824ded38557fca702903f743cf2a0ba919621f2"
+        }
+      },
+      "group": 2,
+      "columns": [
+        258,
+        322
+      ],
+      "exact_physical_products_checked": 288,
+      "output_lane16_physical_products_explained": 144,
+      "exact_subnormal_products_checked": 3,
+      "matching_saved_X_rows": 198,
+      "repeated_first_phase_K_mod64_equals1": [
+        471489,
+        479105,
+        486721,
+        494337,
+        501953,
+        509569,
+        517185,
+        524801,
+        532417,
+        540033,
+        547649,
+        555265,
+        562881,
+        570497,
+        578113,
+        585729,
+        593345,
+        600961,
+        608577,
+        616193,
+        623809,
+        631425,
+        639041,
+        646657,
+        654273,
+        661889,
+        669505,
+        677121,
+        684737,
+        692353,
+        699969,
+        707585,
+        774273,
+        810497
+      ],
+      "original_v257_donor_geometry_exactly_matches_all_observations": true,
+      "actual_X_membership_basis": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_terminal_donor_fit_peer_v1/v513_control_independent_product_review_v1.json",
+        "bytes": 28184,
+        "sha256": "e72b6e39eab3e05d1677ed579824ded38557fca702903f743cf2a0ba919621f2"
+      }
+    },
+    {
+      "arm": "v511_source1_zero",
+      "failure_iteration": 57,
+      "audits": {
+        "full_failure": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_failure_audit_v1/v511_source1_zero_full_failure_v1.json",
+          "bytes": 3694782,
+          "sha256": "cc1903c4c99320d33606f99a0d568e83f385e52ad319829d19fedb551581b426"
+        },
+        "complete_stream": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_stream_audit_v1/v511_source1_zero_independent_stream_pairs_v1.json",
+          "bytes": 312739,
+          "sha256": "68eb766ba14475d67ca6696bb7b0cac34ad3a2d18a29bd3830199ae50a8e71a6"
+        },
+        "source_support": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_source_support_v1/v511_source1_zero_all_source_support_v1.json",
+          "bytes": 547500,
+          "sha256": "a552b9daa36eeeb0026819a4c9b30a582b464779d0505992c6d48dee1399cefb"
+        },
+        "donor_fit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_terminal_donor_fit_v1/v511_source1_zero_exact_donor_models_v1.json",
+          "bytes": 1030514,
+          "sha256": "ef9c57bcf1d984fb6e970a305b5641b2d4f0366a6d7cee2c20a3a3bbc669d405"
+        },
+        "independent_product_peer": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_terminal_donor_fit_peer_v1/v511_source1_zero_independent_product_review_v1.json",
+          "bytes": 18517,
+          "sha256": "ea0842cfbfd4eb3fffa639c42db2d3b95cba4ec17e10903e71c765429cc70174"
+        }
+      },
+      "group": 2,
+      "columns": [
+        258,
+        322
+      ],
+      "exact_physical_products_checked": 288,
+      "output_lane16_physical_products_explained": 144,
+      "exact_subnormal_products_checked": 3,
+      "matching_saved_X_rows": 100,
+      "repeated_first_phase_K_mod64_equals1": [
+        21249,
+        43457,
+        65665
+      ],
+      "original_v257_donor_geometry_exactly_matches_all_observations": true,
+      "actual_X_membership_basis": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_terminal_donor_fit_peer_v1/v511_source1_zero_independent_product_review_v1.json",
+        "bytes": 18517,
+        "sha256": "ea0842cfbfd4eb3fffa639c42db2d3b95cba4ec17e10903e71c765429cc70174"
+      }
+    },
+    {
+      "arm": "bank0_transition",
+      "failure_iteration": 7,
+      "audits": {
+        "full_failure": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_failure_audit_v1/bank0_transition_full_failure_v1.json",
+          "bytes": 3565485,
+          "sha256": "941d0509c2ba234a1d4449d1752614aca101046adc097755985a196ba8c0b59b"
+        },
+        "complete_stream": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_stream_audit_v1/bank0_transition_independent_stream_pairs_v1.json",
+          "bytes": 220269,
+          "sha256": "29a16406126873011f693b818702a8d7a67f87fd8a85cb63ff5b769977b7a5a1"
+        },
+        "source_support": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_source_support_v1/bank0_transition_all_source_support_v1.json",
+          "bytes": 547684,
+          "sha256": "bf0c21180785c4fa972869b283be5fa50183c857be60357e7098b3f58fc3902d"
+        },
+        "donor_fit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_terminal_donor_fit_v1/bank0_transition_exact_donor_models_v1.json",
+          "bytes": 1052404,
+          "sha256": "7bdcd49ba15a284b7bb6029250cae708dbfa25b0c3aea5f8699b948b19a5c43c"
+        },
+        "independent_product_peer": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_terminal_donor_fit_peer_v1/bank0_transition_independent_product_review_v1.json",
+          "bytes": 38807,
+          "sha256": "5b2fecaecb51cbfea836d4ed96ab2bf82125faa16c8858cee9865cc692bddd3d"
+        }
+      },
+      "group": 2,
+      "columns": [
+        258,
+        322
+      ],
+      "exact_physical_products_checked": 288,
+      "output_lane16_physical_products_explained": 144,
+      "exact_subnormal_products_checked": 3,
+      "matching_saved_X_rows": 324,
+      "repeated_first_phase_K_mod64_equals1": [
+        277953,
+        300929,
+        319745,
+        361537,
+        403329
+      ],
+      "original_v257_donor_geometry_exactly_matches_all_observations": true,
+      "actual_X_membership_basis": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_terminal_donor_fit_peer_v1/bank0_transition_independent_product_review_v1.json",
+        "bytes": 38807,
+        "sha256": "5b2fecaecb51cbfea836d4ed96ab2bf82125faa16c8858cee9865cc692bddd3d"
+      }
+    }
+  ],
+  "findings": [
+    "A lane-zero-only copy into v513 predicts output observations in both lane0 and lane16 through the WMMA accumulator layout; no direct lane16 handler write is needed.",
+    "One affected wave predicts64 visible true even-M sources plus8 direct duplicates. Four affected waves in one group predict256 true sources and288 physical words at columns128*g+2 and128*g+66.",
+    "Every physical observation in the two completed source1-zero failures and bank0 FAIL7 matches that conditional geometry and the exact v257-wave-lane0 times captured-X projection, including all three subnormal words in each failure.",
+    "The three bank-history setter changes at0x753c/0x7548 select46/4a/42, which have the reverse conditional copy direction v513->v257; the suffix81 opportunity windows are unchanged.",
+    "Setter01/05 has the separate conditional v257lane0->v1lane0 path; the finalv0:v7 C0 intervention can clear that direct accumulator copy while a prior v513-to-B product already in v128 survives."
+  ],
+  "limits": [
+    "This proves a conditional numerical/geometric match, not that a trap occurred or that interrupted MODE survives entry into the actual installed early sequence.",
+    "The copy must occur after relevant LDS data is available and before the operand is overwritten or consumed; listed instruction windows alone do not prove completion or trap timing.",
+    "The four-wave pattern requires compatible copies in all four affected waves; actual CWSR scheduling and whether a common preemption supplied them are not established.",
+    "Exact X-row membership is inherited from pinned independent completed-product reviews. This correlation reconstructs even-M X choices and rechecks all288 exact integer product equalities per failure across all three completed failures without rescanning captured X.",
+    "Fragment contraction and accumulator layout are the explicitly pinned vendor-supported model; no complete ISA or microarchitectural emulator is claimed.",
+    "No kernel or common cause is assigned to the original untraced training NaNs."
+  ]
+}

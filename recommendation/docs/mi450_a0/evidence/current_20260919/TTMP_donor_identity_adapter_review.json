@@ -1,0 +1,27 @@
+{
+  "status": "PASS_ROOT_POSTRUN_FITTER_IDENTITY_SCHEMA_ADAPTER_REVIEW",
+  "GPU_actions": false,
+  "adapter": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_donor_identity_adapter_CPU_v1/run_frozen_fitter_identity_adapter_v1.py",
+    "bytes": 4180,
+    "sha256": "e308707398ae36fe1f1b259189ae286bc24774fda71dd67ab1b7558a02651678"
+  },
+  "readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_donor_identity_adapter_CPU_v1/identity_adapter_CPU_readiness_v1.json",
+    "bytes": 5833,
+    "sha256": "9d45093f7801d599c5c7c0177292c4fdff724b9ddfe365127657e29d525b3c5d"
+  },
+  "review": [
+    "Reads pinned frozen fitter and its unchanged readiness; imports/calls same frozen main.",
+    "Only deep-copied full-audit JSON receives four normalized identities: manifest,auditor,coordinates,report.",
+    "Each identity must have exactly path,bytes,sha256,stable_during_wholefile_read; stability must be true.",
+    "Only the true annotation is removed. Exact path/bytes/hash values remain intact and all existing fitter comparisons execute.",
+    "Original full report is rehashed before normalization and before output; normalization list retained.",
+    "Output is restricted to fresh adapter-directory path and adds explicit postrun/nonfrozen adapter provenance.",
+    "All original math, complete-X search, raw data, native/stream/coordinate and frozen source checks are unchanged."
+  ],
+  "limits": [
+    "This addresses a postrun JSON identity schema mismatch; no arithmetic normalization or metadata masking changed.",
+    "Frozen failed fitter invocation and all original inputs remain preserved."
+  ]
+}

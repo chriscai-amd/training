@@ -1,0 +1,6183 @@
+{
+  "status": "CONDITIONAL_STATIC_CROSS_BANK_LANE0_COPY_CERTIFIED_FOR_EXACT_INSTALLED_ENTRY_WORDS",
+  "reviewer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/certify_CWSR_entry_bank_and_lane_v1.py",
+    "bytes": 10823,
+    "sha256": "5a44e4cab065002d2ebbc67812f3632f248b8866ff6c92d486e7e1b7cc4a5f9f"
+  },
+  "installed_CWSR": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_CWSR_gfx1250.bin",
+    "bytes": 5656,
+    "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+  },
+  "installed_module_header_binding": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_CWSR_symbol_header_binding_v1.json",
+    "bytes": 487,
+    "sha256": "b4ff1415412f5bb4abed14224f303673f17f7f5f471b3463781ebbb7301dc6d7"
+  },
+  "installed_activation_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_trap_static_activation_scope_v1.json",
+    "bytes": 16775,
+    "sha256": "75da79e38cccb7a1353370a20dcecfed9552375081068029922fbcf3447aac95"
+  },
+  "local_CWSR_source": {
+    "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/cwsr_trap_handler_gfx12.asm",
+    "bytes": 69197,
+    "sha256": "5e0e339cb988120d99fbccf2869bfab29e0a143bd110ce6f00cfdc495d5bf69d"
+  },
+  "tiny_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/CWSR_exact_entry_all256_modes_v1.s",
+    "bytes": 33944,
+    "sha256": "c6cbc5d59a09495a4eef19818a70297fa0533cd82b1140c4b5087af1ae4e4d0e"
+  },
+  "tiny_object": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/CWSR_exact_entry_all256_modes_v1.o",
+    "bytes": 19056,
+    "sha256": "b031101361575e89b2aca090062362fba58d14de577ae28ad9bf2f1f1e237b0c"
+  },
+  "tiny_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/CWSR_exact_entry_all256_modes_v1.dis",
+    "bytes": 128179,
+    "sha256": "7d0acd02efbbd01aae617b59412694873177aaf2ebeeeb99c2c005c074e97e83"
+  },
+  "commands": [
+    [
+      "/opt/rocm-10.1.0a20260811/lib/llvm/bin/llvm-mc",
+      "--triple=amdgcn-amd-amdhsa",
+      "--mcpu=gfx1250",
+      "--filetype=obj",
+      "-o",
+      "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/CWSR_exact_entry_all256_modes_v1.o",
+      "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/CWSR_exact_entry_all256_modes_v1.s"
+    ],
+    [
+      "/opt/rocm-10.1.0a20260811/lib/llvm/bin/llvm-objdump",
+      "-D",
+      "--section=.text",
+      "--mcpu=gfx1250",
+      "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/CWSR_exact_entry_all256_modes_v1.o"
+    ]
+  ],
+  "tool_outputs": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/all256_assembler_stdout_v1.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/all256_assembler_stderr_v1.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/all256_disassembler_stderr_v1.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "tools": [
+    {
+      "path": "/opt/rocm-10.1.0a20260811/lib/llvm/bin/llvm-mc",
+      "bytes": 114176,
+      "sha256": "2d99290e7a3dd53e09020347b01327ee8f6ef1155cf78a3c34fa52977cc9d13e"
+    },
+    {
+      "path": "/opt/rocm-10.1.0a20260811/lib/llvm/bin/llvm-objdump",
+      "bytes": 1157640,
+      "sha256": "4b6823f059b07f8683be319361e349159ee0c7029d98f0b0cf4fb69fec7ff30e"
+    }
+  ],
+  "full_tiny_ELF_reconciliation": {
+    "instructions": 1280,
+    "text_bytes": 9216,
+    "zero_gaps": [],
+    "tail_bytes": 0
+  },
+  "all256_mode_cases": [
+    {
+      "setter_low_byte": "0x0",
+      "MODE_19_12_byte": "0x0",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x1",
+      "MODE_19_12_byte": "0x4",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x2",
+      "MODE_19_12_byte": "0x8",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x3",
+      "MODE_19_12_byte": "0xc",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x4",
+      "MODE_19_12_byte": "0x10",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x5",
+      "MODE_19_12_byte": "0x14",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x6",
+      "MODE_19_12_byte": "0x18",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x7",
+      "MODE_19_12_byte": "0x1c",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x8",
+      "MODE_19_12_byte": "0x20",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x9",
+      "MODE_19_12_byte": "0x24",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xa",
+      "MODE_19_12_byte": "0x28",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xb",
+      "MODE_19_12_byte": "0x2c",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xc",
+      "MODE_19_12_byte": "0x30",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xd",
+      "MODE_19_12_byte": "0x34",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xe",
+      "MODE_19_12_byte": "0x38",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xf",
+      "MODE_19_12_byte": "0x3c",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x10",
+      "MODE_19_12_byte": "0x40",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x11",
+      "MODE_19_12_byte": "0x44",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x12",
+      "MODE_19_12_byte": "0x48",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x13",
+      "MODE_19_12_byte": "0x4c",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x14",
+      "MODE_19_12_byte": "0x50",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x15",
+      "MODE_19_12_byte": "0x54",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x16",
+      "MODE_19_12_byte": "0x58",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x17",
+      "MODE_19_12_byte": "0x5c",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x18",
+      "MODE_19_12_byte": "0x60",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x19",
+      "MODE_19_12_byte": "0x64",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x1a",
+      "MODE_19_12_byte": "0x68",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x1b",
+      "MODE_19_12_byte": "0x6c",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x1c",
+      "MODE_19_12_byte": "0x70",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x1d",
+      "MODE_19_12_byte": "0x74",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x1e",
+      "MODE_19_12_byte": "0x78",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x1f",
+      "MODE_19_12_byte": "0x7c",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x20",
+      "MODE_19_12_byte": "0x80",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x21",
+      "MODE_19_12_byte": "0x84",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x22",
+      "MODE_19_12_byte": "0x88",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x23",
+      "MODE_19_12_byte": "0x8c",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x24",
+      "MODE_19_12_byte": "0x90",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x25",
+      "MODE_19_12_byte": "0x94",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x26",
+      "MODE_19_12_byte": "0x98",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x27",
+      "MODE_19_12_byte": "0x9c",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x28",
+      "MODE_19_12_byte": "0xa0",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x29",
+      "MODE_19_12_byte": "0xa4",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x2a",
+      "MODE_19_12_byte": "0xa8",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x2b",
+      "MODE_19_12_byte": "0xac",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x2c",
+      "MODE_19_12_byte": "0xb0",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x2d",
+      "MODE_19_12_byte": "0xb4",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x2e",
+      "MODE_19_12_byte": "0xb8",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x2f",
+      "MODE_19_12_byte": "0xbc",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x30",
+      "MODE_19_12_byte": "0xc0",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x31",
+      "MODE_19_12_byte": "0xc4",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x32",
+      "MODE_19_12_byte": "0xc8",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x33",
+      "MODE_19_12_byte": "0xcc",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x34",
+      "MODE_19_12_byte": "0xd0",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x35",
+      "MODE_19_12_byte": "0xd4",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x36",
+      "MODE_19_12_byte": "0xd8",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x37",
+      "MODE_19_12_byte": "0xdc",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x38",
+      "MODE_19_12_byte": "0xe0",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x39",
+      "MODE_19_12_byte": "0xe4",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x3a",
+      "MODE_19_12_byte": "0xe8",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x3b",
+      "MODE_19_12_byte": "0xec",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x3c",
+      "MODE_19_12_byte": "0xf0",
+      "src0_bank": 0,
+      "dst_bank": 0,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x3d",
+      "MODE_19_12_byte": "0xf4",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x3e",
+      "MODE_19_12_byte": "0xf8",
+      "src0_bank": 2,
+      "dst_bank": 0,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x3f",
+      "MODE_19_12_byte": "0xfc",
+      "src0_bank": 3,
+      "dst_bank": 0,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x40",
+      "MODE_19_12_byte": "0x1",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x41",
+      "MODE_19_12_byte": "0x5",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x42",
+      "MODE_19_12_byte": "0x9",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x43",
+      "MODE_19_12_byte": "0xd",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x44",
+      "MODE_19_12_byte": "0x11",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x45",
+      "MODE_19_12_byte": "0x15",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x46",
+      "MODE_19_12_byte": "0x19",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x47",
+      "MODE_19_12_byte": "0x1d",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x48",
+      "MODE_19_12_byte": "0x21",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x49",
+      "MODE_19_12_byte": "0x25",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x4a",
+      "MODE_19_12_byte": "0x29",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x4b",
+      "MODE_19_12_byte": "0x2d",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x4c",
+      "MODE_19_12_byte": "0x31",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x4d",
+      "MODE_19_12_byte": "0x35",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x4e",
+      "MODE_19_12_byte": "0x39",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x4f",
+      "MODE_19_12_byte": "0x3d",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x50",
+      "MODE_19_12_byte": "0x41",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x51",
+      "MODE_19_12_byte": "0x45",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x52",
+      "MODE_19_12_byte": "0x49",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x53",
+      "MODE_19_12_byte": "0x4d",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x54",
+      "MODE_19_12_byte": "0x51",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x55",
+      "MODE_19_12_byte": "0x55",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x56",
+      "MODE_19_12_byte": "0x59",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x57",
+      "MODE_19_12_byte": "0x5d",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x58",
+      "MODE_19_12_byte": "0x61",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x59",
+      "MODE_19_12_byte": "0x65",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x5a",
+      "MODE_19_12_byte": "0x69",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x5b",
+      "MODE_19_12_byte": "0x6d",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x5c",
+      "MODE_19_12_byte": "0x71",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x5d",
+      "MODE_19_12_byte": "0x75",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x5e",
+      "MODE_19_12_byte": "0x79",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x5f",
+      "MODE_19_12_byte": "0x7d",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x60",
+      "MODE_19_12_byte": "0x81",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x61",
+      "MODE_19_12_byte": "0x85",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x62",
+      "MODE_19_12_byte": "0x89",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x63",
+      "MODE_19_12_byte": "0x8d",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x64",
+      "MODE_19_12_byte": "0x91",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x65",
+      "MODE_19_12_byte": "0x95",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x66",
+      "MODE_19_12_byte": "0x99",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x67",
+      "MODE_19_12_byte": "0x9d",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x68",
+      "MODE_19_12_byte": "0xa1",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x69",
+      "MODE_19_12_byte": "0xa5",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x6a",
+      "MODE_19_12_byte": "0xa9",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x6b",
+      "MODE_19_12_byte": "0xad",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x6c",
+      "MODE_19_12_byte": "0xb1",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x6d",
+      "MODE_19_12_byte": "0xb5",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x6e",
+      "MODE_19_12_byte": "0xb9",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x6f",
+      "MODE_19_12_byte": "0xbd",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x70",
+      "MODE_19_12_byte": "0xc1",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x71",
+      "MODE_19_12_byte": "0xc5",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x72",
+      "MODE_19_12_byte": "0xc9",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x73",
+      "MODE_19_12_byte": "0xcd",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x74",
+      "MODE_19_12_byte": "0xd1",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x75",
+      "MODE_19_12_byte": "0xd5",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x76",
+      "MODE_19_12_byte": "0xd9",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x77",
+      "MODE_19_12_byte": "0xdd",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x78",
+      "MODE_19_12_byte": "0xe1",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x79",
+      "MODE_19_12_byte": "0xe5",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x7a",
+      "MODE_19_12_byte": "0xe9",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x7b",
+      "MODE_19_12_byte": "0xed",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x7c",
+      "MODE_19_12_byte": "0xf1",
+      "src0_bank": 0,
+      "dst_bank": 1,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x7d",
+      "MODE_19_12_byte": "0xf5",
+      "src0_bank": 1,
+      "dst_bank": 1,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x7e",
+      "MODE_19_12_byte": "0xf9",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x7f",
+      "MODE_19_12_byte": "0xfd",
+      "src0_bank": 3,
+      "dst_bank": 1,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x80",
+      "MODE_19_12_byte": "0x2",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x81",
+      "MODE_19_12_byte": "0x6",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x82",
+      "MODE_19_12_byte": "0xa",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x83",
+      "MODE_19_12_byte": "0xe",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x84",
+      "MODE_19_12_byte": "0x12",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x85",
+      "MODE_19_12_byte": "0x16",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x86",
+      "MODE_19_12_byte": "0x1a",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x87",
+      "MODE_19_12_byte": "0x1e",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x88",
+      "MODE_19_12_byte": "0x22",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x89",
+      "MODE_19_12_byte": "0x26",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x8a",
+      "MODE_19_12_byte": "0x2a",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x8b",
+      "MODE_19_12_byte": "0x2e",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x8c",
+      "MODE_19_12_byte": "0x32",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x8d",
+      "MODE_19_12_byte": "0x36",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x8e",
+      "MODE_19_12_byte": "0x3a",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x8f",
+      "MODE_19_12_byte": "0x3e",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x90",
+      "MODE_19_12_byte": "0x42",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x91",
+      "MODE_19_12_byte": "0x46",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x92",
+      "MODE_19_12_byte": "0x4a",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x93",
+      "MODE_19_12_byte": "0x4e",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x94",
+      "MODE_19_12_byte": "0x52",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x95",
+      "MODE_19_12_byte": "0x56",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x96",
+      "MODE_19_12_byte": "0x5a",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x97",
+      "MODE_19_12_byte": "0x5e",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x98",
+      "MODE_19_12_byte": "0x62",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x99",
+      "MODE_19_12_byte": "0x66",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x9a",
+      "MODE_19_12_byte": "0x6a",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x9b",
+      "MODE_19_12_byte": "0x6e",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x9c",
+      "MODE_19_12_byte": "0x72",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x9d",
+      "MODE_19_12_byte": "0x76",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x9e",
+      "MODE_19_12_byte": "0x7a",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x9f",
+      "MODE_19_12_byte": "0x7e",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xa0",
+      "MODE_19_12_byte": "0x82",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xa1",
+      "MODE_19_12_byte": "0x86",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xa2",
+      "MODE_19_12_byte": "0x8a",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xa3",
+      "MODE_19_12_byte": "0x8e",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xa4",
+      "MODE_19_12_byte": "0x92",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xa5",
+      "MODE_19_12_byte": "0x96",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xa6",
+      "MODE_19_12_byte": "0x9a",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xa7",
+      "MODE_19_12_byte": "0x9e",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xa8",
+      "MODE_19_12_byte": "0xa2",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xa9",
+      "MODE_19_12_byte": "0xa6",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xaa",
+      "MODE_19_12_byte": "0xaa",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xab",
+      "MODE_19_12_byte": "0xae",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xac",
+      "MODE_19_12_byte": "0xb2",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xad",
+      "MODE_19_12_byte": "0xb6",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xae",
+      "MODE_19_12_byte": "0xba",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xaf",
+      "MODE_19_12_byte": "0xbe",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xb0",
+      "MODE_19_12_byte": "0xc2",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xb1",
+      "MODE_19_12_byte": "0xc6",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xb2",
+      "MODE_19_12_byte": "0xca",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xb3",
+      "MODE_19_12_byte": "0xce",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xb4",
+      "MODE_19_12_byte": "0xd2",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xb5",
+      "MODE_19_12_byte": "0xd6",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xb6",
+      "MODE_19_12_byte": "0xda",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xb7",
+      "MODE_19_12_byte": "0xde",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xb8",
+      "MODE_19_12_byte": "0xe2",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xb9",
+      "MODE_19_12_byte": "0xe6",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xba",
+      "MODE_19_12_byte": "0xea",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xbb",
+      "MODE_19_12_byte": "0xee",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xbc",
+      "MODE_19_12_byte": "0xf2",
+      "src0_bank": 0,
+      "dst_bank": 2,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xbd",
+      "MODE_19_12_byte": "0xf6",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xbe",
+      "MODE_19_12_byte": "0xfa",
+      "src0_bank": 2,
+      "dst_bank": 2,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xbf",
+      "MODE_19_12_byte": "0xfe",
+      "src0_bank": 3,
+      "dst_bank": 2,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xc0",
+      "MODE_19_12_byte": "0x3",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xc1",
+      "MODE_19_12_byte": "0x7",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xc2",
+      "MODE_19_12_byte": "0xb",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xc3",
+      "MODE_19_12_byte": "0xf",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xc4",
+      "MODE_19_12_byte": "0x13",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xc5",
+      "MODE_19_12_byte": "0x17",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xc6",
+      "MODE_19_12_byte": "0x1b",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xc7",
+      "MODE_19_12_byte": "0x1f",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xc8",
+      "MODE_19_12_byte": "0x23",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xc9",
+      "MODE_19_12_byte": "0x27",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xca",
+      "MODE_19_12_byte": "0x2b",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xcb",
+      "MODE_19_12_byte": "0x2f",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xcc",
+      "MODE_19_12_byte": "0x33",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xcd",
+      "MODE_19_12_byte": "0x37",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xce",
+      "MODE_19_12_byte": "0x3b",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xcf",
+      "MODE_19_12_byte": "0x3f",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xd0",
+      "MODE_19_12_byte": "0x43",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xd1",
+      "MODE_19_12_byte": "0x47",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xd2",
+      "MODE_19_12_byte": "0x4b",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xd3",
+      "MODE_19_12_byte": "0x4f",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xd4",
+      "MODE_19_12_byte": "0x53",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xd5",
+      "MODE_19_12_byte": "0x57",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xd6",
+      "MODE_19_12_byte": "0x5b",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xd7",
+      "MODE_19_12_byte": "0x5f",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xd8",
+      "MODE_19_12_byte": "0x63",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xd9",
+      "MODE_19_12_byte": "0x67",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xda",
+      "MODE_19_12_byte": "0x6b",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xdb",
+      "MODE_19_12_byte": "0x6f",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xdc",
+      "MODE_19_12_byte": "0x73",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xdd",
+      "MODE_19_12_byte": "0x77",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xde",
+      "MODE_19_12_byte": "0x7b",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xdf",
+      "MODE_19_12_byte": "0x7f",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xe0",
+      "MODE_19_12_byte": "0x83",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xe1",
+      "MODE_19_12_byte": "0x87",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xe2",
+      "MODE_19_12_byte": "0x8b",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xe3",
+      "MODE_19_12_byte": "0x8f",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xe4",
+      "MODE_19_12_byte": "0x93",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xe5",
+      "MODE_19_12_byte": "0x97",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xe6",
+      "MODE_19_12_byte": "0x9b",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xe7",
+      "MODE_19_12_byte": "0x9f",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xe8",
+      "MODE_19_12_byte": "0xa3",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xe9",
+      "MODE_19_12_byte": "0xa7",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xea",
+      "MODE_19_12_byte": "0xab",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xeb",
+      "MODE_19_12_byte": "0xaf",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xec",
+      "MODE_19_12_byte": "0xb3",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xed",
+      "MODE_19_12_byte": "0xb7",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xee",
+      "MODE_19_12_byte": "0xbb",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xef",
+      "MODE_19_12_byte": "0xbf",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xf0",
+      "MODE_19_12_byte": "0xc3",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xf1",
+      "MODE_19_12_byte": "0xc7",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xf2",
+      "MODE_19_12_byte": "0xcb",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xf3",
+      "MODE_19_12_byte": "0xcf",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xf4",
+      "MODE_19_12_byte": "0xd3",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xf5",
+      "MODE_19_12_byte": "0xd7",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xf6",
+      "MODE_19_12_byte": "0xdb",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xf7",
+      "MODE_19_12_byte": "0xdf",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xf8",
+      "MODE_19_12_byte": "0xe3",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xf9",
+      "MODE_19_12_byte": "0xe7",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xfa",
+      "MODE_19_12_byte": "0xeb",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xfb",
+      "MODE_19_12_byte": "0xef",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xfc",
+      "MODE_19_12_byte": "0xf3",
+      "src0_bank": 0,
+      "dst_bank": 3,
+      "read_logical_VGPR": 1,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v1, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v1[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xfd",
+      "MODE_19_12_byte": "0xf7",
+      "src0_bank": 1,
+      "dst_bank": 3,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xfe",
+      "MODE_19_12_byte": "0xfb",
+      "src0_bank": 2,
+      "dst_bank": 3,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0xff",
+      "MODE_19_12_byte": "0xff",
+      "src0_bank": 3,
+      "dst_bank": 3,
+      "read_logical_VGPR": 769,
+      "written_logical_VGPR": 769,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v769, 0",
+        "v_mov_b32_e32 v769, 0",
+        "global_prefetch_b8 v769, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v769, ttmp15, 0"
+      ],
+      "conditional_effect": "v769[lane0] <- original v769[lane0]",
+      "changed_sentinel_coordinates": [],
+      "all_lane16_sentinels_unchanged": true
+    }
+  ],
+  "key_cases": [
+    {
+      "setter_low_byte": "0x1",
+      "MODE_19_12_byte": "0x4",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x5",
+      "MODE_19_12_byte": "0x14",
+      "src0_bank": 1,
+      "dst_bank": 0,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 1,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v1, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v1, ttmp15, 0"
+      ],
+      "conditional_effect": "v1[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          0,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x81",
+      "MODE_19_12_byte": "0x6",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x85",
+      "MODE_19_12_byte": "0x16",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "read_logical_VGPR": 257,
+      "written_logical_VGPR": 513,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v257, 0",
+        "v_mov_b32_e32 v513, 0",
+        "global_prefetch_b8 v257, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v513, ttmp15, 0"
+      ],
+      "conditional_effect": "v513[lane0] <- original v257[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          2,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x46",
+      "MODE_19_12_byte": "0x19",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x4a",
+      "MODE_19_12_byte": "0x29",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    },
+    {
+      "setter_low_byte": "0x42",
+      "MODE_19_12_byte": "0x9",
+      "src0_bank": 2,
+      "dst_bank": 1,
+      "read_logical_VGPR": 513,
+      "written_logical_VGPR": 257,
+      "read_lane": 0,
+      "written_lane": 0,
+      "decoded_exact_words": [
+        "v_readlane_b32 ttmp15, v513, 0",
+        "v_mov_b32_e32 v257, 0",
+        "global_prefetch_b8 v513, ttmp[2:3] scope:SCOPE_SE",
+        "v_writelane_b32 v257, ttmp15, 0"
+      ],
+      "conditional_effect": "v257[lane0] <- original v513[lane0]",
+      "changed_sentinel_coordinates": [
+        [
+          1,
+          0
+        ]
+      ],
+      "all_lane16_sentinels_unchanged": true
+    }
+  ],
+  "ISA_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_CPU_v1/amdgpu_isa_cdna5_v1.xml",
+    "bytes": 17163258,
+    "sha256": "0f2895ac52907c40dc81f26301933dcaa1d95e0327f19965ad105cc7168b22a2"
+  },
+  "ISA_excerpts": {
+    "S_VERSION": {
+      "description": "Do nothing. This opcode is used to specify the microcode version for tools that interpret shader microcode.",
+      "XML_excerpt": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/ISA_S_VERSION_excerpt_v1.xml",
+        "bytes": 1782,
+        "sha256": "f52a55a3a78d1f33c5ec36ed01fa3c60eda5680f5a34a883bc2ca56167d6807e"
+      }
+    },
+    "GLOBAL_PREFETCH_B8": {
+      "description": "Load byte into L1 cache. Does not return any data to VGPRs. Does not alter shader dependency counters.",
+      "XML_excerpt": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/ISA_GLOBAL_PREFETCH_B8_excerpt_v1.xml",
+        "bytes": 2621,
+        "sha256": "87daf665949685c1917c5100d262ce1f05efe7c34754770f46a10595d0614cb9"
+      }
+    },
+    "V_MOV_B32": {
+      "description": "Move 32-bit data from a vector input into a vector register.",
+      "XML_excerpt": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/ISA_V_MOV_B32_excerpt_v1.xml",
+        "bytes": 11985,
+        "sha256": "85248b246da695057389fce8de3ae0e3920008a26829b7fc78dc2851080d6d5b"
+      }
+    },
+    "V_READLANE_B32": {
+      "description": "Read the scalar value in the specified lane of the first input where the lane select is in the second input. Store the result into a scalar register.",
+      "XML_excerpt": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/ISA_V_READLANE_B32_excerpt_v1.xml",
+        "bytes": 2699,
+        "sha256": "278bf25a5f037f473125429ff9c6bc95647da393fdfcb0815dfa3ebee1ec60ae"
+      }
+    },
+    "V_WRITELANE_B32": {
+      "description": "Write the scalar value in the first input into the specified lane of a vector register where the lane select is in the second input.",
+      "XML_excerpt": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/ISA_V_WRITELANE_B32_excerpt_v1.xml",
+        "bytes": 4355,
+        "sha256": "0f391f8617f5019f4180252e7f2e8c02a7adba97645fbb0792de20db27f840cc"
+      }
+    }
+  },
+  "LLVM_lane_EXEC_references": [
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_vgpr_semantics_v1/VOP1Instructions.td",
+        "bytes": 83454,
+        "sha256": "32884317aec41b084227cd4a35e3a01f26e45f06583824e6e04684dc2f99d71c"
+      },
+      "lines": [
+        38,
+        58
+      ],
+      "quote": "let Uses = !if(ReadsModeReg, [MODE, EXEC], [EXEC]);"
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_vgpr_semantics_v1/VOP2Instructions.td",
+        "bytes": 127595,
+        "sha256": "d2e7945b65562195f34490a10b69a99d65983a3c935c342320016e45f2daa8dc"
+      },
+      "lines": [
+        958,
+        964
+      ],
+      "quote": "These are special and do not read the exec mask."
+    }
+  ],
+  "lane_behavior": [
+    "V_READLANE reads SRC0 VGPR lane selected by SRC1=inline0, independent of EXEC.",
+    "The installed code forces EXEC_LO=1 on this wave32 path. V_MOV writes zero only to DST-selected VGPR lane0.",
+    "V_WRITELANE writes saved scalar ttmp15 to DST-selected VGPR lane0, independent of EXEC. It does not broadcast to lane16 or other lanes.",
+    "The installed sequence restores the original EXEC_LO afterward. The net register effect under ordinary semantics is a full32-bit cross-bank copy at lane0 when SRC0 and DST differ.",
+    "GLOBAL_PREFETCH uses the SRC0-selected logical v1 in the LLVM model; it does not return a register value. Its memory and timing effects are not modeled."
+  ],
+  "conditional_causal_examples": [
+    "SRC0bank1/DSTbank0 (low modes01,05 and other unused-field variants) copies historical v257 lane0 into v1 lane0.",
+    "SRC0bank1/DSTbank2 (low modes81,85 and other unused-field variants) copies historical v257 lane0 into v513 lane0.",
+    "Current three-arm target low modes46,4a,42 all have SRC0bank2/DSTbank1, giving the reverse copy v513 lane0 into v257 lane0 if entry occurs at those inherited bank settings."
+  ],
+  "architecture_evidence_and_limit": "The first-level source itself later saves/clears shader DST/SRC0/SRC1 bank fields to use v0..255, supporting inherited-bank significance in privileged code. No independent architectural guarantee or runtime observation establishes MODE on actual entry to this early workaround. Ordinary decoding plus this intent is a concrete conditional candidate, not a proven observed trap-mediated fault.",
+  "geometry_limit": "Physical lane16 is untouched by this early sequence. An observed lane16 output requires downstream routing/arithmetic or another mechanism; downstream B-permute/WMMA correlation is delegated to the independent tail_result_audit peer.",
+  "GPU_actions": false,
+  "runtime_initialized": false,
+  "live_experiment_outputs_read": false,
+  "commits_or_pushes": false
+}

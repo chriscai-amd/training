@@ -1,0 +1,47 @@
+{
+  "status": "PASS_ROOT_EXACT_RESIDUAL_AND_RNE_CELL_BOUND_REVIEW",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_DY_row_scalar_CPU_v1/review_residual_bound_root_v1.py",
+    "bytes": 2980,
+    "sha256": "8cf8576f8713085f2d57908b7c7096a6e72f4f5e53168ad569860ab9064e9c6c"
+  },
+  "author": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_DY_row_scalar_CPU_v1/training405_DY_row_scalar_with_bounded_ordinary_residual_v1.json",
+    "bytes": 6765,
+    "sha256": "895741754d1b454d373c09e725cbe628f4fb01265bbff31bd1beb227a1197fbc"
+  },
+  "independent_sign_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_DY_row_scalar_CPU_v1/independent_root_sign_review_v1.json",
+    "bytes": 2554,
+    "sha256": "5fc4c4163177dcb644242d33c29460c252172edbcd35529c99d6b33f0d95d0c8"
+  },
+  "prior_full_payload_audit": {
+    "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/training405_full_payload.json",
+    "bytes": 788852,
+    "sha256": "b8c0989b7a62c38618f5c2951f6d2de25ca3bbf6f4e5e76468c92c1e309bb409"
+  },
+  "exact_residual_bound": "168515375/16777216",
+  "targets": [
+    {
+      "M": 0,
+      "minimum_cell_distance": "6209043009540735441290919936",
+      "greater_than_residual": true
+    },
+    {
+      "M": 1,
+      "minimum_cell_distance": "22205549454681508681003040768",
+      "greater_than_residual": true
+    },
+    {
+      "M": 5,
+      "minimum_cell_distance": "14352367330464877562111721472",
+      "greater_than_residual": true
+    }
+  ],
+  "proof": "Any target preimage minus a residual bounded by B retains the target sign; one scalar times a DY row must therefore satisfy the independently rejected full-vector signs.",
+  "limits": [
+    "Operand maxima independently agree with the prior full payload audit; its full input backing is not rescanned in this algebra review.",
+    "One changed X coefficient plus otherwise exact real contraction terms and final BF16 RNE only; no physical fault or intermediate rounding model inferred."
+  ]
+}

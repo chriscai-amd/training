@@ -1,0 +1,5048 @@
+{
+  "status": "PASS_INDEPENDENT_1000_CALL_ZERO_AND_PREFILL_STREAM_REVIEW",
+  "GPU_actions": false,
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_terminal_pass_peer_v1/review_terminal_pass_stream_v1.py",
+    "bytes": 8245,
+    "sha256": "756b3d9bcc611f3b813d842298b940ccb190d9ecc2ca57021398b2206a6885ca"
+  },
+  "stream_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_stream_audit_v1/v513_control_independent_stream_pairs_v1.json",
+    "bytes": 1860852,
+    "sha256": "6271827259ebb744410d6cb4ebe53baa9e27bac1385475bb8da8fb45b332baea"
+  },
+  "arm": "v513_control",
+  "calls": 1000,
+  "complete_output_words_checked": 65536000,
+  "complete_prefill_halfwords_checked": 131072000,
+  "source_pairs_checked": 2048000,
+  "negative_zero_words": 0,
+  "all_output_bits_positive_zero": true,
+  "pair_sign_counts": {
+    "v128_positive_positive": 512000,
+    "v129_positive_positive": 512000,
+    "v130_positive_positive": 512000,
+    "v131_positive_positive": 512000
+  },
+  "signed_zero_anomalies": [],
+  "every_invocation": [
+    {
+      "iteration": 1,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 2,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 3,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 4,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 5,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 6,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 7,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 8,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 9,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 10,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 11,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 12,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 13,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 14,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 15,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 16,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 17,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 18,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 19,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 20,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 21,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 22,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 23,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 24,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 25,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 26,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 27,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 28,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 29,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 30,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 31,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 32,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 33,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 34,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 35,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 36,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 37,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 38,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 39,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 40,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 41,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 42,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 43,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 44,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 45,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 46,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 47,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 48,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 49,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 50,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 51,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 52,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 53,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 54,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 55,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 56,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 57,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 58,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 59,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 60,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 61,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 62,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 63,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 64,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 65,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 66,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 67,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 68,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 69,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 70,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 71,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 72,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 73,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 74,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 75,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 76,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 77,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 78,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 79,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 80,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 81,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 82,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 83,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 84,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 85,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 86,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 87,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 88,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 89,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 90,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 91,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 92,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 93,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 94,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 95,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 96,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 97,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 98,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 99,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 100,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 101,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 102,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 103,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 104,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 105,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 106,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 107,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 108,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 109,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 110,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 111,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 112,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 113,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 114,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 115,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 116,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 117,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 118,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 119,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 120,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 121,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 122,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 123,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 124,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 125,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 126,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 127,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 128,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 129,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 130,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 131,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 132,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 133,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 134,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 135,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 136,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 137,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 138,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 139,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 140,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 141,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 142,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 143,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 144,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 145,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 146,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 147,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 148,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 149,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 150,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 151,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 152,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 153,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 154,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 155,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 156,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 157,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 158,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 159,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 160,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 161,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 162,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 163,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 164,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 165,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 166,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 167,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 168,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 169,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 170,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 171,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 172,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 173,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 174,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 175,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 176,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 177,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 178,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 179,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 180,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 181,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 182,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 183,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 184,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 185,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 186,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 187,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 188,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 189,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 190,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 191,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 192,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 193,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 194,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 195,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 196,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 197,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 198,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 199,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 200,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 201,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 202,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 203,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 204,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 205,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 206,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 207,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 208,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 209,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 210,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 211,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 212,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 213,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 214,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 215,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 216,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 217,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 218,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 219,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 220,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 221,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 222,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 223,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 224,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 225,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 226,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 227,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 228,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 229,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 230,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 231,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 232,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 233,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 234,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 235,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 236,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 237,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 238,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 239,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 240,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 241,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 242,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 243,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 244,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 245,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 246,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 247,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 248,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 249,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 250,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 251,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 252,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 253,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 254,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 255,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 256,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 257,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 258,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 259,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 260,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 261,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 262,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 263,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 264,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 265,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 266,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 267,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 268,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 269,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 270,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 271,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 272,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 273,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 274,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 275,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 276,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 277,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 278,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 279,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 280,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 281,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 282,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 283,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 284,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 285,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 286,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 287,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 288,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 289,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 290,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 291,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 292,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 293,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 294,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 295,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 296,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 297,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 298,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 299,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 300,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 301,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 302,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 303,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 304,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 305,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 306,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 307,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 308,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 309,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 310,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 311,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 312,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 313,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 314,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 315,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 316,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 317,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 318,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 319,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 320,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 321,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 322,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 323,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 324,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 325,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 326,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 327,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 328,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 329,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 330,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 331,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 332,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 333,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 334,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 335,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 336,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 337,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 338,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 339,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 340,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 341,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 342,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 343,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 344,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 345,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 346,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 347,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 348,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 349,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 350,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 351,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 352,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 353,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 354,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 355,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 356,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 357,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 358,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 359,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 360,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 361,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 362,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 363,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 364,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 365,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 366,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 367,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 368,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 369,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 370,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 371,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 372,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 373,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 374,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 375,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 376,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 377,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 378,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 379,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 380,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 381,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 382,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 383,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 384,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 385,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 386,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 387,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 388,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 389,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 390,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 391,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 392,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 393,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 394,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 395,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 396,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 397,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 398,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 399,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 400,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 401,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 402,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 403,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 404,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 405,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 406,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 407,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 408,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 409,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 410,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 411,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 412,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 413,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 414,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 415,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 416,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 417,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 418,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 419,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 420,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 421,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 422,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 423,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 424,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 425,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 426,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 427,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 428,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 429,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 430,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 431,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 432,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 433,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 434,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 435,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 436,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 437,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 438,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 439,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 440,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 441,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 442,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 443,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 444,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 445,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 446,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 447,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 448,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 449,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 450,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 451,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 452,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 453,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 454,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 455,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 456,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 457,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 458,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 459,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 460,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 461,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 462,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 463,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 464,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 465,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 466,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 467,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 468,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 469,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 470,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 471,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 472,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 473,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 474,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 475,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 476,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 477,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 478,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 479,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 480,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 481,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 482,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 483,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 484,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 485,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 486,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 487,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 488,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 489,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 490,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 491,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 492,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 493,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 494,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 495,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 496,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 497,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 498,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 499,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 500,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 501,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 502,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 503,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 504,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 505,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 506,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 507,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 508,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 509,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 510,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 511,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 512,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 513,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 514,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 515,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 516,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 517,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 518,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 519,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 520,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 521,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 522,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 523,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 524,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 525,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 526,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 527,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 528,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 529,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 530,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 531,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 532,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 533,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 534,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 535,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 536,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 537,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 538,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 539,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 540,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 541,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 542,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 543,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 544,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 545,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 546,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 547,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 548,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 549,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 550,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 551,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 552,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 553,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 554,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 555,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 556,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 557,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 558,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 559,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 560,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 561,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 562,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 563,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 564,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 565,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 566,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 567,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 568,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 569,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 570,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 571,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 572,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 573,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 574,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 575,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 576,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 577,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 578,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 579,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 580,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 581,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 582,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 583,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 584,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 585,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 586,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 587,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 588,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 589,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 590,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 591,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 592,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 593,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 594,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 595,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 596,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 597,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 598,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 599,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 600,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 601,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 602,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 603,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 604,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 605,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 606,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 607,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 608,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 609,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 610,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 611,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 612,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 613,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 614,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 615,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 616,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 617,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 618,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 619,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 620,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 621,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 622,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 623,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 624,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 625,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 626,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 627,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 628,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 629,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 630,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 631,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 632,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 633,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 634,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 635,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 636,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 637,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 638,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 639,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 640,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 641,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 642,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 643,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 644,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 645,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 646,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 647,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 648,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 649,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 650,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 651,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 652,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 653,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 654,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 655,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 656,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 657,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 658,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 659,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 660,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 661,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 662,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 663,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 664,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 665,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 666,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 667,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 668,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 669,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 670,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 671,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 672,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 673,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 674,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 675,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 676,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 677,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 678,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 679,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 680,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 681,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 682,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 683,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 684,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 685,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 686,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 687,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 688,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 689,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 690,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 691,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 692,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 693,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 694,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 695,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 696,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 697,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 698,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 699,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 700,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 701,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 702,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 703,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 704,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 705,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 706,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 707,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 708,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 709,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 710,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 711,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 712,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 713,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 714,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 715,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 716,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 717,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 718,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 719,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 720,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 721,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 722,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 723,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 724,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 725,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 726,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 727,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 728,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 729,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 730,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 731,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 732,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 733,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 734,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 735,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 736,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 737,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 738,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 739,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 740,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 741,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 742,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 743,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 744,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 745,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 746,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 747,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 748,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 749,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 750,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 751,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 752,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 753,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 754,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 755,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 756,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 757,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 758,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 759,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 760,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 761,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 762,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 763,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 764,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 765,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 766,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 767,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 768,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 769,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 770,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 771,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 772,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 773,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 774,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 775,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 776,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 777,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 778,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 779,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 780,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 781,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 782,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 783,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 784,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 785,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 786,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 787,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 788,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 789,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 790,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 791,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 792,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 793,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 794,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 795,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 796,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 797,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 798,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 799,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 800,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 801,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 802,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 803,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 804,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 805,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 806,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 807,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 808,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 809,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 810,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 811,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 812,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 813,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 814,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 815,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 816,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 817,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 818,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 819,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 820,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 821,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 822,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 823,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 824,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 825,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 826,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 827,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 828,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 829,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 830,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 831,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 832,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 833,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 834,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 835,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 836,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 837,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 838,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 839,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 840,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 841,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 842,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 843,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 844,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 845,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 846,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 847,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 848,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 849,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 850,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 851,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 852,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 853,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 854,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 855,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 856,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 857,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 858,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 859,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 860,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 861,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 862,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 863,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 864,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 865,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 866,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 867,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 868,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 869,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 870,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 871,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 872,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 873,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 874,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 875,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 876,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 877,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 878,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 879,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 880,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 881,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 882,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 883,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 884,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 885,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 886,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 887,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 888,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 889,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 890,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 891,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 892,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 893,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 894,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 895,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 896,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 897,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 898,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 899,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 900,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 901,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 902,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 903,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 904,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 905,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 906,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 907,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 908,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 909,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 910,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 911,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 912,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 913,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 914,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 915,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 916,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 917,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 918,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 919,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 920,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 921,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 922,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 923,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 924,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 925,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 926,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 927,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 928,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 929,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 930,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 931,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 932,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 933,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 934,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 935,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 936,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 937,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 938,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 939,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 940,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 941,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 942,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 943,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 944,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 945,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 946,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 947,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 948,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 949,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 950,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 951,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 952,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 953,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 954,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 955,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 956,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 957,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 958,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 959,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 960,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 961,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 962,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 963,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 964,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 965,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 966,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 967,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 968,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 969,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 970,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 971,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 972,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 973,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 974,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 975,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 976,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 977,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 978,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 979,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 980,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 981,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 982,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 983,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 984,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 985,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 986,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 987,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 988,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 989,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 990,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 991,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 992,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 993,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 994,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 995,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 996,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 997,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 998,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 999,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    },
+    {
+      "iteration": 1000,
+      "negative_zero_words": 0,
+      "unequal_signed_zero_pairs": 0
+    }
+  ],
+  "stream": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_reroute_v513_control_v1.json.cpu_outputs.bin",
+    "bytes": 262144000,
+    "sha256": "e9474e4cc673c0c227a6e807e04aa4ab1f88d3744243950a290869c53daa65df"
+  },
+  "prefill_stream": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_reroute_v513_control_v1.json.cpu_prefills.bin",
+    "bytes": 262144000,
+    "sha256": "c0159b8c3102844c27bdd4cc6a5e1a37f9a77ae1bc2417878f24ba7aa8a0e24b"
+  },
+  "producer_final_input_byte_flags_verified": true,
+  "no_donor_fit_performed": true,
+  "limits": [
+    "Bounded1000-call exposure only; no numerical nonzero output is available for a donor-product fit.",
+    "Signed-zero route differences are retained and are not classified as numerical exact-zero failures.",
+    "Final resident-input digest equality is reported by the pinned producer; a PASS has no full retained-input failure artifact.",
+    "Native packet/pointer/ELF joins rely on the pinned native and independent observer certificates; no hardware fault timing is measured."
+  ]
+}

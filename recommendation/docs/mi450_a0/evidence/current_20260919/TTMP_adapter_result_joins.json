@@ -1,0 +1,349 @@
+{
+  "status": "PASS_INDEPENDENT_POSTRUN_ADAPTER_AND_EXACT_RETAINED_RESULT_JOINS",
+  "created_utc": "2026-09-20T06:01:01.652062+00:00",
+  "GPU_actions": false,
+  "root_confirmed_both_GPU_arms_and_native_verifiers_terminal_reaped": true,
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/audit_adapter_result_joins_independent_v1.py",
+    "bytes": 20262,
+    "sha256": "5084ff590cd8e925b75e08f69d84cb133872de0843dad60f76303b8a0b7ee66e"
+  },
+  "adapter": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_donor_identity_adapter_CPU_v1/run_frozen_fitter_identity_adapter_v1.py",
+    "bytes": 4180,
+    "sha256": "e308707398ae36fe1f1b259189ae286bc24774fda71dd67ab1b7558a02651678"
+  },
+  "readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_donor_identity_adapter_CPU_v1/identity_adapter_CPU_readiness_v1.json",
+    "bytes": 5833,
+    "sha256": "9d45093f7801d599c5c7c0177292c4fdff724b9ddfe365127657e29d525b3c5d"
+  },
+  "frozen_fitter": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_terminal_donor_fit_v1/fit_terminal_donor_products_v1.py",
+    "bytes": 30225,
+    "sha256": "dab158874c0ff617988690f11760a367e27970b14f6d9522806d21d7455d4fa0"
+  },
+  "AST_extracted_only_normalization_function_and_constants": true,
+  "fitter_module_not_imported": true,
+  "fitter_replacements": [
+    {
+      "attribute": "load",
+      "replacement": "load_with_identity_schema"
+    },
+    {
+      "attribute": "write",
+      "replacement": "write_with_adapter_provenance"
+    }
+  ],
+  "retained_readiness_cases_reviewed": 33,
+  "frozen_readiness_not_rerun": true,
+  "arms": [
+    {
+      "arm": "source1_control",
+      "iteration": 43,
+      "result": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_donor_identity_adapter_CPU_v1/source1_control_iteration43_exact_donor_models_v1.json",
+        "bytes": 2630354,
+        "sha256": "60ec025ddfba5cc8ced8b5b8f411a5186e7145d0921be1ad701066ae1e71673e"
+      },
+      "full_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/source1_control_full_failure_v1.json",
+        "bytes": 3817672,
+        "sha256": "2661f121fb0d29cae48ac000e21f20457c7ded4fa09c1d1ca6fde14d9ec988c8"
+      },
+      "independent_stream": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/source1_control_complete_stream_metadata_pairs_independent_review_v1.json",
+        "bytes": 185372,
+        "sha256": "a33d2dc49148ea3621025f424e1ed558a130f73c0e4520a5c3049b6a9f4c7d41"
+      },
+      "independent_source_wave": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/source1_control_source_wave_metadata_join_independent_v1.json",
+        "bytes": 345688,
+        "sha256": "ef93e5b51a9e6c84c5cae58e7cf54e9a3803b5e4d7709fe9d32c742b171aae21"
+      },
+      "normalized_identity_locations": [
+        [
+          "files",
+          "manifest"
+        ],
+        [
+          "auditor"
+        ],
+        [
+          "files",
+          "coordinates"
+        ],
+        [
+          "files",
+          "report"
+        ]
+      ],
+      "original_full_audit_unchanged": true,
+      "exact_result_stream_source_wave_raw_and_coordinate_join": true,
+      "complete_final_raw_sha256": "cabc24ddef8098586ceea124ed98c63b40ba76af51d6169c3c00c49aee7e489e",
+      "complete_final_raw_words_scanned": 65536,
+      "arithmetic_words": 65536,
+      "nonzero_physical": 288,
+      "unique_nonzero_sources": 256,
+      "group": 1,
+      "waves": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "bit_identical_nonzero_direct_normal_pairs": 32,
+      "unequal_routes": 0,
+      "metadata_words": 0,
+      "same_wave_sampled_return_PCs": [],
+      "report_model_list_consistency": [
+        {
+          "result_key": "normal_route_models",
+          "old_matching_count": 19087,
+          "old_matching_range": [
+            471402,
+            2324274
+          ],
+          "neighbor_status": "NO_SAVED_X_ROW_MATCH",
+          "neighbor_search_performed": true
+        },
+        {
+          "result_key": "all_observed_route_models",
+          "old_matching_count": 19087,
+          "old_matching_range": [
+            471402,
+            2324274
+          ],
+          "neighbor_status": "NO_SAVED_X_ROW_MATCH",
+          "neighbor_search_performed": true
+        },
+        {
+          "result_key": "normal_route_FP32_RNE_models",
+          "old_matching_count": 19087,
+          "old_matching_range": [
+            471402,
+            2324274
+          ],
+          "neighbor_status": "NO_FP32_RNE_PRODUCT_REPRESENTATION_IN_ACTUAL_X_DOMAIN",
+          "neighbor_search_performed": false
+        },
+        {
+          "result_key": "all_observed_route_FP32_RNE_models",
+          "old_matching_count": 19087,
+          "old_matching_range": [
+            471402,
+            2324274
+          ],
+          "neighbor_status": "NO_FP32_RNE_PRODUCT_REPRESENTATION_IN_ACTUAL_X_DOMAIN",
+          "neighbor_search_performed": false
+        }
+      ],
+      "matching_K_lists_identical_across_four_old_models": true,
+      "donor_math_recomputed_here": false
+    },
+    {
+      "arm": "ttmp_observer",
+      "iteration": 332,
+      "result": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_donor_identity_adapter_CPU_v1/ttmp_observer_iteration332_exact_donor_models_v1.json",
+        "bytes": 1059878,
+        "sha256": "1621b98e531726c746819d18705752917df70e80da555ffcf4e66e83519ebecb"
+      },
+      "full_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/ttmp_observer_full_failure_v1.json",
+        "bytes": 7517999,
+        "sha256": "4054a91a9af23463e04de0a362514a6d266097252ffa0430153b1ac816bf2d22"
+      },
+      "independent_stream": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/ttmp_observer_complete_stream_metadata_pairs_independent_review_v1.json",
+        "bytes": 4705016,
+        "sha256": "267b18f9c8326fe3b32fe37542b475958bc2814dd9ebd3cb7089be39fe6bd370"
+      },
+      "independent_source_wave": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/ttmp_observer_source_wave_metadata_join_independent_v1.json",
+        "bytes": 580049,
+        "sha256": "74a8a212df310a956d89518bdb40d20c2fb816845d65d8a13b81dd63b16eb4a0"
+      },
+      "normalized_identity_locations": [
+        [
+          "files",
+          "manifest"
+        ],
+        [
+          "auditor"
+        ],
+        [
+          "files",
+          "coordinates"
+        ],
+        [
+          "files",
+          "report"
+        ]
+      ],
+      "original_full_audit_unchanged": true,
+      "exact_result_stream_source_wave_raw_and_coordinate_join": true,
+      "complete_final_raw_sha256": "a2bcf506e784d9668cb6539dd7f034ad9399cd1e95f7ccd811843c8f5ba138ac",
+      "complete_final_raw_words_scanned": 65536,
+      "arithmetic_words": 65472,
+      "nonzero_physical": 272,
+      "unique_nonzero_sources": 256,
+      "group": 2,
+      "waves": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "bit_identical_nonzero_direct_normal_pairs": 16,
+      "unequal_routes": 0,
+      "metadata_words": 64,
+      "same_wave_sampled_return_PCs": [
+        {
+          "group": 2,
+          "wave": 0,
+          "sampled_return_PC": "0x80d4"
+        },
+        {
+          "group": 2,
+          "wave": 1,
+          "sampled_return_PC": "0x80d4"
+        },
+        {
+          "group": 2,
+          "wave": 2,
+          "sampled_return_PC": "0x80d4"
+        },
+        {
+          "group": 2,
+          "wave": 3,
+          "sampled_return_PC": "0x80d4"
+        }
+      ],
+      "report_model_list_consistency": [
+        {
+          "result_key": "normal_route_models",
+          "old_matching_count": 368,
+          "old_matching_range": [
+            471207,
+            819765
+          ],
+          "neighbor_status": "NO_SAVED_X_ROW_MATCH",
+          "neighbor_search_performed": true
+        },
+        {
+          "result_key": "all_observed_route_models",
+          "old_matching_count": 368,
+          "old_matching_range": [
+            471207,
+            819765
+          ],
+          "neighbor_status": "NO_SAVED_X_ROW_MATCH",
+          "neighbor_search_performed": true
+        },
+        {
+          "result_key": "normal_route_FP32_RNE_models",
+          "old_matching_count": 368,
+          "old_matching_range": [
+            471207,
+            819765
+          ],
+          "neighbor_status": "NO_FP32_RNE_PRODUCT_REPRESENTATION_IN_ACTUAL_X_DOMAIN",
+          "neighbor_search_performed": false
+        },
+        {
+          "result_key": "all_observed_route_FP32_RNE_models",
+          "old_matching_count": 368,
+          "old_matching_range": [
+            471207,
+            819765
+          ],
+          "neighbor_status": "NO_FP32_RNE_PRODUCT_REPRESENTATION_IN_ACTUAL_X_DOMAIN",
+          "neighbor_search_performed": false
+        }
+      ],
+      "matching_K_lists_identical_across_four_old_models": true,
+      "donor_math_recomputed_here": false
+    }
+  ],
+  "full_PC_history_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/TTMP_observer_complete_PC_context_independent_v1.json",
+    "bytes": 17409,
+    "sha256": "2e54138252f227370728d78012b00a0b8efaba3bc6c81a21b3268423778318f3"
+  },
+  "all_pinned_inputs_unchanged_after_review": true,
+  "pinned_inputs": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_donor_identity_adapter_CPU_v1/run_frozen_fitter_identity_adapter_v1.py",
+      "bytes": 4180,
+      "sha256": "e308707398ae36fe1f1b259189ae286bc24774fda71dd67ab1b7558a02651678"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_donor_identity_adapter_CPU_v1/identity_adapter_CPU_readiness_v1.json",
+      "bytes": 5833,
+      "sha256": "9d45093f7801d599c5c7c0177292c4fdff724b9ddfe365127657e29d525b3c5d"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_terminal_donor_fit_v1/fit_terminal_donor_products_v1.py",
+      "bytes": 30225,
+      "sha256": "dab158874c0ff617988690f11760a367e27970b14f6d9522806d21d7455d4fa0"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_donor_identity_adapter_CPU_v1/source1_control_iteration43_exact_donor_models_v1.json",
+      "bytes": 2630354,
+      "sha256": "60ec025ddfba5cc8ced8b5b8f411a5186e7145d0921be1ad701066ae1e71673e"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_donor_identity_adapter_CPU_v1/ttmp_observer_iteration332_exact_donor_models_v1.json",
+      "bytes": 1059878,
+      "sha256": "1621b98e531726c746819d18705752917df70e80da555ffcf4e66e83519ebecb"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/source1_control_full_failure_v1.json",
+      "bytes": 3817672,
+      "sha256": "2661f121fb0d29cae48ac000e21f20457c7ded4fa09c1d1ca6fde14d9ec988c8"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/ttmp_observer_full_failure_v1.json",
+      "bytes": 7517999,
+      "sha256": "4054a91a9af23463e04de0a362514a6d266097252ffa0430153b1ac816bf2d22"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/source1_control_complete_stream_metadata_pairs_independent_review_v1.json",
+      "bytes": 185372,
+      "sha256": "a33d2dc49148ea3621025f424e1ed558a130f73c0e4520a5c3049b6a9f4c7d41"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/ttmp_observer_complete_stream_metadata_pairs_independent_review_v1.json",
+      "bytes": 4705016,
+      "sha256": "267b18f9c8326fe3b32fe37542b475958bc2814dd9ebd3cb7089be39fe6bd370"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/source1_control_source_wave_metadata_join_independent_v1.json",
+      "bytes": 345688,
+      "sha256": "ef93e5b51a9e6c84c5cae58e7cf54e9a3803b5e4d7709fe9d32c742b171aae21"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/ttmp_observer_source_wave_metadata_join_independent_v1.json",
+      "bytes": 580049,
+      "sha256": "74a8a212df310a956d89518bdb40d20c2fb816845d65d8a13b81dd63b16eb4a0"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/TTMP_observer_complete_PC_context_independent_v1.json",
+      "bytes": 17409,
+      "sha256": "2e54138252f227370728d78012b00a0b8efaba3bc6c81a21b3268423778318f3"
+    }
+  ],
+  "numerical_claim_scope": "This review checks joins and consistency of the retained reported model lists only. Independent whole-X/exact/RNE arithmetic recomputation belongs to donor_product_independent.",
+  "wording_limits": [
+    "The adapter was created after the runs; the prelaunch frozen fitter is unchanged, and normalization removes only four true stability annotations in memory.",
+    "The old-v257 models admit 19,087 control rows and 368 observer rows. These numerical representations do not identify a unique K or event time.",
+    "The neighbor-v258 exclusions apply to the reported single-row, wave-lane0 donor models in the actual saved-X domain; they do not exclude other lanes, multiple rows, or unrelated faults.",
+    "All four wrong observer source waves have the same-invocation last-visible sampled return/resume boundary 0x80d4. This does not identify 0x80d4 as the corrupting instruction.",
+    "Last-visible TTMP does not date the underlying trap or reveal full history; passing snapshots do not exclude earlier hidden traps, and nonmatching module PCs remain unassigned.",
+    "The v513 LDS request precedes the sampled bank window, but asynchronous completion has not been dated.",
+    "The explicit-trap sentinel demonstrated historical v257 lane0-to-v1/v513 copying under the installed handler. The current sampled-PC association is separate evidence.",
+    "A shared cause with the original training NaNs remains unproved.",
+    "Whole-stream and failure-payload certifications are joined to previously retained terminal audits. This review rehashes only both complete final raw records and the report/script identities, and performs no full-X search."
+  ]
+}

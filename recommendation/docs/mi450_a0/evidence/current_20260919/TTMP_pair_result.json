@@ -1,0 +1,171 @@
+{
+  "status": "PASS_ROOT_COMPLETE_RAW_TTMP_AND_WRONG_SOURCE_WAVE_JOIN",
+  "GPU_actions": false,
+  "all_GPU_and_native_processes_terminal_reaped": true,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_result_root_v1/join_result_root_v1.py",
+    "bytes": 7722,
+    "sha256": "74a14dc00780c4e6d0b325029e708e67e58ac115a154e61183ca14da7c0aeaa6"
+  },
+  "references": {
+    "manifest": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/launch_manifest_ttmp_observer_v1.json",
+      "bytes": 65604,
+      "sha256": "71c7ee38c0c7defe98577aa62498aa048e772102c088e6b79873baac13c0ba93"
+    },
+    "control_native": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/source1_control_joined_verification_v1.json",
+      "bytes": 6703,
+      "sha256": "255a2dbde997b91dadb85bcf9ee3f11930fbae9abfa143b73bbfa8f42d4e63a2"
+    },
+    "observer_native": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/ttmp_observer_joined_verification_v1.json",
+      "bytes": 11906,
+      "sha256": "86540c2f6854b36868c869cbc23e3a664c026c04e3bf99bfe1457144b98a63e7"
+    },
+    "source1_control_full": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/source1_control_full_failure_v1.json",
+      "bytes": 3817672,
+      "sha256": "2661f121fb0d29cae48ac000e21f20457c7ded4fa09c1d1ca6fde14d9ec988c8"
+    },
+    "ttmp_observer_full": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/ttmp_observer_full_failure_v1.json",
+      "bytes": 7517999,
+      "sha256": "4054a91a9af23463e04de0a362514a6d266097252ffa0430153b1ac816bf2d22"
+    },
+    "source1_control_stream": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/source1_control_complete_stream_metadata_pairs_independent_review_v1.json",
+      "bytes": 185372,
+      "sha256": "a33d2dc49148ea3621025f424e1ed558a130f73c0e4520a5c3049b6a9f4c7d41"
+    },
+    "ttmp_observer_stream": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/ttmp_observer_complete_stream_metadata_pairs_independent_review_v1.json",
+      "bytes": 4705016,
+      "sha256": "267b18f9c8326fe3b32fe37542b475958bc2814dd9ebd3cb7089be39fe6bd370"
+    },
+    "observer_source_wave": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/ttmp_observer_source_wave_metadata_join_independent_v1.json",
+      "bytes": 580049,
+      "sha256": "74a8a212df310a956d89518bdb40d20c2fb816845d65d8a13b81dd63b16eb4a0"
+    },
+    "observer_PC_context": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/TTMP_observer_complete_PC_context_independent_v1.json",
+      "bytes": 17409,
+      "sha256": "2e54138252f227370728d78012b00a0b8efaba3bc6c81a21b3268423778318f3"
+    },
+    "source1_control_products": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_donor_identity_adapter_CPU_v1/source1_control_iteration43_exact_donor_models_v1.json",
+      "bytes": 2630354,
+      "sha256": "60ec025ddfba5cc8ced8b5b8f411a5186e7145d0921be1ad701066ae1e71673e"
+    },
+    "ttmp_observer_products": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_donor_identity_adapter_CPU_v1/ttmp_observer_iteration332_exact_donor_models_v1.json",
+      "bytes": 1059878,
+      "sha256": "1621b98e531726c746819d18705752917df70e80da555ffcf4e66e83519ebecb"
+    }
+  },
+  "control": {
+    "failure_call": 43,
+    "physical_wrong_arithmetic_words": 288,
+    "unique_wrong_sources": 256,
+    "source_columns": [
+      130,
+      194
+    ],
+    "group": 1,
+    "equal_nonzero_pairs": 32,
+    "TTMP_observer": false
+  },
+  "observer": {
+    "failure_call": 332,
+    "physical_wrong_arithmetic_words": 272,
+    "unique_wrong_sources": 256,
+    "source_columns": [
+      258,
+      322
+    ],
+    "group": 2,
+    "equal_nonzero_pairs": 16,
+    "metadata_failures": [],
+    "complete_raw_stream": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_ttmp_observer_v1.json.cpu_outputs.bin",
+      "bytes": 87031808,
+      "sha256": "c7a0788b67e4350d6fd64c56e420200d33bf2669c360996144831cd18c141b62"
+    },
+    "final_raw_sha256": "a2bcf506e784d9668cb6539dd7f034ad9399cd1e95f7ccd811843c8f5ba138ac",
+    "all_getpc_references": [
+      "0x7263877a0138"
+    ],
+    "module_bias": [
+      "0x726387780000"
+    ],
+    "complete_selected_window_hits": [
+      {
+        "iteration": 332,
+        "group": 2,
+        "wave": 0,
+        "TTMP64": "0x7263877880d4",
+        "GETPC64": "0x7263877a0138",
+        "relative_PC": "0x80d4"
+      },
+      {
+        "iteration": 332,
+        "group": 2,
+        "wave": 1,
+        "TTMP64": "0x7263877880d4",
+        "GETPC64": "0x7263877a0138",
+        "relative_PC": "0x80d4"
+      },
+      {
+        "iteration": 332,
+        "group": 2,
+        "wave": 2,
+        "TTMP64": "0x7263877880d4",
+        "GETPC64": "0x7263877a0138",
+        "relative_PC": "0x80d4"
+      },
+      {
+        "iteration": 332,
+        "group": 2,
+        "wave": 3,
+        "TTMP64": "0x7263877880d4",
+        "GETPC64": "0x7263877a0138",
+        "relative_PC": "0x80d4"
+      }
+    ],
+    "matching_wrong_source_waves": [
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "preceding331_selected_window_hits": 0,
+    "program_TTMP01_access": [
+      "\ts_mov_b64 s[24:25], ttmp[0:1]                              // 000000020130: BE98016C"
+    ],
+    "no_program_S_TRAP": true
+  },
+  "interpretation": [
+    "Controlled installed trap path already reproduces the bank copy. New failed arithmetic replay has same-wave sampled returnPC at one of the fourteen preselected post-v513-load bank81 heads.",
+    "All wrong observer sources belong to exactly the four waves sampling0x80d4. All earlier331 calls lack a sampled return at these selected heads.",
+    "Wrong products admit old-v257 donor model for both arms; independent product recomputation is separate."
+  ],
+  "limits": [
+    "TTMP snapshot supplies last visible value, with no guaranteed initial reset or complete history. Unknown/stale values, later traps and handler restart adjustments limit age/timing assignment.",
+    "0x80d4 is a resume boundary, not proof that its LDS instruction manufactured the wrong value. Async v513 load completion and actual handler-entry bank state are not directly captured.",
+    "Observer replaces64 duplicate words;272 vs288 counts are consistent with preserved256 sources and lost16 nonzero duplicates, not a new geometry.",
+    "This strengthens the replay mechanism but does not establish a complete training fix or common cause with the untraced enormous attempt405 NaNs."
+  ]
+}

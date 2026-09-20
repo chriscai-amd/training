@@ -1,0 +1,158 @@
+{
+  "status": "PASS_COMPOSITION_BOTH_ARMS_PASS1000_NO_DONOR_EVENT",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_result_comparison_v1/compare_both_PASS_pair_v1.py",
+    "bytes": 7375,
+    "sha256": "beb67118f2357124088a41ddd4324f9532b7fae4da193e84c00f4ca87ad7423f"
+  },
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_pair_v1/launch_manifest_v514_reroute_v1.json",
+    "bytes": 18677,
+    "sha256": "d58b0e0ae5a5a2747d42575b6c039229dd3b758b451d4a519f4d2360461e25c5"
+  },
+  "configuration": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_reroute_runtime_v1/configuration_v514_reroute_v1.json",
+    "bytes": 8909,
+    "sha256": "2a44075136b7cb714f8764304184aacc37925c183057041d272279d393728b26"
+  },
+  "results": [
+    {
+      "arm": "v513_control",
+      "disposition": "PASS1000",
+      "numerical_nonzero_words": 0,
+      "negative_zero_words": 0,
+      "all_bits_positive_zero": true,
+      "output_words_checked": 65536000,
+      "prefill_halfwords_checked": 131072000,
+      "source_pairs_checked": 2048000,
+      "signed_zero_anomalies": [],
+      "peer": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_terminal_pass_peer_v1/control_PASS1000_independent_stream_review_v1.json",
+        "bytes": 108122,
+        "sha256": "4943bc193598bf32c720a7d89e3baac09787c5f6abb15b49d616502450a7c4af"
+      },
+      "native_join": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_pair_v1/v513_control_joined_verification_v1.json",
+        "bytes": 23577,
+        "sha256": "2491e47588856a890085672b9b0a0d2eed7a1b17fb4798818c63c9b2e870c80c"
+      },
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_pair_v1/v513_control_terminal.json",
+        "bytes": 271,
+        "sha256": "7487182e91d90cad0d2e29f56d8f81a53a96adc13f60d259fd487c81b8591c62"
+      },
+      "runtime_ELF": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_v514_reroute_native_artifacts_v1/DW_v513_control.elf",
+        "bytes": 335000,
+        "sha256": "c422ef9aa28418c3156b4031444cb78d0cece0e11cc0c6f213bdafa993edc279"
+      }
+    },
+    {
+      "arm": "v514_repeated",
+      "disposition": "PASS1000",
+      "numerical_nonzero_words": 0,
+      "negative_zero_words": 0,
+      "all_bits_positive_zero": true,
+      "output_words_checked": 65536000,
+      "prefill_halfwords_checked": 131072000,
+      "source_pairs_checked": 2048000,
+      "signed_zero_anomalies": [],
+      "peer": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_terminal_pass_peer_v1/v514_repeated_PASS1000_independent_stream_review_v1.json",
+        "bytes": 108126,
+        "sha256": "e3488f3e2f4eea1ad46b981119175c83a72ed7fb043ebbb2137c43911acd3227"
+      },
+      "native_join": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_pair_v1/v514_repeated_joined_verification_v1.json",
+        "bytes": 23578,
+        "sha256": "05cae04f2236762850ddc187ffc9b9e47c483714b1114e52dc06291874452d62"
+      },
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_pair_v1/v514_repeated_terminal.json",
+        "bytes": 272,
+        "sha256": "2b2e99f590c6c117f0edbdd0a8bed3b93e131f21ddaa58137cf62a9a359287dc"
+      },
+      "runtime_ELF": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_v514_reroute_native_artifacts_v1/DW_v514_repeated.elf",
+        "bytes": 335000,
+        "sha256": "78548372163245924d43b4bed622f08d2fb89fa601a1d3c51eb12387223147f3"
+      }
+    }
+  ],
+  "pair_totals": {
+    "output_words_checked": 131072000,
+    "prefill_halfwords_checked": 262144000,
+    "source_pairs_checked": 4096000
+  },
+  "source_intervention": {
+    "PC": "0x7540",
+    "source0_before": "v513",
+    "source0_after": "v514",
+    "changed_file_bytes": [
+      [
+        25924,
+        1,
+        2
+      ]
+    ],
+    "candidate_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_peer_v1/repeated_v514_independent_candidate_review_v1.json",
+      "bytes": 9491,
+      "sha256": "b18982493aaef50ae7769be98dc54f6517d61df27b0aa2ad2794f038c6aee5f8"
+    },
+    "all_other_ELF_bytes_identical": true,
+    "shared_final_v0_v7_C0": true,
+    "v128_final_accumulation_not_reset": true,
+    "producer_and_wrapper_shared": true,
+    "same_native_packet_fields_except_process_pointers": {
+      "Gemm info": 1,
+      "kernel info0": 18874369,
+      "kernel info1": 1073807368,
+      "numWG": 4,
+      "SizesFree0": 256,
+      "SizesFree1": 512,
+      "SizesFree2": 1,
+      "SizesSum0": 2324351,
+      "strideD0": 256,
+      "strideD1": 0,
+      "strideC0": 256,
+      "strideC1": 0,
+      "strideA0": 256,
+      "strideA1": 0,
+      "strideB0": 512,
+      "strideB1": 0,
+      "alpha": 1.0,
+      "beta": 0.0,
+      "AddressScaleAlphaVec": "0x0",
+      "bias": "0x0",
+      "biasType": 0,
+      "StrideBias": 0,
+      "activationAlpha": 0.0,
+      "activationBeta": 0.0,
+      "activationType": 0,
+      "batchOffsetD": 0,
+      "batchOffsetC": 0,
+      "batchOffsetA": 0,
+      "batchOffsetB": 0
+    }
+  },
+  "prior_control_failure_evidence": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_zero_result_comparison_v1/terminal_v513_source_zero_pair_comparison_v1.json",
+    "bytes": 12719,
+    "sha256": "be5e103a0e33a943d14fc746b9b61b2df9f43f1ea5b753931f34a2706d50f07d"
+  },
+  "no_terminal_donor_fitter_invoked": true,
+  "findings": [
+    "Both original-source control and neighboring-register arm completed1000 calls with no numerical nonzero output.",
+    "Each retained output/prefill stream and all paired zero signs were independently checked. Neither arm supplied a donor event, so this pair does not distinguish original-v257 from conditional-v258 hypotheses.",
+    "The original control ELF is byte-identical to the earlier control that failed at532. Its clean repetition shows that a1000-call pass can occur without a source intervention and further limits claims based on the earlier source-zero pass."
+  ],
+  "limits": [
+    "These are separate bounded processes. Neither a failure-rate estimate, suppression claim, permanent fix nor physical fault localization follows from two clean runs.",
+    "The source identity changes from v513 to v514 and the reaching LDS producer changes; retaining a VGPR operand does not guarantee equal hardware timing or routing.",
+    "Final resident-input equality is reported by the pinned producer. PASS lacks a full retained-input failure artifact.",
+    "No donor-product fit is available for either arm. The independently prepared numerical discrimination test remains unexercised by this pair.",
+    "Odd-M accumulators and overwritten original carrier values remain unobserved; observed signed-zero differences would be retained explicitly."
+  ]
+}

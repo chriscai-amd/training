@@ -1,0 +1,248 @@
+{
+  "status": "PASS_CPU_TWO_SETTER_HISTORY_CONSISTENCY_AND_LLVM_OPERAND_FEASIBILITY",
+  "GPU_actions": false,
+  "runtime_outputs_read": false,
+  "full_kernel_candidate_created": false,
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_CPU_v1/review_inline_zero_history_consistent_pair_v1.py",
+    "bytes": 11120,
+    "sha256": "5bc1fa91d3e6848dc467c8008cd00dc495d267a706e1da883e03326ea254ce1f"
+  },
+  "parser": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_bank_peer_v1/review_inline_zero_source1_bank_v2.py",
+    "bytes": 13983,
+    "sha256": "f93fb080a3ef3e35a586e78fbad1d0392aa2e58a2490b773596faa08c1694d5c"
+  },
+  "ELF": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_design_v1/DW_v511_source1_zero.elf",
+    "bytes": 335000,
+    "sha256": "aca1aa60c441b019361099553232f5c011aad1d053505b9cad69d45348851faf"
+  },
+  "full_source_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_bank_peer_v1/source_ELF_full_text_independent_disassembly_v1.s",
+    "bytes": 4657042,
+    "sha256": "0200758e527b13bb2298b2591d14454857706b4c95e18d41b064b99e3eeca18d"
+  },
+  "edits_described_only": [
+    {
+      "setter_pc": "0x753c",
+      "old_word": "0xbf864a46",
+      "new_word": "0xbf864a4a",
+      "old_immediate": "0x4a46",
+      "new_immediate": "0x4a4a",
+      "byte_edit": {
+        "file_offset": 25916,
+        "instruction_byte_index": 0,
+        "old": "0x46",
+        "new": "0x4a"
+      }
+    },
+    {
+      "setter_pc": "0x7548",
+      "old_word": "0xbf86464a",
+      "new_word": "0xbf864a4a",
+      "old_immediate": "0x464a",
+      "new_immediate": "0x4a4a",
+      "byte_edit": {
+        "file_offset": 25929,
+        "instruction_byte_index": 1,
+        "old": "0x46",
+        "new": "0x4a"
+      }
+    }
+  ],
+  "tiny_assembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_CPU_v1/history_consistent_setter_pair_v1.s",
+    "bytes": 931,
+    "sha256": "66d2a1fe9ccd28d5a50527ce2782560ca983c9357724ed85dce07a140fae99b5"
+  },
+  "tiny_object": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_CPU_v1/history_consistent_setter_pair_v1.o",
+    "bytes": 656,
+    "sha256": "0094d1a0555a0aca2151b8d87744c66d80234c58c0d67001e6b039808402d1e8"
+  },
+  "tiny_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_CPU_v1/history_consistent_setter_pair_disassembly_v1.txt",
+    "bytes": 3101,
+    "sha256": "4798409af3c4f67c2fcd666cb99681376d3b479c2d41407ed3c2106a78a28acf"
+  },
+  "LLVM_tools": [
+    {
+      "path": "/opt/rocm-10.1.0a20260811/lib/llvm/bin/llvm-mc",
+      "bytes": 114176,
+      "sha256": "2d99290e7a3dd53e09020347b01327ee8f6ef1155cf78a3c34fa52977cc9d13e"
+    },
+    {
+      "path": "/opt/rocm-10.1.0a20260811/lib/llvm/bin/llvm-objdump",
+      "bytes": 1157640,
+      "sha256": "4b6823f059b07f8683be319361e349159ee0c7029d98f0b0cf4fb69fec7ff30e"
+    }
+  ],
+  "window_checks": [
+    {
+      "label": "baseline",
+      "setter_states": [
+        {
+          "pc": "0x7500",
+          "immediate": "0x464a",
+          "previous_active": "0x46",
+          "history_matches": true,
+          "new_active": "0x4a",
+          "changes_active_mode": true
+        },
+        {
+          "pc": "0x753c",
+          "immediate": "0x4a46",
+          "previous_active": "0x4a",
+          "history_matches": true,
+          "new_active": "0x46",
+          "changes_active_mode": true
+        },
+        {
+          "pc": "0x7548",
+          "immediate": "0x464a",
+          "previous_active": "0x46",
+          "history_matches": true,
+          "new_active": "0x4a",
+          "changes_active_mode": true
+        },
+        {
+          "pc": "0x7554",
+          "immediate": "0x4a05",
+          "previous_active": "0x4a",
+          "history_matches": true,
+          "new_active": "0x5",
+          "changes_active_mode": true
+        }
+      ],
+      "nonsetter_instructions_byte_and_decode_identical": 10,
+      "target": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, 0, s66",
+      "next_setter_after_pair": "0x7554: 0x4a05 unchanged"
+    },
+    {
+      "label": "history_consistent_field2",
+      "setter_states": [
+        {
+          "pc": "0x7500",
+          "immediate": "0x464a",
+          "previous_active": "0x46",
+          "history_matches": true,
+          "new_active": "0x4a",
+          "changes_active_mode": true
+        },
+        {
+          "pc": "0x753c",
+          "immediate": "0x4a4a",
+          "previous_active": "0x4a",
+          "history_matches": true,
+          "new_active": "0x4a",
+          "changes_active_mode": false
+        },
+        {
+          "pc": "0x7548",
+          "immediate": "0x4a4a",
+          "previous_active": "0x4a",
+          "history_matches": true,
+          "new_active": "0x4a",
+          "changes_active_mode": false
+        },
+        {
+          "pc": "0x7554",
+          "immediate": "0x4a05",
+          "previous_active": "0x4a",
+          "history_matches": true,
+          "new_active": "0x5",
+          "changes_active_mode": true
+        }
+      ],
+      "nonsetter_instructions_byte_and_decode_identical": 10,
+      "target": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, 0, s66",
+      "next_setter_after_pair": "0x7554: 0x4a05 unchanged"
+    }
+  ],
+  "finding": "Setting both immediates to 0x4a4a keeps previous/current low modes consistent at 0x753c and 0x7548. Both become redundant writes of mode 0x4a. The inline-zero target and all other inspected nonsetter instructions retain exact bytes and LLVM-decoded operands. The following setter at 0x7554 retains correct history 0x4a and active mode 0x05.",
+  "causal_interpretation": "This removes the two active source1-bank transitions 2->1->2. It does not isolate an unused source1-bank value from transition removal, redundant-setter handling, or associated timing/firmware behavior.",
+  "firmware_history_evidence": {
+    "comments_source": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_CPU_v1/llvm_history_pr_165035_issue_comments_v1.json",
+      "bytes": 31325,
+      "sha256": "4f052455787d4c00af9827325b512a99801592359118c6bba3841190a2a828a4"
+    },
+    "comment_url": "https://github.com/llvm/llvm-project/pull/165035#issuecomment-3455001473",
+    "author": "rampitec",
+    "created_at": "2025-10-28T07:35:33Z",
+    "quote": "This is the new FW requirement.",
+    "commit_source": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_CPU_v1/llvm_history_commit_be2ae264_v1.json",
+      "bytes": 53516,
+      "sha256": "9552f131033a7cecb27e74a7811951929f2f04b28ccd8bc82fce09f7748862e8"
+    },
+    "commit": "be2ae264dd6a590f7f4ba96949af3b4d220a1fad",
+    "interpretation": "The upstream author explicitly gives a firmware requirement as the reason for recording previous mode. This is stronger than a compiler-only-metadata hypothesis, but does not specify what firmware does with the byte or how a mismatch manifests."
+  },
+  "vendor_ISA_evidence": {
+    "archive": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_CPU_v1/amd_machine_readable_isa_latest_v1.zip",
+      "bytes": 2294639,
+      "sha256": "82404f1126761b7877595b622afa7e1f311f2f41e89a3abe9aaf8ad045c082e2"
+    },
+    "retrieval": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_CPU_v1/retrieval_ISA_archive_v1.json",
+      "bytes": 3544,
+      "sha256": "0de165b3965f3eddba1bb7e02268f717b8a2637fdac9afc2ef181e260893c540"
+    },
+    "XML": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_CPU_v1/amdgpu_isa_cdna5_v1.xml",
+      "bytes": 17163258,
+      "sha256": "0f2895ac52907c40dc81f26301933dcaa1d95e0327f19965ad105cc7168b22a2"
+    },
+    "architecture_name": "AMD CDNA 5",
+    "release_date": "2026-08-03",
+    "excerpt": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_CPU_v1/AMD_CDNA5_set_vgpr_msb_instruction_and_operand_excerpt_v1.xml",
+      "bytes": 4438,
+      "sha256": "d535cfffaeb22e77367d31039ece9991f0b9de4f38004fa8d69b434ea0a40784"
+    },
+    "instruction_description": "Set the MSBs of the logical VGPR address for subsequent vector instructions that use VGPRs. The operand is an immediate value that sets the MSBs as follows:",
+    "opcode": 6,
+    "immediate_bits": 16,
+    "fields": {
+      "DST_MSB": {
+        "bit_count": 2,
+        "bit_offset": 6,
+        "description": "MSBs of logical VGPR address for dst operands."
+      },
+      "SRC0_MSB": {
+        "bit_count": 2,
+        "bit_offset": 0,
+        "description": "MSBs of logical VGPR address for src0 operands."
+      },
+      "SRC1_MSB": {
+        "bit_count": 2,
+        "bit_offset": 2,
+        "description": "MSBs of logical VGPR address for src1 operands."
+      },
+      "SRC2_MSB": {
+        "bit_count": 2,
+        "bit_offset": 4,
+        "description": "MSBs of logical VGPR address for src2 operands."
+      }
+    },
+    "upper_byte": "The retrieved AMD CDNA 5 XML defines only the four fields in bits0:7. It does not list a field or behavioral definition for bits8:15. Omission does not establish reserved/ignored semantics."
+  },
+  "additional_vendor_source": {
+    "source": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_CPU_v1/amd_debugger_architecture_v1.cpp",
+      "bytes": 303552,
+      "sha256": "9d8d9aee3d1dc70db37aea73de5a3e2b9b707f7e79867f2a909bd0b3cd78c973"
+    },
+    "git_blob": "9e475bb1c3363ecf9bcbbd9f57371b29dd101c35",
+    "finding": "ROCm debugger gfx12_5 code describes four active MODE MSB fields and gfx1250. No S_SET_VGPR_MSB mnemonic or high-immediate-byte interpretation was present in the retrieved architecture.cpp."
+  },
+  "limits": [
+    "CPU-only feasibility and consistency with the known compiler/firmware convention; not proof of hardware correctness or timing equivalence.",
+    "The public XML does not document the previous-mode high byte or redundant-setter execution behavior.",
+    "Implicit XCNT wait and known setreg adjacency hazard remain relevant general context; no setreg or control transfer occurs in the inspected pair window.",
+    "No production input, full kernel ELF, loader, runtime configuration, or GPU experiment was created."
+  ]
+}

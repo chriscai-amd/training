@@ -1,0 +1,142 @@
+{
+  "status": "PASS_INDEPENDENT_TWO_BYTE_SOURCE_FIELD_ONLY_V513_REPEATED_ZERO_CANDIDATE",
+  "GPU_actions": false,
+  "reviewer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_repeated_zero_peer_v1/review_repeated_v513_zero_candidate_v1.py",
+    "bytes": 8693,
+    "sha256": "69848b16ac97baf40466e1f1e8557e5ad1da722324476b702834e88dc3fc5ddf"
+  },
+  "certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_c0_v513_repeated_zero_design_v1/repeated_v513_source_zero_CPU_design_certificate_v1.json",
+    "bytes": 6252,
+    "sha256": "b8d51e562db6040e698f0d113a788acb3d92615d33f86cbffeb653cc1e226526"
+  },
+  "baseline": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_pair_v0_C0_design_v1/v128_direct_v0_tail_C0_v1.elf",
+    "bytes": 335000,
+    "sha256": "c422ef9aa28418c3156b4031444cb78d0cece0e11cc0c6f213bdafa993edc279"
+  },
+  "candidate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_c0_v513_repeated_zero_design_v1/DW_v128_c0_direct_v513_repeated_source_zero_v1.elf",
+    "bytes": 335000,
+    "sha256": "49d671f0956bf195fcf59dbd86c0b89afb0cba8ae4d9e49586d0ac30874cbfef"
+  },
+  "text_section": {
+    "address": 18176,
+    "offset": 14080,
+    "bytes": 284712
+  },
+  "changed_file_bytes": [
+    [
+      25924,
+      1,
+      128
+    ],
+    [
+      25925,
+      255,
+      254
+    ]
+  ],
+  "only_changed_instruction": {
+    "before": {
+      "pc": 30016,
+      "text": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, v255 /*v511*/, s66",
+      "words": [
+        3594780910,
+        17563393
+      ]
+    },
+    "after": {
+      "pc": 30016,
+      "text": "v_perm_b32 v238 /*v494*/, 0, v255 /*v511*/, s66",
+      "words": [
+        3594780910,
+        17563264
+      ]
+    }
+  },
+  "source0_before_code": 257,
+  "source0_after_inline_zero_code": 128,
+  "source0_architectural_register_before": "v513 under inherited s_set_vgpr_msb source0 bank 2",
+  "destination_source1_selector_opcode_and_all_other_encoding_fields_preserved": true,
+  "independent_assembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_repeated_zero_peer_v1/independent_source_encoding_v1.s",
+    "bytes": 89,
+    "sha256": "ee73db2a898e330da0ba975fa64d908ce2d91906adf1a3059fd3644ee0e01816"
+  },
+  "independent_MC_output": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_repeated_zero_peer_v1/independent_source_encoding_v1.txt",
+    "bytes": 272,
+    "sha256": "65a93f07bb0ce39b2edbd0a0f70b3a1c09212f0a745898a924412fb8df7fff53"
+  },
+  "fresh_disassemblies": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_repeated_zero_peer_v1/baseline_independent_disassembly_v1.s",
+      "bytes": 4287113,
+      "sha256": "3843a289e37f33021a0f705b23e2c8cd8e70142a1bf1d2fca6859f106a1c10c3"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_repeated_zero_peer_v1/candidate_independent_disassembly_v1.s",
+      "bytes": 4287145,
+      "sha256": "e8b926c0d101b3026c1084f85e8f43ce0051a736ea1e119500df3cd2670f5671"
+    }
+  ],
+  "every_disassembled_word_reconciled_to_ELF": true,
+  "preserved_instruction_positions_and_widths": 46786,
+  "unchanged_WMMA_instructions": 320,
+  "shared_v0_v7_tail_C0_unchanged": true,
+  "complete_observer_suffix_instructions_unchanged": 30138,
+  "bank_modes_waits_branches_effective_address_instructions_and_store_instructions_unchanged": true,
+  "other_v513_static_read_sites_unchanged": true,
+  "pair_map": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_pair_design_v1/same_invocation_v128_to_v131_pairs_v1.json",
+    "bytes": 1570035,
+    "sha256": "2681d32eca89c9be1e7c46e5e3ca0a4b3471a6fce5ac514637e02c947e74e4ef"
+  },
+  "inherited_baseline_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_v0_C0_peer_v1/matched_v128_v0_C0_independent_review_v1.json",
+    "bytes": 6551,
+    "sha256": "a6203aad67301003640686cbe244c450d014a61b8c57c0fa295fed61a1534166"
+  },
+  "inherited_scalar_path_proof": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_consumers_CPU_v1/v513_consumer_scalar_path_and_lane0_K_v2.json",
+    "bytes": 118109,
+    "sha256": "ade90c6d59db6341ab0d655d01eaa8a42367d62f596a3fc542e3776b3ad76c76"
+  },
+  "inherited_scalar_path_independent_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_scalar_peer_v1/scalar_path_K_descriptor_independent_review_v1.json",
+    "bytes": 7545,
+    "sha256": "11a49d0b8121a4650675562db7c89a5353d1d66c9b942d340b4fddb974a0f8e3"
+  },
+  "inherited_scalar_peer_status": "PASS_WITH_EXPLICIT_SECONDARY_VCC_COMPLETENESS_NOTE",
+  "inherited_dynamic_scope": {
+    "contexts": 16,
+    "visits_per_wave": 36314,
+    "first_phase_input_lane0_K_range": [
+      65,
+      2324097
+    ],
+    "K_stride": 64,
+    "untouched_initial_site": "0x6c64",
+    "untouched_cleanup_sites": [
+      "0x858c",
+      "0x93b0",
+      "0xbc7c"
+    ],
+    "untouched_tail_site": "0xe41c"
+  },
+  "conclusions": [
+    "Exactly one source0 field at PC0x7540 changes from an architectural v513 read to inline zero.",
+    "Both instruction width and every other ELF byte outside the two source-field bytes are preserved.",
+    "All320 WMMAs, the final v0:v7 C0 instruction, and complete v128 observer suffix are identical.",
+    "Correct zero-DY arithmetic remains zero because the removed B-packing input is architecturally zero."
+  ],
+  "limits": [
+    "The candidate is CPU-reviewed only; runtime package identity and complete source freeze are separate.",
+    "Architectural v513 is an ISA register designation and does not identify physical hardware storage.",
+    "The review inherits the separately checked scalar/LDS provenance. It does not independently rerun that trace.",
+    "Inline zero removes this read dependency and may alter instruction handling. Suppression would not alone locate the faulty physical component.",
+    "All other v513 consumers remain; a bounded clean run cannot establish a permanent fix."
+  ]
+}

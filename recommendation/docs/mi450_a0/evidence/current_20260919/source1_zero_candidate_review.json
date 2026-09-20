@@ -1,0 +1,210 @@
+{
+  "status": "PASS_INDEPENDENT_SOURCE1_INLINE_ZERO_CANDIDATE_AND_ZERO_LIFETIME_REVIEW",
+  "GPU_actions": false,
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_peer_v1/review_source1_inline_zero_candidate_v3.py",
+    "bytes": 12489,
+    "sha256": "491ef8899cb5a3ff60a7e7056bdf65cdc91a67c3f2d8ff3027f11d62b2003d2e"
+  },
+  "candidate_author_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_design_v1/source1_inline_zero_CPU_candidate_certificate_v1.json",
+    "bytes": 7756,
+    "sha256": "a9c5f6c46d54ad0de030edb824113c1b31318ffbf5577030a7555f6cf01bddca"
+  },
+  "feasibility_author": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_CPU_v1/source1_inline_zero_CPU_feasibility_v1.json",
+    "bytes": 13393,
+    "sha256": "9eb1f0a459726ce47c082688bc5aafbb49b7c257f5548cb3a3c58ad007c8c268"
+  },
+  "baseline": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_pair_v0_C0_design_v1/v128_direct_v0_tail_C0_v1.elf",
+    "bytes": 335000,
+    "sha256": "c422ef9aa28418c3156b4031444cb78d0cece0e11cc0c6f213bdafa993edc279"
+  },
+  "candidate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_design_v1/DW_v511_source1_zero.elf",
+    "bytes": 335000,
+    "sha256": "aca1aa60c441b019361099553232f5c011aad1d053505b9cad69d45348851faf"
+  },
+  "pair_map": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_pair_design_v1/same_invocation_v128_to_v131_pairs_v1.json",
+    "bytes": 1570035,
+    "sha256": "2681d32eca89c9be1e7c46e5e3ca0a4b3471a6fce5ac514637e02c947e74e4ef"
+  },
+  "inherited_support": {
+    "inherited_candidate_peer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_peer_v1/repeated_v514_independent_candidate_review_v1.json",
+      "bytes": 9491,
+      "sha256": "b18982493aaef50ae7769be98dc54f6517d61df27b0aa2ad2794f038c6aee5f8"
+    },
+    "baseline": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_pair_v0_C0_design_v1/v128_direct_v0_tail_C0_v1.elf",
+      "bytes": 335000,
+      "sha256": "c422ef9aa28418c3156b4031444cb78d0cece0e11cc0c6f213bdafa993edc279"
+    },
+    "baseline_disassembly": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_peer_v1/baseline_independent_disassembly_v1.s",
+      "bytes": 4287113,
+      "sha256": "3843a289e37f33021a0f705b23e2c8cd8e70142a1bf1d2fca6859f106a1c10c3"
+    },
+    "neighbor_zero_peer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_neighbor_reroute_peer_v1/neighbor_zero_lifetime_and_products_independent_review_v1.json",
+      "bytes": 13372,
+      "sha256": "735e92bf4e9923044f62a5cc86ba6217004154c84fe25911875c53431fda9966"
+    },
+    "neighbor_source_mapping": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_neighbor_reroute_CPU_v1/neighbor_zero_VGPR_reroute_feasibility_v1.json",
+      "bytes": 9746,
+      "sha256": "3e345bf36a28c206853d7272141e0c13181170a8e640b01282ec947be04b9a15"
+    },
+    "A_pipeline_peer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_mainloop_A_provenance_peer_v1/mainloop_A_membership_and_pipeline_independent_review_v2.json",
+      "bytes": 13792,
+      "sha256": "f414465076fd22df73dc885ce3a8037918dbc09f56db560e732f7d7ab424b941"
+    },
+    "parser": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_mainloop_A_provenance_peer_v1/review_mainloop_A_membership_and_pipeline_v3.py",
+      "bytes": 15484,
+      "sha256": "eac370992ee889351ac7005a408c35755d1e039814585da7acb23cdfb0ec42eb"
+    },
+    "scalar_CFG": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_scalar_peer_v1/scalar_path_K_descriptor_independent_review_v1.json",
+      "bytes": 7545,
+      "sha256": "11a49d0b8121a4650675562db7c89a5353d1d66c9b942d340b4fddb974a0f8e3"
+    },
+    "packet": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v2/b_reuse_off_joined_verification_v1.json",
+      "bytes": 4240,
+      "sha256": "0c079bddecb5e29ba58f1f274bb8eb70e7b5c20d224c4369a48b354be131fef6"
+    },
+    "metadata": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/DW_kernel_metadata.json",
+      "bytes": 7099,
+      "sha256": "b8ee1f792b59a5d3aa4da70e005387cf65d138589e8f246826562082cf6e32ab"
+    },
+    "prologue_helper": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_donor_lifetime_v1/prove_first_accumulator_definition_v1.py",
+      "bytes": 7696,
+      "sha256": "761d34a82b860b03ff6b6f686b9bf8a2b7ccb8c961361a0f8560ef6e76376ae0"
+    },
+    "historical_zero_DY": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_c0_donor_failure_audit_v1/v128_c0_direct_full_failure_v1.json",
+      "bytes": 3218176,
+      "sha256": "3e519bce9c070e9d1e9c987c5e539ab7af568064e869046a436e24ffe66d0c1e"
+    },
+    "prologue_interpreter": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_mechanism_v1/prove_raw_export_packet_path_v2.py",
+      "bytes": 20296,
+      "sha256": "b92e4e46d9097a383f1ce1526aac169c00945072460815604f242bfa511292f1"
+    }
+  },
+  "independent_ELF_parser": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_mixed_bank_perm_inventory_peer_v1/review_mixed_source_bank_inventory_v1.py",
+    "bytes": 11693,
+    "sha256": "129d6c11fbcb298aa5c2bd0db9388f02198929dcb043c1f86c859439aefefebe"
+  },
+  "changed_file_bytes": [
+    [
+      25925,
+      255,
+      1
+    ],
+    [
+      25926,
+      11,
+      9
+    ]
+  ],
+  "source1_field_mask": "0x3fe00",
+  "source0_code_unchanged": 257,
+  "source1_before_code": 511,
+  "source1_after_inline_zero_code": 128,
+  "only_changed_instruction": {
+    "before": {
+      "pc": 30016,
+      "instruction": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, v255 /*v511*/, s66",
+      "words": [
+        3594780910,
+        17563393
+      ]
+    },
+    "after": {
+      "pc": 30016,
+      "instruction": "v_perm_b32 v238 /*v494*/, v1 /*v513*/, 0, s66",
+      "words": [
+        3594780910,
+        17367297
+      ]
+    }
+  },
+  "fresh_disassemblies": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_peer_v1/baseline_fresh_independent_disassembly_v3.s",
+      "bytes": 4287113,
+      "sha256": "3843a289e37f33021a0f705b23e2c8cd8e70142a1bf1d2fca6859f106a1c10c3"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_peer_v1/candidate_fresh_independent_disassembly_v3.s",
+      "bytes": 4287110,
+      "sha256": "2980e6c0081435144454fe30aaed2f911cb3eac9599b351cd4a1f3daa865ee29"
+    }
+  ],
+  "independent_MC_output": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_peer_v1/independent_MC_source1_encodings_v3.txt",
+    "bytes": 272,
+    "sha256": "b96c18fd6dc598768e2b2819dfb911a86883e025ff8c35ec532e73ba8218b526"
+  },
+  "all46786_instructions_reconciled_per_ELF": true,
+  "preserved_WMMA_count": 320,
+  "preserved_complete_observer_suffix_instructions": 30139,
+  "shared_final_v0_v7_C0_preserved": true,
+  "sole_loop_definitions": {
+    "511": {
+      "pc": 32936,
+      "instruction": "ds_load_b64 v[254:255] /*v[510:511]*/, v27 /*v283*/",
+      "words": [
+        3654811648,
+        4261412891
+      ],
+      "op": "ds_load_b64",
+      "args": [
+        "v[510:511]",
+        "v283"
+      ],
+      "text": "ds_load_b64 v[510:511], v283"
+    },
+    "513": {
+      "pc": 32948,
+      "instruction": "ds_load_b64 v[0:1] /*v[512:513]*/, v27 /*v283*/ offset:256",
+      "words": [
+        3654811904,
+        27
+      ],
+      "op": "ds_load_b64",
+      "args": [
+        "v[512:513]",
+        "v283 offset:256"
+      ],
+      "text": "ds_load_b64 v[512:513], v283 offset:256"
+    }
+  },
+  "source1_and_source0_halfword_coordinates_reproduced": 2048,
+  "source1_full_word_halfword_checks": 1024,
+  "source0_halfword_checks": 1024,
+  "full_EXEC_wait_and_store_refill_order_checked": true,
+  "repeated_visits_per_context": 36314,
+  "contexts": 16,
+  "byte_selection_basis_cases": 34,
+  "conclusions": [
+    "Only source1 at0x7540 changes from architectural v511 to inline zero. Source0v513, source0 bank2, selector, destination and instruction width remain unchanged.",
+    "The source1 v511 word is architecturally zero under positive-zero DY and correct delivery across all repeated contexts, using its sole0x80a8 definition.",
+    "Both instructions yield(v513&0xffff)<<16 for arbitrary source0 bits when source1 is zero; original-v257 donor coordinates/models are unchanged.",
+    "All320 WMMAs, shared finalv0:v7 C0, addresses/waits/stores and complete paired observer are byte-identical."
+  ],
+  "limits": [
+    "CPU architectural proof only; inline zero can change scheduling, operand dependencies, routing or timing.",
+    "The prologue seeds, scalar recurrence, valid B storage and disjoint A/B LDS region are inherited from pinned independent proofs; byte membership and reaching definitions were independently checked here.",
+    "Historical positive-zero DY is an inherited setup premise. Every new runtime must verify its own inputs.",
+    "No runtime manifest, native trace, current output or GPU execution was read or launched; bounded PASS would not identify a unique physical mechanism."
+  ]
+}

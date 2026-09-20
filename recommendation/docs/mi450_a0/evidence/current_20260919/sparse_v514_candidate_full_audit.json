@@ -1,0 +1,215 @@
+{
+  "status": "PASS_COMPLETE_RETAINED_SPARSE_INPUTS_AND_EVERY_OUTPUT_PREFILL_AUDIT",
+  "GPU_actions": false,
+  "arm": "v514_repeated",
+  "runtime_status": "PASS",
+  "iterations": 4,
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_failure_audit_v1/audit_terminal_sparse_witness_v1.py",
+    "bytes": 19014,
+    "sha256": "b110427ceba35ecaba0cecd77bc8f9e0f4f625aab2b8a969194af96b4a79cb1e"
+  },
+  "readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_failure_audit_v1/CPU_readiness_v1.json",
+    "bytes": 5200,
+    "sha256": "c01667d2955a4d36fd234226c0cec3aa41c57b778889b25486e07d5669d35d55"
+  },
+  "binding": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_failure_audit_v1/runtime_binding_v1.json",
+    "bytes": 1720,
+    "sha256": "a0f13951f3d66bbcbfb480aab158c17b774eace3b73b8a02ac31be089471a949"
+  },
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/launch_manifest_v514_sparse_witness_v1.json",
+    "bytes": 22006,
+    "sha256": "180dd07481f8320f50a946572ec7c72475c26f95ba2e2e6022608d8a5623bd02"
+  },
+  "terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/v514_repeated_terminal.json",
+    "bytes": 272,
+    "sha256": "f215fcedad119ac1d9dbd5540c76eb0af0c34ca3cf7e32609ff6b1da7b3e2ba6"
+  },
+  "native_join": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/v514_repeated_joined_verification_v1.json",
+    "bytes": 8591,
+    "sha256": "35627850240c20ba4c51d98b9291ecdda562ef4aef6b870d096a897bb0afa8bc"
+  },
+  "report": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v514_repeated_v1.json",
+    "bytes": 392459,
+    "sha256": "3482b10959af4336c06e5fcb8341bf07e5dcd7d1010641eb9c52f1540ca89846"
+  },
+  "complete_final_artifact": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v514_repeated_v1_final_inputs.pt",
+    "bytes": 3570849181,
+    "sha256": "78218f68eb32144abfac818a6bf4d1fd4caf9c6f16b8e996771c57f4eedd1368"
+  },
+  "original_capture": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+    "bytes": 3570835225,
+    "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+  },
+  "raw_ZIP_helper": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/audit_step405_linear_zero_failure_independent_v1.py",
+    "bytes": 25482,
+    "sha256": "93dcdc836a6f14bd6dc28228b0e1d52ba3dc93f5e7f38ece63ec7a5f09ddee3b"
+  },
+  "numeric_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_peer_v1/sparse_positive_witness_independent_review_v1.json",
+    "bytes": 13003,
+    "sha256": "cbe1eef59699756b980943207078a6a7a799e0613c300258eb9c7d202fd3d57b"
+  },
+  "full_input_audits": {
+    "x": {
+      "elements": 595033856,
+      "bytes": 1190067712,
+      "sha256": "30c06a6dd8e292bc09fda19e540915255c381d79f5ebf4e8600405398464a869",
+      "exact_sparse_bytes_match": true,
+      "mismatching_halfwords": 0,
+      "actual_non_positive_zero_halfwords": 1,
+      "designated_halfword_index": 16640,
+      "designated_bits": "0x3f80",
+      "first64_mismatches": [],
+      "all_backing_bytes_read": true,
+      "shape": [
+        2324351,
+        256
+      ],
+      "stride": [
+        256,
+        1
+      ],
+      "storage_key": "0"
+    },
+    "dy": {
+      "elements": 1190067712,
+      "bytes": 2380135424,
+      "sha256": "d1ba5641fe417109ea61b2c4694b08fc883e5dd106c60fd2929cbd95c2aef341",
+      "exact_sparse_bytes_match": true,
+      "mismatching_halfwords": 0,
+      "actual_non_positive_zero_halfwords": 1,
+      "designated_halfword_index": 33792,
+      "designated_bits": "0x3f80",
+      "first64_mismatches": [],
+      "all_backing_bytes_read": true,
+      "shape": [
+        2324351,
+        512
+      ],
+      "stride": [
+        512,
+        1
+      ],
+      "storage_key": "1"
+    },
+    "mat2": {
+      "bytes": 262144,
+      "elements": 131072,
+      "sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+      "all_backing_bytes_read": true,
+      "every_mat2_backing_byte_equals_original_capture": true,
+      "shape": [
+        256,
+        512
+      ],
+      "stride": [
+        1,
+        256
+      ],
+      "storage_key": "2"
+    }
+  },
+  "complete_last_output_snapshot_sha256": "b4e15e1e8efedbb4c69bb09733e50d65ba5a87ea0c68be38da2e6e87286e2b8e",
+  "stream_audit": {
+    "status": "ALL_RETAINED_OUTPUT_AND_PREFILL_BYTES_INDEPENDENTLY_CHECKED",
+    "invocations": 4,
+    "complete_output_words": 262144,
+    "complete_prefill_halfwords": 524288,
+    "output_stream": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v514_repeated_v1.json.cpu_outputs.bin",
+      "bytes": 1048576,
+      "sha256": "23a446d3a1924e48d1d7a049313c320a31957a4568c0867eabda7e806ce448dd"
+    },
+    "prefill_stream": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v514_repeated_v1.json.cpu_prefills.bin",
+      "bytes": 1048576,
+      "sha256": "b168fd938548be8b95bd48a9450497841ee944d9af26dcd66167a2b2c29a9f8d"
+    },
+    "last_retained_snapshot_matches_last_complete_stream_record": true,
+    "every_invocation": [
+      {
+        "iteration": 1,
+        "exact_bytes_match": true,
+        "mismatching_FP32_words": 0,
+        "first64_mismatches": [],
+        "sha256": "b4e15e1e8efedbb4c69bb09733e50d65ba5a87ea0c68be38da2e6e87286e2b8e",
+        "expected_sha256": "b4e15e1e8efedbb4c69bb09733e50d65ba5a87ea0c68be38da2e6e87286e2b8e",
+        "nonzero_including_nonfinite": 2,
+        "negative_zero": 0,
+        "nonfinite": 0,
+        "direct_bits": "0x3f800000",
+        "normal_bits": "0x3f800000",
+        "direct_normal_equal": true,
+        "raw_prefill_word_count": 0,
+        "prefill_halfword_count": 2,
+        "complete_prefill_halfwords": 131072
+      },
+      {
+        "iteration": 2,
+        "exact_bytes_match": true,
+        "mismatching_FP32_words": 0,
+        "first64_mismatches": [],
+        "sha256": "b4e15e1e8efedbb4c69bb09733e50d65ba5a87ea0c68be38da2e6e87286e2b8e",
+        "expected_sha256": "b4e15e1e8efedbb4c69bb09733e50d65ba5a87ea0c68be38da2e6e87286e2b8e",
+        "nonzero_including_nonfinite": 2,
+        "negative_zero": 0,
+        "nonfinite": 0,
+        "direct_bits": "0x3f800000",
+        "normal_bits": "0x3f800000",
+        "direct_normal_equal": true,
+        "raw_prefill_word_count": 0,
+        "prefill_halfword_count": 2,
+        "complete_prefill_halfwords": 131072
+      },
+      {
+        "iteration": 3,
+        "exact_bytes_match": true,
+        "mismatching_FP32_words": 0,
+        "first64_mismatches": [],
+        "sha256": "b4e15e1e8efedbb4c69bb09733e50d65ba5a87ea0c68be38da2e6e87286e2b8e",
+        "expected_sha256": "b4e15e1e8efedbb4c69bb09733e50d65ba5a87ea0c68be38da2e6e87286e2b8e",
+        "nonzero_including_nonfinite": 2,
+        "negative_zero": 0,
+        "nonfinite": 0,
+        "direct_bits": "0x3f800000",
+        "normal_bits": "0x3f800000",
+        "direct_normal_equal": true,
+        "raw_prefill_word_count": 0,
+        "prefill_halfword_count": 2,
+        "complete_prefill_halfwords": 131072
+      },
+      {
+        "iteration": 4,
+        "exact_bytes_match": true,
+        "mismatching_FP32_words": 0,
+        "first64_mismatches": [],
+        "sha256": "b4e15e1e8efedbb4c69bb09733e50d65ba5a87ea0c68be38da2e6e87286e2b8e",
+        "expected_sha256": "b4e15e1e8efedbb4c69bb09733e50d65ba5a87ea0c68be38da2e6e87286e2b8e",
+        "nonzero_including_nonfinite": 2,
+        "negative_zero": 0,
+        "nonfinite": 0,
+        "direct_bits": "0x3f800000",
+        "normal_bits": "0x3f800000",
+        "direct_normal_equal": true,
+        "raw_prefill_word_count": 0,
+        "prefill_halfword_count": 2,
+        "complete_prefill_halfwords": 131072
+      }
+    ]
+  },
+  "limits": [
+    "All retained final input backing bytes, output words and prefill halfwords are checked independently here; native selected-kernel/packet/pointer provenance is supplied by the pinned separate verifier.",
+    "Final retained sparse inputs and before/after producer byte records do not exclude transient untracked input changes restored before finalization.",
+    "A successful sparse witness supports the predicted operand effect for these synthetic inputs; it does not identify the historical fault or establish its probability."
+  ]
+}

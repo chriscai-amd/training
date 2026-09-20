@@ -1,0 +1,215 @@
+{
+  "status": "PASS_INDEPENDENT_CPU_THREE_ARM_SOURCE1_BANK_HISTORY_FEASIBILITY",
+  "GPU_actions": false,
+  "runtime_outputs_read": false,
+  "full_kernel_candidate_created": false,
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_peer_v1/review_three_arm_setter_modes_independent_v1.py",
+    "bytes": 9624,
+    "sha256": "577d1fc7f0cac860af5496130d7848fe641a55e6713000d0c4aebb7586d18b8d"
+  },
+  "prior_independent_history_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_peer_v1/history_consistent_setter_pair_independent_CPU_review_v2.json",
+    "bytes": 10629,
+    "sha256": "4f6f7d081ba0ab011dd87aa442535ad681a931e3818a023edff065065181eace"
+  },
+  "ELF": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_design_v1/DW_v511_source1_zero.elf",
+    "bytes": 335000,
+    "sha256": "aca1aa60c441b019361099553232f5c011aad1d053505b9cad69d45348851faf"
+  },
+  "full_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_peer_v1/source_full_text_fresh_peer_v2.s",
+    "bytes": 4657042,
+    "sha256": "0200758e527b13bb2298b2591d14454857706b4c95e18d41b064b99e3eeca18d"
+  },
+  "tiny_assembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_peer_v1/independent_three_arm_history_windows_v1.s",
+    "bytes": 1448,
+    "sha256": "6c76e39ed54a8d176099817aadf7814b130b4520bcd3855c8b67f747d5b66f9d"
+  },
+  "tiny_object": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_peer_v1/independent_three_arm_history_windows_v1.o",
+    "bytes": 880,
+    "sha256": "23cf5b98c8cc5f6ed0642350e898a8f35c467606c91205b02685932caf3506fb"
+  },
+  "tiny_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_peer_v1/independent_three_arm_history_windows_v1.txt",
+    "bytes": 5926,
+    "sha256": "0210b27ff6a7baafb5c9c40e123e6c34b4a2758c96156c81169bf2e0957e3081"
+  },
+  "arms": [
+    {
+      "arm": "bank1_baseline",
+      "source1_target_bank": 1,
+      "setters": [
+        {
+          "pc": "0x753c",
+          "immediate": "0x4a46",
+          "previous_mode": "0x4a",
+          "active_mode": "0x46",
+          "source1_before": 2,
+          "source1_after": 1,
+          "changes_mode": true,
+          "changed_active_bits": 2,
+          "history_consistent": true
+        },
+        {
+          "pc": "0x7548",
+          "immediate": "0x464a",
+          "previous_mode": "0x46",
+          "active_mode": "0x4a",
+          "source1_before": 1,
+          "source1_after": 2,
+          "changes_mode": true,
+          "changed_active_bits": 2,
+          "history_consistent": true
+        }
+      ],
+      "described_byte_edits": [],
+      "unchanged_nonsetter_operations": 13,
+      "changed_active_mode_nonsetters": [],
+      "subsequent_unchanged_setters": 11016,
+      "target_decoded_operands": "v494, v513, inline integer0, s66",
+      "target_words": [
+        "0xd64400ee",
+        "0x01090101"
+      ]
+    },
+    {
+      "arm": "bank2_redundant",
+      "source1_target_bank": 2,
+      "setters": [
+        {
+          "pc": "0x753c",
+          "immediate": "0x4a4a",
+          "previous_mode": "0x4a",
+          "active_mode": "0x4a",
+          "source1_before": 2,
+          "source1_after": 2,
+          "changes_mode": false,
+          "changed_active_bits": 0,
+          "history_consistent": true
+        },
+        {
+          "pc": "0x7548",
+          "immediate": "0x4a4a",
+          "previous_mode": "0x4a",
+          "active_mode": "0x4a",
+          "source1_before": 2,
+          "source1_after": 2,
+          "changes_mode": false,
+          "changed_active_bits": 0,
+          "history_consistent": true
+        }
+      ],
+      "described_byte_edits": [
+        {
+          "pc": "0x753c",
+          "file_offset": 25916,
+          "before": "0x46",
+          "after": "0x4a"
+        },
+        {
+          "pc": "0x7548",
+          "file_offset": 25929,
+          "before": "0x46",
+          "after": "0x4a"
+        }
+      ],
+      "unchanged_nonsetter_operations": 13,
+      "changed_active_mode_nonsetters": [
+        "0x7540"
+      ],
+      "subsequent_unchanged_setters": 11016,
+      "target_decoded_operands": "v494, v513, inline integer0, s66",
+      "target_words": [
+        "0xd64400ee",
+        "0x01090101"
+      ]
+    },
+    {
+      "arm": "bank0_two_transitions",
+      "source1_target_bank": 0,
+      "setters": [
+        {
+          "pc": "0x753c",
+          "immediate": "0x4a42",
+          "previous_mode": "0x4a",
+          "active_mode": "0x42",
+          "source1_before": 2,
+          "source1_after": 0,
+          "changes_mode": true,
+          "changed_active_bits": 1,
+          "history_consistent": true
+        },
+        {
+          "pc": "0x7548",
+          "immediate": "0x424a",
+          "previous_mode": "0x42",
+          "active_mode": "0x4a",
+          "source1_before": 0,
+          "source1_after": 2,
+          "changes_mode": true,
+          "changed_active_bits": 1,
+          "history_consistent": true
+        }
+      ],
+      "described_byte_edits": [
+        {
+          "pc": "0x753c",
+          "file_offset": 25916,
+          "before": "0x46",
+          "after": "0x42"
+        },
+        {
+          "pc": "0x7548",
+          "file_offset": 25929,
+          "before": "0x46",
+          "after": "0x42"
+        }
+      ],
+      "unchanged_nonsetter_operations": 13,
+      "changed_active_mode_nonsetters": [
+        "0x7540"
+      ],
+      "subsequent_unchanged_setters": 11016,
+      "target_decoded_operands": "v494, v513, inline integer0, s66",
+      "target_words": [
+        "0xd64400ee",
+        "0x01090101"
+      ]
+    }
+  ],
+  "mode_rejoin_PC": "0x7548",
+  "following_setters": [
+    "0x7554:4a05",
+    "0x7560:0541"
+  ],
+  "public_firmware_constraint": {
+    "comment": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_peer_v1/independent_FW_comment_3455001473_v1.json",
+      "bytes": 1745,
+      "sha256": "ed85fb04b8fe4b2698cbe2448365f02626f7181d060f5a30a4a5b0bbae774992"
+    },
+    "commit": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_source1_history_peer_v1/independent_history_commit_be2ae264_v1.json",
+      "bytes": 53516,
+      "sha256": "9552f131033a7cecb27e74a7811951929f2f04b28ccd8bc82fce09f7748862e8"
+    },
+    "quote": "This is the new FW requirement.",
+    "requirement": "Record the preceding active low mode in each setter high byte; the proposed pairs follow this known convention."
+  },
+  "comparisons": {
+    "baseline_vs_bank0": "Both have two source1-bank transitions and no redundant setters. Target bank1 vs0 and transition bit patterns differ: two bits change per baseline transition, one bit per bank0 transition.",
+    "baseline_vs_bank2": "Target bank1 vs2 changes together with two transitions becoming two redundant writes; firmware handling, implicit waiting and timing may differ.",
+    "bank0_vs_bank2": "Both preserve source0v513 and inline0 source1. Bank0 has two transitions; bank2 has none, but target bank and setter encodings also differ."
+  },
+  "valid_claim": "The three arms preserve LLVM-decoded arithmetic and consistent previous-mode history while varying source1 mode value and transition pattern. They can compare these combined interventions; they do not independently isolate bank value, transition count, transition bit pattern, firmware behavior or timing.",
+  "limits": [
+    "No hardware equivalence or redundant-setter safety is established by LLVM decoding/public convention alone.",
+    "The public firmware quote does not specify high-byte validation or execution details; the vendor XML specifies only active low-byte fields.",
+    "Local path and direct-entry scope are inherited from the pinned prior independent peer; arbitrary indirect reachability is not newly proved.",
+    "Full candidate ELF and strict loader reviews remain pending their authors; no runtime or GPU work was performed."
+  ]
+}

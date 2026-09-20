@@ -1,0 +1,1261 @@
+{
+  "container_name": "triton-7ff97e-20260910",
+  "container_id": "345f3d4609b852505bf66834b811388bdf1a7f7177ca7dab27215672bed8d13a",
+  "image_id": "sha256:7dcd1177dac976c9af2da3e1eeaa9e2d119827879c1873c2dda97ac3b0b287d7",
+  "idle_assertion": "/home/chcai/mi450_logs/root_cause_20260919/assert_gpu_idle.py",
+  "capture_sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a",
+  "context_sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d",
+  "large_external_capture": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+    "bytes": 3570835225,
+    "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+  },
+  "format": "DW_prefill_ttmp_observer_pair_v1",
+  "status": "FROZEN_PENDING_ROOT_AND_FINAL_PACKAGE_REVIEW",
+  "created_utc": "2026-09-20T05:33:39.001937+00:00",
+  "runtime_configuration_host": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_v1/configuration_ttmp_observer_v1.json",
+  "metadata_host": "/home/chcai/dlrm_data/root_cause_20260919/DW_ttmp_observer_native_artifacts_v1/DW_kernel_metadata.json",
+  "ttmp_metadata_layout_host": "/home/chcai/dlrm_data/root_cause_20260919/DW_ttmp_observer_native_artifacts_v1/TTMP_metadata_layout_v1.json",
+  "prior_pair_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/launch_manifest_inline_zero_bank_history_v1.json",
+    "bytes": 35617,
+    "sha256": "a7be4943c4b3e36c6cebde56cb3af738987eeb54fdead16258d34cea7cccd3c0"
+  },
+  "configuration_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/runtime_configuration_inline_zero_bank_history_v1.json",
+    "bytes": 10614,
+    "sha256": "7f27421aab9cbfc0e5bb981e974f956d88890837aeffb7fae01796e3f9b8b8ef"
+  },
+  "launch_order": [
+    "source1_control",
+    "ttmp_observer"
+  ],
+  "arms": {
+    "source1_control": {
+      "host_log": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/source1_control.log",
+      "host_idle": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/source1_control_idle.json",
+      "host_launch": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/source1_control_launch.json",
+      "host_terminal": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/source1_control_terminal.json",
+      "command": [
+        "docker",
+        "exec",
+        "-w",
+        "/workspace/recommendation",
+        "-e",
+        "AMDGCN_USE_BUFFER_OPS=0",
+        "-e",
+        "TRITON_FULL_AUTOTUNE=0",
+        "-e",
+        "TRITON_ALLOW_PIPELINING=0",
+        "-e",
+        "HIPBLASLT_WORKSPACE_SIZE=1",
+        "-e",
+        "HSTU_BWD_MAX_VGPR=256",
+        "-e",
+        "WEIGHTED_LN_BWD_BLOCK_N=1",
+        "-e",
+        "HIPBLASLT_TENSILE_LIBPATH=/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250",
+        "triton-7ff97e-20260910",
+        "env",
+        "-u",
+        "PYTORCH_ALLOC_CONF",
+        "-u",
+        "CUBLASLT_WORKSPACE_SIZE",
+        "-u",
+        "TENSILE_STREAMK_DATA_PARALLEL",
+        "-u",
+        "TENSILE_STREAMK_FIXED_GRID",
+        "-u",
+        "TENSILE_SOLUTION_INDEX",
+        "-u",
+        "HIPBLASLT_TUNING_OVERRIDE_FILE",
+        "-u",
+        "AMD_SERIALIZE_KERNEL",
+        "-u",
+        "HIP_LAUNCH_BLOCKING",
+        "-u",
+        "LINEAR_DW_NATIVE_OVERRIDE",
+        "-u",
+        "LINEAR_DW_NATIVE_OVERRIDE_ELF",
+        "-u",
+        "LINEAR_DW_BZERO_OVERRIDE",
+        "-u",
+        "LINEAR_DW_BZERO_OVERRIDE_ELF",
+        "-u",
+        "LINEAR_DW_RAW_EXPORT",
+        "-u",
+        "LINEAR_DW_RAW_EXPORT_ELF",
+        "-u",
+        "LINEAR_DW_ACCUMULATOR_EXPORT",
+        "-u",
+        "LINEAR_DW_ACCUMULATOR_EXPORT_ELF",
+        "-u",
+        "LINEAR_DW_DONOR_TAG",
+        "-u",
+        "LINEAR_DW_DONOR_TAG_ELF",
+        "-u",
+        "LINEAR_DW_DIRECT_STORE",
+        "-u",
+        "LINEAR_DW_DIRECT_STORE_ELF",
+        "-u",
+        "LINEAR_DW_TAIL_CZERO",
+        "-u",
+        "LINEAR_DW_TAIL_CZERO_ELF",
+        "-u",
+        "LINEAR_DW_PAIRED_CLEAR",
+        "-u",
+        "LINEAR_DW_PAIRED_CLEAR_ELF",
+        "-u",
+        "LINEAR_DW_V128_DONOR",
+        "-u",
+        "LINEAR_DW_V128_DONOR_ELF",
+        "-u",
+        "LINEAR_DW_V128_C0_DONOR",
+        "-u",
+        "LINEAR_DW_V128_C0_DONOR_ELF",
+        "-u",
+        "LINEAR_DW_V513_ZERO",
+        "-u",
+        "LINEAR_DW_V513_ZERO_ELF",
+        "-u",
+        "LINEAR_DW_V514_REROUTE",
+        "-u",
+        "LINEAR_DW_V514_REROUTE_ELF",
+        "-u",
+        "LINEAR_DW_V511_SOURCE1_ZERO",
+        "-u",
+        "LINEAR_DW_V511_SOURCE1_ZERO_ELF",
+        "-u",
+        "LINEAR_DW_INLINE_ZERO_BANK_HISTORY",
+        "-u",
+        "LINEAR_DW_INLINE_ZERO_BANK_HISTORY_ELF",
+        "LD_PRELOAD=/data/mlperf_dlrm_v4/root_cause_20260919/DW_ttmp_observer_native_CPU_v1/replace_linear_dw_ttmp_observer_elf_v1.so",
+        "LINEAR_DW_TTMP_OBSERVER=source1_control",
+        "LINEAR_DW_TTMP_OBSERVER_ELF=/data/mlperf_dlrm_v4/root_cause_20260919/DW_ttmp_observer_native_artifacts_v1/DW_source1_control.elf",
+        "PROJECTION_HIP_LAUNCH_TRACE=/data/mlperf_dlrm_v4/root_cause_20260919/session_continue_DW_ttmp_observer_source1_control_v1_hip.jsonl",
+        "python",
+        "-B",
+        "-u",
+        "/data/mlperf_dlrm_v4/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_v1/runtime_wrapper_ttmp_observer_v1.py",
+        "/data/mlperf_dlrm_v4/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_v1/configuration_ttmp_observer_v1.json",
+        "source1_control"
+      ],
+      "fresh_outputs": [
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_source1_control_v1.json",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_source1_control_v1_failure.pt",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_source1_control_v1_hip.jsonl",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_source1_control_v1_environment.json",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_source1_control_v1_libraries.json",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_source1_control_v1.json.update",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_source1_control_v1.json.cpu_outputs.bin",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_source1_control_v1.json.cpu_prefills.bin",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_source1_control_v1_failure.pt.tmp",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/source1_control.log",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/source1_control_idle.json",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/source1_control_launch.json",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/source1_control_terminal.json",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/source1_control_joined_verification_v1.json"
+      ]
+    },
+    "ttmp_observer": {
+      "host_log": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/ttmp_observer.log",
+      "host_idle": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/ttmp_observer_idle.json",
+      "host_launch": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/ttmp_observer_launch.json",
+      "host_terminal": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/ttmp_observer_terminal.json",
+      "command": [
+        "docker",
+        "exec",
+        "-w",
+        "/workspace/recommendation",
+        "-e",
+        "AMDGCN_USE_BUFFER_OPS=0",
+        "-e",
+        "TRITON_FULL_AUTOTUNE=0",
+        "-e",
+        "TRITON_ALLOW_PIPELINING=0",
+        "-e",
+        "HIPBLASLT_WORKSPACE_SIZE=1",
+        "-e",
+        "HSTU_BWD_MAX_VGPR=256",
+        "-e",
+        "WEIGHTED_LN_BWD_BLOCK_N=1",
+        "-e",
+        "HIPBLASLT_TENSILE_LIBPATH=/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250",
+        "triton-7ff97e-20260910",
+        "env",
+        "-u",
+        "PYTORCH_ALLOC_CONF",
+        "-u",
+        "CUBLASLT_WORKSPACE_SIZE",
+        "-u",
+        "TENSILE_STREAMK_DATA_PARALLEL",
+        "-u",
+        "TENSILE_STREAMK_FIXED_GRID",
+        "-u",
+        "TENSILE_SOLUTION_INDEX",
+        "-u",
+        "HIPBLASLT_TUNING_OVERRIDE_FILE",
+        "-u",
+        "AMD_SERIALIZE_KERNEL",
+        "-u",
+        "HIP_LAUNCH_BLOCKING",
+        "-u",
+        "LINEAR_DW_NATIVE_OVERRIDE",
+        "-u",
+        "LINEAR_DW_NATIVE_OVERRIDE_ELF",
+        "-u",
+        "LINEAR_DW_BZERO_OVERRIDE",
+        "-u",
+        "LINEAR_DW_BZERO_OVERRIDE_ELF",
+        "-u",
+        "LINEAR_DW_RAW_EXPORT",
+        "-u",
+        "LINEAR_DW_RAW_EXPORT_ELF",
+        "-u",
+        "LINEAR_DW_ACCUMULATOR_EXPORT",
+        "-u",
+        "LINEAR_DW_ACCUMULATOR_EXPORT_ELF",
+        "-u",
+        "LINEAR_DW_DONOR_TAG",
+        "-u",
+        "LINEAR_DW_DONOR_TAG_ELF",
+        "-u",
+        "LINEAR_DW_DIRECT_STORE",
+        "-u",
+        "LINEAR_DW_DIRECT_STORE_ELF",
+        "-u",
+        "LINEAR_DW_TAIL_CZERO",
+        "-u",
+        "LINEAR_DW_TAIL_CZERO_ELF",
+        "-u",
+        "LINEAR_DW_PAIRED_CLEAR",
+        "-u",
+        "LINEAR_DW_PAIRED_CLEAR_ELF",
+        "-u",
+        "LINEAR_DW_V128_DONOR",
+        "-u",
+        "LINEAR_DW_V128_DONOR_ELF",
+        "-u",
+        "LINEAR_DW_V128_C0_DONOR",
+        "-u",
+        "LINEAR_DW_V128_C0_DONOR_ELF",
+        "-u",
+        "LINEAR_DW_V513_ZERO",
+        "-u",
+        "LINEAR_DW_V513_ZERO_ELF",
+        "-u",
+        "LINEAR_DW_V514_REROUTE",
+        "-u",
+        "LINEAR_DW_V514_REROUTE_ELF",
+        "-u",
+        "LINEAR_DW_V511_SOURCE1_ZERO",
+        "-u",
+        "LINEAR_DW_V511_SOURCE1_ZERO_ELF",
+        "-u",
+        "LINEAR_DW_INLINE_ZERO_BANK_HISTORY",
+        "-u",
+        "LINEAR_DW_INLINE_ZERO_BANK_HISTORY_ELF",
+        "LD_PRELOAD=/data/mlperf_dlrm_v4/root_cause_20260919/DW_ttmp_observer_native_CPU_v1/replace_linear_dw_ttmp_observer_elf_v1.so",
+        "LINEAR_DW_TTMP_OBSERVER=ttmp_observer",
+        "LINEAR_DW_TTMP_OBSERVER_ELF=/data/mlperf_dlrm_v4/root_cause_20260919/DW_ttmp_observer_native_artifacts_v1/DW_ttmp_observer.elf",
+        "PROJECTION_HIP_LAUNCH_TRACE=/data/mlperf_dlrm_v4/root_cause_20260919/session_continue_DW_ttmp_observer_ttmp_observer_v1_hip.jsonl",
+        "python",
+        "-B",
+        "-u",
+        "/data/mlperf_dlrm_v4/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_v1/runtime_wrapper_ttmp_observer_v1.py",
+        "/data/mlperf_dlrm_v4/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_v1/configuration_ttmp_observer_v1.json",
+        "ttmp_observer"
+      ],
+      "fresh_outputs": [
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_ttmp_observer_v1.json",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_ttmp_observer_v1_failure.pt",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_ttmp_observer_v1_hip.jsonl",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_ttmp_observer_v1_environment.json",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_ttmp_observer_v1_libraries.json",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_ttmp_observer_v1.json.update",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_ttmp_observer_v1.json.cpu_outputs.bin",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_ttmp_observer_v1.json.cpu_prefills.bin",
+        "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_ttmp_observer_v1_failure.pt.tmp",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/ttmp_observer.log",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/ttmp_observer_idle.json",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/ttmp_observer_launch.json",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/ttmp_observer_terminal.json",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/ttmp_observer_joined_verification_v1.json"
+      ]
+    }
+  },
+  "limits": [
+    "Control retains all65536 raw arithmetic words. Observer exports TTMP0:1 and local S_GETPC from all16 waves into exactly64 duplicate words and checks all65472 other arithmetic words; all2048 normal observations and63488 unique sources remain. Both retain full262144-byte raw/prefill snapshots and unchanged FP arithmetic including320 WMMAs. Metadata decoding reports last visible return/resume address only; zero/unknown/out-of-range TTMP permitted. Require consistent valid S_GETPC and exact frozen instruction-boundary membership for location attribution. Later traps can hide earlier ones and traps after capture are invisible. Iteration failure is arithmetic OR metadata failure. Observer instrumentation changes instruction timing and read dependencies. No complete trap history, original workload trap occurrence, causal fault site, or shared training-NaN cause inferred from static predictions or separate bounded runs."
+  ],
+  "candidate_author": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_design_v1/ttmp_observer_CPU_candidate_certificate_v1.json",
+    "bytes": 14153,
+    "sha256": "70b6f9a1f41cec3267038a412544afe854e404f28ba3736917419a16bfae4cfc"
+  },
+  "candidate_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_peer_v1/TTMP_observer_independent_candidate_review_v1.json",
+    "bytes": 11901,
+    "sha256": "0ff5a0b072450790513aa3b4715cf83f3b8e4c0529fbfdd2403caa051270612b"
+  },
+  "layout_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_peer_v1/TTMP_exact64_metadata_interface_independent_review_v1.json",
+    "bytes": 3072,
+    "sha256": "60c5520ee45271c2644cbea56e4aa0efcbcb4006acdc3525ea2774f7500cfce0"
+  },
+  "loader_readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/ttmp_observer_compiled_loader_CPU_readiness_v2.json",
+    "bytes": 24247,
+    "sha256": "17794835a7d669f861304178797ae661f1cf07cd1fba1d44610dc28f3c13a70e"
+  },
+  "producer_readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_v1/ttmp_observer_producer_CPU_readiness_v1.json",
+    "bytes": 5439,
+    "sha256": "ba124714d2160db6993fcb69988e3778955cbe92308792333d33f2c231149fc8"
+  },
+  "producer_source_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_peer_v1/TTMP_producer_independent_source_function_review_v1.json",
+    "bytes": 7287,
+    "sha256": "2d109abc284cdd6d70fff7ef266d3d3b1983d21ec914d73eeba38b187251f1d9"
+  },
+  "producer_evidence_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_peer_v1/TTMP_producer_retained_CPU_evidence_independent_review_v1.json",
+    "bytes": 4949,
+    "sha256": "de5fa373c81a15bde621853c57d3913a2bf705b3beb3e6e783706ff80d9ebecf"
+  },
+  "runtime_source_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_peer_v1/root_runtime_independent_peer_review_v1.json",
+    "bytes": 7478,
+    "sha256": "6f4b09a27c0f8be50c58bc0dc57111959f4592c535382cf6096162a9a7407862"
+  },
+  "runtime_CPU_equivalence": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_peer_v1/root_native_metadata_CPU_equivalence_v1.json",
+    "bytes": 109068,
+    "sha256": "97d52b8943cd61013410982e6b6428a237e9d468d7a9e6ef7e893a8ba3db95c2"
+  },
+  "stream_reader_readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/TTMP_independent_record_reader_CPU_readiness_v1.json",
+    "bytes": 3171,
+    "sha256": "52c448ad4ac4b7d0ef0e898324eb09a7df84a7bc057fc76f5bc799378043fc5d"
+  },
+  "stream_terminal_readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/TTMP_terminal_wrapper_CPU_readiness_v1.json",
+    "bytes": 1691,
+    "sha256": "8e52f2a20391ec6bc72b40168160921b05e50190a3b2a56e3c99aae9d969c0fd"
+  },
+  "source_wave_readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/TTMP_source_wave_join_CPU_readiness_v1.json",
+    "bytes": 2472,
+    "sha256": "120907a415aa563dd29c98b111b4f8ee3eba7923130f895eed6a1973f9ac6372"
+  },
+  "runtime_configuration_derivation": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/runtime_configuration_derivation_root_v1.json",
+    "bytes": 5955,
+    "sha256": "05b9da44f56f4eec209c7855d7aa5f13e536f9be9674c6874557c1901fe1575d"
+  },
+  "CPU_runtime_preflight": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/CPU_runtime_preflight_v1.json",
+    "bytes": 19547,
+    "sha256": "3717d8165a42556e61ee8ead6964a8d5b9327ebca7526945781f2504be143604"
+  },
+  "freeze_tool_derivation": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/freeze_tools_derivation_v1.json",
+    "bytes": 1957,
+    "sha256": "336680e270e2db0dd42d915626ed4f5d76b9bd63d129b9e1b0bddbbec9988699"
+  },
+  "loader_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_root_review_v1/TTMP_loader_independent_root_review_v1.json",
+    "bytes": 20421,
+    "sha256": "7603a01b805e407628a51fbb9ccbc03c6e3b1801f87c113468f9cec8e0a177c1"
+  },
+  "configuration_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_config_peer_v1/TTMP_configuration_independent_review_v1.json",
+    "bytes": 16050,
+    "sha256": "d891e753c746ccfd32442b9e5d2cfef5d9b1f6de57c27441e7b98127292210bf"
+  },
+  "auditor_readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/TTMP_terminal_auditors_CPU_preparation_certificate_v1.json",
+    "bytes": 12893,
+    "sha256": "baed2edeec0c742f40dd9dd5d115d139d7f4ac700e8589cc52e6b68a7254c958"
+  },
+  "auditor_root_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/root_auditor_review_v1.json",
+    "bytes": 5866,
+    "sha256": "ad54fc66cac66dacfa94bceb815a055325a3f2e7f85efe74b82fa71041992d0c"
+  },
+  "support_0": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_ttmp_observer_native_CPU_v1/replace_linear_dw_ttmp_observer_elf_v1.so",
+    "bytes": 139352,
+    "sha256": "5a9804863d1af4fd9df0497b22f4c4adc9209cfd0a7d063f503f1a5857cc52d0"
+  },
+  "support_1": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_ttmp_observer_native_artifacts_v1/DW_kernel_metadata.json",
+    "bytes": 7099,
+    "sha256": "b8ee1f792b59a5d3aa4da70e005387cf65d138589e8f246826562082cf6e32ab"
+  },
+  "support_2": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_ttmp_observer_native_artifacts_v1/DW_source1_control.elf",
+    "bytes": 335000,
+    "sha256": "aca1aa60c441b019361099553232f5c011aad1d053505b9cad69d45348851faf"
+  },
+  "support_3": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_ttmp_observer_native_artifacts_v1/DW_ttmp_observer.elf",
+    "bytes": 335000,
+    "sha256": "61581ac29b22c6cb25e78c5406e9f6c687a1121a60fe72e16be1d47b7eff87e3"
+  },
+  "support_4": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_ttmp_observer_native_artifacts_v1/TTMP_metadata_layout_v1.json",
+    "bytes": 10728,
+    "sha256": "aaafc81f28047cac2052d55062779003b1a851231d9b453bd8cff2e4d177366f"
+  },
+  "support_5": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_v511_source1_zero_native_artifacts_v1/DW_kernel_metadata.json",
+    "bytes": 7099,
+    "sha256": "b8ee1f792b59a5d3aa4da70e005387cf65d138589e8f246826562082cf6e32ab"
+  },
+  "support_6": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_inline_zero_bank_history_bank0_transition_v1.json.cpu_outputs.bin",
+    "bytes": 1835008,
+    "sha256": "6e85c6fab4932294d6d8205472abd91b1734defa878c2a7fdc136443cff4d004"
+  },
+  "support_7": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_v1/configuration_ttmp_observer_v1.json",
+    "bytes": 9550,
+    "sha256": "50d45f928b46359404cb97443e586889d690ca3a407714244b14ff8d6ee90694"
+  },
+  "support_8": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_v1/repro_linear_dw_ttmp_observer_v1.py",
+    "bytes": 24233,
+    "sha256": "0c89862a5d95dcb9ef68f462693bf6d7a78e0446fbacb73b38d5b13e6a13f60b"
+  },
+  "support_9": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_v1/runtime_wrapper_ttmp_observer_v1.py",
+    "bytes": 6468,
+    "sha256": "4c4518b62afcec6670723496392beec40e61cc27d3ffc9ee8cb688111a30260e"
+  },
+  "support_10": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+    "bytes": 94391,
+    "sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d"
+  },
+  "support_11": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/audit_step405_linear_zero_failure_independent_v1.py",
+    "bytes": 25482,
+    "sha256": "93dcdc836a6f14bd6dc28228b0e1d52ba3dc93f5e7f38ece63ec7a5f09ddee3b"
+  },
+  "support_12": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_carrier_slots_CPU_v1/all32_store_metadata_slot_disjointness_independent_v1.json",
+    "bytes": 13016,
+    "sha256": "be3db80e8b0465874493d8a5648a6d0160effffb4847f7904fab7fd5ed387696"
+  },
+  "support_13": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_export_feasibility_CPU_v1/TTMP_export_exact_feasibility_certificate_v3.json",
+    "bytes": 26469,
+    "sha256": "1fb2c1d577cb3b536e62d8c708ea003a05692d40478bf815bc01f39b0f046198"
+  },
+  "support_14": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/freeze_package_v1.py",
+    "bytes": 3646,
+    "sha256": "35f70be2853153b1649ef842e618c1d4b034fd340134112edf01c42d24a87d27"
+  },
+  "support_15": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/launch_arm_inline_zero_bank_history_v1.py",
+    "bytes": 3532,
+    "sha256": "60df6df84c99488a28622295065a78aeb5c87efa91ebcf27fa33e29ec49b4aaa"
+  },
+  "support_16": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/launch_manifest_inline_zero_bank_history_v1.json",
+    "bytes": 35617,
+    "sha256": "a7be4943c4b3e36c6cebde56cb3af738987eeb54fdead16258d34cea7cccd3c0"
+  },
+  "support_17": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/required_native_packet_fields_v1.json",
+    "bytes": 597,
+    "sha256": "9ed1c4e03b6077c954df0bd58f00814d34812f76017f5212d70f60995497e568"
+  },
+  "support_18": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/review_frozen_package_root_v1.py",
+    "bytes": 3206,
+    "sha256": "64d42e8be4c1b13db136cc313b8abba5165312871afb85d0e571de0965def68d"
+  },
+  "support_19": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/run_CPU_preflights_v1.py",
+    "bytes": 1827,
+    "sha256": "7579c506d340e92b101a14fecda2f1a29ee8f00a3a0667917d71f0a93a439e8b"
+  },
+  "support_20": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/runtime_configuration_inline_zero_bank_history_v1.json",
+    "bytes": 10614,
+    "sha256": "7f27421aab9cbfc0e5bb981e974f956d88890837aeffb7fae01796e3f9b8b8ef"
+  },
+  "support_21": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/runtime_wrapper_inline_zero_bank_history_v1.py",
+    "bytes": 6362,
+    "sha256": "3569ae7ade39f49184d55ab15757d87b94e009c6b9edc723fcdc582dce280bc7"
+  },
+  "support_22": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/source_inventory_inline_zero_bank_history_v1.json",
+    "bytes": 374558,
+    "sha256": "fe93c97420c09e442cdc3ce3f0dbda7f9abac3e059ef46bbe072cced97931d70"
+  },
+  "support_23": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/verify_arm_inline_zero_bank_history_v1.py",
+    "bytes": 12550,
+    "sha256": "78335cfccf5f1cd5db8e6b75ffe0550bef5f4a58b1b6ce758e3c59ca26004664"
+  },
+  "support_24": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_pair_v1/verify_prefill_stream_v1.py",
+    "bytes": 3928,
+    "sha256": "767d7cb627ea72c9ec6de6740edf9d97e850dcb4182cdcd4dba7e27d4a498684"
+  },
+  "support_25": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_inline_zero_bank_history_terminal_donor_fit_v1/CPU_fitter_readiness_v1.json",
+    "bytes": 14502,
+    "sha256": "8ddab9567fbe15a257695cc27a6f8cf403e65c9e0b7709d84592f122848f74e7"
+  },
+  "support_26": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_design_v1/DW_ttmp_observer.elf",
+    "bytes": 335000,
+    "sha256": "61581ac29b22c6cb25e78c5406e9f6c687a1121a60fe72e16be1d47b7eff87e3"
+  },
+  "support_27": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_design_v1/TTMP_metadata_layout_v1.json",
+    "bytes": 10728,
+    "sha256": "aaafc81f28047cac2052d55062779003b1a851231d9b453bd8cff2e4d177366f"
+  },
+  "support_28": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_design_v1/TTMP_observer_patch_MC_encoding_v1.txt",
+    "bytes": 1437,
+    "sha256": "528f4d3c1c3c54a73c815155710a9e9fccfcae5c1b7e2e76d634da44dff2d7d9"
+  },
+  "support_29": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_design_v1/TTMP_observer_patch_v1.s",
+    "bytes": 601,
+    "sha256": "c2781ddc64aeb98a8e2b68e41b01c6a984aaea4c9483abf9885ae5d21468df6a"
+  },
+  "support_30": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_design_v1/prepare_ttmp_observer_candidate_v2.py",
+    "bytes": 8438,
+    "sha256": "818d2e89ba1dee83457a691bdb6bf2993e0bec46a3e6d2c32f27b38ad58173b8"
+  },
+  "support_31": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_design_v1/source1_control_fresh_disassembly_v1.s",
+    "bytes": 4287110,
+    "sha256": "2980e6c0081435144454fe30aaed2f911cb3eac9599b351cd4a1f3daa865ee29"
+  },
+  "support_32": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_design_v1/ttmp_observer_CPU_candidate_certificate_v1.json",
+    "bytes": 14153,
+    "sha256": "70b6f9a1f41cec3267038a412544afe854e404f28ba3736917419a16bfae4cfc"
+  },
+  "support_33": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_design_v1/ttmp_observer_fresh_disassembly_v1.s",
+    "bytes": 4286960,
+    "sha256": "4c913a8219d8f790b437a5c29be302da8b0719f5fee5bc355f1d32619a776786"
+  },
+  "support_34": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/CPU_ttmp_terminal_auditor_readiness_v1.json",
+    "bytes": 969431,
+    "sha256": "416158fd42526ce3e85afcb168e793eb0f62856c782dd81250d2f774e904078a"
+  },
+  "support_35": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/TTMP_terminal_auditors_CPU_preparation_certificate_v1.json",
+    "bytes": 12893,
+    "sha256": "baed2edeec0c742f40dd9dd5d115d139d7f4ac700e8589cc52e6b68a7254c958"
+  },
+  "support_36": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/audit_failure_v2.py",
+    "bytes": 33703,
+    "sha256": "319e9e023f4d6ec9db0f0e758a8e35520ef698b130690979a592ae4e233e0595"
+  },
+  "support_37": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/paired_route_mapping_v2.py",
+    "bytes": 8413,
+    "sha256": "f886065a83b6a7888312ab4b7f5d83809f48acbd3635d43f55d7e1fd64f9a9c5"
+  },
+  "support_38": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/prefill_stream_audit_v1.py",
+    "bytes": 4677,
+    "sha256": "11c3c0d8a6a0de20bbb8d758c168c0c6ea088f7ec3edfe2911e9f1ef1e1053f2"
+  },
+  "support_39": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/ttmp_audit_support_v1.py",
+    "bytes": 3715,
+    "sha256": "22049fc52f7e6a19cf2a7130a66f0fd2d3b162d0a7983b153a2999efabc204e3"
+  },
+  "support_40": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_failure_audit_v1/ttmp_terminal_auditor_derivation_v1.json",
+    "bytes": 5421,
+    "sha256": "c6162522d88094eaef9f12b2ef4769dfed6b37f125d5a9811401e4a8283c7177"
+  },
+  "support_41": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_root_review_v1/review_loader_root_v1.py",
+    "bytes": 5936,
+    "sha256": "543bde09ea03813106c072c9a971285a5614e070ca72fd1b870fcd64c2db2a16"
+  },
+  "support_42": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/bad_hash.trace.jsonl",
+    "bytes": 2483,
+    "sha256": "db6f71b944cb092d8cb0f50e4b64bd9dcf8a521128c48a63e16a24f8cedc05cc"
+  },
+  "support_43": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/bad_mode.trace.jsonl",
+    "bytes": 1043,
+    "sha256": "6d033f76c6d3fbfb7ccaa5a5fb41c72d705dd566de7a15c1ce911ddd6fc2af96"
+  },
+  "support_44": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/bypass.trace.jsonl",
+    "bytes": 5213,
+    "sha256": "613c037844a3e71539b0a7ca92d010d614848fb528a8370138d461001c5620c5"
+  },
+  "support_45": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/concurrent.trace.jsonl",
+    "bytes": 29682,
+    "sha256": "4d6c8294d2b3759702d7b311e8f6740d78506e4c62f74e371f352fa6d4dbf100"
+  },
+  "support_46": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/context_changed.trace.jsonl",
+    "bytes": 5207,
+    "sha256": "31efc1ec06aaf70c465e796e2bd6942ab7e625cd31a796602cac1d001604dea0"
+  },
+  "support_47": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/context_error.trace.jsonl",
+    "bytes": 2526,
+    "sha256": "29c0457c3cd4fcd988762eef6eed7fcb672ed0ea345e13972ae9bc32f78561ef"
+  },
+  "support_48": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/control_changed.trace.jsonl",
+    "bytes": 5206,
+    "sha256": "455efe5448b6e5aa92930378bbf2c52f219c522cb16e88252f8e84b2f6931c85"
+  },
+  "support_49": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/device_changed.trace.jsonl",
+    "bytes": 5207,
+    "sha256": "f6008f1505489949807c55d9b8335a1188e8c406893e5e4846086f1f8da67aab"
+  },
+  "support_50": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/device_error.trace.jsonl",
+    "bytes": 2526,
+    "sha256": "d7197274b7d26dac95ef6c31dead438afea5f7794ceb8a35ec04f3b355e7ad79"
+  },
+  "support_51": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/disabled.trace.jsonl",
+    "bytes": 8167,
+    "sha256": "13c030123a2a5685f9164b141d886688c8a2a0a4bc816bdd3bf7707028cbc395"
+  },
+  "support_52": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/env_changed.trace.jsonl",
+    "bytes": 5221,
+    "sha256": "5b3334d243f8d02f863e56754640aa023b5ecc71c12b8df83ecf679baad2a1a1"
+  },
+  "support_53": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/fork.trace.jsonl",
+    "bytes": 4137,
+    "sha256": "2f8f8115f5e31a018a13747ab3a9564c73cf4e78afe9fa4d769c36848d4dec8f"
+  },
+  "support_54": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/handle_changed.trace.jsonl",
+    "bytes": 6252,
+    "sha256": "5911e0f2d67111da161f203b26b94b3e2d7950127fc44ae1b14c4f17300b101b"
+  },
+  "support_55": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/load_alias.trace.jsonl",
+    "bytes": 2796,
+    "sha256": "6d5005b4bc9898f81d710a1873f68f1a4d89ebbf1e40a3f039486413c0774c9d"
+  },
+  "support_56": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/load_error.trace.jsonl",
+    "bytes": 2794,
+    "sha256": "a4de0720f97dc149fd42617a83a5376eb4fe4fc8187e857e48e712b49f96a298"
+  },
+  "support_57": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/load_mutates.trace.jsonl",
+    "bytes": 2798,
+    "sha256": "8d11e04031368b1ae6fa405100ed6ff8403006772fab243a76c08b649319d9a0"
+  },
+  "support_58": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/load_null.trace.jsonl",
+    "bytes": 2793,
+    "sha256": "beaae5588fb79f5ddd92dd81fbc573f1cca395165737e5d049cb011e75743b01"
+  },
+  "support_59": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/lookup_miss_then_success.trace.jsonl",
+    "bytes": 10140,
+    "sha256": "7beaec3ad88f0c043795b627553dae2a1082b3f08fc02a9503aa6249f59aa090"
+  },
+  "support_60": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/missing_file.trace.jsonl",
+    "bytes": 2090,
+    "sha256": "b96ff3d454c897c54c33c5dffae26fd5135c4aca75c19878cb106f3ece276de3"
+  },
+  "support_61": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/missing_mode.trace.jsonl",
+    "bytes": 1046,
+    "sha256": "3cd0141949d58f8c0c491a2137b595f82fae596c4ca0acea4a142e8c1044a9fa"
+  },
+  "support_62": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/missing_path.trace.jsonl",
+    "bytes": 1074,
+    "sha256": "1a6894ae12087c02c8f7c10345f5650caba77737c7a43bfb41d857d3ca96c984"
+  },
+  "support_63": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/missing_zero.trace.jsonl",
+    "bytes": 1070,
+    "sha256": "18a51d251a97465c14ff94ede6215a71f499e1207eda039a8d0eb59191929688"
+  },
+  "support_64": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/module_changed.trace.jsonl",
+    "bytes": 6252,
+    "sha256": "8cfe83026a3ae7699921c1f1181f7a85dc8e7870087684d90c5d5a6dc641442d"
+  },
+  "support_65": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/near_only.trace.jsonl",
+    "bytes": 2224,
+    "sha256": "b3c36716d372808908768bee809cb1f74078abbe5e0a78cd2a03ff9dfe487463"
+  },
+  "support_66": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/nonzero_autotune.trace.jsonl",
+    "bytes": 1069,
+    "sha256": "76664a8118c2c20d13278f97560172340b73cf98a742c40e88a3d72230ef6b28"
+  },
+  "support_67": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/nonzero_pipeline.trace.jsonl",
+    "bytes": 1072,
+    "sha256": "927c6b7bf562abb001c50cbf5fa31b384ef7baad5bcbc70380390ce03806cc47"
+  },
+  "support_68": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/old_original_mode_rejected.trace.jsonl",
+    "bytes": 1047,
+    "sha256": "11f0c02a818fc64e1bb23db0582f4973178b1fe071054e09e07e1a0906bc782c"
+  },
+  "support_69": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/original_error.trace.jsonl",
+    "bytes": 2142,
+    "sha256": "fedd86f1d2e7f9dc294a43878d0c1708a436457024af9525aef7ed3e7fc86a9c"
+  },
+  "support_70": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/original_null.trace.jsonl",
+    "bytes": 2110,
+    "sha256": "9c633ceeeae810aaaa6822132bfa90b13f76dd47064b3c01d41384324931aa83"
+  },
+  "support_71": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/projection_arm_spelling.trace.jsonl",
+    "bytes": 1050,
+    "sha256": "1976c8ef47dc5b02d960490645b21c56373c9fa42d647f242ae5b5ad1f61397c"
+  },
+  "support_72": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/reentrant.trace.jsonl",
+    "bytes": 2533,
+    "sha256": "431b034783e5345bb89de3e48f2830496f778e3c5ae3b981ff87860d08e7890d"
+  },
+  "support_73": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/replace_linear_dw_ttmp_observer_elf_v1.so",
+    "bytes": 139352,
+    "sha256": "5a9804863d1af4fd9df0497b22f4c4adc9209cfd0a7d063f503f1a5857cc52d0"
+  },
+  "support_74": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/replacement_alias.trace.jsonl",
+    "bytes": 3931,
+    "sha256": "54dd09f242625d91f5424bf22fcb36b21fa51b4d4167dc7fbb8f42e5e6febea7"
+  },
+  "support_75": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/replacement_get_error.trace.jsonl",
+    "bytes": 3927,
+    "sha256": "ce5a28c14abae4e3f8a062b11390d6582b0cecff0e33e7abb656f8b2d4259a50"
+  },
+  "support_76": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/replacement_null.trace.jsonl",
+    "bytes": 3926,
+    "sha256": "25407a654aebb2be1c5241875276b4a84d32a1d01c19e5edddfe5969b31475c1"
+  },
+  "support_77": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/report.json",
+    "bytes": 25017,
+    "sha256": "61e318e11cc78deb57bfebf3a845ab249fd0ddb99abbc07efc54e8506deabf38"
+  },
+  "support_78": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/reset.trace.jsonl",
+    "bytes": 5214,
+    "sha256": "05fed2cf074e2114f2e188c1a8bbee0fac742c916feaec19bd58369dd641e9cb"
+  },
+  "support_79": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/success_source1_control.trace.jsonl",
+    "bytes": 12542,
+    "sha256": "5ed052390dff6d318823b026b72235c85dd846f76dacc1fcce805cd451a8f83a"
+  },
+  "support_80": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/success_ttmp_observer.trace.jsonl",
+    "bytes": 12534,
+    "sha256": "682baae23d070a6e3659512469f8f2cf22eeec7da615d433f9b11a9d001b8d60"
+  },
+  "support_81": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/unload.trace.jsonl",
+    "bytes": 5205,
+    "sha256": "e64a80bcaf9abfc3fb1f1b070b2d9a9f95905954d2a98bcd6d87fcf944efb0ed"
+  },
+  "support_82": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/unmodified_original_ELF_rejected.trace.jsonl",
+    "bytes": 2493,
+    "sha256": "13ce2aba5cf0becbdef7b9ffbdbb14fe9101cca2995fc4976a0f7ca32fd63f8f"
+  },
+  "support_83": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/wrong_arm.trace.jsonl",
+    "bytes": 2503,
+    "sha256": "1b0550ade7b5d7fa84634993f286fd0e59202116cd2533b17e9aa6f0a2eb3809"
+  },
+  "support_84": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/wrong_arm_reverse.trace.jsonl",
+    "bytes": 2501,
+    "sha256": "8445b18f5f8ede1a6f5200aea353c4a67b9fef6c7f194f0568cbc6a11d24169a"
+  },
+  "support_85": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/CPU_loader_v1/wrong_size.trace.jsonl",
+    "bytes": 2111,
+    "sha256": "2e5289c204742726833ea5963df55975b2e4b93739fc03e075f2d43b95266328"
+  },
+  "support_86": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/certifier_exact_derivation_v1.diff",
+    "bytes": 5921,
+    "sha256": "46a31a70d68415043b3e2219865c64a35a25eb460bc0e87d4792f14f3b041b19"
+  },
+  "support_87": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/certify_ttmp_observer_loader_CPU_v1.py",
+    "bytes": 9712,
+    "sha256": "537d90175c635e9c6001aa918d77cb44482ac492b8b3c09ff6c5c4ce62f723df"
+  },
+  "support_88": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/certify_ttmp_observer_loader_CPU_v2.py",
+    "bytes": 9806,
+    "sha256": "6d37206d6077c42ef284bdbc534dd7cb382ede861319f81cc02713b2c08b2aca"
+  },
+  "support_89": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/loader_exact_derivation_v1.diff",
+    "bytes": 7040,
+    "sha256": "1cea96075927e2df0069d5643fde2040f3de5e2a164bd9f55831a8fa6cc30d16"
+  },
+  "support_90": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/prepare_ttmp_observer_loader_v1.py",
+    "bytes": 7213,
+    "sha256": "fdf2dd7e817fb9b506703c846b781be74859a607555c604556531760014fac70"
+  },
+  "support_91": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/replace_linear_dw_ttmp_observer_elf_v1.cpp",
+    "bytes": 13986,
+    "sha256": "276fe4a76c0c8c4f66be2374dd17410681fde6d1cccb9115477d2ca67ea3169c"
+  },
+  "support_92": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/test_exact_derivation_v1.diff",
+    "bytes": 12293,
+    "sha256": "660bfaaa3a6ae3083ebdf467c4f9e945a9f695da452aaa3c4982ed59537e8d7a"
+  },
+  "support_93": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/test_replace_linear_dw_ttmp_observer_elf_v1.py",
+    "bytes": 17900,
+    "sha256": "2a4fb593f479cd2ee24c39dfed5a36303a279290116d80a105729cea85ee6178"
+  },
+  "support_94": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/trace_projection_hip_launches_v2.cpp",
+    "bytes": 10647,
+    "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+  },
+  "support_95": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/ttmp_observer_compiled_loader_CPU_readiness_v2.json",
+    "bytes": 24247,
+    "sha256": "17794835a7d669f861304178797ae661f1cf07cd1fba1d44610dc28f3c13a70e"
+  },
+  "support_96": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_loader_v1/ttmp_observer_loader_source_derivation_v1.json",
+    "bytes": 9479,
+    "sha256": "71219cf1c7fc3a7c2abf9fbb72bb12573a00cedbbcbb0d44296408cf1b2e6580"
+  },
+  "support_97": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/CPU_runtime_preflight_v1.json",
+    "bytes": 19547,
+    "sha256": "3717d8165a42556e61ee8ead6964a8d5b9327ebca7526945781f2504be143604"
+  },
+  "support_98": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/freeze_package_v1.py",
+    "bytes": 3583,
+    "sha256": "7cdc87f525dbc2d756ade329d697fa2e9f9f38ce548e0d02849db9a8efc89289"
+  },
+  "support_99": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/freeze_package_v1.py.derivation.patch",
+    "bytes": 3582,
+    "sha256": "e7103f684be63abe3befe825063b24fd868a9afb37237a5f15ff6d7720c90711"
+  },
+  "support_100": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/launch_arm_ttmp_observer_v1.py",
+    "bytes": 3493,
+    "sha256": "ccaea45b138f2a1500610c0135c465e5df86dbc2a7110b9b5ebe2ea18d8c3081"
+  },
+  "support_101": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/launch_arm_ttmp_observer_v1.py.derivation.patch",
+    "bytes": 1861,
+    "sha256": "3223a04ef6c66683292498991a6234a1be711387330385d233bbfef072844940"
+  },
+  "support_102": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/launch_manifest_ttmp_observer_provisional_v1.json",
+    "bytes": 14009,
+    "sha256": "99ddbe94bd98beaa1797beaa7e7d840cfe6f599ec8bc329e59e3b0761b9b5c84"
+  },
+  "support_103": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/prepare_configuration_root_v1.py",
+    "bytes": 7831,
+    "sha256": "b6e6ba10ac4b3a87d66c209d11279d9de88acdcf4e37144775cf9ab662caf720"
+  },
+  "support_104": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/required_native_packet_fields_v1.json",
+    "bytes": 597,
+    "sha256": "9ed1c4e03b6077c954df0bd58f00814d34812f76017f5212d70f60995497e568"
+  },
+  "support_105": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/review_frozen_package_root_v1.py",
+    "bytes": 3163,
+    "sha256": "7e33502b6e5f1a5c0bd088b6aee7dfff39e39dc49f39a88061a8d6115e9bfbd4"
+  },
+  "support_106": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/review_frozen_package_root_v1.py.derivation.patch",
+    "bytes": 1662,
+    "sha256": "3105f1e6237551ab2a237e6aeabea206da88272a9744378a12a0fc7c1294f396"
+  },
+  "support_107": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/root_runtime_source_derivation_v1.json",
+    "bytes": 3786,
+    "sha256": "ea7443949baf7b781fe6f36d612fa065cffb544880d9b545323857e7124e123f"
+  },
+  "support_108": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/run_CPU_preflights_v1.py",
+    "bytes": 1767,
+    "sha256": "d5ee4b17ea2f0f2af4875eb5a35e8caa60f6f271669195eb0874a2159d396413"
+  },
+  "support_109": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/run_CPU_preflights_v1.py.derivation.patch",
+    "bytes": 2527,
+    "sha256": "bc806a7349fa1fc8e828003b4ff5a7ee3c3029a22329a841ef633f11658fec16"
+  },
+  "support_110": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/runtime_configuration_derivation_root_v1.json",
+    "bytes": 5955,
+    "sha256": "05b9da44f56f4eec209c7855d7aa5f13e536f9be9674c6874557c1901fe1575d"
+  },
+  "support_111": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/runtime_configuration_ttmp_observer_v1.json",
+    "bytes": 9550,
+    "sha256": "50d45f928b46359404cb97443e586889d690ca3a407714244b14ff8d6ee90694"
+  },
+  "support_112": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/runtime_wrapper_ttmp_observer_v1.py",
+    "bytes": 6468,
+    "sha256": "4c4518b62afcec6670723496392beec40e61cc27d3ffc9ee8cb688111a30260e"
+  },
+  "support_113": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/runtime_wrapper_ttmp_observer_v1.py.derivation.patch",
+    "bytes": 4203,
+    "sha256": "5470195363a67816df42c7eb2f527e0bc571478d8a178e1ada8df35ed33abf52"
+  },
+  "support_114": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/ttmp_native_metadata_root_v1.py",
+    "bytes": 2225,
+    "sha256": "cceafbab4ab6b88da280c05e216f1b68cf5a6129aa6c0f7bda0a27d68be10c39"
+  },
+  "support_115": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/verify_arm_ttmp_observer_v1.py",
+    "bytes": 13333,
+    "sha256": "5fa0f7b3f3a3c4b80766f9d59a36d6db54ec5b074f1c64422db03f36d1f4078c"
+  },
+  "support_116": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/verify_arm_ttmp_observer_v1.py.derivation.patch",
+    "bytes": 7335,
+    "sha256": "8158cd30e86fa9e612eaf9a89dffb6ffb84d5b105b958937f0aec636bae6d8c7"
+  },
+  "support_117": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/verify_prefill_stream_v1.py",
+    "bytes": 3928,
+    "sha256": "767d7cb627ea72c9ec6de6740edf9d97e850dcb4182cdcd4dba7e27d4a498684"
+  },
+  "support_118": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_peer_v1/TTMP_observer_independent_candidate_review_v1.json",
+    "bytes": 11901,
+    "sha256": "0ff5a0b072450790513aa3b4715cf83f3b8e4c0529fbfdd2403caa051270612b"
+  },
+  "support_119": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_peer_v1/baseline_fresh_independent_disassembly_v1.s",
+    "bytes": 4287110,
+    "sha256": "2980e6c0081435144454fe30aaed2f911cb3eac9599b351cd4a1f3daa865ee29"
+  },
+  "support_120": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_peer_v1/candidate_fresh_independent_disassembly_v1.s",
+    "bytes": 4286960,
+    "sha256": "4c913a8219d8f790b437a5c29be302da8b0719f5fee5bc355f1d32619a776786"
+  },
+  "support_121": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_peer_v1/independent_MC_sequence_encoding_v1.txt",
+    "bytes": 1437,
+    "sha256": "528f4d3c1c3c54a73c815155710a9e9fccfcae5c1b7e2e76d634da44dff2d7d9"
+  },
+  "support_122": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_peer_v1/independent_MC_sequence_source_v1.s",
+    "bytes": 466,
+    "sha256": "1b0f5fa0987be4ca967aade712db291e2dcf5a1b98badc4771d27015a56e839d"
+  },
+  "support_123": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_peer_v1/review_candidate_independent_v1.py",
+    "bytes": 15422,
+    "sha256": "620dc1c8c074e075b1c8e88078f63482c9a21914e269f631c2a835ba513099dc"
+  },
+  "support_124": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_peer_v1/review_exact64_metadata_interface_v1.py",
+    "bytes": 4116,
+    "sha256": "6640d9db627b315398b372d54f1dcfb58427b13f02bcca6a01bdc5cfe81446bd"
+  },
+  "support_125": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_peer_v1/TTMP_producer_independent_source_function_review_v1.json",
+    "bytes": 7287,
+    "sha256": "2d109abc284cdd6d70fff7ef266d3d3b1983d21ec914d73eeba38b187251f1d9"
+  },
+  "support_126": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_peer_v1/review_producer_source_and_functions_v1.py",
+    "bytes": 14181,
+    "sha256": "9f0a8a165ac963f6c6615800dfffdd51ce6fd271cb84a8d51dd892a38e52e009"
+  },
+  "support_127": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_peer_v1/review_retained_CPU_evidence_v1.py",
+    "bytes": 8341,
+    "sha256": "976ab3204f110b4b383cbe133d0515ab5b1ed477421a17e9df4bf8ab3985519e"
+  },
+  "support_128": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_v1/CPU_boundary_tests_v1/CPU_boundary_test_report_v1.json",
+    "bytes": 18766,
+    "sha256": "ab6b757276097a14ba922f33c78e59c9a541be44a3f6316f5a7e0c07e732d37d"
+  },
+  "support_129": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_v1/CPU_boundary_tests_v1/CPU_mock_complete_output.bin",
+    "bytes": 262144,
+    "sha256": "ffce3c0fb04ff51a6e372a53f836a514cc71c18e87b2d7a9b1150fef3b245acf"
+  },
+  "support_130": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_v1/CPU_boundary_tests_v1/CPU_mock_complete_prefill.bin",
+    "bytes": 262144,
+    "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+  },
+  "support_131": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_v1/certify_ttmp_producer_CPU_v1.py",
+    "bytes": 7109,
+    "sha256": "9ad02113437ea3db864f4e4fb3400e5e4700274111e25974ce91e93271dfec41"
+  },
+  "support_132": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_v1/repro_linear_dw_ttmp_observer_v1.py",
+    "bytes": 24233,
+    "sha256": "0c89862a5d95dcb9ef68f462693bf6d7a78e0446fbacb73b38d5b13e6a13f60b"
+  },
+  "support_133": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_v1/test_ttmp_producer_CPU_v1.py",
+    "bytes": 15306,
+    "sha256": "2ba310eabd693ef0ad5e4125130f377810c95ae2f692f0f687574a9333de3a0b"
+  },
+  "support_134": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_producer_v1/ttmp_observer_producer_source_derivation_v1.json",
+    "bytes": 15883,
+    "sha256": "3bdec79653db1b88ce9b8182d26c404958fba1d2287ceed9bd476e4d5e774ad9"
+  },
+  "support_135": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_peer_v1/review_root_runtime_static_v1.py",
+    "bytes": 8242,
+    "sha256": "59fa0e25fde9ef03cdd2e5d332bf01405c81d48c3bf8de3e89ec75c382693693"
+  },
+  "support_136": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_peer_v1/root_native_metadata_CPU_equivalence_v1.json",
+    "bytes": 109068,
+    "sha256": "97d52b8943cd61013410982e6b6428a237e9d468d7a9e6ef7e893a8ba3db95c2"
+  },
+  "support_137": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_runtime_peer_v1/test_root_native_metadata_CPU_v1.py",
+    "bytes": 14089,
+    "sha256": "ee27634d44e5238f7c3584ec123ba2a06b32c32ef658421e71a2ac65b08a8e1d"
+  },
+  "support_138": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/TTMP_independent_record_reader_CPU_readiness_v1.json",
+    "bytes": 3171,
+    "sha256": "52c448ad4ac4b7d0ef0e898324eb09a7df84a7bc057fc76f5bc799378043fc5d"
+  },
+  "support_139": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/audit_terminal_stream_independent_v1.py",
+    "bytes": 19106,
+    "sha256": "7ff2eca71b7bef4dcf4b97315fb5403d20d8a63ac76087d640e9483aa73dce59"
+  },
+  "support_140": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/inspect_ttmp_record_independent_v1.py",
+    "bytes": 14267,
+    "sha256": "e4e2addfcb4d6a0583c9b4e5ae87145f16c5e13b5cc578d0c4bf12a890ab624a"
+  },
+  "support_141": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/join_source_wave_metadata_independent_v1.py",
+    "bytes": 10464,
+    "sha256": "2e4fd548353f0c99c8328bc35f2d0ca59794c5131d8a4476422ef0c5cb3838de"
+  },
+  "support_142": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_terminal_donor_fit_v1/CPU_fitter_readiness_v1.json",
+    "bytes": 1160,
+    "sha256": "40401a0eee9a9135c8ac6c9689205eea955b9380adc7acf860b65b19171da95f"
+  },
+  "support_143": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_terminal_donor_fit_v1/fit_terminal_donor_products_v1.py",
+    "bytes": 30225,
+    "sha256": "dab158874c0ff617988690f11760a367e27970b14f6d9522806d21d7455d4fa0"
+  },
+  "support_144": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_actual_X_product_domain_v1/actual_X_product_domain_v1.json",
+    "bytes": 217440,
+    "sha256": "d6edda9669f5257e64e5afc5b53032a944aa5a5b963f3fb5162f987ea9b0292b"
+  },
+  "support_145": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_pair_design_v1/same_invocation_v128_to_v131_pairs_v1.json",
+    "bytes": 1570035,
+    "sha256": "2681d32eca89c9be1e7c46e5e3ca0a4b3471a6fce5ac514637e02c947e74e4ef"
+  },
+  "support_146": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_design_v1/DW_v511_source1_zero.elf",
+    "bytes": 335000,
+    "sha256": "aca1aa60c441b019361099553232f5c011aad1d053505b9cad69d45348851faf"
+  },
+  "support_147": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_loader_peer_v1/v511_source1_zero_loader_independent_review_v1.json",
+    "bytes": 22663,
+    "sha256": "3512242e2d72cb32b040a3a06236f0e2bf68314c649936589969e9b4d049df2c"
+  },
+  "support_148": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_loader_v1/certify_v511_source1_zero_loader_CPU_v1.py",
+    "bytes": 9691,
+    "sha256": "141188177861a8bec34aa8e2b902eb99440d5e34841b45b7e76f9cdfcdd53443"
+  },
+  "support_149": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_loader_v1/replace_linear_dw_v511_source1_zero_elf_v1.cpp",
+    "bytes": 14032,
+    "sha256": "a1038ce1e14535448f77717bcdcffb4a5db365c7771c709f3e04711b7fb2baea"
+  },
+  "support_150": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_loader_v1/test_replace_linear_dw_v511_source1_zero_elf_v1.py",
+    "bytes": 17987,
+    "sha256": "0f2eb06f2461bc32ca13ae79845e49ba8e30304c43de142afdbb06dce839ee39"
+  },
+  "support_151": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_loader_v1/v511_source1_zero_compiled_loader_CPU_readiness_v1.json",
+    "bytes": 24416,
+    "sha256": "cfa562cc0c6ea1c83938def676f77995efb6b04c310af65c547e1fbb43a9b031"
+  },
+  "support_152": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_loader_v1/v511_source1_zero_loader_source_derivation_v1.json",
+    "bytes": 9361,
+    "sha256": "7c7e8505eb3b62e1e0ad5245b9a2206324608030585f7249b85f4a975319a93b"
+  },
+  "support_153": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_neighbor_reroute_peer_v1/neighbor_zero_lifetime_and_products_independent_review_v1.json",
+    "bytes": 13372,
+    "sha256": "735e92bf4e9923044f62a5cc86ba6217004154c84fe25911875c53431fda9966"
+  },
+  "support_154": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_accumulator_export_v1/accumulator_even_CPU_static_certificate_v1.json",
+    "bytes": 142233,
+    "sha256": "1046d20d65e824161b98a8e3d5fe514e73c068385f7f64f51f7c263e40c8ff72"
+  },
+  "support_155": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_mechanism_v1/raw_export_exact_packet_path_and_EXEC_v2.json",
+    "bytes": 397752,
+    "sha256": "779bb760f8cdbebb55cd33e67422f75a16aa1cfa877611f9b4f365d55c1fa78d"
+  },
+  "support_156": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v1/installed_native_files/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+    "bytes": 60748,
+    "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+  },
+  "support_157": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v1/installed_native_files/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib",
+    "bytes": 2687,
+    "sha256": "8ac6594e0e67b351b853ee679d815acbf79f3fb138c789ce7d225ce9f67e5d59"
+  },
+  "support_158": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v1/installed_native_files/TensileLibrary_lazy_gfx1250.dat.zlib",
+    "bytes": 4746,
+    "sha256": "908c9fb056975e44f27aa675238e7a5751943f50f1bb0312c05f33337f5fa402"
+  },
+  "support_159": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v1/installed_native_files/TensileLiteLibrary_lazy_gfx1250_Mapping.dat.zlib",
+    "bytes": 1588,
+    "sha256": "139f25bb1441ed65f381ce5ded3c45ec0586b2e75e375552dc4b83bc443f46eb"
+  },
+  "support_160": {
+    "path": "/home/chcai/training/recommendation/scripts/audit_training_arithmetic_bounds.py",
+    "bytes": 16614,
+    "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5"
+  },
+  "support_161": {
+    "path": "/home/chcai/training/recommendation/scripts/audit_training_gradient_flow.py",
+    "bytes": 25133,
+    "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c"
+  },
+  "support_162": {
+    "path": "/home/chcai/training/recommendation/scripts/nan_backward_boundaries.py",
+    "bytes": 31280,
+    "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44"
+  },
+  "support_163": {
+    "path": "/home/chcai/training/recommendation/scripts/replay_additional_linear_capture.py",
+    "bytes": 37139,
+    "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f"
+  },
+  "support_164": {
+    "path": "/home/chcai/training/recommendation/scripts/replay_backward_boundary.py",
+    "bytes": 47094,
+    "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970"
+  },
+  "support_165": {
+    "path": "/home/chcai/training/recommendation/scripts/replay_hstu_output_boundary.py",
+    "bytes": 31162,
+    "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01"
+  },
+  "support_166": {
+    "path": "/home/chcai/training/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+    "bytes": 7068,
+    "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+  },
+  "support_167": {
+    "path": "/home/chcai/training/recommendation/scripts/stress_addmm_backward_boundary.py",
+    "bytes": 37705,
+    "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb"
+  },
+  "support_168": {
+    "path": "/home/chcai/training/recommendation/scripts/stress_hstu_output_boundary.py",
+    "bytes": 24294,
+    "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12"
+  },
+  "support_169": {
+    "path": "/home/chcai/training/recommendation/scripts/trace_projection_hip_launches_v2.cpp",
+    "bytes": 10647,
+    "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+  },
+  "source_freeze_sha256": "f196efe9132072a40828d3b39b665e4f71666a906aa46f2856d290b7036231aa",
+  "source_file_count": 1697,
+  "source_inventory": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/source_inventory_ttmp_observer_v1.json",
+    "bytes": 428116,
+    "sha256": "884f0a4cc9ebd5ed164d3a6337b1b7910ff68070ee3c467ce17980e400721bad"
+  },
+  "archive": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/sources_and_artifacts_ttmp_observer_v1.tar.gz",
+    "bytes": 32439911,
+    "sha256": "df3d78e27c8ab74863ea148d5d6cd70e3e2676d2736da69ed3ba61f8601a75c5"
+  },
+  "archive_file_count": 1696,
+  "archive_excluded_large_files": [
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+      "bytes": 3570835225,
+      "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+    }
+  ],
+  "inherited_source_count": 1486,
+  "freeze_inputs": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_pair_v1/freeze_inputs_v1.json",
+    "bytes": 72138,
+    "sha256": "1048ccd0890cebd3e8a8b599fe6b94b59eefa2c4e2d55729bb7780203987798e"
+  }
+}

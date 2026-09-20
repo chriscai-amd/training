@@ -1,0 +1,1933 @@
+{
+  "format": "A0_session_resume_summary_20260919_v3",
+  "created_utc": "2026-09-19T21:07:56.944104+00:00",
+  "repo_head": "191adbccd350a427d44192f9c3005f64681f938f",
+  "commit_or_push_performed": false,
+  "training1000": {
+    "terminal": {
+      "requested": 1000,
+      "completed": 1000,
+      "trainer_exit": 42,
+      "window": 27,
+      "batch": 105
+    },
+    "seconds": 3396.572706032006,
+    "final_capture": {
+      "payload": "/data/mlperf_dlrm_v4/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_1000_v1/boundaries/linear-deferred-166143-1789809794573130348-s1000-finite.pt",
+      "bytes": 38556889443,
+      "sha256": "03fc40da8ed904b4dbfc938fcb771e70b48d54d224bfebe5e34f85c9f6a2ea6e",
+      "attempt": {
+        "mode": "training",
+        "repeat": 0,
+        "step": 1000
+      },
+      "trigger": null,
+      "totals": {
+        "logical_views": 534,
+        "storages": 466,
+        "nonfinite_views": 0,
+        "extreme_views": 0,
+        "input_bytes_exact": true,
+        "gradient_bytes_exact": true
+      }
+    },
+    "gradient_transition_count": 8,
+    "input_pair_count": 6,
+    "scalar_stages": {
+      "endpoint_to_batch": {
+        "rows": 367,
+        "nan_aware_mismatches": 0,
+        "raw_FP64_comparable_rows": 367,
+        "raw_FP64_mismatches": 0
+      },
+      "batch_to_returned": {
+        "rows": 367,
+        "nan_aware_mismatches": 0,
+        "raw_FP64_comparable_rows": 367,
+        "raw_FP64_mismatches": 0
+      },
+      "returned_to_native_summary": {
+        "rows": 367,
+        "nan_aware_mismatches": 0,
+        "raw_FP64_comparable_rows": 367,
+        "raw_FP64_mismatches": 0
+      },
+      "returned_to_final_summary": {
+        "rows": 367,
+        "nan_aware_mismatches": 0,
+        "raw_FP64_comparable_rows": 367,
+        "raw_FP64_mismatches": 0
+      },
+      "final_dense_CPU_to_endpoint": {
+        "rows": 138,
+        "nan_aware_mismatches": 0,
+        "raw_FP64_comparable_rows": 138,
+        "raw_FP64_mismatches": 0
+      },
+      "final_dense_CPU_to_batch": {
+        "rows": 138,
+        "nan_aware_mismatches": 0,
+        "raw_FP64_comparable_rows": 138,
+        "raw_FP64_mismatches": 0
+      },
+      "final_dense_CPU_to_returned": {
+        "rows": 138,
+        "nan_aware_mismatches": 0,
+        "raw_FP64_comparable_rows": 138,
+        "raw_FP64_mismatches": 0
+      },
+      "final_dense_CPU_to_native_summary": {
+        "rows": 138,
+        "nan_aware_mismatches": 0,
+        "raw_FP64_comparable_rows": 138,
+        "raw_FP64_mismatches": 0
+      }
+    },
+    "CPU_same_observation_scalar_rows": 163,
+    "unmapped_scalar_rows": 204,
+    "native": {
+      "begin_return_pairs": 57000,
+      "solution102": 14000,
+      "solution103": 0,
+      "unique_complete_pointer_match": 56990,
+      "pid": 166143,
+      "M_N_K": [
+        256,
+        512,
+        2338476
+      ]
+    },
+    "selected_Linear_DW": {
+      "pid": 166143,
+      "launch_id": 56990,
+      "kernel": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1",
+      "pointers": {
+        "A": "0x71b920543400",
+        "B": "0x71be26646400",
+        "D": "0x72012c4e8600",
+        "C": "0x72012c4e8600"
+      },
+      "all_ABCD_matches_in_complete_trace": 1,
+      "output_pointer_only_matching_launch_ids": [
+        56986,
+        56990
+      ],
+      "fields": {
+        "Gemm info": 1,
+        "kernel info0": 1,
+        "kernel info1": 1073807361,
+        "numWG": 256,
+        "SizesFree0": 256,
+        "SizesFree1": 512,
+        "SizesFree2": 1,
+        "SizesSum0": 2338476,
+        "D": "0x72012c4e8600",
+        "C": "0x72012c4e8600",
+        "A": "0x71b920543400",
+        "B": "0x71be26646400",
+        "strideD0": 256,
+        "strideD1": 0,
+        "strideC0": 256,
+        "strideC1": 0,
+        "strideA0": 256,
+        "strideA1": 0,
+        "strideB0": 512,
+        "strideB1": 0,
+        "alpha": 1.0,
+        "beta": 0.0,
+        "AddressScaleAlphaVec": "0x0",
+        "bias": "0x0",
+        "biasType": 0,
+        "StrideBias": 0,
+        "activationAlpha": 0.0,
+        "activationBeta": 0.0,
+        "activationType": 0,
+        "batchOffsetD": 0,
+        "batchOffsetC": 0,
+        "batchOffsetA": 0,
+        "batchOffsetB": 0
+      },
+      "grid_or_global": [
+        16384,
+        1,
+        1
+      ],
+      "block_or_local": [
+        64,
+        1,
+        1
+      ],
+      "packet_sha256": "5dcb8fbe57d4a887e8506961b45986beb2fcaefdeef44471266cf581bee09be2"
+    },
+    "comparison_limits": [
+      "Prior failing run saved finite frame at step1; passing run at step1000.",
+      "Passing launch additionally enables native LD_PRELOAD tracing and private catalog verification/wrapper.",
+      "No strict catalog-only A/B or 3000-step uninstrumented result.",
+      "Whole 38.56GB payload scan/hash delegated to pinned root certificate; not repeated here.",
+      "Saved final frame is after backward before clipping and explicit step1000 optimizer; termination independently establishes optimizer completion.",
+      "Finite raw tensors and exact delivery are not an exact arithmetic reference for DW.",
+      "Core join zip lacks its own decoded-length assertion; actual 14000-length artifact was checked independently, so no current-result defect."
+    ]
+  },
+  "health": {
+    "format": "a0_cpu_oracle_gather_health_v1",
+    "status": "passed",
+    "started_unix": 1789848382.2109003,
+    "torch": "2.11.0+rocm7.14.0a20260625",
+    "hip": "7.14.60850",
+    "source_sha256": "f3a4bd36399d8424ca228d34d5ed825a32d70cf2800eb278a3d9add7d6f0d942",
+    "rows": 2347656,
+    "requests": 16384,
+    "repeats": 1000,
+    "seed": 11,
+    "source_rule": "float32(row) + float32(column)/4; exact at these sizes",
+    "source_device": "cpu",
+    "index_device": "cpu",
+    "oracle_device": "cpu",
+    "environment": {
+      "LD_PRELOAD": "",
+      "CUDA_VISIBLE_DEVICES": null,
+      "HIP_VISIBLE_DEVICES": null,
+      "ROCR_VISIBLE_DEVICES": null,
+      "AMDGCN_USE_BUFFER_OPS": "0",
+      "TRITON_FULL_AUTOTUNE": "0",
+      "TRITON_ALLOW_PIPELINING": "0"
+    },
+    "arms": [
+      {
+        "width": 16,
+        "mode": "gather",
+        "status": "passed",
+        "checks_completed": 1000,
+        "source_initial_readback_exact": true,
+        "attempted_call": 1000,
+        "source_final_readback_exact": true,
+        "elapsed_s": 0.36389239599975554
+      },
+      {
+        "width": 16,
+        "mode": "index_select",
+        "status": "passed",
+        "checks_completed": 1000,
+        "source_initial_readback_exact": true,
+        "attempted_call": 1000,
+        "source_final_readback_exact": true,
+        "elapsed_s": 0.3376045619997967
+      },
+      {
+        "width": 4,
+        "mode": "gather",
+        "status": "passed",
+        "checks_completed": 1000,
+        "source_initial_readback_exact": true,
+        "attempted_call": 1000,
+        "source_final_readback_exact": true,
+        "elapsed_s": 0.3124428419996548
+      },
+      {
+        "width": 4,
+        "mode": "index_select",
+        "status": "passed",
+        "checks_completed": 1000,
+        "source_initial_readback_exact": true,
+        "attempted_call": 1000,
+        "source_final_readback_exact": true,
+        "elapsed_s": 0.2739101880006274
+      }
+    ],
+    "finished_unix": 1789848383.7717338
+  },
+  "DW_B_reuse_experiment": {
+    "execution_order": [
+      "original_fail75",
+      "b_reuse_off_pass1000",
+      "original_return_fail561",
+      "b_reuse_off_repeat_fail154"
+    ],
+    "static_ELF_review": {
+      "status": "INDEPENDENT_CPU_STATIC_AND_41_MOCK_CASES_PASS",
+      "GPU_work_performed": false,
+      "ELF_patch": {
+        "changed_bytes": 280,
+        "changed_bits": 280,
+        "static_WMMA_count": 320,
+        "instruction_count": 46658,
+        "mutation": "Only original matrix_b_reuse WMMA first-word bit 14 cleared; all other bytes, decoded operands, instruction addresses preserved.",
+        "original": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_artifacts_v1/DW_original.elf",
+          "bytes": 335000,
+          "sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3"
+        },
+        "derived": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_artifacts_v1/DW_B_reuse_off.elf",
+          "bytes": 335000,
+          "sha256": "d57129bfbd851f78ba148a2af82d0379704e3e3c2e5ef85190f8b4ecc8091a33"
+        },
+        "fresh_decoder": {
+          "path": "/opt/rocm-10.1.0a20260811/lib/llvm/bin/llvm-objdump",
+          "bytes": 1157640,
+          "sha256": "4b6823f059b07f8683be319361e349159ee0c7029d98f0b0cf4fb69fec7ff30e"
+        }
+      },
+      "loader_source_exact_projection_normalization": true,
+      "DW_metadata_symbol_matches": true,
+      "declared_argument_bytes": 172,
+      "aligned_argument_bytes": 176,
+      "container_built_loader": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_CPU_v1/replace_linear_dw_native_elf_v1.so",
+        "bytes": 139120,
+        "sha256": "deea178e8158746ff70a2b2ffaa3225d4e30c3be8a7296b120955604204ce22f"
+      },
+      "loader_dependencies": [
+        "libcrypto.so.3",
+        "libstdc++.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ],
+      "independent_CPU_mock_report": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_CPU_independent_v1/report.json",
+        "bytes": 24334,
+        "sha256": "e6f4fadd64c719554bda093f23f1251650ccf64ad52e4c8e8fd18d9f78626b13"
+      },
+      "source_inventory": {
+        "replace_linear_dw_native_elf_v1.cpp": {
+          "path": "/home/chcai/training/recommendation/scripts/replace_linear_dw_native_elf_v1.cpp",
+          "bytes": 13810,
+          "sha256": "0a86b9b9df1c36fa740377c359dcb5ca3bb686f4f6f9db45bfa432c7d9401add"
+        },
+        "test_replace_linear_dw_native_elf_v1.py": {
+          "path": "/home/chcai/training/recommendation/scripts/test_replace_linear_dw_native_elf_v1.py",
+          "bytes": 17519,
+          "sha256": "5a395cd399739394c82f65555a80f6ddc6308a9f9715bd29dec71abe9ebe1546"
+        },
+        "trace_projection_hip_launches_v2.cpp": {
+          "path": "/home/chcai/training/recommendation/scripts/trace_projection_hip_launches_v2.cpp",
+          "bytes": 10647,
+          "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+        },
+        "repro_linear_dw_saved_orientation.py": {
+          "path": "/home/chcai/training/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+          "bytes": 7068,
+          "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+        }
+      },
+      "limits": [
+        "No GPU module load/execution or device instruction observation in this review.",
+        "B-zero CFG/reaching definitions are not proved by reuse-bit patch audit.",
+        "Paired launcher/provenance must still be frozen by root before GPU scheduling."
+      ]
+    },
+    "full_CPU_failure_certificates": [
+      {
+        "arm": "original",
+        "iteration": 75,
+        "full_CPU_certificate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/original_full_failure_v1.json",
+          "bytes": 119311,
+          "sha256": "71da265c05e7be308a7a82266eec4ddea8da5e5e0a2755eaf2e7c4d9350d31d5"
+        },
+        "terminal": {
+          "arm": "original",
+          "started_utc": "2026-09-19T20:10:13.227387+00:00",
+          "finished_utc": "2026-09-19T20:11:25.715991+00:00",
+          "exit_code": 1,
+          "process_wait_completed": true,
+          "log_sha256": "7c249ea235935b683b646b1e6b1c2aa1efa0d6f1fcd217171bbe9eee694f0d9c"
+        },
+        "inputs": {
+          "x": {
+            "shape": [
+              2324351,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ],
+            "original_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "prepared_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "current_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "all_backing_bytes_verified": true
+          },
+          "mat2": {
+            "shape": [
+              256,
+              512
+            ],
+            "stride": [
+              1,
+              256
+            ],
+            "original_sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+            "prepared_sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+            "current_sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+            "all_backing_bytes_verified": true
+          },
+          "dy": {
+            "shape": [
+              2324351,
+              512
+            ],
+            "stride": [
+              512,
+              1
+            ],
+            "original_sha256": "8982a8bba7aa6ae843a589a2ff671d3b62adb2a9359609c1988e8cfcdf1cecea",
+            "prepared_sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+            "current_sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+            "all_backing_bytes_verified": true
+          }
+        },
+        "zero_DY_positive_zero_elements": 1190067712,
+        "full_raw_DW_statistics": {
+          "elements": 131072,
+          "positive_zero_count": 130560,
+          "negative_zero_count": 0,
+          "nonzero_including_nonfinite_count": 512,
+          "nonfinite_count": 0,
+          "infinity_count": 0,
+          "nan_count": 0,
+          "subnormal_count": 7,
+          "extreme_count": 0,
+          "max_abs_finite": 3.75556339155511e-33,
+          "unique_raw_bitpatterns": 464
+        },
+        "wrong_columns": [
+          2,
+          66
+        ],
+        "wrong_row_count": 256,
+        "native_launches": 75,
+        "trace": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_original_workspace1_argtrace1000_v1_hip.jsonl",
+          "bytes": 137014,
+          "sha256": "2c5bf1c0cce70d8ff3c6b573e1f6d7404ad9e4cec8a808a790290de019830b21",
+          "stable_during_wholefile_read": true
+        },
+        "owned_ELF": {
+          "pid": 372,
+          "monotonic_ns": 6380931567477,
+          "event": "native_override_image_verified",
+          "mode": "original",
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/DW_native_override_artifacts_v1/DW_original.elf",
+          "bytes": 335000,
+          "sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3",
+          "required_sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3",
+          "matches": true
+        },
+        "failure_artifacts": {
+          "manifest": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v1/launch_manifest_v1.json",
+            "bytes": 12872,
+            "sha256": "17548f4f482bdbfb78af3855db243059b8e7324db97549b8e0f1896afe33630c",
+            "stable_during_wholefile_read": true
+          },
+          "configuration": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_pair_v1_runtime/configuration_v1.json",
+            "bytes": 8661,
+            "sha256": "43613f09a43c11bc5af27879b8c44267a57eaf398cf27123a7f0f8cfb3dff8ad",
+            "stable_during_wholefile_read": true
+          },
+          "failure": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_original_workspace1_argtrace1000_v1_failure.pt",
+            "bytes": 10712109223,
+            "sha256": "75a89f72bf85a441464379ab094b516a473c07b508a16830c2a3bbabb33158f4",
+            "stable_during_wholefile_read": true
+          },
+          "report": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_original_workspace1_argtrace1000_v1.json",
+            "bytes": 420756,
+            "sha256": "5de13cfe837686d576e0e0d5c51d07365c175dbafde8506441a5c0af3e35ebc8",
+            "stable_during_wholefile_read": true
+          },
+          "original": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+            "bytes": 3570835225,
+            "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a",
+            "stable_during_wholefile_read": true
+          },
+          "coordinates": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/original_wrong_coordinates_v1.json",
+            "bytes": 137503,
+            "sha256": "f71341e9bd1e7f3bc37f8aec01e539f06f0ed2dbe2317e7a5f76d2654a80dee6",
+            "stable_during_wholefile_read": true
+          },
+          "environment": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_original_workspace1_argtrace1000_v1_environment.json",
+            "bytes": 12833,
+            "sha256": "eb58b8fd50454066dd5337bb470457bacab34aa79d8aa326033a0facfeda99ea",
+            "stable_during_wholefile_read": true
+          },
+          "libraries": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_original_workspace1_argtrace1000_v1_libraries.json",
+            "bytes": 2081,
+            "sha256": "0e6e808a4ae7d122ebad2d6e9c21691e52e895d012df82944751f1d4ccbe81b6",
+            "stable_during_wholefile_read": true
+          }
+        },
+        "limits": [
+          "Finite retained X and exact-zero DY require numerical zero DW; subnormals are counted from raw BF16 bits.",
+          "Complete retained backing hashes and exact original/prepared/current equality do not certify transient internal device operand reads.",
+          "The frozen payload has no resident GPU data pointers. Complete packets and one-launch-per-call chronology associate the terminal call; no tensor-pointer address join is claimed.",
+          "A positive failure proves B-reuse hints unnecessary only in a verified b_reuse_off arm; passing intermittent arms alone do not prove a fix.",
+          "Original versus modified ELF differs in the frozen patch; this auditor verifies owned image identity, not a specific corrupting instruction."
+        ]
+      },
+      {
+        "arm": "original_return",
+        "iteration": 561,
+        "full_CPU_certificate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/original_return_full_failure_v1.json",
+          "bytes": 675415,
+          "sha256": "601acfc600a1d5f9ebbb52498f5580eeb855394019f17aa873b5a1efe2ebadba"
+        },
+        "terminal": {
+          "arm": "original_return",
+          "started_utc": "2026-09-19T20:16:13.477095+00:00",
+          "finished_utc": "2026-09-19T20:17:52.158709+00:00",
+          "exit_code": 1,
+          "process_wait_completed": true,
+          "log_sha256": "9030243edfb1070e97c07c7f3e377c5438a2f3811ed3dbf6dad2b605ccfc9da8"
+        },
+        "inputs": {
+          "x": {
+            "shape": [
+              2324351,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ],
+            "original_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "prepared_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "current_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "all_backing_bytes_verified": true
+          },
+          "mat2": {
+            "shape": [
+              256,
+              512
+            ],
+            "stride": [
+              1,
+              256
+            ],
+            "original_sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+            "prepared_sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+            "current_sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+            "all_backing_bytes_verified": true
+          },
+          "dy": {
+            "shape": [
+              2324351,
+              512
+            ],
+            "stride": [
+              512,
+              1
+            ],
+            "original_sha256": "8982a8bba7aa6ae843a589a2ff671d3b62adb2a9359609c1988e8cfcdf1cecea",
+            "prepared_sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+            "current_sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+            "all_backing_bytes_verified": true
+          }
+        },
+        "zero_DY_positive_zero_elements": 1190067712,
+        "full_raw_DW_statistics": {
+          "elements": 131072,
+          "positive_zero_count": 130560,
+          "negative_zero_count": 0,
+          "nonzero_including_nonfinite_count": 512,
+          "nonfinite_count": 0,
+          "infinity_count": 0,
+          "nan_count": 0,
+          "subnormal_count": 6,
+          "extreme_count": 0,
+          "max_abs_finite": 3.9000081373841526e-33,
+          "unique_raw_bitpatterns": 469
+        },
+        "wrong_columns": [
+          2,
+          66
+        ],
+        "wrong_row_count": 256,
+        "native_launches": 561,
+        "trace": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_original_return_workspace1_argtrace1000_v1_hip.jsonl",
+          "bytes": 986165,
+          "sha256": "307a55e8f337ffa7972ec897799604c3be67057d70f5fcd0186484601ded84ff",
+          "stable_during_wholefile_read": true
+        },
+        "owned_ELF": {
+          "pid": 1054,
+          "monotonic_ns": 6740758669320,
+          "event": "native_override_image_verified",
+          "mode": "original",
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/DW_native_override_artifacts_v1/DW_original.elf",
+          "bytes": 335000,
+          "sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3",
+          "required_sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3",
+          "matches": true
+        },
+        "failure_artifacts": {
+          "manifest": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v1/launch_manifest_v1.json",
+            "bytes": 12872,
+            "sha256": "17548f4f482bdbfb78af3855db243059b8e7324db97549b8e0f1896afe33630c",
+            "stable_during_wholefile_read": true
+          },
+          "configuration": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_pair_v1_runtime/configuration_v1.json",
+            "bytes": 8661,
+            "sha256": "43613f09a43c11bc5af27879b8c44267a57eaf398cf27123a7f0f8cfb3dff8ad",
+            "stable_during_wholefile_read": true
+          },
+          "failure": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_original_return_workspace1_argtrace1000_v1_failure.pt",
+            "bytes": 10712109223,
+            "sha256": "e3d4df1251bdec10426cad2772f211b400a678872a469d8f6caa0865d21bb250",
+            "stable_during_wholefile_read": true
+          },
+          "report": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_original_return_workspace1_argtrace1000_v1.json",
+            "bytes": 649757,
+            "sha256": "2a30c493a63b7b96e312440de7c40e468bf117b4291492c441d190908d6633d5",
+            "stable_during_wholefile_read": true
+          },
+          "original": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+            "bytes": 3570835225,
+            "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a",
+            "stable_during_wholefile_read": true
+          },
+          "coordinates": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/original_return_wrong_coordinates_v1.json",
+            "bytes": 137540,
+            "sha256": "25f93526472f5db659e78b57fadd98a7f7e5048e4737e786aba3eb6f69a31806",
+            "stable_during_wholefile_read": true
+          },
+          "environment": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_original_return_workspace1_argtrace1000_v1_environment.json",
+            "bytes": 12870,
+            "sha256": "59f2c489b175598e5c89d0f1bb9c1a58b406cd4346d93869f820a0a2a485c301",
+            "stable_during_wholefile_read": true
+          },
+          "libraries": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_original_return_workspace1_argtrace1000_v1_libraries.json",
+            "bytes": 2082,
+            "sha256": "9f6b30c7bf0f286454350998054eed555d4c07aca99bf20be44661b60ae09f83",
+            "stable_during_wholefile_read": true
+          }
+        },
+        "limits": [
+          "Finite retained X and exact-zero DY require numerical zero DW; subnormals are counted from raw BF16 bits.",
+          "Complete retained backing hashes and exact original/prepared/current equality do not certify transient internal device operand reads.",
+          "The frozen payload has no resident GPU data pointers. Complete packets and one-launch-per-call chronology associate the terminal call; no tensor-pointer address join is claimed.",
+          "A positive failure proves B-reuse hints unnecessary only in a verified b_reuse_off arm; passing intermittent arms alone do not prove a fix.",
+          "Original versus modified ELF differs in the frozen patch; this auditor verifies owned image identity, not a specific corrupting instruction."
+        ]
+      },
+      {
+        "arm": "b_reuse_off_repeat",
+        "iteration": 154,
+        "full_CPU_certificate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/b_reuse_off_full_failure_v1.json",
+          "bytes": 209776,
+          "sha256": "e93396a2c080726af58e7d2a1acfc42c878044271c209e9cdaa7707c526f817c"
+        },
+        "terminal": {
+          "arm": "b_reuse_off",
+          "started_utc": "2026-09-19T20:19:27.397752+00:00",
+          "finished_utc": "2026-09-19T20:20:39.098531+00:00",
+          "exit_code": 1,
+          "process_wait_completed": true,
+          "log_sha256": "45306f0dc21218533bbfd9843303a0eff81f03a0c557fdd59ef2b2a1858f8a3d"
+        },
+        "inputs": {
+          "x": {
+            "shape": [
+              2324351,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ],
+            "original_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "prepared_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "current_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "all_backing_bytes_verified": true
+          },
+          "mat2": {
+            "shape": [
+              256,
+              512
+            ],
+            "stride": [
+              1,
+              256
+            ],
+            "original_sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+            "prepared_sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+            "current_sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+            "all_backing_bytes_verified": true
+          },
+          "dy": {
+            "shape": [
+              2324351,
+              512
+            ],
+            "stride": [
+              512,
+              1
+            ],
+            "original_sha256": "8982a8bba7aa6ae843a589a2ff671d3b62adb2a9359609c1988e8cfcdf1cecea",
+            "prepared_sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+            "current_sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+            "all_backing_bytes_verified": true
+          }
+        },
+        "zero_DY_positive_zero_elements": 1190067712,
+        "full_raw_DW_statistics": {
+          "elements": 131072,
+          "positive_zero_count": 130560,
+          "negative_zero_count": 0,
+          "nonzero_including_nonfinite_count": 512,
+          "nonfinite_count": 0,
+          "infinity_count": 0,
+          "nan_count": 0,
+          "subnormal_count": 4,
+          "extreme_count": 0,
+          "max_abs_finite": 3.75556339155511e-33,
+          "unique_raw_bitpatterns": 467
+        },
+        "wrong_columns": [
+          386,
+          450
+        ],
+        "wrong_row_count": 256,
+        "native_launches": 154,
+        "trace": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_b_reuse_off_workspace1_argtrace1000_v2_hip.jsonl",
+          "bytes": 275145,
+          "sha256": "11137b1ae483453bd42efc12f3eb69a32ec8b10707030353c184ec1df4cc8014",
+          "stable_during_wholefile_read": true
+        },
+        "owned_ELF": {
+          "pid": 1395,
+          "monotonic_ns": 6929919314649,
+          "event": "native_override_image_verified",
+          "mode": "b_reuse_off",
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/DW_native_override_artifacts_v1/DW_B_reuse_off.elf",
+          "bytes": 335000,
+          "sha256": "d57129bfbd851f78ba148a2af82d0379704e3e3c2e5ef85190f8b4ecc8091a33",
+          "required_sha256": "d57129bfbd851f78ba148a2af82d0379704e3e3c2e5ef85190f8b4ecc8091a33",
+          "matches": true
+        },
+        "failure_artifacts": {
+          "manifest": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v2/launch_manifest_v2.json",
+            "bytes": 6249,
+            "sha256": "d0f74d1805357238a0ab2798ad094d762fa1ba2c08e788d894c92dc16a0b53ee",
+            "stable_during_wholefile_read": true
+          },
+          "configuration": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_pair_v2_runtime/configuration_v2.json",
+            "bytes": 6854,
+            "sha256": "3fba8702da6f7e3b33d29ee0fe3232bdaebd3b0995dbb8af6a9b060b8531c931",
+            "stable_during_wholefile_read": true
+          },
+          "failure": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_b_reuse_off_workspace1_argtrace1000_v2_failure.pt",
+            "bytes": 10712109223,
+            "sha256": "22767009605505e114b8adae46143890a8f7dceb4a0dd29ddc311ea29a3d8a41",
+            "stable_during_wholefile_read": true
+          },
+          "report": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_b_reuse_off_workspace1_argtrace1000_v2.json",
+            "bytes": 457964,
+            "sha256": "911c8df85b1af3a7fabdf25ee8c7f6a4e89da56e19d933d311d69419d0473bf1",
+            "stable_during_wholefile_read": true
+          },
+          "original": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+            "bytes": 3570835225,
+            "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a",
+            "stable_during_wholefile_read": true
+          },
+          "coordinates": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/b_reuse_off_wrong_coordinates_v1.json",
+            "bytes": 139783,
+            "sha256": "5b5d02e893ec555f329c5c148553630dcf520264c5862d5aae20cde68d6a64f1",
+            "stable_during_wholefile_read": true
+          },
+          "environment": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_b_reuse_off_workspace1_argtrace1000_v2_environment.json",
+            "bytes": 12862,
+            "sha256": "0c3113df8a10417648528038be1ed8f9f3442aa10ff528a9db26e17de84ccc37",
+            "stable_during_wholefile_read": true
+          },
+          "libraries": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_b_reuse_off_workspace1_argtrace1000_v2_libraries.json",
+            "bytes": 2082,
+            "sha256": "607bae65fc7e491e808416cc8768424f6b89e573e0029f2e7eb6c47ef165f139",
+            "stable_during_wholefile_read": true
+          }
+        },
+        "limits": [
+          "Finite retained X and exact-zero DY require numerical zero DW; subnormals are counted from raw BF16 bits.",
+          "Complete retained backing hashes and exact original/prepared/current equality do not certify transient internal device operand reads.",
+          "The frozen payload has no resident GPU data pointers. Complete packets and one-launch-per-call chronology associate the terminal call; no tensor-pointer address join is claimed.",
+          "A positive failure proves B-reuse hints unnecessary only in a verified b_reuse_off arm; passing intermittent arms alone do not prove a fix.",
+          "Original versus modified ELF differs in the frozen patch; this auditor verifies owned image identity, not a specific corrupting instruction."
+        ]
+      }
+    ],
+    "first_modified_pass": {
+      "format": "DW_pair_bounded_pass_independent_v1",
+      "status": "BOUNDED_PASS_REPORT_AND_TRACE_CONFIRMED",
+      "arm": "b_reuse_off",
+      "auditor": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/audit_pass_v1.py",
+        "bytes": 8208,
+        "sha256": "ddd9b2a248829ef1c92e8d71dd1a8064f621fd90a3655a2725230532172ed88d",
+        "stable_during_wholefile_read": true
+      },
+      "base_auditor": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/audit_failure_v1.py",
+        "bytes": 16830,
+        "sha256": "7e82d3701e055696c24f7fc5a2d638a4b5b00316c10773be534d48d7f91304a2",
+        "stable_during_wholefile_read": true
+      },
+      "manifest": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v1/launch_manifest_v1.json",
+        "bytes": 12872,
+        "sha256": "17548f4f482bdbfb78af3855db243059b8e7324db97549b8e0f1896afe33630c",
+        "stable_during_wholefile_read": true
+      },
+      "terminal": {
+        "arm": "b_reuse_off",
+        "started_utc": "2026-09-19T20:13:40.167505+00:00",
+        "finished_utc": "2026-09-19T20:15:17.714153+00:00",
+        "exit_code": 0,
+        "process_wait_completed": true,
+        "log_sha256": "2a5e6b5e66fee891f5b87567b0b1f06d0daef85ee6750f5ac4152609e194bd28"
+      },
+      "files": {
+        "report": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_b_reuse_off_workspace1_argtrace1000_v1.json",
+          "bytes": 856470,
+          "sha256": "c58e9731d0847366a806d2a05c2b0734f0b0110e1ff42ac6097f633fa3e96a30",
+          "stable_during_wholefile_read": true
+        },
+        "provenance": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_b_reuse_off_workspace1_argtrace1000_v1_environment.json",
+          "bytes": 12861,
+          "sha256": "ff88bad9d28b447c97c99ae54b720e94bdc8312e2540af302cac6186e3d3eb35",
+          "stable_during_wholefile_read": true
+        },
+        "libraries": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_b_reuse_off_workspace1_argtrace1000_v1_libraries.json",
+          "bytes": 2081,
+          "sha256": "6d47ab0757d78c8d7394bd72d6b07beeba8e85b5d3ab6dc368ee452759cac6bc",
+          "stable_during_wholefile_read": true
+        },
+        "original_full_CPU_certificate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/original_full_failure_v1.json",
+          "bytes": 119311,
+          "sha256": "71da265c05e7be308a7a82266eec4ddea8da5e5e0a2755eaf2e7c4d9350d31d5",
+          "stable_during_wholefile_read": true
+        }
+      },
+      "iterations": 1000,
+      "runtime_exact_zero_checks_passed": 1000,
+      "input_digests_equal_independently_CPU_verified_original_arm": true,
+      "native_nonpointer_packet_fields_equal_original_arm": true,
+      "native_trace": {
+        "trace": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_DW_b_reuse_off_workspace1_argtrace1000_v1_hip.jsonl",
+          "bytes": 1751102,
+          "sha256": "5759efc5cc240e0684f5abd4a986e9370db201f933c4e78dc99a449a10023ed2",
+          "stable_during_wholefile_read": true
+        },
+        "kernel": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+        "launches": 1000,
+        "owned_ELF": {
+          "verification": {
+            "pid": 713,
+            "monotonic_ns": 6585146507977,
+            "event": "native_override_image_verified",
+            "mode": "b_reuse_off",
+            "path": "/data/mlperf_dlrm_v4/root_cause_20260919/DW_native_override_artifacts_v1/DW_B_reuse_off.elf",
+            "bytes": 335000,
+            "sha256": "d57129bfbd851f78ba148a2af82d0379704e3e3c2e5ef85190f8b4ecc8091a33",
+            "required_sha256": "d57129bfbd851f78ba148a2af82d0379704e3e3c2e5ef85190f8b4ecc8091a33",
+            "matches": true
+          },
+          "module_load": {
+            "pid": 713,
+            "monotonic_ns": 6585147197829,
+            "event": "native_override_module_load_return",
+            "hip_error": 0,
+            "module": "0x29452000",
+            "image_pointer": "0x2aa2cd80",
+            "sha256": "d57129bfbd851f78ba148a2af82d0379704e3e3c2e5ef85190f8b4ecc8091a33",
+            "bytes": 335000,
+            "context": "0x29090210",
+            "device": 0
+          },
+          "function_get": {
+            "pid": 713,
+            "monotonic_ns": 6585147380893,
+            "event": "native_override_GetFunction_return",
+            "hip_error": 0,
+            "module": "0x29452000",
+            "function": "0x2a4eb790",
+            "target": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+            "sha256": "d57129bfbd851f78ba148a2af82d0379704e3e3c2e5ef85190f8b4ecc8091a33"
+          }
+        },
+        "stable_A_and_B_addresses": true,
+        "C_equals_D_every_call": true,
+        "all_shapes_strides_alpha_beta_match": true,
+        "resident_GPU_pointer_metadata_saved_in_payload": false,
+        "association": "One exact replacement target launch per completed replay call; runtime reports all1000 exact-zero checks passed. No retained raw output tensor for independent CPU validation.",
+        "last_completed_call_ordinal": 1000,
+        "decoded_packet_count": 1000,
+        "first_packet": {
+          "pid": 713,
+          "launch_id": 1,
+          "fields": {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "D": "0x7dbbf2640000",
+            "C": "0x7dbbf2640000",
+            "A": "0x7e358ec00000",
+            "B": "0x7e35d5aefe00",
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0
+          },
+          "packet_sha256": "4cc2ef0c514bf47ff13dfd522450d8841875a27a56fd459373b629e904079b1a"
+        },
+        "last_packet": {
+          "pid": 713,
+          "launch_id": 1000,
+          "fields": {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "D": "0x7dbbf2640000",
+            "C": "0x7dbbf2640000",
+            "A": "0x7e358ec00000",
+            "B": "0x7e35d5aefe00",
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0
+          },
+          "packet_sha256": "4cc2ef0c514bf47ff13dfd522450d8841875a27a56fd459373b629e904079b1a"
+        }
+      },
+      "trace_PIDs_ordering_module_handle_linkage_verified": true,
+      "limits": [
+        "No failure payload is expected on PASS; zero output values are runtime checks, not retained tensors independently rescanned on CPU.",
+        "Complete prepared-input digests equal the independently CPU-verified original arm; passing-arm final input equality is the frozen runtime report.",
+        "This modified-arm1000 pass is bounded and does not establish a training fix or B-reuse necessity under intermittent failure.",
+        "No original resident GPU addresses are saved in the tensor payload; packet addresses are checked only within the native trace."
+      ],
+      "full_certificate": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/b_reuse_off_pass_audit_v1.json",
+        "bytes": 1150142,
+        "sha256": "7575b577b6bdc83bbf7a576aa210168866fcf517386b096fe187811b8c90f941"
+      }
+    },
+    "pattern_comparison": {
+      "format": "DW_pair_output_pattern_comparison_v1",
+      "status": "COMPLETED_SAVED_EVIDENCE_COMPARISON",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/compare_patterns_v1.py",
+        "bytes": 6082,
+        "sha256": "72ec9bbd6b12ceff8bc52effbe51f7518dcea7da8a597c1e64ec02314076bcbe"
+      },
+      "files": {
+        "historical196": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_linear_single_dw_zero_workspace1_argtrace1000_v1_wrong_DW_coordinates_independent_v1.json",
+          "bytes": 251806,
+          "sha256": "31249ebf927eb5c0dbe3f48dd631cbb3b7eabc9bae276267e23edec1e22f6de2"
+        },
+        "original": {
+          "certificate": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/original_full_failure_v1.json",
+            "bytes": 119311,
+            "sha256": "71da265c05e7be308a7a82266eec4ddea8da5e5e0a2755eaf2e7c4d9350d31d5"
+          },
+          "coordinates": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/original_wrong_coordinates_v1.json",
+            "bytes": 137503,
+            "sha256": "f71341e9bd1e7f3bc37f8aec01e539f06f0ed2dbe2317e7a5f76d2654a80dee6"
+          }
+        },
+        "original_return": {
+          "certificate": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/original_return_full_failure_v1.json",
+            "bytes": 675415,
+            "sha256": "601acfc600a1d5f9ebbb52498f5580eeb855394019f17aa873b5a1efe2ebadba"
+          },
+          "coordinates": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/original_return_wrong_coordinates_v1.json",
+            "bytes": 137540,
+            "sha256": "25f93526472f5db659e78b57fadd98a7f7e5048e4737e786aba3eb6f69a31806"
+          }
+        },
+        "b_reuse_off": {
+          "certificate": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/b_reuse_off_full_failure_v1.json",
+            "bytes": 209776,
+            "sha256": "e93396a2c080726af58e7d2a1acfc42c878044271c209e9cdaa7707c526f817c"
+          },
+          "coordinates": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/b_reuse_off_wrong_coordinates_v1.json",
+            "bytes": 139783,
+            "sha256": "5b5d02e893ec555f329c5c148553630dcf520264c5862d5aae20cde68d6a64f1"
+          }
+        },
+        "training405": {
+          "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/training405_full_payload.json",
+          "bytes": 788852,
+          "sha256": "b8c0989b7a62c38618f5c2951f6d2de25ca3bbf6f4e5e76468c92c1e309bb409"
+        }
+      },
+      "characteristics": {
+        "historical196": {
+          "nonzero_coordinates": 512,
+          "row_count": 256,
+          "columns": [
+            258,
+            322
+          ],
+          "column_offsets_mod128": [
+            2,
+            66
+          ],
+          "column_tiles128": [
+            2
+          ],
+          "nonfinite": 0,
+          "subnormal": 7,
+          "paired_rows": 256,
+          "exact_ratio256_rows": 251,
+          "raw_bits_plus0x400_rows": 249,
+          "pair_exceptions": [
+            {
+              "row": 5,
+              "low_bits": "0x7c",
+              "high_bits": "0x479",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            },
+            {
+              "row": 39,
+              "low_bits": "0x807a",
+              "high_bits": "0x8473",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            },
+            {
+              "row": 100,
+              "low_bits": "0x804e",
+              "high_bits": "0x841b",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            },
+            {
+              "row": 110,
+              "low_bits": "0x3",
+              "high_bits": "0x1ca",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            },
+            {
+              "row": 112,
+              "low_bits": "0x8022",
+              "high_bits": "0x838a",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            }
+          ]
+        },
+        "original": {
+          "nonzero_coordinates": 512,
+          "row_count": 256,
+          "columns": [
+            2,
+            66
+          ],
+          "column_offsets_mod128": [
+            2,
+            66
+          ],
+          "column_tiles128": [
+            0
+          ],
+          "nonfinite": 0,
+          "subnormal": 7,
+          "paired_rows": 256,
+          "exact_ratio256_rows": 251,
+          "raw_bits_plus0x400_rows": 249,
+          "pair_exceptions": [
+            {
+              "row": 30,
+              "low_bits": "0x802f",
+              "high_bits": "0x83bd",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            },
+            {
+              "row": 31,
+              "low_bits": "0x804e",
+              "high_bits": "0x841b",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            },
+            {
+              "row": 37,
+              "low_bits": "0x8037",
+              "high_bits": "0x83de",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            },
+            {
+              "row": 71,
+              "low_bits": "0x58",
+              "high_bits": "0x431",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            },
+            {
+              "row": 125,
+              "low_bits": "0x804b",
+              "high_bits": "0x8417",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            }
+          ]
+        },
+        "original_return": {
+          "nonzero_coordinates": 512,
+          "row_count": 256,
+          "columns": [
+            2,
+            66
+          ],
+          "column_offsets_mod128": [
+            2,
+            66
+          ],
+          "column_tiles128": [
+            0
+          ],
+          "nonfinite": 0,
+          "subnormal": 6,
+          "paired_rows": 256,
+          "exact_ratio256_rows": 254,
+          "raw_bits_plus0x400_rows": 250,
+          "pair_exceptions": [
+            {
+              "row": 59,
+              "low_bits": "0x20",
+              "high_bits": "0x37c",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            },
+            {
+              "row": 60,
+              "low_bits": "0x8009",
+              "high_bits": "0x828e",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            }
+          ]
+        },
+        "b_reuse_off": {
+          "nonzero_coordinates": 512,
+          "row_count": 256,
+          "columns": [
+            386,
+            450
+          ],
+          "column_offsets_mod128": [
+            2,
+            66
+          ],
+          "column_tiles128": [
+            3
+          ],
+          "nonfinite": 0,
+          "subnormal": 4,
+          "paired_rows": 256,
+          "exact_ratio256_rows": 255,
+          "raw_bits_plus0x400_rows": 252,
+          "pair_exceptions": [
+            {
+              "row": 77,
+              "low_bits": "0x803e",
+              "high_bits": "0x83f9",
+              "exact_real_ratio_256": false,
+              "raw_bits_plus_0x400": false
+            }
+          ]
+        }
+      },
+      "pairwise": {
+        "historical196_vs_original": {
+          "absolute_coordinate_overlap": 0,
+          "absolute_overlap_equal_bits": 0,
+          "relative_tile_coordinate_overlap": 512,
+          "relative_tile_support_equal": true,
+          "relative_tile_equal_bits": 2,
+          "scope": "Tile-normalized output-pattern comparison only; equal support or values do not establish the same corrupting instruction."
+        },
+        "historical196_vs_original_return": {
+          "absolute_coordinate_overlap": 0,
+          "absolute_overlap_equal_bits": 0,
+          "relative_tile_coordinate_overlap": 512,
+          "relative_tile_support_equal": true,
+          "relative_tile_equal_bits": 0,
+          "scope": "Tile-normalized output-pattern comparison only; equal support or values do not establish the same corrupting instruction."
+        },
+        "historical196_vs_b_reuse_off": {
+          "absolute_coordinate_overlap": 0,
+          "absolute_overlap_equal_bits": 0,
+          "relative_tile_coordinate_overlap": 512,
+          "relative_tile_support_equal": true,
+          "relative_tile_equal_bits": 2,
+          "scope": "Tile-normalized output-pattern comparison only; equal support or values do not establish the same corrupting instruction."
+        },
+        "original_vs_original_return": {
+          "absolute_coordinate_overlap": 512,
+          "absolute_overlap_equal_bits": 2,
+          "relative_tile_coordinate_overlap": 512,
+          "relative_tile_support_equal": true,
+          "relative_tile_equal_bits": 2,
+          "scope": "Tile-normalized output-pattern comparison only; equal support or values do not establish the same corrupting instruction."
+        },
+        "original_vs_b_reuse_off": {
+          "absolute_coordinate_overlap": 0,
+          "absolute_overlap_equal_bits": 0,
+          "relative_tile_coordinate_overlap": 512,
+          "relative_tile_support_equal": true,
+          "relative_tile_equal_bits": 0,
+          "scope": "Tile-normalized output-pattern comparison only; equal support or values do not establish the same corrupting instruction."
+        },
+        "original_return_vs_b_reuse_off": {
+          "absolute_coordinate_overlap": 0,
+          "absolute_overlap_equal_bits": 0,
+          "relative_tile_coordinate_overlap": 512,
+          "relative_tile_support_equal": true,
+          "relative_tile_equal_bits": 2,
+          "scope": "Tile-normalized output-pattern comparison only; equal support or values do not establish the same corrupting instruction."
+        }
+      },
+      "training405": {
+        "anomalous_coordinates": 1024,
+        "support": "rows0..7, columns128..255",
+        "NaNs": 640,
+        "finite_above1e6": 384,
+        "nonfinite_bits": {
+          "0xffc0": 640
+        },
+        "max_abs_finite": 1.02204329643401e+31,
+        "replay_absolute_coordinate_overlap": {
+          "historical196": 0,
+          "original": 0,
+          "original_return": 0,
+          "b_reuse_off": 0
+        }
+      },
+      "limits": [
+        "Replay support marks every nonzero, including subnormal, under the exact-zero oracle.",
+        "Training405 support marks captured NaNs and finite values above1e6; it is not a complete exact-gradient error map.",
+        "The replay tiny finite values remain distinct from the training huge-value/NaN event. Shared row/column tile structure cannot establish a common numerical mechanism.",
+        "These comparisons consume completed full-byte audit certificates; they do not execute GPU work or rehash the large payloads."
+      ]
+    },
+    "conclusion": "B-reuse hints are unnecessary for the observed exact-zero native DW defect. First modified 1000-call pass was intermittent nonreproduction.",
+    "limits": [
+      "No faulty instruction or shared cause of attention, projection DX and weighted LN established.",
+      "Native isolated tiny errors remain mechanistically unlinked to enormous/NaN training405 DW.",
+      "The captured failure payloads lack resident GPU address metadata; full packet shape/address invariants and call chronology are verified without fabricating a payload-pointer join.",
+      "Passing outputs were not all retained; first modified pass has frozen runtime checks and native-trace audit, not a full CPU output rescan."
+    ]
+  },
+  "full_vs_shrunk": {
+    "report": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_full_vs_shrunk_agent_v1.md",
+      "bytes": 13283,
+      "sha256": "5364eb83b31e80eff7ef3d4d7f80310dda337126345eb9b27ef001dd77f97f3e"
+    },
+    "findings": [
+      "Dense architecture and local batch unchanged; embedding vocabulary quartered.",
+      "Installed fused TorchRec initialization bounds double at quarter row scale; variance quadruples.",
+      "ID modulo/hash collisions, RNG/sharding, memory placement and sparse update distribution differ.",
+      "Current host comparison also changes ranks/global batch, samples, allocator, transport, driver/kernel and firmware.",
+      "Best training control is one four-GPU host, fixed world4/local1024/global4096, scale1.0/0.25/1.0.",
+      "No remote experiment has been executed this session; isolated zero-DY failure has no embedding model or optimizer."
+    ]
+  },
+  "external_artifacts": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/private_DW_training1000_full_payload_resume_v1.json",
+      "bytes": 637591,
+      "sha256": "8eccc94a4fca3b328eece0acb14339565c2b33a354869105cdd3ace16092ef53"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/private_DW_training1000_metadata_resume_v1.json",
+      "bytes": 14882,
+      "sha256": "dabf3fa3e4bb0b2f40d9e5c1c11ad76e3a4d4e3e054040975f4818f511c28414"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/private_DW_training1000_scalar_stages_resume_v1.json",
+      "bytes": 569725,
+      "sha256": "29029e9318ca512df4a4163dfd731fb63216242c6f89b8ddebb06d98ba03eb2e"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/private_DW_training1000_native_trace_resume_v1.json",
+      "bytes": 16321451,
+      "sha256": "b1d33e415714df89d4af4619cc37a536a026e472246ead88f3476c61d4fc19c2"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/private_DW_training1000_join_resume_v1.json",
+      "bytes": 75375,
+      "sha256": "0764f6bd8a73e114800a29a659f5b906c5ea28b625fe945c455c18bcfcfdcf98"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/training1000_agent_independent_resume_v1.json",
+      "bytes": 3418,
+      "sha256": "e0fd9823f9689e000378630619ed7dcd27656a567e3a4f94d4bd44263317d633"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/training405_vs_privateDW1000_context_comparison_v1.json",
+      "bytes": 5758,
+      "sha256": "2d4fe43d309e6f33ee225fa270fce74d7b67e914edfcedabcedba84a58c7c332"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_full_vs_shrunk_agent_v1.md",
+      "bytes": 13283,
+      "sha256": "5364eb83b31e80eff7ef3d4d7f80310dda337126345eb9b27ef001dd77f97f3e"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_runtime_agent_v1.md",
+      "bytes": 7970,
+      "sha256": "350451919219ea4a9f3e1043c7fa7100e67c08fc82a5d9763ef4f8c247aac5a2"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_runtime_and_health_metadata_v1.json",
+      "bytes": 5513,
+      "sha256": "6cdbbf8d425998256e0f458871f05391f98f944e8572c37808d89adae8098528"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_resume_gather_health_v1.json",
+      "bytes": 1880,
+      "sha256": "4449a64ce807ab77d45227e2f01c5172aed18909802c10afa011bc1ffb16790d"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_static_independent_v1.json",
+      "bytes": 3191,
+      "sha256": "87c374d7525c5424662d8015d4cf535cbef9f99c4df9b29e00402876eaea17db"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_review_agent_v1.md",
+      "bytes": 10157,
+      "sha256": "b410f13ce577cd9c1c827aa66be7c95063b964ab9d627f1077ccdafc0c09df32"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v1/launch_manifest_v1.json",
+      "bytes": 12872,
+      "sha256": "17548f4f482bdbfb78af3855db243059b8e7324db97549b8e0f1896afe33630c"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v2/launch_manifest_v2.json",
+      "bytes": 6249,
+      "sha256": "d0f74d1805357238a0ab2798ad094d762fa1ba2c08e788d894c92dc16a0b53ee"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v1/CPU_wrapper_lifecycle_report_v1.json",
+      "bytes": 837,
+      "sha256": "237ab3baeebebdfff6205b078ea94b364a1442db75aa1c70adb3348c88abf785"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/b_reuse_off_pass_audit_v1.json",
+      "bytes": 1150142,
+      "sha256": "7575b577b6bdc83bbf7a576aa210168866fcf517386b096fe187811b8c90f941"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/paired_Boff154_original75_561_pattern_comparison_v1.json",
+      "bytes": 10058,
+      "sha256": "b9eaac7bb83945ea3d393f1c17f08522522cc5cc7cfc221614bf47ac0a92a3d4"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/original75_return561_strict_trace_lineage_v1.json",
+      "bytes": 2690,
+      "sha256": "8cb8db96bca4f29e978441434b582159cc5536f93e7c8da2b92a0ed99cdb50b0"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_audit_v1/boff154_strict_trace_lineage_v1.json",
+      "bytes": 1658,
+      "sha256": "6e8f3f05208de4be32a557da1975e984788fb13db056e7b73ab512cc3993b384"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/create_resume_summary_v2.py",
+      "bytes": 6233,
+      "sha256": "ef4916ce9fe9cd863d1bbd22bb7ce494f4a9a77444025cfbbeddcc63c8fa483d"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_Bzero_pair_v1/CPU_readiness_v1.json",
+      "bytes": 7229,
+      "sha256": "3b93f2d87c4f855c9c9fadfbd2ce56a7da047f351fbef87a74ac185779c8aa3f"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_Bzero_pair_v2/CPU_readiness_v2.json",
+      "bytes": 2747,
+      "sha256": "e19347589232e430c1b1d9a640320a6cad317c08d3147a366d2963829fea9147"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_B_zero_CFG_v1_retraction.json",
+      "bytes": 1076,
+      "sha256": "cf4e6730362ba9a7f153d9721057730c9fb3ee6fea422ee23e4d030cf4790ed5"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_B_zero_CFG_v2.json",
+      "bytes": 285721,
+      "sha256": "b208732c4ed3b188363bb312ca75183bd43d4c1a7adc9bfb4b9e8b389c8acba6"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_activation_independent_v1.json",
+      "bytes": 4141,
+      "sha256": "d1e744fc07ed3031cc0521322225d928901a06ff9f06c72339e0d24795d06ffe"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_B_zero_independent_v1.json",
+      "bytes": 57211,
+      "sha256": "45247419988760312cdb39dcfb7eb0b63ff5e42df733b0bf92e94fe6286597e0"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_B_zero_byte_independent_v1/report.json",
+      "bytes": 3540,
+      "sha256": "2e49c03c0b87e26b4f09f23cb673123eabe4700b12affaef161440855d257278"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_vgpr_semantics_v1/semantic_certificate.json",
+      "bytes": 18467,
+      "sha256": "778602315d6fb3c7fac08028f93895868a98437a37ad3a71ffd4e55cd5d7ab9f"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_B_zero_prepare_v2/independent_loader_review_v1.json",
+      "bytes": 2661,
+      "sha256": "1dabac176cc1ae78cbcbda2ce245740ce29a8001b8029a481c9753dbc1fe1c9e"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_Bzero_pair_v1/independent_runtime_review_v1.json",
+      "bytes": 1888,
+      "sha256": "ef4423cb63300e5de2e87518de13390e067010ebf518b4fce7adfc4bfa4de933"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_Bzero_pair_v2/independent_runtime_review_v2.json",
+      "bytes": 1763,
+      "sha256": "605875d1b0ae34edb5d08fe32131a4d9cdb0f32778ea923d8d03cb8508a653e7"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_current_VBIOS_v1.json",
+      "bytes": 813,
+      "sha256": "ef406abb18cbca72cb1d87e95e81678f8141fad746bdd7b45556feaaf419c65d"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_after_DW_pair_runtime_v1.json",
+      "bytes": 3321,
+      "sha256": "60cd7095ff2647f87647680d4bdb70cae2674ade306b7933699433a424797721"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/create_resume_summary_v3.py",
+      "bytes": 3639,
+      "sha256": "3ff0d74d303c62faee9c0612d884653f9938059efb09f172e05d3bb644543902"
+    }
+  ],
+  "B_fragment_zero_experiment": {
+    "arms": [
+      {
+        "version": "v1",
+        "arm": "b_reuse_off",
+        "terminal": {
+          "arm": "b_reuse_off",
+          "started_utc": "2026-09-19T20:53:53.195388+00:00",
+          "finished_utc": "2026-09-19T20:55:35.631889+00:00",
+          "exit_code": 0,
+          "process_wait_completed": true,
+          "log_sha256": "89acd135510b764a7b260fe91bd55ed3e24ce81df7cd1f1be6fa1da77fad53b3"
+        },
+        "native_verifier": {
+          "status": "PASS_TERMINAL_OWNED_ELF_AND_ALL_NATIVE_LAUNCHES_JOIN",
+          "arm": "b_reuse_off",
+          "report_status": "PASS",
+          "iterations_completed": 1000,
+          "last_output_check": {
+            "raw_dw": {
+              "nonfinite_count": 0,
+              "extreme_count": 0,
+              "nonzero_including_nonfinite_count": 0,
+              "max_abs_finite": 0.0
+            }
+          },
+          "trace_sha256": "cb96838f89cce6b6339434e11f8f2079c34c978cc2778b032d45c1461feb8f33",
+          "event_counts": {
+            "get_function_return": 2,
+            "native_override_original_lookup_error": 1,
+            "native_override_image_verified": 1,
+            "native_override_module_load_return": 1,
+            "native_override_GetFunction_return": 1,
+            "native_override_function_return": 1,
+            "launch_begin": 1000,
+            "launch_return": 1000
+          },
+          "owned_ELF_sha256": "d57129bfbd851f78ba148a2af82d0379704e3e3c2e5ef85190f8b4ecc8091a33",
+          "target": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+          "workgroups": 4,
+          "declared_packet_bytes": 172,
+          "first_decoded_packet": {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "D": "0x7014fa640000",
+            "C": "0x7014fa640000",
+            "A": "0x708e96c00000",
+            "B": "0x708eddaefe00",
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0
+          },
+          "last_decoded_packet": {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "D": "0x7014fa640000",
+            "C": "0x7014fa640000",
+            "A": "0x708e96c00000",
+            "B": "0x708eddaefe00",
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0
+          },
+          "provenance_sha256": "506c1c9b0fe7ac68577bc7e90b6a0ce000acfcde476a7564099b4316335f208c",
+          "libraries_sha256": "8ea52dc4166a6e869417ca9c241219a8ec32432bdb1f0a9de85ce673a378bd9e",
+          "failure_capture": null,
+          "limits": [
+            "Runtime oracle and input digests are joined; a saved failure still requires independent complete CPU storage/bit audit.",
+            "Replacement host ELF and handles are verified; no on-device instruction fetch observation is claimed.",
+            "Passing1000 is bounded; differing arms do not uniquely diagnose operand delivery, arithmetic hardware, or a training fix."
+          ]
+        },
+        "native_verifier_file": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_Bzero_pair_v1/b_reuse_off_joined_verification_v1.json",
+          "bytes": 3988,
+          "sha256": "431e02dda29c8502384c64066aadd96824a1e9d87550aff22c6fef87807442b5"
+        },
+        "independent_audit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_Bzero_pair_audit_v1/b_reuse_off_pass_audit_v1.json",
+          "bytes": 1151330,
+          "sha256": "839e2d4e6e7b9e93ab90ae746acd0f04574d6c3106a8da7d6dadcb1fec7e3b3b"
+        }
+      },
+      {
+        "version": "v1",
+        "arm": "b_fragment_zero",
+        "terminal": {
+          "arm": "b_fragment_zero",
+          "started_utc": "2026-09-19T20:56:42.333708+00:00",
+          "finished_utc": "2026-09-19T20:58:21.063179+00:00",
+          "exit_code": 0,
+          "process_wait_completed": true,
+          "log_sha256": "620896f99ab519667d59834023e8cd604fb185f17cee2d86d67f1a2df1f19fe9"
+        },
+        "native_verifier": {
+          "status": "PASS_TERMINAL_OWNED_ELF_AND_ALL_NATIVE_LAUNCHES_JOIN",
+          "arm": "b_fragment_zero",
+          "report_status": "PASS",
+          "iterations_completed": 1000,
+          "last_output_check": {
+            "raw_dw": {
+              "nonfinite_count": 0,
+              "extreme_count": 0,
+              "nonzero_including_nonfinite_count": 0,
+              "max_abs_finite": 0.0
+            }
+          },
+          "trace_sha256": "67de320c1f5ffde52c542cd95b958df0c01ac0bcb6b1ea8d611e718a0e40cab3",
+          "event_counts": {
+            "get_function_return": 2,
+            "native_override_original_lookup_error": 1,
+            "native_override_image_verified": 1,
+            "native_override_module_load_return": 1,
+            "native_override_GetFunction_return": 1,
+            "native_override_function_return": 1,
+            "launch_begin": 1000,
+            "launch_return": 1000
+          },
+          "owned_ELF_sha256": "4e94f696024576a8d81389998a272ba0b7e42c4a27845b53cd241230eaf4839d",
+          "target": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+          "workgroups": 4,
+          "declared_packet_bytes": 172,
+          "first_decoded_packet": {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "D": "0x7e60ae640000",
+            "C": "0x7e60ae640000",
+            "A": "0x7eda4ac00000",
+            "B": "0x7eda91aefe00",
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0
+          },
+          "last_decoded_packet": {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "D": "0x7e60ae640000",
+            "C": "0x7e60ae640000",
+            "A": "0x7eda4ac00000",
+            "B": "0x7eda91aefe00",
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0
+          },
+          "provenance_sha256": "b7938c2680fd21ab88d5ad2b8f1e2aa2f759ccfb5c9ea4369a684aac2d94bf94",
+          "libraries_sha256": "c6ae5fff2f0e07f8d173be11fa0e6cfc0c7cce826b07a9da2408863c592e43a0",
+          "failure_capture": null,
+          "limits": [
+            "Runtime oracle and input digests are joined; a saved failure still requires independent complete CPU storage/bit audit.",
+            "Replacement host ELF and handles are verified; no on-device instruction fetch observation is claimed.",
+            "Passing1000 is bounded; differing arms do not uniquely diagnose operand delivery, arithmetic hardware, or a training fix."
+          ]
+        },
+        "native_verifier_file": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_Bzero_pair_v1/b_fragment_zero_joined_verification_v1.json",
+          "bytes": 3992,
+          "sha256": "19919526ecdf26e0e2f8221dfdbae4c73cde92ff7da795c84d13b8be295dc702"
+        },
+        "independent_audit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_Bzero_pair_audit_v1/b_fragment_zero_pass_audit_v1.json",
+          "bytes": 1151353,
+          "sha256": "760e86f8a38567aa1cb2c9ad3545904960217aab3a2f1c6dc23e371ed15c7110"
+        }
+      },
+      {
+        "version": "v2",
+        "arm": "b_fragment_zero",
+        "terminal": {
+          "arm": "b_fragment_zero",
+          "started_utc": "2026-09-19T21:02:01.754791+00:00",
+          "finished_utc": "2026-09-19T21:03:44.555151+00:00",
+          "exit_code": 0,
+          "process_wait_completed": true,
+          "log_sha256": "fb916e24833bf7fb81f469206acc94b9db9df8bf42270a15d5511bf873ffa764"
+        },
+        "native_verifier": {
+          "status": "PASS_TERMINAL_OWNED_ELF_AND_ALL_NATIVE_LAUNCHES_JOIN",
+          "arm": "b_fragment_zero",
+          "report_status": "PASS",
+          "iterations_completed": 1000,
+          "last_output_check": {
+            "raw_dw": {
+              "nonfinite_count": 0,
+              "extreme_count": 0,
+              "nonzero_including_nonfinite_count": 0,
+              "max_abs_finite": 0.0
+            }
+          },
+          "trace_sha256": "23772e4af01cdd1919db2cab8108ea1785072e91af3aaca3f785834bba08e0b3",
+          "event_counts": {
+            "get_function_return": 2,
+            "native_override_original_lookup_error": 1,
+            "native_override_image_verified": 1,
+            "native_override_module_load_return": 1,
+            "native_override_GetFunction_return": 1,
+            "native_override_function_return": 1,
+            "launch_begin": 1000,
+            "launch_return": 1000
+          },
+          "owned_ELF_sha256": "4e94f696024576a8d81389998a272ba0b7e42c4a27845b53cd241230eaf4839d",
+          "target": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+          "workgroups": 4,
+          "declared_packet_bytes": 172,
+          "first_decoded_packet": {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "D": "0x738d06640000",
+            "C": "0x738d06640000",
+            "A": "0x7406a2c00000",
+            "B": "0x7406e9aefe00",
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0
+          },
+          "last_decoded_packet": {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "D": "0x738d06640000",
+            "C": "0x738d06640000",
+            "A": "0x7406a2c00000",
+            "B": "0x7406e9aefe00",
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0
+          },
+          "provenance_sha256": "b21dcc2e07a003b1f345bc11fd9700467aef85181a7a710b88ec9daaba7dd39e",
+          "libraries_sha256": "9ccae9a7a808a2dd7d19b061f9d102bce04b32ea96e385b42eb5ffbb9b051ed0",
+          "failure_capture": null,
+          "limits": [
+            "Runtime oracle and input digests are joined; a saved failure still requires independent complete CPU storage/bit audit.",
+            "Replacement host ELF and handles are verified; no on-device instruction fetch observation is claimed.",
+            "Passing1000 is bounded; differing arms do not uniquely diagnose operand delivery, arithmetic hardware, or a training fix."
+          ]
+        },
+        "native_verifier_file": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_Bzero_pair_v2/b_fragment_zero_joined_verification_v1.json",
+          "bytes": 3992,
+          "sha256": "89683f887138f55b9ac2869da3102805dacbab874afb654b63d8174a035faddd"
+        },
+        "independent_audit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_Bzero_pair_audit_v2/b_fragment_zero_pass_audit_v2.json",
+          "bytes": 1151352,
+          "sha256": "9f6c73e51d52b66e123838cbf6e7f37c72d59e26914b2526b965d50ee1300f8c"
+        }
+      }
+    ],
+    "candidate_SHA256": "4e94f696024576a8d81389998a272ba0b7e42c4a27845b53cd241230eaf4839d",
+    "baseline_SHA256": "d57129bfbd851f78ba148a2af82d0379704e3e3c2e5ef85190f8b4ecc8091a33",
+    "replacement_instructions": 384,
+    "changed_bytes_vs_Boff": 2240,
+    "unchanged_WMMA_instructions": 320,
+    "B_register_read_obligations_proved_zero": 2560,
+    "register_count_unchanged": 676,
+    "independent_proof_status": "Corrected indirect control flow, bank mapping, full EXEC, reaching zero definitions and exact ELF bytes independently verified. CFGv1 retracted; v2 accounts for three statically false sign branches.",
+    "limits": [
+      "Architectural zero definition is not an observation of physical register values.",
+      "Replacing permutations and masks changes dependencies and timing. Passing controls do not uniquely identify a faulty operation or constitute a production fix.",
+      "Passing tensors are not retained for independent CPU rescanning; runtime bitwise-zero checks and every native launch are audited.",
+      "Existing positive B-reuse-off failures still apply despite later passes. Intermittent onset remains."
+    ]
+  },
+  "current_VBIOS": {
+    "observed_utc": "2026-09-19T20:42:55.390514+00:00",
+    "boot_id": "a58e7751-b723-47c0-ad91-b2abd8b95833",
+    "sysfs_path": "/sys/bus/pci/devices/0001:01:00.0/vbios_version",
+    "vbios_version": "113-M4500001-630A",
+    "kernel_evidence": [
+      "Sep 19 20:03:26 heliosr-1b114-c07-1 kernel: amdgpu 0001:01:00.0: [drm] ATOM BIOS: 113-M4500001-630A, build: 00195379, ver: 025.040.000.009.000001, 2026/07/25"
+    ],
+    "command": [
+      "sudo",
+      "-n",
+      "journalctl",
+      "-k",
+      "-b",
+      "--no-pager",
+      "--since",
+      "2026-09-19 20:03:20 UTC",
+      "--until",
+      "2026-09-19 20:03:35 UTC"
+    ],
+    "limits": [
+      "Current boot identity; not a retrospective attestation of all historical runs.",
+      "Firmware differs from documented1P4G640C andB0650D; no isolated firmware comparison or fix attribution."
+    ]
+  }
+}

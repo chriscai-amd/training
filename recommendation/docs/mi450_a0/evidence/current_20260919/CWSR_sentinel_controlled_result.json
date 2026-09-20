@@ -1,0 +1,140 @@
+{
+  "status": "CONFIRMED_CONTROLLED_TRAP_LANE0_CROSS_BANK_COPY",
+  "utc": "2026-09-20T05:08:11.378248+00:00",
+  "independent_full_packet_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_result_audit_independent_v1/sentinel_complete_raw_packet_independent_review_v1.json",
+    "bytes": 70792,
+    "sha256": "5c2e8c566cd8143d3c1fa597b1ca800af53858a59a9bdd53c3ec050ad66d54bd"
+  },
+  "native_join": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_root_v1/native_join_root_v1.json",
+    "bytes": 15585,
+    "sha256": "9ed67383738b1a68eab7daace4a76ca7e3db2e4d5b1604a4fa61a16c138efe62"
+  },
+  "shader_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/final_sentinel_shader_instruction_ABI_independent_review_v1.json",
+    "bytes": 15283,
+    "sha256": "e61c855fe35d6aba5473c616b59909fc315e7467ff8d8b6073a9a2b7f33ac389"
+  },
+  "launch_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_root_v1/launch_manifest_sentinel_v1.json",
+    "bytes": 144896,
+    "sha256": "094d67381d46874044043c40e3672a5b168cd06089398342f2a4ca9b7d6df5ea"
+  },
+  "mode_comparisons": [
+    {
+      "mode": "0x00",
+      "MODE_19_12": "0x00",
+      "expected_entry_source_VGPR": 1,
+      "expected_entry_destination_VGPR": 1,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "UNCHANGED",
+      "shader_trap_changed_tags": [],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    },
+    {
+      "mode": "0x41",
+      "MODE_19_12": "0x05",
+      "expected_entry_source_VGPR": 257,
+      "expected_entry_destination_VGPR": 257,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "UNCHANGED",
+      "shader_trap_changed_tags": [],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    },
+    {
+      "mode": "0x45",
+      "MODE_19_12": "0x15",
+      "expected_entry_source_VGPR": 257,
+      "expected_entry_destination_VGPR": 257,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "UNCHANGED",
+      "shader_trap_changed_tags": [],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    },
+    {
+      "mode": "0x82",
+      "MODE_19_12": "0x0a",
+      "expected_entry_source_VGPR": 513,
+      "expected_entry_destination_VGPR": 513,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "UNCHANGED",
+      "shader_trap_changed_tags": [],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    },
+    {
+      "mode": "0x05",
+      "MODE_19_12": "0x14",
+      "expected_entry_source_VGPR": 257,
+      "expected_entry_destination_VGPR": 1,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "shader_trap_changed_tags": [
+        {
+          "vgpr": 1,
+          "lane": 0,
+          "before": "0x11000000",
+          "after": "0x22000000"
+        }
+      ],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    },
+    {
+      "mode": "0x81",
+      "MODE_19_12": "0x06",
+      "expected_entry_source_VGPR": 257,
+      "expected_entry_destination_VGPR": 513,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "shader_trap_changed_tags": [
+        {
+          "vgpr": 513,
+          "lane": 0,
+          "before": "0x33000000",
+          "after": "0x22000000"
+        }
+      ],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    },
+    {
+      "mode": "0x85",
+      "MODE_19_12": "0x16",
+      "expected_entry_source_VGPR": 257,
+      "expected_entry_destination_VGPR": 513,
+      "no_shader_trap_classification": "UNCHANGED",
+      "shader_trap_classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "shader_trap_changed_tags": [
+        {
+          "vgpr": 513,
+          "lane": 0,
+          "before": "0x33000000",
+          "after": "0x22000000"
+        }
+      ],
+      "both_packets_and_initializations_valid": true,
+      "both_MODE_and_EXEC_preserved": true,
+      "shader_trap_TTMP_full64_equals_intended_PC": true
+    }
+  ],
+  "observed": "All7 no-trap controls unchanged. Trap05 copied full v257 lane0 tag into v1 lane0. Trap81 and85 copied full v257 lane0 tag into v513 lane0. Four equal-bank trap controls unchanged. All other sampled tags at lanes0/1/16 unchanged; all MODE and EXEC values preserved.",
+  "trap_return_evidence": "All7 explicit-trap TTMP0:1 full64 values exactly equal computed post-S_TRAP PC; all7 no-trap TTMP0:1 values zero. TRAP_EN remained1 and returned PRIV0. STATUS delta0x400 is VCCZ, not a trap marker.",
+  "scope": "Hardware observation in standalone single-wave shader under exact installed HIP/HSA/driver stack. Matches installed first-level CWSR entry-workaround bank-copy prediction.",
+  "limits": [
+    "The controlled trap observation does not observe a trap in the original failing arithmetic workload.",
+    "A shared cause for tiny historical-address replay products and enormous training NaNs remains unproved.",
+    "Observed lane controls sample0/1/16; other-lane invariance of the entry sequence also has static EXEC=1 proof."
+  ],
+  "next": "Export read-only TTMP0:1 and a local PC reference from the workload epilogue to identify last visible returnPC while preserving all normal arithmetic observations."
+}

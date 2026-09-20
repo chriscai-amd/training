@@ -1,0 +1,285 @@
+{
+  "status": "PASS_INDEPENDENT_SIX_MONOMIAL_INTERVAL_DETERMINANT_EXCLUDES_ZERO",
+  "GPU_actions": false,
+  "original_DY_search_rerun": false,
+  "global_512_corner_enumeration": false,
+  "author_algorithm_imported": false,
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_rank2_peer_v1/review_rank2_by_monomial_intervals_v1.py",
+    "bytes": 7908,
+    "sha256": "f0c6104f62f33d825d79f5c4bd7168d6acdc12bb2fcab944bc34dba6d2c2406c"
+  },
+  "author_rank_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_rank2_CPU_v1/training405_shared_two_row_rank_invariant_feasibility_v1.json",
+    "bytes": 9621,
+    "sha256": "38e4e7d69650f737f709a21edb4e2c23a3ada890e2438f378b50bd66e3bd1a2b"
+  },
+  "parent_search": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_DY_row_scalar_CPU_v1/training405_all_DY_rows_single_scalar_search_v1.json",
+    "bytes": 30716,
+    "sha256": "82f8cb52aae68d8a0d538beb3cf3f7bbe0646dffe03bc042e8e694bdba4074b3"
+  },
+  "residual_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_DY_row_scalar_CPU_v1/training405_DY_row_scalar_with_bounded_ordinary_residual_v1.json",
+    "bytes": 6765,
+    "sha256": "895741754d1b454d373c09e725cbe628f4fb01265bbff31bd1beb227a1197fbc"
+  },
+  "original_complete_DW_storage_rehashed": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/boundaries/linear-deferred-151178-1789804761268849047-s405-raw_addmm_outputs.pt",
+    "member": "archive/data/1",
+    "bytes": 262144,
+    "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+  },
+  "rows_M": [
+    0,
+    1,
+    5
+  ],
+  "columns_N": [
+    128,
+    129,
+    130
+  ],
+  "arbitrary_coordinate_residual_bound": 11,
+  "all_K_ordinary_term_bound_verified_below_11": true,
+  "exact_cells": [
+    {
+      "M": 0,
+      "N": 128,
+      "BF16": "0x7121",
+      "closed_cell": [
+        "794757505221214136485237751808",
+        "799709265378355657584834248704"
+      ],
+      "expanded_cell": [
+        "794757505221214136485237751797",
+        "799709265378355657584834248715"
+      ]
+    },
+    {
+      "M": 0,
+      "N": 129,
+      "BF16": "0xf2a7",
+      "closed_cell": [
+        "-6635358610569638273459305840640",
+        "-6595744529312506104662533865472"
+      ],
+      "expanded_cell": [
+        "-6635358610569638273459305840651",
+        "-6595744529312506104662533865461"
+      ]
+    },
+    {
+      "M": 0,
+      "N": 130,
+      "BF16": "0xf1e3",
+      "closed_cell": [
+        "-2253050871499392100316406087680",
+        "-2243147351185109058117213093888"
+      ],
+      "expanded_cell": [
+        "-2253050871499392100316406087691",
+        "-2243147351185109058117213093877"
+      ]
+    },
+    {
+      "M": 1,
+      "N": 128,
+      "BF16": "0xf260",
+      "closed_cell": [
+        "-4446680621113085947437654212608",
+        "-4426873580484519863039268225024"
+      ],
+      "expanded_cell": [
+        "-4446680621113085947437654212619",
+        "-4426873580484519863039268225013"
+      ]
+    },
+    {
+      "M": 1,
+      "N": 129,
+      "BF16": "0x726a",
+      "closed_cell": [
+        "4624943986770180707023128100864",
+        "4644751027398746791421514088448"
+      ],
+      "expanded_cell": [
+        "4624943986770180707023128100853",
+        "4644751027398746791421514088459"
+      ]
+    },
+    {
+      "M": 1,
+      "N": 130,
+      "BF16": "0x7111",
+      "closed_cell": [
+        "715529342706949798891693801472",
+        "720481102864091319991290298368"
+      ],
+      "expanded_cell": [
+        "715529342706949798891693801461",
+        "720481102864091319991290298379"
+      ]
+    },
+    {
+      "M": 5,
+      "N": 128,
+      "BF16": "0x7150",
+      "closed_cell": [
+        "1027490232606865628166273105920",
+        "1032441992764007149265869602816"
+      ],
+      "expanded_cell": [
+        "1027490232606865628166273105909",
+        "1032441992764007149265869602827"
+      ]
+    },
+    {
+      "M": 5,
+      "N": 129,
+      "BF16": "0xf142",
+      "closed_cell": [
+        "-963117350564025853871518646272",
+        "-958165590406884332771922149376"
+      ],
+      "expanded_cell": [
+        "-963117350564025853871518646283",
+        "-958165590406884332771922149365"
+      ]
+    },
+    {
+      "M": 5,
+      "N": 130,
+      "BF16": "0xf1d1",
+      "closed_cell": [
+        "-2074787505842297340730932199424",
+        "-2064883985528014298531739205632"
+      ],
+      "expanded_cell": [
+        "-2074787505842297340730932199435",
+        "-2064883985528014298531739205621"
+      ]
+    }
+  ],
+  "six_signed_monomial_enclosures": [
+    {
+      "column_permutation": [
+        0,
+        1,
+        2
+      ],
+      "sign": 1,
+      "unsigned_interval": [
+        "-7706695347355936830131985271620758360346914604999361989488634321766920066160707564306695475",
+        "-7589912535400621711682063413561627143854697979332161236288042193851872923172094999728749261"
+      ],
+      "signed_interval": [
+        "-7706695347355936830131985271620758360346914604999361989488634321766920066160707564306695475",
+        "-7589912535400621711682063413561627143854697979332161236288042193851872923172094999728749261"
+      ]
+    },
+    {
+      "column_permutation": [
+        0,
+        2,
+        1
+      ],
+      "sign": -1,
+      "unsigned_interval": [
+        "-554924537701034988648288518695384767671851300244101661660027445487421336311374631533544755",
+        "-544882244758889933513354424605959004258756834500380377345241078581663829255940305412160205"
+      ],
+      "signed_interval": [
+        "544882244758889933513354424605959004258756834500380377345241078581663829255940305412160205",
+        "554924537701034988648288518695384767671851300244101661660027445487421336311374631533544755"
+      ]
+    },
+    {
+      "column_permutation": [
+        1,
+        0,
+        2
+      ],
+      "sign": -1,
+      "unsigned_interval": [
+        "-61217270428355871503392505739340565601712351230519374973950128252933996486783415288734942515",
+        "-60291571217190281569537743864432968760139678059134330217386660553783727748135579911647656653"
+      ],
+      "signed_interval": [
+        "60291571217190281569537743864432968760139678059134330217386660553783727748135579911647656653",
+        "61217270428355871503392505739340565601712351230519374973950128252933996486783415288734942515"
+      ]
+    },
+    {
+      "column_permutation": [
+        1,
+        2,
+        0
+      ],
+      "sign": 1,
+      "unsigned_interval": [
+        "-4935744318234169235348088827789253838573441095259747297863484706170771868070293441506968883",
+        "-4849187491572994235512602877596364954038026118792148332785807782246775428818882587965520589"
+      ],
+      "signed_interval": [
+        "-4935744318234169235348088827789253838573441095259747297863484706170771868070293441506968883",
+        "-4849187491572994235512602877596364954038026118792148332785807782246775428818882587965520589"
+      ]
+    },
+    {
+      "column_permutation": [
+        2,
+        0,
+        1
+      ],
+      "sign": 1,
+      "unsigned_interval": [
+        "-9649085223762019980713636370743977182454581176641145303174493623709280946687069436799616307",
+        "-9514708630984262546932932405893633467805424735173543872275954681876015305042401037905820365"
+      ],
+      "signed_interval": [
+        "-9649085223762019980713636370743977182454581176641145303174493623709280946687069436799616307",
+        "-9514708630984262546932932405893633467805424735173543872275954681876015305042401037905820365"
+      ]
+    },
+    {
+      "column_permutation": [
+        2,
+        1,
+        0
+      ],
+      "sign": -1,
+      "unsigned_interval": [
+        "-10804361273935277673253376574815588892796601462564697258120197705158653162958100824621843763",
+        "-10659626370624172652066530039053582459366365807021179589885931576731738013424346716920871629"
+      ],
+      "signed_interval": [
+        "10659626370624172652066530039053582459366365807021179589885931576731738013424346716920871629",
+        "10804361273935277673253376574815588892796601462564697258120197705158653162958100824621843763"
+      ]
+    }
+  ],
+  "determinant_enclosure": {
+    "lower": {
+      "exact": "49204554943221218108923917857938520842389863823755635594091220557450156709897796491367407822",
+      "approx": 4.920455494322122e+91
+    },
+    "upper": {
+      "exact": "50622747582034305671166572135799913696482655160030320452380548745605407329019512119290240818",
+      "approx": 5.0622747582034306e+91
+    }
+  },
+  "author_exact_corner_extrema_inside_independent_enclosure": true,
+  "proof": [
+    "A common two-source exact linear combination has form C(3x2)*D(2x3), so every such 3x3 minor has determinant zero.",
+    "Target BF16-RNE preimages are contained in closed midpoint cells. Subtracting any residual of magnitude at most11 places the putative rank2 matrix inside the independently reconstructed expanded cells.",
+    "For each of six determinant monomials, repeated exact integer interval multiplication encloses all products. Adding signed intervals conservatively encloses every determinant, without enumerating full matrix corners.",
+    "The resulting lower bound is strictly positive, so the entire rank2 family is impossible inside these rounding/error boxes."
+  ],
+  "limits": [
+    "The bound excludes a common pair of arbitrary source profiles with row-dependent exact coefficients, including any common pair of saved DY rows. It does not exclude different source pairs for each M or three shared profiles.",
+    "The report checks coordinate residual11 only. The author additional2^98 sensitivity case and any GPU intermediate rounding/fault model are not independently certified here.",
+    "No kernel, instruction, physical cause or common cause with zero-DY donor events is inferred. NaN rows remain outside the finite real model.",
+    "No large original operand data was rescanned; original X/DY extrema and full backing identities inherit the pinned residual certificate."
+  ]
+}

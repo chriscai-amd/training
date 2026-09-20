@@ -1,0 +1,796 @@
+{
+  "status": "PASS_COMPLETE_OBSERVER_PC_HISTORY_AND_FAIL332_WAVE_CORRELATION",
+  "created_utc": "2026-09-20T05:55:48.188796+00:00",
+  "GPU_actions": false,
+  "root_confirmed_GPU_and_native_terminal_reaped": true,
+  "stream_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/ttmp_observer_complete_stream_metadata_pairs_independent_review_v1.json",
+    "bytes": 4705016,
+    "sha256": "267b18f9c8326fe3b32fe37542b475958bc2814dd9ebd3cb7089be39fe6bd370"
+  },
+  "source_wave_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_stream_audit_v1/ttmp_observer_source_wave_metadata_join_independent_v1.json",
+    "bytes": 580049,
+    "sha256": "74a8a212df310a956d89518bdb40d20c2fb816845d65d8a13b81dd63b16eb4a0"
+  },
+  "candidate_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_ttmp_observer_peer_v1/candidate_fresh_independent_disassembly_v1.s",
+    "bytes": 4286960,
+    "sha256": "4c913a8219d8f790b437a5c29be302da8b0719f5fee5bc355f1d32619a776786"
+  },
+  "historical_window_certificate": {
+    "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/CWSR_executed_bank_windows.json",
+    "bytes": 112484,
+    "sha256": "e78925aa0e9a35054c274b14108f24f35de1c84d0b3c27045150fec2f9c24855"
+  },
+  "all172_historical_route_instruction_words_equal_current_candidate": true,
+  "selected_windows": [
+    {
+      "setter_pc": "0x80c8",
+      "low_mode": "0x81",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "following_instruction_heads": [
+        "0x80cc",
+        "0x80d4"
+      ]
+    },
+    {
+      "setter_pc": "0x80e8",
+      "low_mode": "0x81",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "following_instruction_heads": [
+        "0x80ec",
+        "0x80f4"
+      ]
+    },
+    {
+      "setter_pc": "0x8108",
+      "low_mode": "0x81",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "following_instruction_heads": [
+        "0x810c",
+        "0x8114"
+      ]
+    },
+    {
+      "setter_pc": "0x8128",
+      "low_mode": "0x81",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "following_instruction_heads": [
+        "0x812c",
+        "0x8134"
+      ]
+    },
+    {
+      "setter_pc": "0x8148",
+      "low_mode": "0x81",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "following_instruction_heads": [
+        "0x814c",
+        "0x8154"
+      ]
+    },
+    {
+      "setter_pc": "0x8168",
+      "low_mode": "0x81",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "following_instruction_heads": [
+        "0x816c",
+        "0x8174"
+      ]
+    },
+    {
+      "setter_pc": "0x8188",
+      "low_mode": "0x81",
+      "src0_bank": 1,
+      "dst_bank": 2,
+      "following_instruction_heads": [
+        "0x818c",
+        "0x8194"
+      ]
+    }
+  ],
+  "selected_instruction_heads": [
+    "0x80cc",
+    "0x80d4",
+    "0x80ec",
+    "0x80f4",
+    "0x810c",
+    "0x8114",
+    "0x812c",
+    "0x8134",
+    "0x814c",
+    "0x8154",
+    "0x816c",
+    "0x8174",
+    "0x818c",
+    "0x8194"
+  ],
+  "all332_invocations_scanned": true,
+  "wave_samples": 5312,
+  "metadata_failure_calls": [],
+  "all_references_identical_across_calls": {
+    "0x00007263877a0138": 332
+  },
+  "module_bias_samples": {
+    "0x000726387780000": 5312
+  },
+  "class_counts": {
+    "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 4464,
+    "EXACT_INSTRUCTION_BOUNDARY": 848
+  },
+  "per_call_class_counts": [
+    {
+      "classes": {
+        "NONZERO_TTMP_NO_EXACT_BOUNDARY_MATCH": 16
+      },
+      "call_count": 279
+    },
+    {
+      "classes": {
+        "EXACT_INSTRUCTION_BOUNDARY": 16
+      },
+      "call_count": 53
+    }
+  ],
+  "exact_boundary_PC_context": [
+    {
+      "PC": "0x71f8",
+      "sample_count": 124,
+      "calls": [
+        77,
+        91,
+        109,
+        123,
+        141,
+        155,
+        173,
+        187,
+        205,
+        219,
+        229,
+        233,
+        243,
+        251,
+        261,
+        265,
+        275,
+        283,
+        293,
+        297,
+        307,
+        315,
+        325,
+        329
+      ],
+      "matching_instruction": "v_perm_b32 v28 /*v284*/, v96 /*v352*/, v92 /*v348*/, s66"
+    },
+    {
+      "PC": "0x7740",
+      "sample_count": 20,
+      "calls": [
+        186,
+        200,
+        218,
+        232,
+        250,
+        264,
+        282,
+        296,
+        314,
+        328
+      ],
+      "matching_instruction": "s_set_vgpr_msb 0x8105"
+    },
+    {
+      "PC": "0x7760",
+      "sample_count": 20,
+      "calls": [
+        186,
+        200,
+        218,
+        232,
+        250,
+        264,
+        282,
+        296,
+        314,
+        328
+      ],
+      "matching_instruction": "s_set_vgpr_msb 0x8105"
+    },
+    {
+      "PC": "0x7940",
+      "sample_count": 184,
+      "calls": [
+        53,
+        67,
+        81,
+        99,
+        113,
+        131,
+        145,
+        163,
+        177,
+        186,
+        195,
+        200,
+        209,
+        218,
+        227,
+        232,
+        241,
+        250,
+        255,
+        264,
+        273,
+        282,
+        287,
+        296,
+        305,
+        314,
+        319,
+        328
+      ],
+      "matching_instruction": "v_wmma_f32_16x16x32_bf16 v[224:231], v[60:67] /*v[316:323]*/, v[246:253] /*v[502:509]*/, v[224:231]"
+    },
+    {
+      "PC": "0x79bc",
+      "sample_count": 8,
+      "calls": [
+        332
+      ],
+      "matching_instruction": "v_wmma_f32_16x16x32_bf16 v[232:239], v[68:75] /*v[324:331]*/, v[246:253] /*v[502:509]*/, v[232:239]"
+    },
+    {
+      "PC": "0x7ab4",
+      "sample_count": 51,
+      "calls": [
+        77,
+        91,
+        109,
+        123,
+        141,
+        155,
+        173,
+        187,
+        205,
+        219,
+        233,
+        251,
+        265,
+        283,
+        297,
+        315,
+        329
+      ],
+      "matching_instruction": "v_wmma_f32_16x16x32_bf16 v[248:255], v[84:91] /*v[340:347]*/, v[246:253] /*v[502:509]*/, v[248:255]"
+    },
+    {
+      "PC": "0x7abc",
+      "sample_count": 17,
+      "calls": [
+        77,
+        91,
+        109,
+        123,
+        141,
+        155,
+        173,
+        187,
+        205,
+        219,
+        233,
+        251,
+        265,
+        283,
+        297,
+        315,
+        329
+      ],
+      "matching_instruction": "s_wait_loadcnt 0x17"
+    },
+    {
+      "PC": "0x7bf8",
+      "sample_count": 25,
+      "calls": [
+        53,
+        67,
+        81,
+        99,
+        113,
+        131,
+        145,
+        163,
+        177,
+        195,
+        209,
+        227,
+        229,
+        241,
+        243,
+        255,
+        261,
+        273,
+        275,
+        287,
+        293,
+        305,
+        307,
+        319,
+        325
+      ],
+      "matching_instruction": "s_wait_loadcnt 0x17"
+    },
+    {
+      "PC": "0x7bfc",
+      "sample_count": 25,
+      "calls": [
+        53,
+        67,
+        81,
+        99,
+        113,
+        131,
+        145,
+        163,
+        177,
+        195,
+        209,
+        227,
+        229,
+        241,
+        243,
+        255,
+        261,
+        273,
+        275,
+        287,
+        293,
+        305,
+        307,
+        319,
+        325
+      ],
+      "matching_instruction": "s_set_vgpr_msb 0x8109"
+    },
+    {
+      "PC": "0x7c08",
+      "sample_count": 25,
+      "calls": [
+        53,
+        67,
+        81,
+        99,
+        113,
+        131,
+        145,
+        163,
+        177,
+        195,
+        209,
+        227,
+        229,
+        241,
+        243,
+        255,
+        261,
+        273,
+        275,
+        287,
+        293,
+        305,
+        307,
+        319,
+        325
+      ],
+      "matching_instruction": "s_set_vgpr_msb 0x981"
+    },
+    {
+      "PC": "0x7c0c",
+      "sample_count": 25,
+      "calls": [
+        53,
+        67,
+        81,
+        99,
+        113,
+        131,
+        145,
+        163,
+        177,
+        195,
+        209,
+        227,
+        229,
+        241,
+        243,
+        255,
+        261,
+        273,
+        275,
+        287,
+        293,
+        305,
+        307,
+        319,
+        325
+      ],
+      "matching_instruction": "s_wait_alu depctr_vm_vsrc(0)"
+    },
+    {
+      "PC": "0x7c40",
+      "sample_count": 30,
+      "calls": [
+        186,
+        200,
+        218,
+        232,
+        250,
+        264,
+        282,
+        296,
+        314,
+        328
+      ],
+      "matching_instruction": "s_wait_xcnt 0x0"
+    },
+    {
+      "PC": "0x7c48",
+      "sample_count": 78,
+      "calls": [
+        77,
+        91,
+        109,
+        123,
+        141,
+        155,
+        173,
+        186,
+        187,
+        200,
+        205,
+        218,
+        219,
+        232,
+        233,
+        250,
+        251,
+        264,
+        265,
+        282,
+        283,
+        296,
+        297,
+        314,
+        315,
+        328,
+        329
+      ],
+      "matching_instruction": "v_perm_b32 v38 /*v294*/, v176 /*v432*/, v172 /*v428*/, s67"
+    },
+    {
+      "PC": "0x7d40",
+      "sample_count": 40,
+      "calls": [
+        186,
+        200,
+        218,
+        232,
+        250,
+        264,
+        282,
+        296,
+        314,
+        328
+      ],
+      "matching_instruction": "s_wait_xcnt 0x0"
+    },
+    {
+      "PC": "0x7dc0",
+      "sample_count": 1,
+      "calls": [
+        332
+      ],
+      "matching_instruction": "v_perm_b32 v69 /*v325*/, v170 /*v426*/, v166 /*v422*/, s67"
+    },
+    {
+      "PC": "0x7dcc",
+      "sample_count": 1,
+      "calls": [
+        332
+      ],
+      "matching_instruction": "v_wmma_f32_16x16x32_bf16 v[16:23], v[44:51] /*v[300:307]*/, v[222:229] /*v[478:485]*/, v[16:23]"
+    },
+    {
+      "PC": "0x7de0",
+      "sample_count": 1,
+      "calls": [
+        332
+      ],
+      "matching_instruction": "v_perm_b32 v71 /*v327*/, v186 /*v442*/, v182 /*v438*/, s67"
+    },
+    {
+      "PC": "0x7de8",
+      "sample_count": 1,
+      "calls": [
+        332
+      ],
+      "matching_instruction": "v_perm_b32 v72 /*v328*/, v194 /*v450*/, v190 /*v446*/, s67"
+    },
+    {
+      "PC": "0x80d4",
+      "sample_count": 4,
+      "calls": [
+        332
+      ],
+      "matching_instruction": "ds_load_b64 v[4:5] /*v[516:517]*/, v27 /*v283*/ offset:768"
+    },
+    {
+      "PC": "0x81b8",
+      "sample_count": 28,
+      "calls": [
+        229,
+        243,
+        261,
+        275,
+        293,
+        307,
+        325
+      ],
+      "matching_instruction": "v_wmma_f32_16x16x32_bf16 v[208:215], v[44:51] /*v[300:307]*/, v[246:253] /*v[502:509]*/, v[208:215]"
+    },
+    {
+      "PC": "0x81d0",
+      "sample_count": 72,
+      "calls": [
+        53,
+        67,
+        81,
+        99,
+        113,
+        131,
+        145,
+        163,
+        177,
+        195,
+        209,
+        227,
+        241,
+        255,
+        273,
+        287,
+        305,
+        319
+      ],
+      "matching_instruction": "v_wmma_f32_16x16x32_bf16 v[232:239], v[68:75] /*v[324:331]*/, v[246:253] /*v[502:509]*/, v[232:239]"
+    },
+    {
+      "PC": "0x81ec",
+      "sample_count": 68,
+      "calls": [
+        77,
+        91,
+        109,
+        123,
+        141,
+        155,
+        173,
+        187,
+        205,
+        219,
+        233,
+        251,
+        265,
+        283,
+        297,
+        315,
+        329
+      ],
+      "matching_instruction": "s_cmp_eq_i32 s12, 2"
+    }
+  ],
+  "nonmatching_distinct_raw_and_normalized_pairs": 271,
+  "selected_window_hits": [
+    {
+      "iteration": 332,
+      "group": 2,
+      "wave": 0,
+      "arithmetic_failed": true,
+      "TTMP64": "0x00007263877880d4",
+      "normalized_PC": "0x0000000000080d4",
+      "classification": "EXACT_INSTRUCTION_BOUNDARY"
+    },
+    {
+      "iteration": 332,
+      "group": 2,
+      "wave": 1,
+      "arithmetic_failed": true,
+      "TTMP64": "0x00007263877880d4",
+      "normalized_PC": "0x0000000000080d4",
+      "classification": "EXACT_INSTRUCTION_BOUNDARY"
+    },
+    {
+      "iteration": 332,
+      "group": 2,
+      "wave": 2,
+      "arithmetic_failed": true,
+      "TTMP64": "0x00007263877880d4",
+      "normalized_PC": "0x0000000000080d4",
+      "classification": "EXACT_INSTRUCTION_BOUNDARY"
+    },
+    {
+      "iteration": 332,
+      "group": 2,
+      "wave": 3,
+      "arithmetic_failed": true,
+      "TTMP64": "0x00007263877880d4",
+      "normalized_PC": "0x0000000000080d4",
+      "classification": "EXACT_INSTRUCTION_BOUNDARY"
+    }
+  ],
+  "selected_window_hits_in_passing331": [],
+  "final_failure": {
+    "iteration": 332,
+    "raw_sha256": "a2bcf506e784d9668cb6539dd7f034ad9399cd1e95f7ccd811843c8f5ba138ac",
+    "raw_words_nonzero": 336,
+    "arithmetic_words_nonzero": 272,
+    "arithmetic_subnormal_words": 2,
+    "unique_nonzero_sources": 256,
+    "source_column_counts": {
+      "258": 136,
+      "322": 136
+    },
+    "source_lane_counts": {
+      "16": 144,
+      "0": 128
+    },
+    "wrong_source_waves": [
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "all_wrong_source_waves_equal_selected_PC_waves": true,
+    "sampled_PC": "0x80d4",
+    "sampled_instruction": "ds_load_b64 v[4:5] /*v[516:517]*/, v27 /*v283*/ offset:768",
+    "preceding_bank_setter": {
+      "instruction": "s_set_vgpr_msb 0x581",
+      "words": [
+        3213231489
+      ]
+    },
+    "reaching_v513_program_load": {
+      "instruction": "ds_load_b64 v[0:1] /*v[512:513]*/, v27 /*v283*/ offset:256",
+      "words": [
+        3654811904,
+        27
+      ]
+    },
+    "later_dscnt_wait_PC": "0x71f0",
+    "raw_correspondence": [
+      {
+        "group": 2,
+        "wave": 0,
+        "metadata_byte_offsets": [
+          131072,
+          131076,
+          131080,
+          131084
+        ],
+        "raw_words": [
+          "0x877880d4",
+          "0x00007263",
+          "0x877a0138",
+          "0x00007263"
+        ],
+        "TTMP0": "0x877880d4",
+        "TTMP1": "0x00007263",
+        "TTMP64": "0x00007263877880d4",
+        "S_GETPC64": "0x00007263877a0138",
+        "normalized_module_bias_low57": "0x000726387780000",
+        "last_visible_return_ELF_PC_low57": "0x0000000000080d4",
+        "return_classification": "EXACT_INSTRUCTION_BOUNDARY",
+        "matching_instruction": "ds_load_b64 v[4:5] /*v[516:517]*/, v27 /*v283*/ offset:768"
+      },
+      {
+        "group": 2,
+        "wave": 1,
+        "metadata_byte_offsets": [
+          131328,
+          131332,
+          131336,
+          131340
+        ],
+        "raw_words": [
+          "0x877880d4",
+          "0x00007263",
+          "0x877a0138",
+          "0x00007263"
+        ],
+        "TTMP0": "0x877880d4",
+        "TTMP1": "0x00007263",
+        "TTMP64": "0x00007263877880d4",
+        "S_GETPC64": "0x00007263877a0138",
+        "normalized_module_bias_low57": "0x000726387780000",
+        "last_visible_return_ELF_PC_low57": "0x0000000000080d4",
+        "return_classification": "EXACT_INSTRUCTION_BOUNDARY",
+        "matching_instruction": "ds_load_b64 v[4:5] /*v[516:517]*/, v27 /*v283*/ offset:768"
+      },
+      {
+        "group": 2,
+        "wave": 2,
+        "metadata_byte_offsets": [
+          163840,
+          163844,
+          163848,
+          163852
+        ],
+        "raw_words": [
+          "0x877880d4",
+          "0x00007263",
+          "0x877a0138",
+          "0x00007263"
+        ],
+        "TTMP0": "0x877880d4",
+        "TTMP1": "0x00007263",
+        "TTMP64": "0x00007263877880d4",
+        "S_GETPC64": "0x00007263877a0138",
+        "normalized_module_bias_low57": "0x000726387780000",
+        "last_visible_return_ELF_PC_low57": "0x0000000000080d4",
+        "return_classification": "EXACT_INSTRUCTION_BOUNDARY",
+        "matching_instruction": "ds_load_b64 v[4:5] /*v[516:517]*/, v27 /*v283*/ offset:768"
+      },
+      {
+        "group": 2,
+        "wave": 3,
+        "metadata_byte_offsets": [
+          164096,
+          164100,
+          164104,
+          164108
+        ],
+        "raw_words": [
+          "0x877880d4",
+          "0x00007263",
+          "0x877a0138",
+          "0x00007263"
+        ],
+        "TTMP0": "0x877880d4",
+        "TTMP1": "0x00007263",
+        "TTMP64": "0x00007263877880d4",
+        "S_GETPC64": "0x00007263877a0138",
+        "normalized_module_bias_low57": "0x000726387780000",
+        "last_visible_return_ELF_PC_low57": "0x0000000000080d4",
+        "return_classification": "EXACT_INSTRUCTION_BOUNDARY",
+        "matching_instruction": "ds_load_b64 v[4:5] /*v[516:517]*/, v27 /*v283*/ offset:768"
+      }
+    ]
+  },
+  "limits": [
+    "Samples were exported by the failing invocation; a last-visible TTMP value alone does not date the underlying trap or recover the full trap history.",
+    "No previous passing invocation samples any of the fourteen preselected instruction heads; this does not prove no earlier hidden trap occurred.",
+    "279 invocations have nonzero TTMP values that do not match this loaded module; these values are retained without attributing them to a current-kernel instruction.",
+    "The bank81 geometry is a conditional installed-handler mechanism. The sampled LDS instruction is a return/resume boundary, not identified as the corrupting instruction.",
+    "The v513 LDS request precedes the window, but its completion is asynchronous; static code alone does not establish whether the request completed before the sampled event.",
+    "Shared cause with the original training NaNs remains unproved."
+  ]
+}

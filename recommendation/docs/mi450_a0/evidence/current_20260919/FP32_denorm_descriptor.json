@@ -1,0 +1,30 @@
+{
+  "status": "PASS_STATIC_FP32_DENORM_PRESERVATION",
+  "utc": "2026-09-19T22:35:17.307566+00:00",
+  "elf": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_native_override_artifacts_v1/DW_B_reuse_off.elf",
+    "bytes": 335000,
+    "sha256": "d57129bfbd851f78ba148a2af82d0379704e3e3c2e5ef85190f8b4ecc8091a33"
+  },
+  "header": {
+    "path": "/opt/rocm-10.1.0a20260811/lib/llvm/include/llvm/Support/AMDHSAKernelDescriptor.h",
+    "bytes": 15027,
+    "sha256": "867b8bfabc6d38e97fe83a4ea5bed76f2e29306ddfde5be9a42ffed6fa68081f"
+  },
+  "disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_accumulator_export_audit_v1/baseline_independent_fresh_disassembly_v2.s",
+    "bytes": 4277349,
+    "sha256": "20fa89aeefd7fef017bdf13e451d36c47c962e32c898aa3e44b66ab5557cc22d"
+  },
+  "descriptor_file_offset_hex": "0x3640",
+  "descriptor_hex": "00c00000000000000000000000000000c0100000000000000000000000000000000000000000000000000000f00f00002a000fc0b803000008041a0000000000",
+  "COMPUTE_PGM_RSRC1_hex": "0xc00f002a",
+  "FP32_denorm_mode": 3,
+  "FP32_rounding_mode": 0,
+  "explicit_mode_register_writes": [
+    "s_setreg_imm32_b32 hwreg(HW_REG_WAVE_SCHED_MODE, 0, 2), 2  // 000000004714: B980081A 00000002",
+    "s_setreg_imm32_b32 hwreg(HW_REG_WAVE_SCHED_MODE, 0, 2), 2  // 00000000471C: B980081A 00000002",
+    "s_setreg_imm32_b32 hwreg(HW_REG_WAVE_SCHED_MODE, 4, 1), 1  // 000000005024: B980011A 00000001"
+  ],
+  "conclusion": "Descriptor permits source and destination FP32 subnormals; no explicit FP mode write in disassembly. Historical0x810-family bits can survive identity alpha/scale/bias arithmetic architecturally. This check does not identify a fault site or certify hardware behavior."
+}

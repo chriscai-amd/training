@@ -1,0 +1,283 @@
+{
+  "status": "PASS_BOUNDED_SHARED_TWO_ROW_RANK_INVARIANT_FEASIBILITY",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_rank2_CPU_v1/review_shared_two_row_rank_feasibility_v1.py",
+    "bytes": 8365,
+    "sha256": "bd37a9d1497f74e4484f1d2445811fc23afe7b71faba390f07d2ce85b59e0c26"
+  },
+  "author_row_search": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_DY_row_scalar_CPU_v1/training405_all_DY_rows_single_scalar_search_v1.json",
+    "bytes": 30716,
+    "sha256": "82f8cb52aae68d8a0d538beb3cf3f7bbe0646dffe03bc042e8e694bdba4074b3"
+  },
+  "independent_all_column_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_DY_row_scalar_CPU_v1/independent_root_sign_review_v1.json",
+    "bytes": 2554,
+    "sha256": "5fc4c4163177dcb644242d33c29460c252172edbcd35529c99d6b33f0d95d0c8"
+  },
+  "independent_operand_residual_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_training405_DY_row_scalar_CPU_v1/training405_DY_row_scalar_with_bounded_ordinary_residual_v1.json",
+    "bytes": 6765,
+    "sha256": "895741754d1b454d373c09e725cbe628f4fb01265bbff31bd1beb227a1197fbc"
+  },
+  "original_DY_search_rerun": false,
+  "original_large_payloads_read": false,
+  "DY_pairs_enumerated": 0,
+  "reviewed_search_logic": [
+    "The author progressively filters every saved DY row by finite/nonzero and necessary signs for each scalar sign. Zero survivors at a prefix excludes every full 128-column match.",
+    "The root peer separately compares every full 128-column sign vector in chunks, reconstructs target words from the original DW storage, and independently rehashes the complete DY backing.",
+    "The exact interval branch has no survivors to check; the exclusion is established by signs, not by unexercised interval arithmetic."
+  ],
+  "tested_rows_M": [
+    0,
+    1,
+    5
+  ],
+  "tested_columns_N": [
+    128,
+    129,
+    130
+  ],
+  "target_words": [
+    [
+      "0x7121",
+      "0xf2a7",
+      "0xf1e3"
+    ],
+    [
+      "0xf260",
+      "0x726a",
+      "0x7111"
+    ],
+    [
+      "0x7150",
+      "0xf142",
+      "0xf1d1"
+    ]
+  ],
+  "closed_BF16_cells": [
+    {
+      "word": "0x7121",
+      "lower": {
+        "numerator": "794757505221214136485237751808",
+        "denominator": "1",
+        "approx": 7.947575052212141e+29
+      },
+      "upper": {
+        "numerator": "799709265378355657584834248704",
+        "denominator": "1",
+        "approx": 7.997092653783557e+29
+      }
+    },
+    {
+      "word": "0xf2a7",
+      "lower": {
+        "numerator": "-6635358610569638273459305840640",
+        "denominator": "1",
+        "approx": -6.635358610569638e+30
+      },
+      "upper": {
+        "numerator": "-6595744529312506104662533865472",
+        "denominator": "1",
+        "approx": -6.595744529312506e+30
+      }
+    },
+    {
+      "word": "0xf1e3",
+      "lower": {
+        "numerator": "-2253050871499392100316406087680",
+        "denominator": "1",
+        "approx": -2.253050871499392e+30
+      },
+      "upper": {
+        "numerator": "-2243147351185109058117213093888",
+        "denominator": "1",
+        "approx": -2.243147351185109e+30
+      }
+    },
+    {
+      "word": "0xf260",
+      "lower": {
+        "numerator": "-4446680621113085947437654212608",
+        "denominator": "1",
+        "approx": -4.446680621113086e+30
+      },
+      "upper": {
+        "numerator": "-4426873580484519863039268225024",
+        "denominator": "1",
+        "approx": -4.42687358048452e+30
+      }
+    },
+    {
+      "word": "0x726a",
+      "lower": {
+        "numerator": "4624943986770180707023128100864",
+        "denominator": "1",
+        "approx": 4.6249439867701807e+30
+      },
+      "upper": {
+        "numerator": "4644751027398746791421514088448",
+        "denominator": "1",
+        "approx": 4.644751027398747e+30
+      }
+    },
+    {
+      "word": "0x7111",
+      "lower": {
+        "numerator": "715529342706949798891693801472",
+        "denominator": "1",
+        "approx": 7.155293427069498e+29
+      },
+      "upper": {
+        "numerator": "720481102864091319991290298368",
+        "denominator": "1",
+        "approx": 7.204811028640913e+29
+      }
+    },
+    {
+      "word": "0x7150",
+      "lower": {
+        "numerator": "1027490232606865628166273105920",
+        "denominator": "1",
+        "approx": 1.0274902326068656e+30
+      },
+      "upper": {
+        "numerator": "1032441992764007149265869602816",
+        "denominator": "1",
+        "approx": 1.0324419927640071e+30
+      }
+    },
+    {
+      "word": "0xf142",
+      "lower": {
+        "numerator": "-963117350564025853871518646272",
+        "denominator": "1",
+        "approx": -9.631173505640259e+29
+      },
+      "upper": {
+        "numerator": "-958165590406884332771922149376",
+        "denominator": "1",
+        "approx": -9.581655904068843e+29
+      }
+    },
+    {
+      "word": "0xf1d1",
+      "lower": {
+        "numerator": "-2074787505842297340730932199424",
+        "denominator": "1",
+        "approx": -2.0747875058422973e+30
+      },
+      "upper": {
+        "numerator": "-2064883985528014298531739205632",
+        "denominator": "1",
+        "approx": -2.0648839855280143e+30
+      }
+    }
+  ],
+  "ordinary_K_term_bound": {
+    "numerator": "337030895",
+    "denominator": "33554432",
+    "approx": 10.044303387403488
+  },
+  "ordinary_bound_upper_integer": 11,
+  "center_determinant": {
+    "numerator": "49912737601164386976841578187439615740326452090771559770762972412472543220679095711973769216",
+    "denominator": "1",
+    "approx": 4.991273760116439e+91
+  },
+  "cases": [
+    {
+      "label": "ordinary_residual_only",
+      "coordinate_error_budget": "11",
+      "corner_count": 512,
+      "determinant_min": {
+        "numerator": "49422294281105115592650332113121172887152942324228876565668542446514116722364857626774203188",
+        "denominator": "1",
+        "approx": 4.9422294281105116e+91
+      },
+      "determinant_max": {
+        "numerator": "50406240867562525412535656279204909087863382284141704852750861596044761312093383516091323596",
+        "denominator": "1",
+        "approx": 5.0406240867562525e+91
+      },
+      "min_corner": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "max_corner": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "zero_excluded": true
+    },
+    {
+      "label": "additional_error_sensitivity",
+      "coordinate_error_budget": "316912650057057350374175801355",
+      "corner_count": 512,
+      "determinant_min": {
+        "numerator": "27818283433799042223788960253953851489799762929466381341006214809131578111112880715869454336",
+        "denominator": "1",
+        "approx": 2.7818283433799042e+91
+      },
+      "determinant_max": {
+        "numerator": "79275656588923632965290361999320661510773106962564119521046930840228258454668057379378042060",
+        "denominator": "1",
+        "approx": 7.927565658892363e+91
+      },
+      "min_corner": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "max_corner": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "zero_excluded": true
+    }
+  ],
+  "family": "For common k1,k2 and finite real coefficients a_m,b_m, Y[m,n]=BF16_RNE(a_m*DY[k1,n]+b_m*DY[k2,n]+r[m,n]), with |r[m,n]|<11 and m in {0,1,5}.",
+  "rank_argument": "The unrounded two-row combination is C(3x2)*D(2x3), hence its determinant is zero. Each true entry must lie in its closed BF16 cell expanded by the residual bound. The determinant is multi-affine in nine entries, so its extrema over the box occur among the 512 corners; every corner has strictly positive determinant.",
+  "result": "This fixed minor rejects the entire stated common-two-row exact-linear-combination family, including arbitrary choices of the two DY rows and arbitrary row-dependent coefficients.",
+  "arithmetic_error_scope": "The second case establishes sensitivity to any additional coordinate error bounded by 2^98. No claim is made here that GPU intermediate arithmetic satisfies that bound; proving such a bound would be separate work.",
+  "useful_next_model_constraints": [
+    "A common-source exact-linear model requires at least three independent source profiles across these finite output rows.",
+    "Three or more unconstrained shared rows cannot be rejected by a rank test using only these three finite rows; a further search needs a separately justified source support, coefficient structure, or remapping rule.",
+    "Allowing different row pairs for every M removes this shared-rank invariant and should not be silently added to the tested family."
+  ],
+  "limits": [
+    "This is a small CPU feasibility/invariant calculation on pinned target words. It does not search saved row pairs or repeat the full source searches.",
+    "NaN rows are excluded from finite real algebra. Their count and location are not fitted by this model.",
+    "The original training event has no assigned kernel/instruction here, and no common cause with later zero-DY donor events is inferred.",
+    "Arbitrary intermediate error, more shared rows, row-specific source pairs, coordinate remapping, or nonlinear corruption are outside the stated family.",
+    "The determinant uses closed rounding cells, conservatively including tie endpoints; no tie convention can restore zero determinant within these boxes."
+  ]
+}

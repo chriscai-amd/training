@@ -1,0 +1,374 @@
+{
+  "status": "VERIFIED_STATIC_INSTALLED_TRAP_ACTIVATION_SCOPE_WITH_RUNTIME_LIMITS",
+  "checker": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/certify_static_activation_scope_v1.py",
+    "bytes": 13382,
+    "sha256": "d9e6df4c271a4cfffbbb4de4184640f87a5a601aa9da89c1fc1c4b3058a155f2"
+  },
+  "GPU_actions": false,
+  "runtime_initialized": false,
+  "live_runtime_outputs_read": false,
+  "second_level_binding": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_binding_peer_v1/installed_GFX1250_public_fixup_byte_binding_v1.json",
+    "bytes": 8383,
+    "sha256": "d87026f20b37bcd5bb139c29fa15e9322b3233ddda16c769f557992a0cc7cec3"
+  },
+  "library": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_binding_peer_v1/0_libhsa-runtime64.so.1",
+    "bytes": 4887073,
+    "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+  },
+  "module": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_amdgpu.ko",
+    "bytes": 40319738,
+    "sha256": "f11e1604ac0417410e26c5020d43824ad122ae8b7b996879309468b87c1c5e28"
+  },
+  "loaded_setup_snapshot": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_module_setup_v1.json",
+    "bytes": 2031,
+    "sha256": "27421edf3a9d60d5f5fe5dfd29f45c36307cfbc1e02dcab7e90dfc35aa025fc1"
+  },
+  "loaded_module_version_srcversion_match": true,
+  "live_module_bytes_not_read": true,
+  "public_source_records": [
+    {
+      "URL": "https://raw.githubusercontent.com/ROCm/rocm-systems/61d7472d43a122eb96126c210ddfc7dd45f53104/projects/rocr-runtime/runtime/hsa-runtime/core/runtime/amd_gpu_agent.cpp",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/public_runtime_amd_gpu_agent.cpp",
+      "bytes": 226054,
+      "sha256": "0d724c7a2dad634c694a105161e88315c925a47b188f420bd9eac563406c93cc"
+    },
+    {
+      "URL": "https://raw.githubusercontent.com/ROCm/rocm-systems/61d7472d43a122eb96126c210ddfc7dd45f53104/projects/rocr-runtime/runtime/hsa-runtime/core/runtime/runtime.cpp",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/public_runtime_runtime.cpp",
+      "bytes": 199129,
+      "sha256": "0d2818f108a4753a851c7f0e79ec8b9ab3c2e0168acb87c493326a4cc66117bb"
+    },
+    {
+      "URL": "https://raw.githubusercontent.com/ROCm/rocm-systems/61d7472d43a122eb96126c210ddfc7dd45f53104/projects/rocr-runtime/runtime/hsa-runtime/core/inc/runtime.h",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/public_inc_runtime.h",
+      "bytes": 45581,
+      "sha256": "a1421cc5bd3679beede97a002cb70f6608f9891f2c0028d7ffab0a4f40767197"
+    },
+    {
+      "URL": "https://raw.githubusercontent.com/ROCm/rocm-systems/61d7472d43a122eb96126c210ddfc7dd45f53104/projects/rocr-runtime/runtime/hsa-runtime/core/runtime/amd_topology.cpp",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/public_core_runtime_amd_topology.cpp",
+      "bytes": 21508,
+      "sha256": "1eb0906ee14176db9b4aa5cd271dce7182d6faaa5d2604454084e8c5c845b39f"
+    },
+    {
+      "URL": "https://raw.githubusercontent.com/ROCm/rocm-systems/61d7472d43a122eb96126c210ddfc7dd45f53104/projects/rocr-runtime/runtime/hsa-runtime/core/driver/kfd/amd_kfd_driver.cpp",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/public_core_driver_kfd_amd_kfd_driver.cpp",
+      "bytes": 43001,
+      "sha256": "c844e29806cceb27e28e0e8bb465adacea76507ece4b086dc792035d92e42805"
+    },
+    {
+      "URL": "https://raw.githubusercontent.com/ROCm/rocm-systems/61d7472d43a122eb96126c210ddfc7dd45f53104/projects/rocr-runtime/runtime/hsa-runtime/CMakeLists.txt",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/public_CMakeLists.txt",
+      "bytes": 22436,
+      "sha256": "78fa461579a7b3ad338dacb51782498e7a521e8d93cb367fac36bec9166f14dc"
+    }
+  ],
+  "local_driver_source_records": [
+    {
+      "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_device.c",
+      "bytes": 51287,
+      "sha256": "7729b41821a7e24448e900b9ab677d7f9d4d8a1fd1ed4dec1f3f001f8f591d23"
+    },
+    {
+      "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_chardev.c",
+      "bytes": 108590,
+      "sha256": "cc24a322c1e32de97fa46c5d0bf29c5b88d8ad2a6ec0f111e025e4debb8c1c97"
+    },
+    {
+      "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_process.c",
+      "bytes": 73019,
+      "sha256": "bd6dd04b51d7ba0f4ef1c4a696ef8023e41129daa4e32638044a5f7426c32f5d"
+    },
+    {
+      "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/cwsr_trap_handler.h",
+      "bytes": 135221,
+      "sha256": "006a44ea767d581ecc84913ec8bdcd68476471510a1ccd9923b00efc3b8463ef"
+    },
+    {
+      "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/cwsr_trap_handler_gfx12.asm",
+      "bytes": 69197,
+      "sha256": "5e0e339cb988120d99fbccf2869bfab29e0a143bd110ce6f00cfdc495d5bf69d"
+    },
+    {
+      "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_priv.h",
+      "bytes": 56838,
+      "sha256": "f455ee91cf77e1a8748044b414ce54368c4e27b8f46fa07e38a63c3713c1e068"
+    }
+  ],
+  "installed_host_function_disassemblies": [
+    {
+      "symbol": "_ZN4rocr3AMD9KfdDriver4InitEv",
+      "section_index": 11,
+      "virtual_address": 652128,
+      "bytes": 381,
+      "info": 2,
+      "command": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0x9f360",
+        "--stop-address=0x9f4dd",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_binding_peer_v1/0_libhsa-runtime64.so.1"
+      ],
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_KfdDriver_Init.dis",
+        "bytes": 6072,
+        "sha256": "9a39ef716b90a4605b15e6f7944cf7023966880090cdd182dafe0f51d58d2057"
+      }
+    },
+    {
+      "symbol": "_ZN4rocr3AMD8GpuAgent13PostToolsInitEv",
+      "section_index": 11,
+      "virtual_address": 804368,
+      "bytes": 78,
+      "info": 2,
+      "command": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0xc4610",
+        "--stop-address=0xc465e",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_binding_peer_v1/0_libhsa-runtime64.so.1"
+      ],
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_PostToolsInit.dis",
+        "bytes": 1525,
+        "sha256": "756f056fe69d763653d271903a9171c006db66223d75e763457852d24bbbe7f8"
+      }
+    },
+    {
+      "symbol": "_ZN4rocr3AMD8GpuAgent15BindTrapHandlerEv",
+      "section_index": 11,
+      "virtual_address": 805360,
+      "bytes": 535,
+      "info": 2,
+      "command": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0xc49f0",
+        "--stop-address=0xc4c07",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_binding_peer_v1/0_libhsa-runtime64.so.1"
+      ],
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_BindTrapHandler.dis",
+        "bytes": 8192,
+        "sha256": "0f34ec893ddd3a3da284c9a6c9738a5a15a6a1983afee742a8328cf4b0fccb3e"
+      }
+    },
+    {
+      "symbol": "_ZNK4rocr3AMD8GpuAgent14AssembleShaderEPKcNS1_14AssembleTargetERPvRm",
+      "section_index": 11,
+      "virtual_address": 793488,
+      "bytes": 4202,
+      "info": 2,
+      "command": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0xc1b90",
+        "--stop-address=0xc2bfa",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_binding_peer_v1/0_libhsa-runtime64.so.1"
+      ],
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_AssembleShader.dis",
+        "bytes": 69078,
+        "sha256": "83b89ec5806968c520003971df1fe94c8b7e55a1996564156ced822323c604d4"
+      }
+    },
+    {
+      "symbol": "_ZNK4rocr3AMD9KfdDriver14SetTrapHandlerEjPKvmS3_m",
+      "section_index": 11,
+      "virtual_address": 656864,
+      "bytes": 52,
+      "info": 2,
+      "command": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0xa05e0",
+        "--stop-address=0xa0614",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_binding_peer_v1/0_libhsa-runtime64.so.1"
+      ],
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_KfdDriver_SetTrapHandler.dis",
+        "bytes": 1196,
+        "sha256": "7ae52b6690e78006bb2350282d9009b518a9da9f94e99189a54432c534dfe730"
+      }
+    },
+    {
+      "symbol": "kfd_ioctl_set_trap_handler",
+      "section_index": 3,
+      "virtual_address": 3023536,
+      "bytes": 128,
+      "info": 2,
+      "command": [
+        "objdump",
+        "-dr",
+        "-C",
+        "--start-address=0x2e22b0",
+        "--stop-address=0x2e2330",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_amdgpu.ko"
+      ],
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_kfd_ioctl_set_trap_handler.dis",
+        "bytes": 2946,
+        "sha256": "19671bd5b8c7381c8e9179d641067fc4af03a3f64ae89db0fe691f42a38a18ab"
+      }
+    },
+    {
+      "symbol": "kfd_process_set_trap_handler",
+      "section_index": 3,
+      "virtual_address": 3086240,
+      "bytes": 77,
+      "info": 18,
+      "command": [
+        "objdump",
+        "-dr",
+        "-C",
+        "--start-address=0x2f17a0",
+        "--stop-address=0x2f17ed",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_amdgpu.ko"
+      ],
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_kfd_process_set_trap_handler.dis",
+        "bytes": 1597,
+        "sha256": "c0c9a6b508550fe3b1fa45695ccc537c9fb17dc1c4af1d134b9b0969aa928763"
+      }
+    },
+    {
+      "symbol": "kgd2kfd_device_init",
+      "section_index": 3,
+      "virtual_address": 3006976,
+      "bytes": 3608,
+      "info": 18,
+      "command": [
+        "objdump",
+        "-dr",
+        "-C",
+        "--start-address=0x2de200",
+        "--stop-address=0x2df018",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_amdgpu.ko"
+      ],
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_kgd2kfd_device_init.dis",
+        "bytes": 52090,
+        "sha256": "ee2ebcb66ca80c9dce6125447f3a23be08db438db2413aa21a1cd4232d8d2f20"
+      }
+    }
+  ],
+  "second_level_map_tuple": {
+    "virtual_address": 1965808,
+    "size": 2496,
+    "sgprs": 2,
+    "vgprs": 4,
+    "relocation": {
+      "offset": 1965808,
+      "info": 8,
+      "addend": 2009808
+    }
+  },
+  "first_level_symbol": {
+    "name": "cwsr_trap_gfx12_1_0_hex",
+    "section_index": 22,
+    "virtual_address": 508672,
+    "bytes": 5656,
+    "info": 1,
+    "file_offset": 11773248
+  },
+  "first_level_image": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_CWSR_gfx1250.bin",
+    "bytes": 5656,
+    "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+  },
+  "first_level_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_CWSR_gfx1250.dis",
+    "bytes": 97176,
+    "sha256": "2538084a910fab8fb9cd2a4637436926f3fa90316b1aa05a26687c828bc81ea7"
+  },
+  "first_level_full_header_match": true,
+  "first_level_all_disassembly_bytes_reconciled": true,
+  "static_findings": [
+    {
+      "scope": "installed_runtime_initialization",
+      "finding": "PostToolsInit calls BindTrapHandler during ordinary GPU agent initialization. BindTrapHandler selects TrapHandlerKfdExceptions when the runtime boolean at offset0x690 is set; for GFX1250 it returns without a legacy handler if that capability is absent.",
+      "evidence_offsets": [
+        "libhsa0xc4610",
+        "libhsa0xc49f0",
+        "libhsa0xc4a1d"
+      ]
+    },
+    {
+      "scope": "capability_guard",
+      "finding": "Installed KfdDriver::Init assigns that same0x690 boolean from RuntimeEnable result !=11 (HSAKMT_STATUS_NOT_SUPPORTED). The attached-debugger state is not the BindTrapHandler selection guard.",
+      "evidence_offsets": [
+        "libhsa0x9f389",
+        "libhsa0x9f3d2",
+        "libhsa0x9f3d8"
+      ]
+    },
+    {
+      "scope": "installed_handler_selection",
+      "finding": "The KFD-exceptions map initializer contains a2496-byte GFX1250 entry relocated to the named installed trap array. Major12 and minor>=5 select that entry.",
+      "evidence_offsets": [
+        "libhsa0x31299",
+        "libhsa0xc1d32",
+        "libhsa0xc2647",
+        "libhsa0x1dfef0"
+      ]
+    },
+    {
+      "scope": "driver_daisy_chain",
+      "finding": "With a KFD first-level CWSR buffer present, set_trap_handler records the supplied runtime TBA/TMA at first-level TMA offsets0 and8 (buffer offsets0x1800 and0x1808). The first-level GPU code loads those pointers and jumps to the runtime handler.",
+      "evidence_offsets": [
+        "amdgpu0x2f17b5",
+        "amdgpu0x2f17bc",
+        "CWSR0x1cc",
+        "CWSR0x1d8",
+        "CWSR0x1ec"
+      ]
+    },
+    {
+      "scope": "first_level_selection",
+      "finding": "Driver setup reports GFX target120500 and cwsr_enable1. Local source maps GC IP12.1.0 to that target; installed module selects its5656-byte cwsr_trap_gfx12_1_0_hex image at the same GC threshold. The entire image is identical to the local generated header array.",
+      "evidence_offsets": [
+        "amdgpu0x2def57",
+        "amdgpu0x2def66",
+        "amdgpu0x2def76"
+      ]
+    },
+    {
+      "scope": "entry_triggers",
+      "finding": "First-level code forwards non-SAVECTX exception/trap conditions: nonmaskable exception mask0xbd0, enabled user/address-watch exceptions, nonzero software TRAP_ID, or single-step trap control. Host/stochastic events have driver feature-mask handling. A pure SAVECTX condition branches to its own save path at0x470.",
+      "evidence_offsets": [
+        "CWSR0xd4",
+        "CWSR0xe0",
+        "CWSR0x100",
+        "CWSR0x10c",
+        "CWSR0x118",
+        "CWSR0x190"
+      ]
+    },
+    {
+      "scope": "context_save_fixup",
+      "finding": "The first-level save path contains its own instruction fixup before clearing bank selections. Pure context save therefore need not execute the runtime second-level fixup to involve bank-history handling.",
+      "evidence_offsets": [
+        "CWSR0x470"
+      ],
+      "limitation": "Exact first-level decoder source/byte semantics are under separate independent review."
+    }
+  ],
+  "unresolved_entry_bank_question": "Actual first-level normal entry reads v1 through SRC0, writes v1 through DST, and restores v1 through DST before its visible bank clear. Normal bank semantics could copy between different architectural banks. The source later explicitly clears interrupted shader bank selections to use v0..255. No independent hardware guarantee about trap-entry bank reset or privileged operand override has yet been found.",
+  "limits": [
+    "No RuntimeEnable/SetTrapHandler call was made or observed in an experimental process; its selected runtime boolean and live TBA/TMA were not read.",
+    "Module version and srcversion match the loaded module metadata, and the installed image is pinned; this is not an in-memory module-byte attestation.",
+    "Current public runtime source supports interpretation of matching installed control flow but is not claimed as the complete installed source revision.",
+    "Presence, selection code and trigger logic do not establish that any exception, context save, debugger event or profiling event occurred during a failing experiment.",
+    "The early-entry bank question remains conditional on actual trap-mode operand semantics and trap activation; it is not a proven corruption mechanism."
+  ]
+}

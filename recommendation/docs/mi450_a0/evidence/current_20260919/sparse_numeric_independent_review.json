@@ -1,0 +1,489 @@
+{
+  "status": "PASS_INDEPENDENT_PACKED_PAYLOAD_SPARSE_WITNESS_AND_FULL_RAW_ORACLE_PEER",
+  "GPU_actions": false,
+  "runtime_outputs_read": false,
+  "input_tensors_created": false,
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_peer_v1/review_sparse_witness_numeric_payload_v1.py",
+    "bytes": 13529,
+    "sha256": "6f4f9cfd55ea6e35b0e3e6953c3fd635be45357d673caa7663ae2a449efcfc00"
+  },
+  "author_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_CPU_v1/sparse_positive_witness_architectural_feasibility_v1.json",
+    "bytes": 103636,
+    "sha256": "7fcc52025d699e91223d01def1b67f06063b4d1ce8e69aa4021a60ffe4fad87d"
+  },
+  "author_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_CPU_v1/derive_sparse_positive_witness_v3.py",
+    "bytes": 24510,
+    "sha256": "0833c18e1f02bb5aa5eea0e29ca5fb9535921777121c8c3b48d538f5c49bf9ff"
+  },
+  "ELFs": {
+    "v513_control": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_pair_v0_C0_design_v1/v128_direct_v0_tail_C0_v1.elf",
+      "bytes": 335000,
+      "sha256": "c422ef9aa28418c3156b4031444cb78d0cece0e11cc0c6f213bdafa993edc279"
+    },
+    "v514_repeated": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_c0_v514_reroute_design_v1/DW_v128_c0_direct_repeated_v514_source_v1.elf",
+      "bytes": 335000,
+      "sha256": "78548372163245924d43b4bed622f08d2fb89fa601a1d3c51eb12387223147f3"
+    }
+  },
+  "disassemblies": {
+    "v513_control": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_peer_v1/baseline_independent_disassembly_v1.s",
+      "bytes": 4287113,
+      "sha256": "3843a289e37f33021a0f705b23e2c8cd8e70142a1bf1d2fca6859f106a1c10c3"
+    },
+    "v514_repeated": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_reroute_peer_v1/candidate_independent_disassembly_v1.s",
+      "bytes": 4287134,
+      "sha256": "7520aa86359cca3fc39962eaf9739a88e2de2019227108e6b8b06a69161b170e"
+    }
+  },
+  "vendor_layout_sources_rehashed": [
+    {
+      "path": "/opt/rocm-10.1.0a20260811/include/ck/utility/amd_wmma.hpp",
+      "bytes": 45045,
+      "sha256": "44f7852f2540b1f6a459e8ac98ae8d289f4068f63460b1f1f7452a49e2f523a9"
+    },
+    {
+      "path": "/opt/rocm-10.1.0a20260811/include/ck/tensor_operation/gpu/warp/wmma_gemm.hpp",
+      "bytes": 51892,
+      "sha256": "b634783704df1a29934640279732ffff32a57cdccb6f6440b8b79d94493054fc"
+    },
+    {
+      "path": "/opt/rocm-10.1.0a20260811/include/ck/tensor_operation/gpu/warp/wmma_gemm.hpp",
+      "bytes": 51892,
+      "sha256": "b634783704df1a29934640279732ffff32a57cdccb6f6440b8b79d94493054fc"
+    },
+    {
+      "path": "/opt/rocm-10.1.0a20260811/include/ck/tensor_operation/gpu/block/blockwise_gemm_wmma.hpp",
+      "bytes": 45069,
+      "sha256": "efec0ed08bc0e61a58844372133b83c8e38d002f68ecb3acb84b2bbd23cfe112"
+    },
+    {
+      "path": "/opt/rocm-10.1.0a20260811/include/ck/tensor_operation/gpu/block/blockwise_gemm_wmma.hpp",
+      "bytes": 45069,
+      "sha256": "efec0ed08bc0e61a58844372133b83c8e38d002f68ecb3acb84b2bbd23cfe112"
+    },
+    {
+      "path": "/opt/rocm-10.1.0a20260811/include/ck/tensor_operation/gpu/grid/gridwise_gemm_wmma.hpp",
+      "bytes": 53234,
+      "sha256": "31634c510452dee2378c62faa4e4a8d7372c8a8b8049bf0426a6295e70388822"
+    },
+    {
+      "path": "/opt/rocm-10.1.0a20260811/include/ck/tensor_operation/gpu/grid/gridwise_gemm_wmma.hpp",
+      "bytes": 53234,
+      "sha256": "31634c510452dee2378c62faa4e4a8d7372c8a8b8049bf0426a6295e70388822"
+    },
+    {
+      "path": "/opt/rocm-10.1.0a20260811/include/rocwmma/internal/wmma_impl.hpp",
+      "bytes": 142214,
+      "sha256": "ae8d7771d037979371e6029b7e4b1627cdeb5a53d300ca65371bf1731aea8688"
+    }
+  ],
+  "method": "Independent packed32-bit BF16 payload loads/permutes, dense16x32 and32x16 integer fragment products, explicit256-register accumulator state, and forward raw source mapping.",
+  "all_disassembly_words_reconciled_to_ELF": true,
+  "initial32_accumulator_families_start_with_C0": true,
+  "sparse_entry_contexts": [
+    {
+      "arm": "v513_control",
+      "group": 0,
+      "wave": 0,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ],
+        [
+          514,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v513_control",
+      "group": 0,
+      "wave": 1,
+      "nonzero_halfwords": [
+        [
+          514,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v513_control",
+      "group": 0,
+      "wave": 2,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v513_control",
+      "group": 0,
+      "wave": 3,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v513_control",
+      "group": 1,
+      "wave": 0,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v513_control",
+      "group": 1,
+      "wave": 1,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v513_control",
+      "group": 1,
+      "wave": 2,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v513_control",
+      "group": 1,
+      "wave": 3,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v513_control",
+      "group": 2,
+      "wave": 0,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v513_control",
+      "group": 2,
+      "wave": 1,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v513_control",
+      "group": 2,
+      "wave": 2,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v513_control",
+      "group": 2,
+      "wave": 3,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v513_control",
+      "group": 3,
+      "wave": 0,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v513_control",
+      "group": 3,
+      "wave": 1,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v513_control",
+      "group": 3,
+      "wave": 2,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v513_control",
+      "group": 3,
+      "wave": 3,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 0,
+      "wave": 0,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ],
+        [
+          514,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 0,
+      "wave": 1,
+      "nonzero_halfwords": [
+        [
+          514,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 0,
+      "wave": 2,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 0,
+      "wave": 3,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 1,
+      "wave": 0,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 1,
+      "wave": 1,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 1,
+      "wave": 2,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 1,
+      "wave": 3,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 2,
+      "wave": 0,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 2,
+      "wave": 1,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 2,
+      "wave": 2,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 2,
+      "wave": 3,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 3,
+      "wave": 0,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 3,
+      "wave": 1,
+      "nonzero_halfwords": []
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 3,
+      "wave": 2,
+      "nonzero_halfwords": [
+        [
+          352,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "v514_repeated",
+      "group": 3,
+      "wave": 3,
+      "nonzero_halfwords": []
+    }
+  ],
+  "WMMA_snapshots_checked": 2048,
+  "halfword_fragment_placements_checked": 2097152,
+  "unique_positive_product": {
+    "arm": "v514_repeated",
+    "group": 0,
+    "wave": 0,
+    "WMMA_PC": "0x7744",
+    "output_register": 128,
+    "output_lane": 0,
+    "value": 1
+  },
+  "later_v128_writes_retain_C": [
+    "0x7744",
+    "0x80c0",
+    "0x8748",
+    "0x8e88",
+    "0xbe38",
+    "0xc32c",
+    "0xf578"
+  ],
+  "full65536_word_oracles": {
+    "v513_control": {
+      "bytes": 262144,
+      "words": 65536,
+      "nonzeros": [],
+      "normal_nonzeros": 0,
+      "direct_nonzeros": 0,
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    "v514_repeated": {
+      "bytes": 262144,
+      "words": 65536,
+      "nonzeros": [
+        {
+          "byte_offset": 0,
+          "raw_FP32_bits": "0x3f800000"
+        },
+        {
+          "byte_offset": 1024,
+          "raw_FP32_bits": "0x3f800000"
+        }
+      ],
+      "normal_nonzeros": 1,
+      "direct_nonzeros": 1,
+      "sha256": "b4e15e1e8efedbb4c69bb09733e50d65ba5a87ea0c68be38da2e6e87286e2b8e"
+    }
+  },
+  "inherited_initial_cleanup_tail_and_observer_proofs": {
+    "inherited_A_pipeline": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_mainloop_A_provenance_peer_v1/mainloop_A_membership_and_pipeline_independent_review_v2.json",
+      "bytes": 13792,
+      "sha256": "f414465076fd22df73dc885ce3a8037918dbc09f56db560e732f7d7ab424b941"
+    },
+    "inherited_scalar_peer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_scalar_peer_v1/scalar_path_K_descriptor_independent_review_v1.json",
+      "bytes": 7545,
+      "sha256": "11a49d0b8121a4650675562db7c89a5353d1d66c9b942d340b4fddb974a0f8e3"
+    },
+    "inherited_tail_path": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_tail_C0_independent_v1/tail_C0_independent_candidate_review_v1.json",
+      "bytes": 158588,
+      "sha256": "31e9275f33c8fef1df79e94a488205b64c129829ed1ca74a258990cacd6a72ad"
+    },
+    "pair_map": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v128_pair_design_v1/same_invocation_v128_to_v131_pairs_v1.json",
+      "bytes": 1570035,
+      "sha256": "2681d32eca89c9be1e7c46e5e3ca0a4b3471a6fce5ac514637e02c947e74e4ef"
+    },
+    "unchanged_packet_proof": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_mechanism_v1/raw_export_exact_packet_path_and_EXEC_v2.json",
+      "bytes": 397752,
+      "sha256": "779bb760f8cdbebb55cd33e67422f75a16aa1cfa877611f9b4f365d55c1fa78d"
+    }
+  },
+  "conclusions": [
+    "Original arithmetic has no matching nonzero K operands. Candidate yields exactly one integer1 product at0x7744/v128/lane0 in group0/wave0.",
+    "The natural v514 contribution uses fragment slot2 and does not match X atslot1; the candidate copy creates the unique matching slot1 pair.",
+    "All64 WMMAs in both phases and all16 contexts per arm were evaluated in the narrow integer fragment model; next-tile fragment inputs are zero.",
+    "The sole positive accumulator survives the C-retaining chain and lies outside finalv0:v7 C0.",
+    "Independent forward observer mapping reproduces all65536 expected words: control allpositivezero; candidate exactlyFP32one atoffsets0 and1024."
+  ],
+  "limits": [
+    "Vendor-supported fragment contraction and C layout are explicit model inputs. This is not a complete WMMA ISA or microarchitectural emulator.",
+    "Initial/cleanup/tail provenance and complete observer survival inherit pinned independent proofs; the repeated packed payload, products and complete raw coordinate mapping are independently recomputed.",
+    "No synthetic input tensor, producer, runtime or GPU observation is validated by this CPU theorem.",
+    "A witness success would demonstrate the selected operand affects arithmetic under sparse inputs, not locate the historical defect or establish equivalent fault probability."
+  ]
+}

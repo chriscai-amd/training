@@ -1,0 +1,438 @@
+{
+  "format": "independent_direct_store_candidate_stream_pair_review_v1",
+  "status": "PASS_RETAINED_STREAM_AND_ALL_SAME_INVOCATION_PAIRS",
+  "created_utc": "2026-09-19T22:58:49.076654+00:00",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_direct_store_stream_audit_v1/review_candidate_pairs_v1.py",
+    "bytes": 13033,
+    "sha256": "996b4250b4d4844aa7f6d5554a3cca3cb5873a03d9c4e6c97743e527228b2f80"
+  },
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_direct_store_pair_v1/launch_manifest_direct_store_v1.json",
+    "bytes": 14109,
+    "sha256": "b2bd39bce8fb72cd027863cad835f96e835e0db30c5b9e1f357db36a8a450611"
+  },
+  "configuration": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_persist_DW_direct_store_runtime_v1/configuration_direct_store_v1.json",
+    "bytes": 8734,
+    "sha256": "0c576089362507b0e10281641acbca22f8baec6a460a6c3f2dc2b8a84f03e731"
+  },
+  "terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_direct_store_pair_v1/accumulator_even_direct_store_terminal.json",
+    "bytes": 288,
+    "sha256": "79eea5442009631aeed57a749d459b5ea4de19e38661ddddf62cd3898d221ee7"
+  },
+  "report": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_persist_DW_direct_store_accumulator_even_direct_store_v1.json",
+    "bytes": 400740,
+    "sha256": "ff8883cdcdc9026384babc755d29b6308d6d71a006d7cadd35078470acac4744"
+  },
+  "native_join": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_direct_store_pair_v1/accumulator_even_direct_store_joined_verification_v1.json",
+    "bytes": 4808,
+    "sha256": "9159e595fb1d9940d8f30a87caebe1b95f003cd00cfd65188adc57f5291d2ce7"
+  },
+  "stream": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_persist_DW_direct_store_accumulator_even_direct_store_v1.json.cpu_outputs.bin",
+    "bytes": 2883584,
+    "sha256": "016d873abea0ff4723f09232e6094a0c92317773c3400a1fe011f622d58331d2"
+  },
+  "reviewed_map": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_accumulator_direct_store_v1/same_invocation_v1_v2_v3_pairs_and_interpretation_v1.json",
+    "bytes": 1175755,
+    "sha256": "3b3a5f4b6bf68ab5bbdd2433228f3bb6ea9f16a25ca55679687d582e2b05c8ab"
+  },
+  "CPU_self_tests": {
+    "status": "PASS",
+    "fixture_count": 6,
+    "pairs_checked": 1536,
+    "cases": [
+      "Direct-only subnormal",
+      "Normal-only subnormal",
+      "Equal nonzero subnormal",
+      "Different nonzero words",
+      "Signed zero equivalence",
+      "Distinct NaN and infinity payloads"
+    ],
+    "full_grid_corner_and_middle_offsets_checked": true
+  },
+  "runtime_status": "FAIL",
+  "invocations_fully_scanned": 11,
+  "independently_derived_pairs_per_invocation": 1536,
+  "pair_classifications": 16896,
+  "aggregate_pair_classification_by_accumulator": {
+    "v1": {
+      "both_zero": 5622,
+      "direct_nonzero_only": 0,
+      "normal_nonzero_only": 0,
+      "both_nonzero_equal": 10,
+      "both_nonzero_different": 0
+    },
+    "v2": {
+      "both_zero": 5632,
+      "direct_nonzero_only": 0,
+      "normal_nonzero_only": 0,
+      "both_nonzero_equal": 0,
+      "both_nonzero_different": 0
+    },
+    "v3": {
+      "both_zero": 5632,
+      "direct_nonzero_only": 0,
+      "normal_nonzero_only": 0,
+      "both_nonzero_equal": 0,
+      "both_nonzero_different": 0
+    }
+  },
+  "signed_zero_bit_differences": 0,
+  "anomalous_invocations": [
+    {
+      "iteration": 11,
+      "all_raw_nonzero_words": 20,
+      "paired_nonzero_observations": 20,
+      "pair_classification_by_accumulator": {
+        "v1": {
+          "both_zero": 502,
+          "direct_nonzero_only": 0,
+          "normal_nonzero_only": 0,
+          "both_nonzero_equal": 10,
+          "both_nonzero_different": 0
+        },
+        "v2": {
+          "both_zero": 512,
+          "direct_nonzero_only": 0,
+          "normal_nonzero_only": 0,
+          "both_nonzero_equal": 0,
+          "both_nonzero_different": 0
+        },
+        "v3": {
+          "both_zero": 512,
+          "direct_nonzero_only": 0,
+          "normal_nonzero_only": 0,
+          "both_nonzero_equal": 0,
+          "both_nonzero_different": 0
+        }
+      },
+      "anomalous_pairs": [
+        {
+          "group": 0,
+          "wave": 0,
+          "lane": 0,
+          "accumulator": "v1",
+          "true_original_DW_coordinate": [
+            8,
+            0
+          ],
+          "direct_carrier_coordinate": [
+            2,
+            0
+          ],
+          "direct_raw_coordinate": [
+            1,
+            0
+          ],
+          "normal_carrier_coordinate": [
+            8,
+            0
+          ],
+          "normal_raw_coordinate": [
+            4,
+            0
+          ],
+          "direct_byte_offset_from_D": 4,
+          "normal_byte_offset_from_D": 16,
+          "classification": "both_nonzero_equal",
+          "direct_word": "0x00000810",
+          "normal_word": "0x00000810"
+        },
+        {
+          "group": 0,
+          "wave": 2,
+          "lane": 0,
+          "accumulator": "v1",
+          "true_original_DW_coordinate": [
+            8,
+            64
+          ],
+          "direct_carrier_coordinate": [
+            2,
+            64
+          ],
+          "direct_raw_coordinate": [
+            1,
+            64
+          ],
+          "normal_carrier_coordinate": [
+            8,
+            64
+          ],
+          "normal_raw_coordinate": [
+            4,
+            64
+          ],
+          "direct_byte_offset_from_D": 32772,
+          "normal_byte_offset_from_D": 32784,
+          "classification": "both_nonzero_equal",
+          "direct_word": "0x00000c10",
+          "normal_word": "0x00000c10"
+        },
+        {
+          "group": 1,
+          "wave": 0,
+          "lane": 0,
+          "accumulator": "v1",
+          "true_original_DW_coordinate": [
+            8,
+            128
+          ],
+          "direct_carrier_coordinate": [
+            2,
+            128
+          ],
+          "direct_raw_coordinate": [
+            1,
+            128
+          ],
+          "normal_carrier_coordinate": [
+            8,
+            128
+          ],
+          "normal_raw_coordinate": [
+            4,
+            128
+          ],
+          "direct_byte_offset_from_D": 65540,
+          "normal_byte_offset_from_D": 65552,
+          "classification": "both_nonzero_equal",
+          "direct_word": "0x00000810",
+          "normal_word": "0x00000810"
+        },
+        {
+          "group": 1,
+          "wave": 1,
+          "lane": 0,
+          "accumulator": "v1",
+          "true_original_DW_coordinate": [
+            136,
+            128
+          ],
+          "direct_carrier_coordinate": [
+            130,
+            128
+          ],
+          "direct_raw_coordinate": [
+            65,
+            128
+          ],
+          "normal_carrier_coordinate": [
+            136,
+            128
+          ],
+          "normal_raw_coordinate": [
+            68,
+            128
+          ],
+          "direct_byte_offset_from_D": 65796,
+          "normal_byte_offset_from_D": 65808,
+          "classification": "both_nonzero_equal",
+          "direct_word": "0x00000a10",
+          "normal_word": "0x00000a10"
+        },
+        {
+          "group": 1,
+          "wave": 2,
+          "lane": 0,
+          "accumulator": "v1",
+          "true_original_DW_coordinate": [
+            8,
+            192
+          ],
+          "direct_carrier_coordinate": [
+            2,
+            192
+          ],
+          "direct_raw_coordinate": [
+            1,
+            192
+          ],
+          "normal_carrier_coordinate": [
+            8,
+            192
+          ],
+          "normal_raw_coordinate": [
+            4,
+            192
+          ],
+          "direct_byte_offset_from_D": 98308,
+          "normal_byte_offset_from_D": 98320,
+          "classification": "both_nonzero_equal",
+          "direct_word": "0x00000c10",
+          "normal_word": "0x00000c10"
+        },
+        {
+          "group": 1,
+          "wave": 3,
+          "lane": 0,
+          "accumulator": "v1",
+          "true_original_DW_coordinate": [
+            136,
+            192
+          ],
+          "direct_carrier_coordinate": [
+            130,
+            192
+          ],
+          "direct_raw_coordinate": [
+            65,
+            192
+          ],
+          "normal_carrier_coordinate": [
+            136,
+            192
+          ],
+          "normal_raw_coordinate": [
+            68,
+            192
+          ],
+          "direct_byte_offset_from_D": 98564,
+          "normal_byte_offset_from_D": 98576,
+          "classification": "both_nonzero_equal",
+          "direct_word": "0x00000e10",
+          "normal_word": "0x00000e10"
+        },
+        {
+          "group": 3,
+          "wave": 0,
+          "lane": 0,
+          "accumulator": "v1",
+          "true_original_DW_coordinate": [
+            8,
+            384
+          ],
+          "direct_carrier_coordinate": [
+            2,
+            384
+          ],
+          "direct_raw_coordinate": [
+            1,
+            384
+          ],
+          "normal_carrier_coordinate": [
+            8,
+            384
+          ],
+          "normal_raw_coordinate": [
+            4,
+            384
+          ],
+          "direct_byte_offset_from_D": 196612,
+          "normal_byte_offset_from_D": 196624,
+          "classification": "both_nonzero_equal",
+          "direct_word": "0x00000810",
+          "normal_word": "0x00000810"
+        },
+        {
+          "group": 3,
+          "wave": 1,
+          "lane": 0,
+          "accumulator": "v1",
+          "true_original_DW_coordinate": [
+            136,
+            384
+          ],
+          "direct_carrier_coordinate": [
+            130,
+            384
+          ],
+          "direct_raw_coordinate": [
+            65,
+            384
+          ],
+          "normal_carrier_coordinate": [
+            136,
+            384
+          ],
+          "normal_raw_coordinate": [
+            68,
+            384
+          ],
+          "direct_byte_offset_from_D": 196868,
+          "normal_byte_offset_from_D": 196880,
+          "classification": "both_nonzero_equal",
+          "direct_word": "0x00000a10",
+          "normal_word": "0x00000a10"
+        },
+        {
+          "group": 3,
+          "wave": 2,
+          "lane": 0,
+          "accumulator": "v1",
+          "true_original_DW_coordinate": [
+            8,
+            448
+          ],
+          "direct_carrier_coordinate": [
+            2,
+            448
+          ],
+          "direct_raw_coordinate": [
+            1,
+            448
+          ],
+          "normal_carrier_coordinate": [
+            8,
+            448
+          ],
+          "normal_raw_coordinate": [
+            4,
+            448
+          ],
+          "direct_byte_offset_from_D": 229380,
+          "normal_byte_offset_from_D": 229392,
+          "classification": "both_nonzero_equal",
+          "direct_word": "0x00000c10",
+          "normal_word": "0x00000c10"
+        },
+        {
+          "group": 3,
+          "wave": 3,
+          "lane": 0,
+          "accumulator": "v1",
+          "true_original_DW_coordinate": [
+            136,
+            448
+          ],
+          "direct_carrier_coordinate": [
+            130,
+            448
+          ],
+          "direct_raw_coordinate": [
+            65,
+            448
+          ],
+          "normal_carrier_coordinate": [
+            136,
+            448
+          ],
+          "normal_raw_coordinate": [
+            68,
+            448
+          ],
+          "direct_byte_offset_from_D": 229636,
+          "normal_byte_offset_from_D": 229648,
+          "classification": "both_nonzero_equal",
+          "direct_word": "0x00000e10",
+          "normal_word": "0x00000e10"
+        }
+      ]
+    }
+  ],
+  "no_full_storage_auditor_or_mapper_imported": true,
+  "limits": [
+    "A carrier coordinate is the physical output slot; the true coordinate identifies the original accumulator value.",
+    "Direct and normal observations are from one invocation but occur at different instruction times and follow different read routes.",
+    "The unchanged observer has no prefill: a zero may be an untouched output slot or dropped store.",
+    "Equal nonzero words do not uniquely prove physical accumulator storage corruption.",
+    "This stream-only review does not independently audit saved input storage or on-device instruction fetch."
+  ]
+}

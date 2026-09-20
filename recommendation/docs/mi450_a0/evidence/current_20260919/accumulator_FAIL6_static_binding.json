@@ -1,0 +1,162 @@
+{
+  "format": "direct_accumulator_FAIL6_independent_source_and_raw56_comparison_v1",
+  "status": "PASS",
+  "reviewer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_raw_failure_mechanism_audit_v1/audit_accumulator6_static_binding_v1.py",
+    "bytes": 8694,
+    "sha256": "73133ad88df87be8cb8bbcf760b24e1a994b7e47ae451600706f9cfdec7e5bae"
+  },
+  "failure_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_accumulator_failure_audit_v1/accumulator_even_full_failure_v1.json",
+    "bytes": 46031,
+    "sha256": "dc0ca9afc942930a658ebc17ac226794c492dd2c7689d8d744437c310d203b61"
+  },
+  "coordinates": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_accumulator_failure_audit_v1/accumulator_even_wrong_coordinates_v1.json",
+    "bytes": 3026,
+    "sha256": "370e9966429f888a67ec60becaef398a3cd475305d889832373becf6cfb1178e"
+  },
+  "candidate_static_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_accumulator_export_audit_v1/independent_accumulator_export_certificate_v2.json",
+    "bytes": 39761,
+    "sha256": "1726f8ed855851fcb053437b67ce70af645182dd7925da9062a847afc9e02927"
+  },
+  "packet_path": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_mechanism_v1/raw_export_exact_packet_path_and_EXEC_v2.json",
+    "bytes": 397752,
+    "sha256": "779bb760f8cdbebb55cd33e67422f75a16aa1cfa877611f9b4f365d55c1fa78d"
+  },
+  "historical_address_map": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_mechanism_v1/address_donor_hypothesis_exact_static_map_v1.json",
+    "bytes": 185997,
+    "sha256": "afc027dd9094f34d5c86ed0b1d195544c69db9db5cf49f123effb3763e96f97a"
+  },
+  "raw56_static_binding": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_raw_failure_mechanism_audit_v1/raw56_failure_independent_static_source_binding_v1.json",
+    "bytes": 12283,
+    "sha256": "992d94b8e94bb655310e4d2c2ee11c2ab9d6a94045547830c348a22b625e6974"
+  },
+  "all65536_even_M_store_addresses_reenumerated": true,
+  "all_five_words_accounted_for": true,
+  "words": [
+    {
+      "M": 8,
+      "N": 128,
+      "word": "0x00000810",
+      "group": 1,
+      "wave": 0,
+      "lane": 0,
+      "thread": 0,
+      "source_accumulator": 1,
+      "direct_move_pc": "0x201e8",
+      "direct_move": "v288 <- v1, source bank0, destination bank1",
+      "bank_set_pc": "0x201e4",
+      "bank_set_immediate": "0x4544",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 65552,
+      "arithmetic_region_v257": 2064,
+      "epilogue_v257": 128
+    },
+    {
+      "M": 8,
+      "N": 192,
+      "word": "0x00000c10",
+      "group": 1,
+      "wave": 2,
+      "lane": 0,
+      "thread": 64,
+      "source_accumulator": 1,
+      "direct_move_pc": "0x201e8",
+      "direct_move": "v288 <- v1, source bank0, destination bank1",
+      "bank_set_pc": "0x201e4",
+      "bank_set_immediate": "0x4544",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 98320,
+      "arithmetic_region_v257": 3088,
+      "epilogue_v257": 192
+    },
+    {
+      "M": 136,
+      "N": 128,
+      "word": "0x00000a10",
+      "group": 1,
+      "wave": 1,
+      "lane": 0,
+      "thread": 32,
+      "source_accumulator": 1,
+      "direct_move_pc": "0x201e8",
+      "direct_move": "v288 <- v1, source bank0, destination bank1",
+      "bank_set_pc": "0x201e4",
+      "bank_set_immediate": "0x4544",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 65808,
+      "arithmetic_region_v257": 2576,
+      "epilogue_v257": 128
+    },
+    {
+      "M": 136,
+      "N": 192,
+      "word": "0x00000e10",
+      "group": 1,
+      "wave": 3,
+      "lane": 0,
+      "thread": 96,
+      "source_accumulator": 1,
+      "direct_move_pc": "0x201e8",
+      "direct_move": "v288 <- v1, source bank0, destination bank1",
+      "bank_set_pc": "0x201e4",
+      "bank_set_immediate": "0x4544",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 98576,
+      "arithmetic_region_v257": 3600,
+      "epilogue_v257": 192
+    },
+    {
+      "M": 136,
+      "N": 256,
+      "word": "0x00000a10",
+      "group": 2,
+      "wave": 1,
+      "lane": 0,
+      "thread": 32,
+      "source_accumulator": 1,
+      "direct_move_pc": "0x201e8",
+      "direct_move": "v288 <- v1, source bank0, destination bank1",
+      "bank_set_pc": "0x201e4",
+      "bank_set_immediate": "0x4544",
+      "store_pc": "0x2020c",
+      "store_word": 0,
+      "store_address_register": "v273",
+      "carrier_byte_offset": 131344,
+      "arithmetic_region_v257": 2576,
+      "epilogue_v257": 256
+    }
+  ],
+  "coordinate_overlap_with_raw56": [
+    [
+      8,
+      128
+    ],
+    [
+      136,
+      256
+    ]
+  ],
+  "same_historical_donor_formula_for_all_raw56_and_accumulator6_words": true,
+  "interpretation": "The direct accumulator source path also produces the same historical address-bit fingerprint. Feeding the computed alpha/scale/bias or BF16 conversion results to the output is unnecessary for this observed failure.",
+  "limits": [
+    "These are separate launches; coordinate overlap is not a same-event paired observation.",
+    "Direct export observes accumulator bits through a bank-selecting move, output stores and CPU copy; it does not prove the physical accumulator register contained the bits or uniquely identify WMMA.",
+    "Unconsumed epilogue computations still execute and can change timing. Transient register selection/delivery or output-path faults remain possible.",
+    "The current epilogue v257 differs from the earlier address fingerprint; a simple contemporaneous v1-to-v257 read alias would not explain these words."
+  ],
+  "GPU_actions": false
+}

@@ -1,0 +1,74 @@
+{
+  "status": "PASS_CPU_ONLY_EXACT_FROZEN_DEPENDENCY_COPY",
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_packet_peer_v1/review_packet_dependency_repair_v1.py",
+    "bytes": 5974,
+    "sha256": "b3acaff99f100cc139b012ac59aafc8b75d36e6584ee3eb96dda72c4c583df58"
+  },
+  "repair_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/native_verifier_packet_dependency_repair_v1.json",
+    "bytes": 1888,
+    "sha256": "bbea63d4adb296c02d14330fec93ddc022eb72f9c06d973b48fce81fdcaa3c21"
+  },
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/launch_manifest_v514_sparse_witness_v1.json",
+    "bytes": 22006,
+    "sha256": "180dd07481f8320f50a946572ec7c72475c26f95ba2e2e6022608d8a5623bd02"
+  },
+  "frozen_inventory": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/sources.sha256",
+    "bytes": 473398,
+    "sha256": "16620b25f96821ad01e8a935027c39a03a3cd0a85378fe9f343ff6f8f3f747dd"
+  },
+  "archive": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/sources_and_artifacts_v514_sparse_witness_v1.tar.gz",
+    "bytes": 24451815,
+    "sha256": "2f01ff902749ce6508a832c9d401e0b35f395ff10403837486252714e223fb80"
+  },
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v511_source1_zero_pair_v1/required_native_packet_fields_v1.json",
+    "bytes": 597,
+    "sha256": "9ed1c4e03b6077c954df0bd58f00814d34812f76017f5212d70f60995497e568"
+  },
+  "destination": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/required_native_packet_fields_v1.json",
+    "bytes": 597,
+    "sha256": "9ed1c4e03b6077c954df0bd58f00814d34812f76017f5212d70f60995497e568"
+  },
+  "failure_record": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/native_verifier_v2_missing_dependency_failure_v1.json",
+    "bytes": 1015,
+    "sha256": "c09b4a90abf6670a2ce1b3533b5375641cf2e69601880e62d2149ed68f84cdd2"
+  },
+  "native_verifier": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_pair_v1/verify_arm_v514_sparse_witness_v2.py",
+    "bytes": 14501,
+    "sha256": "40e63768a5104443ec2defd0dd5b47a6b137f27a57aea3d515a713f9fe37c2a1"
+  },
+  "full_auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_failure_audit_v1/audit_terminal_sparse_witness_v1.py",
+    "bytes": 19014,
+    "sha256": "b110427ceba35ecaba0cecd77bc8f9e0f4f625aab2b8a969194af96b4a79cb1e"
+  },
+  "readiness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_failure_audit_v1/CPU_readiness_v1.json",
+    "bytes": 5200,
+    "sha256": "c01667d2955a4d36fd234226c0cec3aa41c57b778889b25486e07d5669d35d55"
+  },
+  "binding": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v514_sparse_witness_failure_audit_v1/runtime_binding_v1.json",
+    "bytes": 1720,
+    "sha256": "a0f13951f3d66bbcbfb480aab158c17b774eace3b73b8a02ac31be089471a949"
+  },
+  "source_matches_prelaunch_frozen_inventory_and_archive_bytes": true,
+  "supplemental_destination_absent_from_frozen_inventory_and_archive": true,
+  "expected_packet_values_derived_from_observations": false,
+  "verifier_and_full_auditor_sources_and_bindings_unchanged": true,
+  "runtime_outputs_read": false,
+  "GPU_actions": false,
+  "conclusion": "Unchanged native v2 can resolve its original packet-control dependency without changing prelaunch expected values; the unchanged full auditor binding remains valid.",
+  "limits": [
+    "This review certifies the dependency copy and selected pinned identities; it does not reread every frozen source or independently establish historical path absence beyond the frozen inventory/archive and preserved root failure record.",
+    "The root-provided process terminal/reaped notification separately gates runtime evidence inspection."
+  ]
+}

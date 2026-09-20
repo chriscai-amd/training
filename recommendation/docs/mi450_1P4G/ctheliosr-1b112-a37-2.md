@@ -1,26 +1,39 @@
 # MI450 1P4G, host `ctheliosp-1b112-a37-2` (gfx1250, full model)
 
-Updated **2026-09-19** after the second 3,000-step run and its post-run checks.
+Updated **2026-09-20** after verified holdout convergence and finalization of
+the post-AC-cycle run at **08:07:53 UTC**.
 The requested filename is `ctheliosr-1b112-a37-2.md`; the hostname captured in
 every experiment is **`ctheliosp-1b112-a37-2.mnb.dcgpu`**. This document retains
 that distinction so the artifacts can be matched to the correct machine.
 All experiment and capture times below are **UTC**. Firmware build dates are
 quoted as reported; their source does not specify a timezone.
 
-**NaN loss did not reproduce in either of two fresh-process runs.** Each ran
-the full Yambda-5b HSTU model on four GPUs for **3,000 optimizer steps**, using
-**local batch 1024, global batch 4096, seed 1, `START_TS=0` and all full
-embedding tables**. Actual FBGEMM allocations verify **11 tables, 293,051,712
-logical rows, width 512 and 600,169,906,176 FP32 weight bytes**. Neither run
-reported a GPU fault/reset; all available total GPU ECC counters stayed zero.
-All four GPUs passed post-run checks and returned to idle.
+**The full-model run reached holdout AUC 0.7514703274 at step 14,000 on
+2026-09-20 at 08:07:17 UTC.** MLPerf recorded `run_stop: success`; the trainer
+and controller exited 0, with no owned processes remaining. All **14,000
+unique logged training losses were finite**, covering **57,344,000 training
+samples**. Launch-to-target time was **9h 9m 37.875s**.
 
-This is evidence of repeatability at this configuration. **It does not resolve
-the A0/B0 NaN, validate every intermediate tensor, or establish convergence.**
-Both launches use the same seed and boot, each stops at step 3000, and all
-observed updates are still inside the 24,000-step LR warmup. Evaluation was
-disabled. The local-2048/global-8192 AUC estimate in [§7](#7-auc-075-projection-at-local-batch-2048)
-is an extrapolation; that batch size was not run.
+This fresh run used **local batch 1024, global batch 4096, seed 1, dense and
+sparse base LR 5e-7, and 24,000 warmup steps**. It retained **11 full embedding
+tables, 293,051,712 logical rows, width 512 and 600,169,906,176 FP32 weight
+bytes**. The three holdout readings were **0.7236417 → 0.7416119 → 0.7514703**.
+See [§5.5](#55-completed-4k-holdout-convergence-run) for measured timings,
+losses, memory and hardware observations.
+
+The earlier two 3,000-step runs used base LR 1e-6 and disabled holdout
+evaluation. Five subsequent local-2048/global-8192 attempts ended in OOM,
+stall, an intentional initialization stop or driver failure. After the user
+reported an AC cycle, the successful 4K run started from scratch on a new
+boot; it did not resume any earlier trajectory. The historical local-2048
+projection in [§7](#7-auc-075-projection-at-local-batch-2048) never became a
+measured convergence result at that batch size.
+
+**The A0/B0 NaN root cause remains unresolved.** This run establishes finite
+logged loss and holdout convergence for its recorded configuration; it does
+not certify every intermediate tensor or post-warmup behavior. Step 14,000
+is still inside the 24,000-step warmup. Baseline settings and comparisons
+below are explicitly separated from the latest run.
 
 Companion investigations:
 [MI450 A0](../mi450_a0/mi450_a0.md),
@@ -31,13 +44,15 @@ Companion investigations:
 
 | Question | Recorded answer |
 |---|---|
-| Does the full model fit? | **Yes at local batch 1024 on four GPUs.** All embedding rows were retained; peak sampled VRAM was about 391–406 GiB per 432 GiB GPU. |
-| Did NaN loss reproduce? | **No: 3,000/3,000 finite losses in each of two runs.** There are no missing or duplicate MLLOG loss records. |
+| Does the full model fit? | **Yes at local batch 1024 on four GPUs.** The converged run retained all embedding rows and peaked at approximately **427.81 GiB on one 432 GiB GPU**; see the telemetry-unit convention in §5.5. |
+| Did NaN loss reproduce? | **No in the completed 4K runs:** two earlier 3,000-step checks and the latest **14,000-step** convergence run had finite logged losses throughout. |
 | Was the model shrunk? | **No.** `EMBEDDING_ROW_SCALE=1.0`, full 512-wide tables, three HSTU layers and sequence limit 4096. Column sharding retains every vocabulary row. |
 | Which attention arm ran? | **Uncapped baseline**, `HSTU_BWD_MAX_VGPR=0`, exact upstream Triton `7ff97e310935b4a79794878dbc911f9af25d38d9`; no cap256 training comparison. |
 | Was training resumed? | **No.** Empty checkpoint path and fresh trainer processes in each launch. |
-| Is this a 6,000-step training result? | **No.** It is two 3,000-step runs from the same configured start, totaling 6,000 step executions. |
-| Was holdout AUC 0.75 measured? | **No.** Holdout evaluation was disabled. The conditional estimate at local 2048/global 8192 is about **11 hours**, plus startup, if memory fit, throughput and convergence assumptions hold. |
+| What is the longest completed trajectory? | **14,000 steps in the latest fresh run.** The two earlier 3,000-step checks are separate trajectories. |
+| Was holdout AUC 0.75 measured? | **Yes: 0.7514703274 at 08:07:17 UTC on September 20**, with MLPerf success and clean termination. |
+| What happened at local batch 2048? | Five attempts on September 19; none reached holdout evaluation. See [§4.4](#44-local-2048global-8192-attempts). |
+| What was the host state at completion? | No surviving owned trainer tasks; all four GPUs returned to sampled driver-used VRAM of **165 tool-reported MB**. Available total GPU ECC counters stayed zero; corrected CPU reports are recorded separately. |
 
 ## Contents
 
@@ -45,7 +60,7 @@ Companion investigations:
 2. [Dataset and full model](#2-dataset-and-full-model)
 3. [Exact training settings](#3-exact-training-settings)
 4. [Experiment record](#4-experiment-record)
-5. [Results and comparison](#5-results-and-comparison)
+5. [Results and comparison](#5-results-and-comparison), including [latest convergence statistics](#55-completed-4k-holdout-convergence-run)
 6. [Reproduction and analysis commands](#6-reproduction-and-analysis-commands)
 7. [AUC 0.75 projection at local batch 2048](#7-auc-075-projection-at-local-batch-2048)
 8. [Evidence inventory and limits](#8-evidence-inventory-and-limits)
@@ -54,8 +69,8 @@ Companion investigations:
 
 ### 1.1 Host, CPU, GPUs and firmware
 
-The run-time host inventory was captured at **03:58:41 UTC**. A supplemental
-read-only inventory at **08:32:37 UTC**, on the same boot, records OS, CPU
+The baseline host inventory was captured on **September 19 at 03:58:41 UTC**.
+A supplemental read-only inventory at **08:32:37 UTC**, on the same boot, records OS, CPU
 topology, Docker versions and container configuration omitted from the first
 snapshot. These are `host_inventory.json` and `documentation_inventory.json`
 under the setup directory listed in [§8](#8-evidence-inventory-and-limits).
@@ -74,8 +89,10 @@ under the setup directory listed in [§8](#8-evidence-inventory-and-limits).
 | AMDGPU driver | `7.1.0.31300009` |
 | Kernel | `6.16.1-0_fbk2_brcmrdma5_35_g5ba27bd1d6b9` |
 | Loaded driver controls | `gpu_recovery=0`, `halt_if_hws_hang=0` |
-| Boot ID for both runs | `3cb36f24-0832-402b-af25-ff917fa8350f` |
-| Recovery actions during this experiment | No reboot, AC cycle, driver reload or GPU reset performed |
+| Boot ID for the two morning baseline runs | `3cb36f24-0832-402b-af25-ff917fa8350f` |
+| Recovery during the two morning baseline runs | No reboot, AC cycle, driver reload or GPU reset |
+| Boot ID for the converged post-AC run | `6ef5adda-fa87-4225-9fa2-99f733c74604` |
+| Post-AC driver recovery | AMDGPU loaded at **22:56:54 UTC September 19** with `noretry=0 gpu_recovery=0 ip_block_mask=0xcff`; four GPUs enumerated in SPX/NPS1 |
 
 Saved boot messages independently report one CPU package and CPU255's
 invalid-APIC-ID bring-up failure. The nominal 256-thread topology must not be
@@ -88,14 +105,17 @@ The GPU market-name string is `AMD Radeon Graphics`, while IFWI identifies
 `N/A`. Revision `0x00` does not establish an A0/B0 stepping distinction.
 The captured kernel command line includes `pci=realloc=off`, `iommu=pt`,
 `mitigations=off` and an `amdgpu,device_dax,dax_hmem` module blacklist; the
-driver was already loaded. These settings were recorded, not changed here.
+driver was already loaded for the morning baselines. After the later AC cycle,
+AMDGPU had to be loaded explicitly; see [§4.5](#45-post-ac-recovery-and-fresh-4k-launch).
+No persistent boot configuration was changed by that recovery.
 
 ### 1.2 Runtime and source pins
 
 | Component | Exact recorded version or source |
 |---|---|
 | Checkout | `/home/chcai/training`, branch `chcai/mi450` |
-| Training commit | `82e3d1c87bbb409c2679977f3b1677e04bbc21a1` |
+| Training commit, morning baselines | `82e3d1c87bbb409c2679977f3b1677e04bbc21a1` |
+| Training commit, converged post-AC run | `191adbccd350a427d44192f9c3005f64681f938f` |
 | Python | `3.12.3`, `/opt/venv/bin/python` |
 | Torch | `2.11.0+rocm7.14.0a20260625` |
 | Torch source | `f55dda6ca78b73027840c1bc4014fe703d4f5473` |
@@ -110,10 +130,19 @@ driver was already loaded. These settings were recorded, not changed here.
 | Docker client / server | `29.5.2` / `29.5.2`; supplemental documentation-time snapshot |
 | containerd / runc | `2.2.4` / `1.3.5` |
 
-No trainer/model source was changed for these experiments. Both launches
-captured the same **150 source SHA-256 entries** and matched the checked-out
+The two morning baseline launches captured the same **150 source SHA-256
+entries** and matched the checked-out
 files. The existing A0/B0 kernel fixes and workarounds in that commit remain
 part of the tested stack; the full-table result does not isolate their effects.
+
+The converged run records the later commit above and **276 source hashes**,
+identical to the final 8K attempt's manifest. Of the 150 paths shared with the
+morning baseline manifest, **143 hashes match and seven differ**; the source
+trees must not be described as identical. Changes include opt-in tripwire
+instrumentation and a weighted-layer-norm backward block-size override. The
+latest run explicitly sets `NAN_TRIPWIRE=0` and `WEIGHTED_LN_BWD_BLOCK_N=0`.
+Its captured Torch, Triton, TorchRec and FBGEMM package versions match the
+table, and the prepared image/container identity is retained.
 
 ### 1.3 Images and container
 
@@ -146,10 +175,11 @@ metadata requests Triton 3.6, so the override emits a dependency warning;
 the build import check, prepared-stack checks and both training runs succeeded
 with the documented custom version.
 
-**The image's default allocator setting is not the setting used in training.**
-The launcher explicitly clears both allocator variables, overriding the
-Dockerfile's `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`. It also sets
-the required library directory:
+**The three completed GBS4096 runs override the image's default allocator.**
+Their launchers explicitly clear both allocator variables, overriding the
+Dockerfile's `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`. They also set
+the required library directory as shown below. The 8K allocator experiments
+used the distinct settings recorded in §4.4.
 
 ```text
 HIPBLASLT_TENSILE_LIBPATH=/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250
@@ -210,10 +240,11 @@ directions ([§3.2](#32-optimizer-and-communication)).
 
 ### 2.3 Full embedding tables and actual sharding
 
+The two morning baselines and the converged GBS4096 run use
 `EMBEDDING_ROW_SCALE=1.0`, `EMB_PLACEMENT=hbm`, with both
 `EMB_PLACEMENT_OVERRIDES` and `EMB_SHARDING_OVERRIDES` empty.
 Every logical table has **512 FP32 columns**. The following layout was verified
-from **eight native FBGEMM TBE initialization records in each run**:
+from **eight native FBGEMM TBE initialization records in each of those runs**:
 
 | Table | Full logical rows | Actual placement |
 |---|---:|---|
@@ -249,12 +280,14 @@ runtime VRAM usage; measured peaks include the rest of training memory.
 
 ## 3. Exact training settings
 
-These tables describe **both completed runs**. Their saved explicit settings
-differ only in `RUN_NAME`: `baseline_noeval` versus `repeat01`.
+Sections 3.1–3.4 describe **the two morning 3,000-step baseline runs**. Their
+saved explicit settings differ only in `RUN_NAME`: `baseline_noeval` versus
+`repeat01`.
 The complete machine-readable settings are each run's
 `effective_training_env.json`; inherited environment is not exhaustively
 represented by that file. The initialization-only attempt's one setting
-difference is recorded in [§4](#4-experiment-record).
+difference is recorded in [§4](#4-experiment-record). The converged run's
+configuration changes are listed in [§3.5](#35-converged-run-configuration).
 
 ### 3.1 Distributed execution, batching and input pipeline
 
@@ -356,7 +389,41 @@ The final `ProcessExitedException` is expected from the explicit worker exit
 42. A finite verdict requires the bound marker, complete loss coverage,
 controller result and process cleanup; parent exit 1 alone is not the verdict.
 
+### 3.5 Converged run configuration
+
+Run: `mi450_4gpu_4k_auc075_post_ac_20260919T225739Z`. The saved
+`effective_training_env.json`, `configuration_verification.json` and native
+`allocator_runtime.json` establish these settings:
+
+| Setting | Converged run |
+|---|---|
+| Local / global batch; accumulation | **1024 / 4096; 1** |
+| Dense / sparse base LR | **5e-7 / 5e-7** |
+| Warmup | **24,000 optimizer steps from zero**, unchanged step count |
+| Training limit | `DIE_AT_STEP=-1`; no optimizer-step or train/eval batch cap |
+| Evaluation | `EVAL_EVERY_DATA_PCT=0.001`, `EVAL_EVERY_N_WINDOWS=0` |
+| Initial evaluation skip | `SKIP_EVAL_EPOCH_PCT=0.022361844716419856`; runtime skip threshold 12,507 |
+| Actual holdout schedule | First at **step 12,880**, then every **560 steps / 2,293,760 training samples** |
+| Holdout | Window **299**, one full window, **2,058,204 configured anchors**, no evaluation batch cap |
+| Stop target | Finite holdout `eval_accuracy >= 0.75`, followed by MLPerf success and clean exit |
+| Initialization / checkpoints | Fresh seed 1, `START_TS=0`, empty `CKPT_PATH`; checkpoint output disabled |
+| Model / sharding | All 11 full tables, three HSTU layers, history 4086, sequence limit 4096; original automatic sharding, with the same concrete table placements as `repeat01` |
+| Allocator | Both allocator aliases empty; native max split -1, GC threshold 0, memory fraction 1.0, expandable segments false |
+| Kernel controls | Uncapped `HSTU_BWD_MAX_VGPR=0`; `WEIGHTED_LN_BWD_BLOCK_N=0`; NaN probes/tripwire disabled |
+| MLPerf platform label | `MI450`, correcting the morning baseline's stale `MI355X` label |
+| Monitor | Two-distinct-step nonfinite-loss stop; explicit OOM/GPU-fault detection; **1,200-second training-stall guard**, excluding startup and evaluation |
+
+Dense Adam, fused row-wise Adagrad, clipping and FP16 sparse communication
+retain the settings in §3.2. The last logged LR was
+**2.916458333333333e-7 = 5e-7 × 13,999 / 24,000**, about **58.33%** of the
+base rate. Convergence occurred before warmup finished. The sample-based
+initial skip controls when evaluation begins; it does not predict when AUC
+will cross the target.
+
 ## 4. Experiment record
+
+Sections 4.1–4.4 refer to **September 19 UTC**. The fresh run in §4.5 continued
+into September 20.
 
 ### 4.1 Preparation and initialization-only attempt
 
@@ -407,7 +474,58 @@ ten all-to-all operations per dtype using int64/FP32. These are small checks;
 they do not exercise production-size communication, the full HSTU backward
 or fused embedding updates.
 
+### 4.4 Local-2048/global-8192 attempts
+
+Five fresh attempts followed the morning checks. Each retained the full model
+and used physical local batch 2048 on four GPUs. **None reached a holdout
+evaluation or established convergence.** The run directory names below are
+relative to `/home/chcai/runs/`.
+
+| Run directory | Recorded outcome |
+|---|---|
+| `mi450_4gpu_8k_auc075_20260919T201418Z` | **19 finite steps**, then a **17.82 GiB** HSTU-backward allocation failure and logged RCCL memory fault with original sharding. |
+| `mi450_4gpu_8k_auc075_alloc1024_20260919T203058Z` | Same **19-step** failure. The intended max-split setting was shadowed by empty `PYTORCH_CUDA_ALLOC_CONF`; this did not test the intended allocator protection. |
+| `mi450_4gpu_8k_auc075_cw_20260919T204609Z` | Full column-wise sharding; **80 finite steps**, then a sustained stall after **21:01:51.335**. Rank 1 was in ROCr scratch reclamation through `hipMalloc`/`index_select`; no logged NaN, OOM or GPU fault. Owned cleanup completed **21:08:28.167**. |
+| `mi450_4gpu_8k_auc075_cw_gc70_20260919T211127Z` | Intentional initialization-only stop at **21:18:17.836**, with **zero optimizer steps**. GC threshold 0.7 parsed, but native memory fraction 1.0 disabled the GC call. |
+| `mi450_4gpu_8k_auc075_cw_gc70_f99_20260919T212335Z` | **Five finite steps**, then MES/driver failure. Both allocator aliases correctly set max split 1024 MiB, GC 0.7 and memory fraction 0.99. MES `INVALIDATE_TLBS` errors began **21:34:48**, before the final loss at **21:34:53.164**. |
+
+The last attempt retained non-zombie D/R tasks after SIGKILL, despite its
+terminal controller label. Its saved thread audit establishes incomplete
+cleanup on that boot. The subsequent AC cycle and new-boot preflight are the
+recovery evidence; the old `stopped` label is not. The further prepared
+`mi450_4gpu_8k_cw_maxsplit_setup` was not launched. Detailed failure, allocator
+and cleanup records are linked from the host-local
+[8K handoff](/home/chcai/runs/mi450_4gpu_8k_handoff.md).
+
+### 4.5 Post-AC recovery and fresh 4K launch
+
+After the user reported an AC cycle, the boot ID was
+`6ef5adda-fa87-4225-9fa2-99f733c74604`. All four GPUs were present on PCI, but
+AMDGPU and `/dev/kfd` were absent because the existing boot configuration
+blacklists automatic driver loading. The recorded restore command was
+`sudo -n modprobe amdgpu noretry=0 gpu_recovery=0 ip_block_mask=0xcff`; it
+completed at **22:56:54.826 UTC September 19**, without a persistent boot
+configuration change. The existing container, image and mounts were retained.
+
+All four ranks passed a bounded FP32/BF16 indexing/matmul and RCCL
+all-reduce/all-to-all preflight in **3.959 seconds**. The host wrapper began
+at **22:57:39.448 UTC** and recorded the detached training launch at
+**22:57:39.634 UTC**. The prepared 4K run had not launched before the AC cycle,
+and no checkpoint existed. This was fresh initialization with the settings
+in §3.5, original automatic sharding and default allocator behavior.
+
+The run directory is
+`/home/chcai/runs/mi450_4gpu_4k_auc075_post_ac_20260919T225739Z/`.
+The saved [recovery record](/home/chcai/runs/mi450_4gpu_4k_auc_setup/POST_AC_RECOVERY.md)
+and `configuration_verification.json` establish recovery and setup;
+`outcome.json` and `finalization.json` establish the subsequent successful
+completion. The 1,200-second stall guard never fired, and no manual stop or
+automatic relaunch was recorded.
+
 ## 5. Results and comparison
+
+Sections 5.1–5.4 retain the **two morning 3,000-step baseline results**.
+The completed September 19–20 convergence run is documented in §5.5.
 
 ### 5.1 Losses, coverage and repeatability
 
@@ -514,14 +632,116 @@ kernel and execution history also differ. These experiments do not show
 that full tables fix NaN or that shrinking tables caused it. No same-host
 quarter/full-table A/B or capped/uncapped A/B was performed.
 
+### 5.5 Completed 4K holdout convergence run
+
+**Verified success:** finite holdout AUC **0.7514703273773193** at step
+**14,000**, followed by MLPerf `run_stop: success`, trainer/controller/host
+launcher exit **0**, and an empty owned-process and whole-group survivor
+census. Finalization completed at **2026-09-20 08:07:53.377 UTC**.
+
+The run processed **57,344,000 training samples**, corresponding to logged
+epoch fraction **0.0250319161**. Its **14,000 MLPerf loss events** are
+consecutive, with no missing steps, duplicate steps, malformed complete
+MLPerf events or nonfinite losses. The controller's **28,000 reports** count
+both console and MLPerf output; they are not 28,000 optimizer steps.
+
+| Loss statistic | Value |
+|---|---:|
+| First loss, step 1 | 0.14112599194049835 |
+| Last loss, step 14,000 | **0.10529641807079315** |
+| Mean over all 14,000 steps | 0.1295759480819106 |
+| Minimum, step 13,820 | 0.08038505166769028 |
+| Maximum, step 3,756 | 0.1869322508573532 |
+| Nonfinite logged losses / evaluations | **0 / 0** |
+
+All three scheduled holdout evaluations completed. Sample counts below are
+**training samples accumulated before evaluation**, not holdout sizes. The
+fixed holdout configuration contains 2,058,204 anchors with no batch cap;
+the final evaluation log records 502 batches.
+
+| Step | Training samples | Eval start, September 20 UTC | Result time UTC | Eval duration | Holdout AUC |
+|---:|---:|---|---|---:|---:|
+| 12,880 | 52,756,480 | 07:03:42.498 | 07:10:52.135 | 429.637 s | 0.7236416935920715 |
+| 13,440 | 55,050,240 | 07:31:54.190 | 07:39:03.338 | 429.148 s | 0.741611897945404 |
+| **14,000** | **57,344,000** | **08:00:07.599** | **08:07:17.323** | **429.724 s** | **0.7514703273773193** |
+
+Timing uses embedded MLPerf event timestamps and the host wrapper's recorded
+launch/completion times. The first training block began at **23:07:48.161
+UTC September 19**; the first loss followed at **23:08:42.209**. The final
+training loss was recorded at **08:00:07.588 UTC September 20**.
+
+| Timing scope | Measured duration | Aggregate training samples/s |
+|---|---:|---:|
+| Host launch → first training block | 10m 8.713s | — |
+| Sum of three training blocks | **8h 38m 0.652s** | **1,845.01** |
+| Sum of three full evaluations | **21m 28.509s** | — |
+| MLPerf `run_start` → successful `run_stop` | **9h 9m 27.096s** | **1,739.43** |
+| Host launch → qualifying AUC | **9h 9m 37.875s** | — |
+| Host launch → host wrapper completion | **9h 9m 50.633s** | **1,738.19** |
+
+Training-block throughput excludes startup and the logged evaluation
+intervals, but includes loading, synchronization and other waits inside those
+blocks. It is not pure GPU compute throughput. The last two 560-step training
+blocks took **1,262.055 s** and **1,264.260 s**, about **2.26 s/step**; adding
+the roughly **7m 10s** holdout produced results about **28m 13s** apart.
+
+The 05:00 UTC projection had a 10:00 UTC working ETA before any holdout AUC
+was known. After two measured evaluations, the saved 07:45 projection moved
+the planning window to **08:07–08:35 UTC**, with the next evaluation as the
+best estimate. The actual crossing at **08:07:17 UTC** is now the result;
+those projections remain historical assumptions rather than current status.
+
+There were **3,104 saved telemetry samples per GPU**, from September 19
+**22:57:39.449** through September 20 **08:07:29.412 UTC**, with no telemetry
+call failures. Peak sampled memory was higher than in the morning baselines:
+
+| GPU | Peak used VRAM, tool-reported MB | Approximate peak GiB | Peak timestamp UTC | Final used VRAM, tool-reported MB |
+|---|---:|---:|---|---:|
+| 0 | **438,077** | **427.81** | September 19 23:14:09.044 | 165 |
+| 1 | 415,863 | 406.12 | September 19 23:10:04.497 | 165 |
+| 2 | 435,563 | 425.35 | September 19 23:14:09.044 | 165 |
+| 3 | 408,217 | 398.65 | September 20 07:11:16.003 | 165 |
+
+AMD-SMI labels these values `MB`, including **442,368 MB** total per GPU.
+The approximate GiB column uses the same binary-capacity interpretation as
+§5.2: divide the reported count by 1024, consistent with the independently
+recorded **432 GiB** capacity. The smallest sampled headroom was about
+**4.19 GiB** on GPU 0. Sampling can miss instantaneous peaks and does not
+separate active tensors from allocator cache.
+
+All available **total correctable, uncorrectable and deferred GPU ECC
+counters remained zero on all four GPUs**. Per-block/cache and other
+unavailable counters remain `N/A`. A review of the saved training and kernel
+logs found **no GPU fault, OOM or reset signature**. The kernel log separately
+contains **260 corrected CPU error reports**: CPU 218 **101**, CPU 106 **99**,
+and CPU 73 **60**, each reporting “Corrected error, no action required.”
+Suppressed MCE callback messages and `ifoe` devlink-port warnings are also
+retained. These observations do not establish training causation and are not
+GPU ECC events.
+
+At recorded completion, `termination_incomplete=false`, both survivor lists
+were empty, and sampled GPU memory had returned to its idle level. These are
+the saved completion observations; no additional post-run GPU health probe
+was performed for this documentation update. The run establishes convergence
+at the recorded settings, while the lack of intermediate-tensor validation,
+post-warmup training and a controlled A0/B0 root-cause comparison remains.
+
+Primary evidence: [final result](/home/chcai/runs/mi450_4gpu_4k_auc075_post_ac_20260919T225739Z/RESULT.md),
+[summary](/home/chcai/runs/mi450_4gpu_4k_auc075_post_ac_20260919T225739Z/summary.json),
+[MLPerf events](/home/chcai/runs/mi450_4gpu_4k_auc075_post_ac_20260919T225739Z/mlperf.log),
+[per-step losses](/home/chcai/runs/mi450_4gpu_4k_auc075_post_ac_20260919T225739Z/loss.csv),
+and [finalization](/home/chcai/runs/mi450_4gpu_4k_auc075_post_ac_20260919T225739Z/finalization.json).
+
 ## 6. Reproduction and analysis commands
 
 The commands below use the **already prepared host-local container, dataset
 and saved launch scripts**. They are recorded for future reproduction; this
 documentation update does not launch another experiment.
 
-For a source-matched repeat, first ensure the checkout mounted at `/workspace`
-is at the recorded commit `82e3d1c87bbb409c2679977f3b1677e04bbc21a1`.
+For a source-matched repeat, the morning baselines used commit
+`82e3d1c87bbb409c2679977f3b1677e04bbc21a1`; the converged run used
+`191adbccd350a427d44192f9c3005f64681f938f`. Match the intended run's captured
+source manifest and configuration in the checkout mounted at `/workspace`.
 The branch can advance after these experiments. Because the checkout is bind
 mounted, retaining the prepared image alone does not freeze the trainer source.
 
@@ -543,7 +763,7 @@ guaranteed byte-identical because some package dependencies in the Dockerfile
 are not fully locked. Preserve the recorded image and provenance when making
 a controlled comparison.
 
-### 6.2 Launch, stop and summarize
+### 6.2 Baseline launch, stop and summarize
 
 ```bash
 # Use a new name; the launcher refuses to overwrite or resume an existing run.
@@ -570,7 +790,7 @@ touch /home/chcai/runs/mi450_4gpu_repeat02/stop.request
 The supervisor verifies ownership before signaling the trainer process group.
 It does not terminate the whole container or unrelated jobs. A separately
 named `HSTU_BWD_MAX_VGPR=256` launch would be a new experimental arm; neither
-completed run used it. `BATCH_SIZE` is explicitly fixed to 1024 by this
+morning baseline used it. `BATCH_SIZE` is explicitly fixed to 1024 by this
 launcher, so merely exporting 2048 outside it does not create the proposed
 larger-batch experiment.
 
@@ -589,10 +809,31 @@ retained separately; their script is `health_preflight.py` in the setup
 directory. A successful small health check is not a substitute for the
 training and full-allocation audits.
 
+### 6.3 Convergence-run artifacts and reproduction setup
+
+The separate
+[/home/chcai/runs/mi450_4gpu_4k_auc_setup/README.md](/home/chcai/runs/mi450_4gpu_4k_auc_setup/README.md)
+records the 4K convergence launcher and watcher commands, including the
+1,200-second training-stall timeout. Its initial “run remains active” text is
+a launch-time observation; the final artifacts in §5.5 supersede it.
+Use this setup's LR/evaluation configuration for a matching convergence run;
+the baseline launcher above intentionally stops after 3,000 steps.
+
+The completed run's saved logs can be summarized without GPU work:
+
+```bash
+python3 /home/chcai/runs/mi450_4gpu_4k_auc_setup/summarize_4k.py \
+  --run-dir /home/chcai/runs/mi450_4gpu_4k_auc075_post_ac_20260919T225739Z \
+  --observations-dir /home/chcai/runs/mi450_4gpu_4k_auc_setup/observations/auc075_post_ac_20260919T225739Z
+```
+
 ## 7. AUC 0.75 projection at local batch 2048
 
-**This section contains an estimate, not an executed experiment.** The MI350
-reference used **1024 per GPU across eight GPUs**, hence **global batch 8192**.
+**Historical projection prepared before the 8K attempts.** Those subsequent
+attempts are recorded in §4.4; none produced a measured time to AUC 0.75.
+The completed run in §5.5 used global batch 4096 and has its own measured
+result. The MI350 reference used **1024 per GPU across eight GPUs**, hence
+**global batch 8192**.
 The proposed **2048 per GPU across four GPUs** has the same global batch.
 The reference did not use global batch 1024.
 
@@ -633,19 +874,19 @@ T_total = T_train * (1 + R_eval)
 | Retained evaluation | 0.4282 h | 0.8606 h | 1.5212 h |
 | **Total** | **9.4324 h** | **10.9318 h** | **13.1932 h** |
 
-**About 11 hours plus startup is the planning estimate.** Running every
+**About 11 hours plus startup was the planning estimate.** Running every
 reference evaluation instead projects to about 14.3 hours on average. New
 initialization, JIT and evaluation-related startup scans are not included.
 
-The estimate assumes memory fit at local 2048, roughly unchanged aggregate
-sample throughput, comparable convergence at the same global batch, and
-comparable evaluation/training cost. None was measured at local 2048 here.
-Doubling batch does not imply doubling throughput. Local 1024 already peaked
-at 406.4 of 432 GiB on one GPU; without active/reserved memory separation,
-these measurements establish neither local-2048 fit nor an inevitable OOM.
-The RCP target windows (69–74) are beyond the measured window 46, so later
-sequence work may also change throughput. The range is an empirical reference
-seed range under these assumptions, not a prediction interval or guarantee.
+The historical estimate assumed memory fit at local 2048, roughly unchanged
+aggregate sample throughput, comparable convergence at the same global batch, and
+comparable evaluation/training cost. The original-sharding attempts later
+failed allocations, and the full-column-wise attempts did not establish
+sustained training or reach evaluation. These assumptions therefore remain
+unvalidated for local 2048. Doubling batch does not imply doubling throughput.
+The projection used only the morning measurements through window 46, before
+the RCP target windows 69–74. Its range is an empirical reference-seed range
+under those assumptions, not a prediction interval or a current ETA.
 
 ## 8. Evidence inventory and limits
 
@@ -658,6 +899,10 @@ container images are not embedded in this Markdown file.
 | `/home/chcai/runs/mi450_4gpu_baseline/` | Initialization-only attempt and full-allocation proof |
 | `/home/chcai/runs/mi450_4gpu_baseline_noeval/` | First completed 3,000-step run |
 | `/home/chcai/runs/mi450_4gpu_repeat01/` | Completed fresh-process repeat |
+| `/home/chcai/runs/mi450_4gpu_8k_handoff.md` | Index of the five 8K attempts, failure evidence and incomplete cleanup before the AC cycle |
+| `/home/chcai/runs/mi450_4gpu_4k_auc_setup/` | Post-AC recovery, driver and preflight records, convergence launch/monitor scripts |
+| `/home/chcai/runs/mi450_4gpu_4k_auc075_post_ac_20260919T225739Z/` | **Completed 14,000-step run, holdout AUC 0.7514703274 and clean termination** |
+| `/home/chcai/runs/mi450_4gpu_4k_auc_setup/observations/auc075_post_ac_20260919T225739Z/` | Latest run's host timing, kernel log and GPU telemetry |
 
 | File, relative to the indicated root | Evidence |
 |---|---|
@@ -665,21 +910,33 @@ container images are not embedded in this Markdown file.
 | Setup: `docker_build.log`, `prepared_stack.json`, `prepared_stack.log` | Build details, exact runtime pins, full row counts and prepared GPU checks |
 | Setup: `dataset_md5.log`, `dataset_verify.log`, `dataset_audit.json`, `dataset_window_steps.json` | Download integrity, finite-source scan, shapes/catalog sizes and global-step/window mapping |
 | Setup: `launcher_cpu_validation.json` | Synthetic supervisor lifecycle checks, including ownership and cleanup |
-| Setup: `health_preflight.json`, `health_postrun.json`, `health_repeat01_postrun.json` | Four-GPU small-check results before training and after each completed run |
+| Setup: `health_preflight.json`, `health_postrun.json`, `health_repeat01_postrun.json` | Four-GPU small-check results before training and after each morning baseline |
 | Setup: `{baseline,baseline_noeval,repeat01}.host_result.json` | Host launch/end times and launcher exit codes |
 | Setup: `{baseline,baseline_noeval,repeat01}.{kernel.log,gpu.jsonl}` | Captured kernel stream and sampled GPU telemetry for each attempt |
 | Setup: `repeat01.postrun_processes.json`, `repeat01.postrun_metrics.json` | Idle GPU state after repeat postflight |
 | Initial attempt: `actual_embedding_allocation.json`, `outcome.json` | Full allocation and intentional stop before training |
 | Each completed run: `effective_training_env.json`, `command.json`, `container.json`, `provenance.json`, `source_sha256.json` | Exact settings, invocation, container/software identity and captured source hashes |
-| Each completed run: `training.log`, `driver.log`, `status.json`, `outcome.json` | Raw progress, bound marker, supervisor decision and cleanup |
+| Each completed run: `training.log`, `driver.log`, `status.json`, `outcome.json` | Raw progress, completion markers, supervisor decision and cleanup |
 | Each completed run: `summary.json`, `loss.csv` | Independently parsed consecutive losses, samples, memory/ECC, fault and termination checks |
-| Each completed run: `audit_fullmodel.json`, `audit_fullmodel.md` | Separate actual-allocation, model, source, log and termination audit |
+| Each morning baseline: `audit_fullmodel.json`, `audit_fullmodel.md` | Separate actual-allocation, model, source, log and termination audit |
 | Setup: `baseline_noeval_vs_repeat01.{json,csv,md}` | Full-precision paired losses, source/runtime/config comparison and coverage limits |
 | Setup: `rcp_convergence_analysis.{json,csv}`, `rcp_host_projection.{json,md}` | Per-seed RCP crossings and conditional AUC-time calculation |
+| 4K AUC setup: `POST_AC_RECOVERY.md`, `post_ac_host_inventory.json`, `post_ac_20260919T225636Z.driver_load.json` | New boot, restored AMDGPU and retained container identity |
+| 4K AUC setup: `health_post_ac_20260919T225706Z.json`, `active_launch.json` | Passed four-GPU preflight and recorded detached launch |
+| Latest run: `configuration_verification.json`, `allocator_runtime.json`, `source_sha256.json`, `provenance.json` | Runtime settings, full allocation/sharding, native allocator and later source/software provenance |
+| Latest run: `mlperf.log`, `eval_accuracy.json`, `mlperf_run_stop.json` | Three holdout results, exact interval timing and successful MLPerf termination |
+| Latest run: `summary.json`, `loss.csv`, `RESULT.md`, `outcome.json`, `finalization.json` | Verified finite coverage, final statistics, clean exits and completed finalization |
+| Latest run: `eta_projection_20260920T0500Z.json`, `eta_projection_20260920T074522Z.json` | Historical ETA assumptions before evaluation and after two measured holdout results |
+| Latest observations: `host_result.json`, `kernel.log`, `gpu.jsonl` | Host launch/completion, corrected CPU reports and sampled GPU memory/ECC |
 
-All final summary validation fields passed, and a separate audit agreed with
-the consecutive loss count, full table allocations and intended termination.
+The latest terminal artifacts establish finite loss coverage, qualifying
+holdout AUC, MLPerf success and clean trainer/controller termination. The
+runtime configuration audit establishes full table allocations and actual
+sharding. The saved kernel and telemetry review supports the stated observed
+fault/ECC findings; controller success alone is not a hardware-health audit.
+
 Finite logged loss does not prove that every gradient or the final update is
-finite; A0 previously captured bad gradients with a finite forward loss.
-No full-state multi-rank replay, post-warmup run, full convergence run,
-local-2048 memory test or controlled A0/B0 root-cause comparison was performed.
+finite; A0 previously captured bad gradients with a finite forward loss. The
+latest run establishes convergence **during warmup** at global batch 4096.
+No full-state multi-rank replay, post-warmup run, successful global-8192
+convergence run or controlled A0/B0 root-cause comparison was performed.

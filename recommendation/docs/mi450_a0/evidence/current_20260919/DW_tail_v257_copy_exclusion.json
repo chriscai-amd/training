@@ -1,0 +1,98 @@
+{
+  "status": "PASS_FIRST_TAIL_ACCUMULATOR_TO_V257_COPY_EXCLUDED_AS_HUGE_NAN_PRODUCER_UNDER_ORDINARY_PREHISTORY",
+  "descriptor_evidence": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/tail_SRD_capture.json",
+    "bytes": 9647,
+    "sha256": "63d6f736d0345557d97b7ad85835be0ec5067312a2dd05b27e9b6e93af3a40e2"
+  },
+  "complete_original_input_quantum": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/original_input_quantum.json",
+    "bytes": 1077198,
+    "sha256": "ae4bc127b4fa34ec5120179ce6f8b41a15ae942abb97d71e6e4eef07a342ac56"
+  },
+  "independent_v513_deadness": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/independent_tail_deadness_review.json",
+    "bytes": 6402,
+    "sha256": "71452551748e766804beeac1a1b6a89a345c4655bcfc2a96833f42f776042635"
+  },
+  "published_alignment_and_bounds_support": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_resume_v1/buffer_alignment_support_v1.json",
+    "bytes": 14344,
+    "sha256": "df7c9c06d2299cd29070d491bdbc93e4df6f410ea157763d9c325705a258c5c9"
+  },
+  "addressed_window": "Executed source0bank0/destinationbank1 tail setters while v257 remains address for C698,C6B8,C6D8,C6F8,C718,C738,C758,C778",
+  "geometry": {
+    "original_v257_lane0": "0x810+512*wave",
+    "original_A_base_offset": 1190035440,
+    "intended_X_K_by_wave": [
+      2324292,
+      2324293,
+      2324294,
+      2324295
+    ],
+    "intended_X_M_half_open": [
+      0,
+      8
+    ],
+    "evaluation": "Geometry is compatible with an8-row affected slice, but does not overcome the following bounds/value exclusion."
+  },
+  "SRD": {
+    "A_num_records_bytes": 32272,
+    "A_base_from_original": "2324288*512-16",
+    "num_records_field": "bits101:57",
+    "stride": 0,
+    "swizzle": 0,
+    "OOB_select": 0,
+    "scalar_offset": 0,
+    "load_width_bytes": 2,
+    "immediate_offsets": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14
+    ],
+    "first_load_max_in_range_unsigned_VGPR": 32270,
+    "all_eight_loads_max_in_range_unsigned_VGPR": 32256,
+    "offset_sum_width_bits": 45,
+    "no_u32_wrap_exception": true
+  },
+  "source_cases": [
+    {
+      "source": "positive normal FP32",
+      "minimum_raw_unsigned": 8388608,
+      "result": "Every tail load is out of bounds and returns zero."
+    },
+    {
+      "source": "any negative FP32 including negative zero",
+      "minimum_raw_unsigned": 2147483648,
+      "result": "Every tail load is out of bounds and returns zero."
+    },
+    {
+      "source": "positive nonzero subnormal FP32",
+      "result": "Cannot arise before the first corruption under the original BF16/ordinary FP32 product-sum model: all inputs produce a common2^-109 grid."
+    },
+    {
+      "source": "positive zero",
+      "raw_unsigned": 0,
+      "result": "Reads finite aligned X[K2324287,M248:256]; the valid original values cannot produce huge/NaN with unchanged finite DY."
+    }
+  ],
+  "mathematical_input_grid": {
+    "X_quantum_exponent": -38,
+    "DY_quantum_exponent": -71,
+    "product_and_ordinary_FP32_sum_quantum_exponent": -109,
+    "normal_FP32_min_exponent": -126
+  },
+  "conclusion": "The numerical low-half or byte-splice argument does not supply a live enormous/NaN-producing first tail0-to1 copy. Current remaining bound, not full1.19GBallocation, controls these loads.",
+  "open_branch": "An earlier mainloop v513-to-v257 copy has a different source word and larger current SRD; persistent address corruption and unaligned payloads require separate analysis.",
+  "limits": [
+    "Original training405 native kernel and trap events remain unobserved.",
+    "Assumes one first modeled copy, finite unchanged original operands, and otherwise ordinary architectural BF16-product/FP32 arithmetic.",
+    "Prior corrupt accumulator contents, different paths/packets, multiple interacting copy directions, or other faults are outside this exclusion."
+  ],
+  "GPU_actions": false
+}

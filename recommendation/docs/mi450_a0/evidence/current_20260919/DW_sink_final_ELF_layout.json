@@ -1,0 +1,2004 @@
+{
+  "status": "PASS_INDEPENDENT_SIX_ELF_LAYOUT_METADATA_DESCRIPTOR_SYMBOL_SEGMENT_AUDIT",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/audit_elf_layout.py",
+    "bytes": 14930,
+    "sha256": "33ad67bbaaa55b5dfea67f1ed773343238648a22023180fb9def7b29457a353e"
+  },
+  "original": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/verified_unbundle.elf",
+    "bytes": 335000,
+    "sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3"
+  },
+  "parent_build_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_candidate_CPU_v1/matched_ELF_build_report.json",
+    "bytes": 8486,
+    "sha256": "6e1b05135e3e61ab7ae2166336e998c574c5657f37c9d271e261f1af84e3009c"
+  },
+  "gate_build_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_combined_gate_CPU_v1/artifacts_v1/sink_combined_gate_build_report.json",
+    "bytes": 31935,
+    "sha256": "31ea5ce2c269705a016206829152b20d69e5d62317b83bff5b1275195af3419d"
+  },
+  "address_map": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_relocation_plan_peer_v1/logical_address_map.json",
+    "bytes": 2395099,
+    "sha256": "4e70c022fd8c796de67cf4343b4fdce0f05b03bbe86867ddfaed0c59cdecbac0"
+  },
+  "arms": {
+    "control": {
+      "input": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/verified_unbundle.elf",
+        "bytes": 335000,
+        "sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3"
+      },
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_candidate_CPU_v1/DW_sink_control.elf",
+        "bytes": 352408,
+        "sha256": "d8d1f9293505cfe3247ea44908d6bdb30cc7ca641efb31bb88badd0d03b1b967"
+      },
+      "file_growth": 17408,
+      "symbol_entries_checked": 626,
+      "symbol_entries_changed": 488,
+      "exports": [
+        {
+          "name": "",
+          "value": "0x0",
+          "size": 0,
+          "info": 0,
+          "section_index": 0
+        },
+        {
+          "name": "UNDEF",
+          "value": "0x0",
+          "size": 0,
+          "info": 16,
+          "section_index": 0
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+          "value": "0x4700",
+          "size": 0,
+          "info": 18,
+          "section_index": 8
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1.kd",
+          "value": "0x3640",
+          "size": 64,
+          "info": 17,
+          "section_index": 7
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1",
+          "value": "0x48b00",
+          "size": 0,
+          "info": 18,
+          "section_index": 8
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1.kd",
+          "value": "0x3680",
+          "size": 64,
+          "info": 17,
+          "section_index": 7
+        }
+      ],
+      "first_kernel_metadata": {
+        ".args": [
+          {
+            ".name": "Gemm info",
+            ".offset": 0,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "kernel info0",
+            ".offset": 4,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "kernel info1",
+            ".offset": 8,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "numWG",
+            ".offset": 12,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree0",
+            ".offset": 16,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree1",
+            ".offset": 20,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree2",
+            ".offset": 24,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesSum0",
+            ".offset": 28,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "D",
+            ".offset": 32,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "C",
+            ".offset": 40,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "A",
+            ".offset": 48,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "B",
+            ".offset": 56,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".name": "strideD0",
+            ".offset": 64,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideD1",
+            ".offset": 68,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideC0",
+            ".offset": 72,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideC1",
+            ".offset": 76,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideA0",
+            ".offset": 80,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideA1",
+            ".offset": 84,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideB0",
+            ".offset": 88,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideB1",
+            ".offset": 92,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "alpha",
+            ".offset": 96,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "beta",
+            ".offset": 100,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "AddressScaleAlphaVec",
+            ".offset": 104,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "f32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "bias",
+            ".offset": 112,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "void"
+          },
+          {
+            ".name": "biasType",
+            ".offset": 120,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "StrideBias",
+            ".offset": 124,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "activationAlpha",
+            ".offset": 128,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "activationBeta",
+            ".offset": 132,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "activationType",
+            ".offset": 136,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "batchOffsetD",
+            ".offset": 140,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetC",
+            ".offset": 148,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetA",
+            ".offset": 156,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetB",
+            ".offset": 164,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          }
+        ],
+        ".group_segment_fixed_size": 49152,
+        ".kernarg_segment_align": 8,
+        ".kernarg_segment_size": 176,
+        ".language": "OpenCL C",
+        ".language_version": [
+          2,
+          0
+        ],
+        ".max_flat_workgroup_size": 128,
+        ".name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+        ".private_segment_fixed_size": 0,
+        ".sgpr_count": 73,
+        ".sgpr_spill_count": 0,
+        ".symbol": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1.kd",
+        ".vgpr_count": 689,
+        ".vgpr_spill_count": 0,
+        ".wavefront_size": 32
+      },
+      "second_metadata_unchanged": true,
+      "descriptor_all_bytes_exact": true,
+      "first_kernel_entry": "0x4700",
+      "second_kernel_entry": "0x48b00",
+      "second_kernel_identical_bytes": 22568,
+      "second_kernel_sha256": "a21c6d30462a4d15b24615083bc28bd8f73770e15729184f2d7462a0a084ec21",
+      "synthetic_build_id": "238bf36ea3dfd0d1b937699843ab8afeb0a7b986",
+      "all_segments_and_sections_valid": true,
+      "dynamic_pointers_and_hash_tables_valid": true,
+      "relocation_sections": [],
+      "unexplained_changed_bytes": []
+    },
+    "control_nop": {
+      "input": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_candidate_CPU_v1/DW_sink_control.elf",
+        "bytes": 352408,
+        "sha256": "d8d1f9293505cfe3247ea44908d6bdb30cc7ca641efb31bb88badd0d03b1b967"
+      },
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_combined_gate_CPU_v1/artifacts_v1/DW_sink_combined_control_nop.elf",
+        "bytes": 352664,
+        "sha256": "6bcd85133ac3cb4e52c2ed854f3de303dfde3aee4f2332fdbf34cc25b8faf9e2"
+      },
+      "file_growth": 256,
+      "symbol_entries_checked": 626,
+      "symbol_entries_changed": 197,
+      "exports": [
+        {
+          "name": "",
+          "value": "0x0",
+          "size": 0,
+          "info": 0,
+          "section_index": 0
+        },
+        {
+          "name": "UNDEF",
+          "value": "0x0",
+          "size": 0,
+          "info": 16,
+          "section_index": 0
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+          "value": "0x4700",
+          "size": 0,
+          "info": 18,
+          "section_index": 8
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1.kd",
+          "value": "0x3640",
+          "size": 64,
+          "info": 17,
+          "section_index": 7
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1",
+          "value": "0x48c00",
+          "size": 0,
+          "info": 18,
+          "section_index": 8
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1.kd",
+          "value": "0x3680",
+          "size": 64,
+          "info": 17,
+          "section_index": 7
+        }
+      ],
+      "first_kernel_metadata": {
+        ".args": [
+          {
+            ".name": "Gemm info",
+            ".offset": 0,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "kernel info0",
+            ".offset": 4,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "kernel info1",
+            ".offset": 8,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "numWG",
+            ".offset": 12,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree0",
+            ".offset": 16,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree1",
+            ".offset": 20,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree2",
+            ".offset": 24,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesSum0",
+            ".offset": 28,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "D",
+            ".offset": 32,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "C",
+            ".offset": 40,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "A",
+            ".offset": 48,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "B",
+            ".offset": 56,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".name": "strideD0",
+            ".offset": 64,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideD1",
+            ".offset": 68,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideC0",
+            ".offset": 72,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideC1",
+            ".offset": 76,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideA0",
+            ".offset": 80,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideA1",
+            ".offset": 84,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideB0",
+            ".offset": 88,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideB1",
+            ".offset": 92,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "alpha",
+            ".offset": 96,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "beta",
+            ".offset": 100,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "AddressScaleAlphaVec",
+            ".offset": 104,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "f32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "bias",
+            ".offset": 112,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "void"
+          },
+          {
+            ".name": "biasType",
+            ".offset": 120,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "StrideBias",
+            ".offset": 124,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "activationAlpha",
+            ".offset": 128,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "activationBeta",
+            ".offset": 132,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "activationType",
+            ".offset": 136,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "batchOffsetD",
+            ".offset": 140,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetC",
+            ".offset": 148,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetA",
+            ".offset": 156,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetB",
+            ".offset": 164,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          }
+        ],
+        ".group_segment_fixed_size": 49152,
+        ".kernarg_segment_align": 8,
+        ".kernarg_segment_size": 176,
+        ".language": "OpenCL C",
+        ".language_version": [
+          2,
+          0
+        ],
+        ".max_flat_workgroup_size": 128,
+        ".name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+        ".private_segment_fixed_size": 0,
+        ".sgpr_count": 73,
+        ".sgpr_spill_count": 0,
+        ".symbol": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1.kd",
+        ".vgpr_count": 689,
+        ".vgpr_spill_count": 0,
+        ".wavefront_size": 32
+      },
+      "second_metadata_unchanged": true,
+      "descriptor_all_bytes_exact": true,
+      "first_kernel_entry": "0x4700",
+      "second_kernel_entry": "0x48c00",
+      "second_kernel_identical_bytes": 22568,
+      "second_kernel_sha256": "a21c6d30462a4d15b24615083bc28bd8f73770e15729184f2d7462a0a084ec21",
+      "synthetic_build_id": "e25aff7b9d3c70ade008d7c523f9069b5b74d23e",
+      "all_segments_and_sections_valid": true,
+      "dynamic_pointers_and_hash_tables_valid": true,
+      "relocation_sections": [],
+      "unexplained_changed_bytes": []
+    },
+    "control_trap": {
+      "input": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_candidate_CPU_v1/DW_sink_control.elf",
+        "bytes": 352408,
+        "sha256": "d8d1f9293505cfe3247ea44908d6bdb30cc7ca641efb31bb88badd0d03b1b967"
+      },
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_combined_gate_CPU_v1/artifacts_v1/DW_sink_combined_control_trap.elf",
+        "bytes": 352664,
+        "sha256": "6b7851fa757704d276d4a87530052f8d7c240b0f98b29b32a85e2141a264a4e7"
+      },
+      "file_growth": 256,
+      "symbol_entries_checked": 626,
+      "symbol_entries_changed": 197,
+      "exports": [
+        {
+          "name": "",
+          "value": "0x0",
+          "size": 0,
+          "info": 0,
+          "section_index": 0
+        },
+        {
+          "name": "UNDEF",
+          "value": "0x0",
+          "size": 0,
+          "info": 16,
+          "section_index": 0
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+          "value": "0x4700",
+          "size": 0,
+          "info": 18,
+          "section_index": 8
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1.kd",
+          "value": "0x3640",
+          "size": 64,
+          "info": 17,
+          "section_index": 7
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1",
+          "value": "0x48c00",
+          "size": 0,
+          "info": 18,
+          "section_index": 8
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1.kd",
+          "value": "0x3680",
+          "size": 64,
+          "info": 17,
+          "section_index": 7
+        }
+      ],
+      "first_kernel_metadata": {
+        ".args": [
+          {
+            ".name": "Gemm info",
+            ".offset": 0,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "kernel info0",
+            ".offset": 4,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "kernel info1",
+            ".offset": 8,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "numWG",
+            ".offset": 12,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree0",
+            ".offset": 16,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree1",
+            ".offset": 20,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree2",
+            ".offset": 24,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesSum0",
+            ".offset": 28,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "D",
+            ".offset": 32,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "C",
+            ".offset": 40,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "A",
+            ".offset": 48,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "B",
+            ".offset": 56,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".name": "strideD0",
+            ".offset": 64,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideD1",
+            ".offset": 68,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideC0",
+            ".offset": 72,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideC1",
+            ".offset": 76,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideA0",
+            ".offset": 80,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideA1",
+            ".offset": 84,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideB0",
+            ".offset": 88,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideB1",
+            ".offset": 92,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "alpha",
+            ".offset": 96,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "beta",
+            ".offset": 100,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "AddressScaleAlphaVec",
+            ".offset": 104,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "f32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "bias",
+            ".offset": 112,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "void"
+          },
+          {
+            ".name": "biasType",
+            ".offset": 120,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "StrideBias",
+            ".offset": 124,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "activationAlpha",
+            ".offset": 128,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "activationBeta",
+            ".offset": 132,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "activationType",
+            ".offset": 136,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "batchOffsetD",
+            ".offset": 140,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetC",
+            ".offset": 148,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetA",
+            ".offset": 156,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetB",
+            ".offset": 164,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          }
+        ],
+        ".group_segment_fixed_size": 49152,
+        ".kernarg_segment_align": 8,
+        ".kernarg_segment_size": 176,
+        ".language": "OpenCL C",
+        ".language_version": [
+          2,
+          0
+        ],
+        ".max_flat_workgroup_size": 128,
+        ".name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+        ".private_segment_fixed_size": 0,
+        ".sgpr_count": 73,
+        ".sgpr_spill_count": 0,
+        ".symbol": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1.kd",
+        ".vgpr_count": 689,
+        ".vgpr_spill_count": 0,
+        ".wavefront_size": 32
+      },
+      "second_metadata_unchanged": true,
+      "descriptor_all_bytes_exact": true,
+      "first_kernel_entry": "0x4700",
+      "second_kernel_entry": "0x48c00",
+      "second_kernel_identical_bytes": 22568,
+      "second_kernel_sha256": "a21c6d30462a4d15b24615083bc28bd8f73770e15729184f2d7462a0a084ec21",
+      "synthetic_build_id": "176c646919a10e3dbf5a2b475fc1ba9855a32347",
+      "all_segments_and_sections_valid": true,
+      "dynamic_pointers_and_hash_tables_valid": true,
+      "relocation_sections": [],
+      "unexplained_changed_bytes": []
+    },
+    "candidate": {
+      "input": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/verified_unbundle.elf",
+        "bytes": 335000,
+        "sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3"
+      },
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_candidate_CPU_v1/DW_sink_candidate.elf",
+        "bytes": 352408,
+        "sha256": "676d759461418da2876e10ef619c7aee47a616dd2b480f54bc85dfdb4c5dfce1"
+      },
+      "file_growth": 17408,
+      "symbol_entries_checked": 626,
+      "symbol_entries_changed": 488,
+      "exports": [
+        {
+          "name": "",
+          "value": "0x0",
+          "size": 0,
+          "info": 0,
+          "section_index": 0
+        },
+        {
+          "name": "UNDEF",
+          "value": "0x0",
+          "size": 0,
+          "info": 16,
+          "section_index": 0
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+          "value": "0x4700",
+          "size": 0,
+          "info": 18,
+          "section_index": 8
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1.kd",
+          "value": "0x3640",
+          "size": 64,
+          "info": 17,
+          "section_index": 7
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1",
+          "value": "0x48b00",
+          "size": 0,
+          "info": 18,
+          "section_index": 8
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1.kd",
+          "value": "0x3680",
+          "size": 64,
+          "info": 17,
+          "section_index": 7
+        }
+      ],
+      "first_kernel_metadata": {
+        ".args": [
+          {
+            ".name": "Gemm info",
+            ".offset": 0,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "kernel info0",
+            ".offset": 4,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "kernel info1",
+            ".offset": 8,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "numWG",
+            ".offset": 12,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree0",
+            ".offset": 16,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree1",
+            ".offset": 20,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree2",
+            ".offset": 24,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesSum0",
+            ".offset": 28,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "D",
+            ".offset": 32,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "C",
+            ".offset": 40,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "A",
+            ".offset": 48,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "B",
+            ".offset": 56,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".name": "strideD0",
+            ".offset": 64,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideD1",
+            ".offset": 68,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideC0",
+            ".offset": 72,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideC1",
+            ".offset": 76,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideA0",
+            ".offset": 80,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideA1",
+            ".offset": 84,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideB0",
+            ".offset": 88,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideB1",
+            ".offset": 92,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "alpha",
+            ".offset": 96,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "beta",
+            ".offset": 100,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "AddressScaleAlphaVec",
+            ".offset": 104,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "f32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "bias",
+            ".offset": 112,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "void"
+          },
+          {
+            ".name": "biasType",
+            ".offset": 120,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "StrideBias",
+            ".offset": 124,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "activationAlpha",
+            ".offset": 128,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "activationBeta",
+            ".offset": 132,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "activationType",
+            ".offset": 136,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "batchOffsetD",
+            ".offset": 140,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetC",
+            ".offset": 148,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetA",
+            ".offset": 156,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetB",
+            ".offset": 164,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          }
+        ],
+        ".group_segment_fixed_size": 49152,
+        ".kernarg_segment_align": 8,
+        ".kernarg_segment_size": 176,
+        ".language": "OpenCL C",
+        ".language_version": [
+          2,
+          0
+        ],
+        ".max_flat_workgroup_size": 128,
+        ".name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+        ".private_segment_fixed_size": 0,
+        ".sgpr_count": 73,
+        ".sgpr_spill_count": 0,
+        ".symbol": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1.kd",
+        ".vgpr_count": 689,
+        ".vgpr_spill_count": 0,
+        ".wavefront_size": 32
+      },
+      "second_metadata_unchanged": true,
+      "descriptor_all_bytes_exact": true,
+      "first_kernel_entry": "0x4700",
+      "second_kernel_entry": "0x48b00",
+      "second_kernel_identical_bytes": 22568,
+      "second_kernel_sha256": "a21c6d30462a4d15b24615083bc28bd8f73770e15729184f2d7462a0a084ec21",
+      "synthetic_build_id": "471bb4945017eae8cbed862c5b106f3192d63808",
+      "all_segments_and_sections_valid": true,
+      "dynamic_pointers_and_hash_tables_valid": true,
+      "relocation_sections": [],
+      "unexplained_changed_bytes": []
+    },
+    "candidate_nop": {
+      "input": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_candidate_CPU_v1/DW_sink_candidate.elf",
+        "bytes": 352408,
+        "sha256": "676d759461418da2876e10ef619c7aee47a616dd2b480f54bc85dfdb4c5dfce1"
+      },
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_combined_gate_CPU_v1/artifacts_v1/DW_sink_combined_candidate_nop.elf",
+        "bytes": 352664,
+        "sha256": "50b6e419a84e8196061efd2926efedbe4f302c9c1c19724a4273c62d8e2fe700"
+      },
+      "file_growth": 256,
+      "symbol_entries_checked": 626,
+      "symbol_entries_changed": 197,
+      "exports": [
+        {
+          "name": "",
+          "value": "0x0",
+          "size": 0,
+          "info": 0,
+          "section_index": 0
+        },
+        {
+          "name": "UNDEF",
+          "value": "0x0",
+          "size": 0,
+          "info": 16,
+          "section_index": 0
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+          "value": "0x4700",
+          "size": 0,
+          "info": 18,
+          "section_index": 8
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1.kd",
+          "value": "0x3640",
+          "size": 64,
+          "info": 17,
+          "section_index": 7
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1",
+          "value": "0x48c00",
+          "size": 0,
+          "info": 18,
+          "section_index": 8
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1.kd",
+          "value": "0x3680",
+          "size": 64,
+          "info": 17,
+          "section_index": 7
+        }
+      ],
+      "first_kernel_metadata": {
+        ".args": [
+          {
+            ".name": "Gemm info",
+            ".offset": 0,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "kernel info0",
+            ".offset": 4,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "kernel info1",
+            ".offset": 8,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "numWG",
+            ".offset": 12,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree0",
+            ".offset": 16,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree1",
+            ".offset": 20,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree2",
+            ".offset": 24,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesSum0",
+            ".offset": 28,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "D",
+            ".offset": 32,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "C",
+            ".offset": 40,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "A",
+            ".offset": 48,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "B",
+            ".offset": 56,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".name": "strideD0",
+            ".offset": 64,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideD1",
+            ".offset": 68,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideC0",
+            ".offset": 72,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideC1",
+            ".offset": 76,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideA0",
+            ".offset": 80,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideA1",
+            ".offset": 84,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideB0",
+            ".offset": 88,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideB1",
+            ".offset": 92,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "alpha",
+            ".offset": 96,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "beta",
+            ".offset": 100,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "AddressScaleAlphaVec",
+            ".offset": 104,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "f32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "bias",
+            ".offset": 112,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "void"
+          },
+          {
+            ".name": "biasType",
+            ".offset": 120,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "StrideBias",
+            ".offset": 124,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "activationAlpha",
+            ".offset": 128,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "activationBeta",
+            ".offset": 132,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "activationType",
+            ".offset": 136,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "batchOffsetD",
+            ".offset": 140,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetC",
+            ".offset": 148,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetA",
+            ".offset": 156,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetB",
+            ".offset": 164,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          }
+        ],
+        ".group_segment_fixed_size": 49152,
+        ".kernarg_segment_align": 8,
+        ".kernarg_segment_size": 176,
+        ".language": "OpenCL C",
+        ".language_version": [
+          2,
+          0
+        ],
+        ".max_flat_workgroup_size": 128,
+        ".name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+        ".private_segment_fixed_size": 0,
+        ".sgpr_count": 73,
+        ".sgpr_spill_count": 0,
+        ".symbol": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1.kd",
+        ".vgpr_count": 689,
+        ".vgpr_spill_count": 0,
+        ".wavefront_size": 32
+      },
+      "second_metadata_unchanged": true,
+      "descriptor_all_bytes_exact": true,
+      "first_kernel_entry": "0x4700",
+      "second_kernel_entry": "0x48c00",
+      "second_kernel_identical_bytes": 22568,
+      "second_kernel_sha256": "a21c6d30462a4d15b24615083bc28bd8f73770e15729184f2d7462a0a084ec21",
+      "synthetic_build_id": "606b6b24ed9cea3d7bac0774476142395f419c8d",
+      "all_segments_and_sections_valid": true,
+      "dynamic_pointers_and_hash_tables_valid": true,
+      "relocation_sections": [],
+      "unexplained_changed_bytes": []
+    },
+    "candidate_trap": {
+      "input": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_candidate_CPU_v1/DW_sink_candidate.elf",
+        "bytes": 352408,
+        "sha256": "676d759461418da2876e10ef619c7aee47a616dd2b480f54bc85dfdb4c5dfce1"
+      },
+      "output": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_combined_gate_CPU_v1/artifacts_v1/DW_sink_combined_candidate_trap.elf",
+        "bytes": 352664,
+        "sha256": "e1f13829baa8a299e87ae4eb01356840a4da358a6e4c9768823727156e91f88c"
+      },
+      "file_growth": 256,
+      "symbol_entries_checked": 626,
+      "symbol_entries_changed": 197,
+      "exports": [
+        {
+          "name": "",
+          "value": "0x0",
+          "size": 0,
+          "info": 0,
+          "section_index": 0
+        },
+        {
+          "name": "UNDEF",
+          "value": "0x0",
+          "size": 0,
+          "info": 16,
+          "section_index": 0
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+          "value": "0x4700",
+          "size": 0,
+          "info": 18,
+          "section_index": 8
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1.kd",
+          "value": "0x3640",
+          "size": 64,
+          "info": 17,
+          "section_index": 7
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1",
+          "value": "0x48c00",
+          "size": 0,
+          "info": 18,
+          "section_index": 8
+        },
+        {
+          "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1.kd",
+          "value": "0x3680",
+          "size": 64,
+          "info": 17,
+          "section_index": 7
+        }
+      ],
+      "first_kernel_metadata": {
+        ".args": [
+          {
+            ".name": "Gemm info",
+            ".offset": 0,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "kernel info0",
+            ".offset": 4,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "kernel info1",
+            ".offset": 8,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "numWG",
+            ".offset": 12,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree0",
+            ".offset": 16,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree1",
+            ".offset": 20,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesFree2",
+            ".offset": 24,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "SizesSum0",
+            ".offset": 28,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "D",
+            ".offset": 32,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "C",
+            ".offset": 40,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "A",
+            ".offset": 48,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "B",
+            ".offset": 56,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "bf16"
+          },
+          {
+            ".name": "strideD0",
+            ".offset": 64,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideD1",
+            ".offset": 68,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideC0",
+            ".offset": 72,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideC1",
+            ".offset": 76,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideA0",
+            ".offset": 80,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideA1",
+            ".offset": 84,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideB0",
+            ".offset": 88,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "strideB1",
+            ".offset": 92,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "alpha",
+            ".offset": 96,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "beta",
+            ".offset": 100,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "AddressScaleAlphaVec",
+            ".offset": 104,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "f32"
+          },
+          {
+            ".address_space": "generic",
+            ".name": "bias",
+            ".offset": 112,
+            ".size": 8,
+            ".value_kind": "global_buffer",
+            ".value_type": "void"
+          },
+          {
+            ".name": "biasType",
+            ".offset": 120,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "StrideBias",
+            ".offset": 124,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "activationAlpha",
+            ".offset": 128,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "activationBeta",
+            ".offset": 132,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "f32"
+          },
+          {
+            ".name": "activationType",
+            ".offset": 136,
+            ".size": 4,
+            ".value_kind": "by_value",
+            ".value_type": "u32"
+          },
+          {
+            ".name": "batchOffsetD",
+            ".offset": 140,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetC",
+            ".offset": 148,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetA",
+            ".offset": 156,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          },
+          {
+            ".name": "batchOffsetB",
+            ".offset": 164,
+            ".size": 8,
+            ".value_kind": "by_value",
+            ".value_type": "u64"
+          }
+        ],
+        ".group_segment_fixed_size": 49152,
+        ".kernarg_segment_align": 8,
+        ".kernarg_segment_size": 176,
+        ".language": "OpenCL C",
+        ".language_version": [
+          2,
+          0
+        ],
+        ".max_flat_workgroup_size": 128,
+        ".name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+        ".private_segment_fixed_size": 0,
+        ".sgpr_count": 73,
+        ".sgpr_spill_count": 0,
+        ".symbol": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1.kd",
+        ".vgpr_count": 689,
+        ".vgpr_spill_count": 0,
+        ".wavefront_size": 32
+      },
+      "second_metadata_unchanged": true,
+      "descriptor_all_bytes_exact": true,
+      "first_kernel_entry": "0x4700",
+      "second_kernel_entry": "0x48c00",
+      "second_kernel_identical_bytes": 22568,
+      "second_kernel_sha256": "a21c6d30462a4d15b24615083bc28bd8f73770e15729184f2d7462a0a084ec21",
+      "synthetic_build_id": "b8d88559242b96219e2d0549d41bc84879f219c3",
+      "all_segments_and_sections_valid": true,
+      "dynamic_pointers_and_hash_tables_valid": true,
+      "relocation_sections": [],
+      "unexplained_changed_bytes": []
+    }
+  },
+  "GPU_actions": false,
+  "driver_actions": false,
+  "limits": [
+    "Original arithmetic and first-kernel control flow rely on separate pinned native reviews.",
+    "Uniform relocation retains all 22,568 second-kernel bytes; this is an ELF audit, not native execution."
+  ]
+}

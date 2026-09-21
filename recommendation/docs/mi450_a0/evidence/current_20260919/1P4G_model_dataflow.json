@@ -1,0 +1,550 @@
+{
+  "status": "COMPLETED_SOURCE_BOUND_1P4G_FULL_QUARTER_PREPROCESSING_DATAFLOW_REVIEW",
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_model_dataflow_v1/audit_model_dataflow.py",
+    "bytes": 10308,
+    "sha256": "da2cd099c539340ea9134dcdd5105ca1bef15c84e9890f35bb3647911ff85ff1"
+  },
+  "source_equality_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/full_frozen_source_overlap.json",
+    "bytes": 125072,
+    "sha256": "3b8f769ed054f72ba0d7a69e04e85e073149263c4c57e1d7881fe3345ee61e1b"
+  },
+  "reviewed_source_files": [
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/configs.py",
+      "bytes": 34889,
+      "sha256": "f340fb8f62d67af9ac3f60fe72a9195a226b0ae23a9c07ea2cc5ffdf3b87674f",
+      "relative_path": "generative_recommenders/dlrm_v4/configs.py",
+      "A0_and_converged_191adbc_byte_equal": true,
+      "excerpts": [
+        {
+          "first_line": 41,
+          "last_line": 103,
+          "text": "# Scale all yambda-5b embedding row counts by this factor (env override).\n# Default 1.0 preserves the reference tables (~600 GiB FP32 weights). On a\n# single ~432 GiB GPU set e.g. EMBEDDING_ROW_SCALE=0.25 so tables fit in HBM\n# for e2e smoke. Cross features already hash into num_embeddings; base id\n# features are modulo-wrapped in the dataset when scale < 1.\ndef _embedding_row_scale() -> float:\n    try:\n        return float(os.environ.get(\"EMBEDDING_ROW_SCALE\", \"1.0\"))\n    except ValueError:\n        return 1.0\n\n\ndef scale_embedding_rows(n: int) -> int:\n    \"\"\"Apply EMBEDDING_ROW_SCALE; keep at least 2 rows for TorchRec.\"\"\"\n    s = _embedding_row_scale()\n    if s >= 0.999999:\n        return int(n)\n    return max(2, int(n * s))\n\n\n# (name, keys, num_embeddings, salt) \u2014 single source of truth for both\n# get_embedding_table_config(\"yambda-5b\") and the dataset's cross-hash inputs.\n# Sizes mirror Primus-DLRM/configs/bench_onetrans_large_5b_cross_feat_shampoo.yaml.\n# num_embeddings here are the UNSCALED reference sizes; callers that need the\n# live (possibly scaled) caps should use yambda_5b_cross_specs().\nYAMBDA_5B_CROSS_SPECS_BASE = [\n    (\"user_x_artist\",        (\"uid\", \"artist_id\"),                  100_000_000, 0),\n    (\"user_x_album\",         (\"uid\", \"album_id\"),                    40_000_000, 0),\n    (\"user_x_hour\",          (\"uid\", \"hour_of_day\"),                 24_000_000, 0),\n    (\"item_x_hour\",          (\"item_id\", \"hour_of_day\"),             40_000_000, 0),\n    (\"artist_x_hour\",        (\"artist_id\", \"hour_of_day\"),           32_000_000, 0),\n    (\"user_x_is_organic\",    (\"uid\", \"is_organic\"),                   2_000_000, 0),\n    (\"user_x_artist_x_hour\", (\"uid\", \"artist_id\", \"hour_of_day\"),    40_000_000, 0),\n]\n\n\ndef yambda_5b_cross_specs():\n    \"\"\"Cross-feature specs with EMBEDDING_ROW_SCALE applied to num_embeddings.\"\"\"\n    return [\n        (name, keys, scale_embedding_rows(n), salt)\n        for (name, keys, n, salt) in YAMBDA_5B_CROSS_SPECS_BASE\n    ]\n\n\n# Back-compat alias: most call sites import YAMBDA_5B_CROSS_SPECS. Keep it as a\n# scaled snapshot evaluated at import time so existing `from ... import\n# YAMBDA_5B_CROSS_SPECS` keeps working. Prefer yambda_5b_cross_specs() when the\n# env may change after import (tests).\nYAMBDA_5B_CROSS_SPECS = yambda_5b_cross_specs()\n\n# Unscaled base-id table sizes (item/artist/album/uid). Scaled at table-build\n# time and exposed for dataset-side modulo wrapping.\nYAMBDA_5B_BASE_TABLE_ROWS = {\n    \"item_id\": 9_390_624,\n    \"artist_id\": 1_293_395,\n    \"album_id\": 3_367_692,\n    \"uid\": 1_000_001,\n}\n\n\ndef yambda_5b_table_rows() -> Dict[str, int]:\n    \"\"\"All yambda-5b table row counts after EMBEDDING_ROW_SCALE.\"\"\"\n    rows = {k: scale_embedding_rows(v) for k, v in YAMBDA_5B_BASE_TABLE_ROWS.items()}"
+        },
+        {
+          "first_line": 136,
+          "last_line": 145,
+          "text": "    hstu_config = DlrmHSTUConfig(\n        hstu_num_heads=4,\n        hstu_attn_linear_dim=128,\n        hstu_attn_qk_dim=128,\n        hstu_attn_num_layers=5,\n        hstu_embedding_table_dim=HSTU_EMBEDDING_DIM,\n        hstu_preprocessor_hidden_dim=256,\n        hstu_transducer_embedding_dim=512,\n        hstu_group_norm=False,\n        hstu_input_dropout_ratio=0.2,"
+        },
+        {
+          "first_line": 405,
+          "last_line": 461,
+          "text": "        assert dataset in [\"yambda-5b\"]\n        cross_names = [name for (name, _k, _n, _s) in YAMBDA_5B_CROSS_SPECS]\n        # Per-table dim defaults to HSTU_EMBEDDING_DIM (512); override via the\n        # `get_hstu_configs.hstu_embedding_table_dim = N` gin binding if needed.\n        # Note: the embedding tables in get_embedding_table_config also use\n        # HSTU_EMBEDDING_DIM and must stay aligned with this value.\n        hstu_config.hstu_embedding_table_dim = HSTU_EMBEDDING_DIM\n        hstu_config.hstu_transducer_embedding_dim = 512\n        hstu_config.max_seq_len = 8192\n        hstu_config.max_num_candidates = 1\n        hstu_config.max_num_candidates_inference = 1\n        # Per dlrm_hstu convention (see streaming-100b/movielens):\n        #  - user_embedding_feature_names = UIH-side post-id features + contextual features.\n        #    After main_forward merges UIH + candidate, only these entries hold the merged\n        #    sequence (used by user-side transducer).\n        #  - item_embedding_feature_names = candidate-side names only. _item_forward\n        #    concats these along dim=-1 to feed the item MLP (per-candidate, not per-position).\n        hstu_config.user_embedding_feature_names = (\n            [\"uid\"]\n            + cross_names\n            + [\"item_id\", \"artist_id\", \"album_id\"]\n        )\n        hstu_config.item_embedding_feature_names = [\n            \"item_candidate_id\",\n            \"item_candidate_artist_id\",\n            \"item_candidate_album_id\",\n        ]\n        hstu_config.uih_post_id_feature_name = \"item_id\"\n        hstu_config.uih_action_time_feature_name = \"action_timestamp\"\n        hstu_config.uih_weight_feature_name = \"action_weight\"\n        hstu_config.candidates_querytime_feature_name = \"item_query_time\"\n        hstu_config.candidates_weight_feature_name = \"item_action_weight\"\n        hstu_config.candidates_watchtime_feature_name = \"item_dummy_watchtime\"\n        hstu_config.action_weights = [1, 2, 4]  # lp, like, skip bits\n        hstu_config.contextual_feature_to_max_length = {\n            \"uid\": 1,\n            **{name: 1 for name in cross_names},\n        }\n        hstu_config.contextual_feature_to_min_uih_length = {\n            \"uid\": 0,\n            **{name: 0 for name in cross_names},\n        }\n        # uih names map to candidate names (no name collisions allowed):\n        # item_id/artist_id/album_id appear with prefix \"item_\" on candidate side.\n        hstu_config.merge_uih_candidate_feature_mapping = [\n            (\"item_id\", \"item_candidate_id\"),\n            (\"artist_id\", \"item_candidate_artist_id\"),\n            (\"album_id\", \"item_candidate_album_id\"),\n            (\"action_weight\", \"item_action_weight\"),\n            (\"action_timestamp\", \"item_query_time\"),\n            (\"dummy_watch_time\", \"item_dummy_watchtime\"),\n        ]\n        hstu_config.hstu_uih_feature_names = (\n            [\"uid\"]\n            + cross_names\n            + [\n                \"item_id\","
+        },
+        {
+          "first_line": 592,
+          "last_line": 619,
+          "text": "def _make_seeded_uniform_init(\n    table_seed: int, lo: float, hi: float\n) -> Callable[[torch.Tensor], torch.Tensor]:\n    \"\"\"Build a seeded in-place uniform initializer for one table's weight.\n\n    TorchREC/FBGEMM calls ``init_fn`` with the (per-rank) local shard tensor on\n    its compute device, so we seed a generator on that same device. For a fixed\n    sharding plan (world size + plan unchanged) this makes embedding init\n    byte-reproducible run-to-run.\n    \"\"\"\n\n    def _init(weight: torch.Tensor) -> torch.Tensor:\n        # TorchREC builds the unsharded EmbeddingCollection on the META device\n        # first (DMP materializes real storage on the compute device later).\n        # Meta tensors have no storage and torch.Generator(device=\"meta\") is\n        # invalid (\"META device type not an accelerator\"), so skip them: the\n        # seeded init for the sharded/fused TBE path is provided by the RNG\n        # re-seed right before DMP in make_optimizer_and_shard. On a real\n        # device (eager/non-meta path) we still apply the per-table seeded fill.\n        if weight.device.type == \"meta\":\n            return weight\n        gen = torch.Generator(device=weight.device)\n        gen.manual_seed(table_seed)\n        with torch.no_grad():\n            weight.uniform_(lo, hi, generator=gen)\n        return weight\n\n    return _init"
+        },
+        {
+          "first_line": 648,
+          "last_line": 660,
+          "text": "        Dict mapping table names to their EmbeddingConfig objects.\n    \"\"\"\n    tables = _build_embedding_table_config(dataset=dataset, embedding_dim=embedding_dim)\n\n    if init_seed is None:\n        init_seed = int(os.environ.get(\"SEED\", \"1\"))\n    for name, cfg in tables.items():\n        lo, hi = _uniform_init_bounds(cfg)\n        cfg.init_fn = _make_seeded_uniform_init(\n            _stable_table_seed(init_seed, name), lo, hi\n        )\n    return tables\n"
+        },
+        {
+          "first_line": 831,
+          "last_line": 876,
+          "text": "        tables: Dict[str, EmbeddingConfig] = {\n            \"item_id\": EmbeddingConfig(\n                num_embeddings=rows[\"item_id\"],\n                embedding_dim=DIM,\n                name=\"item_id\",\n                data_type=DataType.FP32,\n                feature_names=[\"item_id\", \"item_candidate_id\"],\n            ),\n            \"artist_id\": EmbeddingConfig(\n                num_embeddings=rows[\"artist_id\"],\n                embedding_dim=DIM,\n                name=\"artist_id\",\n                data_type=DataType.FP32,\n                feature_names=[\"artist_id\", \"item_candidate_artist_id\"],\n            ),\n            \"album_id\": EmbeddingConfig(\n                num_embeddings=rows[\"album_id\"],\n                embedding_dim=DIM,\n                name=\"album_id\",\n                data_type=DataType.FP32,\n                feature_names=[\"album_id\", \"item_candidate_album_id\"],\n            ),\n            \"uid\": EmbeddingConfig(\n                num_embeddings=rows[\"uid\"],\n                embedding_dim=DIM,\n                name=\"uid\",\n                data_type=DataType.FP32,\n                feature_names=[\"uid\"],\n            ),\n        }\n        for name, _keys, num_embeddings, _salt in yambda_5b_cross_specs():\n            tables[name] = EmbeddingConfig(\n                num_embeddings=num_embeddings,\n                embedding_dim=DIM,\n                name=name,\n                data_type=DataType.FP32,\n                feature_names=[name],\n            )\n        return tables\n    else:\n        return {\n            \"post_id\": EmbeddingConfig(\n                num_embeddings=HASH_SIZE,\n                embedding_dim=DIM,\n                name=\"post_id\",\n                data_type=DataType.FP16,"
+        }
+      ]
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/datasets/yambda.py",
+      "bytes": 52394,
+      "sha256": "1827e8e932bcc199c23c416da540ffa3a6a565415daa1efc6edb51d96fe08bd8",
+      "relative_path": "generative_recommenders/dlrm_v4/datasets/yambda.py",
+      "A0_and_converged_191adbc_byte_equal": true,
+      "excerpts": [
+        {
+          "first_line": 958,
+          "last_line": 1034,
+          "text": "    def _build_sample(\n        self, flat_pos: int, max_num_candidates: int\n    ) -> Tuple[KeyedJaggedTensor, KeyedJaggedTensor]:\n        uid = int(self.store.flat_uid[flat_pos])\n        user_start = int(self.store.user_start[uid])\n\n        items, artists, albums, ts, weight = self._gather_history(\n            flat_pos, user_start\n        )\n\n        target_item = int(self.store.flat_item_ids[flat_pos])\n        target_artist = int(\n            self.item_to_artist[target_item]\n            if target_item < self.item_to_artist.shape[0]\n            else 0\n        )\n        target_album = int(\n            self.item_to_album[target_item]\n            if target_item < self.item_to_album.shape[0]\n            else 0\n        )\n        target_ts = int(self.store.flat_timestamps[flat_pos])\n\n        played_ratio = float(self.store.flat_played_ratio[flat_pos])\n        is_lp = (\n            int(self.store.flat_event_types[flat_pos]) == LISTEN_TYPE\n            and played_ratio >= LISTEN_PLUS_THRESHOLD\n        )\n        # Label encoded into the candidate's action_weight via the LP bit, so\n        # _get_supervision_labels_and_weights sees the right supervision.\n        candidate_action_weight = LP_BIT if is_lp else 0\n\n        cross_id_anchor: Dict[str, int] = {\n            \"uid\": uid,\n            \"item_id\": target_item,\n            \"artist_id\": target_artist,\n            \"album_id\": target_album,\n            \"hour_of_day\": int((target_ts // 3600) % 24),\n            \"is_organic\": int(self.store.flat_is_organic[flat_pos]),\n        }\n        cross_ids: Dict[str, int] = {\n            name: xxhash_cross(cross_id_anchor, list(keys), n, salt)\n            for (name, keys, n, salt) in self._cross_specs\n        }\n\n        # When EMBEDDING_ROW_SCALE < 1, embedding tables are smaller than the\n        # raw catalog ids. Wrap base ids into the scaled vocabulary so TBE\n        # lookups stay in-range. Cross ids are already hashed into the scaled\n        # caps via yambda_5b_cross_specs() / xxhash_cross(..., n, ...).\n        from generative_recommenders.dlrm_v4.configs import yambda_5b_table_rows\n\n        _rows = yambda_5b_table_rows()\n        _item_n = int(_rows[\"item_id\"])\n        _artist_n = int(_rows[\"artist_id\"])\n        _album_n = int(_rows[\"album_id\"])\n        _uid_n = int(_rows[\"uid\"])\n        uid = int(uid) % _uid_n\n        items = (items.astype(np.int64, copy=False) % _item_n)\n        artists = (artists.astype(np.int64, copy=False) % _artist_n)\n        albums = (albums.astype(np.int64, copy=False) % _album_n)\n        target_item = int(target_item) % _item_n\n        target_artist = int(target_artist) % _artist_n\n        target_album = int(target_album) % _album_n\n\n        # ---- Truncate UIH to fit max_seq_len budget ----\n        uih_seq_len_budget = (\n            self._max_seq_len\n            - max_num_candidates\n            - len(self._contextual_feature_to_max_length or {})\n        )\n        if items.shape[0] > uih_seq_len_budget:\n            items = items[-uih_seq_len_budget:]\n            artists = artists[-uih_seq_len_budget:]\n            albums = albums[-uih_seq_len_budget:]\n            ts = ts[-uih_seq_len_budget:]\n            weight = weight[-uih_seq_len_budget:]\n        uih_seq_len = int(items.shape[0])"
+        }
+      ]
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/datasets/utils.py",
+      "bytes": 4199,
+      "sha256": "fe4ee01f1234f902a1cb787cf5d1d91773609c6e904074996e1f6ad94354109c",
+      "relative_path": "generative_recommenders/dlrm_v4/datasets/utils.py",
+      "A0_and_converged_191adbc_byte_equal": true,
+      "excerpts": [
+        {
+          "first_line": 108,
+          "last_line": 123,
+          "text": "def xxhash_cross(\n    anchor: Dict[str, int],\n    keys: Sequence[str],\n    table_size: int,\n    salt: int = 0,\n) -> int:\n    \"\"\"xxhash64(seed=salt) over little-endian int64 concat(anchor[k] for k in keys), mod table_size.\n\n    Bit-identical to primus_dlrm.data.hashing.cross_hash_nway \u2014 embedding rows\n    are interchangeable with Primus-trained ones.\n    \"\"\"\n    n = len(keys)\n    assert n >= 2, f\"xxhash_cross needs >=2 keys, got {n}\"\n    digest = xxhash.xxh64(seed=salt)\n    digest.update(struct.Struct(f\"<{n}q\").pack(*(int(anchor[k]) for k in keys)))\n    return digest.intdigest() % table_size"
+        }
+      ]
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/modules/dlrm_hstu.py",
+      "bytes": 37022,
+      "sha256": "b4e953b3ab112be902a1477c3b8256b6579af2ddbb1d3f6b2ca93dc5e636be05",
+      "relative_path": "generative_recommenders/modules/dlrm_hstu.py",
+      "A0_and_converged_191adbc_byte_equal": true,
+      "excerpts": [
+        {
+          "first_line": 151,
+          "last_line": 165,
+          "text": "        # Last batch's jagged FLOPs/sample (0-d tensor on GPU). Populated by\n        # main_forward; MetricsLogger reads + .item()s on each compute_and_log\n        # to compute tflops_real/gpu and hfu (vs dense yardstick from\n        # get_num_flops_per_sample()).\n        self._last_jagged_flops_per_sample: Optional[torch.Tensor] = None\n        set_static_max_seq_lens([self._hstu_configs.max_seq_len])\n\n        if not is_dense:\n            self._embedding_collection: EmbeddingCollection = EmbeddingCollection(\n                tables=list(embedding_tables.values()),\n                need_indices=False,\n                device=torch.device(\"meta\"),\n            )\n\n        # multitask configs must be sorted by task types"
+        },
+        {
+          "first_line": 178,
+          "last_line": 205,
+          "text": "        self._additional_embedding_features: List[str] = [\n            uih_feature_name\n            for (\n                uih_feature_name,\n                candidate_feature_name,\n            ) in self._hstu_configs.merge_uih_candidate_feature_mapping\n            if (\n                candidate_feature_name\n                in self._hstu_configs.item_embedding_feature_names\n            )\n            and (uih_feature_name in self._hstu_configs.user_embedding_feature_names)\n            and (uih_feature_name is not self._hstu_configs.uih_post_id_feature_name)\n        ]\n\n        # preprocessor setup\n        preprocessor = ContextualPreprocessor(\n            input_embedding_dim=hstu_configs.hstu_embedding_table_dim,\n            hidden_dim=hstu_configs.hstu_preprocessor_hidden_dim,\n            output_embedding_dim=hstu_configs.hstu_transducer_embedding_dim,\n            contextual_feature_to_max_length=hstu_configs.contextual_feature_to_max_length,\n            contextual_feature_to_min_uih_length=hstu_configs.contextual_feature_to_min_uih_length,\n            action_embedding_dim=8,\n            action_feature_name=self._hstu_configs.uih_weight_feature_name,\n            action_weights=self._hstu_configs.action_weights,\n            action_embedding_init_std=self._hstu_configs.action_embedding_init_std,\n            additional_embedding_features=self._additional_embedding_features,\n            is_inference=is_inference,\n        )"
+        },
+        {
+          "first_line": 446,
+          "last_line": 493,
+          "text": "    def _construct_payload(\n        self,\n        payload_features: Dict[str, torch.Tensor],\n        seq_embeddings: Dict[str, SequenceEmbedding],\n    ) -> Dict[str, torch.Tensor]:\n        if len(self._hstu_configs.contextual_feature_to_max_length) > 0:\n            contextual_offsets: List[torch.Tensor] = []\n            for x in self._hstu_configs.contextual_feature_to_max_length.keys():\n                contextual_offsets.append(\n                    torch.ops.fbgemm.asynchronous_complete_cumsum(\n                        seq_embeddings[x].lengths\n                    )\n                )\n        else:\n            # Dummy, offsets are unused\n            contextual_offsets = torch.empty((0, 0))\n        if torch.jit.is_scripting():\n            # Explicit loops are TS-clean (avoid the dict-merge / dict-comp\n            # idioms below, which TorchScript cannot script).\n            out: Dict[str, torch.Tensor] = {}\n            for k, v in payload_features.items():\n                out[k] = v\n            for x in self._hstu_configs.contextual_feature_to_max_length.keys():\n                out[x] = seq_embeddings[x].embedding\n            i = 0\n            for x in self._hstu_configs.contextual_feature_to_max_length.keys():\n                # pyre-ignore[6]\n                out[x + \"_offsets\"] = contextual_offsets[i]\n                i += 1\n            for x in self._additional_embedding_features:\n                out[x] = seq_embeddings[x].embedding\n            return out\n        return {\n            **payload_features,\n            **{\n                x: seq_embeddings[x].embedding\n                for x in self._hstu_configs.contextual_feature_to_max_length.keys()\n            },\n            **{\n                x + \"_offsets\": contextual_offsets[i]\n                for i, x in enumerate(\n                    list(self._hstu_configs.contextual_feature_to_max_length.keys())\n                )\n            },\n            **{\n                x: seq_embeddings[x].embedding\n                for x in self._additional_embedding_features\n            },"
+        },
+        {
+          "first_line": 527,
+          "last_line": 573,
+          "text": "        embedding = seq_embeddings[\n            self._hstu_configs.uih_post_id_feature_name\n        ].embedding\n        dtype = embedding.dtype\n        if (not self.is_inference) and self._bf16_training:\n            embedding = embedding.to(torch.bfloat16)\n        if torch.jit.is_scripting():\n            # TorchScript does not support ``with torch.autocast(...)``.\n            # In script-mode inference the dense path is already in bf16\n            # (move_sparse_output_to_device upcasts on the C++ side), so\n            # autocast is a no-op for the path the predictor exercises.\n            candidates_user_embeddings, _ = self._hstu_transducer(\n                max_uih_len=max_uih_len,\n                max_targets=max_candidates,\n                total_uih_len=total_uih_len,\n                total_targets=total_targets,\n                seq_embeddings=embedding,\n                seq_lengths=source_lengths,\n                seq_timestamps=source_timestamps,\n                seq_payloads=self._construct_payload(\n                    payload_features=payload_features,\n                    seq_embeddings=seq_embeddings,\n                ),\n                num_targets=num_candidates,\n            )\n        else:\n            with torch.autocast(\n                \"cuda\",\n                dtype=torch.bfloat16,\n                enabled=(not self.is_inference) and self._bf16_training,\n            ):\n                candidates_user_embeddings, _ = self._hstu_transducer(\n                    max_uih_len=max_uih_len,\n                    max_targets=max_candidates,\n                    total_uih_len=total_uih_len,\n                    total_targets=total_targets,\n                    seq_embeddings=embedding,\n                    seq_lengths=source_lengths,\n                    seq_timestamps=source_timestamps,\n                    seq_payloads=self._construct_payload(\n                        payload_features=payload_features,\n                        seq_embeddings=seq_embeddings,\n                    ),\n                    num_targets=num_candidates,\n                )\n        candidates_user_embeddings = candidates_user_embeddings.to(dtype)\n"
+        },
+        {
+          "first_line": 590,
+          "last_line": 633,
+          "text": "    def preprocess(\n        self,\n        uih_features: KeyedJaggedTensor,\n        candidates_features: KeyedJaggedTensor,\n        merged_sparse_features: Optional[KeyedJaggedTensor] = None,\n    ) -> Tuple[\n        Dict[str, SequenceEmbedding],\n        Dict[str, torch.Tensor],\n        int,\n        torch.Tensor,\n        int,\n        torch.Tensor,\n    ]:\n        # Embedding lookup for uih + candidates. When the caller (the pipeline\n        # path) supplies the pre-merged KJT from the batch, feed it straight to\n        # the EmbeddingCollection: that keeps the lookup's input a plain getattr\n        # off the batch so TorchRec's TrainPipelineSparseDist can hoist its\n        # input_dist into the prefetch stage. Building it here (cat +\n        # from_lengths_sync's .sync()) is an \"input modification\" that makes\n        # TorchRec skip pipelining the embedding collection.\n        if merged_sparse_features is None:\n            merged_sparse_features = KeyedJaggedTensor.from_lengths_sync(\n                keys=uih_features.keys() + candidates_features.keys(),\n                values=torch.cat(\n                    [uih_features.values(), candidates_features.values()],\n                    dim=0,\n                ),\n                lengths=torch.cat(\n                    [uih_features.lengths(), candidates_features.lengths()],\n                    dim=0,\n                ),\n            )\n        seq_embeddings_dict = self._embedding_collection(merged_sparse_features)\n        num_candidates = fx_mark_length_features(\n            candidates_features.lengths().view(len(candidates_features.keys()), -1)\n        )[0]\n        max_num_candidates = fx_infer_max_len(num_candidates)\n        uih_seq_lengths = uih_features[\n            self._hstu_configs.uih_post_id_feature_name\n        ].lengths()\n        max_uih_len = fx_infer_max_len(uih_seq_lengths)\n\n        # prepare payload features\n        payload_features: Dict[str, torch.Tensor] = {}"
+        },
+        {
+          "first_line": 713,
+          "last_line": 739,
+          "text": "                )\n            )\n\n        # merge uih and candidates embeddings\n        for (\n            uih_feature_name,\n            candidate_feature_name,\n        ) in self._hstu_configs.merge_uih_candidate_feature_mapping:\n            if uih_feature_name in seq_embeddings:\n                seq_embeddings[uih_feature_name] = SequenceEmbedding(\n                    lengths=uih_seq_lengths + num_candidates,\n                    embedding=concat_2D_jagged(\n                        max_seq_len=max_uih_len + max_num_candidates,\n                        max_len_left=max_uih_len,\n                        offsets_left=torch.ops.fbgemm.asynchronous_complete_cumsum(\n                            uih_seq_lengths\n                        ),\n                        values_left=seq_embeddings[uih_feature_name].embedding,\n                        max_len_right=max_num_candidates,\n                        offsets_right=torch.ops.fbgemm.asynchronous_complete_cumsum(\n                            num_candidates\n                        ),\n                        values_right=seq_embeddings[candidate_feature_name].embedding,\n                        kernel=self.hammer_kernel(),\n                    ),\n                )\n"
+        }
+      ]
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/modules/preprocessors.py",
+      "bytes": 13035,
+      "sha256": "485359d07d53cb4452981d09908d806c7bae7fe38126160e4dfc32d86201ccae",
+      "relative_path": "generative_recommenders/modules/preprocessors.py",
+      "A0_and_converged_191adbc_byte_equal": true,
+      "excerpts": [
+        {
+          "first_line": 157,
+          "last_line": 185,
+          "text": "            )\n        self._content_embedding_mlp: torch.nn.Module = torch.nn.Sequential(\n            torch.nn.Linear(\n                in_features=self._input_embedding_dim,\n                out_features=self._hidden_dim,\n            ),\n            SwishLayerNorm(self._hidden_dim),\n            torch.nn.Linear(\n                in_features=self._hidden_dim,\n                out_features=self._output_embedding_dim,\n            ),\n            LayerNorm(self._output_embedding_dim),\n        ).apply(init_mlp_weights_optional_bias)\n        self._additional_embedding_features: List[str] = additional_embedding_features\n        self._additional_embedding_mlp: torch.nn.Module = torch.nn.Sequential(\n            torch.nn.Linear(\n                in_features=self._input_embedding_dim\n                * len(additional_embedding_features),\n                out_features=self._hidden_dim,\n            ),\n            SwishLayerNorm(self._hidden_dim),\n            torch.nn.Linear(\n                in_features=self._hidden_dim,\n                out_features=self._output_embedding_dim,\n            ),\n            LayerNorm(self._output_embedding_dim),\n        ).apply(init_mlp_weights_optional_bias)\n        self._action_feature_name: str = action_feature_name\n        self._action_weights: Optional[List[int]] = action_weights"
+        },
+        {
+          "first_line": 229,
+          "last_line": 241,
+          "text": "        output_seq_embeddings = self._content_embedding_mlp(seq_embeddings)\n        if len(self._additional_embedding_features) > 0:\n            additional_embeddings = torch.cat(\n                [\n                    seq_payloads[feature]\n                    for feature in self._additional_embedding_features\n                ],\n                dim=1,\n            )\n            output_seq_embeddings = (\n                output_seq_embeddings\n                + self._additional_embedding_mlp(additional_embeddings)\n            )"
+        },
+        {
+          "first_line": 270,
+          "last_line": 322,
+          "text": "            contextual_input_embeddings = get_contextual_input_embeddings(\n                seq_lengths=seq_lengths,\n                seq_payloads=seq_payloads,\n                contextual_feature_to_max_length=self._contextual_feature_to_max_length,\n                contextual_feature_to_min_uih_length=self._contextual_feature_to_min_uih_length,\n                dtype=seq_embeddings.dtype,\n            )\n            contextual_embeddings = torch.baddbmm(\n                self._batched_contextual_linear_bias.view(\n                    -1, 1, self._output_embedding_dim\n                ).to(contextual_input_embeddings.dtype),\n                contextual_input_embeddings.view(\n                    -1, self._max_contextual_seq_len, self._input_embedding_dim\n                ).transpose(0, 1),\n                self._batched_contextual_linear_weights.to(\n                    contextual_input_embeddings.dtype\n                ),\n            ).transpose(0, 1)\n            output_seq_embeddings = concat_2D_jagged(\n                max_seq_len=self._max_contextual_seq_len + output_max_seq_len,\n                values_left=fx_unwrap_optional_tensor(contextual_embeddings).reshape(\n                    -1, self._output_embedding_dim\n                ),\n                values_right=output_seq_embeddings,\n                max_len_left=self._max_contextual_seq_len,\n                max_len_right=output_max_seq_len,\n                offsets_left=None,\n                offsets_right=output_seq_offsets,\n                kernel=self.hammer_kernel(),\n            )\n            output_seq_timestamps = concat_2D_jagged(\n                max_seq_len=self._max_contextual_seq_len + output_max_seq_len,\n                values_left=torch.zeros(\n                    (output_seq_lengths.size(0) * self._max_contextual_seq_len, 1),\n                    dtype=output_seq_timestamps.dtype,\n                    device=output_seq_timestamps.device,\n                ),\n                values_right=output_seq_timestamps.unsqueeze(-1),\n                max_len_left=self._max_contextual_seq_len,\n                max_len_right=output_max_seq_len,\n                offsets_left=None,\n                offsets_right=output_seq_offsets,\n                kernel=self.hammer_kernel(),\n            ).squeeze(-1)\n            output_max_seq_len = output_max_seq_len + self._max_contextual_seq_len\n            output_seq_lengths = output_seq_lengths + self._max_contextual_seq_len\n            output_seq_offsets = torch.ops.fbgemm.asynchronous_complete_cumsum(\n                output_seq_lengths\n            )\n            output_total_uih_len = (\n                output_total_uih_len\n                + self._max_contextual_seq_len * output_seq_lengths.size(0)\n            )"
+        }
+      ]
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/ops/layer_norm.py",
+      "bytes": 9802,
+      "sha256": "384f76d327e4783c22aabe9d9cf8f9476a898a92b030945ae8814f041a8fe299",
+      "relative_path": "generative_recommenders/ops/layer_norm.py",
+      "A0_and_converged_191adbc_byte_equal": true,
+      "excerpts": [
+        {
+          "first_line": 307,
+          "last_line": 330,
+          "text": "class SwishLayerNorm(HammerModule):\n    def __init__(\n        self,\n        dim: int,\n        eps: float = 1e-5,\n        is_inference: bool = False,\n    ) -> None:\n        super().__init__(is_inference=is_inference)\n        self._normalized_shape: List[int] = [dim]\n        self.weight = torch.nn.Parameter(torch.ones(self._normalized_shape))\n        self.bias = torch.nn.Parameter(torch.zeros(self._normalized_shape))\n        self._eps = eps\n\n    def forward(\n        self,\n        x: torch.Tensor,\n    ) -> torch.Tensor:\n        return swish_layer_norm(\n            x=x,\n            weight=self.weight,\n            bias=self.bias,\n            eps=self._eps,\n            kernel=self.hammer_kernel(),\n        )"
+        }
+      ]
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/ops/pytorch/pt_layer_norm.py",
+      "bytes": 2002,
+      "sha256": "22413c065f66b20e1e11635463db0754830560149654eb0a99ae5b17294cfb04",
+      "relative_path": "generative_recommenders/ops/pytorch/pt_layer_norm.py",
+      "A0_and_converged_191adbc_byte_equal": true,
+      "excerpts": [
+        {
+          "first_line": 61,
+          "last_line": 81,
+          "text": "def pytorch_swish_layer_norm(\n    x: torch.Tensor,\n    normalized_shape: List[int],\n    weight: torch.Tensor,\n    bias: torch.Tensor,\n    eps: float,\n) -> torch.Tensor:\n    dtype = x.dtype\n    x = x.to(torch.float32)\n    return (\n        x\n        * torch.sigmoid(\n            torch.nn.functional.layer_norm(\n                x,\n                normalized_shape,\n                weight.to(torch.float32),\n                bias.to(torch.float32),\n                eps,\n            )\n        )\n    ).to(dtype)"
+        }
+      ]
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/common.py",
+      "bytes": 16112,
+      "sha256": "daa381563b771a3b8bc96f5e621f25b2bc49c2a67be088dacff25c9bf03fef9f",
+      "relative_path": "generative_recommenders/common.py",
+      "A0_and_converged_191adbc_byte_equal": true,
+      "excerpts": [
+        {
+          "first_line": 554,
+          "last_line": 558,
+          "text": "def init_mlp_weights_optional_bias(m: torch.nn.Module) -> None:\n    if isinstance(m, torch.nn.Linear):\n        torch.nn.init.xavier_uniform_(m.weight)\n        if m.bias is not None:\n            m.bias.data.fill_(0.0)"
+        }
+      ]
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/train/utils.py",
+      "bytes": 158795,
+      "sha256": "6c50d9a10a6852c7293c09fbd635cce8e1080aa1455850113c91015e632b4cb9",
+      "relative_path": "generative_recommenders/dlrm_v4/train/utils.py",
+      "A0_and_converged_191adbc_byte_equal": true,
+      "excerpts": [
+        {
+          "first_line": 151,
+          "last_line": 172,
+          "text": "def decorrelate_runtime_rng(rank: int = 0, enabled: bool = True) -> None:\n    \"\"\"Re-seed torch/cuda with $SEED + rank so HSTU dropout draws different masks\n    per data-parallel rank (seed_everything's identical seed would draw the same).\n\n    MUST run after make_model() + make_optimizer_and_shard() so init stays\n    identical across ranks; it perturbs only forward-time stochasticity.\n    Reproducible (pure fn of $SEED + rank; RNG state checkpointed). enabled=False\n    keeps the legacy identical-mask behavior.\n    \"\"\"\n    if not enabled:\n        logger.info(\n            f\"[rank {rank}] decorrelate_runtime_rng disabled; dropout masks \"\n            f\"identical across ranks\"\n        )\n        return\n    base = int(os.environ.get(\"SEED\", \"1\"))\n    offset_seed = base + int(rank)\n    torch.manual_seed(offset_seed)\n    torch.cuda.manual_seed_all(offset_seed)\n    logger.info(\n        f\"[rank {rank}] decorrelated runtime RNG: SEED={base} + rank={rank} \"\n        f\"=> {offset_seed} (per-rank dropout masks)\""
+        },
+        {
+          "first_line": 553,
+          "last_line": 557,
+          "text": "        def _lowmem_fp16(tensor: torch.Tensor) -> torch.Tensor:\n            return tensor.half().clamp_(_HMIN, _HMAX)\n\n        def _lowmem_bf16(tensor: torch.Tensor) -> torch.Tensor:\n            return tensor.bfloat16().clamp_(_BMIN, _BMAX)"
+        },
+        {
+          "first_line": 702,
+          "last_line": 707,
+          "text": "    use_index_dedup collapses duplicate ids within a batch to unique rows before\n    the input all-to-all (torch.ops.fbgemm.jagged_unique_indices), does the\n    embedding lookup once, then scatters back via reverse_indices. For a\n    non-pooled EmbeddingCollection (this sequence model) that reconstruction is\n    exact, so the forward is numerically lossless \u2014 unlike the fp16 a2a it does\n    not perturb AUC/NE. The buffers it registers (_hash_size_cumsum_tensor_*,"
+        },
+        {
+          "first_line": 971,
+          "last_line": 988,
+          "text": "    # Re-seed right before DMP materializes/inits the sharded embedding tables.\n    # The per-table seeded init_fn (configs.get_embedding_table_config) handles\n    # the eager path, but the fused FBGEMM TBE path inits weights on-device and\n    # may bypass init_fn, drawing from the global RNG instead. Re-seeding here\n    # (same value on every rank) makes embedding init reproducible run-to-run for\n    # a fixed sharding plan (Tier 1). Dense params are already initialized in\n    # make_model, so this does not perturb them.\n    _emb_seed = int(os.environ.get(\"SEED\", \"1\"))\n    torch.manual_seed(_emb_seed)\n    torch.cuda.manual_seed_all(_emb_seed)\n    logger.info(f\"[emb-init] re-seeded RNGs before DMP with SEED={_emb_seed}\")\n\n    # Shard model\n    model = DistributedModelParallel(\n        module=model,\n        device=device,\n        plan=plan,\n        sharders=sharders,"
+        },
+        {
+          "first_line": 1124,
+          "last_line": 1195,
+          "text": "class StreamingWindowSampler(torch.utils.data.Sampler):\n    \"\"\"Per-rank sampler whose index list is swapped each window.\n\n    Yields this rank's round-robin slice of the active window's GLOBAL anchor\n    indices (into the dataset's ``_positions``). Because indices are global, a\n    single DataLoader with ``persistent_workers=True`` can be reused across all\n    windows: the main process re-iterates this sampler each window and ships the\n    new indices to the already-forked workers, which map any global index via\n    the shared mmap. No per-window worker respawn / dataset re-pickle.\n\n    Round-robin striding (rank r gets ``indices[r::world_size]``) over the\n    time-sorted window keeps every rank on the same time front; the window is\n    truncated to a multiple of ``world_size`` so all ranks get equal counts\n    (required for DDP collective lockstep).\n    \"\"\"\n\n    def __init__(self, rank: int, world_size: int) -> None:\n        self._rank: int = rank\n        self._world_size: int = world_size\n        self._indices: List[int] = []\n\n    def set_window(self, global_indices, skip_samples: int = 0) -> None:\n        \"\"\"Install this window's per-rank index list, optionally fast-forwarding.\n\n        ``skip_samples`` drops the first N per-rank samples from the list so the\n        next ``__iter__`` starts at sample N+1 in this rank's slice. Used on\n        resume to skip batches that were already trained: pass\n        ``skip_samples = batch_size * batches_completed`` and the dataloader\n        emits batches starting at exactly the next unseen batch.\n\n        The skip is safe because the sample order is fully deterministic given\n        (global_indices, rank, world_size): we re-derive the same per-rank list\n        as the pre-crash run, just hand back a tail slice of it.\n        \"\"\"\n        n = (len(global_indices) // self._world_size) * self._world_size\n        per_rank = global_indices[:n][self._rank :: self._world_size].tolist()\n        if skip_samples < 0 or skip_samples > len(per_rank):\n            raise ValueError(\n                f\"skip_samples={skip_samples} out of [0, {len(per_rank)}] \"\n                f\"for rank={self._rank} world_size={self._world_size}\"\n            )\n        self._indices = per_rank[skip_samples:]\n\n    def __iter__(self):\n        return iter(self._indices)\n\n    def __len__(self) -> int:\n        return len(self._indices)\n\n\n@gin.configurable\ndef make_persistent_streaming_dataloader(\n    dataset: HammerToTorchDataset,\n    sampler: StreamingWindowSampler,\n    batch_size: int,\n    num_workers: int,\n    prefetch_factor: int,\n) -> DataLoader:\n    \"\"\"One reusable DataLoader for the whole streaming run. ``sampler`` is\n    mutated per window via ``set_window``; workers persist across windows.\"\"\"\n    use_workers = bool(num_workers and num_workers > 0)\n    return DataLoader(\n        dataset=dataset,\n        batch_size=batch_size,\n        shuffle=False,\n        collate_fn=collate_fn,\n        drop_last=True,\n        num_workers=num_workers,\n        prefetch_factor=prefetch_factor if use_workers else None,\n        sampler=sampler,\n        persistent_workers=use_workers,\n        multiprocessing_context=\"fork\" if use_workers else None,"
+        }
+      ]
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/train/train_ranker.py",
+      "bytes": 21386,
+      "sha256": "a6fc79e0ac9a858028be0497d87f77892a49fa4819603d2ebb4a42e30978d0d8",
+      "relative_path": "generative_recommenders/dlrm_v4/train/train_ranker.py",
+      "A0_and_converged_191adbc_byte_equal": true,
+      "excerpts": [
+        {
+          "first_line": 290,
+          "last_line": 310,
+          "text": "    # Seed all RNGs (gin-configurable $SEED) BEFORE make_model() so weight init\n    # is reproducible run-to-run. Must follow the full parse above so the binding\n    # is wired, and precede make_model() below.\n    seed_everything(rank=rank)\n\n    model, model_configs, embedding_table_configs = make_model()\n    model, optimizer = make_optimizer_and_shard(\n        model=model,\n        device=device,\n        world_size=world_size,\n        local_world_size=gpus_per_node,\n        embedding_table_configs=embedding_table_configs,\n    )\n    # Decorrelate forward-time stochasticity (HSTU dropout) per data-parallel\n    # rank. MUST run after make_model() + make_optimizer_and_shard() so the\n    # replicated dense weights and sharded embeddings stay init-identical across\n    # ranks; this only offsets the global RNG by rank so dropout masks differ.\n    decorrelate_runtime_rng(rank=rank)\n    train_dataloader, test_dataloader = make_train_test_dataloaders(\n        hstu_config=model_configs,\n        embedding_table_configs=embedding_table_configs,"
+        }
+      ]
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/train/gin/yambda_5b.gin",
+      "bytes": 55730,
+      "sha256": "87355931eda3079de203555edf2e95c5030b2afa050c350a2eba3df1717f302f",
+      "relative_path": "generative_recommenders/dlrm_v4/train/gin/yambda_5b.gin",
+      "A0_and_converged_191adbc_byte_equal": true,
+      "excerpts": [
+        {
+          "first_line": 435,
+          "last_line": 530,
+          "text": "# Total user-interaction-history (UIH) budget per sample, distributed evenly\n# across 3 behaviour pools (listen+ / like / skip) at L//3 events each.\n# Per-sample sequence the model sees =\n#     3 \u00d7 (L // 3) + 8 contextual + 1 candidate\n# Choosing 4086 makes 3 \u00d7 1362 + 9 = 4095, the largest value that fits\n# get_hstu_configs.max_seq_len = 4096 with no dataset-side truncation (the\n# 4k analog of the previous 2039/2048 shape, where 3\u00d7679+9=2046 \u2264 2048).\n# Larger L overflows the budget; the dataset truncates UIH events to fit.\n# Note: like events are only 1.9% of the yambda corpus and max user lifetime\n# is ~28k events, so the like pool fills to ~105 events per anchor on\n# average (not 1362) \u2014 TRITON's jagged attention skips the unfilled slots,\n# so the under-fill costs sequence budget but not GPU compute.\n# Cache is keyed by L on disk under <processed_dir>/hstu_cache_L<N>/;\n# switching L reuses an existing cache or builds a new one. Override via\n# $HISTORY_LENGTH (default 4086 = the 4k-no-truncation shape; use 2039 with\n# MAX_SEQ_LEN=2048 to reuse the previous 2k single-task cache).\nget_dataset.history_length = @hl/env_int()\nhl/env_int.key     = \"HISTORY_LENGTH\"\nhl/env_int.default = 4086\n\n# UIH construction strategy \u2014 how a user's prior events become the sequence the\n# model attends over. Override via $HISTORY_STRATEGY. Both strategies scan the\n# last `scan_window` (20000) events before the anchor and consider ONLY the 3\n# behavior pools (listen+ / like / skip); dislike/unlike/undislike are excluded\n# (no action-weight bit), so the model's action_weights=[1,2,4] are unchanged.\n# The two differ only in HOW they pick events out of that scan window:\n#\n#   \"interleaved\" (default):\n#     - Budget = equal per-pool quota of HISTORY_LENGTH//3 (=1362) events; take\n#       the last 1362 of EACH pool independently, then merge + re-sort by time.\n#     - HISTORY_LENGTH is thus a PER-POOL cap (nominal total = 3 * L//3).\n#     - Consequence: likes are only ~1.9% of the corpus, so the like pool\n#       under-fills (~105 of its 1362 slots) and that budget is NOT reallocated\n#       \u2014 the sequence comes up short. Measured: ~2663 events effective, ~4.0%\n#       of them likes (i.e. likes OVER-represented vs their natural rate).\n#     - Use when you want guaranteed like exposure per sample (class-balanced UIH).\n#\n#   \"last_n\":\n#     - Budget = a single pool-agnostic cap: take the last HISTORY_LENGTH events\n#       of ANY pool type, already chronological (no per-pool split, no re-sort).\n#     - HISTORY_LENGTH is thus the LITERAL TOTAL UIH cap (not a per-pool L//3).\n#     - Consequence: the sequence fills to ~HISTORY_LENGTH (the only limit is how\n#       many pooled events exist in the scan window), so effective length is\n#       higher and the like share falls to its natural rate. Measured: ~4085\n#       events effective (~1.5x interleaved), ~1.2% of them likes.\n#     - Trade-off: more recent listen+/skip context (longer effective sequence)\n#       at the cost of fewer likes; ~1.4x eval/step compute (more non-skipped\n#       jagged-attention positions). Keep HISTORY_LENGTH=4086 to fill the 4k\n#       model budget.\n#\n# Both strategies are strategy-INDEPENDENT on disk: the gather runs at\n# sample-build time, so switching reuses the SAME hstu_cache_L<HISTORY_LENGTH>/\n# and positions cache \u2014 no rebuild needed.\nget_dataset.history_strategy = @hs/env_str()\nhs/env_str.key     = \"HISTORY_STRATEGY\"\nhs/env_str.default = \"interleaved\"\n\n# Anchor-eligibility floor: a LISTEN event becomes a trainable/eval anchor once\n# the user has >= MIN_HISTORY prior events.\n# The default is 4086 == history_length: require a full history of context,\n# which is the MLPerf-scored setting. It drops ~60% of users, and it means\n# anchors are full-length by construction -- MIN_HISTORY does NOT produce short\n# UIH rows at the default.\n# Technically decoupled from history_length (which is only the gather/truncation\n# cap), since jagged attention handles short UIH: MIN_HISTORY=0 would include\n# ~all users AND their cold-start first event (zero prior context), and\n# MIN_HISTORY=64 is what scripts/run_smoke_shrink_1gpu.sh uses for the retired\n# batch-8 bring-up path. Neither is MLPerf-valid; do not use them for a scored\n# run. Positions/anchor-ts caches are keyed by (L, MIN_HISTORY) so floors don't\n# collide -- positions_L<L>.npy when MIN_HISTORY == L, else\n# positions_L<L>_m<MIN_HISTORY>.npy, so the file a run opens tells you which\n# floor it actually used. Override via $MIN_HISTORY.\nget_dataset.min_history = @mh/env_int()\nmh/env_int.key     = \"MIN_HISTORY\"\nmh/env_int.default = 4086\n\n# Model-side attention budget. Dataset truncates UIH to fit this value if\n# `history_length + contextual + candidate` would overflow. Override via\n# $MAX_SEQ_LEN (default 4096, the 4k-no-truncation shape paired with\n# HISTORY_LENGTH=4086: 3*1362+9=4095 \u2264 4096). Set MAX_SEQ_LEN=2048 with\n# HISTORY_LENGTH=2039 for the previous 2k production single-task shape.\nget_hstu_configs.max_seq_len = @msl/env_int()\nmsl/env_int.key     = \"MAX_SEQ_LEN\"\nmsl/env_int.default = 4096\n\n# HSTU transformer depth (number of attention layers). Default 3.\n# Override per-run via $HSTU_NUM_LAYERS. NOTE: changing depth changes the model\n# shape, so a run with a new depth MUST use a FRESH CKPT_PATH (incompatible with\n# checkpoints of a different depth). Resolved in the full gin parse\n# (get_hstu_configs is not registered during the early skip_unknown parse), so\n# the @env_int reference is skipped on the first pass \u2014 same safe path as the LR knobs.\nget_hstu_configs.hstu_attn_num_layers = @nl/env_int()\nnl/env_int.key     = \"HSTU_NUM_LAYERS\"\nnl/env_int.default = 3\n\n# --- streaming (temporal-order) training -------------------------------------"
+        }
+      ]
+    }
+  ],
+  "locally_installed_fused_initialization": {
+    "status": "PASS_READ_ONLY_INSTALLED_TORCHREC_SOURCE_COPY",
+    "sources": [
+      {
+        "container": "triton-7ff97e-20260910",
+        "container_source": "/opt/venv/lib/python3.12/site-packages/torchrec/modules/embedding_configs.py",
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_model_dataflow_v1/installed_torchrec_embedding_configs.py",
+        "bytes": 16052,
+        "sha256": "f115285c6ecebae7195ad03a0b33e2c6dca8f88cf28d74790f402682148000ba"
+      },
+      {
+        "container": "triton-7ff97e-20260910",
+        "container_source": "/opt/venv/lib/python3.12/site-packages/torchrec/distributed/batched_embedding_kernel.py",
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_model_dataflow_v1/installed_torchrec_batched_embedding_kernel.py",
+        "bytes": 202485,
+        "sha256": "44572e4a11742ee3a05319d12ba416cb5038e40c90aaa3234268acc48252c744"
+      }
+    ],
+    "GPU_actions": false,
+    "Torch_imported": false
+  },
+  "table_counts_and_initialization": [
+    {
+      "name": "item_id",
+      "full_rows": 9390624,
+      "quarter_rows": 2347656,
+      "columns": 512,
+      "full_FP32_weight_bytes": 19231997952,
+      "quarter_FP32_weight_bytes": 4807999488,
+      "full_uniform_bound": 0.00032632682395434084,
+      "quarter_uniform_bound": 0.0006526536479086817,
+      "amplitude_ratio": 2.0,
+      "variance_ratio": 4.0,
+      "synthetic_base_ID_example": {
+        "raw": [
+          0,
+          2347656,
+          9390623
+        ],
+        "full": [
+          0,
+          2347656,
+          9390623
+        ],
+        "quarter": [
+          0,
+          0,
+          2347655
+        ]
+      }
+    },
+    {
+      "name": "artist_id",
+      "full_rows": 1293395,
+      "quarter_rows": 323348,
+      "columns": 512,
+      "full_FP32_weight_bytes": 2648872960,
+      "quarter_FP32_weight_bytes": 662216704,
+      "full_uniform_bound": 0.0008792946103258857,
+      "quarter_uniform_bound": 0.0017585912601589752,
+      "amplitude_ratio": 2.0000023194810703,
+      "variance_ratio": 4.000009277929661,
+      "synthetic_base_ID_example": {
+        "raw": [
+          0,
+          323348,
+          1293394
+        ],
+        "full": [
+          0,
+          323348,
+          1293394
+        ],
+        "quarter": [
+          0,
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "name": "album_id",
+      "full_rows": 3367692,
+      "quarter_rows": 841923,
+      "columns": 512,
+      "full_FP32_weight_bytes": 6897033216,
+      "quarter_FP32_weight_bytes": 1724258304,
+      "full_uniform_bound": 0.00054492134184026,
+      "quarter_uniform_bound": 0.00108984268368052,
+      "amplitude_ratio": 2.0,
+      "variance_ratio": 4.0,
+      "synthetic_base_ID_example": {
+        "raw": [
+          0,
+          841923,
+          3367691
+        ],
+        "full": [
+          0,
+          841923,
+          3367691
+        ],
+        "quarter": [
+          0,
+          0,
+          841922
+        ]
+      }
+    },
+    {
+      "name": "uid",
+      "full_rows": 1000001,
+      "quarter_rows": 250000,
+      "columns": 512,
+      "full_FP32_weight_bytes": 2048002048,
+      "quarter_FP32_weight_bytes": 512000000,
+      "full_uniform_bound": 0.000999999500000375,
+      "quarter_uniform_bound": 0.002,
+      "amplitude_ratio": 2.00000099999975,
+      "variance_ratio": 4.000004,
+      "synthetic_base_ID_example": {
+        "raw": [
+          0,
+          250000,
+          1000000
+        ],
+        "full": [
+          0,
+          250000,
+          1000000
+        ],
+        "quarter": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "user_x_artist",
+      "full_rows": 100000000,
+      "quarter_rows": 25000000,
+      "columns": 512,
+      "full_FP32_weight_bytes": 204800000000,
+      "quarter_FP32_weight_bytes": 51200000000,
+      "full_uniform_bound": 0.0001,
+      "quarter_uniform_bound": 0.0002,
+      "amplitude_ratio": 2.0,
+      "variance_ratio": 4.0,
+      "synthetic_base_ID_example": null
+    },
+    {
+      "name": "user_x_album",
+      "full_rows": 40000000,
+      "quarter_rows": 10000000,
+      "columns": 512,
+      "full_FP32_weight_bytes": 81920000000,
+      "quarter_FP32_weight_bytes": 20480000000,
+      "full_uniform_bound": 0.00015811388300841897,
+      "quarter_uniform_bound": 0.00031622776601683794,
+      "amplitude_ratio": 2.0,
+      "variance_ratio": 4.0,
+      "synthetic_base_ID_example": null
+    },
+    {
+      "name": "user_x_hour",
+      "full_rows": 24000000,
+      "quarter_rows": 6000000,
+      "columns": 512,
+      "full_FP32_weight_bytes": 49152000000,
+      "quarter_FP32_weight_bytes": 12288000000,
+      "full_uniform_bound": 0.00020412414523193151,
+      "quarter_uniform_bound": 0.00040824829046386303,
+      "amplitude_ratio": 2.0,
+      "variance_ratio": 4.0,
+      "synthetic_base_ID_example": null
+    },
+    {
+      "name": "item_x_hour",
+      "full_rows": 40000000,
+      "quarter_rows": 10000000,
+      "columns": 512,
+      "full_FP32_weight_bytes": 81920000000,
+      "quarter_FP32_weight_bytes": 20480000000,
+      "full_uniform_bound": 0.00015811388300841897,
+      "quarter_uniform_bound": 0.00031622776601683794,
+      "amplitude_ratio": 2.0,
+      "variance_ratio": 4.0,
+      "synthetic_base_ID_example": null
+    },
+    {
+      "name": "artist_x_hour",
+      "full_rows": 32000000,
+      "quarter_rows": 8000000,
+      "columns": 512,
+      "full_FP32_weight_bytes": 65536000000,
+      "quarter_FP32_weight_bytes": 16384000000,
+      "full_uniform_bound": 0.00017677669529663688,
+      "quarter_uniform_bound": 0.00035355339059327376,
+      "amplitude_ratio": 2.0,
+      "variance_ratio": 4.0,
+      "synthetic_base_ID_example": null
+    },
+    {
+      "name": "user_x_is_organic",
+      "full_rows": 2000000,
+      "quarter_rows": 500000,
+      "columns": 512,
+      "full_FP32_weight_bytes": 4096000000,
+      "quarter_FP32_weight_bytes": 1024000000,
+      "full_uniform_bound": 0.0007071067811865475,
+      "quarter_uniform_bound": 0.001414213562373095,
+      "amplitude_ratio": 2.0,
+      "variance_ratio": 4.0,
+      "synthetic_base_ID_example": null
+    },
+    {
+      "name": "user_x_artist_x_hour",
+      "full_rows": 40000000,
+      "quarter_rows": 10000000,
+      "columns": 512,
+      "full_FP32_weight_bytes": 81920000000,
+      "quarter_FP32_weight_bytes": 20480000000,
+      "full_uniform_bound": 0.00015811388300841897,
+      "quarter_uniform_bound": 0.00031622776601683794,
+      "amplitude_ratio": 2.0,
+      "variance_ratio": 4.0,
+      "synthetic_base_ID_example": null
+    }
+  ],
+  "table_summary": {
+    "full_rows": 293051712,
+    "quarter_rows": 73262927,
+    "full_weight_bytes": 600169906176,
+    "quarter_weight_bytes": 150042474496
+  },
+  "findings": [
+    {
+      "topic": "Exact selected local path",
+      "statement": "Artist and album sequence/candidate lookups are merged by jagged concatenation. The additional-feature list selects artist_id and album_id; concatenation forms E[K,1024], then Linear1024\u2192256, SwishLayerNorm256, selected Linear256\u2192512, then LayerNorm512. The observed selected raw DW has logical shape[256,512], native stride[1,256]."
+    },
+    {
+      "topic": "Meaning of X",
+      "statement": "The captured X[K,256] is the output of SwishLayerNorm after the first additional-feature Linear, not a raw embedding table slice. In real arithmetic: Z=E W0^T+b0; X=Z*sigmoid(LayerNorm(Z;gamma,beta,eps=1e-5)). BF16 casting/rounding also affects stored X. The source is not SiLU(LayerNorm(Z)); its multiplicative Z branch preserves amplitude sensitivity."
+    },
+    {
+      "topic": "Meaning of DY",
+      "statement": "For the selected Y=X W2^T+b2, DY is dLoss/dY[K,512], after backpropagation through the following LayerNorm512 and downstream branches/attention/loss. Artist/album changes can alter X directly; item/UID/cross embeddings can also alter DY through the content/context/downstream network, even if a chosen X row happened to match."
+    },
+    {
+      "topic": "Exact row-count dependency",
+      "statement": "Before contextual tokens are appended, K=sum_i(history_length_i+candidate_count_i). IDs are remapped without deleting or padding sequence positions. At fixed anchors, history strategy/length, candidate counts, rank assignment and batching, changing row scale alone preserves this K and the widths 256/512. Eight contextual tokens are appended only after the additional-feature MLP."
+    },
+    {
+      "topic": "Captured versus derived K",
+      "statement": "A0 captured K=2324351 at local batch1024. With the documented one candidate per sample this implies2323327 history rows. At eight contextual tokens per sample the downstream contextualized sequence would add8192 rows; that is a source-derived count, not a retained successful-host attention capture. Actual a37-2 per-rank preprocessing K/X/DY/nativeDW are unrecorded."
+    },
+    {
+      "topic": "Mapping order and collisions",
+      "statement": "The dataset gathers history, resolves raw item\u2192artist/album metadata and computes labels first. Cross hashes use original raw anchor keys, little-endian int64 concatenation, xxhash64 and modulo scaled capacity. Only then are base IDs reduced modulo the scaled table rows. These operations change lookup identity and aliasing, while preserving lengths/timestamps/action weights."
+    },
+    {
+      "topic": "Initialization",
+      "statement": "The locally installed fused TorchRec path, freshly rehashed against the earlier audit, collects each table get_weight_init_min/max then fills actual shards with uniform_. Defaults are \u00b1sqrt(1/num_embeddings), and repository table configs provide no explicit fixed bounds. Quarter row counts therefore increase uniform amplitude approximately2\u00d7 and variance approximately4\u00d7, with exact per-table ratios below. This alone does not imply every resulting X or DY value doubles, or changes a particular bit."
+    },
+    {
+      "topic": "Seed and sharding",
+      "statement": "The meta/eager custom init_fn and the fused initializer are distinct paths. Source seeds before dense model construction, reseeds before DMP initializes embeddings, then by default reseeds runtime RNG with SEED+rank for dropout. Table/shard sizes and draw ordering can change embedding bytes. The embedding reseed happens after dense initialization; it does not itself alter already initialized dense parameters. Actual remote initialized tensors were not retained."
+    },
+    {
+      "topic": "Four ranks",
+      "statement": "StreamingWindowSampler uses global_indices[:n][rank::world_size], and each rank batches1024 samples. Four ranks change selected anchors/windows/globalbatch to4096; they do not divide local batch or this dense contraction K by four. Table or column sharding reconstructs logical embedding features for local samples; it is not proof of tensor parallelism of the selected dense Linear."
+    },
+    {
+      "topic": "Further numerical and execution changes",
+      "statement": "After training begins, changed collisions affect sparse update sharing and all subsequent dense/embedding states; distinct global batch, LR and sampled histories change optimization. FP16 sparse communication and rank-specific dropout can alter bits/timing. Optional index dedup reconstructs the logical sequence via reverse_indices, so unique lookup count is not this dense K. No actual remote communication path or tensor equality is inferred from settings alone."
+    },
+    {
+      "topic": "Connection to the NaN mechanism",
+      "statement": "The completed one-bit intervention changes only DY[602561,194] from b101 to b100, leaves ordinary NOP outputs unchanged, and turns the trapped enormous/NaN block into bounded finite wrong-address arithmetic. This demonstrates that operand bits can change trap-copy exposure without changing K or dense widths. It does not establish which full/quarter dataflow change explains successful a37-2 training or that a37-2 has the same selected handler/kernel."
+    }
+  ],
+  "existing_comparison": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/source_and_context_audit.json",
+    "bytes": 17701,
+    "sha256": "bf6962c9c7d4277db014e13f97177d92cd13e8fd35dbc358b0063b1acbef396b"
+  },
+  "successful_host_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosr-1b112-a37-2.md",
+    "bytes": 56645,
+    "sha256": "01d0e177191a8359221997fa290d5478b0b607b82b416f954a2d240ac832825f"
+  },
+  "missing_observations": [
+    "Actual a37-2 per-rank anchors/history lengths and selected preprocessing K.",
+    "Actual a37-2 selected saved X/DY, initialization/checkpoint tensor bytes and effective stochastic state.",
+    "Actual successful-host DW native ELF/arguments/workspace and selected CWSR handler bytes/policy."
+  ],
+  "remote_actions": false,
+  "GPU_actions": false,
+  "Torch_imported": false,
+  "shared_sources_modified": false
+}

@@ -1,0 +1,760 @@
+{
+  "format": "successful_1P4G_scheduler_semantics_CPU_v1",
+  "created_utc": "2026-09-21T06:26:31.240870+00:00",
+  "scope": "Local packaged-source semantics plus frozen a37-2 documentation; no remote source or live hardware attestation. A0 parameter snapshot is current, not historical attempt405.",
+  "actions": {
+    "GPU_device_open": false,
+    "remote_access": false,
+    "driver_or_parameter_mutation": false,
+    "shared_document_edit": false,
+    "commit_or_push": false
+  },
+  "source_bindings": {
+    "amdgpu/amdgpu_device.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdgpu/amdgpu_device.c",
+      "bytes": 189995,
+      "sha256": "bdc3046fc0be52d57f7f8a7efa13e3e61c10d29928ca3df4319f50a5f41b8f0c",
+      "excerpts": [
+        {
+          "first_line": 2044,
+          "last_line": 2067,
+          "text": "2044: \tfor (i = 0; i < adev->num_ip_blocks; i++) {\n2045: \t\tip_block = &adev->ip_blocks[i];\n2046: \n2047: \t\tif ((amdgpu_ip_block_mask & (1 << i)) == 0) {\n2048: \t\t\tdev_warn(adev->dev, \"disabled ip block: %d <%s>\\n\", i,\n2049: \t\t\t\t adev->ip_blocks[i].version->funcs->name);\n2050: \t\t\tadev->ip_blocks[i].status.valid = false;\n2051: \t\t} else if (ip_block->version->funcs->early_init) {\n2052: \t\t\tr = ip_block->version->funcs->early_init(ip_block);\n2053: \t\t\tif (r == -ENOENT) {\n2054: \t\t\t\tadev->ip_blocks[i].status.valid = false;\n2055: \t\t\t} else if (r) {\n2056: \t\t\t\tdev_err(adev->dev,\n2057: \t\t\t\t\t\"early_init of IP block <%s> failed %d\\n\",\n2058: \t\t\t\t\tadev->ip_blocks[i].version->funcs->name,\n2059: \t\t\t\t\tr);\n2060: \t\t\t\ttotal = false;\n2061: \t\t\t} else {\n2062: \t\t\t\tadev->ip_blocks[i].status.valid = true;\n2063: \t\t\t}\n2064: \t\t} else {\n2065: \t\t\tadev->ip_blocks[i].status.valid = true;\n2066: \t\t}\n2067: \t\t/* get the vbios after the asic_funcs are set up */"
+        },
+        {
+          "first_line": 3938,
+          "last_line": 3948,
+          "text": "3938: \t    amdgpu_ip_version(adev, GC_HWIP, 0) >= IP_VERSION(10, 3, 0))\n3939: \t\t/* VF MMIO access (except mailbox range) from CPU\n3940: \t\t * will be blocked during sriov runtime\n3941: \t\t */\n3942: \t\tadev->virt.caps |= AMDGPU_VF_MMIO_ACCESS_PROTECT;\n3943: \n3944: \tamdgpu_gmc_noretry_set(adev);\n3945: \t/* Need to get xgmi info early to decide the reset behavior*/\n3946: \tif (adev->gmc.xgmi.supported) {\n3947: \t\tif (adev->gfxhub.funcs &&\n3948: \t\t    adev->gfxhub.funcs->get_xgmi_info) {"
+        },
+        {
+          "first_line": 4882,
+          "last_line": 4923,
+          "text": "4882: bool amdgpu_device_should_recover_gpu(struct amdgpu_device *adev)\n4883: {\n4884: \n4885: \tif (amdgpu_gpu_recovery == 0)\n4886: \t\tgoto disabled;\n4887: \n4888: \t/* Skip soft reset check in fatal error mode */\n4889: \tif (!amdgpu_ras_is_poison_mode_supported(adev))\n4890: \t\treturn true;\n4891: \n4892: \tif (amdgpu_sriov_vf(adev))\n4893: \t\treturn true;\n4894: \n4895: \tif (amdgpu_gpu_recovery == -1) {\n4896: \t\tswitch (adev->asic_type) {\n4897: #ifdef CONFIG_DRM_AMDGPU_SI_AMDKCL\n4898: \t\tcase CHIP_VERDE:\n4899: \t\tcase CHIP_TAHITI:\n4900: \t\tcase CHIP_PITCAIRN:\n4901: \t\tcase CHIP_OLAND:\n4902: \t\tcase CHIP_HAINAN:\n4903: #endif\n4904: #ifdef CONFIG_DRM_AMDGPU_CIK_AMDKCL\n4905: \t\tcase CHIP_KAVERI:\n4906: \t\tcase CHIP_KABINI:\n4907: \t\tcase CHIP_MULLINS:\n4908: #endif\n4909: \t\tcase CHIP_CARRIZO:\n4910: \t\tcase CHIP_STONEY:\n4911: \t\tcase CHIP_CYAN_SKILLFISH:\n4912: \t\t\tgoto disabled;\n4913: \t\tdefault:\n4914: \t\t\tbreak;\n4915: \t\t}\n4916: \t}\n4917: \n4918: \treturn true;\n4919: \n4920: disabled:\n4921: \t\tdev_info(adev->dev, \"GPU recovery disabled.\\n\");\n4922: \t\treturn false;\n4923: }"
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdgpu/amdgpu_device.c",
+        "bytes": 189890,
+        "sha256": "d4625ca1aa2ae5cfcf94a970dcec46a099f0f7435443a565d5e826215112da02"
+      },
+      "matches_installed_package_source": false,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 15,
+      "CONFIG_AMDKCL_symbols": [
+        "CONFIG_DRM_AMDGPU_CIK_AMDKCL",
+        "CONFIG_DRM_AMDGPU_SI_AMDKCL",
+        "CONFIG_DRM_AMD_DC_AMDKCL",
+        "CONFIG_DRM_AMD_DC_SI_AMDKCL",
+        "CONFIG_HSA_AMD_P2P_AMDKCL"
+      ]
+    },
+    "amdgpu/amdgpu_discovery.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdgpu/amdgpu_discovery.c",
+      "bytes": 120707,
+      "sha256": "f37260a079fcf13454e29587efbad06476ef0a5f9a67c721a3c51cbf2d5ef8c4",
+      "excerpts": [
+        {
+          "first_line": 3055,
+          "last_line": 3068,
+          "text": "3055: \t\tamdgpu_device_ip_block_add(adev, &gfx_v11_0_ip_block);\n3056: \t\tbreak;\n3057: \tcase IP_VERSION(12, 0, 0):\n3058: \tcase IP_VERSION(12, 0, 1):\n3059: \t\tamdgpu_device_ip_block_add(adev, &gfx_v12_0_ip_block);\n3060: \t\tbreak;\n3061: \tcase IP_VERSION(12, 1, 0):\n3062: \t\tamdgpu_device_ip_block_add(adev, &gfx_v12_1_ip_block);\n3063: \t\tbreak;\n3064: \tdefault:\n3065: \t\tdev_err(adev->dev, \"Failed to add gfx ip block(GC_HWIP:0x%x)\\n\",\n3066: \t\t\tamdgpu_ip_version(adev, GC_HWIP, 0));\n3067: \t\treturn -EINVAL;\n3068: \t}"
+        },
+        {
+          "first_line": 3117,
+          "last_line": 3130,
+          "text": "3117: \t\tbreak;\n3118: \tcase IP_VERSION(7, 0, 0):\n3119: \tcase IP_VERSION(7, 0, 1):\n3120: \t\tamdgpu_device_ip_block_add(adev, &sdma_v7_0_ip_block);\n3121: \t\tbreak;\n3122: \tcase IP_VERSION(7, 1, 0):\n3123: \t\tamdgpu_device_ip_block_add(adev, &sdma_v7_1_ip_block);\n3124: \t\tbreak;\n3125: \tdefault:\n3126: \t\tdev_err(adev->dev,\n3127: \t\t\t\"Failed to add sdma ip block(SDMA0_HWIP:0x%x)\\n\",\n3128: \t\t\tamdgpu_ip_version(adev, SDMA0_HWIP, 0));\n3129: \t\treturn -EINVAL;\n3130: \t}"
+        },
+        {
+          "first_line": 3243,
+          "last_line": 3251,
+          "text": "3243: \t\t\tamdgpu_device_ip_block_add(adev, &vcn_v5_0_1_ip_block);\n3244: \t\t\tamdgpu_device_ip_block_add(adev, &jpeg_v5_0_1_ip_block);\n3245: \t\t\tbreak;\n3246: \t\tcase IP_VERSION(5, 0, 2):\n3247: \t\t\tamdgpu_device_ip_block_add(adev, &vcn_v5_0_2_ip_block);\n3248: \t\t\tamdgpu_device_ip_block_add(adev, &jpeg_v5_0_2_ip_block);\n3249: \t\t\tbreak;\n3250: \t\tdefault:\n3251: \t\t\tdev_err(adev->dev,"
+        },
+        {
+          "first_line": 3284,
+          "last_line": 3296,
+          "text": "3284: \t\tadev->enable_mes_kiq = true;\n3285: \t\tif (amdgpu_uni_mes)\n3286: \t\t\tadev->enable_uni_mes = true;\n3287: \t\tbreak;\n3288: \tcase IP_VERSION(12, 1, 0):\n3289: \t\tamdgpu_device_ip_block_add(adev, &mes_v12_1_ip_block);\n3290: \t\tadev->enable_mes = true;\n3291: \t\tadev->enable_mes_kiq = true;\n3292: \t\tif (amdgpu_uni_mes)\n3293: \t\t\tadev->enable_uni_mes = true;\n3294: \t\tbreak;\n3295: \tdefault:\n3296: \t\tbreak;"
+        },
+        {
+          "first_line": 3980,
+          "last_line": 4061,
+          "text": "3980: \tif (r)\n3981: \t\treturn r;\n3982: \n3983: \tr = amdgpu_discovery_set_gmc_ip_blocks(adev);\n3984: \tif (r)\n3985: \t\treturn r;\n3986: \n3987: \t/* For SR-IOV, PSP needs to be initialized before IH */\n3988: \tif (amdgpu_sriov_vf(adev)) {\n3989: \t\tr = amdgpu_discovery_set_psp_ip_blocks(adev);\n3990: \t\tif (r)\n3991: \t\t\treturn r;\n3992: \t\tr = amdgpu_discovery_set_ih_ip_blocks(adev);\n3993: \t\tif (r)\n3994: \t\t\treturn r;\n3995: \t} else {\n3996: \t\tr = amdgpu_discovery_set_ih_ip_blocks(adev);\n3997: \t\tif (r)\n3998: \t\t\treturn r;\n3999: \n4000: \t\tif (likely(adev->firmware.load_type == AMDGPU_FW_LOAD_PSP)) {\n4001: \t\t\tr = amdgpu_discovery_set_psp_ip_blocks(adev);\n4002: \t\t\tif (r)\n4003: \t\t\t\treturn r;\n4004: \t\t}\n4005: \t}\n4006: \n4007: \tif (likely(adev->firmware.load_type == AMDGPU_FW_LOAD_PSP)) {\n4008: \t\tr = amdgpu_discovery_set_smu_ip_blocks(adev);\n4009: \t\tif (r)\n4010: \t\t\treturn r;\n4011: \t}\n4012: \n4013: \tr = amdgpu_discovery_set_display_ip_blocks(adev);\n4014: \tif (r)\n4015: \t\treturn r;\n4016: \n4017: \tr = amdgpu_discovery_set_gc_ip_blocks(adev);\n4018: \tif (r)\n4019: \t\treturn r;\n4020: \n4021: \tr = amdgpu_discovery_set_sdma_ip_blocks(adev);\n4022: \tif (r)\n4023: \t\treturn r;\n4024: \n4025: \tr = amdgpu_discovery_set_ras_ip_blocks(adev);\n4026: \tif (r)\n4027: \t\treturn r;\n4028: \n4029: \tif ((adev->firmware.load_type == AMDGPU_FW_LOAD_DIRECT &&\n4030: \t     !amdgpu_sriov_vf(adev) &&\n4031: \t     amdgpu_dpm == 1) ||\n4032: \t    (adev->firmware.load_type == AMDGPU_FW_LOAD_RLC_BACKDOOR_AUTO &&\n4033: \t     amdgpu_dpm == 1)) {\n4034: \t\tr = amdgpu_discovery_set_smu_ip_blocks(adev);\n4035: \t\tif (r)\n4036: \t\t\treturn r;\n4037: \t}\n4038: \n4039: \tr = amdgpu_discovery_set_mm_ip_blocks(adev);\n4040: \tif (r)\n4041: \t\treturn r;\n4042: \n4043: \tr = amdgpu_discovery_set_mes_ip_blocks(adev);\n4044: \tif (r)\n4045: \t\treturn r;\n4046: \n4047: \tr = amdgpu_discovery_set_vpe_ip_blocks(adev);\n4048: \tif (r)\n4049: \t\treturn r;\n4050: \n4051: \tr = amdgpu_discovery_set_umsch_mm_ip_blocks(adev);\n4052: \tif (r)\n4053: \t\treturn r;\n4054: \n4055: \tr = amdgpu_discovery_set_isp_ip_blocks(adev);\n4056: \tif (r)\n4057: \t\treturn r;\n4058: \n4059: \tr = amdgpu_discovery_set_ualink_ip_blocks(adev);\n4060: \tif (r)\n4061: \t\treturn r;"
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdgpu/amdgpu_discovery.c",
+        "bytes": 120672,
+        "sha256": "0decffe0bf5edb85c82355c3fe11f0e2c54bfef71c850e8ff7c75dccb20fa3f5"
+      },
+      "matches_installed_package_source": false,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 5,
+      "CONFIG_AMDKCL_symbols": [
+        "CONFIG_DRM_AMD_DC_AMDKCL",
+        "CONFIG_DRM_AMD_ISP_AMDKCL"
+      ]
+    },
+    "amdgpu/amdgpu_gmc.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdgpu/amdgpu_gmc.c",
+      "bytes": 51545,
+      "sha256": "4d0c72642ae9e8cff8a8a27830d592b479d20f60693c7c5431ad2f777774fbad",
+      "excerpts": [
+        {
+          "first_line": 1019,
+          "last_line": 1056,
+          "text": "1019: void amdgpu_gmc_noretry_set(struct amdgpu_device *adev)\n1020: {\n1021: \tstruct amdgpu_gmc *gmc = &adev->gmc;\n1022: \tuint32_t gc_ver = amdgpu_ip_version(adev, GC_HWIP, 0);\n1023: \tbool noretry_default = (gc_ver == IP_VERSION(9, 0, 1) ||\n1024: \t\t\t\tgc_ver == IP_VERSION(9, 4, 0) ||\n1025: \t\t\t\tgc_ver == IP_VERSION(9, 4, 1) ||\n1026: \t\t\t\tgc_ver == IP_VERSION(9, 4, 2) ||\n1027: \t\t\t\tgc_ver == IP_VERSION(9, 4, 3) ||\n1028: \t\t\t\tgc_ver == IP_VERSION(9, 4, 4) ||\n1029: \t\t\t\tgc_ver == IP_VERSION(9, 5, 0) ||\n1030: \t\t\t\tgc_ver >= IP_VERSION(10, 1, 0));\n1031: \n1032: \tif (!amdgpu_sriov_xnack_support(adev))\n1033: \t\tgmc->noretry = 1;\n1034: \telse\n1035: \t\tgmc->noretry = (amdgpu_noretry == -1) ? noretry_default : amdgpu_noretry;\n1036: \n1037: \t/* keep this for kfd test fail */\n1038: \tswitch (adev->asic_type) {\n1039: \tcase CHIP_VEGA10:\n1040: \tcase CHIP_NAVI10:\n1041: \tcase CHIP_NAVI14:\n1042: \tcase CHIP_SIENNA_CICHLID:\n1043: \tcase CHIP_NAVY_FLOUNDER:\n1044: \tcase CHIP_DIMGREY_CAVEFISH:\n1045: \t\t/*\n1046: \t\t * noretry = 0 will cause kfd page fault tests fail\n1047: \t\t * for some ASICs, so set default to 1 for these ASICs.\n1048: \t\t */\n1049: \t\tif (amdgpu_noretry == -1)\n1050: \t\t\tgmc->noretry = 1;\n1051: \t\telse\n1052: \t\t\tgmc->noretry = amdgpu_noretry;\n1053: \t\tbreak;\n1054: \tdefault:\n1055: \t\tbreak;\n1056: \t}"
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdgpu/amdgpu_gmc.c",
+        "bytes": 51545,
+        "sha256": "4d0c72642ae9e8cff8a8a27830d592b479d20f60693c7c5431ad2f777774fbad"
+      },
+      "matches_installed_package_source": true,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 0,
+      "CONFIG_AMDKCL_symbols": []
+    },
+    "amdgpu/amdgpu_virt.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdgpu/amdgpu_virt.c",
+      "bytes": 64074,
+      "sha256": "cc1dabe97ba1089f29b69dccb9fb0ed2f0baca9a6025e6de69e93a759349bb4f",
+      "excerpts": [
+        {
+          "first_line": 1711,
+          "last_line": 1721,
+          "text": "1711: bool amdgpu_sriov_xnack_support(struct amdgpu_device *adev)\n1712: {\n1713: \tbool xnack_mode = true;\n1714: \n1715: \tif (amdgpu_sriov_vf(adev) &&\n1716: \t    amdgpu_ip_version(adev, GC_HWIP, 0) == IP_VERSION(9, 4, 2))\n1717: \t\txnack_mode = false;\n1718: \n1719: \treturn xnack_mode;\n1720: }\n1721: "
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdgpu/amdgpu_virt.c",
+        "bytes": 64074,
+        "sha256": "cc1dabe97ba1089f29b69dccb9fb0ed2f0baca9a6025e6de69e93a759349bb4f"
+      },
+      "matches_installed_package_source": true,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 0,
+      "CONFIG_AMDKCL_symbols": []
+    },
+    "amdgpu/amdgpu_drv.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdgpu/amdgpu_drv.c",
+      "bytes": 110415,
+      "sha256": "a5b9877604b73b8f719880e7391c27b8570ffea6b0326d94692ca78daa5252b4",
+      "excerpts": [
+        {
+          "first_line": 205,
+          "last_line": 235,
+          "text": "205:  * GFX DCS(bit 19) disabled by default\n206:  */\n207: uint amdgpu_pp_feature_mask = 0xfff7bfff;\n208: uint amdgpu_force_long_training;\n209: int amdgpu_lbpw = -1;\n210: int amdgpu_compute_multipipe = -1;\n211: int amdgpu_gpu_recovery = -1; /* auto */\n212: int amdgpu_emu_mode;\n213: uint amdgpu_smu_memory_pool_size;\n214: int amdgpu_smu_pptable_id = -1;\n215: /*\n216:  * FBC (bit 0) disabled by default\n217:  * MULTI_MON_PP_MCLK_SWITCH (bit 1) enabled by default\n218:  *   - With this, for multiple monitors in sync(e.g. with the same model),\n219:  *     mclk switching will be allowed. And the mclk will be not foced to the\n220:  *     highest. That helps saving some idle power.\n221:  * DISABLE_FRACTIONAL_PWM (bit 2) disabled by default\n222:  * PSR (bit 3) disabled by default\n223:  * EDP NO POWER SEQUENCING (bit 4) disabled by default\n224:  */\n225: uint amdgpu_dc_feature_mask = 2;\n226: uint amdgpu_dc_debug_mask;\n227: uint amdgpu_dc_visual_confirm;\n228: int amdgpu_async_gfx_ring = 1;\n229: int amdgpu_mcbp = -1;\n230: int amdgpu_discovery = -1;\n231: int amdgpu_mes_log_enable = 0;\n232: int amdgpu_uni_mes = 1;\n233: int amdgpu_noretry = -1;\n234: int amdgpu_force_asic_type = -1;\n235: int amdgpu_tmz = -1; /* auto */"
+        },
+        {
+          "first_line": 706,
+          "last_line": 725,
+          "text": "706: \n707: /**\n708:  * DOC: uni_mes (int)\n709:  * Enable Unified Micro Engine Scheduler. This is a new engine pipe for unified scheduler.\n710:  * (0 = disabled (default), 1 = enabled)\n711:  */\n712: MODULE_PARM_DESC(uni_mes,\n713: \t\"Enable Unified Micro Engine Scheduler (0 = disabled, 1 = enabled(default)\");\n714: module_param_named(uni_mes, amdgpu_uni_mes, int, 0444);\n715: \n716: /**\n717:  * DOC: noretry (int)\n718:  * Disable XNACK retry in the SQ by default on GFXv9 hardware. On ASICs that\n719:  * do not support per-process XNACK this also disables retry page faults.\n720:  * (0 = retry enabled, 1 = retry disabled, -1 auto (default))\n721:  */\n722: MODULE_PARM_DESC(noretry,\n723: \t\"Disable retry faults (0 = retry enabled, 1 = retry disabled, -1 auto (default))\");\n724: module_param_named(noretry, amdgpu_noretry, int, 0644);\n725: "
+        },
+        {
+          "first_line": 744,
+          "last_line": 819,
+          "text": "744: /**\n745:  * DOC: sched_policy (int)\n746:  * Set scheduling policy. Default is HWS(hardware scheduling) with over-subscription.\n747:  * Setting 1 disables over-subscription. Setting 2 disables HWS and statically\n748:  * assigns queues to HQDs.\n749:  */\n750: int sched_policy = KFD_SCHED_POLICY_HWS;\n751: module_param_unsafe(sched_policy, int, 0444);\n752: MODULE_PARM_DESC(sched_policy,\n753: \t\"Scheduling policy (0 = HWS (Default), 1 = HWS without over-subscription, 2 = Non-HWS (Used for debugging only)\");\n754: \n755: /**\n756:  * DOC: hws_max_conc_proc (int)\n757:  * Maximum number of processes that HWS can schedule concurrently. The maximum is the\n758:  * number of VMIDs assigned to the HWS, which is also the default.\n759:  */\n760: int hws_max_conc_proc = -1;\n761: module_param(hws_max_conc_proc, int, 0444);\n762: MODULE_PARM_DESC(hws_max_conc_proc,\n763: \t\"Max # processes HWS can execute concurrently when sched_policy=0 (0 = no concurrency, #VMIDs for KFD = Maximum(default))\");\n764: \n765: /**\n766:  * DOC: cwsr_enable (int)\n767:  * CWSR(compute wave store and resume) allows the GPU to preempt shader execution in\n768:  * the middle of a compute wave. Default is 1 to enable this feature. Setting 0\n769:  * disables it.\n770:  */\n771: int cwsr_enable = 1;\n772: module_param(cwsr_enable, int, 0444);\n773: MODULE_PARM_DESC(cwsr_enable, \"CWSR enable (0 = Off, 1 = On (Default))\");\n774: \n775: /**\n776:  * DOC: max_num_of_queues_per_device (int)\n777:  * Maximum number of queues per device. Valid setting is between 1 and 4096. Default\n778:  * is 4096.\n779:  */\n780: int max_num_of_queues_per_device = KFD_MAX_NUM_OF_QUEUES_PER_DEVICE_DEFAULT;\n781: module_param(max_num_of_queues_per_device, int, 0444);\n782: MODULE_PARM_DESC(max_num_of_queues_per_device,\n783: \t\"Maximum number of supported queues per device (1 = Minimum, 4096 = default)\");\n784: \n785: /**\n786:  * DOC: send_sigterm (int)\n787:  * Send sigterm to HSA process on unhandled exceptions. Default is not to send sigterm\n788:  * but just print errors on dmesg. Setting 1 enables sending sigterm.\n789:  */\n790: int send_sigterm;\n791: module_param(send_sigterm, int, 0444);\n792: MODULE_PARM_DESC(send_sigterm,\n793: \t\"Send sigterm to HSA process on unhandled exception (0 = disable, 1 = enable)\");\n794: \n795: /**\n796:  * DOC: halt_if_hws_hang (int)\n797:  * Halt if HWS hang is detected. Default value, 0, disables the halt on hang.\n798:  * Setting 1 enables halt on hang.\n799:  */\n800: int halt_if_hws_hang;\n801: module_param_unsafe(halt_if_hws_hang, int, 0644);\n802: MODULE_PARM_DESC(halt_if_hws_hang, \"Halt if HWS hang is detected (0 = off (default), 1 = on)\");\n803: \n804: /**\n805:  * DOC: hws_gws_support(bool)\n806:  * Assume that HWS supports GWS barriers regardless of what firmware version\n807:  * check says. Default value: false (rely on MEC2 firmware version check).\n808:  */\n809: bool hws_gws_support;\n810: module_param_unsafe(hws_gws_support, bool, 0444);\n811: MODULE_PARM_DESC(hws_gws_support, \"Assume MEC2 FW supports GWS barriers (false = rely on FW version check (Default), true = force supported)\");\n812: \n813: /**\n814:  * DOC: queue_preemption_timeout_ms (int)\n815:  * queue preemption timeout in ms (1 = Minimum, 9000 = default)\n816:  */\n817: int queue_preemption_timeout_ms = 9000;\n818: module_param(queue_preemption_timeout_ms, int, 0644);\n819: MODULE_PARM_DESC(queue_preemption_timeout_ms, \"queue preemption timeout in ms (1 = Minimum, 9000 = default)\");"
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdgpu/amdgpu_drv.c",
+        "bytes": 110359,
+        "sha256": "c32f431422407da63f165e037f0395c5274198f4466e3a3e884b60b3abf59ef0"
+      },
+      "matches_installed_package_source": false,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 8,
+      "CONFIG_AMDKCL_symbols": [
+        "CONFIG_DRM_AMDGPU_CIK_AMDKCL",
+        "CONFIG_DRM_AMDGPU_SI_AMDKCL",
+        "CONFIG_HSA_AMD_AMDKCL"
+      ]
+    },
+    "amdgpu/amdgpu_amdkfd.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdgpu/amdgpu_amdkfd.c",
+      "bytes": 25578,
+      "sha256": "fd04dea58d23f4590235da813e0de9f8738a2016b76e23beaf4ffa20ba993344",
+      "excerpts": [
+        {
+          "first_line": 178,
+          "last_line": 193,
+          "text": "178: \n179: \tif (adev->kfd.dev) {\n180: \t\tstruct kgd2kfd_shared_resources gpu_resources = {\n181: \t\t\t.compute_vmid_bitmap =\n182: \t\t\t\t((1 << AMDGPU_NUM_VMID) - 1) -\n183: \t\t\t\t((1 << adev->vm_manager.first_kfd_vmid) - 1),\n184: \t\t\t.num_pipe_per_mec = adev->gfx.mec.num_pipe_per_mec,\n185: \t\t\t.num_queue_per_pipe = adev->gfx.mec.num_queue_per_pipe,\n186: \t\t\t.gpuvm_size = min(adev->vm_manager.max_pfn\n187: \t\t\t\t\t  << AMDGPU_GPU_PAGE_SHIFT,\n188: \t\t\t\t\t  AMDGPU_GMC_HOLE_START),\n189: \t\t\t.drm_render_minor = adev_to_drm(adev)->render->index,\n190: \t\t\t.sdma_doorbell_idx = adev->doorbell_index.sdma_engine,\n191: \t\t\t.enable_mes = adev->enable_mes,\n192: \t\t};\n193: "
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdgpu/amdgpu_amdkfd.c",
+        "bytes": 25564,
+        "sha256": "d1b4aa219c237bf2eb24681dea053225f6b064beac762a0cc305d711061899af"
+      },
+      "matches_installed_package_source": false,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 2,
+      "CONFIG_AMDKCL_symbols": [
+        "CONFIG_HSA_AMD_AMDKCL"
+      ]
+    },
+    "amdgpu/gfx_v12_1.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdgpu/gfx_v12_1.c",
+      "bytes": 152322,
+      "sha256": "02df8d3da1e580401ec33ed2a7bfdf65427b91debad9103123f398fcd8d01cc9",
+      "excerpts": [
+        {
+          "first_line": 1939,
+          "last_line": 1953,
+          "text": "1939: static void gfx_v12_1_xcc_init_sh_mem_config(struct amdgpu_device *adev,\n1940: \t\t\t\t\t     int xcc_id)\n1941: {\n1942: \tu32 sh_mem_config;\n1943: \n1944: \tsh_mem_config = RREG32_SOC15(GC, GET_INST(GC, xcc_id), regSH_MEM_CONFIG);\n1945: \t/* XXX temporary: confirm RLC programmed RETRY_DISABLE before driver init */\n1946: \tpr_info(\"gfx_v12_1: xcc %d SH_MEM_CONFIG=0x%08x retry_disable=%u\\n\",\n1947: \t\txcc_id, sh_mem_config,\n1948: \t\tREG_GET_FIELD(sh_mem_config, SH_MEM_CONFIG, RETRY_DISABLE));\n1949: \tsh_mem_config &= SH_MEM_CONFIG__RETRY_DISABLE_MASK;\n1950: \tsh_mem_config |= DEFAULT_SH_MEM_CONFIG & ~SH_MEM_CONFIG__RETRY_DISABLE_MASK;\n1951: \n1952: \tWREG32_SOC15(GC, GET_INST(GC, xcc_id), regSH_MEM_CONFIG, sh_mem_config);\n1953: }"
+        },
+        {
+          "first_line": 1972,
+          "last_line": 2004,
+          "text": "1972: \tmutex_lock(&adev->srbm_mutex);\n1973: \tfor (i = adev->vm_manager.first_kfd_vmid; i < AMDGPU_NUM_VMID; i++) {\n1974: \t\tsoc_v1_0_grbm_select(adev, 0, 0, 0, i, GET_INST(GC, xcc_id));\n1975: \t\t/* CP and shaders */\n1976: \t\tgfx_v12_1_xcc_init_sh_mem_config(adev, xcc_id);\n1977: \t\tWREG32_SOC15(GC, GET_INST(GC, xcc_id), regSH_MEM_BASES, sh_mem_bases);\n1978: \n1979: \t\t/* Enable trap for each kfd vmid. */\n1980: \t\tdata = RREG32_SOC15(GC, GET_INST(GC, xcc_id), regSPI_GDBG_PER_VMID_CNTL);\n1981: \t\tdata = REG_SET_FIELD(data, SPI_GDBG_PER_VMID_CNTL, TRAP_EN, 1);\n1982: \t\tWREG32_SOC15(GC, GET_INST(GC, xcc_id), regSPI_GDBG_PER_VMID_CNTL, data);\n1983: \n1984: \t\t/* Disable VGPR deallocation instruction for each KFD vmid. */\n1985: \t\tdata = RREG32_SOC15(GC, GET_INST(GC, xcc_id), regSQ_DEBUG);\n1986: \t\tdata = REG_SET_FIELD(data, SQ_DEBUG, DISABLE_VGPR_DEALLOC, 1);\n1987: \t\tWREG32_SOC15(GC, GET_INST(GC, xcc_id), regSQ_DEBUG, data);\n1988: \t}\n1989: \tsoc_v1_0_grbm_select(adev, 0, 0, 0, 0, GET_INST(GC, xcc_id));\n1990: \tmutex_unlock(&adev->srbm_mutex);\n1991: }\n1992: \n1993: static void gfx_v12_1_xcc_xnack_set_chicken_bits(struct amdgpu_device *adev, int xcc_id)\n1994: {\n1995: \t/* NOTE: COMPRESSION_ENABLE is used a chicken bit to enable/disable xcc xnack */\n1996: \tmutex_lock(&adev->srbm_mutex);\n1997: \tif (!adev->gmc.noretry) {\n1998: \t\tWREG32_FIELD15_PREREG(GC, GET_INST(GC, xcc_id),\n1999: \t\t\t\t      TCP_PERFCOUNTER_FILTER, COMPRESSION_ENABLE, 0x1);\n2000: \t} else\n2001: \t\tWREG32_FIELD15_PREREG(GC, GET_INST(GC, xcc_id),\n2002: \t\t\t\t      TCP_PERFCOUNTER_FILTER, COMPRESSION_ENABLE, 0x0);\n2003: \tmutex_unlock(&adev->srbm_mutex);\n2004: }"
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdgpu/gfx_v12_1.c",
+        "bytes": 152322,
+        "sha256": "02df8d3da1e580401ec33ed2a7bfdf65427b91debad9103123f398fcd8d01cc9"
+      },
+      "matches_installed_package_source": true,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 0,
+      "CONFIG_AMDKCL_symbols": []
+    },
+    "amdgpu/mes_v12_1.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdgpu/mes_v12_1.c",
+      "bytes": 65953,
+      "sha256": "7652f4d308573e6d4ae901604b3d28c63732e0d1cf3783f9781c800416d48a2b",
+      "excerpts": [
+        {
+          "first_line": 151,
+          "last_line": 177,
+          "text": "151: static int mes_v12_1_submit_pkt_and_poll_completion(struct amdgpu_mes *mes,\n152: \t\t\t\t\t    int xcc_id, int pipe, void *pkt,\n153: \t\t\t\t\t    int size, int api_status_off)\n154: {\n155: \tunion MESAPI__QUERY_MES_STATUS mes_status_pkt;\n156: \tsigned long timeout = 2100000; /* 2100 ms */\n157: \tstruct amdgpu_device *adev = mes->adev;\n158: \tstruct amdgpu_ring *ring = &mes->ring[MES_PIPE_INST(xcc_id, pipe)];\n159: \tspinlock_t *ring_lock = &mes->ring_lock[MES_PIPE_INST(xcc_id, pipe)];\n160: \tstruct MES_API_STATUS *api_status;\n161: \tunion MESAPI__MISC *x_pkt = pkt;\n162: \tconst char *op_str, *misc_op_str;\n163: \tunsigned long flags;\n164: \tu64 status_gpu_addr;\n165: \tu32 seq, status_offset;\n166: \tu64 *status_ptr;\n167: \tsigned long r;\n168: \tint ret;\n169: \n170: \tif (x_pkt->header.opcode >= MES_SCH_API_MAX)\n171: \t\treturn -EINVAL;\n172: \n173: \tif (amdgpu_emu_mode) {\n174: \t\ttimeout = 3000000L * 1000;\n175: \t} else if (amdgpu_sriov_vf(adev)) {\n176: \t\t/* Worst case in sriov where all other 15 VF timeout, each VF needs about 600ms */\n177: \t\ttimeout = 15 * 600 * 1000;"
+        },
+        {
+          "first_line": 193,
+          "last_line": 238,
+          "text": "193: \tseq = ++ring->fence_drv.sync_seq;\n194: \tr = amdgpu_fence_wait_polling(ring,\n195: \t\t\t\t      seq - ring->fence_drv.num_fences_mask,\n196: \t\t\t\t      timeout);\n197: \tif (r < 1)\n198: \t\tgoto error_undo;\n199: \n200: \tapi_status = (struct MES_API_STATUS *)((char *)pkt + api_status_off);\n201: \tapi_status->api_completion_fence_addr = status_gpu_addr;\n202: \tapi_status->api_completion_fence_value = 1;\n203: \n204: \tamdgpu_ring_write_multiple(ring, pkt, size / 4);\n205: \n206: \tmemset(&mes_status_pkt, 0, sizeof(mes_status_pkt));\n207: \tmes_status_pkt.header.type = MES_API_TYPE_SCHEDULER;\n208: \tmes_status_pkt.header.opcode = MES_SCH_API_QUERY_SCHEDULER_STATUS;\n209: \tmes_status_pkt.header.dwsize = API_FRAME_SIZE_IN_DWORDS;\n210: \tmes_status_pkt.api_status.api_completion_fence_addr =\n211: \t\tring->fence_drv.gpu_addr;\n212: \tmes_status_pkt.api_status.api_completion_fence_value = seq;\n213: \n214: \tamdgpu_ring_write_multiple(ring, &mes_status_pkt,\n215: \t\t\t\t   sizeof(mes_status_pkt) / 4);\n216: \n217: \tamdgpu_ring_commit(ring);\n218: \tspin_unlock_irqrestore(ring_lock, flags);\n219: \n220: \top_str = mes_v12_1_get_op_string(x_pkt);\n221: \tmisc_op_str = mes_v12_1_get_misc_op_string(x_pkt);\n222: \n223: \tif (misc_op_str)\n224: \t\tdev_dbg(adev->dev, \"MES(%d, %d) msg=%s (%s) was emitted\\n\",\n225: \t\t\txcc_id, pipe, op_str, misc_op_str);\n226: \telse if (op_str)\n227: \t\tdev_dbg(adev->dev, \"MES(%d, %d) msg=%s was emitted\\n\",\n228: \t\t\txcc_id, pipe, op_str);\n229: \telse\n230: \t\tdev_dbg(adev->dev, \"MES(%d, %d) msg=%d was emitted\\n\",\n231: \t\t\txcc_id, pipe, x_pkt->header.opcode);\n232: \n233: \tif (adev->emu_flags & AMDGPU_EMU_GOPHER)\n234: \t\tr = amdgpu_emu_fence_wait_polling(ring, seq, timeout);\n235: \telse\n236: \t\tr = amdgpu_fence_wait_polling(ring, seq, timeout);\n237: \tif (r < 1 || !lower_32_bits(*status_ptr)) {\n238: \t\tif (misc_op_str)"
+        },
+        {
+          "first_line": 348,
+          "last_line": 370,
+          "text": "348: static int mes_v12_1_remove_hw_queue(struct amdgpu_mes *mes,\n349: \t\t\t\t     struct mes_remove_queue_input *input)\n350: {\n351: \tunion MESAPI__REMOVE_QUEUE mes_remove_queue_pkt;\n352: \tint xcc_id = input->xcc_id;\n353: \n354: \tif (mes->enable_coop_mode)\n355: \t\txcc_id = mes->master_xcc_ids[xcc_id];\n356: \n357: \tmemset(&mes_remove_queue_pkt, 0, sizeof(mes_remove_queue_pkt));\n358: \n359: \tmes_remove_queue_pkt.header.type = MES_API_TYPE_SCHEDULER;\n360: \tmes_remove_queue_pkt.header.opcode = MES_SCH_API_REMOVE_QUEUE;\n361: \tmes_remove_queue_pkt.header.dwsize = API_FRAME_SIZE_IN_DWORDS;\n362: \n363: \tmes_remove_queue_pkt.doorbell_offset = input->doorbell_offset;\n364: \tmes_remove_queue_pkt.gang_context_addr = input->gang_context_addr;\n365: \tmes_remove_queue_pkt.queue_type =\n366: \t\tconvert_to_mes_queue_type(input->queue_type);\n367: \n368: \treturn mes_v12_1_submit_pkt_and_poll_completion(mes,\n369: \t\t\txcc_id, AMDGPU_MES_SCHED_PIPE,\n370: \t\t\t&mes_remove_queue_pkt, sizeof(mes_remove_queue_pkt),"
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdgpu/mes_v12_1.c",
+        "bytes": 65953,
+        "sha256": "7652f4d308573e6d4ae901604b3d28c63732e0d1cf3783f9781c800416d48a2b"
+      },
+      "matches_installed_package_source": true,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 0,
+      "CONFIG_AMDKCL_symbols": []
+    },
+    "amdkfd/kfd_priv.h": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_priv.h",
+      "bytes": 56838,
+      "sha256": "f455ee91cf77e1a8748044b414ce54368c4e27b8f46fa07e38a63c3713c1e068",
+      "excerpts": [
+        {
+          "first_line": 240,
+          "last_line": 247,
+          "text": "240: #define KFD_GC_VERSION(dev) (amdgpu_ip_version((dev)->adev, GC_HWIP, 0))\n241: #define KFD_IS_SOC15(dev)   ((KFD_GC_VERSION(dev)) >= (IP_VERSION(9, 0, 1)))\n242: #define KFD_SUPPORT_XNACK_PER_PROCESS(dev)\\\n243: \t((KFD_GC_VERSION(dev) == IP_VERSION(9, 4, 2)) ||\t\\\n244: \t (KFD_GC_VERSION(dev) == IP_VERSION(9, 4, 3)) ||\t\\\n245: \t (KFD_GC_VERSION(dev) == IP_VERSION(9, 4, 4)) ||\t\\\n246: \t (KFD_GC_VERSION(dev) == IP_VERSION(9, 5, 0)))\n247: "
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_priv.h",
+        "bytes": 56838,
+        "sha256": "f455ee91cf77e1a8748044b414ce54368c4e27b8f46fa07e38a63c3713c1e068"
+      },
+      "matches_installed_package_source": true,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 0,
+      "CONFIG_AMDKCL_symbols": []
+    },
+    "amdkfd/kfd_device.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_device.c",
+      "bytes": 51308,
+      "sha256": "5b14d36842461ad509977b28598e41b787aa83137a404da7ebb88f846e2040eb",
+      "excerpts": [
+        {
+          "first_line": 193,
+          "last_line": 213,
+          "text": "193: static void kfd_device_info_init(struct kfd_dev *kfd,\n194: \t\t\t\t bool vf, uint32_t gfx_target_version)\n195: {\n196: \tuint32_t gc_version = KFD_GC_VERSION(kfd);\n197: \tuint32_t asic_type = kfd->adev->asic_type;\n198: \n199: \tkfd->device_info.max_pasid_bits = 16;\n200: \tkfd->device_info.max_no_of_hqd = 24;\n201: \tkfd->device_info.num_of_watch_points = 4;\n202: \tkfd->device_info.mqd_size_aligned = MQD_SIZE_ALIGNED;\n203: \tkfd->device_info.gfx_target_version = gfx_target_version;\n204: \n205: \tif (KFD_IS_SOC15(kfd)) {\n206: \t\tkfd->device_info.doorbell_size = 8;\n207: \t\tkfd->device_info.ih_ring_entry_size = 8 * sizeof(uint32_t);\n208: \t\tkfd->device_info.supports_cwsr = true;\n209: \n210: \t\tkfd_device_info_set_sdma_info(kfd);\n211: \n212: \t\tkfd_device_info_set_event_interrupt_class(kfd);\n213: "
+        },
+        {
+          "first_line": 513,
+          "last_line": 578,
+          "text": "513: static void kfd_cwsr_init(struct kfd_dev *kfd)\n514: {\n515: \tif (cwsr_enable && kfd->device_info.supports_cwsr) {\n516: \t\tif (KFD_GC_VERSION(kfd) < IP_VERSION(9, 0, 1)) {\n517: \t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx8_hex)\n518: \t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);\n519: \t\t\tkfd->cwsr_isa = cwsr_trap_gfx8_hex;\n520: \t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx8_hex);\n521: \t\t} else if (KFD_GC_VERSION(kfd) == IP_VERSION(9, 4, 1)) {\n522: \t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_arcturus_hex)\n523: \t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);\n524: \t\t\tkfd->cwsr_isa = cwsr_trap_arcturus_hex;\n525: \t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_arcturus_hex);\n526: \t\t} else if (KFD_GC_VERSION(kfd) == IP_VERSION(9, 4, 2)) {\n527: \t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_aldebaran_hex)\n528: \t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);\n529: \t\t\tkfd->cwsr_isa = cwsr_trap_aldebaran_hex;\n530: \t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_aldebaran_hex);\n531: \t\t} else if (KFD_GC_VERSION(kfd) == IP_VERSION(9, 4, 3) ||\n532: \t\t\t   KFD_GC_VERSION(kfd) == IP_VERSION(9, 4, 4)) {\n533: \t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx9_4_3_hex)\n534: \t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);\n535: \t\t\tkfd->cwsr_isa = cwsr_trap_gfx9_4_3_hex;\n536: \t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx9_4_3_hex);\n537: \t\t} else if (KFD_GC_VERSION(kfd) == IP_VERSION(9, 5, 0)) {\n538: \t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx9_5_0_hex) > PAGE_SIZE);\n539: \t\t\tkfd->cwsr_isa = cwsr_trap_gfx9_5_0_hex;\n540: \t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx9_5_0_hex);\n541: \t\t} else if (KFD_GC_VERSION(kfd) < IP_VERSION(10, 1, 1)) {\n542: \t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx9_hex)\n543: \t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);\n544: \t\t\tkfd->cwsr_isa = cwsr_trap_gfx9_hex;\n545: \t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx9_hex);\n546: \t\t} else if (KFD_GC_VERSION(kfd) < IP_VERSION(10, 3, 0)) {\n547: \t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_nv1x_hex)\n548: \t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);\n549: \t\t\tkfd->cwsr_isa = cwsr_trap_nv1x_hex;\n550: \t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_nv1x_hex);\n551: \t\t} else if (KFD_GC_VERSION(kfd) < IP_VERSION(11, 0, 0)) {\n552: \t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx10_hex)\n553: \t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);\n554: \t\t\tkfd->cwsr_isa = cwsr_trap_gfx10_hex;\n555: \t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx10_hex);\n556: \t\t} else if (KFD_GC_VERSION(kfd) < IP_VERSION(12, 0, 0)) {\n557: \t\t\t/* The gfx11 cwsr trap handler must fit inside a single\n558: \t\t\t   page. */\n559: \t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx11_hex) > PAGE_SIZE);\n560: \t\t\tkfd->cwsr_isa = cwsr_trap_gfx11_hex;\n561: \t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx11_hex);\n562: \t\t} else if (KFD_GC_VERSION(kfd) < IP_VERSION(12, 1, 0)) {\n563: \t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx12_hex)\n564: \t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);\n565: \t\t\tkfd->cwsr_isa = cwsr_trap_gfx12_hex;\n566: \t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx12_hex);\n567: \t\t} else {\n568: \t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx12_1_0_hex)\n569: \t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);\n570: \t\t\tkfd->cwsr_isa = cwsr_trap_gfx12_1_0_hex;\n571: \t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx12_1_0_hex);\n572: \t\t}\n573: \n574: \t\tkfd->cwsr_enabled = true;\n575: \t}\n576: }\n577: \n578: static int kfd_gws_init(struct kfd_node *node)"
+        },
+        {
+          "first_line": 794,
+          "last_line": 837,
+          "text": "794: \tfirst_vmid_kfd = ffs(gpu_resources->compute_vmid_bitmap)-1;\n795: \tlast_vmid_kfd = fls(gpu_resources->compute_vmid_bitmap)-1;\n796: \tvmid_num_kfd = last_vmid_kfd - first_vmid_kfd + 1;\n797: \n798: \t/* For multi-partition capable GPUs, we need special handling for VMIDs\n799: \t * depending on partition mode.\n800: \t * In CPX mode, the VMID range needs to be shared between XCDs.\n801: \t * Additionally, there are 13 VMIDs (3-15) available for KFD. To\n802: \t * divide them equally, we change starting VMID to 4 and not use\n803: \t * VMID 3.\n804: \t * If the VMID range changes for multi-partition capable GPUs, then\n805: \t * this code MUST be revisited.\n806: \t */\n807: \tif (kfd->adev->xcp_mgr && (KFD_GC_VERSION(kfd) != IP_VERSION(12, 1, 0))) {\n808: \t\tpartition_mode = amdgpu_xcp_query_partition_mode(kfd->adev->xcp_mgr,\n809: \t\t\t\t\t\t\t\t AMDGPU_XCP_FL_LOCKED);\n810: \t\tif (partition_mode == AMDGPU_CPX_PARTITION_MODE &&\n811: \t\t    kfd->num_nodes != 1) {\n812: \t\t\tvmid_num_kfd /= 2;\n813: \t\t\tfirst_vmid_kfd = last_vmid_kfd + 1 - vmid_num_kfd*2;\n814: \t\t}\n815: \t}\n816: \n817: \t/* Verify module parameters regarding mapped process number*/\n818: \tif (hws_max_conc_proc >= 0)\n819: \t\tmax_proc_per_quantum = min((u32)hws_max_conc_proc, vmid_num_kfd);\n820: \telse\n821: \t\tmax_proc_per_quantum = vmid_num_kfd;\n822: \n823: \t/* calculate max size of mqds needed for queues */\n824: \tsize = max_num_of_queues_per_device *\n825: \t\t\tkfd->device_info.mqd_size_aligned;\n826: \n827: \t/*\n828: \t * calculate max size of runlist packet.\n829: \t * There can be only 2 packets at once\n830: \t */\n831: \tmap_process_packet_size = KFD_GC_VERSION(kfd) == IP_VERSION(9, 4, 2) ?\n832: \t\t\t\tsizeof(struct pm4_mes_map_process_aldebaran) :\n833: \t\t\t\tsizeof(struct pm4_mes_map_process);\n834: \tsize += (KFD_MAX_NUM_OF_PROCESSES * map_process_packet_size +\n835: \t\tmax_num_of_queues_per_device * sizeof(struct pm4_mes_map_queues)\n836: \t\t+ sizeof(struct pm4_mes_runlist)) * 2;\n837: "
+        },
+        {
+          "first_line": 875,
+          "last_line": 883,
+          "text": "875: \t */\n876: \tif (!kfd->hive_id && kfd->num_nodes > 1)\n877: \t\tkfd->hive_id = pci_dev_id(kfd->adev->pdev);\n878: \n879: \tkfd->noretry = kfd->adev->gmc.noretry;\n880: \n881: \tkfd_cwsr_init(kfd);\n882: \n883: \tdev_info(kfd_device, \"Total number of KFD nodes to be created: %d\\n\","
+        },
+        {
+          "first_line": 932,
+          "last_line": 944,
+          "text": "932: \t\t\t\t((0x1 << (node->vm_info.first_vmid_kfd)) - 1);\n933: \t\t} else {\n934: \t\t\tnode->vm_info.first_vmid_kfd = first_vmid_kfd;\n935: \t\t\tnode->vm_info.last_vmid_kfd = last_vmid_kfd;\n936: \t\t\tnode->compute_vmid_bitmap =\n937: \t\t\t\tgpu_resources->compute_vmid_bitmap;\n938: \t\t}\n939: \n940: \t\tnode->max_proc_per_quantum = max_proc_per_quantum;\n941: \t\tatomic_set(&node->sram_ecc_flag, 0);\n942: \n943: \t\tamdgpu_amdkfd_get_local_mem_info(kfd->adev,\n944: \t\t\t\t\t&node->local_mem_info, node->xcp);"
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_device.c",
+        "bytes": 51287,
+        "sha256": "7729b41821a7e24448e900b9ab677d7f9d4d8a1fd1ed4dec1f3f001f8f591d23"
+      },
+      "matches_installed_package_source": false,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 3,
+      "CONFIG_AMDKCL_symbols": [
+        "CONFIG_DRM_AMDGPU_CIK_AMDKCL"
+      ]
+    },
+    "amdkfd/kfd_process.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_process.c",
+      "bytes": 73019,
+      "sha256": "bd6dd04b51d7ba0f4ef1c4a696ef8023e41129daa4e32638044a5f7426c32f5d",
+      "excerpts": [
+        {
+          "first_line": 1674,
+          "last_line": 1727,
+          "text": "1674: bool kfd_process_xnack_mode(struct kfd_process *p, bool supported)\n1675: {\n1676: \tint i;\n1677: \n1678: \t/* On most GFXv9 GPUs, the retry mode in the SQ must match the\n1679: \t * boot time retry setting. Mixing processes with different\n1680: \t * XNACK/retry settings can hang the GPU.\n1681: \t *\n1682: \t * Different GPUs can have different noretry settings depending\n1683: \t * on HW bugs or limitations. We need to find at least one\n1684: \t * XNACK mode for this process that's compatible with all GPUs.\n1685: \t * Fortunately GPUs with retry enabled (noretry=0) can run code\n1686: \t * built for XNACK-off. On GFXv9 it may perform slower.\n1687: \t *\n1688: \t * Therefore applications built for XNACK-off can always be\n1689: \t * supported and will be our fallback if any GPU does not\n1690: \t * support retry.\n1691: \t */\n1692: \tfor (i = 0; i < p->n_pdds; i++) {\n1693: \t\tstruct kfd_node *dev = p->pdds[i]->dev;\n1694: \n1695: \t\t/* Only consider GFXv9 and higher GPUs. Older GPUs don't\n1696: \t\t * support the SVM APIs and don't need to be considered\n1697: \t\t * for the XNACK mode selection.\n1698: \t\t */\n1699: \t\tif (!KFD_IS_SOC15(dev))\n1700: \t\t\tcontinue;\n1701: \t\t/* Aldebaran can always support XNACK because it can support\n1702: \t\t * per-process XNACK mode selection. But let the dev->noretry\n1703: \t\t * setting still influence the default XNACK mode.\n1704: \t\t */\n1705: \t\tif (supported && KFD_SUPPORT_XNACK_PER_PROCESS(dev)) {\n1706: \t\t\tif (!amdgpu_sriov_xnack_support(dev->kfd->adev)) {\n1707: \t\t\t\tpr_debug(\"SRIOV platform xnack not supported\\n\");\n1708: \t\t\t\treturn false;\n1709: \t\t\t}\n1710: \t\t\tcontinue;\n1711: \t\t}\n1712: \n1713: \t\t/* GFXv10 and later GPUs do not support shader preemption\n1714: \t\t * during page faults. This can lead to poor QoS for queue\n1715: \t\t * management and memory-manager-related preemptions or\n1716: \t\t * even deadlocks.\n1717: \t\t */\n1718: \t\tif (KFD_GC_VERSION(dev) >= IP_VERSION(10, 1, 1) &&\n1719: \t\t    KFD_GC_VERSION(dev) < IP_VERSION(12, 1, 0))\n1720: \t\t\treturn false;\n1721: \n1722: \t\tif (dev->kfd->noretry)\n1723: \t\t\treturn false;\n1724: \t}\n1725: \n1726: \treturn true;\n1727: }"
+        },
+        {
+          "first_line": 1803,
+          "last_line": 1813,
+          "text": "1803: \t/* init process apertures*/\n1804: \terr = kfd_init_apertures(process);\n1805: \tif (err != 0)\n1806: \t\tgoto err_init_apertures;\n1807: \n1808: \t/* Check XNACK support after PDDs are created in kfd_init_apertures */\n1809: \tprocess->xnack_enabled = kfd_process_xnack_mode(process, false);\n1810: \n1811: \terr = svm_range_list_init(process);\n1812: \tif (err)\n1813: \t\tgoto err_init_svm_range_list;"
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_process.c",
+        "bytes": 73019,
+        "sha256": "bd6dd04b51d7ba0f4ef1c4a696ef8023e41129daa4e32638044a5f7426c32f5d"
+      },
+      "matches_installed_package_source": true,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 0,
+      "CONFIG_AMDKCL_symbols": []
+    },
+    "amdkfd/kfd_chardev.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_chardev.c",
+      "bytes": 108604,
+      "sha256": "a4af092cc90bbce4338e6fb6cba4d4c338a43fdf45922a05d0baa9a22b94f67c",
+      "excerpts": [
+        {
+          "first_line": 1815,
+          "last_line": 1850,
+          "text": "1815: \n1816: #if IS_ENABLED(CONFIG_HSA_AMD_SVM_AMDKCL)\n1817: \n1818: static int kfd_ioctl_set_xnack_mode(struct file *filep,\n1819: \t\t\t\t    struct kfd_process *p, void *data)\n1820: {\n1821: \tstruct kfd_ioctl_set_xnack_mode_args *args = data;\n1822: \tint r = 0;\n1823: \n1824: \tmutex_lock(&p->mutex);\n1825: \tif (args->xnack_enabled >= 0) {\n1826: \t\tif (!list_empty(&p->pqm.queues)) {\n1827: \t\t\tpr_debug(\"Process has user queues running\\n\");\n1828: \t\t\tr = -EBUSY;\n1829: \t\t\tgoto out_unlock;\n1830: \t\t}\n1831: \n1832: \t\tif (p->xnack_enabled == args->xnack_enabled)\n1833: \t\t\tgoto out_unlock;\n1834: \n1835: \t\tif (args->xnack_enabled && !kfd_process_xnack_mode(p, true)) {\n1836: \t\t\tr = -EPERM;\n1837: \t\t\tgoto out_unlock;\n1838: \t\t}\n1839: \n1840: \t\tr = svm_range_switch_xnack_reserve_mem(p, args->xnack_enabled);\n1841: \t} else {\n1842: \t\targs->xnack_enabled = p->xnack_enabled;\n1843: \t}\n1844: \n1845: out_unlock:\n1846: \tmutex_unlock(&p->mutex);\n1847: \n1848: \treturn r;\n1849: }\n1850: "
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_chardev.c",
+        "bytes": 108590,
+        "sha256": "cc24a322c1e32de97fa46c5d0bf29c5b88d8ad2a6ec0f111e025e4debb8c1c97"
+      },
+      "matches_installed_package_source": false,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 2,
+      "CONFIG_AMDKCL_symbols": [
+        "CONFIG_HSA_AMD_SVM_AMDKCL"
+      ]
+    },
+    "amdkfd/kfd_device_queue_manager_v12_1.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_device_queue_manager_v12_1.c",
+      "bytes": 3554,
+      "sha256": "6ae448b61f23b4fda2e684aa5df4b0b1b0f080a875a3fd880434d697daf3cd58",
+      "excerpts": [
+        {
+          "first_line": 51,
+          "last_line": 96,
+          "text": "51: static int update_qpd_v12_1(struct device_queue_manager *dqm,\n52: \t\t\t struct qcm_process_device *qpd)\n53: {\n54: \tstruct kfd_process_device *pdd;\n55: \tstruct amdgpu_device *adev = dqm->dev->adev;\n56: \tstruct amdgpu_vmhub *hub = &adev->vmhub[AMDGPU_GFXHUB(0)];\n57: \tbool xnack_enabled;\n58: \n59: \tpdd = qpd_to_pdd(qpd);\n60: \tqpd->vm_cntx_cntl = hub->vm_cntx_cntl;\n61: \n62: \t/* check if sh_mem_config register already configured */\n63: \tif (qpd->sh_mem_config == 0) {\n64: \t\tqpd->sh_mem_config =\n65: \t\t\t(SH_MEM_ALIGNMENT_MODE_UNALIGNED <<\n66: \t\t\t\tSH_MEM_CONFIG__ALIGNMENT_MODE__SHIFT) |\n67: \t\t\t(3 << SH_MEM_CONFIG__INITIAL_INST_PREFETCH__SHIFT);\n68: \n69: \t\tqpd->sh_mem_config |=\n70: \t\t\t(1 << SH_MEM_CONFIG__F8_MODE__SHIFT);\n71: \t\tqpd->sh_mem_ape1_limit = 0;\n72: \t\tqpd->sh_mem_ape1_base = 0;\n73: \t}\n74: \n75: \txnack_enabled = KFD_SUPPORT_XNACK_PER_PROCESS(dqm->dev) ?\n76: \t\t\tpdd->process->xnack_enabled :\n77: \t\t\t!pdd->dev->kfd->noretry;\n78: \n79: \tif (!xnack_enabled) {\n80: \t\tqpd->sh_mem_config |= 1 << SH_MEM_CONFIG__RETRY_DISABLE__SHIFT;\n81: \t\tqpd->vm_cntx_cntl &=\n82: \t\t\t~(1 << GCVM_CONTEXT0_CNTL__RETRY_PERMISSION_OR_INVALID_PAGE_FAULT__SHIFT);\n83: \t} else {\n84: \t\tqpd->sh_mem_config &= ~(1 << SH_MEM_CONFIG__RETRY_DISABLE__SHIFT);\n85: \t\tqpd->vm_cntx_cntl |=\n86: \t\t\t(1 << GCVM_CONTEXT0_CNTL__RETRY_PERMISSION_OR_INVALID_PAGE_FAULT__SHIFT);\n87: \t}\n88: \n89: \tqpd->sh_mem_bases = compute_sh_mem_bases_64bit(pdd);\n90: \n91: \tpr_debug(\"sh_mem_bases 0x%X\\n\", qpd->sh_mem_bases);\n92: \n93: \treturn 0;\n94: }\n95: \n96: static void init_sdma_vm_v12_1(struct device_queue_manager *dqm, struct queue *q,"
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_device_queue_manager_v12_1.c",
+        "bytes": 3554,
+        "sha256": "6ae448b61f23b4fda2e684aa5df4b0b1b0f080a875a3fd880434d697daf3cd58"
+      },
+      "matches_installed_package_source": true,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 0,
+      "CONFIG_AMDKCL_symbols": []
+    },
+    "amdkfd/kfd_device_queue_manager.h": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_device_queue_manager.h",
+      "bytes": 12986,
+      "sha256": "f29bebfd3a85f6e63a926607fa1c8d4c3ab1f9b1a7e37388c72be09b524aa6ce",
+      "excerpts": [
+        {
+          "first_line": 35,
+          "last_line": 39,
+          "text": "35: #define VMID_NUM 16\n36: \n37: #define KFD_MES_PROCESS_QUANTUM\t\t100000\n38: #define KFD_MES_GANG_QUANTUM\t\t10000\n39: "
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_device_queue_manager.h",
+        "bytes": 12986,
+        "sha256": "f29bebfd3a85f6e63a926607fa1c8d4c3ab1f9b1a7e37388c72be09b524aa6ce"
+      },
+      "matches_installed_package_source": true,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 0,
+      "CONFIG_AMDKCL_symbols": []
+    },
+    "amdkfd/kfd_device_queue_manager.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_device_queue_manager.c",
+      "bytes": 107788,
+      "sha256": "00026ea8ced3a0c29b25129a241d0c1b82eb72fe87def136dfea0bc5c488f2c3",
+      "excerpts": [
+        {
+          "first_line": 233,
+          "last_line": 305,
+          "text": "233: static int add_queue_mes(struct device_queue_manager *dqm, struct queue *q,\n234: \t\t\t struct qcm_process_device *qpd)\n235: {\n236: \tstruct amdgpu_device *adev = (struct amdgpu_device *)dqm->dev->adev;\n237: \tstruct kfd_process_device *pdd = qpd_to_pdd(qpd);\n238: \tstruct mes_add_queue_input queue_input;\n239: \tint r, queue_type;\n240: \tuint64_t wptr_addr_off;\n241: \n242: \tif (!dqm->sched_running || dqm->sched_halt)\n243: \t\treturn 0;\n244: \tif (!down_read_trylock(&adev->reset_domain->sem))\n245: \t\treturn -EIO;\n246: \n247: \tmemset(&queue_input, 0x0, sizeof(struct mes_add_queue_input));\n248: \tqueue_input.process_id = pdd->pasid;\n249: \tqueue_input.page_table_base_addr =  qpd->page_table_base;\n250: \tqueue_input.process_va_start = 0;\n251: \tqueue_input.process_va_end = adev->vm_manager.max_pfn - 1;\n252: \t/* MES unit for quantum is 100ns */\n253: \tqueue_input.process_quantum = KFD_MES_PROCESS_QUANTUM;  /* Equivalent to 10ms. */\n254: \tqueue_input.process_context_addr = pdd->proc_ctx_gpu_addr;\n255: \tqueue_input.gang_quantum = KFD_MES_GANG_QUANTUM; /* Equivalent to 1ms */\n256: \tqueue_input.gang_context_addr = q->gang_ctx_gpu_addr;\n257: \tqueue_input.inprocess_gang_priority = q->properties.priority;\n258: \tqueue_input.gang_global_priority_level =\n259: \t\t\t\t\tAMDGPU_MES_PRIORITY_LEVEL_NORMAL;\n260: \tqueue_input.doorbell_offset = q->properties.doorbell_off;\n261: \tqueue_input.mqd_addr = q->gart_mqd_addr;\n262: \tqueue_input.wptr_addr = (uint64_t)q->properties.write_ptr;\n263: \n264: \twptr_addr_off = (uint64_t)q->properties.write_ptr & (PAGE_SIZE - 1);\n265: \tqueue_input.wptr_mc_addr = amdgpu_bo_gpu_offset(q->properties.wptr_bo) + wptr_addr_off;\n266: \n267: \tqueue_input.is_kfd_process = 1;\n268: \tqueue_input.is_aql_queue = (q->properties.format == KFD_QUEUE_FORMAT_AQL);\n269: \tqueue_input.queue_size = q->properties.queue_size >> 2;\n270: \n271: \tqueue_input.paging = false;\n272: \tqueue_input.tba_addr = qpd->tba_addr;\n273: \tqueue_input.tma_addr = qpd->tma_addr;\n274: \tqueue_input.trap_en = !kfd_dbg_has_cwsr_workaround(q->device);\n275: \tqueue_input.skip_process_ctx_clear =\n276: \t\tqpd->pqm->process->runtime_info.runtime_state == DEBUG_RUNTIME_STATE_ENABLED &&\n277: \t\t\t\t\t\t(qpd->pqm->process->debug_trap_enabled ||\n278: \t\t\t\t\t\t kfd_dbg_has_ttmps_always_setup(q->device));\n279: \n280: \tqueue_type = convert_to_amdgpu_ring_type(q->properties.type);\n281: \tif (queue_type < 0) {\n282: \t\tdev_err(adev->dev, \"Queue type not supported with MES, queue:%d\\n\",\n283: \t\t\tq->properties.type);\n284: \t\tup_read(&adev->reset_domain->sem);\n285: \t\treturn -EINVAL;\n286: \t}\n287: \tqueue_input.queue_type = (uint32_t)queue_type;\n288: \n289: \tqueue_input.exclusively_scheduled = q->properties.is_gws;\n290: \tqueue_input.sh_mem_config_data = qpd->sh_mem_config;\n291: \tqueue_input.vm_cntx_cntl = qpd->vm_cntx_cntl;\n292: \tqueue_input.xcc_id = ffs(dqm->dev->xcc_mask) - 1;\n293: \n294: \tamdgpu_mes_lock(&adev->mes);\n295: \tr = adev->mes.funcs->add_hw_queue(&adev->mes, &queue_input);\n296: \tamdgpu_mes_unlock(&adev->mes);\n297: \tup_read(&adev->reset_domain->sem);\n298: \tif (r) {\n299: \t\tdev_err(adev->dev, \"failed to add hardware queue to MES, doorbell=0x%x\\n\",\n300: \t\t\tq->properties.doorbell_off);\n301: \t\tdev_err(adev->dev, \"MES might be in unrecoverable state, issue a GPU reset\\n\");\n302: \t\tkfd_hws_hang(dqm);\n303: \t}\n304: \n305: \treturn r;"
+        },
+        {
+          "first_line": 308,
+          "last_line": 352,
+          "text": "308: static int remove_queue_mes_on_reset_option(struct device_queue_manager *dqm, struct queue *q,\n309: \t\t\t\t\t    struct qcm_process_device *qpd,\n310: \t\t\t\t\t    bool is_for_reset,\n311: \t\t\t\t\t    bool flush_mes_queue)\n312: {\n313: \tstruct amdgpu_device *adev = (struct amdgpu_device *)dqm->dev->adev;\n314: \tint r;\n315: \tstruct mes_remove_queue_input queue_input;\n316: \n317: \t/* queue was already removed during reset */\n318: \tif (q->properties.is_reset)\n319: \t\treturn 0;\n320: \n321: \tif (!dqm->sched_running || dqm->sched_halt)\n322: \t\treturn 0;\n323: \tif (!down_read_trylock(&adev->reset_domain->sem))\n324: \t\treturn -EIO;\n325: \n326: \tmemset(&queue_input, 0x0, sizeof(struct mes_remove_queue_input));\n327: \tqueue_input.doorbell_offset = q->properties.doorbell_off;\n328: \tqueue_input.gang_context_addr = q->gang_ctx_gpu_addr;\n329: \tqueue_input.queue_type = convert_to_amdgpu_ring_type(q->properties.type);\n330: \tqueue_input.remove_queue_after_reset = flush_mes_queue;\n331: \tqueue_input.xcc_id = ffs(dqm->dev->xcc_mask) - 1;\n332: \n333: \tamdgpu_mes_lock(&adev->mes);\n334: \tr = adev->mes.funcs->remove_hw_queue(&adev->mes, &queue_input);\n335: \tamdgpu_mes_unlock(&adev->mes);\n336: \tup_read(&adev->reset_domain->sem);\n337: \n338: \t/* If is_for_reset set, it is a mes internal cleanup */\n339: \tif (!r || is_for_reset)\n340: \t\treturn r;\n341: \n342: \t/* remove_hw_queue failure indicates a queue hang. reset the queue */\n343: \tr = reset_queues_mes(dqm, q);\n344: \tif (r && amdgpu_gpu_recovery) {\n345: \t\tdev_err(adev->dev, \"failed to remove queue from MES, doorbell=0x%x\\n\",\n346: \t\t\tq->properties.doorbell_off);\n347: \t\tdev_err(adev->dev, \"MES might be in unrecoverable state, issue a GPU reset\\n\");\n348: \t\tkfd_hws_hang(dqm);\n349: \t}\n350: \n351: \treturn r;\n352: }"
+        },
+        {
+          "first_line": 452,
+          "last_line": 478,
+          "text": "452: {\n453: \tstruct amdgpu_device *adev = (struct amdgpu_device *)dqm->dev->adev;\n454: \tunsigned int num_hung = 0;\n455: \tint r = 0;\n456: \tstruct mes_remove_queue_input queue_input;\n457: \n458: \tif (!amdgpu_mes_queue_reset_by_mes_supported(adev)) {\n459: \t\tr = -ENOTRECOVERABLE;\n460: \t\tgoto fail;\n461: \t}\n462: \n463: \t/* reset should be used only in dqm locked queue reset */\n464: \tif (WARN_ON(dqm->detect_hang_count > 0))\n465: \t\treturn 0;\n466: \n467: \tif (!amdgpu_gpu_recovery) {\n468: \t\tr = -ENOTRECOVERABLE;\n469: \t\tgoto fail;\n470: \t}\n471: \n472: \tmemset(&queue_input, 0x0, sizeof(struct mes_remove_queue_input));\n473: \tqueue_input.doorbell_offset = q->properties.doorbell_off;\n474: \tqueue_input.gang_context_addr = q->gang_ctx_gpu_addr;\n475: \tqueue_input.queue_type = convert_to_amdgpu_ring_type(q->properties.type);\n476: \tqueue_input.remove_queue_after_reset = false;\n477: \tqueue_input.xcc_id = ffs(dqm->dev->xcc_mask) - 1;\n478: \t/* pass the known bad queue info to the reset function */"
+        },
+        {
+          "first_line": 2083,
+          "last_line": 2100,
+          "text": "2083: \n2084: \tif (!dqm->dev->kfd->shared_resources.enable_mes)\n2085: \t\tret = unmap_queues_cpsch(dqm, KFD_UNMAP_QUEUES_FILTER_ALL_QUEUES,\n2086: \t\t\t\t\t\t\t\t0, USE_DEFAULT_GRACE_PERIOD, false);\n2087: \telse\n2088: \t\tret = remove_all_kfd_queues_mes(dqm);\n2089: \n2090: \tdqm->sched_running = false;\n2091: \n2092: \tif (!dqm->dev->kfd->shared_resources.enable_mes)\n2093: \t\tpm_release_ib(&dqm->packet_mgr);\n2094: \n2095: \tkfd_gtt_sa_free(dqm->dev, dqm->fence_mem);\n2096: \tif (!dqm->dev->kfd->shared_resources.enable_mes)\n2097: \t\tpm_uninit(&dqm->packet_mgr);\n2098: \tkfree(dqm->detect_hang_info);\n2099: \tdqm->detect_hang_info = NULL;\n2100: \tkfree(dqm->hung_db_array);"
+        },
+        {
+          "first_line": 2157,
+          "last_line": 2175,
+          "text": "2157: \n2158: static int create_queue_cpsch(struct device_queue_manager *dqm, struct queue *q,\n2159: \t\t\tstruct qcm_process_device *qpd,\n2160: \t\t\tconst struct kfd_criu_queue_priv_data *qd,\n2161: \t\t\tconst void *restore_mqd, const void *restore_ctl_stack)\n2162: {\n2163: \tint retval;\n2164: \tstruct mqd_manager *mqd_mgr;\n2165: \n2166: \tif (dqm->total_queue_count >= max_num_of_queues_per_device) {\n2167: \t\tpr_warn(\"Can't create new usermode queue because %d queues were already created\\n\",\n2168: \t\t\t\tdqm->total_queue_count);\n2169: \t\tretval = -EPERM;\n2170: \t\tgoto out;\n2171: \t}\n2172: \n2173: \tif (q->properties.type == KFD_QUEUE_TYPE_SDMA ||\n2174: \t\tq->properties.type == KFD_QUEUE_TYPE_SDMA_XGMI ||\n2175: \t\tq->properties.type == KFD_QUEUE_TYPE_SDMA_BY_ENG_ID) {"
+        },
+        {
+          "first_line": 2554,
+          "last_line": 2573,
+          "text": "2554: static int reset_queues_on_hws_hang(struct device_queue_manager *dqm, bool is_sdma)\n2555: {\n2556: \tstruct amdgpu_device *adev = dqm->dev->adev;\n2557: \n2558: \twhile (halt_if_hws_hang)\n2559: \t\tschedule();\n2560: \n2561: \tif (adev->debug_disable_gpu_ring_reset) {\n2562: \t\tdev_info_once(adev->dev,\n2563: \t\t\t      \"%s queue hung, but ring reset disabled\",\n2564: \t\t\t      is_sdma ? \"sdma\" : \"compute\");\n2565: \n2566: \t\treturn -EPERM;\n2567: \t}\n2568: \tif (!amdgpu_gpu_recovery)\n2569: \t\treturn -ENOTRECOVERABLE;\n2570: \n2571: \treturn is_sdma ? reset_hung_queues_sdma(dqm) : reset_hung_queues(dqm);\n2572: }\n2573: "
+        },
+        {
+          "first_line": 2580,
+          "last_line": 2620,
+          "text": "2580:  *\n2581:  */\n2582: static int unmap_queues_cpsch(struct device_queue_manager *dqm,\n2583: \t\t\t\tenum kfd_unmap_queues_filter filter,\n2584: \t\t\t\tuint32_t filter_param,\n2585: \t\t\t\tuint32_t grace_period,\n2586: \t\t\t\tbool reset)\n2587: {\n2588: \tstruct device *dev = dqm->dev->adev->dev;\n2589: \tstruct mqd_manager *mqd_mgr;\n2590: \tint retval;\n2591: \n2592: \tif (!dqm->sched_running)\n2593: \t\treturn 0;\n2594: \tif (!dqm->active_runlist)\n2595: \t\treturn 0;\n2596: \tif (!down_read_trylock(&dqm->dev->adev->reset_domain->sem))\n2597: \t\treturn -EIO;\n2598: \n2599: \tif (grace_period != USE_DEFAULT_GRACE_PERIOD) {\n2600: \t\tretval = pm_config_dequeue_wait_counts(&dqm->packet_mgr,\n2601: \t\t\t\tKFD_DEQUEUE_WAIT_SET_SCH_WAVE, grace_period);\n2602: \t\tif (retval)\n2603: \t\t\tgoto out;\n2604: \t}\n2605: \tretval = pm_send_unmap_queue(&dqm->packet_mgr, filter, filter_param, reset);\n2606: \tif (retval)\n2607: \t\tgoto out;\n2608: \n2609: \t*dqm->fence_addr = KFD_FENCE_INIT;\n2610: \tmb();\n2611: \tpm_send_query_status(&dqm->packet_mgr, dqm->fence_gpu_addr,\n2612: \t\t\t\tKFD_FENCE_COMPLETED);\n2613: \t/* should be timed out */\n2614: \tretval = amdkfd_fence_wait_timeout(dqm, KFD_FENCE_COMPLETED,\n2615: \t\t\t\t\t   queue_preemption_timeout_ms);\n2616: \tif (retval) {\n2617: \t\tdev_err(dev, \"The cp might be in an unrecoverable state due to an unsuccessful queues preemption\\n\");\n2618: \t\tkfd_hws_hang(dqm);\n2619: \t\tgoto out;\n2620: \t}"
+        },
+        {
+          "first_line": 3144,
+          "last_line": 3220,
+          "text": "3144: \tstruct device_queue_manager *dqm;\n3145: \tint i;\n3146: \n3147: \tpr_debug(\"Loading device queue manager\\n\");\n3148: \n3149: \tdqm = kzalloc_obj(*dqm);\n3150: \tif (!dqm)\n3151: \t\treturn NULL;\n3152: \n3153: \tswitch (dev->adev->asic_type) {\n3154: \t/* HWS is not available on Hawaii. */\n3155: \tcase CHIP_HAWAII:\n3156: \t/* HWS depends on CWSR for timely dequeue. CWSR is not\n3157: \t * available on Tonga.\n3158: \t *\n3159: \t * FIXME: This argument also applies to Kaveri.\n3160: \t */\n3161: \tcase CHIP_TONGA:\n3162: \t\tdqm->sched_policy = KFD_SCHED_POLICY_NO_HWS;\n3163: \t\tbreak;\n3164: \tdefault:\n3165: \t\tdqm->sched_policy = sched_policy;\n3166: \t\tbreak;\n3167: \t}\n3168: \n3169: \tdqm->dev = dev;\n3170: \tswitch (dqm->sched_policy) {\n3171: \tcase KFD_SCHED_POLICY_HWS:\n3172: \tcase KFD_SCHED_POLICY_HWS_NO_OVERSUBSCRIPTION:\n3173: \t\t/* initialize dqm for cp scheduling */\n3174: \t\tdqm->ops.create_queue = create_queue_cpsch;\n3175: \t\tdqm->ops.initialize = initialize_cpsch;\n3176: \t\tdqm->ops.start = start_cpsch;\n3177: \t\tdqm->ops.stop = stop_cpsch;\n3178: \t\tdqm->ops.halt = halt_cpsch;\n3179: \t\tdqm->ops.unhalt = unhalt_cpsch;\n3180: \t\tdqm->ops.destroy_queue = destroy_queue_cpsch;\n3181: \t\tdqm->ops.update_queue = update_queue;\n3182: \t\tdqm->ops.register_process = register_process;\n3183: \t\tdqm->ops.unregister_process = unregister_process;\n3184: \t\tdqm->ops.uninitialize = uninitialize;\n3185: \t\tdqm->ops.create_kernel_queue = create_kernel_queue_cpsch;\n3186: \t\tdqm->ops.destroy_kernel_queue = destroy_kernel_queue_cpsch;\n3187: \t\tdqm->ops.set_cache_memory_policy = set_cache_memory_policy;\n3188: \t\tdqm->ops.process_termination = process_termination_cpsch;\n3189: \t\tdqm->ops.evict_process_queues = evict_process_queues_cpsch;\n3190: \t\tdqm->ops.restore_process_queues = restore_process_queues_cpsch;\n3191: \t\tdqm->ops.get_wave_state = get_wave_state;\n3192: \t\tdqm->ops.reset_queues = reset_queues_cpsch;\n3193: \t\tdqm->ops.get_queue_checkpoint_info = get_queue_checkpoint_info;\n3194: \t\tdqm->ops.checkpoint_mqd = checkpoint_mqd;\n3195: \t\tdqm->ops.set_perfcount = set_perfcount;\n3196: \t\tbreak;\n3197: \tcase KFD_SCHED_POLICY_NO_HWS:\n3198: \t\t/* initialize dqm for no cp scheduling */\n3199: \t\tdqm->ops.start = start_nocpsch;\n3200: \t\tdqm->ops.stop = stop_nocpsch;\n3201: \t\tdqm->ops.create_queue = create_queue_nocpsch;\n3202: \t\tdqm->ops.destroy_queue = destroy_queue_nocpsch;\n3203: \t\tdqm->ops.update_queue = update_queue;\n3204: \t\tdqm->ops.register_process = register_process;\n3205: \t\tdqm->ops.unregister_process = unregister_process;\n3206: \t\tdqm->ops.initialize = initialize_nocpsch;\n3207: \t\tdqm->ops.uninitialize = uninitialize;\n3208: \t\tdqm->ops.set_cache_memory_policy = set_cache_memory_policy;\n3209: \t\tdqm->ops.process_termination = process_termination_nocpsch;\n3210: \t\tdqm->ops.evict_process_queues = evict_process_queues_nocpsch;\n3211: \t\tdqm->ops.restore_process_queues =\n3212: \t\t\trestore_process_queues_nocpsch;\n3213: \t\tdqm->ops.get_wave_state = get_wave_state;\n3214: \t\tdqm->ops.get_queue_checkpoint_info = get_queue_checkpoint_info;\n3215: \t\tdqm->ops.checkpoint_mqd = checkpoint_mqd;\n3216: \t\tdqm->ops.set_perfcount = set_perfcount;\n3217: \t\tbreak;\n3218: \tdefault:\n3219: \t\tdev_err(dev->adev->dev, \"Invalid scheduling policy %d\\n\", dqm->sched_policy);\n3220: \t\tgoto out_free;"
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_device_queue_manager.c",
+        "bytes": 107788,
+        "sha256": "00026ea8ced3a0c29b25129a241d0c1b82eb72fe87def136dfea0bc5c488f2c3"
+      },
+      "matches_installed_package_source": true,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 0,
+      "CONFIG_AMDKCL_symbols": []
+    },
+    "amdkfd/kfd_packet_manager.c": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_packet_manager.c",
+      "bytes": 15735,
+      "sha256": "1ed642990cbb7d4cdbde211fee571318e233c19744ea1663d8eb68946c1310dd",
+      "excerpts": [
+        {
+          "first_line": 46,
+          "last_line": 84,
+          "text": "46: static void pm_calc_rlib_size(struct packet_manager *pm,\n47: \t\t\t\tunsigned int *rlib_size,\n48: \t\t\t\tint *over_subscription,\n49: \t\t\t\tint xnack_conflict)\n50: {\n51: \tunsigned int process_count, queue_count, compute_queue_count, gws_queue_count;\n52: \tunsigned int map_queue_size;\n53: \tunsigned int max_proc_per_quantum = 1;\n54: \tstruct kfd_node *node = pm->dqm->dev;\n55: \tstruct device *dev = node->adev->dev;\n56: \n57: \tprocess_count = pm->dqm->processes_count;\n58: \tqueue_count = pm->dqm->active_queue_count;\n59: \tcompute_queue_count = pm->dqm->active_cp_queue_count;\n60: \tgws_queue_count = pm->dqm->gws_queue_count;\n61: \n62: \t/* check if there is over subscription\n63: \t * Note: the arbitration between the number of VMIDs and\n64: \t * hws_max_conc_proc has been done in\n65: \t * kgd2kfd_device_init().\n66: \t */\n67: \t*over_subscription = 0;\n68: \n69: \tif (node->max_proc_per_quantum > 1)\n70: \t\tmax_proc_per_quantum = node->max_proc_per_quantum;\n71: \n72: \tif (process_count > max_proc_per_quantum)\n73: \t\t*over_subscription |= OVER_SUBSCRIPTION_PROCESS_COUNT;\n74: \tif (compute_queue_count > get_cp_queues_num(pm->dqm))\n75: \t\t*over_subscription |= OVER_SUBSCRIPTION_COMPUTE_QUEUE_COUNT;\n76: \tif (gws_queue_count > 1)\n77: \t\t*over_subscription |= OVER_SUBSCRIPTION_GWS_QUEUE_COUNT;\n78: \tif (xnack_conflict && (node->adev->gmc.xnack_flags & AMDGPU_GMC_XNACK_FLAG_CHAIN))\n79: \t\t*over_subscription |= OVER_SUBSCRIPTION_XNACK_CONFLICT;\n80: \n81: \tif (*over_subscription)\n82: \t\tdev_dbg(dev, \"Over subscribed runlist\\n\");\n83: \n84: \tmap_queue_size = pm->pmf->map_queues_size;"
+        }
+      ],
+      "installed_package_source": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_packet_manager.c",
+        "bytes": 15735,
+        "sha256": "1ed642990cbb7d4cdbde211fee571318e233c19744ea1663d8eb68946c1310dd"
+      },
+      "matches_installed_package_source": true,
+      "installed_package_source_matches_original_inventory": true,
+      "matches_installed_package_after_CONFIG_AMDKCL_normalization": true,
+      "CONFIG_AMDKCL_replacement_count": 0,
+      "CONFIG_AMDKCL_symbols": []
+    }
+  },
+  "module_binding": {
+    "audit": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/module_byte_audit_v2.json",
+      "bytes": 5124,
+      "sha256": "07995ac0e1eec0eb48683ec5c3ff90a14c2927badcd0253f8b9bcfb5f339b3fe"
+    },
+    "driver_build": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/driver_build.json",
+      "bytes": 2095,
+      "sha256": "dfdf8aec24cb5419883d40e08f05035f9fa02d625e20e6c2ac5ddc907925f029"
+    },
+    "builder": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/build_driver.py",
+      "bytes": 5504,
+      "sha256": "b3969ea4487b9950ac7e01c22c89a842cdb989cae094b78a2b9156f5ba664972"
+    },
+    "installed_source_inventory_before": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source_inventory_before.json",
+      "bytes": 853888,
+      "sha256": "89e3ede3338ef18a539d65ee4fbf4ab6cc0360c6bbd7e3bac5102537ef5e6c9b"
+    },
+    "build_config_name_rewrite": {
+      "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/dkms/pre-build.sh",
+      "bytes": 7530,
+      "sha256": "f3948c7a2fbcdffb288e00fb082bc4b0e50662538e3c4c55ef69b931857d0475",
+      "excerpts": [
+        {
+          "first_line": 80,
+          "last_line": 90,
+          "text": "80: # rename CONFIG_xxx to CONFIG_xxx_AMDKCL\n81: # otherwise kernel config would override dkms package config\n82: AMDGPU_CONFIG=$(find -name Kconfig -exec grep -h '^config' {} + | sed 's/ /_/' | tr 'a-z' 'A-Z')\n83: TTM_CONFIG=$(awk '/CONFIG_DRM/{gsub(\".*\\\\(CONFIG_DRM\",\"CONFIG_DRM\");gsub(\"\\\\).*\",\"\");print $0}' ttm/Makefile)\n84: SCHED_CONFIG=$(awk '/CONFIG_DRM/{gsub(\".*\\\\(CONFIG_DRM\",\"CONFIG_DRM\");gsub(\"\\\\).*\",\"\");print $0}' scheduler/Makefile)\n85: for config in $AMDGPU_CONFIG $TTM_CONFIG $SCHED_CONFIG; do\n86: \tfor file in $(grep -rl $config ./); do\n87: \t\tsed -i \"s/\\<$config\\>/&_AMDKCL/\" $file\n88: \tdone\n89: \tsed -i \"/${config}$/s/$/_AMDKCL/\" amd/dkms/Kbuild\n90: done"
+        }
+      ]
+    },
+    "interpretation": "10 of 16 cited source files equal the installed package bytes; six differ only in CONFIG_* to CONFIG_*_AMDKCL names, as performed by the DKMS pre-build script. Every installed source matches the pre-build inventory. Prior baseline audit matches all 37959 CPU functions and differs only in build-id allocated bytes. Candidate-only handler/table size changes do not alter the cited policy source text. This binding is local, not a37-2."
+  },
+  "successful_host_document": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosr-1b112-a37-2.md",
+    "bytes": 56645,
+    "sha256": "01d0e177191a8359221997fa290d5478b0b607b82b416f954a2d240ac832825f",
+    "excerpts": [
+      {
+        "first_line": 78,
+        "last_line": 108,
+        "text": "78: | Item | Recorded value |\n79: |---|---|\n80: | Actual hostname | `ctheliosp-1b112-a37-2.mnb.dcgpu` |\n81: | Host OS | CentOS Stream 9; supplemental documentation-time snapshot |\n82: | CPU | `AMD Eng Sample: 100-000001046-04`, family `0x1a`, model `0x51`, stepping 0 |\n83: | CPU topology | One socket, 128 physical cores, two threads/core; 256 present logical CPUs, **255 online (0\u2013254), CPU255 offline** |\n84: | NUMA topology | 38 nodes reported by the supplemental `lscpu` snapshot |\n85: | Host-visible RAM / swap capacity | 539,757,096,960 bytes RAM (502.688 GiB); 8,589,930,496 bytes swap |\n86: | GPUs | Four MI450-class devices, target `gfx1250`, PCI vendor/device `1002:75c1`, revision `0x00`, 256 reported compute units each |\n87: | HBM | **463,856,467,968 bytes = 432 GiB per GPU**; 1,728 GiB aggregate |\n88: | IFWI, all four GPUs | `AMD MI450X_GENERIC`, part `113-M4500001-640C`, version `00198930`, built `2026/08/19 23:17` |\n89: | AMDGPU driver | `7.1.0.31300009` |\n90: | Kernel | `6.16.1-0_fbk2_brcmrdma5_35_g5ba27bd1d6b9` |\n91: | Loaded driver controls | `gpu_recovery=0`, `halt_if_hws_hang=0` |\n92: | Boot ID for the two morning baseline runs | `3cb36f24-0832-402b-af25-ff917fa8350f` |\n93: | Recovery during the two morning baseline runs | No reboot, AC cycle, driver reload or GPU reset |\n94: | Boot ID for the converged post-AC run | `6ef5adda-fa87-4225-9fa2-99f733c74604` |\n95: | Post-AC driver recovery | AMDGPU loaded at **22:56:54 UTC September 19** with `noretry=0 gpu_recovery=0 ip_block_mask=0xcff`; four GPUs enumerated in SPX/NPS1 |\n96: \n97: Saved boot messages independently report one CPU package and CPU255's\n98: invalid-APIC-ID bring-up failure. The nominal 256-thread topology must not be\n99: quoted as 256 online CPUs. GPU PCI endpoints in the boot log are\n100: `0001:04:00.0`, `0002:04:00.0`, `0003:04:00.0` and `0004:04:00.0`; these\n101: records alone do not establish their mapping to training rank ordinals.\n102: \n103: The GPU market-name string is `AMD Radeon Graphics`, while IFWI identifies\n104: `AMD MI450X_GENERIC`. Board product/model/FRU and PCIe width/speed fields are\n105: `N/A`. Revision `0x00` does not establish an A0/B0 stepping distinction.\n106: The captured kernel command line includes `pci=realloc=off`, `iommu=pt`,\n107: `mitigations=off` and an `amdgpu,device_dax,dax_hmem` module blacklist; the\n108: driver was already loaded for the morning baselines. After the later AC cycle,"
+      },
+      {
+        "first_line": 295,
+        "last_line": 304,
+        "text": "295: |---|---|\n296: | `NNODES`, `GPUS_PER_NODE`, `WORLD_SIZE`, `NODE_RANK` | `1`, `4`, `4`, `0` |\n297: | Visible GPUs | `HIP_VISIBLE_DEVICES=0,1,2,3` |\n298: | **Local / global batch** | **`BATCH_SIZE=1024` per rank / 4096 aggregate** |\n299: | Gradient accumulation | 1 |\n300: | Rendezvous | `MASTER_ADDR=127.0.0.1`; `MASTER_PORT` empty in explicit settings, resolved by the trainer |\n301: | RCCL socket/debug | `NCCL_SOCKET_IFNAME=lo`, `NCCL_DEBUG=WARN` |\n302: | Python | `PYTHONUNBUFFERED=1`, `PYTHONPATH=/workspace/recommendation` |\n303: | Dataset path inside container | `DLRM_DATA_PATH=/data/mlperf_dlrm_v4` |\n304: | Start / configured training windows | `START_TS=0`, `NUM_TRAIN_TS=299`; windows 0\u2013298, 86,400 seconds each |"
+      },
+      {
+        "first_line": 484,
+        "last_line": 526,
+        "text": "484: | Run directory | Recorded outcome |\n485: |---|---|\n486: | `mi450_4gpu_8k_auc075_20260919T201418Z` | **19 finite steps**, then a **17.82 GiB** HSTU-backward allocation failure and logged RCCL memory fault with original sharding. |\n487: | `mi450_4gpu_8k_auc075_alloc1024_20260919T203058Z` | Same **19-step** failure. The intended max-split setting was shadowed by empty `PYTORCH_CUDA_ALLOC_CONF`; this did not test the intended allocator protection. |\n488: | `mi450_4gpu_8k_auc075_cw_20260919T204609Z` | Full column-wise sharding; **80 finite steps**, then a sustained stall after **21:01:51.335**. Rank 1 was in ROCr scratch reclamation through `hipMalloc`/`index_select`; no logged NaN, OOM or GPU fault. Owned cleanup completed **21:08:28.167**. |\n489: | `mi450_4gpu_8k_auc075_cw_gc70_20260919T211127Z` | Intentional initialization-only stop at **21:18:17.836**, with **zero optimizer steps**. GC threshold 0.7 parsed, but native memory fraction 1.0 disabled the GC call. |\n490: | `mi450_4gpu_8k_auc075_cw_gc70_f99_20260919T212335Z` | **Five finite steps**, then MES/driver failure. Both allocator aliases correctly set max split 1024 MiB, GC 0.7 and memory fraction 0.99. MES `INVALIDATE_TLBS` errors began **21:34:48**, before the final loss at **21:34:53.164**. |\n491: \n492: The last attempt retained non-zombie D/R tasks after SIGKILL, despite its\n493: terminal controller label. Its saved thread audit establishes incomplete\n494: cleanup on that boot. The subsequent AC cycle and new-boot preflight are the\n495: recovery evidence; the old `stopped` label is not. The further prepared\n496: `mi450_4gpu_8k_cw_maxsplit_setup` was not launched. Detailed failure, allocator\n497: and cleanup records are linked from the host-local\n498: [8K handoff](/home/chcai/runs/mi450_4gpu_8k_handoff.md).\n499: \n500: ### 4.5 Post-AC recovery and fresh 4K launch\n501: \n502: After the user reported an AC cycle, the boot ID was\n503: `6ef5adda-fa87-4225-9fa2-99f733c74604`. All four GPUs were present on PCI, but\n504: AMDGPU and `/dev/kfd` were absent because the existing boot configuration\n505: blacklists automatic driver loading. The recorded restore command was\n506: `sudo -n modprobe amdgpu noretry=0 gpu_recovery=0 ip_block_mask=0xcff`; it\n507: completed at **22:56:54.826 UTC September 19**, without a persistent boot\n508: configuration change. The existing container, image and mounts were retained.\n509: \n510: All four ranks passed a bounded FP32/BF16 indexing/matmul and RCCL\n511: all-reduce/all-to-all preflight in **3.959 seconds**. The host wrapper began\n512: at **22:57:39.448 UTC** and recorded the detached training launch at\n513: **22:57:39.634 UTC**. The prepared 4K run had not launched before the AC cycle,\n514: and no checkpoint existed. This was fresh initialization with the settings\n515: in \u00a73.5, original automatic sharding and default allocator behavior.\n516: \n517: The run directory is\n518: `/home/chcai/runs/mi450_4gpu_4k_auc075_post_ac_20260919T225739Z/`.\n519: The saved [recovery record](/home/chcai/runs/mi450_4gpu_4k_auc_setup/POST_AC_RECOVERY.md)\n520: and `configuration_verification.json` establish recovery and setup;\n521: `outcome.json` and `finalization.json` establish the subsequent successful\n522: completion. The 1,200-second stall guard never fired, and no manual stop or\n523: automatic relaunch was recorded.\n524: \n525: ## 5. Results and comparison\n526: "
+      }
+    ]
+  },
+  "A0_parameter_snapshot": {
+    "identity": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/driver_queue_parameters.json",
+      "bytes": 471,
+      "sha256": "574ebc1eb08163d31127a579ae63295409781ad94a0997d323f725748627b1a6"
+    },
+    "contents": {
+      "timestamp": "2026-09-21T05:08:13.137505+00:00",
+      "parameters": {
+        "cwsr_enable": "1",
+        "sched_policy": "0",
+        "hws_max_conc_proc": "-1",
+        "max_num_of_queues_per_device": "4096",
+        "queue_preemption_timeout_ms": "9000",
+        "gpu_recovery": "-1",
+        "noretry": "-1",
+        "ip_block_mask": "4294967295",
+        "halt_if_hws_hang": "0"
+      },
+      "scope": "Read-only current A0 parameters; no claim these values equal historical training405 or successful1P4G."
+    }
+  },
+  "local_boot_block_order": {
+    "identity": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/kernel_after_restore.log",
+      "bytes": 151906,
+      "sha256": "d9b189639088586a16ca1afae0d786e988ecaaeb7c20156a10da1332e37c7316"
+    },
+    "rows": [
+      {
+        "index": 0,
+        "name": "common_v1_0_0",
+        "line": 1618,
+        "enabled_by_0xcff": true,
+        "enabled_by_0xffffffff": true
+      },
+      {
+        "index": 1,
+        "name": "gmc_v12_0_0",
+        "line": 1619,
+        "enabled_by_0xcff": true,
+        "enabled_by_0xffffffff": true
+      },
+      {
+        "index": 2,
+        "name": "ih_v7_0_0",
+        "line": 1620,
+        "enabled_by_0xcff": true,
+        "enabled_by_0xffffffff": true
+      },
+      {
+        "index": 3,
+        "name": "psp_v15_0_8",
+        "line": 1621,
+        "enabled_by_0xcff": true,
+        "enabled_by_0xffffffff": true
+      },
+      {
+        "index": 4,
+        "name": "smu_v15_0_0",
+        "line": 1622,
+        "enabled_by_0xcff": true,
+        "enabled_by_0xffffffff": true
+      },
+      {
+        "index": 5,
+        "name": "gfx_v12_1_0",
+        "line": 1623,
+        "enabled_by_0xcff": true,
+        "enabled_by_0xffffffff": true
+      },
+      {
+        "index": 6,
+        "name": "sdma_v7_1_0",
+        "line": 1624,
+        "enabled_by_0xcff": true,
+        "enabled_by_0xffffffff": true
+      },
+      {
+        "index": 7,
+        "name": "ras_v1_0_0",
+        "line": 1625,
+        "enabled_by_0xcff": true,
+        "enabled_by_0xffffffff": true
+      },
+      {
+        "index": 8,
+        "name": "vcn_v5_0_2",
+        "line": 1626,
+        "enabled_by_0xcff": false,
+        "enabled_by_0xffffffff": true
+      },
+      {
+        "index": 9,
+        "name": "jpeg_v5_0_2",
+        "line": 1627,
+        "enabled_by_0xcff": false,
+        "enabled_by_0xffffffff": true
+      },
+      {
+        "index": 10,
+        "name": "mes_v12_1_0",
+        "line": 1628,
+        "enabled_by_0xcff": true,
+        "enabled_by_0xffffffff": true
+      },
+      {
+        "index": 11,
+        "name": "ualink_v1_0_0",
+        "line": 1629,
+        "enabled_by_0xcff": true,
+        "enabled_by_0xffffffff": true
+      }
+    ],
+    "scope": "Observed local restored baseline boot, first GPU; remote registered order absent."
+  },
+  "evaluations": {
+    "ip_block_mask": {
+      "index_domain": "adev->ip_blocks registration index, not enum amd_ip_block_type",
+      "0xcff_enabled_indices_0_to_11": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        11
+      ],
+      "0xcff_disabled_names_in_observed_local_order": [
+        "vcn_v5_0_2",
+        "jpeg_v5_0_2"
+      ],
+      "remote_condition": "VCN/JPEG interpretation requires same block registration order; no evidence of CWSR or MES disable from this mask."
+    },
+    "noretry": {
+      "local_GC_version": "12.1.0",
+      "local_auto_resolves_to_noretry": 1,
+      "local_explicit_zero_resolves_to_noretry": 0,
+      "KFD_SUPPORT_XNACK_PER_PROCESS_gfx12_1": false,
+      "queue_selection": "xnack_enabled = !kfd->noretry; updates RETRY_DISABLE and VM retry-permission/invalid-page-fault bit",
+      "also_programs": "gfx_v12_1_xcc_xnack_set_chicken_bits uses !gmc.noretry",
+      "latching_limit": "Global noretry is writable0644 but gmc and KFD fields are initialized/copied; sysfs parameter alone does not attest arbitrary post-write queue state.",
+      "boot_log_limit": "gfx_v12_1 SH_MEM_CONFIG print reads preexisting RLC value before init; mixed log values do not attest final process queue retry mode.",
+      "remote_limit": "Local semantics only until successful module/source and effective initialization are verified. HSA_XNACK and selected code-object mode unrecorded."
+    },
+    "recovery": {
+      "gpu_recovery_zero": "Disables generic GPU recovery and KFD MES queue-reset paths shown here",
+      "gpu_recovery_minus_one_on_local_gfx12_1": "Generic recovery permitted; none of the legacy ASIC exceptions applies",
+      "halt_if_hws_hang": "Both records report0; classic-HWS hang handler waits while nonzero",
+      "causal_limit": "Controls post-failure behavior; these paths do not remove the first-level bank-copy instructions."
+    },
+    "CWSR_and_scheduler": {
+      "source_defaults": {
+        "cwsr_enable": 1,
+        "sched_policy": 0,
+        "hws_max_conc_proc": -1,
+        "max_num_of_queues_per_device": 4096,
+        "queue_preemption_timeout_ms": 9000,
+        "uni_mes": 1
+      },
+      "sched_policy_0": "HWS with oversubscription permitted, not observed oversubscription",
+      "gfx12_1_discovery": "Selects MES12.1 and enables MES/MES-KIQ; Unified MES conditional on uni_mes",
+      "hws_max_conc_proc_minus_one": "Resolved to count of KFD VMIDs for classic HWS max_proc_per_quantum; not proof of MES firmware active-process count",
+      "4096": "Queue allocation/admission ceiling, not active queue count",
+      "9000ms": "Classic unmap_queues_cpsch completion wait, not preemption cadence",
+      "MES_normal_poll_timeout_us": 2100000,
+      "MES_process_quantum_100ns_units": 100000,
+      "MES_process_quantum_ms": 10,
+      "MES_gang_quantum_100ns_units": 10000,
+      "MES_gang_quantum_ms": 1,
+      "quantum_limit": "Parameters submitted to MES, not measured trap cadence or proof of mid-kernel preemption",
+      "successful_host_missing": [
+        "cwsr_enable",
+        "sched_policy",
+        "uni_mes",
+        "actual queue inventory and oversubscription",
+        "trap entry history",
+        "loaded first-level handler bytes",
+        "selected native DW"
+      ]
+    }
+  },
+  "successful_host_settings_not_inferred": [
+    "a37-1 P2P/SHM disable",
+    "a37-1 observed Socket channels",
+    "a37-1 GPU_MAX_HW_QUEUES=2",
+    "a37-1 HSA_NO_SCRATCH_RECLAIM=1",
+    "a37-1 SDMA environment"
+  ],
+  "conclusions": [
+    "The documented mask most plausibly excludes VCN/JPEG under the verified local order; it is not evidence of disabled compute/MES/CWSR.",
+    "Retry mode is a substantive candidate execution difference under local source semantics, not a proven explanation for successful training.",
+    "Recovery is post-failure policy; queue limits and timeouts cannot be turned into trap-frequency claims.",
+    "Successful run native identity, operands, effective queue state, handler bytes and entry history remain the decisive missing evidence."
+  ],
+  "collector": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_scheduler_semantics_v1/collect_scheduler_evidence.py",
+    "bytes": 10982,
+    "sha256": "861c8e6db65000599e833a97a4c8cbdeeb9c3b7fdee7ca4dc943154f7c2fdf22"
+  }
+}

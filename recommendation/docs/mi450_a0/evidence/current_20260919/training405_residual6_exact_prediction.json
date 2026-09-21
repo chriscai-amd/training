@@ -1,0 +1,1165 @@
+{
+  "status": "PASS_EXACT_INTEGER_REAL_SUFFIX_SUMS_FOR_HISTORICAL_RESIDUAL6",
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training405_residual6_CPU_v1/exact_dyadic_residual6.py",
+    "bytes": 5064,
+    "sha256": "6492c4a106f199c300f655f049e706707de4c866eeac6239b1bd271efe8a5c30"
+  },
+  "mathematical_screen": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training405_residual6_CPU_v1/geometry_and_mathematical_suffix_screen.json",
+    "bytes": 32641,
+    "sha256": "0edcbaf7ae989d50491de70acb9c36c935c9adf76274c3aecdb9d65d56eeeed3"
+  },
+  "source_archive": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+    "bytes": 3570835225,
+    "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+  },
+  "raw_helper": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/audit_step405_linear_zero_failure_independent_v1.py",
+    "bytes": 25482,
+    "sha256": "93dcdc836a6f14bd6dc28228b0e1d52ba3dc93f5e7f38ece63ec7a5f09ddee3b"
+  },
+  "exact_bin_method": "Signed BF16 significand products are integers at most65025; total absolute weight<=2324351*65025<2^53 makes each FP64 integer bincount exact. Exponent alignment and all rounding-cell comparisons are integer operations.",
+  "unit_exponent": -266,
+  "common_boundary_results": [
+    {
+      "start_K": 0,
+      "all_six_exact_real_target_cells": false,
+      "all_six_exact_real_baseline_cells": true
+    },
+    {
+      "start_K": 602496,
+      "all_six_exact_real_target_cells": false,
+      "all_six_exact_real_baseline_cells": false
+    },
+    {
+      "start_K": 602528,
+      "all_six_exact_real_target_cells": true,
+      "all_six_exact_real_baseline_cells": false
+    },
+    {
+      "start_K": 602560,
+      "all_six_exact_real_target_cells": true,
+      "all_six_exact_real_baseline_cells": false
+    },
+    {
+      "start_K": 602592,
+      "all_six_exact_real_target_cells": true,
+      "all_six_exact_real_baseline_cells": false
+    },
+    {
+      "start_K": 602624,
+      "all_six_exact_real_target_cells": true,
+      "all_six_exact_real_baseline_cells": false
+    },
+    {
+      "start_K": 602656,
+      "all_six_exact_real_target_cells": true,
+      "all_six_exact_real_baseline_cells": false
+    },
+    {
+      "start_K": 602688,
+      "all_six_exact_real_target_cells": true,
+      "all_six_exact_real_baseline_cells": false
+    },
+    {
+      "start_K": 602720,
+      "all_six_exact_real_target_cells": true,
+      "all_six_exact_real_baseline_cells": false
+    },
+    {
+      "start_K": 602752,
+      "all_six_exact_real_target_cells": false,
+      "all_six_exact_real_baseline_cells": false
+    }
+  ],
+  "results": [
+    {
+      "M": 8,
+      "N": 0,
+      "start_K": 0,
+      "target_word": "0xb5ac",
+      "baseline_word": "0xb668",
+      "exact_real_suffix_integer_hex": "-0xe7b8d0d523b6d1c80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x0",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79439229834,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": true,
+      "minimum_target_cell_margin_integer_hex": "-0x9178d0d523b6d1c80000000000000000000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x56400000000000000000000000000000000000000000000000000000000000",
+        "-0x55c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 0,
+      "start_K": 602496,
+      "target_word": "0xb5ac",
+      "baseline_word": "0xb668",
+      "exact_real_suffix_integer_hex": "-0x57ed0c2c68a11ca80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79439229834,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "-0x1ad0c2c68a11ca7fffffffffffffefe000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x56400000000000000000000000000000000000000000000000000000000000",
+        "-0x55c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 0,
+      "start_K": 602528,
+      "target_word": "0xb5ac",
+      "baseline_word": "0xb668",
+      "exact_real_suffix_integer_hex": "-0x55cfb02d19c31ca80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79439229834,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0xfb02d19c31ca7fffffffffffffefe000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x56400000000000000000000000000000000000000000000000000000000000",
+        "-0x55c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 0,
+      "start_K": 602560,
+      "target_word": "0xb5ac",
+      "baseline_word": "0xb668",
+      "exact_real_suffix_integer_hex": "-0x55cff2866d651ca80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79439229834,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0xff2866d651ca7fffffffffffffefe000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x56400000000000000000000000000000000000000000000000000000000000",
+        "-0x55c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 0,
+      "start_K": 602592,
+      "target_word": "0xb5ac",
+      "baseline_word": "0xb668",
+      "exact_real_suffix_integer_hex": "-0x55d058a413ad1ca80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79439229834,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x1058a413ad1ca7fffffffffffffefe000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x56400000000000000000000000000000000000000000000000000000000000",
+        "-0x55c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 0,
+      "start_K": 602624,
+      "target_word": "0xb5ac",
+      "baseline_word": "0xb668",
+      "exact_real_suffix_integer_hex": "-0x55d068a3abcf1ca80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79439229834,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x1068a3abcf1ca7fffffffffffffefe000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x56400000000000000000000000000000000000000000000000000000000000",
+        "-0x55c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 0,
+      "start_K": 602656,
+      "target_word": "0xb5ac",
+      "baseline_word": "0xb668",
+      "exact_real_suffix_integer_hex": "-0x55d03a9c68c51ca80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79439229834,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x103a9c68c51ca7fffffffffffffefe000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x56400000000000000000000000000000000000000000000000000000000000",
+        "-0x55c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 0,
+      "start_K": 602688,
+      "target_word": "0xb5ac",
+      "baseline_word": "0xb668",
+      "exact_real_suffix_integer_hex": "-0x55d0bb3c9be51ca80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79439229834,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x10bb3c9be51ca7fffffffffffffefe000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x56400000000000000000000000000000000000000000000000000000000000",
+        "-0x55c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 0,
+      "start_K": 602720,
+      "target_word": "0xb5ac",
+      "baseline_word": "0xb668",
+      "exact_real_suffix_integer_hex": "-0x55d17cac9de51ca80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79439229834,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x117cac9de51ca7fffffffffffffefe000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x56400000000000000000000000000000000000000000000000000000000000",
+        "-0x55c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 0,
+      "start_K": 602752,
+      "target_word": "0xb5ac",
+      "baseline_word": "0xb668",
+      "exact_real_suffix_integer_hex": "-0x55d1c03dc5231ca80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79439229834,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x11c03dc5231ca7fffffffffffffefe000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x56400000000000000000000000000000000000000000000000000000000000",
+        "-0x55c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 64,
+      "start_K": 0,
+      "target_word": "0x364e",
+      "baseline_word": "0x3670",
+      "exact_real_suffix_integer_hex": "0xefaa04044d99af7c0000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x0",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79426225469,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": true,
+      "minimum_target_cell_margin_integer_hex": "-0x212a04044d99af7c0000000000000000000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0xcd800000000000000000000000000000000000000000000000000000000000",
+        "0xce800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 64,
+      "start_K": 602496,
+      "target_word": "0x364e",
+      "baseline_word": "0x3670",
+      "exact_real_suffix_integer_hex": "0xd4456605024180000000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79426225469,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "-0x5c56605024180000000000000000182000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0xcd800000000000000000000000000000000000000000000000000000000000",
+        "0xce800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 64,
+      "start_K": 602528,
+      "target_word": "0x364e",
+      "baseline_word": "0x3670",
+      "exact_real_suffix_integer_hex": "0xcdaa26968b9180000000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79426225469,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2a26968b9180000000000000000182000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0xcd800000000000000000000000000000000000000000000000000000000000",
+        "0xce800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 64,
+      "start_K": 602560,
+      "target_word": "0x364e",
+      "baseline_word": "0x3670",
+      "exact_real_suffix_integer_hex": "0xcdaa5678b0b980000000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79426225469,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2a5678b0b980000000000000000182000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0xcd800000000000000000000000000000000000000000000000000000000000",
+        "0xce800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 64,
+      "start_K": 602592,
+      "target_word": "0x364e",
+      "baseline_word": "0x3670",
+      "exact_real_suffix_integer_hex": "0xcdaa6fd731d980000000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79426225469,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2a6fd731d980000000000000000182000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0xcd800000000000000000000000000000000000000000000000000000000000",
+        "0xce800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 64,
+      "start_K": 602624,
+      "target_word": "0x364e",
+      "baseline_word": "0x3670",
+      "exact_real_suffix_integer_hex": "0xcdaa8e976ce980000000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79426225469,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2a8e976ce980000000000000000182000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0xcd800000000000000000000000000000000000000000000000000000000000",
+        "0xce800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 64,
+      "start_K": 602656,
+      "target_word": "0x364e",
+      "baseline_word": "0x3670",
+      "exact_real_suffix_integer_hex": "0xcdaa7debe13500000000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79426225469,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2a7debe13500000000000000000182000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0xcd800000000000000000000000000000000000000000000000000000000000",
+        "0xce800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 64,
+      "start_K": 602688,
+      "target_word": "0x364e",
+      "baseline_word": "0x3670",
+      "exact_real_suffix_integer_hex": "0xcdaaa239548500000000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79426225469,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2aa239548500000000000000000182000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0xcd800000000000000000000000000000000000000000000000000000000000",
+        "0xce800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 64,
+      "start_K": 602720,
+      "target_word": "0x364e",
+      "baseline_word": "0x3670",
+      "exact_real_suffix_integer_hex": "0xcdab0c4f2f2d00000000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79426225469,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2b0c4f2f2d00000000000000000182000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0xcd800000000000000000000000000000000000000000000000000000000000",
+        "0xce800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 64,
+      "start_K": 602752,
+      "target_word": "0x364e",
+      "baseline_word": "0x3670",
+      "exact_real_suffix_integer_hex": "0xcdab70cbffe500000000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79426225469,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2b70cbffe500000000000000000182000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0xcd800000000000000000000000000000000000000000000000000000000000",
+        "0xce800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 256,
+      "start_K": 0,
+      "target_word": "0x3541",
+      "baseline_word": "0x3583",
+      "exact_real_suffix_integer_hex": "0x415e3c0509fcb2c50000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x0",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79430491243,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": true,
+      "minimum_target_cell_margin_integer_hex": "-0x10fe3c0509fcb2c50000000000000000000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x30200000000000000000000000000000000000000000000000000000000000",
+        "0x30600000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 256,
+      "start_K": 602496,
+      "target_word": "0x3541",
+      "baseline_word": "0x3583",
+      "exact_real_suffix_integer_hex": "0x2744d3635365beb80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79430491243,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "-0x8db2c9cac9a4147fffffffffffffefe000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x30200000000000000000000000000000000000000000000000000000000000",
+        "0x30600000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 256,
+      "start_K": 602528,
+      "target_word": "0x3541",
+      "baseline_word": "0x3583",
+      "exact_real_suffix_integer_hex": "0x302182d63f71beb80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79430491243,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x182d63f71beb80000000000000102000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x30200000000000000000000000000000000000000000000000000000000000",
+        "0x30600000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 256,
+      "start_K": 602560,
+      "target_word": "0x3541",
+      "baseline_word": "0x3583",
+      "exact_real_suffix_integer_hex": "0x30213da8d641beb80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79430491243,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x13da8d641beb80000000000000102000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x30200000000000000000000000000000000000000000000000000000000000",
+        "0x30600000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 256,
+      "start_K": 602592,
+      "target_word": "0x3541",
+      "baseline_word": "0x3583",
+      "exact_real_suffix_integer_hex": "0x3020d218cb01beb80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79430491243,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0xd218cb01beb80000000000000102000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x30200000000000000000000000000000000000000000000000000000000000",
+        "0x30600000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 256,
+      "start_K": 602624,
+      "target_word": "0x3541",
+      "baseline_word": "0x3583",
+      "exact_real_suffix_integer_hex": "0x3020d9c5dfd3beb80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79430491243,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0xd9c5dfd3beb80000000000000102000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x30200000000000000000000000000000000000000000000000000000000000",
+        "0x30600000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 256,
+      "start_K": 602656,
+      "target_word": "0x3541",
+      "baseline_word": "0x3583",
+      "exact_real_suffix_integer_hex": "0x3020ff003ce3beb80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79430491243,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0xff003ce3beb80000000000000102000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x30200000000000000000000000000000000000000000000000000000000000",
+        "0x30600000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 256,
+      "start_K": 602688,
+      "target_word": "0x3541",
+      "baseline_word": "0x3583",
+      "exact_real_suffix_integer_hex": "0x3020e7d0079bbeb80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79430491243,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0xe7d0079bbeb80000000000000102000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x30200000000000000000000000000000000000000000000000000000000000",
+        "0x30600000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 256,
+      "start_K": 602720,
+      "target_word": "0x3541",
+      "baseline_word": "0x3583",
+      "exact_real_suffix_integer_hex": "0x30204b90cd07beb80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79430491243,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x4b90cd07beb80000000000000102000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x30200000000000000000000000000000000000000000000000000000000000",
+        "0x30600000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 256,
+      "start_K": 602752,
+      "target_word": "0x3541",
+      "baseline_word": "0x3583",
+      "exact_real_suffix_integer_hex": "0x301fcf66603cbeb80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x102000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79430491243,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "-0x30999fc34147fffffffffffffefe000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x30200000000000000000000000000000000000000000000000000000000000",
+        "0x30600000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 320,
+      "start_K": 0,
+      "target_word": "0x3589",
+      "baseline_word": "0xb550",
+      "exact_real_suffix_integer_hex": "-0x33f5b5cab5ff20f80000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x0",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79454873213,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": true,
+      "minimum_target_cell_margin_integer_hex": "-0x7835b5cab5ff20f80000000000000000000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x44400000000000000000000000000000000000000000000000000000000000",
+        "0x44c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 320,
+      "start_K": 602496,
+      "target_word": "0x3589",
+      "baseline_word": "0xb550",
+      "exact_real_suffix_integer_hex": "0x460003909df144f00000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79454873213,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "-0x14003909df144f00000000000000182000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x44400000000000000000000000000000000000000000000000000000000000",
+        "0x44c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 320,
+      "start_K": 602528,
+      "target_word": "0x3589",
+      "baseline_word": "0xb550",
+      "exact_real_suffix_integer_hex": "0x4491cab9492144f00000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79454873213,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2e3546b6debb0ffffffffffffffe7e000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x44400000000000000000000000000000000000000000000000000000000000",
+        "0x44c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 320,
+      "start_K": 602560,
+      "target_word": "0x3589",
+      "baseline_word": "0xb550",
+      "exact_real_suffix_integer_hex": "0x4491d043f6d144f00000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79454873213,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2e2fbc092ebb0ffffffffffffffe7e000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x44400000000000000000000000000000000000000000000000000000000000",
+        "0x44c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 320,
+      "start_K": 602592,
+      "target_word": "0x3589",
+      "baseline_word": "0xb550",
+      "exact_real_suffix_integer_hex": "0x4491d7f7e47944f00000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79454873213,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2e28081b86bb0ffffffffffffffe7e000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x44400000000000000000000000000000000000000000000000000000000000",
+        "0x44c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 320,
+      "start_K": 602624,
+      "target_word": "0x3589",
+      "baseline_word": "0xb550",
+      "exact_real_suffix_integer_hex": "0x4491da8cea5844f00000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79454873213,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2e257315a7bb0ffffffffffffffe7e000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x44400000000000000000000000000000000000000000000000000000000000",
+        "0x44c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 320,
+      "start_K": 602656,
+      "target_word": "0x3589",
+      "baseline_word": "0xb550",
+      "exact_real_suffix_integer_hex": "0x4492036248eaa4f00000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79454873213,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2dfc9db7155b0ffffffffffffffe7e000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x44400000000000000000000000000000000000000000000000000000000000",
+        "0x44c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 320,
+      "start_K": 602688,
+      "target_word": "0x3589",
+      "baseline_word": "0xb550",
+      "exact_real_suffix_integer_hex": "0x4491e8c82714a4f00000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79454873213,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2e1737d8eb5b0ffffffffffffffe7e000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x44400000000000000000000000000000000000000000000000000000000000",
+        "0x44c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 320,
+      "start_K": 602720,
+      "target_word": "0x3589",
+      "baseline_word": "0xb550",
+      "exact_real_suffix_integer_hex": "0x4491ec2265aca4f00000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79454873213,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2e13dd9a535b0ffffffffffffffe7e000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x44400000000000000000000000000000000000000000000000000000000000",
+        "0x44c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 8,
+      "N": 320,
+      "start_K": 602752,
+      "target_word": "0x3589",
+      "baseline_word": "0xb550",
+      "exact_real_suffix_integer_hex": "0x4491f5185388a4f00000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x182000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79454873213,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x2e0ae7ac775b0ffffffffffffffe7e000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x44400000000000000000000000000000000000000000000000000000000000",
+        "0x44c00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 256,
+      "start_K": 0,
+      "target_word": "0x3611",
+      "baseline_word": "0x3692",
+      "exact_real_suffix_integer_hex": "0x124cb3a919c00f64f0000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x0",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79603826432,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": true,
+      "minimum_target_cell_margin_integer_hex": "-0x934b3a919c00f64f0000000000000000000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x90800000000000000000000000000000000000000000000000000000000000",
+        "0x91800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 256,
+      "start_K": 602496,
+      "target_word": "0x3611",
+      "baseline_word": "0x3692",
+      "exact_real_suffix_integer_hex": "0x924e1cf8f7bcc4100000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x142000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79603826432,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "-0xce1cf8f7bcc4100000000000000142000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x90800000000000000000000000000000000000000000000000000000000000",
+        "0x91800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 256,
+      "start_K": 602528,
+      "target_word": "0x3611",
+      "baseline_word": "0x3692",
+      "exact_real_suffix_integer_hex": "0x90bf3337f2eac4100000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x142000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79603826432,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x3f3337f2eac4100000000000000142000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x90800000000000000000000000000000000000000000000000000000000000",
+        "0x91800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 256,
+      "start_K": 602560,
+      "target_word": "0x3611",
+      "baseline_word": "0x3692",
+      "exact_real_suffix_integer_hex": "0x90bf403034eac4100000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x142000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79603826432,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x3f403034eac4100000000000000142000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x90800000000000000000000000000000000000000000000000000000000000",
+        "0x91800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 256,
+      "start_K": 602592,
+      "target_word": "0x3611",
+      "baseline_word": "0x3692",
+      "exact_real_suffix_integer_hex": "0x90bf11f3893ac4100000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x142000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79603826432,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x3f11f3893ac4100000000000000142000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x90800000000000000000000000000000000000000000000000000000000000",
+        "0x91800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 256,
+      "start_K": 602624,
+      "target_word": "0x3611",
+      "baseline_word": "0x3692",
+      "exact_real_suffix_integer_hex": "0x90bf0f55cc1ec4100000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x142000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79603826432,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x3f0f55cc1ec4100000000000000142000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x90800000000000000000000000000000000000000000000000000000000000",
+        "0x91800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 256,
+      "start_K": 602656,
+      "target_word": "0x3611",
+      "baseline_word": "0x3692",
+      "exact_real_suffix_integer_hex": "0x90befd905822c4100000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x142000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79603826432,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x3efd905822c4100000000000000142000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x90800000000000000000000000000000000000000000000000000000000000",
+        "0x91800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 256,
+      "start_K": 602688,
+      "target_word": "0x3611",
+      "baseline_word": "0x3692",
+      "exact_real_suffix_integer_hex": "0x90bed734c66ac4100000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x142000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79603826432,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x3ed734c66ac4100000000000000142000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x90800000000000000000000000000000000000000000000000000000000000",
+        "0x91800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 256,
+      "start_K": 602720,
+      "target_word": "0x3611",
+      "baseline_word": "0x3692",
+      "exact_real_suffix_integer_hex": "0x90bea2f7861ec4100000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x142000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79603826432,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x3ea2f7861ec4100000000000000142000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x90800000000000000000000000000000000000000000000000000000000000",
+        "0x91800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 256,
+      "start_K": 602752,
+      "target_word": "0x3611",
+      "baseline_word": "0x3692",
+      "exact_real_suffix_integer_hex": "0x90be3c653e60c4100000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x142000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79603826432,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x3e3c653e60c4100000000000000142000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "0x90800000000000000000000000000000000000000000000000000000000000",
+        "0x91800000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 320,
+      "start_K": 0,
+      "target_word": "0xb55c",
+      "baseline_word": "0x361e",
+      "exact_real_suffix_integer_hex": "0x9e0bba872914736b0000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x0",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79629069346,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": true,
+      "minimum_target_cell_margin_integer_hex": "-0xd4ebba872914736b0000000000000000000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x37200000000000000000000000000000000000000000000000000000000000",
+        "-0x36e00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 320,
+      "start_K": 602496,
+      "target_word": "0xb55c",
+      "baseline_word": "0x361e",
+      "exact_real_suffix_integer_hex": "-0x375fca315049077d0000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x1c2000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79629069346,
+      "strictly_in_target_BF16_cell": false,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "-0x3fca315049077cfffffffffffffe3e000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x37200000000000000000000000000000000000000000000000000000000000",
+        "-0x36e00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 320,
+      "start_K": 602528,
+      "target_word": "0xb55c",
+      "baseline_word": "0x361e",
+      "exact_real_suffix_integer_hex": "-0x371f4134abad077d0000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x1c2000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79629069346,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0xbecb5452f88300000000000001c2000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x37200000000000000000000000000000000000000000000000000000000000",
+        "-0x36e00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 320,
+      "start_K": 602560,
+      "target_word": "0xb55c",
+      "baseline_word": "0x361e",
+      "exact_real_suffix_integer_hex": "-0x371f601b4a5c077d0000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x1c2000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79629069346,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x9fe4b5a3f88300000000000001c2000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x37200000000000000000000000000000000000000000000000000000000000",
+        "-0x36e00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 320,
+      "start_K": 602592,
+      "target_word": "0xb55c",
+      "baseline_word": "0x361e",
+      "exact_real_suffix_integer_hex": "-0x371f7e5d501c077d0000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x1c2000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79629069346,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x81a2afe3f88300000000000001c2000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x37200000000000000000000000000000000000000000000000000000000000",
+        "-0x36e00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 320,
+      "start_K": 602624,
+      "target_word": "0xb55c",
+      "baseline_word": "0x361e",
+      "exact_real_suffix_integer_hex": "-0x371f7b2cb798077d0000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x1c2000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79629069346,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x84d34867f88300000000000001c2000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x37200000000000000000000000000000000000000000000000000000000000",
+        "-0x36e00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 320,
+      "start_K": 602656,
+      "target_word": "0xb55c",
+      "baseline_word": "0x361e",
+      "exact_real_suffix_integer_hex": "-0x371f898a6c5c077d0000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x1c2000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79629069346,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x767593a3f88300000000000001c2000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x37200000000000000000000000000000000000000000000000000000000000",
+        "-0x36e00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 320,
+      "start_K": 602688,
+      "target_word": "0xb55c",
+      "baseline_word": "0x361e",
+      "exact_real_suffix_integer_hex": "-0x371fa9f9c5a5077d0000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x1c2000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79629069346,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x56063a5af88300000000000001c2000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x37200000000000000000000000000000000000000000000000000000000000",
+        "-0x36e00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 320,
+      "start_K": 602720,
+      "target_word": "0xb55c",
+      "baseline_word": "0x361e",
+      "exact_real_suffix_integer_hex": "-0x371fa87e1e05077d0000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x1c2000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79629069346,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x5781e1faf88300000000000001c2000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x37200000000000000000000000000000000000000000000000000000000000",
+        "-0x36e00000000000000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "M": 136,
+      "N": 320,
+      "start_K": 602752,
+      "target_word": "0xb55c",
+      "baseline_word": "0x361e",
+      "exact_real_suffix_integer_hex": "-0x371f9f1cdca5077d0000000000000000000000000000000000000000000000",
+      "reset_integer_hex": "0x1c2000000000000000000000000000000",
+      "exact_integer_unit_exponent": -266,
+      "absolute_integer_bin_bound": 79629069346,
+      "strictly_in_target_BF16_cell": true,
+      "strictly_in_baseline_BF16_cell": false,
+      "minimum_target_cell_margin_integer_hex": "0x60e3235af88300000000000001c2000000000000000000000000000000",
+      "target_cell_integer_hex": [
+        "-0x37200000000000000000000000000000000000000000000000000000000000",
+        "-0x36e00000000000000000000000000000000000000000000000000000000000"
+      ]
+    }
+  ],
+  "limits": [
+    "This certifies exact mathematical suffix sums plus a tiny FP32 donor, not native WMMA intermediate rounding.",
+    "The separate seven scoped FP32 schedules reproduce all six target words for five of these candidate boundaries.",
+    "Original native kernel and trap history remain unrecorded."
+  ],
+  "GPU_actions": false
+}

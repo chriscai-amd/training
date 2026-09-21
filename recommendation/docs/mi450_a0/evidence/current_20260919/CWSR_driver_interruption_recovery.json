@@ -1,0 +1,76 @@
+{
+  "format": "CWSR_driver_interruption_recovery_v1",
+  "status": "ORIGINAL_RESTORED_AND_SENTINEL_REPRODUCED_CANDIDATE_UNRESOLVED",
+  "utc": "2026-09-21T03:08:21.544433+00:00",
+  "pre_reboot_boot": "2f8cc048-2e41-4425-87ce-4335ecc01096",
+  "current_boot": "4a77f7e8-32cd-4c74-974b-c0b0c0d8eb03",
+  "last_completed_switch_action": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/remove_original.json",
+    "bytes": 175,
+    "sha256": "f5fccdcd2ef18e0a42ee26d35b38bfe433eaf0903685a2258e6cd9db1c1d5146"
+  },
+  "original_pre_reconstruction": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_history_v1/original_pre_recovery/reconstruction_certificate.json",
+    "bytes": 4090,
+    "sha256": "67cb8d10cc531ce670263293c640f46a4ad262d7f37ba03d6f7290eb5cbfc8e1"
+  },
+  "original_post_packet_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/original_post/sentinel_complete_raw_packet_independent_review_v1.json",
+    "bytes": 71676,
+    "sha256": "c14be7abe10314791daea88ad4f2ae07e418d123727a9e57df6a676e8e71cd4b"
+  },
+  "original_post_execution": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/original_post_recovered.json",
+    "bytes": 24312,
+    "sha256": "0122ea4081a6663098ee28c7721fec2656dfefcc890464673675cc4ebf43ee5f"
+  },
+  "runtime": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/runtime_restoration.json",
+    "bytes": 7945,
+    "sha256": "58e70d0fd926c2dd3a798ecc59435c0c6cc4277c917fd8ca6f32eb55d8496761"
+  },
+  "static_load_interface_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_interrupted_load_static_review_v1/load_interface_review.json",
+    "bytes": 18386,
+    "sha256": "37623feb2414becb469f39204dfcd57b799846bb4a00f04ddd654fb13680a5f3"
+  },
+  "journals": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/boot_list.txt",
+      "bytes": 541,
+      "sha256": "91961bef32fe6be949cb3007cdf279edc9aa5ef80641969442db5e0ff408dd8d"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/previous_kernel.txt",
+      "bytes": 275420,
+      "sha256": "b850c382e29acaa62955feb66fdaa7541a4cf6bf29f42498e7c6c25ceff8c50a"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/previous_last.txt",
+      "bytes": 76990,
+      "sha256": "a7a4d0bf30684bd351cc0369ef3f7583e70c472f0d8509faf276dfc7affc16af"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/current_kernel.txt",
+      "bytes": 153332,
+      "sha256": "06b7953b0ccb553eee6262cad6e86ce37ad80610ed94fae18f02698b69f69c9d"
+    }
+  ],
+  "user_reboot_cause_reply": "Unknown",
+  "findings": [
+    "Original pre-switch sentinel recovered from complete raw bytes; all 502 frozen source files match.",
+    "New-boot original sentinel reproduces exactly the same expected trap copy classifications, with MODE/EXEC and forced PCs valid.",
+    "Installed driver bytes unchanged; loaded source version and runtime properties match original.",
+    "1000 CPU-oracle calls pass in each of four gather/index_select health arms.",
+    "Prior controller recorded original removal exit0 at 02:54:25 but no candidate-load completion; new boot starts 02:59:15.",
+    "Prior persisted journal ends before module switch and contains no post-switch diagnosis; no current pstore crash record.",
+    "No static module load-interface mismatch found across 1161 undefined symbols,1162 imported CRCs and827798 normalized relocations."
+  ],
+  "limits": [
+    "No corrected driver sentinel or training result exists.",
+    "No evidence identifies why the comparison was interrupted or why host rebooted.",
+    "Pre-switch corrected CPU machine checks predate candidate attempt and do not assign the interruption or NaNs.",
+    "Post-reboot original phase is recovery validation, not completion of matched original/candidate/restored comparison.",
+    "Do not rerun old controller against already-used output paths."
+  ]
+}

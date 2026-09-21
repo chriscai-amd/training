@@ -1,0 +1,556 @@
+{
+  "status": "COMPLETE_REVERSE_ORDER_PASS1000_FAIL70_WITH_FULL_AUDITS",
+  "launch_order": [
+    "bank82_equal",
+    "bank81_control"
+  ],
+  "equal": {
+    "arm": "bank82_equal",
+    "status": "PASS_COMPLETE_TERMINAL_TTMP_ARITHMETIC_METADATA_PREFILL_AND_NATIVE_POINTER_REVIEW",
+    "runtime_status": "PASS",
+    "invocations": 1000,
+    "complete_output_words": 65536000,
+    "arithmetic_failure_calls": [],
+    "metadata_failure_calls": [],
+    "aggregate_pair_counts": {
+      "v128": {
+        "both_zero": 496000,
+        "direct_nonzero_only": 0,
+        "normal_nonzero_only": 0,
+        "both_nonzero_equal": 0,
+        "both_nonzero_different": 0
+      },
+      "v129": {
+        "both_zero": 496000,
+        "direct_nonzero_only": 0,
+        "normal_nonzero_only": 0,
+        "both_nonzero_equal": 0,
+        "both_nonzero_different": 0
+      },
+      "v130": {
+        "both_zero": 496000,
+        "direct_nonzero_only": 0,
+        "normal_nonzero_only": 0,
+        "both_nonzero_equal": 0,
+        "both_nonzero_different": 0
+      },
+      "v131": {
+        "both_zero": 496000,
+        "direct_nonzero_only": 0,
+        "normal_nonzero_only": 0,
+        "both_nonzero_equal": 0,
+        "both_nonzero_different": 0
+      }
+    },
+    "wave_samples": 16000,
+    "class_counts": {
+      "ZERO_RAW_TTMP": 6016,
+      "EXACT_INSTRUCTION_BOUNDARY": 9984
+    },
+    "selected_window_sample_count": 0,
+    "selected_window_call_count": 0,
+    "selected_window_by_pc": {},
+    "setup_cave_samples": 0
+  },
+  "control": {
+    "status": "PASS_COMPLETE_CONTROL_TERMINAL_INPUT_STREAM_AND_DONOR_AUDIT",
+    "GPU_actions": false,
+    "arm": "bank81_control",
+    "iteration": 70,
+    "prior_passing_calls": 69,
+    "full_input_backings": {
+      "x": {
+        "shape": [
+          2324351,
+          256
+        ],
+        "stride": [
+          256,
+          1
+        ],
+        "original_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+        "prepared_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+        "current_sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+        "all_backing_bytes_verified": true
+      },
+      "mat2": {
+        "shape": [
+          256,
+          512
+        ],
+        "stride": [
+          1,
+          256
+        ],
+        "original_sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+        "prepared_sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+        "current_sha256": "d374d54eb29f90616cc32eafd75918316458d7e2883c927bac51702c0968d022",
+        "all_backing_bytes_verified": true
+      },
+      "dy": {
+        "shape": [
+          2324351,
+          512
+        ],
+        "stride": [
+          512,
+          1
+        ],
+        "original_sha256": "8982a8bba7aa6ae843a589a2ff671d3b62adb2a9359609c1988e8cfcdf1cecea",
+        "prepared_sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+        "current_sha256": "3f373ad9e450a3573b98fd1c3b1a277ac769e1c306bca3c19e194fcc9b15f379",
+        "all_backing_bytes_verified": true
+      }
+    },
+    "prepared_current_DY_positive_zero_elements": 1190067712,
+    "raw_FP32_statistics": {
+      "elements": 65536,
+      "positive_zero_count": 65264,
+      "negative_zero_count": 0,
+      "nonzero_including_nonfinite_count": 272,
+      "nonfinite_count": 0,
+      "infinity_count": 0,
+      "nan_count": 0,
+      "subnormal_count": 0,
+      "extreme_count": 0,
+      "max_abs_finite": 2.6406305096871867e-33,
+      "unique_raw_bitpatterns": 249
+    },
+    "metadata_valid": true,
+    "physical_nonzeros": 272,
+    "unique_nonzero_sources": 256,
+    "source_columns": [
+      386,
+      450
+    ],
+    "source_M_rows": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28,
+      30,
+      32,
+      34,
+      36,
+      38,
+      40,
+      42,
+      44,
+      46,
+      48,
+      50,
+      52,
+      54,
+      56,
+      58,
+      60,
+      62,
+      64,
+      66,
+      68,
+      70,
+      72,
+      74,
+      76,
+      78,
+      80,
+      82,
+      84,
+      86,
+      88,
+      90,
+      92,
+      94,
+      96,
+      98,
+      100,
+      102,
+      104,
+      106,
+      108,
+      110,
+      112,
+      114,
+      116,
+      118,
+      120,
+      122,
+      124,
+      126,
+      128,
+      130,
+      132,
+      134,
+      136,
+      138,
+      140,
+      142,
+      144,
+      146,
+      148,
+      150,
+      152,
+      154,
+      156,
+      158,
+      160,
+      162,
+      164,
+      166,
+      168,
+      170,
+      172,
+      174,
+      176,
+      178,
+      180,
+      182,
+      184,
+      186,
+      188,
+      190,
+      192,
+      194,
+      196,
+      198,
+      200,
+      202,
+      204,
+      206,
+      208,
+      210,
+      212,
+      214,
+      216,
+      218,
+      220,
+      222,
+      224,
+      226,
+      228,
+      230,
+      232,
+      234,
+      236,
+      238,
+      240,
+      242,
+      244,
+      246,
+      248,
+      250,
+      252,
+      254
+    ],
+    "physical_by_source_wave": [
+      {
+        "group": 3,
+        "wave": 0,
+        "count": 68
+      },
+      {
+        "group": 3,
+        "wave": 1,
+        "count": 68
+      },
+      {
+        "group": 3,
+        "wave": 2,
+        "count": 68
+      },
+      {
+        "group": 3,
+        "wave": 3,
+        "count": 68
+      }
+    ],
+    "paired_route_counts": {
+      "v128": {
+        "both_zero": 34716,
+        "direct_nonzero_only": 0,
+        "normal_nonzero_only": 0,
+        "both_nonzero_equal": 4,
+        "both_nonzero_different": 0
+      },
+      "v129": {
+        "both_zero": 34716,
+        "direct_nonzero_only": 0,
+        "normal_nonzero_only": 0,
+        "both_nonzero_equal": 4,
+        "both_nonzero_different": 0
+      },
+      "v130": {
+        "both_zero": 34716,
+        "direct_nonzero_only": 0,
+        "normal_nonzero_only": 0,
+        "both_nonzero_equal": 4,
+        "both_nonzero_different": 0
+      },
+      "v131": {
+        "both_zero": 34716,
+        "direct_nonzero_only": 0,
+        "normal_nonzero_only": 0,
+        "both_nonzero_equal": 4,
+        "both_nonzero_different": 0
+      }
+    },
+    "unequal_route_source_count": 0,
+    "source_wave_return_PCs": [
+      "0x00000000000813c"
+    ],
+    "donor_models": [
+      {
+        "route": "normal_route_models",
+        "model": "old_wave_lane0",
+        "arithmetic_model": "exact_real_product",
+        "donor_base": "0x0810",
+        "observations_considered": 256,
+        "status": "EXACT_MATCHES",
+        "matching_row_count": 465,
+        "saved_X_search_performed": true,
+        "matching_k_first": [
+          67115,
+          67118,
+          67120
+        ],
+        "matching_k_last": [
+          468977,
+          468980,
+          468982
+        ]
+      },
+      {
+        "route": "normal_route_models",
+        "model": "neighbor_v258_wave_lane0",
+        "arithmetic_model": "exact_real_product",
+        "donor_base": "0x1010",
+        "observations_considered": 256,
+        "status": "NO_SAVED_X_ROW_MATCH",
+        "matching_row_count": 0,
+        "saved_X_search_performed": true,
+        "matching_k_first": [],
+        "matching_k_last": []
+      },
+      {
+        "route": "all_observed_route_models",
+        "model": "old_wave_lane0",
+        "arithmetic_model": "exact_real_product",
+        "donor_base": "0x0810",
+        "observations_considered": 256,
+        "status": "EXACT_MATCHES",
+        "matching_row_count": 465,
+        "saved_X_search_performed": true,
+        "matching_k_first": [
+          67115,
+          67118,
+          67120
+        ],
+        "matching_k_last": [
+          468977,
+          468980,
+          468982
+        ]
+      },
+      {
+        "route": "all_observed_route_models",
+        "model": "neighbor_v258_wave_lane0",
+        "arithmetic_model": "exact_real_product",
+        "donor_base": "0x1010",
+        "observations_considered": 256,
+        "status": "NO_SAVED_X_ROW_MATCH",
+        "matching_row_count": 0,
+        "saved_X_search_performed": true,
+        "matching_k_first": [],
+        "matching_k_last": []
+      },
+      {
+        "route": "normal_route_FP32_RNE_models",
+        "model": "old_wave_lane0_FP32_RNE",
+        "arithmetic_model": "integer_FP32_RNE_product",
+        "donor_base": "0x0810",
+        "observations_considered": 256,
+        "status": "EXACT_MATCHES",
+        "matching_row_count": 465,
+        "saved_X_search_performed": true,
+        "matching_k_first": [
+          67115,
+          67118,
+          67120
+        ],
+        "matching_k_last": [
+          468977,
+          468980,
+          468982
+        ]
+      },
+      {
+        "route": "normal_route_FP32_RNE_models",
+        "model": "neighbor_v258_wave_lane0_FP32_RNE",
+        "arithmetic_model": "integer_FP32_RNE_product",
+        "donor_base": "0x1010",
+        "observations_considered": 256,
+        "status": "NO_FP32_RNE_PRODUCT_REPRESENTATION_IN_ACTUAL_X_DOMAIN",
+        "matching_row_count": 0,
+        "saved_X_search_performed": false,
+        "matching_k_first": [],
+        "matching_k_last": []
+      },
+      {
+        "route": "all_observed_route_FP32_RNE_models",
+        "model": "old_wave_lane0_FP32_RNE",
+        "arithmetic_model": "integer_FP32_RNE_product",
+        "donor_base": "0x0810",
+        "observations_considered": 256,
+        "status": "EXACT_MATCHES",
+        "matching_row_count": 465,
+        "saved_X_search_performed": true,
+        "matching_k_first": [
+          67115,
+          67118,
+          67120
+        ],
+        "matching_k_last": [
+          468977,
+          468980,
+          468982
+        ]
+      },
+      {
+        "route": "all_observed_route_FP32_RNE_models",
+        "model": "neighbor_v258_wave_lane0_FP32_RNE",
+        "arithmetic_model": "integer_FP32_RNE_product",
+        "donor_base": "0x1010",
+        "observations_considered": 256,
+        "status": "NO_FP32_RNE_PRODUCT_REPRESENTATION_IN_ACTUAL_X_DOMAIN",
+        "matching_row_count": 0,
+        "saved_X_search_performed": false,
+        "matching_k_first": [],
+        "matching_k_last": []
+      }
+    ],
+    "posthoc_PC_comparison": {
+      "bank82_equal": {
+        "runtime_status": "PASS",
+        "invocations": 1000,
+        "wave_samples": 16000,
+        "original_14_head_samples": 0,
+        "original_14_head_calls": 0,
+        "posthoc_exit_samples": 0,
+        "posthoc_exit_calls": 0,
+        "posthoc_by_PC": {},
+        "posthoc_calls_by_PC": {
+          "0x80dc": 0,
+          "0x80fc": 0,
+          "0x811c": 0,
+          "0x813c": 0,
+          "0x815c": 0,
+          "0x817c": 0,
+          "0x819c": 0
+        },
+        "posthoc_arithmetic_failure_samples": 0,
+        "posthoc_wrong_source_wave_samples": 0,
+        "posthoc_wrong_source_observations": 0
+      },
+      "bank81_control": {
+        "runtime_status": "FAIL",
+        "invocations": 70,
+        "wave_samples": 1120,
+        "original_14_head_samples": 0,
+        "original_14_head_calls": 0,
+        "posthoc_exit_samples": 4,
+        "posthoc_exit_calls": 1,
+        "posthoc_by_PC": {
+          "0x813c": 4
+        },
+        "posthoc_calls_by_PC": {
+          "0x80dc": 0,
+          "0x80fc": 0,
+          "0x811c": 0,
+          "0x813c": 1,
+          "0x815c": 0,
+          "0x817c": 0,
+          "0x819c": 0
+        },
+        "posthoc_arithmetic_failure_samples": 4,
+        "posthoc_wrong_source_wave_samples": 4,
+        "posthoc_wrong_source_observations": 272
+      }
+    },
+    "sources": {
+      "bank81_control_full_failure_v1.json": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/bank81_control_full_failure_v1.json",
+        "bytes": 4437800,
+        "sha256": "686cc92786fa2ff1285f6c0ecd9dec24f369155dbca6088da696b5f57879b9f2"
+      },
+      "bank81_control_complete_stream_metadata_pairs_independent_review_v1.json": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/bank81_control_complete_stream_metadata_pairs_independent_review_v1.json",
+        "bytes": 1111209,
+        "sha256": "4deec618acf5b2f3308ad35b88849382dec72cd084f9f527e3923d69d67a7ece"
+      },
+      "bank81_control_source_wave_metadata_join_independent_v1.json": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/bank81_control_source_wave_metadata_join_independent_v1.json",
+        "bytes": 570225,
+        "sha256": "a8e5a14a34c9293f9609ea75e4f9615e7ceb5bb41c63090eee23d4521e314cb9"
+      },
+      "bank81_control_exact_donor_models_v1.json": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/bank81_control_exact_donor_models_v1.json",
+        "bytes": 1064912,
+        "sha256": "0c22048fd41250116afb4a6bc390bb9315bea5cf3f130124eee86be701f256cb"
+      },
+      "reverse_pair_posthoc_exit_setter_7_heads_v1.json": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/reverse_pair_posthoc_exit_setter_7_heads_v1.json",
+        "bytes": 11706,
+        "sha256": "cfdd8b807aa188d0d031a16cb298dcec426fa4a6cdec43eea00ce14c9c23059c"
+      }
+    },
+    "limits": [
+      "The successful old-v257 lane0 donor model is a conditional numerical representation; 465 matching saved-X rows do not identify a unique k or physical fault source.",
+      "The last-visible exit-setter return PC does not establish directly observed incoming MODE or causal event timing.",
+      "New equal arm has no original14 or posthoc7 selected samples; earlier original equal passing exit-setter samples are separate exposure."
+    ]
+  },
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_pair_v1/launch_manifest_bank_equal_v1.json",
+    "bytes": 21530,
+    "sha256": "e9246aa35b1a76dbd4a3db413edbd5198aec4fea61f98ef0364f57e2655a65af"
+  },
+  "native": {
+    "bank81_control": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_pair_v1/bank81_control_joined_verification_v1.json",
+      "bytes": 7157,
+      "sha256": "c6daf41cd198171a7ca2d372d7c78a0b2d08469a9854aeaf25faacd7e92ac917"
+    },
+    "bank82_equal": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_pair_v1/bank82_equal_joined_verification_v1.json",
+      "bytes": 23606,
+      "sha256": "617e8b3698e3ac334faeedf753b603b911f65acf0d912d8383b25d36f1d71c8a"
+    }
+  },
+  "independent_posthoc_exit_PC_comparison": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/reverse_pair_posthoc_exit_setter_7_heads_v1.json",
+    "bytes": 11706,
+    "sha256": "cfdd8b807aa188d0d031a16cb298dcec426fa4a6cdec43eea00ce14c9c23059c"
+  },
+  "driver_continuity": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_runtime_root_v1/driver_trap_binding_continuity.json",
+    "bytes": 474,
+    "sha256": "488a32dc84a2ff9e16b8533a79f0089a15546d797b826a925f423bda3ac4cada"
+  },
+  "limits": [
+    "New boot and reverse order distinguish this repeat from the September20 pair.",
+    "Neither new arm samples the original14selectedloadheads; only controlFAIL70 samples posthoc exitsetter0x813c in fourwrongsourcewaves.",
+    "Two bounded equal passes do not establish fix, independent event count or failure rate.",
+    "Common cause with untraced attempt405 training NaNs remains unproved."
+  ]
+}

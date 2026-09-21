@@ -1,0 +1,103 @@
+{
+  "status": "PASS_INDEPENDENT_METADATA_AND_ALL_SELECTED_PAYLOADS",
+  "reviewer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/review_operand_sensitivity.py",
+    "bytes": 3702,
+    "sha256": "2fba269d40d5659595d2be3e9f3a0396afc001600a1eb552a230265ec923a088"
+  },
+  "reviewed_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_discriminators_v1/operand_address_discriminators.json",
+    "bytes": 6239,
+    "sha256": "739a0068b041012aa6158fa42d94e4a87f795d44d564fdc81a469977926ed10f"
+  },
+  "metadata_reader": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/audit_step405_linear_zero_failure_independent_v1.py",
+    "bytes": 25482,
+    "sha256": "93dcdc836a6f14bd6dc28228b0e1d52ba3dc93f5e7f38ece63ec7a5f09ddee3b"
+  },
+  "original_input_metadata": {
+    "x": {
+      "abstract_tensor_only": true,
+      "storage": {
+        "key": "0",
+        "dtype": "torch.bfloat16",
+        "location": "cpu",
+        "numel": 595033856
+      },
+      "offset": 0,
+      "shape": [
+        2324351,
+        256
+      ],
+      "stride": [
+        256,
+        1
+      ],
+      "requires_grad": false,
+      "hooks": {}
+    },
+    "dy": {
+      "abstract_tensor_only": true,
+      "storage": {
+        "key": "2",
+        "dtype": "torch.bfloat16",
+        "location": "cpu",
+        "numel": 1190067712
+      },
+      "offset": 0,
+      "shape": [
+        2324351,
+        512
+      ],
+      "stride": [
+        512,
+        1
+      ],
+      "requires_grad": false,
+      "hooks": {}
+    }
+  },
+  "complete_X_and_DY_hashes_rechecked": true,
+  "checks": [
+    {
+      "case": "original",
+      "complete_payload_matches": true,
+      "loads": 1576,
+      "NaN_payload_words": 53,
+      "maximum_absolute_finite": 2.4723640721599435e+38
+    },
+    {
+      "case": "low_DY_adjacent_BF16_even_address",
+      "complete_payload_matches": true,
+      "loads": 1576,
+      "NaN_payload_words": 0,
+      "maximum_absolute_finite": 0.0027008056640625
+    },
+    {
+      "case": "high_DY_sign_flip",
+      "complete_payload_matches": true,
+      "loads": 0,
+      "NaN_payload_words": 0,
+      "maximum_absolute_finite": 0
+    },
+    {
+      "case": "both_DY_values_times2_donor_bits_only",
+      "complete_payload_matches": true,
+      "loads": 1320,
+      "NaN_payload_words": 12,
+      "maximum_absolute_finite": 2.4723640721599435e+38
+    },
+    {
+      "case": "both_DY_values_times0p5_donor_bits_only",
+      "complete_payload_matches": true,
+      "loads": 1832,
+      "NaN_payload_words": 6,
+      "maximum_absolute_finite": 2.4723640721599435e+38
+    }
+  ],
+  "limits": [
+    "Checks conditional mainloop byte payloads, not final DW arithmetic or actual 1P4G execution.",
+    "Allocation-base cancellation is algebraic at fixed storage origin, range, bits and descriptor controls."
+  ],
+  "GPU_actions": false
+}

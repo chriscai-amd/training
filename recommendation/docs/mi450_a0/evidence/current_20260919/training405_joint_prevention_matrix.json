@@ -1,0 +1,405 @@
+{
+  "status": "PASS_CONTROLLED_COMBINED_EQUAL_FULL_BASELINE_PREVENTION",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_terminal_review_v1/audit_combined_equal_matrix.py",
+    "bytes": 12404,
+    "sha256": "cf64a892211ea06d723ef7c29e208784294886878859d76701b75585eb2b3fc5"
+  },
+  "terminal_auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_terminal_review_v1/audit_combined_equal_terminal.py",
+    "bytes": 29573,
+    "sha256": "553e86d61d044c1687fbe1c4a21c07f9f890f071e5f443b6ea882dd8f0b33bb7"
+  },
+  "prospective_criteria": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_package_v1/prospective_combined_equal_criteria.json",
+    "bytes": 6831,
+    "sha256": "63de46a520b8f19445ec4e6b1e18e1af675a5b62aa1cfe2182743d8ab27d27fa"
+  },
+  "input_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_native_results_v1/equal_terminal_manifest.json",
+    "bytes": 630,
+    "sha256": "6c41bb4e5cad0a9d7255db297dacef2f16467a54267ebf7ef0dc9f0d5b1ff1b6"
+  },
+  "primary_NOP46_terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/nop_bank46_control_terminal_audit.json",
+    "bytes": 28089,
+    "sha256": "64c49dc030e910a660cb9ade17d6e4976bb3b7d189d4bf462e36126d1590944d"
+  },
+  "reference_binding": {
+    "primary_baseline": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+      "bytes": 262144,
+      "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+    },
+    "target": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/original_training405_block_M0_8_N128_256.bf16",
+      "bytes": 2048,
+      "sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+    },
+    "positive_combined_matrix": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_references_independent_v1/combined_full_historical_DW_matrix.json",
+      "bytes": 68969,
+      "sha256": "49e1ce7b8d2a6ebffeed800fe9086c5fe3bca4e8777d421ee8ce8a8a3e8ab4ea"
+    },
+    "historical_forensics_only": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/original_training405_DW_native_Nmajor.bf16.bin",
+      "bytes": 262144,
+      "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+    }
+  },
+  "arms": [
+    {
+      "arm": "combined_equal_nop",
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_native_results_v1/combined_equal_nop_terminal_audit.json",
+        "bytes": 28968,
+        "sha256": "a5199172cda07fcb95243606c554506011e149a5d7867993db3607346fa2554e"
+      },
+      "producer_status": "PASS",
+      "reference": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "calls": [
+        {
+          "iteration": 1,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_nop/call_01_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_nop/call_01_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_original_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 2,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_nop/call_02_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_nop/call_02_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_original_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 3,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_nop/call_03_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_nop/call_03_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_original_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 4,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_nop/call_04_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_nop/call_04_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_original_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        }
+      ]
+    },
+    {
+      "arm": "combined_equal_trap",
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_native_results_v1/combined_equal_trap_terminal_audit.json",
+        "bytes": 28984,
+        "sha256": "a5a799e5770b83df737f5d9695d5997b644d9b674a3f82087dabcf730fffee71"
+      },
+      "producer_status": "PASS",
+      "reference": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "calls": [
+        {
+          "iteration": 1,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_trap/call_01_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_trap/call_01_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_original_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 2,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_trap/call_02_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_trap/call_02_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_original_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 3,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_trap/call_03_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_trap/call_03_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_original_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 4,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_trap/call_04_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_equal_runtime_v1/results_combined_equal_trap/call_04_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_original_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        }
+      ]
+    }
+  ],
+  "issues": [],
+  "primary_criteria_all_match": true,
+  "GPU_actions": false,
+  "limits": [
+    "A pass shows joint prevention in this controlled seven-event replay, with the two bank settings changed and all seven traps retained.",
+    "Static predicate proves selected trap sites/count; no runtime gate-count observer is added.",
+    "This does not repair the installed handler, observe original historical trap timing or establish training stability.",
+    "Every mismatch fails the frozen criterion; bounded finite values are insufficient."
+  ]
+}

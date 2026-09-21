@@ -1,0 +1,113 @@
+{
+  "status": "PASS_RESTORED_RAW_TAG_AND_FRESHNESS_EVIDENCE",
+  "created_utc": "2026-09-21T07:44:04.601889+00:00",
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/recover_reverse_ttmp.py",
+    "bytes": 4693,
+    "sha256": "4d2b075adc9f206c49f21ee0da66235aa36268c674cd244cf7099f733871ee3e"
+  },
+  "prior_full_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_terminal_audit_v2/independent_terminal_audit.json",
+    "bytes": 7192397,
+    "sha256": "f986d423ac2d27260e04e5340059574f996b1a6c0d35f47e0324f7c79bbebe35"
+  },
+  "images_rehashed": 2400,
+  "bytes_rehashed": 460800,
+  "outcomes": {
+    "explicit_calibration_tags_match": 400,
+    "no_injection_without_fresh_PC": 395,
+    "no_injection_copy_with_fresh_PC": 3,
+    "no_injection_fresh_PC_tags_unchanged": 2
+  },
+  "observations": [
+    {
+      "ordinal": 19,
+      "mode": "0x5",
+      "injected": false,
+      "TTMP_before": "0x72875e4888bc",
+      "TTMP_after": "0x7548a1e301c4",
+      "plateau_start": "0x7548a1e301bc",
+      "plateau_end": "0x7548a1e301cc",
+      "changed_tag_indices": [
+        0
+      ],
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_reverse_runtime_v1/results/case_19_05_0/output.bin",
+        "bytes": 192,
+        "sha256": "fb7dd17a36a8a2ca12370fbccf156610e4448f2aa85db488672536900575eacb"
+      }
+    },
+    {
+      "ordinal": 25,
+      "mode": "0x0",
+      "injected": false,
+      "TTMP_before": "0x72875e4896bc",
+      "TTMP_after": "0x7548a1e30fbc",
+      "plateau_start": "0x7548a1e30fbc",
+      "plateau_end": "0x7548a1e30fcc",
+      "changed_tag_indices": [],
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_reverse_runtime_v1/results/case_25_00_0/output.bin",
+        "bytes": 192,
+        "sha256": "6cd5fa52a8cd9a55a4450f33f0bf0cd6f165d1b732b6ecf0d4caa49f2b26f9a3"
+      }
+    },
+    {
+      "ordinal": 37,
+      "mode": "0x86",
+      "injected": false,
+      "TTMP_before": "0x72875e487ac0",
+      "TTMP_after": "0x7548a1e2f3c0",
+      "plateau_start": "0x7548a1e2f3c0",
+      "plateau_end": "0x7548a1e2f3d0",
+      "changed_tag_indices": [],
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_reverse_runtime_v1/results/case_37_86_0/output.bin",
+        "bytes": 192,
+        "sha256": "a6042e21ae1fe14c5cef88e8e3225a99aaf04941a7a1d0ee760e5ffadfc31954"
+      }
+    },
+    {
+      "ordinal": 159,
+      "mode": "0x46",
+      "injected": false,
+      "TTMP_before": "0x7548a1e316bc",
+      "TTMP_after": "0x7548a1e2e5c0",
+      "plateau_start": "0x7548a1e2e5c0",
+      "plateau_end": "0x7548a1e2e5d0",
+      "changed_tag_indices": [
+        3
+      ],
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_reverse_runtime_v1/results/case_159_46_0/output.bin",
+        "bytes": 192,
+        "sha256": "8bb8fca26c387f381bd72714cc958bbda590bfaf7f3429140a65355f083daa8f"
+      }
+    },
+    {
+      "ordinal": 379,
+      "mode": "0x5",
+      "injected": false,
+      "TTMP_before": "0x7548a1e2fac0",
+      "TTMP_after": "0x7548a1e301c4",
+      "plateau_start": "0x7548a1e301bc",
+      "plateau_end": "0x7548a1e301cc",
+      "changed_tag_indices": [
+        0
+      ],
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_reverse_runtime_v1/results/case_379_05_0/output.bin",
+        "bytes": 192,
+        "sha256": "2025e29176dc136e78cbc95d469756b60d00562e2432a8953e7a0b7345270420"
+      }
+    }
+  ],
+  "limits": [
+    "This fresh recheck covers complete retained image hashes, tags and the before/after PC predicate.",
+    "Native code, full packet validation, launch and library joins are supplied by the pinned earlier independent audit.",
+    "The tag snapshot window is wider than the TTMP plateau; these observations do not identify one uniquely causal trap.",
+    "This is an A0 register probe, not a training repair validation."
+  ],
+  "GPU_actions": false,
+  "driver_actions": false
+}

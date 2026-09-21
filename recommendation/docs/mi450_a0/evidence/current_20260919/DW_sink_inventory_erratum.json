@@ -1,0 +1,4358 @@
+{
+  "status": "ERRATUM_CORRECTS_HALF_SELECTOR_ANNOTATIONS_AND_AFFECTED_COUNTS",
+  "created_utc": "2026-09-21T06:36:59.698280+00:00",
+  "original_report_retained": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_DW_bank_mitigation_feasibility_v1/full_DW_mitigation_coverage_and_gaps.json",
+    "bytes": 14487,
+    "sha256": "6a00023c5c98dd44ff3bd3eed7f4537c1e6620e255924c878484f95c3fa9ce4c"
+  },
+  "original_inventory_retained": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_DW_bank_mitigation_feasibility_v1/full_DW_bank_inventory.json",
+    "bytes": 7221,
+    "sha256": "7e4495a5c1a77e3536b10079d036ce8a4e2e5a3e7aeaa0e696d7f24c9f3ee85c"
+  },
+  "corrected_inventory": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_DW_bank_mitigation_feasibility_v1/v2/full_DW_bank_inventory.json",
+    "bytes": 7236,
+    "sha256": "e729656bf1ce1380691d4043cae41e46d1819db8721c9b3f57a81b83db0ab5d6"
+  },
+  "corrected_operand_bundle_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_DW_bank_mitigation_feasibility_v1/v2/operand_bundle_relocation_feasibility.json",
+    "bytes": 419352,
+    "sha256": "dcecc8305bcca31e90aa69a073f59e14b1ab7cb55366449e5eb60e92897fb826"
+  },
+  "correction": "Physical annotation substitution now includes .l/.h suffixes. Previously v4.l /*v260.l*/ left the encoded v4 token in the scan and falsely counted it as physical v4.",
+  "instruction_physical_strings_corrected": 772,
+  "affected_count_before": 1699,
+  "affected_count_after": 1675,
+  "opcode_count_change": {
+    "opcode": "v_cvt_f32_bf16_e64",
+    "before": 43,
+    "after": 19
+  },
+  "false_positive_rows_removed": [
+    {
+      "PC": "0x9e24",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v4.l /*v260.l*/",
+      "region": "mainloop_exit_and_optimized_path",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          260,
+          260
+        ]
+      ]
+    },
+    {
+      "PC": "0x9e44",
+      "instruction": "v_cvt_f32_bf16_e64 v261, v5.l /*v261.l*/",
+      "region": "mainloop_exit_and_optimized_path",
+      "vector_operands": [
+        [
+          261,
+          261
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          261,
+          261
+        ]
+      ]
+    },
+    {
+      "PC": "0x1fae4",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v4.l /*v260.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          260,
+          260
+        ]
+      ]
+    },
+    {
+      "PC": "0x1fb04",
+      "instruction": "v_cvt_f32_bf16_e64 v261, v5.l /*v261.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          261,
+          261
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          261,
+          261
+        ]
+      ]
+    },
+    {
+      "PC": "0x2f070",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v4.l /*v516.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          516,
+          516
+        ]
+      ]
+    },
+    {
+      "PC": "0x2f088",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v4.h /*v516.h*/ op_sel:[1,0]",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          516,
+          516
+        ]
+      ]
+    },
+    {
+      "PC": "0x2f0a0",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v5.l /*v517.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          517,
+          517
+        ]
+      ]
+    },
+    {
+      "PC": "0x2f0b8",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v5.h /*v517.h*/ op_sel:[1,0]",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          517,
+          517
+        ]
+      ]
+    },
+    {
+      "PC": "0x2f0d0",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v6.l /*v518.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          518,
+          518
+        ]
+      ]
+    },
+    {
+      "PC": "0x2f0e8",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v6.h /*v518.h*/ op_sel:[1,0]",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          518,
+          518
+        ]
+      ]
+    },
+    {
+      "PC": "0x2f100",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v7.l /*v519.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          519,
+          519
+        ]
+      ]
+    },
+    {
+      "PC": "0x2f118",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v7.h /*v519.h*/ op_sel:[1,0]",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          519,
+          519
+        ]
+      ]
+    },
+    {
+      "PC": "0x302d8",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v4.l /*v516.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          516,
+          516
+        ]
+      ]
+    },
+    {
+      "PC": "0x302f0",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v4.h /*v516.h*/ op_sel:[1,0]",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          516,
+          516
+        ]
+      ]
+    },
+    {
+      "PC": "0x30308",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v5.l /*v517.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          517,
+          517
+        ]
+      ]
+    },
+    {
+      "PC": "0x3032c",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v5.h /*v517.h*/ op_sel:[1,0]",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          517,
+          517
+        ]
+      ]
+    },
+    {
+      "PC": "0x30344",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v6.l /*v518.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          518,
+          518
+        ]
+      ]
+    },
+    {
+      "PC": "0x3035c",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v6.h /*v518.h*/ op_sel:[1,0]",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          518,
+          518
+        ]
+      ]
+    },
+    {
+      "PC": "0x30374",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v7.l /*v519.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          519,
+          519
+        ]
+      ]
+    },
+    {
+      "PC": "0x3038c",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v7.h /*v519.h*/ op_sel:[1,0]",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          519,
+          519
+        ]
+      ]
+    },
+    {
+      "PC": "0x3875c",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v7.l /*v519.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          519,
+          519
+        ]
+      ]
+    },
+    {
+      "PC": "0x3c3ac",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v7.l /*v519.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          519,
+          519
+        ]
+      ]
+    },
+    {
+      "PC": "0x40008",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v7.l /*v519.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          519,
+          519
+        ]
+      ]
+    },
+    {
+      "PC": "0x4378c",
+      "instruction": "v_cvt_f32_bf16_e64 v260, v4.l /*v516.l*/",
+      "region": "general_epilogue_and_dispatch",
+      "vector_operands": [
+        [
+          260,
+          260
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          516,
+          516
+        ]
+      ]
+    }
+  ],
+  "all_physical_string_changes": [
+    {
+      "PC": "0x9e24",
+      "before": "v_cvt_f32_bf16_e64 v260, v4.l /*v260.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v260.l"
+    },
+    {
+      "PC": "0x9e44",
+      "before": "v_cvt_f32_bf16_e64 v261, v5.l /*v261.l*/",
+      "after": "v_cvt_f32_bf16_e64 v261, v261.l"
+    },
+    {
+      "PC": "0x1fae4",
+      "before": "v_cvt_f32_bf16_e64 v260, v4.l /*v260.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v260.l"
+    },
+    {
+      "PC": "0x1fb04",
+      "before": "v_cvt_f32_bf16_e64 v261, v5.l /*v261.l*/",
+      "after": "v_cvt_f32_bf16_e64 v261, v261.l"
+    },
+    {
+      "PC": "0x2e6f8",
+      "before": "v_cvt_f32_bf16_e64 v260, v20.l /*v276.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v276.l"
+    },
+    {
+      "PC": "0x2e708",
+      "before": "v_cvt_f32_bf16_e64 v260, v20.h /*v276.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v276.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2e718",
+      "before": "v_cvt_f32_bf16_e64 v260, v21.l /*v277.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v277.l"
+    },
+    {
+      "PC": "0x2e728",
+      "before": "v_cvt_f32_bf16_e64 v260, v21.h /*v277.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v277.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2e738",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.l /*v278.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v278.l"
+    },
+    {
+      "PC": "0x2e748",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.h /*v278.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v278.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2e758",
+      "before": "v_cvt_f32_bf16_e64 v260, v23.l /*v279.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v279.l"
+    },
+    {
+      "PC": "0x2e768",
+      "before": "v_cvt_f32_bf16_e64 v260, v23.h /*v279.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v279.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2e820",
+      "before": "v_cvt_f32_bf16_e64 v260, v136.l /*v392.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v392.l"
+    },
+    {
+      "PC": "0x2e830",
+      "before": "v_cvt_f32_bf16_e64 v260, v136.h /*v392.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v392.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2e840",
+      "before": "v_cvt_f32_bf16_e64 v260, v137.l /*v393.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v393.l"
+    },
+    {
+      "PC": "0x2e850",
+      "before": "v_cvt_f32_bf16_e64 v260, v137.h /*v393.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v393.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2e860",
+      "before": "v_cvt_f32_bf16_e64 v260, v138.l /*v394.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v394.l"
+    },
+    {
+      "PC": "0x2e870",
+      "before": "v_cvt_f32_bf16_e64 v260, v138.h /*v394.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v394.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2e880",
+      "before": "v_cvt_f32_bf16_e64 v260, v139.l /*v395.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v395.l"
+    },
+    {
+      "PC": "0x2e890",
+      "before": "v_cvt_f32_bf16_e64 v260, v139.h /*v395.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v395.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2e948",
+      "before": "v_cvt_f32_bf16_e64 v260, v140.l /*v396.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v396.l"
+    },
+    {
+      "PC": "0x2e958",
+      "before": "v_cvt_f32_bf16_e64 v260, v140.h /*v396.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v396.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2e968",
+      "before": "v_cvt_f32_bf16_e64 v260, v141.l /*v397.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v397.l"
+    },
+    {
+      "PC": "0x2e978",
+      "before": "v_cvt_f32_bf16_e64 v260, v141.h /*v397.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v397.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2e988",
+      "before": "v_cvt_f32_bf16_e64 v260, v142.l /*v398.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v398.l"
+    },
+    {
+      "PC": "0x2e998",
+      "before": "v_cvt_f32_bf16_e64 v260, v142.h /*v398.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v398.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2e9a8",
+      "before": "v_cvt_f32_bf16_e64 v260, v143.l /*v399.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v399.l"
+    },
+    {
+      "PC": "0x2e9b8",
+      "before": "v_cvt_f32_bf16_e64 v260, v143.h /*v399.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v399.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ea70",
+      "before": "v_cvt_f32_bf16_e64 v260, v176.l /*v432.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v432.l"
+    },
+    {
+      "PC": "0x2ea80",
+      "before": "v_cvt_f32_bf16_e64 v260, v176.h /*v432.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v432.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ea90",
+      "before": "v_cvt_f32_bf16_e64 v260, v177.l /*v433.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v433.l"
+    },
+    {
+      "PC": "0x2eaa0",
+      "before": "v_cvt_f32_bf16_e64 v260, v177.h /*v433.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v433.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2eab0",
+      "before": "v_cvt_f32_bf16_e64 v260, v178.l /*v434.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v434.l"
+    },
+    {
+      "PC": "0x2eac0",
+      "before": "v_cvt_f32_bf16_e64 v260, v178.h /*v434.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v434.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ead0",
+      "before": "v_cvt_f32_bf16_e64 v260, v179.l /*v435.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v435.l"
+    },
+    {
+      "PC": "0x2eae0",
+      "before": "v_cvt_f32_bf16_e64 v260, v179.h /*v435.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v435.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2eb98",
+      "before": "v_cvt_f32_bf16_e64 v260, v180.l /*v436.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v436.l"
+    },
+    {
+      "PC": "0x2eba8",
+      "before": "v_cvt_f32_bf16_e64 v260, v180.h /*v436.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v436.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ebb8",
+      "before": "v_cvt_f32_bf16_e64 v260, v181.l /*v437.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v437.l"
+    },
+    {
+      "PC": "0x2ebc8",
+      "before": "v_cvt_f32_bf16_e64 v260, v181.h /*v437.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v437.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ebd8",
+      "before": "v_cvt_f32_bf16_e64 v260, v182.l /*v438.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v438.l"
+    },
+    {
+      "PC": "0x2ebe8",
+      "before": "v_cvt_f32_bf16_e64 v260, v182.h /*v438.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v438.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ebf8",
+      "before": "v_cvt_f32_bf16_e64 v260, v183.l /*v439.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v439.l"
+    },
+    {
+      "PC": "0x2ec08",
+      "before": "v_cvt_f32_bf16_e64 v260, v183.h /*v439.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v439.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ecc0",
+      "before": "v_cvt_f32_bf16_e64 v260, v216.l /*v472.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v472.l"
+    },
+    {
+      "PC": "0x2ecd0",
+      "before": "v_cvt_f32_bf16_e64 v260, v216.h /*v472.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v472.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ece0",
+      "before": "v_cvt_f32_bf16_e64 v260, v217.l /*v473.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v473.l"
+    },
+    {
+      "PC": "0x2ecf0",
+      "before": "v_cvt_f32_bf16_e64 v260, v217.h /*v473.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v473.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ed00",
+      "before": "v_cvt_f32_bf16_e64 v260, v218.l /*v474.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v474.l"
+    },
+    {
+      "PC": "0x2ed10",
+      "before": "v_cvt_f32_bf16_e64 v260, v218.h /*v474.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v474.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ed20",
+      "before": "v_cvt_f32_bf16_e64 v260, v219.l /*v475.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v475.l"
+    },
+    {
+      "PC": "0x2ed30",
+      "before": "v_cvt_f32_bf16_e64 v260, v219.h /*v475.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v475.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ede8",
+      "before": "v_cvt_f32_bf16_e64 v260, v220.l /*v476.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v476.l"
+    },
+    {
+      "PC": "0x2edf8",
+      "before": "v_cvt_f32_bf16_e64 v260, v220.h /*v476.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v476.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ee08",
+      "before": "v_cvt_f32_bf16_e64 v260, v221.l /*v477.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v477.l"
+    },
+    {
+      "PC": "0x2ee18",
+      "before": "v_cvt_f32_bf16_e64 v260, v221.h /*v477.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v477.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ee28",
+      "before": "v_cvt_f32_bf16_e64 v260, v222.l /*v478.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v478.l"
+    },
+    {
+      "PC": "0x2ee38",
+      "before": "v_cvt_f32_bf16_e64 v260, v222.h /*v478.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v478.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ee48",
+      "before": "v_cvt_f32_bf16_e64 v260, v223.l /*v479.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v479.l"
+    },
+    {
+      "PC": "0x2ee58",
+      "before": "v_cvt_f32_bf16_e64 v260, v223.h /*v479.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v479.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ef10",
+      "before": "v_cvt_f32_bf16_e64 v260, v0.l /*v512.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v512.l"
+    },
+    {
+      "PC": "0x2ef28",
+      "before": "v_cvt_f32_bf16_e64 v260, v0.h /*v512.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v512.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ef40",
+      "before": "v_cvt_f32_bf16_e64 v260, v1.l /*v513.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v513.l"
+    },
+    {
+      "PC": "0x2ef58",
+      "before": "v_cvt_f32_bf16_e64 v260, v1.h /*v513.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v513.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ef70",
+      "before": "v_cvt_f32_bf16_e64 v260, v2.l /*v514.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v514.l"
+    },
+    {
+      "PC": "0x2ef88",
+      "before": "v_cvt_f32_bf16_e64 v260, v2.h /*v514.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v514.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2efa0",
+      "before": "v_cvt_f32_bf16_e64 v260, v3.l /*v515.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v515.l"
+    },
+    {
+      "PC": "0x2efb8",
+      "before": "v_cvt_f32_bf16_e64 v260, v3.h /*v515.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v515.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f070",
+      "before": "v_cvt_f32_bf16_e64 v260, v4.l /*v516.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v516.l"
+    },
+    {
+      "PC": "0x2f088",
+      "before": "v_cvt_f32_bf16_e64 v260, v4.h /*v516.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v516.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f0a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v5.l /*v517.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v517.l"
+    },
+    {
+      "PC": "0x2f0b8",
+      "before": "v_cvt_f32_bf16_e64 v260, v5.h /*v517.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v517.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f0d0",
+      "before": "v_cvt_f32_bf16_e64 v260, v6.l /*v518.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v518.l"
+    },
+    {
+      "PC": "0x2f0e8",
+      "before": "v_cvt_f32_bf16_e64 v260, v6.h /*v518.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v518.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f100",
+      "before": "v_cvt_f32_bf16_e64 v260, v7.l /*v519.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v519.l"
+    },
+    {
+      "PC": "0x2f118",
+      "before": "v_cvt_f32_bf16_e64 v260, v7.h /*v519.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v519.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f1dc",
+      "before": "v_cvt_f32_bf16_e64 v260, v24.l /*v536.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v536.l"
+    },
+    {
+      "PC": "0x2f1f4",
+      "before": "v_cvt_f32_bf16_e64 v260, v24.h /*v536.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v536.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f20c",
+      "before": "v_cvt_f32_bf16_e64 v260, v25.l /*v537.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v537.l"
+    },
+    {
+      "PC": "0x2f224",
+      "before": "v_cvt_f32_bf16_e64 v260, v25.h /*v537.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v537.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f23c",
+      "before": "v_cvt_f32_bf16_e64 v260, v26.l /*v538.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v538.l"
+    },
+    {
+      "PC": "0x2f254",
+      "before": "v_cvt_f32_bf16_e64 v260, v26.h /*v538.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v538.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f26c",
+      "before": "v_cvt_f32_bf16_e64 v260, v27.l /*v539.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v539.l"
+    },
+    {
+      "PC": "0x2f284",
+      "before": "v_cvt_f32_bf16_e64 v260, v27.h /*v539.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v539.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f348",
+      "before": "v_cvt_f32_bf16_e64 v260, v28.l /*v540.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v540.l"
+    },
+    {
+      "PC": "0x2f360",
+      "before": "v_cvt_f32_bf16_e64 v260, v28.h /*v540.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v540.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f378",
+      "before": "v_cvt_f32_bf16_e64 v260, v29.l /*v541.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v541.l"
+    },
+    {
+      "PC": "0x2f390",
+      "before": "v_cvt_f32_bf16_e64 v260, v29.h /*v541.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v541.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f3a8",
+      "before": "v_cvt_f32_bf16_e64 v260, v30.l /*v542.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v542.l"
+    },
+    {
+      "PC": "0x2f3c0",
+      "before": "v_cvt_f32_bf16_e64 v260, v30.h /*v542.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v542.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f3d8",
+      "before": "v_cvt_f32_bf16_e64 v260, v31.l /*v543.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v543.l"
+    },
+    {
+      "PC": "0x2f3f0",
+      "before": "v_cvt_f32_bf16_e64 v260, v31.h /*v543.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v543.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f4a8",
+      "before": "v_cvt_f32_bf16_e64 v260, v32.l /*v544.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v544.l"
+    },
+    {
+      "PC": "0x2f4c0",
+      "before": "v_cvt_f32_bf16_e64 v260, v32.h /*v544.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v544.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f4d8",
+      "before": "v_cvt_f32_bf16_e64 v260, v33.l /*v545.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v545.l"
+    },
+    {
+      "PC": "0x2f4f0",
+      "before": "v_cvt_f32_bf16_e64 v260, v33.h /*v545.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v545.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f508",
+      "before": "v_cvt_f32_bf16_e64 v260, v34.l /*v546.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v546.l"
+    },
+    {
+      "PC": "0x2f520",
+      "before": "v_cvt_f32_bf16_e64 v260, v34.h /*v546.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v546.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f538",
+      "before": "v_cvt_f32_bf16_e64 v260, v35.l /*v547.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v547.l"
+    },
+    {
+      "PC": "0x2f550",
+      "before": "v_cvt_f32_bf16_e64 v260, v35.h /*v547.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v547.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f954",
+      "before": "v_cvt_f32_bf16_e64 v260, v20.l /*v276.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v276.l"
+    },
+    {
+      "PC": "0x2f964",
+      "before": "v_cvt_f32_bf16_e64 v260, v20.h /*v276.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v276.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f974",
+      "before": "v_cvt_f32_bf16_e64 v260, v21.l /*v277.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v277.l"
+    },
+    {
+      "PC": "0x2f984",
+      "before": "v_cvt_f32_bf16_e64 v260, v21.h /*v277.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v277.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f994",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.l /*v278.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v278.l"
+    },
+    {
+      "PC": "0x2f9a4",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.h /*v278.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v278.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2f9b4",
+      "before": "v_cvt_f32_bf16_e64 v260, v23.l /*v279.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v279.l"
+    },
+    {
+      "PC": "0x2f9c4",
+      "before": "v_cvt_f32_bf16_e64 v260, v23.h /*v279.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v279.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fa7c",
+      "before": "v_cvt_f32_bf16_e64 v260, v136.l /*v392.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v392.l"
+    },
+    {
+      "PC": "0x2fa8c",
+      "before": "v_cvt_f32_bf16_e64 v260, v136.h /*v392.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v392.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fa9c",
+      "before": "v_cvt_f32_bf16_e64 v260, v137.l /*v393.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v393.l"
+    },
+    {
+      "PC": "0x2faac",
+      "before": "v_cvt_f32_bf16_e64 v260, v137.h /*v393.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v393.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fabc",
+      "before": "v_cvt_f32_bf16_e64 v260, v138.l /*v394.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v394.l"
+    },
+    {
+      "PC": "0x2facc",
+      "before": "v_cvt_f32_bf16_e64 v260, v138.h /*v394.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v394.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fadc",
+      "before": "v_cvt_f32_bf16_e64 v260, v139.l /*v395.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v395.l"
+    },
+    {
+      "PC": "0x2faec",
+      "before": "v_cvt_f32_bf16_e64 v260, v139.h /*v395.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v395.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fba4",
+      "before": "v_cvt_f32_bf16_e64 v260, v140.l /*v396.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v396.l"
+    },
+    {
+      "PC": "0x2fbb4",
+      "before": "v_cvt_f32_bf16_e64 v260, v140.h /*v396.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v396.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fbc4",
+      "before": "v_cvt_f32_bf16_e64 v260, v141.l /*v397.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v397.l"
+    },
+    {
+      "PC": "0x2fbd4",
+      "before": "v_cvt_f32_bf16_e64 v260, v141.h /*v397.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v397.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fbe4",
+      "before": "v_cvt_f32_bf16_e64 v260, v142.l /*v398.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v398.l"
+    },
+    {
+      "PC": "0x2fbf4",
+      "before": "v_cvt_f32_bf16_e64 v260, v142.h /*v398.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v398.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fc04",
+      "before": "v_cvt_f32_bf16_e64 v260, v143.l /*v399.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v399.l"
+    },
+    {
+      "PC": "0x2fc14",
+      "before": "v_cvt_f32_bf16_e64 v260, v143.h /*v399.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v399.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fccc",
+      "before": "v_cvt_f32_bf16_e64 v260, v176.l /*v432.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v432.l"
+    },
+    {
+      "PC": "0x2fcdc",
+      "before": "v_cvt_f32_bf16_e64 v260, v176.h /*v432.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v432.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fcec",
+      "before": "v_cvt_f32_bf16_e64 v260, v177.l /*v433.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v433.l"
+    },
+    {
+      "PC": "0x2fcfc",
+      "before": "v_cvt_f32_bf16_e64 v260, v177.h /*v433.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v433.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fd0c",
+      "before": "v_cvt_f32_bf16_e64 v260, v178.l /*v434.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v434.l"
+    },
+    {
+      "PC": "0x2fd1c",
+      "before": "v_cvt_f32_bf16_e64 v260, v178.h /*v434.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v434.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fd2c",
+      "before": "v_cvt_f32_bf16_e64 v260, v179.l /*v435.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v435.l"
+    },
+    {
+      "PC": "0x2fd3c",
+      "before": "v_cvt_f32_bf16_e64 v260, v179.h /*v435.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v435.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fdf4",
+      "before": "v_cvt_f32_bf16_e64 v260, v180.l /*v436.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v436.l"
+    },
+    {
+      "PC": "0x2fe04",
+      "before": "v_cvt_f32_bf16_e64 v260, v180.h /*v436.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v436.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fe14",
+      "before": "v_cvt_f32_bf16_e64 v260, v181.l /*v437.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v437.l"
+    },
+    {
+      "PC": "0x2fe24",
+      "before": "v_cvt_f32_bf16_e64 v260, v181.h /*v437.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v437.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fe34",
+      "before": "v_cvt_f32_bf16_e64 v260, v182.l /*v438.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v438.l"
+    },
+    {
+      "PC": "0x2fe44",
+      "before": "v_cvt_f32_bf16_e64 v260, v182.h /*v438.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v438.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2fe54",
+      "before": "v_cvt_f32_bf16_e64 v260, v183.l /*v439.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v439.l"
+    },
+    {
+      "PC": "0x2fe64",
+      "before": "v_cvt_f32_bf16_e64 v260, v183.h /*v439.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v439.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ff28",
+      "before": "v_cvt_f32_bf16_e64 v260, v216.l /*v472.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v472.l"
+    },
+    {
+      "PC": "0x2ff38",
+      "before": "v_cvt_f32_bf16_e64 v260, v216.h /*v472.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v472.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ff48",
+      "before": "v_cvt_f32_bf16_e64 v260, v217.l /*v473.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v473.l"
+    },
+    {
+      "PC": "0x2ff58",
+      "before": "v_cvt_f32_bf16_e64 v260, v217.h /*v473.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v473.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ff68",
+      "before": "v_cvt_f32_bf16_e64 v260, v218.l /*v474.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v474.l"
+    },
+    {
+      "PC": "0x2ff78",
+      "before": "v_cvt_f32_bf16_e64 v260, v218.h /*v474.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v474.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x2ff88",
+      "before": "v_cvt_f32_bf16_e64 v260, v219.l /*v475.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v475.l"
+    },
+    {
+      "PC": "0x2ff98",
+      "before": "v_cvt_f32_bf16_e64 v260, v219.h /*v475.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v475.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30050",
+      "before": "v_cvt_f32_bf16_e64 v260, v220.l /*v476.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v476.l"
+    },
+    {
+      "PC": "0x30060",
+      "before": "v_cvt_f32_bf16_e64 v260, v220.h /*v476.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v476.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30070",
+      "before": "v_cvt_f32_bf16_e64 v260, v221.l /*v477.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v477.l"
+    },
+    {
+      "PC": "0x30080",
+      "before": "v_cvt_f32_bf16_e64 v260, v221.h /*v477.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v477.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30090",
+      "before": "v_cvt_f32_bf16_e64 v260, v222.l /*v478.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v478.l"
+    },
+    {
+      "PC": "0x300a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v222.h /*v478.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v478.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x300b0",
+      "before": "v_cvt_f32_bf16_e64 v260, v223.l /*v479.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v479.l"
+    },
+    {
+      "PC": "0x300c0",
+      "before": "v_cvt_f32_bf16_e64 v260, v223.h /*v479.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v479.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30178",
+      "before": "v_cvt_f32_bf16_e64 v260, v0.l /*v512.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v512.l"
+    },
+    {
+      "PC": "0x30190",
+      "before": "v_cvt_f32_bf16_e64 v260, v0.h /*v512.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v512.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x301a8",
+      "before": "v_cvt_f32_bf16_e64 v260, v1.l /*v513.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v513.l"
+    },
+    {
+      "PC": "0x301c0",
+      "before": "v_cvt_f32_bf16_e64 v260, v1.h /*v513.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v513.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x301d8",
+      "before": "v_cvt_f32_bf16_e64 v260, v2.l /*v514.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v514.l"
+    },
+    {
+      "PC": "0x301f0",
+      "before": "v_cvt_f32_bf16_e64 v260, v2.h /*v514.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v514.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30208",
+      "before": "v_cvt_f32_bf16_e64 v260, v3.l /*v515.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v515.l"
+    },
+    {
+      "PC": "0x30220",
+      "before": "v_cvt_f32_bf16_e64 v260, v3.h /*v515.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v515.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x302d8",
+      "before": "v_cvt_f32_bf16_e64 v260, v4.l /*v516.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v516.l"
+    },
+    {
+      "PC": "0x302f0",
+      "before": "v_cvt_f32_bf16_e64 v260, v4.h /*v516.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v516.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30308",
+      "before": "v_cvt_f32_bf16_e64 v260, v5.l /*v517.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v517.l"
+    },
+    {
+      "PC": "0x3032c",
+      "before": "v_cvt_f32_bf16_e64 v260, v5.h /*v517.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v517.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30344",
+      "before": "v_cvt_f32_bf16_e64 v260, v6.l /*v518.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v518.l"
+    },
+    {
+      "PC": "0x3035c",
+      "before": "v_cvt_f32_bf16_e64 v260, v6.h /*v518.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v518.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30374",
+      "before": "v_cvt_f32_bf16_e64 v260, v7.l /*v519.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v519.l"
+    },
+    {
+      "PC": "0x3038c",
+      "before": "v_cvt_f32_bf16_e64 v260, v7.h /*v519.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v519.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30444",
+      "before": "v_cvt_f32_bf16_e64 v260, v24.l /*v536.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v536.l"
+    },
+    {
+      "PC": "0x3045c",
+      "before": "v_cvt_f32_bf16_e64 v260, v24.h /*v536.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v536.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30474",
+      "before": "v_cvt_f32_bf16_e64 v260, v25.l /*v537.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v537.l"
+    },
+    {
+      "PC": "0x3048c",
+      "before": "v_cvt_f32_bf16_e64 v260, v25.h /*v537.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v537.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x304a4",
+      "before": "v_cvt_f32_bf16_e64 v260, v26.l /*v538.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v538.l"
+    },
+    {
+      "PC": "0x304bc",
+      "before": "v_cvt_f32_bf16_e64 v260, v26.h /*v538.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v538.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x304d4",
+      "before": "v_cvt_f32_bf16_e64 v260, v27.l /*v539.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v539.l"
+    },
+    {
+      "PC": "0x304ec",
+      "before": "v_cvt_f32_bf16_e64 v260, v27.h /*v539.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v539.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x305a4",
+      "before": "v_cvt_f32_bf16_e64 v260, v28.l /*v540.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v540.l"
+    },
+    {
+      "PC": "0x305bc",
+      "before": "v_cvt_f32_bf16_e64 v260, v28.h /*v540.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v540.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x305d4",
+      "before": "v_cvt_f32_bf16_e64 v260, v29.l /*v541.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v541.l"
+    },
+    {
+      "PC": "0x305ec",
+      "before": "v_cvt_f32_bf16_e64 v260, v29.h /*v541.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v541.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30604",
+      "before": "v_cvt_f32_bf16_e64 v260, v30.l /*v542.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v542.l"
+    },
+    {
+      "PC": "0x3061c",
+      "before": "v_cvt_f32_bf16_e64 v260, v30.h /*v542.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v542.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30634",
+      "before": "v_cvt_f32_bf16_e64 v260, v31.l /*v543.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v543.l"
+    },
+    {
+      "PC": "0x3064c",
+      "before": "v_cvt_f32_bf16_e64 v260, v31.h /*v543.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v543.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30704",
+      "before": "v_cvt_f32_bf16_e64 v260, v32.l /*v544.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v544.l"
+    },
+    {
+      "PC": "0x3071c",
+      "before": "v_cvt_f32_bf16_e64 v260, v32.h /*v544.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v544.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30734",
+      "before": "v_cvt_f32_bf16_e64 v260, v33.l /*v545.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v545.l"
+    },
+    {
+      "PC": "0x3074c",
+      "before": "v_cvt_f32_bf16_e64 v260, v33.h /*v545.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v545.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30764",
+      "before": "v_cvt_f32_bf16_e64 v260, v34.l /*v546.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v546.l"
+    },
+    {
+      "PC": "0x3077c",
+      "before": "v_cvt_f32_bf16_e64 v260, v34.h /*v546.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v546.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30794",
+      "before": "v_cvt_f32_bf16_e64 v260, v35.l /*v547.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v547.l"
+    },
+    {
+      "PC": "0x307ac",
+      "before": "v_cvt_f32_bf16_e64 v260, v35.h /*v547.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v547.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30af8",
+      "before": "v_cvt_f32_bf16_e64 v260, v20.l /*v276.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v276.l"
+    },
+    {
+      "PC": "0x30b08",
+      "before": "v_cvt_f32_bf16_e64 v260, v20.h /*v276.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v276.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30b18",
+      "before": "v_cvt_f32_bf16_e64 v260, v21.l /*v277.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v277.l"
+    },
+    {
+      "PC": "0x30b28",
+      "before": "v_cvt_f32_bf16_e64 v260, v21.h /*v277.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v277.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30b38",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.l /*v278.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v278.l"
+    },
+    {
+      "PC": "0x30b48",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.h /*v278.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v278.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30b58",
+      "before": "v_cvt_f32_bf16_e64 v260, v23.l /*v279.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v279.l"
+    },
+    {
+      "PC": "0x30b68",
+      "before": "v_cvt_f32_bf16_e64 v260, v23.h /*v279.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v279.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30c2c",
+      "before": "v_cvt_f32_bf16_e64 v260, v104.l /*v360.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v360.l"
+    },
+    {
+      "PC": "0x30c3c",
+      "before": "v_cvt_f32_bf16_e64 v260, v104.h /*v360.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v360.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30c4c",
+      "before": "v_cvt_f32_bf16_e64 v260, v105.l /*v361.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v361.l"
+    },
+    {
+      "PC": "0x30c5c",
+      "before": "v_cvt_f32_bf16_e64 v260, v105.h /*v361.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v361.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30c6c",
+      "before": "v_cvt_f32_bf16_e64 v260, v106.l /*v362.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v362.l"
+    },
+    {
+      "PC": "0x30c7c",
+      "before": "v_cvt_f32_bf16_e64 v260, v106.h /*v362.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v362.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30c8c",
+      "before": "v_cvt_f32_bf16_e64 v260, v107.l /*v363.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v363.l"
+    },
+    {
+      "PC": "0x30c9c",
+      "before": "v_cvt_f32_bf16_e64 v260, v107.h /*v363.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v363.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30d54",
+      "before": "v_cvt_f32_bf16_e64 v260, v108.l /*v364.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v364.l"
+    },
+    {
+      "PC": "0x30d64",
+      "before": "v_cvt_f32_bf16_e64 v260, v108.h /*v364.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v364.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30d74",
+      "before": "v_cvt_f32_bf16_e64 v260, v109.l /*v365.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v365.l"
+    },
+    {
+      "PC": "0x30d84",
+      "before": "v_cvt_f32_bf16_e64 v260, v109.h /*v365.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v365.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30d94",
+      "before": "v_cvt_f32_bf16_e64 v260, v110.l /*v366.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v366.l"
+    },
+    {
+      "PC": "0x30da4",
+      "before": "v_cvt_f32_bf16_e64 v260, v110.h /*v366.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v366.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30db4",
+      "before": "v_cvt_f32_bf16_e64 v260, v111.l /*v367.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v367.l"
+    },
+    {
+      "PC": "0x30dc4",
+      "before": "v_cvt_f32_bf16_e64 v260, v111.h /*v367.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v367.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30e7c",
+      "before": "v_cvt_f32_bf16_e64 v260, v144.l /*v400.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v400.l"
+    },
+    {
+      "PC": "0x30e8c",
+      "before": "v_cvt_f32_bf16_e64 v260, v144.h /*v400.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v400.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30e9c",
+      "before": "v_cvt_f32_bf16_e64 v260, v145.l /*v401.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v401.l"
+    },
+    {
+      "PC": "0x30eac",
+      "before": "v_cvt_f32_bf16_e64 v260, v145.h /*v401.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v401.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30ebc",
+      "before": "v_cvt_f32_bf16_e64 v260, v146.l /*v402.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v402.l"
+    },
+    {
+      "PC": "0x30ecc",
+      "before": "v_cvt_f32_bf16_e64 v260, v146.h /*v402.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v402.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30edc",
+      "before": "v_cvt_f32_bf16_e64 v260, v147.l /*v403.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v403.l"
+    },
+    {
+      "PC": "0x30eec",
+      "before": "v_cvt_f32_bf16_e64 v260, v147.h /*v403.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v403.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30fa4",
+      "before": "v_cvt_f32_bf16_e64 v260, v148.l /*v404.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v404.l"
+    },
+    {
+      "PC": "0x30fb4",
+      "before": "v_cvt_f32_bf16_e64 v260, v148.h /*v404.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v404.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30fc4",
+      "before": "v_cvt_f32_bf16_e64 v260, v149.l /*v405.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v405.l"
+    },
+    {
+      "PC": "0x30fd4",
+      "before": "v_cvt_f32_bf16_e64 v260, v149.h /*v405.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v405.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x30fe4",
+      "before": "v_cvt_f32_bf16_e64 v260, v150.l /*v406.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v406.l"
+    },
+    {
+      "PC": "0x30ff4",
+      "before": "v_cvt_f32_bf16_e64 v260, v150.h /*v406.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v406.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31004",
+      "before": "v_cvt_f32_bf16_e64 v260, v151.l /*v407.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v407.l"
+    },
+    {
+      "PC": "0x31014",
+      "before": "v_cvt_f32_bf16_e64 v260, v151.h /*v407.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v407.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x310cc",
+      "before": "v_cvt_f32_bf16_e64 v260, v184.l /*v440.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v440.l"
+    },
+    {
+      "PC": "0x310dc",
+      "before": "v_cvt_f32_bf16_e64 v260, v184.h /*v440.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v440.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x310ec",
+      "before": "v_cvt_f32_bf16_e64 v260, v185.l /*v441.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v441.l"
+    },
+    {
+      "PC": "0x310fc",
+      "before": "v_cvt_f32_bf16_e64 v260, v185.h /*v441.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v441.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3110c",
+      "before": "v_cvt_f32_bf16_e64 v260, v186.l /*v442.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v442.l"
+    },
+    {
+      "PC": "0x3111c",
+      "before": "v_cvt_f32_bf16_e64 v260, v186.h /*v442.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v442.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3112c",
+      "before": "v_cvt_f32_bf16_e64 v260, v187.l /*v443.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v443.l"
+    },
+    {
+      "PC": "0x3113c",
+      "before": "v_cvt_f32_bf16_e64 v260, v187.h /*v443.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v443.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x311f4",
+      "before": "v_cvt_f32_bf16_e64 v260, v188.l /*v444.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v444.l"
+    },
+    {
+      "PC": "0x31204",
+      "before": "v_cvt_f32_bf16_e64 v260, v188.h /*v444.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v444.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31214",
+      "before": "v_cvt_f32_bf16_e64 v260, v189.l /*v445.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v445.l"
+    },
+    {
+      "PC": "0x31224",
+      "before": "v_cvt_f32_bf16_e64 v260, v189.h /*v445.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v445.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31234",
+      "before": "v_cvt_f32_bf16_e64 v260, v190.l /*v446.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v446.l"
+    },
+    {
+      "PC": "0x31244",
+      "before": "v_cvt_f32_bf16_e64 v260, v190.h /*v446.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v446.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31254",
+      "before": "v_cvt_f32_bf16_e64 v260, v191.l /*v447.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v447.l"
+    },
+    {
+      "PC": "0x31264",
+      "before": "v_cvt_f32_bf16_e64 v260, v191.h /*v447.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v447.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3131c",
+      "before": "v_cvt_f32_bf16_e64 v260, v224.l /*v480.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v480.l"
+    },
+    {
+      "PC": "0x31338",
+      "before": "v_cvt_f32_bf16_e64 v260, v224.h /*v480.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v480.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31348",
+      "before": "v_cvt_f32_bf16_e64 v260, v225.l /*v481.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v481.l"
+    },
+    {
+      "PC": "0x31358",
+      "before": "v_cvt_f32_bf16_e64 v260, v225.h /*v481.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v481.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31368",
+      "before": "v_cvt_f32_bf16_e64 v260, v226.l /*v482.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v482.l"
+    },
+    {
+      "PC": "0x31378",
+      "before": "v_cvt_f32_bf16_e64 v260, v226.h /*v482.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v482.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31388",
+      "before": "v_cvt_f32_bf16_e64 v260, v227.l /*v483.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v483.l"
+    },
+    {
+      "PC": "0x31398",
+      "before": "v_cvt_f32_bf16_e64 v260, v227.h /*v483.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v483.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31eb4",
+      "before": "v_cvt_f32_bf16_e64 v260, v20.l /*v276.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v276.l"
+    },
+    {
+      "PC": "0x31ec4",
+      "before": "v_cvt_f32_bf16_e64 v260, v20.h /*v276.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v276.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31ed4",
+      "before": "v_cvt_f32_bf16_e64 v260, v21.l /*v277.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v277.l"
+    },
+    {
+      "PC": "0x31ee4",
+      "before": "v_cvt_f32_bf16_e64 v260, v21.h /*v277.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v277.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31ef4",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.l /*v278.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v278.l"
+    },
+    {
+      "PC": "0x31f04",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.h /*v278.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v278.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31f14",
+      "before": "v_cvt_f32_bf16_e64 v260, v23.l /*v279.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v279.l"
+    },
+    {
+      "PC": "0x31f24",
+      "before": "v_cvt_f32_bf16_e64 v260, v23.h /*v279.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v279.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31fcc",
+      "before": "v_cvt_f32_bf16_e64 v260, v136.l /*v392.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v392.l"
+    },
+    {
+      "PC": "0x31fdc",
+      "before": "v_cvt_f32_bf16_e64 v260, v136.h /*v392.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v392.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x31fec",
+      "before": "v_cvt_f32_bf16_e64 v260, v137.l /*v393.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v393.l"
+    },
+    {
+      "PC": "0x31ffc",
+      "before": "v_cvt_f32_bf16_e64 v260, v137.h /*v393.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v393.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3200c",
+      "before": "v_cvt_f32_bf16_e64 v260, v138.l /*v394.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v394.l"
+    },
+    {
+      "PC": "0x3201c",
+      "before": "v_cvt_f32_bf16_e64 v260, v138.h /*v394.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v394.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3202c",
+      "before": "v_cvt_f32_bf16_e64 v260, v139.l /*v395.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v395.l"
+    },
+    {
+      "PC": "0x3203c",
+      "before": "v_cvt_f32_bf16_e64 v260, v139.h /*v395.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v395.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x320e4",
+      "before": "v_cvt_f32_bf16_e64 v260, v160.l /*v416.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v416.l"
+    },
+    {
+      "PC": "0x320f4",
+      "before": "v_cvt_f32_bf16_e64 v260, v160.h /*v416.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v416.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32104",
+      "before": "v_cvt_f32_bf16_e64 v260, v161.l /*v417.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v417.l"
+    },
+    {
+      "PC": "0x32114",
+      "before": "v_cvt_f32_bf16_e64 v260, v161.h /*v417.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v417.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32124",
+      "before": "v_cvt_f32_bf16_e64 v260, v162.l /*v418.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v418.l"
+    },
+    {
+      "PC": "0x32134",
+      "before": "v_cvt_f32_bf16_e64 v260, v162.h /*v418.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v418.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32144",
+      "before": "v_cvt_f32_bf16_e64 v260, v163.l /*v419.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v419.l"
+    },
+    {
+      "PC": "0x32154",
+      "before": "v_cvt_f32_bf16_e64 v260, v163.h /*v419.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v419.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x321fc",
+      "before": "v_cvt_f32_bf16_e64 v260, v164.l /*v420.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v420.l"
+    },
+    {
+      "PC": "0x3220c",
+      "before": "v_cvt_f32_bf16_e64 v260, v164.h /*v420.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v420.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3221c",
+      "before": "v_cvt_f32_bf16_e64 v260, v165.l /*v421.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v421.l"
+    },
+    {
+      "PC": "0x3222c",
+      "before": "v_cvt_f32_bf16_e64 v260, v165.h /*v421.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v421.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3223c",
+      "before": "v_cvt_f32_bf16_e64 v260, v166.l /*v422.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v422.l"
+    },
+    {
+      "PC": "0x3224c",
+      "before": "v_cvt_f32_bf16_e64 v260, v166.h /*v422.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v422.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3225c",
+      "before": "v_cvt_f32_bf16_e64 v260, v167.l /*v423.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v423.l"
+    },
+    {
+      "PC": "0x3226c",
+      "before": "v_cvt_f32_bf16_e64 v260, v167.h /*v423.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v423.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32314",
+      "before": "v_cvt_f32_bf16_e64 v260, v204.l /*v460.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v460.l"
+    },
+    {
+      "PC": "0x32324",
+      "before": "v_cvt_f32_bf16_e64 v260, v204.h /*v460.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v460.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32334",
+      "before": "v_cvt_f32_bf16_e64 v260, v205.l /*v461.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v461.l"
+    },
+    {
+      "PC": "0x32344",
+      "before": "v_cvt_f32_bf16_e64 v260, v205.h /*v461.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v461.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32354",
+      "before": "v_cvt_f32_bf16_e64 v260, v206.l /*v462.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v462.l"
+    },
+    {
+      "PC": "0x32364",
+      "before": "v_cvt_f32_bf16_e64 v260, v206.h /*v462.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v462.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32374",
+      "before": "v_cvt_f32_bf16_e64 v260, v207.l /*v463.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v463.l"
+    },
+    {
+      "PC": "0x32384",
+      "before": "v_cvt_f32_bf16_e64 v260, v207.h /*v463.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v463.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3242c",
+      "before": "v_cvt_f32_bf16_e64 v260, v224.l /*v480.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v480.l"
+    },
+    {
+      "PC": "0x3243c",
+      "before": "v_cvt_f32_bf16_e64 v260, v224.h /*v480.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v480.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3244c",
+      "before": "v_cvt_f32_bf16_e64 v260, v225.l /*v481.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v481.l"
+    },
+    {
+      "PC": "0x3245c",
+      "before": "v_cvt_f32_bf16_e64 v260, v225.h /*v481.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v481.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3246c",
+      "before": "v_cvt_f32_bf16_e64 v260, v226.l /*v482.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v482.l"
+    },
+    {
+      "PC": "0x3247c",
+      "before": "v_cvt_f32_bf16_e64 v260, v226.h /*v482.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v482.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3248c",
+      "before": "v_cvt_f32_bf16_e64 v260, v227.l /*v483.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v483.l"
+    },
+    {
+      "PC": "0x3249c",
+      "before": "v_cvt_f32_bf16_e64 v260, v227.h /*v483.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v483.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32550",
+      "before": "v_cvt_f32_bf16_e64 v260, v248.l /*v504.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v504.l"
+    },
+    {
+      "PC": "0x32560",
+      "before": "v_cvt_f32_bf16_e64 v260, v248.h /*v504.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v504.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3257c",
+      "before": "v_cvt_f32_bf16_e64 v260, v249.l /*v505.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v505.l"
+    },
+    {
+      "PC": "0x3258c",
+      "before": "v_cvt_f32_bf16_e64 v260, v249.h /*v505.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v505.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3259c",
+      "before": "v_cvt_f32_bf16_e64 v260, v250.l /*v506.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v506.l"
+    },
+    {
+      "PC": "0x325ac",
+      "before": "v_cvt_f32_bf16_e64 v260, v250.h /*v506.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v506.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x325bc",
+      "before": "v_cvt_f32_bf16_e64 v260, v251.l /*v507.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v507.l"
+    },
+    {
+      "PC": "0x325cc",
+      "before": "v_cvt_f32_bf16_e64 v260, v251.h /*v507.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v507.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32680",
+      "before": "v_cvt_f32_bf16_e64 v260, v252.l /*v508.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v508.l"
+    },
+    {
+      "PC": "0x32690",
+      "before": "v_cvt_f32_bf16_e64 v260, v252.h /*v508.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v508.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x326a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v253.l /*v509.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v509.l"
+    },
+    {
+      "PC": "0x326b0",
+      "before": "v_cvt_f32_bf16_e64 v260, v253.h /*v509.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v509.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x326c0",
+      "before": "v_cvt_f32_bf16_e64 v260, v254.l /*v510.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v510.l"
+    },
+    {
+      "PC": "0x326d0",
+      "before": "v_cvt_f32_bf16_e64 v260, v254.h /*v510.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v510.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x326e0",
+      "before": "v_cvt_f32_bf16_e64 v260, v255.l /*v511.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v511.l"
+    },
+    {
+      "PC": "0x326f0",
+      "before": "v_cvt_f32_bf16_e64 v260, v255.h /*v511.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v511.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x327a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v36.l /*v548.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v548.l"
+    },
+    {
+      "PC": "0x327b8",
+      "before": "v_cvt_f32_bf16_e64 v260, v36.h /*v548.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v548.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x327d0",
+      "before": "v_cvt_f32_bf16_e64 v260, v37.l /*v549.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v549.l"
+    },
+    {
+      "PC": "0x327e8",
+      "before": "v_cvt_f32_bf16_e64 v260, v37.h /*v549.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v549.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32800",
+      "before": "v_cvt_f32_bf16_e64 v260, v38.l /*v550.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v550.l"
+    },
+    {
+      "PC": "0x32818",
+      "before": "v_cvt_f32_bf16_e64 v260, v38.h /*v550.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v550.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32830",
+      "before": "v_cvt_f32_bf16_e64 v260, v39.l /*v551.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v551.l"
+    },
+    {
+      "PC": "0x32848",
+      "before": "v_cvt_f32_bf16_e64 v260, v39.h /*v551.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v551.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x328f4",
+      "before": "v_cvt_f32_bf16_e64 v260, v40.l /*v552.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v552.l"
+    },
+    {
+      "PC": "0x3290c",
+      "before": "v_cvt_f32_bf16_e64 v260, v40.h /*v552.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v552.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32924",
+      "before": "v_cvt_f32_bf16_e64 v260, v41.l /*v553.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v553.l"
+    },
+    {
+      "PC": "0x3293c",
+      "before": "v_cvt_f32_bf16_e64 v260, v41.h /*v553.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v553.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32954",
+      "before": "v_cvt_f32_bf16_e64 v260, v42.l /*v554.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v554.l"
+    },
+    {
+      "PC": "0x3296c",
+      "before": "v_cvt_f32_bf16_e64 v260, v42.h /*v554.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v554.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32984",
+      "before": "v_cvt_f32_bf16_e64 v260, v43.l /*v555.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v555.l"
+    },
+    {
+      "PC": "0x3299c",
+      "before": "v_cvt_f32_bf16_e64 v260, v43.h /*v555.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v555.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32a48",
+      "before": "v_cvt_f32_bf16_e64 v260, v48.l /*v560.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v560.l"
+    },
+    {
+      "PC": "0x32a60",
+      "before": "v_cvt_f32_bf16_e64 v260, v48.h /*v560.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v560.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32a78",
+      "before": "v_cvt_f32_bf16_e64 v260, v49.l /*v561.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v561.l"
+    },
+    {
+      "PC": "0x32a90",
+      "before": "v_cvt_f32_bf16_e64 v260, v49.h /*v561.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v561.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32aa8",
+      "before": "v_cvt_f32_bf16_e64 v260, v50.l /*v562.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v562.l"
+    },
+    {
+      "PC": "0x32ac0",
+      "before": "v_cvt_f32_bf16_e64 v260, v50.h /*v562.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v562.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32ad8",
+      "before": "v_cvt_f32_bf16_e64 v260, v51.l /*v563.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v563.l"
+    },
+    {
+      "PC": "0x32af0",
+      "before": "v_cvt_f32_bf16_e64 v260, v51.h /*v563.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v563.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32b9c",
+      "before": "v_cvt_f32_bf16_e64 v260, v52.l /*v564.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v564.l"
+    },
+    {
+      "PC": "0x32bb4",
+      "before": "v_cvt_f32_bf16_e64 v260, v52.h /*v564.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v564.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32bcc",
+      "before": "v_cvt_f32_bf16_e64 v260, v53.l /*v565.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v565.l"
+    },
+    {
+      "PC": "0x32be4",
+      "before": "v_cvt_f32_bf16_e64 v260, v53.h /*v565.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v565.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32bfc",
+      "before": "v_cvt_f32_bf16_e64 v260, v54.l /*v566.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v566.l"
+    },
+    {
+      "PC": "0x32c14",
+      "before": "v_cvt_f32_bf16_e64 v260, v54.h /*v566.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v566.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x32c2c",
+      "before": "v_cvt_f32_bf16_e64 v260, v55.l /*v567.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v567.l"
+    },
+    {
+      "PC": "0x32c44",
+      "before": "v_cvt_f32_bf16_e64 v260, v55.h /*v567.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v567.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3360c",
+      "before": "v_cvt_f32_bf16_e64 v260, v20.l /*v276.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v276.l"
+    },
+    {
+      "PC": "0x3361c",
+      "before": "v_cvt_f32_bf16_e64 v260, v20.h /*v276.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v276.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3362c",
+      "before": "v_cvt_f32_bf16_e64 v260, v21.l /*v277.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v277.l"
+    },
+    {
+      "PC": "0x3363c",
+      "before": "v_cvt_f32_bf16_e64 v260, v21.h /*v277.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v277.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3364c",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.l /*v278.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v278.l"
+    },
+    {
+      "PC": "0x3365c",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.h /*v278.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v278.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3366c",
+      "before": "v_cvt_f32_bf16_e64 v260, v23.l /*v279.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v279.l"
+    },
+    {
+      "PC": "0x3367c",
+      "before": "v_cvt_f32_bf16_e64 v260, v23.h /*v279.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v279.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33724",
+      "before": "v_cvt_f32_bf16_e64 v260, v136.l /*v392.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v392.l"
+    },
+    {
+      "PC": "0x33734",
+      "before": "v_cvt_f32_bf16_e64 v260, v136.h /*v392.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v392.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33744",
+      "before": "v_cvt_f32_bf16_e64 v260, v137.l /*v393.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v393.l"
+    },
+    {
+      "PC": "0x33754",
+      "before": "v_cvt_f32_bf16_e64 v260, v137.h /*v393.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v393.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33764",
+      "before": "v_cvt_f32_bf16_e64 v260, v138.l /*v394.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v394.l"
+    },
+    {
+      "PC": "0x33774",
+      "before": "v_cvt_f32_bf16_e64 v260, v138.h /*v394.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v394.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33784",
+      "before": "v_cvt_f32_bf16_e64 v260, v139.l /*v395.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v395.l"
+    },
+    {
+      "PC": "0x33794",
+      "before": "v_cvt_f32_bf16_e64 v260, v139.h /*v395.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v395.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3383c",
+      "before": "v_cvt_f32_bf16_e64 v260, v160.l /*v416.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v416.l"
+    },
+    {
+      "PC": "0x3384c",
+      "before": "v_cvt_f32_bf16_e64 v260, v160.h /*v416.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v416.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3385c",
+      "before": "v_cvt_f32_bf16_e64 v260, v161.l /*v417.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v417.l"
+    },
+    {
+      "PC": "0x3386c",
+      "before": "v_cvt_f32_bf16_e64 v260, v161.h /*v417.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v417.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3387c",
+      "before": "v_cvt_f32_bf16_e64 v260, v162.l /*v418.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v418.l"
+    },
+    {
+      "PC": "0x3388c",
+      "before": "v_cvt_f32_bf16_e64 v260, v162.h /*v418.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v418.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x3389c",
+      "before": "v_cvt_f32_bf16_e64 v260, v163.l /*v419.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v419.l"
+    },
+    {
+      "PC": "0x338ac",
+      "before": "v_cvt_f32_bf16_e64 v260, v163.h /*v419.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v419.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33954",
+      "before": "v_cvt_f32_bf16_e64 v260, v164.l /*v420.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v420.l"
+    },
+    {
+      "PC": "0x33964",
+      "before": "v_cvt_f32_bf16_e64 v260, v164.h /*v420.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v420.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33974",
+      "before": "v_cvt_f32_bf16_e64 v260, v165.l /*v421.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v421.l"
+    },
+    {
+      "PC": "0x33984",
+      "before": "v_cvt_f32_bf16_e64 v260, v165.h /*v421.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v421.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33994",
+      "before": "v_cvt_f32_bf16_e64 v260, v166.l /*v422.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v422.l"
+    },
+    {
+      "PC": "0x339a4",
+      "before": "v_cvt_f32_bf16_e64 v260, v166.h /*v422.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v422.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x339b4",
+      "before": "v_cvt_f32_bf16_e64 v260, v167.l /*v423.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v423.l"
+    },
+    {
+      "PC": "0x339c4",
+      "before": "v_cvt_f32_bf16_e64 v260, v167.h /*v423.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v423.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33a6c",
+      "before": "v_cvt_f32_bf16_e64 v260, v204.l /*v460.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v460.l"
+    },
+    {
+      "PC": "0x33a7c",
+      "before": "v_cvt_f32_bf16_e64 v260, v204.h /*v460.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v460.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33a8c",
+      "before": "v_cvt_f32_bf16_e64 v260, v205.l /*v461.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v461.l"
+    },
+    {
+      "PC": "0x33a9c",
+      "before": "v_cvt_f32_bf16_e64 v260, v205.h /*v461.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v461.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33aac",
+      "before": "v_cvt_f32_bf16_e64 v260, v206.l /*v462.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v462.l"
+    },
+    {
+      "PC": "0x33abc",
+      "before": "v_cvt_f32_bf16_e64 v260, v206.h /*v462.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v462.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33acc",
+      "before": "v_cvt_f32_bf16_e64 v260, v207.l /*v463.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v463.l"
+    },
+    {
+      "PC": "0x33adc",
+      "before": "v_cvt_f32_bf16_e64 v260, v207.h /*v463.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v463.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33b84",
+      "before": "v_cvt_f32_bf16_e64 v260, v224.l /*v480.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v480.l"
+    },
+    {
+      "PC": "0x33b94",
+      "before": "v_cvt_f32_bf16_e64 v260, v224.h /*v480.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v480.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33ba4",
+      "before": "v_cvt_f32_bf16_e64 v260, v225.l /*v481.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v481.l"
+    },
+    {
+      "PC": "0x33bb4",
+      "before": "v_cvt_f32_bf16_e64 v260, v225.h /*v481.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v481.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33bc4",
+      "before": "v_cvt_f32_bf16_e64 v260, v226.l /*v482.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v482.l"
+    },
+    {
+      "PC": "0x33bd4",
+      "before": "v_cvt_f32_bf16_e64 v260, v226.h /*v482.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v482.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33be4",
+      "before": "v_cvt_f32_bf16_e64 v260, v227.l /*v483.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v483.l"
+    },
+    {
+      "PC": "0x33bf4",
+      "before": "v_cvt_f32_bf16_e64 v260, v227.h /*v483.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v483.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33ca8",
+      "before": "v_cvt_f32_bf16_e64 v260, v248.l /*v504.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v504.l"
+    },
+    {
+      "PC": "0x33cb8",
+      "before": "v_cvt_f32_bf16_e64 v260, v248.h /*v504.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v504.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33cc8",
+      "before": "v_cvt_f32_bf16_e64 v260, v249.l /*v505.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v505.l"
+    },
+    {
+      "PC": "0x33cd8",
+      "before": "v_cvt_f32_bf16_e64 v260, v249.h /*v505.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v505.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33ce8",
+      "before": "v_cvt_f32_bf16_e64 v260, v250.l /*v506.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v506.l"
+    },
+    {
+      "PC": "0x33cf8",
+      "before": "v_cvt_f32_bf16_e64 v260, v250.h /*v506.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v506.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33d08",
+      "before": "v_cvt_f32_bf16_e64 v260, v251.l /*v507.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v507.l"
+    },
+    {
+      "PC": "0x33d18",
+      "before": "v_cvt_f32_bf16_e64 v260, v251.h /*v507.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v507.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33dcc",
+      "before": "v_cvt_f32_bf16_e64 v260, v252.l /*v508.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v508.l"
+    },
+    {
+      "PC": "0x33ddc",
+      "before": "v_cvt_f32_bf16_e64 v260, v252.h /*v508.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v508.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33dec",
+      "before": "v_cvt_f32_bf16_e64 v260, v253.l /*v509.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v509.l"
+    },
+    {
+      "PC": "0x33dfc",
+      "before": "v_cvt_f32_bf16_e64 v260, v253.h /*v509.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v509.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33e0c",
+      "before": "v_cvt_f32_bf16_e64 v260, v254.l /*v510.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v510.l"
+    },
+    {
+      "PC": "0x33e1c",
+      "before": "v_cvt_f32_bf16_e64 v260, v254.h /*v510.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v510.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33e2c",
+      "before": "v_cvt_f32_bf16_e64 v260, v255.l /*v511.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v511.l"
+    },
+    {
+      "PC": "0x33e3c",
+      "before": "v_cvt_f32_bf16_e64 v260, v255.h /*v511.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v511.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33eec",
+      "before": "v_cvt_f32_bf16_e64 v260, v36.l /*v548.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v548.l"
+    },
+    {
+      "PC": "0x33f04",
+      "before": "v_cvt_f32_bf16_e64 v260, v36.h /*v548.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v548.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33f1c",
+      "before": "v_cvt_f32_bf16_e64 v260, v37.l /*v549.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v549.l"
+    },
+    {
+      "PC": "0x33f34",
+      "before": "v_cvt_f32_bf16_e64 v260, v37.h /*v549.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v549.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33f4c",
+      "before": "v_cvt_f32_bf16_e64 v260, v38.l /*v550.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v550.l"
+    },
+    {
+      "PC": "0x33f64",
+      "before": "v_cvt_f32_bf16_e64 v260, v38.h /*v550.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v550.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x33f7c",
+      "before": "v_cvt_f32_bf16_e64 v260, v39.l /*v551.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v551.l"
+    },
+    {
+      "PC": "0x33f94",
+      "before": "v_cvt_f32_bf16_e64 v260, v39.h /*v551.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v551.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34040",
+      "before": "v_cvt_f32_bf16_e64 v260, v40.l /*v552.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v552.l"
+    },
+    {
+      "PC": "0x34058",
+      "before": "v_cvt_f32_bf16_e64 v260, v40.h /*v552.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v552.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34070",
+      "before": "v_cvt_f32_bf16_e64 v260, v41.l /*v553.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v553.l"
+    },
+    {
+      "PC": "0x34088",
+      "before": "v_cvt_f32_bf16_e64 v260, v41.h /*v553.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v553.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x340a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v42.l /*v554.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v554.l"
+    },
+    {
+      "PC": "0x340b8",
+      "before": "v_cvt_f32_bf16_e64 v260, v42.h /*v554.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v554.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x340d0",
+      "before": "v_cvt_f32_bf16_e64 v260, v43.l /*v555.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v555.l"
+    },
+    {
+      "PC": "0x340e8",
+      "before": "v_cvt_f32_bf16_e64 v260, v43.h /*v555.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v555.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34194",
+      "before": "v_cvt_f32_bf16_e64 v260, v48.l /*v560.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v560.l"
+    },
+    {
+      "PC": "0x341ac",
+      "before": "v_cvt_f32_bf16_e64 v260, v48.h /*v560.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v560.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x341c4",
+      "before": "v_cvt_f32_bf16_e64 v260, v49.l /*v561.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v561.l"
+    },
+    {
+      "PC": "0x341dc",
+      "before": "v_cvt_f32_bf16_e64 v260, v49.h /*v561.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v561.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x341f4",
+      "before": "v_cvt_f32_bf16_e64 v260, v50.l /*v562.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v562.l"
+    },
+    {
+      "PC": "0x3420c",
+      "before": "v_cvt_f32_bf16_e64 v260, v50.h /*v562.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v562.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34224",
+      "before": "v_cvt_f32_bf16_e64 v260, v51.l /*v563.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v563.l"
+    },
+    {
+      "PC": "0x3423c",
+      "before": "v_cvt_f32_bf16_e64 v260, v51.h /*v563.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v563.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x342e8",
+      "before": "v_cvt_f32_bf16_e64 v260, v52.l /*v564.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v564.l"
+    },
+    {
+      "PC": "0x34300",
+      "before": "v_cvt_f32_bf16_e64 v260, v52.h /*v564.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v564.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34318",
+      "before": "v_cvt_f32_bf16_e64 v260, v53.l /*v565.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v565.l"
+    },
+    {
+      "PC": "0x34330",
+      "before": "v_cvt_f32_bf16_e64 v260, v53.h /*v565.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v565.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34348",
+      "before": "v_cvt_f32_bf16_e64 v260, v54.l /*v566.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v566.l"
+    },
+    {
+      "PC": "0x34360",
+      "before": "v_cvt_f32_bf16_e64 v260, v54.h /*v566.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v566.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34378",
+      "before": "v_cvt_f32_bf16_e64 v260, v55.l /*v567.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v567.l"
+    },
+    {
+      "PC": "0x34390",
+      "before": "v_cvt_f32_bf16_e64 v260, v55.h /*v567.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v567.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34ab8",
+      "before": "v_cvt_f32_bf16_e64 v260, v20.l /*v276.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v276.l"
+    },
+    {
+      "PC": "0x34ac8",
+      "before": "v_cvt_f32_bf16_e64 v260, v20.h /*v276.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v276.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34ad8",
+      "before": "v_cvt_f32_bf16_e64 v260, v21.l /*v277.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v277.l"
+    },
+    {
+      "PC": "0x34ae8",
+      "before": "v_cvt_f32_bf16_e64 v260, v21.h /*v277.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v277.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34af8",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.l /*v278.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v278.l"
+    },
+    {
+      "PC": "0x34b08",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.h /*v278.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v278.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34b18",
+      "before": "v_cvt_f32_bf16_e64 v260, v23.l /*v279.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v279.l"
+    },
+    {
+      "PC": "0x34b28",
+      "before": "v_cvt_f32_bf16_e64 v260, v23.h /*v279.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v279.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34bd0",
+      "before": "v_cvt_f32_bf16_e64 v260, v104.l /*v360.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v360.l"
+    },
+    {
+      "PC": "0x34be0",
+      "before": "v_cvt_f32_bf16_e64 v260, v104.h /*v360.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v360.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34bf0",
+      "before": "v_cvt_f32_bf16_e64 v260, v105.l /*v361.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v361.l"
+    },
+    {
+      "PC": "0x34c00",
+      "before": "v_cvt_f32_bf16_e64 v260, v105.h /*v361.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v361.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34c10",
+      "before": "v_cvt_f32_bf16_e64 v260, v106.l /*v362.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v362.l"
+    },
+    {
+      "PC": "0x34c20",
+      "before": "v_cvt_f32_bf16_e64 v260, v106.h /*v362.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v362.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34c30",
+      "before": "v_cvt_f32_bf16_e64 v260, v107.l /*v363.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v363.l"
+    },
+    {
+      "PC": "0x34c40",
+      "before": "v_cvt_f32_bf16_e64 v260, v107.h /*v363.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v363.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34ce8",
+      "before": "v_cvt_f32_bf16_e64 v260, v128.l /*v384.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v384.l"
+    },
+    {
+      "PC": "0x34cf8",
+      "before": "v_cvt_f32_bf16_e64 v260, v128.h /*v384.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v384.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34d08",
+      "before": "v_cvt_f32_bf16_e64 v260, v129.l /*v385.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v385.l"
+    },
+    {
+      "PC": "0x34d18",
+      "before": "v_cvt_f32_bf16_e64 v260, v129.h /*v385.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v385.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34d28",
+      "before": "v_cvt_f32_bf16_e64 v260, v130.l /*v386.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v386.l"
+    },
+    {
+      "PC": "0x34d38",
+      "before": "v_cvt_f32_bf16_e64 v260, v130.h /*v386.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v386.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34d48",
+      "before": "v_cvt_f32_bf16_e64 v260, v131.l /*v387.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v387.l"
+    },
+    {
+      "PC": "0x34d58",
+      "before": "v_cvt_f32_bf16_e64 v260, v131.h /*v387.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v387.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34e00",
+      "before": "v_cvt_f32_bf16_e64 v260, v132.l /*v388.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v388.l"
+    },
+    {
+      "PC": "0x34e10",
+      "before": "v_cvt_f32_bf16_e64 v260, v132.h /*v388.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v388.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34e20",
+      "before": "v_cvt_f32_bf16_e64 v260, v133.l /*v389.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v389.l"
+    },
+    {
+      "PC": "0x34e30",
+      "before": "v_cvt_f32_bf16_e64 v260, v133.h /*v389.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v389.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34e40",
+      "before": "v_cvt_f32_bf16_e64 v260, v134.l /*v390.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v390.l"
+    },
+    {
+      "PC": "0x34e50",
+      "before": "v_cvt_f32_bf16_e64 v260, v134.h /*v390.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v390.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34e60",
+      "before": "v_cvt_f32_bf16_e64 v260, v135.l /*v391.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v391.l"
+    },
+    {
+      "PC": "0x34e70",
+      "before": "v_cvt_f32_bf16_e64 v260, v135.h /*v391.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v391.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34f18",
+      "before": "v_cvt_f32_bf16_e64 v260, v172.l /*v428.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v428.l"
+    },
+    {
+      "PC": "0x34f28",
+      "before": "v_cvt_f32_bf16_e64 v260, v172.h /*v428.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v428.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34f38",
+      "before": "v_cvt_f32_bf16_e64 v260, v173.l /*v429.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v429.l"
+    },
+    {
+      "PC": "0x34f48",
+      "before": "v_cvt_f32_bf16_e64 v260, v173.h /*v429.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v429.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34f58",
+      "before": "v_cvt_f32_bf16_e64 v260, v174.l /*v430.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v430.l"
+    },
+    {
+      "PC": "0x34f68",
+      "before": "v_cvt_f32_bf16_e64 v260, v174.h /*v430.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v430.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x34f78",
+      "before": "v_cvt_f32_bf16_e64 v260, v175.l /*v431.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v431.l"
+    },
+    {
+      "PC": "0x34f88",
+      "before": "v_cvt_f32_bf16_e64 v260, v175.h /*v431.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v431.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x35030",
+      "before": "v_cvt_f32_bf16_e64 v260, v192.l /*v448.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v448.l"
+    },
+    {
+      "PC": "0x35040",
+      "before": "v_cvt_f32_bf16_e64 v260, v192.h /*v448.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v448.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x35050",
+      "before": "v_cvt_f32_bf16_e64 v260, v193.l /*v449.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v449.l"
+    },
+    {
+      "PC": "0x35060",
+      "before": "v_cvt_f32_bf16_e64 v260, v193.h /*v449.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v449.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x35070",
+      "before": "v_cvt_f32_bf16_e64 v260, v194.l /*v450.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v450.l"
+    },
+    {
+      "PC": "0x35080",
+      "before": "v_cvt_f32_bf16_e64 v260, v194.h /*v450.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v450.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x35090",
+      "before": "v_cvt_f32_bf16_e64 v260, v195.l /*v451.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v451.l"
+    },
+    {
+      "PC": "0x350a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v195.h /*v451.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v451.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x35148",
+      "before": "v_cvt_f32_bf16_e64 v260, v216.l /*v472.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v472.l"
+    },
+    {
+      "PC": "0x35158",
+      "before": "v_cvt_f32_bf16_e64 v260, v216.h /*v472.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v472.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x35168",
+      "before": "v_cvt_f32_bf16_e64 v260, v217.l /*v473.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v473.l"
+    },
+    {
+      "PC": "0x35178",
+      "before": "v_cvt_f32_bf16_e64 v260, v217.h /*v473.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v473.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x35188",
+      "before": "v_cvt_f32_bf16_e64 v260, v218.l /*v474.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v474.l"
+    },
+    {
+      "PC": "0x35198",
+      "before": "v_cvt_f32_bf16_e64 v260, v218.h /*v474.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v474.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x351a8",
+      "before": "v_cvt_f32_bf16_e64 v260, v219.l /*v475.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v475.l"
+    },
+    {
+      "PC": "0x351b8",
+      "before": "v_cvt_f32_bf16_e64 v260, v219.h /*v475.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v475.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x35260",
+      "before": "v_cvt_f32_bf16_e64 v260, v220.l /*v476.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v476.l"
+    },
+    {
+      "PC": "0x35270",
+      "before": "v_cvt_f32_bf16_e64 v260, v220.h /*v476.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v476.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x35280",
+      "before": "v_cvt_f32_bf16_e64 v260, v221.l /*v477.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v477.l"
+    },
+    {
+      "PC": "0x35290",
+      "before": "v_cvt_f32_bf16_e64 v260, v221.h /*v477.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v477.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x352a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v222.l /*v478.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v478.l"
+    },
+    {
+      "PC": "0x352b0",
+      "before": "v_cvt_f32_bf16_e64 v260, v222.h /*v478.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v478.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x352c0",
+      "before": "v_cvt_f32_bf16_e64 v260, v223.l /*v479.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v479.l"
+    },
+    {
+      "PC": "0x352d0",
+      "before": "v_cvt_f32_bf16_e64 v260, v223.h /*v479.h*/ op_sel:[1,0]",
+      "after": "v_cvt_f32_bf16_e64 v260, v479.h op_sel:[1,0]"
+    },
+    {
+      "PC": "0x37da4",
+      "before": "v_cvt_f32_bf16_e64 v260, v83.l /*v339.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v339.l"
+    },
+    {
+      "PC": "0x37de8",
+      "before": "v_cvt_f32_bf16_e64 v260, v88.l /*v344.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v344.l"
+    },
+    {
+      "PC": "0x37e2c",
+      "before": "v_cvt_f32_bf16_e64 v260, v93.l /*v349.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v349.l"
+    },
+    {
+      "PC": "0x37e70",
+      "before": "v_cvt_f32_bf16_e64 v260, v98.l /*v354.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v354.l"
+    },
+    {
+      "PC": "0x37eb4",
+      "before": "v_cvt_f32_bf16_e64 v260, v103.l /*v359.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v359.l"
+    },
+    {
+      "PC": "0x37ef8",
+      "before": "v_cvt_f32_bf16_e64 v260, v108.l /*v364.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v364.l"
+    },
+    {
+      "PC": "0x37f3c",
+      "before": "v_cvt_f32_bf16_e64 v260, v113.l /*v369.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v369.l"
+    },
+    {
+      "PC": "0x37f80",
+      "before": "v_cvt_f32_bf16_e64 v260, v118.l /*v374.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v374.l"
+    },
+    {
+      "PC": "0x37fc4",
+      "before": "v_cvt_f32_bf16_e64 v260, v123.l /*v379.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v379.l"
+    },
+    {
+      "PC": "0x38008",
+      "before": "v_cvt_f32_bf16_e64 v260, v128.l /*v384.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v384.l"
+    },
+    {
+      "PC": "0x3804c",
+      "before": "v_cvt_f32_bf16_e64 v260, v133.l /*v389.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v389.l"
+    },
+    {
+      "PC": "0x38090",
+      "before": "v_cvt_f32_bf16_e64 v260, v138.l /*v394.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v394.l"
+    },
+    {
+      "PC": "0x380d4",
+      "before": "v_cvt_f32_bf16_e64 v260, v143.l /*v399.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v399.l"
+    },
+    {
+      "PC": "0x38118",
+      "before": "v_cvt_f32_bf16_e64 v260, v148.l /*v404.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v404.l"
+    },
+    {
+      "PC": "0x3815c",
+      "before": "v_cvt_f32_bf16_e64 v260, v153.l /*v409.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v409.l"
+    },
+    {
+      "PC": "0x381a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v158.l /*v414.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v414.l"
+    },
+    {
+      "PC": "0x381e4",
+      "before": "v_cvt_f32_bf16_e64 v260, v163.l /*v419.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v419.l"
+    },
+    {
+      "PC": "0x38228",
+      "before": "v_cvt_f32_bf16_e64 v260, v168.l /*v424.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v424.l"
+    },
+    {
+      "PC": "0x3826c",
+      "before": "v_cvt_f32_bf16_e64 v260, v173.l /*v429.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v429.l"
+    },
+    {
+      "PC": "0x382b0",
+      "before": "v_cvt_f32_bf16_e64 v260, v178.l /*v434.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v434.l"
+    },
+    {
+      "PC": "0x382f4",
+      "before": "v_cvt_f32_bf16_e64 v260, v183.l /*v439.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v439.l"
+    },
+    {
+      "PC": "0x38338",
+      "before": "v_cvt_f32_bf16_e64 v260, v188.l /*v444.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v444.l"
+    },
+    {
+      "PC": "0x3837c",
+      "before": "v_cvt_f32_bf16_e64 v260, v193.l /*v449.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v449.l"
+    },
+    {
+      "PC": "0x383c0",
+      "before": "v_cvt_f32_bf16_e64 v260, v198.l /*v454.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v454.l"
+    },
+    {
+      "PC": "0x38404",
+      "before": "v_cvt_f32_bf16_e64 v260, v203.l /*v459.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v459.l"
+    },
+    {
+      "PC": "0x38448",
+      "before": "v_cvt_f32_bf16_e64 v260, v208.l /*v464.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v464.l"
+    },
+    {
+      "PC": "0x3848c",
+      "before": "v_cvt_f32_bf16_e64 v260, v213.l /*v469.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v469.l"
+    },
+    {
+      "PC": "0x384dc",
+      "before": "v_cvt_f32_bf16_e64 v260, v218.l /*v474.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v474.l"
+    },
+    {
+      "PC": "0x38520",
+      "before": "v_cvt_f32_bf16_e64 v260, v223.l /*v479.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v479.l"
+    },
+    {
+      "PC": "0x38564",
+      "before": "v_cvt_f32_bf16_e64 v260, v228.l /*v484.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v484.l"
+    },
+    {
+      "PC": "0x385a8",
+      "before": "v_cvt_f32_bf16_e64 v260, v233.l /*v489.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v489.l"
+    },
+    {
+      "PC": "0x385ec",
+      "before": "v_cvt_f32_bf16_e64 v260, v238.l /*v494.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v494.l"
+    },
+    {
+      "PC": "0x38630",
+      "before": "v_cvt_f32_bf16_e64 v260, v243.l /*v499.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v499.l"
+    },
+    {
+      "PC": "0x38674",
+      "before": "v_cvt_f32_bf16_e64 v260, v248.l /*v504.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v504.l"
+    },
+    {
+      "PC": "0x386b8",
+      "before": "v_cvt_f32_bf16_e64 v260, v253.l /*v509.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v509.l"
+    },
+    {
+      "PC": "0x38708",
+      "before": "v_cvt_f32_bf16_e64 v260, v2.l /*v514.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v514.l"
+    },
+    {
+      "PC": "0x3875c",
+      "before": "v_cvt_f32_bf16_e64 v260, v7.l /*v519.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v519.l"
+    },
+    {
+      "PC": "0x387b0",
+      "before": "v_cvt_f32_bf16_e64 v260, v12.l /*v524.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v524.l"
+    },
+    {
+      "PC": "0x38804",
+      "before": "v_cvt_f32_bf16_e64 v260, v17.l /*v529.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v529.l"
+    },
+    {
+      "PC": "0x38858",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.l /*v534.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v534.l"
+    },
+    {
+      "PC": "0x388ac",
+      "before": "v_cvt_f32_bf16_e64 v260, v27.l /*v539.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v539.l"
+    },
+    {
+      "PC": "0x38900",
+      "before": "v_cvt_f32_bf16_e64 v260, v32.l /*v544.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v544.l"
+    },
+    {
+      "PC": "0x38954",
+      "before": "v_cvt_f32_bf16_e64 v260, v37.l /*v549.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v549.l"
+    },
+    {
+      "PC": "0x389a8",
+      "before": "v_cvt_f32_bf16_e64 v260, v42.l /*v554.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v554.l"
+    },
+    {
+      "PC": "0x389fc",
+      "before": "v_cvt_f32_bf16_e64 v260, v47.l /*v559.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v559.l"
+    },
+    {
+      "PC": "0x38a50",
+      "before": "v_cvt_f32_bf16_e64 v260, v52.l /*v564.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v564.l"
+    },
+    {
+      "PC": "0x38aa4",
+      "before": "v_cvt_f32_bf16_e64 v260, v57.l /*v569.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v569.l"
+    },
+    {
+      "PC": "0x38af8",
+      "before": "v_cvt_f32_bf16_e64 v260, v62.l /*v574.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v574.l"
+    },
+    {
+      "PC": "0x38b4c",
+      "before": "v_cvt_f32_bf16_e64 v260, v67.l /*v579.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v579.l"
+    },
+    {
+      "PC": "0x38ba0",
+      "before": "v_cvt_f32_bf16_e64 v260, v72.l /*v584.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v584.l"
+    },
+    {
+      "PC": "0x38bf4",
+      "before": "v_cvt_f32_bf16_e64 v260, v77.l /*v589.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v589.l"
+    },
+    {
+      "PC": "0x38c48",
+      "before": "v_cvt_f32_bf16_e64 v260, v82.l /*v594.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v594.l"
+    },
+    {
+      "PC": "0x38c9c",
+      "before": "v_cvt_f32_bf16_e64 v260, v87.l /*v599.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v599.l"
+    },
+    {
+      "PC": "0x38cf0",
+      "before": "v_cvt_f32_bf16_e64 v260, v92.l /*v604.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v604.l"
+    },
+    {
+      "PC": "0x38d44",
+      "before": "v_cvt_f32_bf16_e64 v260, v97.l /*v609.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v609.l"
+    },
+    {
+      "PC": "0x38d98",
+      "before": "v_cvt_f32_bf16_e64 v260, v102.l /*v614.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v614.l"
+    },
+    {
+      "PC": "0x38dec",
+      "before": "v_cvt_f32_bf16_e64 v260, v107.l /*v619.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v619.l"
+    },
+    {
+      "PC": "0x38e40",
+      "before": "v_cvt_f32_bf16_e64 v260, v112.l /*v624.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v624.l"
+    },
+    {
+      "PC": "0x38e94",
+      "before": "v_cvt_f32_bf16_e64 v260, v117.l /*v629.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v629.l"
+    },
+    {
+      "PC": "0x38ee8",
+      "before": "v_cvt_f32_bf16_e64 v260, v122.l /*v634.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v634.l"
+    },
+    {
+      "PC": "0x38f3c",
+      "before": "v_cvt_f32_bf16_e64 v260, v127.l /*v639.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v639.l"
+    },
+    {
+      "PC": "0x38f90",
+      "before": "v_cvt_f32_bf16_e64 v260, v132.l /*v644.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v644.l"
+    },
+    {
+      "PC": "0x38fe4",
+      "before": "v_cvt_f32_bf16_e64 v260, v137.l /*v649.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v649.l"
+    },
+    {
+      "PC": "0x39038",
+      "before": "v_cvt_f32_bf16_e64 v260, v142.l /*v654.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v654.l"
+    },
+    {
+      "PC": "0x39080",
+      "before": "v_cvt_f32_bf16_e64 v260, v147.l /*v659.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v659.l"
+    },
+    {
+      "PC": "0x390c8",
+      "before": "v_cvt_f32_bf16_e64 v260, v150.l /*v662.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v662.l"
+    },
+    {
+      "PC": "0x3ba00",
+      "before": "v_cvt_f32_bf16_e64 v260, v83.l /*v339.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v339.l"
+    },
+    {
+      "PC": "0x3ba44",
+      "before": "v_cvt_f32_bf16_e64 v260, v88.l /*v344.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v344.l"
+    },
+    {
+      "PC": "0x3ba88",
+      "before": "v_cvt_f32_bf16_e64 v260, v93.l /*v349.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v349.l"
+    },
+    {
+      "PC": "0x3bacc",
+      "before": "v_cvt_f32_bf16_e64 v260, v98.l /*v354.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v354.l"
+    },
+    {
+      "PC": "0x3bb10",
+      "before": "v_cvt_f32_bf16_e64 v260, v103.l /*v359.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v359.l"
+    },
+    {
+      "PC": "0x3bb54",
+      "before": "v_cvt_f32_bf16_e64 v260, v108.l /*v364.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v364.l"
+    },
+    {
+      "PC": "0x3bb98",
+      "before": "v_cvt_f32_bf16_e64 v260, v113.l /*v369.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v369.l"
+    },
+    {
+      "PC": "0x3bbdc",
+      "before": "v_cvt_f32_bf16_e64 v260, v118.l /*v374.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v374.l"
+    },
+    {
+      "PC": "0x3bc20",
+      "before": "v_cvt_f32_bf16_e64 v260, v123.l /*v379.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v379.l"
+    },
+    {
+      "PC": "0x3bc64",
+      "before": "v_cvt_f32_bf16_e64 v260, v128.l /*v384.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v384.l"
+    },
+    {
+      "PC": "0x3bca8",
+      "before": "v_cvt_f32_bf16_e64 v260, v133.l /*v389.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v389.l"
+    },
+    {
+      "PC": "0x3bcec",
+      "before": "v_cvt_f32_bf16_e64 v260, v138.l /*v394.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v394.l"
+    },
+    {
+      "PC": "0x3bd30",
+      "before": "v_cvt_f32_bf16_e64 v260, v143.l /*v399.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v399.l"
+    },
+    {
+      "PC": "0x3bd74",
+      "before": "v_cvt_f32_bf16_e64 v260, v148.l /*v404.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v404.l"
+    },
+    {
+      "PC": "0x3bdb8",
+      "before": "v_cvt_f32_bf16_e64 v260, v153.l /*v409.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v409.l"
+    },
+    {
+      "PC": "0x3bdfc",
+      "before": "v_cvt_f32_bf16_e64 v260, v158.l /*v414.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v414.l"
+    },
+    {
+      "PC": "0x3be40",
+      "before": "v_cvt_f32_bf16_e64 v260, v163.l /*v419.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v419.l"
+    },
+    {
+      "PC": "0x3be84",
+      "before": "v_cvt_f32_bf16_e64 v260, v168.l /*v424.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v424.l"
+    },
+    {
+      "PC": "0x3bec8",
+      "before": "v_cvt_f32_bf16_e64 v260, v173.l /*v429.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v429.l"
+    },
+    {
+      "PC": "0x3bf0c",
+      "before": "v_cvt_f32_bf16_e64 v260, v178.l /*v434.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v434.l"
+    },
+    {
+      "PC": "0x3bf50",
+      "before": "v_cvt_f32_bf16_e64 v260, v183.l /*v439.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v439.l"
+    },
+    {
+      "PC": "0x3bf94",
+      "before": "v_cvt_f32_bf16_e64 v260, v188.l /*v444.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v444.l"
+    },
+    {
+      "PC": "0x3bfd8",
+      "before": "v_cvt_f32_bf16_e64 v260, v193.l /*v449.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v449.l"
+    },
+    {
+      "PC": "0x3c01c",
+      "before": "v_cvt_f32_bf16_e64 v260, v198.l /*v454.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v454.l"
+    },
+    {
+      "PC": "0x3c060",
+      "before": "v_cvt_f32_bf16_e64 v260, v203.l /*v459.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v459.l"
+    },
+    {
+      "PC": "0x3c0a4",
+      "before": "v_cvt_f32_bf16_e64 v260, v208.l /*v464.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v464.l"
+    },
+    {
+      "PC": "0x3c0e8",
+      "before": "v_cvt_f32_bf16_e64 v260, v213.l /*v469.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v469.l"
+    },
+    {
+      "PC": "0x3c12c",
+      "before": "v_cvt_f32_bf16_e64 v260, v218.l /*v474.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v474.l"
+    },
+    {
+      "PC": "0x3c170",
+      "before": "v_cvt_f32_bf16_e64 v260, v223.l /*v479.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v479.l"
+    },
+    {
+      "PC": "0x3c1b4",
+      "before": "v_cvt_f32_bf16_e64 v260, v228.l /*v484.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v484.l"
+    },
+    {
+      "PC": "0x3c1f8",
+      "before": "v_cvt_f32_bf16_e64 v260, v233.l /*v489.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v489.l"
+    },
+    {
+      "PC": "0x3c23c",
+      "before": "v_cvt_f32_bf16_e64 v260, v238.l /*v494.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v494.l"
+    },
+    {
+      "PC": "0x3c280",
+      "before": "v_cvt_f32_bf16_e64 v260, v243.l /*v499.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v499.l"
+    },
+    {
+      "PC": "0x3c2c4",
+      "before": "v_cvt_f32_bf16_e64 v260, v248.l /*v504.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v504.l"
+    },
+    {
+      "PC": "0x3c308",
+      "before": "v_cvt_f32_bf16_e64 v260, v253.l /*v509.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v509.l"
+    },
+    {
+      "PC": "0x3c358",
+      "before": "v_cvt_f32_bf16_e64 v260, v2.l /*v514.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v514.l"
+    },
+    {
+      "PC": "0x3c3ac",
+      "before": "v_cvt_f32_bf16_e64 v260, v7.l /*v519.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v519.l"
+    },
+    {
+      "PC": "0x3c400",
+      "before": "v_cvt_f32_bf16_e64 v260, v12.l /*v524.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v524.l"
+    },
+    {
+      "PC": "0x3c454",
+      "before": "v_cvt_f32_bf16_e64 v260, v17.l /*v529.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v529.l"
+    },
+    {
+      "PC": "0x3c4b4",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.l /*v534.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v534.l"
+    },
+    {
+      "PC": "0x3c508",
+      "before": "v_cvt_f32_bf16_e64 v260, v27.l /*v539.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v539.l"
+    },
+    {
+      "PC": "0x3c55c",
+      "before": "v_cvt_f32_bf16_e64 v260, v32.l /*v544.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v544.l"
+    },
+    {
+      "PC": "0x3c5b0",
+      "before": "v_cvt_f32_bf16_e64 v260, v37.l /*v549.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v549.l"
+    },
+    {
+      "PC": "0x3c604",
+      "before": "v_cvt_f32_bf16_e64 v260, v42.l /*v554.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v554.l"
+    },
+    {
+      "PC": "0x3c658",
+      "before": "v_cvt_f32_bf16_e64 v260, v47.l /*v559.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v559.l"
+    },
+    {
+      "PC": "0x3c6ac",
+      "before": "v_cvt_f32_bf16_e64 v260, v52.l /*v564.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v564.l"
+    },
+    {
+      "PC": "0x3c700",
+      "before": "v_cvt_f32_bf16_e64 v260, v57.l /*v569.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v569.l"
+    },
+    {
+      "PC": "0x3c754",
+      "before": "v_cvt_f32_bf16_e64 v260, v62.l /*v574.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v574.l"
+    },
+    {
+      "PC": "0x3c7a8",
+      "before": "v_cvt_f32_bf16_e64 v260, v67.l /*v579.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v579.l"
+    },
+    {
+      "PC": "0x3c7fc",
+      "before": "v_cvt_f32_bf16_e64 v260, v72.l /*v584.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v584.l"
+    },
+    {
+      "PC": "0x3c850",
+      "before": "v_cvt_f32_bf16_e64 v260, v77.l /*v589.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v589.l"
+    },
+    {
+      "PC": "0x3c8a4",
+      "before": "v_cvt_f32_bf16_e64 v260, v82.l /*v594.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v594.l"
+    },
+    {
+      "PC": "0x3c8f8",
+      "before": "v_cvt_f32_bf16_e64 v260, v87.l /*v599.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v599.l"
+    },
+    {
+      "PC": "0x3c94c",
+      "before": "v_cvt_f32_bf16_e64 v260, v92.l /*v604.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v604.l"
+    },
+    {
+      "PC": "0x3c9a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v97.l /*v609.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v609.l"
+    },
+    {
+      "PC": "0x3c9f4",
+      "before": "v_cvt_f32_bf16_e64 v260, v102.l /*v614.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v614.l"
+    },
+    {
+      "PC": "0x3ca48",
+      "before": "v_cvt_f32_bf16_e64 v260, v107.l /*v619.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v619.l"
+    },
+    {
+      "PC": "0x3ca9c",
+      "before": "v_cvt_f32_bf16_e64 v260, v112.l /*v624.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v624.l"
+    },
+    {
+      "PC": "0x3caf0",
+      "before": "v_cvt_f32_bf16_e64 v260, v117.l /*v629.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v629.l"
+    },
+    {
+      "PC": "0x3cb44",
+      "before": "v_cvt_f32_bf16_e64 v260, v122.l /*v634.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v634.l"
+    },
+    {
+      "PC": "0x3cb98",
+      "before": "v_cvt_f32_bf16_e64 v260, v127.l /*v639.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v639.l"
+    },
+    {
+      "PC": "0x3cbec",
+      "before": "v_cvt_f32_bf16_e64 v260, v132.l /*v644.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v644.l"
+    },
+    {
+      "PC": "0x3cc40",
+      "before": "v_cvt_f32_bf16_e64 v260, v137.l /*v649.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v649.l"
+    },
+    {
+      "PC": "0x3cc94",
+      "before": "v_cvt_f32_bf16_e64 v260, v142.l /*v654.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v654.l"
+    },
+    {
+      "PC": "0x3ccdc",
+      "before": "v_cvt_f32_bf16_e64 v260, v147.l /*v659.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v659.l"
+    },
+    {
+      "PC": "0x3cd24",
+      "before": "v_cvt_f32_bf16_e64 v260, v150.l /*v662.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v662.l"
+    },
+    {
+      "PC": "0x3f65c",
+      "before": "v_cvt_f32_bf16_e64 v260, v83.l /*v339.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v339.l"
+    },
+    {
+      "PC": "0x3f6a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v88.l /*v344.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v344.l"
+    },
+    {
+      "PC": "0x3f6e4",
+      "before": "v_cvt_f32_bf16_e64 v260, v93.l /*v349.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v349.l"
+    },
+    {
+      "PC": "0x3f728",
+      "before": "v_cvt_f32_bf16_e64 v260, v98.l /*v354.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v354.l"
+    },
+    {
+      "PC": "0x3f76c",
+      "before": "v_cvt_f32_bf16_e64 v260, v103.l /*v359.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v359.l"
+    },
+    {
+      "PC": "0x3f7b0",
+      "before": "v_cvt_f32_bf16_e64 v260, v108.l /*v364.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v364.l"
+    },
+    {
+      "PC": "0x3f7f4",
+      "before": "v_cvt_f32_bf16_e64 v260, v113.l /*v369.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v369.l"
+    },
+    {
+      "PC": "0x3f838",
+      "before": "v_cvt_f32_bf16_e64 v260, v118.l /*v374.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v374.l"
+    },
+    {
+      "PC": "0x3f87c",
+      "before": "v_cvt_f32_bf16_e64 v260, v123.l /*v379.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v379.l"
+    },
+    {
+      "PC": "0x3f8c0",
+      "before": "v_cvt_f32_bf16_e64 v260, v128.l /*v384.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v384.l"
+    },
+    {
+      "PC": "0x3f904",
+      "before": "v_cvt_f32_bf16_e64 v260, v133.l /*v389.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v389.l"
+    },
+    {
+      "PC": "0x3f948",
+      "before": "v_cvt_f32_bf16_e64 v260, v138.l /*v394.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v394.l"
+    },
+    {
+      "PC": "0x3f98c",
+      "before": "v_cvt_f32_bf16_e64 v260, v143.l /*v399.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v399.l"
+    },
+    {
+      "PC": "0x3f9d0",
+      "before": "v_cvt_f32_bf16_e64 v260, v148.l /*v404.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v404.l"
+    },
+    {
+      "PC": "0x3fa14",
+      "before": "v_cvt_f32_bf16_e64 v260, v153.l /*v409.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v409.l"
+    },
+    {
+      "PC": "0x3fa58",
+      "before": "v_cvt_f32_bf16_e64 v260, v158.l /*v414.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v414.l"
+    },
+    {
+      "PC": "0x3fa9c",
+      "before": "v_cvt_f32_bf16_e64 v260, v163.l /*v419.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v419.l"
+    },
+    {
+      "PC": "0x3fae0",
+      "before": "v_cvt_f32_bf16_e64 v260, v168.l /*v424.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v424.l"
+    },
+    {
+      "PC": "0x3fb24",
+      "before": "v_cvt_f32_bf16_e64 v260, v173.l /*v429.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v429.l"
+    },
+    {
+      "PC": "0x3fb68",
+      "before": "v_cvt_f32_bf16_e64 v260, v178.l /*v434.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v434.l"
+    },
+    {
+      "PC": "0x3fbac",
+      "before": "v_cvt_f32_bf16_e64 v260, v183.l /*v439.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v439.l"
+    },
+    {
+      "PC": "0x3fbf0",
+      "before": "v_cvt_f32_bf16_e64 v260, v188.l /*v444.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v444.l"
+    },
+    {
+      "PC": "0x3fc34",
+      "before": "v_cvt_f32_bf16_e64 v260, v193.l /*v449.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v449.l"
+    },
+    {
+      "PC": "0x3fc78",
+      "before": "v_cvt_f32_bf16_e64 v260, v198.l /*v454.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v454.l"
+    },
+    {
+      "PC": "0x3fcbc",
+      "before": "v_cvt_f32_bf16_e64 v260, v203.l /*v459.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v459.l"
+    },
+    {
+      "PC": "0x3fd00",
+      "before": "v_cvt_f32_bf16_e64 v260, v208.l /*v464.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v464.l"
+    },
+    {
+      "PC": "0x3fd44",
+      "before": "v_cvt_f32_bf16_e64 v260, v213.l /*v469.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v469.l"
+    },
+    {
+      "PC": "0x3fd88",
+      "before": "v_cvt_f32_bf16_e64 v260, v218.l /*v474.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v474.l"
+    },
+    {
+      "PC": "0x3fdcc",
+      "before": "v_cvt_f32_bf16_e64 v260, v223.l /*v479.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v479.l"
+    },
+    {
+      "PC": "0x3fe10",
+      "before": "v_cvt_f32_bf16_e64 v260, v228.l /*v484.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v484.l"
+    },
+    {
+      "PC": "0x3fe54",
+      "before": "v_cvt_f32_bf16_e64 v260, v233.l /*v489.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v489.l"
+    },
+    {
+      "PC": "0x3fe98",
+      "before": "v_cvt_f32_bf16_e64 v260, v238.l /*v494.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v494.l"
+    },
+    {
+      "PC": "0x3fedc",
+      "before": "v_cvt_f32_bf16_e64 v260, v243.l /*v499.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v499.l"
+    },
+    {
+      "PC": "0x3ff20",
+      "before": "v_cvt_f32_bf16_e64 v260, v248.l /*v504.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v504.l"
+    },
+    {
+      "PC": "0x3ff64",
+      "before": "v_cvt_f32_bf16_e64 v260, v253.l /*v509.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v509.l"
+    },
+    {
+      "PC": "0x3ffb4",
+      "before": "v_cvt_f32_bf16_e64 v260, v2.l /*v514.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v514.l"
+    },
+    {
+      "PC": "0x40008",
+      "before": "v_cvt_f32_bf16_e64 v260, v7.l /*v519.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v519.l"
+    },
+    {
+      "PC": "0x4005c",
+      "before": "v_cvt_f32_bf16_e64 v260, v12.l /*v524.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v524.l"
+    },
+    {
+      "PC": "0x400b0",
+      "before": "v_cvt_f32_bf16_e64 v260, v17.l /*v529.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v529.l"
+    },
+    {
+      "PC": "0x40104",
+      "before": "v_cvt_f32_bf16_e64 v260, v22.l /*v534.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v534.l"
+    },
+    {
+      "PC": "0x40158",
+      "before": "v_cvt_f32_bf16_e64 v260, v27.l /*v539.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v539.l"
+    },
+    {
+      "PC": "0x401ac",
+      "before": "v_cvt_f32_bf16_e64 v260, v32.l /*v544.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v544.l"
+    },
+    {
+      "PC": "0x40200",
+      "before": "v_cvt_f32_bf16_e64 v260, v37.l /*v549.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v549.l"
+    },
+    {
+      "PC": "0x40254",
+      "before": "v_cvt_f32_bf16_e64 v260, v42.l /*v554.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v554.l"
+    },
+    {
+      "PC": "0x402a8",
+      "before": "v_cvt_f32_bf16_e64 v260, v47.l /*v559.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v559.l"
+    },
+    {
+      "PC": "0x402fc",
+      "before": "v_cvt_f32_bf16_e64 v260, v52.l /*v564.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v564.l"
+    },
+    {
+      "PC": "0x40350",
+      "before": "v_cvt_f32_bf16_e64 v260, v57.l /*v569.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v569.l"
+    },
+    {
+      "PC": "0x403a4",
+      "before": "v_cvt_f32_bf16_e64 v260, v62.l /*v574.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v574.l"
+    },
+    {
+      "PC": "0x403f8",
+      "before": "v_cvt_f32_bf16_e64 v260, v67.l /*v579.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v579.l"
+    },
+    {
+      "PC": "0x4044c",
+      "before": "v_cvt_f32_bf16_e64 v260, v72.l /*v584.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v584.l"
+    },
+    {
+      "PC": "0x404a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v77.l /*v589.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v589.l"
+    },
+    {
+      "PC": "0x40500",
+      "before": "v_cvt_f32_bf16_e64 v260, v82.l /*v594.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v594.l"
+    },
+    {
+      "PC": "0x40554",
+      "before": "v_cvt_f32_bf16_e64 v260, v87.l /*v599.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v599.l"
+    },
+    {
+      "PC": "0x405a8",
+      "before": "v_cvt_f32_bf16_e64 v260, v92.l /*v604.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v604.l"
+    },
+    {
+      "PC": "0x405fc",
+      "before": "v_cvt_f32_bf16_e64 v260, v97.l /*v609.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v609.l"
+    },
+    {
+      "PC": "0x40650",
+      "before": "v_cvt_f32_bf16_e64 v260, v102.l /*v614.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v614.l"
+    },
+    {
+      "PC": "0x406a4",
+      "before": "v_cvt_f32_bf16_e64 v260, v107.l /*v619.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v619.l"
+    },
+    {
+      "PC": "0x406f8",
+      "before": "v_cvt_f32_bf16_e64 v260, v112.l /*v624.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v624.l"
+    },
+    {
+      "PC": "0x4074c",
+      "before": "v_cvt_f32_bf16_e64 v260, v117.l /*v629.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v629.l"
+    },
+    {
+      "PC": "0x407a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v122.l /*v634.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v634.l"
+    },
+    {
+      "PC": "0x407f4",
+      "before": "v_cvt_f32_bf16_e64 v260, v127.l /*v639.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v639.l"
+    },
+    {
+      "PC": "0x40848",
+      "before": "v_cvt_f32_bf16_e64 v260, v132.l /*v644.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v644.l"
+    },
+    {
+      "PC": "0x4089c",
+      "before": "v_cvt_f32_bf16_e64 v260, v137.l /*v649.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v649.l"
+    },
+    {
+      "PC": "0x408f0",
+      "before": "v_cvt_f32_bf16_e64 v260, v142.l /*v654.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v654.l"
+    },
+    {
+      "PC": "0x40938",
+      "before": "v_cvt_f32_bf16_e64 v260, v147.l /*v659.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v659.l"
+    },
+    {
+      "PC": "0x40980",
+      "before": "v_cvt_f32_bf16_e64 v260, v150.l /*v662.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v662.l"
+    },
+    {
+      "PC": "0x42d94",
+      "before": "v_cvt_f32_bf16_e64 v260, v75.l /*v331.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v331.l"
+    },
+    {
+      "PC": "0x42dd8",
+      "before": "v_cvt_f32_bf16_e64 v260, v80.l /*v336.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v336.l"
+    },
+    {
+      "PC": "0x42e1c",
+      "before": "v_cvt_f32_bf16_e64 v260, v85.l /*v341.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v341.l"
+    },
+    {
+      "PC": "0x42e60",
+      "before": "v_cvt_f32_bf16_e64 v260, v90.l /*v346.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v346.l"
+    },
+    {
+      "PC": "0x42ea4",
+      "before": "v_cvt_f32_bf16_e64 v260, v95.l /*v351.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v351.l"
+    },
+    {
+      "PC": "0x42ee8",
+      "before": "v_cvt_f32_bf16_e64 v260, v100.l /*v356.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v356.l"
+    },
+    {
+      "PC": "0x42f2c",
+      "before": "v_cvt_f32_bf16_e64 v260, v105.l /*v361.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v361.l"
+    },
+    {
+      "PC": "0x42f70",
+      "before": "v_cvt_f32_bf16_e64 v260, v110.l /*v366.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v366.l"
+    },
+    {
+      "PC": "0x42fb4",
+      "before": "v_cvt_f32_bf16_e64 v260, v115.l /*v371.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v371.l"
+    },
+    {
+      "PC": "0x42ff8",
+      "before": "v_cvt_f32_bf16_e64 v260, v120.l /*v376.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v376.l"
+    },
+    {
+      "PC": "0x4303c",
+      "before": "v_cvt_f32_bf16_e64 v260, v125.l /*v381.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v381.l"
+    },
+    {
+      "PC": "0x43080",
+      "before": "v_cvt_f32_bf16_e64 v260, v130.l /*v386.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v386.l"
+    },
+    {
+      "PC": "0x430c4",
+      "before": "v_cvt_f32_bf16_e64 v260, v135.l /*v391.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v391.l"
+    },
+    {
+      "PC": "0x43108",
+      "before": "v_cvt_f32_bf16_e64 v260, v140.l /*v396.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v396.l"
+    },
+    {
+      "PC": "0x4314c",
+      "before": "v_cvt_f32_bf16_e64 v260, v145.l /*v401.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v401.l"
+    },
+    {
+      "PC": "0x43190",
+      "before": "v_cvt_f32_bf16_e64 v260, v150.l /*v406.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v406.l"
+    },
+    {
+      "PC": "0x431d4",
+      "before": "v_cvt_f32_bf16_e64 v260, v155.l /*v411.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v411.l"
+    },
+    {
+      "PC": "0x43218",
+      "before": "v_cvt_f32_bf16_e64 v260, v160.l /*v416.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v416.l"
+    },
+    {
+      "PC": "0x4325c",
+      "before": "v_cvt_f32_bf16_e64 v260, v165.l /*v421.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v421.l"
+    },
+    {
+      "PC": "0x432a0",
+      "before": "v_cvt_f32_bf16_e64 v260, v170.l /*v426.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v426.l"
+    },
+    {
+      "PC": "0x432e4",
+      "before": "v_cvt_f32_bf16_e64 v260, v175.l /*v431.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v431.l"
+    },
+    {
+      "PC": "0x43328",
+      "before": "v_cvt_f32_bf16_e64 v260, v180.l /*v436.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v436.l"
+    },
+    {
+      "PC": "0x4336c",
+      "before": "v_cvt_f32_bf16_e64 v260, v185.l /*v441.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v441.l"
+    },
+    {
+      "PC": "0x433b0",
+      "before": "v_cvt_f32_bf16_e64 v260, v190.l /*v446.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v446.l"
+    },
+    {
+      "PC": "0x433f4",
+      "before": "v_cvt_f32_bf16_e64 v260, v195.l /*v451.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v451.l"
+    },
+    {
+      "PC": "0x43438",
+      "before": "v_cvt_f32_bf16_e64 v260, v200.l /*v456.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v456.l"
+    },
+    {
+      "PC": "0x4347c",
+      "before": "v_cvt_f32_bf16_e64 v260, v205.l /*v461.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v461.l"
+    },
+    {
+      "PC": "0x434cc",
+      "before": "v_cvt_f32_bf16_e64 v260, v210.l /*v466.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v466.l"
+    },
+    {
+      "PC": "0x43510",
+      "before": "v_cvt_f32_bf16_e64 v260, v215.l /*v471.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v471.l"
+    },
+    {
+      "PC": "0x43554",
+      "before": "v_cvt_f32_bf16_e64 v260, v220.l /*v476.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v476.l"
+    },
+    {
+      "PC": "0x43598",
+      "before": "v_cvt_f32_bf16_e64 v260, v225.l /*v481.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v481.l"
+    },
+    {
+      "PC": "0x435dc",
+      "before": "v_cvt_f32_bf16_e64 v260, v230.l /*v486.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v486.l"
+    },
+    {
+      "PC": "0x43620",
+      "before": "v_cvt_f32_bf16_e64 v260, v235.l /*v491.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v491.l"
+    },
+    {
+      "PC": "0x43664",
+      "before": "v_cvt_f32_bf16_e64 v260, v240.l /*v496.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v496.l"
+    },
+    {
+      "PC": "0x436a8",
+      "before": "v_cvt_f32_bf16_e64 v260, v245.l /*v501.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v501.l"
+    },
+    {
+      "PC": "0x436ec",
+      "before": "v_cvt_f32_bf16_e64 v260, v250.l /*v506.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v506.l"
+    },
+    {
+      "PC": "0x4373c",
+      "before": "v_cvt_f32_bf16_e64 v260, v255.l /*v511.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v511.l"
+    },
+    {
+      "PC": "0x4378c",
+      "before": "v_cvt_f32_bf16_e64 v260, v4.l /*v516.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v516.l"
+    },
+    {
+      "PC": "0x437e0",
+      "before": "v_cvt_f32_bf16_e64 v260, v9.l /*v521.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v521.l"
+    },
+    {
+      "PC": "0x43834",
+      "before": "v_cvt_f32_bf16_e64 v260, v14.l /*v526.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v526.l"
+    },
+    {
+      "PC": "0x43888",
+      "before": "v_cvt_f32_bf16_e64 v260, v19.l /*v531.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v531.l"
+    },
+    {
+      "PC": "0x438dc",
+      "before": "v_cvt_f32_bf16_e64 v260, v24.l /*v536.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v536.l"
+    },
+    {
+      "PC": "0x43930",
+      "before": "v_cvt_f32_bf16_e64 v260, v29.l /*v541.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v541.l"
+    },
+    {
+      "PC": "0x43984",
+      "before": "v_cvt_f32_bf16_e64 v260, v34.l /*v546.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v546.l"
+    },
+    {
+      "PC": "0x439d8",
+      "before": "v_cvt_f32_bf16_e64 v260, v39.l /*v551.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v551.l"
+    },
+    {
+      "PC": "0x43a2c",
+      "before": "v_cvt_f32_bf16_e64 v260, v44.l /*v556.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v556.l"
+    },
+    {
+      "PC": "0x43a80",
+      "before": "v_cvt_f32_bf16_e64 v260, v49.l /*v561.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v561.l"
+    },
+    {
+      "PC": "0x43ad4",
+      "before": "v_cvt_f32_bf16_e64 v260, v54.l /*v566.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v566.l"
+    },
+    {
+      "PC": "0x43b28",
+      "before": "v_cvt_f32_bf16_e64 v260, v59.l /*v571.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v571.l"
+    },
+    {
+      "PC": "0x43b7c",
+      "before": "v_cvt_f32_bf16_e64 v260, v64.l /*v576.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v576.l"
+    },
+    {
+      "PC": "0x43bd0",
+      "before": "v_cvt_f32_bf16_e64 v260, v69.l /*v581.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v581.l"
+    },
+    {
+      "PC": "0x43c24",
+      "before": "v_cvt_f32_bf16_e64 v260, v74.l /*v586.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v586.l"
+    },
+    {
+      "PC": "0x43c78",
+      "before": "v_cvt_f32_bf16_e64 v260, v79.l /*v591.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v591.l"
+    },
+    {
+      "PC": "0x43ccc",
+      "before": "v_cvt_f32_bf16_e64 v260, v84.l /*v596.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v596.l"
+    },
+    {
+      "PC": "0x43d20",
+      "before": "v_cvt_f32_bf16_e64 v260, v89.l /*v601.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v601.l"
+    },
+    {
+      "PC": "0x43d74",
+      "before": "v_cvt_f32_bf16_e64 v260, v94.l /*v606.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v606.l"
+    },
+    {
+      "PC": "0x43dc8",
+      "before": "v_cvt_f32_bf16_e64 v260, v99.l /*v611.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v611.l"
+    },
+    {
+      "PC": "0x43e1c",
+      "before": "v_cvt_f32_bf16_e64 v260, v104.l /*v616.l*/",
+      "after": "v_cvt_f32_bf16_e64 v260, v616.l"
+    }
+  ],
+  "all_native_bytes_and_instruction_structure_unchanged": true,
+  "all_bank_setters_intervals_counts_unchanged": true,
+  "register_range_closure_13_unchanged": true,
+  "allocation_proposal_689_logical_VGPRs_unchanged": true,
+  "GPU_actions": false
+}

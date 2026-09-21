@@ -1,0 +1,172 @@
+{
+  "status": "PASS_ONE_INPUT_BIT_CHANGES_NAN_EXPLOSION_TO_FINITE_CORRUPTION",
+  "created_utc": "2026-09-21T06:19:44.677627+00:00",
+  "formal_matrix": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_native_results_v1/onebit_DY_full_finite_repeat_support_matrix.json",
+    "bytes": 6475138,
+    "sha256": "b9d77beb59ab0fc033ac4aaa35e4e2582dc6b6cfdeabe23b7f148e7c298425ef"
+  },
+  "intervention": {
+    "original_capture_unchanged": true,
+    "CPU_clone_before_GPU_initialization": true,
+    "DY_M_N": [
+      602561,
+      194
+    ],
+    "BF16_before": "0xb101",
+    "BF16_after": "0xb100",
+    "changed_bits": 1,
+    "changed_bytes": 1,
+    "byte_offset": 617022852,
+    "byte_before": "0x01",
+    "byte_after": "0x00",
+    "value_delta_exact": "+2^-36",
+    "modified_complete_DY_sha256": "aa8a6144c03bb6c3d63408746c3f8a87e843707e79c32ff86b651b510cebedb3",
+    "copied_address_before": "0x3176b101",
+    "copied_address_after": "0x3176b100",
+    "native_ELFs": "Unchanged original single-target bank46 NOP/TRAP binaries",
+    "mutation_certificate": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/one_bit_DY_mutation_certificate.json",
+      "bytes": 2438,
+      "sha256": "210b4924b0081b41585c34020c35f782383d9efdfa967f09311682170b79ea00"
+    }
+  },
+  "prospective_criteria": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_package_v1/prospective_onebit_DY_criteria.json",
+    "bytes": 9217,
+    "sha256": "eadd43c900e2b29a486e19aa03afcb0571b2c4c9fcaf4492d035e72940c3c6d7"
+  },
+  "package_release": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_package_v1/package_release_CPU.json",
+    "bytes": 5690,
+    "sha256": "6747feff626f83cceba1e4071c84dc19b99167621034d21a2f3a2c02f025e5f2"
+  },
+  "launch_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_package_v1/launch_manifest_output_v1.json",
+    "bytes": 53418,
+    "sha256": "9aacdf861504def4a115f09f41fe636b810983c10b34539e9c3132be33bac1fb"
+  },
+  "baseline": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+    "bytes": 262144,
+    "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+  },
+  "arms": [
+    {
+      "arm": "onebit_nop",
+      "calls": 4,
+      "all_complete_outputs_identical": true,
+      "complete_output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_01_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_native_results_v1/onebit_nop_terminal_audit.json",
+        "bytes": 38719,
+        "sha256": "34cbcfa26e062a62efb68993a6b11ffacee641d9f18714b7224716f062bba4f7"
+      },
+      "NaN_words": 0,
+      "Inf_words": 0,
+      "changed_words_vs_original_baseline": 0,
+      "changed_words_outside_target": [],
+      "changed_target_words_per_M": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_abs_complete_output": 2.0623207092285156e-05,
+      "max_abs_target": 1.1861324310302734e-05,
+      "max_abs_difference_vs_original_baseline": 0.0,
+      "max_difference_M_N": [
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "onebit_trap",
+      "calls": 4,
+      "all_complete_outputs_identical": true,
+      "complete_output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_01_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "2b54c5b40dbbf354a3089e79f2ed6c467f800c438428c7083461a27f94b72e92"
+      },
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_native_results_v1/onebit_trap_terminal_audit.json",
+        "bytes": 38735,
+        "sha256": "87e0516480bdcbd361500dd2b04b07c586a97021361716b2bf54ce26a73220ec"
+      },
+      "NaN_words": 0,
+      "Inf_words": 0,
+      "changed_words_vs_original_baseline": 1001,
+      "changed_words_outside_target": [],
+      "changed_target_words_per_M": [
+        125,
+        124,
+        126,
+        123,
+        124,
+        125,
+        127,
+        127
+      ],
+      "max_abs_complete_output": 2.0623207092285156e-05,
+      "max_abs_target": 1.2099742889404297e-05,
+      "max_abs_difference_vs_original_baseline": 1.3634562492370605e-06,
+      "max_difference_M_N": [
+        0,
+        160
+      ]
+    }
+  ],
+  "numerical_diagnostic": {
+    "prelaunch_intervals": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_tree_interval_CPU_v1/any_local_tree_FP32_interval_report.json",
+      "bytes": 747345,
+      "sha256": "47e7fc53be50fc1cd40c04b8cb45a08b60fedec6acd41c54077acaa09ea6ee20"
+    },
+    "observed_comparison": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_tree_interval_CPU_v1/retained_onebit_output_interval_comparison.json",
+      "bytes": 7970,
+      "sha256": "f2208b1f1390cd66a01f72b766ece44626630365181ffe49c4bb3916422504c2"
+    },
+    "all_eight_calls_target_words_enclosed": true,
+    "target_words_per_call": 1024,
+    "prelaunch_disjoint_cells_all_observed_different": 204,
+    "central_model_matches_NOP": 1011,
+    "central_model_matches_TRAP": 1012,
+    "central_model_is_exact_hardware_oracle": false,
+    "bounded_rounding_model_screen": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_rounding_direction_CPU_v1/shared_exponent_model_screen.json",
+      "bytes": 105530,
+      "sha256": "d360cd03e1ff871974a3303994275ef01fd68472160bf911e8cf4c71ce2b8893"
+    }
+  },
+  "root_worker_receipts": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/onebit_nop_post_idle.json",
+      "bytes": 455,
+      "sha256": "d2c162e83bc8462f38bbccb275e647c8fe4f7f8e2ad72f25657550b38643ad48"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/onebit_trap_post_idle.json",
+      "bytes": 455,
+      "sha256": "17b02df1e18902062c91a70dd3a2c8c779040780bca03c89b5923cd74500b4de"
+    }
+  ],
+  "driver_actions": false,
+  "limits": [
+    "The defect persists: finite wrong outputs are not a repair or an arithmetic pass.",
+    "Formal PASS concerns the frozen finite/repeat/support criterion; all 1001 changed words remain errors versus ordinary execution.",
+    "The actual 1P4G operands, executed native DW and selected handler remain unavailable; no successful-host cause is assigned.",
+    "Original training native kernel and trap history were not captured.",
+    "Intervals assume ordinary local FP32 RNE reduction trees. Central-model rounding discrepancies remain unassigned.",
+    "Earlier primary four-arm and address-mediation matrices remain FAIL; later passing experiments do not erase their outliers."
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "status": "PASS_CPU_DONOR_BIT_SENSITIVITY_AND_BASE_CANCELLATION",
+  "created_utc": "2026-09-21T05:34:46.584955+00:00",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_discriminators_v1/audit_operand_address_discriminators.py",
+    "bytes": 5359,
+    "sha256": "63fdeeb1e56430eb78decade0bfa4ccf61f2982b96185e6c4a61d83b772d625c"
+  },
+  "scalar_SRD_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/source_word_and_actual_load_SRD.json",
+    "bytes": 13722,
+    "sha256": "bc1579df21301300e57892ba03247b1891fee53657597d5c56260416e7e51160"
+  },
+  "prior_full_input_hash_and_finiteness_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/original_input_quantum.json",
+    "bytes": 1077198,
+    "sha256": "ae4bc127b4fa34ec5120179ce6f8b41a15ae942abb97d71e6e4eef07a342ac56"
+  },
+  "capture": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+    "bytes": 3570835225,
+    "whole_capture_rehashed_here": false
+  },
+  "source_DY_coordinate": [
+    602561,
+    194
+  ],
+  "source_word": "0x3176b101",
+  "X_zip_data_offset": 105408,
+  "DY_zip_data_offset": 1190435392,
+  "variants": [
+    {
+      "case": "original",
+      "donor_word": "0x3176b101",
+      "low_BF16": "0xb101",
+      "high_BF16": "0x3176",
+      "low_value": -1.877197064459324e-09,
+      "high_value": 3.5797711461782455e-09,
+      "copied_unsigned_offset": 829862145,
+      "parity": 1,
+      "full_in_range_loads": 1576,
+      "first_last_visit": [
+        9415,
+        10990
+      ],
+      "partial_loads": [],
+      "payload_BF16_words": 12608,
+      "payload_NaN_words": 53,
+      "payload_Inf_words": 0,
+      "payload_maximum_finite": 2.4723640721599435e+38,
+      "payload_sha256": "ef564c2f3cfdac2cb18a0ba649542ab7f82b942d50b5fcff66f557747e076605"
+    },
+    {
+      "case": "low_DY_adjacent_BF16_even_address",
+      "donor_word": "0x3176b100",
+      "low_BF16": "0xb100",
+      "high_BF16": "0x3176",
+      "low_value": -1.862645149230957e-09,
+      "high_value": 3.5797711461782455e-09,
+      "copied_unsigned_offset": 829862144,
+      "parity": 0,
+      "full_in_range_loads": 1576,
+      "first_last_visit": [
+        9415,
+        10990
+      ],
+      "partial_loads": [],
+      "payload_BF16_words": 12608,
+      "payload_NaN_words": 0,
+      "payload_Inf_words": 0,
+      "payload_maximum_finite": 0.0027008056640625,
+      "payload_sha256": "73348987ddba0b2489c5a61f623a9ef209cf4daa56b7d69ec9a23f3a47d5a90a"
+    },
+    {
+      "case": "high_DY_sign_flip",
+      "donor_word": "0xb176b101",
+      "low_BF16": "0xb101",
+      "high_BF16": "0xb176",
+      "low_value": -1.877197064459324e-09,
+      "high_value": -3.5797711461782455e-09,
+      "copied_unsigned_offset": 2977345793,
+      "parity": 1,
+      "full_in_range_loads": 0,
+      "first_last_visit": null,
+      "partial_loads": [],
+      "payload_BF16_words": 0,
+      "payload_NaN_words": 0,
+      "payload_Inf_words": 0,
+      "payload_maximum_finite": 0,
+      "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "both_DY_values_times2_donor_bits_only",
+      "donor_word": "0x31f6b181",
+      "low_BF16": "0xb181",
+      "high_BF16": "0x31f6",
+      "low_value": -3.754394128918648e-09,
+      "high_value": 7.159542292356491e-09,
+      "copied_unsigned_offset": 838250881,
+      "parity": 1,
+      "full_in_range_loads": 1320,
+      "first_last_visit": [
+        9415,
+        10734
+      ],
+      "partial_loads": [],
+      "payload_BF16_words": 10560,
+      "payload_NaN_words": 12,
+      "payload_Inf_words": 0,
+      "payload_maximum_finite": 2.4723640721599435e+38,
+      "payload_sha256": "aeb7e13505b617973481fb1f2d805888c4e6f62bc8d04e9008c79acdc1b93965"
+    },
+    {
+      "case": "both_DY_values_times0p5_donor_bits_only",
+      "donor_word": "0x30f6b081",
+      "low_BF16": "0xb081",
+      "high_BF16": "0x30f6",
+      "low_value": -9.38598532229662e-10,
+      "high_value": 1.7898855730891228e-09,
+      "copied_unsigned_offset": 821473409,
+      "parity": 1,
+      "full_in_range_loads": 1832,
+      "first_last_visit": [
+        9415,
+        11246
+      ],
+      "partial_loads": [],
+      "payload_BF16_words": 14656,
+      "payload_NaN_words": 6,
+      "payload_Inf_words": 0,
+      "payload_maximum_finite": 2.4723640721599435e+38,
+      "payload_sha256": "c158ad239ff73f4018a1dd7b98bd889e86fff6532c22e83b314e854d55adfcc8"
+    }
+  ],
+  "base_relocation_algebra_checks": [
+    {
+      "illustrative_base": "0x100000000",
+      "all1576_relative_addresses_identical": true
+    },
+    {
+      "illustrative_base": "0x10000fff0000",
+      "all1576_relative_addresses_identical": true
+    },
+    {
+      "illustrative_base": "0x120000000000",
+      "all1576_relative_addresses_identical": true
+    }
+  ],
+  "conclusions": [
+    "A one-BF16-ULP change in the low donor component toggles copied offset parity while both donor values remain small finite numbers. All selected even-offset X payloads are finite and bounded.",
+    "Flipping only the high donor component sign makes the unsigned copied offset exceed every remaining descriptor range, so this modeled address route loads no in-range X payload.",
+    "The selected route depends on operand bits, not only their magnitudes. This alone permits different numerical outcomes under the same copied-register mechanism.",
+    "At fixed X bytes,shape,storage origin,descriptor controls and j, changing the allocation base alone cancels out of all relative loads; allocation changes can still affect kernel selection,trap timing,lifetime,or other faults."
+  ],
+  "limits": [
+    "CPU counterfactual address/payload analysis only; no modified input file, GPU run, final DW prediction, or full-training stability claim.",
+    "Times2/times0p5 modify only the donor interpretation for address sensitivity; they are not simulations of full DY scaling or vocabulary scaling.",
+    "No 1P4G X/DY or native descriptor capture exists locally, so no actual successful-host donor distribution is inferred."
+  ],
+  "GPU_actions": false,
+  "remote_actions": false
+}

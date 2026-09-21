@@ -1,0 +1,109 @@
+{
+  "status": "PASS_INDEPENDENT_SOLUTION102_BANK_ZERO_CODE_AND_EMBEDDED_METADATA_SCOPE",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_solution102_peer_v1/audit_solution102_peer.py",
+    "bytes": 7578,
+    "sha256": "e46d5f45c9adc65ba6f89642c61140851122ba8e27762f5e03b101c5a220d0aa"
+  },
+  "root_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_solution102_bank_CPU_v1/solution102_bank_zero_scope.json",
+    "bytes": 16836,
+    "sha256": "c3221d16dcbbeec43ae18d94ca06f7ec5030b89f10cb4519fbfcf77c6b33091c"
+  },
+  "ELF": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/verified_unbundle.elf",
+    "bytes": 335000,
+    "sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3"
+  },
+  "metadata": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_lower_vgpr_native_selection_static_v1/candidate102_kernel_metadata.json",
+    "bytes": 7105,
+    "sha256": "b1e887bf2ec8b7ba62f6fe5151fd34ec5fe281e68a3b488225dfcab457591360"
+  },
+  "fresh_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_solution102_peer_v1/solution102_fresh.dis",
+    "bytes": 370094,
+    "sha256": "0c426bf686f5e8bf45daa78b107f30f611a85135d885c9fecefb813839fe1a3f"
+  },
+  "fresh_decode_command": [
+    "/opt/rocm-10.1.0a20260811/lib/llvm/bin/llvm-objdump",
+    "-d",
+    "--mcpu=gfx1250",
+    "--start-address=0x44700",
+    "--stop-address=0x49f28",
+    "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/verified_unbundle.elf"
+  ],
+  "original_metadata_decoder": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_lower_vgpr_native_selection_static_v1/audit_selection_static_v1.py",
+    "bytes": 12615,
+    "sha256": "6e4b3df33a2cbf5e7d1f35e9c5f9feb40838c77153f0b828a239b7ffd648859e"
+  },
+  "original_selection_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_lower_vgpr_native_selection_static_v1/selection_certificate_v1.json",
+    "bytes": 28923,
+    "sha256": "73ffac8d726cc8fc1a675bb7b51554cd65ebd540c50029a3126a15103527be52"
+  },
+  "instruction_count": 4037,
+  "contiguous_native_bytes": 22568,
+  "range": [
+    "0x44700",
+    "0x49f28"
+  ],
+  "all_instruction_words_bound": true,
+  "bank_setter_count": 74,
+  "all_bank_setters_clear_all_fields": true,
+  "only_other_setregs_are_wave_scheduling": true,
+  "direct_branches": 200,
+  "all_direct_targets_in_body": true,
+  "first_zero_setter": "0x447a8",
+  "prefix_non_scalar": [
+    {
+      "PC": 280324,
+      "bytes": 4,
+      "instruction": "v_nop",
+      "words": [
+        2113929216
+      ]
+    },
+    {
+      "PC": 280328,
+      "bytes": 12,
+      "instruction": "global_prefetch_b8 v0, s[64:65] scope:SCOPE_SE",
+      "words": [
+        3994501184,
+        262144,
+        0
+      ]
+    }
+  ],
+  "highest_explicit_single_VGPR": 73,
+  "highest_explicit_range_endpoint": 55,
+  "highest_explicit_VGPR_including_ranges": 73,
+  "embedded_metadata_declared_VGPRs": 252,
+  "all_embedded_metadata_fields_equal_retained_metadata": true,
+  "AMDGPU_metadata_note_identities": [
+    {
+      "bytes": 4677,
+      "sha256": "8c4277a02c77287c00c6d86dbbbd6a74c37524c125853b4201142422261b9e84"
+    },
+    {
+      "bytes": 4683,
+      "sha256": "f650df82865fa5ec835c96ede5d0145bd214a92ce7cb9315a1e45c668b0d114c"
+    }
+  ],
+  "descriptor": {
+    "PC": "0x3680",
+    "bytes": 64,
+    "sha256": "1179dfa86c9cd24de7e5e79828ffc026945b9a2e410a0f09a73d2b63e6ce9683",
+    "entry_offset": 266368,
+    "entry_PC": "0x44700",
+    "compute_pgm_rsrc1_raw": "0xc00f000f"
+  },
+  "conclusion": "The v73 versus252 difference is real visible usage versus embedded declared allocation, not detached metadata; after a zero setter, code paths confined to the body preserve equal source0/destination banks.",
+  "limits": [
+    "Why the generator declares252 registers for this smaller visible register footprint is not determined.",
+    "Initial MODE before the first zero setter and dynamic indirect targets remain qualified as in the root certificate.",
+    "No new solution102 loaded-image, trapped runtime or training stability claim is made."
+  ],
+  "GPU_actions": false
+}

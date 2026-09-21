@@ -1,0 +1,2732 @@
+{
+  "status": "PASS_INDEPENDENT_RAW_BYTES_AND_SEPARATE_RNE_ALL384_INTERVAL_REVIEW",
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_resume_v1/review_ordered_rounding_enclosure_v1.py",
+    "bytes": 5604,
+    "sha256": "f1275f5501713c5b60f59945bc797cb1a9ccac7d84a0b90006b5dda69dce236a"
+  },
+  "independent_encoder": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_resume_v1/reproduce_training405_j9415_exact_v1.py",
+    "bytes": 7685,
+    "sha256": "64686667eb1c8e8c68f59fff9e05d0afd127559b5249629936a68fd9dd92d99b"
+  },
+  "independent_exact_reconstruction": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_resume_v1/training405_j9415_exact_independent_v1.json",
+    "bytes": 155359,
+    "sha256": "c2b668fd0e998f8e6574e7f3c6cf8ee82e8242b77b6015a9b1b80de00a591b01"
+  },
+  "reviewed_peer_interval_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/j9415_ordered_rounding_enclosure.json",
+    "bytes": 308660,
+    "sha256": "c0c0d8b4567c7655caf9b918cad7b32dc307956ab043920e3d3f92b909d5c833"
+  },
+  "actual_load_SRD_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/source_word_and_actual_load_SRD.json",
+    "bytes": 13722,
+    "sha256": "bc1579df21301300e57892ba03247b1891fee53657597d5c56260416e7e51160"
+  },
+  "results": [
+    {
+      "M": 0,
+      "N": 128,
+      "observed_BF16": "0x7121",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 129,
+      "observed_BF16": "0xf2a7",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 130,
+      "observed_BF16": "0xf1e3",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 131,
+      "observed_BF16": "0x7297",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 132,
+      "observed_BF16": "0x7216",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 133,
+      "observed_BF16": "0xeeb7",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 134,
+      "observed_BF16": "0xf196",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 135,
+      "observed_BF16": "0x724f",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 136,
+      "observed_BF16": "0xf2ad",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 137,
+      "observed_BF16": "0xf208",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 138,
+      "observed_BF16": "0x71fe",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 139,
+      "observed_BF16": "0xf230",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 140,
+      "observed_BF16": "0xf1b1",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 141,
+      "observed_BF16": "0xf1ab",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 142,
+      "observed_BF16": "0xefdb",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 143,
+      "observed_BF16": "0xf252",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 144,
+      "observed_BF16": "0x72c4",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 145,
+      "observed_BF16": "0xf2c3",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 146,
+      "observed_BF16": "0x7112",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 147,
+      "observed_BF16": "0xf21a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 148,
+      "observed_BF16": "0x7301",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 149,
+      "observed_BF16": "0xf209",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 150,
+      "observed_BF16": "0xf080",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 151,
+      "observed_BF16": "0x7290",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 152,
+      "observed_BF16": "0x7214",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 153,
+      "observed_BF16": "0xf2c4",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 154,
+      "observed_BF16": "0xf207",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 155,
+      "observed_BF16": "0x728d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 156,
+      "observed_BF16": "0x7221",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 157,
+      "observed_BF16": "0x72b8",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 158,
+      "observed_BF16": "0xf212",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 159,
+      "observed_BF16": "0x71b3",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 160,
+      "observed_BF16": "0x70f2",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 161,
+      "observed_BF16": "0x70d0",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 162,
+      "observed_BF16": "0x7234",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 163,
+      "observed_BF16": "0xf2ae",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 164,
+      "observed_BF16": "0xf0fe",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 165,
+      "observed_BF16": "0x72a4",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 166,
+      "observed_BF16": "0x718e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 167,
+      "observed_BF16": "0x7281",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 168,
+      "observed_BF16": "0xf26a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 169,
+      "observed_BF16": "0xf19a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 170,
+      "observed_BF16": "0xf25f",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 171,
+      "observed_BF16": "0xf1c3",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 172,
+      "observed_BF16": "0x7264",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 173,
+      "observed_BF16": "0x726c",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 174,
+      "observed_BF16": "0xf123",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 175,
+      "observed_BF16": "0x7217",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 176,
+      "observed_BF16": "0xf11a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 177,
+      "observed_BF16": "0x70e3",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 178,
+      "observed_BF16": "0xf20b",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 179,
+      "observed_BF16": "0x7160",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 180,
+      "observed_BF16": "0x7206",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 181,
+      "observed_BF16": "0x7010",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 182,
+      "observed_BF16": "0x70e7",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 183,
+      "observed_BF16": "0xf204",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 184,
+      "observed_BF16": "0xf224",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 185,
+      "observed_BF16": "0x7170",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 186,
+      "observed_BF16": "0xf218",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 187,
+      "observed_BF16": "0x7065",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 188,
+      "observed_BF16": "0x7235",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 189,
+      "observed_BF16": "0x7184",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 190,
+      "observed_BF16": "0x71f7",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 191,
+      "observed_BF16": "0x7211",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 192,
+      "observed_BF16": "0x70d9",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 193,
+      "observed_BF16": "0x7049",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 194,
+      "observed_BF16": "0x7100",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 195,
+      "observed_BF16": "0x721d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 196,
+      "observed_BF16": "0x721b",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 197,
+      "observed_BF16": "0xf19b",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 198,
+      "observed_BF16": "0xf09d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 199,
+      "observed_BF16": "0x7283",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 200,
+      "observed_BF16": "0x70c5",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 201,
+      "observed_BF16": "0x7148",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 202,
+      "observed_BF16": "0x724e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 203,
+      "observed_BF16": "0x720b",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 204,
+      "observed_BF16": "0xf29c",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 205,
+      "observed_BF16": "0x7217",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 206,
+      "observed_BF16": "0x7084",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 207,
+      "observed_BF16": "0xf1e8",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 208,
+      "observed_BF16": "0x71dc",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 209,
+      "observed_BF16": "0xf1a9",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 210,
+      "observed_BF16": "0x710d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 211,
+      "observed_BF16": "0x71b0",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 212,
+      "observed_BF16": "0xf1b9",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 213,
+      "observed_BF16": "0x7265",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 214,
+      "observed_BF16": "0xf255",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 215,
+      "observed_BF16": "0xf1c6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 216,
+      "observed_BF16": "0x708b",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 217,
+      "observed_BF16": "0xf12e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 218,
+      "observed_BF16": "0x70e6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 219,
+      "observed_BF16": "0xf203",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 220,
+      "observed_BF16": "0x713d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 221,
+      "observed_BF16": "0x716f",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 222,
+      "observed_BF16": "0xf0ad",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 223,
+      "observed_BF16": "0x71e6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 224,
+      "observed_BF16": "0x728f",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 225,
+      "observed_BF16": "0x7191",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 226,
+      "observed_BF16": "0x7207",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 227,
+      "observed_BF16": "0xf2a6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 228,
+      "observed_BF16": "0x72fc",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 229,
+      "observed_BF16": "0x728d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 230,
+      "observed_BF16": "0xf1dd",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 231,
+      "observed_BF16": "0xf0aa",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 232,
+      "observed_BF16": "0x72a8",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 233,
+      "observed_BF16": "0x7298",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 234,
+      "observed_BF16": "0xefd7",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 235,
+      "observed_BF16": "0xf24b",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 236,
+      "observed_BF16": "0x71d9",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 237,
+      "observed_BF16": "0x71e3",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 238,
+      "observed_BF16": "0xf1ac",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 239,
+      "observed_BF16": "0xf234",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 240,
+      "observed_BF16": "0xf0fd",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 241,
+      "observed_BF16": "0xf107",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 242,
+      "observed_BF16": "0xf164",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 243,
+      "observed_BF16": "0x7213",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 244,
+      "observed_BF16": "0xf1eb",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 245,
+      "observed_BF16": "0xf26e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 246,
+      "observed_BF16": "0xf1b2",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 247,
+      "observed_BF16": "0xf1c1",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 248,
+      "observed_BF16": "0x721a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 249,
+      "observed_BF16": "0xf03e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 250,
+      "observed_BF16": "0x6dc4",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 251,
+      "observed_BF16": "0x7248",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 252,
+      "observed_BF16": "0x72db",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 253,
+      "observed_BF16": "0x724e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 254,
+      "observed_BF16": "0xeda1",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 0,
+      "N": 255,
+      "observed_BF16": "0xf1d8",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 128,
+      "observed_BF16": "0xf260",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 129,
+      "observed_BF16": "0x726a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 130,
+      "observed_BF16": "0x7111",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 131,
+      "observed_BF16": "0xf243",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 132,
+      "observed_BF16": "0xf23d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 133,
+      "observed_BF16": "0xf191",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 134,
+      "observed_BF16": "0xf1bf",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 135,
+      "observed_BF16": "0x70d6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 136,
+      "observed_BF16": "0xf0f7",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 137,
+      "observed_BF16": "0x708a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 138,
+      "observed_BF16": "0x72a6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 139,
+      "observed_BF16": "0x7228",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 140,
+      "observed_BF16": "0xf29d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 141,
+      "observed_BF16": "0xf19c",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 142,
+      "observed_BF16": "0x72b9",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 143,
+      "observed_BF16": "0x72de",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 144,
+      "observed_BF16": "0xf2e4",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 145,
+      "observed_BF16": "0xf2c6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 146,
+      "observed_BF16": "0x7288",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 147,
+      "observed_BF16": "0x729f",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 148,
+      "observed_BF16": "0xf2a2",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 149,
+      "observed_BF16": "0x7171",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 150,
+      "observed_BF16": "0xee90",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 151,
+      "observed_BF16": "0xf1a2",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 152,
+      "observed_BF16": "0x725c",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 153,
+      "observed_BF16": "0xf2cb",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 154,
+      "observed_BF16": "0xf2b0",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 155,
+      "observed_BF16": "0xf207",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 156,
+      "observed_BF16": "0xef90",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 157,
+      "observed_BF16": "0xf237",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 158,
+      "observed_BF16": "0xf2db",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 159,
+      "observed_BF16": "0xf15b",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 160,
+      "observed_BF16": "0xf236",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 161,
+      "observed_BF16": "0x728c",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 162,
+      "observed_BF16": "0x7283",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 163,
+      "observed_BF16": "0xf212",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 164,
+      "observed_BF16": "0xf1cd",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 165,
+      "observed_BF16": "0xf18f",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 166,
+      "observed_BF16": "0xf2e1",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 167,
+      "observed_BF16": "0x705a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 168,
+      "observed_BF16": "0x7301",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 169,
+      "observed_BF16": "0x71f5",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 170,
+      "observed_BF16": "0xf221",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 171,
+      "observed_BF16": "0xf268",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 172,
+      "observed_BF16": "0x7289",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 173,
+      "observed_BF16": "0xf275",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 174,
+      "observed_BF16": "0x7046",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 175,
+      "observed_BF16": "0xf2f4",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 176,
+      "observed_BF16": "0xf1b9",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 177,
+      "observed_BF16": "0xf1c1",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 178,
+      "observed_BF16": "0x71e0",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 179,
+      "observed_BF16": "0x7244",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 180,
+      "observed_BF16": "0x7293",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 181,
+      "observed_BF16": "0xf18f",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 182,
+      "observed_BF16": "0xf12d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 183,
+      "observed_BF16": "0x7293",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 184,
+      "observed_BF16": "0x727e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 185,
+      "observed_BF16": "0xf2c4",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 186,
+      "observed_BF16": "0x715d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 187,
+      "observed_BF16": "0x72f8",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 188,
+      "observed_BF16": "0xf24e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 189,
+      "observed_BF16": "0xf281",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 190,
+      "observed_BF16": "0x7218",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 191,
+      "observed_BF16": "0x722a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 192,
+      "observed_BF16": "0x7184",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 193,
+      "observed_BF16": "0xf293",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 194,
+      "observed_BF16": "0x722c",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 195,
+      "observed_BF16": "0x72bc",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 196,
+      "observed_BF16": "0x726d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 197,
+      "observed_BF16": "0xf267",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 198,
+      "observed_BF16": "0x721b",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 199,
+      "observed_BF16": "0xf1e3",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 200,
+      "observed_BF16": "0xf301",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 201,
+      "observed_BF16": "0xf253",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 202,
+      "observed_BF16": "0x712e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 203,
+      "observed_BF16": "0x7268",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 204,
+      "observed_BF16": "0x7234",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 205,
+      "observed_BF16": "0x72b0",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 206,
+      "observed_BF16": "0xf029",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 207,
+      "observed_BF16": "0x71e0",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 208,
+      "observed_BF16": "0xf281",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 209,
+      "observed_BF16": "0xf2e5",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 210,
+      "observed_BF16": "0x72a7",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 211,
+      "observed_BF16": "0xf1a8",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 212,
+      "observed_BF16": "0x7210",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 213,
+      "observed_BF16": "0x7167",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 214,
+      "observed_BF16": "0x71fc",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 215,
+      "observed_BF16": "0xf1b3",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 216,
+      "observed_BF16": "0xf2f3",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 217,
+      "observed_BF16": "0x7222",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 218,
+      "observed_BF16": "0x7278",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 219,
+      "observed_BF16": "0x71e9",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 220,
+      "observed_BF16": "0xf226",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 221,
+      "observed_BF16": "0x7232",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 222,
+      "observed_BF16": "0xf14a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 223,
+      "observed_BF16": "0x71a8",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 224,
+      "observed_BF16": "0xf1c6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 225,
+      "observed_BF16": "0xf293",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 226,
+      "observed_BF16": "0x7270",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 227,
+      "observed_BF16": "0x7229",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 228,
+      "observed_BF16": "0xf225",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 229,
+      "observed_BF16": "0x7275",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 230,
+      "observed_BF16": "0xf27c",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 231,
+      "observed_BF16": "0xf1c1",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 232,
+      "observed_BF16": "0xf2b0",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 233,
+      "observed_BF16": "0xf1c9",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 234,
+      "observed_BF16": "0x7214",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 235,
+      "observed_BF16": "0x72b4",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 236,
+      "observed_BF16": "0x7261",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 237,
+      "observed_BF16": "0xf2b4",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 238,
+      "observed_BF16": "0x7220",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 239,
+      "observed_BF16": "0xf1cf",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 240,
+      "observed_BF16": "0xf284",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 241,
+      "observed_BF16": "0x70fb",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 242,
+      "observed_BF16": "0xf1a2",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 243,
+      "observed_BF16": "0xf2a1",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 244,
+      "observed_BF16": "0xf235",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 245,
+      "observed_BF16": "0x7206",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 246,
+      "observed_BF16": "0xf117",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 247,
+      "observed_BF16": "0x71b6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 248,
+      "observed_BF16": "0xf2d7",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 249,
+      "observed_BF16": "0xf2b3",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 250,
+      "observed_BF16": "0x7206",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 251,
+      "observed_BF16": "0x7186",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 252,
+      "observed_BF16": "0x7261",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 253,
+      "observed_BF16": "0x7140",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 254,
+      "observed_BF16": "0xf232",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 1,
+      "N": 255,
+      "observed_BF16": "0x7240",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 128,
+      "observed_BF16": "0x7150",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 129,
+      "observed_BF16": "0xf142",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 130,
+      "observed_BF16": "0xf1d1",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 131,
+      "observed_BF16": "0x71e7",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 132,
+      "observed_BF16": "0x7166",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 133,
+      "observed_BF16": "0xf178",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 134,
+      "observed_BF16": "0xf180",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 135,
+      "observed_BF16": "0x7163",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 136,
+      "observed_BF16": "0xef2b",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 137,
+      "observed_BF16": "0xef96",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 138,
+      "observed_BF16": "0xf233",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 139,
+      "observed_BF16": "0xf1cc",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 140,
+      "observed_BF16": "0x71b8",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 141,
+      "observed_BF16": "0x7106",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 142,
+      "observed_BF16": "0xf1bb",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 143,
+      "observed_BF16": "0x71f7",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 144,
+      "observed_BF16": "0x7218",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 145,
+      "observed_BF16": "0xf185",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 146,
+      "observed_BF16": "0x721b",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 147,
+      "observed_BF16": "0xf21e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 148,
+      "observed_BF16": "0x7024",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 149,
+      "observed_BF16": "0x7105",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 150,
+      "observed_BF16": "0x7185",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 151,
+      "observed_BF16": "0x717f",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 152,
+      "observed_BF16": "0xf132",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 153,
+      "observed_BF16": "0x71f7",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 154,
+      "observed_BF16": "0xf115",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 155,
+      "observed_BF16": "0xf07d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 156,
+      "observed_BF16": "0x712d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 157,
+      "observed_BF16": "0xf237",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 158,
+      "observed_BF16": "0x710d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 159,
+      "observed_BF16": "0x7243",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 160,
+      "observed_BF16": "0xf142",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 161,
+      "observed_BF16": "0xf23d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 162,
+      "observed_BF16": "0xf0d9",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 163,
+      "observed_BF16": "0x713a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 164,
+      "observed_BF16": "0x70f5",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 165,
+      "observed_BF16": "0x70ac",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 166,
+      "observed_BF16": "0x712e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 167,
+      "observed_BF16": "0x71c6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 168,
+      "observed_BF16": "0x6fe7",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 169,
+      "observed_BF16": "0x70b6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 170,
+      "observed_BF16": "0x7195",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 171,
+      "observed_BF16": "0x717e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 172,
+      "observed_BF16": "0xf105",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 173,
+      "observed_BF16": "0x7204",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 174,
+      "observed_BF16": "0xf215",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 175,
+      "observed_BF16": "0x7208",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 176,
+      "observed_BF16": "0xef11",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 177,
+      "observed_BF16": "0xf201",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 178,
+      "observed_BF16": "0x7095",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 179,
+      "observed_BF16": "0x722e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 180,
+      "observed_BF16": "0xf28b",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 181,
+      "observed_BF16": "0x71fd",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 182,
+      "observed_BF16": "0x71fe",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 183,
+      "observed_BF16": "0xf209",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 184,
+      "observed_BF16": "0x71ed",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 185,
+      "observed_BF16": "0xf21d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 186,
+      "observed_BF16": "0x71c6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 187,
+      "observed_BF16": "0xf22f",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 188,
+      "observed_BF16": "0xf22f",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 189,
+      "observed_BF16": "0xf194",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 190,
+      "observed_BF16": "0xf1a6",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 191,
+      "observed_BF16": "0xf161",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 192,
+      "observed_BF16": "0x6fdc",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 193,
+      "observed_BF16": "0x71e4",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 194,
+      "observed_BF16": "0xf15d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 195,
+      "observed_BF16": "0x6f85",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 196,
+      "observed_BF16": "0xf24e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 197,
+      "observed_BF16": "0x7116",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 198,
+      "observed_BF16": "0xf12c",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 199,
+      "observed_BF16": "0xf169",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 200,
+      "observed_BF16": "0xf030",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 201,
+      "observed_BF16": "0xee3a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 202,
+      "observed_BF16": "0xefae",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 203,
+      "observed_BF16": "0x7202",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 204,
+      "observed_BF16": "0xf1bc",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 205,
+      "observed_BF16": "0xf1a3",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 206,
+      "observed_BF16": "0x7229",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 207,
+      "observed_BF16": "0xf1a0",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 208,
+      "observed_BF16": "0xf137",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 209,
+      "observed_BF16": "0xf03a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 210,
+      "observed_BF16": "0xf1be",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 211,
+      "observed_BF16": "0x71d1",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 212,
+      "observed_BF16": "0xef18",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 213,
+      "observed_BF16": "0xf201",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 214,
+      "observed_BF16": "0xf16f",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 215,
+      "observed_BF16": "0x7270",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 216,
+      "observed_BF16": "0x723b",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 217,
+      "observed_BF16": "0xf14e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 218,
+      "observed_BF16": "0x718d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 219,
+      "observed_BF16": "0xf176",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 220,
+      "observed_BF16": "0x71d9",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 221,
+      "observed_BF16": "0xf119",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 222,
+      "observed_BF16": "0xf0ba",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 223,
+      "observed_BF16": "0x71d4",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 224,
+      "observed_BF16": "0x7202",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 225,
+      "observed_BF16": "0x7219",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 226,
+      "observed_BF16": "0xf1a1",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 227,
+      "observed_BF16": "0xf19d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 228,
+      "observed_BF16": "0xf233",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 229,
+      "observed_BF16": "0x7131",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 230,
+      "observed_BF16": "0x71cf",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 231,
+      "observed_BF16": "0xf1e1",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 232,
+      "observed_BF16": "0x6f75",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 233,
+      "observed_BF16": "0xf139",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 234,
+      "observed_BF16": "0xf18a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 235,
+      "observed_BF16": "0xf207",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 236,
+      "observed_BF16": "0x71ef",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 237,
+      "observed_BF16": "0xf0ae",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 238,
+      "observed_BF16": "0xf182",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 239,
+      "observed_BF16": "0xf29e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 240,
+      "observed_BF16": "0x722e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 241,
+      "observed_BF16": "0xf1ec",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 242,
+      "observed_BF16": "0x714e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 243,
+      "observed_BF16": "0xf147",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 244,
+      "observed_BF16": "0x713e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 245,
+      "observed_BF16": "0xf05e",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 246,
+      "observed_BF16": "0xf10c",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 247,
+      "observed_BF16": "0xf025",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 248,
+      "observed_BF16": "0xf146",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 249,
+      "observed_BF16": "0xf188",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 250,
+      "observed_BF16": "0xf20f",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 251,
+      "observed_BF16": "0xf118",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 252,
+      "observed_BF16": "0xf14a",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 253,
+      "observed_BF16": "0x71ce",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 254,
+      "observed_BF16": "0xf1bc",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    },
+    {
+      "M": 5,
+      "N": 255,
+      "observed_BF16": "0xf00d",
+      "independent_endpoints_equal_peer": true,
+      "strictly_inside_observed_BF16_cell": true
+    }
+  ],
+  "minimum_exact_margin_units2m266": "609210569872362745271621918386426562121698561512889766896827829827897940650759238373771241362677135572992",
+  "minimum_absolute_margin": 5.137934733362174e+24,
+  "rounding_lemma_review": "If a is representable and q=RN(a+p), nearestness implies |q-(a+p)|<=|p| because a is a candidate, so |q-a|<=2|p|. Endpoint monotonicity under RN bounds inserted ordinary products.",
+  "conclusions": [
+    "Own byte slicing, ownBF16 integer decoding and separate FP32 encode/decode reproduce all384 peer lower/upper endpoints exactly.",
+    "All384 endpoint intervals lie strictly inside corresponding actual savedDW BF16 cells, with allowance for ordinary original products before, between and after changed coefficients.",
+    "Observed QWORD OOBgranularity cannot alter j9415 because everycandidate load is full16B or entirelyOOB by independently checked wide boundarymargins."
+  ],
+  "material_assumptions": [
+    "Each changed product enters its persistentC accumulator once and in increasingKorder; one alteredcoefficient per64tile peroutput in the reviewed producerwave2model.",
+    "FP32 RNE sequentialadd/FMA or equivalent one-large-product WMMA accumulation with ordinarysmallterms. This does not establish an unspecified nativeinternalWMMA reduction algorithm.",
+    "No further faults, scale change, special overflow/rounding, or original-event/nativekernel identity is inferred."
+  ],
+  "GPU_actions": false
+}

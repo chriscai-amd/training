@@ -1,0 +1,186 @@
+{
+  "status": "OBSERVED_TARGET1024_EXACT_BASELINE_IN_ALL8_MEDIATED_CALLS_WHOLE_PAIR_STILL_FAILS",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/review_mediation_target_scope.py",
+    "bytes": 3350,
+    "sha256": "4c87798e4fa29e38b5d3bcf1b9fae40376f20f84ed906794a872874b3c49d54c"
+  },
+  "original_pair_result": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/mediation_pair_matrix_audit.json",
+    "bytes": 13785,
+    "sha256": "5cd4b03e4162c8aafeea0ba7d49afd036839aa3e62d74bb5e632dc119815b742"
+  },
+  "baseline": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_j9415_runtime_v1/nop/results_bank46_control/call_01_output.bf16.bin",
+    "bytes": 262144,
+    "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+  },
+  "full_frozen_pair_status_unchanged": "FAIL_CONTROLLED_ORIGINAL_INPUT_NINE_SITE_MEDIATION_CRITERIA",
+  "calls": [
+    {
+      "arm": "bank46_mediated_nop",
+      "iteration": 1,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_nop/call_01_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "target_words_compared": 1024,
+      "target_words_differing_from_NOP46": 0,
+      "target_NaN_words": 0,
+      "target_block_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+      "outside_words_compared": 130048,
+      "outside_words_differing_from_NOP46": 0,
+      "all_outside_coordinates": []
+    },
+    {
+      "arm": "bank46_mediated_nop",
+      "iteration": 2,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_nop/call_02_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "target_words_compared": 1024,
+      "target_words_differing_from_NOP46": 0,
+      "target_NaN_words": 0,
+      "target_block_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+      "outside_words_compared": 130048,
+      "outside_words_differing_from_NOP46": 0,
+      "all_outside_coordinates": []
+    },
+    {
+      "arm": "bank46_mediated_nop",
+      "iteration": 3,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_nop/call_03_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "target_words_compared": 1024,
+      "target_words_differing_from_NOP46": 0,
+      "target_NaN_words": 0,
+      "target_block_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+      "outside_words_compared": 130048,
+      "outside_words_differing_from_NOP46": 0,
+      "all_outside_coordinates": []
+    },
+    {
+      "arm": "bank46_mediated_nop",
+      "iteration": 4,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_nop/call_04_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "target_words_compared": 1024,
+      "target_words_differing_from_NOP46": 0,
+      "target_NaN_words": 0,
+      "target_block_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+      "outside_words_compared": 130048,
+      "outside_words_differing_from_NOP46": 0,
+      "all_outside_coordinates": []
+    },
+    {
+      "arm": "bank46_mediated_trap",
+      "iteration": 1,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_trap/call_01_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "target_words_compared": 1024,
+      "target_words_differing_from_NOP46": 0,
+      "target_NaN_words": 0,
+      "target_block_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+      "outside_words_compared": 130048,
+      "outside_words_differing_from_NOP46": 0,
+      "all_outside_coordinates": []
+    },
+    {
+      "arm": "bank46_mediated_trap",
+      "iteration": 2,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_trap/call_02_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "target_words_compared": 1024,
+      "target_words_differing_from_NOP46": 0,
+      "target_NaN_words": 0,
+      "target_block_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+      "outside_words_compared": 130048,
+      "outside_words_differing_from_NOP46": 0,
+      "all_outside_coordinates": []
+    },
+    {
+      "arm": "bank46_mediated_trap",
+      "iteration": 3,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_trap/call_03_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "77fc5744af224172d60cbd6bd79ff9a24a413a600472167cdecf4b883bd9410e"
+      },
+      "target_words_compared": 1024,
+      "target_words_differing_from_NOP46": 0,
+      "target_NaN_words": 0,
+      "target_block_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+      "outside_words_compared": 130048,
+      "outside_words_differing_from_NOP46": 7,
+      "all_outside_coordinates": [
+        {
+          "M": 8,
+          "N": 0
+        },
+        {
+          "M": 136,
+          "N": 0
+        },
+        {
+          "M": 8,
+          "N": 64
+        },
+        {
+          "M": 136,
+          "N": 64
+        },
+        {
+          "M": 8,
+          "N": 128
+        },
+        {
+          "M": 136,
+          "N": 128
+        },
+        {
+          "M": 136,
+          "N": 192
+        }
+      ]
+    },
+    {
+      "arm": "bank46_mediated_trap",
+      "iteration": 4,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_trap/call_04_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "target_words_compared": 1024,
+      "target_words_differing_from_NOP46": 0,
+      "target_NaN_words": 0,
+      "target_block_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+      "outside_words_compared": 130048,
+      "outside_words_differing_from_NOP46": 0,
+      "all_outside_coordinates": []
+    }
+  ],
+  "complete_pair_equality_satisfied": false,
+  "original_target_repaired_in_all_retained_calls": true,
+  "limits": [
+    "This is an observed scoped comparison after the formal pair failed; it does not replace or weaken the prospective criterion.",
+    "Seven residual finite differences remain in mediated TRAP call3; all are outside the original target.",
+    "The original training kernel, trap history and runtime gate-count observation remain unavailable."
+  ],
+  "GPU_actions": false
+}

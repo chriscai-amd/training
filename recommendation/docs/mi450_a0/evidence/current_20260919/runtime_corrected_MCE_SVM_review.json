@@ -1,0 +1,207 @@
+{
+  "status": "DECODED_PCIE_LINK_CLASS_ENDPOINT_AND_SYNDROME_UNRESOLVED",
+  "scope": "Independent CPU/read-only investigation; no GPU launches, driver/reset actions, source edits, commits or pushes.",
+  "created_utc": "2026-09-21T08:10:58.891125+00:00",
+  "input_logs": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/pre_runtime_kernel.json",
+      "bytes": 236015,
+      "sha256": "20ea55cac39536ef7ff2654d6f2b137e3decd4cb050e6bcbd527b7407bddcfee"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/quartet_post_kernel.json",
+      "bytes": 239665,
+      "sha256": "518f0c0ba4bb801e25a2c8022bf51a70e4d70aa1e2feb59deae6982d1d0c944c"
+    }
+  ],
+  "new_relevant_log_lines": [
+    "2026-09-21T08:00:48,922098+00:00 workqueue: svm_range_restore_work [amdgpu] hogged CPU for >10000us 67 times, consider switching to WQ_UNBOUND",
+    "2026-09-21T08:05:13,197561+00:00 mce: [Hardware Error]: Machine check events logged",
+    "2026-09-21T08:05:13,197569+00:00 [Hardware Error]: Corrected error, no action required.",
+    "2026-09-21T08:05:13,204917+00:00 [Hardware Error]: CPU:8 (1a:51:0) MC60_STATUS[Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-]: 0xd8202000000c080b",
+    "2026-09-21T08:05:13,220207+00:00 [Hardware Error]: PPIN: 0x00831df01b0e0007",
+    "2026-09-21T08:05:13,229138+00:00 [Hardware Error]: IPID: 0x000001e11ccc0007, Syndrome: 0x000000005a800001",
+    "2026-09-21T08:05:13,240121+00:00 [Hardware Error]: cache level: L3/GEN, mem/io: IO, mem-tx: GEN, part-proc: SRC (no timeout)"
+  ],
+  "comparison_method": "Compare event text and ISO time through whole seconds, preserving originals; repeated historical prefix shifts by one microsecond in separate dmesg ISO rendering.",
+  "recurrence": {
+    "pre_runtime_MC60_records": 12,
+    "post_quartet_MC60_records": 13,
+    "prior_exact_status_occurrences": 6,
+    "prior_same_status_events": [
+      "2026-09-21T03:04:51,305647+00:00 [Hardware Error]: CPU:8 (1a:51:0) MC60_STATUS[Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-]: 0xd8202000000c080b",
+      "2026-09-21T03:48:32,677569+00:00 [Hardware Error]: CPU:8 (1a:51:0) MC60_STATUS[Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-]: 0xd8202000000c080b",
+      "2026-09-21T04:26:46,362745+00:00 [Hardware Error]: CPU:8 (1a:51:0) MC60_STATUS[Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-]: 0xd8202000000c080b",
+      "2026-09-21T04:37:41,705697+00:00 [Hardware Error]: CPU:8 (1a:51:0) MC60_STATUS[Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-]: 0xd8202000000c080b",
+      "2026-09-21T04:48:37,059057+00:00 [Hardware Error]: CPU:8 (1a:51:0) MC60_STATUS[Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-]: 0xd8202000000c080b",
+      "2026-09-21T06:54:13,490948+00:00 [Hardware Error]: CPU:8 (1a:51:0) MC60_STATUS[Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-]: 0xd8202000000c080b"
+    ],
+    "prior_other_MC60_statuses": {
+      "0xd8202000000c080b": 6,
+      "0x982000000012080b": 5,
+      "0x98202000000c080b": 1
+    },
+    "finding": "08:05:13 event adds one occurrence of a signature already present before runtime. The event is not newly introduced by quartet evidence."
+  },
+  "IPID_decode": {
+    "raw": "0x1e11ccc0007",
+    "hardware_id_43_32": "0x1e1",
+    "MCA_type_63_48": "0x0",
+    "instance_id_hi_47_44": "0x0",
+    "instance_id_lo_31_0": "0x1ccc0007",
+    "classification": "PCIe Link Unit / SMCA_PCIE_PL",
+    "basis": [
+      "Current upstream Linux arch/x86/kernel/cpu/mce/amd.c line202: SMCA_PCIE_PL HWID_MCATYPE(0x1E1,0x0).",
+      "Current upstream Linux drivers/edac/mce_amd.c line716: PCIe Link Unit.",
+      "Local AMD rascore/ras_aca_v5_0.c lines52,67 independently map PCIE_PL HWID0x1E1 type0."
+    ],
+    "kernel_limit": "Upstream Linux v6.14 has no HWID0x1E1 entry; installed6.14.0-37 enum lacks SMCA_PCIE_PL and sysfs exposes generic th_bank_60, consistent with missing decoder. Exact Ubuntu running decoder binary was not decompiled.",
+    "endpoint_limit": "CPU8 is the reporting logical CPU. PCIe link identity/root port/endpoint is not established from IPID instance fields; no GPU ordinal or BDF can be assigned. Do not apply GPU-specific ACA socket/die parsing to this CPU MCA event without applicable documentation."
+  },
+  "MC60_STATUS_decode": {
+    "raw": "0xd8202000000c080b",
+    "flags": {
+      "VAL": true,
+      "OVER": true,
+      "UC": false,
+      "EN": true,
+      "MISCV": true,
+      "ADDRV": false,
+      "PCC": false,
+      "TCC": false,
+      "SYNDV": true,
+      "CECC": false,
+      "UECC": true,
+      "DEFERRED": false,
+      "POISON": false,
+      "SCRUB": false
+    },
+    "error_code_15_0": "0x80b",
+    "extended_error_code_21_16": "0xc",
+    "generic_classification": "Kernel calls event corrected because UC=0 and DEFERRED=0. UECC bit45 is independently set and must remain reported; it does not override generic status to an uncorrected CPU context error.",
+    "overflow_limit": "OVER=1 means previous errors were lost; one logged record is not one underlying event.",
+    "generic_bus_error": "EC0x080b formats L3/GEN, IO, generic transaction, source participant, no timeout. This generic error-code text is not evidence that the CPU L3 cache itself failed.",
+    "address_limit": "ADDRV=0; no valid error address is established.",
+    "XEC_limit": "XEC0x0c exact PCIe link sub-error meaning is not supplied by retained installed/Linux/rasdaemon sources. Related prior records have XEC0x12."
+  },
+  "syndrome": {
+    "raw": "0x000000005a800001",
+    "related_prior": "0x000000005a000001",
+    "difference": "bit23 (0x00800000)",
+    "limit": "SyndV is set. Exact PCIE_PL syndrome fields and lane/port/error meaning require applicable family1Ah model51h documentation or vendor decode; no guessed semantics assigned."
+  },
+  "RAS_availability": {
+    "rasdaemon": "not installed/on PATH",
+    "ras_mc_ctl": "not installed/on PATH",
+    "mcelog": "not installed/on PATH",
+    "edac_util": "not installed/on PATH",
+    "var_lib_rasdaemon": "absent",
+    "edac_memory_controllers": "/sys/devices/system/edac/mc has only uevent/power/subsystem, no enumerated mcN",
+    "debug_ras": "unprivileged read denied; no elevated or write action attempted",
+    "sysfs_threshold_snapshot_utc": "2026-09-21T08:10:58.891555+00:00",
+    "machinecheck8": {
+      "60": {
+        "error_count": "21",
+        "threshold_limit": "4095",
+        "interrupt_enable": "1"
+      },
+      "61": {
+        "error_count": "0",
+        "threshold_limit": "4095",
+        "interrupt_enable": "1"
+      },
+      "63": {
+        "error_count": "0",
+        "threshold_limit": "4095",
+        "interrupt_enable": "1"
+      }
+    },
+    "counter_limit": "Threshold error_count is an instantaneous bank counter; it has no process/kernel identity and is not a lifetime event count."
+  },
+  "SVM_warning": {
+    "new_line": "2026-09-21T08:00:48,922098+00:00 workqueue: svm_range_restore_work [amdgpu] hogged CPU for >10000us 67 times, consider switching to WQ_UNBOUND",
+    "prior_last": "2026-09-21T05:49:49,783675+00:00 workqueue: svm_range_restore_work [amdgpu] hogged CPU for >10000us 35 times, consider switching to WQ_UNBOUND",
+    "source_context": "Local kfd_svm.c1908\u20131999 remaps invalid ranges, waits migration, then resumes queues; comment2660\u20132664 explains CPU invalidation with retry fault disabled evicts queues and schedules worker.",
+    "interpretation": "The CPU-hog warning reports scheduling/performance of shared virtual memory restoration work. Queue eviction/restoration is potentially relevant to CWSR exposure, but this warning provides no process/GPU identity, trap PC/count/duration or success/failure conclusion. It does not alone establish a hang or memory corruption.",
+    "count_limit": "Reported35\u219267 is the cumulative warning occurrence counter for CPU-hog work, not a CWSR trap count."
+  },
+  "scientific_implication": "Preserve recurring PCIe-link RAS signature as a hardware-health confound. These lines do not connect an endpoint, timestamped trap, failing DW word or data corruption to the NaN culprit. Pair/runtime judgments require root timeline and independent current health checks.",
+  "retained_local_sources": [
+    {
+      "original": {
+        "path": "/usr/src/linux-hwe-6.14-headers-6.14.0-37/arch/x86/include/asm/mce.h",
+        "bytes": 13831,
+        "sha256": "97d547f434ccf6483dfd69c935cf766aa4e16609a9c96d0cf8359496e948b379"
+      },
+      "retained": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_MCE_peer_v1/installed_mce.h",
+        "bytes": 13831,
+        "sha256": "97d547f434ccf6483dfd69c935cf766aa4e16609a9c96d0cf8359496e948b379"
+      }
+    },
+    {
+      "original": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/ras/rascore/ras_aca_v5_0.c",
+        "bytes": 13144,
+        "sha256": "9bf7ec3647a88ccd17e5f65d7b942146216824a0da7411af643d8af0006365bc"
+      },
+      "retained": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_MCE_peer_v1/local_ras_aca_v5_0.c",
+        "bytes": 13144,
+        "sha256": "9bf7ec3647a88ccd17e5f65d7b942146216824a0da7411af643d8af0006365bc"
+      }
+    },
+    {
+      "original": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/ras/rascore/ras_aca_v5_0.h",
+        "bytes": 3356,
+        "sha256": "f1b45cfdb6095315d18103781ac1bb75fd3ce04b5a73797eeb0d3f74f2d55ede"
+      },
+      "retained": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_MCE_peer_v1/local_ras_aca_v5_0.h",
+        "bytes": 3356,
+        "sha256": "f1b45cfdb6095315d18103781ac1bb75fd3ce04b5a73797eeb0d3f74f2d55ede"
+      }
+    },
+    {
+      "original": {
+        "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_svm.c",
+        "bytes": 123545,
+        "sha256": "6b472b6f06cb1ed93cbf4af0a5625088cc50f3ca6a5dc7f375c6fe4023ff8be0"
+      },
+      "retained": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_MCE_peer_v1/local_kfd_svm.c",
+        "bytes": 123545,
+        "sha256": "6b472b6f06cb1ed93cbf4af0a5625088cc50f3ca6a5dc7f375c6fe4023ff8be0"
+      }
+    }
+  ],
+  "retained_upstream_sources": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_MCE_peer_v1/linux_master_mce_amd.c",
+      "bytes": 32552,
+      "sha256": "a8a4c8a33dadaf4da5db64a4eb156b1bd708e46594a2b06d7064e0a468d5a09b"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_MCE_peer_v1/linux_master_mce_amd_edac.c",
+      "bytes": 22214,
+      "sha256": "863f4cfdf56d95ca8c492230d3fc580ba91e5fa40fc4d9cfeaef7550c7e2a6cf"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_MCE_peer_v1/linux_v6_14_mce_amd.c",
+      "bytes": 33401,
+      "sha256": "df1440dc910466748a4d78cb2f48dd160638a3dc7adb0ffec0d6fa307a12cb63"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_MCE_peer_v1/linux_v6_14_mce_amd_edac.c",
+      "bytes": 21830,
+      "sha256": "fbc842dd18b00a4564d85f572026f86888105d9931a88a72ebfc34ff49a9cab3"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_MCE_peer_v1/rasdaemon_master_amd_smca.c",
+      "bytes": 33193,
+      "sha256": "eea26589cc8483c1d70fa1020d0074ca0d5fc30568acffd28e563a3747f36395"
+    }
+  ],
+  "upstream_source_limit": "Fetched public source snapshots are identified by complete file SHA256; current master is reference decode evidence, not the running kernel binary."
+}

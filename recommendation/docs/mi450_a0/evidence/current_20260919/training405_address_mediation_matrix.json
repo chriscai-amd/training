@@ -1,0 +1,333 @@
+{
+  "status": "FAIL_CONTROLLED_ORIGINAL_INPUT_NINE_SITE_MEDIATION_CRITERIA",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_mediation_review_v1/audit_mediation_matrix.py",
+    "bytes": 10520,
+    "sha256": "5b0e76071f5cc690ef9fc23a1c94718af7a9f450662e25b5bf9884f1f72df0a3"
+  },
+  "terminal_auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_mediation_review_v1/audit_mediation_terminal.py",
+    "bytes": 29050,
+    "sha256": "5ee5f82641458f352d31550bb2cf74a352ed4d3acdc26d43deb7e69be97277df"
+  },
+  "input_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/mediation_terminal_manifest.json",
+    "bytes": 628,
+    "sha256": "9fcc4e8bca64fb38cbcfc10da318ade6b68ffb34cb4259176ae569be9709c0ba"
+  },
+  "prospective_criteria": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_mediation_package_v1/prospective_mediation_criteria.json",
+    "bytes": 3934,
+    "sha256": "b23479fa4c5d21cb9156d73bb06bd6b2696d6bbbba381828e3bd94daf4a92f2d"
+  },
+  "primary_NOP46_terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/nop_bank46_control_terminal_audit.json",
+    "bytes": 28089,
+    "sha256": "64c49dc030e910a660cb9ade17d6e4976bb3b7d189d4bf462e36126d1590944d"
+  },
+  "baseline_primary_first_NOP46": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_j9415_runtime_v1/nop/results_bank46_control/call_01_output.bf16.bin",
+    "bytes": 262144,
+    "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+  },
+  "arms": [
+    {
+      "arm": "bank46_mediated_nop",
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/bank46_mediated_nop_terminal_audit.json",
+        "bytes": 28954,
+        "sha256": "3b8d0a47ac7ddfdaca4b2f04179f8ab4048e5510a8ff96b7c023c129c0f940d1"
+      },
+      "producer_status": "PASS",
+      "calls": [
+        {
+          "iteration": 1,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_nop/call_01_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_nop/call_01_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_primary_first_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "all_words_finite_and_absolute_at_most20": true,
+            "first32_word_mismatches": []
+          }
+        },
+        {
+          "iteration": 2,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_nop/call_02_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_nop/call_02_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_primary_first_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "all_words_finite_and_absolute_at_most20": true,
+            "first32_word_mismatches": []
+          }
+        },
+        {
+          "iteration": 3,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_nop/call_03_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_nop/call_03_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_primary_first_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "all_words_finite_and_absolute_at_most20": true,
+            "first32_word_mismatches": []
+          }
+        },
+        {
+          "iteration": 4,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_nop/call_04_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_nop/call_04_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_primary_first_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "all_words_finite_and_absolute_at_most20": true,
+            "first32_word_mismatches": []
+          }
+        }
+      ]
+    },
+    {
+      "arm": "bank46_mediated_trap",
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/bank46_mediated_trap_terminal_audit.json",
+        "bytes": 28970,
+        "sha256": "a215ca039b6687f5346e335c99c582c12008e0d719173258dc915a0b51a6e84d"
+      },
+      "producer_status": "PASS",
+      "calls": [
+        {
+          "iteration": 1,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_trap/call_01_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_trap/call_01_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_primary_first_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "all_words_finite_and_absolute_at_most20": true,
+            "first32_word_mismatches": []
+          }
+        },
+        {
+          "iteration": 2,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_trap/call_02_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_trap/call_02_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_primary_first_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "all_words_finite_and_absolute_at_most20": true,
+            "first32_word_mismatches": []
+          }
+        },
+        {
+          "iteration": 3,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_trap/call_03_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "77fc5744af224172d60cbd6bd79ff9a24a413a600472167cdecf4b883bd9410e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_trap/call_03_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": false,
+          "comparison_to_primary_first_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 7,
+            "complete_bytes_match": false,
+            "all_words_finite_and_absolute_at_most20": true,
+            "first32_word_mismatches": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0x3509",
+                "baseline_BF16": "0xb668"
+              },
+              {
+                "M": 136,
+                "N": 0,
+                "actual_BF16": "0xb379",
+                "baseline_BF16": "0x3426"
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x3596",
+                "baseline_BF16": "0x3670"
+              },
+              {
+                "M": 136,
+                "N": 64,
+                "actual_BF16": "0xb47c",
+                "baseline_BF16": "0x3577"
+              },
+              {
+                "M": 8,
+                "N": 128,
+                "actual_BF16": "0xb557",
+                "baseline_BF16": "0x36ca"
+              },
+              {
+                "M": 136,
+                "N": 128,
+                "actual_BF16": "0x3503",
+                "baseline_BF16": "0xb433"
+              },
+              {
+                "M": 136,
+                "N": 192,
+                "actual_BF16": "0x3470",
+                "baseline_BF16": "0x36d3"
+              }
+            ]
+          }
+        },
+        {
+          "iteration": 4,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_trap/call_04_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_resume_j9415_mediation_runtime_v1/results_bank46_mediated_trap/call_04_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_primary_first_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "all_words_finite_and_absolute_at_most20": true,
+            "first32_word_mismatches": []
+          }
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "arm": "bank46_mediated_trap",
+      "iteration": 3,
+      "issue": "Complete primary NOP46 baseline equality failed",
+      "comparison": {
+        "complete_words_compared": 131072,
+        "complete_word_mismatches": 7,
+        "complete_bytes_match": false,
+        "all_words_finite_and_absolute_at_most20": true,
+        "first32_word_mismatches": [
+          {
+            "M": 8,
+            "N": 0,
+            "actual_BF16": "0x3509",
+            "baseline_BF16": "0xb668"
+          },
+          {
+            "M": 136,
+            "N": 0,
+            "actual_BF16": "0xb379",
+            "baseline_BF16": "0x3426"
+          },
+          {
+            "M": 8,
+            "N": 64,
+            "actual_BF16": "0x3596",
+            "baseline_BF16": "0x3670"
+          },
+          {
+            "M": 136,
+            "N": 64,
+            "actual_BF16": "0xb47c",
+            "baseline_BF16": "0x3577"
+          },
+          {
+            "M": 8,
+            "N": 128,
+            "actual_BF16": "0xb557",
+            "baseline_BF16": "0x36ca"
+          },
+          {
+            "M": 136,
+            "N": 128,
+            "actual_BF16": "0x3503",
+            "baseline_BF16": "0xb433"
+          },
+          {
+            "M": 136,
+            "N": 192,
+            "actual_BF16": "0x3470",
+            "baseline_BF16": "0x36d3"
+          }
+        ]
+      }
+    }
+  ],
+  "primary_criteria_all_match": false,
+  "limits": [
+    "Matched complete output equality tests mediation of the prescribed copied address in this native replay.",
+    "Gate count and trap return PC are derived statically; no runtime TTMP/gate-count observer is added.",
+    "Additional trap histories remain possible; this is not a complete kernel or training repair.",
+    "The original training native kernel and trap history were not retained."
+  ],
+  "GPU_actions": false
+}

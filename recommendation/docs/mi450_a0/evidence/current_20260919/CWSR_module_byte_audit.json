@@ -1,0 +1,130 @@
+{
+  "format": "CWSR_scratch_module_byte_audit_v2",
+  "created_utc": "2026-09-21T02:48:26.711679+00:00",
+  "modules": {
+    "installed": {
+      "module": {
+        "path": "/lib/modules/6.14.0-37-generic/updates/dkms/amdgpu.ko.zst",
+        "bytes": 6162515,
+        "sha256": "1dc79e7c4c8baeaf88c2244c2abfd485a1a05c498159de392f9e09f2993a5890"
+      },
+      "metadata": {
+        "version": "7.1.1.31300009",
+        "srcversion": "654C1DDE7A9A3E129BA9553",
+        "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+        "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+        "signer": "heliosr-1b114-c07-1 Secure Boot Module Signature key"
+      },
+      "handler_bytes": 5656,
+      "handler_sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290",
+      "handler_section_offset": 508672
+    },
+    "baseline": {
+      "module": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/baseline_amdgpu.stripped.ko",
+        "bytes": 40319256,
+        "sha256": "bd992f82ab51c16b79ee9a8a0c08dad45e3ee4d708e67a5fdce73d22cd4d5156"
+      },
+      "metadata": {
+        "version": "7.1.1.31300009",
+        "srcversion": "654C1DDE7A9A3E129BA9553",
+        "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+        "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+        "signer": ""
+      },
+      "handler_bytes": 5656,
+      "handler_sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290",
+      "handler_section_offset": 508672
+    },
+    "candidate": {
+      "module": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/candidate_amdgpu.stripped.ko",
+        "bytes": 40319256,
+        "sha256": "7e9a2985cb07838caf44793751ff6ce0149b61062e39bf0a4d72716c7289e8ab"
+      },
+      "metadata": {
+        "version": "7.1.1.31300009",
+        "srcversion": "8336BBB74E6C4D53275A4E5",
+        "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+        "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+        "signer": ""
+      },
+      "handler_bytes": 5672,
+      "handler_sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80",
+      "handler_section_offset": 508672
+    }
+  },
+  "status": "PASS_COMPLETE_MODULE_BYTE_AUDIT_NOT_LOADED",
+  "comparisons": {
+    "installed_to_baseline": {
+      "allocated_sections_differing": [
+        {
+          "section": ".note.gnu.build-id",
+          "old_bytes": 36,
+          "new_bytes": 36,
+          "different_byte_count_in_overlap": 20
+        }
+      ],
+      "functions_checked": 37959,
+      "changed_functions": []
+    },
+    "baseline_to_candidate": {
+      "allocated_sections_differing": [
+        {
+          "section": ".note.gnu.build-id",
+          "old_bytes": 36,
+          "new_bytes": 36,
+          "different_byte_count_in_overlap": 20
+        },
+        {
+          "section": ".text",
+          "old_bytes": 10895175,
+          "new_bytes": 10895175,
+          "different_byte_count_in_overlap": 2
+        },
+        {
+          "section": ".rodata",
+          "old_bytes": 1948272,
+          "new_bytes": 1948304,
+          "different_byte_count_in_overlap": 528176
+        },
+        {
+          "section": ".modinfo",
+          "old_bytes": 50142,
+          "new_bytes": 50142,
+          "different_byte_count_in_overlap": 23
+        }
+      ],
+      "functions_checked": 37959,
+      "changed_functions": [
+        {
+          "symbol": "kgd2kfd_device_init",
+          "old_bytes": 3608,
+          "new_bytes": 3608,
+          "different_offsets": [
+            3442,
+            3448
+          ]
+        }
+      ]
+    }
+  },
+  "only_changed_function_bytes": "Two immediates in kgd2kfd_device_init select 5672 instead of 5656 for gfx1250 while retaining 3760 for the older handler: (mask & (3760 - size)) + size.",
+  "baseline_source_version_matches_loaded": true,
+  "builder_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/driver_build.json",
+    "bytes": 2095,
+    "sha256": "dfdf8aec24cb5419883d40e08f05035f9fa02d625e20e6c2ac5ddc907925f029"
+  },
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/audit_modules_v2.py",
+    "bytes": 6856,
+    "sha256": "8c9f56034275c82329df636b87c665a91cb7736243682071370a574b3b890759"
+  },
+  "retained_ELF_reader": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_binding_peer_v1/certify_installed_trap_fixup_binding_v1.py",
+    "bytes": 11323,
+    "sha256": "31adfc5d94e1fbf4bd04ce321c961a74017a96557cf27ee592db7f480e23a026"
+  },
+  "GPU_or_module_load_actions": false
+}

@@ -1,0 +1,127 @@
+{
+  "status": "PASS_BOUND_ORIGINAL_DW_BYTES_MAINLOOP_SRD_AND_CORRECTED_ALIGNMENT_SCOPE",
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/bind_j9415_full_evidence.py",
+    "bytes": 5464,
+    "sha256": "03d8a48a65fc1abb22dcc0bdd874cc5109d6f3a096364accb95664132703e905"
+  },
+  "numerical_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/j9415_training_block_match_certificate.json",
+    "bytes": 241450,
+    "sha256": "3339ceb44fadfdcb155cff78a7c25c4a4655cd1af7f13ded06c982fdee0cd6a8"
+  },
+  "ordered_rounding_enclosure": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/j9415_ordered_rounding_enclosure.json",
+    "bytes": 308660,
+    "sha256": "c0c0d8b4567c7655caf9b918cad7b32dc307956ab043920e3d3f92b909d5c833"
+  },
+  "source_word_and_actual_buffer_SRD": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/source_word_and_actual_load_SRD.json",
+    "bytes": 13722,
+    "sha256": "bc1579df21301300e57892ba03247b1891fee53657597d5c56260416e7e51160"
+  },
+  "original_input_byte_hash_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/original_input_quantum.json",
+    "bytes": 1077198,
+    "sha256": "ae4bc127b4fa34ec5120179ce6f8b41a15ae942abb97d71e6e4eef07a342ac56"
+  },
+  "hardware_buffer_probe": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_buffer_unaligned_probe_root_v1/independent_raw_audit.json",
+    "bytes": 13767,
+    "sha256": "d0e298c388e5e30ed1f17c99b6e42a3d448f4bc64e88d96cec5b826f25041e28"
+  },
+  "mask_enumeration": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/persistent_reverse_copy_nan_masks.json",
+    "bytes": 1259994,
+    "sha256": "2030038d098931973664963ae31b10e91f405c279e695e2eae7642e92203df61"
+  },
+  "original_training_DW": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/boundaries/linear-deferred-151178-1789804761268849047-s405-raw_addmm_outputs.pt",
+    "whole_archive_bytes": 38325462947,
+    "member": "archive/data/1",
+    "member_bytes": 262144,
+    "member_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9",
+    "logical_row_major_sha256": "6313d5e99f06cb9000bfbf65644486fe878af648088a52fa326a563f72dead57",
+    "whole_archive_rehashed_here": false,
+    "block_M_half_open": [
+      0,
+      8
+    ],
+    "block_N_half_open": [
+      128,
+      256
+    ],
+    "block_bytes_sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807",
+    "finite_saved_words_rechecked": 384,
+    "NaN_saved_words_rechecked": 640,
+    "NaN_raw_word": "0xffc0"
+  },
+  "scope_corrections": [
+    "The sourceword halves are DY[602561,194] and DY[602561,195], at the same K; an earlier informal message with different high-half K was a typo and was never used by the scripts.",
+    "Descriptor7540 is prepacking. Actual756c/7570 pack NumRecords before788c. All145256 actual buffer states now satisfy base=(64*j+128)*512-16 and range=Xbytes-base with high controlbits0.",
+    "Fresh hardware buffer probe demonstrates odd byte addressing and partial-OOB behavior compatible with8B components. Earlier scan wording assumed4B components. All912 odd-source residue classes have no partial final payload, so every reported NaNmask andj9415 load count is unchanged.",
+    "The first affected load j9415 does not uniquely identify a trap PC. Multiple live src0bank2/dstbank1 windows before that load can copy the same v513 word.7540 is a concrete prospective controlled gate."
+  ],
+  "audited_boundary_loads": [
+    {
+      "visit": 9415,
+      "s12": 26902,
+      "A_base_offset": 308576240,
+      "A_NUM_RECORDS": 881491472,
+      "unsigned_copied_offset": 829862145,
+      "absolute_X_byte": 1138438385,
+      "loaded_bytes_after_DWORD_bounds": 16,
+      "intended_X_K": 602694,
+      "payload_hex": "395b3a3c39c7386cb9f6396ab9363967",
+      "loaded_bytes_under_8B_component_model": 16,
+      "bytes_remaining_from_requested_address": 51629327
+    },
+    {
+      "visit": 10990,
+      "s12": 25327,
+      "A_base_offset": 360185840,
+      "A_NUM_RECORDS": 829881872,
+      "unsigned_copied_offset": 829862145,
+      "absolute_X_byte": 1190047985,
+      "loaded_bytes_after_DWORD_bounds": 16,
+      "intended_X_K": 703494,
+      "payload_hex": "b898398139673938ba90390639073ac0",
+      "loaded_bytes_under_8B_component_model": 16,
+      "bytes_remaining_from_requested_address": 19727
+    },
+    {
+      "visit": 10991,
+      "s12": 25326,
+      "A_base_offset": 360218608,
+      "A_NUM_RECORDS": 829849104,
+      "unsigned_copied_offset": 829862145,
+      "absolute_X_byte": 1190080753,
+      "loaded_bytes_after_DWORD_bounds": 0,
+      "intended_X_K": 703558,
+      "payload_hex": null,
+      "loaded_bytes_under_8B_component_model": 0,
+      "bytes_remaining_from_requested_address": -13041
+    },
+    {
+      "visit": 36314,
+      "s12": 3,
+      "A_base_offset": 1190002672,
+      "A_NUM_RECORDS": 65040,
+      "unsigned_copied_offset": 829862145,
+      "absolute_X_byte": 2019864817,
+      "loaded_bytes_after_DWORD_bounds": 0,
+      "intended_X_K": 2324230,
+      "payload_hex": null,
+      "loaded_bytes_under_8B_component_model": 0,
+      "bytes_remaining_from_requested_address": -829797105
+    }
+  ],
+  "exact_model_summary": "One persistent original-DY word0x3176b101 copied into v257lane0 ofgroup1wave2 before788c visit9415 reads1576 odd-offset original-X vectors throughvisit10990. This produces the savedfive-NaN-row classification and384finite BF16words; exactK-order FP32 interval bounds include allordinaryterms.",
+  "remaining_qualifications": [
+    "CPU modeled mechanism plus fresh-process unaligned probe; actual original training queue state and native kernel/event were not captured.",
+    "Numerical NaN classification does not itself establish hardware NaN sign/payload, even though all640 original saved NaNs are0xffc0.",
+    "The ordered enclosure assumes ordinary FP32 RNE/FMA or equivalent WMMA accumulation with one changed coefficient at each64-K interval.",
+    "A controlled actual-DW original-DY gate and prevention counterfactual remain the useful next causal experiments."
+  ],
+  "GPU_actions": false
+}

@@ -1,0 +1,315 @@
+{
+  "status": "PASS_READONLY_SEQUENCE_RECONSTRUCTION_ACTIVATION_UNRESOLVED",
+  "created_utc": "2026-09-21T06:11:33.178953+00:00",
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_driver_switch_reaudit_v1/audit_driver_switch_readonly.py",
+    "bytes": 12365,
+    "sha256": "ed44b25cfd13dabf237b2ade40d2b82270c894d1e7cd7a8948badb52e799ed60"
+  },
+  "prior_evidence": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/prepared.json",
+      "bytes": 2443,
+      "sha256": "a6c513b0a165eb75bf9be140f39a0fbbba5dce4170d5d98405ebcbd98b6d7b07"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/run_comparison.py",
+      "bytes": 10627,
+      "sha256": "1c3d0616f5a09743a945618b04c0de73010d0bed1b263ecbcd85f5aa98342caf"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/before_switch_idle.json",
+      "bytes": 379,
+      "sha256": "8f8a25a825491ec8b0ee66dc68d3fbff825d742887a4e4a04e0e8aa3d184e72f"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/before_switch_device_owners.json",
+      "bytes": 53,
+      "sha256": "94484b79abdfca480bfe6293299eb0f64258ff14b5bc621e770bf870b703468c"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/kernel_before_switch.json",
+      "bytes": 221275,
+      "sha256": "333163c3ea642e4876486e29631d97e260a26392e7102fea5391bee78d4645f2"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/remove_original.json",
+      "bytes": 175,
+      "sha256": "f5fccdcd2ef18e0a42ee26d35b38bfe433eaf0903685a2258e6cd9db1c1d5146"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/recovery_result.json",
+      "bytes": 4341,
+      "sha256": "6f48d5b96f5c18b0f7201995c1fdf2bce118f6cff8b388ea5438637655ead653"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/boot_list.txt",
+      "bytes": 541,
+      "sha256": "91961bef32fe6be949cb3007cdf279edc9aa5ef80641969442db5e0ff408dd8d"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/resume_state.json",
+      "bytes": 249,
+      "sha256": "f14eb6338d9df2f1b18dd5ffcdd1a7eba88a538319e3d30441ce33f03aca99a9"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/runtime_restoration.json",
+      "bytes": 7945,
+      "sha256": "58e70d0fd926c2dd3a798ecc59435c0c6cc4277c917fd8ca6f32eb55d8496761"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/restore_original_started.json",
+      "bytes": 224,
+      "sha256": "6becc501795b4b9a6cddf9e93856123ff05480f6c9b24eed15f67053fb8aca59"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/restore_original_completed.json",
+      "bytes": 328,
+      "sha256": "165d2a737b333045f8b8bec9ada7654bac6fb4469063297add803cd32c704b92"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/previous_last.txt",
+      "bytes": 76990,
+      "sha256": "a7a4d0bf30684bd351cc0369ef3f7583e70c472f0d8509faf276dfc7affc16af"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/previous_kernel.txt",
+      "bytes": 275420,
+      "sha256": "b850c382e29acaa62955feb66fdaa7541a4cf6bf29f42498e7c6c25ceff8c50a"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_interrupted_load_static_review_v1/load_interface_review.json",
+      "bytes": 18386,
+      "sha256": "37623feb2414becb469f39204dfcd57b799846bb4a00f04ddd654fb13680a5f3"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_interrupted_load_static_review_v1/per_process_trap_API_review.json",
+      "bytes": 18223,
+      "sha256": "c552e2f75827d5ae874ab9d93692bd58648be79feb90e70895c3b427bb5a8ba0"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_history_v1/last_driver_comparison_transcript_records.json",
+      "bytes": 4852,
+      "sha256": "362eb912e9c2ddc9b0714d6e99483ba09c072bac6b312bcb52e128ba16b7b554"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_history_v1/original_pre_recovery/reconstruction_certificate.json",
+      "bytes": 4090,
+      "sha256": "67cb8d10cc531ce670263293c640f46a4ad262d7f37ba03d6f7290eb5cbfc8e1"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/module_byte_audit_v2.json",
+      "bytes": 5124,
+      "sha256": "07995ac0e1eec0eb48683ec5c3ff90a14c2927badcd0253f8b9bcfb5f339b3fe"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/module_relocation_audit.json",
+      "bytes": 1477,
+      "sha256": "32a289c7404542ca9423eb2d3f172e995a29d8e8409509355d41647c19e0f730"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdgpu/amdgpu_drv.c",
+      "bytes": 110415,
+      "sha256": "a5b9877604b73b8f719880e7391c27b8570ffea6b0326d94692ca78daa5252b4"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_device.c",
+      "bytes": 51308,
+      "sha256": "5b14d36842461ad509977b28598e41b787aa83137a404da7ebb88f846e2040eb"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_process.c",
+      "bytes": 73019,
+      "sha256": "bd6dd04b51d7ba0f4ef1c4a696ef8023e41129daa4e32638044a5f7426c32f5d"
+    }
+  ],
+  "current_state": {
+    "/proc/sys/kernel/random/boot_id": {
+      "value": "4a77f7e8-32cd-4c74-974b-c0b0c0d8eb03",
+      "mode": "0o444"
+    },
+    "/sys/module/amdgpu/srcversion": {
+      "value": "654C1DDE7A9A3E129BA9553",
+      "mode": "0o444"
+    },
+    "/sys/module/amdgpu/version": {
+      "value": "7.1.1.31300009",
+      "mode": "0o444"
+    },
+    "/sys/module/amdgpu/parameters/cwsr_enable": {
+      "value": "1",
+      "mode": "0o444"
+    },
+    "/sys/module/module/parameters/sig_enforce": {
+      "value": "N",
+      "mode": "0o644"
+    },
+    "/proc/cmdline": {
+      "value": "BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic root=UUID=a8c7367a-9025-4849-baa8-853bab204e11 ro modprobe.blacklist=amdgpu pci=realloc=off iommu=pt modprobe.blacklist=amdgpu,device_dax,dax_hmem iommu=pt console=tty0 console=ttyS1,115200n8 preempt=full rcu_nocbs=all",
+      "mode": "0o444"
+    }
+  },
+  "timeline": [
+    {
+      "event": "Original sentinel complete and audited",
+      "evidence": "Retained controller transcript records original_pre PASS; raw outputs independently recovered.",
+      "observed_by_utc": "2026-09-21T02:54:08.428Z"
+    },
+    {
+      "event": "Pre-switch KFD idle check complete",
+      "utc": "2026-09-21T02:54:08.169773+00:00"
+    },
+    {
+      "event": "Pre-switch kernel capture complete",
+      "utc": "2026-09-21T02:54:08.285213+00:00"
+    },
+    {
+      "event": "Original rmmod returned success and receipt was fsynced",
+      "utc": "2026-09-21T02:54:25.009508+00:00"
+    },
+    {
+      "event": "Next programmed action",
+      "command": [
+        "sudo",
+        "-n",
+        "insmod",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/candidate_amdgpu.stripped.ko"
+      ],
+      "execution_start_and_completion_observed": false
+    },
+    {
+      "event": "New boot kernel begins",
+      "utc_approx": "2026-09-21T02:59:15Z",
+      "first_persisted_journal_entry": "2026-09-21T02:59:25Z"
+    }
+  ],
+  "synchronous_rmmod_duration_upper_bound_seconds": 16.724295,
+  "missing_downstream_records": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/load_candidate.json",
+      "exists": false
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/candidate/loaded_driver_before.json",
+      "exists": false
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/candidate/sentinel_launch.json",
+      "exists": false
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/candidate/sentinel_terminal.json",
+      "exists": false
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/candidate/launch_execution.json",
+      "exists": false
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2_candidate",
+      "exists": false
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/remove_candidate.json",
+      "exists": false
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/restore_original.json",
+      "exists": false
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/comparison.json",
+      "exists": false
+    }
+  ],
+  "controller_observability": {
+    "start_receipt": false,
+    "completion_receipt": true,
+    "completion_file_fsync": true,
+    "stdout_stderr_streamed": false,
+    "subprocess_timeout": false,
+    "finally_cannot_guarantee_recovery_after_host_hang_or_reboot": true
+  },
+  "current_readonly_queries": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_driver_switch_reaudit_v1/previous_boot_journal_current_read.json",
+      "bytes": 4226,
+      "sha256": "6a3663df6db2208dbecd8302615308c34ff9a8a6195475db75fc6b9aaacfd477"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_driver_switch_reaudit_v1/crash_store_current_inventory.json",
+      "bytes": 596,
+      "sha256": "c8d9c6fe86c6e704327218986e198f2cdf837f724d3d8f9b527a9ad69c15bc42"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_driver_switch_reaudit_v1/modprobe_readonly_dependencies.json",
+      "bytes": 1497,
+      "sha256": "fcfb9e1013807bbfeacebb0b866da421784f631529e5d951e092a1a4b172f6ac"
+    }
+  ],
+  "journal_last_observed_entry": "2026-09-21T02:53:29.221192+00:00 heliosr-1b114-c07-1 kernel: audit: type=1400 audit(1789959209.219:233): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4191 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+  "new_crash_store_files_on_switch_day": [],
+  "checked_module_interfaces": {
+    "undefined_symbols": 1161,
+    "imported_symbol_CRCs": 1162,
+    "normalized_relocations": 827798,
+    "init_exit_this_module_data_param_sections_unchanged": true,
+    "baseline_and_candidate_unsigned": true,
+    "installed_signed": true,
+    "prior_SecureBoot_disabled": true,
+    "current_sig_enforce": "N"
+  },
+  "supported_conclusions": [
+    "The synchronous original rmmod completed successfully. Its caller was not still waiting in that rmmod when the completion receipt was saved; a delayed unload/reload defect is not excluded.",
+    "The next controller statement is candidate insmod. No persisted start or completion, candidate loaded-driver marker, or candidate sentinel result establishes how far it executed.",
+    "The new boot occurred about290 seconds after the successful-removal receipt. Missing post-switch evidence cannot identify a cause, hang point, or candidate shader execution.",
+    "The original journal still ends before the switch. No current pstore entry or crash-store file dated September21 supplies the missing diagnosis.",
+    "The kernel handler is selected from compiled-in cwsr_trap_gfx12_1_0_hex; per-process GPUVM setup copies those bytes. There is no firmware-file substitution in this reviewed selection/copy path.",
+    "cwsr_enable is a load-time parameter exported read-only0444. Disabling it is not a runtime patch and would alter preemption semantics rather than activate this corrected handler.",
+    "Existing undefined-symbol, CRC, relocation, init/exit/data/parameter and signing checks supply no diagnosed load-interface mismatch. Repeating these static checks does not validate activation."
+  ],
+  "activation_alternatives": [
+    {
+      "route": "Fresh-boot first load using a matching rebuilt baseline before the candidate",
+      "evidence": "The current retained recovery began with amdgpu absent under modprobe.blacklist; original modprobe and the later sentinel succeeded. A statically installed-matching scratch baseline already exists.",
+      "what_it_separates": "Avoids a preceding amdgpu removal and can distinguish generic rebuilt-module/first-load issues from the corrected handler.",
+      "status": "A controlled future diagnostic design, not a validated safe activation route; requires a fresh driver-absent state and external recovery/observability. No reboot or load was performed."
+    },
+    {
+      "route": "Repeat the old hot-switch controller",
+      "status": "Unsupported as-is",
+      "reason": "The failure point remains unknown, output paths are already used, and no start/stream/timeout diagnostics survive a blocked subprocess or host failure."
+    },
+    {
+      "route": "Use public per-process trap-handler APIs",
+      "status": "Prior source audit finds only a second-level replacement with CWSR enabled; independent source recheck delegated to native_audit.",
+      "reason": "A later handler cannot prevent the faulty first-level entry from already executing."
+    },
+    {
+      "route": "Firmware replacement or writable cwsr_enable sysfs knob",
+      "status": "Not provided by the reviewed active path",
+      "reason": "Handler bytes are compiled into the module and cwsr_enable is0444."
+    },
+    {
+      "route": "Kernel code/rodata/CWSR mapping patch, unbind/rebind or live probing",
+      "status": "No supported, validated local activation path established; not attempted",
+      "reason": "Those operations would create a new intervention and do not follow from a public replacement interface in the retained source."
+    }
+  ],
+  "genuinely_blocked": [
+    "Historical interruption diagnosis: no evidence after the successful-removal receipt identifies insmod progress or reboot cause. Additional external console/crash/BMC evidence would be needed.",
+    "Corrected first-level handler hardware validation on this active boot: no validated public replacement route avoids unresolved module activation."
+  ],
+  "remains_safely_testable_locally": [
+    "Read-only recovery of remaining persisted system/controller evidence and validation of module/source identity.",
+    "CPU review of entry semantics, exact shader bytes, branches, module interfaces and any proposed activation controller, with mocked failures and durable per-step records before a future hardware test.",
+    "Matched ELF/input mechanism tests on the original driver remain available under root-owned serial GPU execution; they do not require corrected-driver activation."
+  ],
+  "GPU_actions": false,
+  "driver_actions": false,
+  "old_or_frozen_files_modified": false,
+  "limits": [
+    "No new runtime safety claim is made for the candidate.",
+    "No reboot, unload, load, reset, device open, reserved mapping write, or driver-file edit was performed."
+  ]
+}

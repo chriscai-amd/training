@@ -1,0 +1,413 @@
+{
+  "format": "CWSR_interrupted_load_CPU_interfaces_review_v1",
+  "created_utc": "2026-09-21T03:05:55.161512+00:00",
+  "status": "PASS_STATIC_LOAD_INTERFACES_NO_RUNTIME_VERDICT",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_interrupted_load_static_review_v1/review_load_interfaces.py",
+    "bytes": 9470,
+    "sha256": "293e3bcc82097f9d0201e5276f78b42f776b31deae64cbef575d3dcac1cf2ed4"
+  },
+  "modules": {
+    "installed": {
+      "path": "/lib/modules/6.14.0-37-generic/updates/dkms/amdgpu.ko.zst",
+      "bytes": 6162515,
+      "sha256": "1dc79e7c4c8baeaf88c2244c2abfd485a1a05c498159de392f9e09f2993a5890"
+    },
+    "baseline": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/baseline_amdgpu.stripped.ko",
+      "bytes": 40319256,
+      "sha256": "bd992f82ab51c16b79ee9a8a0c08dad45e3ee4d708e67a5fdce73d22cd4d5156"
+    },
+    "candidate": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/candidate_amdgpu.stripped.ko",
+      "bytes": 40319256,
+      "sha256": "7e9a2985cb07838caf44793751ff6ce0149b61062e39bf0a4d72716c7289e8ab"
+    }
+  },
+  "metadata": {
+    "installed": {
+      "name": "amdgpu",
+      "version": "7.1.1.31300009",
+      "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+      "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+      "srcversion": "654C1DDE7A9A3E129BA9553",
+      "signer": "heliosr-1b114-c07-1 Secure Boot Module Signature key"
+    },
+    "baseline": {
+      "name": "amdgpu",
+      "version": "7.1.1.31300009",
+      "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+      "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+      "srcversion": "654C1DDE7A9A3E129BA9553",
+      "signer": ""
+    },
+    "candidate": {
+      "name": "amdgpu",
+      "version": "7.1.1.31300009",
+      "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+      "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+      "srcversion": "8336BBB74E6C4D53275A4E5",
+      "signer": ""
+    }
+  },
+  "undefined_symbols": 1161,
+  "symbol_crc_versions": 1162,
+  "all_undefined_symbol_interfaces_equal": true,
+  "all_imported_symbol_CRCS_equal": true,
+  "all_three_normalized_relocations_equal": true,
+  "relocations_checked": 827798,
+  "installed_to_baseline_allocated_attributes_identical": true,
+  "baseline_to_candidate_attribute_changes": {
+    ".rodata": [
+      [
+        1,
+        2,
+        0,
+        1948272,
+        32,
+        0
+      ],
+      [
+        1,
+        2,
+        0,
+        1948304,
+        32,
+        0
+      ]
+    ]
+  },
+  "unchanged_load_sections": {
+    ".init.text": {
+      "bytes": 218,
+      "sha256": "67acb75d835f9b54d51fcd9a5b899e7e851680519a3dfb6e8be0a96ccf55db77",
+      "all_three_equal": true
+    },
+    ".exit.text": {
+      "bytes": 75,
+      "sha256": "97d89bd4c1e915e4e462b2a013ca5036d1b550d092ab5aa8cb756acb6a85628a",
+      "all_three_equal": true
+    },
+    ".gnu.linkonce.this_module": {
+      "bytes": 1344,
+      "sha256": "d34cfebccd831a61183aefb54c550ba7c462f42f542a1486c15caec05f3d2c39",
+      "all_three_equal": true
+    },
+    "__versions": {
+      "bytes": 74368,
+      "sha256": "fb4aa8a6779f80b25c959a21124aecc50b29506f237e00e4f51e99796b8495bb",
+      "all_three_equal": true
+    },
+    ".bss": {
+      "bytes": 291297,
+      "zero_initialized": true,
+      "attributes_equal": true
+    },
+    ".data": {
+      "bytes": 2462002,
+      "sha256": "311cefe6889a981e9ab258e97fc92513d76208533ec55efd52cb12bc59ff322f",
+      "all_three_equal": true
+    },
+    "__param": {
+      "bytes": 4080,
+      "sha256": "bf824c7756cddc306adda36c9fb86f49a96a18f0006de880529febec4096629d",
+      "all_three_equal": true
+    }
+  },
+  "current_boot_configuration": {
+    "/sys/module/module/parameters/sig_enforce": "N",
+    "/sys/kernel/security/lockdown": "[none] integrity confidentiality",
+    "/proc/cmdline": "BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic root=UUID=a8c7367a-9025-4849-baa8-853bab204e11 ro modprobe.blacklist=amdgpu pci=realloc=off iommu=pt modprobe.blacklist=amdgpu,device_dax,dax_hmem iommu=pt console=tty0 console=ttyS1,115200n8 preempt=full rcu_nocbs=all",
+    "/proc/sys/kernel/random/boot_id": "4a77f7e8-32cd-4c74-974b-c0b0c0d8eb03"
+  },
+  "read_only_commands": {
+    "modprobe_dry_dependencies": {
+      "argv": [
+        "modprobe",
+        "--show-depends",
+        "amdgpu"
+      ],
+      "exit_code": 0,
+      "stdout": "insmod /lib/modules/6.14.0-37-generic/kernel/net/sunrpc/sunrpc.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/kernel/drivers/platform/x86/wmi.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/kernel/drivers/acpi/video.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/kernel/drivers/i2c/algos/i2c-algo-bit.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/kernel/drivers/media/rc/rc-core.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/kernel/drivers/media/cec/core/cec.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/kernel/drivers/gpu/drm/display/drm_display_helper.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/updates/dkms/amddrm_suballoc_helper.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/kernel/drivers/gpu/drm/ttm/ttm.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/kernel/drivers/gpu/drm/drm_ttm_helper.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/updates/dkms/amddrm_buddy.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/updates/dkms/amdkcl.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/updates/dkms/amd-sched.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/updates/dkms/amddrm_exec.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/updates/dkms/amdxcp.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/updates/dkms/amdttm.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/updates/dkms/amddrm_ttm_helper.ko.zst \ninsmod /lib/modules/6.14.0-37-generic/updates/dkms/amdgpu.ko.zst \n",
+      "stderr": ""
+    },
+    "secureboot": {
+      "argv": [
+        "mokutil",
+        "--sb-state"
+      ],
+      "exit_code": 0,
+      "stdout": "SecureBoot disabled\nPlatform is in Setup Mode\n",
+      "stderr": ""
+    }
+  },
+  "prior_boot_secureboot_lines": [
+    "2026-09-20T23:36:45,283134+00:00 secureboot: Secure boot disabled",
+    "2026-09-20T23:36:45,288346+00:00 secureboot: Secure boot disabled"
+  ],
+  "original_removal_record": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_sentinel_v2/remove_original.json",
+    "bytes": 175,
+    "sha256": "f5fccdcd2ef18e0a42ee26d35b38bfe433eaf0903685a2258e6cd9db1c1d5146"
+  },
+  "source_excerpts": [
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdgpu/amdgpu_drv.c",
+        "bytes": 110415,
+        "sha256": "a5b9877604b73b8f719880e7391c27b8570ffea6b0326d94692ca78daa5252b4"
+      },
+      "first_line": 3339,
+      "lines": [
+        "};",
+        "",
+        "static int __init amdgpu_init(void)",
+        "{",
+        "\tint r;",
+        "",
+        "\t/* Train lockdep on correct lock ordering */",
+        "\tamdgpu_lockdep_init();",
+        "",
+        "\tr = amdgpu_sync_init();",
+        "\tif (r)",
+        "\t\treturn r;",
+        "",
+        "\tDRM_INFO(\"amdgpu version: %s\\n\", AMDGPU_VERSION);",
+        "\tDRM_INFO(\"OS DRM version: %d.%d.%d\\n\", DRM_VER, DRM_PATCH, DRM_SUB);",
+        "",
+        "\tamdgpu_register_atpx_handler();",
+        "\tamdgpu_acpi_detect();",
+        "",
+        "\t/* Ignore KFD init failures when CONFIG_HSA_AMD_AMDKCL is not set. */",
+        "\tr = amdgpu_amdkfd_init();",
+        "\tif (r && r != -ENOENT)",
+        "\t\tgoto error_fini_sync;",
+        "",
+        "\tif (amdgpu_pp_feature_mask & PP_OVERDRIVE_MASK) {",
+        "\t\tadd_taint(TAINT_CPU_OUT_OF_SPEC, LOCKDEP_STILL_OK);",
+        "\t\tpr_crit(\"Overdrive is enabled, please disable it before \"",
+        "\t\t\t\"reporting any bugs unrelated to overdrive.\\n\");",
+        "\t}",
+        "",
+        "\t/* let modprobe override vga console setting */",
+        "\treturn pci_register_driver(&amdgpu_kms_pci_driver);",
+        "",
+        "error_fini_sync:",
+        "\tamdgpu_sync_fini();",
+        "\treturn r;",
+        "}",
+        "",
+        "static void __exit amdgpu_exit(void)",
+        "{",
+        "\tamdgpu_amdkfd_fini();",
+        "\tpci_unregister_driver(&amdgpu_kms_pci_driver);",
+        "\tamdgpu_unregister_atpx_handler();",
+        "\tamdgpu_acpi_release();",
+        "\tamdgpu_sync_fini();",
+        "#ifdef HAVE_MMU_NOTIFIER_SYNCHRONIZE",
+        "\tmmu_notifier_synchronize();",
+        "#endif",
+        "\tamdgpu_xcp_drv_release();",
+        "",
+        "\t/*",
+        "\t * Flush outstanding call_rcu() callbacks before the",
+        "\t * module text is freed.  Otherwise a grace period elapsing after",
+        "\t * unload invokes a callback in already-freed module memory and",
+        "\t * faults in rcu_do_batch().",
+        "\t */",
+        "\trcu_barrier();",
+        "}",
+        "",
+        "module_init(amdgpu_init);",
+        "module_exit(amdgpu_exit);",
+        ""
+      ]
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_device.c",
+        "bytes": 51308,
+        "sha256": "5b14d36842461ad509977b28598e41b787aa83137a404da7ebb88f846e2040eb"
+      },
+      "first_line": 513,
+      "lines": [
+        "static void kfd_cwsr_init(struct kfd_dev *kfd)",
+        "{",
+        "\tif (cwsr_enable && kfd->device_info.supports_cwsr) {",
+        "\t\tif (KFD_GC_VERSION(kfd) < IP_VERSION(9, 0, 1)) {",
+        "\t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx8_hex)",
+        "\t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);",
+        "\t\t\tkfd->cwsr_isa = cwsr_trap_gfx8_hex;",
+        "\t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx8_hex);",
+        "\t\t} else if (KFD_GC_VERSION(kfd) == IP_VERSION(9, 4, 1)) {",
+        "\t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_arcturus_hex)",
+        "\t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);",
+        "\t\t\tkfd->cwsr_isa = cwsr_trap_arcturus_hex;",
+        "\t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_arcturus_hex);",
+        "\t\t} else if (KFD_GC_VERSION(kfd) == IP_VERSION(9, 4, 2)) {",
+        "\t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_aldebaran_hex)",
+        "\t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);",
+        "\t\t\tkfd->cwsr_isa = cwsr_trap_aldebaran_hex;",
+        "\t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_aldebaran_hex);",
+        "\t\t} else if (KFD_GC_VERSION(kfd) == IP_VERSION(9, 4, 3) ||",
+        "\t\t\t   KFD_GC_VERSION(kfd) == IP_VERSION(9, 4, 4)) {",
+        "\t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx9_4_3_hex)",
+        "\t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);",
+        "\t\t\tkfd->cwsr_isa = cwsr_trap_gfx9_4_3_hex;",
+        "\t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx9_4_3_hex);",
+        "\t\t} else if (KFD_GC_VERSION(kfd) == IP_VERSION(9, 5, 0)) {",
+        "\t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx9_5_0_hex) > PAGE_SIZE);",
+        "\t\t\tkfd->cwsr_isa = cwsr_trap_gfx9_5_0_hex;",
+        "\t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx9_5_0_hex);",
+        "\t\t} else if (KFD_GC_VERSION(kfd) < IP_VERSION(10, 1, 1)) {",
+        "\t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx9_hex)",
+        "\t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);",
+        "\t\t\tkfd->cwsr_isa = cwsr_trap_gfx9_hex;",
+        "\t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx9_hex);",
+        "\t\t} else if (KFD_GC_VERSION(kfd) < IP_VERSION(10, 3, 0)) {",
+        "\t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_nv1x_hex)",
+        "\t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);",
+        "\t\t\tkfd->cwsr_isa = cwsr_trap_nv1x_hex;",
+        "\t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_nv1x_hex);",
+        "\t\t} else if (KFD_GC_VERSION(kfd) < IP_VERSION(11, 0, 0)) {",
+        "\t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx10_hex)",
+        "\t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);",
+        "\t\t\tkfd->cwsr_isa = cwsr_trap_gfx10_hex;",
+        "\t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx10_hex);",
+        "\t\t} else if (KFD_GC_VERSION(kfd) < IP_VERSION(12, 0, 0)) {",
+        "\t\t\t/* The gfx11 cwsr trap handler must fit inside a single",
+        "\t\t\t   page. */",
+        "\t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx11_hex) > PAGE_SIZE);",
+        "\t\t\tkfd->cwsr_isa = cwsr_trap_gfx11_hex;",
+        "\t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx11_hex);",
+        "\t\t} else if (KFD_GC_VERSION(kfd) < IP_VERSION(12, 1, 0)) {",
+        "\t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx12_hex)",
+        "\t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);",
+        "\t\t\tkfd->cwsr_isa = cwsr_trap_gfx12_hex;",
+        "\t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx12_hex);",
+        "\t\t} else {",
+        "\t\t\tBUILD_BUG_ON(sizeof(cwsr_trap_gfx12_1_0_hex)",
+        "\t\t\t\t\t     > KFD_CWSR_TMA_OFFSET);",
+        "\t\t\tkfd->cwsr_isa = cwsr_trap_gfx12_1_0_hex;",
+        "\t\t\tkfd->cwsr_isa_size = sizeof(cwsr_trap_gfx12_1_0_hex);",
+        "\t\t}",
+        "",
+        "\t\tkfd->cwsr_enabled = true;",
+        "\t}",
+        "}"
+      ]
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_process.c",
+        "bytes": 73019,
+        "sha256": "bd6dd04b51d7ba0f4ef1c4a696ef8023e41129daa4e32638044a5f7426c32f5d"
+      },
+      "first_line": 1604,
+      "lines": [
+        "static int kfd_process_device_init_cwsr_dgpu(struct kfd_process_device *pdd)",
+        "{",
+        "\tstruct kfd_node *dev = pdd->dev;",
+        "\tstruct qcm_process_device *qpd = &pdd->qpd;",
+        "\tu32 flags = KFD_IOC_ALLOC_MEM_FLAGS_NO_SUBSTITUTE",
+        "\t\t\t| KFD_IOC_ALLOC_MEM_FLAGS_EXECUTABLE;",
+        "\tstruct kgd_mem *mem;",
+        "\tvoid *kaddr;",
+        "\tint ret;",
+        "",
+        "\tif (!dev->kfd->cwsr_enabled || qpd->cwsr_kaddr || !qpd->cwsr_base)",
+        "\t\treturn 0;",
+        "",
+        "\tif (KFD_GC_VERSION(dev) >= IP_VERSION(9, 4, 2) && !dev->adev->apu_prefer_gtt)",
+        "\t\tflags |= KFD_IOC_ALLOC_MEM_FLAGS_VRAM;",
+        "\telse",
+        "\t\tflags |= KFD_IOC_ALLOC_MEM_FLAGS_GTT;",
+        "",
+        "\t/* Allocate CWSR TBA/TMA buffers */",
+        "\tret = kfd_process_alloc_gpuvm(pdd, qpd->cwsr_base,",
+        "\t\t\t\t      KFD_CWSR_TBA_TMA_SIZE, flags, &mem, &kaddr);",
+        "\tif (ret)",
+        "\t\treturn ret;",
+        "",
+        "\tqpd->cwsr_mem = mem;",
+        "\tqpd->cwsr_kaddr = kaddr;",
+        "\tqpd->tba_addr = qpd->cwsr_base;",
+        "",
+        "\tmemcpy(qpd->cwsr_kaddr, dev->kfd->cwsr_isa, dev->kfd->cwsr_isa_size);",
+        "",
+        "\tkfd_process_set_trap_debug_flag(&pdd->qpd,",
+        "\t\t\t\t\tpdd->process->debug_trap_enabled);",
+        "",
+        "\tqpd->tma_addr = qpd->tba_addr + KFD_CWSR_TMA_OFFSET;",
+        "\tpr_debug(\"set tba :0x%llx, tma:0x%llx, cwsr_kaddr:%p for pqm.\\n\",",
+        "\t\t qpd->tba_addr, qpd->tma_addr, qpd->cwsr_kaddr);",
+        "",
+        "\treturn 0;"
+      ]
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/source/amd/amdkfd/kfd_process.c",
+        "bytes": 73019,
+        "sha256": "bd6dd04b51d7ba0f4ef1c4a696ef8023e41129daa4e32638044a5f7426c32f5d"
+      },
+      "first_line": 1960,
+      "lines": [
+        "\tstruct kfd_process *p;",
+        "\tstruct dma_fence *ef;",
+        "\tstruct kfd_node *dev;",
+        "\tint ret;",
+        "",
+        "\tif (pdd->drm_priv)",
+        "\t\treturn -EBUSY;",
+        "",
+        "\tret = amdgpu_file_to_fpriv(drm_file, &drv_priv);",
+        "\tif (ret)",
+        "\t\treturn ret;",
+        "\tavm = &drv_priv->vm;",
+        "",
+        "\tp = pdd->process;",
+        "\tdev = pdd->dev;",
+        "",
+        "\tret = amdgpu_amdkfd_gpuvm_acquire_process_vm(dev->adev, avm,",
+        "\t\t\t\t\t\t     &p->kgd_process_info,",
+        "\t\t\t\t\t\t     p->ef ? NULL : &ef);",
+        "\tif (ret) {",
+        "\t\tdev_err(dev->adev->dev, \"Failed to create process VM object\\n\");",
+        "\t\treturn ret;",
+        "\t}",
+        "",
+        "\tif (!p->ef)",
+        "\t\tRCU_INIT_POINTER(p->ef, ef);",
+        "",
+        "\tpdd->drm_priv = drm_file->private_data;",
+        "",
+        "\tret = kfd_process_device_reserve_ib_mem(pdd);",
+        "\tif (ret)",
+        "\t\tgoto err_reserve_ib_mem;",
+        "\tret = kfd_process_device_init_cwsr_dgpu(pdd);",
+        "\tif (ret)",
+        "\t\tgoto err_init_cwsr;",
+        "",
+        "\tif (unlikely(!avm->pasid)) {",
+        "\t\tdev_warn(pdd->dev->adev->dev, \"WARN: vm %p has no pasid associated\",",
+        "\t\t\t\t avm);",
+        "\t\tret = -EINVAL;",
+        "\t\tgoto err_get_pasid;"
+      ]
+    }
+  ],
+  "conclusions": [
+    "No changed undefined symbol, imported symbol CRC, init/exit/module structure/parameter/data bytes or unaccounted allocated section attribute was found.",
+    "Candidate unsigned status differs from installed, but retained prior-boot Secure Boot was disabled; current sig_enforce is N and lockdown none.",
+    "Dry modprobe dependency output has no amdgpu module options; config search found no active amdgpu options. insmod options omission is not supported.",
+    "Module/device initialization selects the CWSR pointer and size. The only cwsr_isa payload copy found in packaged KFD C sources is in per-process GPUVM initialization; a candidate shader invocation during insmod is not established.",
+    "The existing installed-matching amdgpu_exit includes rcu_barrier for outstanding module callbacks. This does not exclude other unload/reload defects.",
+    "The controller records commands only after completion and has no persisted start record or streamed stdout/stderr for the missing insmod step. Missing completion cannot establish execution progress."
+  ],
+  "limits": [
+    "CPU/static review only; no module load/unload or GPU workload was run.",
+    "No conclusion about the reboot cause or candidate correction efficacy.",
+    "Original training NaNs remain unlinked."
+  ]
+}

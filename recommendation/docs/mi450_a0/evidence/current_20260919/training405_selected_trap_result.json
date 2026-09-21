@@ -1,0 +1,359 @@
+{
+  "status": "CONTROLLED_TRAINING_TARGET_REPRODUCTION_AND_PREVENTION_WITH_ONE_NOP_OUTLIER",
+  "formal_frozen_matrix_status": "FAIL_CONTROLLED_ORIGINAL_INPUT_FOUR_ARM_MATRIX_CRITERIA",
+  "formal_matrix": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/four_arm_original_matrix_audit.json",
+    "bytes": 71326,
+    "sha256": "64027950a204e918610b68dc57f38d241db0779a653aa6b365891be20c22ff49"
+  },
+  "arms": [
+    {
+      "injection": "nop",
+      "arm": "bank46_control",
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/nop_bank46_control_terminal_audit.json",
+        "bytes": 28089,
+        "sha256": "64c49dc030e910a660cb9ade17d6e4976bb3b7d189d4bf462e36126d1590944d"
+      },
+      "calls": [
+        {
+          "iteration": 1,
+          "complete_output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+          "finite_target_exact_matches": 0,
+          "NaN_target_class_matches": 0,
+          "all1024_target_raw_words_match": false,
+          "complete_baseline_word_mismatches": 0,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        },
+        {
+          "iteration": 2,
+          "complete_output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+          "finite_target_exact_matches": 0,
+          "NaN_target_class_matches": 0,
+          "all1024_target_raw_words_match": false,
+          "complete_baseline_word_mismatches": 0,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        },
+        {
+          "iteration": 3,
+          "complete_output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+          "finite_target_exact_matches": 0,
+          "NaN_target_class_matches": 0,
+          "all1024_target_raw_words_match": false,
+          "complete_baseline_word_mismatches": 0,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        },
+        {
+          "iteration": 4,
+          "complete_output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+          "finite_target_exact_matches": 0,
+          "NaN_target_class_matches": 0,
+          "all1024_target_raw_words_match": false,
+          "complete_baseline_word_mismatches": 0,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        }
+      ]
+    },
+    {
+      "injection": "nop",
+      "arm": "bank86_equal",
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/nop_bank86_equal_terminal_audit.json",
+        "bytes": 28057,
+        "sha256": "41975c9087dfc5a7bd165f1b0157093787763c9131acfb872aed5d8aa2270f18"
+      },
+      "calls": [
+        {
+          "iteration": 1,
+          "complete_output_sha256": "98ad55a5db38fd8b0bdf159ed7c2c181b905ebebcbd099a414e5bd795444747c",
+          "finite_target_exact_matches": 0,
+          "NaN_target_class_matches": 0,
+          "all1024_target_raw_words_match": false,
+          "complete_baseline_word_mismatches": 11,
+          "outside_baseline_word_mismatches": 11,
+          "criterion_matches": false
+        },
+        {
+          "iteration": 2,
+          "complete_output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+          "finite_target_exact_matches": 0,
+          "NaN_target_class_matches": 0,
+          "all1024_target_raw_words_match": false,
+          "complete_baseline_word_mismatches": 0,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        },
+        {
+          "iteration": 3,
+          "complete_output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+          "finite_target_exact_matches": 0,
+          "NaN_target_class_matches": 0,
+          "all1024_target_raw_words_match": false,
+          "complete_baseline_word_mismatches": 0,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        },
+        {
+          "iteration": 4,
+          "complete_output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+          "finite_target_exact_matches": 0,
+          "NaN_target_class_matches": 0,
+          "all1024_target_raw_words_match": false,
+          "complete_baseline_word_mismatches": 0,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        }
+      ]
+    },
+    {
+      "injection": "trap",
+      "arm": "bank46_control",
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/trap_bank46_control_terminal_audit.json",
+        "bytes": 28150,
+        "sha256": "87e77b09b491e8bc2f352bb89bb15e4dcc450126f89f668fcfaca943c4d12d90"
+      },
+      "calls": [
+        {
+          "iteration": 1,
+          "complete_output_sha256": "9e6c0b3f08211d848ee19fb76e8a93603d44a86301c2111185f47dfdbc700f1b",
+          "finite_target_exact_matches": 384,
+          "NaN_target_class_matches": 640,
+          "all1024_target_raw_words_match": true,
+          "complete_baseline_word_mismatches": 1024,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        },
+        {
+          "iteration": 2,
+          "complete_output_sha256": "9e6c0b3f08211d848ee19fb76e8a93603d44a86301c2111185f47dfdbc700f1b",
+          "finite_target_exact_matches": 384,
+          "NaN_target_class_matches": 640,
+          "all1024_target_raw_words_match": true,
+          "complete_baseline_word_mismatches": 1024,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        },
+        {
+          "iteration": 3,
+          "complete_output_sha256": "9e6c0b3f08211d848ee19fb76e8a93603d44a86301c2111185f47dfdbc700f1b",
+          "finite_target_exact_matches": 384,
+          "NaN_target_class_matches": 640,
+          "all1024_target_raw_words_match": true,
+          "complete_baseline_word_mismatches": 1024,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        },
+        {
+          "iteration": 4,
+          "complete_output_sha256": "9e6c0b3f08211d848ee19fb76e8a93603d44a86301c2111185f47dfdbc700f1b",
+          "finite_target_exact_matches": 384,
+          "NaN_target_class_matches": 640,
+          "all1024_target_raw_words_match": true,
+          "complete_baseline_word_mismatches": 1024,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        }
+      ]
+    },
+    {
+      "injection": "trap",
+      "arm": "bank86_equal",
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/trap_bank86_equal_terminal_audit.json",
+        "bytes": 28090,
+        "sha256": "a2c9448352890226c45dbb854e9959bb739ef544dda49a318bb728c988135071"
+      },
+      "calls": [
+        {
+          "iteration": 1,
+          "complete_output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+          "finite_target_exact_matches": 0,
+          "NaN_target_class_matches": 0,
+          "all1024_target_raw_words_match": false,
+          "complete_baseline_word_mismatches": 0,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        },
+        {
+          "iteration": 2,
+          "complete_output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+          "finite_target_exact_matches": 0,
+          "NaN_target_class_matches": 0,
+          "all1024_target_raw_words_match": false,
+          "complete_baseline_word_mismatches": 0,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        },
+        {
+          "iteration": 3,
+          "complete_output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+          "finite_target_exact_matches": 0,
+          "NaN_target_class_matches": 0,
+          "all1024_target_raw_words_match": false,
+          "complete_baseline_word_mismatches": 0,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        },
+        {
+          "iteration": 4,
+          "complete_output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+          "finite_target_exact_matches": 0,
+          "NaN_target_class_matches": 0,
+          "all1024_target_raw_words_match": false,
+          "complete_baseline_word_mismatches": 0,
+          "outside_baseline_word_mismatches": 0,
+          "criterion_matches": true
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "role": [
+        "nop",
+        "bank86_equal"
+      ],
+      "iteration": 1,
+      "issue": "Frozen full-matrix criterion failed",
+      "predicate": {
+        "prospective_predicate_matches": true,
+        "expected_corruption": false,
+        "checked_BF16_words": 131072,
+        "finite_words": 131072,
+        "NaN_words": 0,
+        "Inf_words": 0,
+        "finite_words_above20": 0,
+        "maximum_absolute_finite": 2.0623207092285156e-05,
+        "outside_block_nonfinite_or_above20": 0,
+        "target_finite_exact_matches": 0,
+        "target_NaN_class_matches": 0,
+        "target_raw_word_matches": 0,
+        "all1024_target_raw_words_match": false,
+        "output_sha256": "98ad55a5db38fd8b0bdf159ed7c2c181b905ebebcbd099a414e5bd795444747c",
+        "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+      },
+      "comparison": {
+        "complete_word_mismatches": 11,
+        "outside_block_word_mismatches": 11,
+        "inside_block_word_mismatches": 0,
+        "complete_words_compared": 131072,
+        "outside_block_words_compared": 130048,
+        "first32_word_mismatches": [
+          {
+            "M": 8,
+            "N": 0,
+            "inside_target_block": false,
+            "actual_BF16": "0x34e7",
+            "baseline_BF16": "0xb668"
+          },
+          {
+            "M": 136,
+            "N": 0,
+            "inside_target_block": false,
+            "actual_BF16": "0xb3c1",
+            "baseline_BF16": "0x3426"
+          },
+          {
+            "M": 8,
+            "N": 64,
+            "inside_target_block": false,
+            "actual_BF16": "0x3582",
+            "baseline_BF16": "0x3670"
+          },
+          {
+            "M": 136,
+            "N": 64,
+            "inside_target_block": false,
+            "actual_BF16": "0xb4a1",
+            "baseline_BF16": "0x3577"
+          },
+          {
+            "M": 156,
+            "N": 194,
+            "inside_target_block": false,
+            "actual_BF16": "0xb412",
+            "baseline_BF16": "0xb413"
+          },
+          {
+            "M": 136,
+            "N": 256,
+            "inside_target_block": false,
+            "actual_BF16": "0xb43c",
+            "baseline_BF16": "0x3692"
+          },
+          {
+            "M": 8,
+            "N": 320,
+            "inside_target_block": false,
+            "actual_BF16": "0x354c",
+            "baseline_BF16": "0xb550"
+          },
+          {
+            "M": 8,
+            "N": 384,
+            "inside_target_block": false,
+            "actual_BF16": "0x35dd",
+            "baseline_BF16": "0x357c"
+          },
+          {
+            "M": 136,
+            "N": 384,
+            "inside_target_block": false,
+            "actual_BF16": "0xb310",
+            "baseline_BF16": "0x368c"
+          },
+          {
+            "M": 8,
+            "N": 448,
+            "inside_target_block": false,
+            "actual_BF16": "0xb431",
+            "baseline_BF16": "0x3550"
+          },
+          {
+            "M": 136,
+            "N": 448,
+            "inside_target_block": false,
+            "actual_BF16": "0xb50c",
+            "baseline_BF16": "0xb61e"
+          }
+        ],
+        "complete_bytes_match": false,
+        "outside_block_bytes_match": false
+      }
+    }
+  ],
+  "historical_entire_DW_comparison": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/whole_historical_DW_vs_four_arm_replay.json",
+    "bytes": 133312,
+    "sha256": "c1c8cb1296d26bd2a170f453681a49d3bca967c6f4270bbed5365149f70b71c9"
+  },
+  "candidate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_build_v1/candidate_certificate.json",
+    "bytes": 46019,
+    "sha256": "536183f3677e9e2d80123dacee90d5c7693b693109adf2e0fe3fe0ad6344290b"
+  },
+  "candidate_independent": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_review_v1/candidate_raw_bytes_independent.json",
+    "bytes": 9849,
+    "sha256": "5c178429d8d4098264ea0ed48984682f8edc2bd884e3069a18ed2a907411584b"
+  },
+  "frozen_launch_plan": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_j9415_pair_v1/package_and_command_plan.json",
+    "bytes": 9794,
+    "sha256": "dbd1767fafd789557eaab15acb060e6bb4cd5de8f3a5e59280e7fb154e21e33e"
+  },
+  "all_four_workers_terminal_and_reaped": true,
+  "driver_changed": false,
+  "interpretation": [
+    "Controlled selected trap reproduces all384 enormous finite words and all640 NaN raw words from original training target in4/4calls. Outside target all130048 words match the firstNOP46 baseline exactly.",
+    "Matching equal-bank trap arm returns the entire ordinary baseline in4/4calls.",
+    "Frozen full-matrix criterion FAILS because firstNOP86 call has11 outside-target differences; no call is discarded or reclassified.",
+    "The original historical entireDW differs from the controlled trap result at6 small outside-target words, so full originalDW reproduction is not claimed.",
+    "Original training native kernel/trap history were not captured. These results demonstrate sufficiency/prevention for this controlled replay and exact target signature, not a validated training fix."
+  ]
+}

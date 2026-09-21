@@ -708,6 +708,396 @@
       "source": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_BANK_EQUAL_STREAM_CPU_PEER_v1/bank81_control_complete_PC_context_independent_v1.json",
       "bytes": 60518,
       "sha256": "4caf96efaf0e8b3b30e5d55367928ed8c347ccb7c8abc91fc4e305a9605eab4e"
+    },
+    {
+      "file": "BANK_EQUAL_complete_PC_comparison.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_equal_bank_PC_audit_v1/matched_PC_comparison_v1.json",
+      "bytes": 5040,
+      "sha256": "ff0ed946a7785c3d7078c4f3989265f693295ea95fb9d1dfcd06577237d58a26"
+    },
+    {
+      "file": "BANK_EQUAL_snapshot_age_and_entry_ordering.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_equal_bank_PC_audit_v1/snapshot_age_and_entry_ordering_addendum_v1.json",
+      "bytes": 23359,
+      "sha256": "eac5058d6e88229665d8ac04ffdf5c1877aca0e62e24441367ba0d9573cbb3f7"
+    },
+    {
+      "file": "runtime_restoration_20260921.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_runtime_root_v1/runtime_restoration.json",
+      "bytes": 7793,
+      "sha256": "64a9381695b93b75739cff0d0e576f77059c72d412a8701c165420752f29d43f"
+    },
+    {
+      "file": "BANK_EQUAL_reverse_PASS1000_FAIL70.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_pair_v1/reverse_pair_result_root.json",
+      "bytes": 15700,
+      "sha256": "0815b83a2a9ada036d3f74f02fb3b797df87ac53def35dff042eacf0e6690ebc"
+    },
+    {
+      "file": "BANK_EQUAL_reverse_exit_PC_comparison.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/reverse_pair_posthoc_exit_setter_7_heads_v1.json",
+      "bytes": 11706,
+      "sha256": "cfdd8b807aa188d0d031a16cb298dcec426fa4a6cdec43eea00ce14c9c23059c"
+    },
+    {
+      "file": "gated_actual_DW_trap_matrix.json",
+      "source": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/gated_actual_DW_trap_matrix.json",
+      "bytes": 5708,
+      "sha256": "2f539a05e469875569e4d9531a2367b3b1de47f07c00dd4669df0fdacc62a192"
+    },
+    {
+      "file": "CWSR_complete_handler_build.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/complete_handler_build.json",
+      "bytes": 22548,
+      "sha256": "146b4e87ad8310274cc54c7d008f2b8d4bab1b550483e52d80b6fb6513dcde38"
+    },
+    {
+      "file": "CWSR_module_byte_audit.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/module_byte_audit_v2.json",
+      "bytes": 5124,
+      "sha256": "07995ac0e1eec0eb48683ec5c3ff90a14c2927badcd0253f8b9bcfb5f339b3fe"
+    },
+    {
+      "file": "CWSR_module_relocation_audit.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/module_relocation_audit.json",
+      "bytes": 1477,
+      "sha256": "32a289c7404542ca9423eb2d3f172e995a29d8e8409509355d41647c19e0f730"
+    },
+    {
+      "file": "CWSR_driver_interruption_recovery.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_after_driver_interruption_v1/recovery_result.json",
+      "bytes": 4341,
+      "sha256": "6f48d5b96f5c18b0f7201995c1fdf2bce118f6cff8b388ea5438637655ead653"
+    },
+    {
+      "file": "CWSR_interrupted_load_interfaces.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_interrupted_load_static_review_v1/load_interface_review.json",
+      "bytes": 18386,
+      "sha256": "37623feb2414becb469f39204dfcd57b799846bb4a00f04ddd654fb13680a5f3"
+    },
+    {
+      "file": "FULL_BF16_bank_comparison.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_result_root_v1/full_BF16_bank_comparison.json",
+      "bytes": 6710,
+      "sha256": "cd36fd21a325c9031c132b991a8384cb82d0c16d6f513ba3c5a17c7a03e7ea7b"
+    },
+    {
+      "file": "buffer_unaligned_QWORD_hardware.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_buffer_QWORD_review_v1/QWORD_observation_addendum.json",
+      "bytes": 6303,
+      "sha256": "0fa2c641f043ddb3bda80f18670c140546f582bd10eefd9148b6a671376a358d"
+    },
+    {
+      "file": "training405_mainloop_copy_complete_binding.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/j9415_complete_evidence_binding.json",
+      "bytes": 6464,
+      "sha256": "2e7ab7e66ad6b420169d08528f1449422ae9c97ca367f399566ffa947957a640"
+    },
+    {
+      "file": "training405_mainloop_copy_numerical_match.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/j9415_training_block_match_certificate.json",
+      "bytes": 241450,
+      "sha256": "3339ceb44fadfdcb155cff78a7c25c4a4655cd1af7f13ded06c982fdee0cd6a8"
+    },
+    {
+      "file": "training405_mainloop_copy_ordered_rounding.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/j9415_ordered_rounding_enclosure.json",
+      "bytes": 308660,
+      "sha256": "c0c0d8b4567c7655caf9b918cad7b32dc307956ab043920e3d3f92b909d5c833"
+    },
+    {
+      "file": "training405_mainloop_source_and_SRD.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/source_word_and_actual_load_SRD.json",
+      "bytes": 13722,
+      "sha256": "bc1579df21301300e57892ba03247b1891fee53657597d5c56260416e7e51160"
+    },
+    {
+      "file": "DW_tail_v513_deadness.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/independent_tail_deadness_review.json",
+      "bytes": 6402,
+      "sha256": "71452551748e766804beeac1a1b6a89a345c4655bcfc2a96833f42f776042635"
+    },
+    {
+      "file": "DW_tail_v257_copy_exclusion.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/tail_v257_copy_exclusion.json",
+      "bytes": 4084,
+      "sha256": "eb91110570d956a7fe950571558a6ebbba6a55c2d98ec6a33e8a23209a9099d6"
+    },
+    {
+      "file": "training405_mainloop_copy_independent.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_resume_v1/training405_j9415_exact_independent_v1.json",
+      "bytes": 155359,
+      "sha256": "c2b668fd0e998f8e6574e7f3c6cf8ee82e8242b77b6015a9b1b80de00a591b01"
+    },
+    {
+      "file": "training405_mainloop_rounding_independent.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_resume_v1/ordered_rounding_independent_review_v1.json",
+      "bytes": 69375,
+      "sha256": "e8bde3b1af4fe5b3cf36672fb51d0d46a60aa6dddfe5b8b6ad864f6476fffba5"
+    },
+    {
+      "file": "training405_mainloop_temporal_order.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/native_changed_term_order_review.json",
+      "bytes": 325832,
+      "sha256": "a630075119e83420912e54e3309fa2d368b3118b3ae7613a8e1129abb671a5c1"
+    },
+    {
+      "file": "training405_mainloop_lag_and_window_scope.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/lag0_lag1_complete_screen_and_window_scope.json",
+      "bytes": 15454,
+      "sha256": "813e871f75e0792611036f0b8c8799a96ea552c50bc418d35411b9a0e6c0bc4f"
+    },
+    {
+      "file": "training405_selected_trap_result.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/training405_selected_trap_result.json",
+      "bytes": 14070,
+      "sha256": "b7bd1af2d0f49641bd3e656cd915fe4d6842e81e881040f9e0e790dd1b551277"
+    },
+    {
+      "file": "training405_selected_trap_matrix.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/four_arm_original_matrix_audit.json",
+      "bytes": 71326,
+      "sha256": "64027950a204e918610b68dc57f38d241db0779a653aa6b365891be20c22ff49"
+    },
+    {
+      "file": "training405_entire_DW_replay_comparison.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/whole_historical_DW_vs_four_arm_replay.json",
+      "bytes": 133312,
+      "sha256": "c1c8cb1296d26bd2a170f453681a49d3bca967c6f4270bbed5365149f70b71c9"
+    },
+    {
+      "file": "training405_address_mediation_matrix.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/mediation_pair_matrix_audit.json",
+      "bytes": 13785,
+      "sha256": "5cd4b03e4162c8aafeea0ba7d49afd036839aa3e62d74bb5e632dc119815b742"
+    },
+    {
+      "file": "training405_address_mediation_target.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/mediation_original_target_scope.json",
+      "bytes": 7558,
+      "sha256": "2441e30b42edd2fdb2c7b1bc490cbdf4dc41b25570849f7e75aafa8efe398ca3"
+    },
+    {
+      "file": "1P4G_complete_A0_source_overlap.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/full_frozen_source_overlap.json",
+      "bytes": 125072,
+      "sha256": "3b8f769ed054f72ba0d7a69e04e85e073149263c4c57e1d7881fe3345ee61e1b"
+    },
+    {
+      "file": "1P4G_comparison_evidence_manifest.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/comparison_evidence_manifest.json",
+      "bytes": 14860,
+      "sha256": "fae5c1d4629651d1a3cfec7df5ee77422ab52b6aac99d7e120305f6dfe767e47"
+    },
+    {
+      "file": "training405_combined_full_result.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/training405_combined_full_result.json",
+      "bytes": 6027,
+      "sha256": "5a895950d5d5fcccf90151754f62d6175519c20cf6017c262afbe684ffe6ee43"
+    },
+    {
+      "file": "training405_combined_full_matrix.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_references_independent_v1/combined_full_historical_DW_matrix.json",
+      "bytes": 68969,
+      "sha256": "49e1ce7b8d2a6ebffeed800fe9086c5fe3bca4e8777d421ee8ce8a8a3e8ab4ea"
+    },
+    {
+      "file": "training405_residual6_exact_prediction.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training405_residual6_CPU_v1/exact_dyadic_residual6_certificate.json",
+      "bytes": 50691,
+      "sha256": "bb4598b939bc65f62cfb85bc897dd5dcde386e19092bf6b432d6aa8d81418ce7"
+    },
+    {
+      "file": "1P4G_additional_discriminators.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_discriminators_v1/manifest.json",
+      "bytes": 2185,
+      "sha256": "7eabe368025e49f01670614a3cfb6767c81ed5a31b807942144ac5e36688578d"
+    },
+    {
+      "file": "training405_operand_bit_sensitivity.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_discriminators_v1/operand_address_discriminators.json",
+      "bytes": 6239,
+      "sha256": "739a0068b041012aa6158fa42d94e4a87f795d44d564fdc81a469977926ed10f"
+    },
+    {
+      "file": "training405_operand_bit_sensitivity_independent.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/operand_sensitivity_independent.json",
+      "bytes": 2890,
+      "sha256": "dfa979a5e65c8c071090aca037881f53186a9e7635faa6f22f05965b17af2d8c"
+    },
+    {
+      "file": "training405_joint_prevention_result.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/training405_joint_prevention_result.json",
+      "bytes": 4222,
+      "sha256": "e8e8c33e396eb5f6cedbed27f65370279c0f3c992a84924d0b17fc2484b4b370"
+    },
+    {
+      "file": "training405_joint_prevention_matrix.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_native_results_v1/joint_equal_full_baseline_matrix.json",
+      "bytes": 19407,
+      "sha256": "e73673bd1290e5a091ef7b92a14b9bacc990a615116c4068dbf44b4ccc714aba"
+    },
+    {
+      "file": "solution102_bank_zero_body.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_solution102_bank_CPU_v1/solution102_bank_zero_scope.json",
+      "bytes": 16836,
+      "sha256": "c3221d16dcbbeec43ae18d94ca06f7ec5030b89f10cb4519fbfcf77c6b33091c"
+    },
+    {
+      "file": "solution102_bank_zero_independent.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_solution102_peer_v1/independent_solution102_bank_review.json",
+      "bytes": 4245,
+      "sha256": "944a059944da5f77681d0af9845c00e15cc04b73b15fee46adc0640e581d6d4f"
+    },
+    {
+      "file": "training405_onebit_DY_result.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/training405_onebit_DY_result.json",
+      "bytes": 7162,
+      "sha256": "87f73d67bfe463b57d16ac698cae84d22c92a111e39284ce0a9bd15e178cba5a"
+    },
+    {
+      "file": "training405_onebit_DY_matrix.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_native_results_v1/onebit_DY_full_finite_repeat_support_matrix.json",
+      "bytes": 6475138,
+      "sha256": "b9d77beb59ab0fc033ac4aaa35e4e2582dc6b6cfdeabe23b7f148e7c298425ef"
+    },
+    {
+      "file": "training405_onebit_interval_comparison.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_tree_interval_CPU_v1/retained_onebit_output_interval_comparison.json",
+      "bytes": 7970,
+      "sha256": "f2208b1f1390cd66a01f72b766ece44626630365181ffe49c4bb3916422504c2"
+    },
+    {
+      "file": "CWSR_driver_switch_reaudit.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_driver_switch_reaudit_v1/driver_switch_reaudit.json",
+      "bytes": 15914,
+      "sha256": "39f4875381d2534ec451542d93d39edc7a0ea3153c515a9c86d2ee65de66baa1"
+    },
+    {
+      "file": "CWSR_first_level_API_mapping_reaudit.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_first_level_API_mapping_reaudit_v1/independent_first_level_API_mapping_review.json",
+      "bytes": 38806,
+      "sha256": "20147c0269563273caca036cec0f7eb3fff7869fe72d9ebae885298678808ab0"
+    },
+    {
+      "file": "CWSR_read_only_offset_exposure.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_first_level_API_mapping_reaudit_v1/read_only_offset_exposure_addendum.json",
+      "bytes": 15127,
+      "sha256": "2b158189cf448ac69dce7cf7384b031c869c19e8d03014c3f4f62a9d35f36b39"
+    },
+    {
+      "file": "1P4G_model_dataflow.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_model_dataflow_v1/full_quarter_preprocessing_dataflow.json",
+      "bytes": 63432,
+      "sha256": "76f2ea17abc0c2402140ab5f748f5b8d65bd6d4144a7a904ab82fcc507e5e256"
+    },
+    {
+      "file": "1P4G_scheduler_semantics.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_scheduler_semantics_v1/scheduler_semantics_evidence.json",
+      "bytes": 84792,
+      "sha256": "5e3fe33a2c50e970b5c856c23dbb18208552393f93a8d0a7ac0ab83a66a265a6"
+    },
+    {
+      "file": "DW_full_bank_mitigation_feasibility.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_DW_bank_mitigation_feasibility_v1/full_DW_mitigation_coverage_and_gaps.json",
+      "bytes": 14487,
+      "sha256": "6a00023c5c98dd44ff3bd3eed7f4537c1e6620e255924c878484f95c3fa9ce4c"
+    },
+    {
+      "file": "training405_onebit_synthesis_peer.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_synthesis_peer_v1/independent_onebit_synthesis_peer_review.json",
+      "bytes": 19032,
+      "sha256": "4c1c8b68a24df1bf462f59fe5b569e94816cd645ef94208f5b189b782f81e496"
+    },
+    {
+      "file": "fresh_TTMP_160_terminal.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_terminal_audit_v1/independent_terminal_audit.json",
+      "bytes": 1466618,
+      "sha256": "f0a4eeef4cad398faa9db5c712579c315c90633dc2c2838c81fc0a17ad399ce3"
+    },
+    {
+      "file": "DW_full_bank_mitigation_feasibility_v2.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_DW_bank_mitigation_feasibility_v1/v2/full_DW_mitigation_coverage_and_gaps.json",
+      "bytes": 14776,
+      "sha256": "7d1919289ca75f7c1a90cb42834b591d52b97a78e650b3bd14a8161a14a6c725"
+    },
+    {
+      "file": "DW_sink_inventory_erratum.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_DW_bank_mitigation_feasibility_v1/v2/half_selector_parser_erratum.json",
+      "bytes": 129850,
+      "sha256": "27d91e7dbf59a07f6076d52850e258e6e4612610bf20360263fe7661d9034600"
+    },
+    {
+      "file": "DW_sink_instruction_encoding.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_encoding_peer_v1/independent_sink_relocation_instruction_encoding.json",
+      "bytes": 2197247,
+      "sha256": "2331d258d1303ff84d35603d5562cbe8f6fc34fed3f9a4117bdaf7749c72192b"
+    },
+    {
+      "file": "fresh_TTMP_800_restored.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/fresh_TTMP_reverse_restored_result.json",
+      "bytes": 4156,
+      "sha256": "5a4de95c553f0edc772be5723ba3b6c1180a0b3227b7ffc0965d377aaa0fb3a7"
+    },
+    {
+      "file": "DW_sink_full_lane_definitions.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_lane_schedule_peer_v1/full_EXEC_lane_renaming_equivalence.json",
+      "bytes": 18019,
+      "sha256": "9212335eb9cbf9c56dec2bf3eaca8167412d17db160553b127406ea22be8e2d7"
+    },
+    {
+      "file": "DW_sink_noninterference.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_gate_native_peer_v1/dead_physical_sink_noninterference_addendum_v2.json",
+      "bytes": 33200,
+      "sha256": "dfc562eaf5049f1f42a7ab364189353ae4046a6e1db001e2066ffc3dfaf9dc52"
+    },
+    {
+      "file": "DW_sink_final_ELF_layout.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/independent_elf_layout_audit.json",
+      "bytes": 88276,
+      "sha256": "90cebaaf219453d09511b255c7bb04ff2543a222600f2b421c4ec8085dbecf11"
+    },
+    {
+      "file": "DW_sink_arithmetic_matrix.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/arithmetic_matrix.json",
+      "bytes": 18853,
+      "sha256": "272c13086e7728879c29bee74af764b24861910c0512892a3798a2bc1a83e3fd"
+    },
+    {
+      "file": "DW_sink_arithmetic_result.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/sink_arithmetic_result.json",
+      "bytes": 4771,
+      "sha256": "c46893f26f5fedd067f530c4d65996bae8541ff575b4e735f92ad8e5a2390f80"
+    },
+    {
+      "file": "DW_sink_quartet_matrix.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_audit_v1/quartet_matrix.json",
+      "bytes": 37537,
+      "sha256": "193f1e39368d1d32e38732b745c1ad0591eb74a1999539e6fdfe2808bca98d63"
+    },
+    {
+      "file": "DW_sink_quartet_result.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/sink_quartet_result.json",
+      "bytes": 2852,
+      "sha256": "0a8e4030f29f6d3b5aa2b2b7113bde2cda10c2e231f33c505d317afaa234c126"
+    },
+    {
+      "file": "runtime_corrected_MCE_SVM_review.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_MCE_peer_v1/independent_MCE_and_SVM_review.json",
+      "bytes": 11525,
+      "sha256": "1838b94e30d254da4e90b4eaf6b72f37768e05e384dcdcdadaac01b92e04feb3"
+    },
+    {
+      "file": "fresh_TTMP_NOP_only_result.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/NOP_only_result.json",
+      "bytes": 7580,
+      "sha256": "78e42a2f5db17030460ba2320b10ca97e393536e2e240c65957f174fb94e92ce"
+    },
+    {
+      "file": "session_stop_20260921.json",
+      "source": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/session_stop_wrap.json",
+      "bytes": 25693,
+      "sha256": "5c676635dfc59af59ba42f7c28265cbc415fb5f19bb6b745e3c426f791db8fb6"
     }
   ],
   "historical_archive": "/home/chcai/mi450_logs/a0_docs_archive_20260919_session_wrap_v1",
@@ -730,5 +1120,11 @@
     "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_final_runtime_v1.json",
     "bytes": 2011,
     "sha256": "bcc41d6e2617ee210c66594c4d66d8efe373b7a4aeefdf0269fd376bde097d40"
+  },
+  "latest_session_stop": {
+    "status": "STOPPED_AT_USER_REQUEST",
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/session_stop_wrap.json",
+    "bytes": 25693,
+    "sha256": "5c676635dfc59af59ba42f7c28265cbc415fb5f19bb6b745e3c426f791db8fb6"
   }
 }

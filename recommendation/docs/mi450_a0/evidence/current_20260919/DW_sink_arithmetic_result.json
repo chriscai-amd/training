@@ -1,0 +1,123 @@
+{
+  "status": "PASS_EIGHT_ORIGINAL_INPUT_FULL_BASELINE_OUTPUTS_AND_TERMINAL_AUDITS",
+  "matrix": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/arithmetic_matrix.json",
+    "bytes": 18853,
+    "sha256": "272c13086e7728879c29bee74af764b24861910c0512892a3798a2bc1a83e3fd"
+  },
+  "outputs": [
+    {
+      "arm": "sink_control",
+      "iteration": 1,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_control/call_01_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      }
+    },
+    {
+      "arm": "sink_control",
+      "iteration": 2,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_control/call_02_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      }
+    },
+    {
+      "arm": "sink_control",
+      "iteration": 3,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_control/call_03_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      }
+    },
+    {
+      "arm": "sink_control",
+      "iteration": 4,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_control/call_04_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      }
+    },
+    {
+      "arm": "sink_candidate",
+      "iteration": 1,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_candidate/call_01_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      }
+    },
+    {
+      "arm": "sink_candidate",
+      "iteration": 2,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_candidate/call_02_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      }
+    },
+    {
+      "arm": "sink_candidate",
+      "iteration": 3,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_candidate/call_03_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      }
+    },
+    {
+      "arm": "sink_candidate",
+      "iteration": 4,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_candidate/call_04_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      }
+    }
+  ],
+  "idle_receipts": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/sink_control_pre_all_device_idle.json",
+      "bytes": 2262,
+      "sha256": "36ffab046f95367e7ae5a0294c933cda13a2a3f9abc359a0ee04da425821a607"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/sink_control_post_all_device_idle.json",
+      "bytes": 2262,
+      "sha256": "f8684a7dd9b576f298655a861d314ef241a7923a485b38f94acab453c1b88ed3"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/sink_candidate_post_all_device_idle.json",
+      "bytes": 2262,
+      "sha256": "6d6c9c19d07d77a3c2562f29a07dbdbc9c407b8c76d3c7df3069a77f95117f68"
+    }
+  ],
+  "kernel_log_comparison": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/arithmetic_post_kernel.json",
+    "bytes": 236046,
+    "sha256": "14d38e84110bda7bdf90d60d598129942e8dbd92356f589c316a4528873c813c"
+  },
+  "workers": {
+    "sink_control": {
+      "session": 42866,
+      "terminal_exit": 0,
+      "reaped": true
+    },
+    "sink_candidate": {
+      "session": 61948,
+      "terminal_exit": 0,
+      "reaped": true
+    }
+  },
+  "driver_srcversion": "654C1DDE7A9A3E129BA9553",
+  "boot_id": "4a77f7e8-32cd-4c74-974b-c0b0c0d8eb03",
+  "limits": [
+    "Eight-call original-input arithmetic preservation only; neither arm injected a trap.",
+    "Controlled-trap prevention and natural replay/training repair remain to be tested.",
+    "Point-in-time device ownership checks do not prove continuous exclusivity."
+  ]
+}

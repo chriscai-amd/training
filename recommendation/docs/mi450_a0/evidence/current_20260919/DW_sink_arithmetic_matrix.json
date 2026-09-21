@@ -1,0 +1,403 @@
+{
+  "status": "PASS_SINK_ARITHMETIC_FULL_BASELINE",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/audit_sink_matrix.py",
+    "bytes": 13803,
+    "sha256": "0947ae6a80b3ea638e4a8d4001affb5f3e34baed345711f9c7149c72d67f11b0"
+  },
+  "terminal_auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/audit_sink_terminal.py",
+    "bytes": 32123,
+    "sha256": "009d634adb4c78a569f09364fcdbfc2090c7a6b78d4f67a6c646935a4af78f57"
+  },
+  "prospective_criteria": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_package_v1/prospective_sink_criteria.json",
+    "bytes": 6586,
+    "sha256": "4b8f53b54ca04bf9b14b4ae8e47e6c21ddf12a8d6a317a67d8e8de02cc0fd611"
+  },
+  "input_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/runtime_terminals_manifest.json",
+    "bytes": 586,
+    "sha256": "18d99e686ca6cf747e14867de32654985f077684a211ca51c1b7e5e455fd912b"
+  },
+  "primary_NOP46_terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/nop_bank46_control_terminal_audit.json",
+    "bytes": 28089,
+    "sha256": "64c49dc030e910a660cb9ade17d6e4976bb3b7d189d4bf462e36126d1590944d"
+  },
+  "reference_binding": {
+    "ordinary_baseline": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+      "bytes": 262144,
+      "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+    },
+    "target": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/original_training405_block_M0_8_N128_256.bf16",
+      "bytes": 2048,
+      "sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+    },
+    "historical_reference_for_context": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/original_training405_DW_native_Nmajor.bf16.bin",
+      "bytes": 262144,
+      "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+    },
+    "arithmetic_contract": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_arithmetic_audit_CPU_v1/arithmetic_pair_audit_contract.json",
+      "bytes": 4724,
+      "sha256": "aa7f1ba06b6d761eabb81d27a36876ccfe00f2e48d3be6f33dafdf017660c499"
+    }
+  },
+  "arms": [
+    {
+      "arm": "sink_control",
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/sink_control_terminal_audit.json",
+        "bytes": 29510,
+        "sha256": "ba546224de7461277435dd26d61d5d3814dc68445cc5b9b5db02bd3a51cfa064"
+      },
+      "producer_status": "PASS",
+      "reference": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "calls": [
+        {
+          "iteration": 1,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_control/call_01_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_control/call_01_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 2,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_control/call_02_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_control/call_02_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 3,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_control/call_03_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_control/call_03_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 4,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_control/call_04_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_control/call_04_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        }
+      ]
+    },
+    {
+      "arm": "sink_candidate",
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/sink_candidate_terminal_audit.json",
+        "bytes": 29546,
+        "sha256": "2c1df7a690977c83bfa8df15eab2db11ea59d869b444bc41dca8d37f1f0c2f9c"
+      },
+      "producer_status": "PASS",
+      "reference": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "calls": [
+        {
+          "iteration": 1,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_candidate/call_01_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_candidate/call_01_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 2,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_candidate/call_02_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_candidate/call_02_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 3,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_candidate/call_03_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_candidate/call_03_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 4,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_candidate/call_04_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_runtime_v1/results_sink_candidate/call_04_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_bytes_match": true,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "all_word_mismatches": []
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        }
+      ]
+    }
+  ],
+  "issues": [],
+  "primary_criteria_all_match": true,
+  "GPU_actions": false,
+  "limits": [
+    "Pass establishes original-input arithmetic preservation for these eight calls only.",
+    "Neither arithmetic arm injects a trap; controlled-trap prevention and training stability remain untested."
+  ]
+}

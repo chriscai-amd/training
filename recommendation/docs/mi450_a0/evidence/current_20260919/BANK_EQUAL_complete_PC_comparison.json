@@ -1,0 +1,156 @@
+{
+  "status": "PASS_COMPLETE_MATCHED_PC_COMPARISON",
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_equal_bank_PC_audit_v1/audit_complete_streams_v1.py",
+    "bytes": 19280,
+    "sha256": "0fdb9e2c80cac3a55a1db1621d879ffb041717f3d53b4f68a59490e90c1c1907"
+  },
+  "reports": {
+    "bank81_control": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_equal_bank_PC_audit_v1/bank81_control_complete_PC_source_wave_audit_v1.json",
+      "bytes": 1775988,
+      "sha256": "1ad1f468235926ec1ae9e4b8d1c9dd0bfc9d8ce72350843a8158bd49c2286bfd"
+    },
+    "bank82_equal": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_equal_bank_PC_audit_v1/bank82_equal_complete_PC_source_wave_audit_v1.json",
+      "bytes": 9184300,
+      "sha256": "6422a10bfcf3d5195addce5de9c23ac28991b15b2dc63ee8becff6b66676cb7b"
+    }
+  },
+  "independent_prior_control_PC_audit_reproduced": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_BANK_EQUAL_STREAM_CPU_PEER_v1/bank81_control_complete_PC_context_independent_v1.json",
+    "bytes": 60518,
+    "sha256": "4caf96efaf0e8b3b30e5d55367928ed8c347ccb7c8abc91fc4e305a9605eab4e"
+  },
+  "control_selected_hits": [
+    {
+      "call": 203,
+      "group": 1,
+      "wave": 0,
+      "TTMP64": "0x7088d9988114",
+      "S_GETPC64": "0x7088d99a0138",
+      "module_bias": "0x7088d9980000",
+      "normalized_PC": "0x8114",
+      "classification": "EXACT_INSTRUCTION_BOUNDARY",
+      "instruction": {
+        "instruction": "ds_load_b64 v[12:13] /*v[524:525]*/, v27 /*v283*/ offset:1792",
+        "bytes": "0007d8d91b00000c",
+        "ELF_file_offset": 28948
+      },
+      "arithmetic_failed": true,
+      "wrong_source_wave": true
+    },
+    {
+      "call": 203,
+      "group": 1,
+      "wave": 1,
+      "TTMP64": "0x7088d9988114",
+      "S_GETPC64": "0x7088d99a0138",
+      "module_bias": "0x7088d9980000",
+      "normalized_PC": "0x8114",
+      "classification": "EXACT_INSTRUCTION_BOUNDARY",
+      "instruction": {
+        "instruction": "ds_load_b64 v[12:13] /*v[524:525]*/, v27 /*v283*/ offset:1792",
+        "bytes": "0007d8d91b00000c",
+        "ELF_file_offset": 28948
+      },
+      "arithmetic_failed": true,
+      "wrong_source_wave": true
+    },
+    {
+      "call": 203,
+      "group": 1,
+      "wave": 2,
+      "TTMP64": "0x7088d9988114",
+      "S_GETPC64": "0x7088d99a0138",
+      "module_bias": "0x7088d9980000",
+      "normalized_PC": "0x8114",
+      "classification": "EXACT_INSTRUCTION_BOUNDARY",
+      "instruction": {
+        "instruction": "ds_load_b64 v[12:13] /*v[524:525]*/, v27 /*v283*/ offset:1792",
+        "bytes": "0007d8d91b00000c",
+        "ELF_file_offset": 28948
+      },
+      "arithmetic_failed": true,
+      "wrong_source_wave": true
+    },
+    {
+      "call": 203,
+      "group": 1,
+      "wave": 3,
+      "TTMP64": "0x7088d9988114",
+      "S_GETPC64": "0x7088d99a0138",
+      "module_bias": "0x7088d9980000",
+      "normalized_PC": "0x8114",
+      "classification": "EXACT_INSTRUCTION_BOUNDARY",
+      "instruction": {
+        "instruction": "ds_load_b64 v[12:13] /*v[524:525]*/, v27 /*v283*/ offset:1792",
+        "bytes": "0007d8d91b00000c",
+        "ELF_file_offset": 28948
+      },
+      "arithmetic_failed": true,
+      "wrong_source_wave": true
+    }
+  ],
+  "equal_selected_hits": [],
+  "equal_posthoc_exit_setter_sample_counts": {
+    "0x815c": 96,
+    "0x813c": 84
+  },
+  "equal_posthoc_exit_setter_calls": [
+    306,
+    320,
+    334,
+    362,
+    376,
+    390,
+    404,
+    408,
+    422,
+    436,
+    450,
+    468,
+    482,
+    500,
+    514,
+    532,
+    546,
+    564,
+    578,
+    596,
+    610,
+    628,
+    642,
+    660,
+    674,
+    692,
+    706,
+    724,
+    738,
+    756,
+    770,
+    788,
+    802,
+    820,
+    834,
+    852,
+    866,
+    884,
+    898,
+    912,
+    930,
+    944,
+    962,
+    976,
+    994
+  ],
+  "conclusion": "Control FAIL203 retains four selected-head samples at 0x8114 in precisely all four wrong-source group1 waves. Equal PASS1000 has zero samples at any of the original 14 heads; it has separate adjacent exit-setter observations that require resume/entry-state caution.",
+  "limits": [
+    "Original 14 preselected LDS heads are kept distinct from post-hoc adjacent exit-setter heads.",
+    "TTMP records the last visible return/resume address, with unknown initial age, no event timestamp, and potentially hidden earlier events.",
+    "A saved resume PC at an exit setter does not by itself prove the handler entry MODE; instruction retirement, restart and asynchronous LDS completion remain caveats.",
+    "All getPC references use observed raw words and the ELF instruction end at 0x20138. Native ELF bindings verify host code, not instruction fetch.",
+    "Saved input backing files are not rehashed here; this completes output/prefill/PC/source-wave audit, complementing the prior native and input audits.",
+    "No failure rate, permanent fix, or common cause with the original untraced training NaNs is established."
+  ]
+}

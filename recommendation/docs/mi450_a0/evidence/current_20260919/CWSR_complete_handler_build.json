@@ -1,0 +1,757 @@
+{
+  "format": "CWSR_complete_LLVM_preserved_encoding_build_v2",
+  "created_utc": "2026-09-21T02:43:16.935135+00:00",
+  "status": "PASS_CPU_BUILD_ONLY",
+  "builder": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/build_preserved.py",
+    "bytes": 7559,
+    "sha256": "df96bafa7427a418f22db9aae0622d69d0a5118cf863ac11866c6479de29cd9e"
+  },
+  "helper_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v1/build_roundtrip.py",
+    "bytes": 7229,
+    "sha256": "8315a385b66d967ee13d377aa252e48fb466428d6c49d7549d88016ae7dc03cc"
+  },
+  "failed_pure_LLVM_roundtrip": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v1/baseline_mismatch.json",
+    "bytes": 1637,
+    "sha256": "531d697ed17be1a87968b417b3ece13191df368d26f533518c7d87b56ca104e2"
+  },
+  "installed_binary": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_CWSR_gfx1250.bin",
+    "bytes": 5656,
+    "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+  },
+  "installed_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_CWSR_gfx1250.dis",
+    "bytes": 97176,
+    "sha256": "2538084a910fab8fb9cd2a4637436926f3fa90316b1aa05a26687c828bc81ea7"
+  },
+  "input_assembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v1/baseline.s",
+    "bytes": 40390,
+    "sha256": "6f60658b697b73c8d9ae682941c9c1af70b4c6fe712957a37e862bb764a8efa3"
+  },
+  "replacement_probe": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_bank_neutral_fix_feasibility_v1/non_wave_start_compensated_address_probe_v2.s",
+    "bytes": 414,
+    "sha256": "d2693a18f009243edaa5eca4aa98ec1149cb29238144dfd66abea7fec6c40e13"
+  },
+  "llvm_mc": {
+    "path": "/opt/rocm/lib/llvm/bin/llvm-mc",
+    "bytes": 114176,
+    "sha256": "2d99290e7a3dd53e09020347b01327ee8f6ef1155cf78a3c34fa52977cc9d13e"
+  },
+  "preserved_VOP3_instruction_encodings": [
+    {
+      "pc": 68,
+      "instruction": "v_readlane_b32 ttmp15, v1, 0",
+      "installed_hex": "7b0060d701010100",
+      "llvm_hex": "7b0060d701010102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 96,
+      "instruction": "v_writelane_b32 v1, ttmp15, 0",
+      "installed_hex": "010061d77b000100",
+      "llvm_hex": "010061d77b000102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 1920,
+      "instruction": "v_writelane_b32 v0, ttmp4, 4",
+      "installed_hex": "000061d770080100",
+      "llvm_hex": "000061d770080102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 1928,
+      "instruction": "v_writelane_b32 v0, ttmp5, 5",
+      "installed_hex": "000061d7710a0100",
+      "llvm_hex": "000061d7710a0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 1936,
+      "instruction": "v_writelane_b32 v0, ttmp6, 6",
+      "installed_hex": "000061d7720c0100",
+      "llvm_hex": "000061d7720c0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 1944,
+      "instruction": "v_writelane_b32 v0, ttmp7, 7",
+      "installed_hex": "000061d7730e0100",
+      "llvm_hex": "000061d7730e0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 1952,
+      "instruction": "v_writelane_b32 v0, ttmp8, 8",
+      "installed_hex": "000061d774100100",
+      "llvm_hex": "000061d774100102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 1960,
+      "instruction": "v_writelane_b32 v0, ttmp9, 9",
+      "installed_hex": "000061d775120100",
+      "llvm_hex": "000061d775120102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 1968,
+      "instruction": "v_writelane_b32 v0, ttmp10, 10",
+      "installed_hex": "000061d776140100",
+      "llvm_hex": "000061d776140102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 1976,
+      "instruction": "v_writelane_b32 v0, ttmp11, 11",
+      "installed_hex": "000061d777160100",
+      "llvm_hex": "000061d777160102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 1984,
+      "instruction": "v_writelane_b32 v0, ttmp13, 13",
+      "installed_hex": "000061d7791a0100",
+      "llvm_hex": "000061d7791a0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 1992,
+      "instruction": "v_writelane_b32 v0, exec_lo, 14",
+      "installed_hex": "000061d77e1c0100",
+      "llvm_hex": "000061d77e1c0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2000,
+      "instruction": "v_writelane_b32 v0, exec_hi, 15",
+      "installed_hex": "000061d77f1e0100",
+      "llvm_hex": "000061d77f1e0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2032,
+      "instruction": "v_readlane_b32 ttmp14, v0, 14",
+      "installed_hex": "7a0060d7001d0100",
+      "llvm_hex": "7a0060d7001d0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2040,
+      "instruction": "v_readlane_b32 ttmp15, v0, 15",
+      "installed_hex": "7b0060d7001f0100",
+      "llvm_hex": "7b0060d7001f0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2244,
+      "instruction": "v_writelane_b32 v2, ttmp5, m0",
+      "installed_hex": "020061d771fa0000",
+      "llvm_hex": "020061d771fa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2352,
+      "instruction": "v_writelane_b32 v2, ttmp0, m0",
+      "installed_hex": "020061d76cfa0000",
+      "llvm_hex": "020061d76cfa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2372,
+      "instruction": "v_writelane_b32 v2, ttmp14, m0",
+      "installed_hex": "020061d77afa0000",
+      "llvm_hex": "020061d77afa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2384,
+      "instruction": "v_writelane_b32 v2, ttmp2, m0",
+      "installed_hex": "020061d76efa0000",
+      "llvm_hex": "020061d76efa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2400,
+      "instruction": "v_writelane_b32 v2, ttmp14, m0",
+      "installed_hex": "020061d77afa0000",
+      "llvm_hex": "020061d77afa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2412,
+      "instruction": "v_writelane_b32 v2, ttmp12, m0",
+      "installed_hex": "020061d778fa0000",
+      "llvm_hex": "020061d778fa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2428,
+      "instruction": "v_writelane_b32 v2, ttmp14, m0",
+      "installed_hex": "020061d77afa0000",
+      "llvm_hex": "020061d77afa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2440,
+      "instruction": "v_writelane_b32 v2, ttmp3, m0",
+      "installed_hex": "020061d76ffa0000",
+      "llvm_hex": "020061d76ffa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2472,
+      "instruction": "v_writelane_b32 v2, ttmp5, m0",
+      "installed_hex": "020061d771fa0000",
+      "llvm_hex": "020061d771fa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2488,
+      "instruction": "v_writelane_b32 v2, ttmp5, m0",
+      "installed_hex": "020061d771fa0000",
+      "llvm_hex": "020061d771fa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2504,
+      "instruction": "v_writelane_b32 v2, ttmp5, m0",
+      "installed_hex": "020061d771fa0000",
+      "llvm_hex": "020061d771fa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2520,
+      "instruction": "v_writelane_b32 v2, ttmp5, m0",
+      "installed_hex": "020061d771fa0000",
+      "llvm_hex": "020061d771fa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2536,
+      "instruction": "v_writelane_b32 v2, ttmp5, m0",
+      "installed_hex": "020061d771fa0000",
+      "llvm_hex": "020061d771fa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2552,
+      "instruction": "v_writelane_b32 v2, ttmp14, m0",
+      "installed_hex": "020061d77afa0000",
+      "llvm_hex": "020061d77afa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2572,
+      "instruction": "v_writelane_b32 v2, ttmp14, m0",
+      "installed_hex": "020061d77afa0000",
+      "llvm_hex": "020061d77afa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2592,
+      "instruction": "v_writelane_b32 v2, ttmp14, m0",
+      "installed_hex": "020061d77afa0000",
+      "llvm_hex": "020061d77afa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2608,
+      "instruction": "v_writelane_b32 v2, ttmp14, m0",
+      "installed_hex": "020061d77afa0000",
+      "llvm_hex": "020061d77afa0002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2664,
+      "instruction": "v_writelane_b32 v2, ttmp14, 0",
+      "installed_hex": "020061d77a000100",
+      "llvm_hex": "020061d77a000102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2680,
+      "instruction": "v_writelane_b32 v2, ttmp14, 1",
+      "installed_hex": "020061d77a020100",
+      "llvm_hex": "020061d77a020102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2696,
+      "instruction": "v_writelane_b32 v2, ttmp14, 2",
+      "installed_hex": "020061d77a040100",
+      "llvm_hex": "020061d77a040102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2712,
+      "instruction": "v_writelane_b32 v2, ttmp14, 3",
+      "installed_hex": "020061d77a060100",
+      "llvm_hex": "020061d77a060102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2728,
+      "instruction": "v_writelane_b32 v2, ttmp14, 4",
+      "installed_hex": "020061d77a080100",
+      "llvm_hex": "020061d77a080102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2744,
+      "instruction": "v_writelane_b32 v2, ttmp14, 5",
+      "installed_hex": "020061d77a0a0100",
+      "llvm_hex": "020061d77a0a0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2760,
+      "instruction": "v_writelane_b32 v2, ttmp14, 6",
+      "installed_hex": "020061d77a0c0100",
+      "llvm_hex": "020061d77a0c0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2776,
+      "instruction": "v_writelane_b32 v2, ttmp14, 7",
+      "installed_hex": "020061d77a0e0100",
+      "llvm_hex": "020061d77a0e0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2792,
+      "instruction": "v_writelane_b32 v2, ttmp14, 8",
+      "installed_hex": "020061d77a100100",
+      "llvm_hex": "020061d77a100102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2808,
+      "instruction": "v_writelane_b32 v2, ttmp14, 9",
+      "installed_hex": "020061d77a120100",
+      "llvm_hex": "020061d77a120102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2824,
+      "instruction": "v_writelane_b32 v2, ttmp14, 10",
+      "installed_hex": "020061d77a140100",
+      "llvm_hex": "020061d77a140102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2840,
+      "instruction": "v_writelane_b32 v2, ttmp14, 11",
+      "installed_hex": "020061d77a160100",
+      "llvm_hex": "020061d77a160102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2856,
+      "instruction": "v_writelane_b32 v2, ttmp14, 12",
+      "installed_hex": "020061d77a180100",
+      "llvm_hex": "020061d77a180102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2872,
+      "instruction": "v_writelane_b32 v2, ttmp14, 13",
+      "installed_hex": "020061d77a1a0100",
+      "llvm_hex": "020061d77a1a0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2888,
+      "instruction": "v_writelane_b32 v2, ttmp14, 14",
+      "installed_hex": "020061d77a1c0100",
+      "llvm_hex": "020061d77a1c0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2904,
+      "instruction": "v_writelane_b32 v2, ttmp14, 15",
+      "installed_hex": "020061d77a1e0100",
+      "llvm_hex": "020061d77a1e0102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 2996,
+      "instruction": "v_writelane_b32 v2, s0, ttmp13",
+      "installed_hex": "020061d700f20000",
+      "llvm_hex": "020061d700f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3008,
+      "instruction": "v_writelane_b32 v2, s1, ttmp13",
+      "installed_hex": "020061d701f20000",
+      "llvm_hex": "020061d701f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3020,
+      "instruction": "v_writelane_b32 v2, s2, ttmp13",
+      "installed_hex": "020061d702f20000",
+      "llvm_hex": "020061d702f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3032,
+      "instruction": "v_writelane_b32 v2, s3, ttmp13",
+      "installed_hex": "020061d703f20000",
+      "llvm_hex": "020061d703f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3044,
+      "instruction": "v_writelane_b32 v2, s4, ttmp13",
+      "installed_hex": "020061d704f20000",
+      "llvm_hex": "020061d704f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3056,
+      "instruction": "v_writelane_b32 v2, s5, ttmp13",
+      "installed_hex": "020061d705f20000",
+      "llvm_hex": "020061d705f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3068,
+      "instruction": "v_writelane_b32 v2, s6, ttmp13",
+      "installed_hex": "020061d706f20000",
+      "llvm_hex": "020061d706f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3080,
+      "instruction": "v_writelane_b32 v2, s7, ttmp13",
+      "installed_hex": "020061d707f20000",
+      "llvm_hex": "020061d707f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3092,
+      "instruction": "v_writelane_b32 v2, s8, ttmp13",
+      "installed_hex": "020061d708f20000",
+      "llvm_hex": "020061d708f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3104,
+      "instruction": "v_writelane_b32 v2, s9, ttmp13",
+      "installed_hex": "020061d709f20000",
+      "llvm_hex": "020061d709f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3116,
+      "instruction": "v_writelane_b32 v2, s10, ttmp13",
+      "installed_hex": "020061d70af20000",
+      "llvm_hex": "020061d70af20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3128,
+      "instruction": "v_writelane_b32 v2, s11, ttmp13",
+      "installed_hex": "020061d70bf20000",
+      "llvm_hex": "020061d70bf20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3140,
+      "instruction": "v_writelane_b32 v2, s12, ttmp13",
+      "installed_hex": "020061d70cf20000",
+      "llvm_hex": "020061d70cf20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3152,
+      "instruction": "v_writelane_b32 v2, s13, ttmp13",
+      "installed_hex": "020061d70df20000",
+      "llvm_hex": "020061d70df20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3164,
+      "instruction": "v_writelane_b32 v2, s14, ttmp13",
+      "installed_hex": "020061d70ef20000",
+      "llvm_hex": "020061d70ef20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3176,
+      "instruction": "v_writelane_b32 v2, s15, ttmp13",
+      "installed_hex": "020061d70ff20000",
+      "llvm_hex": "020061d70ff20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3272,
+      "instruction": "v_writelane_b32 v2, s0, ttmp13",
+      "installed_hex": "020061d700f20000",
+      "llvm_hex": "020061d700f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3284,
+      "instruction": "v_writelane_b32 v2, s1, ttmp13",
+      "installed_hex": "020061d701f20000",
+      "llvm_hex": "020061d701f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3296,
+      "instruction": "v_writelane_b32 v2, s2, ttmp13",
+      "installed_hex": "020061d702f20000",
+      "llvm_hex": "020061d702f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3308,
+      "instruction": "v_writelane_b32 v2, s3, ttmp13",
+      "installed_hex": "020061d703f20000",
+      "llvm_hex": "020061d703f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3320,
+      "instruction": "v_writelane_b32 v2, s4, ttmp13",
+      "installed_hex": "020061d704f20000",
+      "llvm_hex": "020061d704f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3332,
+      "instruction": "v_writelane_b32 v2, s5, ttmp13",
+      "installed_hex": "020061d705f20000",
+      "llvm_hex": "020061d705f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3344,
+      "instruction": "v_writelane_b32 v2, s6, ttmp13",
+      "installed_hex": "020061d706f20000",
+      "llvm_hex": "020061d706f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3356,
+      "instruction": "v_writelane_b32 v2, s7, ttmp13",
+      "installed_hex": "020061d707f20000",
+      "llvm_hex": "020061d707f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3368,
+      "instruction": "v_writelane_b32 v2, s8, ttmp13",
+      "installed_hex": "020061d708f20000",
+      "llvm_hex": "020061d708f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3380,
+      "instruction": "v_writelane_b32 v2, s9, ttmp13",
+      "installed_hex": "020061d709f20000",
+      "llvm_hex": "020061d709f20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3392,
+      "instruction": "v_writelane_b32 v2, s10, ttmp13",
+      "installed_hex": "020061d70af20000",
+      "llvm_hex": "020061d70af20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3404,
+      "instruction": "v_writelane_b32 v2, s11, ttmp13",
+      "installed_hex": "020061d70bf20000",
+      "llvm_hex": "020061d70bf20002",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3548,
+      "instruction": "v_mbcnt_lo_u32_b32 v0, -1, 0",
+      "installed_hex": "00001fd7c1000100",
+      "llvm_hex": "00001fd7c1000102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3556,
+      "instruction": "v_mbcnt_hi_u32_b32 v0, -1, v0",
+      "installed_hex": "000020d7c1000200",
+      "llvm_hex": "000020d7c1000202",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3648,
+      "instruction": "v_add_nc_u32_e64 v0, v0, 0x80",
+      "installed_hex": "000025d500ff010080000000",
+      "llvm_hex": "000025d500ff010280000000",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 3732,
+      "instruction": "v_add_nc_u32_e64 v0, v0, 0x100",
+      "installed_hex": "000025d500ff010000010000",
+      "llvm_hex": "000025d500ff010200010000",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 4188,
+      "instruction": "v_mbcnt_lo_u32_b32 v1, -1, 0",
+      "installed_hex": "01001fd7c1000100",
+      "llvm_hex": "01001fd7c1000102",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 4196,
+      "instruction": "v_mbcnt_hi_u32_b32 v1, -1, v1",
+      "installed_hex": "010020d7c1020200",
+      "llvm_hex": "010020d7c1020202",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 4244,
+      "instruction": "v_add_nc_u32_e64 v1, v1, 0x80",
+      "installed_hex": "010025d501ff010080000000",
+      "llvm_hex": "010025d501ff010280000000",
+      "preserved_bit": 57
+    },
+    {
+      "pc": 4316,
+      "instruction": "v_add_nc_u32_e64 v1, v1, 0x100",
+      "installed_hex": "010025d501ff010000010000",
+      "llvm_hex": "010025d501ff010200010000",
+      "preserved_bit": 57
+    }
+  ],
+  "builds": {
+    "baseline": {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/baseline.s",
+        "bytes": 44050,
+        "sha256": "398f6ed2c68eb423e0a722970a7199aff8776ce5535bf1512b8dad2e193e35eb"
+      },
+      "object": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/baseline.o",
+        "bytes": 38920,
+        "sha256": "ac962c12b65617049bacae78f8178abf14a711656fbd617bafd323ec72e67d82"
+      },
+      "binary": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/baseline.bin",
+        "bytes": 5656,
+        "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+      },
+      "no_unresolved_relocations": true,
+      "exact_installed_byte_match": true
+    },
+    "corrected": {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/corrected.s",
+        "bytes": 44179,
+        "sha256": "4c0f6ea1d9e25ea7ac0da69edc7cce16f093761e8f65ccebea28b28105e84028"
+      },
+      "object": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/corrected.o",
+        "bytes": 38720,
+        "sha256": "47b9e7f644786705b9595e08aeb7b30e298e6fd346f08937ed05ee0da250007b"
+      },
+      "binary": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/corrected.bin",
+        "bytes": 5672,
+        "sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80"
+      },
+      "no_unresolved_relocations": true,
+      "size_delta": 16,
+      "all_other_instruction_bytes_preserved": true,
+      "replacement_range": [
+        60,
+        124
+      ],
+      "original_replacement_range": [
+        60,
+        108
+      ],
+      "branch_targets_checked": 165,
+      "branches_requiring_relocation": [
+        {
+          "pc": 4,
+          "target": 4044,
+          "new_pc": 4,
+          "new_target": 4060,
+          "new_immediate": 1013
+        }
+      ],
+      "instructions_in_replacement": [
+        {
+          "pc": 60,
+          "instruction": "s_getreg_b32 ttmp2, hwreg(HW_REG_WAVE_MODE, 12, 6)",
+          "hex": "012beeb8"
+        },
+        {
+          "pc": 64,
+          "instruction": "s_mov_b32 ttmp3, 0",
+          "hex": "8000efbe"
+        },
+        {
+          "pc": 68,
+          "instruction": "s_setreg_b32 hwreg(HW_REG_WAVE_MODE, 12, 6), ttmp3",
+          "hex": "012b6fb9"
+        },
+        {
+          "pc": 72,
+          "instruction": "s_mov_b32 ttmp14, exec_lo",
+          "hex": "7e00fabe"
+        },
+        {
+          "pc": 76,
+          "instruction": "s_mov_b32 exec_lo, 1",
+          "hex": "8100febe"
+        },
+        {
+          "pc": 80,
+          "instruction": "v_readlane_b32 ttmp15, v1, 0",
+          "hex": "7b0060d701010100"
+        },
+        {
+          "pc": 88,
+          "instruction": "v_sub_nc_u32_e64 v1, 63, ttmp2",
+          "hex": "010026d5bfdc0002"
+        },
+        {
+          "pc": 96,
+          "instruction": "global_prefetch_b8 v1, ttmp[2:3] offset:-63 scope:SCOPE_SE",
+          "hex": "6e4017ee0000040001c1ffff"
+        },
+        {
+          "pc": 108,
+          "instruction": "v_writelane_b32 v1, ttmp15, 0",
+          "hex": "010061d77b000100"
+        },
+        {
+          "pc": 116,
+          "instruction": "s_setreg_b32 hwreg(HW_REG_WAVE_MODE, 12, 6), ttmp2",
+          "hex": "012b6eb9"
+        },
+        {
+          "pc": 120,
+          "instruction": "s_mov_b32 exec_lo, ttmp14",
+          "hex": "7a00febe"
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "LLVM assembly with 84 exact installed VOP3 instruction encodings emitted as .long. No semantic assumption about differing bit 57 is required.",
+    "Disassembly-derived reconstruction, not compilation of original SP3 source.",
+    "No handler installation or hardware execution; private early-VMEM workaround scheduling remains unvalidated.",
+    "Original training NaNs are not yet linked to this repair hypothesis."
+  ]
+}

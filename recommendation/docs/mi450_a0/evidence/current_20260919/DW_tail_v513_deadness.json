@@ -1,0 +1,240 @@
+{
+  "status": "PASS_INDEPENDENT_TAIL_V513_DEADNESS_WITH_EXACT_PACKET_SCOPE",
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/review_tail_deadness.py",
+    "bytes": 7446,
+    "sha256": "aefaf9ecf9d0f0754b09ce2ef7b5660135620b01d4f2c9ced82db72ce576de6f"
+  },
+  "reviewed_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_resume_v1/accumulator_to_v513_tail_lifetime_v2.json",
+    "bytes": 22209,
+    "sha256": "2119ed8559463a3e248def316a7aa87724e83af4b3b3189e904cfedc3e1db289"
+  },
+  "original_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/DW_full_kernel.s",
+    "bytes": 4281628,
+    "sha256": "114a11bd3f27c2fdd77751aaee78172320611331b983440c3e4c7fd5087fecd3"
+  },
+  "original_ELF": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/verified_unbundle.elf",
+    "bytes": 335000,
+    "sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3"
+  },
+  "independently_byte_checked_instructions": 46658,
+  "independent_window_inventory": [
+    {
+      "setter_PC": "0xe49c",
+      "low": "0x88",
+      "next_setter_PC": "0xe4ac"
+    },
+    {
+      "setter_PC": "0xe71c",
+      "low": "0x88",
+      "next_setter_PC": "0xe72c"
+    },
+    {
+      "setter_PC": "0xe8a8",
+      "low": "0x84",
+      "next_setter_PC": "0xe8bc"
+    },
+    {
+      "setter_PC": "0xe9ac",
+      "low": "0x84",
+      "next_setter_PC": "0xe9c0"
+    },
+    {
+      "setter_PC": "0xeab0",
+      "low": "0x84",
+      "next_setter_PC": "0xeac4"
+    },
+    {
+      "setter_PC": "0xebb4",
+      "low": "0x84",
+      "next_setter_PC": "0xebc8"
+    },
+    {
+      "setter_PC": "0xecb8",
+      "low": "0x84",
+      "next_setter_PC": "0xeccc"
+    },
+    {
+      "setter_PC": "0xedbc",
+      "low": "0x84",
+      "next_setter_PC": "0xedd0"
+    },
+    {
+      "setter_PC": "0xeec0",
+      "low": "0x84",
+      "next_setter_PC": "0xeed4"
+    },
+    {
+      "setter_PC": "0xefc4",
+      "low": "0x84",
+      "next_setter_PC": "0xefd8"
+    },
+    {
+      "setter_PC": "0xf0d4",
+      "low": "0x84",
+      "next_setter_PC": "0xf0e8"
+    },
+    {
+      "setter_PC": "0xf1d8",
+      "low": "0x84",
+      "next_setter_PC": "0xf1ec"
+    },
+    {
+      "setter_PC": "0xf2dc",
+      "low": "0x84",
+      "next_setter_PC": "0xf2f0"
+    },
+    {
+      "setter_PC": "0xf3e0",
+      "low": "0x84",
+      "next_setter_PC": "0xf3f4"
+    }
+  ],
+  "tail_only_control": "F604 SCC0 branch to E030 or fallthrough F608",
+  "tail_v513_references": [
+    {
+      "PC": "0xe0dc",
+      "instruction": "ds_load_b64 v[512:513], v283 offset:512"
+    },
+    {
+      "PC": "0xe41c",
+      "instruction": "v_perm_b32 v493, v515, v513, s66"
+    },
+    {
+      "PC": "0xe464",
+      "instruction": "v_perm_b32 v501, v515, v513, s67"
+    }
+  ],
+  "no_tail_EXEC_or_indirect_register_writers": true,
+  "tail_loads_drained_by_wait_at_F4E4": true,
+  "inherited_exact_packet_epilogue_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_mechanism_v1/raw_export_exact_packet_path_and_EXEC_v2.json",
+    "bytes": 397752,
+    "sha256": "779bb760f8cdbebb55cd33e67422f75a16aa1cfa877611f9b4f365d55c1fa78d"
+  },
+  "epilogue_contexts": [
+    {
+      "group": 0,
+      "wave": 0,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 0,
+      "wave": 1,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 0,
+      "wave": 2,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 0,
+      "wave": 3,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 1,
+      "wave": 0,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 1,
+      "wave": 1,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 1,
+      "wave": 2,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 1,
+      "wave": 3,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 2,
+      "wave": 0,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 2,
+      "wave": 1,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 2,
+      "wave": 2,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 2,
+      "wave": 3,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 3,
+      "wave": 0,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 3,
+      "wave": 1,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 3,
+      "wave": 2,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    },
+    {
+      "group": 3,
+      "wave": 3,
+      "first_v513_reference": "0x1fe80",
+      "op": "ds_load_b128",
+      "full_EXEC": true
+    }
+  ],
+  "review": "No missed first-operand, range-register, modifier, WMMA, or relative-register reference found. The only tail branch cannot bypass the E0DC kill on another iteration. Exact packet epilogue reaches full 1FE80 load before any v513 read; activation None leaf has no VGPR effect.",
+  "limits": [
+    "Epiloque selection and full EXEC bind to the prior exact replay packet certificate; this is not an all-argument epilogue claim.",
+    "One v1-to-v513 copy only; later cross-bank copies could transfer the value before overwrite.",
+    "A ds_load is a completing architectural overwrite; physical faults or additional trap effects outside the modeled copy are not covered.",
+    "The original training405 native kernel remains untraced and is not assigned by this result."
+  ],
+  "GPU_actions": false
+}

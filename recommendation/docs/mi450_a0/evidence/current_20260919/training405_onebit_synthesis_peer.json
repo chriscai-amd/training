@@ -1,0 +1,459 @@
+{
+  "status": "PASS_INDEPENDENT_ONEBIT_SYNTHESIS_NUMERICAL_AND_SCOPE_PEER_REVIEW",
+  "created_utc": "2026-09-21T06:28:14.105115+00:00",
+  "reviewer_script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_synthesis_peer_v1/review_synthesis.py",
+    "bytes": 9965,
+    "sha256": "29bbac404465a559c27d72d22252c770d1ec1d74852ebcb21961b54c74e87bb9"
+  },
+  "synthesis": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/training405_onebit_DY_result.json",
+    "bytes": 7162,
+    "sha256": "87f73d67bfe463b57d16ac698cae84d22c92a111e39284ce0a9bd15e178cba5a"
+  },
+  "reviewed_A0_snapshot": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_synthesis_peer_v1/mi450_a0_reviewed_snapshot.md",
+    "bytes": 148812,
+    "sha256": "d77b72167e81a0427eaa187d5ba86b6f26e9a906403dbe76acb4bdbaddb827c4"
+  },
+  "curated_manifest": {
+    "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/manifest.json",
+    "bytes": 54285,
+    "sha256": "95e1f9035de6f76210696a207ce3bdedccb7940551cf7222bf1c984c7372c162"
+  },
+  "curated_manifest_entries_at_review": 164,
+  "all_synthesis_record_bindings_verified": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_native_results_v1/onebit_DY_full_finite_repeat_support_matrix.json",
+      "bytes": 6475138,
+      "sha256": "b9d77beb59ab0fc033ac4aaa35e4e2582dc6b6cfdeabe23b7f148e7c298425ef"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/one_bit_DY_mutation_certificate.json",
+      "bytes": 2438,
+      "sha256": "210b4924b0081b41585c34020c35f782383d9efdfa967f09311682170b79ea00"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_package_v1/prospective_onebit_DY_criteria.json",
+      "bytes": 9217,
+      "sha256": "eadd43c900e2b29a486e19aa03afcb0571b2c4c9fcaf4492d035e72940c3c6d7"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_package_v1/package_release_CPU.json",
+      "bytes": 5690,
+      "sha256": "6747feff626f83cceba1e4071c84dc19b99167621034d21a2f3a2c02f025e5f2"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_package_v1/launch_manifest_output_v1.json",
+      "bytes": 53418,
+      "sha256": "9aacdf861504def4a115f09f41fe636b810983c10b34539e9c3132be33bac1fb"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+      "bytes": 262144,
+      "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_01_output.bf16.bin",
+      "bytes": 262144,
+      "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_native_results_v1/onebit_nop_terminal_audit.json",
+      "bytes": 38719,
+      "sha256": "34cbcfa26e062a62efb68993a6b11ffacee641d9f18714b7224716f062bba4f7"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_01_output.bf16.bin",
+      "bytes": 262144,
+      "sha256": "2b54c5b40dbbf354a3089e79f2ed6c467f800c438428c7083461a27f94b72e92"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_native_results_v1/onebit_trap_terminal_audit.json",
+      "bytes": 38735,
+      "sha256": "87e0516480bdcbd361500dd2b04b07c586a97021361716b2bf54ce26a73220ec"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_tree_interval_CPU_v1/any_local_tree_FP32_interval_report.json",
+      "bytes": 747345,
+      "sha256": "47e7fc53be50fc1cd40c04b8cb45a08b60fedec6acd41c54077acaa09ea6ee20"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_tree_interval_CPU_v1/retained_onebit_output_interval_comparison.json",
+      "bytes": 7970,
+      "sha256": "f2208b1f1390cd66a01f72b766ece44626630365181ffe49c4bb3916422504c2"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_rounding_direction_CPU_v1/shared_exponent_model_screen.json",
+      "bytes": 105530,
+      "sha256": "d360cd03e1ff871974a3303994275ef01fd68472160bf911e8cf4c71ce2b8893"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/onebit_nop_post_idle.json",
+      "bytes": 455,
+      "sha256": "d2c162e83bc8462f38bbccb275e647c8fe4f7f8e2ad72f25657550b38643ad48"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/onebit_trap_post_idle.json",
+      "bytes": 455,
+      "sha256": "17b02df1e18902062c91a70dd3a2c8c779040780bca03c89b5923cd74500b4de"
+    }
+  ],
+  "curated_onebit_bindings": [
+    {
+      "curated": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/training405_onebit_DY_result.json",
+        "bytes": 7162,
+        "sha256": "87f73d67bfe463b57d16ac698cae84d22c92a111e39284ce0a9bd15e178cba5a"
+      },
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/training405_onebit_DY_result.json",
+        "bytes": 7162,
+        "sha256": "87f73d67bfe463b57d16ac698cae84d22c92a111e39284ce0a9bd15e178cba5a"
+      }
+    },
+    {
+      "curated": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/training405_onebit_DY_matrix.json",
+        "bytes": 6475138,
+        "sha256": "b9d77beb59ab0fc033ac4aaa35e4e2582dc6b6cfdeabe23b7f148e7c298425ef"
+      },
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_native_results_v1/onebit_DY_full_finite_repeat_support_matrix.json",
+        "bytes": 6475138,
+        "sha256": "b9d77beb59ab0fc033ac4aaa35e4e2582dc6b6cfdeabe23b7f148e7c298425ef"
+      }
+    },
+    {
+      "curated": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/training405_onebit_interval_comparison.json",
+        "bytes": 7970,
+        "sha256": "f2208b1f1390cd66a01f72b766ece44626630365181ffe49c4bb3916422504c2"
+      },
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_tree_interval_CPU_v1/retained_onebit_output_interval_comparison.json",
+        "bytes": 7970,
+        "sha256": "f2208b1f1390cd66a01f72b766ece44626630365181ffe49c4bb3916422504c2"
+      }
+    }
+  ],
+  "complete_output_words_scanned": 1048576,
+  "complete_prefill_bytes_hashed": 2097152,
+  "arms": [
+    {
+      "arm": "onebit_nop",
+      "calls": [
+        {
+          "iteration": 1,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_01_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_01_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "metrics": {
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "changed_words_vs_original_baseline": 0,
+            "changed_words_outside_target": [],
+            "changed_target_words_per_M": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "max_abs_complete_output": 2.0623207092285156e-05,
+            "max_abs_target": 1.1861324310302734e-05,
+            "max_abs_difference_vs_original_baseline": 0.0
+          },
+          "BF16_interval_enclosed": 1024,
+          "central_model_matches": 1011
+        },
+        {
+          "iteration": 2,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_02_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_02_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "metrics": {
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "changed_words_vs_original_baseline": 0,
+            "changed_words_outside_target": [],
+            "changed_target_words_per_M": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "max_abs_complete_output": 2.0623207092285156e-05,
+            "max_abs_target": 1.1861324310302734e-05,
+            "max_abs_difference_vs_original_baseline": 0.0
+          },
+          "BF16_interval_enclosed": 1024,
+          "central_model_matches": 1011
+        },
+        {
+          "iteration": 3,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_03_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_03_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "metrics": {
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "changed_words_vs_original_baseline": 0,
+            "changed_words_outside_target": [],
+            "changed_target_words_per_M": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "max_abs_complete_output": 2.0623207092285156e-05,
+            "max_abs_target": 1.1861324310302734e-05,
+            "max_abs_difference_vs_original_baseline": 0.0
+          },
+          "BF16_interval_enclosed": 1024,
+          "central_model_matches": 1011
+        },
+        {
+          "iteration": 4,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_04_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_04_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "metrics": {
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "changed_words_vs_original_baseline": 0,
+            "changed_words_outside_target": [],
+            "changed_target_words_per_M": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "max_abs_complete_output": 2.0623207092285156e-05,
+            "max_abs_target": 1.1861324310302734e-05,
+            "max_abs_difference_vs_original_baseline": 0.0
+          },
+          "BF16_interval_enclosed": 1024,
+          "central_model_matches": 1011
+        }
+      ]
+    },
+    {
+      "arm": "onebit_trap",
+      "calls": [
+        {
+          "iteration": 1,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_01_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "2b54c5b40dbbf354a3089e79f2ed6c467f800c438428c7083461a27f94b72e92"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_01_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "metrics": {
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "changed_words_vs_original_baseline": 1001,
+            "changed_words_outside_target": [],
+            "changed_target_words_per_M": [
+              125,
+              124,
+              126,
+              123,
+              124,
+              125,
+              127,
+              127
+            ],
+            "max_abs_complete_output": 2.0623207092285156e-05,
+            "max_abs_target": 1.2099742889404297e-05,
+            "max_abs_difference_vs_original_baseline": 1.3634562492370605e-06
+          },
+          "BF16_interval_enclosed": 1024,
+          "central_model_matches": 1012
+        },
+        {
+          "iteration": 2,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_02_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "2b54c5b40dbbf354a3089e79f2ed6c467f800c438428c7083461a27f94b72e92"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_02_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "metrics": {
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "changed_words_vs_original_baseline": 1001,
+            "changed_words_outside_target": [],
+            "changed_target_words_per_M": [
+              125,
+              124,
+              126,
+              123,
+              124,
+              125,
+              127,
+              127
+            ],
+            "max_abs_complete_output": 2.0623207092285156e-05,
+            "max_abs_target": 1.2099742889404297e-05,
+            "max_abs_difference_vs_original_baseline": 1.3634562492370605e-06
+          },
+          "BF16_interval_enclosed": 1024,
+          "central_model_matches": 1012
+        },
+        {
+          "iteration": 3,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_03_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "2b54c5b40dbbf354a3089e79f2ed6c467f800c438428c7083461a27f94b72e92"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_03_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "metrics": {
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "changed_words_vs_original_baseline": 1001,
+            "changed_words_outside_target": [],
+            "changed_target_words_per_M": [
+              125,
+              124,
+              126,
+              123,
+              124,
+              125,
+              127,
+              127
+            ],
+            "max_abs_complete_output": 2.0623207092285156e-05,
+            "max_abs_target": 1.2099742889404297e-05,
+            "max_abs_difference_vs_original_baseline": 1.3634562492370605e-06
+          },
+          "BF16_interval_enclosed": 1024,
+          "central_model_matches": 1012
+        },
+        {
+          "iteration": 4,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_04_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "2b54c5b40dbbf354a3089e79f2ed6c467f800c438428c7083461a27f94b72e92"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_04_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "metrics": {
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "changed_words_vs_original_baseline": 1001,
+            "changed_words_outside_target": [],
+            "changed_target_words_per_M": [
+              125,
+              124,
+              126,
+              123,
+              124,
+              125,
+              127,
+              127
+            ],
+            "max_abs_complete_output": 2.0623207092285156e-05,
+            "max_abs_target": 1.2099742889404297e-05,
+            "max_abs_difference_vs_original_baseline": 1.3634562492370605e-06
+          },
+          "BF16_interval_enclosed": 1024,
+          "central_model_matches": 1012
+        }
+      ]
+    }
+  ],
+  "disjoint_cells": 204,
+  "matched_pairs": [
+    {
+      "call": 1,
+      "all_disjoint_BF16_cells_differ": 204
+    },
+    {
+      "call": 2,
+      "all_disjoint_BF16_cells_differ": 204
+    },
+    {
+      "call": 3,
+      "all_disjoint_BF16_cells_differ": 204
+    },
+    {
+      "call": 4,
+      "all_disjoint_BF16_cells_differ": 204
+    }
+  ],
+  "mutation_scalar_and_offset_arithmetic_independently_checked": true,
+  "scope_review": [
+    "PASS is limited to the prospective finite/repeat/support/native-input criteria. It is not an arithmetic pass or repair.",
+    "All 1001 trapped output errors remain finite and confined to M0:8,N128:256; NOP matches the original whole baseline.",
+    "Interval enclosure compares observed BF16 values to rounded interval endpoint ranges, not raw BF16 values to unrounded FP32 intervals.",
+    "The interval model assumes ordinary local FP32 RNE trees over prior C plus 32 exact BF16 products; it does not establish undocumented native WMMA semantics.",
+    "The central model is approximate: 13 NOP and 12 TRAP mismatches remain unassigned.",
+    "Original training native ELF/trap history and actual successful 1P4G operands/native handler remain unobserved.",
+    "The earlier primary and address-mediation outliers remain explicit in the reviewed A0 snapshot.",
+    "Full retained-input and native audits are bound through their existing reports; this review did not repeat multi-gigabyte input scans."
+  ],
+  "issues": [],
+  "GPU_actions": false,
+  "shared_document_edits": false
+}

@@ -1,0 +1,393 @@
+{
+  "status": "PASS_CPU_REPORT_LINKS_SOURCE_ARCHIVE_PRIMARY_AND_MEDIATION_RESULT_CONSISTENCY",
+  "created_utc": "2026-09-21T05:14:03.166123+00:00",
+  "artifacts": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/full_frozen_source_overlap.json",
+      "bytes": 125072,
+      "sha256": "3b8f769ed054f72ba0d7a69e04e85e073149263c4c57e1d7881fe3345ee61e1b"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/audit_full_frozen_source_overlap.py",
+      "bytes": 2622,
+      "sha256": "51448f320df777447ccf37a5a533ef40266809d6e96844ace176350672c8955a"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/independent_bounded_report_review.json",
+      "bytes": 612,
+      "sha256": "4f425628f6d763be46cf2302fc8c7659cd86fb16652daacb73bd117730b679cb"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/mediation_pair_matrix_audit.json",
+      "bytes": 13785,
+      "sha256": "5cd4b03e4162c8aafeea0ba7d49afd036839aa3e62d74bb5e632dc119815b742"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/mediation_original_target_scope.json",
+      "bytes": 7558,
+      "sha256": "2441e30b42edd2fdb2c7b1bc490cbdf4dc41b25570849f7e75aafa8efe398ca3"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/comparison.md",
+      "bytes": 27285,
+      "sha256": "dc69e9c803f281c169871ac69cc343a5d47c3fefd25d8c660ffbe8efe7331bf1"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/source_and_context_audit.json",
+      "bytes": 17701,
+      "sha256": "bf6962c9c7d4277db014e13f97177d92cd13e8fd35dbc358b0063b1acbef396b"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/audit_sources_and_context.py",
+      "bytes": 8989,
+      "sha256": "b7fe438796448f4a1d0ac8beb7f8e9a6cb81d119b565ea0d7ae053a478b7c1de"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/finalize_comparison.py",
+      "bytes": 3573,
+      "sha256": "452d20cd78383de880219c1d2479803cca2d70dea1d67440e018d5a69d6496d9"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/mi450_b0.md",
+      "bytes": 195936,
+      "sha256": "57a932d4b0079fa634c4cc6d3991e1ac30e042c8029eb91203d16f55feb1a8e0"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/mi450_a0.md",
+      "bytes": 129921,
+      "sha256": "0841e1d974cb124fa644084296bfcad3069a1e7e17f8386a89586c3c56586829"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosp-1b112-a37-1.md",
+      "bytes": 32353,
+      "sha256": "5a31fdc4cb35fb2110f3c12c7a8f819e251daab7db09067eff690bbfc29416af"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosr-1b112-a37-2.md",
+      "bytes": 56645,
+      "sha256": "01d0e177191a8359221997fa290d5478b0b607b82b416f954a2d240ac832825f"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/training405_selected_trap_result.json",
+      "bytes": 14070,
+      "sha256": "b7bd1af2d0f49641bd3e656cd915fe4d6842e81e881040f9e0e790dd1b551277"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_trap_entry_contract_history_peer_v1/installed_trap_entry_contract_history_peer_v1.json",
+      "bytes": 26812,
+      "sha256": "4224fbc35cd725990c63dbe9c6a2f36b6bd2d6c3eb788b58479e18e587c2a024"
+    }
+  ],
+  "local_links_checked": 42,
+  "links": [
+    {
+      "label": "Result and timing",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosr-1b112-a37-2.md",
+      "exists": true,
+      "line": 637,
+      "total_lines": 942,
+      "line_in_bounds": true
+    },
+    {
+      "label": "configuration",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosr-1b112-a37-2.md",
+      "exists": true,
+      "line": 392,
+      "total_lines": 942,
+      "line_in_bounds": true
+    },
+    {
+      "label": "Morning ledger",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosr-1b112-a37-2.md",
+      "exists": true,
+      "line": 448,
+      "total_lines": 942,
+      "line_in_bounds": true
+    },
+    {
+      "label": "Ledger",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosp-1b112-a37-1.md",
+      "exists": true,
+      "line": 330,
+      "total_lines": 546,
+      "line_in_bounds": true
+    },
+    {
+      "label": "complete loss audit",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosp-1b112-a37-1.md",
+      "exists": true,
+      "line": 371,
+      "total_lines": 546,
+      "line_in_bounds": true
+    },
+    {
+      "label": "Interruption limits",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosp-1b112-a37-1.md",
+      "exists": true,
+      "line": 337,
+      "total_lines": 546,
+      "line_in_bounds": true
+    },
+    {
+      "label": "8K attempts",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosr-1b112-a37-2.md",
+      "exists": true,
+      "line": 477,
+      "total_lines": 942,
+      "line_in_bounds": true
+    },
+    {
+      "label": "full result",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosr-1b112-a37-2.md",
+      "exists": true,
+      "line": 637,
+      "total_lines": 942,
+      "line_in_bounds": true
+    },
+    {
+      "label": "frozen context",
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+      "exists": true
+    },
+    {
+      "label": "A0 operands/bounds",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/mi450_a0.md",
+      "exists": true,
+      "line": 210,
+      "total_lines": 1608,
+      "line_in_bounds": true
+    },
+    {
+      "label": "1P4G sharding",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosr-1b112-a37-2.md",
+      "exists": true,
+      "line": 241,
+      "total_lines": 942,
+      "line_in_bounds": true
+    },
+    {
+      "label": "1P4G controls",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosr-1b112-a37-2.md",
+      "exists": true,
+      "line": 341,
+      "total_lines": 942,
+      "line_in_bounds": true
+    },
+    {
+      "label": "converged settings",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosr-1b112-a37-2.md",
+      "exists": true,
+      "line": 392,
+      "total_lines": 942,
+      "line_in_bounds": true
+    },
+    {
+      "label": "machine-readable source/context comparison",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/source_and_context_audit.json",
+      "exists": true
+    },
+    {
+      "label": "A0 private-DW evidence",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/mi450_a0.md",
+      "exists": true,
+      "line": 346,
+      "total_lines": 1608,
+      "line_in_bounds": true
+    },
+    {
+      "label": "sampler",
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/train/utils.py",
+      "exists": true,
+      "line": 1124,
+      "total_lines": 3439,
+      "line_in_bounds": true
+    },
+    {
+      "label": "loader",
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/train/utils.py",
+      "exists": true,
+      "line": 1185,
+      "total_lines": 3439,
+      "line_in_bounds": true
+    },
+    {
+      "label": "trainer",
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/train/train_ranker.py",
+      "exists": true,
+      "line": 375,
+      "total_lines": 522,
+      "line_in_bounds": true
+    },
+    {
+      "label": "additional-embedding MLP",
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/modules/preprocessors.py",
+      "exists": true,
+      "line": 171,
+      "total_lines": 334,
+      "line_in_bounds": true
+    },
+    {
+      "label": "forward",
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/modules/preprocessors.py",
+      "exists": true,
+      "line": 229,
+      "total_lines": 334,
+      "line_in_bounds": true
+    },
+    {
+      "label": "truncates table rows",
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/configs.py",
+      "exists": true,
+      "line": 41,
+      "total_lines": 898,
+      "line_in_bounds": true
+    },
+    {
+      "label": "sample construction",
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/datasets/yambda.py",
+      "exists": true,
+      "line": 958,
+      "total_lines": 1092,
+      "line_in_bounds": true
+    },
+    {
+      "label": "line 1022",
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/datasets/yambda.py",
+      "exists": true,
+      "line": 1022,
+      "total_lines": 1092,
+      "line_in_bounds": true
+    },
+    {
+      "label": "table constructor",
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/configs.py",
+      "exists": true,
+      "line": 831,
+      "total_lines": 898,
+      "line_in_bounds": true
+    },
+    {
+      "label": "re-seeds before DMP",
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/train/utils.py",
+      "exists": true,
+      "line": 971,
+      "total_lines": 3439,
+      "line_in_bounds": true
+    },
+    {
+      "label": "earlier fused-initializer audit",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_full_vs_shrunk_agent_v1.md",
+      "exists": true
+    },
+    {
+      "label": "cast-then-clamp codec",
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/generative_recommenders/dlrm_v4/train/utils.py",
+      "exists": true,
+      "line": 553,
+      "total_lines": 3439,
+      "line_in_bounds": true
+    },
+    {
+      "label": "complete archive and committed-source audit",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/full_frozen_source_overlap.json",
+      "exists": true
+    },
+    {
+      "label": "initial sample/context audit",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/source_and_context_audit.json",
+      "exists": true
+    },
+    {
+      "label": "installed setup",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_activation_peer_v1/installed_module_setup_v1.json",
+      "exists": true
+    },
+    {
+      "label": "activation audit",
+      "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/CWSR_installed_static_activation.json",
+      "exists": true
+    },
+    {
+      "label": "A0 current snapshot",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_current_VBIOS_v1.json",
+      "exists": true
+    },
+    {
+      "label": "a37-1 hardware",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosp-1b112-a37-1.md",
+      "exists": true,
+      "line": 69,
+      "total_lines": 546,
+      "line_in_bounds": true
+    },
+    {
+      "label": "a37-2 hardware",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/ctheliosr-1b112-a37-2.md",
+      "exists": true,
+      "line": 78,
+      "total_lines": 942,
+      "line_in_bounds": true
+    },
+    {
+      "label": "package/source history audit",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_trap_entry_contract_history_peer_v1/installed_trap_entry_contract_history_peer_v1.json",
+      "exists": true
+    },
+    {
+      "label": "installed entry mechanism",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/mi450_a0.md",
+      "exists": true,
+      "line": 980,
+      "total_lines": 1608,
+      "line_in_bounds": true
+    },
+    {
+      "label": "j9415 result",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/training405_selected_trap_result.json",
+      "exists": true
+    },
+    {
+      "label": "native matrix audit",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/four_arm_original_matrix_audit.json",
+      "exists": true
+    },
+    {
+      "label": "nine-site address-mediation pair",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/mediation_pair_matrix_audit.json",
+      "exists": true
+    },
+    {
+      "label": "target-only post-result audit",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/mediation_original_target_scope.json",
+      "exists": true
+    },
+    {
+      "label": "B0 report",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/mi450_b0.md",
+      "exists": true,
+      "line": 9,
+      "total_lines": 2518,
+      "line_in_bounds": true
+    },
+    {
+      "label": "production baseline",
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_comparison_v1/mi450_b0.md",
+      "exists": true,
+      "line": 49,
+      "total_lines": 2518,
+      "line_in_bounds": true
+    }
+  ],
+  "worktree_clean": true,
+  "A0_sampled_python_source_matches": 9,
+  "A0_archive_source_matches_converged_commit": 250,
+  "A0_archive_source_matches_current_commit": 250,
+  "primary_formal_matrix_status": "FAIL_CONTROLLED_ORIGINAL_INPUT_FOUR_ARM_MATRIX_CRITERIA",
+  "no_GPU_actions": true,
+  "no_remote_host_actions": true,
+  "no_commits_or_pushes": true,
+  "limits": [
+    "Link and consistency audit does not independently verify remote raw training artifacts.",
+    "The selected original target reproduction coexists with a formal frozen-matrix failure and six small historical outside-target differences."
+  ]
+}

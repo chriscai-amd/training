@@ -1,0 +1,706 @@
+{
+  "status": "PASS_BOTH_V513_HALVES_AND_ALL_MAINLOOP_RAW_SRD_GATES",
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/review_source_word_and_actual_load_SRD.py",
+    "bytes": 6959,
+    "sha256": "5e44f87239adf73c5bd17b5e39e67ecd2b3f84df5c34e6ebacbcc1606ef1dc1c"
+  },
+  "seed_helper": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_persist_DW_donor_lifetime_v1/prove_first_accumulator_definition_v1.py",
+    "bytes": 7696,
+    "sha256": "761d34a82b860b03ff6b6f686b9bf8a2b7ccb8c961361a0f8560ef6e76376ae0"
+  },
+  "scalar_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_v513_consumers_CPU_v1/trace_v513_mainloop_scalar_v2.py",
+    "bytes": 13700,
+    "sha256": "148a248a186e85e97c3e143088ed15ee1189c4268d8eada228c14da268fec0e2"
+  },
+  "original_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/DW_full_kernel.s",
+    "bytes": 4281628,
+    "sha256": "114a11bd3f27c2fdd77751aaee78172320611331b983440c3e4c7fd5087fecd3"
+  },
+  "packet": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_resume_DW_pair_v2/b_reuse_off_joined_verification_v1.json",
+    "bytes": 4240,
+    "sha256": "0c079bddecb5e29ba58f1f274bb8eb70e7b5c20d224c4369a48b354be131fef6"
+  },
+  "metadata": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/DW_kernel_metadata.json",
+    "bytes": 7099,
+    "sha256": "b8ee1f792b59a5d3aa4da70e005387cf65d138589e8f246826562082cf6e32ab"
+  },
+  "mapping": [
+    {
+      "group": 0,
+      "wave": 0,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 2,
+      "high16_relative_K": 1,
+      "high16_N": 3,
+      "byte_tokens": [
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          3,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 0,
+      "wave": 1,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 2,
+      "high16_relative_K": 1,
+      "high16_N": 3,
+      "byte_tokens": [
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          3,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 0,
+      "wave": 2,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 66,
+      "high16_relative_K": 1,
+      "high16_N": 67,
+      "byte_tokens": [
+        [
+          1,
+          66,
+          0
+        ],
+        [
+          1,
+          66,
+          1
+        ],
+        [
+          1,
+          67,
+          0
+        ],
+        [
+          1,
+          67,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 0,
+      "wave": 3,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 66,
+      "high16_relative_K": 1,
+      "high16_N": 67,
+      "byte_tokens": [
+        [
+          1,
+          66,
+          0
+        ],
+        [
+          1,
+          66,
+          1
+        ],
+        [
+          1,
+          67,
+          0
+        ],
+        [
+          1,
+          67,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 1,
+      "wave": 0,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 130,
+      "high16_relative_K": 1,
+      "high16_N": 131,
+      "byte_tokens": [
+        [
+          1,
+          130,
+          0
+        ],
+        [
+          1,
+          130,
+          1
+        ],
+        [
+          1,
+          131,
+          0
+        ],
+        [
+          1,
+          131,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 1,
+      "wave": 1,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 130,
+      "high16_relative_K": 1,
+      "high16_N": 131,
+      "byte_tokens": [
+        [
+          1,
+          130,
+          0
+        ],
+        [
+          1,
+          130,
+          1
+        ],
+        [
+          1,
+          131,
+          0
+        ],
+        [
+          1,
+          131,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 1,
+      "wave": 2,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 194,
+      "high16_relative_K": 1,
+      "high16_N": 195,
+      "byte_tokens": [
+        [
+          1,
+          194,
+          0
+        ],
+        [
+          1,
+          194,
+          1
+        ],
+        [
+          1,
+          195,
+          0
+        ],
+        [
+          1,
+          195,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 1,
+      "wave": 3,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 194,
+      "high16_relative_K": 1,
+      "high16_N": 195,
+      "byte_tokens": [
+        [
+          1,
+          194,
+          0
+        ],
+        [
+          1,
+          194,
+          1
+        ],
+        [
+          1,
+          195,
+          0
+        ],
+        [
+          1,
+          195,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 2,
+      "wave": 0,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 258,
+      "high16_relative_K": 1,
+      "high16_N": 259,
+      "byte_tokens": [
+        [
+          1,
+          258,
+          0
+        ],
+        [
+          1,
+          258,
+          1
+        ],
+        [
+          1,
+          259,
+          0
+        ],
+        [
+          1,
+          259,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 2,
+      "wave": 1,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 258,
+      "high16_relative_K": 1,
+      "high16_N": 259,
+      "byte_tokens": [
+        [
+          1,
+          258,
+          0
+        ],
+        [
+          1,
+          258,
+          1
+        ],
+        [
+          1,
+          259,
+          0
+        ],
+        [
+          1,
+          259,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 2,
+      "wave": 2,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 322,
+      "high16_relative_K": 1,
+      "high16_N": 323,
+      "byte_tokens": [
+        [
+          1,
+          322,
+          0
+        ],
+        [
+          1,
+          322,
+          1
+        ],
+        [
+          1,
+          323,
+          0
+        ],
+        [
+          1,
+          323,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 2,
+      "wave": 3,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 322,
+      "high16_relative_K": 1,
+      "high16_N": 323,
+      "byte_tokens": [
+        [
+          1,
+          322,
+          0
+        ],
+        [
+          1,
+          322,
+          1
+        ],
+        [
+          1,
+          323,
+          0
+        ],
+        [
+          1,
+          323,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 3,
+      "wave": 0,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 386,
+      "high16_relative_K": 1,
+      "high16_N": 387,
+      "byte_tokens": [
+        [
+          1,
+          386,
+          0
+        ],
+        [
+          1,
+          386,
+          1
+        ],
+        [
+          1,
+          387,
+          0
+        ],
+        [
+          1,
+          387,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 3,
+      "wave": 1,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 386,
+      "high16_relative_K": 1,
+      "high16_N": 387,
+      "byte_tokens": [
+        [
+          1,
+          386,
+          0
+        ],
+        [
+          1,
+          386,
+          1
+        ],
+        [
+          1,
+          387,
+          0
+        ],
+        [
+          1,
+          387,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 3,
+      "wave": 2,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 450,
+      "high16_relative_K": 1,
+      "high16_N": 451,
+      "byte_tokens": [
+        [
+          1,
+          450,
+          0
+        ],
+        [
+          1,
+          450,
+          1
+        ],
+        [
+          1,
+          451,
+          0
+        ],
+        [
+          1,
+          451,
+          1
+        ]
+      ]
+    },
+    {
+      "group": 3,
+      "wave": 3,
+      "lane": 0,
+      "low16_relative_K": 1,
+      "low16_N": 450,
+      "high16_relative_K": 1,
+      "high16_N": 451,
+      "byte_tokens": [
+        [
+          1,
+          450,
+          0
+        ],
+        [
+          1,
+          450,
+          1
+        ],
+        [
+          1,
+          451,
+          0
+        ],
+        [
+          1,
+          451,
+          1
+        ]
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "group": 0,
+      "all_36314_visits_verified": true,
+      "first": [
+        [
+          1,
+          36316,
+          98288,
+          1189969424,
+          0
+        ],
+        [
+          2,
+          36315,
+          131056,
+          1189936656,
+          0
+        ]
+      ],
+      "last": [
+        [
+          36313,
+          4,
+          1189969904,
+          97808,
+          0
+        ],
+        [
+          36314,
+          3,
+          1190002672,
+          65040,
+          0
+        ]
+      ],
+      "raw_stride0_swizzle0_OOB0_on_all": true,
+      "visit_records_sha256": "d92e11b06c9e3a441c76a91f8d4054fc82d65bfd947ff1718daf8fedef0e3b8a"
+    },
+    {
+      "group": 1,
+      "all_36314_visits_verified": true,
+      "first": [
+        [
+          1,
+          36316,
+          98288,
+          1189969424,
+          0
+        ],
+        [
+          2,
+          36315,
+          131056,
+          1189936656,
+          0
+        ]
+      ],
+      "last": [
+        [
+          36313,
+          4,
+          1189969904,
+          97808,
+          0
+        ],
+        [
+          36314,
+          3,
+          1190002672,
+          65040,
+          0
+        ]
+      ],
+      "raw_stride0_swizzle0_OOB0_on_all": true,
+      "visit_records_sha256": "d92e11b06c9e3a441c76a91f8d4054fc82d65bfd947ff1718daf8fedef0e3b8a"
+    },
+    {
+      "group": 2,
+      "all_36314_visits_verified": true,
+      "first": [
+        [
+          1,
+          36316,
+          98288,
+          1189969424,
+          0
+        ],
+        [
+          2,
+          36315,
+          131056,
+          1189936656,
+          0
+        ]
+      ],
+      "last": [
+        [
+          36313,
+          4,
+          1189969904,
+          97808,
+          0
+        ],
+        [
+          36314,
+          3,
+          1190002672,
+          65040,
+          0
+        ]
+      ],
+      "raw_stride0_swizzle0_OOB0_on_all": true,
+      "visit_records_sha256": "d92e11b06c9e3a441c76a91f8d4054fc82d65bfd947ff1718daf8fedef0e3b8a"
+    },
+    {
+      "group": 3,
+      "all_36314_visits_verified": true,
+      "first": [
+        [
+          1,
+          36316,
+          98288,
+          1189969424,
+          0
+        ],
+        [
+          2,
+          36315,
+          131056,
+          1189936656,
+          0
+        ]
+      ],
+      "last": [
+        [
+          36313,
+          4,
+          1189969904,
+          97808,
+          0
+        ],
+        [
+          36314,
+          3,
+          1190002672,
+          65040,
+          0
+        ]
+      ],
+      "raw_stride0_swizzle0_OOB0_on_all": true,
+      "visit_records_sha256": "d92e11b06c9e3a441c76a91f8d4054fc82d65bfd947ff1718daf8fedef0e3b8a"
+    }
+  ],
+  "descriptor_bit_layout": "Basebits0:56; NumRecordsbits57:101; allotherbits0",
+  "gate": "j=36317-s12, exactlyj1..36314, verified at actual buffer load788c after descriptor packing756c/7570",
+  "source_K": "64*j+1",
+  "copied_word": "DY[64*j+1,N] | (DY[64*j+1,N+1]<<16), N=128*group+64*(wave//2)+2",
+  "A_base_offset": "(64*j+128)*512-16",
+  "A_remaining": "2324351*512-A_base_offset",
+  "audit_source_extension": {
+    "before": "        if pc in EVENTS:\n            if pc in {0x7ae8,0x896c}:",
+    "after": "        if pc==0x788c:\n            packed_A=sum(get('s'+str(r))<<(32*(r-24)) for r in range(24,28))\n            visit=36317-get('s12')\n            offset=(64*visit+128)*512-16\n            assert 1<=visit<=36314\n            assert packed_A&((1<<57)-1)==int(packet['A'],0)+offset\n            assert (packed_A>>57)&((1<<45)-1)==2324351*512-offset, (visit,hex(packed_A),[hex(get('s'+str(r))) for r in range(24,28)],(packed_A>>57)&((1<<45)-1),2324351*512-offset)\n            assert packed_A>>102==0\n            assert v513_tile==64*visit and definition_pc==0x80b4\n            SRD_REVIEW[group].append((visit,get('s12'),offset,(packed_A>>57)&((1<<45)-1),packed_A>>102))\n        if pc in EVENTS:\n            if pc in {0x7ae8,0x896c}:"
+  },
+  "conclusions": [
+    "Both low and high halves of the source v513 word are adjacent original DY columns at the same K, established byte by byte from the original B stores and load.",
+    "All145256 group/visit scalar states satisfy the proposed A base/range algebra and retain every SRD control bit above101 atzero.",
+    "The prospective gate j corresponds exactly to s12=36317-j at788c; the ordinary source word is determined by the retained DY elements above.",
+    "A prior failed assertion at7540 decoded an unpacked descriptor as though alreadypacked. Actual packing756c ORs s8 into s25;7570 shifts s26>>7. The current check is at the actual buffer operation788c."
+  ],
+  "limits": [
+    "This reexecutes the previously reviewed scalar interpreter with assertions only; it is independent of the new numerical witness enumeration, not a newly independent scalar instruction semantics implementation.",
+    "No actual trap, physical register contents, queue SH_MEM_CONFIG or original training kernel identity is observed.",
+    "No GPU or module actions, commits or pushes."
+  ]
+}

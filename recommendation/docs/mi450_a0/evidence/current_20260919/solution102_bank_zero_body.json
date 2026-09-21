@@ -1,0 +1,766 @@
+{
+  "status": "PASS_COMPLETE_SOLUTION102_STATIC_BANK_ZERO_SCOPE",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_solution102_bank_CPU_v1/audit_solution102_banks.py",
+    "bytes": 6023,
+    "sha256": "3a9028e959ceeaa84acd02995376d7255f729e98fa68c8a2cf8a8c01c211a0e8"
+  },
+  "ELF": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/verified_unbundle.elf",
+    "bytes": 335000,
+    "sha256": "1c7b790600e7dffdd4caaca8c1213c5480a81314ad3c13682eeb24335b8926f3"
+  },
+  "metadata": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_lower_vgpr_native_selection_static_v1/candidate102_kernel_metadata.json",
+    "bytes": 7105,
+    "sha256": "b1e887bf2ec8b7ba62f6fe5151fd34ec5fe281e68a3b488225dfcab457591360"
+  },
+  "disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_solution102_bank_CPU_v1/solution102.dis",
+    "bytes": 370094,
+    "sha256": "0c426bf686f5e8bf45daa78b107f30f611a85135d885c9fecefb813839fe1a3f"
+  },
+  "symbols": [
+    {
+      "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1",
+      "address": 280320,
+      "size": 0,
+      "info": 18,
+      "section": 8
+    },
+    {
+      "name": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_LDSB0_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA1_GRVWB1_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA512_LBSPPB256_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA16_LPB16_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT1_1_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR0_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA1_VWB1_WSGRA0_WSGRB0_WS32_WG32_2_1_WGMXCC1.kd",
+      "address": 13952,
+      "size": 64,
+      "info": 17,
+      "section": 7
+    }
+  ],
+  "instruction_range": [
+    "0x44700",
+    "0x49f28"
+  ],
+  "instruction_count": 4037,
+  "all_instruction_bytes_match": true,
+  "contiguous_instruction_bytes": 22568,
+  "bank_setters": [
+    {
+      "PC": "0x447a8",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x44810",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x448f0",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x44c9c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x44e24",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x44f70",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x44ff0",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x45098",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x451b8",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x452fc",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x454b0",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x45638",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x45778",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x45958",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x45d3c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x45d84",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x45e68",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x45fb4",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x464ac",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x469d4",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x46dbc",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x46fc0",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x47068",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x47118",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x47290",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x47364",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x473c0",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x47580",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x4769c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x4773c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x47a24",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x47e70",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x47ee4",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x47f94",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x47fec",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48068",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x482b4",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48364",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48520",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x485f4",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48710",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x4880c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48928",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48c08",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48c34",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48c60",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48c8c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48cb8",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48ce4",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48d10",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48d3c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48e68",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x48fe0",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x490fc",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49298",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x493b4",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x497c4",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49800",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x4983c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49878",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x498b4",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x498f0",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x4992c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49968",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49998",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x499e8",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49a00",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49a2c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49a5c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49a7c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49c8c",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49cdc",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49dcc",
+      "word": "0xbf860000",
+      "low_byte": 0
+    },
+    {
+      "PC": "0x49edc",
+      "word": "0xbf860000",
+      "low_byte": 0
+    }
+  ],
+  "other_setregs": [
+    {
+      "pc": 280340,
+      "size": 8,
+      "instruction": "s_setreg_imm32_b32 hwreg(HW_REG_WAVE_SCHED_MODE, 0, 2), 2",
+      "words": [
+        3112175642,
+        2
+      ]
+    },
+    {
+      "pc": 280348,
+      "size": 8,
+      "instruction": "s_setreg_imm32_b32 hwreg(HW_REG_WAVE_SCHED_MODE, 0, 2), 2",
+      "words": [
+        3112175642,
+        2
+      ]
+    },
+    {
+      "pc": 282436,
+      "size": 8,
+      "instruction": "s_setreg_imm32_b32 hwreg(HW_REG_WAVE_SCHED_MODE, 4, 1), 1",
+      "words": [
+        3112173850,
+        1
+      ]
+    }
+  ],
+  "highest_explicit_VGPR": 73,
+  "declared_VGPRs": 252,
+  "first_zero_setter": "0x447a8",
+  "non_scalar_prefix": [
+    {
+      "pc": 280324,
+      "size": 4,
+      "instruction": "v_nop",
+      "words": [
+        2113929216
+      ]
+    },
+    {
+      "pc": 280328,
+      "size": 12,
+      "instruction": "global_prefetch_b8 v0, s[64:65] scope:SCOPE_SE",
+      "words": [
+        3994501184,
+        262144,
+        0
+      ]
+    }
+  ],
+  "all_direct_branches_remain_in_decoded_range": true,
+  "direct_branch_count": 200,
+  "indirect_controlflow": [
+    {
+      "pc": 286076,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[88:89]",
+      "words": [
+        3196078168
+      ]
+    },
+    {
+      "pc": 291676,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 295532,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    },
+    {
+      "pc": 296428,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 296964,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 297984,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 298028,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 298072,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 298116,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 298160,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 298204,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 298248,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 298292,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 298968,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 299664,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 300988,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 301048,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 301108,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 301168,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 301228,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 301288,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 301348,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 301408,
+      "size": 4,
+      "instruction": "s_swap_pc_i64 s[24:25], s[12:13]",
+      "words": [
+        3197651212
+      ]
+    },
+    {
+      "pc": 301452,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    },
+    {
+      "pc": 301532,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    },
+    {
+      "pc": 301556,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    },
+    {
+      "pc": 301600,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    },
+    {
+      "pc": 301648,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    },
+    {
+      "pc": 301672,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    },
+    {
+      "pc": 301680,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    },
+    {
+      "pc": 302208,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    },
+    {
+      "pc": 302288,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    },
+    {
+      "pc": 302528,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    },
+    {
+      "pc": 302800,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    },
+    {
+      "pc": 302880,
+      "size": 4,
+      "instruction": "s_set_pc_i64 s[24:25]",
+      "words": [
+        3196078104
+      ]
+    }
+  ],
+  "conclusions": [
+    "All 74 bank setters in the complete decoded solution102 body set every bank field to zero; no explicit MODE write changes those fields.",
+    "Once a zero setter is executed, instruction paths confined to this body retain equal source0/destination banks. The installed early encoded-v1 handler sequence then reads/restores the same physical v1.",
+    "This supplies a specific mechanism-based explanation compatible with the bounded solution102 passes; register count alone is not the proof."
+  ],
+  "limits": [
+    "Static body review; not a new loaded-ELF or controlled-trap experiment for solution102.",
+    "Initial MODE before0x447a8 is not attested here; the prefix has only v_nop and a v0 prefetch as non-scalar instructions.",
+    "All direct branch targets are in the body, but dynamic indirect targets and exceptional entry paths are not resolved in this certificate.",
+    "Other kernel differences and other faults remain; this does not validate a complete training repair."
+  ],
+  "GPU_actions": false
+}

@@ -1,0 +1,122 @@
+{
+  "format": "MI450_A0_gated_actual_DW_trap_matrix_summary_v1",
+  "created_utc": "2026-09-21T00:00:00Z",
+  "root_runtime_directory": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_gated_DW_runtime_root_v2",
+  "description": "Four-arm controlled single-trap matrix inside the actual Linear DW replay kernel. Both NOP arms and the trap/equal-bank arm preserve zero arithmetic. The trap/bank81 arm intentionally injects one s_trap per wave and its retained raw FP32 output matches the frozen predicted corruption image exactly.",
+  "arms": [
+    {
+      "family": "nop",
+      "arm": "bank81_control",
+      "runtime_status": "PASS",
+      "calls": 4,
+      "native_join_status": "PASS_TERMINAL_OWNED_ELF_AND_ALL_NATIVE_LAUNCHES_JOIN",
+      "all_retained_arithmetic_words_match_frozen_prediction": true,
+      "every_retained_prefill_exact": true,
+      "forced_return_PC_matches_per_call": [
+        "0/16",
+        "0/16",
+        "0/16",
+        "0/16"
+      ],
+      "oracle_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_gated_DW_runtime_root_v2/nop/bank81_control_prescribed_oracle_audit.json",
+        "bytes": 39159,
+        "sha256": "bfa3a7309d6e04df11754c0e06d3b0d16c22071ff2f0e25f957d14f7d5508a39"
+      },
+      "native_join": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_gated_DW_runtime_root_v2/nop/bank81_control_joined_verification_v1.json",
+        "bytes": 5667,
+        "sha256": "8e3b725abaa372f3fe8ea719395ee53647e90ce41653f78794b7dc94d0e78b2e"
+      }
+    },
+    {
+      "family": "nop",
+      "arm": "bank82_equal",
+      "runtime_status": "PASS",
+      "calls": 4,
+      "native_join_status": "PASS_TERMINAL_OWNED_ELF_AND_ALL_NATIVE_LAUNCHES_JOIN",
+      "all_retained_arithmetic_words_match_frozen_prediction": true,
+      "every_retained_prefill_exact": true,
+      "forced_return_PC_matches_per_call": [
+        "0/16",
+        "0/16",
+        "0/16",
+        "0/16"
+      ],
+      "oracle_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_gated_DW_runtime_root_v2/nop/bank82_equal_prescribed_oracle_audit.json",
+        "bytes": 39145,
+        "sha256": "e382ab4cd37c916932d3f429246d2f5b0a0eaaa9bae13c5bf3e673f226a3466c"
+      },
+      "native_join": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_gated_DW_runtime_root_v2/nop/bank82_equal_joined_verification_v1.json",
+        "bytes": 5663,
+        "sha256": "459c0acc7613a5a5b00abb6b5d237ba97ed033a7fe4c2f19bdb3677edf2bae1c"
+      }
+    },
+    {
+      "family": "trap",
+      "arm": "bank81_control",
+      "runtime_status": "FAIL",
+      "calls": 1,
+      "native_join_status": "PASS_TERMINAL_OWNED_ELF_AND_ALL_NATIVE_LAUNCHES_JOIN",
+      "all_retained_arithmetic_words_match_frozen_prediction": true,
+      "every_retained_prefill_exact": true,
+      "forced_return_PC": "0x4468c",
+      "forced_return_PC_matches_per_call": [
+        "16/16"
+      ],
+      "predicted_nonzero_arithmetic_words": 1088,
+      "predicted_unique_wrong_sources": 1024,
+      "predicted_equal_nonzero_direct_normal_pairs": 64,
+      "failure_capture": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_gated_DW_trap_bank81_control_v1_failure.pt",
+        "bytes": 10712110567,
+        "storage_bytes": 10711921152,
+        "sha256": "8c12d6ff29b2acf055799e6aac9c5d1c46e246ecbb8a705f2d674fb98ca543cc"
+      },
+      "oracle_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_gated_DW_runtime_root_v2/trap/bank81_control_prescribed_oracle_audit.json",
+        "bytes": 418629,
+        "sha256": "b6633037a31e2480c299f112f6016903b9c10f4b2b292bf301fc60b5d598fc1a"
+      },
+      "native_join": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_gated_DW_runtime_root_v2/trap/bank81_control_joined_verification_v1.json",
+        "bytes": 5901,
+        "sha256": "b57a1ba9b5f59537907a8e860597ceeac953195e6dda7edfc62701fe9fff468b"
+      }
+    },
+    {
+      "family": "trap",
+      "arm": "bank82_equal",
+      "runtime_status": "PASS",
+      "calls": 4,
+      "native_join_status": "PASS_TERMINAL_OWNED_ELF_AND_ALL_NATIVE_LAUNCHES_JOIN",
+      "all_retained_arithmetic_words_match_frozen_prediction": true,
+      "every_retained_prefill_exact": true,
+      "forced_return_PC": "0x4468c",
+      "forced_return_PC_matches_per_call": [
+        "16/16",
+        "16/16",
+        "16/16",
+        "16/16"
+      ],
+      "predicted_nonzero_arithmetic_words": 0,
+      "oracle_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_gated_DW_runtime_root_v2/trap/bank82_equal_prescribed_oracle_audit.json",
+        "bytes": 38399,
+        "sha256": "e77a3644c7a96b67b8cd21452cb3d680b2a309f2df311705482be4bad33a541f"
+      },
+      "native_join": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_gated_DW_runtime_root_v2/trap/bank82_equal_joined_verification_v1.json",
+        "bytes": 5663,
+        "sha256": "40c84103b143e1eb474d0c81e94b4da9b8b43d55563039edc36f7470e69225f6"
+      }
+    }
+  ],
+  "interpretation": [
+    "The actual-kernel forced-trap result reproduces the predicted bank81 corruption and suppresses it under equal-bank routing at the same injected return-PC coverage.",
+    "This directly tests the installed trap-copy mechanism inside the DW replay body, but it is still an injected-trap counterfactual. It does not prove spontaneous trap timing in the original training failure or establish a complete training fix.",
+    "The four-call NOP arms and four-call trap/equal arm are bounded passes, not failure-rate estimates."
+  ]
+}

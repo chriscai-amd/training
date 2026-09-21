@@ -1,0 +1,538 @@
+{
+  "status": "PASS_LAG0_AND_LAG1_SCOPED_MATCH_AND_EVENT_WINDOW_AMBIGUITY",
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/certify_lag1_and_event_window_scope.py",
+    "bytes": 5037,
+    "sha256": "c49d11657b4aa954ea4e716636ed2391b95b2a63d07b858eeb8ee35a17dc3624"
+  },
+  "parser": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/review_native_changed_term_order.py",
+    "bytes": 9188,
+    "sha256": "ee79514b5f58e1a3df80fd441f5f71302e56827636bdc533c52c0d28487f4eb9"
+  },
+  "original_disassembly": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/step405_addmm_DW_static_independent_v1/DW_full_kernel.s",
+    "bytes": 4281628,
+    "sha256": "114a11bd3f27c2fdd77751aaee78172320611331b983440c3e4c7fd5087fecd3"
+  },
+  "complete_numerical_screens": [
+    {
+      "lag": 0,
+      "report": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/persistent_copy_training_finite_row_screen.json",
+        "bytes": 1959194,
+        "sha256": "6cc2089bbf09335ecf09f3cda673c14f761911cf449e6f9465cf3fc62ae60017"
+      },
+      "cases": 183,
+      "certified_sign_rejections": 179,
+      "survivors": [
+        {
+          "source_visit": 9415,
+          "first_affected_load_visit": 9415,
+          "waves": [
+            2
+          ],
+          "nominal_finite_BF16_matches": 384
+        },
+        {
+          "source_visit": 9415,
+          "first_affected_load_visit": 9415,
+          "waves": [
+            0,
+            2
+          ],
+          "nominal_finite_BF16_matches": 384
+        },
+        {
+          "source_visit": 9415,
+          "first_affected_load_visit": 9415,
+          "waves": [
+            1,
+            2
+          ],
+          "nominal_finite_BF16_matches": 384
+        },
+        {
+          "source_visit": 9415,
+          "first_affected_load_visit": 9415,
+          "waves": [
+            0,
+            1,
+            2
+          ],
+          "nominal_finite_BF16_matches": 384
+        }
+      ]
+    },
+    {
+      "lag": 1,
+      "report": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/persistent_copy_lag1_training_finite_row_screen.json",
+        "bytes": 1966587,
+        "sha256": "447df6a31f4d068a8e393d03b94c7d12e24b3e0789f102f72888d2ad82461e1c"
+      },
+      "cases": 183,
+      "certified_sign_rejections": 179,
+      "survivors": [
+        {
+          "source_visit": 9415,
+          "first_affected_load_visit": 9416,
+          "waves": [
+            2
+          ],
+          "nominal_finite_BF16_matches": 384
+        },
+        {
+          "source_visit": 9415,
+          "first_affected_load_visit": 9416,
+          "waves": [
+            0,
+            2
+          ],
+          "nominal_finite_BF16_matches": 384
+        },
+        {
+          "source_visit": 9415,
+          "first_affected_load_visit": 9416,
+          "waves": [
+            1,
+            2
+          ],
+          "nominal_finite_BF16_matches": 384
+        },
+        {
+          "source_visit": 9415,
+          "first_affected_load_visit": 9416,
+          "waves": [
+            0,
+            1,
+            2
+          ],
+          "nominal_finite_BF16_matches": 384
+        }
+      ]
+    }
+  ],
+  "lag1_NaN_masks": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/persistent_reverse_copy_lag1_nan_masks.json",
+    "bytes": 1356592,
+    "sha256": "cc54a3f6606bb17b27a7f807cd6cac6da1ed22d2089af63ee22db044a2e593bc"
+  },
+  "lag1_ordered_rounding": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training_link_independent_v1/j9415_lag1_ordered_rounding_enclosure.json",
+    "bytes": 308751,
+    "sha256": "17712f8bcb0755fa13a6feab0e5ab512b18990e533091dbb9088959611f053ed"
+  },
+  "source_word": "0x3176b101",
+  "source_DY_K": 602561,
+  "source_DY_N": [
+    194,
+    195
+  ],
+  "source_visit": 9415,
+  "reverse_bank_windows": [
+    {
+      "setter_PC": "0x7238",
+      "immediate": "0x4546",
+      "source_bank": 2,
+      "destination_bank": 1,
+      "first_affected_load_lag": 0,
+      "instruction_heads": [
+        {
+          "PC": "0x723c",
+          "instruction": "v_perm_b32 v478, v512, v510, s66"
+        }
+      ],
+      "next_setter_PC": "0x7244"
+    },
+    {
+      "setter_PC": "0x7244",
+      "immediate": "0x464a",
+      "source_bank": 2,
+      "destination_bank": 1,
+      "first_affected_load_lag": 0,
+      "instruction_heads": [
+        {
+          "PC": "0x7248",
+          "instruction": "v_perm_b32 v479, v516, v514, s66"
+        },
+        {
+          "PC": "0x7250",
+          "instruction": "v_perm_b32 v480, v520, v518, s66"
+        },
+        {
+          "PC": "0x7258",
+          "instruction": "v_perm_b32 v481, v524, v522, s66"
+        },
+        {
+          "PC": "0x7260",
+          "instruction": "v_perm_b32 v482, v528, v526, s66"
+        },
+        {
+          "PC": "0x7268",
+          "instruction": "v_perm_b32 v483, v532, v530, s66"
+        },
+        {
+          "PC": "0x7270",
+          "instruction": "v_perm_b32 v484, v536, v534, s66"
+        },
+        {
+          "PC": "0x7278",
+          "instruction": "v_perm_b32 v485, v540, v538, s66"
+        }
+      ],
+      "next_setter_PC": "0x7280"
+    },
+    {
+      "setter_PC": "0x74f4",
+      "immediate": "0x4546",
+      "source_bank": 2,
+      "destination_bank": 1,
+      "first_affected_load_lag": 0,
+      "instruction_heads": [
+        {
+          "PC": "0x74f8",
+          "instruction": "v_perm_b32 v486, v512, v510, s67"
+        }
+      ],
+      "next_setter_PC": "0x7500"
+    },
+    {
+      "setter_PC": "0x7500",
+      "immediate": "0x464a",
+      "source_bank": 2,
+      "destination_bank": 1,
+      "first_affected_load_lag": 0,
+      "instruction_heads": [
+        {
+          "PC": "0x7504",
+          "instruction": "v_perm_b32 v487, v516, v514, s67"
+        },
+        {
+          "PC": "0x750c",
+          "instruction": "v_perm_b32 v488, v520, v518, s67"
+        },
+        {
+          "PC": "0x7514",
+          "instruction": "v_perm_b32 v489, v524, v522, s67"
+        },
+        {
+          "PC": "0x751c",
+          "instruction": "v_perm_b32 v490, v528, v526, s67"
+        },
+        {
+          "PC": "0x7524",
+          "instruction": "v_perm_b32 v491, v532, v530, s67"
+        },
+        {
+          "PC": "0x752c",
+          "instruction": "v_perm_b32 v492, v536, v534, s67"
+        },
+        {
+          "PC": "0x7534",
+          "instruction": "v_perm_b32 v493, v540, v538, s67"
+        }
+      ],
+      "next_setter_PC": "0x753c"
+    },
+    {
+      "setter_PC": "0x753c",
+      "immediate": "0x4a46",
+      "source_bank": 2,
+      "destination_bank": 1,
+      "first_affected_load_lag": 0,
+      "instruction_heads": [
+        {
+          "PC": "0x7540",
+          "instruction": "v_perm_b32 v494, v513, v511, s66"
+        }
+      ],
+      "next_setter_PC": "0x7548"
+    },
+    {
+      "setter_PC": "0x7548",
+      "immediate": "0x464a",
+      "source_bank": 2,
+      "destination_bank": 1,
+      "first_affected_load_lag": 0,
+      "instruction_heads": [
+        {
+          "PC": "0x754c",
+          "instruction": "v_perm_b32 v495, v517, v515, s66"
+        }
+      ],
+      "next_setter_PC": "0x7554"
+    },
+    {
+      "setter_PC": "0x7578",
+      "immediate": "0x414a",
+      "source_bank": 2,
+      "destination_bank": 1,
+      "first_affected_load_lag": 0,
+      "instruction_heads": [
+        {
+          "PC": "0x757c",
+          "instruction": "v_perm_b32 v496, v521, v519, s66"
+        },
+        {
+          "PC": "0x7584",
+          "instruction": "v_perm_b32 v497, v525, v523, s66"
+        },
+        {
+          "PC": "0x758c",
+          "instruction": "v_perm_b32 v498, v529, v527, s66"
+        },
+        {
+          "PC": "0x7594",
+          "instruction": "v_perm_b32 v499, v533, v531, s66"
+        },
+        {
+          "PC": "0x759c",
+          "instruction": "v_perm_b32 v500, v537, v535, s66"
+        },
+        {
+          "PC": "0x75a4",
+          "instruction": "v_perm_b32 v501, v541, v539, s66"
+        }
+      ],
+      "next_setter_PC": "0x75ac"
+    },
+    {
+      "setter_PC": "0x75ac",
+      "immediate": "0x4a46",
+      "source_bank": 2,
+      "destination_bank": 1,
+      "first_affected_load_lag": 0,
+      "instruction_heads": [
+        {
+          "PC": "0x75b0",
+          "instruction": "v_perm_b32 v502, v513, v511, s67"
+        }
+      ],
+      "next_setter_PC": "0x75b8"
+    },
+    {
+      "setter_PC": "0x75b8",
+      "immediate": "0x464a",
+      "source_bank": 2,
+      "destination_bank": 1,
+      "first_affected_load_lag": 0,
+      "instruction_heads": [
+        {
+          "PC": "0x75bc",
+          "instruction": "v_perm_b32 v503, v517, v515, s67"
+        },
+        {
+          "PC": "0x75c4",
+          "instruction": "v_perm_b32 v504, v521, v519, s67"
+        },
+        {
+          "PC": "0x75cc",
+          "instruction": "v_perm_b32 v505, v525, v523, s67"
+        },
+        {
+          "PC": "0x75d4",
+          "instruction": "v_perm_b32 v506, v529, v527, s67"
+        },
+        {
+          "PC": "0x75dc",
+          "instruction": "v_perm_b32 v507, v533, v531, s67"
+        },
+        {
+          "PC": "0x75e4",
+          "instruction": "v_perm_b32 v508, v537, v535, s67"
+        },
+        {
+          "PC": "0x75ec",
+          "instruction": "v_perm_b32 v509, v541, v539, s67"
+        }
+      ],
+      "next_setter_PC": "0x75f4"
+    },
+    {
+      "setter_PC": "0x7b70",
+      "immediate": "0x454a",
+      "source_bank": 2,
+      "destination_bank": 1,
+      "first_affected_load_lag": 1,
+      "instruction_heads": [
+        {
+          "PC": "0x7b74",
+          "instruction": "v_perm_b32 v478, v544, v542, s66"
+        },
+        {
+          "PC": "0x7b7c",
+          "instruction": "v_perm_b32 v479, v548, v546, s66"
+        },
+        {
+          "PC": "0x7b84",
+          "instruction": "v_perm_b32 v480, v552, v550, s66"
+        },
+        {
+          "PC": "0x7b8c",
+          "instruction": "v_perm_b32 v481, v556, v554, s66"
+        },
+        {
+          "PC": "0x7b94",
+          "instruction": "v_perm_b32 v482, v560, v558, s66"
+        },
+        {
+          "PC": "0x7b9c",
+          "instruction": "v_perm_b32 v483, v564, v562, s66"
+        },
+        {
+          "PC": "0x7ba4",
+          "instruction": "v_perm_b32 v484, v568, v566, s66"
+        },
+        {
+          "PC": "0x7bac",
+          "instruction": "v_perm_b32 v485, v572, v570, s66"
+        }
+      ],
+      "next_setter_PC": "0x7bb4"
+    },
+    {
+      "setter_PC": "0x7e98",
+      "immediate": "0x454a",
+      "source_bank": 2,
+      "destination_bank": 1,
+      "first_affected_load_lag": 1,
+      "instruction_heads": [
+        {
+          "PC": "0x7e9c",
+          "instruction": "v_perm_b32 v486, v544, v542, s67"
+        },
+        {
+          "PC": "0x7ea4",
+          "instruction": "v_perm_b32 v487, v548, v546, s67"
+        },
+        {
+          "PC": "0x7eac",
+          "instruction": "v_perm_b32 v488, v552, v550, s67"
+        },
+        {
+          "PC": "0x7eb4",
+          "instruction": "v_perm_b32 v489, v556, v554, s67"
+        },
+        {
+          "PC": "0x7ebc",
+          "instruction": "v_perm_b32 v490, v560, v558, s67"
+        },
+        {
+          "PC": "0x7ec4",
+          "instruction": "v_perm_b32 v491, v564, v562, s67"
+        },
+        {
+          "PC": "0x7ecc",
+          "instruction": "v_perm_b32 v492, v568, v566, s67"
+        },
+        {
+          "PC": "0x7ed4",
+          "instruction": "v_perm_b32 v493, v572, v570, s67"
+        },
+        {
+          "PC": "0x7edc",
+          "instruction": "v_perm_b32 v494, v545, v543, s66"
+        },
+        {
+          "PC": "0x7ee4",
+          "instruction": "v_perm_b32 v495, v549, v547, s66"
+        }
+      ],
+      "next_setter_PC": "0x7eec"
+    },
+    {
+      "setter_PC": "0x7ef8",
+      "immediate": "0x54a",
+      "source_bank": 2,
+      "destination_bank": 1,
+      "first_affected_load_lag": 1,
+      "instruction_heads": [
+        {
+          "PC": "0x7efc",
+          "instruction": "s_wait_dscnt 0x0"
+        },
+        {
+          "PC": "0x7f00",
+          "instruction": "s_barrier_signal -1"
+        },
+        {
+          "PC": "0x7f04",
+          "instruction": "s_barrier_wait 0xffff"
+        },
+        {
+          "PC": "0x7f08",
+          "instruction": "v_perm_b32 v496, v553, v551, s66"
+        },
+        {
+          "PC": "0x7f10",
+          "instruction": "v_perm_b32 v497, v557, v555, s66"
+        },
+        {
+          "PC": "0x7f18",
+          "instruction": "v_perm_b32 v498, v561, v559, s66"
+        },
+        {
+          "PC": "0x7f20",
+          "instruction": "v_perm_b32 v499, v565, v563, s66"
+        },
+        {
+          "PC": "0x7f28",
+          "instruction": "v_perm_b32 v500, v569, v567, s66"
+        },
+        {
+          "PC": "0x7f30",
+          "instruction": "v_perm_b32 v501, v573, v571, s66"
+        },
+        {
+          "PC": "0x7f38",
+          "instruction": "v_perm_b32 v502, v545, v543, s67"
+        },
+        {
+          "PC": "0x7f40",
+          "instruction": "v_perm_b32 v503, v549, v547, s67"
+        },
+        {
+          "PC": "0x7f48",
+          "instruction": "v_perm_b32 v504, v553, v551, s67"
+        },
+        {
+          "PC": "0x7f50",
+          "instruction": "v_perm_b32 v505, v557, v555, s67"
+        },
+        {
+          "PC": "0x7f58",
+          "instruction": "v_perm_b32 v506, v561, v559, s67"
+        },
+        {
+          "PC": "0x7f60",
+          "instruction": "v_perm_b32 v507, v565, v563, s67"
+        },
+        {
+          "PC": "0x7f68",
+          "instruction": "v_perm_b32 v508, v569, v567, s67"
+        },
+        {
+          "PC": "0x7f70",
+          "instruction": "v_perm_b32 v509, v573, v571, s67"
+        }
+      ],
+      "next_setter_PC": "0x7f78"
+    }
+  ],
+  "v513_only_mainloop_definition_PC": "0x80b4",
+  "s12_only_mainloop_write_PC": "0x81e8",
+  "interpretations": [
+    "Lag0: copy in any of nine earlier bank2\u2192bank1 windows before 788c at source visit 9415. First altered load 9415; 1576 in-range changed vectors.",
+    "Lag1: copy in any of three later bank2\u2192bank1 windows after 788c before v513 refill 80b4, including wait/barrier window 7ef8..7f78. First altered load 9416; 1575 in-range changed vectors.",
+    "Both families produce all 384 saved finite BF16 words and the same five NaN rows. The exact monotone FP32 interval bound includes all ordinary terms and also passes 384/384 for lag1.",
+    "Each complete bounded family has 183 NaN-mask-compatible same-gate wave-subset cases, 179 certified sign rejections, and four matching cases at source visit 9415: wave2 alone or plus optional wave0/1."
+  ],
+  "limits": [
+    "This is uniqueness within the two explicitly enumerated same-gate first-copy families, not across all possible faults, source words, other kernel identities, or multiple events.",
+    "The outputs do not uniquely identify first affected load 9415 vs 9416, a specific trap PC, or the optional wave0/1 copies.",
+    "Window instruction heads show static bank state between setters; asynchronous instruction-boundary capture and trap-return PC attribution retain their prior experiment limits.",
+    "7540 is one concrete controlled test gate; no historic trap was observed."
+  ],
+  "GPU_actions": false
+}

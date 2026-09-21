@@ -1,0 +1,62 @@
+{
+  "status": "PASS_CONTROLLED_WHOLE_KERNEL_SINK_RELOCATION_PREVENTION",
+  "matrix": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_audit_v1/quartet_matrix.json",
+    "bytes": 37537,
+    "sha256": "193f1e39368d1d32e38732b745c1ad0591eb74a1999539e6fdfe2808bca98d63"
+  },
+  "root_readbacks": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/sink_control_nop_root_readback.json",
+      "bytes": 2625,
+      "sha256": "a6e7d36bfdd821b3b845d05a773969ba448795ebce15a637115d5389624d98a2"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/sink_candidate_nop_root_readback.json",
+      "bytes": 2639,
+      "sha256": "813efd0552bc11abbe2502f5d8ed8d632fac9826ce5dd3432bfe28e5e9c5af4e"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/sink_control_trap_root_readback.json",
+      "bytes": 2641,
+      "sha256": "45e73b4cefd07b1c71c88ebd3fd4a0e887e6eef5d5db50add645f5babebc72e2"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/sink_candidate_trap_root_readback.json",
+      "bytes": 2646,
+      "sha256": "bcc91516ba0717b630031801508bd86b4a99e1f2fc8cb6c543def9e65bcd60a3"
+    }
+  ],
+  "workers": {
+    "sink_control_nop": 26964,
+    "sink_candidate_nop": 31384,
+    "sink_control_trap": 51337,
+    "sink_candidate_trap": 35064
+  },
+  "all_workers_reaped_exit0": true,
+  "copy_directions_retained": [
+    "v257->v1",
+    "v513->v257"
+  ],
+  "selected_trap_events": 7,
+  "runtime_trap_count_observed": false,
+  "kernel_delta_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/quartet_kernel_delta_review.json",
+    "bytes": 6214,
+    "sha256": "95975198dc14dd5d7758f07f9ffc32d9a700f31fbfe157212d20df080b5c715d"
+  },
+  "independent_MCE_SVM_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_MCE_peer_v1/independent_MCE_and_SVM_review.json",
+    "bytes": 11525,
+    "sha256": "1838b94e30d254da4e90b4eaf6b72f37768e05e384dcdcdadaac01b92e04feb3"
+  },
+  "driver_srcversion": "654C1DDE7A9A3E129BA9553",
+  "boot_id": "4a77f7e8-32cd-4c74-974b-c0b0c0d8eb03",
+  "limits": [
+    "All16calls exactlymatch their frozen per-arm full reference; no outlier discarded.",
+    "The modelled sevenevent control is protected by relocating live data away from all3sink slots; this does not prove all hidden handler effects absent.",
+    "The native kernel and trap history of original training attempt405 remain unrecorded.",
+    "Natural arithmetic/training repair remains unvalidated.",
+    "Postrun kernel log includes recurring corrected PCIe-link-class MCE and SVMworkqueuewarning; original kernel message bodies preserved."
+  ]
+}

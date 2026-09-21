@@ -1,0 +1,38 @@
+{
+  "format": "CWSR_scratch_module_relocation_audit_v1",
+  "status": "PASS_CPU_MODULE_RELOCATION_AUDIT",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/audit_relocations.py",
+    "bytes": 4554,
+    "sha256": "cab680d11d5f174d33b48ff8ee9a4a5c7443080dd4fad3aefa2c5912e8d53a1e"
+  },
+  "byte_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/module_byte_audit_v2.json",
+    "bytes": 5124,
+    "sha256": "07995ac0e1eec0eb48683ec5c3ff90a14c2927badcd0253f8b9bcfb5f339b3fe"
+  },
+  "modules": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/baseline_amdgpu.stripped.ko",
+      "bytes": 40319256,
+      "sha256": "bd992f82ab51c16b79ee9a8a0c08dad45e3ee4d708e67a5fdce73d22cd4d5156"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/candidate_amdgpu.stripped.ko",
+      "bytes": 40319256,
+      "sha256": "7e9a2985cb07838caf44793751ff6ce0149b61062e39bf0a4d72716c7289e8ab"
+    }
+  ],
+  "handler_section_offset": 508672,
+  "handler_size_change": [
+    5656,
+    5672
+  ],
+  "rodata_size_increase": 32,
+  "extra_alignment_padding_bytes": 16,
+  "whole_rodata_matches_exact_handler_insertion_and_padding": true,
+  "other_rodata_objects_checked": 2930,
+  "relocations_checked": 827798,
+  "all_normalized_relocations_equal": true,
+  "runtime_status": "NOT_LOADED"
+}

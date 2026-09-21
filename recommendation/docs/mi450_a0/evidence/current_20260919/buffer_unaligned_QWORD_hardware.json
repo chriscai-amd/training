@@ -1,0 +1,167 @@
+{
+  "status": "PASS_ALL_NINE_OBSERVATIONS_MATCH_BYTE_ADDRESSING_WITH_PER_QWORD_RANGE_CHECK",
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_buffer_QWORD_review_v1/review_observed_QWORD.py",
+    "bytes": 3049,
+    "sha256": "5f7bfb4a78f5d37bccdf4aafbe0ca567b8e3c5a58ffd3acf1a9a6ef85829208a"
+  },
+  "frozen_independent_raw_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_buffer_unaligned_probe_root_v1/independent_raw_audit.json",
+    "bytes": 13767,
+    "sha256": "d0e298c388e5e30ed1f17c99b6e42a3d448f4bc64e88d96cec5b826f25041e28"
+  },
+  "checks": [
+    {
+      "offset": 0,
+      "expected_loaded16_hex": "135ca5ee3780c9125ba4ed367fc8115a",
+      "all32_lane_data_blocks_match": true,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_buffer_unaligned_probe_runtime_v1/results/case_00_offset_00/output.bin",
+        "bytes": 2048,
+        "sha256": "7a1c46dc35b85ac5ad466472556bf88d9d8908df41213f76f38b1602c272b93d"
+      },
+      "in_range_8byte_blocks": [
+        true,
+        true
+      ]
+    },
+    {
+      "offset": 1,
+      "expected_loaded16_hex": "5ca5ee3780c9125ba4ed367fc8115aa3",
+      "all32_lane_data_blocks_match": true,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_buffer_unaligned_probe_runtime_v1/results/case_01_offset_01/output.bin",
+        "bytes": 2048,
+        "sha256": "45dc70ae103c914f5e8378696254f6374d827e435bb1dbdff04a6435fbab3df5"
+      },
+      "in_range_8byte_blocks": [
+        true,
+        true
+      ]
+    },
+    {
+      "offset": 2,
+      "expected_loaded16_hex": "a5ee3780c9125ba4ed367fc8115aa3ec",
+      "all32_lane_data_blocks_match": true,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_buffer_unaligned_probe_runtime_v1/results/case_02_offset_02/output.bin",
+        "bytes": 2048,
+        "sha256": "cfcc25c59927964ae7762afdab164519a25c0886fcccf3ca546cb35de09d9524"
+      },
+      "in_range_8byte_blocks": [
+        true,
+        true
+      ]
+    },
+    {
+      "offset": 3,
+      "expected_loaded16_hex": "ee3780c9125ba4ed367fc8115aa3ec35",
+      "all32_lane_data_blocks_match": true,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_buffer_unaligned_probe_runtime_v1/results/case_03_offset_03/output.bin",
+        "bytes": 2048,
+        "sha256": "91b0cf8f85c3e54880e7b098cf4566f6a5befe7410a7b650cde75b28f4ce4941"
+      },
+      "in_range_8byte_blocks": [
+        true,
+        true
+      ]
+    },
+    {
+      "offset": 48,
+      "expected_loaded16_hex": "c30c559ee73079c20b549de62f78c10a",
+      "all32_lane_data_blocks_match": true,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_buffer_unaligned_probe_runtime_v1/results/case_04_offset_48/output.bin",
+        "bytes": 2048,
+        "sha256": "2d0a5567b361055346218cc41b41c85e62e63cff74c06547af5e034932975d85"
+      },
+      "in_range_8byte_blocks": [
+        true,
+        true
+      ]
+    },
+    {
+      "offset": 49,
+      "expected_loaded16_hex": "0c559ee73079c20b0000000000000000",
+      "all32_lane_data_blocks_match": true,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_buffer_unaligned_probe_runtime_v1/results/case_05_offset_49/output.bin",
+        "bytes": 2048,
+        "sha256": "9697cf5217d772e20504da0dac1b0d46d1cc0af163604a7e49859163fa88f76d"
+      },
+      "in_range_8byte_blocks": [
+        true,
+        false
+      ]
+    },
+    {
+      "offset": 60,
+      "expected_loaded16_hex": "00000000000000000000000000000000",
+      "all32_lane_data_blocks_match": true,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_buffer_unaligned_probe_runtime_v1/results/case_06_offset_60/output.bin",
+        "bytes": 2048,
+        "sha256": "b87d82d4db19818530ee78aadef762fddbca60e826b7f9a22409290a26f4c35c"
+      },
+      "in_range_8byte_blocks": [
+        false,
+        false
+      ]
+    },
+    {
+      "offset": 61,
+      "expected_loaded16_hex": "00000000000000000000000000000000",
+      "all32_lane_data_blocks_match": true,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_buffer_unaligned_probe_runtime_v1/results/case_07_offset_61/output.bin",
+        "bytes": 2048,
+        "sha256": "0b7de179e544fc4506d9c8755d83d0630d7eadef77abf50133eaab0fe6c23d87"
+      },
+      "in_range_8byte_blocks": [
+        false,
+        false
+      ]
+    },
+    {
+      "offset": 64,
+      "expected_loaded16_hex": "00000000000000000000000000000000",
+      "all32_lane_data_blocks_match": true,
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_buffer_unaligned_probe_runtime_v1/results/case_08_offset_64/output.bin",
+        "bytes": 2048,
+        "sha256": "26a984b316d28db17ad85e9bc5db048dbf81f96584bdc95af68d6706ad4457d8"
+      },
+      "in_range_8byte_blocks": [
+        false,
+        false
+      ]
+    }
+  ],
+  "exact_byte_addressing_observed_at_offsets": [
+    0,
+    1,
+    2,
+    3,
+    48,
+    49
+  ],
+  "hypothesis": "For each of two8-byte chunks starting atoffset andoffset+8, return input bytes iff the entire chunk is inside [0,64); otherwise return8zero bytes.",
+  "correction": "Neither frozen producer nor frozen independent auditor included a QWORD hypothesis. Both correctly retained the unclassified offset49 image. This addendum is a post-observation interpretation.",
+  "discriminators": [
+    {
+      "offset": 49,
+      "observation": "First8bytes nonzero, last8zero; excludes prior per-byte, per-DWORD and whole16B models."
+    },
+    {
+      "offset": 60,
+      "observation": "Allzero although one DWORD would fit; confirms failure of per-DWORD prediction."
+    }
+  ],
+  "limits": [
+    "The nine tested offsets discriminate the listed models; they are not an exhaustive proof of every offset/resource-mode behavior.",
+    "Exact byte delivery is observed under this fresh process and the preserved DW opcode/SRD fields, not the original training405 queue state.",
+    "Any counterfactual using DWORD range checks must be re-evaluated with the observed8-byte rule."
+  ],
+  "GPU_actions": false
+}

@@ -1,0 +1,249 @@
+{
+  "format": "Full_original_DW_installed_encoded_v1_copy_mitigation_feasibility_v2",
+  "created_utc": "2026-09-21T06:36:59.700028+00:00",
+  "status": "FULL_COVERAGE_NOT_ESTABLISHED_PLAUSIBLE_REGISTER_RELOCATION_REQUIRES_RELOWERING",
+  "inventory": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_DW_bank_mitigation_feasibility_v1/v2/full_DW_bank_inventory.json",
+    "bytes": 7236,
+    "sha256": "e729656bf1ce1380691d4043cae41e46d1819db8721c9b3f57a81b83db0ab5d6"
+  },
+  "interval_inventory": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_DW_bank_mitigation_feasibility_v1/v2/all_setter_rooted_bank_intervals.json",
+    "bytes": 8643007,
+    "sha256": "fdda512969dda46283b490a58c1853f1663ec2cf6372a52f46fbf8d5c54445f6"
+  },
+  "operand_bundle_inventory": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_DW_bank_mitigation_feasibility_v1/v2/operand_bundle_relocation_feasibility.json",
+    "bytes": 419352,
+    "sha256": "dcecc8305bcca31e90aa69a073f59e14b1ab7cb55366449e5eb60e92897fb826"
+  },
+  "native_metadata": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_DW_bank_mitigation_feasibility_v1/original_embedded_metadata_and_descriptor.json",
+    "bytes": 7944,
+    "sha256": "d973daf9fd46e9c39b7649e1ab42928a230c1a2ab8c4c0a5b1a15ba7b081bb53"
+  },
+  "prior_mechanism_and_liveness_evidence": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_entry_bank_CPU_v1/CWSR_exact_entry_all256_bank_and_lane_CPU_certificate_v1.json",
+      "bytes": 178763,
+      "sha256": "c66117faf1624377a01daa2fbc7994002f5d7e2669440e8fd89cefbc316b22c4"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_TTMP_V671_CFG_LIVENESS_CPU_PEER_v1/V671_CFG_liveness_and_address_copy_independent_v1.json",
+      "bytes": 10469,
+      "sha256": "1aec19d35139777ad8c4770907359a1ce236db6d766846d5118c985458d3c78b"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_bank_equal_CPU_v1/full_BF16_pair_certificate.json",
+      "bytes": 14368,
+      "sha256": "e707d9a7693ce0cbc6c2b0fcdca62e8b96ef80d6828af3044a6c677ec78aff6c"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training405_residual6_CPU_v1/native_bank_window_backedge_qualification.json",
+      "bytes": 1592,
+      "sha256": "2b007f6cbcb8c61324011159c9475bdfc3898ec3f5dc6c41adb9de205f3ebec2"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_native_results_v1/joint_equal_full_baseline_matrix.json",
+      "bytes": 19407,
+      "sha256": "e73673bd1290e5a091ef7b92a14b9bacc990a615116c4068dbf44b4ccc714aba"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_references_independent_v1/combined_full_historical_DW_matrix.json",
+      "bytes": 68969,
+      "sha256": "49e1ce7b8d2a6ebffeed800fe9086c5fe3bca4e8777d421ee8ce8a8a3e8ab4ea"
+    }
+  ],
+  "findings": [
+    "The complete first kernel body is byte-bound over every one of 46,658 instructions, from 0x4700 through 0x44678. Its 132 padding bytes to solution102 at0x44700 are zero. All 11,134 explicit bank setters and all356 direct branches are inventoried; there are no additional MODE writes among the three non-bank setregs.",
+    "There are5,486 explicit setter intervals with source0 bank unequal to destination bank. Every direction between the three used banks occurs. The scalar boundaries and closing setter heads belong to the incoming state and remain included; looking only at vector instructions or selected load heads would miss possible trap boundaries.",
+    "Of these intervals,4,577 start in the general epilogue/dispatch region and76 start in activation helpers. The earlier narrow LDS patch and seven selected equal-bank trap gates therefore do not cover the full kernel.",
+    "The direct-control analysis includes branch edges and the0x81f0-to0x71f0 backedge. It finds797 heads with multiple incoming modes, of which780 are nonsetter scalar instructions and17 are bank setters. No nonsetter vector instruction has a multi-mode join from the analyzed direct edges. This still leaves699 indirect instructions (672 calls and27 set-PC instructions) unresolved in this inventory; their potential transfers/returns and pre-first-setter state are explicit gaps.",
+    "All original physical register indices0 through675 appear in the full static operand set. The previously reviewed v671 scratch is dead only over a prefix; it becomes live in the epilogue. It cannot be reserved globally based on that prefix certificate."
+  ],
+  "copy_interval_counts": {
+    "v1->v513": 283,
+    "v1->v257": 945,
+    "v257->v513": 1522,
+    "v257->v1": 1734,
+    "v513->v257": 897,
+    "v513->v1": 105
+  },
+  "region_summary": [
+    {
+      "region": "entry_and_setup",
+      "start": "0x4700",
+      "end_exclusive": "0x6914",
+      "instruction_count": 1745,
+      "bank_setters": 139,
+      "unequal_setters": 69,
+      "copy_counts": {
+        "v1->v513": 1,
+        "v1->v257": 64,
+        "v257->v513": 3,
+        "v257->v1": 1
+      },
+      "affected_operand_instructions": 324
+    },
+    {
+      "region": "initial_WMMA_loop",
+      "start": "0x6914",
+      "end_exclusive": "0x71f0",
+      "instruction_count": 358,
+      "bank_setters": 97,
+      "unequal_setters": 76,
+      "copy_counts": {
+        "v513->v257": 9,
+        "v257->v1": 44,
+        "v257->v513": 23
+      },
+      "affected_operand_instructions": 10
+    },
+    {
+      "region": "repeated_mainloop",
+      "start": "0x71f0",
+      "end_exclusive": "0x81f4",
+      "instruction_count": 629,
+      "bank_setters": 167,
+      "unequal_setters": 129,
+      "copy_counts": {
+        "v513->v257": 12,
+        "v257->v1": 77,
+        "v257->v513": 40
+      },
+      "affected_operand_instructions": 13
+    },
+    {
+      "region": "mainloop_exit_and_optimized_path",
+      "start": "0x81f4",
+      "end_exclusive": "0xc3ac",
+      "instruction_count": 2690,
+      "bank_setters": 450,
+      "unequal_setters": 232,
+      "copy_counts": {
+        "v513->v257": 44,
+        "v257->v1": 128,
+        "v257->v513": 34,
+        "v1->v257": 26
+      },
+      "affected_operand_instructions": 55
+    },
+    {
+      "region": "tail_entry_and_loop",
+      "start": "0xc3ac",
+      "end_exclusive": "0xf608",
+      "instruction_count": 2284,
+      "bank_setters": 700,
+      "unequal_setters": 327,
+      "copy_counts": {
+        "v1->v257": 199,
+        "v257->v1": 5,
+        "v257->v513": 1,
+        "v513->v257": 4,
+        "v1->v513": 14,
+        "v513->v1": 104
+      },
+      "affected_operand_instructions": 15
+    },
+    {
+      "region": "general_epilogue_and_dispatch",
+      "start": "0xf608",
+      "end_exclusive": "0x43e68",
+      "instruction_count": 38501,
+      "bank_setters": 9422,
+      "unequal_setters": 4577,
+      "copy_counts": {
+        "v1->v257": 580,
+        "v257->v1": 1479,
+        "v1->v513": 268,
+        "v257->v513": 1421,
+        "v513->v257": 828,
+        "v513->v1": 1
+      },
+      "affected_operand_instructions": 1258
+    },
+    {
+      "region": "activation_helpers_and_ends",
+      "start": "0x43e68",
+      "end_exclusive": "0x4467c",
+      "instruction_count": 451,
+      "bank_setters": 159,
+      "unequal_setters": 76,
+      "copy_counts": {
+        "v1->v257": 76
+      },
+      "affected_operand_instructions": 0
+    }
+  ],
+  "routes": [
+    {
+      "route": "make every source0/destination bank equal",
+      "feasibility": "Large instruction/data-placement rewrite; no complete plan established",
+      "details": [
+        "The current narrow LDS approach duplicates an address into the destination bank and reroutes15 loads. Extending the same idea must also address permutations, WMMA, setup, tail, stores, arithmetic, helpers, and every scalar/branch interval that inherits an unequal state.",
+        "For ordinary cross-bank copies, a source1-based bitwise identity such as OR with scalar zero is a plausible way to transfer values while keeping the unused source0 bank equal to destination. Its exact encoding, MODE history and instruction dependencies need checking before use.",
+        "For bank05 WMMA, A is in bank1 while the accumulator destination is in bank0. Keeping destination/source0 equal while preserving mathematical inputs requires copying the8-register A operand into a suitable bank0 range or moving the accumulator, with bank0 already containing256 accumulators in the repeated loop. A bare bank-immediate change alters arithmetic operands.",
+        "Even equal-bank handler self-copy is not a full proof against an outstanding asynchronous write to that slot. Prior liveness evidence explicitly leaves this hazard timing unproved."
+      ]
+    },
+    {
+      "route": "reserve the three handler-write locations as unused sinks",
+      "feasibility": "Most concrete mechanism-specific whole-kernel candidate concept; no candidate emitted",
+      "details": [
+        "After establishing the ABI live-ins, remap every program definition and use of physical v1, v257 and v513 away from those locations. A trap then writes only program-dead locations regardless of which original0/1/2 bank combination is active. Program arithmetic need not keep every bank setting equal.",
+        "To preserve each existing explicit multi-register operand as one contiguous operand, the minimum closure of these three indices is exactly13 original registers: v0:7, v257, v512:515. This is an operand-range closure, not a proven minimum over all possible instruction decompositions or register allocations.",
+        "A conflict-free static placement beyond the original visible range is v0:7->v680:687, v512:515->v676:679, v257->v688. All declared ranges remain contiguous, remain within one256-register bank, and retain their original range-length alignment; all destinations are outside the original0:675 set.",
+        "The mapping affects1,675 native instructions, including10 WMMA instructions, load/store ranges, packed pairs, setup arithmetic and864 compare instructions. It must change encoded operands plus the appropriate MSB fields and their previous-state bookkeeping throughout. Existing bank fields cannot be copied unchanged.",
+        "The embedded metadata declares676 VGPRs; this placement requires at least689 logical VGPRs. The hardware allocation field and occupancy must be recomputed with the gfx1250 descriptor rules; this report supplies the raw descriptor but does not claim the allocation granularity or performance cost.",
+        "The incoming workitem value in original v0 must be transferred to its remapped location before remapped uses, while preserving the original prefetch and v670 setup behavior. Original first v1 definition is at0x48f4. The descriptor TIDIG field is zero (raw RSRC2=0x3b8), consistent with the x-only live-in convention, but the complete launch-ABI contract still requires independent binding.",
+        "A mathematical sink argument is conditional on all explicit and implicit reads/writes being remapped and the compiler/assembler interpreting every operand correctly. The fresh LLVM explicit operand inventory alone is not that proof. In particular, WMMA range/bank legality and matrix-B-reuse behavior must be verified."
+      ],
+      "mapping": {
+        "v0": "v680",
+        "v1": "v681",
+        "v2": "v682",
+        "v3": "v683",
+        "v4": "v684",
+        "v5": "v685",
+        "v6": "v686",
+        "v7": "v687",
+        "v257": "v688",
+        "v512": "v676",
+        "v513": "v677",
+        "v514": "v678",
+        "v515": "v679"
+      },
+      "affected_instructions": 1675
+    },
+    {
+      "route": "save and restore lane0 around unequal intervals",
+      "feasibility": "Insufficient as a blanket wrapper; requires per-boundary liveness and dependencies",
+      "details": [
+        "Saving a destination before an interval and restoring it afterward cannot repair a value consumed inside the interval. WMMA may both consume and legitimately update v1; restoring its pre-interval value would discard legitimate accumulation.",
+        "An outstanding DS/global write may complete after saving or restoring. Correct fencing and preservation of all legitimate updates is needed; the prior v671 proof does not establish asynchronous trap equivalence.",
+        "Both branches, backedges, early returns, helper calls and all exit setters must carry the matching save state. A save or restore executed under an unequal state is itself another exposure unless its sensitive accesses are rerouted or its bank state is made safe.",
+        "A three-SGPR snapshot is therefore not established sufficient for the full original kernel. It might protect a separately proved local region whose destination has no intervening definition or use."
+      ]
+    }
+  ],
+  "required_before_full_coverage_claim": [
+    "Bind all indirect call/return and computed-branch destinations, including generic activation and epilogue dispatch, and prove entry MODE/ABI state.",
+    "Build an instruction-level operand-role audit against the gfx1250 ISA for every affected opcode, including implicit/range destinations and distinct MSB roles for DS/buffer/global/WMMA operations.",
+    "Prove the remapped program never reads/writes any of v1/v257/v513 after live-in setup; prove all new temporary placements and descriptor allocation are valid.",
+    "Re-encode bank setters/current and previous state across actual control flow, regenerate displaced branches/PC-relative scalar pointers if code grows, and preserve all arithmetic ordering, B reuse and complete argument/runtime bindings.",
+    "Check asynchronous load completion and trap save/restore paths, then compare full retained original-input DW outputs in NOP and explicit-trap coverage tests before any spontaneous or training stability claim."
+  ],
+  "limits": [
+    "This is a CPU feasibility report and exhaustive explicit setter inventory, not a built or hardware-validated mitigation.",
+    "Even a correct sink relocation addresses the demonstrated encoded-v1 copy mechanism; it does not prove absence of every possible driver/hardware fault.",
+    "The lexical phase boundaries are documented address partitions; no dynamic path frequency or complete historical trap sequence is inferred."
+  ],
+  "GPU_actions": false,
+  "candidate_built": false,
+  "shared_docs_modified": false,
+  "parser_erratum": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_DW_bank_mitigation_feasibility_v1/v2/half_selector_parser_erratum.json",
+    "bytes": 129850,
+    "sha256": "27d91e7dbf59a07f6076d52850e258e6e4612610bf20360263fe7661d9034600"
+  }
+}

@@ -1,0 +1,585 @@
+{
+  "format": "A0_user_requested_stop_wrap_v1",
+  "created_utc": "2026-09-21T08:33:49.716466+00:00",
+  "status": "STOPPED_AT_USER_REQUEST",
+  "user_instruction": "wrap up and stop current work, refresh a0 doc with latest findings",
+  "host": "heliosr-1b114-c07-1",
+  "repository": {
+    "path": "/home/chcai/training",
+    "branch": "chcai/mi450",
+    "head": "6950f7f6a497417e7c04ce7f5e1917c678b98403",
+    "commit_or_push_performed": false
+  },
+  "scope": "Shutdown record, artifact inventory and documentation only after the stop request; no new experiment or package completion.",
+  "agents": {
+    "source": "collaboration.list_agents checked during final wrap",
+    "states": {
+      "/root/context_recovery": "interrupted",
+      "/root/sink_audit": "interrupted",
+      "/root/sink_candidate": "interrupted"
+    },
+    "resumed_during_wrap": false
+  },
+  "completed_workers": {
+    "sink_control": {
+      "session_id": 42866,
+      "exit_code": 0,
+      "reaped": true
+    },
+    "sink_candidate": {
+      "session_id": 61948,
+      "exit_code": 0,
+      "reaped": true
+    },
+    "sink_control_nop": {
+      "session_id": 26964,
+      "exit_code": 0,
+      "reaped": true
+    },
+    "sink_candidate_nop": {
+      "session_id": 31384,
+      "exit_code": 0,
+      "reaped": true
+    },
+    "sink_control_trap": {
+      "session_id": 51337,
+      "exit_code": 0,
+      "reaped": true
+    },
+    "sink_candidate_trap": {
+      "session_id": 35064,
+      "exit_code": 0,
+      "reaped": true
+    },
+    "NOP_only": {
+      "session_id": 90561,
+      "exit_code": 0,
+      "reaped": true
+    }
+  },
+  "completed_evidence": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/sink_arithmetic_result.json",
+      "bytes": 4771,
+      "sha256": "c46893f26f5fedd067f530c4d65996bae8541ff575b4e735f92ad8e5a2390f80"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/sink_quartet_result.json",
+      "bytes": 2852,
+      "sha256": "0a8e4030f29f6d3b5aa2b2b7113bde2cda10c2e231f33c505d317afaa234c126"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/NOP_only_result.json",
+      "bytes": 7580,
+      "sha256": "78e42a2f5db17030460ba2320b10ca97e393536e2e240c65957f174fb94e92ce"
+    }
+  ],
+  "findings": {
+    "arithmetic": "All eight original-input complete outputs match the ordinary baseline.",
+    "controlled_quartet": "All 16 outputs match the frozen per-arm full-output matrix; trapped control reproduces complete historical attempt-405 DW, while the three other arms return the ordinary baseline. Both trapped images retain the seven selected events.",
+    "fresh_NOP_only": "400 calls, no explicit calibration kernel invoked in the process; six predicted copies with fresh in-loop PCs, six fresh equal-bank unchanged observations, 388 without a fresh observed in-loop PC; 1200 retained images and 2410 HIP calls audited.",
+    "unproved": "Natural failure suppression, training repair, unique original training trap history, complete trap count and trigger source remain unvalidated."
+  },
+  "natural_zero_DY_pair": {
+    "status": "UNRUN_PREPARATION_INCOMPLETE_AT_STOP",
+    "planned_calls_per_arm": 1000,
+    "preparation": "Derived producer and wrapper, loader sources, partial native/terminal auditors and design review retained. No final launch manifest/release or complete terminal-auditor freeze is present in the package as inventoried.",
+    "producer_derivation_status": "CPU_SOURCES_DERIVED_PENDING_INDEPENDENT_REVIEW",
+    "auditor_checkpoint_status": "IN_PROGRESS_WAITING_CONCRETE_ZERO_PRODUCER_SIDECAR_SCHEMA",
+    "design_review_status": "PASS_DESIGN_REVIEW_PACKAGE_PENDING",
+    "GPU_run_performed": false,
+    "inventory": [
+      {
+        "directory": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v1",
+        "exists": true,
+        "files": [
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v1/launch_arm_output_v1.py",
+            "bytes": 5430,
+            "sha256": "e928505f48d54339760a3f2bc50dd9d2fad9631afaf67b0b5b42aee6a5932d1d"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v1/prepare_sources.py",
+            "bytes": 8480,
+            "sha256": "759cf7a7208290b46f6bb78538c68927ffccb9b4c2d67e67119515c0a4815fc4"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v1/required_native_packet_fields_v1.json",
+            "bytes": 597,
+            "sha256": "9ed1c4e03b6077c954df0bd58f00814d34812f76017f5212d70f60995497e568"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v1/source_derivation.json",
+            "bytes": 14988,
+            "sha256": "a65e42cbe0c215f11de58e14fa68fc6860e599251fd99fd8d79156a9cbd31cd1"
+          }
+        ]
+      },
+      {
+        "directory": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_audit_v1",
+        "exists": true,
+        "files": [
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_audit_v1/audit_failure.py",
+            "bytes": 23694,
+            "sha256": "7b8b9d3da4270478592c29d990eae6462df550f6850bc5bb3e21709fc236a45f"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_audit_v1/audit_failure.py.diff",
+            "bytes": 2952,
+            "sha256": "22cdabad1a2f5ea562f4798a5890005967e1bb10b43780535bd4c65516fd4516"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_audit_v1/audit_sink_terminal.py",
+            "bytes": 26110,
+            "sha256": "c0749996ca996920d08c62f21e738eeccc9988bb8c15544e1473f8ee4fa1d779"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_audit_v1/failure_auditor_derivation.json",
+            "bytes": 1927,
+            "sha256": "8257a6bf08ad327a503e6106e068f213287181117cd579f656cbf8aa5aa2f7f2"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_audit_v1/self_check.py",
+            "bytes": 4301,
+            "sha256": "08da453c6e9bf72b7818f6ec93c5de0d443d3b506a640f51aadbd1c654d247fb"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_audit_v1/terminal_native_stream_draft.py.txt",
+            "bytes": 10517,
+            "sha256": "90f7f4a2c80c39a9d888b649d63d94b5d7cd5a867a6d5f96e1eb47674c222b8f"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_audit_v1/work_checkpoint.json",
+            "bytes": 3013,
+            "sha256": "cbc5c414dd60b8a3eb55a425990cab8ef36ba7c0b9791a061798d4a077925c7c"
+          }
+        ]
+      },
+      {
+        "directory": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_peer_v1",
+        "exists": true,
+        "files": [
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_peer_v1/independent_zero_design_review.json",
+            "bytes": 7852,
+            "sha256": "790418656b1c3465a604e9381fa11fea40886e99ffab39bf2216547d124e443c"
+          }
+        ]
+      },
+      {
+        "directory": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_zero_runtime_v1",
+        "exists": true,
+        "files": [
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_zero_runtime_v1/loader/CPU_tests/replace_linear_dw_bank_equal_elf_v1.so",
+            "bytes": 139296,
+            "sha256": "c4dcdc05cfb85a734c11e5a7c274bec4ed38995300b5cb724c72abd937095ec8"
+          },
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_zero_runtime_v1/loader/CPU_tests/report.json",
+            "bytes": 28549,
+            "sha256": "7cb5da1c03983362cca0180504c8a9cf5fdd5ba05c0b2f3ca7f22a647b8c27b5"
+          },
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_zero_runtime_v1/loader/artifacts/DW_kernel_metadata.json",
+            "bytes": 7099,
+            "sha256": "2ac8b368d5020fd8ca9f437831f38c885e2b637e1b6e7373b1fb2dc6ecfdb084"
+          },
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_zero_runtime_v1/loader/artifacts/DW_prior_ttmp_observer.elf",
+            "bytes": 335000,
+            "sha256": "61581ac29b22c6cb25e78c5406e9f6c687a1121a60fe72e16be1d47b7eff87e3"
+          },
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_zero_runtime_v1/loader/artifacts/DW_sink_candidate.elf",
+            "bytes": 352408,
+            "sha256": "676d759461418da2876e10ef619c7aee47a616dd2b480f54bc85dfdb4c5dfce1"
+          },
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_zero_runtime_v1/loader/artifacts/DW_sink_control.elf",
+            "bytes": 352408,
+            "sha256": "d8d1f9293505cfe3247ea44908d6bdb30cc7ca641efb31bb88badd0d03b1b967"
+          },
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_zero_runtime_v1/loader/replace_linear_dw_bank_equal_elf_v1.cpp",
+            "bytes": 13951,
+            "sha256": "19880e0962dc97148c3e474295fd57591be620ddba87a5c5b55d6d3f8a3ee802"
+          },
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_zero_runtime_v1/loader/test_replace_linear_dw_bank_equal_elf_v1.py",
+            "bytes": 18623,
+            "sha256": "9e8ae3d3dcfbacd9a7429e20bfbd1568c9579e42ebea4ffbc0564bd1dab93a96"
+          },
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_zero_runtime_v1/loader/trace_projection_hip_launches_v2.cpp",
+            "bytes": 10647,
+            "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+          },
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_zero_runtime_v1/repro_sink_zero_output_v1.py",
+            "bytes": 15033,
+            "sha256": "a414d90b7cfdc42eabb7dc5b1eace153d9301595fef22621894907738169cadb"
+          },
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_zero_runtime_v1/runtime_wrapper_output_v1.py",
+            "bytes": 5490,
+            "sha256": "6540796bb956fa2c99f4b85c39adfaa3879c7c94b89a436c68cf770502a7dd6e"
+          }
+        ]
+      }
+    ]
+  },
+  "SVM_queue_tracing_probe": {
+    "status": "CPU_REVIEWED_UNRUN_STOPPED",
+    "frozen_release_status": "READY_FOR_ROOT_LAUNCH",
+    "release_interpretation": "The retained READY_FOR_ROOT_LAUNCH label predates the user stop and is superseded by this record; no launch is pending.",
+    "tracefs_activated": false,
+    "GPU_run_performed": false,
+    "coverage": "Seven existing KFD tracepoints omit direct SVM eviction/restore; CPU design adds two scoped helper kprobes bound to installed-module and BTF arguments.",
+    "limit": "No queue/trap correlation result. SVM as the trigger remains a hypothesis. Helper entry events would denote attempts, not hardware context-save acknowledgments.",
+    "inventory": [
+      {
+        "directory": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1",
+        "exists": true,
+        "files": [
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/CPU_behavior_review_v1.json",
+            "bytes": 6107,
+            "sha256": "a6b7bfecc53cd81d65b969809a3b6dbadf7fe7277a9d578d3330bb93cce83e3e"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/CPU_clock_journal_v1.jsonl",
+            "bytes": 489,
+            "sha256": "f27e53a16021a19d39c604a47784eb805317e91611f42a40c63641f0e1c750bd"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/CPU_final_draft_preflights.json",
+            "bytes": 1852,
+            "sha256": "f4e7e1426cd5f2ea0d734bd7b0060cdd29d84b908f8d9946545050b9f1ccb8f0"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/CPU_handshake_tests_v1/matching_release/process_ready.json",
+            "bytes": 740,
+            "sha256": "cc8b0571025b0ada0d8b141c97059009f4a1b4ace2eceb8dde77dd7163d87e71"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/CPU_handshake_tests_v1/matching_release/process_release.json",
+            "bytes": 112,
+            "sha256": "12a5ac00263f96b543f6ea6d8c67bc228ccee3176e73796b70917a20c324c2dc"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/CPU_handshake_tests_v1/mismatched_release/process_ready.json",
+            "bytes": 740,
+            "sha256": "62dc6c62a984c1578254c24b38fe47233b89c8f3a05e782961c8196716d61b05"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/CPU_handshake_tests_v1/mismatched_release/process_release.json",
+            "bytes": 112,
+            "sha256": "452ef92cbf6ddd0faf9162726b16fd4c94e9f9b826d9b7e333d93b748daf3f73"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/CPU_self_review_v1.json",
+            "bytes": 1708,
+            "sha256": "85ab118fd831309c375df82ac6e845e1aa2dbdbf32d1eee768856e6bd15edcf3"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/README.md",
+            "bytes": 2148,
+            "sha256": "663750ce8afc9b09dd2bf0d5ea989148683cb54be52d0efe90c7bed63ac50e07"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/kfd_process_evict_queues.objdump.txt",
+            "bytes": 7494,
+            "sha256": "61afa06332887d82b8d375fffc59a9f112d532b51c9a28b2d08a7f6e36d95ef3"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/kfd_process_restore_queues.objdump.txt",
+            "bytes": 4675,
+            "sha256": "3195507c48ba5a01d395c331f056d5b9de20cd0068a471c6249d588889a369e4"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/kfd_smi_event_queue_eviction.objdump.txt",
+            "bytes": 3354,
+            "sha256": "8e6539d783a5e2aff9ecf98dc95da82db5e0f178413d91e3dd81bb6e9ed4e0d1"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/kfd_smi_event_queue_restore.objdump.txt",
+            "bytes": 3210,
+            "sha256": "208378dd0fa2e79658e6e7f0025bdf21cbcd1825b10edea6f13cf1e2fe53161d"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/kgd2kfd_quiesce_mm.objdump.txt",
+            "bytes": 3137,
+            "sha256": "3c72e28004686e1090d99e077f1f3d138878de5e93e2dee2366f913b5c54be35"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/kgd2kfd_resume_mm.objdump.txt",
+            "bytes": 1917,
+            "sha256": "67c77214904076817d9e3fbf52aedf2aea3b2a2e0894dc079024ce79f5133bd7"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/launch_fresh_ttmp_ftrace.py",
+            "bytes": 17605,
+            "sha256": "ec97159636a0d7f1863bdb8b8d9f26929bbbd7bcb95971c3d9fcbdc004f6eb47"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/launch_manifest_ftrace.json",
+            "bytes": 20902,
+            "sha256": "bd8941bfb07e987550e6fe898a2a27ce7c2b515e0cd00b4536dbcccb87935f49"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/launch_manifest_ftrace_draft_v1.json",
+            "bytes": 19940,
+            "sha256": "af2f2b7b661c5c44045dacd5dcb3f9c052efc0d6e88a3a12e3a20be72efcbfc6"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/launch_manifest_ftrace_draft_v2.json",
+            "bytes": 19940,
+            "sha256": "be4e88d7fcd7ad701765200db15a18e021e0b08a1bc8dc46da6d10e6219e9048"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/launch_manifest_ftrace_draft_v3.json",
+            "bytes": 20381,
+            "sha256": "d72ce1c86f1eab6376d8f8229d1946c0acccbc51696b815bb44408045f6e98a6"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/probe_argument_coverage.json",
+            "bytes": 3390,
+            "sha256": "87913a4fd510b6afe7a432234fcbad21381e61ec03cfdb25f7b2237428472b92"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/producer_delta.diff",
+            "bytes": 3699,
+            "sha256": "7406701647e2fff0b7b7d6afc5a141d64fe026579a0e3e8e7b37b387c9964d15"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/prospective_criteria.json",
+            "bytes": 2913,
+            "sha256": "9842d1d4a12794cd2c9b032f66698d2238a5ba4c5405a4ab3f1e5c43c553efc1"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/review_amdgpu_module.ko",
+            "bytes": 40319738,
+            "sha256": "f11e1604ac0417410e26c5020d43824ad122ae8b7b996879309468b87c1c5e28"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/review_release.json",
+            "bytes": 1619,
+            "sha256": "6cca70985d1a03b1e4ebae2c1a19fa227df4ecfaefa4ef52eac16d3295f0d5f5"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/task_struct.runtime_btf.txt",
+            "bytes": 12640,
+            "sha256": "4cefdf4bdffdabcc6157f208f301713843836948463015ce48dcd2685735770a"
+          }
+        ]
+      },
+      {
+        "directory": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_CPU_peer_review_v1",
+        "exists": true,
+        "files": [
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_CPU_peer_review_v1/independent_CPU_review.json",
+            "bytes": 3308,
+            "sha256": "6184999dab33e5c169088b15a587b8e97773ec38db00d33188106eb0ed36014e"
+          },
+          {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_CPU_peer_review_v1/review.py",
+            "bytes": 8447,
+            "sha256": "07904b755951efd45b18edec71b238606b6839cf0fc88d22d97b50769b0ffacc"
+          }
+        ]
+      },
+      {
+        "directory": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_runtime_v1",
+        "exists": true,
+        "files": [
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_runtime_v1/fresh_ttmp.hsaco",
+            "bytes": 21208,
+            "sha256": "30b2f258d9deaf2771ec866dbc23ba609cac28b40fbe2997a2a074e5c9ec1b40"
+          },
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_runtime_v1/fresh_ttmp_configuration.json",
+            "bytes": 51255,
+            "sha256": "7f6106aa10371c578dcd602d507cadfac1068a41027b7f86afd930c222677571"
+          },
+          {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_runtime_v1/run_fresh_ttmp_ftrace_v1.py",
+            "bytes": 25036,
+            "sha256": "e944e72bc1dfeb0a4efaff8af38f15d72b36b5adcfa709a0b6356334d0699acc"
+          }
+        ]
+      }
+    ]
+  },
+  "runtime": {
+    "idle_scan": {
+      "format": "A0_process_and_thread_gpu_character_device_scan_v1",
+      "created_utc": "2026-09-21T08:33:49.654298+00:00",
+      "boot_id": "4a77f7e8-32cd-4c74-974b-c0b0c0d8eb03",
+      "driver_srcversion": "654C1DDE7A9A3E129BA9553",
+      "devices": [
+        {
+          "paths": [
+            "/dev/kfd"
+          ],
+          "major": 508,
+          "minor": 0
+        },
+        {
+          "paths": [
+            "/dev/dri/renderD128"
+          ],
+          "major": 226,
+          "minor": 128
+        },
+        {
+          "paths": [
+            "/dev/dri/renderD129"
+          ],
+          "major": 226,
+          "minor": 129
+        },
+        {
+          "paths": [
+            "/dev/dri/renderD130"
+          ],
+          "major": 226,
+          "minor": 130
+        },
+        {
+          "paths": [
+            "/dev/dri/renderD131"
+          ],
+          "major": 226,
+          "minor": 131
+        },
+        {
+          "paths": [
+            "/dev/dri/renderD132"
+          ],
+          "major": 226,
+          "minor": 132
+        },
+        {
+          "paths": [
+            "/dev/dri/renderD133"
+          ],
+          "major": 226,
+          "minor": 133
+        },
+        {
+          "paths": [
+            "/dev/dri/renderD134"
+          ],
+          "major": 226,
+          "minor": 134
+        },
+        {
+          "paths": [
+            "/dev/dri/renderD135"
+          ],
+          "major": 226,
+          "minor": 135
+        },
+        {
+          "paths": [
+            "/dev/dri/card0"
+          ],
+          "major": 226,
+          "minor": 0
+        },
+        {
+          "paths": [
+            "/dev/dri/card1"
+          ],
+          "major": 226,
+          "minor": 1
+        },
+        {
+          "paths": [
+            "/dev/dri/card2"
+          ],
+          "major": 226,
+          "minor": 2
+        },
+        {
+          "paths": [
+            "/dev/dri/card3"
+          ],
+          "major": 226,
+          "minor": 3
+        },
+        {
+          "paths": [
+            "/dev/dri/card4"
+          ],
+          "major": 226,
+          "minor": 4
+        },
+        {
+          "paths": [
+            "/dev/dri/card5"
+          ],
+          "major": 226,
+          "minor": 5
+        },
+        {
+          "paths": [
+            "/dev/dri/card6"
+          ],
+          "major": 226,
+          "minor": 6
+        },
+        {
+          "paths": [
+            "/dev/dri/card7"
+          ],
+          "major": 226,
+          "minor": 7
+        },
+        {
+          "paths": [
+            "/dev/dri/card8"
+          ],
+          "major": 226,
+          "minor": 8
+        }
+      ],
+      "fd_tables_scanned": 3390,
+      "owners": [],
+      "errors": [],
+      "idle": true,
+      "limit": "A point-in-time scan does not prove continuous exclusivity."
+    },
+    "scanner": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/assert_all_gpu_devices_idle.py",
+      "bytes": 2683,
+      "sha256": "2c9598fbae2d29d3c371241de50b66ea44ac92951c87d60d36a22d4385266b28"
+    },
+    "tracing_and_process_check": {
+      "created_utc": "2026-09-21T08:33:49.712384+00:00",
+      "trace_instances": [],
+      "kprobe_events": "",
+      "global_tracing_on": "1",
+      "matching_session_processes": [],
+      "process_scan_errors": [],
+      "process_scan_scope": "Exact path arguments under the September 21 experiment directories; does not enumerate arbitrary CPU work."
+    },
+    "driver_switch_reset_or_reboot_during_restored_session": false
+  },
+  "runtime_caveat": {
+    "review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_MCE_peer_v1/independent_MCE_and_SVM_review.json",
+      "bytes": 11525,
+      "sha256": "1838b94e30d254da4e90b4eaf6b72f37768e05e384dcdcdadaac01b92e04feb3"
+    },
+    "summary": "Post-quartet logs include an SVM restore-work CPU-hog warning and recurring corrected PCIe-link-class MCE. The signature predates this session; exact endpoint and connection to NaNs are unestablished. Report time after controllers exited does not date the underlying event. The quartet kernel log was not unchanged."
+  },
+  "limits": [
+    "Point-in-time process/device checks do not prove continuous exclusivity.",
+    "Completed result certificates retain their historical scope and stale prospective wording; this stopped checkpoint supersedes their pending-work instructions."
+  ]
+}

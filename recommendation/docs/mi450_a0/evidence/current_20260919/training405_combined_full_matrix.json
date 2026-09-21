@@ -1,0 +1,2204 @@
+{
+  "status": "PASS_CONTROLLED_COMBINED_FULL_HISTORICAL_DW",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training405_combined_review_v1/audit_combined_matrix.py",
+    "bytes": 12208,
+    "sha256": "f7259f0d04871fdda6575e5d563a969a6cac3ae694c85182f896c40f315a7866"
+  },
+  "terminal_auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_training405_combined_review_v1/audit_combined_terminal.py",
+    "bytes": 29449,
+    "sha256": "c5601d9b8a99676fe0dd322ca8d3399a06cfd65c3bf59e5160e397c1008b277f"
+  },
+  "prospective_criteria": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_trap_package_v1/prospective_combined_criteria.json",
+    "bytes": 6756,
+    "sha256": "87dc068cf765bc85eb9bab429986c06f3819fd94b7dc9fd381876122fa40e683"
+  },
+  "input_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_references_independent_v1/combined_terminal_manifest.json",
+    "bytes": 610,
+    "sha256": "956c6f1f8256e45e80a2af1a37b54ac4ca58696abfdef948b48466302bfeb0aa"
+  },
+  "primary_NOP46_terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/nop_bank46_control_terminal_audit.json",
+    "bytes": 28089,
+    "sha256": "64c49dc030e910a660cb9ade17d6e4976bb3b7d189d4bf462e36126d1590944d"
+  },
+  "reference_binding": {
+    "historical_native_binding_audit": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/whole_historical_DW_vs_four_arm_replay.json",
+      "bytes": 133312,
+      "sha256": "c1c8cb1296d26bd2a170f453681a49d3bca967c6f4270bbed5365149f70b71c9"
+    },
+    "historical_member": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/boundaries/linear-deferred-151178-1789804761268849047-s405-raw_addmm_outputs.pt",
+      "whole_archive_bytes": 38325462947,
+      "member": "archive/data/1",
+      "member_bytes": 262144,
+      "member_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9",
+      "metadata_member": "archive/data.pkl",
+      "metadata_member_bytes": 308476,
+      "metadata_member_sha256": "6e759ca545e24bc51f67a745057f8447d7aa8ce256d7e0cf0b282ac76bdb7b62",
+      "directly_parsed_DW_tensor": {
+        "abstract_tensor": true,
+        "storage": {
+          "type": "BF16Storage",
+          "key": "1",
+          "count": 131072
+        },
+        "offset": 0,
+        "shape": [
+          256,
+          512
+        ],
+        "stride": [
+          1,
+          256
+        ]
+      },
+      "whole_archive_rehashed_here": false
+    },
+    "whole_archive_rehashed": false,
+    "historical_vs_primary": {
+      "complete_words_compared": 131072,
+      "complete_word_mismatches": 1030,
+      "target_word_mismatches": 1024,
+      "outside_target_word_mismatches": 6,
+      "complete_bytes_match": false,
+      "first32_word_mismatches": [
+        {
+          "M": 8,
+          "N": 0,
+          "actual_BF16": "0xb5ac",
+          "reference_BF16": "0xb668"
+        },
+        {
+          "M": 8,
+          "N": 64,
+          "actual_BF16": "0x364e",
+          "reference_BF16": "0x3670"
+        },
+        {
+          "M": 0,
+          "N": 128,
+          "actual_BF16": "0x7121",
+          "reference_BF16": "0xb4e0"
+        },
+        {
+          "M": 1,
+          "N": 128,
+          "actual_BF16": "0xf260",
+          "reference_BF16": "0xb415"
+        },
+        {
+          "M": 2,
+          "N": 128,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0xb35d"
+        },
+        {
+          "M": 3,
+          "N": 128,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0xb5b8"
+        },
+        {
+          "M": 4,
+          "N": 128,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0x3504"
+        },
+        {
+          "M": 5,
+          "N": 128,
+          "actual_BF16": "0x7150",
+          "reference_BF16": "0xb643"
+        },
+        {
+          "M": 6,
+          "N": 128,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0x35c9"
+        },
+        {
+          "M": 7,
+          "N": 128,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0x33b1"
+        },
+        {
+          "M": 0,
+          "N": 129,
+          "actual_BF16": "0xf2a7",
+          "reference_BF16": "0xb5b6"
+        },
+        {
+          "M": 1,
+          "N": 129,
+          "actual_BF16": "0x726a",
+          "reference_BF16": "0x33ff"
+        },
+        {
+          "M": 2,
+          "N": 129,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0x354a"
+        },
+        {
+          "M": 3,
+          "N": 129,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0x36a1"
+        },
+        {
+          "M": 4,
+          "N": 129,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0xb4e7"
+        },
+        {
+          "M": 5,
+          "N": 129,
+          "actual_BF16": "0xf142",
+          "reference_BF16": "0x365d"
+        },
+        {
+          "M": 6,
+          "N": 129,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0xb5ed"
+        },
+        {
+          "M": 7,
+          "N": 129,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0xb5ab"
+        },
+        {
+          "M": 0,
+          "N": 130,
+          "actual_BF16": "0xf1e3",
+          "reference_BF16": "0xb4d4"
+        },
+        {
+          "M": 1,
+          "N": 130,
+          "actual_BF16": "0x7111",
+          "reference_BF16": "0xb5ce"
+        },
+        {
+          "M": 2,
+          "N": 130,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0x36ab"
+        },
+        {
+          "M": 3,
+          "N": 130,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0x35f7"
+        },
+        {
+          "M": 4,
+          "N": 130,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0x364d"
+        },
+        {
+          "M": 5,
+          "N": 130,
+          "actual_BF16": "0xf1d1",
+          "reference_BF16": "0xb408"
+        },
+        {
+          "M": 6,
+          "N": 130,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0x369a"
+        },
+        {
+          "M": 7,
+          "N": 130,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0x36b3"
+        },
+        {
+          "M": 0,
+          "N": 131,
+          "actual_BF16": "0x7297",
+          "reference_BF16": "0x36a1"
+        },
+        {
+          "M": 1,
+          "N": 131,
+          "actual_BF16": "0xf243",
+          "reference_BF16": "0xb5d3"
+        },
+        {
+          "M": 2,
+          "N": 131,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0xb6df"
+        },
+        {
+          "M": 3,
+          "N": 131,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0xb494"
+        },
+        {
+          "M": 4,
+          "N": 131,
+          "actual_BF16": "0xffc0",
+          "reference_BF16": "0xb62b"
+        },
+        {
+          "M": 5,
+          "N": 131,
+          "actual_BF16": "0x71e7",
+          "reference_BF16": "0x36b6"
+        }
+      ],
+      "six_residual_words": [
+        {
+          "M": 8,
+          "N": 0,
+          "actual_BF16": "0xb5ac",
+          "reference_BF16": "0xb668",
+          "matches": false
+        },
+        {
+          "M": 8,
+          "N": 64,
+          "actual_BF16": "0x364e",
+          "reference_BF16": "0x3670",
+          "matches": false
+        },
+        {
+          "M": 8,
+          "N": 256,
+          "actual_BF16": "0x3541",
+          "reference_BF16": "0x3583",
+          "matches": false
+        },
+        {
+          "M": 8,
+          "N": 320,
+          "actual_BF16": "0x3589",
+          "reference_BF16": "0xb550",
+          "matches": false
+        },
+        {
+          "M": 136,
+          "N": 256,
+          "actual_BF16": "0x3611",
+          "reference_BF16": "0x3692",
+          "matches": false
+        },
+        {
+          "M": 136,
+          "N": 320,
+          "actual_BF16": "0xb55c",
+          "reference_BF16": "0x361e",
+          "matches": false
+        }
+      ]
+    }
+  },
+  "arms": [
+    {
+      "arm": "combined_nop",
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_references_independent_v1/combined_nop_terminal_audit.json",
+        "bytes": 28792,
+        "sha256": "63906e5f9e1d096a8f73acebf3301ec452252c7892dc54b88e0128202ed1cd77"
+      },
+      "producer_status": "PASS",
+      "reference": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "calls": [
+        {
+          "iteration": 1,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_nop/call_01_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_nop/call_01_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "first32_word_mismatches": [],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb668",
+                "reference_BF16": "0xb668",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x3670",
+                "reference_BF16": "0x3670",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3583",
+                "reference_BF16": "0x3583",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0xb550",
+                "reference_BF16": "0xb550",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3692",
+                "reference_BF16": "0x3692",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0x361e",
+                "reference_BF16": "0x361e",
+                "matches": true
+              }
+            ]
+          },
+          "comparison_to_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "first32_word_mismatches": [],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb668",
+                "reference_BF16": "0xb668",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x3670",
+                "reference_BF16": "0x3670",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3583",
+                "reference_BF16": "0x3583",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0xb550",
+                "reference_BF16": "0xb550",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3692",
+                "reference_BF16": "0x3692",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0x361e",
+                "reference_BF16": "0x361e",
+                "matches": true
+              }
+            ]
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 2,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_nop/call_02_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_nop/call_02_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "first32_word_mismatches": [],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb668",
+                "reference_BF16": "0xb668",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x3670",
+                "reference_BF16": "0x3670",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3583",
+                "reference_BF16": "0x3583",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0xb550",
+                "reference_BF16": "0xb550",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3692",
+                "reference_BF16": "0x3692",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0x361e",
+                "reference_BF16": "0x361e",
+                "matches": true
+              }
+            ]
+          },
+          "comparison_to_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "first32_word_mismatches": [],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb668",
+                "reference_BF16": "0xb668",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x3670",
+                "reference_BF16": "0x3670",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3583",
+                "reference_BF16": "0x3583",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0xb550",
+                "reference_BF16": "0xb550",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3692",
+                "reference_BF16": "0x3692",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0x361e",
+                "reference_BF16": "0x361e",
+                "matches": true
+              }
+            ]
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 3,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_nop/call_03_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_nop/call_03_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "first32_word_mismatches": [],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb668",
+                "reference_BF16": "0xb668",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x3670",
+                "reference_BF16": "0x3670",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3583",
+                "reference_BF16": "0x3583",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0xb550",
+                "reference_BF16": "0xb550",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3692",
+                "reference_BF16": "0x3692",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0x361e",
+                "reference_BF16": "0x361e",
+                "matches": true
+              }
+            ]
+          },
+          "comparison_to_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "first32_word_mismatches": [],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb668",
+                "reference_BF16": "0xb668",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x3670",
+                "reference_BF16": "0x3670",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3583",
+                "reference_BF16": "0x3583",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0xb550",
+                "reference_BF16": "0xb550",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3692",
+                "reference_BF16": "0x3692",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0x361e",
+                "reference_BF16": "0x361e",
+                "matches": true
+              }
+            ]
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        },
+        {
+          "iteration": 4,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_nop/call_04_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_nop/call_04_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "first32_word_mismatches": [],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb668",
+                "reference_BF16": "0xb668",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x3670",
+                "reference_BF16": "0x3670",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3583",
+                "reference_BF16": "0x3583",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0xb550",
+                "reference_BF16": "0xb550",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3692",
+                "reference_BF16": "0x3692",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0x361e",
+                "reference_BF16": "0x361e",
+                "matches": true
+              }
+            ]
+          },
+          "comparison_to_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "first32_word_mismatches": [],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb668",
+                "reference_BF16": "0xb668",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x3670",
+                "reference_BF16": "0x3670",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3583",
+                "reference_BF16": "0x3583",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0xb550",
+                "reference_BF16": "0xb550",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3692",
+                "reference_BF16": "0x3692",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0x361e",
+                "reference_BF16": "0x361e",
+                "matches": true
+              }
+            ]
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": false,
+            "checked_BF16_words": 131072,
+            "finite_words": 131072,
+            "NaN_words": 0,
+            "Inf_words": 0,
+            "finite_words_above20": 0,
+            "maximum_absolute_finite": 2.0623207092285156e-05,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 0,
+            "target_NaN_class_matches": 0,
+            "target_raw_word_matches": 0,
+            "all1024_target_raw_words_match": false,
+            "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+            "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4"
+          }
+        }
+      ]
+    },
+    {
+      "arm": "combined_trap",
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_references_independent_v1/combined_trap_terminal_audit.json",
+        "bytes": 28836,
+        "sha256": "3b4dfc01769c64ac93e90a0fe1d575b3dbe9028abc874fb418c5a566c7709ec1"
+      },
+      "producer_status": "PASS",
+      "reference": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/original_training405_DW_native_Nmajor.bf16.bin",
+        "bytes": 262144,
+        "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+      },
+      "calls": [
+        {
+          "iteration": 1,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_trap/call_01_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_trap/call_01_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "first32_word_mismatches": [],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb5ac",
+                "reference_BF16": "0xb5ac",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x364e",
+                "reference_BF16": "0x364e",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3541",
+                "reference_BF16": "0x3541",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0x3589",
+                "reference_BF16": "0x3589",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3611",
+                "reference_BF16": "0x3611",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0xb55c",
+                "reference_BF16": "0xb55c",
+                "matches": true
+              }
+            ]
+          },
+          "comparison_to_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 1030,
+            "target_word_mismatches": 1024,
+            "outside_target_word_mismatches": 6,
+            "complete_bytes_match": false,
+            "first32_word_mismatches": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb5ac",
+                "reference_BF16": "0xb668"
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x364e",
+                "reference_BF16": "0x3670"
+              },
+              {
+                "M": 0,
+                "N": 128,
+                "actual_BF16": "0x7121",
+                "reference_BF16": "0xb4e0"
+              },
+              {
+                "M": 1,
+                "N": 128,
+                "actual_BF16": "0xf260",
+                "reference_BF16": "0xb415"
+              },
+              {
+                "M": 2,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb35d"
+              },
+              {
+                "M": 3,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb5b8"
+              },
+              {
+                "M": 4,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x3504"
+              },
+              {
+                "M": 5,
+                "N": 128,
+                "actual_BF16": "0x7150",
+                "reference_BF16": "0xb643"
+              },
+              {
+                "M": 6,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x35c9"
+              },
+              {
+                "M": 7,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x33b1"
+              },
+              {
+                "M": 0,
+                "N": 129,
+                "actual_BF16": "0xf2a7",
+                "reference_BF16": "0xb5b6"
+              },
+              {
+                "M": 1,
+                "N": 129,
+                "actual_BF16": "0x726a",
+                "reference_BF16": "0x33ff"
+              },
+              {
+                "M": 2,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x354a"
+              },
+              {
+                "M": 3,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x36a1"
+              },
+              {
+                "M": 4,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb4e7"
+              },
+              {
+                "M": 5,
+                "N": 129,
+                "actual_BF16": "0xf142",
+                "reference_BF16": "0x365d"
+              },
+              {
+                "M": 6,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb5ed"
+              },
+              {
+                "M": 7,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb5ab"
+              },
+              {
+                "M": 0,
+                "N": 130,
+                "actual_BF16": "0xf1e3",
+                "reference_BF16": "0xb4d4"
+              },
+              {
+                "M": 1,
+                "N": 130,
+                "actual_BF16": "0x7111",
+                "reference_BF16": "0xb5ce"
+              },
+              {
+                "M": 2,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x36ab"
+              },
+              {
+                "M": 3,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x35f7"
+              },
+              {
+                "M": 4,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x364d"
+              },
+              {
+                "M": 5,
+                "N": 130,
+                "actual_BF16": "0xf1d1",
+                "reference_BF16": "0xb408"
+              },
+              {
+                "M": 6,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x369a"
+              },
+              {
+                "M": 7,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x36b3"
+              },
+              {
+                "M": 0,
+                "N": 131,
+                "actual_BF16": "0x7297",
+                "reference_BF16": "0x36a1"
+              },
+              {
+                "M": 1,
+                "N": 131,
+                "actual_BF16": "0xf243",
+                "reference_BF16": "0xb5d3"
+              },
+              {
+                "M": 2,
+                "N": 131,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb6df"
+              },
+              {
+                "M": 3,
+                "N": 131,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb494"
+              },
+              {
+                "M": 4,
+                "N": 131,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb62b"
+              },
+              {
+                "M": 5,
+                "N": 131,
+                "actual_BF16": "0x71e7",
+                "reference_BF16": "0x36b6"
+              }
+            ],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb5ac",
+                "reference_BF16": "0xb668",
+                "matches": false
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x364e",
+                "reference_BF16": "0x3670",
+                "matches": false
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3541",
+                "reference_BF16": "0x3583",
+                "matches": false
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0x3589",
+                "reference_BF16": "0xb550",
+                "matches": false
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3611",
+                "reference_BF16": "0x3692",
+                "matches": false
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0xb55c",
+                "reference_BF16": "0x361e",
+                "matches": false
+              }
+            ]
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": true,
+            "checked_BF16_words": 131072,
+            "finite_words": 130432,
+            "NaN_words": 640,
+            "Inf_words": 0,
+            "finite_words_above20": 384,
+            "maximum_absolute_finite": 1.02204329643401e+31,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 384,
+            "target_NaN_class_matches": 640,
+            "target_raw_word_matches": 1024,
+            "all1024_target_raw_words_match": true,
+            "output_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9",
+            "target_block_observed_sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+          }
+        },
+        {
+          "iteration": 2,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_trap/call_02_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_trap/call_02_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "first32_word_mismatches": [],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb5ac",
+                "reference_BF16": "0xb5ac",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x364e",
+                "reference_BF16": "0x364e",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3541",
+                "reference_BF16": "0x3541",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0x3589",
+                "reference_BF16": "0x3589",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3611",
+                "reference_BF16": "0x3611",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0xb55c",
+                "reference_BF16": "0xb55c",
+                "matches": true
+              }
+            ]
+          },
+          "comparison_to_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 1030,
+            "target_word_mismatches": 1024,
+            "outside_target_word_mismatches": 6,
+            "complete_bytes_match": false,
+            "first32_word_mismatches": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb5ac",
+                "reference_BF16": "0xb668"
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x364e",
+                "reference_BF16": "0x3670"
+              },
+              {
+                "M": 0,
+                "N": 128,
+                "actual_BF16": "0x7121",
+                "reference_BF16": "0xb4e0"
+              },
+              {
+                "M": 1,
+                "N": 128,
+                "actual_BF16": "0xf260",
+                "reference_BF16": "0xb415"
+              },
+              {
+                "M": 2,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb35d"
+              },
+              {
+                "M": 3,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb5b8"
+              },
+              {
+                "M": 4,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x3504"
+              },
+              {
+                "M": 5,
+                "N": 128,
+                "actual_BF16": "0x7150",
+                "reference_BF16": "0xb643"
+              },
+              {
+                "M": 6,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x35c9"
+              },
+              {
+                "M": 7,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x33b1"
+              },
+              {
+                "M": 0,
+                "N": 129,
+                "actual_BF16": "0xf2a7",
+                "reference_BF16": "0xb5b6"
+              },
+              {
+                "M": 1,
+                "N": 129,
+                "actual_BF16": "0x726a",
+                "reference_BF16": "0x33ff"
+              },
+              {
+                "M": 2,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x354a"
+              },
+              {
+                "M": 3,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x36a1"
+              },
+              {
+                "M": 4,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb4e7"
+              },
+              {
+                "M": 5,
+                "N": 129,
+                "actual_BF16": "0xf142",
+                "reference_BF16": "0x365d"
+              },
+              {
+                "M": 6,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb5ed"
+              },
+              {
+                "M": 7,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb5ab"
+              },
+              {
+                "M": 0,
+                "N": 130,
+                "actual_BF16": "0xf1e3",
+                "reference_BF16": "0xb4d4"
+              },
+              {
+                "M": 1,
+                "N": 130,
+                "actual_BF16": "0x7111",
+                "reference_BF16": "0xb5ce"
+              },
+              {
+                "M": 2,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x36ab"
+              },
+              {
+                "M": 3,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x35f7"
+              },
+              {
+                "M": 4,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x364d"
+              },
+              {
+                "M": 5,
+                "N": 130,
+                "actual_BF16": "0xf1d1",
+                "reference_BF16": "0xb408"
+              },
+              {
+                "M": 6,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x369a"
+              },
+              {
+                "M": 7,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x36b3"
+              },
+              {
+                "M": 0,
+                "N": 131,
+                "actual_BF16": "0x7297",
+                "reference_BF16": "0x36a1"
+              },
+              {
+                "M": 1,
+                "N": 131,
+                "actual_BF16": "0xf243",
+                "reference_BF16": "0xb5d3"
+              },
+              {
+                "M": 2,
+                "N": 131,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb6df"
+              },
+              {
+                "M": 3,
+                "N": 131,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb494"
+              },
+              {
+                "M": 4,
+                "N": 131,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb62b"
+              },
+              {
+                "M": 5,
+                "N": 131,
+                "actual_BF16": "0x71e7",
+                "reference_BF16": "0x36b6"
+              }
+            ],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb5ac",
+                "reference_BF16": "0xb668",
+                "matches": false
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x364e",
+                "reference_BF16": "0x3670",
+                "matches": false
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3541",
+                "reference_BF16": "0x3583",
+                "matches": false
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0x3589",
+                "reference_BF16": "0xb550",
+                "matches": false
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3611",
+                "reference_BF16": "0x3692",
+                "matches": false
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0xb55c",
+                "reference_BF16": "0x361e",
+                "matches": false
+              }
+            ]
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": true,
+            "checked_BF16_words": 131072,
+            "finite_words": 130432,
+            "NaN_words": 640,
+            "Inf_words": 0,
+            "finite_words_above20": 384,
+            "maximum_absolute_finite": 1.02204329643401e+31,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 384,
+            "target_NaN_class_matches": 640,
+            "target_raw_word_matches": 1024,
+            "all1024_target_raw_words_match": true,
+            "output_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9",
+            "target_block_observed_sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+          }
+        },
+        {
+          "iteration": 3,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_trap/call_03_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_trap/call_03_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "first32_word_mismatches": [],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb5ac",
+                "reference_BF16": "0xb5ac",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x364e",
+                "reference_BF16": "0x364e",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3541",
+                "reference_BF16": "0x3541",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0x3589",
+                "reference_BF16": "0x3589",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3611",
+                "reference_BF16": "0x3611",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0xb55c",
+                "reference_BF16": "0xb55c",
+                "matches": true
+              }
+            ]
+          },
+          "comparison_to_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 1030,
+            "target_word_mismatches": 1024,
+            "outside_target_word_mismatches": 6,
+            "complete_bytes_match": false,
+            "first32_word_mismatches": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb5ac",
+                "reference_BF16": "0xb668"
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x364e",
+                "reference_BF16": "0x3670"
+              },
+              {
+                "M": 0,
+                "N": 128,
+                "actual_BF16": "0x7121",
+                "reference_BF16": "0xb4e0"
+              },
+              {
+                "M": 1,
+                "N": 128,
+                "actual_BF16": "0xf260",
+                "reference_BF16": "0xb415"
+              },
+              {
+                "M": 2,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb35d"
+              },
+              {
+                "M": 3,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb5b8"
+              },
+              {
+                "M": 4,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x3504"
+              },
+              {
+                "M": 5,
+                "N": 128,
+                "actual_BF16": "0x7150",
+                "reference_BF16": "0xb643"
+              },
+              {
+                "M": 6,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x35c9"
+              },
+              {
+                "M": 7,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x33b1"
+              },
+              {
+                "M": 0,
+                "N": 129,
+                "actual_BF16": "0xf2a7",
+                "reference_BF16": "0xb5b6"
+              },
+              {
+                "M": 1,
+                "N": 129,
+                "actual_BF16": "0x726a",
+                "reference_BF16": "0x33ff"
+              },
+              {
+                "M": 2,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x354a"
+              },
+              {
+                "M": 3,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x36a1"
+              },
+              {
+                "M": 4,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb4e7"
+              },
+              {
+                "M": 5,
+                "N": 129,
+                "actual_BF16": "0xf142",
+                "reference_BF16": "0x365d"
+              },
+              {
+                "M": 6,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb5ed"
+              },
+              {
+                "M": 7,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb5ab"
+              },
+              {
+                "M": 0,
+                "N": 130,
+                "actual_BF16": "0xf1e3",
+                "reference_BF16": "0xb4d4"
+              },
+              {
+                "M": 1,
+                "N": 130,
+                "actual_BF16": "0x7111",
+                "reference_BF16": "0xb5ce"
+              },
+              {
+                "M": 2,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x36ab"
+              },
+              {
+                "M": 3,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x35f7"
+              },
+              {
+                "M": 4,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x364d"
+              },
+              {
+                "M": 5,
+                "N": 130,
+                "actual_BF16": "0xf1d1",
+                "reference_BF16": "0xb408"
+              },
+              {
+                "M": 6,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x369a"
+              },
+              {
+                "M": 7,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x36b3"
+              },
+              {
+                "M": 0,
+                "N": 131,
+                "actual_BF16": "0x7297",
+                "reference_BF16": "0x36a1"
+              },
+              {
+                "M": 1,
+                "N": 131,
+                "actual_BF16": "0xf243",
+                "reference_BF16": "0xb5d3"
+              },
+              {
+                "M": 2,
+                "N": 131,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb6df"
+              },
+              {
+                "M": 3,
+                "N": 131,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb494"
+              },
+              {
+                "M": 4,
+                "N": 131,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb62b"
+              },
+              {
+                "M": 5,
+                "N": 131,
+                "actual_BF16": "0x71e7",
+                "reference_BF16": "0x36b6"
+              }
+            ],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb5ac",
+                "reference_BF16": "0xb668",
+                "matches": false
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x364e",
+                "reference_BF16": "0x3670",
+                "matches": false
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3541",
+                "reference_BF16": "0x3583",
+                "matches": false
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0x3589",
+                "reference_BF16": "0xb550",
+                "matches": false
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3611",
+                "reference_BF16": "0x3692",
+                "matches": false
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0xb55c",
+                "reference_BF16": "0x361e",
+                "matches": false
+              }
+            ]
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": true,
+            "checked_BF16_words": 131072,
+            "finite_words": 130432,
+            "NaN_words": 640,
+            "Inf_words": 0,
+            "finite_words_above20": 384,
+            "maximum_absolute_finite": 1.02204329643401e+31,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 384,
+            "target_NaN_class_matches": 640,
+            "target_raw_word_matches": 1024,
+            "all1024_target_raw_words_match": true,
+            "output_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9",
+            "target_block_observed_sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+          }
+        },
+        {
+          "iteration": 4,
+          "output": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_trap/call_04_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+          },
+          "prefill": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/results_combined_trap/call_04_prefill.bf16.bin",
+            "bytes": 262144,
+            "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+          },
+          "criterion_matches": true,
+          "comparison_to_per_arm_reference": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 0,
+            "target_word_mismatches": 0,
+            "outside_target_word_mismatches": 0,
+            "complete_bytes_match": true,
+            "first32_word_mismatches": [],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb5ac",
+                "reference_BF16": "0xb5ac",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x364e",
+                "reference_BF16": "0x364e",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3541",
+                "reference_BF16": "0x3541",
+                "matches": true
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0x3589",
+                "reference_BF16": "0x3589",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3611",
+                "reference_BF16": "0x3611",
+                "matches": true
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0xb55c",
+                "reference_BF16": "0xb55c",
+                "matches": true
+              }
+            ]
+          },
+          "comparison_to_primary_NOP46": {
+            "complete_words_compared": 131072,
+            "complete_word_mismatches": 1030,
+            "target_word_mismatches": 1024,
+            "outside_target_word_mismatches": 6,
+            "complete_bytes_match": false,
+            "first32_word_mismatches": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb5ac",
+                "reference_BF16": "0xb668"
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x364e",
+                "reference_BF16": "0x3670"
+              },
+              {
+                "M": 0,
+                "N": 128,
+                "actual_BF16": "0x7121",
+                "reference_BF16": "0xb4e0"
+              },
+              {
+                "M": 1,
+                "N": 128,
+                "actual_BF16": "0xf260",
+                "reference_BF16": "0xb415"
+              },
+              {
+                "M": 2,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb35d"
+              },
+              {
+                "M": 3,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb5b8"
+              },
+              {
+                "M": 4,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x3504"
+              },
+              {
+                "M": 5,
+                "N": 128,
+                "actual_BF16": "0x7150",
+                "reference_BF16": "0xb643"
+              },
+              {
+                "M": 6,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x35c9"
+              },
+              {
+                "M": 7,
+                "N": 128,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x33b1"
+              },
+              {
+                "M": 0,
+                "N": 129,
+                "actual_BF16": "0xf2a7",
+                "reference_BF16": "0xb5b6"
+              },
+              {
+                "M": 1,
+                "N": 129,
+                "actual_BF16": "0x726a",
+                "reference_BF16": "0x33ff"
+              },
+              {
+                "M": 2,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x354a"
+              },
+              {
+                "M": 3,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x36a1"
+              },
+              {
+                "M": 4,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb4e7"
+              },
+              {
+                "M": 5,
+                "N": 129,
+                "actual_BF16": "0xf142",
+                "reference_BF16": "0x365d"
+              },
+              {
+                "M": 6,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb5ed"
+              },
+              {
+                "M": 7,
+                "N": 129,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb5ab"
+              },
+              {
+                "M": 0,
+                "N": 130,
+                "actual_BF16": "0xf1e3",
+                "reference_BF16": "0xb4d4"
+              },
+              {
+                "M": 1,
+                "N": 130,
+                "actual_BF16": "0x7111",
+                "reference_BF16": "0xb5ce"
+              },
+              {
+                "M": 2,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x36ab"
+              },
+              {
+                "M": 3,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x35f7"
+              },
+              {
+                "M": 4,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x364d"
+              },
+              {
+                "M": 5,
+                "N": 130,
+                "actual_BF16": "0xf1d1",
+                "reference_BF16": "0xb408"
+              },
+              {
+                "M": 6,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x369a"
+              },
+              {
+                "M": 7,
+                "N": 130,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0x36b3"
+              },
+              {
+                "M": 0,
+                "N": 131,
+                "actual_BF16": "0x7297",
+                "reference_BF16": "0x36a1"
+              },
+              {
+                "M": 1,
+                "N": 131,
+                "actual_BF16": "0xf243",
+                "reference_BF16": "0xb5d3"
+              },
+              {
+                "M": 2,
+                "N": 131,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb6df"
+              },
+              {
+                "M": 3,
+                "N": 131,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb494"
+              },
+              {
+                "M": 4,
+                "N": 131,
+                "actual_BF16": "0xffc0",
+                "reference_BF16": "0xb62b"
+              },
+              {
+                "M": 5,
+                "N": 131,
+                "actual_BF16": "0x71e7",
+                "reference_BF16": "0x36b6"
+              }
+            ],
+            "six_residual_words": [
+              {
+                "M": 8,
+                "N": 0,
+                "actual_BF16": "0xb5ac",
+                "reference_BF16": "0xb668",
+                "matches": false
+              },
+              {
+                "M": 8,
+                "N": 64,
+                "actual_BF16": "0x364e",
+                "reference_BF16": "0x3670",
+                "matches": false
+              },
+              {
+                "M": 8,
+                "N": 256,
+                "actual_BF16": "0x3541",
+                "reference_BF16": "0x3583",
+                "matches": false
+              },
+              {
+                "M": 8,
+                "N": 320,
+                "actual_BF16": "0x3589",
+                "reference_BF16": "0xb550",
+                "matches": false
+              },
+              {
+                "M": 136,
+                "N": 256,
+                "actual_BF16": "0x3611",
+                "reference_BF16": "0x3692",
+                "matches": false
+              },
+              {
+                "M": 136,
+                "N": 320,
+                "actual_BF16": "0xb55c",
+                "reference_BF16": "0x361e",
+                "matches": false
+              }
+            ]
+          },
+          "independent_predicate": {
+            "prospective_predicate_matches": true,
+            "expected_corruption": true,
+            "checked_BF16_words": 131072,
+            "finite_words": 130432,
+            "NaN_words": 640,
+            "Inf_words": 0,
+            "finite_words_above20": 384,
+            "maximum_absolute_finite": 1.02204329643401e+31,
+            "outside_block_nonfinite_or_above20": 0,
+            "target_finite_exact_matches": 384,
+            "target_NaN_class_matches": 640,
+            "target_raw_word_matches": 1024,
+            "all1024_target_raw_words_match": true,
+            "output_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9",
+            "target_block_observed_sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+          }
+        }
+      ]
+    }
+  ],
+  "issues": [],
+  "primary_criteria_all_match": true,
+  "limits": [
+    "Full equality tests sufficiency of the injected combined state in this replay; the original training native kernel and trap history remain unrecorded.",
+    "Gate selection and count are derived statically; no runtime TTMP/gate-count observer is added.",
+    "All retained outliers fail this frozen criterion; unrelated spontaneous trap histories remain possible.",
+    "This does not establish a unique historical event or a validated training repair."
+  ],
+  "GPU_actions": false
+}

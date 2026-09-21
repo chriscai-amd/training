@@ -1,0 +1,232 @@
+{
+  "status": "PASS_NOP_ONLY_400_FRESH_PC_AND_RAW_TAG_RECHECK",
+  "independent_terminal_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_terminal_audit_v1/independent_terminal_audit.json",
+    "bytes": 3650439,
+    "sha256": "8bbaec36910d99bbdd61e78d7537eddb0b156829b5fc7d6d50cdb03088c81430"
+  },
+  "counts": {
+    "no_fresh_observed_PC": 388,
+    "fresh_predicted_copy": 6,
+    "fresh_unchanged": 6
+  },
+  "current_explicit_calibrations": 0,
+  "historical_explicit_calibrations_are_separate": true,
+  "images_rehashed": 1200,
+  "fresh_events": [
+    {
+      "ordinal": 19,
+      "bank": "0x46",
+      "copy": true,
+      "before_PC": "0x7548a1e2ecc0",
+      "after_PC": "0x7dbc5ac325c8",
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_runtime_v1/results/case_19_46_0/output.bin",
+        "bytes": 192,
+        "sha256": "1517a03be2a966fa089c7ea99f54815d88596b9af14cc0b500b5851e7886c7cc"
+      },
+      "changed_tags": [
+        {
+          "vgpr": 257,
+          "lane": 0,
+          "before": "0x22000000",
+          "after": "0x33000000"
+        }
+      ]
+    },
+    {
+      "ordinal": 25,
+      "bank": "0x5",
+      "copy": true,
+      "before_PC": "0x7548a1e2ecc0",
+      "after_PC": "0x7dbc5ac341c4",
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_runtime_v1/results/case_25_05_0/output.bin",
+        "bytes": 192,
+        "sha256": "5efa5021b666710c91515ef8cbb9905642f5f2d9194b4e4bc90e2dc4a4be417d"
+      },
+      "changed_tags": [
+        {
+          "vgpr": 1,
+          "lane": 0,
+          "before": "0x11000000",
+          "after": "0x22000000"
+        }
+      ]
+    },
+    {
+      "ordinal": 37,
+      "bank": "0x5",
+      "copy": true,
+      "before_PC": "0x7548a1e2fac0",
+      "after_PC": "0x7dbc5ac341c4",
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_runtime_v1/results/case_37_05_0/output.bin",
+        "bytes": 192,
+        "sha256": "523e3609832358542b14abcec5c67599ac3c9dca2f7508720c83adfd5dea415b"
+      },
+      "changed_tags": [
+        {
+          "vgpr": 1,
+          "lane": 0,
+          "before": "0x11000000",
+          "after": "0x22000000"
+        }
+      ]
+    },
+    {
+      "ordinal": 46,
+      "bank": "0x86",
+      "copy": false,
+      "before_PC": "0x7548a1e2fac0",
+      "after_PC": "0x7dbc5ac333c8",
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_runtime_v1/results/case_46_86_0/output.bin",
+        "bytes": 192,
+        "sha256": "b4d1a0acd809d02dd30457a4405e0a0b1049b44cdc3af82efb0351c4c3d21cc3"
+      },
+      "changed_tags": []
+    },
+    {
+      "ordinal": 74,
+      "bank": "0x86",
+      "copy": false,
+      "before_PC": "0x7548a1e308bc",
+      "after_PC": "0x7dbc5ac333c8",
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_runtime_v1/results/case_74_86_0/output.bin",
+        "bytes": 192,
+        "sha256": "580b07de492f816f34cc532821bc02f390e01d4abe9957d0e0992c7e993891f0"
+      },
+      "changed_tags": []
+    },
+    {
+      "ordinal": 98,
+      "bank": "0x86",
+      "copy": false,
+      "before_PC": "0x7548a1e308bc",
+      "after_PC": "0x7dbc5ac333c8",
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_runtime_v1/results/case_98_86_0/output.bin",
+        "bytes": 192,
+        "sha256": "57a7c7eaf850cc727dca56d8481869f0b996913354476a0b5141a4c01beb9877"
+      },
+      "changed_tags": []
+    },
+    {
+      "ordinal": 126,
+      "bank": "0x86",
+      "copy": false,
+      "before_PC": "0x7548a1e2ecc0",
+      "after_PC": "0x7dbc5ac333c8",
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_runtime_v1/results/case_126_86_0/output.bin",
+        "bytes": 192,
+        "sha256": "8f86eb75440f4d81424d2dd459f542c22c2165a0cfad1ff241c2a14998eeb3eb"
+      },
+      "changed_tags": []
+    },
+    {
+      "ordinal": 159,
+      "bank": "0x46",
+      "copy": true,
+      "before_PC": "0x7548a1e316bc",
+      "after_PC": "0x7dbc5ac325c8",
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_runtime_v1/results/case_159_46_0/output.bin",
+        "bytes": 192,
+        "sha256": "082fa64fe3e4b3f0586830d3b8a12e8d9a4111d03fc6aa43e81156f0bcb9d9b6"
+      },
+      "changed_tags": [
+        {
+          "vgpr": 257,
+          "lane": 0,
+          "before": "0x22000000",
+          "after": "0x33000000"
+        }
+      ]
+    },
+    {
+      "ordinal": 199,
+      "bank": "0x46",
+      "copy": true,
+      "before_PC": "0x7548a1e316bc",
+      "after_PC": "0x7dbc5ac325c8",
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_runtime_v1/results/case_199_46_0/output.bin",
+        "bytes": 192,
+        "sha256": "082fa64fe3e4b3f0586830d3b8a12e8d9a4111d03fc6aa43e81156f0bcb9d9b6"
+      },
+      "changed_tags": [
+        {
+          "vgpr": 257,
+          "lane": 0,
+          "before": "0x22000000",
+          "after": "0x33000000"
+        }
+      ]
+    },
+    {
+      "ordinal": 248,
+      "bank": "0x0",
+      "copy": false,
+      "before_PC": "0x7dbc5ac333c8",
+      "after_PC": "0x7dbc5ac34fbc",
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_runtime_v1/results/case_248_00_0/output.bin",
+        "bytes": 192,
+        "sha256": "e50abce61a9fd7dadf2bdeeab358f3fab5ecf969a1519cd50504495f73d4d5d5"
+      },
+      "changed_tags": []
+    },
+    {
+      "ordinal": 309,
+      "bank": "0x5",
+      "copy": true,
+      "before_PC": "0x7548a1e316bc",
+      "after_PC": "0x7dbc5ac341c4",
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_runtime_v1/results/case_309_05_0/output.bin",
+        "bytes": 192,
+        "sha256": "855d5050d553ee885703b832e2a638103c8ee6c40cf4b0a8f2d380e3c4804c12"
+      },
+      "changed_tags": [
+        {
+          "vgpr": 1,
+          "lane": 0,
+          "before": "0x11000000",
+          "after": "0x22000000"
+        }
+      ]
+    },
+    {
+      "ordinal": 384,
+      "bank": "0x0",
+      "copy": false,
+      "before_PC": "0x7548a1e308bc",
+      "after_PC": "0x7dbc5ac34fc4",
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_fresh_TTMP_NOP_only_runtime_v1/results/case_384_00_0/output.bin",
+        "bytes": 192,
+        "sha256": "bb31783b3897baeeda86e52e2e3f4814392d791f18154062b00e7d47ac4c8bcd"
+      },
+      "changed_tags": []
+    }
+  ],
+  "post_idle": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/NOP_only_post_all_device_idle.json",
+    "bytes": 2262,
+    "sha256": "f85a024352bad5f763e04485bd56c1bb9e783c051f906b4c2202d060f125b340"
+  },
+  "worker": {
+    "session": 90561,
+    "exit_code": 0,
+    "reaped": true
+  },
+  "limits": [
+    "No explicit calibration probe was invoked in this process; unused trap entrypoints remain in the module.",
+    "Six fresh copy observations establish that same-process explicit calibration carryover is not required.",
+    "TTMP and tag windows differ; one uniquely causal trap, complete trap count and source are unrecorded.",
+    "This is a register probe, not natural DW or training repair validation."
+  ]
+}

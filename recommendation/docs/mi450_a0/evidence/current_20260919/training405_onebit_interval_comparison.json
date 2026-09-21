@@ -1,0 +1,181 @@
+{
+  "status": "DESCRIPTIVE_RETAINED_ONEBIT_OUTPUTS_VS_PRELAUNCH_NUMERIC_INTERVALS",
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_tree_interval_CPU_v1/compare_retained_onebit_outputs.py",
+    "bytes": 5315,
+    "sha256": "9c0b5051a71f41ddf8f1456576811e585b1f503de66a025947de0d3811ecb442"
+  },
+  "interval_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_tree_interval_CPU_v1/any_local_tree_FP32_interval_report.json",
+    "bytes": 747345,
+    "sha256": "47e7fc53be50fc1cd40c04b8cb45a08b60fedec6acd41c54077acaa09ea6ee20"
+  },
+  "interval_arrays": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_tree_interval_CPU_v1/all_tree_FP32_intervals.npz",
+    "bytes": 69658,
+    "sha256": "cc707c85a696c354f140db95980b13c795c5414ab90974e08d66572b53cefeb9"
+  },
+  "central_model_report": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_numeric_CPU_v1/full_target_scoped_model_results.json",
+    "bytes": 1398932,
+    "sha256": "5492514a309e3f6abb1762af35c98d360e83a7cefb53469eecb5268af1ec2256"
+  },
+  "launch_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_onebit_DY_package_v1/launch_manifest_output_v1.json",
+    "bytes": 53418,
+    "sha256": "9aacdf861504def4a115f09f41fe636b810983c10b34539e9c3132be33bac1fb"
+  },
+  "arms": [
+    {
+      "arm": "onebit_nop",
+      "calls": [
+        {
+          "file": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_01_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "target_words": 1024,
+          "within_prelaunch_any_tree_interval": 1024,
+          "outside_interval": [],
+          "finite_target_words": 1024,
+          "maximum_abs_finite_target": 1.1861324310302734e-05,
+          "exact_scoped_central_model_matches": 1011
+        },
+        {
+          "file": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_02_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "target_words": 1024,
+          "within_prelaunch_any_tree_interval": 1024,
+          "outside_interval": [],
+          "finite_target_words": 1024,
+          "maximum_abs_finite_target": 1.1861324310302734e-05,
+          "exact_scoped_central_model_matches": 1011
+        },
+        {
+          "file": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_03_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "target_words": 1024,
+          "within_prelaunch_any_tree_interval": 1024,
+          "outside_interval": [],
+          "finite_target_words": 1024,
+          "maximum_abs_finite_target": 1.1861324310302734e-05,
+          "exact_scoped_central_model_matches": 1011
+        },
+        {
+          "file": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_nop/call_04_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+          },
+          "target_words": 1024,
+          "within_prelaunch_any_tree_interval": 1024,
+          "outside_interval": [],
+          "finite_target_words": 1024,
+          "maximum_abs_finite_target": 1.1861324310302734e-05,
+          "exact_scoped_central_model_matches": 1011
+        }
+      ],
+      "calls_available": 4
+    },
+    {
+      "arm": "onebit_trap",
+      "calls": [
+        {
+          "file": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_01_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "2b54c5b40dbbf354a3089e79f2ed6c467f800c438428c7083461a27f94b72e92"
+          },
+          "target_words": 1024,
+          "within_prelaunch_any_tree_interval": 1024,
+          "outside_interval": [],
+          "finite_target_words": 1024,
+          "maximum_abs_finite_target": 1.2099742889404297e-05,
+          "exact_scoped_central_model_matches": 1012
+        },
+        {
+          "file": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_02_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "2b54c5b40dbbf354a3089e79f2ed6c467f800c438428c7083461a27f94b72e92"
+          },
+          "target_words": 1024,
+          "within_prelaunch_any_tree_interval": 1024,
+          "outside_interval": [],
+          "finite_target_words": 1024,
+          "maximum_abs_finite_target": 1.2099742889404297e-05,
+          "exact_scoped_central_model_matches": 1012
+        },
+        {
+          "file": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_03_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "2b54c5b40dbbf354a3089e79f2ed6c467f800c438428c7083461a27f94b72e92"
+          },
+          "target_words": 1024,
+          "within_prelaunch_any_tree_interval": 1024,
+          "outside_interval": [],
+          "finite_target_words": 1024,
+          "maximum_abs_finite_target": 1.2099742889404297e-05,
+          "exact_scoped_central_model_matches": 1012
+        },
+        {
+          "file": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_onebit_DY_runtime_v1/results_onebit_trap/call_04_output.bf16.bin",
+            "bytes": 262144,
+            "sha256": "2b54c5b40dbbf354a3089e79f2ed6c467f800c438428c7083461a27f94b72e92"
+          },
+          "target_words": 1024,
+          "within_prelaunch_any_tree_interval": 1024,
+          "outside_interval": [],
+          "finite_target_words": 1024,
+          "maximum_abs_finite_target": 1.2099742889404297e-05,
+          "exact_scoped_central_model_matches": 1012
+        }
+      ],
+      "calls_available": 4
+    }
+  ],
+  "matched_iteration_target_comparisons": [
+    {
+      "call_file": "call_01_output.bf16.bin",
+      "actual_target_differences": 1001,
+      "prelaunch_204_disjoint_cells_observed_different": 204,
+      "trap_target_differences_from_original_baseline": 1001
+    },
+    {
+      "call_file": "call_02_output.bf16.bin",
+      "actual_target_differences": 1001,
+      "prelaunch_204_disjoint_cells_observed_different": 204,
+      "trap_target_differences_from_original_baseline": 1001
+    },
+    {
+      "call_file": "call_03_output.bf16.bin",
+      "actual_target_differences": 1001,
+      "prelaunch_204_disjoint_cells_observed_different": 204,
+      "trap_target_differences_from_original_baseline": 1001
+    },
+    {
+      "call_file": "call_04_output.bf16.bin",
+      "actual_target_differences": 1001,
+      "prelaunch_204_disjoint_cells_observed_different": 204,
+      "trap_target_differences_from_original_baseline": 1001
+    }
+  ],
+  "all_available_target_words_enclosed": true,
+  "exactly_four_retained_calls_each": true,
+  "GPU_actions": false,
+  "limits": [
+    "This is a descriptive numerical comparison, not the frozen formal finite/repeat/support/native-input criterion.",
+    "The enclosure is conditional on ordinary FP32 RNE local tree semantics, with the precise assumptions retained in its prelaunch report.",
+    "Central-model BF16 disagreements do not fail the formal criterion; the original calibration differed in 13 of 1024 cells.",
+    "This comparison rehashes available complete outputs but does not replace terminal input, packet, control, library or provenance audits."
+  ]
+}

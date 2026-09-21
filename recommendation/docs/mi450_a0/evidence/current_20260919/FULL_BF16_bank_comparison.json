@@ -1,0 +1,149 @@
+{
+  "format": "original_BF16_bank_pair_root_summary_v1",
+  "status": "COMPLETE_SPARSE_PASS4_PASS4_AND_ZERO_FAIL8_PASS1000",
+  "scope": "Original full-BF16 DW epilogue, B reuse, C accumulation and all320 WMMA instructions preserved; matched bank81/bank82 load-routing intervention and shared address-copy setup.",
+  "candidate_proof": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_bank_equal_CPU_v1/full_BF16_pair_certificate.json",
+    "bytes": 14368,
+    "sha256": "e707d9a7693ce0cbc6c2b0fcdca62e8b96ef80d6828af3044a6c677ec78aff6c"
+  },
+  "root_candidate_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_root_review_v1/actual_candidate_review.json",
+    "bytes": 2311,
+    "sha256": "29005e16c9c6b509d2c1ffe1bdfd13bffc62423cbfa828f995bb508fa1987977"
+  },
+  "sparse_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_sparse_pair_v1/launch_manifest_output_v1.json",
+    "bytes": 17004,
+    "sha256": "f07de4efadb208dafecd20c303a0ea7e0d12077e176870e6badf5d28d7626ccf"
+  },
+  "zero_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_zero_pair_v1/launch_manifest_output_v1.json",
+    "bytes": 18681,
+    "sha256": "2889986a5ffa30576d9cb82cfaf1b472b54e3e2b2199f165ef9bcc9ed436baa8"
+  },
+  "results": {
+    "bank81_control": {
+      "zero_DY_result": "FAIL",
+      "zero_DY_calls": 8,
+      "native_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_zero_pair_v1/bank81_control_joined_verification_v1.json",
+        "bytes": 4559,
+        "sha256": "12775752f0af35a1e1a877c0238b0565a483899b3267bd8b90c31b82530036b8"
+      },
+      "full_packet_runtime_addendum": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_zero_review_v1/bank81_control_packet_metadata_libraries_addendum.json",
+        "bytes": 5460,
+        "sha256": "00c8064edde20dc39092a9fdd507160cba6b8be645b36b39bbe4a7e51c0fd501"
+      },
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_zero_pair_v1/bank81_control_terminal.json",
+        "bytes": 273,
+        "sha256": "fee316c3f42a32a33713778db25c2ee8b04200123597e750afff9426b9274872"
+      },
+      "last_output": {
+        "raw_dw": {
+          "nonfinite_count": 0,
+          "extreme_count": 0,
+          "nonzero_including_nonfinite_count": 1024,
+          "max_abs_finite": 3.851859888774472e-33
+        }
+      },
+      "sparse_nonzero_result": "PASS4",
+      "sparse_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_sparse_review_v1/bank81_control_terminal_audit.json",
+        "bytes": 23619,
+        "sha256": "e765a05e5b2c69505bb9c14f07f485430718761aba437a3c02f7d27b1d78480b"
+      },
+      "sparse_controls_libraries": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_sparse_review_v1/bank81_control_controls_libraries_addendum.json",
+        "bytes": 4329,
+        "sha256": "32076d7caf3d75d43af3d371dee3a2651e8e903538668212f938a9f73dc2aa8e"
+      }
+    },
+    "bank82_equal": {
+      "zero_DY_result": "PASS",
+      "zero_DY_calls": 1000,
+      "native_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_zero_pair_v1/bank82_equal_joined_verification_v1.json",
+        "bytes": 4272,
+        "sha256": "4133cc0e701bd135fb1ad93378655e6104f34ef31b771a86b5ac20ff4cacca4e"
+      },
+      "full_packet_runtime_addendum": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_zero_review_v1/bank82_equal_packet_metadata_libraries_addendum.json",
+        "bytes": 5456,
+        "sha256": "814efa5922b17d0775da48960c0edf416cbcdb65a124fbc1ecb4ea04f0dc2aea"
+      },
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_zero_pair_v1/bank82_equal_terminal.json",
+        "bytes": 271,
+        "sha256": "e682a7101a93fabf354dc8ef55c0b8a62f4aa96ee6687a8adb42ab22b90ad65b"
+      },
+      "last_output": {
+        "raw_dw": {
+          "nonfinite_count": 0,
+          "extreme_count": 0,
+          "nonzero_including_nonfinite_count": 0,
+          "max_abs_finite": 0.0
+        }
+      },
+      "sparse_nonzero_result": "PASS4",
+      "sparse_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_sparse_review_v1/bank82_equal_terminal_audit.json",
+        "bytes": 23587,
+        "sha256": "5c96493180e6340cd87ac81e69f488cb205a8416cc1c49adcbb1f4cbbb656ecc"
+      },
+      "sparse_controls_libraries": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_sparse_review_v1/bank82_equal_controls_libraries_addendum.json",
+        "bytes": 4321,
+        "sha256": "670b99282e997083127ca756d865fde3d473e92367aa298f553a984d4a703fe0"
+      }
+    }
+  },
+  "control_complete_failure_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_full_BF16_failure_audit_v1/bank81_control_full_failure_v1.json",
+    "bytes": 51642,
+    "sha256": "ead9e2f55d36c4fd4ed4b0acbefa0ccfb8e21861f90d45150184c41297e74453"
+  },
+  "control_wrong_output": {
+    "words": 1024,
+    "finite": true,
+    "subnormal_words": 13,
+    "maximum_absolute": 3.851859888774472e-33,
+    "M_inclusive": [
+      0,
+      255
+    ],
+    "N": [
+      258,
+      322,
+      386,
+      450
+    ]
+  },
+  "sparse_witness": {
+    "calls_per_arm": 4,
+    "nonzero_BF16_words_per_call": 131072,
+    "all_outputs_sha256": "47ba84c587a786f019473a5378254e821c95fa244dc8db0959485eac945e069d",
+    "K_rows": [
+      1,
+      65,
+      129,
+      257,
+      2324097,
+      2324319,
+      2324350
+    ],
+    "oracle": "Exact signed-integer/128 products and FP32 accumulation with explicit BF16 RNE"
+  },
+  "limits": [
+    "A bounded equal-bank pass is supporting evidence, not a demonstrated training fix or measured failure rate.",
+    "Original training405 has no native trace; these replays cannot retrospectively assign its native kernel.",
+    "The tiny zero-DY output errors differ from the enormous original-training errors; the separate reverse-copy numerical model addresses that linkage.",
+    "Zero-DY producer fully checks and hashes BF16-one prefill but does not retain raw prefill bytes. Sparse witness retains complete prefills.",
+    "Zero-DY captured/restored execution metadata matches historical metadata; it does not provide separate per-call readback of controls."
+  ],
+  "GPU_workers_and_native_verifiers_terminal_and_reaped": true,
+  "driver_changed": false,
+  "commits_or_pushes": false
+}

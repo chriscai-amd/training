@@ -1,0 +1,535 @@
+{
+  "status": "PASS_ALL_RELOCATED_PROGRAM_READS_HAVE_PRIOR_FULL_EXEC_HALF_DEFINITIONS",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_lane_schedule_peer_v1/review_full_EXEC_definitions.py",
+    "bytes": 8593,
+    "sha256": "75e5057bc4c649872420384e75ce5f8bd6d78233d4af24ac324aebee1bb10151"
+  },
+  "construction_plan": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_relocation_plan_peer_v1/whole_kernel_relocation_construction_plan.json",
+    "bytes": 9607,
+    "sha256": "ec206ccd88e6a3539c1550378d6aea3ebd70a5e120c65807e5b7060a367f691e"
+  },
+  "previous_scope_addendum": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_relocation_plan_peer_v1/full_lane_definition_scope_addendum.json",
+    "bytes": 29215,
+    "sha256": "1472ab6c10679cd8534908a9f4b22a725350fc582170c10c77e224ea359e20c9"
+  },
+  "read_only_plan_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_relocation_plan_peer_v1/derive_construction_plan.py",
+    "bytes": 17145,
+    "sha256": "79dedf83c29441048f5c90617475591bf374fdbe94197a19867f1b9c0b863327"
+  },
+  "independent_CFG_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_full_context_CFG_peer_v1/independent_full_context_CFG_review.json",
+    "bytes": 4911,
+    "sha256": "8300da30e712985940547deac45baf9eb5e6ad535be3578a55e2822d68836718"
+  },
+  "reached_context_nodes": 140941,
+  "all_EXEC_writer_forms": {
+    "s_mov_b32 exec_lo, vcc_lo": 91,
+    "s_mov_b32 exec_lo, -1": 28,
+    "s_or_saveexec_b32 vcc_lo, s8": 63
+  },
+  "literal_OR_SAVEEXEC_restore_count": 63,
+  "literal_OR_SAVEEXEC_restore_proofs": [
+    {
+      "PC": "0xffa8",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0xffa0",
+      "contexts": 1
+    },
+    {
+      "PC": "0x1000c",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10004",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10070",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10068",
+      "contexts": 1
+    },
+    {
+      "PC": "0x100d4",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x100cc",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10138",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10130",
+      "contexts": 1
+    },
+    {
+      "PC": "0x1019c",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10194",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10200",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x101f8",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10264",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x1025c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x102dc",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x102d4",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10354",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x1034c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x103cc",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x103c4",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10444",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x1043c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x104bc",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x104b4",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10534",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x1052c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x105ac",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x105a4",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10624",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x1061c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x106b0",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x106a8",
+      "contexts": 1
+    },
+    {
+      "PC": "0x1073c",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10734",
+      "contexts": 1
+    },
+    {
+      "PC": "0x107c8",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x107c0",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10854",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x1084c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x108e0",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x108d8",
+      "contexts": 1
+    },
+    {
+      "PC": "0x1096c",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10964",
+      "contexts": 1
+    },
+    {
+      "PC": "0x109f8",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x109f0",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10a84",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10a7c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10b24",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10b1c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10bc4",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10bbc",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10c64",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10c5c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10d04",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10cfc",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10da4",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10d9c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10e44",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10e3c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10ee4",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10edc",
+      "contexts": 1
+    },
+    {
+      "PC": "0x10f84",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x10f7c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11038",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11030",
+      "contexts": 1
+    },
+    {
+      "PC": "0x110ec",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x110e4",
+      "contexts": 1
+    },
+    {
+      "PC": "0x111a0",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11198",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11254",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x1124c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11308",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11300",
+      "contexts": 1
+    },
+    {
+      "PC": "0x113bc",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x113b4",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11470",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11468",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11524",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x1151c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x115ec",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x115e4",
+      "contexts": 1
+    },
+    {
+      "PC": "0x116b4",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x116ac",
+      "contexts": 1
+    },
+    {
+      "PC": "0x1177c",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11774",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11844",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x1183c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x1190c",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11904",
+      "contexts": 1
+    },
+    {
+      "PC": "0x119d4",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x119cc",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11a9c",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11a94",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11b64",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11b5c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11c40",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11c38",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11d1c",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11d14",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11df8",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11df0",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11ed4",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11ecc",
+      "contexts": 1
+    },
+    {
+      "PC": "0x11fb0",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x11fa8",
+      "contexts": 1
+    },
+    {
+      "PC": "0x1208c",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x12084",
+      "contexts": 1
+    },
+    {
+      "PC": "0x12168",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x12160",
+      "contexts": 1
+    },
+    {
+      "PC": "0x12244",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x1223c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x12eec",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x12ee4",
+      "contexts": 1
+    },
+    {
+      "PC": "0x13b34",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x13b2c",
+      "contexts": 1
+    },
+    {
+      "PC": "0x14c88",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x14c80",
+      "contexts": 1
+    },
+    {
+      "PC": "0x162dc",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x162d4",
+      "contexts": 1
+    },
+    {
+      "PC": "0x17738",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x17730",
+      "contexts": 1
+    },
+    {
+      "PC": "0x18898",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x18890",
+      "contexts": 1
+    },
+    {
+      "PC": "0x196f0",
+      "instruction": "s_or_saveexec_b32 vcc_lo, s8",
+      "s8_all_ones_on_every_contextual_incoming_path": true,
+      "immediate_definition_PC": "0x196e8",
+      "contexts": 1
+    }
+  ],
+  "stronger_criterion": "Initialize no relocated register halves at entry; only definitions executed under proven full wave32 EXEC clear may-undefined halves; union may-undefined at all contextual joins. Every explicit relocated source read is checked at its full-word or .l/.h width.",
+  "unresolved_initial_ABI_reads_preserved": [
+    {
+      "PC": "0x4708",
+      "instruction": "global_prefetch_b8 v0, s[64:65] scope:SCOPE_SE",
+      "missing_halves": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "contexts": [
+        -1
+      ]
+    },
+    {
+      "PC": "0x47ac",
+      "instruction": "v_mov_b32_e32 v670, v0",
+      "missing_halves": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "contexts": [
+        -1
+      ]
+    }
+  ],
+  "unresolved_program_read_sites": [],
+  "formerly_unresolved_epilogue_sites_closed": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_sink_lane_schedule_peer_v1/all104_epilogue_FULL_EXEC_definition_closures.json",
+    "bytes": 35149,
+    "sha256": "0c4dccb4fce879a0dcc637fb4d4305c59ef926333b69dab233ba80988aa620ba"
+  },
+  "relocation_equivalence": [
+    "The injective physical-register map preserves lane identity and the selected half for every explicit operand. Added scalar NOP/setters do not change EXEC or lane values.",
+    "Under identical EXEC, each instruction updates the same logical destination lanes and halfwords. Inactive lanes and untouched halfwords retain prior values in both versions.",
+    "No assumption about arbitrary initial contents of the new registers is needed: every program read of a relocated half has a preceding full-EXEC definition on every contextual path. The only initial v0 reads remain unmodified.",
+    "Partial d16 loads define only the selected half. The preserved half is neither counted as initialized by that load nor exempted from later read checks.",
+    "This proves defined values are not lost by the proposed renaming under architectural instruction semantics. It does not model the defective trap handler as correct program execution."
+  ],
+  "limits": [
+    "Assumes the original full wave32 launch at entry; descriptor/workgroup and actual launch checks are owned by the separate ELF/runtime audits.",
+    "Uses the independently reviewed contextual CFG and explicit operand-role encoding inventory. Implicit operand completeness and whole candidate bytes require their companion reviews.",
+    "Instruction-level definition is separate from asynchronous completion. Existing waits and inserted bank-switch scheduling are audited separately.",
+    "No initialization kernel, additional GPU action, original-artifact edit, or callable load was performed."
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "status": "PASS_COMPLETE_HISTORICAL_REPRODUCTION_AND_JOINT_CONTROLLED_PREVENTION",
+  "created_utc": "2026-09-21T05:54:52.661179+00:00",
+  "reproduction_result": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/training405_combined_full_result.json",
+    "bytes": 6027,
+    "sha256": "5a895950d5d5fcccf90151754f62d6175519c20cf6017c262afbe684ffe6ee43"
+  },
+  "prevention_matrix": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_native_results_v1/joint_equal_full_baseline_matrix.json",
+    "bytes": 19407,
+    "sha256": "e73673bd1290e5a091ef7b92a14b9bacc990a615116c4068dbf44b4ccc714aba"
+  },
+  "native_intervention_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_review_v1/independent_equal_native_review.json",
+    "bytes": 7579,
+    "sha256": "82f5fb0676d5448c23d04f04888f635c13a92e9234c7c91824c15be1adf2a9e2"
+  },
+  "package_release": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_package_v1/package_release_CPU.json",
+    "bytes": 3476,
+    "sha256": "6552be24182bc3d20308f5cbc21c20dd77d8f4fc5312d24b99b750dfee02f457"
+  },
+  "intervention": {
+    "changed_immediate_bytes_per_ELF": 4,
+    "residual_bank": "0x05 -> 0x00",
+    "address_bank": "0x46 -> 0x86",
+    "consistent_previous_mode_fields": true,
+    "seven_selected_traps_retained": true,
+    "trigger_PCs_unchanged": true,
+    "original_arithmetic_metadata_ABI_unchanged": true
+  },
+  "arms": [
+    {
+      "arm": "combined_equal_nop",
+      "calls": 4,
+      "all131072_words_equal_baseline": true,
+      "output_sha256": [
+        "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+        "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+        "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+        "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      ],
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_native_results_v1/combined_equal_nop_terminal_audit.json",
+        "bytes": 28968,
+        "sha256": "a5199172cda07fcb95243606c554506011e149a5d7867993db3607346fa2554e"
+      }
+    },
+    {
+      "arm": "combined_equal_trap",
+      "calls": 4,
+      "all131072_words_equal_baseline": true,
+      "output_sha256": [
+        "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+        "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+        "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+        "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      ],
+      "terminal_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_combined_equal_native_results_v1/combined_equal_trap_terminal_audit.json",
+        "bytes": 28984,
+        "sha256": "a5a799e5770b83df737f5d9695d5997b644d9b674a3f82087dabcf730fffee71"
+      }
+    }
+  ],
+  "root_worker_receipts": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/combined_equal_nop_post_idle.json",
+      "bytes": 468,
+      "sha256": "c1147446e2b6c519f17c15cdd9cbaacc1eb195fdd48c531a426cfe62e540bf43"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/combined_equal_trap_post_idle.json",
+      "bytes": 469,
+      "sha256": "6853d9fbce12fadf0125aee9538681f67dcd1c2f7205b513d6e23c8602cecdea"
+    }
+  ],
+  "driver_actions": false,
+  "limits": [
+    "A pass shows joint prevention in this controlled seven-event replay, with the two bank settings changed and all seven traps retained.",
+    "Static predicate proves selected trap sites/count; no runtime gate-count observer is added.",
+    "This does not repair the installed handler, observe original historical trap timing or establish training stability.",
+    "Every mismatch fails the frozen criterion; bounded finite values are insufficient."
+  ],
+  "next_experiment": "One bit in one original DY element, with the original single-target trap, tests numerical trigger sensitivity under the same handler and native kernel."
+}

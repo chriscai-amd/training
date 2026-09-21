@@ -1,0 +1,312 @@
+{
+  "status": "PASS_SEPARATE_POSTHOC_EXIT_SETTER_COUNTS_AND_SAME_WAVE_JOINS",
+  "GPU_actions": false,
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/summarize_posthoc_exit_setters_v1.py",
+    "bytes": 7936,
+    "sha256": "e6f86d682ac820d5513a5423c39bca17eae2bb3b9a89f5b97d7cc454dce267e4"
+  },
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_pair_v1/launch_manifest_bank_equal_v1.json",
+    "bytes": 21530,
+    "sha256": "e9246aa35b1a76dbd4a3db413edbd5198aec4fea61f98ef0364f57e2655a65af"
+  },
+  "selection": "Post hoc follow-up after control failure call 70 sampled PC 0x813c. Kept separate from the original 14 selected load heads.",
+  "original_selected_14_heads": [
+    "0x80cc",
+    "0x80d4",
+    "0x80ec",
+    "0x80f4",
+    "0x810c",
+    "0x8114",
+    "0x812c",
+    "0x8134",
+    "0x814c",
+    "0x8154",
+    "0x816c",
+    "0x8174",
+    "0x818c",
+    "0x8194"
+  ],
+  "posthoc_selected_7_exit_setter_heads": [
+    "0x80dc",
+    "0x80fc",
+    "0x811c",
+    "0x813c",
+    "0x815c",
+    "0x817c",
+    "0x819c"
+  ],
+  "arms": {
+    "bank82_equal": {
+      "runtime_status": "PASS",
+      "invocations": 1000,
+      "wave_samples": 16000,
+      "original_14_head_samples": 0,
+      "original_14_head_calls": 0,
+      "posthoc_exit_samples": 0,
+      "posthoc_exit_calls": 0,
+      "posthoc_by_PC": {},
+      "posthoc_calls_by_PC": {
+        "0x80dc": 0,
+        "0x80fc": 0,
+        "0x811c": 0,
+        "0x813c": 0,
+        "0x815c": 0,
+        "0x817c": 0,
+        "0x819c": 0
+      },
+      "posthoc_arithmetic_failure_samples": 0,
+      "posthoc_wrong_source_wave_samples": 0,
+      "posthoc_wrong_source_observations": 0,
+      "selected_exit_instruction_bytes": [
+        {
+          "ELF_PC": "0x80dc",
+          "file_offset": 28892,
+          "instruction_word": "0xbf868205",
+          "little_endian_bytes": "058286bf",
+          "instruction": "s_set_vgpr_msb 0x8205"
+        },
+        {
+          "ELF_PC": "0x80fc",
+          "file_offset": 28924,
+          "instruction_word": "0xbf868205",
+          "little_endian_bytes": "058286bf",
+          "instruction": "s_set_vgpr_msb 0x8205"
+        },
+        {
+          "ELF_PC": "0x811c",
+          "file_offset": 28956,
+          "instruction_word": "0xbf868205",
+          "little_endian_bytes": "058286bf",
+          "instruction": "s_set_vgpr_msb 0x8205"
+        },
+        {
+          "ELF_PC": "0x813c",
+          "file_offset": 28988,
+          "instruction_word": "0xbf868205",
+          "little_endian_bytes": "058286bf",
+          "instruction": "s_set_vgpr_msb 0x8205"
+        },
+        {
+          "ELF_PC": "0x815c",
+          "file_offset": 29020,
+          "instruction_word": "0xbf868205",
+          "little_endian_bytes": "058286bf",
+          "instruction": "s_set_vgpr_msb 0x8205"
+        },
+        {
+          "ELF_PC": "0x817c",
+          "file_offset": 29052,
+          "instruction_word": "0xbf868205",
+          "little_endian_bytes": "058286bf",
+          "instruction": "s_set_vgpr_msb 0x8205"
+        },
+        {
+          "ELF_PC": "0x819c",
+          "file_offset": 29084,
+          "instruction_word": "0xbf868205",
+          "little_endian_bytes": "058286bf",
+          "instruction": "s_set_vgpr_msb 0x8205"
+        }
+      ],
+      "all_posthoc_exit_samples": [],
+      "inputs": {
+        "stream": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/bank82_equal_complete_stream_metadata_pairs_independent_review_v1.json",
+          "bytes": 13836127,
+          "sha256": "94e8a1bf3063e7d839bbcca6d36913a056cc17137cf413aef5c7c42f7a6fd059"
+        },
+        "source_wave": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/bank82_equal_source_wave_metadata_join_independent_v1.json",
+          "bytes": 2417,
+          "sha256": "ac048c99b8561f29170dbc6a8e460a624253614197bf9bfb8575f22c5ac8708a"
+        },
+        "PC": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/bank82_equal_complete_PC_context_independent_v1.json",
+          "bytes": 235267,
+          "sha256": "73c97008aae1d61fe2118d44852e41f852ea67445d8b33fe72154b765ce0bdbe"
+        },
+        "ELF": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_TTMP_bank_equal_native_artifacts_v1/DW_bank82_equal.elf",
+          "bytes": 335000,
+          "sha256": "6174b35aecd8b7fac979d753610f4903b54f60f285b5f33a6309a04dbb08a8b6"
+        },
+        "native": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_pair_v1/bank82_equal_joined_verification_v1.json",
+          "bytes": 23606,
+          "sha256": "617e8b3698e3ac334faeedf753b603b911f65acf0d912d8383b25d36f1d71c8a"
+        },
+        "terminal": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_pair_v1/bank82_equal_terminal.json",
+          "bytes": 271,
+          "sha256": "88e6a3dfcb4bb447808fb679fb842b86d3780e00492b193633145adc8837f752"
+        }
+      }
+    },
+    "bank81_control": {
+      "runtime_status": "FAIL",
+      "invocations": 70,
+      "wave_samples": 1120,
+      "original_14_head_samples": 0,
+      "original_14_head_calls": 0,
+      "posthoc_exit_samples": 4,
+      "posthoc_exit_calls": 1,
+      "posthoc_by_PC": {
+        "0x813c": 4
+      },
+      "posthoc_calls_by_PC": {
+        "0x80dc": 0,
+        "0x80fc": 0,
+        "0x811c": 0,
+        "0x813c": 1,
+        "0x815c": 0,
+        "0x817c": 0,
+        "0x819c": 0
+      },
+      "posthoc_arithmetic_failure_samples": 4,
+      "posthoc_wrong_source_wave_samples": 4,
+      "posthoc_wrong_source_observations": 272,
+      "selected_exit_instruction_bytes": [
+        {
+          "ELF_PC": "0x80dc",
+          "file_offset": 28892,
+          "instruction_word": "0xbf868105",
+          "little_endian_bytes": "058186bf",
+          "instruction": "s_set_vgpr_msb 0x8105"
+        },
+        {
+          "ELF_PC": "0x80fc",
+          "file_offset": 28924,
+          "instruction_word": "0xbf868105",
+          "little_endian_bytes": "058186bf",
+          "instruction": "s_set_vgpr_msb 0x8105"
+        },
+        {
+          "ELF_PC": "0x811c",
+          "file_offset": 28956,
+          "instruction_word": "0xbf868105",
+          "little_endian_bytes": "058186bf",
+          "instruction": "s_set_vgpr_msb 0x8105"
+        },
+        {
+          "ELF_PC": "0x813c",
+          "file_offset": 28988,
+          "instruction_word": "0xbf868105",
+          "little_endian_bytes": "058186bf",
+          "instruction": "s_set_vgpr_msb 0x8105"
+        },
+        {
+          "ELF_PC": "0x815c",
+          "file_offset": 29020,
+          "instruction_word": "0xbf868105",
+          "little_endian_bytes": "058186bf",
+          "instruction": "s_set_vgpr_msb 0x8105"
+        },
+        {
+          "ELF_PC": "0x817c",
+          "file_offset": 29052,
+          "instruction_word": "0xbf868105",
+          "little_endian_bytes": "058186bf",
+          "instruction": "s_set_vgpr_msb 0x8105"
+        },
+        {
+          "ELF_PC": "0x819c",
+          "file_offset": 29084,
+          "instruction_word": "0xbf868105",
+          "little_endian_bytes": "058186bf",
+          "instruction": "s_set_vgpr_msb 0x8105"
+        }
+      ],
+      "all_posthoc_exit_samples": [
+        {
+          "iteration": 70,
+          "group": 3,
+          "wave": 0,
+          "normalized_PC": "0x813c",
+          "metadata_valid": true,
+          "arithmetic_failed": true,
+          "wrong_source_physical_nonzero_count": 68,
+          "TTMP64": "0x00007666f008813c",
+          "S_GETPC64": "0x00007666f00a0138",
+          "matching_instruction": "s_set_vgpr_msb 0x8105"
+        },
+        {
+          "iteration": 70,
+          "group": 3,
+          "wave": 1,
+          "normalized_PC": "0x813c",
+          "metadata_valid": true,
+          "arithmetic_failed": true,
+          "wrong_source_physical_nonzero_count": 68,
+          "TTMP64": "0x00007666f008813c",
+          "S_GETPC64": "0x00007666f00a0138",
+          "matching_instruction": "s_set_vgpr_msb 0x8105"
+        },
+        {
+          "iteration": 70,
+          "group": 3,
+          "wave": 2,
+          "normalized_PC": "0x813c",
+          "metadata_valid": true,
+          "arithmetic_failed": true,
+          "wrong_source_physical_nonzero_count": 68,
+          "TTMP64": "0x00007666f008813c",
+          "S_GETPC64": "0x00007666f00a0138",
+          "matching_instruction": "s_set_vgpr_msb 0x8105"
+        },
+        {
+          "iteration": 70,
+          "group": 3,
+          "wave": 3,
+          "normalized_PC": "0x813c",
+          "metadata_valid": true,
+          "arithmetic_failed": true,
+          "wrong_source_physical_nonzero_count": 68,
+          "TTMP64": "0x00007666f008813c",
+          "S_GETPC64": "0x00007666f00a0138",
+          "matching_instruction": "s_set_vgpr_msb 0x8105"
+        }
+      ],
+      "inputs": {
+        "stream": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/bank81_control_complete_stream_metadata_pairs_independent_review_v1.json",
+          "bytes": 1111209,
+          "sha256": "4deec618acf5b2f3308ad35b88849382dec72cd084f9f527e3923d69d67a7ece"
+        },
+        "source_wave": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/bank81_control_source_wave_metadata_join_independent_v1.json",
+          "bytes": 570225,
+          "sha256": "a8e5a14a34c9293f9609ea75e4f9615e7ceb5bb41c63090eee23d4521e314cb9"
+        },
+        "PC": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_terminal_audit_v1/bank81_control_complete_PC_context_independent_v1.json",
+          "bytes": 26475,
+          "sha256": "dbc36beb01860b03d55dfb9420e74d4c11753fa27522e332e965039b1a5ba976"
+        },
+        "ELF": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/DW_TTMP_bank_equal_native_artifacts_v1/DW_bank81_control.elf",
+          "bytes": 335000,
+          "sha256": "810ef480c7697b05e850847ea261ea1f9776c51d95dd02cea51aa64dd12c3e77"
+        },
+        "native": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_pair_v1/bank81_control_joined_verification_v1.json",
+          "bytes": 7157,
+          "sha256": "c6daf41cd198171a7ca2d372d7c78a0b2d08469a9854aeaf25faacd7e92ac917"
+        },
+        "terminal": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_DW_bank_equal_reverse_pair_v1/bank81_control_terminal.json",
+          "bytes": 273,
+          "sha256": "6368b3b69456bd078558d88667b656210a071a642dff1e9c309e467f9ca160b4"
+        }
+      }
+    }
+  },
+  "limits": [
+    "PC normalization uses retained per-wave TTMP and S_GETPC metadata; no instruction trace or live MODE sample is present.",
+    "Corresponding exit-setter addresses agree between ELFs while their actual instruction words differ: control 0xbf868105 versus equal 0xbf868205.",
+    "Matching last-visible PCs associate an invocation and source wave but do not date the underlying trap or reveal earlier/later hidden events.",
+    "The post hoc seven-head criterion does not replace, enlarge or retrospectively claim success under the original 14-head criterion.",
+    "Passing exit-setter samples do not show identical incoming MODE, pending LDS operations or trap/restart state to failing samples."
+  ]
+}

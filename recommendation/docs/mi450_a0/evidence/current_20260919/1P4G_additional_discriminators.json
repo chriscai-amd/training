@@ -1,0 +1,49 @@
+{
+  "status": "CPU_ADDITIONAL_1P4G_B0_DISCRIMINATORS_AND_NEXT_EVIDENCE_PLAN",
+  "created_utc": "2026-09-21T05:36:19.395448+00:00",
+  "artifacts": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_discriminators_v1/addendum.md",
+      "bytes": 10781,
+      "sha256": "f6787af1db506375c296c3dd4450bf73c957b0a11b1ec9928d1ad53a45480490"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_discriminators_v1/audit_operand_address_discriminators.py",
+      "bytes": 5359,
+      "sha256": "63fdeeb1e56430eb78decade0bfa4ccf61f2982b96185e6c4a61d83b772d625c"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_1P4G_discriminators_v1/operand_address_discriminators.json",
+      "bytes": 6239,
+      "sha256": "739a0068b041012aa6158fa42d94e4a87f795d44d564fdc81a469977926ed10f"
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/docs/mi450_b0/nan_triage_resume_20260920.md",
+      "bytes": 56282,
+      "sha256": "ad0d12a451cb4446647a44465d252e40adc28ac775a4e307c194645332127249"
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/docs/mi450_b0/nan_triage_resume_20260921.md",
+      "bytes": 27224,
+      "sha256": "7d8bf18eb1906c7b4e626840cd61c094ad6878f61d5e4868b87c5d214f242543"
+    },
+    {
+      "path": "/home/chcai/training_nan_compare_20260921/recommendation/docs/mi450_1P4G/ctheliosr-1b112-a37-2.md",
+      "bytes": 56645,
+      "sha256": "01d0e177191a8359221997fa290d5478b0b607b82b416f954a2d240ac832825f"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_root_v1/driver_queue_parameters.json",
+      "bytes": 471,
+      "sha256": "574ebc1eb08163d31127a579ae63295409781ad94a0997d323f725748627b1a6"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_combined_trap_runtime_v1/loader/artifacts/DW_kernel_metadata.json",
+      "bytes": 7099,
+      "sha256": "b8ee1f792b59a5d3aa4da70e005387cf65d138589e8f246826562082cf6e32ab"
+    }
+  ],
+  "GPU_actions": false,
+  "remote_actions": false,
+  "shared_doc_or_package_edits": false
+}

@@ -1,0 +1,88 @@
+--- a/amd/amdkfd/cwsr_trap_handler_gfx12.asm
++++ b/amd/amdkfd/cwsr_trap_handler_gfx12.asm
+@@ -259,16 +259,41 @@
+ 	s_rfe_b64	[ttmp0, ttmp1]
+ 
+ L_NOT_WAVE_START:
+-	s_mov_b32	ttmp14, exec_lo
+-	s_mov_b32	exec_lo, 1
+-	v_readlane_b32	ttmp15, v1, 0
+-
+-	s_mov_b64	[ttmp2, ttmp3], 0
+-	v_mov_b32	v1, 0
+-	global_prefetch_b8	v1, [ttmp2, ttmp3] scope:SCOPE_SE th:TH_LOAD_RT
+-
+-	v_writelane_b32	v1, ttmp15, 0
+-	s_mov_b32	exec_lo, ttmp14
++	// Incoming SRC0 and DST bank selections can differ. Save, zero,
++	// prefetch from and restore the same physical v1 (the SRC0 bank).
++	// TTMP2:3 are available before/after their zero-address use.
++	// Restore DST before discarding its saved value, then save it
++	// again for the write-back. No extra TTMP ABI storage is needed.
++	// Two V_NOPs precede each MODE write for the gfx1250 VALU/MODE
++	// hazard; two scalar wait states also follow each write.
++	s_mov_b32 ttmp14, exec_lo
++	s_mov_b32 exec_lo, 1
++	v_readlane_b32 ttmp15, v1, 0
++	s_getreg_b32 ttmp2, hwreg(HW_REG_WAVE_MODE, 12, 2)
++	s_getreg_b32 ttmp3, hwreg(HW_REG_WAVE_MODE, 14, 2)
++	v_nop
++	v_nop
++	s_setreg_b32 hwreg(HW_REG_WAVE_MODE, 12, 2), ttmp3
++	s_nop 1
++	v_mov_b32 v1, 0
++	v_nop
++	v_nop
++	s_setreg_b32 hwreg(HW_REG_WAVE_MODE, 12, 2), ttmp2
++	s_nop 1
++	s_mov_b64 [ttmp2, ttmp3], 0
++	global_prefetch_b8 v1, [ttmp2, ttmp3] scope:SCOPE_SE th:TH_LOAD_RT
++	s_getreg_b32 ttmp2, hwreg(HW_REG_WAVE_MODE, 12, 2)
++	s_getreg_b32 ttmp3, hwreg(HW_REG_WAVE_MODE, 14, 2)
++	v_nop
++	v_nop
++	s_setreg_b32 hwreg(HW_REG_WAVE_MODE, 12, 2), ttmp3
++	s_nop 1
++	v_writelane_b32 v1, ttmp15, 0
++	v_nop
++	v_nop
++	s_setreg_b32 hwreg(HW_REG_WAVE_MODE, 12, 2), ttmp2
++	s_nop 1
++	s_mov_b32 exec_lo, ttmp14
+ #endif
+ 
+ #if RELAXED_SCHEDULING_IN_TRAP
+--- a/amd/amdkfd/cwsr_trap_handler.h
++++ b/amd/amdkfd/cwsr_trap_handler.h
+@@ -4685,7 +4685,7 @@
+ };
+ 
+ static const uint32_t cwsr_trap_gfx12_1_0_hex[] = {
+-	0xbfa00001, 0xbfa003f1,
++	0xbfa00001, 0xbfa00405,
+ 	0xb0804009, 0xb8f8f804,
+ 	0xb8faf811, 0xbf0d887a,
+ 	0xbfa10008, 0xb9800211,
+@@ -4694,10 +4694,20 @@
+ 	0x00040000, 0x00000001,
+ 	0xbe804a6c, 0xbefa007e,
+ 	0xbefe0081, 0xd760007b,
+-	0x00010101, 0xbeee0180,
+-	0x7e020280, 0xee17406e,
++	0x00010101, 0xb8ee0b01,
++	0xb8ef0b81, 0x7e000000,
++	0x7e000000, 0xb96f0b01,
++	0xbf800001, 0x7e020280,
++	0x7e000000, 0x7e000000,
++	0xb96e0b01, 0xbf800001,
++	0xbeee0180, 0xee17406e,
+ 	0x00040000, 0x00000001,
++	0xb8ee0b01, 0xb8ef0b81,
++	0x7e000000, 0x7e000000,
++	0xb96f0b01, 0xbf800001,
+ 	0xd7610001, 0x0001007b,
++	0x7e000000, 0x7e000000,
++	0xb96e0b01, 0xbf800001,
+ 	0xbefe007a, 0x9178ff78,
+ 	0x00008c00, 0xb8fbf811,
+ 	0xbf0c877b, 0xbfa20002,

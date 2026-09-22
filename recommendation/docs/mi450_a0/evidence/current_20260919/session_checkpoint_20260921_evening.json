@@ -1,0 +1,91 @@
+{
+  "status": "BLOCKED_ON_CORRECTED_DRIVER_RECOVERY_ROUTE",
+  "utc": "2026-09-21T22:38:33.367599+00:00",
+  "boot_id": "cd2037bd-33c9-435d-922d-d9078f06c72f",
+  "restoration": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/restoration_journal.jsonl",
+    "bytes": 566,
+    "sha256": "4da6ab9beb896584b090002325c9867edbe0accaca30c826146c6f07c6a1aef1"
+  },
+  "health": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_health_v1.json",
+    "bytes": 1882,
+    "sha256": "6ee571f61a53ff97f6348154986e0bce991b2d5e1b2533a0d47214b19382669e"
+  },
+  "ftrace_setup_failure": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/terminal.json",
+    "bytes": 7422,
+    "sha256": "55bd83b1df219f92fd394ceb8f714a25ec4c21e408d9e07721a70605212ff974"
+  },
+  "completed_ftrace_terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_package_v2/terminal.json",
+    "bytes": 7174,
+    "sha256": "47e0ee23a318b959c4bd663f8a2e5e4ca0498524c34b4526af8ec28065da0775"
+  },
+  "next": [
+    "Full raw packet/native/trace correlation audit",
+    "Natural zero-DY relocation comparison; prepare lossless compressed failure retention under 14GiB free disk limit",
+    "Inline original/corrected prologue hardware test; no driver replacement"
+  ],
+  "git_commit_or_push_performed": false,
+  "completed_new_evidence": [
+    "First trace: nine fresh copies and three fresh unchanged cases each have one SVM eviction/restore pair; 388 other cases have none.",
+    "Stack trace: ten identical task_numa_work -> change_prot_numa -> SVM eviction stacks; six copies and four equal-bank observations.",
+    "Inline code: 6,144 calls pass the full expected matrix; 1,536 predicted original copies, zero corrected copies; all MODE/EXEC/tag/native/lifecycle checks pass.",
+    "Natural zero-DY pair: control FAIL103 with 512 finite wrong words; relocated candidate PASS1000 with 131,072,000 positive-zero words; complete audits pass.",
+    "Natural control values: all 512 words fit old-v257 donor arithmetic, at 1,258 saved row indices sharing one X vector.",
+    "Plain process-local MPOL_BIND: 400 calls with zero observed copies, fresh PCs or SVM events; default repeat restores corruption and AutoNUMA stacks, with retained marker exceptions.",
+    "Matched explicit-balancing positive control: same allowed-node mask [0,1], mode 8194; five fresh copies and ten SVM pairs/AutoNUMA stacks in 400 calls. All three policy arms pass complete independent audits."
+  ],
+  "active_work": [],
+  "source_patch": "/home/chcai/training/recommendation/docs/mi450_a0/cwsr_gfx1250_bank_fix.patch",
+  "updated_utc": "2026-09-21T23:06:09.801878+00:00",
+  "blocker": "Actual corrected first-level handler validation requires a controlled driver activation. Prior unload-to-load interval ended in unexplained reboot; no usable external console/recovery route has been established. User question pending. No further driver switch attempted.",
+  "completed_prepared_runtime": true,
+  "focused_report": "/home/chcai/training/recommendation/docs/mi450_a0/cwsr_bank_corruption_fix.md",
+  "pending_user_information": "Usable console or out-of-band recovery route for this host.",
+  "final_idle": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/final_gpu_idle.json",
+    "bytes": 2263,
+    "sha256": "78df9262a0c75f5da358e2bb2920f785266c202af2f44e6b0f7a0f5bbac247ef"
+  },
+  "final_trace_and_policy": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/final_trace_and_policy_state.json",
+    "bytes": 114,
+    "sha256": "599279c9d87df02fce405a9fc11b98ed2986bd31ba87f8980db2e07132bd3445"
+  },
+  "kernel_log": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/final_dmesg.log",
+    "bytes": 150059,
+    "sha256": "ed1bb0f8b5778d976302017e4c3a4b6389a1d7ec01404bae56f39eeea195cd35"
+  },
+  "kernel_log_additions": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/new_kernel_log_lines.txt",
+    "bytes": 1769,
+    "sha256": "24cab613894399109e73e43b4c6340b84aff329365e0c60f268b2613736189f3"
+  },
+  "kernel_log_unchanged": false,
+  "commit_or_push_performed": false,
+  "results": {
+    "inline": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_inline_audit_v1/full_completed.json",
+      "bytes": 203719,
+      "sha256": "978cac17b3bec17a6ce7d9d7f38dad41e62d2c9308fc6474b09f3df46c1af734"
+    },
+    "natural_zero": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v2/zero_matrix.json",
+      "bytes": 2830,
+      "sha256": "c1786f1aa6e6b1568428689cf7b251431e2e8a3a8a0a015843f14cf8ebbd9e7d"
+    },
+    "NUMA_counterfactual": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_three_arm_audit_v1/completed_three_arm_summary.json",
+      "bytes": 28018,
+      "sha256": "45a7c35e3abfc0bf04c1e0da065b91331220c80ac81141f23c9bd9338a3e79d5"
+    }
+  },
+  "runtime_caveat": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_MCE_audit_v1/runtime_corrected_MCE_comparison.json",
+    "bytes": 29506,
+    "sha256": "bf7defdcd5f7989d14318a539f97dd837d76b6354ffcb57959e75f224e595502"
+  }
+}

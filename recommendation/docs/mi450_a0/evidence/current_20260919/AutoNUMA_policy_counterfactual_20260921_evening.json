@@ -1,0 +1,723 @@
+{
+  "status": "PASS_ALL_THREE_NUMA_ARMS_INDEPENDENTLY_AUDITED",
+  "created_utc": "2026-09-21T23:01:44.592054+00:00",
+  "script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_three_arm_audit_v1/consolidate.py",
+    "bytes": 9504,
+    "sha256": "ef35ac569cf586823b297840a82a5168b8271c286e59ddb352aec18353fb9219"
+  },
+  "arms": {
+    "bind": {
+      "manifest": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_bind_ftrace_v1/launch_manifest_ftrace.json",
+        "bytes": 23545,
+        "sha256": "802b957f919c8ab11f1d94d2f39a74689fb0321322d3346bdfe4e0202fa6c4cf"
+      },
+      "packet_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_bind_audit_v1/independent_terminal_audit.json",
+        "bytes": 3564492,
+        "sha256": "4c7953ee33b364ff13c178aa4c1917bb906775b5d2ca311e6a745b85dd63f8b5"
+      },
+      "trace_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_bind_audit_v1/independent_trace_correlation.json",
+        "bytes": 1024441,
+        "sha256": "af291094d5d1f6fe787fa2244c2afa24efc30dd5fe0a52a9538d34eb14304efe"
+      },
+      "boot_id": "cd2037bd-33c9-435d-922d-d9078f06c72f",
+      "driver": {
+        "version": "7.1.1.31300009",
+        "srcversion": "654C1DDE7A9A3E129BA9553"
+      },
+      "NUMA_policy_evidence": {
+        "contract": {
+          "arm": "bind",
+          "expected_mode": 2,
+          "heap_policy": "bind:0-1",
+          "receipt_host": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/bind_policy_before_exec.json",
+          "numactl": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/numactl",
+            "bytes": 36080,
+            "sha256": "f3944bcd7848d64424f8daf27f350b03d7f3281b2fb9be5eaaba0ddd0e72efb8"
+          },
+          "read_only_exec_helper": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/policy_exec.py",
+            "bytes": 3165,
+            "sha256": "154715c4595a0c9c5850715b5ebc19859a4df1a695aeba79cca7eefa4c9002f8"
+          },
+          "allowed_cpu_memory_nodes": [
+            0,
+            1
+          ],
+          "global_numa_balancing_expected": "1"
+        },
+        "helper_receipt": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/bind_policy_before_exec.json",
+          "bytes": 26199,
+          "sha256": "44246fdd7af01da014b12a0c33df0876fe9f905e907eadbc780321cc84d1748c"
+        },
+        "pre_HIP_receipt": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_bind_ftrace_v1/pre_hip_policy.json",
+          "bytes": 38666,
+          "sha256": "78ca7d4410c063e37cb27375cdc23410d4598352c66e11eb43eeb3d25490eae9"
+        },
+        "policy_mode": 2,
+        "policy_nodes": [
+          0,
+          1
+        ],
+        "allowed_nodes": [
+          0,
+          1
+        ],
+        "gated_heap_policies": [
+          "bind:0-1"
+        ],
+        "all_gated_VMA_policy_counts": {
+          "bind:0-1": 89
+        }
+      },
+      "counts": {
+        "cases": 400,
+        "output_images": 400,
+        "prefill_images": 800,
+        "raw_image_bytes": 230400,
+        "HIP_calls": 2410,
+        "HIP_begin_end_records": 4820,
+        "explicit_calibrations": 0,
+        "passing_explicit_calibrations": 0,
+        "instrumentation_valid": 400,
+        "unexpected_packets": 0
+      },
+      "outcome_counts": {
+        "NO_OBSERVED_FRESH_PLATEAU_EVENT": 400
+      },
+      "outcomes_by_mode_and_arm": {
+        "00_NOP": {
+          "NO_OBSERVED_FRESH_PLATEAU_EVENT": 100
+        },
+        "05_NOP": {
+          "NO_OBSERVED_FRESH_PLATEAU_EVENT": 100
+        },
+        "46_NOP": {
+          "NO_OBSERVED_FRESH_PLATEAU_EVENT": 100
+        },
+        "86_NOP": {
+          "NO_OBSERVED_FRESH_PLATEAU_EVENT": 100
+        }
+      },
+      "trace_event_counts": {
+        "tracing_mark_write": 2,
+        "kfd_map_memory_to_gpu_start": 26,
+        "kfd_map_memory_to_gpu_end": 26
+      },
+      "target_helper_event_counts": {},
+      "correlation_by_packet_outcome": {
+        "NO_OBSERVED_FRESH_PLATEAU_EVENT": {
+          "cases": 400,
+          "cases_with_any_target_helper_event": 0,
+          "cases_with_definite_SVM_eviction": 0,
+          "cases_with_boundary_ambiguous_helper_event": 0
+        }
+      },
+      "stack_count": 0,
+      "stack_signatures": [],
+      "every_eviction_stack_contains_ordered_AutoNUMA_chain": true,
+      "minimum_helper_distance_to_call_boundary_ns": null,
+      "timestamp_uncertainty_ns": 1000,
+      "kprobe_profiles": [
+        {
+          "event": "queue_eviction",
+          "hits": 0,
+          "misses": 0,
+          "raw": "  queue_eviction                                             0               0",
+          "captured_in_trace": 0,
+          "hits_outside_capture_or_unaccounted": 0
+        },
+        {
+          "event": "queue_restore",
+          "hits": 0,
+          "misses": 0,
+          "raw": "  queue_restore                                              0               0",
+          "captured_in_trace": 0,
+          "hits_outside_capture_or_unaccounted": 0
+        }
+      ],
+      "stats_totals": {
+        "overrun": 0,
+        "commit overrun": 0,
+        "dropped events": 0,
+        "entries": 54,
+        "read events": 0
+      },
+      "exceptions": [],
+      "packet_failed_checks": [],
+      "trace_failed_checks": []
+    },
+    "default": {
+      "manifest": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_default_ftrace_v1/launch_manifest_ftrace.json",
+        "bytes": 23658,
+        "sha256": "b9f6f623df1f31c1e219d19aafd0f91334779ffbf1da60410d2cdf2d63e4d915"
+      },
+      "packet_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_default_audit_v1/independent_terminal_audit.json",
+        "bytes": 3620904,
+        "sha256": "f7513ce9178c40e4172afc9da716510edf2d0cacbfebde1a98e412c43643c2e7"
+      },
+      "trace_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_default_audit_v1/independent_trace_correlation.json",
+        "bytes": 1124253,
+        "sha256": "9245a9beb8aaea823e42e7307661aaa5d57ee9f5fdf67f01fd0f4767bad12c72"
+      },
+      "boot_id": "cd2037bd-33c9-435d-922d-d9078f06c72f",
+      "driver": {
+        "version": "7.1.1.31300009",
+        "srcversion": "654C1DDE7A9A3E129BA9553"
+      },
+      "NUMA_policy_evidence": {
+        "contract": {
+          "arm": "default",
+          "expected_mode": 0,
+          "heap_policy": "default",
+          "receipt_host": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/default_policy_before_exec.json",
+          "numactl": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/numactl",
+            "bytes": 36080,
+            "sha256": "f3944bcd7848d64424f8daf27f350b03d7f3281b2fb9be5eaaba0ddd0e72efb8"
+          },
+          "read_only_exec_helper": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/policy_exec.py",
+            "bytes": 3165,
+            "sha256": "154715c4595a0c9c5850715b5ebc19859a4df1a695aeba79cca7eefa4c9002f8"
+          },
+          "allowed_cpu_memory_nodes": [
+            0,
+            1
+          ],
+          "global_numa_balancing_expected": "1"
+        },
+        "helper_receipt": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/default_policy_before_exec.json",
+          "bytes": 26070,
+          "sha256": "bd715777ca27eb8335265a29407a67bb3b017cee6c9ee330c5aab12311b14024"
+        },
+        "pre_HIP_receipt": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_default_ftrace_v1/pre_hip_policy.json",
+          "bytes": 38434,
+          "sha256": "232843df23f7c6b51efcda5c5d89f33dec4a5df035868a2131c325c195290c86"
+        },
+        "policy_mode": 0,
+        "policy_nodes": [],
+        "allowed_nodes": [
+          0,
+          1
+        ],
+        "gated_heap_policies": [
+          "default"
+        ],
+        "all_gated_VMA_policy_counts": {
+          "default": 89
+        }
+      },
+      "counts": {
+        "cases": 400,
+        "output_images": 400,
+        "prefill_images": 800,
+        "raw_image_bytes": 230400,
+        "HIP_calls": 2410,
+        "HIP_begin_end_records": 4820,
+        "explicit_calibrations": 0,
+        "passing_explicit_calibrations": 0,
+        "instrumentation_valid": 400,
+        "unexpected_packets": 0
+      },
+      "outcome_counts": {
+        "NO_OBSERVED_FRESH_PLATEAU_EVENT": 389,
+        "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC": 4,
+        "FRESH_PLATEAU_PC_TAGS_UNCHANGED": 6,
+        "COPY_WITHOUT_FRESH_PLATEAU_PC": 1
+      },
+      "outcomes_by_mode_and_arm": {
+        "00_NOP": {
+          "NO_OBSERVED_FRESH_PLATEAU_EVENT": 98,
+          "FRESH_PLATEAU_PC_TAGS_UNCHANGED": 2
+        },
+        "05_NOP": {
+          "NO_OBSERVED_FRESH_PLATEAU_EVENT": 97,
+          "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC": 3
+        },
+        "46_NOP": {
+          "NO_OBSERVED_FRESH_PLATEAU_EVENT": 98,
+          "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC": 1,
+          "COPY_WITHOUT_FRESH_PLATEAU_PC": 1
+        },
+        "86_NOP": {
+          "NO_OBSERVED_FRESH_PLATEAU_EVENT": 96,
+          "FRESH_PLATEAU_PC_TAGS_UNCHANGED": 4
+        }
+      },
+      "trace_event_counts": {
+        "tracing_mark_write": 2,
+        "kfd_map_memory_to_gpu_start": 26,
+        "kfd_map_memory_to_gpu_end": 26,
+        "queue_eviction": 12,
+        "kernel_stack": 12,
+        "queue_restore": 12
+      },
+      "target_helper_event_counts": {
+        "queue_eviction_SVM": 12,
+        "queue_restore_None": 12
+      },
+      "correlation_by_packet_outcome": {
+        "NO_OBSERVED_FRESH_PLATEAU_EVENT": {
+          "cases": 389,
+          "cases_with_any_target_helper_event": 1,
+          "cases_with_definite_SVM_eviction": 1,
+          "cases_with_boundary_ambiguous_helper_event": 0
+        },
+        "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC": {
+          "cases": 4,
+          "cases_with_any_target_helper_event": 4,
+          "cases_with_definite_SVM_eviction": 4,
+          "cases_with_boundary_ambiguous_helper_event": 0
+        },
+        "FRESH_PLATEAU_PC_TAGS_UNCHANGED": {
+          "cases": 6,
+          "cases_with_any_target_helper_event": 6,
+          "cases_with_definite_SVM_eviction": 6,
+          "cases_with_boundary_ambiguous_helper_event": 0
+        },
+        "COPY_WITHOUT_FRESH_PLATEAU_PC": {
+          "cases": 1,
+          "cases_with_any_target_helper_event": 1,
+          "cases_with_definite_SVM_eviction": 1,
+          "cases_with_boundary_ambiguous_helper_event": 0
+        }
+      },
+      "stack_count": 12,
+      "stack_signatures": [
+        {
+          "frames": [
+            "kprobe_trace_func",
+            "kprobe_dispatcher",
+            "kprobe_ftrace_handler",
+            "0xffffffffc25590f5",
+            "kfd_smi_event_queue_eviction",
+            "kgd2kfd_quiesce_mm",
+            "svm_range_cpu_invalidate_pagetables",
+            "__mmu_notifier_invalidate_range_start",
+            "change_pud_range.isra.0",
+            "change_protection_range",
+            "change_protection",
+            "change_prot_numa",
+            "task_numa_work",
+            "task_work_run",
+            "irqentry_exit_to_user_mode",
+            "irqentry_exit",
+            "sysvec_apic_timer_interrupt",
+            "asm_sysvec_apic_timer_interrupt"
+          ],
+          "count": 12
+        }
+      ],
+      "every_eviction_stack_contains_ordered_AutoNUMA_chain": true,
+      "minimum_helper_distance_to_call_boundary_ns": 951265,
+      "timestamp_uncertainty_ns": 1000,
+      "kprobe_profiles": [
+        {
+          "event": "queue_eviction",
+          "hits": 12,
+          "misses": 0,
+          "raw": "  queue_eviction                                            12               0",
+          "captured_in_trace": 12,
+          "hits_outside_capture_or_unaccounted": 0
+        },
+        {
+          "event": "queue_restore",
+          "hits": 12,
+          "misses": 0,
+          "raw": "  queue_restore                                             12               0",
+          "captured_in_trace": 12,
+          "hits_outside_capture_or_unaccounted": 0
+        }
+      ],
+      "stats_totals": {
+        "overrun": 0,
+        "commit overrun": 0,
+        "dropped events": 0,
+        "entries": 90,
+        "read events": 0
+      },
+      "exceptions": [
+        {
+          "ordinal": 159,
+          "case": {
+            "mode_low_byte": 70,
+            "trap": false,
+            "symbol": "fresh_ttmp_46_0",
+            "repetition": 39
+          },
+          "outcome": "COPY_WITHOUT_FRESH_PLATEAU_PC",
+          "changed_tags": [
+            {
+              "vgpr": 257,
+              "lane": 0,
+              "before": "0x22000000",
+              "after": "0x33000000"
+            }
+          ],
+          "TTMP": {
+            "TTMP_before": "0xb2007b25e741e5c0",
+            "TTMP_after": "0x00007b25e741e5c0",
+            "before_masked_PC": "0x00007b25e741e5c0",
+            "after_masked_PC": "0x00007b25e741e5c0",
+            "TTMP_raw_changed": true,
+            "TTMP_masked_PC_changed": false,
+            "fresh_PC_in_plateau": false,
+            "after_PC_in_plateau": true,
+            "plateau_start_PC": "0x00007b25e741e5c0",
+            "plateau_end_PC": "0x00007b25e741e5d0",
+            "after_PC_offset_from_plateau": 0
+          },
+          "call_interval_boot_ns": {
+            "launch_enter": 2499209933148,
+            "launch_return": 2499209940358,
+            "synchronize_enter": 2499210061875,
+            "synchronize_return": 2499272446878
+          },
+          "events": [
+            {
+              "event_id": 74,
+              "event": "queue_eviction",
+              "boot_ns": 2499258070000,
+              "from_launch_ns": 48136852,
+              "to_sync_return_ns": 14376878
+            },
+            {
+              "event_id": 76,
+              "event": "queue_restore",
+              "boot_ns": 2499261420000,
+              "from_launch_ns": 51486852,
+              "to_sync_return_ns": 11026878
+            }
+          ],
+          "packet_images": {
+            "prefill_expected": {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/default/case_159_46_0/prefill_expected.bin",
+              "bytes": 192,
+              "sha256": "d99c33686f17610034a338b79d8b5477bce949a28c05cf2409f41338ab9ac802"
+            },
+            "prefill_actual": {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/default/case_159_46_0/prefill_actual.bin",
+              "bytes": 192,
+              "sha256": "d99c33686f17610034a338b79d8b5477bce949a28c05cf2409f41338ab9ac802"
+            },
+            "output": {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/default/case_159_46_0/output.bin",
+              "bytes": 192,
+              "sha256": "13f9d506d7c9f9e5ad54d6a0ea7f2c9e28894e14ec1d799869ed823f0f61f6c3"
+            }
+          }
+        },
+        {
+          "ordinal": 248,
+          "case": {
+            "mode_low_byte": 0,
+            "trap": false,
+            "symbol": "fresh_ttmp_00_0",
+            "repetition": 62
+          },
+          "outcome": "NO_OBSERVED_FRESH_PLATEAU_EVENT",
+          "changed_tags": [],
+          "TTMP": {
+            "TTMP_before": "0x00007b25e7420fc4",
+            "TTMP_after": "0x00007b25e7420fc4",
+            "before_masked_PC": "0x00007b25e7420fc4",
+            "after_masked_PC": "0x00007b25e7420fc4",
+            "TTMP_raw_changed": false,
+            "TTMP_masked_PC_changed": false,
+            "fresh_PC_in_plateau": false,
+            "after_PC_in_plateau": true,
+            "plateau_start_PC": "0x00007b25e7420fbc",
+            "plateau_end_PC": "0x00007b25e7420fcc",
+            "after_PC_offset_from_plateau": 8
+          },
+          "call_interval_boot_ns": {
+            "launch_enter": 2504601952989,
+            "launch_return": 2504601959379,
+            "synchronize_enter": 2504602069875,
+            "synchronize_return": 2504664366469
+          },
+          "events": [
+            {
+              "event_id": 80,
+              "event": "queue_eviction",
+              "boot_ns": 2504638105000,
+              "from_launch_ns": 36152011,
+              "to_sync_return_ns": 26261469
+            },
+            {
+              "event_id": 82,
+              "event": "queue_restore",
+              "boot_ns": 2504641415000,
+              "from_launch_ns": 39462011,
+              "to_sync_return_ns": 22951469
+            }
+          ],
+          "packet_images": {
+            "prefill_expected": {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/default/case_248_00_0/prefill_expected.bin",
+              "bytes": 192,
+              "sha256": "d99c33686f17610034a338b79d8b5477bce949a28c05cf2409f41338ab9ac802"
+            },
+            "prefill_actual": {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/default/case_248_00_0/prefill_actual.bin",
+              "bytes": 192,
+              "sha256": "d99c33686f17610034a338b79d8b5477bce949a28c05cf2409f41338ab9ac802"
+            },
+            "output": {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/default/case_248_00_0/output.bin",
+              "bytes": 192,
+              "sha256": "b1e9f37ad645f1ee60594fea9812d86334f89ac5404bbfaa6ee3cd8bc02ef884"
+            }
+          }
+        }
+      ],
+      "packet_failed_checks": [],
+      "trace_failed_checks": []
+    },
+    "balancing": {
+      "manifest": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_balancing_ftrace_v1/launch_manifest_ftrace.json",
+        "bytes": 24153,
+        "sha256": "66bd1c8cfb47c7d1d81961fd1ea4a318bc7cf60fb86c1b7c50d7a5a7f750749b"
+      },
+      "packet_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_balancing_audit_v1/independent_terminal_audit.json",
+        "bytes": 3652986,
+        "sha256": "6f792051e656aa855f9f878da997fc2004f06267a880457cdbc6453b84ef1adf"
+      },
+      "trace_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_balancing_audit_v1/independent_trace_correlation.json",
+        "bytes": 1107905,
+        "sha256": "4b8edda7f8bc6f39cb99ea7af011a036cbc54fe4bee8d089e4797d9d783037f6"
+      },
+      "boot_id": "cd2037bd-33c9-435d-922d-d9078f06c72f",
+      "driver": {
+        "version": "7.1.1.31300009",
+        "srcversion": "654C1DDE7A9A3E129BA9553"
+      },
+      "NUMA_policy_evidence": {
+        "contract": {
+          "arm": "bind_balancing",
+          "expected_mode": 8194,
+          "heap_policy": "bind=balancing:0-1",
+          "receipt_host": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/bind_balancing_policy_before_exec.json",
+          "numactl": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/numactl",
+            "bytes": 36080,
+            "sha256": "f3944bcd7848d64424f8daf27f350b03d7f3281b2fb9be5eaaba0ddd0e72efb8"
+          },
+          "read_only_exec_helper": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/policy_exec_balancing_v2.py",
+            "bytes": 3209,
+            "sha256": "8ff0bc29adc77204380d2577180b84e8b631aefb65ec4bd717908a32fc1c2c5f"
+          },
+          "allowed_cpu_memory_nodes": [
+            0,
+            1
+          ],
+          "global_numa_balancing_expected": "1"
+        },
+        "helper_receipt": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_evening_numa_ftrace_runtime_v1/bind_balancing_policy_before_exec.json",
+          "bytes": 27173,
+          "sha256": "4708854f177d1584cb3fe8cac80131b55c2878edfe65ca48f4ecc7bf4b16e370"
+        },
+        "pre_HIP_receipt": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_balancing_ftrace_v1/pre_hip_policy.json",
+          "bytes": 40533,
+          "sha256": "4cb590d7bec946429f65d4b56384ecd7424c6533f5c3e3ecfd66638baa20ff61"
+        },
+        "policy_mode": 8194,
+        "policy_nodes": [
+          0,
+          1
+        ],
+        "allowed_nodes": [
+          0,
+          1
+        ],
+        "gated_heap_policies": [
+          "bind=balancing:0-1"
+        ],
+        "all_gated_VMA_policy_counts": {
+          "bind=balancing:0-1": 89
+        }
+      },
+      "counts": {
+        "cases": 400,
+        "output_images": 400,
+        "prefill_images": 800,
+        "raw_image_bytes": 230400,
+        "HIP_calls": 2410,
+        "HIP_begin_end_records": 4820,
+        "explicit_calibrations": 0,
+        "passing_explicit_calibrations": 0,
+        "instrumentation_valid": 400,
+        "unexpected_packets": 0
+      },
+      "outcome_counts": {
+        "NO_OBSERVED_FRESH_PLATEAU_EVENT": 390,
+        "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC": 5,
+        "FRESH_PLATEAU_PC_TAGS_UNCHANGED": 5
+      },
+      "outcomes_by_mode_and_arm": {
+        "00_NOP": {
+          "NO_OBSERVED_FRESH_PLATEAU_EVENT": 97,
+          "FRESH_PLATEAU_PC_TAGS_UNCHANGED": 3
+        },
+        "05_NOP": {
+          "NO_OBSERVED_FRESH_PLATEAU_EVENT": 97,
+          "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC": 3
+        },
+        "46_NOP": {
+          "NO_OBSERVED_FRESH_PLATEAU_EVENT": 98,
+          "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC": 2
+        },
+        "86_NOP": {
+          "NO_OBSERVED_FRESH_PLATEAU_EVENT": 98,
+          "FRESH_PLATEAU_PC_TAGS_UNCHANGED": 2
+        }
+      },
+      "trace_event_counts": {
+        "tracing_mark_write": 2,
+        "kfd_map_memory_to_gpu_start": 26,
+        "kfd_map_memory_to_gpu_end": 26,
+        "queue_eviction": 10,
+        "kernel_stack": 10,
+        "queue_restore": 10
+      },
+      "target_helper_event_counts": {
+        "queue_eviction_SVM": 10,
+        "queue_restore_None": 10
+      },
+      "correlation_by_packet_outcome": {
+        "NO_OBSERVED_FRESH_PLATEAU_EVENT": {
+          "cases": 390,
+          "cases_with_any_target_helper_event": 0,
+          "cases_with_definite_SVM_eviction": 0,
+          "cases_with_boundary_ambiguous_helper_event": 0
+        },
+        "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC": {
+          "cases": 5,
+          "cases_with_any_target_helper_event": 5,
+          "cases_with_definite_SVM_eviction": 5,
+          "cases_with_boundary_ambiguous_helper_event": 0
+        },
+        "FRESH_PLATEAU_PC_TAGS_UNCHANGED": {
+          "cases": 5,
+          "cases_with_any_target_helper_event": 5,
+          "cases_with_definite_SVM_eviction": 5,
+          "cases_with_boundary_ambiguous_helper_event": 0
+        }
+      },
+      "stack_count": 10,
+      "stack_signatures": [
+        {
+          "frames": [
+            "kprobe_trace_func",
+            "kprobe_dispatcher",
+            "kprobe_ftrace_handler",
+            "0xffffffffc25590f5",
+            "kfd_smi_event_queue_eviction",
+            "kgd2kfd_quiesce_mm",
+            "svm_range_cpu_invalidate_pagetables",
+            "__mmu_notifier_invalidate_range_start",
+            "change_pud_range.isra.0",
+            "change_protection_range",
+            "change_protection",
+            "change_prot_numa",
+            "task_numa_work",
+            "task_work_run",
+            "irqentry_exit_to_user_mode",
+            "irqentry_exit",
+            "sysvec_apic_timer_interrupt",
+            "asm_sysvec_apic_timer_interrupt"
+          ],
+          "count": 10
+        }
+      ],
+      "every_eviction_stack_contains_ordered_AutoNUMA_chain": true,
+      "minimum_helper_distance_to_call_boundary_ns": 1097542,
+      "timestamp_uncertainty_ns": 1000,
+      "kprobe_profiles": [
+        {
+          "event": "queue_eviction",
+          "hits": 10,
+          "misses": 0,
+          "raw": "  queue_eviction                                            10               0",
+          "captured_in_trace": 10,
+          "hits_outside_capture_or_unaccounted": 0
+        },
+        {
+          "event": "queue_restore",
+          "hits": 10,
+          "misses": 0,
+          "raw": "  queue_restore                                             10               0",
+          "captured_in_trace": 10,
+          "hits_outside_capture_or_unaccounted": 0
+        }
+      ],
+      "stats_totals": {
+        "overrun": 0,
+        "commit overrun": 0,
+        "dropped events": 0,
+        "entries": 84,
+        "read events": 0
+      },
+      "exceptions": [],
+      "packet_failed_checks": [],
+      "trace_failed_checks": []
+    }
+  },
+  "total_cases": 1200,
+  "total_images": 3600,
+  "total_retained_image_bytes": 691200,
+  "total_HIP_calls": 7230,
+  "total_eviction_restore_pairs": 22,
+  "total_fresh_cross_bank_copies": 9,
+  "total_additional_copy_without_fresh_PC": 1,
+  "total_fresh_equal_bank_observations": 11,
+  "ordered_AutoNUMA_stack_chain": [
+    "kfd_smi_event_queue_eviction",
+    "kgd2kfd_quiesce_mm",
+    "svm_range_cpu_invalidate_pagetables",
+    "__mmu_notifier_invalidate_range_start",
+    "change_pud_range.isra.0",
+    "change_protection_range",
+    "change_protection",
+    "change_prot_numa",
+    "task_numa_work"
+  ],
+  "interpretation": [
+    "Plain bind to all allowed nodes: zero measured copies, fresh plateau PCs, queue eviction/restore helper hits or stacks in400 cases.",
+    "Default policy:12 SVM eviction/restore pairs and12 identical AutoNUMA stacks;4 fresh copies,6 fresh equal-bank observations,1 copy with unchanged masked PC, and1 unchanged-tag/unchanged-PC case.",
+    "Bind plus NUMA-balancing flag on the same allowed-node mask:10 SVM eviction/restore pairs and10 AutoNUMA stacks;5 fresh copies and5 fresh equal-bank observations, with none in the390 other cases.",
+    "Disabling and reenabling scan eligibility within the same allowed-node mask strengthens automatic NUMA protection scanning as a spontaneous trigger for this reproducer.",
+    "Default ordinal159 changes v257 lane0 from0x22000000 to0x33000000, but its masked TTMP PC remains the plateau start. Preserve the nonfresh classifier despite a raw high-byte change and definite within-call helper events.",
+    "Default ordinal248 has an SVM pair and unchanged tags/TTMP already at plateau+8; this does not meet the fresh-PC criterion."
+  ],
+  "limits": [
+    "Same allowed-node mask does not prove identical physical page placement or timing; arms ran sequentially.",
+    "Host native launch-to-synchronize intervals bracket calls, not exact GPU execution or trap instruction times.",
+    "The tag-observation window and the TTMP freshness criterion are not identical; reused masked PC values can fail the freshness criterion even with a measured copy.",
+    "Helper entry events denote queue eviction/restore attempts, not hardware-success acknowledgments or complete trap counts.",
+    "No-event cases are bounded observations and do not prove absence of every trap path.",
+    "Process memory policy can avoid the observed trigger but does not repair the bank-sensitive driver handler.",
+    "This comparison does not reconstruct original attempt405 trap timing or validate a corrected loaded driver or complete training run."
+  ],
+  "GPU_actions": false,
+  "tracefs_writes": false,
+  "policy_mutations": false
+}

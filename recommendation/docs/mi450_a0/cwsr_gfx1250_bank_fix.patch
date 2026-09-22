@@ -1,0 +1,28 @@
+--- a/amd/amdkfd/cwsr_trap_handler_gfx12.asm
++++ b/amd/amdkfd/cwsr_trap_handler_gfx12.asm
+@@ -259,15 +259,22 @@
+ 	s_rfe_b64	[ttmp0, ttmp1]
+ 
+ L_NOT_WAVE_START:
++	// Design proposal only: preserve inherited bank fields locally.
++	// ttmp2 = k in [0, 63]; SRC2 and all non-bank MODE fields are untouched.
++	s_getreg_b32	ttmp2, hwreg(HW_REG_WAVE_MODE, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SHIFT, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SIZE)
++	s_mov_b32	ttmp3, 0
++	s_setreg_b32	hwreg(HW_REG_WAVE_MODE, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SHIFT, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SIZE), ttmp3
+ 	s_mov_b32	ttmp14, exec_lo
+ 	s_mov_b32	exec_lo, 1
+ 	v_readlane_b32	ttmp15, v1, 0
+ 
+-	s_mov_b64	[ttmp2, ttmp3], 0
+-	v_mov_b32	v1, 0
+-	global_prefetch_b8	v1, [ttmp2, ttmp3] scope:SCOPE_SE th:TH_LOAD_RT
++	// Keep k live in ttmp2. Address = k + (63 - k) - 63 = 0.
++	// The non-carry VOP3 form writes only v1, not VCC or SCC.
++	v_sub_nc_u32	v1, 63, ttmp2
++	global_prefetch_b8	v1, [ttmp2, ttmp3] scope:SCOPE_SE th:TH_LOAD_RT offset:-63
+ 
+ 	v_writelane_b32	v1, ttmp15, 0
++	s_setreg_b32	hwreg(HW_REG_WAVE_MODE, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SHIFT, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SIZE), ttmp2
+ 	s_mov_b32	exec_lo, ttmp14
+ #endif
+ 

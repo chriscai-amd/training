@@ -1,0 +1,255 @@
+{
+  "status": "COMPLETED_TWO_COMPONENT_PROCESS_POLICY_COUNTERFACTUALS",
+  "utc": "2026-09-22T00:41:38.594180+00:00",
+  "boot_id": "cd2037bd-33c9-435d-922d-d9078f06c72f",
+  "driver_srcversion": "654C1DDE7A9A3E129BA9553",
+  "global_numa_balancing": "1",
+  "components": {
+    "projection_DX": [
+      {
+        "arm": "default",
+        "mode": 0,
+        "status": "FAIL",
+        "iterations_completed": 159,
+        "report": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_projection_policy_runtime_v1/default/report.json",
+          "bytes": 276674,
+          "sha256": "3f9f53b2c024be5e8270feaa5bda55eba285a159239d89ba2b0692995cefee9a"
+        },
+        "trace_audit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_trace_v1/dx_default/trace_audit.json",
+          "bytes": 467218,
+          "sha256": "85df00c22b4deecab2b7c6e8778111fd6dbcc4d90c574a8008176c7b7e81284c"
+        },
+        "terminal": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_trace_v1/dx_default/terminal.json",
+          "bytes": 4531,
+          "sha256": "3d38c446f2746ff7560237357262753c52f1f366febafe51d3f95cedf29372ce"
+        },
+        "AutoNUMA_evictions": 84,
+        "runtime_reaped_and_cleanup_passed": true,
+        "kernel_log_additions": [
+          "[ 7217.039336] mce: [Hardware Error]: Machine check events logged",
+          "[ 7217.039347] [Hardware Error]: Corrected error, no action required.",
+          "[ 7217.046277] [Hardware Error]: CPU:8 (1a:51:0) MC60_STATUS[Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-]: 0xd8202000000c080b",
+          "[ 7217.046962] kauditd_printk_skb: 5 callbacks suppressed",
+          "[ 7217.046966] audit: type=1400 audit(1790036063.363:150): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+          "[ 7217.057943] [Hardware Error]: PPIN: 0x00831df01b0e0007",
+          "[ 7217.063717] [Hardware Error]: IPID: 0x000001e11ccc0007, Syndrome: 0x000000005a800001",
+          "",
+          "[ 7217.072631] [Hardware Error]: cache level: L3/GEN, mem/io: IO, mem-tx: GEN, part-proc: SRC (no timeout)",
+          "[ 7217.148832] audit: type=1400 audit(1790036063.464:151): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+          "[ 7217.216953] audit: type=1400 audit(1790036063.532:152): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+          "[ 7217.299569] audit: type=1400 audit(1790036063.615:153): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+          "[ 7217.363198] audit: type=1400 audit(1790036063.679:154): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+          "[ 7217.433732] audit: type=1400 audit(1790036063.749:155): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+          "[ 7217.502438] audit: type=1400 audit(1790036063.818:156): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+          "[ 7217.770442] audit: type=1400 audit(1790036064.086:157): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+          "[ 7218.036651] audit: type=1400 audit(1790036064.352:158): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+          "[ 7218.109559] audit: type=1400 audit(1790036064.425:159): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0"
+        ],
+        "native_submission_interval": {
+          "first_begin_ns": 7218531058804,
+          "last_begin_ns": 7223804601043,
+          "launch_count": 159,
+          "eviction_counts": {
+            "(0, 'AutoNUMA')": 12
+          },
+          "scope": "Between first and last host launch begins. Excludes final execution/completion interval; includes intervening output-check work."
+        },
+        "wrong_words": 60
+      },
+      {
+        "arm": "bind",
+        "mode": 2,
+        "status": "PASS",
+        "iterations_completed": 1000,
+        "report": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_projection_policy_runtime_v1/bind/report.json",
+          "bytes": 1694039,
+          "sha256": "9f068bb42da20d474290f51d27690e30873c521ff44bc04a3f234f687518e9ab"
+        },
+        "trace_audit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_trace_v1/dx_bind/trace_audit.json",
+          "bytes": 316255,
+          "sha256": "ad472644dfcc98116afdc84fd37d46d12eecbf001a41615a00f283ff7af92657"
+        },
+        "terminal": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_trace_v1/dx_bind/terminal.json",
+          "bytes": 4522,
+          "sha256": "fe4bf4e2ed954b0056e2d763306c36016caad6e9798806b19e797ddc28929ec0"
+        },
+        "AutoNUMA_evictions": 0,
+        "runtime_reaped_and_cleanup_passed": true,
+        "kernel_log_additions": [],
+        "native_submission_interval": {
+          "first_begin_ns": 7421677069566,
+          "last_begin_ns": 7453408392886,
+          "launch_count": 1000,
+          "eviction_counts": {},
+          "scope": "Between first and last host launch begins. Excludes final execution/completion interval; includes intervening output-check work."
+        },
+        "wrong_words": 0
+      },
+      {
+        "arm": "bind_balancing",
+        "mode": 8194,
+        "status": "FAIL",
+        "iterations_completed": 704,
+        "report": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_projection_policy_runtime_v1/bind_balancing/report.json",
+          "bytes": 1195563,
+          "sha256": "baf69bb7cdf7b369915107d116438a848a3e468ee03ada5f3c6c6158dc8c88e5"
+        },
+        "trace_audit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_trace_v1/dx_bind_balancing/trace_audit.json",
+          "bytes": 117279,
+          "sha256": "e8b1be963329ee82caa5edf277503046809c0bbd97d8ceb730130a608dddc4db"
+        },
+        "terminal": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_trace_v1/dx_bind_balancing/terminal.json",
+          "bytes": 4551,
+          "sha256": "17368302d4c29d29534ded3cd093b87d84a55abd14c488c20c22467f8c6604d6"
+        },
+        "AutoNUMA_evictions": 78,
+        "runtime_reaped_and_cleanup_passed": true,
+        "kernel_log_additions": [
+          "[ 7638.203053] workqueue: svm_range_restore_work [amdgpu] hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND",
+          "[ 7690.874635] workqueue: svm_range_restore_work [amdgpu] hogged CPU for >10000us 5 times, consider switching to WQ_UNBOUND",
+          "[ 7693.380566] workqueue: svm_range_restore_work [amdgpu] hogged CPU for >10000us 7 times, consider switching to WQ_UNBOUND"
+        ],
+        "native_submission_interval": {
+          "first_begin_ns": 7651021889470,
+          "last_begin_ns": 7673480591290,
+          "launch_count": 704,
+          "eviction_counts": {
+            "(0, 'AutoNUMA')": 6
+          },
+          "scope": "Between first and last host launch begins. Excludes final execution/completion interval; includes intervening output-check work."
+        },
+        "wrong_words": 61
+      }
+    ],
+    "attention_DQ": [
+      {
+        "arm": "default",
+        "mode": 0,
+        "status": "FAIL",
+        "iterations_completed": 131,
+        "report": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_attention_policy_runtime_v2/default/report.json",
+          "bytes": 82336,
+          "sha256": "e2271d61a0ab4cd6781ba3c8e33ca37bd666d0ce0850d2d8501f280e5117b7c9"
+        },
+        "trace_audit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_trace_v1/dq2_default/trace_audit.json",
+          "bytes": 31333,
+          "sha256": "279224cebf51f9e02fd90098fe4aabba515f02b41154ff48e41be5b5a6612119"
+        },
+        "terminal": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_trace_v1/dq2_default/terminal.json",
+          "bytes": 4534,
+          "sha256": "51fa6f4d6ef982f2ca06648356a3c44f1705168838e775f7d5e400711ebb7f89"
+        },
+        "AutoNUMA_evictions": 3,
+        "runtime_reaped_and_cleanup_passed": true,
+        "kernel_log_additions": [],
+        "wrong_words": 80
+      },
+      {
+        "arm": "bind",
+        "mode": 2,
+        "status": "PASS",
+        "iterations_completed": 1000,
+        "report": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_attention_policy_runtime_v2/bind/report.json",
+          "bytes": 282789,
+          "sha256": "1b52c805a1233c81408fb717a6ecf625714b5ec439a60dd87c0acf939ad8e034"
+        },
+        "trace_audit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_trace_v1/dq2_bind/trace_audit.json",
+          "bytes": 13311,
+          "sha256": "5d427247484d9b15835007dbd023904586d3589769cc37c4aa210dd64e44d362"
+        },
+        "terminal": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_trace_v1/dq2_bind/terminal.json",
+          "bytes": 4524,
+          "sha256": "3f0346e0261723b23f4e1be9ee089277ff96bac5c6b66a7b9591a6b5baf910dd"
+        },
+        "AutoNUMA_evictions": 0,
+        "runtime_reaped_and_cleanup_passed": true,
+        "kernel_log_additions": [],
+        "wrong_words": 0
+      },
+      {
+        "arm": "bind_balancing",
+        "mode": 8194,
+        "status": "FAIL",
+        "iterations_completed": 174,
+        "report": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_attention_policy_runtime_v2/bind_balancing/report.json",
+          "bytes": 94132,
+          "sha256": "022fbc94303059715c03e81c175005ba27eb136275d6f8d73d075d43c528a0ac"
+        },
+        "trace_audit": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_trace_v1/dq2_bind_balancing/trace_audit.json",
+          "bytes": 30087,
+          "sha256": "93c5b30646f77b75e1096d6bdd80cefb1d7e9eb0cc9f5ee1f4300ab3fc51597a"
+        },
+        "terminal": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_trace_v1/dq2_bind_balancing/terminal.json",
+          "bytes": 4555,
+          "sha256": "cec259dbcda406a2dadbaf75b2efd41e83f60027480c1125378346c123a0f6ab"
+        },
+        "AutoNUMA_evictions": 4,
+        "runtime_reaped_and_cleanup_passed": true,
+        "kernel_log_additions": [],
+        "wrong_words": 96
+      }
+    ]
+  },
+  "limitations": [
+    "Process binding suppresses an observed trigger; it does not repair the CWSR handler.",
+    "Queue helpers do not identify exact interrupted shader or acknowledge completed hardware context saves.",
+    "Complete output GPU zero checks run each call; full raw CPU output audits cover retained failures.",
+    "Placement and timing are not asserted identical across process policies.",
+    "No corrected-driver or E2E result is supplied by these tests."
+  ],
+  "manual_recovery_receipt": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_driver_reload_v1/recovery_receipt.json",
+    "bytes": 549,
+    "sha256": "c8d1b34e49ea8042322439d0f0d2626f4999f94180568a0fc8899c8685e21ff3"
+  },
+  "projection_full_CPU_matrix": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_projection_policy_audit_v1/policy_matrix.json",
+    "bytes": 7398,
+    "sha256": "54616e7d17f39d1f7bb860056e186b474ac9e2141b688f6deb56274526eda0fd"
+  },
+  "attention_CPU_audits": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_CPU_audit_v1/bind_PASS1000_audit.json",
+      "bytes": 1975,
+      "sha256": "44798cc7c671e0318f6b9cd31b37ab4df34f8b8f36aedd2f4da402265a9f905e"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_CPU_audit_v1/bind_balancing_FAIL174_audit.json",
+      "bytes": 32948,
+      "sha256": "595c7cb9a1f641720558ced2e7267d3400939bb63da3266c72da9163fa2ab04c"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_CPU_audit_v1/default_FAIL131_audit.json",
+      "bytes": 29054,
+      "sha256": "2bd5573ba96e8ac26ba85618192856cf9518e4a4d8cf91885dc42382e32de7ad"
+    }
+  ],
+  "attention_historical_complete_CPU_model": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_CPU_audit_v1/complete_candidate_model.json",
+    "bytes": 10518,
+    "sha256": "b7c5cb4ffe423dbec4345ebb44468cd1f43ee700b06f36dba0686c6937e46e05"
+  },
+  "attention_ownership_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_component_review_v1/attention_trap_CPU_v1/ownership_review.json",
+    "bytes": 58522,
+    "sha256": "343c611cf7575dd02fc12e5068889dd3638d1b662b3c8bce3d4cb9894d06fca7"
+  }
+}

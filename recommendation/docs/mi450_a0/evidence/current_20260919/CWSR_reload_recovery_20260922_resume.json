@@ -1,0 +1,101 @@
+{
+  "status": "READONLY_REVIEW_COMPLETE_ORIGINAL_FRESH_BOOT_RESTORATION_SUPPORTED",
+  "created_utc": "2026-09-22T01:43:22.183297+00:00",
+  "boot_id": "eedd6fe3-b107-405a-b2ad-80e4488d9708",
+  "driver_actions": false,
+  "timeline": [
+    {
+      "stage": "container_stop",
+      "start_exists": true,
+      "start_utc": "2026-09-22T00:43:56.914462+00:00",
+      "spawned_exists": true,
+      "spawned_utc": "2026-09-22T00:43:56.915661+00:00",
+      "child_pid": 71355,
+      "command": [
+        "docker",
+        "stop",
+        "--time",
+        "15",
+        "triton-7ff97e-20260910"
+      ],
+      "terminal_exists": true,
+      "terminal_utc": "2026-09-22T00:44:12.155763+00:00",
+      "status": "EXITED",
+      "returncode": 0
+    },
+    {
+      "stage": "unload",
+      "start_exists": true,
+      "start_utc": "2026-09-22T00:44:12.319594+00:00",
+      "spawned_exists": true,
+      "spawned_utc": "2026-09-22T00:44:12.320809+00:00",
+      "child_pid": 71533,
+      "command": [
+        "/usr/sbin/rmmod",
+        "amdgpu"
+      ],
+      "terminal_exists": true,
+      "terminal_utc": "2026-09-22T00:44:29.010315+00:00",
+      "status": "EXITED",
+      "returncode": 0
+    },
+    {
+      "stage": "udev_settle",
+      "start_exists": true,
+      "start_utc": "2026-09-22T00:44:29.011155+00:00",
+      "spawned_exists": true,
+      "spawned_utc": "2026-09-22T00:44:29.012361+00:00",
+      "child_pid": 71614,
+      "command": [
+        "/usr/bin/udevadm",
+        "settle",
+        "--timeout=30"
+      ],
+      "terminal_exists": true,
+      "terminal_utc": "2026-09-22T00:44:29.020045+00:00",
+      "status": "EXITED",
+      "returncode": 0
+    },
+    {
+      "stage": "load",
+      "start_exists": true,
+      "start_utc": "2026-09-22T00:44:29.075081+00:00",
+      "spawned_exists": true,
+      "spawned_utc": "2026-09-22T00:44:29.075924+00:00",
+      "child_pid": 71615,
+      "command": [
+        "/usr/sbin/insmod",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/baseline_amdgpu.stripped.ko"
+      ],
+      "terminal_exists": false
+    }
+  ],
+  "finding": "Original removal completed and rebuilt baseline insertion started; host restarted before insertion terminal receipt. The following boot reports new fatal processor BERT records. No preserved kernel stack or console identifies the exact load/hardware failure point.",
+  "baseline_hash": "bd992f82ab51c16b79ee9a8a0c08dad45e3ee4d708e67a5fdce73d22cd4d5156",
+  "candidate_was_selected_in_this_attempt": false,
+  "fatal_BERT": [
+    {
+      "APIC": "0x0",
+      "bank": 19,
+      "status": "0xbaa000000005080b",
+      "IPID": "0x0000005c1b321000",
+      "SYND": "0x213014055d000000",
+      "CPER_type": "micro-architectural Internal Unclassified",
+      "processor_context_corrupt": true
+    },
+    {
+      "APIC": "0x0",
+      "bank": 28,
+      "status": "0xb6e04000000b0153",
+      "IPID": "0x000000501b0c0000",
+      "SYND": "0x000001002d2c0000",
+      "CPER_type": "cache error; instruction fetch; level 3",
+      "processor_context_corrupt": true
+    }
+  ],
+  "comparison_prior_recovery": "September21 02:59 boot instead reported recoverable APIC0x30 bank62 status0xa0002000003d0800. September21 22:30 boot kernel saved before latest reload has no BERT previous-boot error record. Current fatal records are distinct.",
+  "corrected_MC60": "CPU8 MC60 corrected events predate both interruptions and recur in current driver-absent boot. Their low-level attribution and causal relationship to NaNs/reload are unproved.",
+  "crash_observability": "Current pstore empty, local IPMI SEL readable but zero entries, only /var/crash file dates September18. Raw 708-byte BERT data captured. MCE TIME1790038170 is 2026-09-22 00:49:30 at import boot, not a proven time of previous fatal event.",
+  "recommendation": "Restore known installed original driver via standard dependency-aware modprobe on current fresh blacklisted boot with durable operation receipts and inherited manual BMC fallback. Do not repeat the rmmod/insmod baseline reload sequence or activate candidate as recovery. Record original identity and validate health before GPU tests.",
+  "remaining_limit": "This is a reasoned continuation based on earlier original restoration success; CPU/platform fatal BERT prevents claiming diagnosed reload cause or guaranteed activation safety."
+}

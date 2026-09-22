@@ -1,0 +1,138 @@
+{
+  "status": "BLOCKED_CURRENT_BOOT_STALLED_TRAINING_AND_LATER_DIAGNOSTIC_KERNEL_OOPS",
+  "boot_id": "eedd6fe3-b107-405a-b2ad-80e4488d9708",
+  "driver_srcversion": "654C1DDE7A9A3E129BA9553",
+  "candidate_executed": false,
+  "training": {
+    "run": "bind1000",
+    "completed_backward_steps": 0,
+    "raw_fault_or_finite_capture": false,
+    "last_queued_event": "step1 enqueue63 leaf_accumulation_bias",
+    "last_queued_unix_time": 1790046158.857955,
+    "live_worker_host_pid": 67376,
+    "autograd_tid": 68585,
+    "stack": [
+      "FBGEMM transpose_embedding_input",
+      "linearize_index_kernel<long,long,true,false>",
+      "hipLaunchKernel",
+      "HSA executable freeze",
+      "InvalidateCodeCaches",
+      "AqlQueue::ExecutePM4",
+      "hsa_signal_wait_scacquire LT1, UINT64_MAX, ACTIVE"
+    ],
+    "queue_read_index": 376,
+    "queue_write_index": 377,
+    "pending_packet_index": 376,
+    "completion_value": 1,
+    "inactive_signal_value": 0,
+    "repeated_state_seconds": 75.7843976,
+    "initial_evictions": 6,
+    "initial_restores": 6,
+    "eviction_causes": {
+      "THP_direct_compaction_migration": 4,
+      "fork": 2,
+      "automatic_NUMA_balancing": 0
+    },
+    "limits": [
+      "Queued diagnostics do not prove numerical completion. No NaN or finite-step verdict exists for this run.",
+      "Software queue shadows do not certify hardware residency or execution.",
+      "The pending cache-invalidation command does not establish the cause of its noncompletion or implicate the CWSR defect."
+    ]
+  },
+  "later_MC60": {
+    "status": "0xd8202000000c080b",
+    "syndrome": "0x5a800001",
+    "kernel_reporting_boot_seconds": 8528.130548,
+    "same_six_hardware_lines_before_driver_load": true,
+    "UC": false,
+    "OVER": true,
+    "limits": "Distinct from default-run variant. OVER reports lost prior errors; report chronology does not establish event timing/causality. No clean-platform or harmlessness claim."
+  },
+  "later_diagnostic_fault": {
+    "command": [
+      "cat",
+      "/sys/kernel/debug/kfd/hqds"
+    ],
+    "reader_pid": 80986,
+    "reader_returncode": -9,
+    "kernel_fault_boot_seconds": 9258.530555,
+    "function": "hqd_sdma_dump_v12_1+0x7a",
+    "fault": "NULL pointer dereference of SDMA1 register-offset table",
+    "cause_scope": "Diagnostic read triggered this later kernel Oops; it did not precede or cause the original observed training stall.",
+    "candidate_diagnostic_function_identical": true,
+    "do_not_repeat_read": true
+  },
+  "preserved_state": {
+    "controller": "Interrupted with SIGINT after evidence collection; exited ERROR/resources_preserved.",
+    "worker_and_launcher": "Not signalled or reaped; preserved live for recovery.",
+    "private_tracing": "Disabled after final complete trace snapshot; instance and probes retained.",
+    "raw_evidence": "All retained tmpfs experiment captures have verified durable originals/archives; active GPU buffers from incomplete backward are not claimed archived.",
+    "further_device_operations": "Stopped; requires a fresh AMDGPU-absent boot before validated GPU work."
+  },
+  "evidence": {
+    "controller_terminal": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/E2E_bind1000/terminal.json",
+      "bytes": 5251,
+      "sha256": "433c55b94041eca8bd82dfc5d9bf2675b57728b272070afc07625d998172d631"
+    },
+    "full_CPU_backtrace": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/E2E_bind1000_stall_snapshot_v1/autograd_gdb_queue.txt",
+      "bytes": 16530,
+      "sha256": "a43c9724f6f18e2b596c7f70529ba41ba3ac73a642dd82b119130c8e3d8983e5"
+    },
+    "queue_capture": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/E2E_bind1000_stall_snapshot_v1/queue_targeted_capture.json",
+      "bytes": 1794,
+      "sha256": "0628e179138603888dbbcc6386ec04abb9d10f58137ef138da11290ebafa8fbd"
+    },
+    "repeat_queue_capture": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/E2E_bind1000_stall_snapshot_v1/queue_repeat_v1/receipt.json",
+      "bytes": 772,
+      "sha256": "d62afa9739a761e5ca3ad1d0e6d3a98ab9428d8293ea55610f123b1ae04f17ab"
+    },
+    "frozen_trace": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/E2E_bind1000_stall_snapshot_v1/final_trace/receipt.json",
+      "bytes": 2192,
+      "sha256": "914481c9ca073d12483d9c3c03f99c392be81c849e0171b80bd6eedd9faef2a0"
+    },
+    "independent_PM4_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_bind_PM4_packet_peer_review_v1/review.json",
+      "bytes": 11157,
+      "sha256": "54d76b24d3c482bf3a07e18872b0f5b5962e5f9282c1f8680dc1f55839609e5c"
+    },
+    "software_shadow_addendum": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_bind_stall_static_review_v1/shadow_addendum/review.json",
+      "bytes": 612156,
+      "sha256": "441c89a9b8e761d47bd5ca756cc4ffafb84e709638ceb8721558eadaeba3017c"
+    },
+    "distinct_MC60_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_bind_stall_MC60_review_v1/review.json",
+      "bytes": 66744,
+      "sha256": "cab2bf741fc9ae3234c782267a36f996435450b8a35547c63137d375eac7c5f5"
+    },
+    "HQD_reader_terminal": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/E2E_bind1000_stall_snapshot_v1/hardware_HQD_terminal.json",
+      "bytes": 275,
+      "sha256": "bd57d20299c7c2a7ce38508e3d4d6113b77adb9b25cbcf5c2964c6cf4782c225"
+    },
+    "HQD_kernel_delta": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/E2E_bind1000_stall_snapshot_v1/dmesg_HQD_delta.log",
+      "bytes": 6815,
+      "sha256": "f5466057d7a6726961021de3281c97b2a278f3d4f8e85fd980d798da5e399f37"
+    },
+    "HQD_independent_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_HQD_SDMA_null_peer_v1/review.json",
+      "bytes": 26813,
+      "sha256": "11553468fe117d25ae221e61085c5296d761d039e08cc4fc3615c3b4bb019a76"
+    },
+    "tmpfs_preservation": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/preboot_tmpfs_preservation_v1/receipt.json",
+      "bytes": 2042,
+      "sha256": "5a6e7e6e4935e51d6d32e583ba10e4002958648eb6b68a4afb16cc49fdf4e4e6"
+    }
+  },
+  "limits": [
+    "No candidate-driver runtime success or E2E sufficiency is established.",
+    "The reviewed driver candidate intentionally changes the CWSR handler only; it does not fix the SDMA diagnostic path."
+  ]
+}

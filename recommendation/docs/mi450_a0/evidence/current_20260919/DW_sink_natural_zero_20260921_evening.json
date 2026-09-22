@@ -1,0 +1,63 @@
+{
+  "status": "CONTROL_FAIL_CANDIDATE_BOUNDED_PASS",
+  "interpretation": "Candidate protection is supported under this observed exposure; this is not a validated training repair.",
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v2/launch_manifest_output_v1.json",
+    "bytes": 25847,
+    "sha256": "69a916765ff2e1dd2d20d956dadda342faefffaf718b6f4c8c90951c0e1374f7"
+  },
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v2/audit_matrix.py",
+    "bytes": 5744,
+    "sha256": "964ec8689d4955b990913debf08388ac6c1692a97f6fbd8e1151f2d562fbc460"
+  },
+  "criteria": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v2/prospective_zero_criteria.json",
+    "bytes": 2197,
+    "sha256": "4deca86efd8f57e1bbd8cb52e09a87b5b49c05f78b80d3cc9e3e8402071b08f2"
+  },
+  "arms": {
+    "sink_control": {
+      "audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v2/sink_control_terminal_audit.json",
+        "bytes": 144367,
+        "sha256": "f76235cf01c7825672a543798bb9cea369953d359760a54e7afb20179ad7dd93"
+      },
+      "report_status": "FAIL",
+      "calls": 103,
+      "all_nonzero_calls": [
+        103
+      ],
+      "owned_ELF_sha256": "d8d1f9293505cfe3247ea44908d6bdb30cc7ca641efb31bb88badd0d03b1b967",
+      "complete_failure_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v2/sink_control_full_failure_v1.json",
+        "bytes": 250333,
+        "sha256": "3c0312c8d21898ca8347fa00584497b0cb47117bf10a93b035380c6d8b1001f4"
+      },
+      "positive_zero_words": 13499904,
+      "negative_zero_words": 0
+    },
+    "sink_candidate": {
+      "audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v2/sink_candidate_terminal_audit.json",
+        "bytes": 652432,
+        "sha256": "08d4b1b69b0803ee9fb16ed003c6365186a68cf9d4f756690f4aee1140de9bb7"
+      },
+      "report_status": "PASS",
+      "calls": 1000,
+      "all_nonzero_calls": [],
+      "owned_ELF_sha256": "676d759461418da2876e10ef619c7aee47a616dd2b480f54bc85dfdb4c5dfce1",
+      "complete_failure_audit": null,
+      "positive_zero_words": 131072000,
+      "negative_zero_words": 0
+    }
+  },
+  "complete_matched_comparison_audited": true,
+  "limits": [
+    "1000 calls or first failure per arm; no independent spontaneous trap observer.",
+    "Boundary input hashes do not exclude transient internal operand changes.",
+    "Extra output prefill and CPU retention affect allocation and timing.",
+    "This comparison alone cannot attribute the original trap or validate training."
+  ],
+  "GPU_actions": false
+}

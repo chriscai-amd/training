@@ -1,0 +1,152 @@
+{
+  "status": "PASS_INDEPENDENT_ACTUAL_WORKER_IDENTITY_LIFECYCLE_AND_TRACE_PILOT_AUDIT",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_E2E_peer_review_v1/audit_pilot.py",
+    "bytes": 8699,
+    "sha256": "4fb95b7e3fd335e01fa7a68b92d77e6e979d910770c60fbf48064ab01addf901"
+  },
+  "adapter": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/run_E2E_trace.py",
+    "bytes": 3503,
+    "sha256": "aae55f0998f7443355a08bf21ebf40253063117830b62ba08845b6bac1fa96a1"
+  },
+  "plan": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/E2E_pilot2_default_spec.json",
+    "bytes": 29927,
+    "sha256": "63fced22993579b9da981c4ca22f926438a40653b9156719afbea2e74c2b7505"
+  },
+  "terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/E2E_pilot2_default/terminal.json",
+    "bytes": 4551,
+    "sha256": "bb98781d138047f4bae1b63477ff39a7b483649ac908477db782494b2196545e"
+  },
+  "actual_worker_join": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/E2E_pilot2_default/actual_worker_join.json",
+    "bytes": 2492,
+    "sha256": "551384a73260b9f318e6b3ad86c4dc19e01c33fedf040f27a708d9457eaaf05b"
+  },
+  "target": {
+    "host_pid": 18096,
+    "start_ticks": 346383,
+    "nspid": [
+      18096,
+      715
+    ],
+    "cmdline": [
+      "/opt/venv/bin/python3",
+      "-B",
+      "-c",
+      "from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=4, pipe_handle=6)",
+      "--multiprocessing-fork"
+    ],
+    "time_namespace": "time:[4026531834]",
+    "timens_offsets": "monotonic           0         0\nboottime            0         0\n"
+  },
+  "parent": {
+    "host_pid": 18088,
+    "start_ticks": 346375,
+    "nspid": [
+      18088,
+      708
+    ],
+    "cmdline": [
+      "python3",
+      "-B",
+      "-u",
+      "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260922_E2E_worker_policy_runtime_v1/worker_policy_launch.py",
+      "--manifest",
+      "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260922_E2E_worker_policy_runtime_v1/launch_manifest.json",
+      "--run-id",
+      "pilot2_default"
+    ],
+    "time_namespace": "time:[4026531834]",
+    "timens_offsets": "monotonic           0         0\nboottime            0         0\n"
+  },
+  "worker_gate_and_spawn_manifest_joined": true,
+  "source_pins_current": true,
+  "lifecycle": {
+    "launcher_rc": 0,
+    "worker_rc": 0,
+    "target_absent": true,
+    "all_device_idle": true,
+    "trace_cleanup": true,
+    "global_state_unchanged": true
+  },
+  "training": {
+    "outcome": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_E2E_worker_policy_runtime_v1/pilot2_default_training/outcome.json",
+      "bytes": 2094,
+      "sha256": "c4659e0266352c95fc8f2bbca99c37eaaf3507fbe167ed3f737ce17a1ff48fac"
+    },
+    "events": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_E2E_worker_policy_runtime_v1/pilot2_default_training/boundaries/events.jsonl",
+      "bytes": 551582,
+      "sha256": "0b929c68201ca8779180022598c3211f763b29d1cbfb066abbe1b018f5d3fe49"
+    },
+    "completed_steps": 2,
+    "raw_fault_captures": 0,
+    "flushes": [
+      {
+        "step": 1,
+        "scans": 68,
+        "operation_endpoints": 42,
+        "checked_finite_summaries": 367,
+        "zero_comparisons": 12,
+        "integer_metadata_not_scanned": 12
+      },
+      {
+        "step": 2,
+        "scans": 68,
+        "operation_endpoints": 42,
+        "checked_finite_summaries": 367,
+        "zero_comparisons": 12,
+        "integer_metadata_not_scanned": 12
+      }
+    ],
+    "limit": "Floating finite/extreme scalar checks and exact input-integrity flags; no full tensor raw capture for this finite pilot."
+  },
+  "trace": {
+    "file": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/E2E_pilot2_default/trace.txt",
+      "bytes": 203990,
+      "sha256": "59c83a9aa32e308094fb2f636b45414636be8959594dc0e61d189b84fe9ba22f"
+    },
+    "per_cpu_count": 256,
+    "stats": {
+      "entries": 1630,
+      "overrun": 0,
+      "commit overrun": 0,
+      "dropped events": 0
+    },
+    "requested_buffer_kib_per_cpu": 1024,
+    "readback_buffer_kib_per_cpu": 1027,
+    "readback_note": "tracefs buffer allocation rounding",
+    "evictions": 23,
+    "restores": 22,
+    "eviction_causes": {
+      "numa_balancing": 20,
+      "fork": 2,
+      "exit": 1
+    },
+    "final_unmatched_eviction_is_process_exit": true,
+    "kprobe_misses": 0
+  },
+  "dmesg_delta": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_E2E_peer_review_v1/dmesg_delta.txt",
+    "bytes": 248,
+    "sha256": "f0c322138873c2651b0e00fd41e440605dcae716536681fe73560a74a275911d"
+  },
+  "adapter_review": [
+    "Inherited find_target requires unique containerPID/startticks/multiprocessing-fork match.",
+    "Adapter additionally joins actual worker role, diagnostic function, run ID, parent launcher command, parent namespace PID/startticks, shared cgroup, inherited run/manifest environment and spawned_child receipt.",
+    "Retained controller gates pre-HIP, installs target-TGID stacktrace then atomically releases exact process, retains live resources on uncertain process exit, and only cleans after all-device idle.",
+    "Adapter changes requested private trace buffer to1024KiB perCPU; raw snapshot corroborates rounded1027KiB."
+  ],
+  "limitations": [
+    "Trace establishes20 NUMA-driven queue evictions during an observed finite2-step original-driver pilot; it does not show the exact GPU instruction at eviction.",
+    "No raw fault capture exists because the configured pilot completed without scalar/integrity alarms.",
+    "Parent/worker same-cgroup check is generic in source; saved pilot cgroup independently matches the exact expected Docker container.",
+    "Integer metadata and masks are intentionally outside floating-value finite/extreme scan scope."
+  ],
+  "GPU_actions": false
+}

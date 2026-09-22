@@ -1,0 +1,70 @@
+{
+  "status": "PASS_COMPLETE_ATTENTION_CAUSAL_QUARTET_AUDIT",
+  "utc": "2026-09-22T01:54:28.673951+00:00",
+  "counts": {
+    "arms": 4,
+    "calls": 16,
+    "complete_BF16_output_words": 393216,
+    "nonzero_output_words": 512,
+    "complete_raw_files": 416,
+    "complete_raw_bytes": 3897088,
+    "guard_intervals": 832,
+    "native_packets": 16,
+    "HIP_calls": 788,
+    "HIP_begin_end_records": 1576,
+    "readonly_logical_buffer_comparisons": 160,
+    "freed_allocations": 52,
+    "module_unloads": 4
+  },
+  "conclusion": "The production uncapped attention native kernel exhibits the prescribed late-site CWSR v1-to-v257 lane0 arithmetic corruption. All four unequal-trap calls exactly match the128-word finite donor model; both no-trap arms and equal-bank trapped arm preserve the entire zero-gradient oracle.",
+  "limitations": [
+    "Synthetic finite input geometry validates a particular native mechanism, not the complete historical capture or training repair.",
+    "No corrected driver was executed; original srcversion654C1DDE7A9A3E129BA9553 stayed loaded.",
+    "Trap PC and eight event count are prescribed from audited executed code/geometry, not separately recorded TTMP/hardware context-save acknowledgments.",
+    "Per-arm external idle receipts scan /dev/kfd ownership; they are not complete all-GPU-device FD scans.",
+    "Library rehash independently checks current container files; per-run mapped-library identity is tied to retained producer hashes/maps."
+  ],
+  "complete_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_attention_result_audit_v1/complete_audit.json",
+    "bytes": 249949,
+    "sha256": "20d65d74c1db768d40df734f71cac0a6b13f3572528655c614729c1a712bf8b7"
+  },
+  "arm_matrix": [
+    {
+      "arm": "unequal_nop",
+      "calls": 4,
+      "DQ_wrong_words_per_call": 0,
+      "DK_DV_wrong_words": 0,
+      "all_output_bytes_exact": true,
+      "external_reaped": true,
+      "kernel_log_unchanged": true
+    },
+    {
+      "arm": "equal_nop",
+      "calls": 4,
+      "DQ_wrong_words_per_call": 0,
+      "DK_DV_wrong_words": 0,
+      "all_output_bytes_exact": true,
+      "external_reaped": true,
+      "kernel_log_unchanged": true
+    },
+    {
+      "arm": "equal_trap",
+      "calls": 4,
+      "DQ_wrong_words_per_call": 0,
+      "DK_DV_wrong_words": 0,
+      "all_output_bytes_exact": true,
+      "external_reaped": true,
+      "kernel_log_unchanged": true
+    },
+    {
+      "arm": "unequal_trap",
+      "calls": 4,
+      "DQ_wrong_words_per_call": 128,
+      "DK_DV_wrong_words": 0,
+      "all_output_bytes_exact": true,
+      "external_reaped": true,
+      "kernel_log_unchanged": true
+    }
+  ]
+}

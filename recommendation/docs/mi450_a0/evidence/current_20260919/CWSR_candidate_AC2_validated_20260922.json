@@ -1,0 +1,188 @@
+{
+  "schema": "MI450_CWSR_AC2_COMPLETED_COMPONENT_VALIDATION_V1",
+  "status": "CONTROLLED_CORRUPTION_PREVENTED_E2E_UNVALIDATED",
+  "date_utc": "2026-09-22",
+  "boot_id": "6478859b-3092-4792-a933-e91c311f2cd1",
+  "candidate": {
+    "version": "7.1.1.31300009",
+    "srcversion": "8336BBB74E6C4D53275A4E5",
+    "cwsr_enable": 1,
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/candidate_amdgpu.stripped.ko",
+    "sha256": "7e9a2985cb07838caf44793751ff6ce0149b61062e39bf0a4d72716c7289e8ab",
+    "activation": "Single first load on fresh boot with AMDGPU previously absent throughout boot",
+    "installed_original_preserved": true,
+    "installed_original_srcversion": "654C1DDE7A9A3E129BA9553"
+  },
+  "health_and_sentinels": {
+    "exact_health_checks": 4000,
+    "sentinel_cases": 14,
+    "all_tag_MODE_EXEC_values_preserved": true,
+    "explicit_trap_return_PCs_exact": 7,
+    "original_corrupting_modes": ["0x05", "0x81", "0x85"],
+    "corrected_corrupting_cases": 0,
+    "native_shader_host_config_environment_libraries_match_original": true,
+    "new_MC60_records_in_health_intervals": [0, 0, 0]
+  },
+  "LayerNorm_and_tiny_attention": {
+    "processes": 24,
+    "dispatches": 36,
+    "raw_files_verified": 856,
+    "raw_bytes_verified": 7366528,
+    "native_pins_verified": 1024,
+    "exact_unique_inventory_verified": true,
+    "same_original_native_ELFs_geometry_scalars": true,
+    "byte_identical_prefill_bytes": 3683264,
+    "original_LN_N16_G1_DX_NaNs": 512,
+    "original_LN_N16_G1_nan_rows": [11],
+    "original_LN_N56_G1_DX_NaNs": 3072,
+    "original_LN_N56_G1_nan_rows": [11, 19, 27, 35, 43, 51],
+    "original_LN_partial_DW_column5_NaNs": 2,
+    "corrected_LN_NaNs": 0,
+    "original_tiny_attention_wrong_finite_DQ_words_per_unequal_trap_call": 128,
+    "original_tiny_attention_wrong_finite_DQ_words_across_four_calls": 512,
+    "corrected_tiny_attention_wrong_DQ_words": 0,
+    "controls_unchanged": true
+  },
+  "full_historical_attention_FAIL131": {
+    "arms": 4,
+    "dispatches": 8,
+    "raw_files": 144,
+    "raw_bytes": 13053235840,
+    "logical_output_words": 1087635456,
+    "guard_regions": 288,
+    "HIP_calls": 596,
+    "all_corrected_DQ_DK_DV_words_positive_zero": true,
+    "original_wrong_finite_DQ_words_per_unequal_trap_call": 80,
+    "original_wrong_DQ_coordinates": [
+      {"row": 28300, "head": 2, "dimension_first": 64, "dimension_last_inclusive": 127},
+      {"row": 44704, "head": 3, "dimension_first": 64, "dimension_last_inclusive": 79}
+    ],
+    "same_original_native_capture_geometry_scalars_environment": true,
+    "complete_raw_scan": "Four pinned completed per-arm auditors scanned the entire current capture",
+    "independent_peer_scope": "Authenticated the complete inventory and hashes against prior independently scanned corrected captures; reread all 144 file guards and all 80 historical DQ coordinates in all eight current outputs",
+    "independent_peer_current_raw_bytes_reread": 75008,
+    "independent_peer_repeated_13GB_scan": false,
+    "all_files_losslessly_archived_and_decompression_hash_verified": true,
+    "raw_retained_at_archive_completion": true
+  },
+  "historical_step405_DW": {
+    "arms": ["sink_control_nop", "sink_candidate_nop", "sink_control_trap", "sink_candidate_trap"],
+    "calls": 16,
+    "bytes_per_complete_output": 262144,
+    "all16_corrected_outputs_equal_ordinary_baseline": true,
+    "ordinary_baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+    "all4_original_sink_control_trap_outputs_equal_historical_corruption": true,
+    "historical_corrupted_output_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9",
+    "historical_BF16_differences_corrected": 1030,
+    "historical_NaNs_corrected": 640,
+    "historical_extreme_finite_words_corrected": 384,
+    "historical_other_finite_words_corrected": 6,
+    "six_other_coordinates_M_N": [[8, 0], [8, 64], [8, 256], [136, 256], [8, 320], [136, 320]],
+    "last_two_other_coordinates_had_sign_flips": true,
+    "corrected_nonfinite_words": 0,
+    "same_original_ELFs_X_DY_geometry_scalars_prefills_libraries": true,
+    "complete_consumer_retained_X_DY_bytes_rehashed": 14280812544,
+    "independent_peer_scope": "Reread all 16 original and 16 corrected complete outputs and prefills; repeated 172-byte native-packet, environment, library and retained lifecycle checks; authenticated full input hashes and checked backing sizes without another 14GB input scan",
+    "sink_candidate_arm_name_meaning": "Earlier kernel register relocation; all four current arms use the corrected driver"
+  },
+  "lifecycle_and_kernel_policy": {
+    "all_producers_exited": true,
+    "final_all_device_idle_gates_passed": true,
+    "new_MC60_records_in_completed_workload_intervals": 0,
+    "known_corrected_MC60_record_preceded_activation": true,
+    "authorized_exception": "Only complete exact known CPU8/MC60 corrected-error records; all other fault rejection remains",
+    "platform_health_clearance": false,
+    "no_live_reload_or_GPU_recovery_for_AC2_validation": true
+  },
+  "health_adapter_provenance": {
+    "launched_and_restored_sha256": "d553545daee188c8d0b90b72353693ffc283cd4305bf574a54e4221cef7a60c1",
+    "separately_preserved_hardened_variant_sha256": "2bcd3aa25862cdb75bf1e634e6bc6fc41fadb667307215e027cafbc4d38dd224",
+    "incident": "Released host adapter was edited before launch coordination completed; edit timing relative to the short execution interval was not separately recorded. The loaded original code completed successfully. Both variants were retained, original bytes restored, and actual result terminals were unchanged.",
+    "producer_environment_numerical_native_lifecycle_driver_policy_code_changed": false,
+    "health_kill_or_retry_performed": false,
+    "independent_original_to_fresh_manifest_derivation_and_actual_launch_pin_verified": true
+  },
+  "remaining_scope": {
+    "corrected_driver_projection_replay": "UNTESTED",
+    "corrected_driver_natural_exposure_stability": "UNVALIDATED",
+    "E2E": "UNVALIDATED; no completed corrected-driver numerical verdict",
+    "previous_candidate_boot": "2001b9f5-abbc-4032-a56f-9d41a57de7f3",
+    "previous_candidate_E2E": "Default1000 stalled in first backward during shader-loading PM4 code-cache invalidation; no backward completion or complete finite-tensor verdict",
+    "next_E2E_experiment_at_record_creation": "Fresh AC2 package pending final review with HIP_ENABLE_DEFERRED_LOADING=0, default NUMA policy and numerical settings preserved",
+    "eager_loading_is_additional_execution_change": true,
+    "stall_physical_cause_proved": false,
+    "unique_cause_of_every_historical_NaN_proved": false,
+    "actual_historical_trap_schedule_reconstructed": false,
+    "existing_source_fixes_or_workarounds_removed": false
+  },
+  "receipts": {
+    "activation": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_root_v1/activation_adjudication/terminal.json",
+      "sha256": "b0469d97b56cde56e8cbff282801b00d443be54477d93c35d9d7c50212bcc5b5"
+    },
+    "health": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_prerequisites_v1/health/terminal.json",
+      "sha256": "35e1274e37b70c0b04d8b280b5153392419413fd8dde8da2dc7fc575c9adbc6a"
+    },
+    "components": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_prerequisites_v1/components/terminal.json",
+      "sha256": "c6b47059f0ca822286b98b8e70e469b2b1c996178568966701daef28ea28cb8b"
+    },
+    "component_consumer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_prerequisites_v1/components/downstream_consumption.json",
+      "sha256": "955966ace1b2d209158cb899411e0ef00d2bf11daeaef9919801d08376396487"
+    },
+    "health_component_peer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_results_peer_v1/health_components_review.json",
+      "sha256": "7845987b4ceef81468c599a1c03a3140e6505b120834965855d37004f0e0c913"
+    },
+    "attention": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_prerequisites_v1/attention/terminal.json",
+      "sha256": "545d0be43c0473f50b6efe8b61ff9f68bdfcbb9d40d3d6ed9c418cd3e6afc596"
+    },
+    "attention_complete_audit": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_prerequisites_v1/attention/complete_raw_audit.json",
+      "sha256": "a8b902e37033d61c6ff13604bdf384be9226d6e02865dad84f666d05d0852b60"
+    },
+    "attention_peer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_results_peer_v1/attention_review.json",
+      "sha256": "fa0974f392c47f4dc8ba87852775a792f625430631329ccd2e76d9f49ebf69b3"
+    },
+    "attention_archive": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_ac2_attention_runtime_v1/raw_archive/archive_receipt.json",
+      "sha256": "4a35b6fc4b4264cc598238edfa8b0b1085892936b5a620e8b056cf87e3122f2c"
+    },
+    "DW_execution": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_DW_execution_v1/terminal.json",
+      "sha256": "9e347fcff8ef324ff196e1cd7edb4b6e803ef67f642e58a8553a1c8d9e0e94cc"
+    },
+    "DW_complete_consumer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_DW_execution_v1/complete_consumer.json",
+      "sha256": "dd50c362832927c6350b3b3f680de9f7ecc7db01dee4195a6645a0f0a9b0da82"
+    },
+    "DW_peer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_DW_result_peer_v1/review.json",
+      "sha256": "10ee8ec3b89141e886aaeb52217e2cb3b96b8b8624ce6936f9ac95fa56993dcd"
+    },
+    "MC60_policy": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_mc60_permitted_v1/mc60_policy.py",
+      "sha256": "938d59b48bb559a7d3fd8cff099c81fe041b8de830956f4f0d8dd0f01ec49a5c"
+    },
+    "MC60_authorization": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_gpu_validation_root_v1/AUTHORIZATION.json",
+      "sha256": "eb8f2c36e1ecddeaa9e077fafa9d888d4c8d4ea4361751da6d83fec7f01f49e6"
+    },
+    "health_adapter_incident": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_prerequisites_v1/HEALTH_ADAPTER_INCIDENT.md",
+      "sha256": "d449f4ec74eeeca0b2220d3ab55f12dda3b106540c8696f09fdb3ac64644f6a3"
+    },
+    "health_manifest_independent_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_root_v1/health_manifest_independent_review.json",
+      "sha256": "59ef4fd8a40dac5d5a9c6e7cba73b32b4775fe6cdc0a3d6c10c45544dbf43b18"
+    },
+    "previous_candidate_boot_actual_results": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_gpu_validation_root_v1/ACTUAL_RESULTS.json",
+      "sha256": "9e4fc82e319d8c175f7f8886ddfc3f446f4824fb63af78ca6381a5d1bc245edc"
+    }
+  }
+}

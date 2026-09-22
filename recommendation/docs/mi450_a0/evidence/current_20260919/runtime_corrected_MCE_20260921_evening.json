@@ -1,0 +1,526 @@
+{
+  "format": "MI450_retained_evening_corrected_MCE_comparison_v1",
+  "created_utc": "2026-09-21T23:05:29.695920+00:00",
+  "status": "RECURRENT_SIGNATURE_REPORT_IN_BETWEEN_RUN_GAP_ENDPOINT_UNRESOLVED",
+  "scope": "CPU-only comparison of retained artifacts; no GPU launches, runtime modifications, live RAS reads, driver actions, tracefs writes, NUMA policy changes, commits or pushes.",
+  "log_integrity": {
+    "comparison_baseline": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/dmesg_after_zero_pair.log",
+    "final_is_exact_baseline_plus_new_lines": true,
+    "baseline_lines": 1886,
+    "final_lines": 1898,
+    "added_nonempty_lines": 11,
+    "added_blank_lines": 1,
+    "new_MCE_record_count": 1,
+    "new_MCE_lines": 6,
+    "new_AppArmor_denials": 5,
+    "new_SVM_cpu_hog_warnings": 0,
+    "limit": "This verifies an exact retained log delta. It does not establish completeness of all hardware events or continuous GPU health. The log was not unchanged."
+  },
+  "MCE_comparison": {
+    "normalized_six_line_payload_exactly_matches_prior_080513_record": true,
+    "normalization": "Strip only leading timestamp and following whitespace; preserve remaining event payload byte for byte.",
+    "current_raw_lines": [
+      "[ 2301.957762] mce: [Hardware Error]: Machine check events logged",
+      "[ 2301.957770] [Hardware Error]: Corrected error, no action required.",
+      "[ 2301.964695] [Hardware Error]: CPU:8 (1a:51:0) MC60_STATUS[Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-]: 0xd8202000000c080b",
+      "[ 2301.976369] [Hardware Error]: PPIN: 0x00831df01b0e0007",
+      "[ 2301.976372] [Hardware Error]: IPID: 0x000001e11ccc0007, Syndrome: 0x000000005a800001",
+      "[ 2301.976375] [Hardware Error]: cache level: L3/GEN, mem/io: IO, mem-tx: GEN, part-proc: SRC (no timeout)"
+    ],
+    "prior_raw_lines": [
+      "2026-09-21T08:05:13,197561+00:00 mce: [Hardware Error]: Machine check events logged",
+      "2026-09-21T08:05:13,197569+00:00 [Hardware Error]: Corrected error, no action required.",
+      "2026-09-21T08:05:13,204917+00:00 [Hardware Error]: CPU:8 (1a:51:0) MC60_STATUS[Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-]: 0xd8202000000c080b",
+      "2026-09-21T08:05:13,220207+00:00 [Hardware Error]: PPIN: 0x00831df01b0e0007",
+      "2026-09-21T08:05:13,229138+00:00 [Hardware Error]: IPID: 0x000001e11ccc0007, Syndrome: 0x000000005a800001",
+      "2026-09-21T08:05:13,240121+00:00 [Hardware Error]: cache level: L3/GEN, mem/io: IO, mem-tx: GEN, part-proc: SRC (no timeout)"
+    ],
+    "prior_certificate_pre_runtime_exact_status_count": 6,
+    "prior_certificate_added_matching_record": 1,
+    "cross_boot_limit": "Morning counts are prior-boot evidence. The current evening boot is separate; these counts are not a single-boot or lifetime total.",
+    "current_boot_id": "cd2037bd-33c9-435d-922d-d9078f06c72f",
+    "current_log_MC60_records": 1,
+    "current_log_exact_status_records": 1,
+    "retained_prior_decoding": {
+      "IPID_decode": {
+        "raw": "0x1e11ccc0007",
+        "hardware_id_43_32": "0x1e1",
+        "MCA_type_63_48": "0x0",
+        "instance_id_hi_47_44": "0x0",
+        "instance_id_lo_31_0": "0x1ccc0007",
+        "classification": "PCIe Link Unit / SMCA_PCIE_PL",
+        "basis": [
+          "Current upstream Linux arch/x86/kernel/cpu/mce/amd.c line202: SMCA_PCIE_PL HWID_MCATYPE(0x1E1,0x0).",
+          "Current upstream Linux drivers/edac/mce_amd.c line716: PCIe Link Unit.",
+          "Local AMD rascore/ras_aca_v5_0.c lines52,67 independently map PCIE_PL HWID0x1E1 type0."
+        ],
+        "kernel_limit": "Upstream Linux v6.14 has no HWID0x1E1 entry; installed6.14.0-37 enum lacks SMCA_PCIE_PL and sysfs exposes generic th_bank_60, consistent with missing decoder. Exact Ubuntu running decoder binary was not decompiled.",
+        "endpoint_limit": "CPU8 is the reporting logical CPU. PCIe link identity/root port/endpoint is not established from IPID instance fields; no GPU ordinal or BDF can be assigned. Do not apply GPU-specific ACA socket/die parsing to this CPU MCA event without applicable documentation."
+      },
+      "MC60_STATUS_decode": {
+        "raw": "0xd8202000000c080b",
+        "flags": {
+          "VAL": true,
+          "OVER": true,
+          "UC": false,
+          "EN": true,
+          "MISCV": true,
+          "ADDRV": false,
+          "PCC": false,
+          "TCC": false,
+          "SYNDV": true,
+          "CECC": false,
+          "UECC": true,
+          "DEFERRED": false,
+          "POISON": false,
+          "SCRUB": false
+        },
+        "error_code_15_0": "0x80b",
+        "extended_error_code_21_16": "0xc",
+        "generic_classification": "Kernel calls event corrected because UC=0 and DEFERRED=0. UECC bit45 is independently set and must remain reported; it does not override generic status to an uncorrected CPU context error.",
+        "overflow_limit": "OVER=1 means previous errors were lost; one logged record is not one underlying event.",
+        "generic_bus_error": "EC0x080b formats L3/GEN, IO, generic transaction, source participant, no timeout. This generic error-code text is not evidence that the CPU L3 cache itself failed.",
+        "address_limit": "ADDRV=0; no valid error address is established.",
+        "XEC_limit": "XEC0x0c exact PCIe link sub-error meaning is not supplied by retained installed/Linux/rasdaemon sources. Related prior records have XEC0x12."
+      },
+      "syndrome": {
+        "raw": "0x000000005a800001",
+        "related_prior": "0x000000005a000001",
+        "difference": "bit23 (0x00800000)",
+        "limit": "SyndV is set. Exact PCIE_PL syndrome fields and lane/port/error meaning require applicable family1Ah model51h documentation or vendor decode; no guessed semantics assigned."
+      }
+    }
+  },
+  "reporting_time": {
+    "kmsg_first_line_seconds": "2301.957762",
+    "kmsg_last_line_seconds": "2301.976375",
+    "nearby_audit_records": [
+      {
+        "line": "[ 2301.965312] audit: type=1400 audit(1790031148.163:130): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+        "kmsg_seconds": "2301.965312",
+        "audit_epoch_seconds": "1790031148.163",
+        "audit_utc": "2026-09-21T22:52:28.163000+00:00",
+        "audit_sequence": 130,
+        "wall_minus_kmsg_seconds": "1790028846.197688"
+      },
+      {
+        "line": "[ 2302.261945] audit: type=1400 audit(1790031148.460:131): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+        "kmsg_seconds": "2302.261945",
+        "audit_epoch_seconds": "1790031148.460",
+        "audit_utc": "2026-09-21T22:52:28.460000+00:00",
+        "audit_sequence": 131,
+        "wall_minus_kmsg_seconds": "1790028846.198055"
+      },
+      {
+        "line": "[ 2302.332391] audit: type=1400 audit(1790031148.531:132): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+        "kmsg_seconds": "2302.332391",
+        "audit_epoch_seconds": "1790031148.531",
+        "audit_utc": "2026-09-21T22:52:28.531000+00:00",
+        "audit_sequence": 132,
+        "wall_minus_kmsg_seconds": "1790028846.198609"
+      },
+      {
+        "line": "[ 2302.469600] audit: type=1400 audit(1790031148.668:133): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+        "kmsg_seconds": "2302.469600",
+        "audit_epoch_seconds": "1790031148.668",
+        "audit_utc": "2026-09-21T22:52:28.668000+00:00",
+        "audit_sequence": 133,
+        "wall_minus_kmsg_seconds": "1790028846.198400"
+      },
+      {
+        "line": "[ 2302.592248] audit: type=1400 audit(1790031148.790:134): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+        "kmsg_seconds": "2302.592248",
+        "audit_epoch_seconds": "1790031148.790",
+        "audit_utc": "2026-09-21T22:52:28.790000+00:00",
+        "audit_sequence": 134,
+        "wall_minus_kmsg_seconds": "1790028846.197752"
+      }
+    ],
+    "adjacent_audit_clock_proxy": {
+      "first_MCE_line_utc_min": "2026-09-21T22:52:28.155450+00:00",
+      "first_MCE_line_utc_max": "2026-09-21T22:52:28.156371+00:00",
+      "last_MCE_line_utc_min": "2026-09-21T22:52:28.174063+00:00",
+      "last_MCE_line_utc_max": "2026-09-21T22:52:28.174984+00:00"
+    },
+    "retained_userspace_boottime_clock_proxy": {
+      "first_MCE_line_utc_min": "2026-09-21T22:52:30.507739+00:00",
+      "first_MCE_line_utc_max": "2026-09-21T22:52:30.507743+00:00",
+      "last_MCE_line_utc_min": "2026-09-21T22:52:30.526351+00:00",
+      "last_MCE_line_utc_max": "2026-09-21T22:52:30.526356+00:00"
+    },
+    "userspace_UTC_minus_boottime_seconds_min": "1790028848.549976488",
+    "userspace_UTC_minus_boottime_seconds_max": "1790028848.549981288",
+    "nearby_audit_UTC_minus_kmsg_seconds_min": "1790028846.197688",
+    "nearby_audit_UTC_minus_kmsg_seconds_max": "1790028846.198609",
+    "difference_between_offset_families_seconds_min": "2.351367488",
+    "difference_between_offset_families_seconds_max": "2.352293288",
+    "clock_receipts": [
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/terminal.json",
+        "clock": "started",
+        "boot_ns": 1251459964750,
+        "monotonic_ns": 1251459965199,
+        "utc": "2026-09-21T22:35:00.009942+00:00",
+        "wall_minus_boottime_seconds": "1790028848.54997725"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/terminal.json",
+        "clock": "finished",
+        "boot_ns": 1251682841671,
+        "monotonic_ns": 1251682842120,
+        "utc": "2026-09-21T22:35:00.232819+00:00",
+        "wall_minus_boottime_seconds": "1790028848.549977329"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_package_v2/terminal.json",
+        "clock": "started",
+        "boot_ns": 1381827511771,
+        "monotonic_ns": 1381827512221,
+        "utc": "2026-09-21T22:37:10.377489+00:00",
+        "wall_minus_boottime_seconds": "1790028848.549977229"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_package_v2/terminal.json",
+        "clock": "finished",
+        "boot_ns": 1407145495885,
+        "monotonic_ns": 1407145496365,
+        "utc": "2026-09-21T22:37:35.695473+00:00",
+        "wall_minus_boottime_seconds": "1790028848.549977115"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_stacks_v3/terminal.json",
+        "clock": "started",
+        "boot_ns": 1661654998712,
+        "monotonic_ns": 1661654999182,
+        "utc": "2026-09-21T22:41:50.204980+00:00",
+        "wall_minus_boottime_seconds": "1790028848.549981288"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_stacks_v3/terminal.json",
+        "clock": "finished",
+        "boot_ns": 1687165292943,
+        "monotonic_ns": 1687165293403,
+        "utc": "2026-09-21T22:42:15.715270+00:00",
+        "wall_minus_boottime_seconds": "1790028848.549977057"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_bind_ftrace_v1/terminal.json",
+        "clock": "started",
+        "boot_ns": 2420299790620,
+        "monotonic_ns": 2420299791040,
+        "utc": "2026-09-21T22:54:28.849768+00:00",
+        "wall_minus_boottime_seconds": "1790028848.54997738"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_bind_ftrace_v1/terminal.json",
+        "clock": "finished",
+        "boot_ns": 2445658599512,
+        "monotonic_ns": 2445658599942,
+        "utc": "2026-09-21T22:54:54.208576+00:00",
+        "wall_minus_boottime_seconds": "1790028848.549976488"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_default_ftrace_v1/terminal.json",
+        "clock": "started",
+        "boot_ns": 2488964460987,
+        "monotonic_ns": 2488964461457,
+        "utc": "2026-09-21T22:55:37.514438+00:00",
+        "wall_minus_boottime_seconds": "1790028848.549977013"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_default_ftrace_v1/terminal.json",
+        "clock": "finished",
+        "boot_ns": 2514426402339,
+        "monotonic_ns": 2514426402779,
+        "utc": "2026-09-21T22:56:02.976379+00:00",
+        "wall_minus_boottime_seconds": "1790028848.549976661"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_balancing_ftrace_v1/terminal.json",
+        "clock": "started",
+        "boot_ns": 2724588922444,
+        "monotonic_ns": 2724588922914,
+        "utc": "2026-09-21T22:59:33.138900+00:00",
+        "wall_minus_boottime_seconds": "1790028848.549977556"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_balancing_ftrace_v1/terminal.json",
+        "clock": "finished",
+        "boot_ns": 2750056113133,
+        "monotonic_ns": 2750056113573,
+        "utc": "2026-09-21T22:59:58.606090+00:00",
+        "wall_minus_boottime_seconds": "1790028848.549976867"
+      }
+    ],
+    "clock_limit": "Kernel log relative timestamps are not assumed identical to userspace CLOCK_BOOTTIME. The two available conversions differ by about 2.35 seconds. Adjacent audit wall timestamps provide an approximate local reporting-time proxy; the conversion envelope is not a formal error bound or proof of underlying hardware event time. No microsecond UTC accuracy is claimed.",
+    "intervals": [
+      {
+        "name": "session_20260921_fresh_TTMP_ftrace_package_v1",
+        "started_utc": "2026-09-21T22:35:00.009942+00:00",
+        "finished_utc": "2026-09-21T22:35:00.232819+00:00",
+        "controller_status": "ERROR",
+        "receipt": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/terminal.json",
+        "relation_to_combined_clock_proxy_envelope": "BEFORE"
+      },
+      {
+        "name": "session_20260921_evening_ftrace_package_v2",
+        "started_utc": "2026-09-21T22:37:10.377489+00:00",
+        "finished_utc": "2026-09-21T22:37:35.695473+00:00",
+        "controller_status": "CHILD_REAPED",
+        "receipt": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_package_v2/terminal.json",
+        "relation_to_combined_clock_proxy_envelope": "BEFORE"
+      },
+      {
+        "name": "session_20260921_evening_ftrace_stacks_v3",
+        "started_utc": "2026-09-21T22:41:50.204980+00:00",
+        "finished_utc": "2026-09-21T22:42:15.715270+00:00",
+        "controller_status": "CHILD_REAPED",
+        "receipt": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_stacks_v3/terminal.json",
+        "relation_to_combined_clock_proxy_envelope": "BEFORE"
+      },
+      {
+        "name": "inline_smoke",
+        "started_utc": "2026-09-21T22:44:05.003584+00:00",
+        "finished_utc": "2026-09-21T22:44:05.330933+00:00",
+        "returncode": 0,
+        "receipts": [
+          "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/inline_smoke_launch.json",
+          "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/inline_smoke_terminal.json"
+        ],
+        "relation_to_combined_clock_proxy_envelope": "BEFORE"
+      },
+      {
+        "name": "inline_full",
+        "started_utc": "2026-09-21T22:44:24.037626+00:00",
+        "finished_utc": "2026-09-21T22:44:25.900962+00:00",
+        "returncode": 0,
+        "receipts": [
+          "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/inline_full_launch.json",
+          "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/inline_full_terminal.json"
+        ],
+        "relation_to_combined_clock_proxy_envelope": "BEFORE"
+      },
+      {
+        "name": "natural_sink_control",
+        "started_utc": "2026-09-21T22:45:54.287502+00:00",
+        "finished_utc": "2026-09-21T22:47:00.953791+00:00",
+        "receipt": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v2/sink_control_terminal.json",
+        "relation_to_combined_clock_proxy_envelope": "BEFORE"
+      },
+      {
+        "name": "natural_sink_candidate",
+        "started_utc": "2026-09-21T22:49:41.059812+00:00",
+        "finished_utc": "2026-09-21T22:51:25.371165+00:00",
+        "receipt": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v2/sink_candidate_terminal.json",
+        "relation_to_combined_clock_proxy_envelope": "BEFORE"
+      },
+      {
+        "name": "session_20260921_evening_numa_bind_ftrace_v1",
+        "started_utc": "2026-09-21T22:54:28.849768+00:00",
+        "finished_utc": "2026-09-21T22:54:54.208576+00:00",
+        "controller_status": "CHILD_REAPED",
+        "receipt": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_bind_ftrace_v1/terminal.json",
+        "relation_to_combined_clock_proxy_envelope": "AFTER"
+      },
+      {
+        "name": "session_20260921_evening_numa_default_ftrace_v1",
+        "started_utc": "2026-09-21T22:55:37.514438+00:00",
+        "finished_utc": "2026-09-21T22:56:02.976379+00:00",
+        "controller_status": "CHILD_REAPED",
+        "receipt": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_default_ftrace_v1/terminal.json",
+        "relation_to_combined_clock_proxy_envelope": "AFTER"
+      },
+      {
+        "name": "session_20260921_evening_numa_balancing_ftrace_v1",
+        "started_utc": "2026-09-21T22:59:33.138900+00:00",
+        "finished_utc": "2026-09-21T22:59:58.606090+00:00",
+        "controller_status": "CHILD_REAPED",
+        "receipt": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_balancing_ftrace_v1/terminal.json",
+        "relation_to_combined_clock_proxy_envelope": "AFTER"
+      }
+    ],
+    "nearest_preceding": "natural_sink_candidate",
+    "nearest_following": "session_20260921_evening_numa_bind_ftrace_v1",
+    "conclusion": "Both retained clock conversions place MCE reporting after the natural zero-DY candidate controller completed and before the plain-bind NUMA controller started. Neither conversion overlaps any retained listed experiment controller interval. Reporting time is not underlying error occurrence time."
+  },
+  "AppArmor": {
+    "lines": [
+      "[ 2301.965312] audit: type=1400 audit(1790031148.163:130): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+      "[ 2302.261945] audit: type=1400 audit(1790031148.460:131): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+      "[ 2302.332391] audit: type=1400 audit(1790031148.531:132): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+      "[ 2302.469600] audit: type=1400 audit(1790031148.668:133): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0",
+      "[ 2302.592248] audit: type=1400 audit(1790031148.790:134): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_passwd.cache\" pid=4209 comm=72733A6D61696E20513A526567 requested_mask=\"r\" denied_mask=\"r\" fsuid=103 ouid=0"
+    ],
+    "profile": "rsyslogd",
+    "operation": "open",
+    "path": "/etc/oslogin_passwd.cache",
+    "requested_mask": "r",
+    "denied_mask": "r",
+    "pid": 4209,
+    "fsuid": 103,
+    "ouid": 0,
+    "comm_hex": "72733A6D61696E20513A526567",
+    "comm_decoded": "rs:main Q:Reg",
+    "evening_baseline_same_path_denials": 0,
+    "evening_baseline_related_rsyslog_denials": [
+      "[  109.992653] audit: type=1400 audit(1790028955.816:121): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/dcgpu_oslogin.conf\" pid=4209 comm=\"rsyslogd\" requested_mask=\"r\" denied_mask=\"r\" fsuid=0 ouid=0",
+      "[  109.992688] audit: type=1400 audit(1790028955.816:122): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/oslogin_group.cache\" pid=4209 comm=\"rsyslogd\" requested_mask=\"r\" denied_mask=\"r\" fsuid=0 ouid=0",
+      "[  109.993249] audit: type=1400 audit(1790028955.817:123): apparmor=\"DENIED\" operation=\"open\" class=\"file\" profile=\"rsyslogd\" name=\"/etc/dcgpu_oslogin.conf\" pid=4209 comm=\"rsyslogd\" requested_mask=\"r\" denied_mask=\"r\" fsuid=0 ouid=0"
+    ],
+    "interpretation": "These record rsyslogd read denials on an oslogin cache file. Interleaving with an MCE record does not establish GPU corruption or assign its cause."
+  },
+  "final_retained_state": {
+    "idle_receipt_utc": "2026-09-21T23:01:27.367647+00:00",
+    "boot_id": "cd2037bd-33c9-435d-922d-d9078f06c72f",
+    "GPU_fd_owner_scan_idle": true,
+    "GPU_fd_owners": [],
+    "GPU_fd_scan_errors": [],
+    "driver_srcversion": "654C1DDE7A9A3E129BA9553",
+    "trace_policy_state": {
+      "instances": [],
+      "kprobes": "",
+      "numa_balancing": "1",
+      "driver_srcversion": "654C1DDE7A9A3E129BA9553"
+    },
+    "limit": "These are point-in-time retained state receipts. They do not prove continuous exclusivity, unchanged logs, successful error correction beyond kernel classification, or complete hardware health."
+  },
+  "scientific_limit": "Preserve recurring PCIe-link-class RAS signature as a hardware-health confound. CPU8 is the reporting logical CPU, not the GPU or PCIe endpoint. UC=0 and DEFERRED=0 support kernel corrected classification; UECC bit45 and OVER=1 remain explicitly set. ADDRV=0 gives no valid address. Generic L3/GEN bus text is not a CPU L3 defect diagnosis. Exact endpoint, XEC0x0c and syndrome fields remain unresolved. No endpoint, timestamped trap, DW word, register copy, or NaN is linked by these records.",
+  "direct_prior_log_recurrence": {
+    "snapshots": [
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/pre_runtime_kernel.json",
+        "MC60_records": 12,
+        "exact_six_line_MCE_matches": 6,
+        "same_rsyslog_passwd_cache_denials": 130,
+        "exact_AppArmor_payload_matches_after_PID_normalization": 130,
+        "prior_PIDs": [
+          "3894"
+        ]
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/quartet_post_kernel.json",
+        "MC60_records": 13,
+        "exact_six_line_MCE_matches": 7,
+        "same_rsyslog_passwd_cache_denials": 140,
+        "exact_AppArmor_payload_matches_after_PID_normalization": 140,
+        "prior_PIDs": [
+          "3894"
+        ]
+      }
+    ],
+    "AppArmor_normalization": "Compare payload beginning apparmor= through end of line, normalizing PID only. Prior PID3894 differs from current PID4209; all other payload fields match.",
+    "limit": "The prior snapshots overlap and are from an earlier boot; counts must not be added together. Current repeated signature is established, without assigning endpoint, occurrence time or causation."
+  },
+  "inputs": [
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/runtime_corrected_MCE_SVM_review.json",
+      "bytes": 11525,
+      "sha256": "1838b94e30d254da4e90b4eaf6b72f37768e05e384dcdcdadaac01b92e04feb3"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/new_kernel_log_lines.txt",
+      "bytes": 1769,
+      "sha256": "24cab613894399109e73e43b4c6340b84aff329365e0c60f268b2613736189f3"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/final_dmesg.log",
+      "bytes": 150059,
+      "sha256": "ed1bb0f8b5778d976302017e4c3a4b6389a1d7ec01404bae56f39eeea195cd35"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/dmesg_after_zero_pair.log",
+      "bytes": 148290,
+      "sha256": "968b981660f80719aa159090265f2492dc883d76dff266476615658bd9457fd3"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_fresh_TTMP_ftrace_package_v1/terminal.json",
+      "bytes": 7422,
+      "sha256": "55bd83b1df219f92fd394ceb8f714a25ec4c21e408d9e07721a70605212ff974"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_package_v2/terminal.json",
+      "bytes": 7174,
+      "sha256": "47e0ee23a318b959c4bd663f8a2e5e4ca0498524c34b4526af8ec28065da0775"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_stacks_v3/terminal.json",
+      "bytes": 7640,
+      "sha256": "664295be027bec64b198e901b3247565892df28f65ebb258d6264222163a15c6"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_bind_ftrace_v1/terminal.json",
+      "bytes": 8091,
+      "sha256": "86c454737e2d68694ac9ac15d60bf69a7d2427463341cf82a6d565259126277c"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_default_ftrace_v1/terminal.json",
+      "bytes": 8092,
+      "sha256": "68775317eed278178c2a31029c67551eb21d0d36b35e9b8a6e9d2db53b8ded30"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_numa_balancing_ftrace_v1/terminal.json",
+      "bytes": 8174,
+      "sha256": "cf6c31c84d16f4e67df1d8dc7d5f9009c068ed16afba921af8f084f38652f7d6"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/inline_smoke_launch.json",
+      "bytes": 578,
+      "sha256": "b3ae7f4e49b260b319b3f53e33432a77140a4e725655aaee3aaa03f27414ddee"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/inline_smoke_terminal.json",
+      "bytes": 100,
+      "sha256": "fca2cd5bf74146c0c00a9fa3a3feb29ab2ee1f0cf074b1e38c2ea64ccefa51dc"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/inline_full_launch.json",
+      "bytes": 576,
+      "sha256": "1be5ad509a6fc98698b42e7771199ead00afca3f6f837d94356ee4090cbcc26c"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/inline_full_terminal.json",
+      "bytes": 100,
+      "sha256": "c90cd7b6d2940a68ca02bf4f2829744d1a6e56657c95e4850ee58d5ae7a147fc"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v2/sink_control_terminal.json",
+      "bytes": 479,
+      "sha256": "b52c17120c09be0cc3f0aabd2be58438fd151dd366ea0136b4a8630b3f719ad2"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_zero_package_v2/sink_candidate_terminal.json",
+      "bytes": 481,
+      "sha256": "2806cee4678c11d4de17365c0201175de8ca773c3a8f10cbcd6564bee39ec2fb"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/initial_state.json",
+      "bytes": 2858,
+      "sha256": "fa835a9e94409f9f12c62b60eb7a74f248631a08b9a807c453fe3ee37718b8fe"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/final_gpu_idle.json",
+      "bytes": 2263,
+      "sha256": "78df9262a0c75f5da358e2bb2920f785266c202af2f44e6b0f7a0f5bbac247ef"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_root_v1/final_trace_and_policy_state.json",
+      "bytes": 114,
+      "sha256": "599279c9d87df02fce405a9fc11b98ed2986bd31ba87f8980db2e07132bd3445"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/pre_runtime_kernel.json",
+      "bytes": 236015,
+      "sha256": "20ea55cac39536ef7ff2654d6f2b137e3decd4cb050e6bcbd527b7407bddcfee"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_root_v1/quartet_post_kernel.json",
+      "bytes": 239665,
+      "sha256": "518f0c0ba4bb801e25a2c8022bf51a70e4d70aa1e2feb59deae6982d1d0c944c"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_MCE_audit_v1/compare_retained.py",
+      "bytes": 13122,
+      "sha256": "00d0c94aeddf5d8c29dfc49e0301548ab196b31ed9e8734e71e8d7a241aa56fc"
+    }
+  ]
+}

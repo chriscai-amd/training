@@ -1,0 +1,142 @@
+{
+  "format": "installed_vs_baseline_complete_ELF_loading_input_audit_v1",
+  "created_utc": "2026-09-22T01:43:56.215968+00:00",
+  "status": "PASS_COMPLETE_ELF_IDENTICAL_EXCEPT_BUILD_ID_AND_SIGNATURE",
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_module_audit_v1/audit_baseline.py",
+    "bytes": 8261,
+    "sha256": "3ec67a78dc5f6c25e7d573340560dba0608eb080677d0aebc78404a769459aaf"
+  },
+  "installed": {
+    "path": "/lib/modules/6.14.0-37-generic/updates/dkms/amdgpu.ko.zst",
+    "bytes": 6162515,
+    "sha256": "1dc79e7c4c8baeaf88c2244c2abfd485a1a05c498159de392f9e09f2993a5890"
+  },
+  "baseline": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/baseline_amdgpu.stripped.ko",
+    "bytes": 40319256,
+    "sha256": "bd992f82ab51c16b79ee9a8a0c08dad45e3ee4d708e67a5fdce73d22cd4d5156"
+  },
+  "installed_decompressed": {
+    "bytes": 40319738,
+    "sha256": "f11e1604ac0417410e26c5020d43824ad122ae8b7b996879309468b87c1c5e28"
+  },
+  "ELF_bytes": 40319256,
+  "section_count": 93,
+  "symbol_count": 57637,
+  "relocation_count": 827798,
+  "all_ELF_header_and_section_header_bytes_equal": true,
+  "differing_ELF_byte_count": 20,
+  "differing_ELF_byte_offsets": [
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99
+  ],
+  "allowed_delta": {
+    "section": ".note.gnu.build-id",
+    "descriptor_offset": 80,
+    "descriptor_bytes": 20,
+    "installed": "ddf061b041314b8ee864b911ad9482169eaab97b",
+    "baseline": "9410957e3984000287ec60d40c74e6f8eb893016"
+  },
+  "normalized_complete_ELF_sha256": "74c181cb6e9d0830efe19cd99026ea62d6882b8aaeb0bd25f84c5537313d5782",
+  "all_relocations_symbols_versions_allocated_and_unallocated_sections_equal_except_build_ID": true,
+  "installed_signature_trailer": {
+    "bytes": 482,
+    "signature_bytes": 442,
+    "algorithm": 0,
+    "hash": 0,
+    "id_type": 2,
+    "sha256": "8ad26b4f8eb2a1838a873ce881cd61df874c5a441d04bd85008604fd86403507"
+  },
+  "compiler_comments": [
+    "GCC: (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+  ],
+  "metadata": {
+    "installed": {
+      "version": "7.1.1.31300009",
+      "srcversion": "654C1DDE7A9A3E129BA9553",
+      "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+      "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+      "signer": "heliosr-1b114-c07-1 Secure Boot Module Signature key"
+    },
+    "baseline": {
+      "version": "7.1.1.31300009",
+      "srcversion": "654C1DDE7A9A3E129BA9553",
+      "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+      "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+      "signer": ""
+    }
+  },
+  "prior_boot_security_log": [
+    "[    0.000000] secureboot: Secure boot disabled",
+    "[    0.004833] secureboot: Secure boot disabled",
+    "[   11.937720] tawk_ipc: module verification failed: signature and/or required key missing - tainting kernel"
+  ],
+  "prior_boot_security_log_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_driver_reload_v1/baseline_reload/dmesg_before.log",
+    "bytes": 159742,
+    "sha256": "23b7c580e0d034c64192ccfead9390fd37e7f44ee8c7da8fea139589f8d57a42"
+  },
+  "current_readonly_state": {
+    "/proc/sys/kernel/random/boot_id": "eedd6fe3-b107-405a-b2ad-80e4488d9708",
+    "/proc/cmdline": "BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic root=UUID=a8c7367a-9025-4849-baa8-853bab204e11 ro modprobe.blacklist=amdgpu pci=realloc=off iommu=pt modprobe.blacklist=amdgpu,device_dax,dax_hmem iommu=pt console=tty0 console=ttyS1,115200n8 preempt=full rcu_nocbs=all",
+    "/proc/sys/kernel/modules_disabled": "0",
+    "/sys/module/module/parameters/sig_enforce": "N",
+    "/sys/kernel/security/lockdown": "[none] integrity confidentiality"
+  },
+  "relevant_kernel_config": [
+    "# CONFIG_X86_KERNEL_IBT is not set",
+    "CONFIG_LTO_NONE=y",
+    "CONFIG_MODULE_SIG_FORMAT=y",
+    "CONFIG_MODULE_UNLOAD=y",
+    "# CONFIG_MODULE_UNLOAD_TAINT_TRACKING is not set",
+    "CONFIG_MODVERSIONS=y",
+    "CONFIG_MODULE_SIG=y",
+    "# CONFIG_MODULE_SIG_FORCE is not set",
+    "CONFIG_MODULE_SIG_ALL=y",
+    "# CONFIG_MODULE_SIG_SHA1 is not set",
+    "# CONFIG_MODULE_SIG_SHA256 is not set",
+    "# CONFIG_MODULE_SIG_SHA384 is not set",
+    "CONFIG_MODULE_SIG_SHA512=y",
+    "# CONFIG_MODULE_SIG_SHA3_256 is not set",
+    "# CONFIG_MODULE_SIG_SHA3_384 is not set",
+    "# CONFIG_MODULE_SIG_SHA3_512 is not set",
+    "CONFIG_MODULE_SIG_HASH=\"sha512\"",
+    "CONFIG_MODULE_SIG_KEY=\"certs/signing_key.pem\"",
+    "CONFIG_MODULE_SIG_KEY_TYPE_RSA=y",
+    "# CONFIG_MODULE_SIG_KEY_TYPE_ECDSA is not set",
+    "CONFIG_DEBUG_INFO_BTF=y",
+    "CONFIG_DEBUG_INFO_BTF_MODULES=y"
+  ],
+  "modprobe_amdgpu_options_install_softdep_lines": [],
+  "interpretation": [
+    "The rebuilt baseline is the installed module ELF with only its GNU build ID changed; it is also unsigned.",
+    "This complete byte comparison covers loader inputs omitted by the previous allocated-section comparison: ELF layout, relocation records, all symbol records, version CRCs, init/exit pointers, and nonallocated sections.",
+    "The identical compiler comments show the installed module and rebuilt baseline used the same GCC revision; the kernel/compiler warning does not distinguish these modules.",
+    "The previous boot disabled Secure Boot and already loaded a module whose missing signature/key merely tainted the kernel. The current boot reports signature enforcement N and no lockdown. A signature-policy explanation for a host hang lacks supporting evidence.",
+    "No configured amdgpu options, install override or soft dependency was found in the current modprobe configuration. insmod bypass of such configuration is not an observed discrepancy.",
+    "The baseline load was attempted after an unload. No terminal receipt or contemporaneous kernel output proves the instruction or loading phase where forward progress stopped.",
+    "These CPU observations do not prove reload safety, establish the host crash root cause, or authorize another insertion."
+  ],
+  "GPU_actions": false,
+  "module_load_unload_actions": false,
+  "installed_files_changed": false
+}

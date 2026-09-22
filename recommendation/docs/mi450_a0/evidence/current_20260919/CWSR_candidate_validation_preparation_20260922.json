@@ -1,0 +1,149 @@
+{
+  "schema": "MI450_CANDIDATE_VALIDATION_PREPARATION_20260922",
+  "status": "CPU_REVIEWED_STAGED_REQUIRES_MANUAL_BMC_NEW_DRIVER_ABSENT_BOOT",
+  "updated_utc": "2026-09-22T04:03:20.616815+00:00",
+  "boot_id": "eedd6fe3-b107-405a-b2ad-80e4488d9708",
+  "current_boot_state": "Preserved binding E2E stall and later diagnostic-triggered kernel Oops; no further GPU/device operations.",
+  "candidate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/candidate_amdgpu.stripped.ko",
+    "sha256": "7e9a2985cb07838caf44793751ff6ce0149b61062e39bf0a4d72716c7289e8ab",
+    "expected_srcversion": "8336BBB74E6C4D53275A4E5",
+    "ever_executed": false,
+    "fixes_HQD_diagnostic": false
+  },
+  "first_load_handoff": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_candidate_first_load_v1/handoff.json",
+    "bytes": 19761,
+    "sha256": "2a6a2c7404b639ec9b40a0d3dbbd1d627a8b8ed5c91e3ad62f079dde09910217"
+  },
+  "packages": [
+    {
+      "name": "basic_components",
+      "status": "SOURCES_STAGED_NOT_EXECUTED",
+      "READY": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_components_root_integration_review_v2/READY.json",
+        "bytes": 5717,
+        "sha256": "e7d2975d16ee0879b5b2a1d6deb5fd98f890018a2d7a20c80c79723305a02512"
+      },
+      "root_review": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/candidate_components_root_review_v2.json",
+        "bytes": 2315,
+        "sha256": "33a58376521b01a2a090874955b90da50ed1a4e8a84b41be62f55c3fcb325a96"
+      },
+      "staging_verification": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/candidate_components_staging_verified_v2.json",
+        "bytes": 627,
+        "sha256": "56c1d35cbf18ed4359eb426f28dcf27e1e831d294469d85ef0c631de96050d81"
+      },
+      "staging_receipt": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_corrected_component_runtime_v1/staging_receipt.json",
+        "bytes": 12102,
+        "sha256": "eb1cf762107dbd640b7548c0cc7f12cd57f1b972bd240bf67971ffecfa989569"
+      },
+      "staged_source_spec_files": 19,
+      "staged_source_spec_bytes": 397230
+    },
+    {
+      "name": "full_historical_attention",
+      "status": "SOURCES_STAGED_NOT_EXECUTED",
+      "READY": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_corrected_package_v2/READY.json",
+        "bytes": 4999,
+        "sha256": "aad6f8786d26658a6b023c23fddc26af46e2e6a1f00aad3a58d88a68986219c7"
+      },
+      "root_review": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/candidate_attention_root_review_v2.json",
+        "bytes": 1997,
+        "sha256": "4d08271b872d90bbbed2ad4a06f93d58e5242549e8cb813969c1f7ed17bdd0f1"
+      },
+      "staging_verification": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/candidate_attention_staging_verified_v2.json",
+        "bytes": 497,
+        "sha256": "0bcfd547f4f18e4c06b0e8b0f8afe2e2bca8422a6eb82c39fc6036922ad06818"
+      },
+      "staging_receipt": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_attention_FAIL131_corrected_runtime_v2/staging_receipt.json",
+        "bytes": 7114,
+        "sha256": "d079c6decb7ca03854c339304a4aa83cc6b6ad04349871d253aacaddc8330711"
+      },
+      "staged_source_spec_files": 12,
+      "staged_source_spec_bytes": 190127
+    },
+    {
+      "name": "candidate_default1000",
+      "status": "SOURCES_STAGED_NOT_EXECUTED",
+      "READY": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/READY.json",
+        "bytes": 8589,
+        "sha256": "3a43b901b99037da6c8c169c41c68370762836086ba79a4a5a0d9fe59eac4808"
+      },
+      "root_review": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/candidate_E2E_root_review_v1.json",
+        "bytes": 3297,
+        "sha256": "69c754b84716cb717ea7f808b9e1eac07a233dc35e3b6ac400d6b06a746cc615"
+      },
+      "staging_verification": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/candidate_E2E_staging_verified_v1.json",
+        "bytes": 787,
+        "sha256": "b3b4bf5aae18bb909bb7af1e3ee26f864de576d6ea1d58dacbf58fc0d23e5aaf"
+      },
+      "staging_receipt": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_candidate_E2E_runtime_v1/staging_receipt.json",
+        "bytes": 2798,
+        "sha256": "d085bd5d8b485d2e639905497daad9a4cb3618798fa99259c6496cf2785baf64"
+      },
+      "staged_source_spec_files": 5,
+      "staged_source_spec_bytes": 128524
+    }
+  ],
+  "staged_total_files": 36,
+  "staged_total_bytes": 715881,
+  "archive_adapter_READY": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_archive_v1/READY.json",
+    "bytes": 2229,
+    "sha256": "835df3ec3dbfbcb3452b0acfe129a9f21cf3c12e34dd8ca054c4e1bbf82d5bf8"
+  },
+  "current_handoff": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/CURRENT_HANDOFF.md",
+    "bytes": 13763,
+    "sha256": "2110005d9f9e52dbad81fda52603c7814dfe6162f12c6ff8a4d8fa4a76dad429"
+  },
+  "exact_serial_commands": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/RECOVERY_COMMANDS.json",
+    "bytes": 11458,
+    "sha256": "4447aba8f0d97ec38785cb19a3dd579120e64ccccd7a3f536ee97ce9e3f3d669"
+  },
+  "stall_inventory": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/restored_stall_evidence_inventory_v1.json",
+    "bytes": 25409,
+    "sha256": "e186fa585c3f83793b3ad35896a9fa668b6bb9b4059ab28945628131dca6af86"
+  },
+  "tmpfs_preservation": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_root_v1/preboot_tmpfs_preservation_v1/receipt.json",
+    "bytes": 2042,
+    "sha256": "5a6e7e6e4935e51d6d32e583ba10e4002958648eb6b68a4afb16cc49fdf4e4e6"
+  },
+  "validation": [
+    "Component author and independent 111-case CPU suites; exact unique inventory and fresh native/raw audit required.",
+    "Full attention author98 and peer78 CPU cases plus composed real component-v2 audit.",
+    "E2E author51, outer127 and timeout/postrun102 top-level checks/scenarios, with overlaps.",
+    "Archive root and peer reran34 inherited synthetic fixtures; source/binding/entry guards also passed.",
+    "Root source preflights, final package pin checks and all staged source/spec hashes passed; directories fsynced."
+  ],
+  "E2E_changes": [
+    "Worker launcher, policy reader, numactl and 110 production sources unchanged.",
+    "Shared exclusion with first-load/component/attention controllers and explicit idle boot/srcversion joins.",
+    "7200-second external producer deadline; live or uncertain worker/launcher state is preserved with trace/kernel evidence.",
+    "Complete raw/postrun audit and strict kernel continuity, including corrected machine checks."
+  ],
+  "constraints": [
+    "No live process or device reads in this continuation; only boot UUID and retained filesystem evidence were read.",
+    "Existing manual BMC authorization remains valid; actual new boot is required. Keep AMDGPU blacklisted.",
+    "Never read hqds or amdgpu_gpu_recover. No live AMDGPU unload/reload.",
+    "Original-driver bind_balancing1000 remains unrun. Candidate default1000 cannot alone resolve binding stall.",
+    "Original default1000 strict FAIL for corrected MC60 records remains unchanged.",
+    "Candidate prevention, E2E sufficiency and long-run NaN stability remain unvalidated.",
+    "No Git commits or pushes."
+  ],
+  "GPU_execution_this_continuation": false
+}

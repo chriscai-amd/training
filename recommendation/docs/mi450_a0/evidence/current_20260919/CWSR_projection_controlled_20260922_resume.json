@@ -1,0 +1,188 @@
+{
+  "status": "PASS_ALL_FOUR_CONTROLLED_ARMS_FULL_CPU_AUDIT_AND_ARCHIVE",
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_projection_package_v1/launch_manifest.json",
+    "bytes": 32473,
+    "sha256": "965b7ed95b8e79841282d875d36b0110de16f2f0f628846194884282335e5ed6"
+  },
+  "arms": [
+    {
+      "arm": "control_nop",
+      "complete_calls": 4,
+      "all_full_outputs_identical": true,
+      "output_sha256": "101d29d6cc1b9177585389be933564b4a072801505182796ff450fc670dd73f1",
+      "words_per_output": 1003293696,
+      "nonzero_per_call": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mismatch_count_per_call": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_output_histogram": {
+        "0x0000": 1003293696
+      },
+      "selected_expected_actual": {},
+      "input_hashes": {
+        "w": "c54f83af34b940a0d34c5571c0c0f7f29b5565ddd2c1b7ab60995223ad2a67a7",
+        "dz": "a7d815f891447ad7f0fcf1dc1e9c9c2347b8ec96f2f20deed0129db834302870"
+      },
+      "full_native_and_lifecycle_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_projection_package_v1/control_nop_result_audit.json",
+        "bytes": 88360,
+        "sha256": "cb40a7009b29e6505d5e9222a0e7d834e235ea7c08258b37cc417d2fc7396703"
+      },
+      "archive_receipt": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_resume_projection_controlled_runtime_v1/control_nop/raw_archive/archive_receipt.json",
+        "bytes": 4064,
+        "sha256": "a817b23ae4c2abdbfcff3dd5055c05b457ba3fd143dc8dabae76180a0c5cb0bc"
+      },
+      "raw_bytes": 16054796288,
+      "compressed_bytes": 2154591
+    },
+    {
+      "arm": "control_trap",
+      "complete_calls": 4,
+      "all_full_outputs_identical": true,
+      "output_sha256": "b8f3a65ca114c986a3ece1f425d16b323632c490101da89d66e97d8887309d20",
+      "words_per_output": 1003293696,
+      "nonzero_per_call": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "mismatch_count_per_call": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_output_histogram": {
+        "0x0000": 1003293692,
+        "0x3cdf": 1,
+        "0xbc08": 1,
+        "0xbc53": 1,
+        "0xbd14": 1
+      },
+      "selected_expected_actual": {
+        "2": "0xbc08",
+        "34": "0x3cdf",
+        "66": "0xbc53",
+        "98": "0xbd14"
+      },
+      "input_hashes": {
+        "w": "c54f83af34b940a0d34c5571c0c0f7f29b5565ddd2c1b7ab60995223ad2a67a7",
+        "dz": "a7d815f891447ad7f0fcf1dc1e9c9c2347b8ec96f2f20deed0129db834302870"
+      },
+      "full_native_and_lifecycle_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_projection_package_v1/control_trap_result_audit.json",
+        "bytes": 89199,
+        "sha256": "0b82899e93a6dc63cc3537e638abfc0a62b8a2b66a01bb2d5a37805985075b09"
+      },
+      "archive_receipt": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_resume_projection_controlled_runtime_v1/control_trap/raw_archive/archive_receipt.json",
+        "bytes": 4078,
+        "sha256": "bd807eeff6ba2ada4d06feb278736440a331305c272e226c34400e46168cafdc"
+      },
+      "raw_bytes": 16054796288,
+      "compressed_bytes": 2154675
+    },
+    {
+      "arm": "equal_nop",
+      "complete_calls": 4,
+      "all_full_outputs_identical": true,
+      "output_sha256": "101d29d6cc1b9177585389be933564b4a072801505182796ff450fc670dd73f1",
+      "words_per_output": 1003293696,
+      "nonzero_per_call": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mismatch_count_per_call": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_output_histogram": {
+        "0x0000": 1003293696
+      },
+      "selected_expected_actual": {},
+      "input_hashes": {
+        "w": "c54f83af34b940a0d34c5571c0c0f7f29b5565ddd2c1b7ab60995223ad2a67a7",
+        "dz": "a7d815f891447ad7f0fcf1dc1e9c9c2347b8ec96f2f20deed0129db834302870"
+      },
+      "full_native_and_lifecycle_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_projection_package_v1/equal_nop_result_audit.json",
+        "bytes": 88338,
+        "sha256": "1bec8904dd2c4605f8a70a24b34c8650a0c9ac48ff6a6b017935d23897f26b86"
+      },
+      "archive_receipt": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_resume_projection_controlled_runtime_v1/equal_nop/raw_archive/archive_receipt.json",
+        "bytes": 4036,
+        "sha256": "410934749d9baaa5637cde7b088bae3e65c1ea9b08c01f3c60db34ef6622507a"
+      },
+      "raw_bytes": 16054796288,
+      "compressed_bytes": 2154591
+    },
+    {
+      "arm": "equal_trap",
+      "complete_calls": 4,
+      "all_full_outputs_identical": true,
+      "output_sha256": "101d29d6cc1b9177585389be933564b4a072801505182796ff450fc670dd73f1",
+      "words_per_output": 1003293696,
+      "nonzero_per_call": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mismatch_count_per_call": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_output_histogram": {
+        "0x0000": 1003293696
+      },
+      "selected_expected_actual": {},
+      "input_hashes": {
+        "w": "c54f83af34b940a0d34c5571c0c0f7f29b5565ddd2c1b7ab60995223ad2a67a7",
+        "dz": "a7d815f891447ad7f0fcf1dc1e9c9c2347b8ec96f2f20deed0129db834302870"
+      },
+      "full_native_and_lifecycle_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_projection_package_v1/equal_trap_result_audit.json",
+        "bytes": 88349,
+        "sha256": "70e4ecdb3af9831d6706cb459a7332c8acce479af036c3d8d49145274164a1ec"
+      },
+      "archive_receipt": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_resume_projection_controlled_runtime_v1/equal_trap/raw_archive/archive_receipt.json",
+        "bytes": 4050,
+        "sha256": "870866f1883d4db79475eacd2ab7cc8f2de3f8352a8135d5ab9b30ec5accad81"
+      },
+      "raw_bytes": 16054796288,
+      "compressed_bytes": 2154591
+    }
+  ],
+  "completed_MM_calls": 16,
+  "output_words_independently_scanned": 16052699136,
+  "raw_bytes_archived_and_roundtrip_verified": 64219185152,
+  "compressed_bytes": 8618448,
+  "raw_files_deleted_by_this_agent": false,
+  "findings": [
+    "Control NOP, equal NOP and equal trap each produce four byte-identical all-positive-zero complete outputs.",
+    "Control trap produces four byte-identical complete outputs with exactly the four independently predicted BF16 values at flat indices2,34,66,98; every other word is positive zero.",
+    "The control-trap output differs from the other arms at exactly four BF16 words, with the same final W/DZ bytes in all arms.",
+    "Every retained output word and input byte was independently checked after the root controller reaped the corresponding process; every archived byte was verified after decompression.",
+    "This supports the injected-trap donor/target corruption mechanism and the equalizing instruction effect. It does not alone identify the spontaneous NaN trigger or validate an E2E fix."
+  ],
+  "GPU_actions": false
+}

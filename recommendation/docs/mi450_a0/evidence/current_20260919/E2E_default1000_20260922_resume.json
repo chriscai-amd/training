@@ -1,0 +1,105 @@
+{
+  "status": "NUMERICAL_PASS_STRICT_KERNEL_LOG_FAIL_PRESERVED",
+  "original_strict_status": "FAIL_PRESERVED_E2E_EVIDENCE",
+  "original_strict_issues": [
+    "no new hard kernel/driver fault"
+  ],
+  "run": "default1000",
+  "driver": "original 654C1DDE7A9A3E129BA9553",
+  "configuration": "Original configuration with source fixes retained; no cap256/LNBN1/workspace/private-solution workaround; global NUMA balancing 1.",
+  "completed_backward_steps": 1000,
+  "explicit_optimizer_updates_on_clean_completion": 1000,
+  "scheduled_snapshot_precedes_update": 1000,
+  "prior_explicit_dense_updates_at_snapshot": 999,
+  "scans_per_step": 68,
+  "operation_endpoints_per_step": 42,
+  "numerical": {
+    "tensor_views": 166,
+    "unique_logical_views": 166,
+    "nonfinite_count": 0,
+    "extreme_count": 0,
+    "check_count": 148
+  },
+  "floating_logical_elements_scanned": 19237486690,
+  "trace": {
+    "evictions": 186,
+    "restores": 185,
+    "eviction_causes": {
+      "numa_protection_scan": 166,
+      "fork": 2,
+      "numa_fault_folio_migration": 17,
+      "exit": 1
+    },
+    "statistics": {
+      "entries": 2227,
+      "overrun": 0,
+      "commit overrun": 0,
+      "dropped events": 0
+    },
+    "profile": {
+      "queue_eviction": {
+        "hits": 186,
+        "misses": 0
+      },
+      "queue_restore": {
+        "hits": 185,
+        "misses": 0
+      }
+    }
+  },
+  "strict_check_count": 541179,
+  "evidence": {
+    "full_raw_certificate": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_E2E_default1000_audit_v1/completed_default1000/raw/certificate.json",
+      "bytes": 135471,
+      "sha256": "8b7f81ffec6572898007ef0a183ccc46c3ad79ae1a1915fb8ed6f35fd1d7b826"
+    },
+    "strict_E2E_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_E2E_default1000_audit_v1/completed_default1000/E2E/review.json",
+      "bytes": 788305,
+      "sha256": "f2d88eec87359c0facdf98f5ca4328b4f7a30a32a8b37dea6c1ad9f5989d386b"
+    },
+    "kernel_adjudication": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_E2E_corrected_MC60_adjudication_v1/review.json",
+      "bytes": 23767,
+      "sha256": "994a0645655d6a490acabf1c6c60c0964406636b4fc994a372e984e5b1e93a5b"
+    },
+    "kernel_adjudication_receipt": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_E2E_corrected_MC60_adjudication_v1/receipt.json",
+      "bytes": 3138,
+      "sha256": "12d9bc06a646203fbb363f7f1c9b69263309222923c048174ae599e9b7d050c2"
+    },
+    "optimizer_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_E2E_optimizer_bound_review_v1/review.json",
+      "bytes": 7680,
+      "sha256": "6e12956c85ec195a9f48bc6f6bb44eec61dfbdf1fac90c5a5d995f0bc1630d80"
+    },
+    "archive_receipt": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_E2E_worker_policy_runtime_v1/default1000_training/raw_archive/archive_receipt.json",
+      "bytes": 966,
+      "sha256": "cdaa03d5842a40144b49bc0a4212c01d1897204113b416d3b881d2a5cb7b5de2"
+    }
+  },
+  "kernel_caveat": "Two exact recurring corrected CPU8/MC60 PCIe-link-class events match a pre-AMDGPU-load event. No new GPU or uncorrected fault was found in the complete delta. Strict FAIL remains unchanged; physical cause remains unproved.",
+  "archive": [
+    {
+      "original": {
+        "path": "/dev/shm/mi450_E2E_worker_policy_v1/default1000/linear-deferred-3578-1790042573211552213-s1000-finite.pt",
+        "bytes": 38556636485,
+        "sha256": "d939628124ba3266121ef037b760072ed64f8a7b00bafffff64dfe7597f8a102"
+      },
+      "archive": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_E2E_worker_policy_runtime_v1/default1000_training/raw_archive/linear-deferred-3578-1790042573211552213-s1000-finite.pt.zst",
+        "bytes": 19552427087,
+        "sha256": "0b1992f264dad0c343ceac2b7206532ea459c57edefd2f2d1ee3bab6b70af9bf"
+      },
+      "full_decompressed_bytes_and_sha256_verified": true
+    }
+  ],
+  "limits": [
+    "A bounded finite run on the original driver does not validate the corrected handler or establish long-run training stability.",
+    "The scheduled snapshot does not certify the state after explicit optimizer update 1000.",
+    "Capture copies, reductions and retained buffers perturb scheduling; traces record helper events, not complete hardware trap history.",
+    "Matched bind and balancing-enabled training runs are separate pending results."
+  ]
+}

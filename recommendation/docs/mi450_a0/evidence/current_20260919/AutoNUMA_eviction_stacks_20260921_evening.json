@@ -1,0 +1,183 @@
+{
+  "status": "PASS_FULL_STACK_AND_PACKET_AUDIT",
+  "created_utc": "2026-09-21T22:44:22.374938+00:00",
+  "packet_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_stacks_audit_v1/independent_terminal_audit.json",
+    "bytes": 3664922,
+    "sha256": "e3c589ae16283c0b1af43625b85c882ff1fb65dd7f8ad55609c0db3fe0ed8c27"
+  },
+  "trace_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_stacks_audit_v1/independent_trace_correlation.json",
+    "bytes": 1104402,
+    "sha256": "a6d4bc4e858c353c27be9deaaaa355e842178b7b22e6304ad9a00fd6693841e9"
+  },
+  "counts": {
+    "cases": 400,
+    "output_images": 400,
+    "prefill_images": 800,
+    "raw_image_bytes": 230400,
+    "HIP_calls": 2410,
+    "HIP_begin_end_records": 4820,
+    "explicit_calibrations": 0,
+    "passing_explicit_calibrations": 0,
+    "instrumentation_valid": 400,
+    "unexpected_packets": 0
+  },
+  "packet_outcomes": {
+    "NO_OBSERVED_FRESH_PLATEAU_EVENT": 390,
+    "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC": 6,
+    "FRESH_PLATEAU_PC_TAGS_UNCHANGED": 4
+  },
+  "trace_event_counts": {
+    "tracing_mark_write": 2,
+    "kfd_map_memory_to_gpu_start": 26,
+    "kfd_map_memory_to_gpu_end": 26,
+    "queue_eviction": 10,
+    "kernel_stack": 10,
+    "queue_restore": 10
+  },
+  "correlation": {
+    "NO_OBSERVED_FRESH_PLATEAU_EVENT": {
+      "cases": 390,
+      "cases_with_any_target_helper_event": 0,
+      "cases_with_definite_SVM_eviction": 0,
+      "cases_with_boundary_ambiguous_helper_event": 0
+    },
+    "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC": {
+      "cases": 6,
+      "cases_with_any_target_helper_event": 6,
+      "cases_with_definite_SVM_eviction": 6,
+      "cases_with_boundary_ambiguous_helper_event": 0
+    },
+    "FRESH_PLATEAU_PC_TAGS_UNCHANGED": {
+      "cases": 4,
+      "cases_with_any_target_helper_event": 4,
+      "cases_with_definite_SVM_eviction": 4,
+      "cases_with_boundary_ambiguous_helper_event": 0
+    }
+  },
+  "minimum_helper_event_distance_from_case_boundary_ns": 3308655,
+  "stack_groups": [
+    {
+      "count": 10,
+      "full_frames": [
+        "kprobe_trace_func",
+        "kprobe_dispatcher",
+        "kprobe_ftrace_handler",
+        "0xffffffffc25590f5",
+        "kfd_smi_event_queue_eviction",
+        "kgd2kfd_quiesce_mm",
+        "svm_range_cpu_invalidate_pagetables",
+        "__mmu_notifier_invalidate_range_start",
+        "change_pud_range.isra.0",
+        "change_protection_range",
+        "change_protection",
+        "change_prot_numa",
+        "task_numa_work",
+        "task_work_run",
+        "irqentry_exit_to_user_mode",
+        "irqentry_exit",
+        "sysvec_apic_timer_interrupt",
+        "asm_sysvec_apic_timer_interrupt"
+      ]
+    }
+  ],
+  "interesting_cases": [
+    {
+      "ordinal": 19,
+      "mode": "0x46",
+      "outcome": "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC",
+      "eviction_event_id": 53,
+      "restore_event_id": 55,
+      "stack_event_id": 54
+    },
+    {
+      "ordinal": 24,
+      "mode": "0x00",
+      "outcome": "FRESH_PLATEAU_PC_TAGS_UNCHANGED",
+      "eviction_event_id": 56,
+      "restore_event_id": 58,
+      "stack_event_id": 57
+    },
+    {
+      "ordinal": 37,
+      "mode": "0x05",
+      "outcome": "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC",
+      "eviction_event_id": 59,
+      "restore_event_id": 61,
+      "stack_event_id": 60
+    },
+    {
+      "ordinal": 45,
+      "mode": "0x05",
+      "outcome": "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC",
+      "eviction_event_id": 62,
+      "restore_event_id": 64,
+      "stack_event_id": 63
+    },
+    {
+      "ordinal": 75,
+      "mode": "0x46",
+      "outcome": "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC",
+      "eviction_event_id": 65,
+      "restore_event_id": 67,
+      "stack_event_id": 66
+    },
+    {
+      "ordinal": 101,
+      "mode": "0x05",
+      "outcome": "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC",
+      "eviction_event_id": 68,
+      "restore_event_id": 70,
+      "stack_event_id": 69
+    },
+    {
+      "ordinal": 135,
+      "mode": "0x46",
+      "outcome": "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC",
+      "eviction_event_id": 71,
+      "restore_event_id": 73,
+      "stack_event_id": 72
+    },
+    {
+      "ordinal": 180,
+      "mode": "0x00",
+      "outcome": "FRESH_PLATEAU_PC_TAGS_UNCHANGED",
+      "eviction_event_id": 74,
+      "restore_event_id": 76,
+      "stack_event_id": 75
+    },
+    {
+      "ordinal": 238,
+      "mode": "0x86",
+      "outcome": "FRESH_PLATEAU_PC_TAGS_UNCHANGED",
+      "eviction_event_id": 77,
+      "restore_event_id": 79,
+      "stack_event_id": 78
+    },
+    {
+      "ordinal": 314,
+      "mode": "0x86",
+      "outcome": "FRESH_PLATEAU_PC_TAGS_UNCHANGED",
+      "eviction_event_id": 80,
+      "restore_event_id": 82,
+      "stack_event_id": 81
+    }
+  ],
+  "stats_totals": {
+    "overrun": 0,
+    "commit overrun": 0,
+    "dropped events": 0,
+    "entries": 84,
+    "read events": 0
+  },
+  "profile_misses": 0,
+  "interpretation": "All ten observed target SVM eviction attempts were initiated through task_numa_work, change_prot_numa and CPU page-table invalidation. Every one coincided within its native launch/synchronize interval with a fresh in-loop return PC; unequal-bank cases had the predicted register copy. Automatic NUMA page-protection scanning is an observed initiator in this probe.",
+  "limits": [
+    "A helper entry is not a hardware context-save acknowledgment or exact trap count.",
+    "This probe does not recover the original attempt405 trap history or validate a training repair.",
+    "Stack tracing changes timing and may affect observed exposure."
+  ],
+  "GPU_actions": false,
+  "tracefs_writes": false
+}

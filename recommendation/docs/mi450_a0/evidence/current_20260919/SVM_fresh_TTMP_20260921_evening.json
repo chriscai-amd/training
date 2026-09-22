@@ -1,0 +1,73 @@
+{
+  "schema": "MI450_EVENING_SVM_FRESH_TTMP_RESULT_v1",
+  "utc": "2026-09-21T22:41:28.052768+00:00",
+  "status": "PASS_COMPLETE_TRACE_PACKET_LIFECYCLE_AUDIT",
+  "boot_id": "cd2037bd-33c9-435d-922d-d9078f06c72f",
+  "packet_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_audit_v1/independent_terminal_audit.json",
+    "bytes": 3615068,
+    "sha256": "f9100583028ed94de5b3733e9d9a44f0181e6e38ed31127fa62087e53764e86d"
+  },
+  "trace_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_audit_v1/independent_trace_correlation_v2.json",
+    "bytes": 1050721,
+    "sha256": "61650c8c14aabade43a5fef4ace20ec4a904a5b798184fee8f32a24de142936d"
+  },
+  "completed_audit_summary": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_evening_ftrace_audit_v1/completed_audit_summary.json",
+    "bytes": 5723,
+    "sha256": "adef0961ae04f803208b947af35b6e77708303eb2dda43c0afbe5705339a00b8"
+  },
+  "facts": {
+    "cases": 400,
+    "explicit_trap_invocations": 0,
+    "retained_images": 1200,
+    "successful_HIP_calls": 2410,
+    "fresh_predicted_copy_cases": 9,
+    "fresh_equal_bank_unchanged_cases": 3,
+    "no_fresh_PC_cases": 388,
+    "SVM_evictions": 12,
+    "restores": 12,
+    "all_fresh_cases_have_one_SVM_eviction_and_restore": true,
+    "all_no_fresh_cases_have_no_pair": true,
+    "trace_loss_or_probe_miss": false,
+    "ambiguous_event_boundaries": false,
+    "minimum_event_distance_to_call_boundary_ms": 1.450779
+  },
+  "correlation_by_packet_outcome": {
+    "NO_OBSERVED_FRESH_PLATEAU_EVENT": {
+      "cases": 388,
+      "cases_with_any_target_helper_event": 0,
+      "cases_with_definite_SVM_eviction": 0,
+      "cases_with_boundary_ambiguous_helper_event": 0
+    },
+    "SPONTANEOUS_COPY_WITH_FRESH_PLATEAU_PC": {
+      "cases": 9,
+      "cases_with_any_target_helper_event": 9,
+      "cases_with_definite_SVM_eviction": 9,
+      "cases_with_boundary_ambiguous_helper_event": 0
+    },
+    "FRESH_PLATEAU_PC_TAGS_UNCHANGED": {
+      "cases": 3,
+      "cases_with_any_target_helper_event": 3,
+      "cases_with_definite_SVM_eviction": 3,
+      "cases_with_boundary_ambiguous_helper_event": 0
+    }
+  },
+  "limits": [
+    "Helpers precede DQM operations; records denote lifecycle attempts, not hardware-success acknowledgments.",
+    "Nested reference-counted evictions need not produce independent hardware save events.",
+    "Probe entry interception changes timing and can affect exposure.",
+    "No-event cases do not prove no trap or no alternative eviction path.",
+    "Module disk SHA/srcversion plus runtime symbol availability bind code version; no attestation of every live patched instruction is claimed.",
+    "All static/dynamic events retained and target PID/GPU classified offline.",
+    "BOOTTIME per-call markers are in producer journal; ftrace contains run markers. No container tracefs mount or relay process.",
+    "No /dev/kfd observer subscription, no SMI FIFO, no driver reset/reload.",
+    "Text ftrace timestamps may be rounded to microseconds; preserve at least \u00b11 microsecond uncertainty for interval boundary classification.",
+    "Per-call interval brackets host native launch entry through synchronization return, not exact GPU execution or trap time.",
+    "Probe profile hits exceeding captured trace rows may occur outside capture; all such excesses are explicitly retained and are not silently assigned to a case.",
+    "BOOTTIME and MONOTONIC are sampled consecutively; their difference range is diagnostic and includes sampling delay.",
+    "Static events with matching process PID lack a complete per-event GPU identity and are reported separately from the scoped helper events."
+  ],
+  "interpretation": "Direct observed association of spontaneous predicted register copies and fresh trap return PCs with target-process SVM queue eviction/restore attempts. Helper entries do not acknowledge hardware context-save completion and do not reconstruct original attempt405 trap history."
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "MI450_POST_AC_CANDIDATE_ACTIVATION_AND_PREWORKLOAD_STOP_V1",
+  "boot_id": "2001b9f5-abbc-4032-a56f-9d41a57de7f3",
+  "candidate_load": {
+    "utc": "2026-09-22T04:43:12.042791+00:00",
+    "returncode": 0,
+    "process_wait_completed": true,
+    "version": "7.1.1.31300009",
+    "srcversion": "8336BBB74E6C4D53275A4E5",
+    "cwsr_enable": "1",
+    "installed_original_unchanged": true,
+    "evidence_directory": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_candidate_first_load_v1/activation_2001b9f5-abbc-4032-a56f-9d41a57de7f3"
+  },
+  "insertion_classifier_correction": {
+    "original_status_preserved": "STOPPED_AFTER_FIRST_LOAD_WITHOUT_AUTOMATIC_RECOVERY",
+    "reason": "The sole regex match was the VM_PAGE_FAULT reserved-memory inventory label, printed by dev_info in amdgpu_discovery.c.",
+    "all_309_insertion_lines_equal_to_original_after_timestamp_removal": true,
+    "adjudication_terminal": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_post_ac_root_v1/activation_adjudication/terminal.json",
+    "adapter": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_post_ac_guard_integration_v1/continue_postload.py",
+    "adapter_sha256": "391ec2ed12083b23652e97d0e8e8c5e1bf26489409b9ca9767a785e7343b0802",
+    "root_CPU_test_count": 74,
+    "later_strict_kernel_guard_unchanged": true
+  },
+  "validation": {
+    "utc": "2026-09-22T04:54:46.410168+00:00",
+    "status": "STOPPED_WITHOUT_DRIVER_CHANGE_OR_AUTOMATIC_RECOVERY",
+    "terminal": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_resume_candidate_first_load_v1/validation_2001b9f5-abbc-4032-a56f-9d41a57de7f3/terminal.json",
+    "terminal_sha256": "c6e7b349bb778994055615f677aa34bd4f8c1378cd24423d5afd15ddfc75763c",
+    "steps": [],
+    "stopped_before_owner_scan_and_container_start": true,
+    "candidate_GPU_workloads_executed": false,
+    "independent_review": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_post_ac_validation_result_review_v1/review.json"
+  },
+  "MC60": {
+    "first_report_boot_seconds": "664.450673",
+    "CPU": 8,
+    "status": "0xd8202000000c080b",
+    "IPID": "0x000001e11ccc0007",
+    "syndrome": "0x000000005a800001",
+    "PPIN": "0x00831df01b0e0007",
+    "kernel_severity": "Corrected error, no action required.",
+    "OVER": true,
+    "UC": false,
+    "DEFERRED": false,
+    "matches_prior_driver_absent_six_line_record": true,
+    "independent_comparison": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_post_ac_MC60_peer_v1/review.json",
+    "limit": "Reporting time is not physical occurrence time; OVER means prior errors lost. Recurrence does not establish harmlessness, physical port, candidate-specific cause, or a causal relationship with NaNs."
+  },
+  "pending_sequence": [
+    "health and 14 sentinels",
+    "24-process component matrix and complete independent audit",
+    "full historical attention quartet and archive",
+    "candidate default E2E1000, complete audit and archive",
+    "matched-policy and longer stability investigation"
+  ],
+  "current_handoff": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_post_ac_root_v1/CURRENT_HANDOFF.md"
+}

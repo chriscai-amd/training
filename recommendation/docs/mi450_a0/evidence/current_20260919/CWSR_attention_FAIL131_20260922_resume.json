@@ -1,0 +1,4367 @@
+{
+  "schema": "MI450_FULL_FAIL131_INDEPENDENT_POSTRUN_REVIEW_V1",
+  "status": "PASS_INDEPENDENT_FULL_HISTORY_ATTENTION_BYTES_ABI_HIP_LIFECYCLE",
+  "utc": "2026-09-22T03:03:54.698740+00:00",
+  "reviewer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_result_peer_review_v1/independent_postrun.py",
+    "bytes": 21282,
+    "sha256": "74b999d01dae621e1a7968211ba3ddfb4714e184748878508606f4c555f500bb"
+  },
+  "supervisor_terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/terminal.json",
+    "bytes": 2531,
+    "sha256": "5f80036aabfbf456aa6f324380e53623137cbfb0fa0f7bace8a16f1c9cad43f2"
+  },
+  "supervisor_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_package_v1/supervisor_manifest.json",
+    "bytes": 4468,
+    "sha256": "972469242a26ca34f9024f509ce28eb64a76a2e7f9310daf2d4e01506391db49"
+  },
+  "configuration": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_package_v1/configuration.json",
+    "bytes": 3738,
+    "sha256": "91a6575955b73eb401c9c5cb9f9d743204d624500bcbc0620a0104dfe0953fa4"
+  },
+  "contract": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_package_v1/captured_contract.json",
+    "bytes": 10750,
+    "sha256": "5ea795d32f29d841b5d25d274aeed631618c29fd3998f896f52ce69fa795f4f7"
+  },
+  "upstream_raw_receipt": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/complete_raw_audit.json",
+    "bytes": 44311,
+    "sha256": "b0332526eec55f0e44ecd86259b6fcdb1f071709bcb27d80685af82efca813ee"
+  },
+  "arms": [
+    {
+      "arm": "unequal_nop",
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/unequal_nop/terminal.json",
+        "bytes": 8938,
+        "sha256": "bb84cd04f4712e99f5f85bd3dd8b24cf92c0db8040fc439e597199aa92c652dd"
+      },
+      "native_result": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_attention_FAIL131_runtime_v1/results/unequal_nop/result.json",
+        "bytes": 91011,
+        "sha256": "e03878bf4cc6c2c4dfeba22f5089980cae20f65e02422fbcdc6b5dbe61807a31"
+      },
+      "raw_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/unequal_nop/raw_audit.json",
+        "bytes": 11800,
+        "sha256": "8c8cadb975893bf8030a68034e81822cd0a4ed9d4a7fe78600dac2f9949ae068"
+      },
+      "HIP_calls": 149,
+      "paired_journal_records": 298,
+      "device_allocations": 9,
+      "guard_regions": 72,
+      "calls": [
+        {
+          "call": 0,
+          "logical": {
+            "dq": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dk": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dv": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            }
+          },
+          "packet_sha256": "66eeee22484d69abdce96a76cdea906982631a7c86d4ac580118e53be4030316"
+        },
+        {
+          "call": 1,
+          "logical": {
+            "dq": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dk": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dv": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            }
+          },
+          "packet_sha256": "66eeee22484d69abdce96a76cdea906982631a7c86d4ac580118e53be4030316"
+        }
+      ],
+      "idle_scans": [
+        {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/unequal_nop/idle_before.json",
+          "bytes": 1674,
+          "sha256": "bceba6b7c76790d8cb47c5e337b0e2f93732fe62a44cd20a55df639d413e9d5e"
+        },
+        {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/unequal_nop/idle_after.json",
+          "bytes": 1674,
+          "sha256": "f41a4bf15a9c8f956bbcda08fa40707df7a6d8959be772d2c1a60e85cc0edfc0"
+        }
+      ],
+      "producer_liveness": {
+        "pid": 5019,
+        "start_ticks": 781958,
+        "same_process_alive": false,
+        "disposition": "ABSENT"
+      },
+      "kernel_delta": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/unequal_nop/dmesg_delta.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "derived_oracle": [
+        [
+          28300,
+          2,
+          64,
+          15551
+        ],
+        [
+          28300,
+          2,
+          65,
+          48205
+        ],
+        [
+          28300,
+          2,
+          66,
+          15241
+        ],
+        [
+          28300,
+          2,
+          67,
+          48131
+        ],
+        [
+          28300,
+          2,
+          68,
+          15751
+        ],
+        [
+          28300,
+          2,
+          69,
+          48447
+        ],
+        [
+          28300,
+          2,
+          70,
+          48428
+        ],
+        [
+          28300,
+          2,
+          71,
+          15839
+        ],
+        [
+          28300,
+          2,
+          72,
+          48267
+        ],
+        [
+          28300,
+          2,
+          73,
+          48218
+        ],
+        [
+          28300,
+          2,
+          74,
+          48425
+        ],
+        [
+          28300,
+          2,
+          75,
+          48399
+        ],
+        [
+          28300,
+          2,
+          76,
+          48376
+        ],
+        [
+          28300,
+          2,
+          77,
+          48161
+        ],
+        [
+          28300,
+          2,
+          78,
+          48354
+        ],
+        [
+          28300,
+          2,
+          79,
+          48021
+        ],
+        [
+          28300,
+          2,
+          80,
+          48343
+        ],
+        [
+          28300,
+          2,
+          81,
+          48202
+        ],
+        [
+          28300,
+          2,
+          82,
+          48524
+        ],
+        [
+          28300,
+          2,
+          83,
+          15861
+        ],
+        [
+          28300,
+          2,
+          84,
+          15537
+        ],
+        [
+          28300,
+          2,
+          85,
+          15537
+        ],
+        [
+          28300,
+          2,
+          86,
+          48529
+        ],
+        [
+          28300,
+          2,
+          87,
+          48560
+        ],
+        [
+          28300,
+          2,
+          88,
+          15704
+        ],
+        [
+          28300,
+          2,
+          89,
+          48486
+        ],
+        [
+          28300,
+          2,
+          90,
+          15384
+        ],
+        [
+          28300,
+          2,
+          91,
+          48654
+        ],
+        [
+          28300,
+          2,
+          92,
+          15544
+        ],
+        [
+          28300,
+          2,
+          93,
+          48597
+        ],
+        [
+          28300,
+          2,
+          94,
+          48248
+        ],
+        [
+          28300,
+          2,
+          95,
+          15873
+        ],
+        [
+          28300,
+          2,
+          96,
+          15604
+        ],
+        [
+          28300,
+          2,
+          97,
+          15897
+        ],
+        [
+          28300,
+          2,
+          98,
+          15789
+        ],
+        [
+          28300,
+          2,
+          99,
+          48542
+        ],
+        [
+          28300,
+          2,
+          100,
+          48591
+        ],
+        [
+          28300,
+          2,
+          101,
+          48643
+        ],
+        [
+          28300,
+          2,
+          102,
+          15743
+        ],
+        [
+          28300,
+          2,
+          103,
+          48120
+        ],
+        [
+          28300,
+          2,
+          104,
+          15794
+        ],
+        [
+          28300,
+          2,
+          105,
+          48678
+        ],
+        [
+          28300,
+          2,
+          106,
+          15900
+        ],
+        [
+          28300,
+          2,
+          107,
+          48455
+        ],
+        [
+          28300,
+          2,
+          108,
+          48572
+        ],
+        [
+          28300,
+          2,
+          109,
+          15736
+        ],
+        [
+          28300,
+          2,
+          110,
+          15420
+        ],
+        [
+          28300,
+          2,
+          111,
+          15460
+        ],
+        [
+          28300,
+          2,
+          112,
+          15354
+        ],
+        [
+          28300,
+          2,
+          113,
+          48407
+        ],
+        [
+          28300,
+          2,
+          114,
+          15613
+        ],
+        [
+          28300,
+          2,
+          115,
+          15755
+        ],
+        [
+          28300,
+          2,
+          116,
+          15587
+        ],
+        [
+          28300,
+          2,
+          117,
+          15653
+        ],
+        [
+          28300,
+          2,
+          118,
+          48267
+        ],
+        [
+          28300,
+          2,
+          119,
+          48604
+        ],
+        [
+          28300,
+          2,
+          120,
+          15680
+        ],
+        [
+          28300,
+          2,
+          121,
+          15014
+        ],
+        [
+          28300,
+          2,
+          122,
+          15717
+        ],
+        [
+          28300,
+          2,
+          123,
+          48330
+        ],
+        [
+          28300,
+          2,
+          124,
+          48286
+        ],
+        [
+          28300,
+          2,
+          125,
+          48462
+        ],
+        [
+          28300,
+          2,
+          126,
+          15534
+        ],
+        [
+          28300,
+          2,
+          127,
+          48219
+        ],
+        [
+          44704,
+          3,
+          64,
+          15509
+        ],
+        [
+          44704,
+          3,
+          65,
+          48138
+        ],
+        [
+          44704,
+          3,
+          66,
+          47268
+        ],
+        [
+          44704,
+          3,
+          67,
+          15566
+        ],
+        [
+          44704,
+          3,
+          68,
+          15385
+        ],
+        [
+          44704,
+          3,
+          69,
+          48382
+        ],
+        [
+          44704,
+          3,
+          70,
+          48139
+        ],
+        [
+          44704,
+          3,
+          71,
+          48169
+        ],
+        [
+          44704,
+          3,
+          72,
+          15626
+        ],
+        [
+          44704,
+          3,
+          73,
+          47922
+        ],
+        [
+          44704,
+          3,
+          74,
+          15372
+        ],
+        [
+          44704,
+          3,
+          75,
+          15083
+        ],
+        [
+          44704,
+          3,
+          76,
+          47906
+        ],
+        [
+          44704,
+          3,
+          77,
+          48095
+        ],
+        [
+          44704,
+          3,
+          78,
+          48250
+        ],
+        [
+          44704,
+          3,
+          79,
+          15487
+        ]
+      ]
+    },
+    {
+      "arm": "equal_nop",
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/equal_nop/terminal.json",
+        "bytes": 8908,
+        "sha256": "eb0884f130150944ac893946d1993f9cd9ad9c686bc2f61a67b7aad5f393f89c"
+      },
+      "native_result": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_attention_FAIL131_runtime_v1/results/equal_nop/result.json",
+        "bytes": 90921,
+        "sha256": "2b11be38a4cfb0a1cb4ecf782292339968fed8ecd546b2d6e04ca6b181f0ad75"
+      },
+      "raw_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/equal_nop/raw_audit.json",
+        "bytes": 11722,
+        "sha256": "e01694839dbda43f97599468e4fa195b48841453b9ac61d57cdc14a60da44c19"
+      },
+      "HIP_calls": 149,
+      "paired_journal_records": 298,
+      "device_allocations": 9,
+      "guard_regions": 72,
+      "calls": [
+        {
+          "call": 0,
+          "logical": {
+            "dq": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dk": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dv": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            }
+          },
+          "packet_sha256": "0df80a95732b045eea4839f15194062134ef5caac2df798979bf31387bcbf282"
+        },
+        {
+          "call": 1,
+          "logical": {
+            "dq": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dk": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dv": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            }
+          },
+          "packet_sha256": "0df80a95732b045eea4839f15194062134ef5caac2df798979bf31387bcbf282"
+        }
+      ],
+      "idle_scans": [
+        {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/equal_nop/idle_before.json",
+          "bytes": 1674,
+          "sha256": "8a0061afeaff8cd3c43cc0070c5ae732e5dae163e04652d272d87e10e1c31c1e"
+        },
+        {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/equal_nop/idle_after.json",
+          "bytes": 1674,
+          "sha256": "96adaab8b97c4e0b652a1fadee2c0cf0d8d607b4432817b489c8fde197976164"
+        }
+      ],
+      "producer_liveness": {
+        "pid": 5097,
+        "start_ticks": 783191,
+        "same_process_alive": false,
+        "disposition": "ABSENT"
+      },
+      "kernel_delta": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/equal_nop/dmesg_delta.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "derived_oracle": [
+        [
+          28300,
+          2,
+          64,
+          15551
+        ],
+        [
+          28300,
+          2,
+          65,
+          48205
+        ],
+        [
+          28300,
+          2,
+          66,
+          15241
+        ],
+        [
+          28300,
+          2,
+          67,
+          48131
+        ],
+        [
+          28300,
+          2,
+          68,
+          15751
+        ],
+        [
+          28300,
+          2,
+          69,
+          48447
+        ],
+        [
+          28300,
+          2,
+          70,
+          48428
+        ],
+        [
+          28300,
+          2,
+          71,
+          15839
+        ],
+        [
+          28300,
+          2,
+          72,
+          48267
+        ],
+        [
+          28300,
+          2,
+          73,
+          48218
+        ],
+        [
+          28300,
+          2,
+          74,
+          48425
+        ],
+        [
+          28300,
+          2,
+          75,
+          48399
+        ],
+        [
+          28300,
+          2,
+          76,
+          48376
+        ],
+        [
+          28300,
+          2,
+          77,
+          48161
+        ],
+        [
+          28300,
+          2,
+          78,
+          48354
+        ],
+        [
+          28300,
+          2,
+          79,
+          48021
+        ],
+        [
+          28300,
+          2,
+          80,
+          48343
+        ],
+        [
+          28300,
+          2,
+          81,
+          48202
+        ],
+        [
+          28300,
+          2,
+          82,
+          48524
+        ],
+        [
+          28300,
+          2,
+          83,
+          15861
+        ],
+        [
+          28300,
+          2,
+          84,
+          15537
+        ],
+        [
+          28300,
+          2,
+          85,
+          15537
+        ],
+        [
+          28300,
+          2,
+          86,
+          48529
+        ],
+        [
+          28300,
+          2,
+          87,
+          48560
+        ],
+        [
+          28300,
+          2,
+          88,
+          15704
+        ],
+        [
+          28300,
+          2,
+          89,
+          48486
+        ],
+        [
+          28300,
+          2,
+          90,
+          15384
+        ],
+        [
+          28300,
+          2,
+          91,
+          48654
+        ],
+        [
+          28300,
+          2,
+          92,
+          15544
+        ],
+        [
+          28300,
+          2,
+          93,
+          48597
+        ],
+        [
+          28300,
+          2,
+          94,
+          48248
+        ],
+        [
+          28300,
+          2,
+          95,
+          15873
+        ],
+        [
+          28300,
+          2,
+          96,
+          15604
+        ],
+        [
+          28300,
+          2,
+          97,
+          15897
+        ],
+        [
+          28300,
+          2,
+          98,
+          15789
+        ],
+        [
+          28300,
+          2,
+          99,
+          48542
+        ],
+        [
+          28300,
+          2,
+          100,
+          48591
+        ],
+        [
+          28300,
+          2,
+          101,
+          48643
+        ],
+        [
+          28300,
+          2,
+          102,
+          15743
+        ],
+        [
+          28300,
+          2,
+          103,
+          48120
+        ],
+        [
+          28300,
+          2,
+          104,
+          15794
+        ],
+        [
+          28300,
+          2,
+          105,
+          48678
+        ],
+        [
+          28300,
+          2,
+          106,
+          15900
+        ],
+        [
+          28300,
+          2,
+          107,
+          48455
+        ],
+        [
+          28300,
+          2,
+          108,
+          48572
+        ],
+        [
+          28300,
+          2,
+          109,
+          15736
+        ],
+        [
+          28300,
+          2,
+          110,
+          15420
+        ],
+        [
+          28300,
+          2,
+          111,
+          15460
+        ],
+        [
+          28300,
+          2,
+          112,
+          15354
+        ],
+        [
+          28300,
+          2,
+          113,
+          48407
+        ],
+        [
+          28300,
+          2,
+          114,
+          15613
+        ],
+        [
+          28300,
+          2,
+          115,
+          15755
+        ],
+        [
+          28300,
+          2,
+          116,
+          15587
+        ],
+        [
+          28300,
+          2,
+          117,
+          15653
+        ],
+        [
+          28300,
+          2,
+          118,
+          48267
+        ],
+        [
+          28300,
+          2,
+          119,
+          48604
+        ],
+        [
+          28300,
+          2,
+          120,
+          15680
+        ],
+        [
+          28300,
+          2,
+          121,
+          15014
+        ],
+        [
+          28300,
+          2,
+          122,
+          15717
+        ],
+        [
+          28300,
+          2,
+          123,
+          48330
+        ],
+        [
+          28300,
+          2,
+          124,
+          48286
+        ],
+        [
+          28300,
+          2,
+          125,
+          48462
+        ],
+        [
+          28300,
+          2,
+          126,
+          15534
+        ],
+        [
+          28300,
+          2,
+          127,
+          48219
+        ],
+        [
+          44704,
+          3,
+          64,
+          15509
+        ],
+        [
+          44704,
+          3,
+          65,
+          48138
+        ],
+        [
+          44704,
+          3,
+          66,
+          47268
+        ],
+        [
+          44704,
+          3,
+          67,
+          15566
+        ],
+        [
+          44704,
+          3,
+          68,
+          15385
+        ],
+        [
+          44704,
+          3,
+          69,
+          48382
+        ],
+        [
+          44704,
+          3,
+          70,
+          48139
+        ],
+        [
+          44704,
+          3,
+          71,
+          48169
+        ],
+        [
+          44704,
+          3,
+          72,
+          15626
+        ],
+        [
+          44704,
+          3,
+          73,
+          47922
+        ],
+        [
+          44704,
+          3,
+          74,
+          15372
+        ],
+        [
+          44704,
+          3,
+          75,
+          15083
+        ],
+        [
+          44704,
+          3,
+          76,
+          47906
+        ],
+        [
+          44704,
+          3,
+          77,
+          48095
+        ],
+        [
+          44704,
+          3,
+          78,
+          48250
+        ],
+        [
+          44704,
+          3,
+          79,
+          15487
+        ]
+      ]
+    },
+    {
+      "arm": "equal_trap",
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/equal_trap/terminal.json",
+        "bytes": 8923,
+        "sha256": "d02cb71fd1e997961e8c2e179ce5f174efa2f541b9128c1bca19dfd3770329d6"
+      },
+      "native_result": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_attention_FAIL131_runtime_v1/results/equal_trap/result.json",
+        "bytes": 90966,
+        "sha256": "119f362b07285f6d86b6c90397ae54cf143d479ad259299b052d85d5ca2a1f5a"
+      },
+      "raw_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/equal_trap/raw_audit.json",
+        "bytes": 11761,
+        "sha256": "3e6d3a29444face7e057ce2cab8c222fc306cb4fd948f8886a8cd3e1780b1146"
+      },
+      "HIP_calls": 149,
+      "paired_journal_records": 298,
+      "device_allocations": 9,
+      "guard_regions": 72,
+      "calls": [
+        {
+          "call": 0,
+          "logical": {
+            "dq": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dk": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dv": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            }
+          },
+          "packet_sha256": "7df1c67c956f2f3c28560857d58b7bc01680421af0ffe672db8fc6623333ce8e"
+        },
+        {
+          "call": 1,
+          "logical": {
+            "dq": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dk": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dv": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            }
+          },
+          "packet_sha256": "7df1c67c956f2f3c28560857d58b7bc01680421af0ffe672db8fc6623333ce8e"
+        }
+      ],
+      "idle_scans": [
+        {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/equal_trap/idle_before.json",
+          "bytes": 1674,
+          "sha256": "85ef324ce8b3774e62e289c8f792edf4adb559a4144ae9a1fc6b1811f89785aa"
+        },
+        {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/equal_trap/idle_after.json",
+          "bytes": 1674,
+          "sha256": "041e1e81527f4a61870e672fae51559f8f3a9fa75a3b6cda5d45c11ac0d68550"
+        }
+      ],
+      "producer_liveness": {
+        "pid": 5175,
+        "start_ticks": 784420,
+        "same_process_alive": false,
+        "disposition": "ABSENT"
+      },
+      "kernel_delta": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/equal_trap/dmesg_delta.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "derived_oracle": [
+        [
+          28300,
+          2,
+          64,
+          15551
+        ],
+        [
+          28300,
+          2,
+          65,
+          48205
+        ],
+        [
+          28300,
+          2,
+          66,
+          15241
+        ],
+        [
+          28300,
+          2,
+          67,
+          48131
+        ],
+        [
+          28300,
+          2,
+          68,
+          15751
+        ],
+        [
+          28300,
+          2,
+          69,
+          48447
+        ],
+        [
+          28300,
+          2,
+          70,
+          48428
+        ],
+        [
+          28300,
+          2,
+          71,
+          15839
+        ],
+        [
+          28300,
+          2,
+          72,
+          48267
+        ],
+        [
+          28300,
+          2,
+          73,
+          48218
+        ],
+        [
+          28300,
+          2,
+          74,
+          48425
+        ],
+        [
+          28300,
+          2,
+          75,
+          48399
+        ],
+        [
+          28300,
+          2,
+          76,
+          48376
+        ],
+        [
+          28300,
+          2,
+          77,
+          48161
+        ],
+        [
+          28300,
+          2,
+          78,
+          48354
+        ],
+        [
+          28300,
+          2,
+          79,
+          48021
+        ],
+        [
+          28300,
+          2,
+          80,
+          48343
+        ],
+        [
+          28300,
+          2,
+          81,
+          48202
+        ],
+        [
+          28300,
+          2,
+          82,
+          48524
+        ],
+        [
+          28300,
+          2,
+          83,
+          15861
+        ],
+        [
+          28300,
+          2,
+          84,
+          15537
+        ],
+        [
+          28300,
+          2,
+          85,
+          15537
+        ],
+        [
+          28300,
+          2,
+          86,
+          48529
+        ],
+        [
+          28300,
+          2,
+          87,
+          48560
+        ],
+        [
+          28300,
+          2,
+          88,
+          15704
+        ],
+        [
+          28300,
+          2,
+          89,
+          48486
+        ],
+        [
+          28300,
+          2,
+          90,
+          15384
+        ],
+        [
+          28300,
+          2,
+          91,
+          48654
+        ],
+        [
+          28300,
+          2,
+          92,
+          15544
+        ],
+        [
+          28300,
+          2,
+          93,
+          48597
+        ],
+        [
+          28300,
+          2,
+          94,
+          48248
+        ],
+        [
+          28300,
+          2,
+          95,
+          15873
+        ],
+        [
+          28300,
+          2,
+          96,
+          15604
+        ],
+        [
+          28300,
+          2,
+          97,
+          15897
+        ],
+        [
+          28300,
+          2,
+          98,
+          15789
+        ],
+        [
+          28300,
+          2,
+          99,
+          48542
+        ],
+        [
+          28300,
+          2,
+          100,
+          48591
+        ],
+        [
+          28300,
+          2,
+          101,
+          48643
+        ],
+        [
+          28300,
+          2,
+          102,
+          15743
+        ],
+        [
+          28300,
+          2,
+          103,
+          48120
+        ],
+        [
+          28300,
+          2,
+          104,
+          15794
+        ],
+        [
+          28300,
+          2,
+          105,
+          48678
+        ],
+        [
+          28300,
+          2,
+          106,
+          15900
+        ],
+        [
+          28300,
+          2,
+          107,
+          48455
+        ],
+        [
+          28300,
+          2,
+          108,
+          48572
+        ],
+        [
+          28300,
+          2,
+          109,
+          15736
+        ],
+        [
+          28300,
+          2,
+          110,
+          15420
+        ],
+        [
+          28300,
+          2,
+          111,
+          15460
+        ],
+        [
+          28300,
+          2,
+          112,
+          15354
+        ],
+        [
+          28300,
+          2,
+          113,
+          48407
+        ],
+        [
+          28300,
+          2,
+          114,
+          15613
+        ],
+        [
+          28300,
+          2,
+          115,
+          15755
+        ],
+        [
+          28300,
+          2,
+          116,
+          15587
+        ],
+        [
+          28300,
+          2,
+          117,
+          15653
+        ],
+        [
+          28300,
+          2,
+          118,
+          48267
+        ],
+        [
+          28300,
+          2,
+          119,
+          48604
+        ],
+        [
+          28300,
+          2,
+          120,
+          15680
+        ],
+        [
+          28300,
+          2,
+          121,
+          15014
+        ],
+        [
+          28300,
+          2,
+          122,
+          15717
+        ],
+        [
+          28300,
+          2,
+          123,
+          48330
+        ],
+        [
+          28300,
+          2,
+          124,
+          48286
+        ],
+        [
+          28300,
+          2,
+          125,
+          48462
+        ],
+        [
+          28300,
+          2,
+          126,
+          15534
+        ],
+        [
+          28300,
+          2,
+          127,
+          48219
+        ],
+        [
+          44704,
+          3,
+          64,
+          15509
+        ],
+        [
+          44704,
+          3,
+          65,
+          48138
+        ],
+        [
+          44704,
+          3,
+          66,
+          47268
+        ],
+        [
+          44704,
+          3,
+          67,
+          15566
+        ],
+        [
+          44704,
+          3,
+          68,
+          15385
+        ],
+        [
+          44704,
+          3,
+          69,
+          48382
+        ],
+        [
+          44704,
+          3,
+          70,
+          48139
+        ],
+        [
+          44704,
+          3,
+          71,
+          48169
+        ],
+        [
+          44704,
+          3,
+          72,
+          15626
+        ],
+        [
+          44704,
+          3,
+          73,
+          47922
+        ],
+        [
+          44704,
+          3,
+          74,
+          15372
+        ],
+        [
+          44704,
+          3,
+          75,
+          15083
+        ],
+        [
+          44704,
+          3,
+          76,
+          47906
+        ],
+        [
+          44704,
+          3,
+          77,
+          48095
+        ],
+        [
+          44704,
+          3,
+          78,
+          48250
+        ],
+        [
+          44704,
+          3,
+          79,
+          15487
+        ]
+      ]
+    },
+    {
+      "arm": "unequal_trap",
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/unequal_trap/terminal.json",
+        "bytes": 8955,
+        "sha256": "e30a82299e7a9e66ec11e3becd31c59c9c0af0875ca554826282568d4fad3977"
+      },
+      "native_result": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_attention_FAIL131_runtime_v1/results/unequal_trap/result.json",
+        "bytes": 91058,
+        "sha256": "4bb1ba4ac2b212b9e1df229d7abdcfdf1357f9cc1b132822980a476773460739"
+      },
+      "raw_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/unequal_trap/raw_audit.json",
+        "bytes": 11841,
+        "sha256": "3ccc47573584732c465ad4d7a0e528921c6dbd127ead8970b7f39704b9b32ab5"
+      },
+      "HIP_calls": 149,
+      "paired_journal_records": 298,
+      "device_allocations": 9,
+      "guard_regions": 72,
+      "calls": [
+        {
+          "call": 0,
+          "logical": {
+            "dq": {
+              "words": 45318144,
+              "nonzero": 80,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": [
+                [
+                  28300,
+                  2,
+                  64,
+                  15551
+                ],
+                [
+                  28300,
+                  2,
+                  65,
+                  48205
+                ],
+                [
+                  28300,
+                  2,
+                  66,
+                  15241
+                ],
+                [
+                  28300,
+                  2,
+                  67,
+                  48131
+                ],
+                [
+                  28300,
+                  2,
+                  68,
+                  15751
+                ],
+                [
+                  28300,
+                  2,
+                  69,
+                  48447
+                ],
+                [
+                  28300,
+                  2,
+                  70,
+                  48428
+                ],
+                [
+                  28300,
+                  2,
+                  71,
+                  15839
+                ],
+                [
+                  28300,
+                  2,
+                  72,
+                  48267
+                ],
+                [
+                  28300,
+                  2,
+                  73,
+                  48218
+                ],
+                [
+                  28300,
+                  2,
+                  74,
+                  48425
+                ],
+                [
+                  28300,
+                  2,
+                  75,
+                  48399
+                ],
+                [
+                  28300,
+                  2,
+                  76,
+                  48376
+                ],
+                [
+                  28300,
+                  2,
+                  77,
+                  48161
+                ],
+                [
+                  28300,
+                  2,
+                  78,
+                  48354
+                ],
+                [
+                  28300,
+                  2,
+                  79,
+                  48021
+                ],
+                [
+                  28300,
+                  2,
+                  80,
+                  48343
+                ],
+                [
+                  28300,
+                  2,
+                  81,
+                  48202
+                ],
+                [
+                  28300,
+                  2,
+                  82,
+                  48524
+                ],
+                [
+                  28300,
+                  2,
+                  83,
+                  15861
+                ],
+                [
+                  28300,
+                  2,
+                  84,
+                  15537
+                ],
+                [
+                  28300,
+                  2,
+                  85,
+                  15537
+                ],
+                [
+                  28300,
+                  2,
+                  86,
+                  48529
+                ],
+                [
+                  28300,
+                  2,
+                  87,
+                  48560
+                ],
+                [
+                  28300,
+                  2,
+                  88,
+                  15704
+                ],
+                [
+                  28300,
+                  2,
+                  89,
+                  48486
+                ],
+                [
+                  28300,
+                  2,
+                  90,
+                  15384
+                ],
+                [
+                  28300,
+                  2,
+                  91,
+                  48654
+                ],
+                [
+                  28300,
+                  2,
+                  92,
+                  15544
+                ],
+                [
+                  28300,
+                  2,
+                  93,
+                  48597
+                ],
+                [
+                  28300,
+                  2,
+                  94,
+                  48248
+                ],
+                [
+                  28300,
+                  2,
+                  95,
+                  15873
+                ],
+                [
+                  28300,
+                  2,
+                  96,
+                  15604
+                ],
+                [
+                  28300,
+                  2,
+                  97,
+                  15897
+                ],
+                [
+                  28300,
+                  2,
+                  98,
+                  15789
+                ],
+                [
+                  28300,
+                  2,
+                  99,
+                  48542
+                ],
+                [
+                  28300,
+                  2,
+                  100,
+                  48591
+                ],
+                [
+                  28300,
+                  2,
+                  101,
+                  48643
+                ],
+                [
+                  28300,
+                  2,
+                  102,
+                  15743
+                ],
+                [
+                  28300,
+                  2,
+                  103,
+                  48120
+                ],
+                [
+                  28300,
+                  2,
+                  104,
+                  15794
+                ],
+                [
+                  28300,
+                  2,
+                  105,
+                  48678
+                ],
+                [
+                  28300,
+                  2,
+                  106,
+                  15900
+                ],
+                [
+                  28300,
+                  2,
+                  107,
+                  48455
+                ],
+                [
+                  28300,
+                  2,
+                  108,
+                  48572
+                ],
+                [
+                  28300,
+                  2,
+                  109,
+                  15736
+                ],
+                [
+                  28300,
+                  2,
+                  110,
+                  15420
+                ],
+                [
+                  28300,
+                  2,
+                  111,
+                  15460
+                ],
+                [
+                  28300,
+                  2,
+                  112,
+                  15354
+                ],
+                [
+                  28300,
+                  2,
+                  113,
+                  48407
+                ],
+                [
+                  28300,
+                  2,
+                  114,
+                  15613
+                ],
+                [
+                  28300,
+                  2,
+                  115,
+                  15755
+                ],
+                [
+                  28300,
+                  2,
+                  116,
+                  15587
+                ],
+                [
+                  28300,
+                  2,
+                  117,
+                  15653
+                ],
+                [
+                  28300,
+                  2,
+                  118,
+                  48267
+                ],
+                [
+                  28300,
+                  2,
+                  119,
+                  48604
+                ],
+                [
+                  28300,
+                  2,
+                  120,
+                  15680
+                ],
+                [
+                  28300,
+                  2,
+                  121,
+                  15014
+                ],
+                [
+                  28300,
+                  2,
+                  122,
+                  15717
+                ],
+                [
+                  28300,
+                  2,
+                  123,
+                  48330
+                ],
+                [
+                  28300,
+                  2,
+                  124,
+                  48286
+                ],
+                [
+                  28300,
+                  2,
+                  125,
+                  48462
+                ],
+                [
+                  28300,
+                  2,
+                  126,
+                  15534
+                ],
+                [
+                  28300,
+                  2,
+                  127,
+                  48219
+                ],
+                [
+                  44704,
+                  3,
+                  64,
+                  15509
+                ],
+                [
+                  44704,
+                  3,
+                  65,
+                  48138
+                ],
+                [
+                  44704,
+                  3,
+                  66,
+                  47268
+                ],
+                [
+                  44704,
+                  3,
+                  67,
+                  15566
+                ],
+                [
+                  44704,
+                  3,
+                  68,
+                  15385
+                ],
+                [
+                  44704,
+                  3,
+                  69,
+                  48382
+                ],
+                [
+                  44704,
+                  3,
+                  70,
+                  48139
+                ],
+                [
+                  44704,
+                  3,
+                  71,
+                  48169
+                ],
+                [
+                  44704,
+                  3,
+                  72,
+                  15626
+                ],
+                [
+                  44704,
+                  3,
+                  73,
+                  47922
+                ],
+                [
+                  44704,
+                  3,
+                  74,
+                  15372
+                ],
+                [
+                  44704,
+                  3,
+                  75,
+                  15083
+                ],
+                [
+                  44704,
+                  3,
+                  76,
+                  47906
+                ],
+                [
+                  44704,
+                  3,
+                  77,
+                  48095
+                ],
+                [
+                  44704,
+                  3,
+                  78,
+                  48250
+                ],
+                [
+                  44704,
+                  3,
+                  79,
+                  15487
+                ]
+              ]
+            },
+            "dk": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dv": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            }
+          },
+          "packet_sha256": "35c438523fab59a71d3de3d9f323da6c879e44a551557a4fb9e13a0d01f4eb09"
+        },
+        {
+          "call": 1,
+          "logical": {
+            "dq": {
+              "words": 45318144,
+              "nonzero": 80,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": [
+                [
+                  28300,
+                  2,
+                  64,
+                  15551
+                ],
+                [
+                  28300,
+                  2,
+                  65,
+                  48205
+                ],
+                [
+                  28300,
+                  2,
+                  66,
+                  15241
+                ],
+                [
+                  28300,
+                  2,
+                  67,
+                  48131
+                ],
+                [
+                  28300,
+                  2,
+                  68,
+                  15751
+                ],
+                [
+                  28300,
+                  2,
+                  69,
+                  48447
+                ],
+                [
+                  28300,
+                  2,
+                  70,
+                  48428
+                ],
+                [
+                  28300,
+                  2,
+                  71,
+                  15839
+                ],
+                [
+                  28300,
+                  2,
+                  72,
+                  48267
+                ],
+                [
+                  28300,
+                  2,
+                  73,
+                  48218
+                ],
+                [
+                  28300,
+                  2,
+                  74,
+                  48425
+                ],
+                [
+                  28300,
+                  2,
+                  75,
+                  48399
+                ],
+                [
+                  28300,
+                  2,
+                  76,
+                  48376
+                ],
+                [
+                  28300,
+                  2,
+                  77,
+                  48161
+                ],
+                [
+                  28300,
+                  2,
+                  78,
+                  48354
+                ],
+                [
+                  28300,
+                  2,
+                  79,
+                  48021
+                ],
+                [
+                  28300,
+                  2,
+                  80,
+                  48343
+                ],
+                [
+                  28300,
+                  2,
+                  81,
+                  48202
+                ],
+                [
+                  28300,
+                  2,
+                  82,
+                  48524
+                ],
+                [
+                  28300,
+                  2,
+                  83,
+                  15861
+                ],
+                [
+                  28300,
+                  2,
+                  84,
+                  15537
+                ],
+                [
+                  28300,
+                  2,
+                  85,
+                  15537
+                ],
+                [
+                  28300,
+                  2,
+                  86,
+                  48529
+                ],
+                [
+                  28300,
+                  2,
+                  87,
+                  48560
+                ],
+                [
+                  28300,
+                  2,
+                  88,
+                  15704
+                ],
+                [
+                  28300,
+                  2,
+                  89,
+                  48486
+                ],
+                [
+                  28300,
+                  2,
+                  90,
+                  15384
+                ],
+                [
+                  28300,
+                  2,
+                  91,
+                  48654
+                ],
+                [
+                  28300,
+                  2,
+                  92,
+                  15544
+                ],
+                [
+                  28300,
+                  2,
+                  93,
+                  48597
+                ],
+                [
+                  28300,
+                  2,
+                  94,
+                  48248
+                ],
+                [
+                  28300,
+                  2,
+                  95,
+                  15873
+                ],
+                [
+                  28300,
+                  2,
+                  96,
+                  15604
+                ],
+                [
+                  28300,
+                  2,
+                  97,
+                  15897
+                ],
+                [
+                  28300,
+                  2,
+                  98,
+                  15789
+                ],
+                [
+                  28300,
+                  2,
+                  99,
+                  48542
+                ],
+                [
+                  28300,
+                  2,
+                  100,
+                  48591
+                ],
+                [
+                  28300,
+                  2,
+                  101,
+                  48643
+                ],
+                [
+                  28300,
+                  2,
+                  102,
+                  15743
+                ],
+                [
+                  28300,
+                  2,
+                  103,
+                  48120
+                ],
+                [
+                  28300,
+                  2,
+                  104,
+                  15794
+                ],
+                [
+                  28300,
+                  2,
+                  105,
+                  48678
+                ],
+                [
+                  28300,
+                  2,
+                  106,
+                  15900
+                ],
+                [
+                  28300,
+                  2,
+                  107,
+                  48455
+                ],
+                [
+                  28300,
+                  2,
+                  108,
+                  48572
+                ],
+                [
+                  28300,
+                  2,
+                  109,
+                  15736
+                ],
+                [
+                  28300,
+                  2,
+                  110,
+                  15420
+                ],
+                [
+                  28300,
+                  2,
+                  111,
+                  15460
+                ],
+                [
+                  28300,
+                  2,
+                  112,
+                  15354
+                ],
+                [
+                  28300,
+                  2,
+                  113,
+                  48407
+                ],
+                [
+                  28300,
+                  2,
+                  114,
+                  15613
+                ],
+                [
+                  28300,
+                  2,
+                  115,
+                  15755
+                ],
+                [
+                  28300,
+                  2,
+                  116,
+                  15587
+                ],
+                [
+                  28300,
+                  2,
+                  117,
+                  15653
+                ],
+                [
+                  28300,
+                  2,
+                  118,
+                  48267
+                ],
+                [
+                  28300,
+                  2,
+                  119,
+                  48604
+                ],
+                [
+                  28300,
+                  2,
+                  120,
+                  15680
+                ],
+                [
+                  28300,
+                  2,
+                  121,
+                  15014
+                ],
+                [
+                  28300,
+                  2,
+                  122,
+                  15717
+                ],
+                [
+                  28300,
+                  2,
+                  123,
+                  48330
+                ],
+                [
+                  28300,
+                  2,
+                  124,
+                  48286
+                ],
+                [
+                  28300,
+                  2,
+                  125,
+                  48462
+                ],
+                [
+                  28300,
+                  2,
+                  126,
+                  15534
+                ],
+                [
+                  28300,
+                  2,
+                  127,
+                  48219
+                ],
+                [
+                  44704,
+                  3,
+                  64,
+                  15509
+                ],
+                [
+                  44704,
+                  3,
+                  65,
+                  48138
+                ],
+                [
+                  44704,
+                  3,
+                  66,
+                  47268
+                ],
+                [
+                  44704,
+                  3,
+                  67,
+                  15566
+                ],
+                [
+                  44704,
+                  3,
+                  68,
+                  15385
+                ],
+                [
+                  44704,
+                  3,
+                  69,
+                  48382
+                ],
+                [
+                  44704,
+                  3,
+                  70,
+                  48139
+                ],
+                [
+                  44704,
+                  3,
+                  71,
+                  48169
+                ],
+                [
+                  44704,
+                  3,
+                  72,
+                  15626
+                ],
+                [
+                  44704,
+                  3,
+                  73,
+                  47922
+                ],
+                [
+                  44704,
+                  3,
+                  74,
+                  15372
+                ],
+                [
+                  44704,
+                  3,
+                  75,
+                  15083
+                ],
+                [
+                  44704,
+                  3,
+                  76,
+                  47906
+                ],
+                [
+                  44704,
+                  3,
+                  77,
+                  48095
+                ],
+                [
+                  44704,
+                  3,
+                  78,
+                  48250
+                ],
+                [
+                  44704,
+                  3,
+                  79,
+                  15487
+                ]
+              ]
+            },
+            "dk": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            },
+            "dv": {
+              "words": 45318144,
+              "nonzero": 0,
+              "nonfinite": 0,
+              "negative_zero": 0,
+              "exact_nonzero_coordinates_and_bits": []
+            }
+          },
+          "packet_sha256": "35c438523fab59a71d3de3d9f323da6c879e44a551557a4fb9e13a0d01f4eb09"
+        }
+      ],
+      "idle_scans": [
+        {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/unequal_trap/idle_before.json",
+          "bytes": 1674,
+          "sha256": "2e5c85fc609a4ac36b3fcff8627b67a351a31d2b2cf8c96659f0732e3accfe9d"
+        },
+        {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/unequal_trap/idle_after.json",
+          "bytes": 1674,
+          "sha256": "8c08d54cd239e36b41e7bf9f4b9c460c57c7e2767c2ad40de87e64b66e69d0f8"
+        }
+      ],
+      "producer_liveness": {
+        "pid": 5253,
+        "start_ticks": 785671,
+        "same_process_alive": false,
+        "disposition": "ABSENT"
+      },
+      "kernel_delta": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_supervised_v1/unequal_trap/dmesg_delta.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "derived_oracle": [
+        [
+          28300,
+          2,
+          64,
+          15551
+        ],
+        [
+          28300,
+          2,
+          65,
+          48205
+        ],
+        [
+          28300,
+          2,
+          66,
+          15241
+        ],
+        [
+          28300,
+          2,
+          67,
+          48131
+        ],
+        [
+          28300,
+          2,
+          68,
+          15751
+        ],
+        [
+          28300,
+          2,
+          69,
+          48447
+        ],
+        [
+          28300,
+          2,
+          70,
+          48428
+        ],
+        [
+          28300,
+          2,
+          71,
+          15839
+        ],
+        [
+          28300,
+          2,
+          72,
+          48267
+        ],
+        [
+          28300,
+          2,
+          73,
+          48218
+        ],
+        [
+          28300,
+          2,
+          74,
+          48425
+        ],
+        [
+          28300,
+          2,
+          75,
+          48399
+        ],
+        [
+          28300,
+          2,
+          76,
+          48376
+        ],
+        [
+          28300,
+          2,
+          77,
+          48161
+        ],
+        [
+          28300,
+          2,
+          78,
+          48354
+        ],
+        [
+          28300,
+          2,
+          79,
+          48021
+        ],
+        [
+          28300,
+          2,
+          80,
+          48343
+        ],
+        [
+          28300,
+          2,
+          81,
+          48202
+        ],
+        [
+          28300,
+          2,
+          82,
+          48524
+        ],
+        [
+          28300,
+          2,
+          83,
+          15861
+        ],
+        [
+          28300,
+          2,
+          84,
+          15537
+        ],
+        [
+          28300,
+          2,
+          85,
+          15537
+        ],
+        [
+          28300,
+          2,
+          86,
+          48529
+        ],
+        [
+          28300,
+          2,
+          87,
+          48560
+        ],
+        [
+          28300,
+          2,
+          88,
+          15704
+        ],
+        [
+          28300,
+          2,
+          89,
+          48486
+        ],
+        [
+          28300,
+          2,
+          90,
+          15384
+        ],
+        [
+          28300,
+          2,
+          91,
+          48654
+        ],
+        [
+          28300,
+          2,
+          92,
+          15544
+        ],
+        [
+          28300,
+          2,
+          93,
+          48597
+        ],
+        [
+          28300,
+          2,
+          94,
+          48248
+        ],
+        [
+          28300,
+          2,
+          95,
+          15873
+        ],
+        [
+          28300,
+          2,
+          96,
+          15604
+        ],
+        [
+          28300,
+          2,
+          97,
+          15897
+        ],
+        [
+          28300,
+          2,
+          98,
+          15789
+        ],
+        [
+          28300,
+          2,
+          99,
+          48542
+        ],
+        [
+          28300,
+          2,
+          100,
+          48591
+        ],
+        [
+          28300,
+          2,
+          101,
+          48643
+        ],
+        [
+          28300,
+          2,
+          102,
+          15743
+        ],
+        [
+          28300,
+          2,
+          103,
+          48120
+        ],
+        [
+          28300,
+          2,
+          104,
+          15794
+        ],
+        [
+          28300,
+          2,
+          105,
+          48678
+        ],
+        [
+          28300,
+          2,
+          106,
+          15900
+        ],
+        [
+          28300,
+          2,
+          107,
+          48455
+        ],
+        [
+          28300,
+          2,
+          108,
+          48572
+        ],
+        [
+          28300,
+          2,
+          109,
+          15736
+        ],
+        [
+          28300,
+          2,
+          110,
+          15420
+        ],
+        [
+          28300,
+          2,
+          111,
+          15460
+        ],
+        [
+          28300,
+          2,
+          112,
+          15354
+        ],
+        [
+          28300,
+          2,
+          113,
+          48407
+        ],
+        [
+          28300,
+          2,
+          114,
+          15613
+        ],
+        [
+          28300,
+          2,
+          115,
+          15755
+        ],
+        [
+          28300,
+          2,
+          116,
+          15587
+        ],
+        [
+          28300,
+          2,
+          117,
+          15653
+        ],
+        [
+          28300,
+          2,
+          118,
+          48267
+        ],
+        [
+          28300,
+          2,
+          119,
+          48604
+        ],
+        [
+          28300,
+          2,
+          120,
+          15680
+        ],
+        [
+          28300,
+          2,
+          121,
+          15014
+        ],
+        [
+          28300,
+          2,
+          122,
+          15717
+        ],
+        [
+          28300,
+          2,
+          123,
+          48330
+        ],
+        [
+          28300,
+          2,
+          124,
+          48286
+        ],
+        [
+          28300,
+          2,
+          125,
+          48462
+        ],
+        [
+          28300,
+          2,
+          126,
+          15534
+        ],
+        [
+          28300,
+          2,
+          127,
+          48219
+        ],
+        [
+          44704,
+          3,
+          64,
+          15509
+        ],
+        [
+          44704,
+          3,
+          65,
+          48138
+        ],
+        [
+          44704,
+          3,
+          66,
+          47268
+        ],
+        [
+          44704,
+          3,
+          67,
+          15566
+        ],
+        [
+          44704,
+          3,
+          68,
+          15385
+        ],
+        [
+          44704,
+          3,
+          69,
+          48382
+        ],
+        [
+          44704,
+          3,
+          70,
+          48139
+        ],
+        [
+          44704,
+          3,
+          71,
+          48169
+        ],
+        [
+          44704,
+          3,
+          72,
+          15626
+        ],
+        [
+          44704,
+          3,
+          73,
+          47922
+        ],
+        [
+          44704,
+          3,
+          74,
+          15372
+        ],
+        [
+          44704,
+          3,
+          75,
+          15083
+        ],
+        [
+          44704,
+          3,
+          76,
+          47906
+        ],
+        [
+          44704,
+          3,
+          77,
+          48095
+        ],
+        [
+          44704,
+          3,
+          78,
+          48250
+        ],
+        [
+          44704,
+          3,
+          79,
+          15487
+        ]
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/input_0_before.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/input_1_before.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/input_2_before.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/input_3_before.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/input_4_before.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/output_before.bin",
+      "bytes": 362545664,
+      "sha256": "2ae0c832449847a514329ef4552ea8a2755e4b6ff7f9941700f666ac2af5b38f",
+      "backing_sha256": "a706c4240a47fe2e66169751006d7543ac65bca834c73462ae3fa49efe012563",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/LOCK_before.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/global_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/profile_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/input_0_after.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/input_1_after.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/input_2_after.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/input_3_after.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/input_4_after.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/output_after.bin",
+      "bytes": 362545664,
+      "sha256": "f7ade26f9daaa40adb37543c9baafb853d38297251a73a8f32f0e099c0bfb113",
+      "backing_sha256": "f1307f19c0d78eed2c90afe74d77e9fea590393acc84657e7107a7128d5542ba",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/LOCK_after.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/global_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_00/profile_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/input_0_before.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/input_1_before.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/input_2_before.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/input_3_before.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/input_4_before.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/output_before.bin",
+      "bytes": 362545664,
+      "sha256": "2ae0c832449847a514329ef4552ea8a2755e4b6ff7f9941700f666ac2af5b38f",
+      "backing_sha256": "a706c4240a47fe2e66169751006d7543ac65bca834c73462ae3fa49efe012563",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/LOCK_before.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/global_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/profile_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/input_0_after.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/input_1_after.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/input_2_after.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/input_3_after.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/input_4_after.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/output_after.bin",
+      "bytes": 362545664,
+      "sha256": "f7ade26f9daaa40adb37543c9baafb853d38297251a73a8f32f0e099c0bfb113",
+      "backing_sha256": "f1307f19c0d78eed2c90afe74d77e9fea590393acc84657e7107a7128d5542ba",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/LOCK_after.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/global_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_nop/call_01/profile_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/input_0_before.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/input_1_before.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/input_2_before.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/input_3_before.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/input_4_before.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/output_before.bin",
+      "bytes": 362545664,
+      "sha256": "2ae0c832449847a514329ef4552ea8a2755e4b6ff7f9941700f666ac2af5b38f",
+      "backing_sha256": "a706c4240a47fe2e66169751006d7543ac65bca834c73462ae3fa49efe012563",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/LOCK_before.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/global_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/profile_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/input_0_after.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/input_1_after.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/input_2_after.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/input_3_after.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/input_4_after.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/output_after.bin",
+      "bytes": 362545664,
+      "sha256": "f7ade26f9daaa40adb37543c9baafb853d38297251a73a8f32f0e099c0bfb113",
+      "backing_sha256": "f1307f19c0d78eed2c90afe74d77e9fea590393acc84657e7107a7128d5542ba",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/LOCK_after.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/global_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_00/profile_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/input_0_before.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/input_1_before.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/input_2_before.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/input_3_before.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/input_4_before.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/output_before.bin",
+      "bytes": 362545664,
+      "sha256": "2ae0c832449847a514329ef4552ea8a2755e4b6ff7f9941700f666ac2af5b38f",
+      "backing_sha256": "a706c4240a47fe2e66169751006d7543ac65bca834c73462ae3fa49efe012563",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/LOCK_before.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/global_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/profile_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/input_0_after.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/input_1_after.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/input_2_after.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/input_3_after.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/input_4_after.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/output_after.bin",
+      "bytes": 362545664,
+      "sha256": "f7ade26f9daaa40adb37543c9baafb853d38297251a73a8f32f0e099c0bfb113",
+      "backing_sha256": "f1307f19c0d78eed2c90afe74d77e9fea590393acc84657e7107a7128d5542ba",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/LOCK_after.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/global_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_nop/call_01/profile_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/input_0_before.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/input_1_before.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/input_2_before.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/input_3_before.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/input_4_before.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/output_before.bin",
+      "bytes": 362545664,
+      "sha256": "2ae0c832449847a514329ef4552ea8a2755e4b6ff7f9941700f666ac2af5b38f",
+      "backing_sha256": "a706c4240a47fe2e66169751006d7543ac65bca834c73462ae3fa49efe012563",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/LOCK_before.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/global_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/profile_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/input_0_after.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/input_1_after.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/input_2_after.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/input_3_after.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/input_4_after.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/output_after.bin",
+      "bytes": 362545664,
+      "sha256": "f7ade26f9daaa40adb37543c9baafb853d38297251a73a8f32f0e099c0bfb113",
+      "backing_sha256": "f1307f19c0d78eed2c90afe74d77e9fea590393acc84657e7107a7128d5542ba",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/LOCK_after.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/global_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_00/profile_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/input_0_before.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/input_1_before.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/input_2_before.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/input_3_before.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/input_4_before.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/output_before.bin",
+      "bytes": 362545664,
+      "sha256": "2ae0c832449847a514329ef4552ea8a2755e4b6ff7f9941700f666ac2af5b38f",
+      "backing_sha256": "a706c4240a47fe2e66169751006d7543ac65bca834c73462ae3fa49efe012563",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/LOCK_before.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/global_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/profile_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/input_0_after.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/input_1_after.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/input_2_after.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/input_3_after.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/input_4_after.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/output_after.bin",
+      "bytes": 362545664,
+      "sha256": "f7ade26f9daaa40adb37543c9baafb853d38297251a73a8f32f0e099c0bfb113",
+      "backing_sha256": "f1307f19c0d78eed2c90afe74d77e9fea590393acc84657e7107a7128d5542ba",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/LOCK_after.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/global_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/equal_trap/call_01/profile_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/input_0_before.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/input_1_before.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/input_2_before.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/input_3_before.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/input_4_before.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/output_before.bin",
+      "bytes": 362545664,
+      "sha256": "2ae0c832449847a514329ef4552ea8a2755e4b6ff7f9941700f666ac2af5b38f",
+      "backing_sha256": "a706c4240a47fe2e66169751006d7543ac65bca834c73462ae3fa49efe012563",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/LOCK_before.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/global_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/profile_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/input_0_after.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/input_1_after.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/input_2_after.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/input_3_after.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/input_4_after.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/output_after.bin",
+      "bytes": 362545664,
+      "sha256": "180ff41924c10c253422a7192de25133a8ddebad65448d5bdf4d18ff0aff4311",
+      "backing_sha256": "a232bcf3fa01783ab0eeaa8417f36027a54cee79d0827585eeec0551f319ae7e",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/LOCK_after.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/global_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_00/profile_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/input_0_before.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/input_1_before.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/input_2_before.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/input_3_before.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/input_4_before.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/output_before.bin",
+      "bytes": 362545664,
+      "sha256": "2ae0c832449847a514329ef4552ea8a2755e4b6ff7f9941700f666ac2af5b38f",
+      "backing_sha256": "a706c4240a47fe2e66169751006d7543ac65bca834c73462ae3fa49efe012563",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/LOCK_before.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/global_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/profile_scratch_before.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/input_0_after.bin",
+      "bytes": 362545664,
+      "sha256": "569b24e05a21c8b643bfad266250b75bb214bd15221d727e8f83743336a1267a",
+      "backing_sha256": "2cff4b140cf0a83b749389de98b9d87f1e036c3cb8c2f225a5d7c77c0c5a10f3",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/input_1_after.bin",
+      "bytes": 90636800,
+      "sha256": "a99b0827950623ff3e0a48acc94bd2c17dfa568ece0086629629a02c898cb4b5",
+      "backing_sha256": "a66aeb3024dfe90af374408655a0cf9f6607e3da7a57186b1a77078ab23d4a88",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/input_2_after.bin",
+      "bytes": 776,
+      "sha256": "81df8f913a3ebb264643b73ed99b383046aead3f9da74f23ac9a184cb257ee27",
+      "backing_sha256": "ee90b53ad5f8a520d5d5682a67f1a66dc81a221831a304c04ed7eb510aee44fd",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/input_3_after.bin",
+      "bytes": 768,
+      "sha256": "aa834e7dc379efe894ef285e880d4240c6c0a3f92d2a7ba04464d58133751a08",
+      "backing_sha256": "6ba64591dc5d5fa6ab9e575602829ad02f0fe517616bda69e4fe87b55b9d9836",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/input_4_after.bin",
+      "bytes": 768,
+      "sha256": "a6da524a59b6cd87e062ce4eb6815600a5d62e33e88b52498c4f26c12972d410",
+      "backing_sha256": "e2b7a5d968066ad0ed30b132d5f15cc0eb26c79e77e546a79986035ddb064c1b",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/output_after.bin",
+      "bytes": 362545664,
+      "sha256": "180ff41924c10c253422a7192de25133a8ddebad65448d5bdf4d18ff0aff4311",
+      "backing_sha256": "a232bcf3fa01783ab0eeaa8417f36027a54cee79d0827585eeec0551f319ae7e",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/LOCK_after.bin",
+      "bytes": 95744,
+      "sha256": "038e5b12d0e21f0c2f6e0571712d1177ac8a284dd8a756bfe9797cf97bf212b9",
+      "backing_sha256": "2dad33fbd877bbfffbd98dd5e580c6d35235defb00d8784c599c832811eca8f6",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/global_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    },
+    {
+      "path": "/dev/shm/mi450_attention_FAIL131_runtime_v1/unequal_trap/call_01/profile_scratch_after.bin",
+      "bytes": 528,
+      "sha256": "ebe8f1bb2ada6dea307be08f9a9433040c05de02d266801adad72805dabccce2",
+      "backing_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "guard_regions_checked": 2
+    }
+  ],
+  "total_raw_files": 144,
+  "total_raw_bytes": 13053235840,
+  "guard_regions": 288,
+  "HIP_calls": 596,
+  "paired_HIP_journal_records": 1192,
+  "logical_output_words_scanned": 1087635456,
+  "nonzero_DQ_words_across_eight_calls": 160,
+  "nonfinite_output_words": 0,
+  "negative_zero_output_words": 0,
+  "conclusions": [
+    "Unequal trapped arm exactly reproduces all80historical wrong DQ words on both calls; every other DQ/DK/DV word is positive zero.",
+    "All three controls have complete positive-zero DQ/DK/DV on both calls.",
+    "Every guarded backing matches the frozen expected full SHA, including all inputs, unused output columns and scratch/lock allocations.",
+    "Exact native image,200-byte packet,128x128geometry,16KiB LDS,149HIP calls per arm and paired journals match the reviewed contract.",
+    "All saved producer identity/reaping, all-device idle, original-driver/container and kernel-prefix checks pass."
+  ],
+  "limits": [
+    "Independent80word arithmetic reconstructed from actual input K and the frozen gate schedule; no capture_model/run_full imports used.",
+    "This reproduces the historical fingerprint under a prescribed five-event trap gate; it does not measure the spontaneous historical trap schedule.",
+    "This original-driver result does not establish corrected-driver repair or repeated E2E training completion.",
+    "Liveness and GPU-idle checks validate saved runtime receipts; root controls subsequent workloads.",
+    "Archive receipt is owned separately by root; this review retains all raw files."
+  ],
+  "GPU_actions": false,
+  "module_actions": false,
+  "raw_deletion_performed": false
+}

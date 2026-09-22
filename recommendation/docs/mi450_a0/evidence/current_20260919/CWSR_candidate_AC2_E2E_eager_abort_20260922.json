@@ -1,0 +1,24 @@
+{
+  "schema": "MI450_AC2_EAGER_E2E_STARTUP_FAILURE_V1",
+  "status": "STARTUP_ABORT_CLEANLY_REAPED_NO_NUMERICAL_VERDICT",
+  "boot_id": "6478859b-3092-4792-a933-e91c311f2cd1",
+  "deliberate_environment_change": {"HIP_ENABLE_DEFERRED_LOADING": "0"},
+  "failure": "ROCm library initialization could not resolve a registered ROCsolver/rocPRIM trampoline symbol; actual worker exited with SIGABRT(-6) before training",
+  "measured_pre_HIP_gate_passed": true,
+  "training_started": false,
+  "complete_tensor_capture_exists": false,
+  "E2E_numerical_PASS": false,
+  "persistent_stall_observed": false,
+  "execution": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_E2E_execution_v1/execution_terminal.json",
+    "sha256": "4cbe243485982e5242136dbeec511e95a19db0e8b579706b25b89c3e24feb134"
+  },
+  "independent_cleanup_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_E2E_abort_peer_v1/review.json",
+    "sha256": "3b58759c36df8c5f48e182a3894755d16df04465550cb7045ec918b772841ede"
+  },
+  "cleanup": "Worker, launcher and controller absent by retained PID/start ticks; all-device idle; private trace/probes removed; driver/global state unchanged; before/after/current kernel logs byte-identical",
+  "recovery_performed": false,
+  "next_experiment_scope": "Separately reviewed targeted FBGEMM code preload with default deferred loading; new current driver/idle/kernel gate and fresh paths required",
+  "platform_health_clearance": false
+}

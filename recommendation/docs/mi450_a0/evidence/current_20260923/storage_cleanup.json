@@ -1,0 +1,434 @@
+{
+  "status": "PASS_COMPLETED_EXACT_STORAGE_RECLAMATION_BATCHES",
+  "operations": [
+    {
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_historical_X_dedup_TLS_execution_v1/terminal.json",
+        "bytes": 2535786,
+        "sha256": "044df781cbe1b0915a6f2a88a8a16d31a7cdba401ce1dd11869ac81d1bce7a51"
+      },
+      "status": "PASS_ALL_HISTORICAL_PATHS_FULL_BYTES_RETAINED_SHARED_INODE",
+      "released_allocated_bytes": 14280867840
+    },
+    {
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_historical_sparse_retention_execution_v1/first_four/terminal.json",
+        "bytes": 2802,
+        "sha256": "6b040b4c6b0a6826d32a36e53354f9756dd03cdcb8404ee4932b002df2ce8847"
+      },
+      "status": "PASS_COMPLETE_HISTORICAL_PT_SPARSE_RETENTION_TRANCHE",
+      "released_allocated_bytes": 80275460096
+    },
+    {
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_stale_min64_cache_deletion_v1/terminal.json",
+        "bytes": 2311,
+        "sha256": "7f2ee9727b18b14f45d14326f62f242cf3fef2369ee5a66f8a230f2c16f944f3"
+      },
+      "status": "PASS_EXACT_TWO_UNUSED_REGENERABLE_MIN64_CACHES_DELETED",
+      "released_allocated_bytes": 73155198976
+    },
+    {
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_tmpfs_dedup_execution_v1/terminal.json",
+        "bytes": 1265856,
+        "sha256": "03e8f388718f97d0346543b980365a6ce428162bdcce471576109f55dbc84699"
+      },
+      "status": "PASS_CURRENT_DW_X_DY_ALL_PATHS_FULL_BYTES_RETAINED_SHARED_INODES",
+      "released_allocated_bytes": 10710614016
+    },
+    {
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_stale_DW_compression_deletion_v1/terminal.json",
+        "bytes": 2804,
+        "sha256": "732621ddfa1d452e3a65bc522269f6435b3aefd152e2de6ea2c22858018cdbf3"
+      },
+      "status": "PASS_ONLY_TWO_OBSOLETE_COMPRESSION_COPIES_DELETED",
+      "released_allocated_bytes": 2267860992
+    },
+    {
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_historical_sparse_retention_execution_v1/remaining/terminal.json",
+        "bytes": 26790,
+        "sha256": "d3bbbd4cfc90fa2b921e2fca29b6e88158cc78c791d71d7b738c6926bae37e4b"
+      },
+      "status": "PASS_COMPLETE_HISTORICAL_PT_SPARSE_RETENTION_TRANCHE",
+      "released_allocated_bytes": 175964098560
+    },
+    {
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_old_gpu_core_archive_execution_v3/terminal.json",
+        "bytes": 10101,
+        "sha256": "b61f02843e65d0d128943b4466040dc87ebb15230697cb22a3b1a2998684e706"
+      },
+      "root_finish": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/after_projection_v4_old_cores.finish.json",
+        "bytes": 2496,
+        "sha256": "1335ffa17bf4caf4e6469625d29d6c7b0e01c001b2afb49ee1a33358e89ab668"
+      },
+      "status": "PASS_ALL_OLD_CORES_LOSSLESSLY_ARCHIVED_AND_RAW_RELEASED_V3",
+      "released_allocated_bytes": 19216740352,
+      "original_allocated_bytes": 32663068672,
+      "archive_allocated_bytes": 13446328320,
+      "file_count": 38,
+      "scope": "Old gpucore.N.gpu files: verified complete lossless archives retained; raw files removed."
+    },
+    {
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_projection_raw_release_execution_v1/terminal.json",
+        "bytes": 123502,
+        "sha256": "2ddfff95c55726e4f01be76d5699c904b20885779a3660a62de9f2b4adebfc1d"
+      },
+      "root_finish": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/after_projection_v4_raw_release.finish.json",
+        "bytes": 2492,
+        "sha256": "18f351e7747a71ca4b8304ceec6b9b6d9d226ab5c2f4c5193ec84d22cc2762bd"
+      },
+      "status": "PASS_PROJECTION_RAW_RELEASE_ARCHIVES_RETAINED",
+      "released_allocated_bytes": 64219217920,
+      "file_count": 24,
+      "storage": "tmpfs",
+      "scope": "Completed projection raw tensor copies; verified lossless durable archives retained."
+    },
+    {
+      "terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_under_1TB_cleanup_v1/retirement_execution_v1/terminal.json",
+        "bytes": 15762,
+        "sha256": "5b8103e1ba8ed1d52a5bc76addd11edf107d9d0aa500993ab16735a6455382a2"
+      },
+      "plan": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_under_1TB_cleanup_v1/PLAN.json",
+        "bytes": 190774,
+        "sha256": "d34a4357d72759f719ecf8f445d9d1bec3275cfcf14bd0dadfb2180ceb4a2184"
+      },
+      "independent_source_and_plan_review": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_storage_outside_rootcause_review_v1/RETIREMENT_SOURCE_PLAN_REVIEW.json",
+        "bytes": 4942,
+        "sha256": "2091051875882bba61c7364dad9547a21c6e72123a823af745b79f0020d18d56"
+      },
+      "status": "PASS_EXACT_OBSOLETE_SUCCESSFUL_SNAPSHOTS_RETIRED",
+      "released_allocated_bytes": 530390228992,
+      "file_count": 18,
+      "storage": "durable",
+      "finished_utc": "2026-09-23T04:06:36.337535+00:00",
+      "retirement_not_equivalence": true,
+      "replacement_archives_created": false,
+      "original_retired_snapshot_raw_rerun_available": false,
+      "retained_reports_verified": true,
+      "protected_files_metadata_unchanged": true,
+      "groups": [
+        {
+          "group": "eight_old_finite_boundary_snapshots",
+          "file_count": 8,
+          "released_allocated_bytes": 83350380544,
+          "files": [
+            {
+              "path": "/home/chcai/dlrm_data/value_trace_20260919/output_stages/boundary-3967-1789777226508961531-current-r0-s101-0005-hstu_output_grad_mm-finite.pt",
+              "bytes": 8027926677,
+              "allocated_bytes": 8027934720,
+              "reason": "Completed obsolete successful diagnostic; intentional retirement of original snapshot. Compact reports, manifests and unique failures retained. No retained healthy replay base is required."
+            },
+            {
+              "path": "/home/chcai/dlrm_data/value_trace_20260919/output_stages/boundary-3967-1789777226508961531-current-r0-s101-0006-triton_layer_norm_mul_dropout_bwd-finite.pt",
+              "bytes": 21084856848,
+              "allocated_bytes": 21084864512,
+              "reason": "Completed obsolete successful diagnostic; intentional retirement of original snapshot. Compact reports, manifests and unique failures retained. No retained healthy replay base is required."
+            },
+            {
+              "path": "/home/chcai/dlrm_data/value_trace_20260919/output_stages/boundary-3967-1789777226508961531-current-r0-s101-0007-triton_addmm_bwd-finite.pt",
+              "bytes": 12043728237,
+              "allocated_bytes": 12043735040,
+              "reason": "Completed obsolete successful diagnostic; intentional retirement of original snapshot. Compact reports, manifests and unique failures retained. No retained healthy replay base is required."
+            },
+            {
+              "path": "/home/chcai/dlrm_data/value_trace_20260919/output_stages/boundary-3967-1789777226508961531-current-r0-s101-0008-triton_weighted_layer_norm_bwd-finite.pt",
+              "bytes": 6035449089,
+              "allocated_bytes": 6035456000,
+              "reason": "Completed obsolete successful diagnostic; intentional retirement of original snapshot. Compact reports, manifests and unique failures retained. No retained healthy replay base is required."
+            },
+            {
+              "path": "/home/chcai/dlrm_data/nan_replay_post_ac_20260918_0730/boundaries_saved/boundary-2946-1789717407684763312-current-r0-s101-0003-triton_addmm_bwd-finite.pt",
+              "bytes": 12043727597,
+              "allocated_bytes": 12043743232,
+              "reason": "Completed obsolete successful diagnostic; intentional retirement of original snapshot. Compact reports, manifests and unique failures retained. No retained healthy replay base is required."
+            },
+            {
+              "path": "/home/chcai/dlrm_data/nan_replay_post_ac_20260918_0730/boundaries_saved/boundary-2946-1789717407684763312-current-r0-s101-0004-triton_weighted_layer_norm_bwd-finite.pt",
+              "bytes": 6035448449,
+              "allocated_bytes": 6035456000,
+              "reason": "Completed obsolete successful diagnostic; intentional retirement of original snapshot. Compact reports, manifests and unique failures retained. No retained healthy replay base is required."
+            },
+            {
+              "path": "/home/chcai/dlrm_data/nan_replay_post_ac_20260918_0730/boundaries_saved/boundary-2946-1789717407684763312-current-r1-s101-0003-triton_addmm_bwd-finite.pt",
+              "bytes": 12043727597,
+              "allocated_bytes": 12043735040,
+              "reason": "Completed obsolete successful diagnostic; intentional retirement of original snapshot. Compact reports, manifests and unique failures retained. No retained healthy replay base is required."
+            },
+            {
+              "path": "/home/chcai/dlrm_data/nan_replay_post_ac_20260918_0730/boundaries_saved/boundary-2946-1789717407684763312-current-r1-s101-0004-triton_weighted_layer_norm_bwd-finite.pt",
+              "bytes": 6035448449,
+              "allocated_bytes": 6035456000,
+              "reason": "Completed obsolete successful diagnostic; intentional retirement of original snapshot. Compact reports, manifests and unique failures retained. No retained healthy replay base is required."
+            }
+          ]
+        },
+        {
+          "group": "requested_healthy_attention_capture",
+          "file_count": 1,
+          "released_allocated_bytes": 8046329856,
+          "files": [
+            {
+              "path": "/home/chcai/dlrm_data/value_trace_20260919/attention_capture/step000101_attention_backward_requested_capture_rank0_pid7092.pt",
+              "bytes": 8046324290,
+              "allocated_bytes": 8046329856,
+              "reason": "Completed obsolete successful diagnostic; intentional retirement of original snapshot. Compact reports, manifests and unique failures retained. No retained healthy replay base is required."
+            }
+          ]
+        },
+        {
+          "group": "two_healthy_forced_replay_base_storages",
+          "file_count": 2,
+          "released_allocated_bytes": 300085063680,
+          "files": [
+            {
+              "path": "/home/chcai/dlrm_data/nan_replay_validate_20260918_0500/capture_step_000003/state/storage-000000.bin",
+              "bytes": 150042474496,
+              "allocated_bytes": 150042525696,
+              "reason": "Completed obsolete healthy forced-forward replay calibration; no active configured dependency"
+            },
+            {
+              "path": "/home/chcai/dlrm_data/nan_replay_validate_20260918_0504/capture_step_000003/state/storage-000000.bin",
+              "bytes": 150042474496,
+              "allocated_bytes": 150042537984,
+              "reason": "Completed obsolete healthy forced-forward replay calibration; no active configured dependency"
+            }
+          ]
+        },
+        {
+          "group": "six_old_finite_diagnostic_frames",
+          "file_count": 6,
+          "released_allocated_bytes": 119356022784,
+          "files": [
+            {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_1000_v1/boundaries/linear-deferred-166143-1789809794573130348-s1000-finite.pt",
+              "bytes": 38556889443,
+              "allocated_bytes": 38556897280,
+              "reason": "38GB completed private-DW training:1000 completed steps,534 logical views/466 stores finite; inputs/gradients exact. Historical full audits retained; current corrected-driver E2E now supplies the current finite endpoint."
+            },
+            {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_2_v1/boundaries/linear-deferred-163747-1789809569916320047-s1-finite.pt",
+              "bytes": 23469148365,
+              "allocated_bytes": 23469154304,
+              "reason": "Completed two-step private-DW smoke;534 logical views/465 stores finite; all input and gradient comparisons exact. Superseded smoke payload."
+            },
+            {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/boundaries/linear-deferred-151178-1789804761268849047-s1-finite.pt",
+              "bytes": 23469142989,
+              "allocated_bytes": 23469150208,
+              "reason": "Healthy step1 diagnostic frame:534 logical views/465 stores finite with exact inputs/gradients. The separate later step405 failure in this SAME directory must remain."
+            },
+            {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_deferred_cap256_bn1_workspace1_start0_2_v4/boundaries/linear-deferred-148789-1789804559869763899-s1-finite.pt",
+              "bytes": 23468896304,
+              "allocated_bytes": 23468904448,
+              "reason": "Completed mitigated two-step smoke;166 logical views/97 stores finite and exact input/gradient checks. Preserve context, events and audits."
+            },
+            {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/train_additional_linear_deferred_uncapped_start0_2_v1/boundaries/linear-deferred-114338-1789797729148447801-s1-finite.pt",
+              "bytes": 7430708583,
+              "allocated_bytes": 7430713344,
+              "reason": "Completed old two-step deferred-linear smoke; saved full CPU audit PASS. Superseded capture-format screening."
+            },
+            {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/train_additional_linear_uncapped_start0_2_retry_v1/boundaries/linear-94691-1789794572825331735-s1-finite.pt",
+              "bytes": 2961196220,
+              "allocated_bytes": 2961203200,
+              "reason": "Completed old two-step smoke retry;14 tensors finite/below threshold and all8 independent CPU comparisons equal."
+            }
+          ]
+        },
+        {
+          "group": "old_September22_finite_E2E_archive",
+          "file_count": 1,
+          "released_allocated_bytes": 19552432128,
+          "files": [
+            {
+              "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_E2E_worker_policy_runtime_v1/default1000_training/raw_archive/linear-deferred-3578-1790042573211552213-s1000-finite.pt.zst",
+              "bytes": 19552427087,
+              "allocated_bytes": 19552432128,
+              "reason": "Old September22 numerically finite1000-step E2E endpoint is superseded by the completed September23 current-driver finite endpoint. The old strict lifecycle had only a kernel-fault issue; preserve its logs/adjudication/receipts. This payload contains no recorded numerical anomaly."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "status": "PASS_EXACT_OBSOLETE_SUCCESSFUL_SNAPSHOTS_RETIRED",
+      "receipt": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_obsolete_companions_cleanup_v1/execution/terminal.json",
+        "bytes": 4962,
+        "sha256": "7de3b3fc2eab3c044237b61b87f3187afeec8ca26afff5f665f6e397235b1a9b"
+      },
+      "plan": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_obsolete_companions_cleanup_v1/PLAN.json",
+        "bytes": 82810,
+        "sha256": "bec9b4addd27b62f2dd44bf3653a43493677a6c4f3ff7bf2714a67e97e3c92f2"
+      },
+      "released_allocated_bytes": 2479206400,
+      "file_count": 6,
+      "storage": "durable",
+      "scope": "Obsolete healthy forced-step3 capture and undo companions; bases already retired",
+      "additive_notices": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_obsolete_companions_cleanup_v1/NOTICES.json",
+        "bytes": 1287,
+        "sha256": "5a96aaa50bec8e5945659dc4e4ab0e4cbbd04851dd31d4152bacbb48c6ae4171"
+      }
+    },
+    {
+      "status": "PASS_NATURAL_DW_TRIAL_ARCHIVE_AND_RAW_RELEASE",
+      "receipt": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_nonzero_DW_execution_v1/archive_release_v2/terminal.json",
+        "bytes": 42278,
+        "sha256": "98105b4bae647b956e6219f7a6c172faed6b27ace890b6d4e0d0011458a4b735"
+      },
+      "raw_files": 5,
+      "raw_allocated_bytes_before": 4094771200,
+      "archive_allocated_bytes_retained": 2287276032,
+      "released_allocated_bytes": 1807495168,
+      "storage": "durable",
+      "all_original_bytes_losslessly_archived": true
+    }
+  ],
+  "durable_reclaimed_allocated_bytes": 897569296384,
+  "tmpfs_reclaimed_allocated_bytes": 77197692928,
+  "deleted_files": [
+    "/home/chcai/dlrm_data/processed_5b/hstu_cache_L4086/positions_L4086_m64.npy",
+    "/home/chcai/dlrm_data/processed_5b/hstu_cache_L4086/anchor_ts_L4086_m64.npy",
+    "/dev/shm/mi450_DW_storage_plan_20260923/x_final_backing.bin.zst",
+    "/dev/shm/mi450_DW_storage_plan_20260923/dy_final_backing.bin.zst",
+    "/home/chcai/dlrm_data/value_trace_20260919/output_stages/boundary-3967-1789777226508961531-current-r0-s101-0005-hstu_output_grad_mm-finite.pt",
+    "/home/chcai/dlrm_data/value_trace_20260919/output_stages/boundary-3967-1789777226508961531-current-r0-s101-0006-triton_layer_norm_mul_dropout_bwd-finite.pt",
+    "/home/chcai/dlrm_data/value_trace_20260919/output_stages/boundary-3967-1789777226508961531-current-r0-s101-0007-triton_addmm_bwd-finite.pt",
+    "/home/chcai/dlrm_data/value_trace_20260919/output_stages/boundary-3967-1789777226508961531-current-r0-s101-0008-triton_weighted_layer_norm_bwd-finite.pt",
+    "/home/chcai/dlrm_data/nan_replay_post_ac_20260918_0730/boundaries_saved/boundary-2946-1789717407684763312-current-r0-s101-0003-triton_addmm_bwd-finite.pt",
+    "/home/chcai/dlrm_data/nan_replay_post_ac_20260918_0730/boundaries_saved/boundary-2946-1789717407684763312-current-r0-s101-0004-triton_weighted_layer_norm_bwd-finite.pt",
+    "/home/chcai/dlrm_data/nan_replay_post_ac_20260918_0730/boundaries_saved/boundary-2946-1789717407684763312-current-r1-s101-0003-triton_addmm_bwd-finite.pt",
+    "/home/chcai/dlrm_data/nan_replay_post_ac_20260918_0730/boundaries_saved/boundary-2946-1789717407684763312-current-r1-s101-0004-triton_weighted_layer_norm_bwd-finite.pt",
+    "/home/chcai/dlrm_data/value_trace_20260919/attention_capture/step000101_attention_backward_requested_capture_rank0_pid7092.pt",
+    "/home/chcai/dlrm_data/nan_replay_validate_20260918_0500/capture_step_000003/state/storage-000000.bin",
+    "/home/chcai/dlrm_data/nan_replay_validate_20260918_0504/capture_step_000003/state/storage-000000.bin",
+    "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_1000_v1/boundaries/linear-deferred-166143-1789809794573130348-s1000-finite.pt",
+    "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_privateDW_start0_2_v1/boundaries/linear-deferred-163747-1789809569916320047-s1-finite.pt",
+    "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/boundaries/linear-deferred-151178-1789804761268849047-s1-finite.pt",
+    "/home/chcai/dlrm_data/root_cause_20260919/train_linear_projection_deferred_cap256_bn1_workspace1_start0_2_v4/boundaries/linear-deferred-148789-1789804559869763899-s1-finite.pt",
+    "/home/chcai/dlrm_data/root_cause_20260919/train_additional_linear_deferred_uncapped_start0_2_v1/boundaries/linear-deferred-114338-1789797729148447801-s1-finite.pt",
+    "/home/chcai/dlrm_data/root_cause_20260919/train_additional_linear_uncapped_start0_2_retry_v1/boundaries/linear-94691-1789794572825331735-s1-finite.pt",
+    "/home/chcai/dlrm_data/root_cause_20260919/session_20260922_E2E_worker_policy_runtime_v1/default1000_training/raw_archive/linear-deferred-3578-1790042573211552213-s1000-finite.pt.zst",
+    "/home/chcai/dlrm_data/nan_replay_validate_20260918_0500/capture_step_000003/capture.pt",
+    "/home/chcai/dlrm_data/nan_replay_validate_20260918_0500/capture_step_000003/state/previous.undo",
+    "/home/chcai/dlrm_data/nan_replay_validate_20260918_0500/rolling/undo-3cbc97d53c9c4ee7b4985781ad6e86c0.bin",
+    "/home/chcai/dlrm_data/nan_replay_validate_20260918_0504/capture_step_000003/capture.pt",
+    "/home/chcai/dlrm_data/nan_replay_validate_20260918_0504/capture_step_000003/state/previous.undo",
+    "/home/chcai/dlrm_data/nan_replay_validate_20260918_0504/rolling/undo-743ca75bc3da4b0fa8fe46c6953f4a6f.bin",
+    "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_natural_nonzero_DW_runtime_v1/sink_control.json.final_inputs/x_final_backing.bin",
+    "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_natural_nonzero_DW_runtime_v1/sink_control.json.final_inputs/mat2_final_backing.bin",
+    "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_natural_nonzero_DW_runtime_v1/sink_control.json.final_inputs/dy_final_backing.bin",
+    "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_natural_nonzero_DW_runtime_v1/sink_control.json.cpu_outputs.bin",
+    "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_natural_nonzero_DW_runtime_v1/sink_control.json.cpu_prefills.bin"
+  ],
+  "retained_unique_raw_and_failure_evidence": true,
+  "firmware_or_driver_changed": false,
+  "limits": [
+    "The two MIN_HISTORY64 arrays are obsolete regenerable preprocessing caches; current4086 arrays and source inputs remain.",
+    "The two deleted compression scratch files have fresh complete-byte matches in the independently verified durable DW archive.",
+    "Historical13path and current8path hardlink groups retain all names and complete contents. Original inode/time metadata remains in receipts.",
+    "The earlier 54-file sparsification pass verified identical complete before/after SHA256, inode, path, size, owner, mode, links and xattrs. Times and allocation changed explicitly; later intentional retirement is a separate operation.",
+    "Per-file reclaimed allocation differs from global filesystem free-space change due to concurrent host writes and the new E2E archive.",
+    "The two approximately150GB healthy forced-replay bases were subsequently fully hashed and found to differ. Both were intentionally retired as completed obsolete diagnostics; their original compact metadata/reports and additive RETIRED notices remain.",
+    "All 38 selected old GPU cores were fully hashed, losslessly compressed and independently decompression-verified before raw unlink. core and core.gpu were excluded; archive maps preserve original names and metadata.",
+    "Exactly 24 completed projection raw files were removed only after fresh full raw hashes and independent full decompression checks of every archive. Original completion receipts remain unchanged; the E2E raw capture is untouched.",
+    "Exactly18 old successful/requested payload files were intentionally retired after exact scope/source/metadata review, under the shared investigation lock and repeated all-task no-users checks. This removed direct raw rerun/full-rescan ability for those original snapshots; no equivalent replacement archive is claimed.",
+    "The retired group includes the old September22 numerically finite E2E archive. Its complete numerical audit, original strict lifecycle failure and source/native/trace evidence remain. The current September23 E2E raw and archive are retained.",
+    "Current MIN_HISTORY4086 mmap data, raw source data and required album/artist metadata remain. Optional unused embeddings were not selected in the18-file retirement.",
+    "Unique numerical failures, the actual step405 failure, current zero-DW inputs and the long-step101 replay base remain protected. All336 pending no-prewarm source pins were freshly verified and contained no selected capture path references.",
+    "Latest reported whole-home allocation is a complete metadata measurement; later writes change usage. Cumulative reclamation is not the current home size."
+  ],
+  "old_GPU_core_raw_retained": false,
+  "old_GPU_core_complete_archived_bytes_retained": true,
+  "projection_raw_retained": false,
+  "projection_complete_archived_bytes_retained": true,
+  "latest_home_allocation": {
+    "receipt": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_pause_wrap_v1/RUNTIME_CHECKPOINT.json",
+      "bytes": 4325,
+      "sha256": "f7ae425d3926fb0df38999d7557ddc385ef78b8ea4202bdc96fd65451de17613"
+    },
+    "measured_utc": "2026-09-23T06:48:06.467003+00:00",
+    "target_scope": "/home/chcai",
+    "target_allocated_bytes_less_than": 1000000000000,
+    "home_allocated_bytes": 992334336000,
+    "under_target": true,
+    "headroom_bytes": 7665664000
+  },
+  "healthy_forced_base_retirement_notices": {
+    "terminal": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_forced_capture_retirement_notices_v1/write_execution_v1/terminal.json",
+      "bytes": 1277,
+      "sha256": "8a9c005f79b73f7a48b53d60e762bc6e67d02979a32399f57d48e4a76c16d84e"
+    },
+    "verification": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_forced_capture_retirement_notices_v1/actual_write_invocation_v1/VERIFIED.json",
+      "bytes": 1338,
+      "sha256": "cebc2038a5b33d0235d3243d59ec447f46a5e9c92725cf8ed1ce095a901e7d00"
+    },
+    "status": "PASS_ADDITIVE_EXACT_TWO_HEALTHY_BASE_RETIREMENT_NOTICES",
+    "written": [
+      {
+        "path": "/home/chcai/dlrm_data/nan_replay_validate_20260918_0500/capture_step_000003/RETIRED.json",
+        "bytes": 4680,
+        "sha256": "b7fea4d96e54097749dc0aed66dd383bf3c69bec672c7eecbd8ae124b0759b79"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/nan_replay_validate_20260918_0500/capture_step_000003/README_RETIRED.md",
+        "bytes": 1325,
+        "sha256": "cb1df0500aead19a6dffdc0483782706fd289b088379fdeeabf3676751a4d68f"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/nan_replay_validate_20260918_0504/capture_step_000003/RETIRED.json",
+        "bytes": 5144,
+        "sha256": "f0b1b74596ac9c24745f0c062c5491f4d1f978f0efa4430ba64cc804f2073235"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/nan_replay_validate_20260918_0504/capture_step_000003/README_RETIRED.md",
+        "bytes": 1325,
+        "sha256": "cb1df0500aead19a6dffdc0483782706fd289b088379fdeeabf3676751a4d68f"
+      }
+    ]
+  },
+  "current_datasets_retained": true,
+  "current_September23_E2E_raw_and_archive_retained": true,
+  "old_September22_finite_E2E_archive_retained": false,
+  "retired_successful_snapshot_raw_rerun_available": false,
+  "two_healthy_base_hash_comparison": {
+    "terminal": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_capture_clone_full_hash_v1/terminal.json",
+      "bytes": 2023,
+      "sha256": "e045895bd272d8a32290b9c1b1ad3ad7d0260d06288231394febd11a33571faf"
+    },
+    "comparison": "DIFFERENT_SHA256",
+    "retirement_not_deduplication": true
+  },
+  "previous_home_allocation": {
+    "receipt": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_root_v1/HOME_AFTER_ARCHIVE.json",
+      "bytes": 2361,
+      "sha256": "3e2204476b8a4941b09c2c85faea60616418042554dce89ba4d0919f98e479cb"
+    },
+    "measured_utc": "2026-09-23T06:21:02.742591+00:00",
+    "target_scope": "/home/chcai",
+    "target_allocated_bytes_less_than": 1000000000000,
+    "home_allocated_bytes": 992326680576,
+    "under_target": true,
+    "headroom_bytes": 7673319424
+  }
+}

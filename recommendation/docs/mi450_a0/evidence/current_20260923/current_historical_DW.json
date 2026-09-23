@@ -1,0 +1,60 @@
+{
+  "status": "PASS_COMPLETE_CORRECTED_DRIVER_HISTORICAL_DW_QUARTET",
+  "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+  "MES": "0x0000007b",
+  "evidence": {
+    "complete_consumer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/complete_consumer.json",
+      "bytes": 181286,
+      "sha256": "da92bf28bd6907cbbbc3b4cdbc30db3f2542d9085c14feba57a068865ee197fd"
+    },
+    "archive_audit": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_DW_runtime_v1/raw_archive/archive_audit.json",
+      "bytes": 5202,
+      "sha256": "a224b010d2f5c307478ce427418d6a554ed5928000db47712d9082fa9dcf5859"
+    },
+    "archive_manifest": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_DW_runtime_v1/raw_archive/archive_manifest.json",
+      "bytes": 25508,
+      "sha256": "baea92053f7682af4e077fdc6dcffeded3cde9518ea46912ae72d0b4fe192f27"
+    },
+    "execution": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/terminal.json",
+      "bytes": 18775,
+      "sha256": "54c06225b1700e67eb50809aa11eface6b5db41c384c6feb1ec00447c97f7f8b"
+    },
+    "final_kernel": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_candidate_trap/final/dmesg.log",
+      "bytes": 165604,
+      "sha256": "8a862ed278016a04c58d472c8c5d6e9d58e106ae0adcf6957f3ce39ea0d16d27"
+    }
+  },
+  "kernel_interval_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/DW_kernel_interval_review.json",
+    "bytes": 469438,
+    "sha256": "66e627ea840b4c55cf3227ca84adfc62267b69f2a689da1643aa448cd326e789"
+  },
+  "arms": [
+    "sink_control_nop",
+    "sink_candidate_nop",
+    "sink_control_trap",
+    "sink_candidate_trap"
+  ],
+  "calls": 16,
+  "all_16_full_outputs_equal_baseline": true,
+  "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+  "full_output_bytes_compared": 4194304,
+  "full_retained_input_bytes_rehashed": 14280812544,
+  "archive_files": 44,
+  "unique_archive_blobs": 8,
+  "compressed_bytes": 2268145764,
+  "raw_retained": true,
+  "known_corrected_MC60_since_attention": 2,
+  "MC60_during_final_arm_producer": 1,
+  "hard_driver_faults_since_attention": 0,
+  "svm_restore_work_hog_warnings": 3,
+  "limits": [
+    "Current-source CWSR correction with loadedMES0x7b; no isolated firmware effect or completed E2E claim.",
+    "Existing exact corrected-MC60 diagnostic exception retained; not platform health clearance."
+  ]
+}

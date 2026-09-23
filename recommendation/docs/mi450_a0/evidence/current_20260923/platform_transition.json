@@ -1,0 +1,77 @@
+{
+  "schema": "MI450_PLATFORM_TRANSITION_20260923_V1",
+  "scope": "CPU audit before any first load on boot b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+  "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+  "amdgpu_initially_absent": true,
+  "user_report": {
+    "testing_MES": "0x17d",
+    "requested_official_MES": "0x7e",
+    "reported_defect": "testing firmware lacks a fix for MES remove_queue hang",
+    "historical_per_run_loaded_firmware_not_attested": true
+  },
+  "observed": {
+    "disk_and_initramfs_uni_MES": "0x7b",
+    "uni_MES_sha256": "d93a2d404bce004dc57d0cf835654f7dc1c7648ed44cb9da8393f3f98239255f",
+    "installed_srcversion": "EADFD8EC13CF3E6B329194E",
+    "installed_handler_sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290",
+    "installed_handler_bytes": 5656,
+    "CWSR_correction_absent": true,
+    "other_source_changes": [
+      "Removed custom persisting GL2 controls and instrumentation",
+      "Changed SH_MEM_CONFIG RETRY_DISABLE initialization",
+      "KMS minor65 to64"
+    ],
+    "MES_source_semantically_unchanged": true
+  },
+  "candidate": {
+    "sha256": "78de19854e38e298f6418bddcfa39f44a797f811f0f4b9c585482f4c4dc2b2b4",
+    "srcversion": "AD83C153B9701570F12964E",
+    "status": "CPU_BUILD_AND_INDEPENDENT_BYTE_RELOCATION_AUDIT_PASS_NOT_LOADED",
+    "against": "current installed source",
+    "handler_sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80"
+  },
+  "interpretation": [
+    "Confirmed deterministic CWSR defect and prior controlled corrected-driver results remain established.",
+    "MES report is directly relevant to historical queue hangs, but does not establish which prior runs used0x17d or uniquely explain first-backward stalls.",
+    "No evidence here establishes0x7b as defective; controlled tests on it must be labeled accordingly.",
+    "Firmware, driver source and boot are distinct changed variables; no MES-only attribution across this transition.",
+    "No new GPU or E2E numerical verdict in this CPU receipt."
+  ],
+  "evidence": {
+    "initial_platform": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/platform_initial/receipt.json",
+      "bytes": 5955,
+      "sha256": "c51682801d7ac75b36c8dc9cc9736bbcab6054bc20aedd438865f5269e60f169"
+    },
+    "installed_module_extraction": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/current_module_audit/report.json",
+      "bytes": 2799134,
+      "sha256": "e9039900b365f68de03e59b7dab23d6265e21258a5440e14b34ef514576f407a"
+    },
+    "current_source_comparison": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_driver_source_v1/REVIEW.json",
+      "bytes": 5659,
+      "sha256": "3935e62348002b41940e22849cfbc1e7b1ff42aec1f23c7ef4e6ce399a805cdc"
+    },
+    "firmware_and_initramfs_audit": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_mes_audit_v1/mes_audit.json",
+      "bytes": 51165,
+      "sha256": "1025e8d7ff18c821938a2de23cced6e9dfdf5120eae11766df52ba2559e8b8d5"
+    },
+    "local_firmware_copies": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_mes_audit_v1/local_copies_audit.json",
+      "bytes": 25007,
+      "sha256": "4d29f864e958383d8c29aa16df6aa390b5b7674f322d008ec2b8394c2d50b782"
+    },
+    "current_candidate_build": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/BUILD.json",
+      "bytes": 1918,
+      "sha256": "20ed05d43c68f903404d12bc93e988cf0c68aafbd4ede0a7f18852f72201244e"
+    },
+    "independent_module_audit": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_audit_v1/REVIEW.json",
+      "bytes": 9810,
+      "sha256": "df6b21da005286a79048a95e1028f1f65b0584c69e95543cbcf1b509944cf3d1"
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "status": "CAUSAL_GAP_REVIEW_WITH_COMPLETED_NATURAL_NONZERO_AND_STU1_DX_LEAD",
+  "utc": "2026-09-23T04:50:06.964649+00:00",
+  "review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_causal_gaps_v1/REVIEW.json",
+    "bytes": 6898,
+    "sha256": "d7581c54b7a25dfb0b8e0f8b0ad2d647b813c0d766f057ea40801884d4017ea4"
+  },
+  "recommendation": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_causal_gaps_v1/RECOMMENDATION.md",
+    "bytes": 12165,
+    "sha256": "2472bd6e132346e5d8515c95cd4eb5946c042938b52589b62ad4d349ba0103d9"
+  },
+  "platform": {
+    "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+    "corrected_driver_srcversion": "AD83C153B9701570F12964E",
+    "MES": "0x0000007b",
+    "MES_KIQ": "0x0000007b"
+  },
+  "current_evidence_limits": [
+    "Corrected natural DW output checks and host-envelope SVM attempts do not observe physical context-save acknowledgement, interrupted PC or banks.",
+    "The original step101 pre-step capture retains state and38 bad gradient names, not the historical bad-gradient values; the names were observed after backward.",
+    "Current plateau400 adds10 fresh plateau PC/tag associations, including2 under bank46; helper attempts are not physical CWSR acknowledgments and do not reconstruct historical step101/405 events."
+  ],
+  "step101_sources": [
+    {
+      "path": "/home/chcai/dlrm_data/nan_replay_long_20260918_0520/status.json",
+      "bytes": 3022,
+      "sha256": "2d84a7bdd92b2d21e49158176167e1928aca6acf30cb29c046bac5fa2d66e6cd"
+    },
+    {
+      "path": "/home/chcai/dlrm_data/nan_replay_long_20260918_0520/capture_step_000101/COMPLETE.json",
+      "bytes": 76,
+      "sha256": "d6af463a0d0071d4d9dc070512094c73d395097002ac930f180d400876b9857c"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/a0_docs_archive_20260919_session_wrap_v1/recommendation/docs/mi450_a0/nan_replay_20260918.md",
+      "bytes": 20389,
+      "sha256": "4d77c44aeba6949cccb036d9995080a760aef0d5fcb12d617fe121198cabe795"
+    }
+  ],
+  "GPU_actions": false,
+  "low_level_changes": false,
+  "updated_utc": "2026-09-23T06:56:43.317589+00:00",
+  "original_next_test": {
+    "description": "Current corrected-driver replay of original400 NOP-only long-plateau sentinel calls, default process policy and private AutoNUMA/SVM stack trace",
+    "priority": "After actual complete NP1000 consumption, before lengthy repeated zero-DY series or after its first trial",
+    "status": "SOURCE_ONLY_PREPARATION_NO_BINDING_OR_RUNTIME",
+    "required_result": "All400 packets preserve every tag regardless of PC freshness; report fresh plateau PC and SVM association separately for each bank, especially05 and46",
+    "limits": [
+      "No observation of fresh vulnerable-bank PCs is exposure-inconclusive.",
+      "Identical before/after sampled PC values do not exclude an intervening event.",
+      "No reconstruction of original step101/405 trap sequence follows."
+    ]
+  },
+  "completed_plateau400": {
+    "consumer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_execution_v1/complete_consumer.json",
+      "bytes": 5545,
+      "sha256": "6e6d50ad4da98d8a978c11cba4351caa1ae15fa832efc1c573f9c9b1ba1e9857"
+    },
+    "status": "PASS_CURRENT_PLATEAU400_FRESH_BANK46_PRESERVED_WITH_SVM_EXPOSURE",
+    "by_mode": {
+      "00": {
+        "relevant_pairs": 3,
+        "distinct_relevant_cases": [
+          24,
+          136,
+          180
+        ],
+        "fresh_PC_preserved_cases": [
+          24,
+          136,
+          180
+        ]
+      },
+      "05": {
+        "relevant_pairs": 2,
+        "distinct_relevant_cases": [
+          37,
+          101
+        ],
+        "fresh_PC_preserved_cases": [
+          37,
+          101
+        ]
+      },
+      "86": {
+        "relevant_pairs": 3,
+        "distinct_relevant_cases": [
+          18,
+          46,
+          314
+        ],
+        "fresh_PC_preserved_cases": [
+          18,
+          46,
+          314
+        ]
+      },
+      "46": {
+        "relevant_pairs": 2,
+        "distinct_relevant_cases": [
+          75,
+          239
+        ],
+        "fresh_PC_preserved_cases": [
+          75,
+          239
+        ]
+      }
+    },
+    "all_tags_preserved": true,
+    "independent_saved_review_status": "PASS_INDEPENDENT_SAVED_CURRENT_PLATEAU400_REVIEW",
+    "independent_saved_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_plateau400_saved_peer_v2/REVIEW.json",
+      "bytes": 80919,
+      "sha256": "1d28287d54b60146a7e9543bb4d728f443ba66f94847ceeb4e41ebfb044750c8"
+    }
+  },
+  "next_test": {
+    "description": "Target STU1 conditional DX bound inconsistency with original-reference scalar/tensor witness in fresh no-prewarm training process",
+    "status": "USER_PAUSED_SOURCE_REVIEW_COMPLETE_NO_RUNTIME",
+    "source_manifest": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_witness_source_v2/SOURCE.json",
+      "bytes": 10058,
+      "sha256": "f36cb61779855564eb6a447566fa557d2d0ad7e2ab6a7734f6b62c6668485a42"
+    },
+    "pretrigger_added_GPU_operations": 0,
+    "original_STU2_capture_retained": true,
+    "raw_observation": "post-backward retained references; no pristine/consumed-input claim",
+    "max_small_files": 2,
+    "max_bytes_per_small_file": 16777216,
+    "source_peer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_source_peer_v2/REVIEW.json",
+      "bytes": 14024,
+      "sha256": "70f4a0b2868f30595908d606564a7abac664655b1584ed66eea05d2a062a0cb2"
+    },
+    "training_source_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_peer_v2/REVIEW.json",
+      "bytes": 26113,
+      "sha256": "9c0f2829b8131e114253b9bcf1e4a38621353baf6dfd01be0a058d6343b4ec94"
+    },
+    "actual_CPU_bootstrap": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_small_bootstrap_v2/REVIEW.json",
+      "bytes": 5170,
+      "sha256": "a0d231ad207b3180574e452d589d6ea1f86f9dd21dad03387eeb55b1f643dacd"
+    },
+    "prepared_request": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/REQUEST_PREPARED.json",
+      "bytes": 13267,
+      "sha256": "a339c1eb7fbc8260e77d88a6e83cff3a71fde875e6e91a7841525273f762072d"
+    },
+    "referenced_unique_backing_byte_cap": 25769803776,
+    "actual_binding": false,
+    "GPU_result": false
+  },
+  "completed_natural_nonzero": {
+    "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_natural_nonzero_DW.json",
+    "bytes": 4313,
+    "sha256": "8a1d447889ec99316252b69c2764048b7fba2e4a2c6d14a00c240a50f71bafc4"
+  }
+}

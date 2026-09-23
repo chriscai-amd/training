@@ -1,0 +1,27 @@
+{
+  "status": "NO_GC12_1_0_ARTIFACT_IN_QUERIED_PUBLIC_LINUX_FIRMWARE_SNAPSHOT",
+  "utc": "2026-09-23T01:23:59.617260+00:00",
+  "fetches": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_public_MES_lookup_v1/FETCH.json",
+    "bytes": 2692,
+    "sha256": "1bd3a261ad3f795a7cf3946ffce7bc19801393e2b375fa63f94a36f24f5ffa2c"
+  },
+  "WHENCE": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_public_MES_lookup_v1/WHENCE.json",
+    "bytes": 2903,
+    "sha256": "961b2dcda73ee69aa3ff4aba445bd288e4d35f5bc4ceb0b32ab73901a53d2dbf"
+  },
+  "WHENCE_payload": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_public_MES_lookup_v1/WHENCE.body",
+    "bytes": 486096,
+    "sha256": "ed77f7cdd89463e78fd26dc54b48171ead05e9781795174a6ef9a158cec27450"
+  },
+  "firmware_candidate_acquired": false,
+  "firmware_installed": false,
+  "GPU_actions": false,
+  "limits": [
+    "Exact unified MES file URLs returned404; successful current WHENCE read has no gc_12_1_0 entry.",
+    "This bounded public lookup does not exclude vendor/private or differently named release artifacts.",
+    "No evidence about presence of the remove_queue fix in loaded0x7b follows."
+  ]
+}

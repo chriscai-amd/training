@@ -1,0 +1,45 @@
+{
+  "status": "IN_PROGRESS_NO_COMPLETED_NUMERICAL_VERDICT",
+  "snapshot_utc": "2026-09-23T01:38:25.234198+00:00",
+  "backward_completions": 514,
+  "numerical_flags": [],
+  "loaded_MES_and_MES_KIQ": "0x0000007b",
+  "receipts": {
+    "monitor": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_monitor_v2/024/progress.json",
+      "bytes": 1620,
+      "sha256": "20e81bc2841081f312fbf5c124f1abac32f55ed619243bd753525234297bb31d"
+    },
+    "first_MC60_peer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_kernel_peer_v1/REVIEW.json",
+      "bytes": 6306,
+      "sha256": "a5a410d596aa3854f00af8c89a375bbf557a41707d02c6fba537ae5df1baeed0"
+    },
+    "second_MC60_peer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_kernel_peer_v1/interval_021_022/REVIEW.json",
+      "bytes": 6516,
+      "sha256": "5401b815e5287ededd50aa11c02fe32aacb7fae283175b60258310bbd7d6ed64"
+    },
+    "trace_buffer_snapshot": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_monitor_v2/trace_stats_0138.json",
+      "bytes": 45335,
+      "sha256": "d00b0b2c454ca5e7b158394d2b1d52b403e9ff976ceb58df3c7c6988333a7ffa"
+    },
+    "source_release": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_v2/RELEASED.json",
+      "bytes": 2292,
+      "sha256": "0c9a128998d9835a1d3968a27cf3d89ba31396dbe4580695e3c5216d00ee3c50"
+    },
+    "predecessor_freeze": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_v2/PREDECESSOR_FREEZE_RECEIPT.json",
+      "bytes": 1932,
+      "sha256": "51e8e086cb6ccbd51fa822662b6dc9a5a98cae5ecda6bb3b92279634aab74bfa"
+    }
+  },
+  "limits": [
+    "The actual producer, full tensor audit, process cleanup, final trace and archive are pending.",
+    "Two complete corrected CPU8/MC60 records matched the already frozen diagnostic exception; platform health is not certified.",
+    "Reinstalled driver baseline, CWSR correction, boot and full prewarm prevent MES-only attribution.",
+    "Later monitor snapshots supersede this progress count; this is an immutable progress checkpoint."
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "status": "COMPLETE_E2E_ARCHIVE_AND_ORIGINAL_COMPARISON_WITH_DIFFERENCES_RETAINED",
+  "archive_consumer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_execution_v2/E2E_archive_tls_adjudicated_default1000/archive_audit.json",
+    "bytes": 3260,
+    "sha256": "8f3a62cfad7923eef9590ad054ab7a52964c7f6e47fb8bf4fbf847296faf29e7"
+  },
+  "archive": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_E2E_runtime_v2/default1000_training/raw_archive_tls_adjudicated/linear-deferred-2789-1790126116674805775-s1000-finite.pt.zst",
+    "bytes": 19557008930,
+    "sha256": "b64931c4ff3cec54591c4c4533da51ad79aec8c2468e9b6e2cdfbf6363187920"
+  },
+  "raw": {
+    "path": "/dev/shm/mi450_current_E2E_v2/default1000/linear-deferred-2789-1790126116674805775-s1000-finite.pt",
+    "bytes": 38556636485,
+    "sha256": "adb06a337e20b385b90c0077452ecb333fdfd521da90f7ff27255a12877e512e"
+  },
+  "decompressed": {
+    "bytes": 38556636485,
+    "sha256": "adb06a337e20b385b90c0077452ecb333fdfd521da90f7ff27255a12877e512e"
+  },
+  "archive_process": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/TLS_archive.finish.json",
+    "bytes": 2265,
+    "sha256": "3e1d30a53eece615106beb010dae554a6c997b270e9d93a314c728e1a737d8ea"
+  },
+  "independent_consumer_process": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/TLS_archive_consumer.finish.json",
+    "bytes": 2193,
+    "sha256": "641d70f61658bdeabc97b2f73c0f92cb38e4d9c5abef2f7694b8bbeccd0caebf"
+  },
+  "original_raw_retained": true,
+  "strict_global_state_unchanged": false,
+  "comparison": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_comparison_TLS_result_v1/comparison.json",
+    "bytes": 742222,
+    "sha256": "8346d4404a437c225888dbea42754fdb5cac9355a839a1f2da3933a79ec9088f"
+  },
+  "comparison_process": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/TLS_comparison.finish.json",
+    "bytes": 2003,
+    "sha256": "bdd652dbc37b3f659bf643c742f54a94dbec41c9453ec042805fc260400ff5c4"
+  },
+  "divergence_analysis": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_E2E_divergence_analysis_v1/REVIEW.json",
+    "bytes": 11777,
+    "sha256": "98ba017abb8bb287f76955deaa86fdc4c339c10d237e6944e422884d5ffeb76e"
+  },
+  "comparison_summary": {
+    "status": "COMPLETE_COMPARISON_DIFFERENCES_PRESERVED",
+    "initial_rng_equal": true,
+    "all_compared_settings_equal": true,
+    "event_counts_equal": true,
+    "geometry_differing_steps": [],
+    "scalar_differing_step_count": 998,
+    "losses_equal": false,
+    "loss_differing_count": 20,
+    "endpoint_counts": {
+      "original_count": 166,
+      "candidate_count": 166,
+      "missing": 0,
+      "added": 0,
+      "layout_differences": 0,
+      "logical_hash_differences": 162,
+      "backing_differences": 162,
+      "full_report_differences": 162
+    }
+  },
+  "limits": [
+    "Per-step scalar extrema are lossy; equality does not prove full tensor equivalence.",
+    "Endpoint logical hashes prove equal logical bytes only when names/layouts agree; backing hashes also include padding.",
+    "The frame is before clipping/update1000; clean bounded completion includes update1000.",
+    "No full optimizer-state trajectory, post-update1000 snapshot, or backend causal attribution is provided.",
+    "The original bounded run already passed numerically; exact equality alone does not discriminate the NaN culprit.",
+    "This comparison requires the separate exact TLS-inventory adjudication; the original execution and strict lifecycle still record their failure.",
+    "Source settings are compared; no full dataset rehash or complete per-step tensor trajectory is claimed.",
+    "Driver baseline, boot, CWSR correction and prewarm differ from the original run, preventing MES-only attribution.",
+    "Current MES is 0x7b; no official 0x7e result or platform-health clearance follows."
+  ]
+}

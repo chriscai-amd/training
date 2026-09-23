@@ -1,0 +1,99 @@
+{
+  "status": "PASS_BOUNDED_CURRENT_FULL_FBGEMM_DEFAULT1000_TLS_INVENTORY_ADJUDICATED",
+  "completed_utc": "2026-09-23T02:30:31.270613+00:00",
+  "terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_E2E_TLS_adjudicated_postrun_v1/terminal.json",
+    "bytes": 573392,
+    "sha256": "c5648da06a9961900a0c99999fa71a93325c02caf31e8c90d27f7424b4338c4a"
+  },
+  "process_completion": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/E2E_TLS_adjudication.finish.json",
+    "bytes": 1766,
+    "sha256": "c4776026991a9662043d101afc3286fcee1dea9abb47aef98b3080750a5de403"
+  },
+  "self_consumption": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_E2E_TLS_adjudicated_postrun_v1/self_consumption.json",
+    "bytes": 576278,
+    "sha256": "509b845b9aeefea42386c2aeb0275763022f69f3973a45fc89ef6997904bafc7"
+  },
+  "authority": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_E2E_TLS_adjudication_v1/AUTHORITY.json",
+    "bytes": 114011,
+    "sha256": "c3f95c7428eb6acb68d3ec521e3ec65bc5d276b7caabd72fd296002dee12490e"
+  },
+  "independent_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_E2E_TLS_adjudication_peer_v1/REVIEW.json",
+    "bytes": 5687,
+    "sha256": "de1089e4198bfd1677888a3ab41a719f76d4d4213ebba7dcbf0947db26d40c2a"
+  },
+  "original_failed_execution": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_execution_v2/execution_terminal.json",
+    "bytes": 1453408,
+    "sha256": "c2da2ae3e7dac369a796ee48a95e121c2ed6cda90c89e3098aceb83a1c6d13aa"
+  },
+  "original_failed_strict_lifecycle": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_E2E_TLS_strict_diagnostic_v2/lifecycle/review.json",
+    "bytes": 1300094,
+    "sha256": "808429487bb004cef06837d1fb0dfbbcbf0be7d657167c89c1132a0c72a23f90"
+  },
+  "raw_certificate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_numerical_audit_v1/raw/certificate.json",
+    "bytes": 135419,
+    "sha256": "23dc408b75205df4a282cbe503daba9a8293a449b60d21896c33d7eaf94c85a6"
+  },
+  "tls_adjudication": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_E2E_TLS_adjudicated_postrun_v1/tls_adjudication.json",
+    "bytes": 2717,
+    "sha256": "4ff72ec8b6fbf439df1c138c5dd7096d8ea3252be15436f6341c938fb6eea108"
+  },
+  "strict_global_state_unchanged": false,
+  "final_gate": "PASS_CURRENT_CANDIDATE_IDLE_AND_KERNEL_CONTINUITY",
+  "driver": {
+    "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+    "driver": {
+      "version": "7.1.1.31300009",
+      "srcversion": "AD83C153B9701570F12964E"
+    },
+    "parameters": {
+      "cwsr_enable": "1",
+      "sched_policy": "0",
+      "noretry": "-1",
+      "gpu_recovery": "-1",
+      "ip_block_mask": "4294967295",
+      "halt_if_hws_hang": "0",
+      "uni_mes": "1"
+    }
+  },
+  "firmware": {
+    "authority": {
+      "bytes": 1365,
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/activation_adjudication/loaded_firmware.json",
+      "sha256": "243b6402edc04e6c121976a5f56d79b18cc707f4fbe3df55ebfd45caf3fc55fd"
+    },
+    "versions": {
+      "mec_fw_version": "0x00000956",
+      "mes_fw_version": "0x0000007b",
+      "mes_kiq_fw_version": "0x0000007b",
+      "rlc_fw_version": "0x0000001f",
+      "sdma2_fw_version": "0x00893547",
+      "sdma_fw_version": "0x00893547",
+      "smc_fw_version": "0x027d0701",
+      "ta_ras_fw_version": "0x1b440004",
+      "vcn_fw_version": "0x0910d008"
+    },
+    "pci": "0001:01:00.0",
+    "official_0x7e_test": false,
+    "method": "Cached driver fields via read-only sysfs; no GPU commands/debugfs/MMIO"
+  },
+  "source_pins_unchanged": true,
+  "kernel_policy_rejections": [],
+  "original_failures_preserved": true,
+  "payloads_deleted": false,
+  "limits": [
+    "The original strict global-state equality still fails; this distinct result admits exactly seven new disabled TLS event entries.",
+    "No trace registration actor or timestamp is established.",
+    "The scheduled finite frame precedes optimizer update 1000; completed outcome separately records that update returning.",
+    "MES remains 0x7b; boot, driver source and full prewarm prevent a MES-only attribution.",
+    "No unique attribution of all historical NaNs, long-run stability, or platform-health clearance is claimed."
+  ]
+}

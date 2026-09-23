@@ -1,0 +1,19 @@
+{
+  "status": "PASS_CPU_RETRY_INITIALIZATION_LOG_SOURCE_JOIN",
+  "source_join": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/SH_MEM_CONFIG_AC2_source_join.json",
+    "bytes": 4045,
+    "sha256": "f38fb6df55b704b8053af997c0b803120c9f422682d99da705a85784579b4f77"
+  },
+  "peer_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_retry_init_peer_v1/REVIEW.json",
+    "bytes": 37109,
+    "sha256": "e4a03ffa5f7a233fa6255abc14a1faa672d8fc645c8b3d717546a3f209b759bf"
+  },
+  "observed": "In each of8 XCC blocks, first read(VMID0 by source order) has RETRY_DISABLE1; all15 following reads have0.",
+  "implication": "The observed old-preserve/new-clear initialization difference is confined toVMID0; these logs do not show a changed KFD user-VMID retry bit.",
+  "limits": [
+    "No final live register state, later firmware-state equality or physical stall cause is established.",
+    "The source/firmware transition remains a confound."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "status": "PASS_CURRENT_SOURCE_CWSR_MES_0x7b_HEALTH_AND_SENTINELS",
+  "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+  "terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/health/terminal.json",
+    "bytes": 15461,
+    "sha256": "292012919a0567f63747fade3f597112751938ce76a5eddfc0d91f30626aed0b"
+  },
+  "health_checks": 4000,
+  "sentinel_cases": 14,
+  "exact_return_PCs": 7,
+  "workers_exited": true,
+  "all_device_idle": true,
+  "new_hard_faults": 0,
+  "new_MC60_in_workload_interval": 0,
+  "evidence": {
+    "health/kernel_delta.json": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/health/kernel_delta.json",
+      "bytes": 424900,
+      "sha256": "895e01cef23fe9549b9d06f4310cd95b440d49d7963672d4c58a7e2671935108"
+    },
+    "health/kernel_delta_final.json": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/health/kernel_delta_final.json",
+      "bytes": 424375,
+      "sha256": "aca9bb9ae1a9d61ec591e27af63133fad8b816497a0bca4b95dd6d82f3db196d"
+    },
+    "health/idle_after_sentinel.json": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/health/idle_after_sentinel.json",
+      "bytes": 1803,
+      "sha256": "d5828119b546db8a151ae9a47d33e1cadee8ab102b06aae2f335cefb3ac88bf7"
+    },
+    "health/health_liveness.json": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/health/health_liveness.json",
+      "bytes": 374,
+      "sha256": "6467ef3673b51054b85a25ad01e56008497686f94e17e458cb36f9818d5d37b4"
+    },
+    "health/sentinel_liveness.json": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/health/sentinel_liveness.json",
+      "bytes": 378,
+      "sha256": "9d60a5358be60cbb5da21405015b5d5c77e3f24a9c46f8838cfad7c9d92be765"
+    },
+    "candidate/native_join_root_v1.json": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/candidate/native_join_root_v1.json",
+      "bytes": 15940,
+      "sha256": "a4d7bf33450a27d1835f5d475aedbe5a81ee083b9dfa55d5c9c53150e9912c3b"
+    },
+    "candidate/sentinel_complete_raw_packet_independent_review_v1.json": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/candidate/sentinel_complete_raw_packet_independent_review_v1.json",
+      "bytes": 70943,
+      "sha256": "33fca1b2c9d5bce5a0bd8dfe74e5aa069003e1dc7e56777347e7419fecb61e00"
+    }
+  },
+  "limit": "Health/register validation on current-source candidate with loaded MES0x7b; no E2E or sole-cause verdict."
+}

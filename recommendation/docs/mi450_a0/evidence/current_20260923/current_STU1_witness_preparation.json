@@ -1,0 +1,242 @@
+{
+  "status": "USER_PAUSED_REVIEWED_SOURCE_NO_ACTUAL_BINDING_OR_GPU_RESULT",
+  "updated_utc": "2026-09-23T06:56:43.317589+00:00",
+  "training_source_directory": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1",
+  "training_python_sources": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/clean_status.py",
+      "bytes": 3619,
+      "sha256": "768b0c9f7a773fbd916a71857c735f713910e00ba7fb183b6c93220ae75e14c4"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/first_backward_component.py",
+      "bytes": 15050,
+      "sha256": "7985c2f5917fa97fde8f5d6bf420988b51ec18e2e111625b6a063b7f2b6f2690"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/first_backward_configuration.py",
+      "bytes": 6850,
+      "sha256": "0fdaf0723b41901f3ff7ed3c96a4192ab028e816f108b228b4a79d228b61f81a"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/first_backward_context.py",
+      "bytes": 20338,
+      "sha256": "55558417246c0a890ba472286c69275cd93a54e920d6cc32361ab4ebb4806606"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/first_backward_lifecycle.py",
+      "bytes": 9865,
+      "sha256": "b9bd681348863f012f1716ffa28b66c662ddf86c3793dce24217e0e0a588e910"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/first_backward_policy.py",
+      "bytes": 7722,
+      "sha256": "5ebf572bea811ffdafcfdc85563af08de8bf713f6469e2e5b081fff525f33949"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/first_backward_readers.py",
+      "bytes": 7714,
+      "sha256": "08b3e6b0ed93f8d9217d9a6f299e87d71138d60dcc92e3633f3e04f26f01353d"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/first_backward_support.py",
+      "bytes": 578,
+      "sha256": "f343ea4354bfda7f157ec9186be45c9b343142c2bd112616686bc6422a2aeb67"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/first_backward_trace.py",
+      "bytes": 4196,
+      "sha256": "3059c4618cf76ec0ef1d010b316456a7f220e620a8837da8007a960b0c03fe26"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/first_backward_trace_integrity.py",
+      "bytes": 5012,
+      "sha256": "23e31e79b95c95d2730f1a1a2b881b53137fa076238e3949d6ba63de22c60b30"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/home_allocation.py",
+      "bytes": 1541,
+      "sha256": "6d049d30636030776187b71802547b0973797ad0353b52e0dbfe96127347e259"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/journal_audit.py",
+      "bytes": 6641,
+      "sha256": "16a5af207f6aac50b87cdb7e3740c8e4d0bd83f47139bffce8507e4867fc5562"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/latest_completed_predecessor.py",
+      "bytes": 20028,
+      "sha256": "6aedfedfca7a2fff86a919de0cd3c8b2283da1c69b0d8d61cfc9ca860bad7d7a"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/np2_predecessor.py",
+      "bytes": 7622,
+      "sha256": "cde590141d372ebb931ff2a6754facc58f65d019755d19532cef129099ecf466"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/postback_configuration.py",
+      "bytes": 5622,
+      "sha256": "b535b76b86db3a07589dc0ea34132fb520782f7a067c427d00732ea01e550313"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/postback_integration.py",
+      "bytes": 3443,
+      "sha256": "24ae9d8bcfa731162eed598f8b9cfe4f1c25403abe40c9b7c073e710fd642a43"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/prepare_binding.py",
+      "bytes": 12901,
+      "sha256": "a1b42958077422db38d7e6ea84c7e02d80263f4aa143e119669f831119776707"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/run_first_backward.py",
+      "bytes": 17082,
+      "sha256": "c0c904bb199f264224351fd97c8fbe23cf1b522cda8025369b8f928c8eda6c2d"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/small_witness_audit.py",
+      "bytes": 18677,
+      "sha256": "628fff919eac7890e87fb1b6e40dc9c1a8fe931eac48581fbe8761d51ec72813"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/worker_policy_launch_noprewarm.py",
+      "bytes": 12093,
+      "sha256": "5a550c33ce5c23e18c0f0cd52c4a7b712ebc0518c0b0cad6876500f627ab2843"
+    }
+  ],
+  "witness_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_witness_source_v2/SOURCE.json",
+    "bytes": 10058,
+    "sha256": "f36cb61779855564eb6a447566fa557d2d0ad7e2ab6a7734f6b62c6668485a42"
+  },
+  "witness_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_source_peer_v2/REVIEW.json",
+    "bytes": 14024,
+    "sha256": "70f4a0b2868f30595908d606564a7abac664655b1584ed66eea05d2a062a0cb2"
+  },
+  "training_source_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_peer_v2/REVIEW.json",
+    "bytes": 26113,
+    "sha256": "9c0f2829b8131e114253b9bcf1e4a38621353baf6dfd01be0a058d6343b4ec94"
+  },
+  "CPU_tests": {
+    "witness_author": 19,
+    "witness_independent_capacity": 16,
+    "root_training": 17,
+    "independent_training": 26,
+    "prior_controller_small_audit": 8
+  },
+  "CPU_receipts": {
+    "witness": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_witness_source_v2/CPU_REVIEW.json",
+      "bytes": 11116,
+      "sha256": "ce2410b837b0f874fb8d963efe92aef9a6bdf1788e0ae84752b3af7ccbe698e7"
+    },
+    "root_training": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_root_v1/INTEGRATION_CPU_REVIEW_V2.json",
+      "bytes": 2895,
+      "sha256": "414532d04fc0a1bf555640a3ae01c57af3a51682249bfc83eb2afa5c15fba244"
+    },
+    "independent_training": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_peer_v2/CPU_REVIEW.json",
+      "bytes": 6300,
+      "sha256": "f755caf9b4d59e9d4d15f7dc0818ae0bb0b89a7edaeb6409fcbb59847a201601"
+    }
+  },
+  "actual_no_device_consumer_bootstrap": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_small_bootstrap_v2/REVIEW.json",
+    "bytes": 5170,
+    "sha256": "a0d231ad207b3180574e452d589d6ea1f86f9dd21dad03387eeb55b1f643dacd"
+  },
+  "latest_predecessor_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_latest_predecessor_peer_v1/REVIEW.json",
+    "bytes": 7143,
+    "sha256": "51d3170733c41406f275752cc6a0826265492da7c5446a0a30fd84f4bea8058e"
+  },
+  "prospective_decisions": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_decisions_v2/RECEIPT.json",
+    "bytes": 2025,
+    "sha256": "b2feafb5c6cfc55d6d1fdcac968e6c9a7d8e7cac014ecb8e52ac42ccfa3b00ba"
+  },
+  "prepared_request": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/REQUEST_PREPARED.json",
+    "bytes": 13267,
+    "sha256": "a339c1eb7fbc8260e77d88a6e83cff3a71fde875e6e91a7841525273f762072d"
+  },
+  "pure_construction": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_pause_wrap_v1/CONSTRUCTION_CHECKPOINT.json",
+    "bytes": 345044,
+    "sha256": "2c8c75e2d0444710e8dbfb98bead93ef29acae24009429d826c1856873b2e5f2"
+  },
+  "resume_preparation_argv": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_pause_wrap_v1/RESUME_COMMANDS.json",
+    "bytes": 1327,
+    "sha256": "6f9ef70cce875232349ea5b6003bab4162ee20902d4ccbd66e928a11ddba2104"
+  },
+  "original_draft": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/REQUEST_DRAFT.json",
+    "bytes": 13288,
+    "sha256": "80456135078418147d88fa7978b7c11dc8c5f7b034e1b6d3a00e2623a83ba498"
+  },
+  "v2_draft": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_training_source_v1/REQUEST_DRAFT_V2.json",
+    "bytes": 13289,
+    "sha256": "40fa1347731a1fa8ecf32b7bf12c7fc7623cbc562f0039d194244c34d2c59c9c"
+  },
+  "policy": {
+    "format": "STU1_original_reference_postback_witness_v1",
+    "target_layer_suffix": "._stu_layers.1",
+    "original_full_projection_capture_layer": 2,
+    "expected_total_scans": 68,
+    "retention": "Original W/DZ objects before public call and original DX after call; no boundary clones.",
+    "raw_observation": "Post-backward, after original deferred flush; no pristine or consumed-input claim.",
+    "pretrigger_extra_GPU_operations": 0,
+    "pretrigger_extra_boundary_host_readbacks": 0,
+    "scalar_enqueue": "Original unchanged enqueue",
+    "scalar_flush": "Original once, actual endpoint/batch/reader retention",
+    "trigger": "Existing conditional FP32/finalBF16 gemm_bound on original STU1 summaries",
+    "first_generic_flags": "Unchanged; original full capture handling retained",
+    "selection": "Post-trigger bounded-scratch full logical DX search; one selected coordinate and its complete row",
+    "raw_copies": "Two sequential compact CPU observations of complete W and selected DZ/DX rows",
+    "scalar_serialized_cap_bytes": 16777216,
+    "raw_serialized_cap_bytes": 16777216,
+    "referenced_unique_backing_byte_cap": 25769803776,
+    "select_scratch_float32_elements": 1048576
+  },
+  "unique_source_metadata_pins": 890,
+  "runtime_pins": 125,
+  "planned_stage_files": 12,
+  "old_16GiB_would_reject_steps": [
+    720,
+    721
+  ],
+  "known_compact_geometries": 985,
+  "largest_compact_reference_bytes": 19720481792,
+  "actual_binding": false,
+  "released_contract": false,
+  "staged": false,
+  "GPU_execution": false,
+  "original_STU1_step583_raw_available": false,
+  "pending": [
+    "Explicit user resumption",
+    "Recheck live epoch, ownership, logs and storage",
+    "Actual prepare_binding predecessor admission",
+    "Independent actual binding release review",
+    "Finalize and stage exact sources",
+    "Source preflight and live gates",
+    "Execute fresh1000-step diagnostic serially under shared lock",
+    "Consume all evidence and investigate witness or bounded non-recurrence"
+  ],
+  "limits": [
+    "Pure construction is not predecessor admission or release.",
+    "Raw observations are post-backward, not pristine or consumed-input proof.",
+    "Reference retention changes allocator history; no pretrigger GPU operations added.",
+    "No new GPU reproduction of the historical step583 inconsistency exists.",
+    "Early GPU-visible CPU-autograd isolation failures remain preserved; final reviews/bootstrap used no-device containers."
+  ],
+  "immutable_checkpoint": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_pause_wrap_v1/SOURCE_CHECKPOINT.json",
+    "bytes": 11618,
+    "sha256": "0a63a8ecb862029b2418903ed1f63efc527a1bb4afc2781689e477689ebd9869"
+  }
+}

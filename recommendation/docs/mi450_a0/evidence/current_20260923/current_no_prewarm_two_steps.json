@@ -1,0 +1,1057 @@
+{
+  "status": "PASS_CURRENT_NO_PREWARM_FIRST_BACKWARD_2_STEPS",
+  "terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_no_prewarm_execution_v3/consume/terminal.json",
+    "bytes": 3634,
+    "sha256": "5eba454d48a0f151a949b45f1ef79b68cc861e201931aff7d86e19a592411be7"
+  },
+  "contract": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_first_backward_noprewarm_TLS_v3/CONTRACT.json",
+    "bytes": 91622,
+    "sha256": "4e91049eb1c711f05d4218f94f71271d94516622dc966cb39c3404a3b2e9d25d"
+  },
+  "stage": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_no_prewarm_runtime_v3/staging_receipt.json",
+    "bytes": 5191,
+    "sha256": "1c9d2b813376b887c26ca1f603e36f21b2fdbc8a131880f5920d74f29712d8e8"
+  },
+  "execution": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_no_prewarm_execution_v3/execution_terminal.json",
+    "bytes": 30549,
+    "sha256": "f62b05cda63b5d1abcfce01ada06c7626d6e6b687e708cd5f08c0afc75ac2c4d"
+  },
+  "lifecycle": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_no_prewarm_execution_v3/consume/lifecycle/review.json",
+    "bytes": 708276,
+    "sha256": "66233d8580ee4b590583a9f69e405c0cea8637749d36ff18bd36463a318fbf71"
+  },
+  "final_gate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_no_prewarm_execution_v3/consume/final_gate/gate.json",
+    "bytes": 667717,
+    "sha256": "6a2fc2f3c92712f18261fb341eaeff3eba2fd02c66e78f1a3727b08300b837bd"
+  },
+  "independent_saved_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_no_prewarm_causal_peer_v1/REVIEW.json",
+    "bytes": 97293,
+    "sha256": "842aa1435b41d072e40d0409f9a90d327a03ebf2b942a60db6af62929c83058b"
+  },
+  "independent_saved_review_status": "PASS_INDEPENDENT_SAVED_NO_PREWARM_TWO_STEP_REVIEW",
+  "completed_backward": 2,
+  "completed_optimizer_steps": 2,
+  "full_endpoint_raw_audit": false,
+  "endpoint_scope": "original scalar journal only; no complete endpoint tensor audit",
+  "worker_journal": {
+    "status": "PASS_TWO_STEP_WORKER_JOURNAL_ONLY",
+    "journal": {
+      "path": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_no_prewarm_runtime_v3/noprewarm2_training/boundaries/events.jsonl",
+        "bytes": 551633,
+        "sha256": "d5e882211b92ef05c91fb214e304416c551c6e6812822063f63dd3037a6c37f8"
+      },
+      "event_counts": {
+        "installed": 1,
+        "deferred_installed": 1,
+        "scan_queued": 28,
+        "comparison_queued": 24,
+        "deferred_flush": 2,
+        "attempt_backward_complete": 2
+      },
+      "sessions": [
+        "5273-1790136617692838373"
+      ],
+      "flushes": [
+        {
+          "step": 1,
+          "time": 1790136667.8544466,
+          "scans": 68,
+          "operation_endpoints": 42,
+          "checked_finite_summaries": 367,
+          "zero_comparisons": 12,
+          "integer_metadata_omissions": 12,
+          "alarm": false
+        },
+        {
+          "step": 2,
+          "time": 1790136670.0703251,
+          "scans": 68,
+          "operation_endpoints": 42,
+          "checked_finite_summaries": 367,
+          "zero_comparisons": 12,
+          "integer_metadata_omissions": 12,
+          "alarm": false
+        }
+      ],
+      "completed_backward_steps": [
+        1,
+        2
+      ],
+      "dumps": [],
+      "alarms": []
+    },
+    "check_count": 1092,
+    "observed_backward_completions": 2,
+    "completed_optimizer_steps_from_original_outcome": 2,
+    "scheduled_success_dump": false,
+    "full_endpoint_raw_audit": false,
+    "lifecycle_trace_kernel_firmware_certified": false,
+    "may_launch_next_workload": false,
+    "limits": [
+      "Finite journal summaries are not a full endpoint tensor audit.",
+      "Host PID/start-tick/container joins, all descendant reaping, private trace audit/cleanup and final current stack/idle/kernel gates remain mandatory.",
+      "This function alone cannot advance the experiment chain."
+    ]
+  },
+  "private_trace": {
+    "status": "PASS_COMPLETE_FIRST_BACKWARD_PRIVATE_TRACE_NO_LOSS",
+    "trace": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_no_prewarm_execution_v3/trace/trace.txt",
+      "bytes": 199734,
+      "sha256": "dd4b9e3bd4f7a4d0dfaa177b494d200bc66453f363716cfff052d769d21b9936"
+    },
+    "before": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_no_prewarm_execution_v3/trace/trace_before.json",
+      "bytes": 45257,
+      "sha256": "92cdeaf19f5c6f5456a13cbef179b99201f246581bac858ebbe198de97de5ce0"
+    },
+    "after": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_no_prewarm_execution_v3/trace/trace_after.json",
+      "bytes": 45322,
+      "sha256": "adf88472c8c4535f53faeb3e001dceba867d93498b7918c9a848d2cf7ffa5191"
+    },
+    "profile": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_no_prewarm_execution_v3/trace/kprobe_profile.txt",
+      "bytes": 158,
+      "sha256": "0cd032ed75d4d1612a84996c686ad0ce61984f158be3794cd17812f423bf7407"
+    },
+    "host_target_tgid": 218309,
+    "entries": 1612,
+    "complete_CPU_counts": true,
+    "all_dynamic_events": {
+      "queue_eviction": 17,
+      "queue_restore": 16
+    },
+    "target_dynamic_events": {
+      "queue_eviction": 17,
+      "queue_restore": 16
+    },
+    "physical_CWSR_proven": false,
+    "GPU_actions": false,
+    "limits": [
+      "CPU queue helper records are lifecycle attempts and do not prove the interrupted GPU instruction or hardware CWSR completion."
+    ]
+  },
+  "eviction_stacks": {
+    "trace": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_no_prewarm_execution_v3/trace/trace.txt",
+      "bytes": 199734,
+      "sha256": "dd4b9e3bd4f7a4d0dfaa177b494d200bc66453f363716cfff052d769d21b9936"
+    },
+    "per_cpu_count": 256,
+    "statistics": {
+      "entries": 1612,
+      "overrun": 0,
+      "commit overrun": 0,
+      "dropped events": 0
+    },
+    "evictions": 17,
+    "restores": 16,
+    "eviction_causes": {
+      "numa_protection_scan": 14,
+      "fork": 2,
+      "exit": 1
+    },
+    "combined_NUMA_evictions": 14,
+    "all_dynamic_event_counts": {
+      "queue_eviction": 17,
+      "queue_restore": 16
+    },
+    "profile": {
+      "queue_eviction": {
+        "hits": 17,
+        "misses": 0
+      },
+      "queue_restore": {
+        "hits": 16,
+        "misses": 0
+      }
+    },
+    "eviction_stacks": [
+      {
+        "line": 294,
+        "time": "15781.087013",
+        "cpu": 66,
+        "actor_tid": 218309,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218309  [066] ..... 15781.087013: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "exc_page_fault",
+          "asm_exc_page_fault"
+        ],
+        "stack_time": "15781.087023",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 315,
+        "time": "15785.540166",
+        "cpu": 206,
+        "actor_tid": 218309,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218309  [206] ..... 15785.540166: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "copy_page_range",
+          "dup_mmap",
+          "dup_mm.constprop.0",
+          "copy_process",
+          "kernel_clone",
+          "__do_sys_clone",
+          "__x64_sys_clone",
+          "x64_sys_call",
+          "do_syscall_64",
+          "entry_SYSCALL_64_after_hwframe"
+        ],
+        "stack_time": "15785.540177",
+        "cause": "fork"
+      },
+      {
+        "line": 336,
+        "time": "15786.893031",
+        "cpu": 96,
+        "actor_tid": 218309,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218309  [096] ..... 15786.893031: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "sysvec_apic_timer_interrupt",
+          "asm_sysvec_apic_timer_interrupt"
+        ],
+        "stack_time": "15786.893043",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 357,
+        "time": "15787.083024",
+        "cpu": 224,
+        "actor_tid": 218309,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218309  [224] ..... 15787.083024: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "sysvec_apic_timer_interrupt",
+          "asm_sysvec_apic_timer_interrupt"
+        ],
+        "stack_time": "15787.083032",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 378,
+        "time": "15787.116157",
+        "cpu": 192,
+        "actor_tid": 218309,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218309  [192] ..... 15787.116157: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "copy_page_range",
+          "dup_mmap",
+          "dup_mm.constprop.0",
+          "copy_process",
+          "kernel_clone",
+          "__do_sys_clone",
+          "__x64_sys_clone",
+          "x64_sys_call",
+          "do_syscall_64",
+          "entry_SYSCALL_64_after_hwframe"
+        ],
+        "stack_time": "15787.116168",
+        "cause": "fork"
+      },
+      {
+        "line": 479,
+        "time": "15788.083007",
+        "cpu": 192,
+        "actor_tid": 218309,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218309  [192] ..... 15788.083007: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "sysvec_apic_timer_interrupt",
+          "asm_sysvec_apic_timer_interrupt"
+        ],
+        "stack_time": "15788.083016",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 528,
+        "time": "15789.078004",
+        "cpu": 213,
+        "actor_tid": 218309,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218309  [213] ..... 15789.078004: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "sysvec_apic_timer_interrupt",
+          "asm_sysvec_apic_timer_interrupt"
+        ],
+        "stack_time": "15789.078009",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 557,
+        "time": "15789.277007",
+        "cpu": 85,
+        "actor_tid": 218309,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218309  [085] ..... 15789.277007: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "sysvec_apic_timer_interrupt",
+          "asm_sysvec_apic_timer_interrupt"
+        ],
+        "stack_time": "15789.277010",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 626,
+        "time": "15790.691010",
+        "cpu": 215,
+        "actor_tid": 218729,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218729  [215] ..... 15790.691010: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "syscall_exit_to_user_mode",
+          "do_syscall_64",
+          "entry_SYSCALL_64_after_hwframe"
+        ],
+        "stack_time": "15790.691016",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 750,
+        "time": "15794.622008",
+        "cpu": 96,
+        "actor_tid": 218309,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218309  [096] ..... 15794.622008: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "sysvec_apic_timer_interrupt",
+          "asm_sysvec_apic_timer_interrupt"
+        ],
+        "stack_time": "15794.622017",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 859,
+        "time": "15797.724006",
+        "cpu": 195,
+        "actor_tid": 218729,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218729  [195] ..... 15797.724006: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "sysvec_apic_timer_interrupt",
+          "asm_sysvec_apic_timer_interrupt"
+        ],
+        "stack_time": "15797.724010",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 1068,
+        "time": "15803.739007",
+        "cpu": 97,
+        "actor_tid": 218309,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218309  [097] ..... 15803.739007: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "sysvec_apic_timer_interrupt",
+          "asm_sysvec_apic_timer_interrupt"
+        ],
+        "stack_time": "15803.739015",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 1165,
+        "time": "15807.220008",
+        "cpu": 64,
+        "actor_tid": 218729,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218729  [064] ..... 15807.220008: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "sysvec_apic_timer_interrupt",
+          "asm_sysvec_apic_timer_interrupt"
+        ],
+        "stack_time": "15807.220017",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 1314,
+        "time": "15811.202006",
+        "cpu": 215,
+        "actor_tid": 218729,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218729  [215] ..... 15811.202006: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "sysvec_apic_timer_interrupt",
+          "asm_sysvec_apic_timer_interrupt"
+        ],
+        "stack_time": "15811.202010",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 1551,
+        "time": "15816.949007",
+        "cpu": 214,
+        "actor_tid": 218729,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "         python3-218729  [214] ..... 15816.949007: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "sysvec_apic_timer_interrupt",
+          "asm_sysvec_apic_timer_interrupt"
+        ],
+        "stack_time": "15816.949011",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 1820,
+        "time": "15827.724007",
+        "cpu": 96,
+        "actor_tid": 219892,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 0
+        },
+        "text": "   pt_autograd_0-219892  [096] ..... 15827.724007: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=0",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "svm_range_cpu_invalidate_pagetables",
+          "__mmu_notifier_invalidate_range_start",
+          "change_pud_range.isra.0",
+          "change_protection_range",
+          "change_protection",
+          "change_prot_numa",
+          "task_numa_work",
+          "task_work_run",
+          "irqentry_exit_to_user_mode",
+          "irqentry_exit",
+          "sysvec_apic_timer_interrupt",
+          "asm_sysvec_apic_timer_interrupt"
+        ],
+        "stack_time": "15827.724016",
+        "cause": "numa_protection_scan"
+      },
+      {
+        "line": 1909,
+        "time": "15832.382735",
+        "cpu": 127,
+        "actor_tid": 219395,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179,
+          "trigger": 1
+        },
+        "text": " async-executor--219395  [127] ..... 15832.382735: queue_eviction: (kfd_smi_event_queue_eviction+0x0/0xa0 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080 trigger=1",
+        "frames": [
+          "kprobe_trace_func",
+          "kprobe_dispatcher",
+          "kprobe_ftrace_handler",
+          "0xffffffffc299a0f5",
+          "kfd_smi_event_queue_eviction",
+          "kgd2kfd_quiesce_mm",
+          "amdgpu_amdkfd_evict_userptr",
+          "amdgpu_hmm_invalidate_hsa",
+          "__mmu_notifier_release",
+          "exit_mmap",
+          "mmput",
+          "exit_mm",
+          "do_exit",
+          "do_group_exit",
+          "get_signal",
+          "arch_do_signal_or_restart",
+          "syscall_exit_to_user_mode",
+          "do_syscall_64",
+          "entry_SYSCALL_64_after_hwframe"
+        ],
+        "stack_time": "15832.382748",
+        "cause": "exit"
+      }
+    ],
+    "restore_events": [
+      {
+        "line": 314,
+        "time": "15781.107046",
+        "cpu": 128,
+        "actor_tid": 17864,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "   kworker/128:2-17864   [128] ..... 15781.107046: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 335,
+        "time": "15785.807094",
+        "cpu": 195,
+        "actor_tid": 104038,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "   kworker/195:1-104038  [195] ..... 15785.807094: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 356,
+        "time": "15786.897613",
+        "cpu": 96,
+        "actor_tid": 103990,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "    kworker/96:0-103990  [096] ..... 15786.897613: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 377,
+        "time": "15787.087445",
+        "cpu": 224,
+        "actor_tid": 2114,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "   kworker/224:1-2114    [224] ..... 15787.087445: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 398,
+        "time": "15787.337070",
+        "cpu": 196,
+        "actor_tid": 78018,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "   kworker/196:0-78018   [196] ..... 15787.337070: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 499,
+        "time": "15788.088003",
+        "cpu": 192,
+        "actor_tid": 122732,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "   kworker/192:1-122732  [192] ..... 15788.088003: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 548,
+        "time": "15789.083986",
+        "cpu": 213,
+        "actor_tid": 1540,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "   kworker/213:0-1540    [213] ..... 15789.083986: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 577,
+        "time": "15789.281452",
+        "cpu": 85,
+        "actor_tid": 112041,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "    kworker/85:0-112041  [085] ..... 15789.281452: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 645,
+        "time": "15790.697109",
+        "cpu": 215,
+        "actor_tid": 104237,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "   kworker/215:2-104237  [215] ..... 15790.697109: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 770,
+        "time": "15794.627249",
+        "cpu": 96,
+        "actor_tid": 103990,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "    kworker/96:0-103990  [096] ..... 15794.627249: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 879,
+        "time": "15797.730127",
+        "cpu": 195,
+        "actor_tid": 104038,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "   kworker/195:1-104038  [195] ..... 15797.730127: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 1088,
+        "time": "15803.744502",
+        "cpu": 97,
+        "actor_tid": 1987,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "    kworker/97:1-1987    [097] ..... 15803.744502: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 1185,
+        "time": "15807.225252",
+        "cpu": 64,
+        "actor_tid": 219648,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "    kworker/64:0-219648  [064] ..... 15807.225252: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 1334,
+        "time": "15811.207217",
+        "cpu": 215,
+        "actor_tid": 104237,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "   kworker/215:2-104237  [215] ..... 15811.207217: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 1571,
+        "time": "15816.954198",
+        "cpu": 214,
+        "actor_tid": 2096,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "   kworker/214:1-2096    [214] ..... 15816.954198: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      },
+      {
+        "line": 1840,
+        "time": "15827.729507",
+        "cpu": 96,
+        "actor_tid": 103990,
+        "fields": {
+          "target_pid": 218309,
+          "target_tgid": 218309,
+          "gpu_id": 56179
+        },
+        "text": "    kworker/96:0-103990  [096] ..... 15827.729507: queue_restore: (kfd_smi_event_queue_restore+0x0/0x90 [amdgpu]) target_pid=218309 target_tgid=218309 gpu_id=56179 node=0xff3c1a8456b51800 task=0xff3c1a98e679b080",
+        "frames": []
+      }
+    ],
+    "unattached_stack_events": [],
+    "limits": [
+      "Queue events and CPU stacks identify eviction causes; they do not identify the exact interrupted GPU instruction.",
+      "Restore and eviction counts are reported independently; an exit eviction need not have a restore."
+    ]
+  },
+  "actual_driver": {
+    "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+    "driver": {
+      "version": "7.1.1.31300009",
+      "srcversion": "AD83C153B9701570F12964E"
+    },
+    "parameters": {
+      "cwsr_enable": "1",
+      "sched_policy": "0",
+      "noretry": "-1",
+      "gpu_recovery": "-1",
+      "ip_block_mask": "4294967295",
+      "halt_if_hws_hang": "0",
+      "uni_mes": "1"
+    }
+  },
+  "firmware": {
+    "authority": {
+      "bytes": 1365,
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/activation_adjudication/loaded_firmware.json",
+      "sha256": "243b6402edc04e6c121976a5f56d79b18cc707f4fbe3df55ebfd45caf3fc55fd"
+    },
+    "versions": {
+      "mec_fw_version": "0x00000956",
+      "mes_fw_version": "0x0000007b",
+      "mes_kiq_fw_version": "0x0000007b",
+      "rlc_fw_version": "0x0000001f",
+      "sdma2_fw_version": "0x00893547",
+      "sdma_fw_version": "0x00893547",
+      "smc_fw_version": "0x027d0701",
+      "ta_ras_fw_version": "0x1b440004",
+      "vcn_fw_version": "0x0910d008"
+    },
+    "pci": "0001:01:00.0",
+    "official_0x7e_test": false,
+    "method": "Cached driver fields via read-only sysfs; no GPU commands/debugfs/MMIO"
+  },
+  "source_pins_unchanged": true,
+  "rejected_kernel_deltas": [],
+  "no_prewarm_vs_current_full_prewarm_first_two_steps": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prewarm_vs_noprewarm_scalars_v1/COMPARISON.json",
+    "bytes": 3166,
+    "sha256": "278d60290a6adc8803430ef083bd8cf841dbda8abf1e3f78225d59c10888f379"
+  },
+  "scalar_comparison_summary": [
+    {
+      "step": 1,
+      "scans": 68,
+      "summary_pairs": 379,
+      "selected_geometry_and_nonvalue_summary_fields_equal": true,
+      "different_summary_count": 1
+    },
+    {
+      "step": 2,
+      "scans": 68,
+      "summary_pairs": 379,
+      "selected_geometry_and_nonvalue_summary_fields_equal": true,
+      "different_summary_count": 1
+    }
+  ],
+  "limits": [
+    "This is two-step journal coverage; no complete endpoint tensor audit was scheduled or produced.",
+    "The boot was already used for full FBGEMM prewarm. Fresh-process success without helper does not establish cold-boot success or isolate firmware.",
+    "Current corrected driver and MES0x7b remained unchanged. Historical driver/source/boot/MES differences remain confounders.",
+    "Only timestamp-embedding gradient extrema differ in the compared scalar summaries, all finite; FP32 reduction ordering remains a hypothesis rather than proven cause."
+  ]
+}

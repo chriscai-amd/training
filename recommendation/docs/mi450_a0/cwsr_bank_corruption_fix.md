@@ -1,7 +1,229 @@
 # MI450 gfx1250 CWSR register-bank corruption
 
-Updated 2026-09-22 UTC after the second host AC cycle and the subsequent
-CPU-only preparation reviews. The corrected CWSR
+Updated 2026-09-23 UTC. **Investigation paused at the user's request.** No GPU
+workload is running; the 06:48 UTC all-task device-descriptor scan was idle.
+Witness v2 and its training integration are source-reviewed, with no actual
+binding, staging or GPU result. The
+[pause checkpoint](evidence/current_20260923/session_pause.json) and
+[handoff](/home/chcai/handoff/nan_handoff.md) supersede earlier active-work instructions.
+
+The pause's saved kernel delta contains one complete corrected CPU8/MC60
+record and retained rsyslogd/AppArmor and suppression messages. Independent
+replay passes the unchanged diagnostic policy; service-actor attribution and
+platform-health clearance do not follow. Fresh live gates remain required.
+
+The new boot `b685ba14-e2ad-4751-b755-2e7bba3b58fa` initially had AMDGPU absent. A package
+reinstall changed the installed module to srcversion
+`EADFD8EC13CF3E6B329194E`, restored the exact faulty 5,656-byte handler, removed
+custom GL2 controls and changed retry-bit initialization. Disk and initramfs
+unified MES are `0x7b`, not the reported testing `0x17d` or intended official
+`0x7e`; prior run-specific MES identities remain unverified.
+
+A fresh candidate against this current source has passed independent CPU
+byte/symbol/relocation audit: srcversion `AD83C153B9701570F12964E`, SHA256
+`78de19854e38e298f6418bddcfa39f44a797f811f0f4b9c585482f4c4dc2b2b4`.
+The subsequent guarded first load completed at 00:23:14 UTC, with both loaded
+MES attributes reporting `0x0000007b`; driver/CWSR, kernel-delta and idle
+checks passed. Health/sentinels passed at 00:28 UTC: 4,000 exact checks,
+14 preserved tag/MODE/EXEC cases and seven exact return PCs, with both
+producers exited and all devices idle. One known corrected MC60 record
+preceded health launch; none occurred during the producers or final checks.
+Tests on `0x7b` are labeled with that version; no evidence establishes `0x7b` as defective or `0x7e`
+as installed. The MES report is relevant to queue hangs and does not undo
+the deterministic CWSR proof. Firmware and the other source changes must
+remain separate variables in any causal comparison.
+[Complete platform transition evidence](evidence/current_20260923/platform_transition.json).
+The follow-up native/source audit confirms preserved KFD user-queue retry
+programming and byte-identical selected MES add-queue code. Removed optional
+GL2 writes remain a conditional confound: invocation during the stall is
+unproved, and initialization instrumentation only read the registers.
+[Detailed GL2/retry/PM4 comparison and independent review](evidence/current_20260923/GL2_retry_stall_source.json).
+[Current first load and firmware receipt](evidence/current_20260923/current_first_load.json).
+[Current health and register sentinels](evidence/current_20260923/current_health_sentinels.json).
+[Independent retained-health review and MC60 timing](evidence/current_20260923/current_health_peer.json).
+
+The current stack also passed the LN/tiny-attention matrix: 24 processes,
+36 dispatches, all 856 raw files and 1,024 native pins verified by the
+complete consumer. Full historical attention also passed four arms/eight
+calls, with all 144 raw hashes equal to the prior corrected run and an
+independently verified lossless archive of all 13,053,235,840 bytes.
+[Current component result](evidence/current_20260923/current_components.json).
+[Current historical attention and archive](evidence/current_20260923/current_full_attention.json).
+
+Historical step-405 DW then passed on this current stack: all 16 full outputs
+equal the ordinary baseline. The complete consumer rehashed 14,280,812,544
+input bytes; the verified archive reconstructs every one of the 44 raw paths,
+with raw retained. Two known corrected CPU8/MC60 records occurred after
+attention, one during the final DW producer, under the existing diagnostic
+exception. Three SVM restore-work CPU-hog warnings accompanied successful
+completion; those warnings alone do not identify the earlier training hang.
+[Current complete DW and archive](evidence/current_20260923/current_historical_DW.json).
+
+The first current natural-DW attempt stopped before HIP initialization or
+worker release because its trace checker rejected `1*` for the enabled
+queue-eviction event with a stacktrace trigger. No numerical call ran.
+The worker expired normally; worker and launcher are absent, global tracing
+was restored, and final idle/kernel checks passed at 01:01 UTC. The frozen
+failed attempt is retained in the fresh reviewed contract's predecessor chain.
+[Pre-HIP failure and cleanup](evidence/current_20260923/natural_DW_preHIP_abort.json).
+
+Natural DW v2 then completed all 1,000 calls on the unchanged vulnerable
+`sink_control` kernel, with all 131,072,000 BF16 words positive zero. Complete
+and independent repeat audits verified all 172 packet bytes per call,
+output/prefill checks and 3,570,465,280 input bytes. The lossless trace has
+1,087 records and 18 relevant AutoNUMA/SVM eviction–restore pairs in 18 call
+envelopes, without loss or probe misses. Worker exit, final idle and unchanged
+kernel logs passed at 01:11:58 UTC. Those windows establish relevant exposure,
+not physical CWSR acknowledgement, an interrupted PC or bank state.
+[Current natural-DW complete result](evidence/current_20260923/current_natural_DW.json).
+The full-FBGEMM-prewarm E2E experiment completed all 1,000 steps and exited.
+The complete 38.56 GB payload audit passed all 166 tensor views, with zero
+nonfinite or extreme values. Strict trace-controller failure is retained:
+seven new disabled TLS event entries changed its global-inventory comparison,
+while existing controls and the complete private trace remained intact.
+The separate exact TLS-inventory adjudication passed at 02:30:31 UTC with
+fresh idle/driver/firmware/kernel gates and unchanged source authorities.
+It preserves both strict failure receipts and `global_state_unchanged=false`.
+Durable archival and independent complete decompression passed at 02:44:45
+UTC, preserving all 38,556,636,485 raw bytes in a 19,557,008,930-byte archive.
+The original/current comparison has matching settings, RNG and scan geometry
+but finite scalar/loss/endpoint differences; the first scalar difference is
+about `1.16e-10` in the step-1 timestamp-embedding gradient extrema.
+[Completed distinct adjudication](evidence/current_20260923/current_E2E_TLS_adjudication.json).
+[Verified archive and numerical comparison](evidence/current_20260923/current_E2E_archive_and_comparison.json).
+Two known corrected CPU8/MC60 records matched the frozen diagnostic policy
+and training continued. Numerical progress does not certify platform health.
+[Current E2E numerical pass and preserved strict trace failure](evidence/current_20260923/current_E2E_numerical_and_trace_gate.json).
+
+The current corrected-driver projection quartet also passed all four arms
+and 16 calls, including the unequal-bank trap case. Every output BF16 word
+is positive zero; the four previously corrupted positions are corrected.
+The complete consumer checked all 212 packet bytes per call, 32.11 GB of
+outputs and 32.11 GB of inputs, with verified lossless archives and complete
+trace/lifecycle checks. All four saved independent reviews passed. The
+whole-worker queue-helper counts do not identify physical CWSR during the
+four GEMMs. Loaded driver and MES `0x7b` were unchanged.
+[Current projection quartet and exact receipts](evidence/current_20260923/current_projection.json).
+
+A fresh process without the prewarm helper then passed two backward/optimizer
+steps on the same current stack. The complete scalar-journal, trace, process
+exit and final idle/kernel checks passed, with no anomaly and empty kernel
+deltas. The journal checks 367 finite summaries and 12 zero comparisons per
+step; no full endpoint tensor audit was scheduled. Only tiny finite
+timestamp-embedding gradient-extrema differences appear against the first
+two full-prewarm steps. This weakens the claim that explicit prewarm is
+required for every fresh process on this boot, but earlier prewarm and other
+platform changes still prevent cold-boot or MES-only attribution.
+[No-prewarm two-step result and independent review](evidence/current_20260923/current_no_prewarm_two_steps.json).
+
+The subsequent no-prewarm run completed **1,000 backward passes and optimizer
+updates**. Its original complete consumer passed at **05:23:09 UTC**, followed
+by independent saved review of 68,000 scans, 42,000 endpoints, 367,000 finite
+summaries and 12,000 zero comparisons. There was no journal alarm or anomaly
+dump; no full endpoint tensor audit was scheduled. The complete private trace
+and process/idle/driver/MES continuity checks passed. The training interval
+contains three corrected MC60 records admitted by the existing diagnostic
+policy, 173 rsyslogd AppArmor denials and 14 shared-printk suppression notices.
+One further MC60 record predates the run. The suppression prefix does not
+recover omitted messages or prove all were audit records; private ftrace
+integrity passed its separate complete audit. No platform-health clearance.
+
+All 379,000 full-prewarm/no-prewarm scalar-summary pairs were compared with
+matching normalized geometry. There are 166,932 different summaries across
+998 steps. The first timestamp-gradient difference is at most `8.73e-11`,
+but the step-583 content-MLP second-Linear bias gradient maximum differs by
+**66.476806640625**: 66.5 without prewarm versus 0.023193359375 with prewarm.
+Finite gradient divergence remains under investigation. Summary equality
+does not establish tensor equality, and same-boot history limits attribution.
+[Completed no-prewarm 1,000-step audit and comparison](evidence/current_20260923/current_no_prewarm_1000_steps.json).
+
+The follow-up complete bound analysis found **one conditional inconsistency
+among 18,000 projection DX/DW/DB checks** across both 1,000-step runs. At
+no-prewarm step 583, STU1 `DX = torch.mm(DZ, W.T)` has recorded max magnitude
+0.0458984375 versus the recorded-input triangle bound 2.1943822503089905e-5,
+a factor of 2,091.63. The next weighted-LN input repeats the DX extrema.
+The independently pinned source has no scale or addend in that matrix product.
+STU1 only has deferred reductions of its original tensors; the extra complete
+pre/post snapshots belong to STU2. Scalar fidelity, consumed-operand continuity,
+native execution and unordered writes therefore remain unresolved. Ordinary
+roundoff under the stated FP32/BF16 model cannot close this gap, and later
+LayerNorm sensitivity alone cannot explain it. The original absolute alarm
+threshold was 1e6, so this finite case produced no raw failure capture.
+The next training diagnostic has a targeted STU1 tensor and scalar witness
+prepared, with GPU execution deferred until the user resumes.
+[Conditional bounds and independent source/observation audit](evidence/current_20260923/current_STU1_DX583.json).
+
+Witness v2 retains original W/DZ objects before the public call and original
+DX after it. It adds no GPU operation, clone or boundary readback before a
+trigger; it does prolong allocations and change allocator history. At the
+existing post-backward flush, a conditional GEMM-bound trigger saves actual
+scalar endpoints, the stacked batch and original reader rows, plus two
+sequential compact CPU observations of complete W and one selected DZ/DX
+row. An exact integer BF16 dot-product check tests the selected coordinate.
+These are post-backward observations and cannot prove the bytes consumed by
+the original GEMM. The trigger stops before explicit clipping/optimizer;
+fused sparse updates can already occur within backward. The original 68
+scans, 367 summaries, STU2 full capture and generic alarms are retained.
+
+The frozen v2 runtime differs from v1 only in its 16 → 24 GiB reference cap.
+Saved steps 720 and 721 require 17,316,032,512 and 19,720,481,792 bytes of
+compact references, respectively. Both small output files remain capped at
+16 MiB. Nineteen author CPU methods and 16 independent cap cases passed;
+17 root and 26 independent training integration cases passed, with eight
+additional controller/auditor cases covering preserved failure handling.
+The unchanged small consumer also passed actual complete and scalar-only
+bootstrap runs with generated artifacts in containers without GPU devices.
+Two earlier CPU-autograd tests in a GPU-visible container opened device
+descriptors despite a false CUDA-initialized flag; their failed isolation
+receipts remain. They were reaped before the successful isolated reviews.
+[Exact source, reviews, bootstrap and prospective decision table](evidence/current_20260923/current_STU1_witness_preparation.json).
+
+The saved step-583 timing analysis found no nominal helper-span or complete
+MC60 overlap; the closest preceding restore ended 1.143 s before scan30
+enqueue. It uses an endpoint clock-hull assumption without a local clock
+bracket. Host enqueue time is not GPU execution time, so CWSR involvement
+remains unresolved. Matching operand extrema do not establish tensor equality.
+The following LN bias extrema equal four times DX extrema after BF16 rounding;
+that scalar pattern does not establish four corrupt rows or a bank route.
+
+The original **400 NOP-only long-plateau probes** also passed. All tags remain
+unchanged in every packet. Ten fresh in-plateau return PCs have matching
+target AutoNUMA/SVM eviction–restore pairs, including mode `0x46` at ordinals
+75 and 239. This adds natural preservation evidence for `v513 → v257` under
+the corrected handler. The complete consumer audited 1,200 raw images,
+2,410 HIP calls, private trace and saved lifecycle; independent saved-result
+review reproduced the complete result. Zero explicit traps were requested. These observations
+do not reconstruct original step101/405 events or supply physical CWSR
+acknowledgments. Natural historical nonzero-DY DW subsequently passed all
+1,000 calls with exact full-baseline equality, including first-call qualification.
+Independent review verified every output/prefill word, full input bytes and
+172 native argument bytes per call. Fourteen qualifying SVM pairs overlap
+14 call envelopes, with no private trace loss.
+[Complete natural nonzero-DY result](evidence/current_20260923/current_natural_nonzero_DW.json).
+[Current plateau400 result and exposure limits](evidence/current_20260923/current_plateau400.json).
+
+Storage cleanup completed at **04:06:36 UTC**, retiring exactly 18 obsolete
+successful/requested snapshots and reclaiming **530,390,228,992 allocated
+durable bytes**. The group contains eight finite boundary captures, one
+requested healthy attention capture, two healthy forced-replay base storages,
+six older finite diagnostic frames and the September 22 finite E2E archive.
+Their reports, manifests, source/native records and historical failure
+verdicts remain. The original retired snapshot bytes have no replacement
+archive, so direct raw reruns and full rescans of those snapshots are no
+longer available. The two base storages had different full hashes; this was
+intentional retirement rather than duplicate-file consolidation. Both base
+capture directories now carry verified `RETIRED.json` and `README_RETIRED.md`
+notices while preserving their original compact metadata and reports.
+All unique numerical failure evidence, current datasets, the long-step101
+base and the current September 23 E2E raw capture/archive remain protected.
+All 336 then-pending no-prewarm source pins were verified and contain no selected
+capture reference. The full `/home/chcai` measurement at **06:48:06 UTC** is
+**992,334,336,000 bytes**, below decimal 1 TB by **7,665,664,000 bytes**.
+Cumulative reclamation is **897,569,296,384 durable allocated bytes** plus
+**77,197,692,928 tmpfs bytes**.
+[Exact retirement scope, retained evidence and allocation receipt](evidence/current_20260923/storage_cleanup.json).
+
+The following completed results describe September 22 AC2. The corrected CWSR
 candidate was first-loaded on fresh boot
 `6478859b-3092-4792-a933-e91c311f2cd1`, with version `7.1.1.31300009`,
 srcversion `8336BBB74E6C4D53275A4E5` and CWSR enabled. Actual GPU tests now
@@ -10,7 +232,7 @@ NaNs, tiny and full historical attention corruption, and the complete
 historical step-405 DW corruption. Native kernels, inputs and launch
 parameters match the original-driver comparisons.
 
-| Corrected-driver test on this boot | Completed result |
+| Corrected-driver test on AC2 | Completed result |
 |---|---|
 | Health and sentinels | 4,000 exact health checks; all 14 tag/MODE/EXEC cases preserved and all seven explicit trap return PCs exact |
 | LayerNorm and tiny attention | All 24 processes / 36 dispatches pass; all 3,586 reproduced LN NaNs and all 512 tiny-attention wrong DQ words absent |
@@ -22,7 +244,7 @@ All producers exited and final all-device idle gates passed. The full
 attention capture also has a verified lossless archive, with raw retained.
 [Actual AC2 results, receipts and scope](evidence/current_20260919/CWSR_candidate_AC2_validated_20260922.json).
 
-**End-to-end training is still unvalidated.** On the preceding candidate
+**Earlier corrected-driver runs did not complete training.** On the preceding candidate
 boot `2001b9f5-abbc-4032-a56f-9d41a57de7f3`, health, LayerNorm and attention
 also passed, but default-policy E2E1000 stalled during its first backward
 pass in a shader-loading PM4 code-cache invalidation wait. It produced no
@@ -49,9 +271,9 @@ earlier nonprogressing training kernel caused the wait.
 
 After more than 15 minutes without journal progress, only the owned
 supervisor received SIGINT through a verified pidfd. The worker and launcher
-remain preserved; the final idle gate failed and the private trace is
-stopped. Further GPU experiments require recovery through a new host AC
-cycle. No driver reset, reload or recovery diagnostic was attempted.
+were preserved; the final idle gate failed and the private trace was
+stopped. That boot required recovery through a new host AC cycle. Its PIDs
+are historical. No driver reset, reload or recovery diagnostic was attempted.
 [Targeted-preload stall evidence](evidence/current_20260919/CWSR_candidate_AC2_E2E_targeted_stall_20260922.json).
 
 The earlier strict post-load MC60 stop is preserved as historical evidence.
@@ -73,14 +295,16 @@ was used for AC2 validation.
 The component to repair is the AMDGPU/KFD **first-level CWSR trap handler**,
 specifically `VMEM_ON_TRAP_ENTRY_WA` at `L_NOT_WAVE_START` in
 [the installed gfx12 handler source](/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/cwsr_trap_handler_gfx12.asm:261).
-The installed original module is
-preserved on disk: `7.1.1.31300009`, srcversion `654C1DDE7A9A3E129BA9553`.
+The original comparison module was `7.1.1.31300009`, srcversion
+`654C1DDE7A9A3E129BA9553`; its authenticated scratch baseline is retained.
+The September 22 reinstall replaced the installed file as described above.
 
 **This is a confirmed defect, not a demonstrated sole remaining E2E cause.**
-The candidate E2E attempt used a handler already validated by component
-tests, but stalled before a numerical verdict. The evidence does not yet
-establish that this patch alone unblocks training, or that existing source
-fixes and execution workarounds can be removed.
+The earlier candidate E2E attempt stalled before a numerical verdict. The
+September 23 corrected-driver full-prewarm run completed 1,000 numerical
+steps, followed by successful two-step and 1,000-step no-prewarm runs. Changes to driver source, boot and
+prewarm history prevent assigning the new training completion to the CWSR
+patch alone. Existing independent source fixes remain necessary.
 
 The handler reads encoded `v1` through the inherited SRC0 bank, temporarily
 writes encoded `v1` through the inherited destination bank, then restores the
@@ -218,9 +442,21 @@ Complete final W/DZ bytes are unchanged across all arms, and all 212 native
 launch-argument bytes match the reviewed packet apart from recorded dynamic
 pointers. The full 64.22 GB of retained raw data has verified compressed
 archives. This demonstrates the predicted copy's effect and prevention by
-equalizing the banks at the injected trap; actual corrected-driver repair
-and the spontaneous event's original trap history remain unvalidated.
+equalizing the banks at the injected trap. The September 23 corrected-driver
+quartet also passes all four arms / 16 calls, correcting the four predicted
+positions and returning positive zero in every output word. The spontaneous
+event's original trap history remains unobserved.
 [Projection reproduction and controls](evidence/current_20260919/CWSR_projection_controlled_20260922_resume.json).
+[Current corrected-driver projection and complete archive/lifecycle audit](evidence/current_20260923/current_projection.json).
+
+The September 23 corrected-driver projection TLS v3 attempt stopped before
+trace setup or worker creation because its uppercase `TLS` trace name failed
+the unchanged controller's lowercase-only validation. No numerical call ran.
+The failure remains frozen; a separate postfailure gate confirms idle devices,
+unchanged driver/MES, accepted kernel continuity and absent attempt resources.
+Fresh v4 source preserves the native kernels and geometry, corrects generated
+tags, and requires every actual staged plan to pass controller admission.
+[Preserved preworker failure and completed postfailure gate](evidence/current_20260923/projection_v3_preworker_abort.json).
 
 The natural zero-DY comparison also completed: the matched original control
 fails at call 103 with 512 finite wrong BF16 words; the relocated candidate
@@ -359,14 +595,13 @@ historical-input intervention above also passes.
 | A0 preprocessing Linear DW | Controlled copies reproduce the complete attempt-405 gradient. The corrected driver restores the entire baseline in all four unchanged ELF arms / 16 calls, correcting all 1,030 differences. Earlier relocation also protects controlled and bounded natural tests on the original driver. |
 | B0 weighted LayerNorm | The earlier X-load trap on A0 using the published B0 native text produces partial DW column-5 NaNs and six full DX rows (3,072 NaNs). The corrected driver eliminates all NaNs in the full earlier-X-load matrix. The prior late-site test separately produces partial DW/DB column-263 NaNs. Exact historical B0 coordinates and validation on B0 hardware remain open. |
 | Attention backward DQ | Five prescribed traps reproduce every historical FAIL131 output byte, including all 80 wrong DQ words. The corrected driver returns positive-zero DQ/DK/DV for the entire quartet / eight calls. The actual historical trap schedule remains unobserved. |
-| Projection backward DX | The controlled unequal-bank trap produces exactly four predicted wrong DX words; equal-bank trap and both NOP controls preserve all-zero outputs across the complete original geometry. Corrected-driver repair and unique attribution of the spontaneous event remain open. |
+| Projection backward DX | The controlled unequal-bank trap produces exactly four predicted wrong DX words; equal-bank trap and both NOP controls preserve all-zero outputs across the complete original geometry. The corrected-driver quartet passes all 16 calls with every output word positive zero, including the four formerly corrupted positions. The spontaneous event's original trap history remains unobserved. |
 | Historical int32 row-offset overflow | Independently proved source defect with int64 fixes already present. The CWSR correction cannot replace those fixes. |
 
 These controlled results establish a cause of the reproduced NaNs and
 corruption and prevention by the candidate in those tests. They do not prove
 the unique cause of every historical NaN or identify every historical trap
-event. Projection still awaits corrected-driver replay, and shared cause
-cannot be inferred from extended-register use alone. See the
+event. Shared cause cannot be inferred from extended-register use alone. See the
 [A0 component evidence](mi450_a0.md#strongest-evidence) and the
 [B0 LayerNorm limits](../mi450_b0/nan_triage_resume_20260921.md#resumed-debugging-compiled-layernorm-nan-mechanism).
 
@@ -391,16 +626,20 @@ matches to a pre-AMDGPU-load event and no new GPU or uncorrected fault; it
 does not identify the physical hardware cause or replace the strict verdict.
 The trace has 186 evictions and 185 restores, including 166 NUMA protection
 scans and 17 NUMA fault-driven migrations, with no losses or probe misses.
-Processes exited, tracing was removed, and all capture bytes have a verified
-lossless archive. The matched binding run stalled in the first backward's
+Processes exited, tracing was removed, and all capture bytes were losslessly
+archived and verified at completion. This old finite archive was retired in
+the September 23 cleanup; its complete numerical audit and strict lifecycle
+failure evidence remain, but the original raw snapshot cannot now be rescanned.
+The matched binding run stalled in the first backward's
 shader-loading path and has no numerical verdict; balancing-enabled binding
 remains unrun. This original-driver bounded numerical pass is
 separate from corrected-driver validation and long-run stability.
 [Complete E2E audit and kernel caveat](evidence/current_20260919/E2E_default1000_20260922_resume.json).
 
 The loaded corrected handler and the sentinel/LN/attention/historical-DW
-replays now pass. Practical E2E sufficiency remains open because neither
-candidate first-backward stall produced a completed numerical verdict.
+replays pass. The September 23 full-prewarm E2E numerical pass adds bounded
+training coverage; changed platform source, boot and preload prevent crediting
+the CWSR correction alone with resolving the earlier first-backward stalls.
 
 ## Remaining stall components
 
@@ -419,6 +658,7 @@ following components the useful next targets:
 
 | Component | Current evidence | Test that would narrow the cause |
 |---|---|---|
+| MES firmware and changed driver initialization | The reported testing `0x17d` lacks a `remove_queue` hang fix; current disk/initramfs contain `0x7b`. Old logs contain `REMOVE_QUEUE` failures, but the latest AC2 stall lacks a direct MES failure record. The reinstall also changed GL2/retry source. | Pin loaded MES and driver bytes before every test. Compare the same source/CWSR/workload under verified firmware versions on separate recovered boots; a mixed source/firmware transition cannot isolate MES. |
 | FBGEMM registration and deferred executable loading | The supported `linearize_index_kernel` attribute query completed, then `split_embedding_backward_codegen_find_long_segments` in the backward library reached the same Freeze wait. One queried kernel did not cover later code loading. | Query supported registered host keys across the relevant FBGEMM code objects before training; join the actual failing launch key, device and library binding to its prewarm receipt. |
 | ROCr executable Freeze / code-cache PM4 completion | Retained ordinary host memory contains an eight-dword `ACQUIRE_MEM` IB, opcode `0x58`, flags `0x4381`, byte base `0x721c70f80000`, rounded span `0x6ae00` (437,760 bytes). Four captured regions are identical at two observations 160.522 seconds apart. | Establish whether prewarm itself waits before any training kernel, or whether the wait appears only after training begins. Current read/write indices, signal value and hardware residency were not observed. |
 | Earlier asynchronous training execution | A later code-freeze wait can be the first host-visible wait after an earlier kernel stopped progressing. The pending FBGEMM kernel name alone does not identify that earlier work. | A separate first-backward run with `HIP_LAUNCH_BLOCKING=1` and complete launch entry/return records can locate the first nonreturning covered launch. Keep prewarm coverage identical to its asynchronous comparison. |
@@ -449,11 +689,13 @@ derived into fresh reviewed packages before another GPU run.
 
 | Purpose | Retained entry and required evidence |
 |---|---|
+| STU1 step-583 bound finding and next diagnostic | [Complete saved-bound analysis](evidence/current_20260923/current_STU1_DX583.json), [frozen witness v2 instructions](/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_witness_source_v2/INTEGRATION.md), [prepared request/reviews](evidence/current_20260923/current_STU1_witness_preparation.json), [resume argv](/home/chcai/mi450_logs/root_cause_20260919/session_20260923_pause_wrap_v1/RESUME_COMMANDS.json). Historical STU1 raw was not retained. The prospective 1,000-step witness has no runtime or result and still requires actual binding/release and live gates. |
+| Current natural nonzero-DY DW | [Completed source, consumer, peer and archive](evidence/current_20260923/current_natural_nonzero_DW.json). All 1,000 outputs match baseline; 14 qualifying SVM pairs. Five raw files were fully round-trip verified, archived and released. Restore and hash before raw replay; use fresh reviewed runtime paths. |
 | Corrected-driver health, 14 sentinels, LN20 and tiny attention, then full FAIL131 attention | [AC2 prerequisite package](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_prerequisites_v1/README.md), [command arrays](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_prerequisites_v1/COMMANDS.json). `run_health.py` and `run_downstream.py` bind the frozen producers; the component consumer, complete attention raw audit and verified archive are required. |
 | Complete historical step405 DW quartet | [DW package](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_DW_v1/README.md), [command arrays](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_DW_v1/COMMANDS.json). `supervise.py --execute-quartet` runs four arms / 16 calls; `audit_completed.py` without `--arm` supplies the complete result. Supervisor success alone is explicitly pending that consumer. |
 | Preserved single-kernel-preload E2E stall | [Targeted E2E package](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_targeted_E2E_v1/README.md), [command arrays](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_targeted_E2E_v1/COMMANDS.json). Seed 1, batch 1024, default NUMA policy, original asynchronous configuration and 1,000-step bound; actual completion was zero steps. |
-| Natural zero-DY DW on the corrected driver | [Reviewed source preparation v3](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_natural_DW_package_v3/READY.json), [next-boot plan](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_natural_DW_package_v3/NEXT_BOOT_PLAN.md). No runtime staging or execution occurred. The old contract still requires a successful targeted-E2E predecessor, which does not exist; the new contract must instead follow completed historical DW. |
-| Broader FBGEMM prewarm | [Helper and inventory description](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_fbgemm_prewarm_full_v1/README.md), [worker integration](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_fbgemm_prewarm_full_v1/INTEGRATION.md). Stage/pin `prewarm_fbgemm.py`, `prewarm_support.py` and selected `prewarm_manifest_v2.json` together; call after the actual same-worker pre-HIP gate release and before diagnostic training entry. |
+| Natural zero-DY DW on the corrected driver | [Current completed result](evidence/current_20260923/current_natural_DW.json): unchanged vulnerable kernel PASS1000 with 18 relevant SVM pairs. Fresh v2 follows completed current historical DW and clean pre-HIP abort cleanup; the old v3 package remains historical. |
+| Broader FBGEMM prewarm | [Helper and inventory description](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_fbgemm_prewarm_full_v1/README.md), [worker integration](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_fbgemm_prewarm_full_v1/INTEGRATION.md). The September 23 worker passed all 226 selected queries and completed 1,000 numerical steps; full tensor audit, exact TLS-inventory adjudication and verified archive passed. Original strict trace failure is retained. |
 | Separate serialization or no-fork control | [Installed-HIP serialization analysis](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_serialization_semantics_v1/RESULT.md), [independent ELF review](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_serialization_semantics_peer_v1/review.json), [DataLoader fork evidence](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_root_v1/TARGETED_STALL_FORK_CONTROL.md). Neither diagnostic has been launched. |
 
 The broader prewarm CPU inventory covers 18 host libraries, 227 fatbinary
@@ -465,9 +707,13 @@ The author CPU audit checked all representatives, 2,912 saved mapping ranges,
 2,034 instruction sequences and six success/failure fixtures. The subsequent
 [root runtime-helper review](/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_root_v1/fbgemm_helper_root_review.json)
 passed; separate registration/constructor/duplicate-handling peer review
-remains pending. No GPU helper run has occurred. A future helper PASS means
-226 verified query receipts, not proof that 227 distinct Programs were
-loaded, that a particular hardware cache state exists, or that E2E passed.
+also passed on September 23 across all 18 libraries and 43,450 registrations
+([independent review](evidence/current_20260923/fbgemm_registration_review.json)).
+The September 23 GPU helper run passed all 226 selected queries in the actual
+training worker before the completed asynchronous E2E1000 run. The full
+tensor audit, distinct TLS-inventory adjudication and archive verification
+also passed; the original strict trace failure remains. Query success does
+not prove 227 distinct Programs loaded or a particular hardware cache state.
 
 Installed HIP binary analysis and its independent review establish that
 `HIP_LAUNCH_BLOCKING=1` contributes the same kernel-command after-enqueue
@@ -478,37 +724,32 @@ so this setting does not bypass or serialize Freeze itself. A diagnostic
 must record the actual launch route, host thread, stream, function identity
 and entry/return timestamps before interpreting the first missing return.
 
-## Next steps
+## Next steps after the user resumes
 
-1. Complete the pending CPU registration/constructor/duplicate-handling
-   reviews and derive the next experiment contracts. Preserve the current
-   worker, evidence and blocked boot; no further GPU work, live reload,
-   reset or `hqds`/SDMA debug read is admissible there. Recovery requires a
-   new host AC cycle and verified candidate first load.
-2. On that fresh boot, complete health and all 14 sentinels, LN/tiny-attention
-   with complete consumers, full historical attention with verified archive,
-   then the historical DW quartet and complete consumer. Use new paths and
-   actual same-boot source, driver and prerequisite hashes.
-3. Run natural zero-DY `sink_control` before E2E, using the unchanged
-   vulnerable ELF and original inputs, for 1,000 calls or the first completed
-   numerical failure. Either signed zero passes; every nonzero or nonfinite
-   value fails. Require native/input/output,
-   lifecycle and exposure consumers plus lossless archival of a failure.
-   A clean run without a qualifying target AutoNUMA/SVM pair is
-   exposure-inconclusive; even a qualifying pair is not a measured CWSR event.
-4. Run the fully reviewed FBGEMM prewarm with normal asynchronous E2E and
-   original loader settings. Do not also change serialization, worker count
-   or NUMA policy. If prewarm or backward stalls, preserve the first pending
-   phase/launch and saved stack; another GPU comparison needs another
-   recovered boot.
-5. Choose the separate serialized first-backward/update diagnostic or
-   `NUM_WORKERS=0` control from that evidence, keeping other factors matched.
-   A completed diagnostic is attributable only to its tested configuration.
-   Corrected-driver projection replay remains an independent coverage gap.
-6. After a complete candidate E2E numerical and lifecycle pass, test the
-   intended duration, independent restarts/seeds, raw gradients, parameters
-   and expected loss/accuracy. Remove individual workarounds only through
-   separate comparisons; retain the independently required int64 source
-   fixes. A bounded pass does not prove that every NaN cause is eliminated.
+1. Recheck boot, loaded driver, firmware, kernel continuity, device ownership
+   and home allocation. The pause checkpoint is observation only, and later
+   kernel messages are preserved separately. Any changed boot or low-level
+   stack requires rebased reviewed prerequisites. Never read KFD `hqds` or
+   `amdgpu_gpu_recover`, reset/reload a stalled boot, or reuse used output roots.
+2. Use `REQUEST_PREPARED.json` in the STU1 training source package. Its source
+   request passed validation and pure construction with 890 source/metadata
+   pins, 125 runtime pins and 12 planned stage files. Actual predecessor
+   admission, independent binding review, finalization, staging and fresh live
+   gates remain undone. The saved resume argv stops at preparation; subsequent
+   commands must be generated from the actual reviewed binding.
+3. Run the reviewed 1,000-step no-prewarm STU1 witness diagnostic. Analyze any
+   trigger using its actual scalar-stage and selected-row findings; preserve
+   failures and incomplete artifacts. A clean run is bounded journal evidence
+   and does not explain the original step-583 event. Full tensor/native
+   attribution remains separate from post-backward observations.
+4. Preserve the completed full-prewarm E2E tensor audit, no-prewarm two-step
+   and 1,000-step journals, plateau400 and natural zero/nonzero-DY results.
+   Restore and hash archived payloads when a future raw audit needs them.
+   Keep the original strict TLS failure and all corrected MC60 records.
+5. Pursue independent restarts/seeds, matched boot/source comparisons,
+   official MES `0x7e` after an actual artifact is supplied, and B0 validation
+   as separate experiments. Retain required int64/source fixes and isolate
+   workaround-removal comparisons. A bounded pass does not establish that
+   every NaN cause is eliminated.
 
 Full chronology and current follow-ups are in [mi450_a0.md](mi450_a0.md).

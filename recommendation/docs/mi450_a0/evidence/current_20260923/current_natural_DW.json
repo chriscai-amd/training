@@ -1,0 +1,125 @@
+{
+  "status": "BOUNDED_CLEAN_WITH_RELEVANT_SVM_EXPOSURE",
+  "complete_consumer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_natural_DW_execution_v2/complete_consumer.json",
+    "bytes": 605103,
+    "sha256": "eb179ac58b5f2d883c3a729b3fbda64e096e4de5b267959107fce0f23f07a9ed"
+  },
+  "native_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_natural_DW_execution_v2/native_raw_audit.json",
+    "bytes": 652347,
+    "sha256": "177748d350bb4b4394fefba4e6e756543bef42363033789dbe6de048f293afbd"
+  },
+  "execution": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_natural_DW_execution_v2/terminal.json",
+    "bytes": 17244,
+    "sha256": "e41a1d9c593c285cf853400a52645c68ceb4ad2cf9b25b951271521102fe5484"
+  },
+  "calls": 1000,
+  "complete_output_bytes": 262144000,
+  "complete_prefill_bytes": 262144000,
+  "native_argument_bytes": 172,
+  "exposure": {
+    "status": "BOUNDED_CLEAN_WITH_RELEVANT_SVM_EXPOSURE",
+    "event_counts": {
+      "queue_eviction": 335,
+      "queue_restore": 334
+    },
+    "trace_integrity": {
+      "retained_entries": 1087,
+      "cpu_buffers": 256,
+      "complete_per_cpu_counts_match": true,
+      "actual_clock": "boot",
+      "controls_read_back_before_release_and_after_stop": true
+    },
+    "relevant_pairs": 18,
+    "distinct_exposed_calls": [
+      302,
+      328,
+      355,
+      381,
+      404,
+      428,
+      452,
+      476,
+      500,
+      550,
+      574,
+      597,
+      621,
+      646,
+      670,
+      693,
+      717,
+      773
+    ],
+    "breadth_target_met": true,
+    "trace_losses": 0,
+    "own_kprobe_misses": 0,
+    "limits": [
+      "The envelope includes queueing/readback time; it does not prove GPU execution at the eviction timestamp.",
+      "Queue helper entry is an attempt, not hardware CWSR acknowledgement.",
+      "Neither interrupted PC nor inherited bank fields are observed.",
+      "The breadth target is descriptive bounded coverage, not statistical proof of eliminated risk."
+    ]
+  },
+  "final_gate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_natural_DW_execution_v2/after/gate.json",
+    "bytes": 457611,
+    "sha256": "83df799ec10f4ddd44814b2815452a6d5eaf3349654352c068473b0a9c0a7744"
+  },
+  "final_kernel": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_natural_DW_execution_v2/after/dmesg.log",
+    "bytes": 165604,
+    "sha256": "8a862ed278016a04c58d472c8c5d6e9d58e106ae0adcf6957f3ce39ea0d16d27"
+  },
+  "serial_floor_ns": 5079467872127,
+  "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+  "driver_srcversion": "AD83C153B9701570F12964E",
+  "MES": "0x0000007b",
+  "numerical_status": "PASS",
+  "positive_zero_BF16_words": 131072000,
+  "negative_zero_BF16_words": 0,
+  "all1000complete_native_packets_verified": true,
+  "platform_health_clearance": false,
+  "physical_CWSR_proven": false,
+  "raw_evidence_retained": true,
+  "independent_complete_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_trace_enable_peer_v1/NATURAL_V2_ACTUAL_REVIEW.json",
+    "bytes": 3923,
+    "sha256": "3c61ca634fec97599410e064f5b33019b4292ef1b834150f9c4caf857bf260b0"
+  },
+  "complete_retained_input_bytes": 3570465280,
+  "exact_target_identity_and_stack_order_addendum": {
+    "review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_completed_results_root_v1/OLD_NATURAL_EXPOSURE_IDENTITY_REVIEW.json",
+      "bytes": 208503,
+      "sha256": "d23041316f626df7c79c2801e6d88e517ad57b061d3ce3d3ed670ed11cebbdd7"
+    },
+    "status": "PASS_SAVED_ZERO_DY_EXPOSURE_UNCHANGED_UNDER_EXACT_IDENTITIES_AND_STACK_ORDER",
+    "complete_dynamic_events": 669,
+    "original_relevant_pairs": 18,
+    "strict_relevant_pairs": 18,
+    "strict_distinct_calls": [
+      302,
+      328,
+      355,
+      381,
+      404,
+      428,
+      452,
+      476,
+      500,
+      550,
+      574,
+      597,
+      621,
+      646,
+      670,
+      693,
+      717,
+      773
+    ],
+    "original_consumer_and_trace_preserved": true
+  }
+}

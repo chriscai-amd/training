@@ -1,0 +1,97 @@
+{
+  "status": "PASS_BOUNDED_E2E_NUMERICS_STRICT_TRACE_INVENTORY_FAILURE_RETAINED",
+  "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+  "driver_srcversion": "AD83C153B9701570F12964E",
+  "loaded_MES_and_MES_KIQ": "0x0000007b",
+  "completed_backward_and_optimizer_steps": 1000,
+  "numerical": {
+    "status": "PASS_FULL_CPU_PAYLOAD_AUDIT",
+    "tensor_views": 166,
+    "unique_logical_views": 166,
+    "floating_logical_elements": 19237486690,
+    "nonfinite_count": 0,
+    "extreme_count": 0,
+    "payload": {
+      "path": "/dev/shm/mi450_current_E2E_v2/default1000/linear-deferred-2789-1790126116674805775-s1000-finite.pt",
+      "bytes": 38556636485,
+      "sha256": "adb06a337e20b385b90c0077452ecb333fdfd521da90f7ff27255a12877e512e"
+    }
+  },
+  "strict_controller": {
+    "status": "FAILED_EVIDENCE_PRESERVED",
+    "trace_returncode": 1,
+    "child_status": "CHILD_REAPED",
+    "child_returncode": 0,
+    "final_candidate_idle_kernel_gate": "PASS_CURRENT_CANDIDATE_IDLE_AND_KERNEL_CONTINUITY",
+    "global_state_unchanged": false,
+    "difference": "Exactly seven newly present disabled TLS trace-event enable files; all pre-existing enable values and every other saved global field are identical."
+  },
+  "private_trace": {
+    "records": 3045,
+    "CPUs": 256,
+    "losses_and_read_events": 0,
+    "configuration_unchanged": true,
+    "target_evictions": 176,
+    "target_restores": 175,
+    "eviction_stacks": {
+      "NUMA_protection": 167,
+      "NUMA_folio_migration": 6,
+      "fork": 2,
+      "final_exit": 1
+    }
+  },
+  "receipts": {
+    "raw_audit_finish": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_numerical_audit_v1/finish.json",
+      "bytes": 2436,
+      "sha256": "93eefe6ad528e41a9977e2ad42617d375413cc3df16d511341e9a7324282e4ad"
+    },
+    "raw_certificate": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_numerical_audit_v1/raw/certificate.json",
+      "bytes": 135419,
+      "sha256": "23dc408b75205df4a282cbe503daba9a8293a449b60d21896c33d7eaf94c85a6"
+    },
+    "execution_failure": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_execution_v2/execution_terminal.json",
+      "bytes": 1453408,
+      "sha256": "c2da2ae3e7dac369a796ee48a95e121c2ed6cda90c89e3098aceb83a1c6d13aa"
+    },
+    "trace_terminal": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_E2E_execution_v2/E2E_default1000/terminal.json",
+      "bytes": 5848,
+      "sha256": "f543bdf8c5545df9d42c99961f304d5f603de932bd75d6dd44fcf1308ca14f56"
+    },
+    "worker_terminal": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_E2E_runtime_v2/default1000_gate/worker_terminal.json",
+      "bytes": 1907,
+      "sha256": "8195710984dc19caaafc6278c8d3e864d7ded41b309b825fd7eab3991d09e0b3"
+    },
+    "outcome": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_E2E_runtime_v2/default1000_training/outcome.json",
+      "bytes": 2099,
+      "sha256": "aece6e7c4f85423aef46003f64b3a5baf2ab5f8b3bb03bac92fb17af14c5e8a2"
+    },
+    "independent_retained_trace_prewarm_journal_peer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_E2E_retained_failure_peer_v1/REVIEW.json",
+      "bytes": 200186,
+      "sha256": "5b531ed7a761f444a586ec8a911e24e4a89d4494eb53264bdf947442368a107a"
+    },
+    "global_inventory_source_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_E2E_global_delta_review_v1/SAVED_GLOBAL_DELTA_REVIEW.json",
+      "bytes": 7068,
+      "sha256": "81053feb25754c89424c19473921a0a1cf65e28e3c9caaab1bca8daf4349fa38"
+    },
+    "TLS_module_ownership": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_E2E_global_delta_review_v1/TLS_MODULE_EVENT_OWNERSHIP.json",
+      "bytes": 12070,
+      "sha256": "178cf830a940fa21e4ffdd7dd37e74dd529e54a7d96799aff5e3217115c1f84a"
+    }
+  },
+  "limits": [
+    "Full raw numerical pass is established; strict lifecycle audit, separate exact TLS-inventory adjudication, original/current comparison and durable raw archive remain pending at this checkpoint.",
+    "Two known corrected CPU8/MC60 records occurred during training under the pre-existing diagnostic exception; platform health is not certified.",
+    "Current driver baseline, boot and full prewarm differ from older runs; this does not establish MES-only attribution or validate official 0x7e.",
+    "The scheduled frame precedes outer optimizer update1000 and reflects999 prior explicit dense updates; completed bounded outcome separately confirms the1000th update returned.",
+    "Queue-helper events do not establish physical context-save acknowledgements or interrupted PCs/banks."
+  ]
+}

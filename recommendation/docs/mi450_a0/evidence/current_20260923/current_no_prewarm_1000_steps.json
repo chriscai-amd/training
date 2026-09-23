@@ -1,0 +1,382 @@
+{
+  "status": "PASS_CURRENT_NO_PREWARM_1000_STEPS_JOURNAL_ONLY",
+  "updated_utc": "2026-09-23T05:32:40.209682+00:00",
+  "consumer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_noprewarm1000_execution_v1/consume/terminal.json",
+    "bytes": 3662,
+    "sha256": "d47c60725a686ee03f376659431fa0697ccdee9afe7322e4b5df0e2506f5071d"
+  },
+  "independent_saved_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_np1000_saved_peer_v2/REVIEW.json",
+    "bytes": 407496,
+    "sha256": "a70f668f63ee6558c9aa971322eb46fe60d30ad129a558c289e26c5b577cc7bb"
+  },
+  "independent_status": "PASS_INDEPENDENT_SAVED_NP1000_JOURNAL_ONLY_REVIEW",
+  "platform": {
+    "boot": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+    "driver": {
+      "srcversion": "AD83C153B9701570F12964E",
+      "version": "7.1.1.31300009"
+    },
+    "MES": "0x7b"
+  },
+  "configuration": {
+    "explicit_prewarm": false,
+    "seed": 1,
+    "batch_size": 1024,
+    "asynchronous": true,
+    "steps": 1000,
+    "scheduled_success_dump": false,
+    "global_deferred_loading": "unset"
+  },
+  "observed_backward_completions": 1000,
+  "completed_optimizer_steps": 1000,
+  "complete_journal": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_noprewarm1000_runtime_v1/noprewarm1000_training/boundaries/events.jsonl",
+    "bytes": 275956652,
+    "sha256": "28e975aed19ef19d7ee3e294f2e7c760584d183eaf4ff90762d301bb1fe5d9a1"
+  },
+  "journal_check_count": 541010,
+  "journal_totals": {
+    "scans": 68000,
+    "operation_endpoints": 42000,
+    "checked_finite_summaries": 367000,
+    "zero_comparisons": 12000
+  },
+  "full_endpoint_raw_audit": false,
+  "anomaly_payloads": [],
+  "private_trace": {
+    "status": "PASS_COMPLETE_FIRST_BACKWARD_PRIVATE_TRACE_NO_LOSS",
+    "trace": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_noprewarm1000_execution_v1/trace/trace.txt",
+      "bytes": 290412,
+      "sha256": "c15e6ce053b9e2cedfa994e50889abc50bd3603fc6694cfbaf65ebf3834faa6e"
+    },
+    "before": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_noprewarm1000_execution_v1/trace/trace_before.json",
+      "bytes": 45265,
+      "sha256": "24fc18d6ba8595707859869b50846cc726d1983a310fecbd527928e352bed4bb"
+    },
+    "after": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_noprewarm1000_execution_v1/trace/trace_after.json",
+      "bytes": 45427,
+      "sha256": "3b01cd8f5e4e191d5abd7708c2d50e25e23d18b49f4db155bb973c30860e954b"
+    },
+    "profile": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_noprewarm1000_execution_v1/trace/kprobe_profile.txt",
+      "bytes": 158,
+      "sha256": "e1fd42c1687097e06425d671d6b6657b6a342f86c94a62f65a43fd45f5e74970"
+    },
+    "host_target_tgid": 238599,
+    "entries": 1957,
+    "complete_CPU_counts": true,
+    "all_dynamic_events": {
+      "queue_eviction": 96,
+      "queue_restore": 95
+    },
+    "target_dynamic_events": {
+      "queue_eviction": 96,
+      "queue_restore": 95
+    },
+    "physical_CWSR_proven": false,
+    "GPU_actions": false,
+    "limits": [
+      "CPU queue helper records are lifecycle attempts and do not prove the interrupted GPU instruction or hardware CWSR completion."
+    ]
+  },
+  "eviction_causes": {
+    "numa_protection_scan": 88,
+    "fork": 2,
+    "numa_fault_folio_migration": 5,
+    "exit": 1
+  },
+  "kernel": {
+    "training_complete_MC60_records": 3,
+    "training_delta_line_counts": {
+      "rsyslogd_AppArmor_oslogin_read_denial": 173,
+      "shared_printk_suppression_reported_by_kauditd": 14,
+      "permitted_complete_corrected_MC60_line": 18,
+      "empty_line": 3
+    },
+    "training_delta_bytes": 46114,
+    "predecessor_to_initial_gate_MC60_records": 1,
+    "all_176_intervals_recomputed": true,
+    "visibility_limits": [
+      "Complete corrected MC60 records use the existing diagnostic exception; initial-gate records precede this training run and must be reported separately from the lifecycle aggregate. No platform-health clearance follows.",
+      "kauditd_printk_skb identifies the caller reporting printk suppression. Upstream Linux6.14 uses the shared printk_ratelimit_state, so suppressed message contents and all callers cannot be reconstructed from this label.",
+      "Kernel audit serial gaps agree with some suppression counts but do not recover the omitted bytes or prove all omitted messages were AppArmor records.",
+      "These printk suppression notices do not count private KFD ftrace loss. Private trace configuration, per-CPU loss and event-count integrity require their separate completed-trace audit.",
+      "Upstream v6.14 source explains the mechanism; the exact installed Ubuntu kernel audit implementation was not independently identified here."
+    ]
+  },
+  "source_closure_files": 396,
+  "source_closure_bytes": 25473903,
+  "full_prewarm_comparison": {
+    "report": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_completed_noprewarm_scalar_comparison_v1/NP1000_COMPARISON.json",
+      "bytes": 4308313,
+      "sha256": "b632f0ff61d75e929a76c77d03b78e76138e0ebf3aa2efa590c719548fe369cd"
+    },
+    "status": "COMPLETE_SAVED_SCALAR_JOURNAL_COMPARISON",
+    "compared_steps": 1000,
+    "summary_pairs": 379000,
+    "aligned_scalar_fields_compared": 1137000,
+    "finite_numeric_fields_compared": 1101000,
+    "other_summary_value_fields_compared": 36000,
+    "different_summary_count": 166932,
+    "different_step_count": 998,
+    "equal_summary_steps": [
+      3,
+      4
+    ],
+    "normalized_event_counts_equal": true,
+    "normalized_geometry_different_steps": [],
+    "absolute_pointer_difference_step_count": 1000,
+    "earliest_difference": {
+      "step": 1,
+      "scan": 67,
+      "summary_ordinal": 129,
+      "kind": "linear_stage",
+      "stage": "after_backward_return_all_dense",
+      "operation": null,
+      "phase": null,
+      "layer": null,
+      "name": "gradients/_hstu_transducer._positional_encoder._timestamp_embeddings_weight",
+      "changed": {
+        "max": {
+          "full_prewarm": 7.275448297150433e-05,
+          "no_prewarm": 7.275451207533479e-05,
+          "absolute_delta": 2.9103830456733704e-11
+        },
+        "max_abs_finite": {
+          "full_prewarm": 7.275448297150433e-05,
+          "no_prewarm": 7.275451207533479e-05,
+          "absolute_delta": 2.9103830456733704e-11
+        },
+        "min": {
+          "full_prewarm": -5.521157072507776e-05,
+          "no_prewarm": -5.521148341358639e-05,
+          "absolute_delta": 8.731149137020111e-11
+        }
+      }
+    },
+    "maximum_difference": {
+      "identity": {
+        "scan": 67,
+        "summary_ordinal": 103,
+        "kind": "linear_stage",
+        "stage": "after_backward_return_all_dense",
+        "operation": null,
+        "phase": null,
+        "layer": null,
+        "name": "gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.2.bias"
+      },
+      "step": 583,
+      "field": "max",
+      "full_prewarm": 0.023193359375,
+      "no_prewarm": 66.5,
+      "absolute_delta": 66.476806640625
+    },
+    "raw_tensor_payloads_read": false,
+    "full_tensor_equality_established": false,
+    "limits": [
+      "Every compared scalar/metadata entry is examined; at most three difference examples per step are expanded, with complete counts and per-observation divergence aggregates.",
+      "Strict nonvalue geometry excludes only session/time/host-enqueue timestamps and scalar values, retaining scalar field presence and absolute argument-layout pointers.",
+      "Normalized geometry replaces only argument-layout source_data_ptr/source_storage_ptr values with within-scan exact alias classes and data-minus-storage byte offsets. All other layout fields remain; absolute-pointer differences and strict hashes are reported separately. Cross-scan address lifetimes and absolute-address-dependent behavior are not inferred.",
+      "Summary value fields are min/max/max_abs_finite, including integer-metadata null placeholders. Numeric and other field counts are separate; absolute deltas are defined only for finite numeric pairs. Geometries unaligned after declared normalization make the result inconclusive and are excluded from scalar deltas.",
+      "Equal summaries do not establish tensor equality, and unequal finite summaries do not establish a NaN, reduction nondeterminism or hardware cause.",
+      "Same corrected-driver/MES0x7b boot has different run order and prewarm history. Original strict trace failure and separate adjudication identities remain preserved."
+    ]
+  },
+  "limits": [
+    "Journal summaries and integrity comparisons are not complete tensor-word auditing.",
+    "Same boot previously ran full prewarm; fresh-boot startup remains untested.",
+    "Saved empty raw inventory and live-cleanup receipts were required but not repeated here.",
+    "CPU SVM stacks do not identify physical CWSR acknowledgment, GPU PC or inherited banks.",
+    "Current MES0x7b/source/boot results do not isolate firmware or reconstruct original step101/405 events."
+  ],
+  "finite_spike_analysis": {
+    "report": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_NP1000_finite_spike_analysis_v1/ANALYSIS.json",
+      "bytes": 245125,
+      "sha256": "c1b8c198e52dce2bfede1a1a9907fa7abd49b328391edd14decbd5bbaa2598f2"
+    },
+    "status": "COMPLETE_SAVED_NP1000_FINITE_SPIKE_SCALAR_ANALYSIS",
+    "all_1000_per_step_comparison_rows_exactly_reproduced": true,
+    "global_max_recorded_dense_gradients": {
+      "full_prewarm": {
+        "step": 87,
+        "name": "gradients/_item_embedding_mlp.2.bias",
+        "dtype": "torch.float32",
+        "shape": [
+          512
+        ],
+        "numel": 512,
+        "min": -4.838364601135254,
+        "max": 7.885479927062988,
+        "max_abs_finite": 7.885479927062988
+      },
+      "no_prewarm": {
+        "step": 583,
+        "name": "gradients/_hstu_transducer._input_preprocessor._content_embedding_mlp.2.bias",
+        "dtype": "torch.float32",
+        "shape": [
+          512
+        ],
+        "numel": 512,
+        "min": -49.0,
+        "max": 66.5,
+        "max_abs_finite": 66.5
+      }
+    },
+    "gradient_clip_norm": 1.0,
+    "gradient_samples_precede_clipping": true,
+    "exact_L2_gradient_norm_available": false,
+    "limits": [
+      "Scalar/shape alignment and equal extrema do not establish tensor equality or identical upstream rows.",
+      "Maximum of recorded gradient absolute maxima describes the saved pre-clip inventory; it is not an independently recomputed tensor norm.",
+      "An observed element above1 implies a pre-clip L2 norm above1; a maximum below1 does not establish that clipping was inactive.",
+      "LayerNorm follows the second Linear in each content/additional/action MLP and uses eps=1e-5. Its FP32 backward multiplies by stored reciprocal standard deviation and returns a rounded output; row-level inputs/variance and upstream gradient equality are unavailable here.",
+      "Finite amplification/reduction-order sensitivity is a hypothesis. These summaries alone neither identify corruption nor rule it out, and do not attribute a firmware or driver cause.",
+      "Root-authorized completed journals only; no live tracing, worker mutation or tensor payload consumption."
+    ]
+  },
+  "subsequent_conditional_bound_inconsistency": {
+    "evidence": "current_STU1_DX583.json",
+    "all_step_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_DX583_bound_audit_v1/BOUNDS.json",
+      "bytes": 93415,
+      "sha256": "3caaeb2952f64176c26374473aab443f2ee3d6c9cf19e354737d62ddd4a472af"
+    },
+    "independent_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_NP1000_step583_bound_source_peer_v1/REVIEW.json",
+      "bytes": 7699,
+      "sha256": "8f55293e5be5cb5ddf15db724aa16c629f35ee7335df9f48d447114ab4bf8898"
+    },
+    "exact_real_arithmetic_bound_exceedances": [
+      {
+        "run": "no_prewarm",
+        "step": 583,
+        "layer": "model._dmp_wrapped_module.module._hstu_transducer._stu_module._stu_layers.1",
+        "before_scan": 30,
+        "after_scan": 31,
+        "output": "d_normed_x",
+        "shape": [
+          2369680,
+          512
+        ],
+        "factors": [
+          2048,
+          0.04833984375,
+          2.2165477275848389e-07
+        ],
+        "exact_real_arithmetic_triangle_bound": 2.1943822503089905e-05,
+        "observed_max_abs_finite": 0.0458984375,
+        "observed_to_bound_ratio": 2091.6336473983533,
+        "exceeds_exact_real_arithmetic_bound": true,
+        "exceeds_bound_with_declared_one_percent_allowance": true,
+        "exact_bound_fraction": "11781/536870912",
+        "exact_ratio_fraction": "24641536/11781",
+        "recorded_operand_summaries": {
+          "x": {
+            "name": "x",
+            "shape": [
+              2369680,
+              512
+            ],
+            "stride": [
+              512,
+              1
+            ],
+            "dtype": "torch.bfloat16",
+            "source_device": "cuda:0",
+            "storage_offset": 0,
+            "requires_grad": false,
+            "numel": 1213276160,
+            "scanned": true,
+            "stream_id": 0,
+            "abs_threshold": 1000000.0,
+            "finite": true,
+            "extreme": false,
+            "min": -4.71875,
+            "max": 4.96875,
+            "max_abs_finite": 4.96875
+          },
+          "w": {
+            "name": "w",
+            "shape": [
+              512,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ],
+            "dtype": "torch.bfloat16",
+            "source_device": "cuda:0",
+            "storage_offset": 0,
+            "requires_grad": true,
+            "numel": 1048576,
+            "scanned": true,
+            "stream_id": 0,
+            "abs_threshold": 1000000.0,
+            "finite": true,
+            "extreme": false,
+            "min": -0.04833984375,
+            "max": 0.04833984375,
+            "max_abs_finite": 0.04833984375
+          },
+          "dz": {
+            "name": "dz",
+            "shape": [
+              2369680,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ],
+            "dtype": "torch.bfloat16",
+            "source_device": "cuda:0",
+            "storage_offset": 0,
+            "requires_grad": false,
+            "numel": 4853104640,
+            "scanned": true,
+            "stream_id": 0,
+            "abs_threshold": 1000000.0,
+            "finite": true,
+            "extreme": false,
+            "min": -1.816079020500183e-07,
+            "max": 2.2165477275848389e-07,
+            "max_abs_finite": 2.2165477275848389e-07
+          }
+        },
+        "recorded_output_summary": {
+          "name": "d_normed_x",
+          "shape": [
+            2369680,
+            512
+          ],
+          "stride": [
+            512,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "source_device": "cuda:0",
+          "storage_offset": 0,
+          "requires_grad": false,
+          "numel": 1213276160,
+          "scanned": true,
+          "stream_id": 0,
+          "abs_threshold": 1000000.0,
+          "finite": true,
+          "extreme": false,
+          "min": -0.04248046875,
+          "max": 0.0458984375,
+          "max_abs_finite": 0.0458984375
+        }
+      }
+    ],
+    "original_no_alarm_verdict_is_not_full_arithmetic_validation": true
+  }
+}

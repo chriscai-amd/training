@@ -1,0 +1,99 @@
+{
+  "schema": "MI450_CURRENT_FIRST_LOAD_RESULT_V1",
+  "activation": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/activation_adjudication/terminal.json",
+    "bytes": 2321,
+    "sha256": "8eeb4a0fbfd74c751940adeafb51e0f580a95c4edd5d78c9ee2555425c5d2e1e"
+  },
+  "result": {
+    "schema": "MI450_CURRENT_FIRST_LOAD_KERNEL_FIRMWARE_V1",
+    "status": "PASS_CURRENT_FIRST_LOAD_KERNEL_FIRMWARE",
+    "ready_for_health": true,
+    "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+    "first_load_contract": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_first_load_v1/contract.json",
+      "bytes": 3600,
+      "sha256": "dbc9ee30b23448a76d0b1a687104e1bef73bd99eb16e31ebaca6c1e282789cde"
+    },
+    "activation_terminal": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_first_load_v1/activation/terminal.json",
+      "bytes": 1608,
+      "sha256": "60da446884afb842e0be5c6083abdc7e53ea68d8c9c87e3dce54c346c4837984"
+    },
+    "reviewed_kernel_capture": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/activation_adjudication/dmesg_reviewed.log",
+      "bytes": 152310,
+      "sha256": "3b9288c2f43b865195523bbe9893d6d6d35017619d781850cb6b6c00c13da378"
+    },
+    "loaded_firmware": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/activation_adjudication/loaded_firmware.json",
+      "bytes": 1365,
+      "sha256": "243b6402edc04e6c121976a5f56d79b18cc707f4fbe3df55ebfd45caf3fc55fd"
+    },
+    "module_audit": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_audit_v1/REVIEW.json",
+      "bytes": 9810,
+      "sha256": "df6b21da005286a79048a95e1028f1f65b0584c69e95543cbcf1b509944cf3d1"
+    },
+    "kernel_classification": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/activation_adjudication/kernel_classification.json",
+      "bytes": 842712,
+      "sha256": "bd578fc3a54622fb94286805377bc6243bdb7a1294dcc9b8ea48220c7d9a7fff"
+    },
+    "idle": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/activation_adjudication/idle.json",
+      "bytes": 2590,
+      "sha256": "a97cef6ca9c75e536a1834cb04606888f23d88a6e74e113a0b9410fe943bded5"
+    },
+    "policy": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_mc60_permitted_v1/mc60_policy.py",
+      "bytes": 6615,
+      "sha256": "938d59b48bb559a7d3fd8cff099c81fe041b8de830956f4f0d8dd0f01ec49a5c"
+    },
+    "platform_health_cleared": false,
+    "utc": "2026-09-23T00:24:49.692003+00:00",
+    "GPU_workloads": false
+  },
+  "loaded_firmware": {
+    "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+    "pci": "0001:01:00.0",
+    "versions": {
+      "mec_fw_version": "0x00000956",
+      "mes_fw_version": "0x0000007b",
+      "mes_kiq_fw_version": "0x0000007b",
+      "rlc_fw_version": "0x0000001f",
+      "sdma2_fw_version": "0x00893547",
+      "sdma_fw_version": "0x00893547",
+      "smc_fw_version": "0x027d0701",
+      "ta_ras_fw_version": "0x1b440004",
+      "vcn_fw_version": "0x0910d008"
+    },
+    "uni_mes_parameter": "1",
+    "disk_files": [
+      {
+        "path": "/lib/firmware/updates/amdgpu/gc_12_1_0_mes.bin",
+        "bytes": 636620,
+        "sha256": "3f13a4f6d5b0a42c03e1622fbdb3cd4e5755b1401071b656079eb7a8b32f405a"
+      },
+      {
+        "path": "/lib/firmware/updates/amdgpu/gc_12_1_0_mes1.bin",
+        "bytes": 617536,
+        "sha256": "830d047d4037d8b52bb9088d7ee884838d5c841e10d2ce4ee6dc04adacc62f57"
+      },
+      {
+        "path": "/lib/firmware/updates/amdgpu/gc_12_1_0_uni_mes.bin",
+        "bytes": 333504,
+        "sha256": "d93a2d404bce004dc57d0cf835654f7dc1c7648ed44cb9da8393f3f98239255f"
+      }
+    ],
+    "source": {
+      "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdgpu/amdgpu_ucode.c",
+      "bytes": 55185,
+      "sha256": "3b786c1da23c314830fa8232d908a872f13400f21aadf33afe9b0f5a181b534d"
+    },
+    "method": "Cached driver fields via read-only fw_version sysfs; no GPU commands/debugfs/MMIO.",
+    "official_0x7e_test": false
+  },
+  "status": "LOADED_CURRENT_SOURCE_CWSR_CANDIDATE_MES_0x7b_AWAITING_HEALTH",
+  "GPU_workload_result": null
+}

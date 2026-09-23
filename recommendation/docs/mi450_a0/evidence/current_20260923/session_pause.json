@@ -1,0 +1,63 @@
+{
+  "status": "USER_REQUESTED_PAUSE_CHECKPOINT",
+  "updated_utc": "2026-09-23T06:56:43.317589+00:00",
+  "user_request": "Be ready to stop current work items, wrap up and refresh A0 with latest status, findings, reproducer and evidence.",
+  "GPU_workload_running": false,
+  "runtime_checkpoint": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_pause_wrap_v1/RUNTIME_CHECKPOINT.json",
+    "bytes": 4325,
+    "sha256": "f7ae425d3926fb0df38999d7557ddc385ef78b8ea4202bdc96fd65451de17613"
+  },
+  "source_checkpoint": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_pause_wrap_v1/SOURCE_CHECKPOINT.json",
+    "bytes": 11618,
+    "sha256": "0a63a8ecb862029b2418903ed1f63efc527a1bb4afc2781689e477689ebd9869"
+  },
+  "source_preparation": {
+    "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_STU1_witness_preparation.json",
+    "bytes": 11864,
+    "sha256": "711b06a474c5dbe263ac6995ec13934cd7d601f10016515b9e7fc9667167f2e6"
+  },
+  "priority_finding": {
+    "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_STU1_DX583.json",
+    "bytes": 27443,
+    "sha256": "65a86a592b8ad191cfed832d40ff9dfb4915652f5ef515dcf31238ae7bf6dff7"
+  },
+  "completed_natural_nonzero_DW": {
+    "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_natural_nonzero_DW.json",
+    "bytes": 4313,
+    "sha256": "8a1d447889ec99316252b69c2764048b7fba2e4a2c6d14a00c240a50f71bafc4"
+  },
+  "storage": {
+    "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/storage_cleanup.json",
+    "bytes": 27921,
+    "sha256": "48b9c3e9748f97fe261c2ed3aa3ef4f17336dc3ca6d1c1879907e80d87c6ea6d"
+  },
+  "resume_commands": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_pause_wrap_v1/RESUME_COMMANDS.json",
+    "bytes": 1327,
+    "sha256": "6f9ef70cce875232349ea5b6003bab4162ee20902d4ccbd66e928a11ddba2104"
+  },
+  "current_boot": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+  "driver": {
+    "version": "7.1.1.31300009",
+    "srcversion": "AD83C153B9701570F12964E"
+  },
+  "MES": "0x0000007b",
+  "official_0x7e_test": false,
+  "firmware_or_driver_changed_in_wrap": false,
+  "new_training_binding": false,
+  "new_training_runtime": false,
+  "git_commit_or_push": false,
+  "kernel_delta_bytes": 12058,
+  "kernel_delta_review": "PASS unchanged saved kernel policy; one complete corrected CPU8/MC60,43rsyslogd denials,5suppression notices totaling101callbacks,2profile_replace STATUS records. No actor attribution or live launch gate.",
+  "handoff": "/home/chcai/handoff/nan_handoff.md",
+  "standing_investigation_rule": "Paused by this user request; resume only when user requests it.",
+  "last_completed_gpu_result": "Natural historical nonzero-DY DW1000 all outputs exact baseline; all14 qualifying exposure calls retained.",
+  "original_STU1_scalar_lead_remains_unresolved": true,
+  "saved_kernel_delta_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_pause_kernel_peer_v1/REVIEW.json",
+    "bytes": 24151,
+    "sha256": "3a199e9d947aae125ae43809ff2c8f5c6f5a15237680a34f940ba74a57e0cbce"
+  }
+}

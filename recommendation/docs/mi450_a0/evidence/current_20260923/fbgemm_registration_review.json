@@ -1,0 +1,62 @@
+{
+  "review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_fbgemm_registration_review_v1/REVIEW.json",
+    "bytes": 2326,
+    "sha256": "d643464440a9a3a8d43a00ee2f44b0cc4530707d30167d888705cc73444c0c06"
+  },
+  "result": {
+    "status": "PASS_INDEPENDENT_FULL_FBGEMM_REGISTRATION_REVIEW",
+    "receipts": [
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_fbgemm_registration_review_v1/static_review.json",
+        "bytes": 101382,
+        "sha256": "f0c472189d40b3e43b8e2ab3ee17eb5436af829261994828d5492116d91fcc70"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_fbgemm_registration_review_v1/hip_semantics_review.json",
+        "bytes": 7070,
+        "sha256": "565c7660d0ae156c05a1da27ca7028978a9dd92fb9c8cd45410d9521132615bc"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_fbgemm_registration_review_v1/review.py",
+        "bytes": 21626,
+        "sha256": "7306020284bd3756e1d34733cfe93402e018050fa1faef7c1188366635ce5ce1"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_fbgemm_registration_review_v1/review_hip_semantics.py",
+        "bytes": 4744,
+        "sha256": "73e1975b6ba0fb2f56df07baca3d849615df12a7dc88e4faab9b0647892ee7ff"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_fbgemm_registration_review_v1/RESULT.md",
+        "bytes": 3918,
+        "sha256": "56660ecb018d7fd0c8b2896db8d8451276738e21bb71749ee6aa21e08705ea6e"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_root_v1/fbgemm_helper_root_review.json",
+        "bytes": 4999,
+        "sha256": "f5927ecbedf5152825fb6d380756f87477fb39562fdfaa1db470c3adb37db909"
+      },
+      {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_ac3_validation_plan_v1/PLAN.md",
+        "bytes": 8572,
+        "sha256": "bac15e20698bee20cfada050919607e7e853db687c6428a3d1a0f7f28b7d229c"
+      }
+    ],
+    "library_count": 18,
+    "wrapper_count": 227,
+    "selected_keys": 226,
+    "shadowed_wrappers": 1,
+    "function_registrations": 43450,
+    "eligible_functions": 41040,
+    "unsupported_functions": 2410,
+    "variable_registrations": 1,
+    "exported_OBJECT_selected": 200,
+    "hidden_selected": 26,
+    "static_release_blocking_findings": [],
+    "runtime_result": null,
+    "GPU_actions": false,
+    "target_ELF_dlopen": false,
+    "claim": "Static selected host-key coverage and default installed HIP duplicate semantics; not227distinct loaded Programs, cache state, or E2E success."
+  }
+}

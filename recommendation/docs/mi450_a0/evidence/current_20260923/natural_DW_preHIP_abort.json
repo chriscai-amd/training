@@ -1,0 +1,54 @@
+{
+  "status": "PASS_PREHIP_EXPIRED_NO_GPU_RELEASE_TRACE_CLEANED_IDLE",
+  "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+  "driver_srcversion": "AD83C153B9701570F12964E",
+  "MES": "0x0000007b",
+  "failure": "ValueError('Event enable differs: mi450_0923_current_natural_dw_v1:queue_eviction')",
+  "failed_execution": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_natural_DW_execution_v1/terminal.json",
+    "bytes": 15633,
+    "sha256": "a8749977a5336504fa355706722b31d32b20561c0dc2c81a3ff17b3843844cdf"
+  },
+  "trace_snapshot": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_natural_DW_execution_v1/trace_preserved.json",
+    "bytes": 47909,
+    "sha256": "1dd25349596a49bb6f43cd888d594abc5654213d5181ffcbf6629051c3d9d450"
+  },
+  "cleanup": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_v1_preHIP_cleanup_v1/terminal.json",
+    "bytes": 1711,
+    "sha256": "0f5d1e48bcebaeb433ddeb09f25f7d0813da957e4366e473eaaf41662257b1ec"
+  },
+  "final_gate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_v1_preHIP_cleanup_v1/final/gate.json",
+    "bytes": 457617,
+    "sha256": "e9b97b09012b7d071b6df743e596a5a5786842376718726126b5056a56dd9d99"
+  },
+  "final_kernel_capture": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_v1_preHIP_cleanup_v1/final/dmesg.log",
+    "bytes": 165604,
+    "sha256": "8a862ed278016a04c58d472c8c5d6e9d58e106ae0adcf6957f3ce39ea0d16d27"
+  },
+  "serial_floor_ns": 4431875804575,
+  "GPU_initialized": false,
+  "numerical_calls": 0,
+  "worker_and_launcher_absent": true,
+  "trace_removed_global_state_restored": true,
+  "process_termination_performed": false,
+  "driver_actions": false,
+  "limits": [
+    "Pre-HIP harness failure; no numerical result or GPU stall.",
+    "Kernel enable marker correction and fresh source/path contract required before natural-DW execution."
+  ],
+  "independent_native_and_cleanup_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_trace_enable_peer_v1/REVIEW.json",
+    "bytes": 12299,
+    "sha256": "47bb5a4f9c6aeb58776b111c1d06380a958d810ea1b262a4587285f129ec7ee3"
+  },
+  "kernel_marker_semantics": "1* is enabled, not soft-disabled, with soft mode active from the exact stacktrace trigger.",
+  "post_cleanup_firmware_readback": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/pre_natural_v2_firmware_readback.json",
+    "bytes": 943,
+    "sha256": "db5c6a77381291883d0c15a4a108723c158515e01bb587f3c18712ec5e1565d3"
+  }
+}

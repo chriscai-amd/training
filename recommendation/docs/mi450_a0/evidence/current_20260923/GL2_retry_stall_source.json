@@ -1,0 +1,38 @@
+{
+  "status": "PASS_SOURCE_AND_NATIVE_CONFOUND_REVIEW_NO_NEW_RUNTIME_VERDICT",
+  "current_loaded_MES": "0x7b",
+  "findings": {
+    "GL2": "Removed optional persisting-cache requests program residency; release or zero-size requests write a flush register without polling. No retained evidence establishes invocation during the stall. Initialization instrumentation only reads these registers; threshold setting is a software shadow. Saved activation reads show zero residency.",
+    "GL2_address": "The old flush-register source comment expects 0x18314, while the saved AID0 SOC15 address is 0x10194; BASE_IDX was marked a placeholder. This discrepancy is conditional on the unproved optional write path executing.",
+    "PM4": "The retained ROCr ACQUIRE_MEM requests GL2_INV with GL2_WB unset. It identifies the requested operation, not a hardware execution PC or the cause of nonprogress.",
+    "retry": "Old initialization readbacks differ only at VMID0. Subsequent KFD retry branches/masks and full sh_mem_config delivery to MES are preserved; selected compiled differences are device-structure displacement changes, and MES add-queue function bytes match. No user-queue retry-policy change or final live state is demonstrated.",
+    "next_discriminators": "After completed current validation and storage admission, screen a fresh process with only full FBGEMM prewarm removed. Prior prewarm on the same boot limits a pass. A fresh-boot matched current-source baseline/corrected controlled trap test can isolate CWSR from the reinstall changes."
+  },
+  "receipts": {
+    "source_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_GL2_retry_stall_source_review_v1/REVIEW.json",
+      "bytes": 14887,
+      "sha256": "0b5dc826f02617a83bad86099683122798b9c07a1a207cc46dd5a697beefc79e"
+    },
+    "source_excerpts": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_GL2_retry_stall_source_review_v1/SOURCE_EXCERPTS.json",
+      "bytes": 14351,
+      "sha256": "540ab25820adfcbd4dc2ccde14932b88db14669316011086b4da25514ee1d1cc"
+    },
+    "independent_native_peer": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_GL2_retry_stall_peer_v1/REVIEW.json",
+      "bytes": 14237,
+      "sha256": "a700d17aadc40354c29131076b193d7cfa688f54ed84136cd3cfa42b985255ff"
+    },
+    "recommendations": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_GL2_retry_stall_source_review_v1/RECOMMENDATIONS.md",
+      "bytes": 7160,
+      "sha256": "87010ca9fc84c44f3d465716309d76cd9152aa0858be830332c272e210816f02"
+    }
+  },
+  "limits": [
+    "No firmware image was acquired or changed, and no GPU/register operation was performed for this analysis.",
+    "The user-reported 0x17d remove_queue defect does not prove a defect in actual 0x7b or identify prior per-run MES versions.",
+    "Source plausibility does not attribute the historical loader wait or weaken the deterministic CWSR corruption proof."
+  ]
+}

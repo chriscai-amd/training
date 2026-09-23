@@ -1,0 +1,36 @@
+{
+  "status": "PASS_CORRECTED_FULL_FAIL131_QUARTET_ALL_ZERO_BYTES_REAPED_IDLE",
+  "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+  "MES": "0x0000007b",
+  "terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/attention/terminal.json",
+    "bytes": 3443,
+    "sha256": "72b9a42a0b8168be6154ff14f00ffdf4e09a9565710daaf7c8c358d738f26a2f"
+  },
+  "complete_raw_audit": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/attention/complete_raw_audit.json",
+    "bytes": 44359,
+    "sha256": "3795c8411525b9d1a71117f672a1f967863737d684b606e158a53a7bc4e26da3"
+  },
+  "archive": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/attention_archive/archive_receipt.json",
+    "bytes": 103160,
+    "sha256": "643ca920523016caa7976492524b253a65ac8398bfa20341215ac25b1b1e8473"
+  },
+  "independent_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_attention_result_peer_v1/REVIEW.json",
+    "bytes": 7131765,
+    "sha256": "549bb140884d755d79c0b2aeb5ff32198fd1b3b523a88d66c80fa1c4df451628"
+  },
+  "arms": 4,
+  "calls": 8,
+  "raw_files": 144,
+  "raw_bytes": 13053235840,
+  "archive_bytes": 2418798288,
+  "all_raw_hashes_match_prior_corrected_run": true,
+  "all_historical_80_wrong_DQ_coordinates_positive_zero": true,
+  "producers_reaped_and_idle": true,
+  "limits": [
+    "Current-source correction with MES0x7b; no E2E sufficiency or isolated MES causal claim."
+  ]
+}

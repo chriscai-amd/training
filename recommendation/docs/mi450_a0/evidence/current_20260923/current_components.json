@@ -1,0 +1,54 @@
+{
+  "status": "PASS_PINNED_COMPLETE_COMPONENT_MATRIX",
+  "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+  "matrix": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/components/terminal.json",
+    "bytes": 11099,
+    "sha256": "f17b2cbe605aa8769ab0d471b884ed1603bb300e62e6c25454e332698ef97c0d"
+  },
+  "contract": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/component_contract.json",
+    "bytes": 60395,
+    "sha256": "61d1fde3a9621466681b46392d2def9cc19bd6c8ceb4d4367d648d25c84756f4"
+  },
+  "processes": 24,
+  "dispatches": 36,
+  "retained_raw_files_verified": 856,
+  "retained_raw_bytes_verified": 7366528,
+  "retained_native_pins_verified": 1024,
+  "expected_driver": {
+    "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+    "driver": {
+      "version": "7.1.1.31300009",
+      "srcversion": "AD83C153B9701570F12964E"
+    },
+    "parameters": {
+      "cwsr_enable": "1",
+      "sched_policy": "0",
+      "noretry": "-1",
+      "gpu_recovery": "-1",
+      "ip_block_mask": "4294967295",
+      "halt_if_hws_hang": "0",
+      "uni_mes": "1"
+    },
+    "selected_module": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/candidate_amdgpu.stripped.ko",
+      "bytes": 40302424,
+      "sha256": "78de19854e38e298f6418bddcfa39f44a797f811f0f4b9c585482f4c4dc2b2b4"
+    }
+  },
+  "final_kernel_capture": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/components/attention_results_unequal_trap/dmesg_terminal.log",
+    "bytes": 159062,
+    "sha256": "8ffa6f7dec94bf531593d7240616ea095cf862b7b79771d18194cbb83f6cf421"
+  },
+  "complete_consumer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/components_consumer.json",
+    "bytes": 8971,
+    "sha256": "9e339a08b549b473dd186de44f93d6376c2c60d7c23d495e3f2b0c072ad6d91e"
+  },
+  "MES": "0x0000007b",
+  "limits": [
+    "Current-source CWSR candidate component result. Not an E2E numerical verdict or firmware-only comparison."
+  ]
+}

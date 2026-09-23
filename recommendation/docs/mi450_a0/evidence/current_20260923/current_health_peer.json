@@ -1,0 +1,16 @@
+{
+  "status": "PASS_INDEPENDENT_CURRENT_HEALTH_RESULT_RETAINED_EVIDENCE",
+  "peer_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_health_result_peer_v1/REVIEW.json",
+    "bytes": 28716,
+    "sha256": "0c2f1f93ab88cb978bd419f38fb2b5843c4977df704ef4ea94eb4678fe2fac05"
+  },
+  "terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/health/terminal.json",
+    "bytes": 15461,
+    "sha256": "292012919a0567f63747fade3f597112751938ce76a5eddfc0d91f30626aed0b"
+  },
+  "prelaunch_known_corrected_MC60_records": 1,
+  "MC60_during_producers_and_final_checks": 0,
+  "limits": "Retained CPU evidence review; no additional GPU workload or broad platform-health clearance."
+}

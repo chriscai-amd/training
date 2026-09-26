@@ -1,0 +1,17 @@
+{
+ "module": "/lib/modules/6.14.0-37-generic/updates/dkms/amdgpu.ko.zst",
+ "module_sha256": "d1d658398d7168fe22605f68f24e03698f0a67a12077bee85bc1a811721988cd",
+ "decompressed_bytes": 40295862,
+ "decompressed_sha256": "b1a1eef14e313d1f230bd60d05c2b5e4070b7980d6f1fc11f530079033ae536f"
+}
+cwsr_trap_gfx9_4_3_hex                   .rodata      4096 B sha256=9039a76997fe26b7.. readlane_v1@[] writelane_v1@[] -> UNKNOWN
+cwsr_trap_gfx8_hex                       .rodata      1992 B sha256=7ed00d506e264a1a.. readlane_v1@[] writelane_v1@[] -> UNKNOWN
+cwsr_trap_arcturus_hex                   .rodata      3912 B sha256=aa1737910dbdda63.. readlane_v1@[] writelane_v1@[] -> UNKNOWN
+cwsr_trap_gfx12_hex                      .rodata      3760 B sha256=ab5ac126b32d309a.. readlane_v1@[] writelane_v1@[] -> UNKNOWN
+cwsr_trap_gfx12_1_0_hex                  .rodata      5656 B sha256=0f718b5eae143bad.. readlane_v1@[68] writelane_v1@[96] -> FAULTY original gfx1250 handler (5656 B; A0 7.1.1 srcversions 654C1DDE/EADFD8EC; B0 identical)
+cwsr_trap_aldebaran_hex                  .rodata      4008 B sha256=2ef6d1c2285d785d.. readlane_v1@[] writelane_v1@[] -> UNKNOWN
+cwsr_trap_gfx9_hex                       .rodata      3304 B sha256=f721abbd6cc2518e.. readlane_v1@[] writelane_v1@[] -> UNKNOWN
+cwsr_trap_gfx9_5_0_hex                   .rodata      4048 B sha256=950dbdacf7b3b8ae.. readlane_v1@[] writelane_v1@[] -> UNKNOWN
+cwsr_trap_gfx10_hex                      .rodata      3448 B sha256=f4301fd24a6af974.. readlane_v1@[] writelane_v1@[] -> UNKNOWN
+cwsr_trap_nv1x_hex                       .rodata      4968 B sha256=b4851f30fb6a749f.. readlane_v1@[] writelane_v1@[] -> UNKNOWN
+cwsr_trap_gfx11_hex                      .rodata      3528 B sha256=11e00216b4515117.. readlane_v1@[] writelane_v1@[] -> UNKNOWN

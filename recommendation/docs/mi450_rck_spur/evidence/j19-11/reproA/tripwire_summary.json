@@ -1,0 +1,21 @@
+{
+ "step": 123,
+ "phase": "backward",
+ "reason": "nonfinite",
+ "failure_side": "output",
+ "all_inputs_finite": true,
+ "all_outputs_finite": false,
+ "first_bad_sequence": 54,
+ "event": "dense_grads",
+ "nonfinite_params": [
+  "_hstu_transducer._input_preprocessor._additional_embedding_mlp.2.weight"
+ ],
+ "nonfinite_shapes": [
+  [
+   512,
+   256
+  ]
+ ],
+ "n_params": 69,
+ "ranks_reporting": 4
+}

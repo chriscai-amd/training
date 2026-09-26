@@ -1,0 +1,1 @@
+numactl --membind=0,1 python -m generative_recommenders.dlrm_v4.train.train_ranker --dataset yambda-5b --mode streaming-train-eval

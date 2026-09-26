@@ -1,0 +1,16 @@
+# chcai MI450 A0 CWSR-handler test. Inert unless the kernel cmdline has chcai_cwsrfix=1,
+# which only the one-shot entry in /boot/grub/custom.cfg adds. See /var/lib/chcai-cwsrfix/README.txt.
+[Unit]
+Description=chcai one-shot first load of the CWSR-corrected amdgpu
+ConditionKernelCommandLine=chcai_cwsrfix=1
+After=local-fs.target systemd-udev-trigger.service systemd-modules-load.service
+Before=spurd.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+TimeoutStartSec=900
+ExecStart=/var/lib/chcai-cwsrfix/load.sh
+
+[Install]
+WantedBy=multi-user.target

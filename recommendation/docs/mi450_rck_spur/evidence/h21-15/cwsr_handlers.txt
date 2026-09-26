@@ -1,0 +1,2 @@
+amdgpu.ko (amdgpu-7.1.1-2389086.el9, srcversion 390DDE7DEA1EBD99204E6D5) module_sha256 f230e6c762f91691305b5bc40f5e00bb80979d7e8b8df76da218377e1faadc2a
+cwsr_trap_gfx12_1_0_hex .rodata 5656 B sha256=0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290 -> FAULTY original gfx1250 handler

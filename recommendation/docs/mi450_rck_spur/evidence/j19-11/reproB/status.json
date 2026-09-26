@@ -1,0 +1,19 @@
+{
+ "run": "/shared/chcai/mi450_a0_newcluster/runs/reproB_numabind_ctheliosr-rck-g02-j19-11_20260925T152003Z",
+ "trainer_pid": 37842,
+ "started": "2026-09-25T15:20:05.578+00:00",
+ "last_step": 6,
+ "last_loss": "0.13922",
+ "last_step_utc": "2026-09-25T15:31:10.714+00:00",
+ "steps_seen": 6,
+ "nonfinite_steps": [],
+ "first_nonfinite": null,
+ "evals": [],
+ "in_eval": false,
+ "run_stop": null,
+ "errors": [],
+ "stall": true,
+ "stopped_by_monitor": null,
+ "trainer_alive": true,
+ "updated": "2026-09-25T15:53:25.900+00:00"
+}

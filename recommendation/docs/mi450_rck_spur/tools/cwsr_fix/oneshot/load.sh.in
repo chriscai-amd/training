@@ -1,0 +1,44 @@
+#!/bin/bash
+# First load of the CWSR-corrected amdgpu. Started by chcai-cwsrfix-load.service only on the
+# chcai-cwsrfix-oneshot GRUB entry, where modprobe.blacklist=amdgpu kept the stock module out.
+set -u
+D=/var/lib/chcai-cwsrfix
+KO=$D/candidate_amdgpu.ko
+EXPECT_SHA=@SHA@
+PARAMS="mes_log_enable=1 halt_if_hws_hang=1 gpu_recovery=0 noretry=1"
+BOOT=$(cat /proc/sys/kernel/random/boot_id)
+R=$D/receipts/$BOOT
+mkdir -p "$R"
+exec >>"$R/load.log" 2>&1
+ts() { date -u +%FT%T.%NZ; }
+
+echo "start $(ts) boot=$BOOT"
+cat /proc/cmdline
+grub-editenv /boot/grub/grubenv unset next_entry || echo "grub-editenv unset failed"
+if [ -e /sys/module/amdgpu ]; then
+  echo "amdgpu already present (srcversion $(cat /sys/module/amdgpu/srcversion 2>/dev/null)); candidate not loaded"
+  exit 1
+fi
+got=$(sha256sum "$KO" | cut -d' ' -f1)
+[ "$got" = "$EXPECT_SHA" ] || { echo "candidate sha256 mismatch: $got"; exit 2; }
+
+modprobe --show-depends amdgpu | awk '$1 == "insmod" && $2 !~ /\/amdgpu\.ko/ {print $2}' |
+  while read -r m; do
+    n=$(basename "$m"); n=${n%%.ko*}
+    modprobe "$n" || echo "dependency $n failed"
+  done
+lsmod >"$R/lsmod_before_insmod.txt"
+
+echo "insmod start $(ts) params=$PARAMS"; sync
+insmod "$KO" $PARAMS
+rc=$?
+echo "insmod rc=$rc $(ts)"; sync
+echo "srcversion=$(cat /sys/module/amdgpu/srcversion 2>/dev/null)"
+for p in noretry mes_log_enable halt_if_hws_hang gpu_recovery cwsr_enable; do
+  echo "$p=$(cat /sys/module/amdgpu/parameters/$p 2>/dev/null)"
+done
+udevadm settle --timeout=120 || echo "udevadm settle timed out"
+ls -la /dev/kfd /dev/dri 2>&1
+dmesg >"$R/dmesg_after_load.txt" 2>&1
+echo "done $(ts)"; sync
+exit $rc

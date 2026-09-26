@@ -1,0 +1,48 @@
+{
+ "run": "/shared/chcai/mi450_a0_newcluster/runs/reproA_default_tripwire_ctheliosr-rck-g02-j19-11_20260925T150501Z",
+ "trainer_pid": 32566,
+ "started": "2026-09-25T15:05:04.795+00:00",
+ "last_step": 122,
+ "last_loss": "0.13893",
+ "last_step_utc": "2026-09-25T15:19:44.980+00:00",
+ "steps_seen": 122,
+ "nonfinite_steps": [],
+ "first_nonfinite": null,
+ "evals": [],
+ "in_eval": false,
+ "run_stop": null,
+ "errors": [
+  {
+   "utc": "2026-09-25T15:19:49.980+00:00",
+   "line": "INFO:__mp_main__:Traceback (most recent call last):"
+  },
+  {
+   "utc": "2026-09-25T15:19:49.980+00:00",
+   "line": "INFO:__mp_main__:Traceback (most recent call last):"
+  },
+  {
+   "utc": "2026-09-25T15:19:49.980+00:00",
+   "line": "INFO:__mp_main__:Traceback (most recent call last):"
+  },
+  {
+   "utc": "2026-09-25T15:19:49.980+00:00",
+   "line": "INFO:__mp_main__:Traceback (most recent call last):"
+  },
+  {
+   "utc": "2026-09-25T15:19:49.980+00:00",
+   "line": "Traceback (most recent call last):"
+  },
+  {
+   "utc": "2026-09-25T15:19:49.981+00:00",
+   "line": "Traceback (most recent call last):"
+  },
+  {
+   "utc": "2026-09-25T15:19:49.981+00:00",
+   "line": "Traceback (most recent call last):"
+  }
+ ],
+ "stall": false,
+ "stopped_by_monitor": null,
+ "trainer_alive": false,
+ "updated": "2026-09-25T15:19:54.981+00:00"
+}

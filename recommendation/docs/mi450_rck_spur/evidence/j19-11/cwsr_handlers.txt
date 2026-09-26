@@ -1,0 +1,3 @@
+"module_sha256": "a8d045fa62fad0e82f08f35a5b73ce180a7a99719b9a84cc667de502dce250c1" (signed per host; srcversion ECD716E95BE41CD5A13F14E)
+cwsr_trap_gfx12_1_0_hex .rodata 5656 B sha256=0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290 readlane_v1@[68] writelane_v1@[96] -> FAULTY original gfx1250 handler
+cwsr_trap_handler_gfx12.asm sha256=5e0e339cb988120d99fbccf2869bfab29e0a143bd110ce6f00cfdc495d5bf69d (amdgpu-7.1.1-2398876)

@@ -1,0 +1,30 @@
+{
+ "run": "/shared/chcai/mi450_a0_newcluster/runs/full4_a37cfg_20260925T035054Z",
+ "trainer_pid": 38910,
+ "started": "2026-09-25T03:50:58.149+00:00",
+ "last_step": 113,
+ "last_loss": "nan",
+ "last_step_utc": "2026-09-25T04:04:44.029+00:00",
+ "steps_seen": 113,
+ "nonfinite_steps": [
+  111,
+  112,
+  113
+ ],
+ "first_nonfinite": {
+  "step": 111,
+  "loss": "nan",
+  "utc": "2026-09-25T04:04:44.029+00:00"
+ },
+ "evals": [],
+ "in_eval": false,
+ "run_stop": null,
+ "errors": [],
+ "stall": false,
+ "stopped_by_monitor": {
+  "reason": "nonfinite loss at two distinct steps",
+  "utc": "2026-09-25T04:04:44.029+00:00"
+ },
+ "trainer_alive": true,
+ "updated": "2026-09-25T04:04:39.024+00:00"
+}

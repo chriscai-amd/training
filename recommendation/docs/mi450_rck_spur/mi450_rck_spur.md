@@ -11,7 +11,7 @@ which component produces the NaN. Companion records:
 [MI450 A0](../mi450_a0/mi450_a0.md) (one GPU, shrunk model),
 [A0 CWSR defect and fix](../mi450_a0/cwsr_bank_corruption_fix.md),
 [MI450 B0](../mi450_b0/mi450_b0.md), and the four-GPU convergence reference
-[1P4G a37-2](../mi450_1P4G/ctheliosr-1b112-a37-2.md), whose configuration
+[1P4G a37-2](../mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md), whose configuration
 every run here reuses.
 
 ## Current status: NaN reproduces; corrected driver built, blocked on hung nodes
@@ -258,7 +258,7 @@ and SHA-256 lists; one corrupted transfer (`anchor_ts_L4086.npy`) was
 downloaded again. The MLPerf log reports 2,290,835,423 training samples.
 
 `run_full_model.sh` applies the a37-2 converged configuration from the
-[1P4G record](../mi450_1P4G/ctheliosr-1b112-a37-2.md):
+[1P4G record](../mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md):
 
 | Group | Settings |
 |---|---|

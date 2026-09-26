@@ -36,9 +36,9 @@ is still inside the 24,000-step warmup. Baseline settings and comparisons
 below are explicitly separated from the latest run.
 
 Companion investigations:
-[MI450 A0](../mi450_a0/mi450_a0.md),
-[MI450 B0](../mi450_b0/mi450_b0.md), and
-[current A0 controls and evidence](../mi450_a0/mi450_a0.md#stack-and-controls).
+[MI450 A0](../../mi450_a0/mi450_a0.md),
+[MI450 B0](../../mi450_b0/mi450_b0.md), and
+[current A0 controls and evidence](../../mi450_a0/mi450_a0.md#stack-and-controls).
 
 ## Start here
 
@@ -150,7 +150,7 @@ table, and the prepared image/container identity is retained.
 |---|---|
 | Base image | `amdprimus/amdprimus:gfx1250-20260910` |
 | Base digest | `sha256:6e656de79e6c8d7f3b3db3690606c3e6cb0536ec871f0521735746015297c9a1` |
-| Build recipe | [`Dockerfile.amdprimus0815`](../../Dockerfile.amdprimus0815), with the September 10 base and exact Triton commit overridden explicitly |
+| Build recipe | [`Dockerfile.amdprimus0815`](../../../Dockerfile.amdprimus0815), with the September 10 base and exact Triton commit overridden explicitly |
 | Prepared image | `recommendation-mi450:0910-7ff-full` |
 | Prepared manifest-list digest / recorded image identity | `sha256:87b89eb5bd7d9abb6e1fdab91456e0b83eae9b5520299d3f282c7e750bbcab0e` |
 | Build platform manifest | `sha256:05db327aa12133b407c1e6ebeb082198f28b4da8e7be14b76836d4754f8c73f0` |
@@ -208,7 +208,7 @@ sizes were retained; no quarter-vocabulary remapping was selected.
 ### 2.2 Architecture and precision
 
 The four `DlrmHSTUConfig` startup records agree with the production settings in
-[`yambda_5b.gin`](../../generative_recommenders/dlrm_v4/train/gin/yambda_5b.gin).
+[`yambda_5b.gin`](../../../generative_recommenders/dlrm_v4/train/gin/yambda_5b.gin).
 
 | Model setting | Value |
 |---|---|
@@ -356,7 +356,7 @@ matrix instruction dimension 16, `waves_per_eu=0`, four warps, one stage,
 pre-hook zeroes `DQ`. Forward source pins are `BLOCK_M=128`, `BLOCK_N=32`,
 matrix instruction dimension 16, `waves_per_eu=0`, `kpack=2`, eight warps,
 two stages, with TLX disabled. See the pinned
-[attention implementation](../../generative_recommenders/ops/triton/triton_hstu_attention.py)
+[attention implementation](../../../generative_recommenders/ops/triton/triton_hstu_attention.py)
 and `prepared_stack.json`.
 
 ### 3.4 Evaluation, checkpoints, logging and stop conditions
@@ -838,7 +838,7 @@ The proposed **2048 per GPU across four GPUs** has the same global batch.
 The reference did not use global batch 1024.
 
 The first `eval_accuracy >= 0.75` event in each of the 20
-[`gbs_8192` RCP logs](../../rcp_logs/gbs_8192/) gives:
+[`gbs_8192` RCP logs](../../../rcp_logs/gbs_8192/) gives:
 
 | Recorded MI350 result | Minimum | Mean | Maximum |
 |---|---:|---:|---:|

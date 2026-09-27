@@ -1,0 +1,106 @@
+Module                  Size  Used by
+amddrm_ttm_helper      12288  0
+amdttm                147456  1 amddrm_ttm_helper
+amdxcp                 12288  0
+amddrm_exec            12288  0
+amd_sched              69632  0
+amdkcl                 36864  3 amd_sched,amdttm,amddrm_exec
+overlay               217088  0
+amddrm_buddy           28672  0
+drm_ttm_helper         16384  0
+ttm                   118784  1 drm_ttm_helper
+amddrm_suballoc_helper    20480  0
+drm_display_helper    278528  0
+cec                    94208  1 drm_display_helper
+rc_core                73728  1 cec
+video                  77824  0
+wmi                    28672  1 video
+rpcsec_gss_krb5        36864  0
+auth_rpcgss           184320  1 rpcsec_gss_krb5
+nfsv4                1150976  1
+nfs                   585728  2 nfsv4
+lockd                 143360  1 nfs
+grace                  12288  1 lockd
+netfs                 598016  1 nfs
+cfg80211             1437696  0
+sunrpc                815104  9 nfsv4,auth_rpcgss,lockd,rpcsec_gss_krb5,nfs
+ipmi_ssif              45056  0
+binfmt_misc            24576  1
+intel_rapl_msr         20480  0
+ifoe_cfg              143360  0
+intel_rapl_common      53248  1 intel_rapl_msr
+ifoe_cmd               12288  0
+nls_iso8859_1          12288  1
+edac_mce_amd           28672  0
+kvm_amd               245760  0
+ccp                   155648  1 kvm_amd
+kvm                  1425408  1 kvm_amd
+rapl                   20480  0
+acpi_ipmi              24576  0
+ipmi_si                86016  1
+i2c_piix4              32768  0
+ipmi_devintf           16384  0
+ast                   122880  0
+ifoe                   90112  2 ifoe_cfg,ifoe_cmd
+i2c_algo_bit           16384  1 ast
+i2c_smbus              20480  1 i2c_piix4
+ipmi_msghandler        94208  4 ipmi_devintf,ipmi_si,acpi_ipmi,ipmi_ssif
+input_leds             12288  0
+hsmp_acpi              12288  0
+hsmp_common            16384  1 hsmp_acpi
+mac_hid                12288  0
+sch_fq_codel           24576  17
+tawk_ipc              135168  0
+dm_multipath           45056  0
+msr                    12288  0
+efi_pstore             12288  0
+nfnetlink              20480  2
+dmi_sysfs              24576  0
+ip_tables              32768  0
+x_tables               65536  1 ip_tables
+autofs4                57344  2
+btrfs                2088960  0
+blake2b_generic        20480  0
+raid10                 73728  0
+raid456               192512  0
+async_raid6_recov      20480  1 raid456
+async_memcpy           16384  2 raid456,async_raid6_recov
+async_pq               20480  2 raid456,async_raid6_recov
+async_xor              16384  3 async_pq,raid456,async_raid6_recov
+async_tx               16384  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
+xor                    20480  2 async_xor,btrfs
+raid6_pq              126976  4 async_pq,btrfs,raid456,async_raid6_recov
+raid1                  61440  0
+raid0                  24576  0
+linear                 16384  0
+pds_vfio_pci           45056  0
+vfio_pci_core          94208  1 pds_vfio_pci
+irqbypass              12288  2 vfio_pci_core,kvm
+vfio_iommu_type1       49152  0
+vfio                   69632  3 vfio_pci_core,pds_vfio_pci,vfio_iommu_type1
+iommufd               118784  1 vfio
+ionic_rdma            258048  0
+ib_peer_mem            20480  1 ionic_rdma
+ib_uverbs             188416  2 ib_peer_mem,ionic_rdma
+pds_fwctl              24576  0
+ib_core               516096  2 ionic_rdma,ib_uverbs
+fwctl                  16384  1 pds_fwctl
+hid_generic            12288  0
+nvme                   61440  2
+polyval_clmulni        12288  0
+polyval_generic        12288  1 polyval_clmulni
+cdc_ether              24576  0
+ghash_clmulni_intel    16384  0
+usbhid                 77824  0
+nvme_core             225280  3 nvme
+usbnet                 61440  1 cdc_ether
+sha256_ssse3           32768  0
+ionic                 286720  1 ionic_rdma
+hid                   262144  2 usbhid,hid_generic
+sha1_ssse3             32768  0
+mii                    20480  1 usbnet
+nvme_auth              28672  1 nvme_core
+pds_core               81920  2 pds_vfio_pci,pds_fwctl
+aesni_intel           122880  0
+crypto_simd            16384  1 aesni_intel
+cryptd                 24576  2 crypto_simd,ghash_clmulni_intel

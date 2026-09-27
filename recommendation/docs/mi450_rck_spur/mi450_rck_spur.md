@@ -1,7 +1,7 @@
 # MI450 A0 on the RCK spur cluster (gfx1250, four GPUs, full model)
 
-Updated **2026-09-26** (all times UTC). Node states were last checked at
-**00:05 UTC on September 26**.
+Updated **2026-09-27, 02:35 UTC** (all times UTC), while the corrected-driver
+run is still in progress.
 
 This cluster (hosts `ctheliosr-rck-g02-j19-*` and `ctheliosp-rck-g02-h21-*`,
 scheduled by ROCm spur) was new to this investigation on September 24. The
@@ -14,12 +14,43 @@ which component produces the NaN. Companion records:
 [1P4G a37-2](../mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md), whose configuration
 every run here reuses.
 
-## Current status: NaN reproduces; corrected driver built, blocked on hung nodes
+## Current status: corrected driver clean past 2,000 steps with the trigger active
 
-**The NaN reproduces with the full four-GPU model.** With the a37-2 converged
-configuration (all embedding rows, local/global batch 1024/4096, seed 1), the
-first non-finite loss appeared at **step 111 on `j19-1`** and at **step 123 on
-`j19-11`**. Both nodes run the stock BKC with AutoNUMA on.
+**On the corrected CWSR handler, the default configuration has run 2,128 finite
+steps and is still going.** The run started at 01:32:50 on September 27 on
+`j19-9`, with AutoNUMA on and no memory binding. On the stock driver, the same
+configuration went NaN at **step 111** (`j19-1`) and **step 123** (`j19-11`).
+The trigger is fully present: AutoNUMA averaged **2.2 million page-table
+updates per minute** over the first 50 training minutes (2.5 million in the
+stock `j19-1` run), and KFD queue evictions, each of which saves the running
+waves through the handler, added 18.5 seconds of evicted time across the four
+ranks. The run continues toward AUC 0.75 as the several-hour end-to-end run
+([§5.2](#52-corrected-driver-run-on-j19-9)).
+
+**This is the strongest evidence so far that the handler is the culprit, but it
+is one run and still in progress.** Hardware, firmware, software stack,
+configuration and trigger are the same as in the stock runs; only the handler
+and its two size bytes changed ([§7](#7-corrected-cwsr-driver)). Both stock
+default runs failed by step 123. A stock run with memory binding once reached
+1,912 steps, so run length alone is not conclusive.
+
+**Memory binding is not a mitigation.** A `numactl --membind=0,1` run on the
+stock driver on `j19-9` went NaN at **step 354**, with zero AutoNUMA page-table
+updates in the minutes before. KFD kept evicting the trainer's queues
+throughout that run (6.9–10.8 seconds of evicted time per rank by the failure).
+AutoNUMA is the largest source of evictions here but not the only one, so
+binding removes one trigger, not the event that runs the faulty handler
+([§6.4](#64-what-numactl---membind01-does-and-doesnt-do)).
+
+**The stalls are a separate firmware problem, and they also block reboots.** A
+bound tripwire run on `j19-9` wedged at 20:57:47 on September 26: GPU `0004`'s
+firmware scheduler (MES `0x7b`) stopped responding to `INVALIDATE_TLBS` and
+then `REMOVE_QUEUE`. With `halt_if_hws_hang=1`, each waiting driver thread
+halts forever by design, so queue restores and other KFD work piled up, the
+ranks could not exit and one GPU read 100% busy for four hours. Clearing the
+parameter at runtime released four of the five stuck processes; about two
+minutes later the node went dark with a firmware-recorded hardware error and
+reset itself ([§8.2](#82-mes-non-response-and-halt_if_hws_hang)).
 
 **The first non-finite tensor is the one the A0 investigation identified.** On
 `j19-11` the NaN tripwire found every input finite and exactly one non-finite
@@ -33,72 +64,55 @@ checked embeds the 5,656-byte gfx1250 handler with SHA-256 `0f718b5e…` in
 amdgpu 7.1.1, and the DKMS source's `L_NOT_WAVE_START` still has the unpatched
 cross-bank lane-0 copy. The corrected handler (`68c31ab2…`) is not in this BKC.
 
-**AutoNUMA is the trigger here, and binding memory removes it.** The default
-run made **2.54 million NUMA page-table updates per minute**. Under
-`numactl --membind=0,1` that fell to **zero**, and the same configuration
-stayed finite through **step 1,912** (about 46 minutes of training) until
-`j19-1` was lost. That is one run: the same arm on `j19-11` stalled at step 6
-without a numerical verdict.
-
-**The decisive corrected-driver test has not run yet.** The corrected amdgpu
-was built on `j19-1` from its own DKMS source. It differs from a faithful
-rebuild of the installed module only in the handler and two handler-size
-bytes, exactly as in the A0 team's audit. It is installed as a one-shot boot
-entry. The reboot into it **hung in shutdown**, as the earlier reboot of
-`j19-11` did, so both A0 nodes need an out-of-band power cycle.
-
-**No several-hour NaN-free run exists yet.** The longest finite run is the
-1,912-step `numactl` run. Node losses, not NaNs, ended every longer attempt:
-five losses on four nodes in about 16 hours, two of them hung reboots
-([§8](#8-cluster-reliability)).
-
 | Question | Recorded answer |
 |---|---|
-| Does the NaN reproduce on this cluster? | **Yes, in 2 of 2 default runs**: step 111 (`j19-1`) and step 123 (`j19-11`). |
+| Does the NaN reproduce on this cluster? | **Yes, on the stock driver**: default runs at steps 111 and 123, and a `numactl`-bound run at step 354. |
 | Was the model shrunk? | **No.** `EMBEDDING_ROW_SCALE=1.0` on four GPUs with the a37-2 settings. |
-| Which component? | **The gfx1250 CWSR trap handler in amdgpu (KFD)**, by the chain in [§6](#6-nan-triage-component-trigger-and-mechanism). The direct corrected-driver run is still pending. |
-| What triggers it here? | Linux automatic NUMA balancing (`kernel.numa_balancing=1`), which evicts KFD queues and forces CWSR saves. |
-| Is there a working mitigation? | `numactl --membind=0,1` removed the trigger and ran 1,912 finite steps (n=1). It isn't a fix: the handler stays faulty. |
-| Several-hour end-to-end run? | **Not yet.** The longest finite run is 1,912 steps (46 minutes). |
-| Is the corrected driver ready? | **Built, audited and armed on `j19-1`**, but not yet loaded. |
-| What blocks progress? | `j19-1` and `j19-11` are hung in shutdown and need a BMC power cycle. |
+| Which component? | **The gfx1250 CWSR trap handler in amdgpu (KFD).** The corrected-driver default run is clean past 2,128 steps with the trigger active; it is still running ([§6](#6-nan-triage-component-trigger-and-mechanism)). |
+| What triggers it? | KFD queue evictions, which save running waves through the handler. AutoNUMA is the largest source here; evictions continue without it. |
+| Is there a mitigation short of the fix? | **No.** `numactl --membind=0,1` still went NaN at step 354. |
+| Several-hour end-to-end run? | **In progress** on the corrected driver: 2,128 steps (about 50 minutes of training) at 02:35. |
+| Why do nodes stall and fail to reboot? | MES `0x7b` stops responding and `halt_if_hws_hang=1` freezes the driver, observed directly on `j19-9`. |
 
-### Node status at 00:05 UTC, September 26
+### Node status at 02:35 UTC, September 27
 
 | Node | GPUs | State | Needs |
 |---|---|---|---|
-| `ctheliosr-rck-g02-j19-1` (`10.190.178.47`) | 4 × `1002:75c1` | Hung in shutdown since the 20:30 reboot; absent from `sinfo` | BMC power cycle. It should then boot the corrected driver once ([§7.3](#73-activation-on-j19-1)). |
-| `ctheliosr-rck-g02-j19-11` (`10.190.178.179`) | 4 × `1002:75c1` | Hung in shutdown since the 18:50 reboot; absent from `sinfo` | BMC power cycle; `/nfs_spur` export |
+| `ctheliosr-rck-g02-j19-9` (`10.190.178.96`) | 4 × `1002:75c1` | Running the corrected-driver validation (job 11120) on the one-boot corrected load from 01:27 | Remove the one-shot files after the test ([§7.4](#74-removal)) |
+| `ctheliosr-rck-g02-j19-1` (`10.190.178.47`) | 4 × `1002:75c1` | Hung in shutdown since 20:30 on September 25; absent from `sinfo` | BMC power cycle. It should then boot the corrected driver once ([§7.3](#73-activation-on-j19-1)) |
+| `ctheliosr-rck-g02-j19-11` (`10.190.178.179`) | 4 × `1002:75c1` | Hung in shutdown since 18:50 on September 25; absent from `sinfo` | BMC power cycle; `/nfs_spur` export |
 | `ctheliosr-rck-g02-j19-7` (`10.190.178.15`) | 4 × `1002:75c1` | `drain` | TheRock CI ran on its GPUs outside the scheduler ([§8.4](#84-ci-workloads-outside-the-scheduler)) |
-| `ctheliosp-rck-g02-h21-15` (`10.190.178.90`) | 4 × `1002:75c1` | `down`; sshd up, node agent dead since 11:22:34 | spurd restart; `/nfs_spur` export |
+| `ctheliosp-rck-g02-h21-15` (`10.190.178.90`) | 4 × `1002:75c1` | `down`; sshd up, node agent dead since 11:22:34 on September 25 | spurd restart; `/nfs_spur` export |
 | `ctheliosr-rck-g02-j19-16` | not inspected | `idle`, but a job did not start within 90 s | — |
-| `ctheliosr-rck-g02-j19-9`, `ctheliosp-rck-g02-h21-7` | — | `resv` and `down`; reserved for other users | — |
+| `ctheliosp-rck-g02-h21-7` | — | `down`; reserved for other users | — |
 | `ctheliosp-rck-g02-h21-13`, `ctheliosp-rck-g02-h21-14` | `h21-14`: `1002:75c7` | Other users' jobs | — |
 | `ctheliosp-rck-g02-h21-12`, `ctheliosp-rck-g02-h21-16` | `h21-16`: `1002:75c7` | `idle`; no `/shared`, no `unsquashfs` | Not A0-equivalent |
 
 ### Needed from admins
 
 1. Power-cycle `j19-1` and `j19-11` through the BMC. Both hung after a systemd
-   reboot request: the kernel answers ping, but sshd and spurd have stopped. If
-   possible, capture `j19-1`'s serial console (`ttyS1`, 115200 baud) first; it
-   would show what blocks the shutdown ([§8.2](#82-hung-soft-reboots-and-halt_if_hws_hang)).
+   reboot request: the kernel answers ping, but sshd and spurd have stopped.
 2. Add `10.190.178.179` (`j19-11`) and `10.190.178.90` (`h21-15`) to the
    `/nfs_spur` export on `10.210.2.150` ([§8.3](#83-nfs-export-gap)).
 3. Restart spurd on `h21-15`.
-4. Decide whether `halt_if_hws_hang=1` should stay enabled on shared nodes
-   ([§8.2](#82-hung-soft-reboots-and-halt_if_hws_hang)).
-5. Check the flood of corrected PCIe errors on `j19-1` ([§8.5](#85-pcie-aer-flood-on-j19-1)).
+4. Reconsider `halt_if_hws_hang=1` on shared nodes. It turns every MES
+   non-response into a permanent wedge that also blocks reboots
+   ([§8.2](#82-mes-non-response-and-halt_if_hws_hang)).
+5. Pass the MES `0x7b` non-response on `j19-9` GPU `0004` to the firmware team
+   ([evidence/j19-9/dmesg_wedge_excerpt.txt](evidence/j19-9/dmesg_wedge_excerpt.txt)).
+6. On `j19-9`, the boot blacklists amdgpu and spurd refuses to start without
+   `/dev/kfd`, so after any reboot the node stays out of the scheduler until
+   amdgpu is loaded ([§8.6](#86-spurd-needs-devkfd)).
+7. Check the flood of corrected PCIe errors on `j19-1` ([§8.5](#85-pcie-aer-flood-on-j19-1)).
 
 ### Next steps
 
-1. When `j19-1` returns, confirm which driver loaded ([§7.3](#73-activation-on-j19-1)).
-   On the corrected driver, run the default AutoNUMA-on configuration past
-   step 123. No NaN would confirm the handler as the culprit; keep that run
-   going toward AUC 0.75 for the several-hour end-to-end result.
-2. If `j19-1` comes back on the stock driver, re-arm the one-shot entry and
-   ask for another power cycle rather than a soft reboot.
-3. After the test, remove the one-shot files ([§7.4](#74-removal)) and
-   power-cycle to return to the stock driver.
+1. Let the corrected-driver run continue toward AUC 0.75, checking that
+   AutoNUMA activity and queue evictions stay present.
+2. If it goes NaN, localize the first non-finite tensor on the corrected
+   driver; that would mean the handler is not the whole story.
+3. After the run, remove the one-shot files on `j19-9` ([§7.4](#74-removal));
+   its `ARMED` flag is already consumed, so later boots behave as before.
 
 ## Contents
 
@@ -282,21 +296,53 @@ step, and samples GPU busy/VRAM and NUMA `vmstat` counters every 30 s.
 
 Startup took about 11 minutes; training then ran at about 1.4 s per step.
 
-| Run (September 25) | Node, boot | Configuration | Result |
+### 5.1 Stock-driver runs
+
+| Run | Node, boot | Configuration | Result |
 |---|---|---|---|
-| `full4_a37cfg_20260925T035054Z` | `j19-1`, `c4dfb7f9` | Default (AutoNUMA on) | Steps 1–110 finite; `nan` from **step 111** at 04:04:44; stopped by the monitor |
+| `full4_a37cfg_20260925T035054Z` | `j19-1`, `c4dfb7f9` | Default (AutoNUMA on) | Steps 1–110 finite; `nan` from **step 111** at 04:04:44 on September 25; stopped by the monitor |
 | `full4_a37cfg_numabind_20260925T040549Z` | `j19-1`, `c4dfb7f9` | `numactl --membind=0,1` | Finite through **step 1,912** at 05:02:55; `j19-1` lost at about 05:03 |
 | Arm A, 1,500-step bound | `h21-15` | Default (AutoNUMA off on this host) | Node agent lost at 11:22:34, about 19 minutes after launch; the run directory is on the node's local disk and wasn't recovered |
 | `reproA_default_tripwire_…_20260925T150501Z` | `j19-11`, `b4ecf5cc` | Default plus tripwire, 600-step bound | Finite through step 122; **step 123** non-finite gradient localized ([§6.1](#61-localization)) |
 | `reproB_numabind_…_20260925T152003Z` | `j19-11`, `b4ecf5cc` | `numactl --membind=0,1`, 1,500-step bound | **Stalled after step 6** (15:31:10). One GPU stayed 100 % busy with VRAM held; the ranks couldn't be killed |
 | reproC | `j19-11` | Triton without the extended VGPR banks (`TRITON_AMD_TARGET_FEATURES=-1024-addressable-vgprs`) | Not run; the GPU was wedged |
+| `long_numabind_ctheliosr-rck-g02-j19-9_20260926T202336Z` | `j19-9`, `964bbe1c` | `numactl --membind=0,1`, no step bound | Steps 1–353 finite; `nan` from **step 354** at 20:43:11 on September 26; stopped by the monitor; node healthy afterwards |
+| `tripwire_numabind_ctheliosr-rck-g02-j19-9_20260926T204726Z` | `j19-9`, `964bbe1c` | `numactl --membind=0,1` plus tripwire, 2,000-step bound | **Wedged in the first iteration** at 20:57:48: MES on GPU `0004` stopped responding ([§8.2](#82-mes-non-response-and-halt_if_hws_hang)) |
 
-| `j19-1` telemetry | Default (NaN at step 111) | `numactl` bind (finite to step 1,912) |
-|---|---:|---:|
-| `numa_pte_updates` per minute | 2,543,480 | 0 |
-| `numa_hint_faults` per minute | 1,059,941 | 15 |
-| `numa_pages_migrated` per minute | 158,360 | 2 |
-| Peak sampled VRAM, GPUs `0001`/`0002`/`0003`/`0004` (GiB) | 424.6 / 406.4 / 391.1 / 351.7 | 399.5 / 406.4 / 391.1 / 398.7 |
+| Stock-driver telemetry | `j19-1` default (NaN at 111) | `j19-1` bind (finite to 1,912) | `j19-9` bind (NaN at 354) |
+|---|---:|---:|---:|
+| `numa_pte_updates` per minute | 2,543,480 | 0 | 0 in the 3.5 minutes before the NaN |
+| `numa_hint_faults` per minute | 1,059,941 | 15 | 0–12 |
+| `numa_pages_migrated` per minute | 158,360 | 2 | 0–6 |
+| KFD evicted time per rank at the end | not recorded | not recorded | 6.9–10.8 s |
+| Peak sampled VRAM, GPUs `0001`/`0002`/`0003`/`0004` (GiB) | 424.6 / 406.4 / 391.1 / 351.7 | 399.5 / 406.4 / 391.1 / 398.7 | — |
+
+The KFD eviction counter (`/sys/class/kfd/kfd/proc/<pid>/stats_*/evicted_ms`)
+was added to the monitor after the `j19-1` runs. In the `j19-9` bound run it
+rose steadily through training on all four ranks, with AutoNUMA idle.
+
+### 5.2 Corrected-driver run on `j19-9`
+
+`corrected_default_ctheliosr-rck-g02-j19-9_20260927T013250Z`: the default
+a37-2 configuration (no binding, no tripwire, no step bound) on the corrected
+driver, srcversion `D0FD14A94CA9A71E8CE9BB4`, loaded as the first amdgpu load
+after a hardware reset ([§7.5](#75-activation-on-j19-9)). `kernel.numa_balancing=1`.
+
+| Milestone | Time (September 27) | Status |
+|---|---|---|
+| Launch | 01:32:50 | Health check passed on the default transport |
+| Step 165 | 01:47:45 | Finite; past the stock failures at 111 and 123 |
+| Step 507 | 01:55:45 | Finite; past the stock bound failure at 354 |
+| Step 1,007 | 02:07:45 | Finite |
+| Step 2,026 | 02:32:46 | Finite; past the 1,912-step bound run on `j19-1` |
+| Step 2,128 | 02:35:19 | Finite, no stall, no evaluation yet; run continuing |
+
+| Trigger during the first 50 training minutes (01:44–02:34) | Value |
+|---|---:|
+| `numa_pte_updates` per minute | 2,232,011 |
+| `numa_hint_faults` per minute | 1,368,619 |
+| `numa_pages_migrated` per minute | 196,153 |
+| KFD evicted time added, all ranks | 18.5 s (9.3–14.7 s per rank since launch) |
 
 ## 6. NaN triage: component, trigger and mechanism
 
@@ -321,8 +367,13 @@ handler embedded in amdgpu's KFD, the component the A0 record corrected:
   5,656-byte `0f718b5e…` handler, and the DKMS source is unpatched.
 - **The same tensor fails.** The first non-finite gradient matches A0's
   attempt 405 ([§6.1](#61-localization)).
-- **The same trigger is active, and removing it removed the NaN** in the one
-  completed test ([§6.3](#63-trigger), [§6.4](#64-why-numactl---membind01-suppresses-it)).
+- **The event that runs the handler is frequent.** KFD queue evictions save
+  the running waves through the handler, and they occur throughout training,
+  from AutoNUMA and from other sources ([§6.3](#63-trigger)).
+- **Changing only the handler has removed the NaN so far.** The
+  corrected-driver default run is finite past 2,128 steps with the trigger
+  active, where the stock driver failed by step 123 in the same configuration
+  ([§5.2](#52-corrected-driver-run-on-j19-9)).
 - **A0's controlled tests establish the mechanism.** On the A0 host the
   corrected driver restores the complete attempt-405 DW baseline in all four
   unchanged ELF arms
@@ -351,10 +402,17 @@ Linux automatic NUMA balancing: task_numa_work
 ```
 
 On `j19-1` the default run made 2.54 million NUMA page-table updates per
-minute ([§5](#5-experiment-record)), so the scanner was invalidating the
+minute ([§5.1](#51-stock-driver-runs)), so the scanner was invalidating the
 trainer's address space continuously during training.
 
-### 6.4 Why `numactl --membind=0,1` suppresses it
+AutoNUMA is not the only source of evictions. In the `j19-9` bound run, with
+zero AutoNUMA page-table updates, each rank still accumulated 6.9–10.8 seconds
+of evicted time. The other sources were not traced; candidates include SVM
+restore activity, buffer moves under memory pressure and `fork`. The kernel log
+shows `svm_range_restore_work` busy just before the wedge
+([§8.2](#82-mes-non-response-and-halt_if_hws_hang)).
+
+### 6.4 What `numactl --membind=0,1` does and doesn't do
 
 `numactl --membind` installs an `MPOL_BIND` task policy without
 `MPOL_F_NUMA_BALANCING`. The kernel's NUMA-balancing scanner skips VMAs whose
@@ -363,23 +421,23 @@ trainer's pages, and no MMU-notifier invalidation reaches KFD from this path.
 The measured page-table update rate fell from 2.54 million to 0 per minute.
 Nodes 0 and 1 hold all of the host's system memory, so the binding doesn't
 restrict placement. A0's policy counterfactual agrees: plain binding gave 0
-SVM eviction pairs and 0 register copies, while `--balancing` with the same
-node mask restored them.
+SVM eviction pairs and 0 register copies in its probes, while `--balancing`
+with the same node mask restored them.
 
-This removes one trigger, not the defect. Queue evictions from other sources,
-such as memory pressure, `fork` or explicit preemption, still run the faulty
-handler.
+In full training that is not enough. The `j19-9` bound run went NaN at step
+354 while queue evictions continued from other sources, and the earlier
+1,912-step bound run on `j19-1` was one sample. Binding lowers exposure but
+does not make training safe; only the handler fix removes the defect.
 
 ### 6.5 What is not established
 
-- The corrected-driver run on this cluster hasn't happened
-  ([§7.3](#73-activation-on-j19-1)).
-- Suppression rests on one 1,912-step run. The `j19-11` `numactl` arm stalled
-  at step 6 for an unknown reason.
-- The victim-side control (reproC, Triton without the extended VGPR banks)
-  didn't run.
-- The trigger rate was measured on `j19-1` only; KFD eviction counts for these
-  runs weren't retained.
+- The corrected-driver evidence is one run, still in progress.
+- The first non-finite tensor under binding was not localized: the bound
+  tripwire run wedged in its first iteration.
+- The non-AutoNUMA eviction sources were not traced.
+- The victim-side control did not run. It would force the failing DW GEMM onto
+  hipBLASLt solution 102 (252 VGPRs, no extended banks), as A0 did; the Triton
+  flag in reproC would not have covered this hipBLASLt kernel.
 - `h21-15` (AutoNUMA off, different BKC) produced no training steps.
 
 ## 7. Corrected CWSR driver
@@ -441,6 +499,10 @@ module on `j19-1`. The full audit log is
 | Candidate identity | srcversion `D0FD14A94CA9A71E8CE9BB4`; stripped module 40,295,376 bytes, SHA-256 `d224829e40dd759028f6ec36573ffedbdb79ee3aae215e014106517b8f23ea18` |
 | Agreement with the A0 audit | Same two `.text` offsets and same 528,176-byte `.rodata` difference as [A0's module audit](../mi450_a0/evidence/current_20260919/CWSR_module_byte_audit.json) |
 
+The same build on `j19-9` produced byte-identical candidate and baseline
+modules (SHA-256 `d224829e…` and `75fc93ee…`) and the same audit result
+([evidence/j19-9/corrected_module_audit.txt](evidence/j19-9/corrected_module_audit.txt)).
+
 ### 7.3 Activation on `j19-1`
 
 **Why not a live reload.** On the A0 host, both live `rmmod`/`insmod`
@@ -486,6 +548,8 @@ After the node returns, check:
 
 ### 7.4 Removal
 
+On `j19-1` (GRUB one-shot):
+
 ```bash
 sudo grub-editenv /boot/grub/grubenv unset next_entry
 sudo rm -f /boot/grub/custom.cfg /etc/systemd/system/chcai-cwsrfix-load.service \
@@ -493,31 +557,61 @@ sudo rm -f /boot/grub/custom.cfg /etc/systemd/system/chcai-cwsrfix-load.service 
 sudo rm -rf /var/lib/chcai-cwsrfix
 ```
 
-After removal, the next boot loads the stock driver.
+On `j19-9` (armed loader; its `ARMED` flag is already consumed):
+
+```bash
+sudo rm -f /etc/systemd/system/chcai-cwsrfix-load.service \
+     /etc/systemd/system/multi-user.target.wants/chcai-cwsrfix-load.service
+sudo rm -rf /var/lib/chcai-cwsrfix
+```
+
+After removal, later boots behave exactly as before the test.
+
+### 7.5 Activation on `j19-9`
+
+`j19-9`'s boot keeps amdgpu out: its kernel command line has
+`modprobe.blacklist=amdgpu` and `/etc/modprobe.d` has `blacklist amdgpu`. On
+its previous boot, amdgpu was loaded about six hours after boot, by hand or by
+CI. So no GRUB entry is needed; every boot there is already a boot without
+amdgpu. [tools/cwsr_fix/oneshot_armed/](tools/cwsr_fix/oneshot_armed/)
+installs the same loader and unit as on `j19-1`, gated on
+`/var/lib/chcai-cwsrfix/ARMED` instead of a command-line token. The loader
+deletes `ARMED` first, so it runs on one boot only.
+
+The files were armed at 01:11 on September 27, while the node was wedged
+([install log](evidence/j19-9/armed_install.txt)). After the reset described
+in [§8.2](#82-mes-non-response-and-halt_if_hws_hang), the new boot
+(`7f22d2fb-18e1-4895-9b5a-a2c054f872b6`) ran the loader. `insmod` started at
+01:26:50 and returned 0 at 01:27:16 with the stock parameters, and all four
+GPUs bound to the corrected module
+([load log](evidence/j19-9/corrected_boot/load_log.txt),
+[post-boot check](evidence/j19-9/corrected_boot/post_boot_inspect.txt)). The
+`VM_PAGE_FAULT` lines in that boot's log are entries of the
+`MEM_RESERVED_INFO` table that every amdgpu load prints, with the same
+addresses on the stock load of September 24, not faults.
 
 ## 8. Cluster reliability
 
 ### 8.1 Node losses
 
-| Time (September 25) | Node | Activity | Symptom | Recovery |
+| Time | Node | Activity | Symptom | Recovery |
 |---|---|---|---|---|
-| About 05:03 | `j19-1` | `numactl`-bound training, step 1,912 | Node agent lost | Rebooted at about 14:16 (boot `b6eaa6f0`) |
-| About 08:29 | `j19-7` | CPU-only dataset download and verification | Node agent lost | Back by about 20:20 (boot `c7c172b6`); drained by 00:05 on September 26 |
-| 11:22:34 | `h21-15` | Arm A, about 19 minutes after launch | Node agent lost; sshd still up | Still down |
-| 18:50 | `j19-11` | systemd reboot after the reproB GPU wedge | Hung in shutdown | Still hung |
-| 20:30 | `j19-1` | systemd reboot into the one-shot entry, GPUs idle | Hung in shutdown | Still hung |
+| About 05:03, September 25 | `j19-1` | `numactl`-bound training, step 1,912 | Node agent lost | Rebooted at about 14:16 (boot `b6eaa6f0`) |
+| About 08:29, September 25 | `j19-7` | CPU-only dataset download and verification | Node agent lost | Back by about 20:20 (boot `c7c172b6`); drained by 00:05 on September 26 |
+| 11:22:34, September 25 | `h21-15` | Arm A, about 19 minutes after launch | Node agent lost; sshd still up | Still down |
+| 18:50, September 25 | `j19-11` | systemd reboot after the reproB GPU wedge | Hung in shutdown | Still hung |
+| 20:30, September 25 | `j19-1` | systemd reboot into the one-shot entry, GPUs idle | Hung in shutdown | Still hung |
+| 20:57, September 26 | `j19-9` | Bound tripwire run, first iteration | MES non-response; driver frozen by `halt_if_hws_hang` | Frozen until 01:12 on September 27 |
+| About 01:14, September 27 | `j19-9` | Two minutes after clearing `halt_if_hws_hang` | Hardware error; node dark, no ping | Reset itself; back at 01:27 on the corrected driver |
 
-The last two were reboots I requested.
+I requested the two `j19` reboots, and the `j19-9` reset followed my clearing
+of `halt_if_hws_hang`.
 
-### 8.2 Hung soft reboots and `halt_if_hws_hang`
+### 8.2 MES non-response and `halt_if_hws_hang`
 
-Both hung nodes show the same signature. The kernel answers ping and resets
-TCP connections, but sshd, rpcbind and spurd have stopped, and ping never
-dropped, so the machine never reached firmware. `j19-11` had unkillable ranks
-and one GPU at 100 % busy when rebooted. `j19-1` had no KFD processes.
-
-**Hypothesis, not confirmed.** Every `j19` node loads amdgpu with
-`halt_if_hws_hang=1 gpu_recovery=0`, a firmware-debug setup. In this driver:
+Every `j19` node loads amdgpu with `halt_if_hws_hang=1 gpu_recovery=0`, a
+firmware-debug setup; `j19-9`'s boot log records "Setting dangerous option
+halt_if_hws_hang - tainting kernel". In this driver:
 
 - `mes_v12_1.c:251` (gfx12.1 MES) runs `while (halt_if_hws_hang) schedule();`
   after `MES(%d, %d) failed to respond to msg=%d`.
@@ -525,17 +619,39 @@ and one GPU at 100 % busy when rebooted. `j19-1` had no KFD processes.
   fence timeout. The source comment says this halts the driver thread "in
   order not to mess up CP states before doing scandumps for FW debugging".
 
-Driver teardown at reboot sends MES messages. The A0 record notes MES
-`REMOVE_QUEUE` failures in older logs and a remove-queue hang fix that a
-testing MES build lacks. One unanswered message would stop the reboot forever,
-and would also explain why the reproB ranks on `j19-11` never exited. Against this, `j19-1`'s kernel log for the 3.3
-hours before its reboot has no amdgpu or MES messages. The journal isn't
-persistent, so a serial-console capture of a hung shutdown is needed to
-settle it.
+**Observed on `j19-9`** ([kernel log excerpt](evidence/j19-9/dmesg_wedge_excerpt.txt)):
 
-The parameter is writable at runtime
-(`/sys/module/amdgpu/parameters/halt_if_hws_hang`, mode 0644). Clearing it
-before a reboot is an untested option for admins.
+| Time (September 26) | Kernel log |
+|---|---|
+| 20:57:30 | `workqueue: svm_range_restore_work [amdgpu] hogged CPU for >10000us 35 times` |
+| 20:57:47 | `amdgpu 0004:01:00.0: MES(0, 0) failed to respond to msg=INVALIDATE_TLBS`, four times |
+| 21:00:55 | `amdgpu 0004:01:00.0: MES(0, 0) failed to respond to msg=REMOVE_QUEUE` |
+| 21:04 onward | Hung-task reports: `svm_range_restore_work` → `kgd2kfd_resume_mm` → `restore_process_queues_cpsch` waiting for a lock; `kfd_sdma_activity_worker` and a `kfd_procfs_show` reader blocked behind it |
+
+The trainer's log stopped at 20:57:48. Its KFD eviction counters jumped by
+about 14 seconds and then stopped changing after 21:01, which fits queues that
+were evicted and never restored. GPU `0004` read 100 % busy for four hours,
+and the cancelled job left five KFD processes that would not exit
+([telemetry](evidence/j19-9/tripwire_numabind_wedge/telemetry.jsonl)).
+
+**Clearing the parameter at runtime** (`echo 0 >
+/sys/module/amdgpu/parameters/halt_if_hws_hang`, mode 0644) released the
+halted threads: within 20 seconds four of the five processes exited and three
+GPUs' VRAM was freed. About two minutes later the node went dark. The next
+boot's BERT reports one hardware error record from the previous boot, and
+the node was back about 13 minutes after it went dark
+([observation](evidence/j19-9/halt_clear_observation.txt)). Clearing the
+parameter therefore unfreezes a wedged node but does not make it safe to keep
+running; a reset is still needed.
+
+**Hung reboots.** The two hung `j19` reboots show the same signature: the
+kernel answers ping and resets TCP connections, but sshd, rpcbind and spurd
+have stopped and the machine never reached firmware. `j19-11` was wedged the
+same way as `j19-9` when it was rebooted, so a teardown message that MES never
+answers, followed by the halt loop, is the likely cause there. `j19-1` had idle
+GPUs, and its retained kernel log shows no MES failures; a serial-console
+capture would settle it. The 1P4G a37-2 host, which trained 14,000 steps
+without a wedge, ran `halt_if_hws_hang=0`.
 
 ### 8.3 NFS export gap
 
@@ -569,6 +685,29 @@ This isn't a GPU link (the GPUs are in PCI domains 0001–0004), and nothing
 connects it to the NaN, but it rotates the amdgpu boot messages out of the
 kernel ring buffer.
 
+### 8.6 spurd needs `/dev/kfd`
+
+`spurd.service` on the `j19` nodes has `ExecStartPre=/usr/bin/test -c /dev/kfd`
+and `ExecStartPre=/usr/bin/mountpoint -q /shared`. On a node whose boot keeps
+amdgpu out, as on `j19-9`, the scheduler agent therefore refuses to start
+until someone loads amdgpu, and the node stays out of the scheduler after any
+reboot. The armed loader on `j19-9` loaded the driver before spurd, which is
+why that node rejoined on its own. `j19-9` also runs a GitHub Actions CI runner
+service, so CI can use its GPUs outside the scheduler, as on `j19-7`.
+
+### 8.7 Staging defects found on `j19-9`
+
+- `cp -a` from `/shared` (NFS) to local disk fails with "preserving
+  permissions … Operation not supported": GNU `cp` preserves ACLs with the
+  mode, and local ext4 rejects the NFSv4 ACLs. It aborted the stack build and
+  made `stage_data_local.sh` exit before verifying. Both scripts now copy with
+  `cp -dR --preserve=timestamps`.
+- The dataset copy on `/shared` still had the corrupt
+  `processed_5b/hstu_cache_L4086/anchor_ts_L4086.npy` from September 25 (MD5
+  `24afb7b4…` instead of `4a1f9a06…`); earlier nodes had repaired their local
+  copies only. It was downloaded again from MLCommons, the local dataset
+  verified (227,409,136,794 bytes), and the `/shared` copy was replaced.
+
 ## 9. Reproduction
 
 The scripts live in `/shared/chcai/mi450_a0_newcluster`; copies of the
@@ -589,6 +728,12 @@ sbatch -p ci-cd -w <node> --exclusive --gpus-per-node 4 -c 256 -t 3-00:00:00 \
   /shared/chcai/mi450_a0_newcluster/container_job.sh
 ```
 
+`container_job.sh` reads its request directory from `REQ`
+(default `/shared/chcai/mi450_a0_newcluster/requests`), so each node gets its
+own queue, for example `REQ=/shared/chcai/mi450_a0_newcluster/requests_j19-9
+sbatch …`. The per-host preflight writes `preflight_status_<host>` and
+`transport_<host>.env`, so concurrent nodes don't overwrite each other.
+
 Request scripts first run `preflight_4gpu.py` (matmul, gather and RCCL
 collectives on four GPUs), then launch a run:
 
@@ -606,12 +751,21 @@ cleanenv.sh env RUN_NAME=<name> DIE_AT_STEP=600 TRIPWIRE_DIR=<dir> bash run_full
 ```bash
 W=/var/tmp/chcai/cwsrmod bash tools/cwsr_fix/build_corrected_module.sh   # handler + module build
 W=/var/tmp/chcai/cwsrmod bash tools/cwsr_fix/audit_modules.sh            # baseline rebuild + audit
-bash tools/cwsr_fix/oneshot/install_oneshot.sh                           # arm the one-shot boot
+bash tools/cwsr_fix/oneshot/install_oneshot.sh                           # j19-1 style: GRUB one-shot
+bash tools/cwsr_fix/oneshot_armed/install_armed.sh                       # j19-9 style: boot keeps amdgpu out
 ```
 
-The build and audit need no root access. `install_oneshot.sh` uses `sudo`
-and does not reboot; reboot through the BMC, because soft reboots hung on
-these nodes ([§8.2](#82-hung-soft-reboots-and-halt_if_hws_hang)).
+The build and audit need no root access. The install scripts use `sudo` and
+do not reboot. Soft reboots hung on these nodes while the driver was frozen
+([§8.2](#82-mes-non-response-and-halt_if_hws_hang)), so reboot through the BMC
+where possible.
+
+**Watchers.** `watch/j19_1_watch.sh` and `watch/j19_9_watch.sh` wait for a node
+to rejoin the scheduler, claim it, check which amdgpu loaded, and launch the
+corrected-driver validation only if the corrected module is loaded with no
+other GPU users and AutoNUMA on. spur's `srun` output uses CRLF line endings,
+so parsers of it must strip `\r`; the first `j19-9` watcher failed its check
+on a trailing carriage return, and that launch was done by hand.
 
 ## 10. Evidence and limits
 
@@ -626,20 +780,29 @@ Files in this folder:
 | [evidence/j19-11/reproA/](evidence/j19-11/reproA/), [evidence/j19-11/reproB/](evidence/j19-11/reproB/) | Tripwire and `numactl` runs: platform, loss, status, tripwire summary |
 | [evidence/j19-1/corrected_module_audit.txt](evidence/j19-1/corrected_module_audit.txt) | Candidate and baseline module audit |
 | [evidence/j19-1/oneshot_install.txt](evidence/j19-1/oneshot_install.txt), [evidence/j19-1/oneshot_custom.cfg](evidence/j19-1/oneshot_custom.cfg), [evidence/j19-1/reboot_request.txt](evidence/j19-1/reboot_request.txt), [evidence/j19-11/reboot_request.txt](evidence/j19-11/reboot_request.txt) | One-shot installation and the two reboot requests |
-| [tools/cwsr_fix/](tools/cwsr_fix/) | Handler extraction, candidate generation, module build, audit and one-shot scripts |
+| [evidence/j19-9/host_first_look.txt](evidence/j19-9/host_first_look.txt) | `j19-9` GPUs, driver, firmware, handler identity and mounts |
+| [evidence/j19-9/long_numabind/](evidence/j19-9/long_numabind/) | Stock-driver `numactl` run that went NaN at step 354: platform, command, loss, telemetry with KFD eviction counters, non-finite stop record |
+| [evidence/j19-9/tripwire_numabind_wedge/](evidence/j19-9/tripwire_numabind_wedge/), [evidence/j19-9/dmesg_wedge_excerpt.txt](evidence/j19-9/dmesg_wedge_excerpt.txt) | The wedged tripwire run (telemetry through 21:31) and the kernel log of the MES non-response |
+| [evidence/j19-9/halt_clear_observation.txt](evidence/j19-9/halt_clear_observation.txt) | Clearing `halt_if_hws_hang` at runtime, the reset and the return |
+| [evidence/j19-9/corrected_module_audit.txt](evidence/j19-9/corrected_module_audit.txt), [evidence/j19-9/armed_install.txt](evidence/j19-9/armed_install.txt), [evidence/j19-9/corrected_boot/](evidence/j19-9/corrected_boot/) | `j19-9` module build and audit, arming, and the corrected-driver load receipt |
+| [evidence/j19-9/corrected_default/](evidence/j19-9/corrected_default/) | Corrected-driver default run: platform, command, loss, telemetry and status as of 02:35 on September 27 (run in progress) |
+| [tools/cwsr_fix/](tools/cwsr_fix/) | Handler extraction, candidate generation, module build, audit, GRUB one-shot and armed-loader scripts |
 
 Full run directories, training logs and MLPerf logs are under
 `/shared/chcai/mi450_a0_newcluster/runs/`. The `j19-11` and `h21-15` run
 directories are on those nodes' local disks. The corrected module and its
-build tree are on `j19-1` under `/var/tmp/chcai/cwsrmod` and
+build tree are on `j19-1` and `j19-9` under `/var/tmp/chcai/cwsrmod` and
 `/var/lib/chcai-cwsrfix`.
 
 Limits:
 
-- Every finding here comes from four runs on two A0 nodes that produced
-  training steps. None of them ran for several hours.
-- The component attribution rests on matching bytes, tensor and trigger plus
-  A0's controlled tests, not on a corrected-driver run on this cluster.
-- The hung-reboot explanation is a source-based hypothesis without a console
-  capture.
+- The corrected-driver result is one run, still in progress. It is compared
+  with two stock default runs (NaN at 111 and 123) and two stock bound runs
+  (NaN at 354; finite to 1,912 until the node was lost).
+- None of the stock runs, and not yet the corrected run, ran for several
+  hours.
+- The non-AutoNUMA eviction sources were not traced, and the first non-finite
+  tensor under binding was not localized.
+- The wedge mechanism is observed directly on `j19-9`. The hung reboots of
+  `j19-1` and `j19-11` have no console capture.
 - Node losses 1–3 have no recovered kernel logs; their causes are unknown.

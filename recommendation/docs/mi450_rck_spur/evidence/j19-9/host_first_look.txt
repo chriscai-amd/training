@@ -1,0 +1,18 @@
+host=ctheliosr-rck-g02-j19-9 boot=964bbe1c-0c9b-4422-90c3-c549415b3b28 up=up 2 days, 8 hours, 40 minutes kernel=6.14.0-37-generic
+PRETTY_NAME="Ubuntu 24.04.4 LTS"
+cpus_online=256 mem=503GiB numa_balancing=1
+0001:01:00.0 dev=0x75c1 rev=0x00 drv=amdgpu
+0002:01:00.0 dev=0x75c1 rev=0x00 drv=amdgpu
+0003:01:00.0 dev=0x75c1 rev=0x00 drv=amdgpu
+0004:01:00.0 dev=0x75c1 rev=0x00 drv=amdgpu
+0001:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a busy=0 vram_used=169MiB
+0003:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a busy=0 vram_used=169MiB
+0004:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a busy=0 vram_used=169MiB
+0002:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a busy=0 vram_used=169MiB
+amdgpu version=7.1.1.31300009 srcversion=ECD716E95BE41CD5A13F14E cwsr_enable=1 halt_if_hws_hang=1 noretry=1
+kfd_procs=0
+10.210.2.150:/nfs_spur /shared
+sudo=yes
+/dev/nvme0n1p2  3.5T  523G  2.8T  16% /
+10.190.178.96/20 172.16.156.1/24 
+cwsr_trap_gfx12_1_0_hex                  .rodata      5656 B sha256=0f718b5eae143bad.. readlane_v1@[68] writelane_v1@[96] -> FAULTY original gfx1250 handler (5656 B; A0 7.1.1 srcversions 654C1DDE/EADFD8EC; B0 identical)

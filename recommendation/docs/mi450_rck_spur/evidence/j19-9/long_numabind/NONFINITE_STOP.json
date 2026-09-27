@@ -1,0 +1,30 @@
+{
+ "run": "/shared/chcai/mi450_a0_newcluster/runs/long_numabind_ctheliosr-rck-g02-j19-9_20260926T202336Z",
+ "trainer_pid": 33946,
+ "started": "2026-09-26T20:23:39.860+00:00",
+ "last_step": 356,
+ "last_loss": "nan",
+ "last_step_utc": "2026-09-26T20:43:11.255+00:00",
+ "steps_seen": 356,
+ "nonfinite_steps": [
+  354,
+  355,
+  356
+ ],
+ "first_nonfinite": {
+  "step": 354,
+  "loss": "nan",
+  "utc": "2026-09-26T20:43:11.255+00:00"
+ },
+ "evals": [],
+ "in_eval": false,
+ "run_stop": null,
+ "errors": [],
+ "stall": false,
+ "stopped_by_monitor": {
+  "reason": "nonfinite loss at two distinct steps",
+  "utc": "2026-09-26T20:43:11.256+00:00"
+ },
+ "trainer_alive": true,
+ "updated": "2026-09-26T20:43:06.249+00:00"
+}

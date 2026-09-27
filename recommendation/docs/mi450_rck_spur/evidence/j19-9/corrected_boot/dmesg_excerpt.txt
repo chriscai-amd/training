@@ -1,0 +1,15 @@
+251:[    0.005739] ACPI: BERT 0x0000000075DF7000 000030 (v01 AMDINC AMDCRB   00000001 AMD  00000001)
+287:[    0.005779] ACPI: Reserving BERT table memory at [mem 0x75df7000-0x75df702f]
+2099:[   18.087013] BERT: [Hardware Error]: Skipped 1 error records
+2100:[   18.093352] BERT: Total records found: 1
+2335:[  117.095363] Setting dangerous option halt_if_hws_hang - tainting kernel
+2336:[  117.095369] Setting dangerous option gpu_recovery - tainting kernel
+2337:[  117.095780] [drm] amdgpu version: 7.1.1.31300009
+2346:[  117.096651] amdgpu 0001:01:00.0: MEM_RESERVED_INFO: list_num=4
+2347:[  117.096654] amdgpu 0001:01:00.0:   [0] id=4 (VM_PAGE_FAULT) size=0x1000 start=0x16bf5fff000
+2528:[  123.093112] amdgpu 0002:01:00.0: MEM_RESERVED_INFO: list_num=4
+2529:[  123.093114] amdgpu 0002:01:00.0:   [0] id=4 (VM_PAGE_FAULT) size=0x1000 start=0x1d7f5fff000
+2704:[  129.192313] amdgpu 0003:01:00.0: MEM_RESERVED_INFO: list_num=4
+2705:[  129.192318] amdgpu 0003:01:00.0:   [0] id=4 (VM_PAGE_FAULT) size=0x1000 start=0x243f5fff000
+2880:[  135.296874] amdgpu 0004:01:00.0: MEM_RESERVED_INFO: list_num=4
+2881:[  135.296877] amdgpu 0004:01:00.0:   [0] id=4 (VM_PAGE_FAULT) size=0x1000 start=0x2aff5fff000

@@ -1,0 +1,19 @@
+{
+ "run": "/shared/chcai/mi450_a0_newcluster/runs/corrected_default_ctheliosr-rck-g02-j19-9_20260927T013250Z",
+ "trainer_pid": 2620,
+ "started": "2026-09-27T01:32:54.783+00:00",
+ "last_step": 2108,
+ "last_loss": "0.13855",
+ "last_step_utc": "2026-09-27T02:34:49.434+00:00",
+ "steps_seen": 2108,
+ "nonfinite_steps": [],
+ "first_nonfinite": null,
+ "evals": [],
+ "in_eval": false,
+ "run_stop": null,
+ "errors": [],
+ "stall": false,
+ "stopped_by_monitor": null,
+ "trainer_alive": true,
+ "updated": "2026-09-27T02:34:49.434+00:00"
+}

@@ -1,0 +1,33 @@
+llv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39679:39679 [1] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39679:39679 [1] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39678:39678 [0] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39678:39678 [0] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39681:39681 [3] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39681:39681 [3] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+[rank1]:[W926 20:57:48.681822907 gen_embedding_forward_split_unweighted_codegen_hip.hip:774] Warning: Running on non-CDNA architecture. Performance may be suboptimal. (function operator())
+[rank2]:[W926 20:57:48.681833287 gen_embedding_forward_split_unweighted_codegen_hip.hip:774] Warning: Running on non-CDNA architecture. Performance may be suboptimal. (function operator())
+[rank3]:[W926 20:57:48.682092381 gen_embedding_forward_split_unweighted_codegen_hip.hip:774] Warning: Running on non-CDNA architecture. Performance may be suboptimal. (function operator())
+[rank0]:[W926 20:57:48.700116356 gen_embedding_forward_split_unweighted_codegen_hip.hip:774] Warning: Running on non-CDNA architecture. Performance may be suboptimal. (function operator())
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39679:39679 [1] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39681:39681 [3] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39680:39680 [2] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39681:39681 [3] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39679:39679 [1] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39680:39680 [2] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39678:39678 [0] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead
+
+[2026-09-26 20:57:48] ctheliosr-rck-g02-j19-9:39678:39678 [0] /therock/output/build/comm-libs/rccl/build/hipify/src/misc/api_trace.cc:616 NCCL WARN Please note that ncclAllToAllv is deprecated, please use ncclAlltoAllv instead

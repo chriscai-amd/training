@@ -1,0 +1,83 @@
+start 2026-09-27T01:26:50.362725619Z boot=7f22d2fb-18e1-4895-9b5a-a2c054f872b6
+BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic root=UUID=258e8a35-cc3e-4d68-8568-4c6084f9b1aa ro panic=0 nowatchdog msr.allow_writes=on nokaslr amdgpu.noretry=1 pci=realloc=off modprobe.blacklist=amdgpu modprobe.blacklist=amdgpu,device_dax,dax_hmem iommu=pt console=tty0 console=ttyS1,115200n8 modprobe.blacklist=amdgpu preempt=full rcu_nocbs=all
+insmod start 2026-09-27T01:26:50.447781028Z params=mes_log_enable=1 halt_if_hws_hang=1 gpu_recovery=0 noretry=1
+insmod rc=0 2026-09-27T01:27:16.506322557Z
+srcversion=D0FD14A94CA9A71E8CE9BB4
+noretry=1
+mes_log_enable=1
+halt_if_hws_hang=1
+gpu_recovery=0
+cwsr_enable=1
+crw-rw-rw- 1 root render 508, 0 Sep 27 01:26 /dev/kfd
+
+/dev/dri:
+total 0
+drwxr-xr-x  3 root root       1360 Sep 27 01:27 .
+drwxr-xr-x 20 root root       4480 Sep 27 01:26 ..
+drwxr-xr-x  2 root root       1340 Sep 27 01:27 by-path
+crw-rw----  1 root video  226,   0 Sep 27 01:25 card0
+crw-rw----  1 root video  226,   1 Sep 27 01:26 card1
+crw-rw----  1 root video  226,  10 Sep 27 01:27 card10
+crw-rw----  1 root video  226,  11 Sep 27 01:27 card11
+crw-rw----  1 root video  226,  12 Sep 27 01:27 card12
+crw-rw----  1 root video  226,  13 Sep 27 01:27 card13
+crw-rw----  1 root video  226,  14 Sep 27 01:27 card14
+crw-rw----  1 root video  226,  15 Sep 27 01:27 card15
+crw-rw----  1 root video  226,  16 Sep 27 01:27 card16
+crw-rw----  1 root video  226,  17 Sep 27 01:27 card17
+crw-rw----  1 root video  226,  18 Sep 27 01:27 card18
+crw-rw----  1 root video  226,  19 Sep 27 01:27 card19
+crw-rw----  1 root video  226,   2 Sep 27 01:26 card2
+crw-rw----  1 root video  226,  20 Sep 27 01:27 card20
+crw-rw----  1 root video  226,  21 Sep 27 01:27 card21
+crw-rw----  1 root video  226,  22 Sep 27 01:27 card22
+crw-rw----  1 root video  226,  23 Sep 27 01:27 card23
+crw-rw----  1 root video  226,  24 Sep 27 01:27 card24
+crw-rw----  1 root video  226,  25 Sep 27 01:27 card25
+crw-rw----  1 root video  226,  26 Sep 27 01:27 card26
+crw-rw----  1 root video  226,  27 Sep 27 01:27 card27
+crw-rw----  1 root video  226,  28 Sep 27 01:27 card28
+crw-rw----  1 root video  226,  29 Sep 27 01:27 card29
+crw-rw----  1 root video  226,   3 Sep 27 01:26 card3
+crw-rw----  1 root video  226,  30 Sep 27 01:27 card30
+crw-rw----  1 root video  226,  31 Sep 27 01:27 card31
+crw-rw----  1 root video  226,  32 Sep 27 01:27 card32
+crw-rw----  1 root video  226,   4 Sep 27 01:26 card4
+crw-rw----  1 root video  226,   5 Sep 27 01:26 card5
+crw-rw----  1 root video  226,   6 Sep 27 01:26 card6
+crw-rw----  1 root video  226,   7 Sep 27 01:26 card7
+crw-rw----  1 root video  226,   8 Sep 27 01:26 card8
+crw-rw----  1 root video  226,   9 Sep 27 01:27 card9
+crw-rw-rw-  1 root render 226, 128 Sep 27 01:26 renderD128
+crw-rw-rw-  1 root render 226, 129 Sep 27 01:26 renderD129
+crw-rw-rw-  1 root render 226, 130 Sep 27 01:26 renderD130
+crw-rw-rw-  1 root render 226, 131 Sep 27 01:26 renderD131
+crw-rw-rw-  1 root render 226, 132 Sep 27 01:26 renderD132
+crw-rw-rw-  1 root render 226, 133 Sep 27 01:26 renderD133
+crw-rw-rw-  1 root render 226, 134 Sep 27 01:26 renderD134
+crw-rw-rw-  1 root render 226, 135 Sep 27 01:26 renderD135
+crw-rw-rw-  1 root render 226, 136 Sep 27 01:27 renderD136
+crw-rw-rw-  1 root render 226, 137 Sep 27 01:27 renderD137
+crw-rw-rw-  1 root render 226, 138 Sep 27 01:27 renderD138
+crw-rw-rw-  1 root render 226, 139 Sep 27 01:27 renderD139
+crw-rw-rw-  1 root render 226, 140 Sep 27 01:27 renderD140
+crw-rw-rw-  1 root render 226, 141 Sep 27 01:27 renderD141
+crw-rw-rw-  1 root render 226, 142 Sep 27 01:27 renderD142
+crw-rw-rw-  1 root render 226, 143 Sep 27 01:27 renderD143
+crw-rw-rw-  1 root render 226, 144 Sep 27 01:27 renderD144
+crw-rw-rw-  1 root render 226, 145 Sep 27 01:27 renderD145
+crw-rw-rw-  1 root render 226, 146 Sep 27 01:27 renderD146
+crw-rw-rw-  1 root render 226, 147 Sep 27 01:27 renderD147
+crw-rw-rw-  1 root render 226, 148 Sep 27 01:27 renderD148
+crw-rw-rw-  1 root render 226, 149 Sep 27 01:27 renderD149
+crw-rw-rw-  1 root render 226, 150 Sep 27 01:27 renderD150
+crw-rw-rw-  1 root render 226, 151 Sep 27 01:27 renderD151
+crw-rw-rw-  1 root render 226, 152 Sep 27 01:27 renderD152
+crw-rw-rw-  1 root render 226, 153 Sep 27 01:27 renderD153
+crw-rw-rw-  1 root render 226, 154 Sep 27 01:27 renderD154
+crw-rw-rw-  1 root render 226, 155 Sep 27 01:27 renderD155
+crw-rw-rw-  1 root render 226, 156 Sep 27 01:27 renderD156
+crw-rw-rw-  1 root render 226, 157 Sep 27 01:27 renderD157
+crw-rw-rw-  1 root render 226, 158 Sep 27 01:27 renderD158
+crw-rw-rw-  1 root render 226, 159 Sep 27 01:27 renderD159
+done 2026-09-27T01:27:16.526689996Z

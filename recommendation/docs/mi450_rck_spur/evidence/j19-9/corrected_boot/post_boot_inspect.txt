@@ -1,0 +1,92 @@
+boot_id=7f22d2fb-18e1-4895-9b5a-a2c054f872b6
+uptime=151.02
+cmdline=BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic root=UUID=258e8a35-cc3e-4d68-8568-4c6084f9b1aa ro panic=0 nowatchdog msr.allow_writes=on nokaslr amdgpu.noretry=1 pci=realloc=off modprobe.blacklist=amdgpu modprobe.blacklist=amdgpu,device_dax,dax_hmem iommu=pt console=tty0 console=ttyS1,115200n8 modprobe.blacklist=amdgpu preempt=full rcu_nocbs=all
+srcversion=D0FD14A94CA9A71E8CE9BB4
+numa_balancing=1
+kfd_procs=0
+gpus=0001:01:00.0:amdgpu 0002:01:00.0:amdgpu 0003:01:00.0:amdgpu 0004:01:00.0:amdgpu 
+receipt=present
+  load.log: start 2026-09-27T01:26:50.362725619Z boot=7f22d2fb-18e1-4895-9b5a-a2c054f872b6
+  load.log: BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic root=UUID=258e8a35-cc3e-4d68-8568-4c6084f9b1aa ro panic=0 nowatchdog msr.allow_writes=on nokaslr amdgpu.noretry=1 pci=realloc=off modprobe.blacklist=amdgpu modprobe.blacklist=amdgpu,device_dax,dax_hmem iommu=pt console=tty0 console=ttyS1,115200n8 modprobe.blacklist=amdgpu preempt=full rcu_nocbs=all
+  load.log: insmod start 2026-09-27T01:26:50.447781028Z params=mes_log_enable=1 halt_if_hws_hang=1 gpu_recovery=0 noretry=1
+  load.log: insmod rc=0 2026-09-27T01:27:16.506322557Z
+  load.log: srcversion=D0FD14A94CA9A71E8CE9BB4
+  load.log: noretry=1
+  load.log: mes_log_enable=1
+  load.log: halt_if_hws_hang=1
+  load.log: gpu_recovery=0
+  load.log: cwsr_enable=1
+  load.log: crw-rw-rw- 1 root render 508, 0 Sep 27 01:26 /dev/kfd
+  load.log: 
+  load.log: /dev/dri:
+  load.log: total 0
+  load.log: drwxr-xr-x  3 root root       1360 Sep 27 01:27 .
+  load.log: drwxr-xr-x 20 root root       4480 Sep 27 01:26 ..
+  load.log: drwxr-xr-x  2 root root       1340 Sep 27 01:27 by-path
+  load.log: crw-rw----  1 root video  226,   0 Sep 27 01:25 card0
+  load.log: crw-rw----  1 root video  226,   1 Sep 27 01:26 card1
+  load.log: crw-rw----  1 root video  226,  10 Sep 27 01:27 card10
+  load.log: crw-rw----  1 root video  226,  11 Sep 27 01:27 card11
+  load.log: crw-rw----  1 root video  226,  12 Sep 27 01:27 card12
+  load.log: crw-rw----  1 root video  226,  13 Sep 27 01:27 card13
+  load.log: crw-rw----  1 root video  226,  14 Sep 27 01:27 card14
+  load.log: crw-rw----  1 root video  226,  15 Sep 27 01:27 card15
+  load.log: crw-rw----  1 root video  226,  16 Sep 27 01:27 card16
+  load.log: crw-rw----  1 root video  226,  17 Sep 27 01:27 card17
+  load.log: crw-rw----  1 root video  226,  18 Sep 27 01:27 card18
+  load.log: crw-rw----  1 root video  226,  19 Sep 27 01:27 card19
+  load.log: crw-rw----  1 root video  226,   2 Sep 27 01:26 card2
+  load.log: crw-rw----  1 root video  226,  20 Sep 27 01:27 card20
+  load.log: crw-rw----  1 root video  226,  21 Sep 27 01:27 card21
+  load.log: crw-rw----  1 root video  226,  22 Sep 27 01:27 card22
+  load.log: crw-rw----  1 root video  226,  23 Sep 27 01:27 card23
+  load.log: crw-rw----  1 root video  226,  24 Sep 27 01:27 card24
+  load.log: crw-rw----  1 root video  226,  25 Sep 27 01:27 card25
+  load.log: crw-rw----  1 root video  226,  26 Sep 27 01:27 card26
+  load.log: crw-rw----  1 root video  226,  27 Sep 27 01:27 card27
+  load.log: crw-rw----  1 root video  226,  28 Sep 27 01:27 card28
+  load.log: crw-rw----  1 root video  226,  29 Sep 27 01:27 card29
+  load.log: crw-rw----  1 root video  226,   3 Sep 27 01:26 card3
+  load.log: crw-rw----  1 root video  226,  30 Sep 27 01:27 card30
+  load.log: crw-rw----  1 root video  226,  31 Sep 27 01:27 card31
+  load.log: crw-rw----  1 root video  226,  32 Sep 27 01:27 card32
+  load.log: crw-rw----  1 root video  226,   4 Sep 27 01:26 card4
+  load.log: crw-rw----  1 root video  226,   5 Sep 27 01:26 card5
+  load.log: crw-rw----  1 root video  226,   6 Sep 27 01:26 card6
+  load.log: crw-rw----  1 root video  226,   7 Sep 27 01:26 card7
+  load.log: crw-rw----  1 root video  226,   8 Sep 27 01:26 card8
+  load.log: crw-rw----  1 root video  226,   9 Sep 27 01:27 card9
+  load.log: crw-rw-rw-  1 root render 226, 128 Sep 27 01:26 renderD128
+  load.log: crw-rw-rw-  1 root render 226, 129 Sep 27 01:26 renderD129
+  load.log: crw-rw-rw-  1 root render 226, 130 Sep 27 01:26 renderD130
+  load.log: crw-rw-rw-  1 root render 226, 131 Sep 27 01:26 renderD131
+  load.log: crw-rw-rw-  1 root render 226, 132 Sep 27 01:26 renderD132
+  load.log: crw-rw-rw-  1 root render 226, 133 Sep 27 01:26 renderD133
+  load.log: crw-rw-rw-  1 root render 226, 134 Sep 27 01:26 renderD134
+  load.log: crw-rw-rw-  1 root render 226, 135 Sep 27 01:26 renderD135
+  load.log: crw-rw-rw-  1 root render 226, 136 Sep 27 01:27 renderD136
+  load.log: crw-rw-rw-  1 root render 226, 137 Sep 27 01:27 renderD137
+  load.log: crw-rw-rw-  1 root render 226, 138 Sep 27 01:27 renderD138
+  load.log: crw-rw-rw-  1 root render 226, 139 Sep 27 01:27 renderD139
+  load.log: crw-rw-rw-  1 root render 226, 140 Sep 27 01:27 renderD140
+  load.log: crw-rw-rw-  1 root render 226, 141 Sep 27 01:27 renderD141
+  load.log: crw-rw-rw-  1 root render 226, 142 Sep 27 01:27 renderD142
+  load.log: crw-rw-rw-  1 root render 226, 143 Sep 27 01:27 renderD143
+  load.log: crw-rw-rw-  1 root render 226, 144 Sep 27 01:27 renderD144
+  load.log: crw-rw-rw-  1 root render 226, 145 Sep 27 01:27 renderD145
+  load.log: crw-rw-rw-  1 root render 226, 146 Sep 27 01:27 renderD146
+  load.log: crw-rw-rw-  1 root render 226, 147 Sep 27 01:27 renderD147
+  load.log: crw-rw-rw-  1 root render 226, 148 Sep 27 01:27 renderD148
+  load.log: crw-rw-rw-  1 root render 226, 149 Sep 27 01:27 renderD149
+  load.log: crw-rw-rw-  1 root render 226, 150 Sep 27 01:27 renderD150
+  load.log: crw-rw-rw-  1 root render 226, 151 Sep 27 01:27 renderD151
+  load.log: crw-rw-rw-  1 root render 226, 152 Sep 27 01:27 renderD152
+  load.log: crw-rw-rw-  1 root render 226, 153 Sep 27 01:27 renderD153
+  load.log: crw-rw-rw-  1 root render 226, 154 Sep 27 01:27 renderD154
+  load.log: crw-rw-rw-  1 root render 226, 155 Sep 27 01:27 renderD155
+  load.log: crw-rw-rw-  1 root render 226, 156 Sep 27 01:27 renderD156
+  load.log: crw-rw-rw-  1 root render 226, 157 Sep 27 01:27 renderD157
+  load.log: crw-rw-rw-  1 root render 226, 158 Sep 27 01:27 renderD158
+  load.log: crw-rw-rw-  1 root render 226, 159 Sep 27 01:27 renderD159
+  load.log: done 2026-09-27T01:27:16.526689996Z
+next_entry=

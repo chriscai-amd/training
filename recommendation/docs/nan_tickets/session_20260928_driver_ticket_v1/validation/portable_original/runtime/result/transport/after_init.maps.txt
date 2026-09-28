@@ -1,0 +1,255 @@
+00400000-00420000 r--p 00000000 00:2f 139742352                          /usr/bin/python3.12
+00420000-00703000 r-xp 00020000 00:2f 139742352                          /usr/bin/python3.12
+00703000-00a27000 r--p 00303000 00:2f 139742352                          /usr/bin/python3.12
+00a27000-00a28000 r--p 00627000 00:2f 139742352                          /usr/bin/python3.12
+00a28000-00ba6000 rw-p 00628000 00:2f 139742352                          /usr/bin/python3.12
+00ba6000-00baa000 rw-p 00000000 00:00 0 
+0d2ad000-0d7e0000 rw-p 00000000 00:00 0                                  [heap]
+747c0ee00000-747c0f200000 rw-s 00000000 00:01 126132                     /dev/zero (deleted)
+747c0f3ff000-747c0f400000 ---p 00000000 00:00 0 
+747c0f400000-747c0fc00000 rw-p 00000000 00:00 0 
+747c0fc00000-748c0fc00000 ---p 00000000 00:00 0 
+748c0fe00000-748c0ffff000 rw-s 10024a000 00:3a 22                        /dev/dri/renderD128
+748c10000000-748c10021000 rw-p 00000000 00:00 0 
+748c10021000-748c14000000 ---p 00000000 00:00 0 
+748c14000000-748c14021000 rw-p 00000000 00:00 0 
+748c14021000-748c18000000 ---p 00000000 00:00 0 
+748c180a4000-748c180df000 r--p 00000000 00:2f 139883383                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_devel/lib/libhsa-amd-aqlprofile64.so.1
+748c180df000-748c18162000 r-xp 0003a000 00:2f 139883383                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_devel/lib/libhsa-amd-aqlprofile64.so.1
+748c18162000-748c18167000 r--p 000bc000 00:2f 139883383                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_devel/lib/libhsa-amd-aqlprofile64.so.1
+748c18167000-748c18169000 rw-p 000c0000 00:2f 139883383                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_devel/lib/libhsa-amd-aqlprofile64.so.1
+748c18169000-748c1816a000 rw-p 00000000 00:00 0 
+748c1816a000-748c1817d000 rw-p 000fa000 00:2f 139883383                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_devel/lib/libhsa-amd-aqlprofile64.so.1
+748c1817d000-748c181fe000 rw-p 00000000 00:00 0 
+748c181fe000-748c181ff000 ---p 00000000 00:00 0 
+748c181ff000-748c189ff000 rw-p 00000000 00:00 0 
+748c189ff000-748c18a00000 ---p 00000000 00:00 0 
+748c18a00000-748c19200000 rw-p 00000000 00:00 0 
+748c19200000-748c19400000 rw-s 100042000 00:3a 22                        /dev/dri/renderD128
+748c19440000-748c19448000 rw-s 100242000 00:3a 22                        /dev/dri/renderD128
+748c1944a000-748c1944b000 rw-s 00000000 00:01 126133                     /dev/zero (deleted)
+748c1944c000-748c19576000 rw-p 00000000 00:00 0 
+748c19576000-748c19578000 r--p 00000000 00:2f 139748678                  /usr/lib/x86_64-linux-gnu/libatomic.so.1.2.0
+748c19578000-748c1957c000 r-xp 00002000 00:2f 139748678                  /usr/lib/x86_64-linux-gnu/libatomic.so.1.2.0
+748c1957c000-748c1957e000 r--p 00006000 00:2f 139748678                  /usr/lib/x86_64-linux-gnu/libatomic.so.1.2.0
+748c1957e000-748c1957f000 r--p 00007000 00:2f 139748678                  /usr/lib/x86_64-linux-gnu/libatomic.so.1.2.0
+748c1957f000-748c19580000 rw-p 00008000 00:2f 139748678                  /usr/lib/x86_64-linux-gnu/libatomic.so.1.2.0
+748c19580000-748c19581000 rw-p 00000000 00:00 0 
+748c19581000-748c19583000 r--p 00000000 00:2f 139885890                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_bz2.so
+748c19583000-748c19596000 r-xp 00002000 00:2f 139885890                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_bz2.so
+748c19596000-748c19598000 r--p 00015000 00:2f 139885890                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_bz2.so
+748c19598000-748c19599000 r--p 00016000 00:2f 139885890                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_bz2.so
+748c19599000-748c1959a000 rw-p 00017000 00:2f 139885890                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_bz2.so
+748c1959a000-748c1959b000 rw-p 0001a000 00:2f 139885890                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_bz2.so
+748c1959b000-748c1959c000 rw-p 0001b000 00:2f 139885890                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_bz2.so
+748c1959c000-748c195a0000 r--p 00000000 00:2f 139885900                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_liblzma.so.5
+748c195a0000-748c195be000 r-xp 00004000 00:2f 139885900                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_liblzma.so.5
+748c195be000-748c195cb000 r--p 00022000 00:2f 139885900                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_liblzma.so.5
+748c195cb000-748c195cc000 r--p 0002e000 00:2f 139885900                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_liblzma.so.5
+748c195cc000-748c195cd000 rw-p 0002f000 00:2f 139885900                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_liblzma.so.5
+748c195cd000-748c195cf000 rw-p 00036000 00:2f 139885900                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_liblzma.so.5
+748c195cf000-748c195d1000 rw-p 00038000 00:2f 139885900                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_liblzma.so.5
+748c195d1000-748c195d5000 r--p 00000000 00:2f 139885911                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_numa.so.1
+748c195d5000-748c195db000 r-xp 00004000 00:2f 139885911                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_numa.so.1
+748c195db000-748c195de000 r--p 0000a000 00:2f 139885911                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_numa.so.1
+748c195de000-748c195df000 r--p 0000c000 00:2f 139885911                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_numa.so.1
+748c195df000-748c195e0000 rw-p 0000d000 00:2f 139885911                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_numa.so.1
+748c195e0000-748c195e2000 rw-p 00036000 00:2f 139885911                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_numa.so.1
+748c195e2000-748c195e4000 rw-p 00038000 00:2f 139885911                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_numa.so.1
+748c195e4000-748c195eb000 r--p 00000000 00:2f 139885893                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm_amdgpu.so.1
+748c195eb000-748c195f0000 r-xp 00007000 00:2f 139885893                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm_amdgpu.so.1
+748c195f0000-748c195f4000 r--p 0000c000 00:2f 139885893                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm_amdgpu.so.1
+748c195f4000-748c195f7000 r--p 00010000 00:2f 139885893                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm_amdgpu.so.1
+748c195f7000-748c195f8000 rw-p 00013000 00:2f 139885893                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm_amdgpu.so.1
+748c195f8000-748c195fa000 rw-p 0003d000 00:2f 139885893                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm_amdgpu.so.1
+748c195fa000-748c195fc000 rw-p 0003f000 00:2f 139885893                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm_amdgpu.so.1
+748c195fc000-748c19601000 r--p 00000000 00:2f 139885892                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm.so.2
+748c19601000-748c1960b000 r-xp 00005000 00:2f 139885892                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm.so.2
+748c1960b000-748c1960f000 r--p 0000f000 00:2f 139885892                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm.so.2
+748c1960f000-748c19610000 r--p 00013000 00:2f 139885892                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm.so.2
+748c19610000-748c19611000 rw-p 00014000 00:2f 139885892                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm.so.2
+748c19611000-748c19614000 rw-p 00058000 00:2f 139885892                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm.so.2
+748c19614000-748c19616000 rw-p 0005b000 00:2f 139885892                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_drm.so.2
+748c19616000-748c1961a000 r--p 00000000 00:2f 139885895                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_elf.so.1
+748c1961a000-748c1962b000 r-xp 00004000 00:2f 139885895                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_elf.so.1
+748c1962b000-748c19630000 r--p 00015000 00:2f 139885895                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_elf.so.1
+748c19630000-748c19631000 r--p 00019000 00:2f 139885895                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_elf.so.1
+748c19631000-748c19632000 rw-p 0001a000 00:2f 139885895                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_elf.so.1
+748c19632000-748c19634000 rw-p 00123000 00:2f 139885895                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_elf.so.1
+748c19634000-748c19636000 rw-p 00125000 00:2f 139885895                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_elf.so.1
+748c19636000-748c19c68000 r--p 00000000 00:2f 139885763                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libLLVM.so.23.0git
+748c19c68000-748c1dc86000 r-xp 00632000 00:2f 139885763                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libLLVM.so.23.0git
+748c1dc86000-748c20352000 r--p 04650000 00:2f 139885763                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libLLVM.so.23.0git
+748c20352000-748c2042f000 r--p 06d1c000 00:2f 139885763                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libLLVM.so.23.0git
+748c2042f000-748c20434000 rw-p 06df9000 00:2f 139885763                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libLLVM.so.23.0git
+748c20434000-748c204de000 rw-p 00000000 00:00 0 
+748c204de000-748c2083b000 rw-p 07d0f000 00:2f 139885763                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libLLVM.so.23.0git
+748c2083b000-748c20b49000 rw-p 0806c000 00:2f 139885763                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libLLVM.so.23.0git
+748c20b49000-748c20b4c000 r--p 00000000 00:2f 139885917                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_z.so.1
+748c20b4c000-748c20b5f000 r-xp 00003000 00:2f 139885917                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_z.so.1
+748c20b5f000-748c20b65000 r--p 00016000 00:2f 139885917                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_z.so.1
+748c20b65000-748c20b66000 r--p 0001c000 00:2f 139885917                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_z.so.1
+748c20b66000-748c20b67000 rw-p 0001d000 00:2f 139885917                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_z.so.1
+748c20b67000-748c20b69000 rw-p 00020000 00:2f 139885917                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_z.so.1
+748c20b69000-748c20b6a000 rw-p 00022000 00:2f 139885917                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_z.so.1
+748c20b6a000-748c2145e000 r--p 00000000 00:2f 139885769                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libclang-cpp.so.23.0git
+748c2145e000-748c246be000 r-xp 008f4000 00:2f 139885769                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libclang-cpp.so.23.0git
+748c246be000-748c25128000 r--p 03b54000 00:2f 139885769                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libclang-cpp.so.23.0git
+748c25128000-748c25335000 r--p 045be000 00:2f 139885769                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libclang-cpp.so.23.0git
+748c25335000-748c25344000 rw-p 047cb000 00:2f 139885769                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libclang-cpp.so.23.0git
+748c25344000-748c25356000 rw-p 00000000 00:00 0 
+748c25356000-748c25750000 rw-p 055fe000 00:2f 139885769                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libclang-cpp.so.23.0git
+748c25750000-748c25afb000 rw-p 059f8000 00:2f 139885769                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/llvm/lib/libclang-cpp.so.23.0git
+748c25afb000-748c25aff000 r--p 00000000 00:2f 139885918                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_zstd.so.1
+748c25aff000-748c25bb8000 r-xp 00004000 00:2f 139885918                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_zstd.so.1
+748c25bb8000-748c25bc8000 r--p 000bd000 00:2f 139885918                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_zstd.so.1
+748c25bc8000-748c25bc9000 r--p 000cc000 00:2f 139885918                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_zstd.so.1
+748c25bc9000-748c25bca000 rw-p 000cd000 00:2f 139885918                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_zstd.so.1
+748c25bca000-748c25bcd000 rw-p 000d7000 00:2f 139885918                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_zstd.so.1
+748c25bcd000-748c25bcf000 rw-p 000da000 00:2f 139885918                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/rocm_sysdeps/lib/librocm_sysdeps_zstd.so.1
+748c25bcf000-748c25bd0000 r--p 00000000 00:2f 147327346                  /usr/lib/x86_64-linux-gnu/libpthread.so.0
+748c25bd0000-748c25bd1000 r-xp 00001000 00:2f 147327346                  /usr/lib/x86_64-linux-gnu/libpthread.so.0
+748c25bd1000-748c25bd2000 r--p 00002000 00:2f 147327346                  /usr/lib/x86_64-linux-gnu/libpthread.so.0
+748c25bd2000-748c25bd3000 r--p 00002000 00:2f 147327346                  /usr/lib/x86_64-linux-gnu/libpthread.so.0
+748c25bd3000-748c25bd4000 rw-p 00003000 00:2f 147327346                  /usr/lib/x86_64-linux-gnu/libpthread.so.0
+748c25bd4000-748c25bd8000 r--p 00000000 00:2f 139619033                  /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+748c25bd8000-748c25bfc000 r-xp 00004000 00:2f 139619033                  /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+748c25bfc000-748c25c00000 r--p 00028000 00:2f 139619033                  /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+748c25c00000-748c25c01000 r--p 0002b000 00:2f 139619033                  /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+748c25c01000-748c25c02000 rw-p 0002c000 00:2f 139619033                  /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+748c25c02000-748c25c9f000 r--p 00000000 00:2f 139619101                  /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+748c25c9f000-748c25de7000 r-xp 0009d000 00:2f 139619101                  /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+748c25de7000-748c25e6e000 r--p 001e5000 00:2f 139619101                  /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+748c25e6e000-748c25e79000 r--p 0026b000 00:2f 139619101                  /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+748c25e79000-748c25e7c000 rw-p 00276000 00:2f 139619101                  /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+748c25e7c000-748c25e80000 rw-p 00000000 00:00 0 
+748c25e80000-748c25f1f000 r--p 00000000 00:2f 139883384                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1
+748c25f1f000-748c2605f000 r-xp 0009e000 00:2f 139883384                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1
+748c2605f000-748c26069000 r--p 001dd000 00:2f 139883384                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1
+748c26069000-748c2629c000 rw-p 001e6000 00:2f 139883384                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1
+748c2629c000-748c262a0000 rw-p 00000000 00:00 0 
+748c262a0000-748c262af000 rw-p 0049b000 00:2f 139883384                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1
+748c262af000-748c26370000 r--p 00000000 00:2f 139883374                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamd_comgr.so.3
+748c26370000-748c26942000 r-xp 000c1000 00:2f 139883374                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamd_comgr.so.3
+748c26942000-748c26ea0000 r--p 00693000 00:2f 139883374                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamd_comgr.so.3
+748c26ea0000-748c26ee0000 r--p 00bf1000 00:2f 139883374                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamd_comgr.so.3
+748c26ee0000-748c26ee7000 rw-p 00c31000 00:2f 139883374                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamd_comgr.so.3
+748c26ee7000-748c26eef000 rw-p 00000000 00:00 0 
+748c26eef000-748c26f05000 rw-p 00c39000 00:2f 139883374                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamd_comgr.so.3
+748c26f05000-748c26f1b000 rw-p 00c4f000 00:2f 139883374                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamd_comgr.so.3
+748c26f1b000-748c26f1c000 r--p 00000000 00:2f 147327350                  /usr/lib/x86_64-linux-gnu/librt.so.1
+748c26f1c000-748c26f1d000 r-xp 00001000 00:2f 147327350                  /usr/lib/x86_64-linux-gnu/librt.so.1
+748c26f1d000-748c26f1e000 r--p 00002000 00:2f 147327350                  /usr/lib/x86_64-linux-gnu/librt.so.1
+748c26f1e000-748c26f1f000 r--p 00002000 00:2f 147327350                  /usr/lib/x86_64-linux-gnu/librt.so.1
+748c26f1f000-748c26f20000 rw-p 00003000 00:2f 147327350                  /usr/lib/x86_64-linux-gnu/librt.so.1
+748c26f20000-748c26f3a000 r--p 00000000 00:2f 139883395                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocprofiler-register.so.0
+748c26f3a000-748c26fbf000 r-xp 0001a000 00:2f 139883395                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocprofiler-register.so.0
+748c26fbf000-748c26fdd000 r--p 0009f000 00:2f 139883395                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocprofiler-register.so.0
+748c26fdd000-748c26fdf000 r--p 000bc000 00:2f 139883395                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocprofiler-register.so.0
+748c26fdf000-748c26fe1000 rw-p 000be000 00:2f 139883395                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocprofiler-register.so.0
+748c26fe1000-748c26ffa000 rw-p 00000000 00:00 0 
+748c26ffa000-748c27009000 rw-p 000ed000 00:2f 139883395                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocprofiler-register.so.0
+748c27009000-748c27017000 rw-p 000fc000 00:2f 139883395                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocprofiler-register.so.0
+748c27017000-748c27021000 r--p 00000000 00:2f 139883392                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocm_kpack.so.0
+748c27021000-748c2704e000 r-xp 0000a000 00:2f 139883392                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocm_kpack.so.0
+748c2704e000-748c27059000 r--p 00037000 00:2f 139883392                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocm_kpack.so.0
+748c27059000-748c2705a000 r--p 00041000 00:2f 139883392                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocm_kpack.so.0
+748c2705a000-748c2705b000 rw-p 00042000 00:2f 139883392                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocm_kpack.so.0
+748c2705b000-748c27061000 rw-p 00054000 00:2f 139883392                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocm_kpack.so.0
+748c27061000-748c27066000 rw-p 0005a000 00:2f 139883392                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/librocm_kpack.so.0
+748c27066000-748c27067000 r--p 00000000 00:2f 147327326                  /usr/lib/x86_64-linux-gnu/libdl.so.2
+748c27067000-748c27068000 r-xp 00001000 00:2f 147327326                  /usr/lib/x86_64-linux-gnu/libdl.so.2
+748c27068000-748c27069000 r--p 00002000 00:2f 147327326                  /usr/lib/x86_64-linux-gnu/libdl.so.2
+748c27069000-748c2706a000 r--p 00002000 00:2f 147327326                  /usr/lib/x86_64-linux-gnu/libdl.so.2
+748c2706a000-748c2706b000 rw-p 00003000 00:2f 147327326                  /usr/lib/x86_64-linux-gnu/libdl.so.2
+748c2706b000-748c27206000 r--p 00000000 00:2f 139883377                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7
+748c27206000-748c27670000 r-xp 0019a000 00:2f 139883377                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7
+748c27670000-748c2767a000 r--p 00603000 00:2f 139883377                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7
+748c2767a000-748c28b1a000 rw-p 0060c000 00:2f 139883377                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7
+748c28b1a000-748c28b24000 rw-p 00000000 00:00 0 
+748c28b24000-748c28b38000 rw-p 01aac000 00:2f 139883377                  /opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7
+748c28b38000-748c28b3a000 r--p 00000000 00:2f 139619030                  /usr/lib/x86_64-linux-gnu/libffi.so.8.1.4
+748c28b3a000-748c28b41000 r-xp 00002000 00:2f 139619030                  /usr/lib/x86_64-linux-gnu/libffi.so.8.1.4
+748c28b41000-748c28b42000 r--p 00009000 00:2f 139619030                  /usr/lib/x86_64-linux-gnu/libffi.so.8.1.4
+748c28b42000-748c28b43000 r--p 0000a000 00:2f 139619030                  /usr/lib/x86_64-linux-gnu/libffi.so.8.1.4
+748c28b43000-748c28b44000 rw-p 0000b000 00:2f 139619030                  /usr/lib/x86_64-linux-gnu/libffi.so.8.1.4
+748c28b44000-748c28b4a000 r--p 00000000 00:2f 139748017                  /usr/lib/python3.12/lib-dynload/_ctypes.cpython-312-x86_64-linux-gnu.so
+748c28b4a000-748c28b5c000 r-xp 00006000 00:2f 139748017                  /usr/lib/python3.12/lib-dynload/_ctypes.cpython-312-x86_64-linux-gnu.so
+748c28b5c000-748c28b62000 r--p 00018000 00:2f 139748017                  /usr/lib/python3.12/lib-dynload/_ctypes.cpython-312-x86_64-linux-gnu.so
+748c28b62000-748c28b63000 r--p 0001d000 00:2f 139748017                  /usr/lib/python3.12/lib-dynload/_ctypes.cpython-312-x86_64-linux-gnu.so
+748c28b63000-748c28b67000 rw-p 0001e000 00:2f 139748017                  /usr/lib/python3.12/lib-dynload/_ctypes.cpython-312-x86_64-linux-gnu.so
+748c28b67000-748c28c9a000 rw-p 00000000 00:00 0 
+748c28c9a000-748c28c9d000 r--p 00000000 00:2f 139748779                  /usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5
+748c28c9d000-748c28cbf000 r-xp 00003000 00:2f 139748779                  /usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5
+748c28cbf000-748c28cca000 r--p 00025000 00:2f 139748779                  /usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5
+748c28cca000-748c28ccb000 r--p 00030000 00:2f 139748779                  /usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5
+748c28ccb000-748c28ccc000 rw-p 00031000 00:2f 139748779                  /usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5
+748c28ccc000-748c28ccf000 r--p 00000000 00:2f 139748026                  /usr/lib/python3.12/lib-dynload/_lzma.cpython-312-x86_64-linux-gnu.so
+748c28ccf000-748c28cd4000 r-xp 00003000 00:2f 139748026                  /usr/lib/python3.12/lib-dynload/_lzma.cpython-312-x86_64-linux-gnu.so
+748c28cd4000-748c28cd7000 r--p 00008000 00:2f 139748026                  /usr/lib/python3.12/lib-dynload/_lzma.cpython-312-x86_64-linux-gnu.so
+748c28cd7000-748c28cd8000 r--p 0000a000 00:2f 139748026                  /usr/lib/python3.12/lib-dynload/_lzma.cpython-312-x86_64-linux-gnu.so
+748c28cd8000-748c28cd9000 rw-p 0000b000 00:2f 139748026                  /usr/lib/python3.12/lib-dynload/_lzma.cpython-312-x86_64-linux-gnu.so
+748c28cd9000-748c28cdb000 r--p 00000000 00:2f 139619007                  /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+748c28cdb000-748c28ce9000 r-xp 00002000 00:2f 139619007                  /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+748c28ce9000-748c28ceb000 r--p 00010000 00:2f 139619007                  /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+748c28ceb000-748c28cec000 r--p 00011000 00:2f 139619007                  /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+748c28cec000-748c28ced000 rw-p 00012000 00:2f 139619007                  /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+748c28ced000-748c28cef000 r--p 00000000 00:2f 139748008                  /usr/lib/python3.12/lib-dynload/_bz2.cpython-312-x86_64-linux-gnu.so
+748c28cef000-748c28cf2000 r-xp 00002000 00:2f 139748008                  /usr/lib/python3.12/lib-dynload/_bz2.cpython-312-x86_64-linux-gnu.so
+748c28cf2000-748c28cf4000 r--p 00005000 00:2f 139748008                  /usr/lib/python3.12/lib-dynload/_bz2.cpython-312-x86_64-linux-gnu.so
+748c28cf4000-748c28cf5000 r--p 00006000 00:2f 139748008                  /usr/lib/python3.12/lib-dynload/_bz2.cpython-312-x86_64-linux-gnu.so
+748c28cf5000-748c28cf6000 rw-p 00007000 00:2f 139748008                  /usr/lib/python3.12/lib-dynload/_bz2.cpython-312-x86_64-linux-gnu.so
+748c28cf6000-748c28df6000 rw-p 00000000 00:00 0 
+748c28df6000-748c28df8000 r--p 00000000 00:2f 139748024                  /usr/lib/python3.12/lib-dynload/_json.cpython-312-x86_64-linux-gnu.so
+748c28df8000-748c28dff000 r-xp 00002000 00:2f 139748024                  /usr/lib/python3.12/lib-dynload/_json.cpython-312-x86_64-linux-gnu.so
+748c28dff000-748c28e01000 r--p 00009000 00:2f 139748024                  /usr/lib/python3.12/lib-dynload/_json.cpython-312-x86_64-linux-gnu.so
+748c28e01000-748c28e02000 r--p 0000a000 00:2f 139748024                  /usr/lib/python3.12/lib-dynload/_json.cpython-312-x86_64-linux-gnu.so
+748c28e02000-748c28e03000 rw-p 0000b000 00:2f 139748024                  /usr/lib/python3.12/lib-dynload/_json.cpython-312-x86_64-linux-gnu.so
+748c28e03000-748c28eb6000 r--p 00000000 00:2f 147212112                  /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+748c28eb6000-748c291ea000 r-xp 000b3000 00:2f 147212112                  /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+748c291ea000-748c292b5000 r--p 003e7000 00:2f 147212112                  /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+748c292b5000-748c29311000 r--p 004b1000 00:2f 147212112                  /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+748c29311000-748c29314000 rw-p 0050d000 00:2f 147212112                  /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+748c29314000-748c29317000 rw-p 00000000 00:00 0 
+748c29319000-748c2931a000 rw-s 00000000 00:01 126131                     /dev/zero (deleted)
+748c2931b000-748c2931f000 r--p 00000000 00:2f 139748023                  /usr/lib/python3.12/lib-dynload/_hashlib.cpython-312-x86_64-linux-gnu.so
+748c2931f000-748c29325000 r-xp 00004000 00:2f 139748023                  /usr/lib/python3.12/lib-dynload/_hashlib.cpython-312-x86_64-linux-gnu.so
+748c29325000-748c29329000 r--p 0000a000 00:2f 139748023                  /usr/lib/python3.12/lib-dynload/_hashlib.cpython-312-x86_64-linux-gnu.so
+748c29329000-748c2932a000 r--p 0000d000 00:2f 139748023                  /usr/lib/python3.12/lib-dynload/_hashlib.cpython-312-x86_64-linux-gnu.so
+748c2932a000-748c2932c000 rw-p 0000e000 00:2f 139748023                  /usr/lib/python3.12/lib-dynload/_hashlib.cpython-312-x86_64-linux-gnu.so
+748c2932c000-748c2968e000 rw-p 00000000 00:00 0 
+748c2968e000-748c29695000 r--s 00000000 00:2f 147327299                  /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+748c29695000-748c296ee000 r--p 00000000 00:2f 147325713                  /usr/lib/locale/C.utf8/LC_CTYPE
+748c296ee000-748c296f0000 rw-p 00000000 00:00 0 
+748c296f0000-748c29718000 r--p 00000000 00:2f 147327322                  /usr/lib/x86_64-linux-gnu/libc.so.6
+748c29718000-748c298a1000 r-xp 00028000 00:2f 147327322                  /usr/lib/x86_64-linux-gnu/libc.so.6
+748c298a1000-748c298f0000 r--p 001b1000 00:2f 147327322                  /usr/lib/x86_64-linux-gnu/libc.so.6
+748c298f0000-748c298f4000 r--p 001ff000 00:2f 147327322                  /usr/lib/x86_64-linux-gnu/libc.so.6
+748c298f4000-748c298f6000 rw-p 00203000 00:2f 147327322                  /usr/lib/x86_64-linux-gnu/libc.so.6
+748c298f6000-748c29903000 rw-p 00000000 00:00 0 
+748c29903000-748c29907000 r--p 00000000 00:2f 139748732                  /usr/lib/x86_64-linux-gnu/libexpat.so.1.9.1
+748c29907000-748c29924000 r-xp 00004000 00:2f 139748732                  /usr/lib/x86_64-linux-gnu/libexpat.so.1.9.1
+748c29924000-748c2992c000 r--p 00021000 00:2f 139748732                  /usr/lib/x86_64-linux-gnu/libexpat.so.1.9.1
+748c2992c000-748c2992e000 r--p 00028000 00:2f 139748732                  /usr/lib/x86_64-linux-gnu/libexpat.so.1.9.1
+748c2992e000-748c2992f000 rw-p 0002a000 00:2f 139748732                  /usr/lib/x86_64-linux-gnu/libexpat.so.1.9.1
+748c2992f000-748c29931000 r--p 00000000 00:2f 139619121                  /usr/lib/x86_64-linux-gnu/libz.so.1.3
+748c29931000-748c29943000 r-xp 00002000 00:2f 139619121                  /usr/lib/x86_64-linux-gnu/libz.so.1.3
+748c29943000-748c29949000 r--p 00014000 00:2f 139619121                  /usr/lib/x86_64-linux-gnu/libz.so.1.3
+748c29949000-748c2994a000 r--p 0001a000 00:2f 139619121                  /usr/lib/x86_64-linux-gnu/libz.so.1.3
+748c2994a000-748c2994b000 rw-p 0001b000 00:2f 139619121                  /usr/lib/x86_64-linux-gnu/libz.so.1.3
+748c2994b000-748c2995b000 r--p 00000000 00:2f 147327328                  /usr/lib/x86_64-linux-gnu/libm.so.6
+748c2995b000-748c299da000 r-xp 00010000 00:2f 147327328                  /usr/lib/x86_64-linux-gnu/libm.so.6
+748c299da000-748c29a32000 r--p 0008f000 00:2f 147327328                  /usr/lib/x86_64-linux-gnu/libm.so.6
+748c29a32000-748c29a33000 r--p 000e7000 00:2f 147327328                  /usr/lib/x86_64-linux-gnu/libm.so.6
+748c29a33000-748c29a34000 rw-p 000e8000 00:2f 147327328                  /usr/lib/x86_64-linux-gnu/libm.so.6
+748c29a34000-748c29a3a000 rw-p 00000000 00:00 0 
+748c29a3a000-748c29a3c000 r--p 00000000 00:00 0                          [vvar]
+748c29a3c000-748c29a3e000 r--p 00000000 00:00 0                          [vvar_vclock]
+748c29a3e000-748c29a40000 r-xp 00000000 00:00 0                          [vdso]
+748c29a40000-748c29a41000 r--p 00000000 00:2f 147327316                  /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+748c29a41000-748c29a6c000 r-xp 00001000 00:2f 147327316                  /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+748c29a6c000-748c29a76000 r--p 0002c000 00:2f 147327316                  /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+748c29a76000-748c29a78000 r--p 00036000 00:2f 147327316                  /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+748c29a78000-748c29a7a000 rw-p 00038000 00:2f 147327316                  /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7ffd030e1000-7ffd03102000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]

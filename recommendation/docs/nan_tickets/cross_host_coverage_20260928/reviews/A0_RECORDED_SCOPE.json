@@ -1,0 +1,31 @@
+{
+  "status": "PASS_A0_RECORDED_COMPONENT_AND_RESIDUAL_SCOPE",
+  "sources": {
+    "current_natural_DW.json": {
+      "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_natural_DW.json",
+      "bytes": 4120,
+      "sha256": "fc3313fda9328324d1790e8459921f0f9abd43a2fff908203b4fb23c6b8df330",
+      "status": "BOUNDED_CLEAN_WITH_RELEVANT_SVM_EXPOSURE"
+    },
+    "current_natural_nonzero_DW.json": {
+      "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_natural_nonzero_DW.json",
+      "bytes": 4313,
+      "sha256": "8a1d447889ec99316252b69c2764048b7fba2e4a2c6d14a00c240a50f71bafc4",
+      "status": "BOUNDED_CLEAN_WITH_RELEVANT_SVM_EXPOSURE"
+    },
+    "current_plateau400.json": {
+      "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_plateau400.json",
+      "bytes": 12805,
+      "sha256": "fd66f45e9dbe700792539f7b108f85b3ae4581fffa624d6f86d5cb6469980bd5",
+      "status": "PASS_CURRENT_PLATEAU400_FRESH_BANK46_PRESERVED_WITH_SVM_EXPOSURE"
+    },
+    "current_STU1_DX583.json": {
+      "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_STU1_DX583.json",
+      "bytes": 27443,
+      "sha256": "65a86a592b8ad191cfed832d40ff9dfb4915652f5ef515dcf31238ae7bf6dff7",
+      "status": "CURRENT_CORRECTED_DRIVER_STU1_DX_CONDITIONAL_BOUND_INCONSISTENCY"
+    }
+  },
+  "scope": "Reconsumed small recorded evidence; no re-read of bulk tensor/archive payloads.",
+  "GPU_actions": false
+}

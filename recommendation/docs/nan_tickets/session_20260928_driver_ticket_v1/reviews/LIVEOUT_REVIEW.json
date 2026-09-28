@@ -1,0 +1,330 @@
+{
+  "status": "PASS_INDEPENDENT_BOUNDED_FIX_LIVEOUT_REVIEW",
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_fix_liveout_supplement_v1/analyze_liveout.py",
+    "bytes": 10237,
+    "sha256": "f98d9b0f4c95be4e5854e004be546c387f4b1ccab50b04b64570be8b05387408"
+  },
+  "receipt": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_fix_liveout_supplement_v1/LIVEOUT_REVIEW.json",
+    "bytes": 13929,
+    "sha256": "ecb7c0d7a03928135a765032541d38528e6ca3a854d7642a6559ccbd75922a67"
+  },
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_fix_liveout_supplement_v1/SHA256SUMS",
+    "bytes": 247,
+    "sha256": "f716b60bad98305c99c1ca427988c0ba4a0e879a2dd78d536a8fd26bfa703dc2"
+  },
+  "frozen_fix_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/SHA256SUMS",
+    "bytes": 3394,
+    "sha256": "be7559b911e385d39c12cb0c4d347f8107cd7ac25c983479c9cdb8ba49ec6029"
+  },
+  "pure_checker_reexecution_equal": true,
+  "independent_branch_and_defuse_paths": {
+    "baseline": {
+      "paths": [
+        [
+          108,
+          116,
+          120,
+          124,
+          128,
+          136,
+          140,
+          144,
+          152,
+          160,
+          168
+        ],
+        [
+          108,
+          116,
+          120,
+          124,
+          128,
+          136,
+          140,
+          168
+        ],
+        [
+          108,
+          116,
+          120,
+          124,
+          136,
+          140,
+          144,
+          152,
+          160,
+          168
+        ],
+        [
+          108,
+          116,
+          120,
+          124,
+          136,
+          140,
+          168
+        ]
+      ],
+      "all_dirty_values_killed_before_use": true
+    },
+    "corrected": {
+      "paths": [
+        [
+          124,
+          132,
+          136,
+          140,
+          144,
+          152,
+          156,
+          160,
+          168,
+          176,
+          184
+        ],
+        [
+          124,
+          132,
+          136,
+          140,
+          144,
+          152,
+          156,
+          184
+        ],
+        [
+          124,
+          132,
+          136,
+          140,
+          152,
+          156,
+          160,
+          168,
+          176,
+          184
+        ],
+        [
+          124,
+          132,
+          136,
+          140,
+          152,
+          156,
+          184
+        ]
+      ],
+      "all_dirty_values_killed_before_use": true
+    }
+  },
+  "source_coordinates_rechecked": {
+    "MODE_field_shift_and_size": {
+      "original": [
+        {
+          "line": 142,
+          "text": "var SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SHIFT\t= 12"
+        },
+        {
+          "line": 143,
+          "text": "var SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SIZE\t= 6"
+        }
+      ],
+      "proposed": [
+        {
+          "line": 142,
+          "text": "var SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SHIFT\t= 12"
+        },
+        {
+          "line": 143,
+          "text": "var SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SIZE\t= 6"
+        }
+      ]
+    },
+    "saved_STATE_PRIV_including_original_SCC": {
+      "original": [
+        {
+          "line": 246,
+          "text": "\ts_getreg_b32\ts_save_state_priv, hwreg(HW_REG_WAVE_STATE_PRIV)\t//save STATUS since we will change SCC"
+        }
+      ],
+      "proposed": [
+        {
+          "line": 246,
+          "text": "\ts_getreg_b32\ts_save_state_priv, hwreg(HW_REG_WAVE_STATE_PRIV)\t//save STATUS since we will change SCC"
+        }
+      ]
+    },
+    "prologue": {
+      "original": [
+        {
+          "line": 261,
+          "text": "L_NOT_WAVE_START:"
+        },
+        {
+          "line": 271,
+          "text": "\ts_mov_b32\texec_lo, ttmp14"
+        }
+      ],
+      "proposed": [
+        {
+          "line": 261,
+          "text": "L_NOT_WAVE_START:"
+        },
+        {
+          "line": 278,
+          "text": "\ts_mov_b32\texec_lo, ttmp14"
+        }
+      ]
+    },
+    "scratch_convention_comment": {
+      "original": [
+        {
+          "line": 401,
+          "text": "\t// ttmp[2:5] and ttmp12 can be used (others hold SPI-initialized debug data)"
+        },
+        {
+          "line": 402,
+          "text": "\t// ttmp12 holds SQ_WAVE_STATUS"
+        }
+      ],
+      "proposed": [
+        {
+          "line": 408,
+          "text": "\t// ttmp[2:5] and ttmp12 can be used (others hold SPI-initialized debug data)"
+        },
+        {
+          "line": 409,
+          "text": "\t// ttmp12 holds SQ_WAVE_STATUS"
+        }
+      ]
+    },
+    "second_level_transfer": {
+      "original": [
+        {
+          "line": 467,
+          "text": "\ts_setpc_b64\t[ttmp2, ttmp3]\t\t\t\t\t\t// jump to second-level trap handler"
+        }
+      ],
+      "proposed": [
+        {
+          "line": 474,
+          "text": "\ts_setpc_b64\t[ttmp2, ttmp3]\t\t\t\t\t\t// jump to second-level trap handler"
+        }
+      ]
+    },
+    "return_EXECZ_and_VCCZ_refresh": {
+      "original": [
+        {
+          "line": 505,
+          "text": "\ts_and_b64\texec, exec, exec\t\t\t\t\t// Restore STATUS.EXECZ, not writable by s_setreg_b32"
+        },
+        {
+          "line": 506,
+          "text": "\ts_and_b64\tvcc, vcc, vcc\t\t\t\t\t\t// Restore STATUS.VCCZ, not writable by s_setreg_b32"
+        }
+      ],
+      "proposed": [
+        {
+          "line": 512,
+          "text": "\ts_and_b64\texec, exec, exec\t\t\t\t\t// Restore STATUS.EXECZ, not writable by s_setreg_b32"
+        },
+        {
+          "line": 513,
+          "text": "\ts_and_b64\tvcc, vcc, vcc\t\t\t\t\t\t// Restore STATUS.VCCZ, not writable by s_setreg_b32"
+        }
+      ]
+    },
+    "return_saved_SCC_restore": {
+      "original": [
+        {
+          "line": 510,
+          "text": "\ts_lshr_b32\ts_save_state_priv, s_save_state_priv, SQ_WAVE_STATE_PRIV_SCC_SHIFT"
+        },
+        {
+          "line": 517,
+          "text": "\ts_setreg_b32\thwreg(HW_REG_WAVE_STATE_PRIV, SQ_WAVE_STATE_PRIV_SCC_SHIFT, \\"
+        },
+        {
+          "line": 518,
+          "text": "\t\tSQ_WAVE_STATE_PRIV_POISON_ERR_SHIFT - SQ_WAVE_STATE_PRIV_SCC_SHIFT + 1), s_save_state_priv"
+        }
+      ],
+      "proposed": [
+        {
+          "line": 517,
+          "text": "\ts_lshr_b32\ts_save_state_priv, s_save_state_priv, SQ_WAVE_STATE_PRIV_SCC_SHIFT"
+        },
+        {
+          "line": 524,
+          "text": "\ts_setreg_b32\thwreg(HW_REG_WAVE_STATE_PRIV, SQ_WAVE_STATE_PRIV_SCC_SHIFT, \\"
+        },
+        {
+          "line": 525,
+          "text": "\t\tSQ_WAVE_STATE_PRIV_POISON_ERR_SHIFT - SQ_WAVE_STATE_PRIV_SCC_SHIFT + 1), s_save_state_priv"
+        }
+      ]
+    },
+    "CWSR_EXEC_copy_into_ttmp2_ttmp3": {
+      "original": [
+        {
+          "line": 543,
+          "text": "\ts_mov_b32\ts_save_exec_lo, exec_lo\t\t\t\t\t//save EXEC and use EXEC for the go signal from SPI"
+        },
+        {
+          "line": 544,
+          "text": "\ts_mov_b32\ts_save_exec_hi, exec_hi"
+        }
+      ],
+      "proposed": [
+        {
+          "line": 550,
+          "text": "\ts_mov_b32\ts_save_exec_lo, exec_lo\t\t\t\t\t//save EXEC and use EXEC for the go signal from SPI"
+        },
+        {
+          "line": 551,
+          "text": "\ts_mov_b32\ts_save_exec_hi, exec_hi"
+        }
+      ]
+    },
+    "CWSR_original_MODE_bank_capture_then_clear": {
+      "original": [
+        {
+          "line": 562,
+          "text": "\ts_getreg_b32\ts_save_tmp, hwreg(HW_REG_WAVE_MODE, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SHIFT, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SIZE)"
+        },
+        {
+          "line": 566,
+          "text": "\ts_setreg_b32\thwreg(HW_REG_WAVE_MODE, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SHIFT, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SIZE), s_save_tmp"
+        }
+      ],
+      "proposed": [
+        {
+          "line": 569,
+          "text": "\ts_getreg_b32\ts_save_tmp, hwreg(HW_REG_WAVE_MODE, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SHIFT, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SIZE)"
+        },
+        {
+          "line": 573,
+          "text": "\ts_setreg_b32\thwreg(HW_REG_WAVE_MODE, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SHIFT, SQ_WAVE_MODE_DST_SRC0_SRC1_VGPR_MSB_SIZE), s_save_tmp"
+        }
+      ]
+    }
+  },
+  "findings": [],
+  "GPU_actions": false,
+  "driver_actions": false,
+  "large_module_or_tensor_payload_reads": false,
+  "prior_reviewer_assertion": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/LIVEOUT_FIRST_ASSERTION.json",
+    "bytes": 1252,
+    "sha256": "4227e9d955cafc2ccc28c378fa63f6b7e96046f83751b1f58f74ada4a22079c5"
+  },
+  "limits": [
+    "Sequential def-use result assumes existing trap scratch ABI, ordered execution and equal corresponding hardware-register reads.",
+    "Neither transient reentrant observers nor special-register timing hazards are modeled.",
+    "SP3 acceptance and vendor trap ABI review remain open."
+  ]
+}

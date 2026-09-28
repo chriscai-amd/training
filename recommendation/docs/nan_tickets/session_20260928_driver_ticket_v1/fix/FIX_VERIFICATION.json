@@ -1,0 +1,400 @@
+{
+  "status": "PASS_PATCH_APPLIES_AND_GENERATES_EXACT_TESTED_HANDLER_WORDS",
+  "preparer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/prepare_fix.py",
+    "bytes": 9711,
+    "sha256": "244bf42be3b3bb1a7c53d591084b8bc90f71476a359bb830ff31d1e8ec8bb4bb"
+  },
+  "patch": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/proposed_fix.patch",
+    "bytes": 2091,
+    "sha256": "58ed3645252ebbb3fe6fcad493a6db7a62b30740ceac937d18acb7995e6dd158"
+  },
+  "original_source_pins": [
+    {
+      "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/cwsr_trap_handler_gfx12.asm",
+      "bytes": 69197,
+      "sha256": "5e0e339cb988120d99fbccf2869bfab29e0a143bd110ce6f00cfdc495d5bf69d"
+    },
+    {
+      "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/cwsr_trap_handler.h",
+      "bytes": 135221,
+      "sha256": "006a44ea767d581ecc84913ec8bdcd68476471510a1ccd9923b00efc3b8463ef"
+    },
+    {
+      "path": "/usr/src/amdgpu-7.1.1-2397345.24.04/amd/amdkfd/kfd_device.c",
+      "bytes": 51287,
+      "sha256": "7729b41821a7e24448e900b9ab677d7f9d4d8a1fd1ed4dec1f3f001f8f591d23"
+    }
+  ],
+  "tested_candidate_source": {
+    "assembly": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/cwsr_trap_handler_gfx12.asm",
+      "bytes": 69860,
+      "sha256": "a5df5bdf844e1f01cbb0012d94c627c3063a2dbafa43723b89506039afb12cae"
+    },
+    "header": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/cwsr_trap_handler.h",
+      "bytes": 135980,
+      "sha256": "81fbdf62ed58b3bc2ccc5bec9b0169a39d855c3a5c5e8423b8bd8454beecd00b"
+    }
+  },
+  "module_build_inputs": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/inputs.json",
+    "bytes": 1444,
+    "sha256": "ee03c0b78cc9d4e5087f065840e0d4df240d8515afb50249007c01eb9bd969ec"
+  },
+  "original_design_patch": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_bank_neutral_fix_feasibility_v1/proposed_non_wave_start_source_change_v2.diff",
+    "bytes": 1198,
+    "sha256": "0222b71a42debe904283b5c0d680a3259f969ae5c62e3feace042734868af8fe"
+  },
+  "native_copies": [
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/baseline.bin",
+        "bytes": 5656,
+        "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/baseline.bin",
+        "bytes": 5656,
+        "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/corrected.bin",
+        "bytes": 5672,
+        "sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/corrected.bin",
+        "bytes": 5672,
+        "sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/baseline.s",
+        "bytes": 44050,
+        "sha256": "398f6ed2c68eb423e0a722970a7199aff8776ce5535bf1512b8dad2e193e35eb"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/baseline.s",
+        "bytes": 44050,
+        "sha256": "398f6ed2c68eb423e0a722970a7199aff8776ce5535bf1512b8dad2e193e35eb"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/corrected.s",
+        "bytes": 44179,
+        "sha256": "4c0f6ea1d9e25ea7ac0da69edc7cce16f093761e8f65ccebea28b28105e84028"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/corrected.s",
+        "bytes": 44179,
+        "sha256": "4c0f6ea1d9e25ea7ac0da69edc7cce16f093761e8f65ccebea28b28105e84028"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/baseline_disassemble.stdout",
+        "bytes": 124474,
+        "sha256": "a9bd83dee15841c7d2753f597f9479684047405bcd4f4801eda46c06720f4341"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/baseline_disassemble.stdout",
+        "bytes": 124474,
+        "sha256": "a9bd83dee15841c7d2753f597f9479684047405bcd4f4801eda46c06720f4341"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/corrected_disassemble.stdout",
+        "bytes": 124546,
+        "sha256": "f1129b621de1b65b2c3b3e83154fcc6bcedae6565bb2b65657d51be119bca88b"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/corrected_disassemble.stdout",
+        "bytes": 124546,
+        "sha256": "f1129b621de1b65b2c3b3e83154fcc6bcedae6565bb2b65657d51be119bca88b"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/baseline_assemble.command.json",
+        "bytes": 365,
+        "sha256": "cc81242825e15815cb445f00501401abee47c893e6b97f7db824799ee2ae5f85"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/baseline_assemble.command.json",
+        "bytes": 365,
+        "sha256": "cc81242825e15815cb445f00501401abee47c893e6b97f7db824799ee2ae5f85"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/corrected_assemble.command.json",
+        "bytes": 367,
+        "sha256": "718fc954525d3906a3318ca9849c51e5119b6a3a560976c61ab7e5b3d8ffb3e8"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/corrected_assemble.command.json",
+        "bytes": 367,
+        "sha256": "718fc954525d3906a3318ca9849c51e5119b6a3a560976c61ab7e5b3d8ffb3e8"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/baseline_extract.command.json",
+        "bytes": 312,
+        "sha256": "d3b64e8456982495d74690f060d8368426e909509735763cbc3391c1fade6649"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/baseline_extract.command.json",
+        "bytes": 312,
+        "sha256": "d3b64e8456982495d74690f060d8368426e909509735763cbc3391c1fade6649"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/corrected_extract.command.json",
+        "bytes": 314,
+        "sha256": "8c0055240bbeba2a9d04b5716ebc552461bb4459820c2759440c1cb73da48b37"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/corrected_extract.command.json",
+        "bytes": 314,
+        "sha256": "8c0055240bbeba2a9d04b5716ebc552461bb4459820c2759440c1cb73da48b37"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/baseline_disassemble.command.json",
+        "bytes": 213,
+        "sha256": "ffd5b2ca8a748156592357b6f4d4eb85a015952941976d93289d046d6298ddd3"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/baseline_disassemble.command.json",
+        "bytes": 213,
+        "sha256": "ffd5b2ca8a748156592357b6f4d4eb85a015952941976d93289d046d6298ddd3"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/corrected_disassemble.command.json",
+        "bytes": 214,
+        "sha256": "bcb12366ee143be0d1f0e3bd74270405de7f5e44a806cda15f0a7b1f7e3df124"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/corrected_disassemble.command.json",
+        "bytes": 214,
+        "sha256": "bcb12366ee143be0d1f0e3bd74270405de7f5e44a806cda15f0a7b1f7e3df124"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/complete_handler_build.json",
+        "bytes": 22548,
+        "sha256": "146b4e87ad8310274cc54c7d008f2b8d4bab1b550483e52d80b6fb6513dcde38"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/complete_handler_build.json",
+        "bytes": 22548,
+        "sha256": "146b4e87ad8310274cc54c7d008f2b8d4bab1b550483e52d80b6fb6513dcde38"
+      }
+    }
+  ],
+  "evidence_copies": [
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_audit_v1/REVIEW.json",
+        "bytes": 9810,
+        "sha256": "df6b21da005286a79048a95e1028f1f65b0584c69e95543cbcf1b509944cf3d1"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/evidence/module_audit.json",
+        "bytes": 9810,
+        "sha256": "df6b21da005286a79048a95e1028f1f65b0584c69e95543cbcf1b509944cf3d1"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/BUILD.json",
+        "bytes": 1918,
+        "sha256": "20ed05d43c68f903404d12bc93e988cf0c68aafbd4ede0a7f18852f72201244e"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/evidence/module_BUILD.json",
+        "bytes": 1918,
+        "sha256": "20ed05d43c68f903404d12bc93e988cf0c68aafbd4ede0a7f18852f72201244e"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/inputs.json",
+        "bytes": 1444,
+        "sha256": "ee03c0b78cc9d4e5087f065840e0d4df240d8515afb50249007c01eb9bd969ec"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/evidence/module_build_inputs.json",
+        "bytes": 1444,
+        "sha256": "ee03c0b78cc9d4e5087f065840e0d4df240d8515afb50249007c01eb9bd969ec"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/build.py",
+        "bytes": 5431,
+        "sha256": "d3191dc29dc0ba90dfecc2d9c9f05bcb8256e5675d48b316120005a812eeadbd"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/evidence/module_build.py",
+        "bytes": 5431,
+        "sha256": "d3191dc29dc0ba90dfecc2d9c9f05bcb8256e5675d48b316120005a812eeadbd"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/build_preserved.py",
+        "bytes": 7559,
+        "sha256": "df96bafa7427a418f22db9aae0622d69d0a5118cf863ac11866c6479de29cd9e"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/evidence/native_builder.py",
+        "bytes": 7559,
+        "sha256": "df96bafa7427a418f22db9aae0622d69d0a5118cf863ac11866c6479de29cd9e"
+      }
+    },
+    {
+      "original": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_causal_audit_v1/AUDIT.json",
+        "bytes": 75215,
+        "sha256": "80c370560fe86454640df4f05109da69d4ea387989b5281595e3ecc403da2368"
+      },
+      "packaged": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/evidence/prior_causal_audit.json",
+        "bytes": 75215,
+        "sha256": "80c370560fe86454640df4f05109da69d4ea387989b5281595e3ecc403da2368"
+      }
+    }
+  ],
+  "original_handler": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/baseline.bin",
+    "bytes": 5656,
+    "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+  },
+  "corrected_handler": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/corrected.bin",
+    "bytes": 5672,
+    "sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80"
+  },
+  "exact_change": {
+    "original_prologue_range": [
+      60,
+      108
+    ],
+    "corrected_prologue_range": [
+      60,
+      124
+    ],
+    "branch_byte_offset": 4,
+    "old_branch_hex": "bfa003f1",
+    "new_branch_hex": "bfa003f5",
+    "old_branch_target": 4044,
+    "new_branch_target": 4060,
+    "other_instruction_bytes_unchanged": true
+  },
+  "patch_application": {
+    "command": [
+      "patch",
+      "--batch",
+      "--forward",
+      "-p1",
+      "-i",
+      "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/proposed_fix.patch"
+    ],
+    "working_directory": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/patch_check",
+    "returncode": 0,
+    "stdout": "patching file drivers/gpu/drm/amd/amdkfd/cwsr_trap_handler_gfx12.asm\npatching file drivers/gpu/drm/amd/amdkfd/cwsr_trap_handler.h\n",
+    "stderr": "",
+    "exact_expected_source_bytes": true
+  },
+  "all_C_hex_tokens_equal_tested_header": true,
+  "header_format_only_two_words_per_line": true,
+  "complete_native_disassemblies_reconstructed_and_verified": true,
+  "original_SP3_assembly_validated": false,
+  "module_rebuilt": false,
+  "GPU_actions": false,
+  "system_files_changed": false,
+  "module_provenance_from_pinned_prior_audit": {
+    "installed": {
+      "module": {
+        "path": "/lib/modules/6.14.0-37-generic/updates/dkms/amdgpu.ko.zst",
+        "bytes": 6164119,
+        "sha256": "dae133624fad0ae7bb7d95dd563edbc5218bcd0ba5ea1f5b44473093a0cc93d2"
+      },
+      "uncompressed_sha256": "5b6e4617fdf247ec8d395660c850e10f49a1c5706dea9d1b8598e71cdaa8c2b9",
+      "metadata": {
+        "version": "7.1.1.31300009",
+        "srcversion": "EADFD8EC13CF3E6B329194E",
+        "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+        "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+        "signer": "heliosr-1b114-c07-1 Secure Boot Module Signature key"
+      },
+      "handler": {
+        "bytes": 5656,
+        "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+      },
+      "handler_rodata_offset": 508096
+    },
+    "baseline": {
+      "module": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/baseline_amdgpu.stripped.ko",
+        "bytes": 40302360,
+        "sha256": "e5c21b237182a8f829e817a3ae382649b15c44ed81d78b50262998811faef84f"
+      },
+      "uncompressed_sha256": "e5c21b237182a8f829e817a3ae382649b15c44ed81d78b50262998811faef84f",
+      "metadata": {
+        "version": "7.1.1.31300009",
+        "srcversion": "EADFD8EC13CF3E6B329194E",
+        "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+        "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+        "signer": ""
+      },
+      "handler": {
+        "bytes": 5656,
+        "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+      },
+      "handler_rodata_offset": 508096
+    },
+    "candidate": {
+      "module": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/candidate_amdgpu.stripped.ko",
+        "bytes": 40302424,
+        "sha256": "78de19854e38e298f6418bddcfa39f44a797f811f0f4b9c585482f4c4dc2b2b4"
+      },
+      "uncompressed_sha256": "78de19854e38e298f6418bddcfa39f44a797f811f0f4b9c585482f4c4dc2b2b4",
+      "metadata": {
+        "version": "7.1.1.31300009",
+        "srcversion": "AD83C153B9701570F12964E",
+        "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+        "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+        "signer": ""
+      },
+      "handler": {
+        "bytes": 5672,
+        "sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80"
+      },
+      "handler_rodata_offset": 508096
+    }
+  },
+  "limits": [
+    "Native payloads were copied and completely rechecked; large module payload hashes and builds were not repeated.",
+    "Source assembly hunk is a feasible proposal. Original SP3 parser/assembler acceptance is not established.",
+    "The embedded uint32_t array is the exact payload already built and tested in the corrected module.",
+    "See parent ticket evidence for runtime counterfactuals and their limits."
+  ]
+}

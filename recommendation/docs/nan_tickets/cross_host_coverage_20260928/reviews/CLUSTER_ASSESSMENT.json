@@ -1,0 +1,1214 @@
+{
+  "status": "PASS_INDEPENDENT_CPU_ASSESSMENT_WITH_EVIDENCE_LIMITS",
+  "utc": "2026-09-28T01:26:53.680421+00:00",
+  "repository_head": "8cf681dead52574301cc68bdfa37442626d333b9",
+  "scope": "Checked-in cluster docs, all small evidence metadata/loss/telemetry, tool source, and frozen ticket native bytes. No remote access, GPU initialization, module/build/boot script execution, commits, or frozen edits.",
+  "pins": [
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/h21-15/cwsr_handlers.txt",
+      "bytes": 298,
+      "sha256": "d9d280c352ab2b34304dd41a2ea4097ac7b5b65ea1e41390bfd9f89d7cfb7810"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/NONFINITE_STOP.json",
+      "bytes": 681,
+      "sha256": "d6f917c6443aee44c9d1572a2d2b34e1081653b6d0860817e59f146c261972ff"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/command.txt",
+      "bytes": 109,
+      "sha256": "dcac87251fb2dc9d98fa7f5c795cdf303e46552c25c99f3c82840930dc322429"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/end_utc.txt",
+      "bytes": 25,
+      "sha256": "6e39a207e4979394e5acd111dfe901a9cea9fe7b0e5dcc5030ae628a1e282922"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/launch_utc.txt",
+      "bytes": 25,
+      "sha256": "f8088fa1825758ef219298fe8a9900ac56c06c65ee564dd9001675123e469c3a"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/loss.csv",
+      "bytes": 4626,
+      "sha256": "7d1857f41af0363de7412d0decf66b64c4c8d456c276f19a0cbf75edd7532e6d"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/platform.txt",
+      "bytes": 920,
+      "sha256": "6a4d391a09f9aa071664d7cee69accddbc06db7bfe589b64ba3d43ae527f7abf"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/telemetry.jsonl",
+      "bytes": 24108,
+      "sha256": "f621f7685eb47f17668e283ba65d966387fcbb667c52a297abf131aff91177cd"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/corrected_module_audit.txt",
+      "bytes": 1449,
+      "sha256": "9afc4a4f6620f0c0454358aca4794815e3e9e7b245498d534d3526323e9d44f5"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/cwsr_handlers.txt",
+      "bytes": 1796,
+      "sha256": "f6026ab35c36da3f5979e197ff17a0719e756fcf8bcc92028368199a68e928fc"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/host_inventory_20260925T024916Z.txt",
+      "bytes": 21515,
+      "sha256": "f47f3b4928ad51f2791385b1d443f4a619218278a53c98fef38eda3a089ee732"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/numabind/command.txt",
+      "bytes": 131,
+      "sha256": "079b697af536ac1226c1ef5919ea52588e05e63f8664ea8514542518c21cf2b0"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/numabind/launch_utc.txt",
+      "bytes": 25,
+      "sha256": "5d2ec6a2b2d14319a532cac099f401183ff6ce5d4f8904dc81cdcc71a18154b3"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/numabind/loss.csv",
+      "bytes": 80120,
+      "sha256": "9da34cb8db4e559bf423640d9a45eaaf5fb6a20f4d1bd8aec2894c7361d633e8"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/numabind/platform.txt",
+      "bytes": 928,
+      "sha256": "dc4ea4c985f50b7b0aaee96ddecf8455c0bcf38620d0b104ad2e96f75e896485"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/numabind/status.json",
+      "bytes": 508,
+      "sha256": "b767ae6c53c82936e3c09e9652265e821260fe42dab7c46969c039c0b3d8365e"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/numabind/telemetry.jsonl",
+      "bytes": 99343,
+      "sha256": "e26de85394066fc08b90367d3cd13cde3e29be0b35f6706a2b1b77f20f468565"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/oneshot_custom.cfg",
+      "bytes": 882,
+      "sha256": "6535011dc8ddd40d363e39d879a9c21a0129ca0b46291cd6389ad7808681a427"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/oneshot_install.txt",
+      "bytes": 1742,
+      "sha256": "6953c3e5400eb7af1b2482d4e80779cdb77c26414f5689ffc3a275d5e450a7e4"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/reboot_request.txt",
+      "bytes": 102,
+      "sha256": "23496d13e2cb9298526ca57c72c6c97c2b18680e238c9bd7d7ce35b667a3b777"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/cwsr_handlers.txt",
+      "bytes": 442,
+      "sha256": "d89f94e49f77afb0cb5f81aba9d138c8a79b835ffa59b81d5f4babee21d9643c"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reboot_request.txt",
+      "bytes": 375,
+      "sha256": "24669aeea5944d50704794384422f7e33e3f307cad97609aaa31900c0353905f"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproA/loss.csv",
+      "bytes": 5016,
+      "sha256": "92c44ccf9c8a57220346c8ca0472100f58a3aba0e7eca32ab3049bacd15a60b3"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproA/platform.txt",
+      "bytes": 1134,
+      "sha256": "9cba9f32d1747f756ea9ee81726acec2bfefc1362fa486da018e21d7dd3d8aa5"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproA/status.json",
+      "bytes": 1303,
+      "sha256": "f91210107e8d982d0fe82f7dde394bb79795762ae12af7b5ef711e816ac7c830"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproA/tripwire_summary.json",
+      "bytes": 393,
+      "sha256": "d01fae97e4bdfbc7c2a6aa3dac59e600e2707f4fb2d4e7e759ab27c4d978ecae"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproB/loss.csv",
+      "bytes": 240,
+      "sha256": "c186d84370833f16c8fb69c97492186618b9d8d686356231b37c0dc2489cdd17"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproB/platform.txt",
+      "bytes": 1059,
+      "sha256": "749fed87661a304415d743f4b44fb99020e5e3b8ed73b5acbe11e8312987d2d5"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproB/status.json",
+      "bytes": 520,
+      "sha256": "77be899d6fbca04b3937028e228d630ae44d257d43892464fc879daaea5945f2"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/armed_install.txt",
+      "bytes": 996,
+      "sha256": "48358564325be8802b2441384ea9f6fa5a2fcf35e371d9e74b147da5df436ebc"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_boot/dmesg_excerpt.txt",
+      "bytes": 1199,
+      "sha256": "97ec83e6ca890ec9ec9a4717417babe47f0e53ccc32c9d7047555c7b8fd9e162"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_boot/load_log.txt",
+      "bytes": 4646,
+      "sha256": "415729715244187fd97e3ee0b1f3a4739f8b588d3299dadcb886ddb7e6c6ce67"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_boot/lsmod_before_insmod.txt",
+      "bytes": 4197,
+      "sha256": "3bfcf130f35e69e6fe1e08ee518d8931e09c1048ba49bb0503e511406c2ed895"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_boot/post_boot_inspect.txt",
+      "bytes": 6230,
+      "sha256": "3b34e3fd2a7795c8b7f898149a32608a56133e538c7e4f9ac1d1342c92cf90fb"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_default/command.txt",
+      "bytes": 109,
+      "sha256": "dcac87251fb2dc9d98fa7f5c795cdf303e46552c25c99f3c82840930dc322429"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_default/launch_utc.txt",
+      "bytes": 25,
+      "sha256": "8625f5bd0594cfd461c770b9b26157ebb48956b643e3a3d6f7d079271bfa8cf7"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_default/loss.csv",
+      "bytes": 88720,
+      "sha256": "68c7583869267bd8f32d2783e5b032260fea30c68ba4c8ae406c10a5240f5031"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_default/platform.txt",
+      "bytes": 1058,
+      "sha256": "744859e6d4d310c213c5a4525508590f211c42e0cb26cf6e54bc188273f8977c"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_default/status.json",
+      "bytes": 527,
+      "sha256": "9a95805c2dbcda039c4894d13aa7c50a86f043ebf1511864290542b061a767e9"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_default/telemetry.jsonl",
+      "bytes": 168295,
+      "sha256": "c01a77a5740a7d8b267a0482d54851d1cf6371aa1d6b132be240521126607708"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_module_audit.txt",
+      "bytes": 2036,
+      "sha256": "bf5152bc503443347e3ad97b6c24ca5693e3c926195239d498b3ed964c2d3cc5"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/dmesg_wedge_excerpt.txt",
+      "bytes": 12429,
+      "sha256": "e526b0027fb47ae09fb8bae8d77c16e9315d6e89898ba8f41ccf968c8776bc81"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/halt_clear_observation.txt",
+      "bytes": 1139,
+      "sha256": "dad2e3562a06d3916f1b76b9ffa7652b147a130f036b7b57fc8c8b30fb83cbd9"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/host_first_look.txt",
+      "bytes": 1219,
+      "sha256": "1f426cb8893520c44d3135693bbae37dfec68c59f88b3331b9eac254f22b0d5f"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/long_numabind/NONFINITE_STOP.json",
+      "bytes": 706,
+      "sha256": "44b7bc9261f7c8e943e9d0bee9561a8bb6aa645473639cc60b9d32ac183c9286"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/long_numabind/command.txt",
+      "bytes": 131,
+      "sha256": "079b697af536ac1226c1ef5919ea52588e05e63f8664ea8514542518c21cf2b0"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/long_numabind/launch_utc.txt",
+      "bytes": 25,
+      "sha256": "fdb8bda11957d20f2dc383a81be8b752261ed7b10eff61507528ac063dbf5edc"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/long_numabind/loss.csv",
+      "bytes": 14832,
+      "sha256": "215a971f6f4369196f772fa16a78acc1964a72a06354845512e4a13bc0e429f8"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/long_numabind/platform.txt",
+      "bytes": 1053,
+      "sha256": "854d4cbaa2de04e374937500a94bc308766d78db258c8da7ba170c17a7bcf7b8"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/long_numabind/telemetry.jsonl",
+      "bytes": 53465,
+      "sha256": "936b43916adfbb7724ad5bc71c7a0a38e8bf6ba14837146eb53b3c8bed51351c"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/tripwire_numabind_wedge/command.txt",
+      "bytes": 131,
+      "sha256": "079b697af536ac1226c1ef5919ea52588e05e63f8664ea8514542518c21cf2b0"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/tripwire_numabind_wedge/launch_utc.txt",
+      "bytes": 25,
+      "sha256": "73a35408a438dffe36902f31c40d870802ef44d90c1cc17aa4278f4d2c185b7d"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/tripwire_numabind_wedge/platform.txt",
+      "bytes": 1128,
+      "sha256": "597cdf2c7c80a950bb9ab8171768f71f560cf7a768db9cc5a5101e090f427800"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/tripwire_numabind_wedge/telemetry.jsonl",
+      "bytes": 121501,
+      "sha256": "7a20c7fe2a641dac703f4feec110748f9f71afd2cc3a3eff6784490c4d1712dd"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/tripwire_numabind_wedge/train_log_tail.txt",
+      "bytes": 4000,
+      "sha256": "98102cd5b5d39783d0c7e31d3d9a739ec93121428294e28110d068d3a1b25331"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/mi450_rck_spur.md",
+      "bytes": 50154,
+      "sha256": "ee484166e8831b1a73887c8f479818c63a56c233e227e221c7e06ffac305f997"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/audit_modules.sh",
+      "bytes": 3012,
+      "sha256": "09b793d0a74bdadd685cb944a18437d2e1a5545093f2b0fa170d18d4e5929f63"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/build_corrected_module.sh",
+      "bytes": 2355,
+      "sha256": "d213086bc039257dc9aeef510eed2c3a27e01055635b596b010dd147a1106b81"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/extract_cwsr.py",
+      "bytes": 4235,
+      "sha256": "5c4c1df0fcb21f6282c8456675600c416e84d9c9ac9757ee94f14fed61c1ee8e"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/make_candidate_handler.py",
+      "bytes": 6385,
+      "sha256": "144680f0f61a61537a8db6ee78ae5d99fbc6250817a9752f80cbd5be30053efa"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/oneshot/README.txt",
+      "bytes": 936,
+      "sha256": "ec8fc3298bd322878ffb70f3f313069e134f6ddee47216f7c79c1854b91882a9"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/oneshot/chcai-cwsrfix-load.service",
+      "bytes": 552,
+      "sha256": "acb78a7f1a4f6f49f3d1b1e8c89c7691b778d8be68ab59ba1c53f50ce5141c0d"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/oneshot/install_oneshot.sh",
+      "bytes": 3467,
+      "sha256": "796d29543c9e78f98106eb0fe3d33d93eabdb41452577f4833ede1b442f5c97f"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/oneshot/load.sh.in",
+      "bytes": 1626,
+      "sha256": "c1f9fe42af0e1dced4abd3ab8ebd6ad5ed6b852ae5979a89d33d728096f3ebc2"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/oneshot_armed/README.txt",
+      "bytes": 1037,
+      "sha256": "9469c6d0a83ee904e972a84eba94d565862136787d7d988c8b596498b663bee1"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/oneshot_armed/chcai-cwsrfix-load.service",
+      "bytes": 565,
+      "sha256": "1dbdcad864a8e9bd78b284832fe5650a6e3888b14184afc3c2a218d0d5d531c2"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/oneshot_armed/install_armed.sh",
+      "bytes": 2262,
+      "sha256": "03437c6d8581a223a0ae1005891ad613b6dc354f19c92681ad27e46c035e11ef"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/oneshot_armed/load.sh.in",
+      "bytes": 1562,
+      "sha256": "357ba9b97ca9603af67cf21c212cbc516d1df033b3bc9d47654c0aa8764129fb"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/verify_module.py",
+      "bytes": 4061,
+      "sha256": "f8fbda5d93367114ee70691425d6153de3ac04fb65dad07f57979fbe2a2951e7"
+    }
+  ],
+  "frozen_pins": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/TICKET.md",
+      "bytes": 10684,
+      "sha256": "fdad197fe9a82f8db1d66775850989040b2bd9aa99175f5c2c0c08d5f5708efa"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/baseline.bin",
+      "bytes": 5656,
+      "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/corrected.bin",
+      "bytes": 5672,
+      "sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80"
+    }
+  ],
+  "loss_runs": {
+    "j19-1/control_default": {
+      "csv_rows": 113,
+      "consecutive_steps": true,
+      "first_row": [
+        "1",
+        "0.14113",
+        "2026-09-25T04:02:13.849+00:00"
+      ],
+      "last_row": [
+        "113",
+        "nan",
+        "2026-09-25T04:04:44.029+00:00"
+      ],
+      "finite_count": 110,
+      "nonfinite_steps": [
+        111,
+        112,
+        113
+      ],
+      "status": {
+        "run": "/shared/chcai/mi450_a0_newcluster/runs/full4_a37cfg_20260925T035054Z",
+        "trainer_pid": 38910,
+        "started": "2026-09-25T03:50:58.149+00:00",
+        "last_step": 113,
+        "last_loss": "nan",
+        "last_step_utc": "2026-09-25T04:04:44.029+00:00",
+        "steps_seen": 113,
+        "nonfinite_steps": [
+          111,
+          112,
+          113
+        ],
+        "first_nonfinite": {
+          "step": 111,
+          "loss": "nan",
+          "utc": "2026-09-25T04:04:44.029+00:00"
+        },
+        "evals": [],
+        "in_eval": false,
+        "run_stop": null,
+        "errors": [],
+        "stall": false,
+        "stopped_by_monitor": {
+          "reason": "nonfinite loss at two distinct steps",
+          "utc": "2026-09-25T04:04:44.029+00:00"
+        },
+        "trainer_alive": true,
+        "updated": "2026-09-25T04:04:39.024+00:00"
+      },
+      "status_minus_csv_steps": 0
+    },
+    "j19-1/numabind": {
+      "csv_rows": 1889,
+      "consecutive_steps": true,
+      "first_row": [
+        "1",
+        "0.14113",
+        "2026-09-25T04:16:47.448+00:00"
+      ],
+      "last_row": [
+        "1889",
+        "0.13704",
+        "2026-09-25T05:02:20.650+00:00"
+      ],
+      "finite_count": 1889,
+      "nonfinite_steps": [],
+      "status": {
+        "run": "/shared/chcai/mi450_a0_newcluster/runs/full4_a37cfg_numabind_20260925T040549Z",
+        "trainer_pid": 44202,
+        "started": "2026-09-25T04:05:51.761+00:00",
+        "last_step": 1912,
+        "last_loss": "0.13556",
+        "last_step_utc": "2026-09-25T05:02:55.693+00:00",
+        "steps_seen": 1912,
+        "nonfinite_steps": [],
+        "first_nonfinite": null,
+        "evals": [],
+        "in_eval": false,
+        "run_stop": null,
+        "errors": [],
+        "stall": false,
+        "stopped_by_monitor": null,
+        "trainer_alive": true,
+        "updated": "2026-09-25T05:02:55.696+00:00"
+      },
+      "status_minus_csv_steps": 23
+    },
+    "j19-11/reproA": {
+      "csv_rows": 122,
+      "consecutive_steps": true,
+      "first_row": [
+        "1",
+        "0.14112",
+        "2026-09-25T15:16:29.931+00:00"
+      ],
+      "last_row": [
+        "122",
+        "0.13893",
+        "2026-09-25T15:19:44.980+00:00"
+      ],
+      "finite_count": 122,
+      "nonfinite_steps": [],
+      "status": {
+        "run": "/shared/chcai/mi450_a0_newcluster/runs/reproA_default_tripwire_ctheliosr-rck-g02-j19-11_20260925T150501Z",
+        "trainer_pid": 32566,
+        "started": "2026-09-25T15:05:04.795+00:00",
+        "last_step": 122,
+        "last_loss": "0.13893",
+        "last_step_utc": "2026-09-25T15:19:44.980+00:00",
+        "steps_seen": 122,
+        "nonfinite_steps": [],
+        "first_nonfinite": null,
+        "evals": [],
+        "in_eval": false,
+        "run_stop": null,
+        "errors": [
+          {
+            "utc": "2026-09-25T15:19:49.980+00:00",
+            "line": "INFO:__mp_main__:Traceback (most recent call last):"
+          },
+          {
+            "utc": "2026-09-25T15:19:49.980+00:00",
+            "line": "INFO:__mp_main__:Traceback (most recent call last):"
+          },
+          {
+            "utc": "2026-09-25T15:19:49.980+00:00",
+            "line": "INFO:__mp_main__:Traceback (most recent call last):"
+          },
+          {
+            "utc": "2026-09-25T15:19:49.980+00:00",
+            "line": "INFO:__mp_main__:Traceback (most recent call last):"
+          },
+          {
+            "utc": "2026-09-25T15:19:49.980+00:00",
+            "line": "Traceback (most recent call last):"
+          },
+          {
+            "utc": "2026-09-25T15:19:49.981+00:00",
+            "line": "Traceback (most recent call last):"
+          },
+          {
+            "utc": "2026-09-25T15:19:49.981+00:00",
+            "line": "Traceback (most recent call last):"
+          }
+        ],
+        "stall": false,
+        "stopped_by_monitor": null,
+        "trainer_alive": false,
+        "updated": "2026-09-25T15:19:54.981+00:00"
+      },
+      "status_minus_csv_steps": 0
+    },
+    "j19-11/reproB": {
+      "csv_rows": 6,
+      "consecutive_steps": true,
+      "first_row": [
+        "1",
+        "0.14113",
+        "2026-09-25T15:31:00.708+00:00"
+      ],
+      "last_row": [
+        "6",
+        "0.13922",
+        "2026-09-25T15:31:10.714+00:00"
+      ],
+      "finite_count": 6,
+      "nonfinite_steps": [],
+      "status": {
+        "run": "/shared/chcai/mi450_a0_newcluster/runs/reproB_numabind_ctheliosr-rck-g02-j19-11_20260925T152003Z",
+        "trainer_pid": 37842,
+        "started": "2026-09-25T15:20:05.578+00:00",
+        "last_step": 6,
+        "last_loss": "0.13922",
+        "last_step_utc": "2026-09-25T15:31:10.714+00:00",
+        "steps_seen": 6,
+        "nonfinite_steps": [],
+        "first_nonfinite": null,
+        "evals": [],
+        "in_eval": false,
+        "run_stop": null,
+        "errors": [],
+        "stall": true,
+        "stopped_by_monitor": null,
+        "trainer_alive": true,
+        "updated": "2026-09-25T15:53:25.900+00:00"
+      },
+      "status_minus_csv_steps": 0
+    },
+    "j19-9/corrected_default": {
+      "csv_rows": 2089,
+      "consecutive_steps": true,
+      "first_row": [
+        "1",
+        "0.14113",
+        "2026-09-27T01:44:05.511+00:00"
+      ],
+      "last_row": [
+        "2089",
+        "0.13734",
+        "2026-09-27T02:34:19.393+00:00"
+      ],
+      "finite_count": 2089,
+      "nonfinite_steps": [],
+      "status": {
+        "run": "/shared/chcai/mi450_a0_newcluster/runs/corrected_default_ctheliosr-rck-g02-j19-9_20260927T013250Z",
+        "trainer_pid": 2620,
+        "started": "2026-09-27T01:32:54.783+00:00",
+        "last_step": 2108,
+        "last_loss": "0.13855",
+        "last_step_utc": "2026-09-27T02:34:49.434+00:00",
+        "steps_seen": 2108,
+        "nonfinite_steps": [],
+        "first_nonfinite": null,
+        "evals": [],
+        "in_eval": false,
+        "run_stop": null,
+        "errors": [],
+        "stall": false,
+        "stopped_by_monitor": null,
+        "trainer_alive": true,
+        "updated": "2026-09-27T02:34:49.434+00:00"
+      },
+      "status_minus_csv_steps": 19
+    },
+    "j19-9/long_numabind": {
+      "csv_rows": 356,
+      "consecutive_steps": true,
+      "first_row": [
+        "1",
+        "0.14113",
+        "2026-09-26T20:35:05.621+00:00"
+      ],
+      "last_row": [
+        "356",
+        "nan",
+        "2026-09-26T20:43:11.255+00:00"
+      ],
+      "finite_count": 353,
+      "nonfinite_steps": [
+        354,
+        355,
+        356
+      ],
+      "status": {
+        "run": "/shared/chcai/mi450_a0_newcluster/runs/long_numabind_ctheliosr-rck-g02-j19-9_20260926T202336Z",
+        "trainer_pid": 33946,
+        "started": "2026-09-26T20:23:39.860+00:00",
+        "last_step": 356,
+        "last_loss": "nan",
+        "last_step_utc": "2026-09-26T20:43:11.255+00:00",
+        "steps_seen": 356,
+        "nonfinite_steps": [
+          354,
+          355,
+          356
+        ],
+        "first_nonfinite": {
+          "step": 354,
+          "loss": "nan",
+          "utc": "2026-09-26T20:43:11.255+00:00"
+        },
+        "evals": [],
+        "in_eval": false,
+        "run_stop": null,
+        "errors": [],
+        "stall": false,
+        "stopped_by_monitor": {
+          "reason": "nonfinite loss at two distinct steps",
+          "utc": "2026-09-26T20:43:11.256+00:00"
+        },
+        "trainer_alive": true,
+        "updated": "2026-09-26T20:43:06.249+00:00"
+      },
+      "status_minus_csv_steps": 0
+    }
+  },
+  "telemetry_runs": {
+    "j19-1/control_default": {
+      "rows": 28,
+      "all_four_gpu_rows": true,
+      "whole_snapshot_window": {
+        "first_line": 1,
+        "last_line": 28,
+        "start_utc": "2026-09-25T03:50:58.152+00:00",
+        "end_utc": "2026-09-25T04:04:29.013+00:00",
+        "seconds": 810.861,
+        "counter_deltas": {
+          "numa_pte_updates": 34373479,
+          "numa_hint_faults": 14324420,
+          "numa_pages_migrated": 2140129
+        },
+        "rates_per_minute": {
+          "numa_pte_updates": 2543480.004587716,
+          "numa_hint_faults": 1059941.4696230304,
+          "numa_pages_migrated": 158359.74353187537
+        },
+        "summed_device_eviction_ms_by_pid_at_start": {},
+        "summed_device_eviction_ms_by_pid_at_end": {},
+        "summed_device_eviction_ms_delta": 0
+      },
+      "peak_vram_GiB_by_pci": {
+        "0001:01:00.0": 424.59050369262695,
+        "0002:01:00.0": 406.37608337402344,
+        "0003:01:00.0": 391.1244468688965,
+        "0004:01:00.0": 351.6848487854004
+      },
+      "post_first_step_samples_window": {
+        "first_line": 24,
+        "last_line": 28,
+        "start_utc": "2026-09-25T04:02:28.868+00:00",
+        "end_utc": "2026-09-25T04:04:29.013+00:00",
+        "seconds": 120.145,
+        "counter_deltas": {
+          "numa_pte_updates": 12944884,
+          "numa_hint_faults": 5370835,
+          "numa_pages_migrated": 1217253
+        },
+        "rates_per_minute": {
+          "numa_pte_updates": 6464630.5713929,
+          "numa_hint_faults": 2682176.536684839,
+          "numa_pages_migrated": 607891.963876982
+        },
+        "summed_device_eviction_ms_by_pid_at_start": {},
+        "summed_device_eviction_ms_by_pid_at_end": {},
+        "summed_device_eviction_ms_delta": 0
+      }
+    },
+    "j19-1/numabind": {
+      "rows": 114,
+      "all_four_gpu_rows": true,
+      "whole_snapshot_window": {
+        "first_line": 1,
+        "last_line": 114,
+        "start_utc": "2026-09-25T04:05:51.764+00:00",
+        "end_utc": "2026-09-25T05:02:25.658+00:00",
+        "seconds": 3393.894,
+        "counter_deltas": {
+          "numa_pte_updates": 0,
+          "numa_hint_faults": 847,
+          "numa_pages_migrated": 140
+        },
+        "rates_per_minute": {
+          "numa_pte_updates": 0.0,
+          "numa_hint_faults": 14.97395027658495,
+          "numa_pages_migrated": 2.4750331035677604
+        },
+        "summed_device_eviction_ms_by_pid_at_start": {},
+        "summed_device_eviction_ms_by_pid_at_end": {},
+        "summed_device_eviction_ms_delta": 0
+      },
+      "peak_vram_GiB_by_pci": {
+        "0001:01:00.0": 399.52565002441406,
+        "0002:01:00.0": 406.3770523071289,
+        "0003:01:00.0": 391.1242980957031,
+        "0004:01:00.0": 398.65233612060547
+      }
+    },
+    "j19-9/corrected_default": {
+      "rows": 124,
+      "all_four_gpu_rows": true,
+      "whole_snapshot_window": {
+        "first_line": 1,
+        "last_line": 124,
+        "start_utc": "2026-09-27T01:32:54.787+00:00",
+        "end_utc": "2026-09-27T02:34:29.409+00:00",
+        "seconds": 3694.622,
+        "counter_deltas": {
+          "numa_pte_updates": 130699763,
+          "numa_hint_faults": 79872248,
+          "numa_pages_migrated": 10841765
+        },
+        "rates_per_minute": {
+          "numa_pte_updates": 2122540.757890794,
+          "numa_hint_faults": 1297111.0116271705,
+          "numa_pages_migrated": 176068.32309232178
+        },
+        "summed_device_eviction_ms_by_pid_at_start": {},
+        "summed_device_eviction_ms_by_pid_at_end": {
+          "41530": 0,
+          "41869": 9254,
+          "41867": 14699,
+          "41868": 12713,
+          "41866": 11234
+        },
+        "summed_device_eviction_ms_delta": 47900
+      },
+      "peak_vram_GiB_by_pci": {
+        "0001:01:00.0": 399.5250701904297,
+        "0002:01:00.0": 406.37638092041016,
+        "0003:01:00.0": 391.1244354248047,
+        "0004:01:00.0": 398.65187072753906
+      },
+      "documented_50_minute_training_window": {
+        "first_line": 24,
+        "last_line": 124,
+        "start_utc": "2026-09-27T01:44:25.537+00:00",
+        "end_utc": "2026-09-27T02:34:29.409+00:00",
+        "seconds": 3003.872,
+        "counter_deltas": {
+          "numa_pte_updates": 111744567,
+          "numa_hint_faults": 68519287,
+          "numa_pages_migrated": 9820322
+        },
+        "rates_per_minute": {
+          "numa_pte_updates": 2232010.5583726605,
+          "numa_hint_faults": 1368619.3086789318,
+          "numa_pages_migrated": 196153.27151090326
+        },
+        "summed_device_eviction_ms_by_pid_at_start": {
+          "41530": 0,
+          "41869": 6449,
+          "41867": 8779,
+          "41868": 8109,
+          "41866": 6097
+        },
+        "summed_device_eviction_ms_by_pid_at_end": {
+          "41530": 0,
+          "41869": 9254,
+          "41867": 14699,
+          "41868": 12713,
+          "41866": 11234
+        },
+        "summed_device_eviction_ms_delta": 18466
+      }
+    },
+    "j19-9/long_numabind": {
+      "rows": 39,
+      "all_four_gpu_rows": true,
+      "whole_snapshot_window": {
+        "first_line": 1,
+        "last_line": 39,
+        "start_utc": "2026-09-26T20:23:39.864+00:00",
+        "end_utc": "2026-09-26T20:42:41.219+00:00",
+        "seconds": 1141.355,
+        "counter_deltas": {
+          "numa_pte_updates": 1817,
+          "numa_hint_faults": 961,
+          "numa_pages_migrated": 168
+        },
+        "rates_per_minute": {
+          "numa_pte_updates": 95.51804653241103,
+          "numa_hint_faults": 50.518900780212995,
+          "numa_pages_migrated": 8.831608044823914
+        },
+        "summed_device_eviction_ms_by_pid_at_start": {},
+        "summed_device_eviction_ms_by_pid_at_end": {
+          "2705216": 7166,
+          "2705214": 10818,
+          "2705217": 6877,
+          "2705215": 7963,
+          "2704889": 0
+        },
+        "summed_device_eviction_ms_delta": 32824
+      },
+      "peak_vram_GiB_by_pci": {
+        "0001:01:00.0": 399.5255889892578,
+        "0002:01:00.0": 406.375789642334,
+        "0003:01:00.0": 391.12393951416016,
+        "0004:01:00.0": 398.64942932128906
+      },
+      "last_3_point_5_minutes_window": {
+        "first_line": 32,
+        "last_line": 39,
+        "start_utc": "2026-09-26T20:39:10.940+00:00",
+        "end_utc": "2026-09-26T20:42:41.219+00:00",
+        "seconds": 210.279,
+        "counter_deltas": {
+          "numa_pte_updates": 0,
+          "numa_hint_faults": 21,
+          "numa_pages_migrated": 7
+        },
+        "rates_per_minute": {
+          "numa_pte_updates": 0.0,
+          "numa_hint_faults": 5.9920391479891,
+          "numa_pages_migrated": 1.9973463826630333
+        },
+        "summed_device_eviction_ms_by_pid_at_start": {
+          "2705216": 6566,
+          "2705214": 10003,
+          "2705217": 6251,
+          "2705215": 7502,
+          "2704889": 0
+        },
+        "summed_device_eviction_ms_by_pid_at_end": {
+          "2705216": 7166,
+          "2705214": 10818,
+          "2705217": 6877,
+          "2705215": 7963,
+          "2704889": 0
+        },
+        "summed_device_eviction_ms_delta": 2502
+      },
+      "last_sample_precedes_first_nonfinite_loss_seconds": 30.036
+    },
+    "j19-9/tripwire_numabind_wedge": {
+      "rows": 89,
+      "all_four_gpu_rows": true,
+      "whole_snapshot_window": {
+        "first_line": 1,
+        "last_line": 89,
+        "start_utc": "2026-09-26T20:47:29.166+00:00",
+        "end_utc": "2026-09-26T21:31:31.656+00:00",
+        "seconds": 2642.49,
+        "counter_deltas": {
+          "numa_pte_updates": 5936,
+          "numa_hint_faults": 1948,
+          "numa_pages_migrated": 203
+        },
+        "rates_per_minute": {
+          "numa_pte_updates": 134.7819670083898,
+          "numa_hint_faults": 44.23100938887186,
+          "numa_pages_migrated": 4.609288966088803
+        },
+        "summed_device_eviction_ms_by_pid_at_start": {},
+        "summed_device_eviction_ms_by_pid_at_end": {
+          "2792481": 3603,
+          "2792154": 0,
+          "2792482": 3491,
+          "2792480": 3598,
+          "2792479": 3535
+        },
+        "summed_device_eviction_ms_delta": 14227
+      },
+      "peak_vram_GiB_by_pci": {
+        "0001:01:00.0": 228.97805786132812,
+        "0002:01:00.0": 158.30139923095703,
+        "0003:01:00.0": 143.01234436035156,
+        "0004:01:00.0": 103.62366104125977
+      },
+      "stable_eviction_counter_suffix": {
+        "first_line": 28,
+        "start_utc": "2026-09-26T21:01:00.019+00:00",
+        "end_utc": "2026-09-26T21:31:31.656+00:00",
+        "summed_device_ms": 14227,
+        "gpu_0004_always_100_busy": true
+      }
+    }
+  },
+  "platforms": {
+    "j19-1/control_default": {
+      "run": "full4_a37cfg_20260925T035054Z",
+      "start": "2026-09-25T03:50:54Z",
+      "host": "ctheliosr-rck-g02-j19-1",
+      "boot_id": "c4dfb7f9-9584-485c-a400-42a7cfcd9081",
+      "version": "7.1.1.31300009",
+      "srcversion": "ECD716E95BE41CD5A13F14E",
+      "amdgpu.cwsr_enable": "1",
+      "amdgpu.noretry": "1",
+      "amdgpu.gpu_recovery": "0",
+      "amdgpu.halt_if_hws_hang": "1",
+      "amdgpu.mes_log_enable": "1",
+      "amdgpu.uni_mes": "1",
+      "amdgpu.sched_policy": "0",
+      "amdgpu.ip_block_mask": "4294967295",
+      "kernel.numa_balancing": "1",
+      "uname": "6.14.0-37-generic",
+      "vbios": "113-M4500001-0660",
+      "mes": "0x0000007b",
+      "mec": "0x0000096a",
+      "NUMA_BIND": "none",
+      "NCCL_NET": "default",
+      "fbgemm": "2026.9.25",
+      "training_source_line": "402f7d0a83252bb4d8c32c01b599b1010bb9f109",
+      "gpu_lines": [
+        "0001:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0002:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0003:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0004:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a"
+      ]
+    },
+    "j19-1/numabind": {
+      "run": "full4_a37cfg_numabind_20260925T040549Z",
+      "start": "2026-09-25T04:05:49Z",
+      "host": "ctheliosr-rck-g02-j19-1",
+      "boot_id": "c4dfb7f9-9584-485c-a400-42a7cfcd9081",
+      "version": "7.1.1.31300009",
+      "srcversion": "ECD716E95BE41CD5A13F14E",
+      "amdgpu.cwsr_enable": "1",
+      "amdgpu.noretry": "1",
+      "amdgpu.gpu_recovery": "0",
+      "amdgpu.halt_if_hws_hang": "1",
+      "amdgpu.mes_log_enable": "1",
+      "amdgpu.uni_mes": "1",
+      "amdgpu.sched_policy": "0",
+      "amdgpu.ip_block_mask": "4294967295",
+      "kernel.numa_balancing": "1",
+      "uname": "6.14.0-37-generic",
+      "vbios": "113-M4500001-0660",
+      "mes": "0x0000007b",
+      "mec": "0x0000096a",
+      "NUMA_BIND": "0,1",
+      "NCCL_NET": "default",
+      "fbgemm": "2026.9.25",
+      "training_source_line": "402f7d0a83252bb4d8c32c01b599b1010bb9f109",
+      "gpu_lines": [
+        "0001:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0002:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0003:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0004:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a"
+      ]
+    },
+    "j19-11/reproA": {
+      "run": "reproA_default_tripwire_ctheliosr-rck-g02-j19-11_20260925T150501Z",
+      "start": "2026-09-25T15:05:01Z",
+      "host": "ctheliosr-rck-g02-j19-11",
+      "boot_id": "b4ecf5cc-c74b-4cb1-8339-d28309d06f2c",
+      "version": "7.1.1.31300009",
+      "srcversion": "ECD716E95BE41CD5A13F14E",
+      "amdgpu.cwsr_enable": "1",
+      "amdgpu.noretry": "1",
+      "amdgpu.gpu_recovery": "0",
+      "amdgpu.halt_if_hws_hang": "1",
+      "amdgpu.mes_log_enable": "1",
+      "amdgpu.uni_mes": "1",
+      "amdgpu.sched_policy": "0",
+      "amdgpu.ip_block_mask": "4294967295",
+      "kernel.numa_balancing": "1",
+      "uname": "6.14.0-37-generic",
+      "vbios": "113-M4500001-0660",
+      "mes": "0x0000007b",
+      "mec": "0x0000096a",
+      "NUMA_BIND": "none",
+      "NCCL_NET": "default",
+      "TRIGGER_CLEAR_REFS_S": "none",
+      "TRIPWIRE_DIR": "/shared/chcai/mi450_a0_newcluster/runs/tripwire_reproA_20260925T150501Z",
+      "PROTECT_KERNELS": "0",
+      "TRITON_AMD_TARGET_FEATURES": "none",
+      "DIE_AT_STEP": "600",
+      "fbgemm": "2026.9.25",
+      "training_source_line": "402f7d0a83252bb4d8c32c01b599b1010bb9f109",
+      "gpu_lines": [
+        "0001:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0002:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0003:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0004:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a"
+      ]
+    },
+    "j19-11/reproB": {
+      "run": "reproB_numabind_ctheliosr-rck-g02-j19-11_20260925T152003Z",
+      "start": "2026-09-25T15:20:03Z",
+      "host": "ctheliosr-rck-g02-j19-11",
+      "boot_id": "b4ecf5cc-c74b-4cb1-8339-d28309d06f2c",
+      "version": "7.1.1.31300009",
+      "srcversion": "ECD716E95BE41CD5A13F14E",
+      "amdgpu.cwsr_enable": "1",
+      "amdgpu.noretry": "1",
+      "amdgpu.gpu_recovery": "0",
+      "amdgpu.halt_if_hws_hang": "1",
+      "amdgpu.mes_log_enable": "1",
+      "amdgpu.uni_mes": "1",
+      "amdgpu.sched_policy": "0",
+      "amdgpu.ip_block_mask": "4294967295",
+      "kernel.numa_balancing": "1",
+      "uname": "6.14.0-37-generic",
+      "vbios": "113-M4500001-0660",
+      "mes": "0x0000007b",
+      "mec": "0x0000096a",
+      "NUMA_BIND": "0,1",
+      "NCCL_NET": "default",
+      "TRIGGER_CLEAR_REFS_S": "none",
+      "TRIPWIRE_DIR": "none",
+      "PROTECT_KERNELS": "0",
+      "TRITON_AMD_TARGET_FEATURES": "none",
+      "DIE_AT_STEP": "1500",
+      "fbgemm": "2026.9.25",
+      "training_source_line": "402f7d0a83252bb4d8c32c01b599b1010bb9f109",
+      "gpu_lines": [
+        "0001:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0002:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0003:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0004:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a"
+      ]
+    },
+    "j19-9/corrected_default": {
+      "run": "corrected_default_ctheliosr-rck-g02-j19-9_20260927T013250Z",
+      "start": "2026-09-27T01:32:50Z",
+      "host": "ctheliosr-rck-g02-j19-9",
+      "boot_id": "7f22d2fb-18e1-4895-9b5a-a2c054f872b6",
+      "version": "7.1.1.31300009",
+      "srcversion": "D0FD14A94CA9A71E8CE9BB4",
+      "amdgpu.cwsr_enable": "1",
+      "amdgpu.noretry": "1",
+      "amdgpu.gpu_recovery": "0",
+      "amdgpu.halt_if_hws_hang": "1",
+      "amdgpu.mes_log_enable": "1",
+      "amdgpu.uni_mes": "1",
+      "amdgpu.sched_policy": "0",
+      "amdgpu.ip_block_mask": "4294967295",
+      "kernel.numa_balancing": "1",
+      "uname": "6.14.0-37-generic",
+      "vbios": "113-M4500001-0660",
+      "mes": "0x0000007b",
+      "mec": "0x0000096a",
+      "NUMA_BIND": "none",
+      "NCCL_NET": "default",
+      "TRIGGER_CLEAR_REFS_S": "none",
+      "TRIPWIRE_DIR": "none",
+      "PROTECT_KERNELS": "0",
+      "TRITON_AMD_TARGET_FEATURES": "none",
+      "DIE_AT_STEP": "-1",
+      "fbgemm": "2026.9.26",
+      "training_source_line": "402f7d0a83252bb4d8c32c01b599b1010bb9f109",
+      "gpu_lines": [
+        "0001:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0002:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0003:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0004:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a"
+      ]
+    },
+    "j19-9/long_numabind": {
+      "run": "long_numabind_ctheliosr-rck-g02-j19-9_20260926T202336Z",
+      "start": "2026-09-26T20:23:36Z",
+      "host": "ctheliosr-rck-g02-j19-9",
+      "boot_id": "964bbe1c-0c9b-4422-90c3-c549415b3b28",
+      "version": "7.1.1.31300009",
+      "srcversion": "ECD716E95BE41CD5A13F14E",
+      "amdgpu.cwsr_enable": "1",
+      "amdgpu.noretry": "1",
+      "amdgpu.gpu_recovery": "0",
+      "amdgpu.halt_if_hws_hang": "1",
+      "amdgpu.mes_log_enable": "1",
+      "amdgpu.uni_mes": "1",
+      "amdgpu.sched_policy": "0",
+      "amdgpu.ip_block_mask": "4294967295",
+      "kernel.numa_balancing": "1",
+      "uname": "6.14.0-37-generic",
+      "vbios": "113-M4500001-0660",
+      "mes": "0x0000007b",
+      "mec": "0x0000096a",
+      "NUMA_BIND": "0,1",
+      "NCCL_NET": "default",
+      "TRIGGER_CLEAR_REFS_S": "none",
+      "TRIPWIRE_DIR": "none",
+      "PROTECT_KERNELS": "0",
+      "TRITON_AMD_TARGET_FEATURES": "none",
+      "DIE_AT_STEP": "-1",
+      "fbgemm": "2026.9.26",
+      "training_source_line": "402f7d0a83252bb4d8c32c01b599b1010bb9f109",
+      "gpu_lines": [
+        "0001:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0002:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0003:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0004:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a"
+      ]
+    },
+    "j19-9/tripwire_numabind_wedge": {
+      "run": "tripwire_numabind_ctheliosr-rck-g02-j19-9_20260926T204726Z",
+      "start": "2026-09-26T20:47:26Z",
+      "host": "ctheliosr-rck-g02-j19-9",
+      "boot_id": "964bbe1c-0c9b-4422-90c3-c549415b3b28",
+      "version": "7.1.1.31300009",
+      "srcversion": "ECD716E95BE41CD5A13F14E",
+      "amdgpu.cwsr_enable": "1",
+      "amdgpu.noretry": "1",
+      "amdgpu.gpu_recovery": "0",
+      "amdgpu.halt_if_hws_hang": "1",
+      "amdgpu.mes_log_enable": "1",
+      "amdgpu.uni_mes": "1",
+      "amdgpu.sched_policy": "0",
+      "amdgpu.ip_block_mask": "4294967295",
+      "kernel.numa_balancing": "1",
+      "uname": "6.14.0-37-generic",
+      "vbios": "113-M4500001-0660",
+      "mes": "0x0000007b",
+      "mec": "0x0000096a",
+      "NUMA_BIND": "0,1",
+      "NCCL_NET": "default",
+      "TRIGGER_CLEAR_REFS_S": "none",
+      "TRIPWIRE_DIR": "/shared/chcai/mi450_a0_newcluster/runs/tripwire_numabind_20260926T204726Z",
+      "PROTECT_KERNELS": "0",
+      "TRITON_AMD_TARGET_FEATURES": "none",
+      "DIE_AT_STEP": "2000",
+      "fbgemm": "2026.9.26",
+      "training_source_line": "402f7d0a83252bb4d8c32c01b599b1010bb9f109",
+      "gpu_lines": [
+        "0001:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0002:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0003:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a",
+        "0004:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a"
+      ]
+    }
+  },
+  "tripwire": {
+    "step": 123,
+    "phase": "backward",
+    "reason": "nonfinite",
+    "failure_side": "output",
+    "all_inputs_finite": true,
+    "all_outputs_finite": false,
+    "first_bad_sequence": 54,
+    "event": "dense_grads",
+    "nonfinite_params": [
+      "_hstu_transducer._input_preprocessor._additional_embedding_mlp.2.weight"
+    ],
+    "nonfinite_shapes": [
+      [
+        512,
+        256
+      ]
+    ],
+    "n_params": 69,
+    "ranks_reporting": 4
+  },
+  "native_builder_check": {
+    "method": "AST literal constants only; supplied builder never imported/executed",
+    "original_sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290",
+    "corrected_sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80",
+    "byte_exact_frozen_candidate_reconstructed": true,
+    "replaced_region": [
+      60,
+      108
+    ],
+    "replacement_bytes": 64,
+    "branch_pc": 4,
+    "module_claim_limit": "Cluster .ko files and full JSON/relocation audits are not in this checkout. Handler and module claims are saved audit/load receipts; not a new independent extraction from cluster modules or live memory."
+  },
+  "fault_classification": {
+    "stock_MES_INVALIDATE_TLBS_nonresponses": 4,
+    "stock_MES_REMOVE_QUEUE_nonresponses": 1,
+    "corrected_boot_reserved_VM_PAGE_FAULT_table_rows": 4,
+    "prior_boot_BERT_record_summary_present": true,
+    "limits": "MEM_RESERVED_INFO names are initialization table data, not runtime fault reports. BERT record content is skipped, so no detailed fault diagnosis or causal link to CWSR follows. Wedges/node losses are not NaN observations or demonstrated corrected-handler regressions."
+  },
+  "assessment": {
+    "ticket_coverage": "Same component and exact original/corrected handler identity; cluster results should supplement frozen A0 component ticket with explicit observational limits. Frozen TICKET.md contains no cluster-specific run/host/telemetry evidence.",
+    "causal_strength": "Strong corroboration of applicability to j19 full four-GPU training; A0 controlled trap/register/DW counterfactuals remain the mechanism proof. Cluster snapshots alone do not isolate handler as the only experimental variable.",
+    "corrected_count_limit": "2089 consecutive finite CSV rows; later status reports 2108; doc claims 2128 without corresponding checked-in raw/status snapshot. No final termination or AUC evidence.",
+    "stock_bound_count_limit": "1889 consecutive finite CSV rows; later status reports 1912. Subsequent node loss is doc-only, not a nonfinite observation.",
+    "matching_limits": "Default comparisons change host and boot, and FBGEMM version label 2026.9.25 -> 2026.9.26. Same-host j19-9 original uses binding; corrected does not. No full runtime-library/source/data hash inventory accompanies these run snapshots.",
+    "telemetry_limits": "AutoNUMA vmstat is host-wide. Corrected 50-minute rate vs stock launch-to-end rate is not a matched interval. KFD counters sum per-process per-GPU durations; not an interrupt count or direct record of which wave was saved or corrupted. Last original bound sample precedes NaN by 30.036 s.",
+    "h21_15": "Saved receipt identifies original faulty handler on different el9 BKC, but no recovered training steps/corrected execution. PCI ID/revision alone does not establish stepping.",
+    "remaining_work": [
+      "Recover contemporaneous complete raw logs/module artifacts from recorded cluster owners if separately authorized; do not infer a run continued after the snapshot.",
+      "Obtain repeated matched original/corrected full-model tests with equivalent captured software, configuration, trigger telemetry, and final AUC/termination evidence.",
+      "Keep MES/halt/BERT/node-loss diagnosis separate from demonstrated CWSR NaN mechanism.",
+      "Historical STU1 finite inconsistency and exact historical interrupt timeline remain unresolved."
+    ]
+  },
+  "review_script": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_cross_host_cluster_peer_v1/analyze_cluster.py",
+    "bytes": 12394,
+    "sha256": "8664fe055fba5322151e1565554337979648886ccb4a09f236d9353c419b17c0"
+  }
+}

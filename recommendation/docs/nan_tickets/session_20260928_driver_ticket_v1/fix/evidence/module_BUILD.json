@@ -1,0 +1,43 @@
+{
+  "status": "BUILT_NOT_LOADED_AWAITING_BYTE_AND_RELOCATION_AUDIT",
+  "baseline": {
+    "unstripped_tmpfs": {
+      "path": "/dev/shm/mi450_current_cwsr_build_20260923/baseline_amdgpu.ko",
+      "bytes": 883217552,
+      "sha256": "65cd5e1ec72c1947b3821ca4910fd581c1f0acd3b20594fdbdf30dda73fcd61d"
+    },
+    "stripped": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/baseline_amdgpu.stripped.ko",
+      "bytes": 40302360,
+      "sha256": "e5c21b237182a8f829e817a3ae382649b15c44ed81d78b50262998811faef84f"
+    },
+    "metadata": {
+      "version": "7.1.1.31300009",
+      "srcversion": "EADFD8EC13CF3E6B329194E",
+      "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+      "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper"
+    }
+  },
+  "candidate": {
+    "unstripped_tmpfs": {
+      "path": "/dev/shm/mi450_current_cwsr_build_20260923/candidate_amdgpu.ko",
+      "bytes": 883217616,
+      "sha256": "3bf80c398130a2fd5b3b1f5c99bc0b6d8ff9e1a250e50f39f9ceb30f49b2ee44"
+    },
+    "stripped": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/candidate_amdgpu.stripped.ko",
+      "bytes": 40302424,
+      "sha256": "78de19854e38e298f6418bddcfa39f44a797f811f0f4b9c585482f4c4dc2b2b4"
+    },
+    "metadata": {
+      "version": "7.1.1.31300009",
+      "srcversion": "AD83C153B9701570F12964E",
+      "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+      "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper"
+    }
+  },
+  "installed_unchanged": true,
+  "installed_sources_unchanged": true,
+  "GPU_actions": false,
+  "driver_actions": false
+}

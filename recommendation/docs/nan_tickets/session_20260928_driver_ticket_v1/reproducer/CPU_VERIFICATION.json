@@ -1,0 +1,283 @@
+{
+  "status": "PASS_PORTABLE_SENTINEL_CPU_SOURCE_AND_OBSERVED_PACKET_CHECKS",
+  "wrapper": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/run_repro.py",
+    "bytes": 12376,
+    "sha256": "521999790d358dc8a4507d29b291a77cd5c1dcc9fe03f8c7bf5565d8fce71262"
+  },
+  "exact_assets": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/EXACT_ASSETS.json",
+    "bytes": 1365,
+    "sha256": "616ea79877ad91a51a368cec9fbbd674b773d48380af69bd1e2989a7a0ae3c1f"
+  },
+  "observed_witnesses": {
+    "original": {
+      "status": "PASS_EXPECTED_ORIGINAL_SENTINEL",
+      "cases": 14,
+      "changed_cases": 3
+    },
+    "fixed": {
+      "status": "PASS_EXPECTED_FIXED_SENTINEL",
+      "cases": 14,
+      "changed_cases": 0
+    }
+  },
+  "native_layout": {
+    "functions": {
+      "sentinel_00_0": {
+        "address": 12544,
+        "bytes": 1328,
+        "kernel_sha256": "9c39060888c082b2b893e974ad2b6ee6164c2fbf0f8c4cdbfa3c6fa1c40c1ac4",
+        "return_PC_offset": 12936,
+        "explicit_S_TRAP_3": false
+      },
+      "sentinel_00_1": {
+        "address": 14080,
+        "bytes": 1328,
+        "kernel_sha256": "b5036eb7410b0ab7163a7516307679cb62697e7eaa4a76aca4b70dac9d8991f6",
+        "return_PC_offset": 14472,
+        "explicit_S_TRAP_3": true
+      },
+      "sentinel_41_0": {
+        "address": 15616,
+        "bytes": 1332,
+        "kernel_sha256": "a7dc141788fcb23ed73229e548d274c89f314a754816c4485b43b8b743ce2826",
+        "return_PC_offset": 16012,
+        "explicit_S_TRAP_3": false
+      },
+      "sentinel_41_1": {
+        "address": 17152,
+        "bytes": 1332,
+        "kernel_sha256": "59bba4021772c9b3bc9a7a914999538308a068bb88bcc462017286504ac5c9c9",
+        "return_PC_offset": 17548,
+        "explicit_S_TRAP_3": true
+      },
+      "sentinel_45_0": {
+        "address": 18688,
+        "bytes": 1332,
+        "kernel_sha256": "2ee38299bce1add1b63af12a66b522d9aa611fc03c38001b421ce50e11d87fad",
+        "return_PC_offset": 19084,
+        "explicit_S_TRAP_3": false
+      },
+      "sentinel_45_1": {
+        "address": 20224,
+        "bytes": 1332,
+        "kernel_sha256": "63e977edae59c1dfba31aabc28cb21cabaec0a4082ff3083ed65e57ea852c1d4",
+        "return_PC_offset": 20620,
+        "explicit_S_TRAP_3": true
+      },
+      "sentinel_82_0": {
+        "address": 21760,
+        "bytes": 1332,
+        "kernel_sha256": "df2c7bd94c9b4a7d9ad14f05c672fc855156e6681bbeeb41faccb78b0657a34a",
+        "return_PC_offset": 22156,
+        "explicit_S_TRAP_3": false
+      },
+      "sentinel_82_1": {
+        "address": 23296,
+        "bytes": 1332,
+        "kernel_sha256": "fadd9a5cf0f1888556e8fd697f0593c02b5147a284b7814467f692ed40a4e6d3",
+        "return_PC_offset": 23692,
+        "explicit_S_TRAP_3": true
+      },
+      "sentinel_05_0": {
+        "address": 24832,
+        "bytes": 1328,
+        "kernel_sha256": "21e7bcf9239ee5f6c20a3955e34ccaf1ce67917e3976021519b9d01e3e4f8c2d",
+        "return_PC_offset": 25224,
+        "explicit_S_TRAP_3": false
+      },
+      "sentinel_05_1": {
+        "address": 26368,
+        "bytes": 1328,
+        "kernel_sha256": "9c8d3682880cf1f0aba56d70320fc09812dd8ff68712dacaa913e2e0b1e81f3d",
+        "return_PC_offset": 26760,
+        "explicit_S_TRAP_3": true
+      },
+      "sentinel_81_0": {
+        "address": 27904,
+        "bytes": 1332,
+        "kernel_sha256": "2843dadd268c03ff690b0a32d18e5006f5e0ec1e58984f6665a89159ae69019b",
+        "return_PC_offset": 28300,
+        "explicit_S_TRAP_3": false
+      },
+      "sentinel_81_1": {
+        "address": 29440,
+        "bytes": 1332,
+        "kernel_sha256": "2edcd49e20a96dc0ca89fd30b9349b87e08bc74175ae2f3240ed5b4c332e870f",
+        "return_PC_offset": 29836,
+        "explicit_S_TRAP_3": true
+      },
+      "sentinel_85_0": {
+        "address": 30976,
+        "bytes": 1332,
+        "kernel_sha256": "85e1966fd18134a1d231888e83b59393db3bfbbd50ec20d7a3e3391ab61a0969",
+        "return_PC_offset": 31372,
+        "explicit_S_TRAP_3": false
+      },
+      "sentinel_85_1": {
+        "address": 32512,
+        "bytes": 1332,
+        "kernel_sha256": "d1a4766da9fe82062e4c843ccfefac3c7ae7b41858a3579e19bcd812f0366bb2",
+        "return_PC_offset": 32908,
+        "explicit_S_TRAP_3": true
+      }
+    },
+    "sections": {
+      ".note": {
+        "bytes": 5248,
+        "sha256": "6f304c75ae2223135bcc2b9c218e4a827dfc209670f679a5210279ea3eb2ccf8"
+      },
+      ".rodata": {
+        "bytes": 896,
+        "sha256": "f25e2235d5ff6fd214fa7acca988a3774f6f697ec5e2c57d4ff614d9f0d6bb24"
+      },
+      ".text": {
+        "bytes": 21300,
+        "sha256": "58b9acc22af897ae8c2b0c271304fbe2f203a655219a2bd291adbb79e7ce09bc"
+      }
+    }
+  },
+  "checks": [
+    {
+      "name": "original actual packets pass own oracle and reject opposite driver oracle",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet0 word0 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet0 word8 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet0 word17 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet1 word27 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet1 word29 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet0 word4 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet0 word5 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet0 word30 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet0 word31 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet0 word6 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet0 word7 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet0 word32 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects packet0 word39 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects missing case inventory",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects duplicate case inventory",
+      "status": "PASS"
+    },
+    {
+      "name": "original rejects order case inventory",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed actual packets pass own oracle and reject opposite driver oracle",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet0 word0 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet0 word8 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet0 word17 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet1 word27 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet1 word29 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet0 word4 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet0 word5 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet0 word30 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet0 word31 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet0 word6 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet0 word7 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet0 word32 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects packet0 word39 mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects missing case inventory",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects duplicate case inventory",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed rejects order case inventory",
+      "status": "PASS"
+    }
+  ],
+  "case_count": 34,
+  "GPU_actions": false,
+  "HIP_initialized": false,
+  "CDLL_called": false
+}

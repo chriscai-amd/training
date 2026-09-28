@@ -1,0 +1,188 @@
+{"phase": "begin", "index": 0, "function": "hipInit", "context": "initialization", "started_utc": "2026-09-28T00:54:57.590268+00:00"}
+{"phase": "end", "index": 0, "function": "hipInit", "context": "initialization", "started_utc": "2026-09-28T00:54:57.590268+00:00", "finished_utc": "2026-09-28T00:54:57.616363+00:00", "result_code": 0}
+{"phase": "begin", "index": 1, "function": "hipGetDeviceCount", "context": "initialization", "started_utc": "2026-09-28T00:54:57.635380+00:00"}
+{"phase": "end", "index": 1, "function": "hipGetDeviceCount", "context": "initialization", "started_utc": "2026-09-28T00:54:57.635380+00:00", "finished_utc": "2026-09-28T00:54:57.635510+00:00", "result_code": 0}
+{"phase": "begin", "index": 2, "function": "hipSetDevice", "context": "initialization", "started_utc": "2026-09-28T00:54:57.635580+00:00"}
+{"phase": "end", "index": 2, "function": "hipSetDevice", "context": "initialization", "started_utc": "2026-09-28T00:54:57.635580+00:00", "finished_utc": "2026-09-28T00:54:57.635656+00:00", "result_code": 0}
+{"phase": "begin", "index": 3, "function": "hipRuntimeGetVersion", "context": "initialization", "started_utc": "2026-09-28T00:54:57.635717+00:00"}
+{"phase": "end", "index": 3, "function": "hipRuntimeGetVersion", "context": "initialization", "started_utc": "2026-09-28T00:54:57.635717+00:00", "finished_utc": "2026-09-28T00:54:57.635778+00:00", "result_code": 0}
+{"phase": "begin", "index": 4, "function": "hipDriverGetVersion", "context": "initialization", "started_utc": "2026-09-28T00:54:57.635846+00:00"}
+{"phase": "end", "index": 4, "function": "hipDriverGetVersion", "context": "initialization", "started_utc": "2026-09-28T00:54:57.635846+00:00", "finished_utc": "2026-09-28T00:54:57.635909+00:00", "result_code": 0}
+{"phase": "begin", "index": 5, "function": "hipDeviceGetName", "context": "initialization", "started_utc": "2026-09-28T00:54:57.635993+00:00"}
+{"phase": "end", "index": 5, "function": "hipDeviceGetName", "context": "initialization", "started_utc": "2026-09-28T00:54:57.635993+00:00", "finished_utc": "2026-09-28T00:54:57.636064+00:00", "result_code": 0}
+{"phase": "begin", "index": 6, "function": "hipModuleLoadData", "context": "module_load", "started_utc": "2026-09-28T00:54:57.636141+00:00"}
+{"phase": "end", "index": 6, "function": "hipModuleLoadData", "context": "module_load", "started_utc": "2026-09-28T00:54:57.636141+00:00", "finished_utc": "2026-09-28T00:54:57.645702+00:00", "result_code": 0}
+{"phase": "begin", "index": 7, "function": "hipMalloc", "context": "output_allocation", "started_utc": "2026-09-28T00:54:57.645853+00:00"}
+{"phase": "end", "index": 7, "function": "hipMalloc", "context": "output_allocation", "started_utc": "2026-09-28T00:54:57.645853+00:00", "finished_utc": "2026-09-28T00:54:57.645975+00:00", "result_code": 0}
+{"phase": "begin", "index": 8, "function": "hipModuleGetFunction", "context": 0, "started_utc": "2026-09-28T00:54:57.646355+00:00"}
+{"phase": "end", "index": 8, "function": "hipModuleGetFunction", "context": 0, "started_utc": "2026-09-28T00:54:57.646355+00:00", "finished_utc": "2026-09-28T00:54:57.646441+00:00", "result_code": 0}
+{"phase": "begin", "index": 9, "function": "hipMemcpy", "context": 0, "started_utc": "2026-09-28T00:54:57.646711+00:00"}
+{"phase": "end", "index": 9, "function": "hipMemcpy", "context": 0, "started_utc": "2026-09-28T00:54:57.646711+00:00", "finished_utc": "2026-09-28T00:54:57.663123+00:00", "result_code": 0}
+{"phase": "begin", "index": 10, "function": "hipMemcpy", "context": 0, "started_utc": "2026-09-28T00:54:57.663323+00:00"}
+{"phase": "end", "index": 10, "function": "hipMemcpy", "context": 0, "started_utc": "2026-09-28T00:54:57.663323+00:00", "finished_utc": "2026-09-28T00:54:57.663427+00:00", "result_code": 0}
+{"phase": "begin", "index": 11, "function": "hipModuleLaunchKernel", "context": 0, "started_utc": "2026-09-28T00:54:57.663746+00:00"}
+{"phase": "end", "index": 11, "function": "hipModuleLaunchKernel", "context": 0, "started_utc": "2026-09-28T00:54:57.663746+00:00", "finished_utc": "2026-09-28T00:54:57.663826+00:00", "result_code": 0}
+{"phase": "begin", "index": 12, "function": "hipDeviceSynchronize", "context": 0, "started_utc": "2026-09-28T00:54:57.663939+00:00"}
+{"phase": "end", "index": 12, "function": "hipDeviceSynchronize", "context": 0, "started_utc": "2026-09-28T00:54:57.663939+00:00", "finished_utc": "2026-09-28T00:54:57.664021+00:00", "result_code": 0}
+{"phase": "begin", "index": 13, "function": "hipMemcpy", "context": 0, "started_utc": "2026-09-28T00:54:57.664082+00:00"}
+{"phase": "end", "index": 13, "function": "hipMemcpy", "context": 0, "started_utc": "2026-09-28T00:54:57.664082+00:00", "finished_utc": "2026-09-28T00:54:57.664164+00:00", "result_code": 0}
+{"phase": "begin", "index": 14, "function": "hipModuleGetFunction", "context": 1, "started_utc": "2026-09-28T00:54:57.664934+00:00"}
+{"phase": "end", "index": 14, "function": "hipModuleGetFunction", "context": 1, "started_utc": "2026-09-28T00:54:57.664934+00:00", "finished_utc": "2026-09-28T00:54:57.665012+00:00", "result_code": 0}
+{"phase": "begin", "index": 15, "function": "hipMemcpy", "context": 1, "started_utc": "2026-09-28T00:54:57.665221+00:00"}
+{"phase": "end", "index": 15, "function": "hipMemcpy", "context": 1, "started_utc": "2026-09-28T00:54:57.665221+00:00", "finished_utc": "2026-09-28T00:54:57.665321+00:00", "result_code": 0}
+{"phase": "begin", "index": 16, "function": "hipMemcpy", "context": 1, "started_utc": "2026-09-28T00:54:57.665414+00:00"}
+{"phase": "end", "index": 16, "function": "hipMemcpy", "context": 1, "started_utc": "2026-09-28T00:54:57.665414+00:00", "finished_utc": "2026-09-28T00:54:57.665507+00:00", "result_code": 0}
+{"phase": "begin", "index": 17, "function": "hipModuleLaunchKernel", "context": 1, "started_utc": "2026-09-28T00:54:57.665734+00:00"}
+{"phase": "end", "index": 17, "function": "hipModuleLaunchKernel", "context": 1, "started_utc": "2026-09-28T00:54:57.665734+00:00", "finished_utc": "2026-09-28T00:54:57.665819+00:00", "result_code": 0}
+{"phase": "begin", "index": 18, "function": "hipDeviceSynchronize", "context": 1, "started_utc": "2026-09-28T00:54:57.665904+00:00"}
+{"phase": "end", "index": 18, "function": "hipDeviceSynchronize", "context": 1, "started_utc": "2026-09-28T00:54:57.665904+00:00", "finished_utc": "2026-09-28T00:54:57.665989+00:00", "result_code": 0}
+{"phase": "begin", "index": 19, "function": "hipMemcpy", "context": 1, "started_utc": "2026-09-28T00:54:57.666061+00:00"}
+{"phase": "end", "index": 19, "function": "hipMemcpy", "context": 1, "started_utc": "2026-09-28T00:54:57.666061+00:00", "finished_utc": "2026-09-28T00:54:57.666139+00:00", "result_code": 0}
+{"phase": "begin", "index": 20, "function": "hipModuleGetFunction", "context": 2, "started_utc": "2026-09-28T00:54:57.666809+00:00"}
+{"phase": "end", "index": 20, "function": "hipModuleGetFunction", "context": 2, "started_utc": "2026-09-28T00:54:57.666809+00:00", "finished_utc": "2026-09-28T00:54:57.666899+00:00", "result_code": 0}
+{"phase": "begin", "index": 21, "function": "hipMemcpy", "context": 2, "started_utc": "2026-09-28T00:54:57.667111+00:00"}
+{"phase": "end", "index": 21, "function": "hipMemcpy", "context": 2, "started_utc": "2026-09-28T00:54:57.667111+00:00", "finished_utc": "2026-09-28T00:54:57.667206+00:00", "result_code": 0}
+{"phase": "begin", "index": 22, "function": "hipMemcpy", "context": 2, "started_utc": "2026-09-28T00:54:57.667292+00:00"}
+{"phase": "end", "index": 22, "function": "hipMemcpy", "context": 2, "started_utc": "2026-09-28T00:54:57.667292+00:00", "finished_utc": "2026-09-28T00:54:57.667360+00:00", "result_code": 0}
+{"phase": "begin", "index": 23, "function": "hipModuleLaunchKernel", "context": 2, "started_utc": "2026-09-28T00:54:57.667545+00:00"}
+{"phase": "end", "index": 23, "function": "hipModuleLaunchKernel", "context": 2, "started_utc": "2026-09-28T00:54:57.667545+00:00", "finished_utc": "2026-09-28T00:54:57.667611+00:00", "result_code": 0}
+{"phase": "begin", "index": 24, "function": "hipDeviceSynchronize", "context": 2, "started_utc": "2026-09-28T00:54:57.667664+00:00"}
+{"phase": "end", "index": 24, "function": "hipDeviceSynchronize", "context": 2, "started_utc": "2026-09-28T00:54:57.667664+00:00", "finished_utc": "2026-09-28T00:54:57.667729+00:00", "result_code": 0}
+{"phase": "begin", "index": 25, "function": "hipMemcpy", "context": 2, "started_utc": "2026-09-28T00:54:57.667803+00:00"}
+{"phase": "end", "index": 25, "function": "hipMemcpy", "context": 2, "started_utc": "2026-09-28T00:54:57.667803+00:00", "finished_utc": "2026-09-28T00:54:57.667873+00:00", "result_code": 0}
+{"phase": "begin", "index": 26, "function": "hipModuleGetFunction", "context": 3, "started_utc": "2026-09-28T00:54:57.668439+00:00"}
+{"phase": "end", "index": 26, "function": "hipModuleGetFunction", "context": 3, "started_utc": "2026-09-28T00:54:57.668439+00:00", "finished_utc": "2026-09-28T00:54:57.668508+00:00", "result_code": 0}
+{"phase": "begin", "index": 27, "function": "hipMemcpy", "context": 3, "started_utc": "2026-09-28T00:54:57.668679+00:00"}
+{"phase": "end", "index": 27, "function": "hipMemcpy", "context": 3, "started_utc": "2026-09-28T00:54:57.668679+00:00", "finished_utc": "2026-09-28T00:54:57.668757+00:00", "result_code": 0}
+{"phase": "begin", "index": 28, "function": "hipMemcpy", "context": 3, "started_utc": "2026-09-28T00:54:57.668810+00:00"}
+{"phase": "end", "index": 28, "function": "hipMemcpy", "context": 3, "started_utc": "2026-09-28T00:54:57.668810+00:00", "finished_utc": "2026-09-28T00:54:57.668878+00:00", "result_code": 0}
+{"phase": "begin", "index": 29, "function": "hipModuleLaunchKernel", "context": 3, "started_utc": "2026-09-28T00:54:57.669049+00:00"}
+{"phase": "end", "index": 29, "function": "hipModuleLaunchKernel", "context": 3, "started_utc": "2026-09-28T00:54:57.669049+00:00", "finished_utc": "2026-09-28T00:54:57.669110+00:00", "result_code": 0}
+{"phase": "begin", "index": 30, "function": "hipDeviceSynchronize", "context": 3, "started_utc": "2026-09-28T00:54:57.669161+00:00"}
+{"phase": "end", "index": 30, "function": "hipDeviceSynchronize", "context": 3, "started_utc": "2026-09-28T00:54:57.669161+00:00", "finished_utc": "2026-09-28T00:54:57.669230+00:00", "result_code": 0}
+{"phase": "begin", "index": 31, "function": "hipMemcpy", "context": 3, "started_utc": "2026-09-28T00:54:57.669283+00:00"}
+{"phase": "end", "index": 31, "function": "hipMemcpy", "context": 3, "started_utc": "2026-09-28T00:54:57.669283+00:00", "finished_utc": "2026-09-28T00:54:57.669352+00:00", "result_code": 0}
+{"phase": "begin", "index": 32, "function": "hipModuleGetFunction", "context": 4, "started_utc": "2026-09-28T00:54:57.669918+00:00"}
+{"phase": "end", "index": 32, "function": "hipModuleGetFunction", "context": 4, "started_utc": "2026-09-28T00:54:57.669918+00:00", "finished_utc": "2026-09-28T00:54:57.669982+00:00", "result_code": 0}
+{"phase": "begin", "index": 33, "function": "hipMemcpy", "context": 4, "started_utc": "2026-09-28T00:54:57.670150+00:00"}
+{"phase": "end", "index": 33, "function": "hipMemcpy", "context": 4, "started_utc": "2026-09-28T00:54:57.670150+00:00", "finished_utc": "2026-09-28T00:54:57.670238+00:00", "result_code": 0}
+{"phase": "begin", "index": 34, "function": "hipMemcpy", "context": 4, "started_utc": "2026-09-28T00:54:57.670298+00:00"}
+{"phase": "end", "index": 34, "function": "hipMemcpy", "context": 4, "started_utc": "2026-09-28T00:54:57.670298+00:00", "finished_utc": "2026-09-28T00:54:57.670367+00:00", "result_code": 0}
+{"phase": "begin", "index": 35, "function": "hipModuleLaunchKernel", "context": 4, "started_utc": "2026-09-28T00:54:57.670546+00:00"}
+{"phase": "end", "index": 35, "function": "hipModuleLaunchKernel", "context": 4, "started_utc": "2026-09-28T00:54:57.670546+00:00", "finished_utc": "2026-09-28T00:54:57.670609+00:00", "result_code": 0}
+{"phase": "begin", "index": 36, "function": "hipDeviceSynchronize", "context": 4, "started_utc": "2026-09-28T00:54:57.670659+00:00"}
+{"phase": "end", "index": 36, "function": "hipDeviceSynchronize", "context": 4, "started_utc": "2026-09-28T00:54:57.670659+00:00", "finished_utc": "2026-09-28T00:54:57.670719+00:00", "result_code": 0}
+{"phase": "begin", "index": 37, "function": "hipMemcpy", "context": 4, "started_utc": "2026-09-28T00:54:57.670771+00:00"}
+{"phase": "end", "index": 37, "function": "hipMemcpy", "context": 4, "started_utc": "2026-09-28T00:54:57.670771+00:00", "finished_utc": "2026-09-28T00:54:57.670862+00:00", "result_code": 0}
+{"phase": "begin", "index": 38, "function": "hipModuleGetFunction", "context": 5, "started_utc": "2026-09-28T00:54:57.671420+00:00"}
+{"phase": "end", "index": 38, "function": "hipModuleGetFunction", "context": 5, "started_utc": "2026-09-28T00:54:57.671420+00:00", "finished_utc": "2026-09-28T00:54:57.671483+00:00", "result_code": 0}
+{"phase": "begin", "index": 39, "function": "hipMemcpy", "context": 5, "started_utc": "2026-09-28T00:54:57.671652+00:00"}
+{"phase": "end", "index": 39, "function": "hipMemcpy", "context": 5, "started_utc": "2026-09-28T00:54:57.671652+00:00", "finished_utc": "2026-09-28T00:54:57.671732+00:00", "result_code": 0}
+{"phase": "begin", "index": 40, "function": "hipMemcpy", "context": 5, "started_utc": "2026-09-28T00:54:57.671786+00:00"}
+{"phase": "end", "index": 40, "function": "hipMemcpy", "context": 5, "started_utc": "2026-09-28T00:54:57.671786+00:00", "finished_utc": "2026-09-28T00:54:57.671857+00:00", "result_code": 0}
+{"phase": "begin", "index": 41, "function": "hipModuleLaunchKernel", "context": 5, "started_utc": "2026-09-28T00:54:57.672026+00:00"}
+{"phase": "end", "index": 41, "function": "hipModuleLaunchKernel", "context": 5, "started_utc": "2026-09-28T00:54:57.672026+00:00", "finished_utc": "2026-09-28T00:54:57.672088+00:00", "result_code": 0}
+{"phase": "begin", "index": 42, "function": "hipDeviceSynchronize", "context": 5, "started_utc": "2026-09-28T00:54:57.672140+00:00"}
+{"phase": "end", "index": 42, "function": "hipDeviceSynchronize", "context": 5, "started_utc": "2026-09-28T00:54:57.672140+00:00", "finished_utc": "2026-09-28T00:54:57.672202+00:00", "result_code": 0}
+{"phase": "begin", "index": 43, "function": "hipMemcpy", "context": 5, "started_utc": "2026-09-28T00:54:57.672257+00:00"}
+{"phase": "end", "index": 43, "function": "hipMemcpy", "context": 5, "started_utc": "2026-09-28T00:54:57.672257+00:00", "finished_utc": "2026-09-28T00:54:57.672327+00:00", "result_code": 0}
+{"phase": "begin", "index": 44, "function": "hipModuleGetFunction", "context": 6, "started_utc": "2026-09-28T00:54:57.672886+00:00"}
+{"phase": "end", "index": 44, "function": "hipModuleGetFunction", "context": 6, "started_utc": "2026-09-28T00:54:57.672886+00:00", "finished_utc": "2026-09-28T00:54:57.672947+00:00", "result_code": 0}
+{"phase": "begin", "index": 45, "function": "hipMemcpy", "context": 6, "started_utc": "2026-09-28T00:54:57.673118+00:00"}
+{"phase": "end", "index": 45, "function": "hipMemcpy", "context": 6, "started_utc": "2026-09-28T00:54:57.673118+00:00", "finished_utc": "2026-09-28T00:54:57.673193+00:00", "result_code": 0}
+{"phase": "begin", "index": 46, "function": "hipMemcpy", "context": 6, "started_utc": "2026-09-28T00:54:57.673258+00:00"}
+{"phase": "end", "index": 46, "function": "hipMemcpy", "context": 6, "started_utc": "2026-09-28T00:54:57.673258+00:00", "finished_utc": "2026-09-28T00:54:57.673325+00:00", "result_code": 0}
+{"phase": "begin", "index": 47, "function": "hipModuleLaunchKernel", "context": 6, "started_utc": "2026-09-28T00:54:57.673509+00:00"}
+{"phase": "end", "index": 47, "function": "hipModuleLaunchKernel", "context": 6, "started_utc": "2026-09-28T00:54:57.673509+00:00", "finished_utc": "2026-09-28T00:54:57.673573+00:00", "result_code": 0}
+{"phase": "begin", "index": 48, "function": "hipDeviceSynchronize", "context": 6, "started_utc": "2026-09-28T00:54:57.673623+00:00"}
+{"phase": "end", "index": 48, "function": "hipDeviceSynchronize", "context": 6, "started_utc": "2026-09-28T00:54:57.673623+00:00", "finished_utc": "2026-09-28T00:54:57.673682+00:00", "result_code": 0}
+{"phase": "begin", "index": 49, "function": "hipMemcpy", "context": 6, "started_utc": "2026-09-28T00:54:57.673733+00:00"}
+{"phase": "end", "index": 49, "function": "hipMemcpy", "context": 6, "started_utc": "2026-09-28T00:54:57.673733+00:00", "finished_utc": "2026-09-28T00:54:57.673802+00:00", "result_code": 0}
+{"phase": "begin", "index": 50, "function": "hipModuleGetFunction", "context": 7, "started_utc": "2026-09-28T00:54:57.674417+00:00"}
+{"phase": "end", "index": 50, "function": "hipModuleGetFunction", "context": 7, "started_utc": "2026-09-28T00:54:57.674417+00:00", "finished_utc": "2026-09-28T00:54:57.674490+00:00", "result_code": 0}
+{"phase": "begin", "index": 51, "function": "hipMemcpy", "context": 7, "started_utc": "2026-09-28T00:54:57.674671+00:00"}
+{"phase": "end", "index": 51, "function": "hipMemcpy", "context": 7, "started_utc": "2026-09-28T00:54:57.674671+00:00", "finished_utc": "2026-09-28T00:54:57.674751+00:00", "result_code": 0}
+{"phase": "begin", "index": 52, "function": "hipMemcpy", "context": 7, "started_utc": "2026-09-28T00:54:57.674806+00:00"}
+{"phase": "end", "index": 52, "function": "hipMemcpy", "context": 7, "started_utc": "2026-09-28T00:54:57.674806+00:00", "finished_utc": "2026-09-28T00:54:57.674873+00:00", "result_code": 0}
+{"phase": "begin", "index": 53, "function": "hipModuleLaunchKernel", "context": 7, "started_utc": "2026-09-28T00:54:57.675059+00:00"}
+{"phase": "end", "index": 53, "function": "hipModuleLaunchKernel", "context": 7, "started_utc": "2026-09-28T00:54:57.675059+00:00", "finished_utc": "2026-09-28T00:54:57.675122+00:00", "result_code": 0}
+{"phase": "begin", "index": 54, "function": "hipDeviceSynchronize", "context": 7, "started_utc": "2026-09-28T00:54:57.675178+00:00"}
+{"phase": "end", "index": 54, "function": "hipDeviceSynchronize", "context": 7, "started_utc": "2026-09-28T00:54:57.675178+00:00", "finished_utc": "2026-09-28T00:54:57.675244+00:00", "result_code": 0}
+{"phase": "begin", "index": 55, "function": "hipMemcpy", "context": 7, "started_utc": "2026-09-28T00:54:57.675297+00:00"}
+{"phase": "end", "index": 55, "function": "hipMemcpy", "context": 7, "started_utc": "2026-09-28T00:54:57.675297+00:00", "finished_utc": "2026-09-28T00:54:57.675366+00:00", "result_code": 0}
+{"phase": "begin", "index": 56, "function": "hipModuleGetFunction", "context": 8, "started_utc": "2026-09-28T00:54:57.675956+00:00"}
+{"phase": "end", "index": 56, "function": "hipModuleGetFunction", "context": 8, "started_utc": "2026-09-28T00:54:57.675956+00:00", "finished_utc": "2026-09-28T00:54:57.676027+00:00", "result_code": 0}
+{"phase": "begin", "index": 57, "function": "hipMemcpy", "context": 8, "started_utc": "2026-09-28T00:54:57.676207+00:00"}
+{"phase": "end", "index": 57, "function": "hipMemcpy", "context": 8, "started_utc": "2026-09-28T00:54:57.676207+00:00", "finished_utc": "2026-09-28T00:54:57.676293+00:00", "result_code": 0}
+{"phase": "begin", "index": 58, "function": "hipMemcpy", "context": 8, "started_utc": "2026-09-28T00:54:57.676348+00:00"}
+{"phase": "end", "index": 58, "function": "hipMemcpy", "context": 8, "started_utc": "2026-09-28T00:54:57.676348+00:00", "finished_utc": "2026-09-28T00:54:57.676412+00:00", "result_code": 0}
+{"phase": "begin", "index": 59, "function": "hipModuleLaunchKernel", "context": 8, "started_utc": "2026-09-28T00:54:57.676587+00:00"}
+{"phase": "end", "index": 59, "function": "hipModuleLaunchKernel", "context": 8, "started_utc": "2026-09-28T00:54:57.676587+00:00", "finished_utc": "2026-09-28T00:54:57.676646+00:00", "result_code": 0}
+{"phase": "begin", "index": 60, "function": "hipDeviceSynchronize", "context": 8, "started_utc": "2026-09-28T00:54:57.676699+00:00"}
+{"phase": "end", "index": 60, "function": "hipDeviceSynchronize", "context": 8, "started_utc": "2026-09-28T00:54:57.676699+00:00", "finished_utc": "2026-09-28T00:54:57.676760+00:00", "result_code": 0}
+{"phase": "begin", "index": 61, "function": "hipMemcpy", "context": 8, "started_utc": "2026-09-28T00:54:57.676811+00:00"}
+{"phase": "end", "index": 61, "function": "hipMemcpy", "context": 8, "started_utc": "2026-09-28T00:54:57.676811+00:00", "finished_utc": "2026-09-28T00:54:57.676875+00:00", "result_code": 0}
+{"phase": "begin", "index": 62, "function": "hipModuleGetFunction", "context": 9, "started_utc": "2026-09-28T00:54:57.677476+00:00"}
+{"phase": "end", "index": 62, "function": "hipModuleGetFunction", "context": 9, "started_utc": "2026-09-28T00:54:57.677476+00:00", "finished_utc": "2026-09-28T00:54:57.677542+00:00", "result_code": 0}
+{"phase": "begin", "index": 63, "function": "hipMemcpy", "context": 9, "started_utc": "2026-09-28T00:54:57.677738+00:00"}
+{"phase": "end", "index": 63, "function": "hipMemcpy", "context": 9, "started_utc": "2026-09-28T00:54:57.677738+00:00", "finished_utc": "2026-09-28T00:54:57.677812+00:00", "result_code": 0}
+{"phase": "begin", "index": 64, "function": "hipMemcpy", "context": 9, "started_utc": "2026-09-28T00:54:57.677865+00:00"}
+{"phase": "end", "index": 64, "function": "hipMemcpy", "context": 9, "started_utc": "2026-09-28T00:54:57.677865+00:00", "finished_utc": "2026-09-28T00:54:57.677929+00:00", "result_code": 0}
+{"phase": "begin", "index": 65, "function": "hipModuleLaunchKernel", "context": 9, "started_utc": "2026-09-28T00:54:57.678100+00:00"}
+{"phase": "end", "index": 65, "function": "hipModuleLaunchKernel", "context": 9, "started_utc": "2026-09-28T00:54:57.678100+00:00", "finished_utc": "2026-09-28T00:54:57.678161+00:00", "result_code": 0}
+{"phase": "begin", "index": 66, "function": "hipDeviceSynchronize", "context": 9, "started_utc": "2026-09-28T00:54:57.678215+00:00"}
+{"phase": "end", "index": 66, "function": "hipDeviceSynchronize", "context": 9, "started_utc": "2026-09-28T00:54:57.678215+00:00", "finished_utc": "2026-09-28T00:54:57.678277+00:00", "result_code": 0}
+{"phase": "begin", "index": 67, "function": "hipMemcpy", "context": 9, "started_utc": "2026-09-28T00:54:57.678326+00:00"}
+{"phase": "end", "index": 67, "function": "hipMemcpy", "context": 9, "started_utc": "2026-09-28T00:54:57.678326+00:00", "finished_utc": "2026-09-28T00:54:57.678388+00:00", "result_code": 0}
+{"phase": "begin", "index": 68, "function": "hipModuleGetFunction", "context": 10, "started_utc": "2026-09-28T00:54:57.678942+00:00"}
+{"phase": "end", "index": 68, "function": "hipModuleGetFunction", "context": 10, "started_utc": "2026-09-28T00:54:57.678942+00:00", "finished_utc": "2026-09-28T00:54:57.679005+00:00", "result_code": 0}
+{"phase": "begin", "index": 69, "function": "hipMemcpy", "context": 10, "started_utc": "2026-09-28T00:54:57.679181+00:00"}
+{"phase": "end", "index": 69, "function": "hipMemcpy", "context": 10, "started_utc": "2026-09-28T00:54:57.679181+00:00", "finished_utc": "2026-09-28T00:54:57.679260+00:00", "result_code": 0}
+{"phase": "begin", "index": 70, "function": "hipMemcpy", "context": 10, "started_utc": "2026-09-28T00:54:57.679315+00:00"}
+{"phase": "end", "index": 70, "function": "hipMemcpy", "context": 10, "started_utc": "2026-09-28T00:54:57.679315+00:00", "finished_utc": "2026-09-28T00:54:57.679378+00:00", "result_code": 0}
+{"phase": "begin", "index": 71, "function": "hipModuleLaunchKernel", "context": 10, "started_utc": "2026-09-28T00:54:57.679548+00:00"}
+{"phase": "end", "index": 71, "function": "hipModuleLaunchKernel", "context": 10, "started_utc": "2026-09-28T00:54:57.679548+00:00", "finished_utc": "2026-09-28T00:54:57.679609+00:00", "result_code": 0}
+{"phase": "begin", "index": 72, "function": "hipDeviceSynchronize", "context": 10, "started_utc": "2026-09-28T00:54:57.679660+00:00"}
+{"phase": "end", "index": 72, "function": "hipDeviceSynchronize", "context": 10, "started_utc": "2026-09-28T00:54:57.679660+00:00", "finished_utc": "2026-09-28T00:54:57.679722+00:00", "result_code": 0}
+{"phase": "begin", "index": 73, "function": "hipMemcpy", "context": 10, "started_utc": "2026-09-28T00:54:57.679773+00:00"}
+{"phase": "end", "index": 73, "function": "hipMemcpy", "context": 10, "started_utc": "2026-09-28T00:54:57.679773+00:00", "finished_utc": "2026-09-28T00:54:57.679837+00:00", "result_code": 0}
+{"phase": "begin", "index": 74, "function": "hipModuleGetFunction", "context": 11, "started_utc": "2026-09-28T00:54:57.680385+00:00"}
+{"phase": "end", "index": 74, "function": "hipModuleGetFunction", "context": 11, "started_utc": "2026-09-28T00:54:57.680385+00:00", "finished_utc": "2026-09-28T00:54:57.680446+00:00", "result_code": 0}
+{"phase": "begin", "index": 75, "function": "hipMemcpy", "context": 11, "started_utc": "2026-09-28T00:54:57.680607+00:00"}
+{"phase": "end", "index": 75, "function": "hipMemcpy", "context": 11, "started_utc": "2026-09-28T00:54:57.680607+00:00", "finished_utc": "2026-09-28T00:54:57.680699+00:00", "result_code": 0}
+{"phase": "begin", "index": 76, "function": "hipMemcpy", "context": 11, "started_utc": "2026-09-28T00:54:57.680753+00:00"}
+{"phase": "end", "index": 76, "function": "hipMemcpy", "context": 11, "started_utc": "2026-09-28T00:54:57.680753+00:00", "finished_utc": "2026-09-28T00:54:57.680815+00:00", "result_code": 0}
+{"phase": "begin", "index": 77, "function": "hipModuleLaunchKernel", "context": 11, "started_utc": "2026-09-28T00:54:57.680978+00:00"}
+{"phase": "end", "index": 77, "function": "hipModuleLaunchKernel", "context": 11, "started_utc": "2026-09-28T00:54:57.680978+00:00", "finished_utc": "2026-09-28T00:54:57.681037+00:00", "result_code": 0}
+{"phase": "begin", "index": 78, "function": "hipDeviceSynchronize", "context": 11, "started_utc": "2026-09-28T00:54:57.681090+00:00"}
+{"phase": "end", "index": 78, "function": "hipDeviceSynchronize", "context": 11, "started_utc": "2026-09-28T00:54:57.681090+00:00", "finished_utc": "2026-09-28T00:54:57.681151+00:00", "result_code": 0}
+{"phase": "begin", "index": 79, "function": "hipMemcpy", "context": 11, "started_utc": "2026-09-28T00:54:57.681207+00:00"}
+{"phase": "end", "index": 79, "function": "hipMemcpy", "context": 11, "started_utc": "2026-09-28T00:54:57.681207+00:00", "finished_utc": "2026-09-28T00:54:57.681271+00:00", "result_code": 0}
+{"phase": "begin", "index": 80, "function": "hipModuleGetFunction", "context": 12, "started_utc": "2026-09-28T00:54:57.681817+00:00"}
+{"phase": "end", "index": 80, "function": "hipModuleGetFunction", "context": 12, "started_utc": "2026-09-28T00:54:57.681817+00:00", "finished_utc": "2026-09-28T00:54:57.681878+00:00", "result_code": 0}
+{"phase": "begin", "index": 81, "function": "hipMemcpy", "context": 12, "started_utc": "2026-09-28T00:54:57.682044+00:00"}
+{"phase": "end", "index": 81, "function": "hipMemcpy", "context": 12, "started_utc": "2026-09-28T00:54:57.682044+00:00", "finished_utc": "2026-09-28T00:54:57.682129+00:00", "result_code": 0}
+{"phase": "begin", "index": 82, "function": "hipMemcpy", "context": 12, "started_utc": "2026-09-28T00:54:57.682183+00:00"}
+{"phase": "end", "index": 82, "function": "hipMemcpy", "context": 12, "started_utc": "2026-09-28T00:54:57.682183+00:00", "finished_utc": "2026-09-28T00:54:57.682261+00:00", "result_code": 0}
+{"phase": "begin", "index": 83, "function": "hipModuleLaunchKernel", "context": 12, "started_utc": "2026-09-28T00:54:57.682430+00:00"}
+{"phase": "end", "index": 83, "function": "hipModuleLaunchKernel", "context": 12, "started_utc": "2026-09-28T00:54:57.682430+00:00", "finished_utc": "2026-09-28T00:54:57.682490+00:00", "result_code": 0}
+{"phase": "begin", "index": 84, "function": "hipDeviceSynchronize", "context": 12, "started_utc": "2026-09-28T00:54:57.682543+00:00"}
+{"phase": "end", "index": 84, "function": "hipDeviceSynchronize", "context": 12, "started_utc": "2026-09-28T00:54:57.682543+00:00", "finished_utc": "2026-09-28T00:54:57.682604+00:00", "result_code": 0}
+{"phase": "begin", "index": 85, "function": "hipMemcpy", "context": 12, "started_utc": "2026-09-28T00:54:57.682656+00:00"}
+{"phase": "end", "index": 85, "function": "hipMemcpy", "context": 12, "started_utc": "2026-09-28T00:54:57.682656+00:00", "finished_utc": "2026-09-28T00:54:57.682720+00:00", "result_code": 0}
+{"phase": "begin", "index": 86, "function": "hipModuleGetFunction", "context": 13, "started_utc": "2026-09-28T00:54:57.683266+00:00"}
+{"phase": "end", "index": 86, "function": "hipModuleGetFunction", "context": 13, "started_utc": "2026-09-28T00:54:57.683266+00:00", "finished_utc": "2026-09-28T00:54:57.683333+00:00", "result_code": 0}
+{"phase": "begin", "index": 87, "function": "hipMemcpy", "context": 13, "started_utc": "2026-09-28T00:54:57.683500+00:00"}
+{"phase": "end", "index": 87, "function": "hipMemcpy", "context": 13, "started_utc": "2026-09-28T00:54:57.683500+00:00", "finished_utc": "2026-09-28T00:54:57.683572+00:00", "result_code": 0}
+{"phase": "begin", "index": 88, "function": "hipMemcpy", "context": 13, "started_utc": "2026-09-28T00:54:57.683651+00:00"}
+{"phase": "end", "index": 88, "function": "hipMemcpy", "context": 13, "started_utc": "2026-09-28T00:54:57.683651+00:00", "finished_utc": "2026-09-28T00:54:57.683714+00:00", "result_code": 0}
+{"phase": "begin", "index": 89, "function": "hipModuleLaunchKernel", "context": 13, "started_utc": "2026-09-28T00:54:57.683885+00:00"}
+{"phase": "end", "index": 89, "function": "hipModuleLaunchKernel", "context": 13, "started_utc": "2026-09-28T00:54:57.683885+00:00", "finished_utc": "2026-09-28T00:54:57.683945+00:00", "result_code": 0}
+{"phase": "begin", "index": 90, "function": "hipDeviceSynchronize", "context": 13, "started_utc": "2026-09-28T00:54:57.683998+00:00"}
+{"phase": "end", "index": 90, "function": "hipDeviceSynchronize", "context": 13, "started_utc": "2026-09-28T00:54:57.683998+00:00", "finished_utc": "2026-09-28T00:54:57.684059+00:00", "result_code": 0}
+{"phase": "begin", "index": 91, "function": "hipMemcpy", "context": 13, "started_utc": "2026-09-28T00:54:57.684111+00:00"}
+{"phase": "end", "index": 91, "function": "hipMemcpy", "context": 13, "started_utc": "2026-09-28T00:54:57.684111+00:00", "finished_utc": "2026-09-28T00:54:57.684173+00:00", "result_code": 0}
+{"phase": "begin", "index": 92, "function": "hipFree", "context": "cleanup", "started_utc": "2026-09-28T00:54:57.684582+00:00"}
+{"phase": "end", "index": 92, "function": "hipFree", "context": "cleanup", "started_utc": "2026-09-28T00:54:57.684582+00:00", "finished_utc": "2026-09-28T00:54:57.684656+00:00", "result_code": 0}
+{"phase": "begin", "index": 93, "function": "hipModuleUnload", "context": "cleanup", "started_utc": "2026-09-28T00:54:57.684714+00:00"}
+{"phase": "end", "index": 93, "function": "hipModuleUnload", "context": "cleanup", "started_utc": "2026-09-28T00:54:57.684714+00:00", "finished_utc": "2026-09-28T00:54:57.685002+00:00", "result_code": 0}

@@ -1,0 +1,29 @@
+{
+  "status": "SOURCE_FROZEN_REQUIRES_INDEPENDENT_REVIEW_AND_ROOT_RELEASE",
+  "files": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/controller.py",
+      "bytes": 17706,
+      "sha256": "174500aeb6870f0c9adea5daa8f11ce5108b65880591017795cbba613a2c7013"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/test_CPU.py",
+      "bytes": 5505,
+      "sha256": "9b77c5d4957db25053f7941474bf67a22432d48024a0d50f9d87ca4067b636a2"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/CPU_TESTS_v2.json",
+      "bytes": 2296,
+      "sha256": "3af580ceda198b67f8f561b3222ff8da9825c936c48729233868b707d1c4c131"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/README.md",
+      "bytes": 3684,
+      "sha256": "84253e944ec4d8a85ed84d84d249bfbddf3ebbb0e2a15a1e3d36064df823304c"
+    }
+  ],
+  "actual_runtime_stage_or_GPU_execution": false,
+  "actual_live_gates": false,
+  "driver_actions": false,
+  "GPU_actions": false
+}

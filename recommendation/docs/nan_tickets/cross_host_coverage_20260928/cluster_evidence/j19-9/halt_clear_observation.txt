@@ -1,0 +1,14 @@
+j19-9, boot 964bbe1c-0c9b-4422-90c3-c549415b3b28, host-context job 11118 (sudo).
+Wedge since 2026-09-26 20:57:47 UTC (MES on 0004:01:00.0 stopped responding; see dmesg_wedge_excerpt.txt).
+Columns per GPU: busy% / VRAM used (GiB). kfd_procs = entries in /sys/class/kfd/kfd/proc.
+
+[01:12:04] halt=1 load=1447.78 1417.58 1036.38 kfd_procs=5 0001:0%/228G 0003:0%/143G 0004:100%/103G 0002:0%/158G
+cleared halt_if_hws_hang at 01:12:04   (echo 0 > /sys/module/amdgpu/parameters/halt_if_hws_hang)
+[01:12:24] halt=0 load=1186.45 1361.11 1025.98 kfd_procs=1 0001:100%/0G 0003:46%/0G 0004:100%/103G 0002:100%/0G
+[01:12:44] halt=0 load=854.09 1273.95 1004.45 kfd_procs=1 0001:100%/0G 0003:100%/0G 0004:100%/103G 0002:100%/0G
+
+The observation step stopped returning after 01:12:44 (a sysfs read presumably blocked).
+01:14:32  scheduler marks the node down ("Not responding"); ping stops.
+01:27:07  ping and sshd return; the new boot's BERT reports 1 error record from the previous boot.
+01:26:50  armed loader starts insmod of the corrected module; 01:27:16 insmod rc=0 (corrected_boot/load.log).
+01:27:27  spurd listening; node back in the scheduler.

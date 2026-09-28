@@ -1,0 +1,19 @@
+{
+ "run": "/shared/chcai/mi450_a0_newcluster/runs/full4_a37cfg_numabind_20260925T040549Z",
+ "trainer_pid": 44202,
+ "started": "2026-09-25T04:05:51.761+00:00",
+ "last_step": 1912,
+ "last_loss": "0.13556",
+ "last_step_utc": "2026-09-25T05:02:55.693+00:00",
+ "steps_seen": 1912,
+ "nonfinite_steps": [],
+ "first_nonfinite": null,
+ "evals": [],
+ "in_eval": false,
+ "run_stop": null,
+ "errors": [],
+ "stall": false,
+ "stopped_by_monitor": null,
+ "trainer_alive": true,
+ "updated": "2026-09-25T05:02:55.696+00:00"
+}

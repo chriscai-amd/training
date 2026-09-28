@@ -1,0 +1,11 @@
+srun: Pending job allocation 11032...
+srun: job 11032 running on ctheliosr-rck-g02-j19-11
+srun: dispatched to node ctheliosr-rck-g02-j19-11
+boot_id_before=b4ecf5cc-c74b-4cb1-8339-d28309d06f2c
+0001:01:00.0 busy=0 vram=346GiB
+0003:01:00.0 busy=100 vram=260GiB
+0004:01:00.0 busy=0 vram=220GiB
+0002:01:00.0 busy=0 vram=275GiB
+6
+requesting reboot via logind
+reboot requested rc=0

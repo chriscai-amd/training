@@ -1,0 +1,277 @@
+{
+  "status": "PASS_INDEPENDENT_DRIVER_TICKET_EVIDENCE_SUFFICIENCY",
+  "documents": {
+    "TICKET.md": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/TICKET.md",
+      "bytes": 10684,
+      "sha256": "fdad197fe9a82f8db1d66775850989040b2bd9aa99175f5c2c0c08d5f5708efa"
+    },
+    "README.md": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/README.md",
+      "bytes": 4470,
+      "sha256": "cb53b073b76dde132af8198d7dc5c2a886233229331510ac3e5e1f4ed1cf8f1b"
+    },
+    "LIVEOUT.md": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/LIVEOUT.md",
+      "bytes": 2488,
+      "sha256": "5cb9e4a768152449bfd1432d190ec6f919b0e2e6031f15d6306263456548e7b3"
+    }
+  },
+  "verdict": "The reviewed evidence is sufficient to file a driver-team ticket for the demonstrated bank-copy defect and the tested corrective implementation. It supports high confidence in the controlled component cause and prevention; it does not support an all-training repair claim.",
+  "component_attribution": {
+    "mechanism": "Inherited SRC0 and DST banks route encoded v1 to different physical registers, causing a deterministic lane-zero word copy.",
+    "conditional_common_entry": "For normal entry at byte 0 with WAVE_START clear, native branch byte24 reaches prologue byte60 before trap/save classification; restore and wave-start paths remain separate.",
+    "native_entry_prefetch_check": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_reviewer_questions_v1/PROVENANCE.json",
+      "bytes": 8743,
+      "sha256": "490629d3ab68a8815ef62a5b91b0b31ceb443eb248cba7213a073a6bfaef9786"
+    },
+    "reviewer_questions": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_reviewer_questions_v1/DRIVER_REVIEWER_QUESTIONS.md",
+      "bytes": 7434,
+      "sha256": "18fbae59bbf91b2e92134b8f6c66f4cf682ad6e8daa7e92a22cc86b1d4d7d81b"
+    },
+    "independent_normal_entry_and_branch_bytes_rechecked": true,
+    "prefetch_controls_and_signed_offset_rechecked": true,
+    "ownership_limit": "Vendor confirmation of the architectural bank-state contract may determine whether this is called a handler defect or an A0 contract violation addressed by software."
+  },
+  "minimal_reproducer": {
+    "requirements": "Python 3.11+, MI450/gfx1250, compatible explicit HIP/HSA library paths, CWSR enabled; no training inputs or PyTorch.",
+    "exact_shader_bytes": 32152,
+    "packet_bytes": 160,
+    "cases": 14,
+    "source_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/REPRODUCER_REVIEW.json",
+      "bytes": 15732,
+      "sha256": "302754824556fa1269de12b2a3146f187324fde2520664c11b3b39a8ed86aba6"
+    },
+    "actual_original_driver_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/PORTABLE_RESULT_REVIEW.json",
+      "bytes": 38967,
+      "sha256": "9863adecafaccea61553ec5bb3fd38d8f442ea4bbedefa7737cf771086781221"
+    },
+    "fresh_adapter_executed": true,
+    "fresh_adapter_corrected_driver_executed": false,
+    "earlier_exact_host_shader_corrected_counterfactual_retained": true,
+    "expected_original_copy_modes": [
+      "0x05",
+      "0x81",
+      "0x85"
+    ],
+    "all_other_original_cases_unchanged": 11,
+    "all_saved_corrected_cases_unchanged": 14
+  },
+  "fix": {
+    "patch": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/proposed_fix.patch",
+      "bytes": 2091,
+      "sha256": "58ed3645252ebbb3fe6fcad493a6db7a62b30740ceac937d18acb7995e6dd158"
+    },
+    "manifest": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/SHA256SUMS",
+      "bytes": 3394,
+      "sha256": "be7559b911e385d39c12cb0c4d347f8107cd7ac25c983479c9cdb8ba49ec6029"
+    },
+    "review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/FIX_REVIEW.json",
+      "bytes": 18466,
+      "sha256": "52ba2241e7bfc429f65f0a726f89d86b59aab15344d53eb71964b5213901df3d"
+    },
+    "liveout_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/LIVEOUT_REVIEW.json",
+      "bytes": 8926,
+      "sha256": "a9a0a13c82bab2839a51e0f64aea93eaadc28ffd87df6c3648a240c802ba7e20"
+    },
+    "source_and_embedded_header_supplied": true,
+    "tested_native_payload_supplied": true,
+    "zero_fuzz_forward_reverse_patch_application_checked": true,
+    "exact_native_LLVM_reassembly_checked": true,
+    "original_SP3_acceptance_established": false,
+    "vendor_ABI_erratum_hazard_and_production_regressions_required": true
+  },
+  "counterfactuals": {
+    "independent_quantitative_assertions": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/TICKET_CLAIMS_ASSERTIONS.json",
+      "bytes": 5822,
+      "sha256": "a783a361a1ae614c250fff27aa68d17ccc6901fc2d7d240f8677f85700cdef57"
+    },
+    "ordinary_prologue_calls_per_arm": 2048,
+    "ordinary_original_copies": 1536,
+    "ordinary_corrected_and_no_prologue_copies": 0,
+    "original_DW_historical_bad_calls": 4,
+    "original_DW_healthy_calls": 12,
+    "corrected_DW_healthy_calls": 16,
+    "complete_bad_output_words": 131072,
+    "historical_changed_words": 1030,
+    "historical_NaNs": 640,
+    "historical_extreme_finite": 384,
+    "historical_other_finite": 6,
+    "independent_victim_register_relocation_counterfactual": true
+  },
+  "platform_interval": {
+    "before_staging": {
+      "CPU": 8,
+      "bank": 60,
+      "status": "0xd8202000000c080b",
+      "syndrome": "0x000000005a800001",
+      "first_timestamp_seconds": "199232.763916",
+      "last_timestamp_seconds": "199232.803189",
+      "new_lines": 18,
+      "MC60_count": 1,
+      "exact_existing_policy_template": true
+    },
+    "following_release_afterproducer_final_intervals": {
+      "new_lines": [
+        0,
+        0,
+        0
+      ],
+      "MC60_counts": [
+        0,
+        0,
+        0
+      ],
+      "hard_fault_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    "platform_health_clearance": false
+  },
+  "limits_explicit_in_reviewed_material": [
+    "The seven-event DW schedule is constructed; exact historical interrupt timing and unique attribution of all training anomalies are not recovered.",
+    "Original and corrected comparisons use different boots; only seven selected historical driver parameters match completely.",
+    "Loaded note/srcversion binding is not direct live executable-memory readback.",
+    "Corrected native payload has runtime evidence, while original SP3 syntax/generation and vendor hardware timing contract remain integration work.",
+    "Fresh portable wrapper execution is original-driver only; saved corrected evidence uses the same underlying exact host/shader.",
+    "Residual finite STU1 step583 lacks retained raw operands/output and remains unresolved.",
+    "The known pre-stage MC60 record is outside the portable execution interval and does not justify general platform-health clearance."
+  ],
+  "attachment_scope": {
+    "scientific_evidence_adequate_to_file": true,
+    "relative_links": [
+      {
+        "document": "TICKET.md",
+        "target": "validation/driver_review/DRIVER_REVIEWER_QUESTIONS.md",
+        "present_at_review": false
+      },
+      {
+        "document": "TICKET.md",
+        "target": "reproducer/",
+        "present_at_review": true
+      },
+      {
+        "document": "TICKET.md",
+        "target": "validation/portable_original/runtime/result/verdict.json",
+        "present_at_review": false
+      },
+      {
+        "document": "TICKET.md",
+        "target": "validation/portable_original/execution/terminal.json",
+        "present_at_review": false
+      },
+      {
+        "document": "TICKET.md",
+        "target": "reviews/PORTABLE_RESULT_REVIEW.json",
+        "present_at_review": false
+      },
+      {
+        "document": "TICKET.md",
+        "target": "evidence/current_vs_corrected_DW.json",
+        "present_at_review": true
+      },
+      {
+        "document": "TICKET.md",
+        "target": "evidence/current_DW_matrix.json",
+        "present_at_review": true
+      },
+      {
+        "document": "TICKET.md",
+        "target": "evidence/DW_all_1030_differences.json",
+        "present_at_review": true
+      },
+      {
+        "document": "TICKET.md",
+        "target": "fix/",
+        "present_at_review": true
+      },
+      {
+        "document": "TICKET.md",
+        "target": "LIVEOUT.md",
+        "present_at_review": true
+      },
+      {
+        "document": "README.md",
+        "target": "TICKET.md",
+        "present_at_review": true
+      },
+      {
+        "document": "README.md",
+        "target": "TICKET.md",
+        "present_at_review": true
+      },
+      {
+        "document": "README.md",
+        "target": "reproducer/README.md",
+        "present_at_review": true
+      },
+      {
+        "document": "README.md",
+        "target": "fix/README.md",
+        "present_at_review": true
+      },
+      {
+        "document": "README.md",
+        "target": "LIVEOUT.md",
+        "present_at_review": true
+      },
+      {
+        "document": "README.md",
+        "target": "validation/driver_review/DRIVER_REVIEWER_QUESTIONS.md",
+        "present_at_review": false
+      },
+      {
+        "document": "README.md",
+        "target": "validation/portable_original/runtime/result/verdict.json",
+        "present_at_review": false
+      },
+      {
+        "document": "README.md",
+        "target": "reviews/PORTABLE_RESULT_REVIEW.json",
+        "present_at_review": false
+      },
+      {
+        "document": "README.md",
+        "target": "EVIDENCE_COPIES.json",
+        "present_at_review": true
+      },
+      {
+        "document": "README.md",
+        "target": "MANIFEST.json",
+        "present_at_review": false
+      },
+      {
+        "document": "LIVEOUT.md",
+        "target": "validation/liveout/LIVEOUT_REVIEW.json",
+        "present_at_review": false
+      },
+      {
+        "document": "LIVEOUT.md",
+        "target": "reviews/LIVEOUT_REVIEW.json",
+        "present_at_review": false
+      },
+      {
+        "document": "LIVEOUT.md",
+        "target": "fix/source/",
+        "present_at_review": true
+      }
+    ],
+    "assembly_checksum_archive_readback_and_extracted_portable_checks": "Owned by root after validation/review copies are populated; not performed or certified by this content/evidence review."
+  },
+  "findings": [],
+  "unresolved_material_evidence_gaps_for_component_ticket": [],
+  "GPU_actions": false,
+  "driver_actions": false,
+  "bulk_training_or_archive_payload_reads": false
+}

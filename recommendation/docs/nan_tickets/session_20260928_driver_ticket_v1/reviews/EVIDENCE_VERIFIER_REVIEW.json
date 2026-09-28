@@ -1,0 +1,90 @@
+{
+  "status": "PASS_INDEPENDENT_DRIVER_TICKET_EVIDENCE_VERIFIER_AND_PORTABILITY_REVIEW",
+  "verifier": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/verify_evidence.py",
+    "bytes": 5995,
+    "sha256": "630e983daf6b7a3d5c7d372a9025e5a9c9d39b2728e38338d5540d342698850d"
+  },
+  "README_at_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/README.md",
+    "bytes": 4291,
+    "sha256": "6d32b381434a4c8787f7c49aa07bcd10bd207b7582cc79067992991f25f8e39b"
+  },
+  "ticket_at_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/TICKET.md",
+    "bytes": 9588,
+    "sha256": "7a6442533478c462f92dd3091d691b78ef1e85af031fe4e11336c3220a1945ba"
+  },
+  "portable_reproducer_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/SOURCE.json",
+    "bytes": 13663,
+    "sha256": "04265d023cc6d924e5724c40ab9ae4f78abf50fb4c7eeda29a17a4ce35314dd1"
+  },
+  "fix_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/SHA256SUMS",
+    "bytes": 3394,
+    "sha256": "be7559b911e385d39c12cb0c4d347f8107cd7ac25c983479c9cdb8ba49ec6029"
+  },
+  "boundary_test_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_usability_peer_v1/check_evidence_CPU_v2.py",
+    "bytes": 5668,
+    "sha256": "65cc7387eb29499e92bfe0caa914d4b25641f1e867dc84cfbf705da73daa4151"
+  },
+  "boundary_result": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_usability_peer_v1/EVIDENCE_BOUNDARIES_v2.json",
+    "bytes": 4314,
+    "sha256": "18995f146d39d4041ecda67177d43e0fba02a601afd5a07aef4aca1b5449a1b9"
+  },
+  "portability_result": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_usability_peer_v1/PORTABILITY_RESULTS.json",
+    "bytes": 3667,
+    "sha256": "1a500b5b89f382a6f7de6bda45f5379e7a983e6a48c42a9cca551c02e7ba2266"
+  },
+  "initial_findings_preserved": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_usability_peer_v1/EVIDENCE_BOUNDARIES_v1.json",
+    "bytes": 6312,
+    "sha256": "352b8e47b163dd60770bffaa0eb82d99144d3064d771e6bac2e07e561daeb69b"
+  },
+  "final_CPU_cases": 17,
+  "relocated_entrypoints": [
+    "verify_evidence.py",
+    "reproducer/run_repro.py --check-only",
+    "fix/verify_fix.py"
+  ],
+  "findings": [],
+  "unresolved_findings": [],
+  "closed_findings": [
+    "Empty declared evidence inventory now rejected.",
+    "Duplicate inventory entries now rejected.",
+    "Current DW requires four exact ordered distinct arms.",
+    "Saved corrected DW requires all sixteen distinct ordered arm/iteration identities.",
+    "Saved corrected review must have exact successful status.",
+    "Inline review must have exact successful status and full suite.",
+    "Optimization mode is explicitly rejected before evidence reads."
+  ],
+  "usability": {
+    "minimum_Python": "3.11",
+    "other_CPU_dependency": "patch",
+    "training_data_required_for_primary_reproducer": false,
+    "container_or_original_home_required_for_CPU_entrypoints": false,
+    "build_required_for_primary_reproducer": false,
+    "original_and_fixed_expectations_explicit": true,
+    "portable_actual_original_GPU_validation_distinguished_from_saved_corrected_host_validation": true,
+    "assembly_header_payload_and_driver_integration_steps_present": true,
+    "SP3_acceptance_limit_explicit": true,
+    "stu1_and_unknown_original_training_interrupt_timeline_limits_explicit": true
+  },
+  "final_packaging_obligations": [
+    "Populate the already documented validation/review/LIVEOUT links and preserve every entry required by the nested fix SHA256SUMS.",
+    "Create and check the final attachment manifest/checksums after those files are copied; this review does not preapprove an archive that has not yet been built."
+  ],
+  "original_frozen_reproducer_or_fix_modified": false,
+  "actual_portable_raw_GPU_result_audit_duplicated": false,
+  "GPU_actions": false,
+  "driver_actions": false,
+  "production_training_raw_or_external_archive_reads": false,
+  "limits": [
+    "Attached evidence-verifier semantics and relocated CPU usability only.",
+    "Coordinated mutation fixtures rehash only temporary synthetic records to test semantic joins; independent archive authentication remains the final package checksum."
+  ]
+}

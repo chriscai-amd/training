@@ -1,0 +1,462 @@
+{
+  "schema": "MI450_CURRENT_PLATEAU400_COMPLETE_CONSUMER_V1",
+  "status": "PASS_CURRENT_PLATEAU400_FRESH_BANK46_PRESERVED_WITH_SVM_EXPOSURE",
+  "numerical_audit_passed": true,
+  "complete_trace_audit_passed": true,
+  "saved_lifecycle_passed": true,
+  "physical_CWSR_acknowledgment": false,
+  "original_training_event_reconstructed": false,
+  "manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_source_v1/launch_manifest_ftrace.json",
+    "bytes": 28638,
+    "sha256": "7fdc4f3c54fa8b910977b55cc7dd3e2852580ae9111781ec9dac85bfb4c5277b"
+  },
+  "execution": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_execution_v1/execution.json",
+    "bytes": 4036,
+    "sha256": "24981e184e861b1ca1632a55605e993d465f8daddbf49722e86889785522f19c"
+  },
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_source_v1/audit_completed.py",
+    "bytes": 14867,
+    "sha256": "ffaf282d6bc33dbcd039ac358553f3b1cc64f6637d516c803a06d088346f1860"
+  },
+  "packets": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_execution_v1/independent_terminal_audit.json",
+    "bytes": 3616724,
+    "sha256": "7d83583bb944caef4b05b289cddd7d7123231bc8598bfac10ba0c102cac41baa"
+  },
+  "corrected_tags": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_execution_v1/corrected_tags.json",
+    "bytes": 2257923,
+    "sha256": "10fd636555ff24765031c11163a0b00357c8699594a3a0c485e0048201989ab2"
+  },
+  "trace": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_execution_v1/independent_trace_correlation.json",
+    "bytes": 1250124,
+    "sha256": "76879c3b0f6924adcf75a03d3d111aaa0514cb0203e068318415a516221f27dc"
+  },
+  "exposure": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_execution_v1/natural_exposure.json",
+    "bytes": 14283,
+    "sha256": "adabb92b62ec8a5b3b35cd6d1b01647a74418378c9095af5a511bd98ab52b8b0"
+  },
+  "lifecycle": {
+    "status": "PASS_SAVED_CURRENT_PLATEAU400_LIFECYCLE_AND_KERNEL_CHAIN",
+    "final_gate": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_execution_v1/final_gate/gate.json",
+      "bytes": 835661,
+      "sha256": "47c7bc7e988f1dcdf28b235ca350b05edb272f3ae47cf35683105b5b58564224"
+    },
+    "final_kernel_capture": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_execution_v1/final_gate/dmesg.log",
+      "bytes": 304137,
+      "sha256": "fcbe931ab7009db2b7969a010c6f90b9523e7a0e12e92d650fdb65d8d0e04edd"
+    },
+    "serial_floor_ns": 20537913748160,
+    "official_0x7e_test": false,
+    "live_checks_performed": false,
+    "GPU_actions": false
+  },
+  "final_gate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_execution_v1/final_gate/gate.json",
+    "bytes": 835661,
+    "sha256": "47c7bc7e988f1dcdf28b235ca350b05edb272f3ae47cf35683105b5b58564224"
+  },
+  "final_kernel_capture": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_execution_v1/final_gate/dmesg.log",
+    "bytes": 304137,
+    "sha256": "fcbe931ab7009db2b7969a010c6f90b9523e7a0e12e92d650fdb65d8d0e04edd"
+  },
+  "serial_floor_ns": 20537913748160,
+  "tag_status": "ALL_400_TAGS_PRESERVED",
+  "exposure_status": "FRESH_BANK46_PC_WITH_PRESERVED_TAGS_AND_RELEVANT_SVM_ATTEMPT",
+  "by_mode": {
+    "00": {
+      "relevant_pairs": 3,
+      "distinct_relevant_cases": [
+        24,
+        136,
+        180
+      ],
+      "fresh_PC_preserved_cases": [
+        24,
+        136,
+        180
+      ]
+    },
+    "05": {
+      "relevant_pairs": 2,
+      "distinct_relevant_cases": [
+        37,
+        101
+      ],
+      "fresh_PC_preserved_cases": [
+        37,
+        101
+      ]
+    },
+    "86": {
+      "relevant_pairs": 3,
+      "distinct_relevant_cases": [
+        18,
+        46,
+        314
+      ],
+      "fresh_PC_preserved_cases": [
+        18,
+        46,
+        314
+      ]
+    },
+    "46": {
+      "relevant_pairs": 2,
+      "distinct_relevant_cases": [
+        75,
+        239
+      ],
+      "fresh_PC_preserved_cases": [
+        75,
+        239
+      ]
+    }
+  },
+  "all_raw_packets_retained": true,
+  "original_reports_preserved": true,
+  "live_gate_performed": false,
+  "GPU_actions": false,
+  "limits": [
+    "This is complete tag/packet adjudication, not a native, trace, lifecycle or platform gate.",
+    "Optional exposure is unverified advisory metadata and never excuses a tag change.",
+    "Freshness is exactly the original changed-low57-PC in-plateau predicate; raw upper-bit changes alone are not fresh.",
+    "Unchanged sampled PCs do not prove no trap; tag and TTMP observation windows differ.",
+    "Fresh PCs only under equal banks do not establish vulnerable-bank exposure.",
+    "No physical CWSR acknowledgment, complete trap count or original training-event attribution is inferred.",
+    "Host launch-to-synchronize intervals include queueing and host work.",
+    "Helper entries record attempts, not physical CWSR completion or a complete trap count.",
+    "Freshness remains changed low57 PC at an exact native plateau instruction head.",
+    "Tag and TTMP snapshot windows differ; an unchanged PC does not prove no trap.",
+    "This does not reconstruct original step101/405 events or establish statistical independence."
+  ],
+  "consumer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_plateau400_execution_v1/complete_consumer.json",
+    "bytes": 5545,
+    "sha256": "6e6d50ad4da98d8a978c11cba4351caa1ae15fa832efc1c573f9c9b1ba1e9857"
+  },
+  "independent_saved_review_status": "PASS_INDEPENDENT_SAVED_CURRENT_PLATEAU400_REVIEW",
+  "platform": {
+    "boot": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+    "driver": {
+      "srcversion": "AD83C153B9701570F12964E",
+      "version": "7.1.1.31300009"
+    },
+    "MES": "0x7b"
+  },
+  "counts": {
+    "cases": 400,
+    "output_images": 400,
+    "prefill_images": 800,
+    "complete_image_bytes": 230400,
+    "HIP_calls": 2410,
+    "explicit_traps": 0,
+    "fresh_plateau_PC_cases": 10,
+    "matching_AutoNUMA_SVM_pairs": 10
+  },
+  "all_recorded_tags_preserved": true,
+  "interpretation": "Natural long-plateau PC/tag preservation under unequal banks, including mode46 reverse v513-to-v257 route; does not reconstruct original training failures.",
+  "independent_saved_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_plateau400_saved_peer_v2/REVIEW.json",
+    "bytes": 80919,
+    "sha256": "1d28287d54b60146a7e9543bb4d728f443ba66f94847ceeb4e41ebfb044750c8"
+  },
+  "reviewer_v1_representation_issue": {
+    "source": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_plateau400_saved_peer_v1/review_saved.py",
+      "bytes": 6279,
+      "sha256": "148b360df73bd2e3d05c6aef3559237ca73dd3fc38a3474627b64825ab64f726"
+    },
+    "explanation": "Only expected tuple versus JSON list reference pairs; exact JSON key and all other Python types/values preserved",
+    "differences": [
+      {
+        "path": [
+          "complete_pairs",
+          0,
+          "eviction_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          18,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          0,
+          "restore_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          18,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          1,
+          "eviction_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          24,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          1,
+          "restore_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          24,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          2,
+          "eviction_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          37,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          2,
+          "restore_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          37,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          3,
+          "eviction_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          46,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          3,
+          "restore_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          46,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          4,
+          "eviction_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          75,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          4,
+          "restore_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          75,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          5,
+          "eviction_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          101,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          5,
+          "restore_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          101,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          6,
+          "eviction_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          136,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          6,
+          "restore_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          136,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          7,
+          "eviction_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          180,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          7,
+          "restore_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          180,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          8,
+          "eviction_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          239,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          8,
+          "restore_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          239,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          9,
+          "eviction_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          314,
+          "DEFINITE_INSIDE"
+        ]
+      },
+      {
+        "path": [
+          "complete_pairs",
+          9,
+          "restore_case_references",
+          0
+        ],
+        "in_memory_type": "tuple",
+        "serialized_type": "list",
+        "value": [
+          314,
+          "DEFINITE_INSIDE"
+        ]
+      }
+    ]
+  }
+}

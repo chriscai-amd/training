@@ -1,0 +1,882 @@
+{
+  "status": "PASS_INDEPENDENT_ACTUAL_PORTABLE_ORIGINAL_SENTINEL_RESULT",
+  "reviewer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/review_portable_result.py",
+    "bytes": 15599,
+    "sha256": "293af7b7952b825af6cf7d41f448c000cadea18e9e8d94d41e1b818a50c0b576"
+  },
+  "root_terminal": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/terminal.json",
+    "bytes": 24180,
+    "sha256": "c60fe39c88cdb792d392bff203406630be0e737e7ea206442f95c2edebaaa6c4"
+  },
+  "release": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/RELEASE.json",
+    "bytes": 745,
+    "sha256": "8ec7243eec5833e7d624868d7fa17805f7378393add8843e30525ae53703ec79"
+  },
+  "controller": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/controller.py",
+    "bytes": 17706,
+    "sha256": "174500aeb6870f0c9adea5daa8f11ce5108b65880591017795cbba613a2c7013"
+  },
+  "controller_source_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/CONTROLLER_REVIEW.json",
+    "bytes": 8281,
+    "sha256": "4f8536be92cd99f7a4284fa2fc6f5097a3839622dd530e90637e5bed5ecd927b"
+  },
+  "package_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/SOURCE.json",
+    "bytes": 13663,
+    "sha256": "04265d023cc6d924e5724c40ab9ae4f78abf50fb4c7eeda29a17a4ce35314dd1"
+  },
+  "package_source_peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/REPRODUCER_REVIEW.json",
+    "bytes": 15732,
+    "sha256": "302754824556fa1269de12b2a3146f187324fde2520664c11b3b39a8ed86aba6"
+  },
+  "exact_stage": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/STAGE.json",
+    "bytes": 24322,
+    "sha256": "ba2953430cbb08e9ec73b7e8973765b3d3a384cce79b9daaba36c88f02db3454"
+  },
+  "checked_stage_files": 42,
+  "boot": "f268e253-8b79-4be6-ae3c-0d8e8b2dfd4e",
+  "driver": {
+    "version": "7.1.1.31300009",
+    "srcversion": "EADFD8EC13CF3E6B329194E",
+    "taint": "OE"
+  },
+  "MES_and_MES_KIQ": "0x0000007b",
+  "driver_parameters_equal_to_current_original_contract": true,
+  "native_image": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/exact/sentinel_shader_root_v2.hsaco",
+    "bytes": 32152,
+    "sha256": "4f840df38a5d815abe50824f37dedbde4bf48fffdec6ca84530cd631f69e5484"
+  },
+  "exact_original_host": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/exact/run_sentinel_host_v1.py",
+    "bytes": 21231,
+    "sha256": "be1582e96b7dad21991a562a6d4aec2664d331bd30ae64e1117cbd2d045ace89"
+  },
+  "actual_portable_adapter": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/adapter.json",
+    "bytes": 1696,
+    "sha256": "6c75bac4160a01f252c8846d2cd3a3e0fc1416394f3af8524f177948c275a3c9"
+  },
+  "actual_portable_configuration": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/portable_configuration.json",
+    "bytes": 4912,
+    "sha256": "b5fe1c3f748964b72d99495027c11e217973969ac69906030cba8e054a61999b"
+  },
+  "portable_adapter_was_actually_executed": true,
+  "complete_HIP_calls": 94,
+  "complete_begin_end_journal_rows": 188,
+  "complete_case_receipt_call_pointer_joins": 14,
+  "direct_output_words_checked": 560,
+  "direct_prefill_bytes_checked": 4480,
+  "original_predicted_copy_cases": 3,
+  "other_unchanged_cases": 11,
+  "full_MODE_EXEC_preserved_cases": 14,
+  "full64_trap_return_PCs_valid": 7,
+  "common_native_module_load_bias": 128145068064768,
+  "packets": [
+    {
+      "ordinal": 0,
+      "case": {
+        "mode_low_byte": 0,
+        "trap": false,
+        "symbol": "sentinel_00_0"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/output.bin",
+        "bytes": 160,
+        "sha256": "c6989b161d85449454f3d9b2648219895c260cda93772f20e2f812bf1bfe1c40"
+      },
+      "classification": "UNCHANGED",
+      "changed_tags": [],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": null,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 1,
+      "case": {
+        "mode_low_byte": 0,
+        "trap": true,
+        "symbol": "sentinel_00_1"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/output.bin",
+        "bytes": 160,
+        "sha256": "5dc02a36ffd93f621f5e13c005e0fba0da89351fd2752b697a4ed9bc066af02f"
+      },
+      "classification": "UNCHANGED",
+      "changed_tags": [],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": true,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 2,
+      "case": {
+        "mode_low_byte": 65,
+        "trap": false,
+        "symbol": "sentinel_41_0"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/output.bin",
+        "bytes": 160,
+        "sha256": "f4e9ba633694481a806b0ff5559e0dd753972255a786fa6c365e6590a731a2bd"
+      },
+      "classification": "UNCHANGED",
+      "changed_tags": [],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": null,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 3,
+      "case": {
+        "mode_low_byte": 65,
+        "trap": true,
+        "symbol": "sentinel_41_1"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/output.bin",
+        "bytes": 160,
+        "sha256": "9c28100808e2fadc8a00ebb6d93820b4186063b3e4d61378e522598413a972b5"
+      },
+      "classification": "UNCHANGED",
+      "changed_tags": [],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": true,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 4,
+      "case": {
+        "mode_low_byte": 69,
+        "trap": false,
+        "symbol": "sentinel_45_0"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/output.bin",
+        "bytes": 160,
+        "sha256": "646314ef818772a3fb19af2587e1f39070bf56d9381cf4e6746ca5be2c35ff90"
+      },
+      "classification": "UNCHANGED",
+      "changed_tags": [],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": null,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 5,
+      "case": {
+        "mode_low_byte": 69,
+        "trap": true,
+        "symbol": "sentinel_45_1"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/output.bin",
+        "bytes": 160,
+        "sha256": "63e571ab2c5bc9acaa9cca9b7b7418df9547f5e5bacb61690be58d0127735818"
+      },
+      "classification": "UNCHANGED",
+      "changed_tags": [],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": true,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 6,
+      "case": {
+        "mode_low_byte": 130,
+        "trap": false,
+        "symbol": "sentinel_82_0"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/output.bin",
+        "bytes": 160,
+        "sha256": "69f108aa9c69f54a28f9f567ca704001910c4328c5a73da86711b47042c969f1"
+      },
+      "classification": "UNCHANGED",
+      "changed_tags": [],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": null,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 7,
+      "case": {
+        "mode_low_byte": 130,
+        "trap": true,
+        "symbol": "sentinel_82_1"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/output.bin",
+        "bytes": 160,
+        "sha256": "2db18a67d09774834d75f8e0c462373521edbe57dd48c915dc758ea6887cdc29"
+      },
+      "classification": "UNCHANGED",
+      "changed_tags": [],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": true,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 8,
+      "case": {
+        "mode_low_byte": 5,
+        "trap": false,
+        "symbol": "sentinel_05_0"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/output.bin",
+        "bytes": 160,
+        "sha256": "6ea59daf5ac10a6de0246aaebede6374579a3e51872269bea23ade98a9f5be2a"
+      },
+      "classification": "UNCHANGED",
+      "changed_tags": [],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": null,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 9,
+      "case": {
+        "mode_low_byte": 5,
+        "trap": true,
+        "symbol": "sentinel_05_1"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/output.bin",
+        "bytes": 160,
+        "sha256": "df2c8c96b85743303496d1b0017b193009940480d6370c0de581824865a0d7b1"
+      },
+      "classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "changed_tags": [
+        {
+          "vgpr": 1,
+          "lane": 0,
+          "before": "0x11000000",
+          "after": "0x22000000"
+        }
+      ],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": true,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 10,
+      "case": {
+        "mode_low_byte": 129,
+        "trap": false,
+        "symbol": "sentinel_81_0"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/output.bin",
+        "bytes": 160,
+        "sha256": "b84e9b154a403570277a955c4067e2dad0d97c5d758e8c2e1d795927bc220efb"
+      },
+      "classification": "UNCHANGED",
+      "changed_tags": [],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": null,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 11,
+      "case": {
+        "mode_low_byte": 129,
+        "trap": true,
+        "symbol": "sentinel_81_1"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/output.bin",
+        "bytes": 160,
+        "sha256": "79663e6f62a70ebceda9dc3c24e6c8e404270618579d7f9eac83482753bb9aff"
+      },
+      "classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "changed_tags": [
+        {
+          "vgpr": 513,
+          "lane": 0,
+          "before": "0x33000000",
+          "after": "0x22000000"
+        }
+      ],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": true,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 12,
+      "case": {
+        "mode_low_byte": 133,
+        "trap": false,
+        "symbol": "sentinel_85_0"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/output.bin",
+        "bytes": 160,
+        "sha256": "836c47f09559abf90055278dc2b23deeec97364068b98b931a8de786e0ce0d96"
+      },
+      "classification": "UNCHANGED",
+      "changed_tags": [],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": null,
+      "intended_PC_in_exact_native_image": true
+    },
+    {
+      "ordinal": 13,
+      "case": {
+        "mode_low_byte": 133,
+        "trap": true,
+        "symbol": "sentinel_85_1"
+      },
+      "output": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/output.bin",
+        "bytes": 160,
+        "sha256": "d419cac7c4e1d986a264eb59c184fdb85094d5aec83e7c45face59fcd8413965"
+      },
+      "classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "changed_tags": [
+        {
+          "vgpr": 513,
+          "lane": 0,
+          "before": "0x33000000",
+          "after": "0x22000000"
+        }
+      ],
+      "full_MODE_EXEC_valid": true,
+      "full64_trap_PC_valid": true,
+      "intended_PC_in_exact_native_image": true
+    }
+  ],
+  "process_receipt": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/producer_process.json",
+    "bytes": 8385,
+    "sha256": "f2cfc04dda05559c8150a2a043b92565b9085545ef04444899ccce8049af77d4"
+  },
+  "saved_inner_producer_absence": {
+    "pid": 1793,
+    "start_ticks": 20016921,
+    "same_process_alive": false,
+    "disposition": "ABSENT"
+  },
+  "current_host_process_absence": [
+    {
+      "role": "root_controller",
+      "pid": 1138553,
+      "start_ticks": 20016740,
+      "same_process_alive": false,
+      "disposition": "ABSENT"
+    },
+    {
+      "role": "docker_exec",
+      "pid": 1138685,
+      "start_ticks": 20016919,
+      "same_process_alive": false,
+      "disposition": "ABSENT"
+    }
+  ],
+  "docker_exec_exit_zero_and_reaped": true,
+  "CPU_preflight_exit_zero_and_reaped": true,
+  "root_reported_outer_session": {
+    "session_id": 6228,
+    "exit_code": 0,
+    "output_drained": true
+  },
+  "gate_chains": [
+    {
+      "name": "initial_gate",
+      "gate": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/initial_gate/gate.json",
+        "bytes": 4878,
+        "sha256": "07be43d3f87470b2aef809aab0d1e9e378d99a8992b4e8a1ef6c57860e72a89e"
+      },
+      "previous": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_original_DW_archive_root_v1/execution/final_gate/kernel/state.json",
+        "bytes": 39758,
+        "sha256": "0d69b311b923188539819189a5ed388812236db8dcee4a5922bc6be3ae76867c"
+      },
+      "current": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/initial_gate/kernel/state.json",
+        "bytes": 39961,
+        "sha256": "eb9acb67ddfb5120375829473fbfbd6f98d60364983bc13373122dd310c5294e"
+      },
+      "idle_tasks": 3876,
+      "owners": [],
+      "errors": [],
+      "exact_journal_ring_and_policy_replayed": true,
+      "new_lines": 18,
+      "admitted_MC60_records": [
+        {
+          "first_line": 1,
+          "last_line": 9,
+          "hardware_lines": [
+            {
+              "line": 1,
+              "text": "[199232.763916] mce: [Hardware Error]: Machine check events logged"
+            },
+            {
+              "line": 2,
+              "text": "[199232.763925] [Hardware Error]: Corrected error, no action required."
+            },
+            {
+              "line": 3,
+              "text": "[199232.771369] [Hardware Error]: CPU:8 (1a:51:0) MC60_STATUS[Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-]: 0xd8202000000c080b"
+            },
+            {
+              "line": 6,
+              "text": "[199232.783139] [Hardware Error]: PPIN: 0x00831df01b0e0007"
+            },
+            {
+              "line": 7,
+              "text": "[199232.792109] [Hardware Error]: IPID: 0x000001e11ccc0007, Syndrome: 0x000000005a800001"
+            },
+            {
+              "line": 9,
+              "text": "[199232.803189] [Hardware Error]: cache level: L3/GEN, mem/io: IO, mem-tx: GEN, part-proc: SRC (no timeout)"
+            }
+          ],
+          "raw_hardware_lines": {
+            "bytes": 514,
+            "sha256": "acf713869cdd77de5f43f46abc561bab64022c609da01cf3a6d18f0a7304d817",
+            "base64": "WzE5OTIzMi43NjM5MTZdIG1jZTogW0hhcmR3YXJlIEVycm9yXTogTWFjaGluZSBjaGVjayBldmVudHMgbG9nZ2VkClsxOTkyMzIuNzYzOTI1XSBbSGFyZHdhcmUgRXJyb3JdOiBDb3JyZWN0ZWQgZXJyb3IsIG5vIGFjdGlvbiByZXF1aXJlZC4KWzE5OTIzMi43NzEzNjldIFtIYXJkd2FyZSBFcnJvcl06IENQVTo4ICgxYTo1MTowKSBNQzYwX1NUQVRVU1tPdmVyfENFfE1pc2NWfC18LXwtfFN5bmRWfFVFQ0N8LXwtfC1dOiAweGQ4MjAyMDAwMDAwYzA4MGIKWzE5OTIzMi43ODMxMzldIFtIYXJkd2FyZSBFcnJvcl06IFBQSU46IDB4MDA4MzFkZjAxYjBlMDAwNwpbMTk5MjMyLjc5MjEwOV0gW0hhcmR3YXJlIEVycm9yXTogSVBJRDogMHgwMDAwMDFlMTFjY2MwMDA3LCBTeW5kcm9tZTogMHgwMDAwMDAwMDVhODAwMDAxClsxOTkyMzIuODAzMTg5XSBbSGFyZHdhcmUgRXJyb3JdOiBjYWNoZSBsZXZlbDogTDMvR0VOLCBtZW0vaW86IElPLCBtZW0tdHg6IEdFTiwgcGFydC1wcm9jOiBTUkMgKG5vIHRpbWVvdXQpCg=="
+          },
+          "normalized_hardware_lines": [
+            "mce: [Hardware Error]: Machine check events logged",
+            "[Hardware Error]: Corrected error, no action required.",
+            "[Hardware Error]: CPU:8 (1a:51:0) MC60_STATUS[Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-]: 0xd8202000000c080b",
+            "[Hardware Error]: PPIN: 0x00831df01b0e0007",
+            "[Hardware Error]: IPID: 0x000001e11ccc0007, Syndrome: 0x000000005a800001",
+            "[Hardware Error]: cache level: L3/GEN, mem/io: IO, mem-tx: GEN, part-proc: SRC (no timeout)"
+          ],
+          "normalized_hardware_sha256": "4ab6257b5fe839a1cc47d6211ba95432e8f42b5e8a1232df2008dd81d72635f0",
+          "cpu": 8,
+          "family_model_stepping": "1a:51:0",
+          "bank": 60,
+          "ppin": "0x00831df01b0e0007",
+          "ipid": "0x000001e11ccc0007",
+          "status": "0xd8202000000c080b",
+          "syndrome": "0x000000005a800001",
+          "printed_flags": "Over|CE|MiscV|-|-|-|SyndV|UECC|-|-|-",
+          "first_timestamp_us": 199232763916,
+          "last_timestamp_us": 199232803189
+        }
+      ],
+      "MC60_delta": 1,
+      "hard_fault_delta": 0
+    },
+    {
+      "name": "release_gate",
+      "gate": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/release_gate/gate.json",
+        "bytes": 4879,
+        "sha256": "0f122c6ffc4db1c3ed3f7ce078b082e2a3f7a6d5bd6fe48dbfa3c504377d67b9"
+      },
+      "previous": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/initial_gate/kernel/state.json",
+        "bytes": 39961,
+        "sha256": "eb9acb67ddfb5120375829473fbfbd6f98d60364983bc13373122dd310c5294e"
+      },
+      "current": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/release_gate/kernel/state.json",
+        "bytes": 39962,
+        "sha256": "51df662158db1b808aee9d8fe582ab45dd8574370e0f4ddcc522c0f6e9016811"
+      },
+      "idle_tasks": 3875,
+      "owners": [],
+      "errors": [],
+      "exact_journal_ring_and_policy_replayed": true,
+      "new_lines": 0,
+      "admitted_MC60_records": [],
+      "MC60_delta": 0,
+      "hard_fault_delta": 0
+    },
+    {
+      "name": "after_producer_gate",
+      "gate": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/after_producer_gate/gate.json",
+        "bytes": 4894,
+        "sha256": "94c0dcc8b3b3d0effa864bafe0e2fa55db1111c204544f2040bc8b3752565bd7"
+      },
+      "previous": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/release_gate/kernel/state.json",
+        "bytes": 39962,
+        "sha256": "51df662158db1b808aee9d8fe582ab45dd8574370e0f4ddcc522c0f6e9016811"
+      },
+      "current": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/after_producer_gate/kernel/state.json",
+        "bytes": 39991,
+        "sha256": "754c0de778fc98603d9235307c420d79fcf685d8d0891edb4798f661d22c12da"
+      },
+      "idle_tasks": 3878,
+      "owners": [],
+      "errors": [],
+      "exact_journal_ring_and_policy_replayed": true,
+      "new_lines": 0,
+      "admitted_MC60_records": [],
+      "MC60_delta": 0,
+      "hard_fault_delta": 0
+    },
+    {
+      "name": "final_gate",
+      "gate": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/final_gate/gate.json",
+        "bytes": 4888,
+        "sha256": "76e6111164b78996a73cc308961cf842a8020030ed4dfa42c1805d3a9d12b403"
+      },
+      "previous": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/after_producer_gate/kernel/state.json",
+        "bytes": 39991,
+        "sha256": "754c0de778fc98603d9235307c420d79fcf685d8d0891edb4798f661d22c12da"
+      },
+      "current": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/final_gate/kernel/state.json",
+        "bytes": 39967,
+        "sha256": "6474c82ae6632e7e99f011b53122f135bd4dcdf640fdf3503d21e244cf3f984a"
+      },
+      "idle_tasks": 3878,
+      "owners": [],
+      "errors": [],
+      "exact_journal_ring_and_policy_replayed": true,
+      "new_lines": 0,
+      "admitted_MC60_records": [],
+      "MC60_delta": 0,
+      "hard_fault_delta": 0
+    }
+  ],
+  "all_gate_hard_fault_deltas_zero": true,
+  "all_gate_MC60_deltas_zero": false,
+  "root_consumer_reexecuted_without_live_functions": true,
+  "complete_numerical_evidence": {
+    "verdict": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/verdict.json",
+      "bytes": 11256,
+      "sha256": "91ca5d3800e98ec93bcfec940faaf6b16d61e9672b12d2986e088b30e4fc5fe9"
+    },
+    "transport": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/result.json",
+      "bytes": 124739,
+      "sha256": "c3cbbd0eecc31804ea9fdadf070ca2efce8961d64a7e42ca698d55c72d49fa09"
+    },
+    "journal": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/hip_calls.jsonl",
+      "bytes": 30678,
+      "sha256": "ff4a4f0acea65adb2ab85a23ba438af1ee962eeaac0f14f2673379d935015424"
+    },
+    "adapter": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/adapter.json",
+      "bytes": 1696,
+      "sha256": "6c75bac4160a01f252c8846d2cd3a3e0fc1416394f3af8524f177948c275a3c9"
+    },
+    "configuration": {
+      "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/portable_configuration.json",
+      "bytes": 4912,
+      "sha256": "b5fe1c3f748964b72d99495027c11e217973969ac69906030cba8e054a61999b"
+    },
+    "case_receipts": [
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/result.json",
+        "bytes": 6041,
+        "sha256": "5dd229e7839aeb8637fe3e93fa6f59bd7863ccc40819370d74eac21529a53a22"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/result.json",
+        "bytes": 6042,
+        "sha256": "42325adc81cdc1873dc3f3ebca7851cfa031b26cbbf397956a70571603c0c566"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/result.json",
+        "bytes": 6045,
+        "sha256": "c44826f071b2f1c7c1ee82147e290665a72588ea3f87c4b4c2dac7a1507819ee"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/result.json",
+        "bytes": 6043,
+        "sha256": "3374784d3805728719a36db207e90fe6438da420ab88bd855428abd3f81020f6"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/result.json",
+        "bytes": 6045,
+        "sha256": "afaf48855c35bc3589149a451cbe4c5b3336b6bff4a8972100ba31fa281bcab4"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/result.json",
+        "bytes": 6043,
+        "sha256": "43268f12bd6a3147c42e769ebb1e27892f2da5891a12a44e0c64cc2c845ef153"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/result.json",
+        "bytes": 6046,
+        "sha256": "eded9fbf61f43ee7313772b167d9d8f9fe9e560c06c62270fe5e16ebefbd6d39"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/result.json",
+        "bytes": 6044,
+        "sha256": "42c6201508a87f908dfafd91b902376a6df69385fa9c1d2a5f0191f37152d127"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/result.json",
+        "bytes": 6044,
+        "sha256": "cfb5849d1c3e8bb4f085de0126eae1abe9ffbe3e5a42857f48036e0c743cc6d5"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/result.json",
+        "bytes": 6185,
+        "sha256": "fec966fcc4e6cdc02c1082697156d72e5e5646f3aa02de62620aa7658833d384"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/result.json",
+        "bytes": 6053,
+        "sha256": "f2a3637891c9b0e5400acc9c2539e4ae803ab3d659227af8167714af30bda0e2"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/result.json",
+        "bytes": 6196,
+        "sha256": "dc6b3b1c880dc75272f1d8e0b8093e8374f37930503bcf0c09cf4701acea9354"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/result.json",
+        "bytes": 6053,
+        "sha256": "b9fd677568aa99b2ddd533e6c1b82e6a4e91c5c1a6cd9fd0b39b30e9cfc55a0f"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/result.json",
+        "bytes": 6196,
+        "sha256": "137996d52ca1d9799a35b60f251f0d8baab3ab821b0516b62aecc3ff5d5ec993"
+      }
+    ],
+    "packets": [
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/output.bin",
+        "bytes": 160,
+        "sha256": "c6989b161d85449454f3d9b2648219895c260cda93772f20e2f812bf1bfe1c40"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/output.bin",
+        "bytes": 160,
+        "sha256": "5dc02a36ffd93f621f5e13c005e0fba0da89351fd2752b697a4ed9bc066af02f"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/output.bin",
+        "bytes": 160,
+        "sha256": "f4e9ba633694481a806b0ff5559e0dd753972255a786fa6c365e6590a731a2bd"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/output.bin",
+        "bytes": 160,
+        "sha256": "9c28100808e2fadc8a00ebb6d93820b4186063b3e4d61378e522598413a972b5"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/output.bin",
+        "bytes": 160,
+        "sha256": "646314ef818772a3fb19af2587e1f39070bf56d9381cf4e6746ca5be2c35ff90"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/output.bin",
+        "bytes": 160,
+        "sha256": "63e571ab2c5bc9acaa9cca9b7b7418df9547f5e5bacb61690be58d0127735818"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/output.bin",
+        "bytes": 160,
+        "sha256": "69f108aa9c69f54a28f9f567ca704001910c4328c5a73da86711b47042c969f1"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/output.bin",
+        "bytes": 160,
+        "sha256": "2db18a67d09774834d75f8e0c462373521edbe57dd48c915dc758ea6887cdc29"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/output.bin",
+        "bytes": 160,
+        "sha256": "6ea59daf5ac10a6de0246aaebede6374579a3e51872269bea23ade98a9f5be2a"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/output.bin",
+        "bytes": 160,
+        "sha256": "df2c8c96b85743303496d1b0017b193009940480d6370c0de581824865a0d7b1"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/output.bin",
+        "bytes": 160,
+        "sha256": "b84e9b154a403570277a955c4067e2dad0d97c5d758e8c2e1d795927bc220efb"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/output.bin",
+        "bytes": 160,
+        "sha256": "79663e6f62a70ebceda9dc3c24e6c8e404270618579d7f9eac83482753bb9aff"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/output.bin",
+        "bytes": 160,
+        "sha256": "836c47f09559abf90055278dc2b23deeec97364068b98b931a8de786e0ce0d96"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/output.bin",
+        "bytes": 160,
+        "sha256": "d419cac7c4e1d986a264eb59c184fdb85094d5aec83e7c45face59fcd8413965"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    ],
+    "complete_HIP_calls": 94,
+    "complete_packet_bytes": 2240,
+    "original_predicted_copy_cases": 3,
+    "all_other_cases_unchanged": true
+  },
+  "findings": [],
+  "GPU_actions": false,
+  "driver_actions": false,
+  "bulk_training_or_archive_payload_reads": false,
+  "limits": [
+    "Fresh execution validates the portable wrapper on the original driver. The corrected-driver counterfactual remains the saved September 23 exact-host/shader result.",
+    "No fresh corrected-driver portable-wrapper run occurred; a separately established corrected-driver boot remains necessary.",
+    "Cached loaded module note and source pins are identity evidence, not live executable-memory readback.",
+    "Kernel policy acceptance is a narrow diagnostic condition, not a general platform-health clearance.",
+    "Controlled trap reproduction does not recover the original training interrupt timeline or resolve STU1."
+  ]
+}

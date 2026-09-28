@@ -1,0 +1,596 @@
+{
+  "status": "PASS_BOUNDED_SEQUENTIAL_LIVEOUT_DATAFLOW",
+  "scope": "Affected non-wave-start prologue through common dispatch write, without GPU or module reads",
+  "checker": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_fix_liveout_supplement_v1/analyze_liveout.py",
+    "bytes": 10237,
+    "sha256": "f98d9b0f4c95be4e5854e004be546c387f4b1ccab50b04b64570be8b05387408"
+  },
+  "frozen_fix_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/SHA256SUMS",
+    "bytes": 3394,
+    "sha256": "be7559b911e385d39c12cb0c4d347f8107cd7ac25c983479c9cdb8ba49ec6029"
+  },
+  "sources": {
+    "original": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/original/cwsr_trap_handler_gfx12.asm",
+      "bytes": 69197,
+      "sha256": "5e0e339cb988120d99fbccf2869bfab29e0a143bd110ce6f00cfdc495d5bf69d"
+    },
+    "proposed": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/proposed/cwsr_trap_handler_gfx12.asm",
+      "bytes": 69860,
+      "sha256": "a5df5bdf844e1f01cbb0012d94c627c3063a2dbafa43723b89506039afb12cae"
+    }
+  },
+  "baseline": {
+    "prefix_start": 108,
+    "common_ttmp2_overwrite": 168,
+    "unconditional_ttmp15_overwrite": 116,
+    "complete_handler_instruction_count": 1061,
+    "prefix": [
+      {
+        "pc": 108,
+        "instruction": "s_and_not1_b32 ttmp12, ttmp12, 0x8c00",
+        "hex": "78ff7891008c0000",
+        "size": 8,
+        "ttmp_reads": [
+          "ttmp12"
+        ],
+        "ttmp_writes": [
+          "ttmp12"
+        ],
+        "successors": [
+          116
+        ],
+        "original_source_line": 291,
+        "proposed_source_line": 298
+      },
+      {
+        "pc": 116,
+        "instruction": "s_getreg_b32 ttmp15, hwreg(HW_REG_WAVE_EXCP_FLAG_PRIV)",
+        "hex": "11f8fbb8",
+        "size": 4,
+        "ttmp_reads": [],
+        "ttmp_writes": [
+          "ttmp15"
+        ],
+        "successors": [
+          120
+        ],
+        "original_source_line": 293,
+        "proposed_source_line": 300
+      },
+      {
+        "pc": 120,
+        "instruction": "s_bitcmp0_b32 ttmp15, 7",
+        "hex": "7b870cbf",
+        "size": 4,
+        "ttmp_reads": [
+          "ttmp15"
+        ],
+        "ttmp_writes": [],
+        "successors": [
+          124
+        ],
+        "original_source_line": 309,
+        "proposed_source_line": 316
+      },
+      {
+        "pc": 124,
+        "instruction": "s_cbranch_scc1 L_0088",
+        "hex": "0200a2bf",
+        "size": 4,
+        "ttmp_reads": [],
+        "ttmp_writes": [],
+        "successors": [
+          128,
+          136
+        ],
+        "original_source_line": 310,
+        "proposed_source_line": 317
+      },
+      {
+        "pc": 128,
+        "instruction": "s_and_not1_b32 ttmp1, ttmp1, 0xf0000000",
+        "hex": "6dff6d91000000f0",
+        "size": 8,
+        "ttmp_reads": [
+          "ttmp1"
+        ],
+        "ttmp_writes": [
+          "ttmp1"
+        ],
+        "successors": [
+          136
+        ],
+        "original_source_line": 311,
+        "proposed_source_line": 318
+      },
+      {
+        "pc": 136,
+        "instruction": "s_bitcmp1_b32 ttmp15, 5",
+        "hex": "7b850dbf",
+        "size": 4,
+        "ttmp_reads": [
+          "ttmp15"
+        ],
+        "ttmp_writes": [],
+        "successors": [
+          140
+        ],
+        "original_source_line": 329,
+        "proposed_source_line": 336
+      },
+      {
+        "pc": 140,
+        "instruction": "s_cbranch_scc0 L_00a8",
+        "hex": "0600a1bf",
+        "size": 4,
+        "ttmp_reads": [],
+        "ttmp_writes": [],
+        "successors": [
+          144,
+          168
+        ],
+        "original_source_line": 330,
+        "proposed_source_line": 337
+      },
+      {
+        "pc": 144,
+        "instruction": "s_and_not1_b32 ttmp15, ttmp15, 0x480",
+        "hex": "7bff7b9180040000",
+        "size": 8,
+        "ttmp_reads": [
+          "ttmp15"
+        ],
+        "ttmp_writes": [
+          "ttmp15"
+        ],
+        "successors": [
+          152
+        ],
+        "original_source_line": 331,
+        "proposed_source_line": 338
+      },
+      {
+        "pc": 152,
+        "instruction": "s_setreg_imm32_b32 hwreg(HW_REG_WAVE_EXCP_FLAG_PRIV, 7, 1), 0",
+        "hex": "d10180b900000000",
+        "size": 8,
+        "ttmp_reads": [],
+        "ttmp_writes": [],
+        "successors": [
+          160
+        ],
+        "original_source_line": 333,
+        "proposed_source_line": 340
+      },
+      {
+        "pc": 160,
+        "instruction": "s_setreg_imm32_b32 hwreg(HW_REG_WAVE_EXCP_FLAG_PRIV, 10, 1), 0",
+        "hex": "910280b900000000",
+        "size": 8,
+        "ttmp_reads": [],
+        "ttmp_writes": [],
+        "successors": [
+          168
+        ],
+        "original_source_line": 334,
+        "proposed_source_line": 341
+      },
+      {
+        "pc": 168,
+        "instruction": "s_and_b32 ttmp2, ttmp12, 0x4000",
+        "hex": "78ff6e8b00400000",
+        "size": 8,
+        "ttmp_reads": [
+          "ttmp12"
+        ],
+        "ttmp_writes": [
+          "ttmp2"
+        ],
+        "successors": [],
+        "original_source_line": 337,
+        "proposed_source_line": 344
+      }
+    ],
+    "conservative_paths": [
+      [
+        108,
+        116,
+        120,
+        124,
+        128,
+        136,
+        140,
+        144,
+        152,
+        160,
+        168
+      ],
+      [
+        108,
+        116,
+        120,
+        124,
+        128,
+        136,
+        140,
+        168
+      ],
+      [
+        108,
+        116,
+        120,
+        124,
+        136,
+        140,
+        144,
+        152,
+        160,
+        168
+      ],
+      [
+        108,
+        116,
+        120,
+        124,
+        136,
+        140,
+        168
+      ]
+    ],
+    "all_paths_overwrite_both_differences_before_read": true
+  },
+  "corrected": {
+    "prefix_start": 124,
+    "common_ttmp2_overwrite": 184,
+    "unconditional_ttmp15_overwrite": 132,
+    "complete_handler_instruction_count": 1064,
+    "prefix": [
+      {
+        "pc": 124,
+        "instruction": "s_and_not1_b32 ttmp12, ttmp12, 0x8c00",
+        "hex": "78ff7891008c0000",
+        "size": 8,
+        "ttmp_reads": [
+          "ttmp12"
+        ],
+        "ttmp_writes": [
+          "ttmp12"
+        ],
+        "successors": [
+          132
+        ],
+        "original_source_line": 291,
+        "proposed_source_line": 298
+      },
+      {
+        "pc": 132,
+        "instruction": "s_getreg_b32 ttmp15, hwreg(HW_REG_WAVE_EXCP_FLAG_PRIV)",
+        "hex": "11f8fbb8",
+        "size": 4,
+        "ttmp_reads": [],
+        "ttmp_writes": [
+          "ttmp15"
+        ],
+        "successors": [
+          136
+        ],
+        "original_source_line": 293,
+        "proposed_source_line": 300
+      },
+      {
+        "pc": 136,
+        "instruction": "s_bitcmp0_b32 ttmp15, 7",
+        "hex": "7b870cbf",
+        "size": 4,
+        "ttmp_reads": [
+          "ttmp15"
+        ],
+        "ttmp_writes": [],
+        "successors": [
+          140
+        ],
+        "original_source_line": 309,
+        "proposed_source_line": 316
+      },
+      {
+        "pc": 140,
+        "instruction": "s_cbranch_scc1 L_0088",
+        "hex": "0200a2bf",
+        "size": 4,
+        "ttmp_reads": [],
+        "ttmp_writes": [],
+        "successors": [
+          144,
+          152
+        ],
+        "original_source_line": 310,
+        "proposed_source_line": 317
+      },
+      {
+        "pc": 144,
+        "instruction": "s_and_not1_b32 ttmp1, ttmp1, 0xf0000000",
+        "hex": "6dff6d91000000f0",
+        "size": 8,
+        "ttmp_reads": [
+          "ttmp1"
+        ],
+        "ttmp_writes": [
+          "ttmp1"
+        ],
+        "successors": [
+          152
+        ],
+        "original_source_line": 311,
+        "proposed_source_line": 318
+      },
+      {
+        "pc": 152,
+        "instruction": "s_bitcmp1_b32 ttmp15, 5",
+        "hex": "7b850dbf",
+        "size": 4,
+        "ttmp_reads": [
+          "ttmp15"
+        ],
+        "ttmp_writes": [],
+        "successors": [
+          156
+        ],
+        "original_source_line": 329,
+        "proposed_source_line": 336
+      },
+      {
+        "pc": 156,
+        "instruction": "s_cbranch_scc0 L_00a8",
+        "hex": "0600a1bf",
+        "size": 4,
+        "ttmp_reads": [],
+        "ttmp_writes": [],
+        "successors": [
+          160,
+          184
+        ],
+        "original_source_line": 330,
+        "proposed_source_line": 337
+      },
+      {
+        "pc": 160,
+        "instruction": "s_and_not1_b32 ttmp15, ttmp15, 0x480",
+        "hex": "7bff7b9180040000",
+        "size": 8,
+        "ttmp_reads": [
+          "ttmp15"
+        ],
+        "ttmp_writes": [
+          "ttmp15"
+        ],
+        "successors": [
+          168
+        ],
+        "original_source_line": 331,
+        "proposed_source_line": 338
+      },
+      {
+        "pc": 168,
+        "instruction": "s_setreg_imm32_b32 hwreg(HW_REG_WAVE_EXCP_FLAG_PRIV, 7, 1), 0",
+        "hex": "d10180b900000000",
+        "size": 8,
+        "ttmp_reads": [],
+        "ttmp_writes": [],
+        "successors": [
+          176
+        ],
+        "original_source_line": 333,
+        "proposed_source_line": 340
+      },
+      {
+        "pc": 176,
+        "instruction": "s_setreg_imm32_b32 hwreg(HW_REG_WAVE_EXCP_FLAG_PRIV, 10, 1), 0",
+        "hex": "910280b900000000",
+        "size": 8,
+        "ttmp_reads": [],
+        "ttmp_writes": [],
+        "successors": [
+          184
+        ],
+        "original_source_line": 334,
+        "proposed_source_line": 341
+      },
+      {
+        "pc": 184,
+        "instruction": "s_and_b32 ttmp2, ttmp12, 0x4000",
+        "hex": "78ff6e8b00400000",
+        "size": 8,
+        "ttmp_reads": [
+          "ttmp12"
+        ],
+        "ttmp_writes": [
+          "ttmp2"
+        ],
+        "successors": [],
+        "original_source_line": 337,
+        "proposed_source_line": 344
+      }
+    ],
+    "conservative_paths": [
+      [
+        124,
+        132,
+        136,
+        140,
+        144,
+        152,
+        156,
+        160,
+        168,
+        176,
+        184
+      ],
+      [
+        124,
+        132,
+        136,
+        140,
+        144,
+        152,
+        156,
+        184
+      ],
+      [
+        124,
+        132,
+        136,
+        140,
+        152,
+        156,
+        160,
+        168,
+        176,
+        184
+      ],
+      [
+        124,
+        132,
+        136,
+        140,
+        152,
+        156,
+        184
+      ]
+    ],
+    "all_paths_overwrite_both_differences_before_read": true
+  },
+  "live_out": {
+    "ttmp2": {
+      "original": "0",
+      "corrected": "k = original MODE[17:12]",
+      "result": "Overwritten from ttmp12 HALT bit before any use on all four prefix paths"
+    },
+    "ttmp3": {
+      "original": "0",
+      "corrected": "0",
+      "result": "No live-out difference"
+    },
+    "ttmp14": {
+      "original": "Incoming EXEC_LO",
+      "corrected": "Incoming EXEC_LO",
+      "result": "No live-out difference"
+    },
+    "ttmp15": {
+      "original": "Lane 0 of SRC0-selected encoded v1",
+      "corrected": "Physical v1 lane 0",
+      "result": "Unconditionally overwritten with EXCP_FLAG_PRIV before any use or following branch"
+    }
+  },
+  "source_coordinates": {
+    "MODE_field_shift_and_size": {
+      "original": [
+        142,
+        143
+      ],
+      "proposed": [
+        142,
+        143
+      ]
+    },
+    "saved_STATE_PRIV_including_original_SCC": {
+      "original": [
+        246
+      ],
+      "proposed": [
+        246
+      ]
+    },
+    "prologue": {
+      "original": [
+        261,
+        271
+      ],
+      "proposed": [
+        261,
+        278
+      ]
+    },
+    "scratch_convention_comment": {
+      "original": [
+        401,
+        402
+      ],
+      "proposed": [
+        408,
+        409
+      ]
+    },
+    "second_level_transfer": {
+      "original": [
+        467
+      ],
+      "proposed": [
+        474
+      ]
+    },
+    "return_EXECZ_and_VCCZ_refresh": {
+      "original": [
+        505,
+        506
+      ],
+      "proposed": [
+        512,
+        513
+      ]
+    },
+    "return_saved_SCC_restore": {
+      "original": [
+        510,
+        517,
+        518
+      ],
+      "proposed": [
+        517,
+        524,
+        525
+      ]
+    },
+    "CWSR_EXEC_copy_into_ttmp2_ttmp3": {
+      "original": [
+        543,
+        544
+      ],
+      "proposed": [
+        550,
+        551
+      ]
+    },
+    "CWSR_original_MODE_bank_capture_then_clear": {
+      "original": [
+        562,
+        566
+      ],
+      "proposed": [
+        569,
+        573
+      ]
+    }
+  },
+  "preserved_state": {
+    "SCC": "Prologue MOV/GETREG/SETREG and lane operations do not write SCC; V_SUB_NC_U32 does not write SCC. Current SCC and saved STATE_PRIV are equal at dispatch entry.",
+    "VCC": "No added instruction writes VCC; non-carry V_SUB_NC_U32 is required.",
+    "EXEC": "EXEC_LO is restored from ttmp14 before dispatch; EXEC_HI is not touched; WAVE32_ONLY applies.",
+    "MODE": "Only bits 17:12 are temporarily cleared and restored; SRC2 and other bits are untouched. Restored before later context-save bank capture."
+  },
+  "limitations": [
+    "Source/native sequential def-use proof; not a hardware hazard or timing proof.",
+    "Existing TTMP scratch ABI and normal ordered instruction execution are assumed. No new dependence on TTMP2 retaining zero survives this merge.",
+    "Asynchronous/reentrant observation of transient trap temporaries is not modeled; vendor trap ABI/hazard review remains necessary.",
+    "Original SP3 parser/assembler acceptance remains untested.",
+    "No claim that all training NaNs or residual corrected-driver STU1 behavior are resolved."
+  ],
+  "original_SP3_assembler_tested": false,
+  "GPU_actions": false,
+  "module_reads": false,
+  "module_rebuilds": false,
+  "frozen_fix_changed": false
+}

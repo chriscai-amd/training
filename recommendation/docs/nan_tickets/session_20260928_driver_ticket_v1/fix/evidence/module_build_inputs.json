@@ -1,0 +1,32 @@
+{
+  "installed": {
+    "path": "/lib/modules/6.14.0-37-generic/updates/dkms/amdgpu.ko.zst",
+    "bytes": 6164119,
+    "sha256": "dae133624fad0ae7bb7d95dd563edbc5218bcd0ba5ea1f5b44473093a0cc93d2"
+  },
+  "source_archive": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/installed_source.tar.gz",
+    "bytes": 60166465,
+    "sha256": "51df8cd5484c5ba48c7ecd16f082eb217039d4543437144c396ad98a6f5c7734"
+  },
+  "source_inventory": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/source_inventory_before.json",
+    "bytes": 853667,
+    "sha256": "401da7c4df750d8fc87b50e66da5355248634101c9911f4dfa0800ece0a88282"
+  },
+  "handler": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/corrected.bin",
+    "bytes": 5672,
+    "sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80"
+  },
+  "patch": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_bank_neutral_fix_feasibility_v1/proposed_non_wave_start_source_change_v2.diff",
+    "bytes": 1198,
+    "sha256": "0222b71a42debe904283b5c0d680a3259f969ae5c62e3feace042734868af8fe"
+  },
+  "builder": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/build.py",
+    "bytes": 5431,
+    "sha256": "d3191dc29dc0ba90dfecc2d9c9f05bcb8256e5675d48b316120005a812eeadbd"
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "status": "PASS_CURRENT_INSTALLED_BASELINE_AND_CWSR_ONLY_CANDIDATE_CPU_AUDIT",
+  "created_utc": "2026-09-23T00:18:12.164004+00:00",
+  "modules": {
+    "installed": {
+      "module": {
+        "path": "/lib/modules/6.14.0-37-generic/updates/dkms/amdgpu.ko.zst",
+        "bytes": 6164119,
+        "sha256": "dae133624fad0ae7bb7d95dd563edbc5218bcd0ba5ea1f5b44473093a0cc93d2"
+      },
+      "uncompressed_sha256": "5b6e4617fdf247ec8d395660c850e10f49a1c5706dea9d1b8598e71cdaa8c2b9",
+      "metadata": {
+        "version": "7.1.1.31300009",
+        "srcversion": "EADFD8EC13CF3E6B329194E",
+        "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+        "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+        "signer": "heliosr-1b114-c07-1 Secure Boot Module Signature key"
+      },
+      "handler": {
+        "bytes": 5656,
+        "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+      },
+      "handler_rodata_offset": 508096
+    },
+    "baseline": {
+      "module": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/baseline_amdgpu.stripped.ko",
+        "bytes": 40302360,
+        "sha256": "e5c21b237182a8f829e817a3ae382649b15c44ed81d78b50262998811faef84f"
+      },
+      "uncompressed_sha256": "e5c21b237182a8f829e817a3ae382649b15c44ed81d78b50262998811faef84f",
+      "metadata": {
+        "version": "7.1.1.31300009",
+        "srcversion": "EADFD8EC13CF3E6B329194E",
+        "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+        "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+        "signer": ""
+      },
+      "handler": {
+        "bytes": 5656,
+        "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+      },
+      "handler_rodata_offset": 508096
+    },
+    "candidate": {
+      "module": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/candidate_amdgpu.stripped.ko",
+        "bytes": 40302424,
+        "sha256": "78de19854e38e298f6418bddcfa39f44a797f811f0f4b9c585482f4c4dc2b2b4"
+      },
+      "uncompressed_sha256": "78de19854e38e298f6418bddcfa39f44a797f811f0f4b9c585482f4c4dc2b2b4",
+      "metadata": {
+        "version": "7.1.1.31300009",
+        "srcversion": "AD83C153B9701570F12964E",
+        "vermagic": "6.14.0-37-generic SMP preempt mod_unload modversions",
+        "depends": "drm_display_helper,amdkcl,amdttm,cec,amddrm_buddy,amd-sched,video,sunrpc,amddrm_suballoc_helper,amddrm_exec,drm_ttm_helper,i2c-algo-bit,amdxcp,amddrm_ttm_helper",
+        "signer": ""
+      },
+      "handler": {
+        "bytes": 5672,
+        "sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80"
+      },
+      "handler_rodata_offset": 508096
+    }
+  },
+  "strip_debug_preservation": {
+    "baseline": {
+      "unstripped": {
+        "path": "/dev/shm/mi450_current_cwsr_build_20260923/baseline_amdgpu.ko",
+        "bytes": 883217552,
+        "sha256": "65cd5e1ec72c1947b3821ca4910fd581c1f0acd3b20594fdbdf30dda73fcd61d"
+      },
+      "stripped": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/baseline_amdgpu.stripped.ko",
+        "bytes": 40302360,
+        "sha256": "e5c21b237182a8f829e817a3ae382649b15c44ed81d78b50262998811faef84f"
+      },
+      "allocated_sections_preserved": 53
+    },
+    "candidate": {
+      "unstripped": {
+        "path": "/dev/shm/mi450_current_cwsr_build_20260923/candidate_amdgpu.ko",
+        "bytes": 883217616,
+        "sha256": "3bf80c398130a2fd5b3b1f5c99bc0b6d8ff9e1a250e50f39f9ceb30f49b2ee44"
+      },
+      "stripped": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/candidate_amdgpu.stripped.ko",
+        "bytes": 40302424,
+        "sha256": "78de19854e38e298f6418bddcfa39f44a797f811f0f4b9c585482f4c4dc2b2b4"
+      },
+      "allocated_sections_preserved": 53
+    }
+  },
+  "comparisons": {
+    "installed_to_baseline": {
+      "allocated_sections_checked": 53,
+      "differences": [
+        {
+          "section": ".note.gnu.build-id",
+          "old_bytes": 36,
+          "new_bytes": 36,
+          "old_sha256": "6c23b0422d47a8170c1672683905c68c8d7398eceda878d94790721b10c71ea7",
+          "new_sha256": "a87754fda480edafb8f68d95f751edcbef681304e465510f61568cdac7a7fcb7",
+          "different_byte_count_in_overlap": 20
+        }
+      ],
+      "functions_checked": 37923,
+      "changed_functions": []
+    },
+    "baseline_to_candidate": {
+      "allocated_sections_checked": 53,
+      "differences": [
+        {
+          "section": ".note.gnu.build-id",
+          "old_bytes": 36,
+          "new_bytes": 36,
+          "old_sha256": "a87754fda480edafb8f68d95f751edcbef681304e465510f61568cdac7a7fcb7",
+          "new_sha256": "c54855c49002e16beeb044bb2f1e626ff841630dc91e34d2cb7aebe256c2f70d",
+          "different_byte_count_in_overlap": 20
+        },
+        {
+          "section": ".text",
+          "old_bytes": 10891207,
+          "new_bytes": 10891207,
+          "old_sha256": "797bc5599850a6046cda9ef441cb7282b4784bb22cdbfdfdd5a21031817c3b54",
+          "new_sha256": "06e73207e198d7899ef3bc1a5eb3c162b16a74f3a9a8901cdb8d2c149d0e80e7",
+          "different_byte_count_in_overlap": 2
+        },
+        {
+          "section": ".rodata",
+          "old_bytes": 1947696,
+          "new_bytes": 1947728,
+          "old_sha256": "c6d7ab8dfd1396532b2ff7ab69dedb384f6b6a6832d50cc548ca229e62039a71",
+          "new_sha256": "4c318d9974fbdfd7193bc373d4cf42adc632f907cd82e65a9bba3744e8dae1c2",
+          "different_byte_count_in_overlap": 528176
+        },
+        {
+          "section": ".modinfo",
+          "old_bytes": 50142,
+          "new_bytes": 50142,
+          "old_sha256": "c2938ae6b876a117b27594a5b1cdc0dd521a7223aca96534aef40f77dd66fa80",
+          "new_sha256": "33d9c5db5679246018635e5cd070f9292e86e42c4da9c838b20bfb760e2a6338",
+          "different_byte_count_in_overlap": 21
+        }
+      ],
+      "functions_checked": 37923,
+      "changed_functions": [
+        {
+          "name": "kgd2kfd_device_init",
+          "old_bytes": 3608,
+          "new_bytes": 3608,
+          "different_offsets": [
+            3442,
+            3448
+          ]
+        }
+      ]
+    }
+  },
+  "symbols": {
+    "installed_to_baseline": {
+      "all_normalized_symbols_equal": true,
+      "symbol_entries": 57598,
+      "unique_normalized_rows": 57564
+    },
+    "baseline_to_candidate": {
+      "all_normalized_symbols_equal": true,
+      "symbol_entries": 57598,
+      "unique_normalized_rows": 57564
+    }
+  },
+  "relocations": {
+    "installed_to_baseline": {
+      "all_normalized_relocations_equal": true,
+      "relocation_entries": 827454,
+      "canonical_sha256": "c44a8c0d285c53529705f9ac04283c160678d96c83ebb8156fdc6030e3d3f8e0"
+    },
+    "baseline_to_candidate": {
+      "all_normalized_relocations_equal": true,
+      "relocation_entries": 827454,
+      "canonical_sha256": "c44a8c0d285c53529705f9ac04283c160678d96c83ebb8156fdc6030e3d3f8e0"
+    }
+  },
+  "candidate_rodata": {
+    "handler_offset": 508096,
+    "handler_sizes": [
+      5656,
+      5672
+    ],
+    "rodata_growth": 32,
+    "extra_alignment_zero_bytes": 16,
+    "entire_rodata_verified": true
+  },
+  "candidate_text": "Entire .text differs at exactly two bytes in size-selection immediates of kgd2kfd_device_init; gfx12.1 size 5656 -> 5672, older size remains 3760.",
+  "candidate_modinfo_only_change": "srcversion",
+  "build_id_variation": "Only the 20-byte GNU build-id payload varies beyond explicitly verified candidate code/rodata/srcversion.",
+  "inputs": {
+    "BUILD.json": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/BUILD.json",
+      "bytes": 1918,
+      "sha256": "20ed05d43c68f903404d12bc93e988cf0c68aafbd4ede0a7f18852f72201244e"
+    },
+    "inputs.json": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/inputs.json",
+      "bytes": 1444,
+      "sha256": "ee03c0b78cc9d4e5087f065840e0d4df240d8515afb50249007c01eb9bd969ec"
+    },
+    "build.py": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/build.py",
+      "bytes": 5431,
+      "sha256": "d3191dc29dc0ba90dfecc2d9c9f05bcb8256e5675d48b316120005a812eeadbd"
+    },
+    "source_inventory_before.json": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_v1/source_inventory_before.json",
+      "bytes": 853667,
+      "sha256": "401da7c4df750d8fc87b50e66da5355248634101c9911f4dfa0800ece0a88282"
+    }
+  },
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_audit_v1/audit.py",
+    "bytes": 15937,
+    "sha256": "eec7497918fdd3a921835d6decb855d135e134cf05df8a7ffabe8a920d6b3d1f"
+  },
+  "reader": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_installed_trap_binding_peer_v1/certify_installed_trap_fixup_binding_v1.py",
+    "bytes": 11323,
+    "sha256": "31adfc5d94e1fbf4bd04ce321c961a74017a96557cf27ee592db7f480e23a026"
+  },
+  "runtime": "NOT_LOADED_BY_THIS_AUDIT",
+  "GPU_actions": false,
+  "driver_actions": false,
+  "limits": [
+    "This is file-byte and relocation equivalence, not GPU correctness or platform-health validation.",
+    "Installed signature is preserved; scratch rebuilt modules are unsigned. Module-loading policy is a separate gate.",
+    "Current firmware identity and actual first-load conditions require root environment audit."
+  ]
+}

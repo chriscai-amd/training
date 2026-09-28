@@ -1,0 +1,704 @@
+{
+  "status": "CURRENT_CORRECTED_DRIVER_STU1_DX_CONDITIONAL_BOUND_INCONSISTENCY",
+  "all_step_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_DX583_bound_audit_v1/BOUNDS.json",
+    "bytes": 93415,
+    "sha256": "3caaeb2952f64176c26374473aab443f2ee3d6c9cf19e354737d62ddd4a472af"
+  },
+  "independent_source_and_bound_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_NP1000_step583_bound_source_peer_v1/REVIEW.json",
+    "bytes": 7699,
+    "sha256": "8f55293e5be5cb5ddf15db724aa16c629f35ee7335df9f48d447114ab4bf8898"
+  },
+  "platform": {
+    "boot": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+    "driver_srcversion": "AD83C153B9701570F12964E",
+    "MES": "0x7b"
+  },
+  "conditional_output_checks": 18000,
+  "exact_real_arithmetic_bound_exceedances": [
+    {
+      "run": "no_prewarm",
+      "step": 583,
+      "layer": "model._dmp_wrapped_module.module._hstu_transducer._stu_module._stu_layers.1",
+      "before_scan": 30,
+      "after_scan": 31,
+      "output": "d_normed_x",
+      "shape": [
+        2369680,
+        512
+      ],
+      "factors": [
+        2048,
+        0.04833984375,
+        2.2165477275848389e-07
+      ],
+      "exact_real_arithmetic_triangle_bound": 2.1943822503089905e-05,
+      "observed_max_abs_finite": 0.0458984375,
+      "observed_to_bound_ratio": 2091.6336473983533,
+      "exceeds_exact_real_arithmetic_bound": true,
+      "exceeds_bound_with_declared_one_percent_allowance": true,
+      "exact_bound_fraction": "11781/536870912",
+      "exact_ratio_fraction": "24641536/11781",
+      "recorded_operand_summaries": {
+        "x": {
+          "name": "x",
+          "shape": [
+            2369680,
+            512
+          ],
+          "stride": [
+            512,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "source_device": "cuda:0",
+          "storage_offset": 0,
+          "requires_grad": false,
+          "numel": 1213276160,
+          "scanned": true,
+          "stream_id": 0,
+          "abs_threshold": 1000000.0,
+          "finite": true,
+          "extreme": false,
+          "min": -4.71875,
+          "max": 4.96875,
+          "max_abs_finite": 4.96875
+        },
+        "w": {
+          "name": "w",
+          "shape": [
+            512,
+            2048
+          ],
+          "stride": [
+            2048,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "source_device": "cuda:0",
+          "storage_offset": 0,
+          "requires_grad": true,
+          "numel": 1048576,
+          "scanned": true,
+          "stream_id": 0,
+          "abs_threshold": 1000000.0,
+          "finite": true,
+          "extreme": false,
+          "min": -0.04833984375,
+          "max": 0.04833984375,
+          "max_abs_finite": 0.04833984375
+        },
+        "dz": {
+          "name": "dz",
+          "shape": [
+            2369680,
+            2048
+          ],
+          "stride": [
+            2048,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "source_device": "cuda:0",
+          "storage_offset": 0,
+          "requires_grad": false,
+          "numel": 4853104640,
+          "scanned": true,
+          "stream_id": 0,
+          "abs_threshold": 1000000.0,
+          "finite": true,
+          "extreme": false,
+          "min": -1.816079020500183e-07,
+          "max": 2.2165477275848389e-07,
+          "max_abs_finite": 2.2165477275848389e-07
+        }
+      },
+      "recorded_output_summary": {
+        "name": "d_normed_x",
+        "shape": [
+          2369680,
+          512
+        ],
+        "stride": [
+          512,
+          1
+        ],
+        "dtype": "torch.bfloat16",
+        "source_device": "cuda:0",
+        "storage_offset": 0,
+        "requires_grad": false,
+        "numel": 1213276160,
+        "scanned": true,
+        "stream_id": 0,
+        "abs_threshold": 1000000.0,
+        "finite": true,
+        "extreme": false,
+        "min": -0.04248046875,
+        "max": 0.0458984375,
+        "max_abs_finite": 0.0458984375
+      }
+    }
+  ],
+  "declared_one_percent_allowance_exceedances": [
+    {
+      "run": "no_prewarm",
+      "step": 583,
+      "layer": "model._dmp_wrapped_module.module._hstu_transducer._stu_module._stu_layers.1",
+      "before_scan": 30,
+      "after_scan": 31,
+      "output": "d_normed_x",
+      "shape": [
+        2369680,
+        512
+      ],
+      "factors": [
+        2048,
+        0.04833984375,
+        2.2165477275848389e-07
+      ],
+      "exact_real_arithmetic_triangle_bound": 2.1943822503089905e-05,
+      "observed_max_abs_finite": 0.0458984375,
+      "observed_to_bound_ratio": 2091.6336473983533,
+      "exceeds_exact_real_arithmetic_bound": true,
+      "exceeds_bound_with_declared_one_percent_allowance": true,
+      "exact_bound_fraction": "11781/536870912",
+      "exact_ratio_fraction": "24641536/11781",
+      "recorded_operand_summaries": {
+        "x": {
+          "name": "x",
+          "shape": [
+            2369680,
+            512
+          ],
+          "stride": [
+            512,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "source_device": "cuda:0",
+          "storage_offset": 0,
+          "requires_grad": false,
+          "numel": 1213276160,
+          "scanned": true,
+          "stream_id": 0,
+          "abs_threshold": 1000000.0,
+          "finite": true,
+          "extreme": false,
+          "min": -4.71875,
+          "max": 4.96875,
+          "max_abs_finite": 4.96875
+        },
+        "w": {
+          "name": "w",
+          "shape": [
+            512,
+            2048
+          ],
+          "stride": [
+            2048,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "source_device": "cuda:0",
+          "storage_offset": 0,
+          "requires_grad": true,
+          "numel": 1048576,
+          "scanned": true,
+          "stream_id": 0,
+          "abs_threshold": 1000000.0,
+          "finite": true,
+          "extreme": false,
+          "min": -0.04833984375,
+          "max": 0.04833984375,
+          "max_abs_finite": 0.04833984375
+        },
+        "dz": {
+          "name": "dz",
+          "shape": [
+            2369680,
+            2048
+          ],
+          "stride": [
+            2048,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "source_device": "cuda:0",
+          "storage_offset": 0,
+          "requires_grad": false,
+          "numel": 4853104640,
+          "scanned": true,
+          "stream_id": 0,
+          "abs_threshold": 1000000.0,
+          "finite": true,
+          "extreme": false,
+          "min": -1.816079020500183e-07,
+          "max": 2.2165477275848389e-07,
+          "max_abs_finite": 2.2165477275848389e-07
+        }
+      },
+      "recorded_output_summary": {
+        "name": "d_normed_x",
+        "shape": [
+          2369680,
+          512
+        ],
+        "stride": [
+          512,
+          1
+        ],
+        "dtype": "torch.bfloat16",
+        "source_device": "cuda:0",
+        "storage_offset": 0,
+        "requires_grad": false,
+        "numel": 1213276160,
+        "scanned": true,
+        "stream_id": 0,
+        "abs_threshold": 1000000.0,
+        "finite": true,
+        "extreme": false,
+        "min": -0.04248046875,
+        "max": 0.0458984375,
+        "max_abs_finite": 0.0458984375
+      }
+    }
+  ],
+  "exact_step583_journal_events": {
+    "full_prewarm": {
+      "saved": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_DX583_bound_audit_v1/STEP583_full_prewarm_deferred_flush.json",
+        "bytes": 197148,
+        "sha256": "b1c20d4a37026c46a35553951ab2977981ee6c1e7672bcb5494580c8a448298f"
+      },
+      "original_line": 16325,
+      "original_byte_offset": 160653795,
+      "original_line_bytes": 197148,
+      "journal": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_E2E_runtime_v2/default1000_training/boundaries/events.jsonl",
+        "bytes": 275959513,
+        "sha256": "6a7a658ffce2bf31af4b1febbf70337efe71e9016a5fc1037294e88dbfb423bb"
+      }
+    },
+    "no_prewarm": {
+      "saved": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_DX583_bound_audit_v1/STEP583_no_prewarm_deferred_flush.json",
+        "bytes": 195884,
+        "sha256": "9ef9de39e7a167aae67538c04d4615e67a6c4736af79cca93768016ad688cad6"
+      },
+      "original_line": 16325,
+      "original_byte_offset": 160652606,
+      "original_line_bytes": 195884,
+      "journal": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_noprewarm1000_runtime_v1/noprewarm1000_training/boundaries/events.jsonl",
+        "bytes": 275956652,
+        "sha256": "28e975aed19ef19d7ee3e294f2e7c760584d183eaf4ff90762d301bb1fe5d9a1"
+      }
+    }
+  },
+  "geometry": {
+    "K": 2048,
+    "M": 2369680,
+    "N": 512,
+    "dx_dtype": "torch.bfloat16",
+    "dx_shape": [
+      2369680,
+      512
+    ],
+    "dz_bytes": 9706209280,
+    "dz_dtype": "torch.bfloat16",
+    "dz_elements": 4853104640,
+    "dz_shape": [
+      2369680,
+      2048
+    ],
+    "w_dtype": "torch.bfloat16",
+    "w_shape": [
+      512,
+      2048
+    ],
+    "x_dtype": "torch.bfloat16",
+    "x_shape": [
+      2369680,
+      512
+    ]
+  },
+  "numerical_result": {
+    "full_prewarm": {
+      "dx_exact_arithmetic_upper_bound": 2.1943822503089905e-05,
+      "dx_exact_bound_fraction": "11781/536870912",
+      "dx_observed_max_abs": 5.192123353481293e-08,
+      "dx_ratio_to_exact_bound": 0.0023660979543332484,
+      "dx_ratio_to_illustrative_bound": 0.0023566037815254018,
+      "exact_DB_upper_bound": 0.5252508819103241,
+      "exact_DW_upper_bound": 2.609840319491923,
+      "illustrative_FP32_accumulation_final_BF16_RN_bound": 2.2032228727565278e-05,
+      "illustrative_FP32_gamma_2047": 0.00012202559628460375,
+      "input_maxima": {
+        "dz": 2.2165477275848389e-07,
+        "w": 0.04833984375,
+        "x": 4.96875
+      },
+      "next_weighted_LN_input_extrema_identical_to_DX": true,
+      "observed_DB_max_abs": 2.518296241760254e-06,
+      "observed_DW_max_abs": 7.361173629760742e-06
+    },
+    "no_prewarm": {
+      "dx_exact_arithmetic_upper_bound": 2.1943822503089905e-05,
+      "dx_exact_bound_fraction": "11781/536870912",
+      "dx_observed_max_abs": 0.0458984375,
+      "dx_ratio_to_exact_bound": 2091.6336473983533,
+      "dx_ratio_to_illustrative_bound": 2083.2407863746844,
+      "exact_DB_upper_bound": 0.5252508819103241,
+      "exact_DW_upper_bound": 2.609840319491923,
+      "illustrative_FP32_accumulation_final_BF16_RN_bound": 2.2032228727565278e-05,
+      "illustrative_FP32_gamma_2047": 0.00012202559628460375,
+      "input_maxima": {
+        "dz": 2.2165477275848389e-07,
+        "w": 0.04833984375,
+        "x": 4.96875
+      },
+      "next_weighted_LN_input_extrema_identical_to_DX": true,
+      "observed_DB_max_abs": 2.518296241760254e-06,
+      "observed_DW_max_abs": 7.361173629760742e-06
+    }
+  },
+  "source_lineage": [
+    "Pinned preprocess backward allocates duvqk and splits du/dv/dq/dk into its storage, then attention and SiLU write those subviews.",
+    "The original triton_addmm_bwd receives x=normed_x,w=uvqk_weight,dz=duvqk.",
+    "Pinned function enqueues dy=sum(dz,dim0), dw=mm(x.T,dz), then dx=mm(dz,w.T); return tuple is dx,dw,dy.",
+    "Wrapper output map names the first return d_normed_x. There is no alpha, beta, bias or residual add in this DX formula.",
+    "Caller passes that first return directly as dy to triton_weighted_layer_norm_bwd; adjacent saved scan32 repeats the large DX extrema."
+  ],
+  "observation_timing": [
+    "For STU1 the capturing wrapper delegates to the generic deferred monitor because full pre/post backing snapshots target only STU2.",
+    "Generic monitor binds the original inputs, enqueues before reductions, calls the original function once, enqueues after reductions, and returns outputs.",
+    "Reductions run on each tensor device current autograd stream. With normal per-stream FIFO, before reductions precede the enqueued GEMMs and after reductions follow them.",
+    "record_stream protects allocation lifetime; it is not an immutability lock, cross-stream dependency, or certificate of values consumed by native GEMM.",
+    "Only small extrema tensors survive to the final stream-joined readback. STU1 original input/output storages are not independently snapshotted here.",
+    "Later writes on the same ordered stream should follow the after reduction. Cross-stream wild stores, broken dependencies or backend stream-contract violations can still affect input/output observations."
+  ],
+  "non_aliasing_limits": "Source torch.mm allocates an output, and expected semantics do not alias its inputs. STU1 saved scalar summaries do not certify physical non-overlap, input immutability or complete backing-byte identity. No pre/post-copy independence claim from STU2 transfers to STU1.",
+  "unresolved_alternatives": [
+    "Input mutation between its before reduction and native consumption (including overlapping writers or incorrect stream dependencies).",
+    "Wrong GEMM result or wrong/stale output content, including allocator/native implementation or lower-level fault.",
+    "Output mutation after GEMM but before its after reduction, especially an unordered writer.",
+    "Corrupted diagnostic reduction or endpoint storage. Adjacent output/input extrema and downstream magnification are supporting witnesses, not a raw-word oracle."
+  ],
+  "trigger_gap": "All values here are finite and below the frozen absolute threshold1e6; this conditional matrix-product violation is outside that trigger, explaining why NP1000 bounded completion did not save a raw payload.",
+  "limits": [
+    "These are conditional bounds on the recorded operand extrema, not an independently recomputed output or proof of operands consumed by the native kernel.",
+    "STU1 records deferred scalar scans of original operands and outputs. It has no retained before/after full operand snapshots or byte-continuity checks; only STU2 has the extra projection capture.",
+    "Per-stream ordering and retained references do not rule out cross-stream mutation, internal operand-delivery faults, output faults, or scalar-scan faults.",
+    "Exact-real-arithmetic triangle bounds are reported separately from a declared1percent allowance. No precise native accumulation algorithm or hardware error model is assumed.",
+    "The large step583 DX value precedes the later LayerNorm and selected additional Linear gradient spike; later LayerNorm sensitivity alone does not explain this earlier inconsistency.",
+    "No firmware, driver, compiler, BLAS or hardware culprit is assigned; this remains current corrected-driver/MES0x7b evidence."
+  ],
+  "RNG_loader_LR_review": {
+    "receipt": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_NP1000_rng_loader_lr_v1/REVIEW.json",
+      "bytes": 11893,
+      "sha256": "809f4f105525b18518f226bab808b97d729a54aa5de256ed63366fcc3c4693ff"
+    },
+    "initial_rng": {
+      "byte_identical": true,
+      "bytes_per_file": 14725,
+      "decoding": "Only byte identity and ZIP members inspected; no pickle/Torch deserialization.",
+      "diagnostic_installation_preserved_rng_in_both_contexts": true,
+      "prewarm_timing": "Full worker prewarm precedes diagnostic_worker; training seeds all RNGs before make_model, and reseeds Torch immediately before embedding DMP materialization.",
+      "sha256": "75f714edcc3194afae0f2f5314e3e8ec174a2125ea52afd7afa9644b703ec5ae",
+      "state_domains": [
+        "Python random",
+        "NumPy global RNG",
+        "Torch CPU default",
+        "all initialized CUDA default generators"
+      ],
+      "timing": "Cold global_step zero at loop wrapper entry, after model/optimizer setup; before diagnostic installation and original streaming loop."
+    },
+    "context": {
+      "difference_scope": "RUN_NAME and NAN_TRAINING_OPTIONS directory/save_finite_step.",
+      "differing_environment_keys": [
+        "NAN_TRAINING_OPTIONS",
+        "RUN_NAME"
+      ],
+      "gin_identical": true,
+      "seed": "1",
+      "source_sha256_maps_identical": true
+    },
+    "loader": {
+      "background_prefetch": "Two persistent worker pools; initial pools primed on the main thread, subsequent window iterators prepared by background threads.",
+      "configuration": {
+        "batch_size": 1024,
+        "double_buffer": true,
+        "history_length": 4086,
+        "history_strategy": "interleaved",
+        "min_history": 4086,
+        "num_workers": 4,
+        "persistent_loader": true,
+        "prefetch_factor": 8,
+        "rank": 0,
+        "split_salt": 0,
+        "streaming_shuffle_fraction": 0.0,
+        "streaming_shuffle_seed": 0,
+        "train_split_percentage": 1.0,
+        "world_size": 1
+      },
+      "matching_logged_window_records": 30,
+      "random_state_limit": "No explicit loader generator is passed; Triton output-dropout source draws a seed from default Torch CPU RNG during training. Per-invocation seeds and worker RNG state are not recorded. This is an unobserved-state limit, not evidence of a seed-order race.",
+      "recorded_input_identity": "Window ranges/counts and scalar geometry/extrema only. No first-batch full-byte digest or dataset backing-file digest is established by these receipts.",
+      "source_order": "window_indices uses ascending anchor indices; shuffle_fraction zero returns them unchanged; StreamingWindowSampler takes deterministic rank/world-size slice; loader shuffle=False, drop_last=True."
+    },
+    "loss_lr": {
+      "differing_sampled_losses": 20,
+      "matched_sampled_lrs": true,
+      "maximum_sampled_loss_absolute_delta": {
+        "absolute_delta": 7.152557373046875e-06,
+        "common_lr": 3.745833333333333e-08,
+        "delta": -7.152557373046875e-06,
+        "full_prewarm": 0.13762538135051727,
+        "no_prewarm": 0.13761822879314423,
+        "step": 900
+      },
+      "sampled_steps": [
+        50,
+        100,
+        150,
+        200,
+        250,
+        300,
+        350,
+        400,
+        450,
+        500,
+        550,
+        600,
+        650,
+        700,
+        750,
+        800,
+        850,
+        900,
+        950,
+        1000
+      ],
+      "semantic_limit": "Each log is the current forward auxiliary loss at its cadence, emitted after optimizer/update; it is not recomputed with post-update weights or an average of intervening 50 steps.",
+      "source_schedule": "LR at 1-based step n is 1e-6 * (n-1)/24000 for both dense and fused sparse groups; configured start LR zero."
+    },
+    "post_update": {
+      "attribution": "Step9 parameter extrema show drift persisted across earlier updates; scalar records do not identify the first changed weight word or isolate one gradient as its cause.",
+      "earliest_before_forward_parameter_groups": [
+        {
+          "different_steps": 975,
+          "first_step": 9,
+          "identity": {
+            "kind": "linear_stage",
+            "layer": null,
+            "name": "parameters/_hstu_transducer._stu_module._stu_layers.1._output_norm_bias",
+            "operation": null,
+            "phase": null,
+            "scan": 0,
+            "stage": "before_forward",
+            "summary_ordinal": 19
+          },
+          "last_step": 1000,
+          "maximum_absolute_delta": 8.803135642665438e-08,
+          "scalar_field_differences": 2908
+        },
+        {
+          "different_steps": 990,
+          "first_step": 9,
+          "identity": {
+            "kind": "linear_stage",
+            "layer": null,
+            "name": "parameters/_hstu_transducer._stu_module._stu_layers.2._uvqk_beta",
+            "operation": null,
+            "phase": null,
+            "scan": 0,
+            "stage": "before_forward",
+            "summary_ordinal": 21
+          },
+          "last_step": 1000,
+          "maximum_absolute_delta": 5.150423021405004e-08,
+          "scalar_field_differences": 2959
+        },
+        {
+          "different_steps": 992,
+          "first_step": 9,
+          "identity": {
+            "kind": "linear_stage",
+            "layer": null,
+            "name": "parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.1.bias",
+            "operation": null,
+            "phase": null,
+            "scan": 0,
+            "stage": "before_forward",
+            "summary_ordinal": 32
+          },
+          "last_step": 1000,
+          "maximum_absolute_delta": 1.3295516509970184e-07,
+          "scalar_field_differences": 2973
+        },
+        {
+          "different_steps": 992,
+          "first_step": 9,
+          "identity": {
+            "kind": "linear_stage",
+            "layer": null,
+            "name": "parameters/_hstu_transducer._input_preprocessor._content_embedding_mlp.3.bias",
+            "operation": null,
+            "phase": null,
+            "scan": 0,
+            "stage": "before_forward",
+            "summary_ordinal": 36
+          },
+          "last_step": 1000,
+          "maximum_absolute_delta": 6.241998562472872e-08,
+          "scalar_field_differences": 2972
+        },
+        {
+          "different_steps": 992,
+          "first_step": 9,
+          "identity": {
+            "kind": "linear_stage",
+            "layer": null,
+            "name": "parameters/_hstu_transducer._input_preprocessor._additional_embedding_mlp.3.bias",
+            "operation": null,
+            "phase": null,
+            "scan": 0,
+            "stage": "before_forward",
+            "summary_ordinal": 44
+          },
+          "last_step": 1000,
+          "maximum_absolute_delta": 6.241998562472872e-08,
+          "scalar_field_differences": 2972
+        },
+        {
+          "different_steps": 992,
+          "first_step": 9,
+          "identity": {
+            "kind": "linear_stage",
+            "layer": null,
+            "name": "parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.1.bias",
+            "operation": null,
+            "phase": null,
+            "scan": 0,
+            "stage": "before_forward",
+            "summary_ordinal": 50
+          },
+          "last_step": 1000,
+          "maximum_absolute_delta": 7.11052052793093e-08,
+          "scalar_field_differences": 2971
+        },
+        {
+          "different_steps": 992,
+          "first_step": 9,
+          "identity": {
+            "kind": "linear_stage",
+            "layer": null,
+            "name": "parameters/_hstu_transducer._input_preprocessor._action_embedding_mlp.3.bias",
+            "operation": null,
+            "phase": null,
+            "scan": 0,
+            "stage": "before_forward",
+            "summary_ordinal": 54
+          },
+          "last_step": 1000,
+          "maximum_absolute_delta": 6.241998562472872e-08,
+          "scalar_field_differences": 2972
+        },
+        {
+          "different_steps": 992,
+          "first_step": 9,
+          "identity": {
+            "kind": "linear_stage",
+            "layer": null,
+            "name": "parameters/_item_embedding_mlp.1.bias",
+            "operation": null,
+            "phase": null,
+            "scan": 0,
+            "stage": "before_forward",
+            "summary_ordinal": 64
+          },
+          "last_step": 1000,
+          "maximum_absolute_delta": 1.1417637324484531e-07,
+          "scalar_field_differences": 2972
+        }
+      ],
+      "earliest_recorded_parameter_extrema_divergence_step": 9,
+      "timestamp_parameter_extrema_divergence_groups": [],
+      "timing": "Dense gradient summaries are before clipping/explicit optimizer; deferred optimizer proxy calls original.step without post-optimizer tensor scans. Next before_forward summaries expose later parameter extrema only.",
+      "zero_lr_limit": "Step1 configured LR is zero; this does not establish unchanged optimizer moments or full state. No optimizer-moment tensor identity was saved."
+    },
+    "limits": [
+      "Same corrected-driver/MES0x7b boot; no isolated firmware effect or fresh-boot no-prewarm control.",
+      "Matching initial default RNG bytes and source/config do not prove complete model/input/state identity.",
+      "Matched scalar extrema do not prove tensor equality; all NaN/corruption attribution remains open.",
+      "Existing timestamp atomic audit is reused, not repeated. This receipt adds saved current-pair RNG/loader/loss/LR joins."
+    ]
+  },
+  "next_step": "User-paused. Reviewed witnessv2 and integration/source request retained; actual binding/release and fresh1000-step GPU execution remain after resumption.",
+  "GPU_actions": false,
+  "original_journal_no_alarm_verdict_retained": true,
+  "original_failing_STU1_raw_available": false,
+  "firmware_cause_assigned": false,
+  "saved_timing_correlation": {
+    "receipt": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_DX583_timing_v1/CORRELATION.json",
+      "bytes": 66450,
+      "sha256": "748485ad90125f9c8792ca6f4619023f7d661603f3532716d69cb861aea4ff23"
+    },
+    "nominal_scan30_to_flush_boot_s": [
+      18820.957597359,
+      18822.867243605
+    ],
+    "nearest_preceding_restore_seconds_before_scan30": 1.14306936,
+    "next_eviction_seconds_after_flush": 5.394766395,
+    "nominal_helper_or_complete_MC60_overlap": false,
+    "limits": [
+      "No local realtime/boot bracket within step583; endpoint clock-hull assumption required.",
+      "Host enqueue interval is not GPU execution timing; no CWSR causation or exclusion follows.",
+      "All47 unmatched candidates are retained old early-boot BERT/MCA records; no parser policy change."
+    ]
+  },
+  "additional_saved_scalar_pattern": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_DX583_scalar_pattern_v1/PATTERN.json",
+    "bytes": 12548,
+    "sha256": "5ed600ab866483c2b8b9df84430360735f45c39e16f1c812ffddfbce1979edb6"
+  },
+  "reference_capacity_preflight": {
+    "review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_reference_capacity_v1/CAPACITY.json",
+      "bytes": 1235,
+      "sha256": "3ebaadc50449736ace17f2845ded0e6faa1835e488d1bba8b89147adc12434d3"
+    },
+    "static_VRAM": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_reference_capacity_v1/VRAM_TOTAL.json",
+      "bytes": 336,
+      "sha256": "f731c70c64c9a0fa7c63f1e0d4fc5f2fab8855d5bb3e5d9b8e56f6ad50cb9e3c"
+    },
+    "old16GiB_would_reject_steps": [
+      720,
+      721
+    ],
+    "proposed_cap_bytes": 25769803776,
+    "small_artifact_caps_unchanged": true,
+    "reviewed_cap_bytes": 25769803776,
+    "reviewed_source": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_witness_source_v2/SOURCE.json",
+      "bytes": 10058,
+      "sha256": "f36cb61779855564eb6a447566fa557d2d0ad7e2ab6a7734f6b62c6668485a42"
+    },
+    "independent_review": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_STU1_postback_source_peer_v2/REVIEW.json",
+      "bytes": 14024,
+      "sha256": "70f4a0b2868f30595908d606564a7abac664655b1584ed66eea05d2a062a0cb2"
+    },
+    "status": "SOURCE_V2_CAP_REVIEW_COMPLETE_NO_TRAINING_RUNTIME"
+  },
+  "updated_utc": "2026-09-23T06:56:43.317589+00:00",
+  "witness_preparation": {
+    "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_STU1_witness_preparation.json",
+    "bytes": 11864,
+    "sha256": "711b06a474c5dbe263ac6995ec13934cd7d601f10016515b9e7fc9667167f2e6"
+  }
+}

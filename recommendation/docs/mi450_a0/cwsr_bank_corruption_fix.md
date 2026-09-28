@@ -27,7 +27,7 @@ See the [current A0 result and limits](mi450_a0.md#current-status),
 [frozen driver ticket and portable reproducer](../nan_tickets/session_20260928_driver_ticket_v1/TICKET.md).
 The historical step-583 scalar inconsistency, absent original trap timeline,
 platform-health caveats and unachieved AUC target remain explicit limits.
-The [prior platform and experiment narrative](history_20260923_cwsr_status.md)
+The [prior platform and experiment narrative](../nan_tickets/history/history_20260923_cwsr_status.md)
 is preserved as historical evidence; it does not describe the current state.
 
 ## Evidence identifying the defect

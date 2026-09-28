@@ -1,0 +1,13 @@
+{
+  "process_receipt": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/producer_process.json",
+    "bytes": 8385,
+    "sha256": "f2cfc04dda05559c8150a2a043b92565b9085545ef04444899ccce8049af77d4"
+  },
+  "liveness": {
+    "pid": 1793,
+    "start_ticks": 20016921,
+    "same_process_alive": false,
+    "disposition": "ABSENT"
+  }
+}

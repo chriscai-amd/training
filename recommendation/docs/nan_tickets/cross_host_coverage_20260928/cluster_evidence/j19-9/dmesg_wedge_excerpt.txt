@@ -1,0 +1,189 @@
+2485:[Thu Sep 24 17:16:51 2026] Setting dangerous option halt_if_hws_hang - tainting kernel
+2486:[Thu Sep 24 17:16:51 2026] Setting dangerous option gpu_recovery - tainting kernel
+...
+
+[Sat Sep 26 20:57:30 2026] workqueue: svm_range_restore_work [amdgpu] hogged CPU for >10000us 35 times, consider switching to WQ_UNBOUND
+[Sat Sep 26 20:57:47 2026] amdgpu 0004:01:00.0: MES(0, 0) failed to respond to msg=INVALIDATE_TLBS
+[Sat Sep 26 20:57:47 2026] amdgpu 0004:01:00.0: MES(0, 0) failed to respond to msg=INVALIDATE_TLBS
+[Sat Sep 26 20:57:47 2026] amdgpu 0004:01:00.0: MES(0, 0) failed to respond to msg=INVALIDATE_TLBS
+[Sat Sep 26 20:57:47 2026] amdgpu 0004:01:00.0: MES(0, 0) failed to respond to msg=INVALIDATE_TLBS
+[Sat Sep 26 20:58:04 2026] workqueue: mce_gen_pool_process hogged CPU for >10000us 11 times, consider switching to WQ_UNBOUND
+
+[Sat Sep 26 21:00:55 2026] amdgpu 0004:01:00.0: MES(0, 0) failed to respond to msg=REMOVE_QUEUE
+
+[Sat Sep 26 21:04:08 2026] INFO: task grpcpp_sync_ser:2834868 blocked for more than 122 seconds.
+[Sat Sep 26 21:04:08 2026]       Tainted: G     U  W  OE      6.14.0-37-generic #37~24.04.1-Ubuntu
+[Sat Sep 26 21:04:08 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Sep 26 21:04:08 2026] task:grpcpp_sync_ser state:D stack:0     pid:2834868 tgid:3536539 ppid:3536526 task_flags:0x400040 flags:0x00004006
+[Sat Sep 26 21:04:08 2026] Call Trace:
+[Sat Sep 26 21:04:08 2026]  <TASK>
+[Sat Sep 26 21:04:08 2026]  __schedule+0x2cf/0x640
+[Sat Sep 26 21:04:08 2026]  schedule+0x29/0xd0
+[Sat Sep 26 21:04:08 2026]  schedule_timeout+0xfb/0x110
+[Sat Sep 26 21:04:08 2026]  __wait_for_common+0x91/0x190
+[Sat Sep 26 21:04:08 2026]  ? __pfx_schedule_timeout+0x10/0x10
+[Sat Sep 26 21:04:08 2026]  wait_for_completion+0x24/0x40
+[Sat Sep 26 21:04:08 2026]  __flush_work+0x86/0xe0
+[Sat Sep 26 21:04:08 2026]  ? __pfx_wq_barrier_func+0x10/0x10
+[Sat Sep 26 21:04:08 2026]  flush_work+0x1c/0x30
+[Sat Sep 26 21:04:08 2026]  kfd_procfs_show+0xcc/0x170 [amdgpu]
+[Sat Sep 26 21:04:08 2026]  ? __pfx_kfd_sdma_activity_worker+0x10/0x10 [amdgpu]
+[Sat Sep 26 21:04:08 2026]  sysfs_kf_seq_show+0xa4/0x120
+[Sat Sep 26 21:04:08 2026]  kernfs_seq_show+0x24/0x40
+[Sat Sep 26 21:04:08 2026]  seq_read_iter+0x12c/0x4b0
+[Sat Sep 26 21:04:08 2026]  ? security_file_permission+0x36/0x60
+[Sat Sep 26 21:04:08 2026]  kernfs_fop_read_iter+0x31/0x40
+[Sat Sep 26 21:04:08 2026]  vfs_read+0x253/0x380
+[Sat Sep 26 21:04:08 2026]  ksys_read+0x72/0xf0
+[Sat Sep 26 21:04:08 2026]  __x64_sys_read+0x19/0x30
+[Sat Sep 26 21:04:08 2026]  x64_sys_call+0x1bd1/0x2650
+[Sat Sep 26 21:04:08 2026]  do_syscall_64+0x7e/0x170
+[Sat Sep 26 21:04:08 2026]  ? do_filp_open+0xd4/0x1a0
+[Sat Sep 26 21:04:08 2026]  ? __pfx_kfree_link+0x10/0x10
+[Sat Sep 26 21:04:08 2026]  ? putname+0x60/0x80
+[Sat Sep 26 21:04:08 2026]  ? do_sys_openat2+0x9f/0xe0
+[Sat Sep 26 21:04:08 2026]  ? arch_exit_to_user_mode_prepare.isra.0+0x22/0x120
+[Sat Sep 26 21:04:08 2026]  ? syscall_exit_to_user_mode+0x38/0x1d0
+[Sat Sep 26 21:04:08 2026]  ? do_syscall_64+0x8a/0x170
+[Sat Sep 26 21:04:08 2026]  ? syscall_exit_to_user_mode+0x38/0x1d0
+[Sat Sep 26 21:04:08 2026]  ? do_syscall_64+0x8a/0x170
+[Sat Sep 26 21:04:08 2026]  ? arch_exit_to_user_mode_prepare.isra.0+0x22/0x120
+[Sat Sep 26 21:04:08 2026]  ? syscall_exit_to_user_mode+0x38/0x1d0
+[Sat Sep 26 21:04:08 2026]  ? do_syscall_64+0x8a/0x170
+[Sat Sep 26 21:04:08 2026]  ? do_syscall_64+0x8a/0x170
+[Sat Sep 26 21:04:08 2026]  ? do_syscall_64+0x8a/0x170
+[Sat Sep 26 21:04:08 2026]  ? sysvec_apic_timer_interrupt+0x57/0xc0
+[Sat Sep 26 21:04:08 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Sep 26 21:04:08 2026] RIP: 0033:0x77c1ae5b644c
+[Sat Sep 26 21:04:08 2026] RSP: 002b:000077c1a4fe87b0 EFLAGS: 00000246 ORIG_RAX: 0000000000000000
+[Sat Sep 26 21:04:08 2026] RAX: ffffffffffffffda RBX: 0000000000001fff RCX: 000077c1ae5b644c
+[Sat Sep 26 21:04:08 2026] RDX: 0000000000001fff RSI: 000077c1740425e0 RDI: 0000000000000029
+[Sat Sep 26 21:04:08 2026] RBP: 000077c1740425e0 R08: 0000000000000000 R09: 0000000000000077
+[Sat Sep 26 21:04:08 2026] R10: 000000000000006b R11: 0000000000000246 R12: 0000000000001fff
+[Sat Sep 26 21:04:08 2026] R13: 000077c1a4fe8990 R14: 000077c1a4fe8cb0 R15: 000077c1a4fe8928
+[Sat Sep 26 21:04:08 2026]  </TASK>
+[Sat Sep 26 21:04:08 2026] INFO: task kworker/42:3:887755 blocked for more than 122 seconds.
+[Sat Sep 26 21:04:08 2026]       Tainted: G     U  W  OE      6.14.0-37-generic #37~24.04.1-Ubuntu
+[Sat Sep 26 21:04:09 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Sep 26 21:04:09 2026] task:kworker/42:3    state:D stack:0     pid:887755 tgid:887755 ppid:2      task_flags:0x4208060 flags:0x00004000
+[Sat Sep 26 21:04:09 2026] Workqueue: events_freezable svm_range_restore_work [amdgpu]
+[Sat Sep 26 21:04:09 2026] Call Trace:
+[Sat Sep 26 21:04:09 2026]  <TASK>
+[Sat Sep 26 21:04:09 2026]  __schedule+0x2cf/0x640
+[Sat Sep 26 21:04:09 2026]  schedule+0x29/0xd0
+[Sat Sep 26 21:04:09 2026]  schedule_preempt_disabled+0x15/0x30
+[Sat Sep 26 21:04:09 2026]  __mutex_lock.constprop.0+0x48d/0x7b0
+[Sat Sep 26 21:04:09 2026]  __mutex_lock_slowpath+0x13/0x20
+[Sat Sep 26 21:04:09 2026]  mutex_lock+0x3b/0x50
+[Sat Sep 26 21:04:09 2026]  restore_process_queues_cpsch+0x41/0x2b0 [amdgpu]
+[Sat Sep 26 21:04:09 2026]  kfd_process_restore_queues+0x77/0xf0 [amdgpu]
+[Sat Sep 26 21:04:09 2026]  kgd2kfd_resume_mm+0x21/0x50 [amdgpu]
+[Sat Sep 26 21:04:09 2026]  svm_range_restore_work+0x23a/0x360 [amdgpu]
+[Sat Sep 26 21:04:09 2026]  process_one_work+0x178/0x3d0
+[Sat Sep 26 21:04:09 2026]  worker_thread+0x2de/0x410
+[Sat Sep 26 21:04:09 2026]  ? __pfx_worker_thread+0x10/0x10
+[Sat Sep 26 21:04:09 2026]  kthread+0xfb/0x230
+[Sat Sep 26 21:04:09 2026]  ? __pfx_kthread+0x10/0x10
+[Sat Sep 26 21:04:09 2026]  ret_from_fork+0x44/0x70
+[Sat Sep 26 21:04:09 2026]  ? __pfx_kthread+0x10/0x10
+[Sat Sep 26 21:04:09 2026]  ret_from_fork_asm+0x1a/0x30
+[Sat Sep 26 21:04:09 2026]  </TASK>
+[Sat Sep 26 21:04:09 2026] INFO: task kworker/78:0:2745411 blocked for more than 122 seconds.
+[Sat Sep 26 21:04:09 2026]       Tainted: G     U  W  OE      6.14.0-37-generic #37~24.04.1-Ubuntu
+[Sat Sep 26 21:04:09 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Sep 26 21:04:09 2026] task:kworker/78:0    state:D stack:0     pid:2745411 tgid:2745411 ppid:2      task_flags:0x4208060 flags:0x00004000
+[Sat Sep 26 21:04:09 2026] Workqueue: events kfd_sdma_activity_worker [amdgpu]
+[Sat Sep 26 21:04:09 2026] Call Trace:
+[Sat Sep 26 21:04:09 2026]  <TASK>
+[Sat Sep 26 21:04:09 2026]  __schedule+0x2cf/0x640
+[Sat Sep 26 21:04:09 2026]  schedule+0x29/0xd0
+[Sat Sep 26 21:04:09 2026]  schedule_preempt_disabled+0x15/0x30
+[Sat Sep 26 21:04:09 2026]  __mutex_lock.constprop.0+0x48d/0x7b0
+[Sat Sep 26 21:04:09 2026]  __mutex_lock_slowpath+0x13/0x20
+[Sat Sep 26 21:04:09 2026]  mutex_lock+0x3b/0x50
+[Sat Sep 26 21:04:09 2026]  kfd_sdma_activity_worker+0xa5/0x510 [amdgpu]
+[Sat Sep 26 21:04:09 2026]  process_one_work+0x178/0x3d0
+[Sat Sep 26 21:04:09 2026]  worker_thread+0x2de/0x410
+[Sat Sep 26 21:04:09 2026]  ? _raw_spin_lock_irqsave+0xe/0x20
+[Sat Sep 26 21:04:09 2026]  ? __pfx_worker_thread+0x10/0x10
+[Sat Sep 26 21:04:09 2026]  kthread+0xfb/0x230
+[Sat Sep 26 21:04:09 2026]  ? __pfx_kthread+0x10/0x10
+[Sat Sep 26 21:04:09 2026]  ret_from_fork+0x44/0x70
+[Sat Sep 26 21:04:09 2026]  ? __pfx_kthread+0x10/0x10
+[Sat Sep 26 21:04:09 2026]  ret_from_fork_asm+0x1a/0x30
+[Sat Sep 26 21:04:09 2026]  </TASK>
+[Sat Sep 26 21:06:11 2026] INFO: task grpcpp_sync_ser:2834868 blocked for more than 245 seconds.
+[Sat Sep 26 21:06:11 2026]       Tainted: G     U  W  OE      6.14.0-37-generic #37~24.04.1-Ubuntu
+[Sat Sep 26 21:06:11 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Sep 26 21:06:11 2026] task:grpcpp_sync_ser state:D stack:0     pid:2834868 tgid:3536539 ppid:3536526 task_flags:0x400040 flags:0x00004006
+[Sat Sep 26 21:06:11 2026] Call Trace:
+[Sat Sep 26 21:06:11 2026]  <TASK>
+[Sat Sep 26 21:06:11 2026]  __schedule+0x2cf/0x640
+[Sat Sep 26 21:06:11 2026]  schedule+0x29/0xd0
+[Sat Sep 26 21:06:11 2026]  schedule_timeout+0xfb/0x110
+[Sat Sep 26 21:06:11 2026]  __wait_for_common+0x91/0x190
+[Sat Sep 26 21:06:11 2026]  ? __pfx_schedule_timeout+0x10/0x10
+[Sat Sep 26 21:06:11 2026]  wait_for_completion+0x24/0x40
+[Sat Sep 26 21:06:11 2026]  __flush_work+0x86/0xe0
+[Sat Sep 26 21:06:11 2026]  ? __pfx_wq_barrier_func+0x10/0x10
+[Sat Sep 26 21:06:11 2026]  flush_work+0x1c/0x30
+[Sat Sep 26 21:06:11 2026]  kfd_procfs_show+0xcc/0x170 [amdgpu]
+[Sat Sep 26 21:06:11 2026]  ? __pfx_kfd_sdma_activity_worker+0x10/0x10 [amdgpu]
+[Sat Sep 26 21:06:11 2026]  sysfs_kf_seq_show+0xa4/0x120
+[Sat Sep 26 21:06:11 2026]  kernfs_seq_show+0x24/0x40
+[Sat Sep 26 21:06:11 2026]  seq_read_iter+0x12c/0x4b0
+[Sat Sep 26 21:06:11 2026]  ? security_file_permission+0x36/0x60
+[Sat Sep 26 21:06:11 2026]  kernfs_fop_read_iter+0x31/0x40
+[Sat Sep 26 21:06:11 2026]  vfs_read+0x253/0x380
+[Sat Sep 26 21:06:11 2026]  ksys_read+0x72/0xf0
+[Sat Sep 26 21:06:11 2026]  __x64_sys_read+0x19/0x30
+[Sat Sep 26 21:06:11 2026]  x64_sys_call+0x1bd1/0x2650
+[Sat Sep 26 21:06:11 2026]  do_syscall_64+0x7e/0x170
+[Sat Sep 26 21:06:11 2026]  ? do_filp_open+0xd4/0x1a0
+[Sat Sep 26 21:06:11 2026]  ? __pfx_kfree_link+0x10/0x10
+[Sat Sep 26 21:06:11 2026]  ? putname+0x60/0x80
+[Sat Sep 26 21:06:11 2026]  ? do_sys_openat2+0x9f/0xe0
+[Sat Sep 26 21:06:11 2026]  ? arch_exit_to_user_mode_prepare.isra.0+0x22/0x120
+[Sat Sep 26 21:06:11 2026]  ? syscall_exit_to_user_mode+0x38/0x1d0
+[Sat Sep 26 21:06:11 2026]  ? do_syscall_64+0x8a/0x170
+[Sat Sep 26 21:06:11 2026]  ? syscall_exit_to_user_mode+0x38/0x1d0
+[Sat Sep 26 21:06:11 2026]  ? do_syscall_64+0x8a/0x170
+[Sat Sep 26 21:06:11 2026]  ? arch_exit_to_user_mode_prepare.isra.0+0x22/0x120
+[Sat Sep 26 21:06:11 2026]  ? syscall_exit_to_user_mode+0x38/0x1d0
+[Sat Sep 26 21:06:11 2026]  ? do_syscall_64+0x8a/0x170
+[Sat Sep 26 21:06:11 2026]  ? do_syscall_64+0x8a/0x170
+[Sat Sep 26 21:06:11 2026]  ? do_syscall_64+0x8a/0x170
+[Sat Sep 26 21:06:11 2026]  ? sysvec_apic_timer_interrupt+0x57/0xc0
+[Sat Sep 26 21:06:11 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Sep 26 21:06:11 2026] RIP: 0033:0x77c1ae5b644c
+[Sat Sep 26 21:06:11 2026] RSP: 002b:000077c1a4fe87b0 EFLAGS: 00000246 ORIG_RAX: 0000000000000000
+[Sat Sep 26 21:06:11 2026] RAX: ffffffffffffffda RBX: 0000000000001fff RCX: 000077c1ae5b644c
+[Sat Sep 26 21:06:11 2026] RDX: 0000000000001fff RSI: 000077c1740425e0 RDI: 0000000000000029
+[Sat Sep 26 21:06:11 2026] RBP: 000077c1740425e0 R08: 0000000000000000 R09: 0000000000000077
+[Sat Sep 26 21:06:11 2026] R10: 000000000000006b R11: 0000000000000246 R12: 0000000000001fff
+[Sat Sep 26 21:06:11 2026] R13: 000077c1a4fe8990 R14: 000077c1a4fe8cb0 R15: 000077c1a4fe8928
+[Sat Sep 26 21:06:11 2026]  </TASK>
+[Sat Sep 26 21:06:11 2026] INFO: task kworker/42:3:887755 blocked for more than 245 seconds.
+[Sat Sep 26 21:06:11 2026]       Tainted: G     U  W  OE      6.14.0-37-generic #37~24.04.1-Ubuntu
+[Sat Sep 26 21:06:11 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Sep 26 21:06:11 2026] task:kworker/42:3    state:D stack:0     pid:887755 tgid:887755 ppid:2      task_flags:0x4208060 flags:0x00004000
+[Sat Sep 26 21:06:11 2026] Workqueue: events_freezable svm_range_restore_work [amdgpu]
+[Sat Sep 26 21:06:11 2026] Call Trace:
+[Sat Sep 26 21:06:11 2026]  <TASK>
+[Sat Sep 26 21:06:11 2026]  __schedule+0x2cf/0x640
+[Sat Sep 26 21:06:11 2026]  schedule+0x29/0xd0
+[Sat Sep 26 21:06:11 2026]  schedule_preempt_disabled+0x15/0x30
+[Sat Sep 26 21:06:11 2026]  __mutex_lock.constprop.0+0x48d/0x7b0
+[Sat Sep 26 21:06:11 2026]  __mutex_lock_slowpath+0x13/0x20
+[Sat Sep 26 21:06:11 2026]  mutex_lock+0x3b/0x50
+[Sat Sep 26 21:06:11 2026]  restore_process_queues_cpsch+0x41/0x2b0 [amdgpu]
+[Sat Sep 26 21:06:11 2026]  kfd_process_restore_queues+0x77/0xf0 [amdgpu]
+[Sat Sep 26 21:06:11 2026]  kgd2kfd_resume_mm+0x21/0x50 [amdgpu]
+[Sat Sep 26 21:06:11 2026]  svm_range_restore_work+0x23a/0x360 [amdgpu]
+[Sat Sep 26 21:06:11 2026]  process_one_work+0x178/0x3d0
+[Sat Sep 26 21:06:11 2026]  worker_thread+0x2de/0x410
+[Sat Sep 26 21:06:11 2026]  ? __pfx_worker_thread+0x10/0x10
+[Sat Sep 26 21:06:11 2026]  kthread+0xfb/0x230
+[Sat Sep 26 21:06:11 2026]  ? __pfx_kthread+0x10/0x10
+[Sat Sep 26 21:06:11 2026]  ret_from_fork+0x44/0x70
+[Sat Sep 26 21:06:11 2026]  ? __pfx_kthread+0x10/0x10

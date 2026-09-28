@@ -1,0 +1,18 @@
+{
+  "status": "ROOT_PORTABLE_SENTINEL_READY",
+  "controller": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/controller.py",
+    "bytes": 17706,
+    "sha256": "174500aeb6870f0c9adea5daa8f11ce5108b65880591017795cbba613a2c7013"
+  },
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/SOURCE.json",
+    "bytes": 1140,
+    "sha256": "14ea9d1ab30fd8bb60997c3ee6a5c4eda6bb3e8169228e3d5a77a55463d5fc2f"
+  },
+  "peer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/CONTROLLER_REVIEW.json",
+    "bytes": 8281,
+    "sha256": "4f8536be92cd99f7a4284fa2fc6f5097a3839622dd530e90637e5bed5ecd927b"
+  }
+}

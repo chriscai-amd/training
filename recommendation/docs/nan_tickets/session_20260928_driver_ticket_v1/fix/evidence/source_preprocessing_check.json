@@ -1,0 +1,92 @@
+{
+  "status": "PASS_UNAFFECTED_FAMILY_PREPROCESSING_IDENTICAL",
+  "receipt_recorded_utc": "2026-09-28T00:47:31.877149+00:00",
+  "execution_note": "Records the completed read-only cpp check from this task; no command was rerun to record this receipt. Full stdout was compared in memory; the outputs were not retained.",
+  "results": [
+    {
+      "family": "CHIP_GFX12",
+      "variant": "original",
+      "command": [
+        "cpp",
+        "-P",
+        "-DASIC_FAMILY=CHIP_GFX12",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/original/cwsr_trap_handler_gfx12.asm"
+      ],
+      "returncode": 0,
+      "input": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/original/cwsr_trap_handler_gfx12.asm",
+        "bytes": 69197,
+        "sha256": "5e0e339cb988120d99fbccf2869bfab29e0a143bd110ce6f00cfdc495d5bf69d"
+      },
+      "stdout": {
+        "bytes": 35875,
+        "sha256": "98d3a22e058061037e04e426627f6f0db56f8fa28527fb1778721e204259ecfe"
+      }
+    },
+    {
+      "family": "CHIP_GFX12",
+      "variant": "proposed",
+      "command": [
+        "cpp",
+        "-P",
+        "-DASIC_FAMILY=CHIP_GFX12",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/proposed/cwsr_trap_handler_gfx12.asm"
+      ],
+      "returncode": 0,
+      "input": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/proposed/cwsr_trap_handler_gfx12.asm",
+        "bytes": 69860,
+        "sha256": "a5df5bdf844e1f01cbb0012d94c627c3063a2dbafa43723b89506039afb12cae"
+      },
+      "stdout": {
+        "bytes": 35875,
+        "sha256": "98d3a22e058061037e04e426627f6f0db56f8fa28527fb1778721e204259ecfe"
+      }
+    },
+    {
+      "family": "CHIP_GC_12_0_3",
+      "variant": "original",
+      "command": [
+        "cpp",
+        "-P",
+        "-DASIC_FAMILY=CHIP_GC_12_0_3",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/original/cwsr_trap_handler_gfx12.asm"
+      ],
+      "returncode": 0,
+      "input": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/original/cwsr_trap_handler_gfx12.asm",
+        "bytes": 69197,
+        "sha256": "5e0e339cb988120d99fbccf2869bfab29e0a143bd110ce6f00cfdc495d5bf69d"
+      },
+      "stdout": {
+        "bytes": 44907,
+        "sha256": "3713c3a341523f0e763b7a9ccc62bbd75e1ed58b23e237a63fa7400ae1be24c4"
+      }
+    },
+    {
+      "family": "CHIP_GC_12_0_3",
+      "variant": "proposed",
+      "command": [
+        "cpp",
+        "-P",
+        "-DASIC_FAMILY=CHIP_GC_12_0_3",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/proposed/cwsr_trap_handler_gfx12.asm"
+      ],
+      "returncode": 0,
+      "input": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/proposed/cwsr_trap_handler_gfx12.asm",
+        "bytes": 69860,
+        "sha256": "a5df5bdf844e1f01cbb0012d94c627c3063a2dbafa43723b89506039afb12cae"
+      },
+      "stdout": {
+        "bytes": 45310,
+        "sha256": "4dc2677003026d6008f0b172ad8cbe25ad6d7de7cc43b29a97e2d46095bf8073"
+      }
+    }
+  ],
+  "CHIP_GFX12_preprocessed_source_byte_identical": true,
+  "CHIP_GC_12_0_3_preprocessed_source_changed": true,
+  "original_SP3_parser_or_assembler_tested": false,
+  "module_rebuilt": false,
+  "GPU_actions": false
+}

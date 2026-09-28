@@ -1,0 +1,22 @@
+/usr/sbin/grub-probe: warning: disk does not exist, so falling back to partition device /dev/nvme0n1p2.
+/usr/sbin/grub-probe: warning: disk does not exist, so falling back to partition device /dev/nvme0n1p2.
+/usr/sbin/grub-probe: warning: disk does not exist, so falling back to partition device /dev/nvme0n1p2.
+/usr/sbin/grub-probe: error: disk `hostdisk//dev/nvme0n1p2' not found.
+== verification
+installed: d224829e40dd759028f6ec36573ffedbdb79ee3aae215e014106517b8f23ea18  /var/lib/chcai-cwsrfix/candidate_amdgpu.ko
+expected:  d224829e40dd759028f6ec36573ffedbdb79ee3aae215e014106517b8f23ea18
+next_entry=chcai-cwsrfix-oneshot
+-rw-r--r-- 1 root root  882 Sep 25 20:29 /boot/grub/custom.cfg
+-rw-r--r-- 1 root root  552 Sep 25 20:29 /etc/systemd/system/chcai-cwsrfix-load.service
+lrwxrwxrwx 1 root root   46 Sep 25 20:29 /etc/systemd/system/multi-user.target.wants/chcai-cwsrfix-load.service -> /etc/systemd/system/chcai-cwsrfix-load.service
+
+/var/lib/chcai-cwsrfix:
+total 39372
+drwxr-xr-x  3 root root     4096 Sep 25 20:29 .
+drwxr-xr-x 53 root root     4096 Sep 25 20:29 ..
+-rw-r--r--  1 root root      936 Sep 25 20:29 README.txt
+-rw-r--r--  1 root root 40295376 Sep 25 20:29 candidate_amdgpu.ko
+-rwxr-xr-x  1 root root     1685 Sep 25 20:29 load.sh
+drwxr-xr-x  2 root root     4096 Sep 25 20:29 receipts
+one-shot linux line: /boot/vmlinuz-6.14.0-37-generic root=UUID=4c8a0bce-9d2d-46e7-b424-981fb6fb8c98 ro  panic=0 nowatchdog msr.allow_writes=on nokaslr amdgpu.noretry=1 pci=realloc=off modprobe.blacklist=device_dax,dax_hmem,amdgpu iommu=pt console=tty0 console=ttyS1,115200n8 preempt=full rcu_nocbs=all chcai_cwsrfix=1
+armed: next boot uses chcai-cwsrfix-oneshot (pre boot_id b6eaa6f0-1689-4705-9dfe-fb1abe7c0139)

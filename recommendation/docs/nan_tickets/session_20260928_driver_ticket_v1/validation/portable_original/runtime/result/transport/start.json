@@ -1,0 +1,19 @@
+{
+  "schema": "MI450-CWSR-SENTINEL-RESULT-v1",
+  "started_utc": "2026-09-28T00:54:57.571576+00:00",
+  "configuration": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/portable_configuration.json",
+    "bytes": 4912,
+    "sha256": "b5fe1c3f748964b72d99495027c11e217973969ac69906030cba8e054a61999b"
+  },
+  "host_source": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/exact/run_sentinel_host_v1.py",
+    "bytes": 21231,
+    "sha256": "be1582e96b7dad21991a562a6d4aec2664d331bd30ae64e1117cbd2d045ace89"
+  },
+  "cases": [],
+  "runtime_initialized": false,
+  "transport_status": "NOT_STARTED",
+  "required_environment": {},
+  "pid": 1793
+}

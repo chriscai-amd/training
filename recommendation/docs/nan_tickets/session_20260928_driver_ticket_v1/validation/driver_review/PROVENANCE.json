@@ -1,0 +1,254 @@
+{
+  "status": "PASS_BOUNDED_ENTRY_ROUTE_AND_PREFETCH_NATIVE_CHECK",
+  "checker": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_reviewer_questions_v1/check_entry_prefetch.py",
+    "bytes": 6946,
+    "sha256": "6ad3194ba3e6263e89698ad77e57c86613ba4dd75d86fa372104d40178156f37"
+  },
+  "inputs": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/TICKET.md",
+      "bytes": 9588,
+      "sha256": "7a6442533478c462f92dd3091d691b78ef1e85af031fe4e11336c3220a1945ba"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/README.md",
+      "bytes": 8627,
+      "sha256": "3f4915875126dbabb55d9bfb9be46da105e700e95121de9744e0d37676c3540e"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/SHA256SUMS",
+      "bytes": 3394,
+      "sha256": "be7559b911e385d39c12cb0c4d347f8107cd7ac25c983479c9cdb8ba49ec6029"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/baseline.bin",
+      "bytes": 5656,
+      "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/corrected.bin",
+      "bytes": 5672,
+      "sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/baseline_disassemble.stdout",
+      "bytes": 124474,
+      "sha256": "a9bd83dee15841c7d2753f597f9479684047405bcd4f4801eda46c06720f4341"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/corrected_disassemble.stdout",
+      "bytes": 124546,
+      "sha256": "f1129b621de1b65b2c3b3e83154fcc6bcedae6565bb2b65657d51be119bca88b"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/original/cwsr_trap_handler_gfx12.asm",
+      "bytes": 69197,
+      "sha256": "5e0e339cb988120d99fbccf2869bfab29e0a143bd110ce6f00cfdc495d5bf69d"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/evidence/kfd_device.c",
+      "bytes": 51287,
+      "sha256": "7729b41821a7e24448e900b9ab677d7f9d4d8a1fd1ed4dec1f3f001f8f591d23"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/evidence/module_audit.json",
+      "bytes": 9810,
+      "sha256": "df6b21da005286a79048a95e1028f1f65b0584c69e95543cbcf1b509944cf3d1"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/complete_handler_build.json",
+      "bytes": 22548,
+      "sha256": "146b4e87ad8310274cc54c7d008f2b8d4bab1b550483e52d80b6fb6513dcde38"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/README.md",
+      "bytes": 7388,
+      "sha256": "dd89d79659e6e7083c1c679933aaa1daa7400d6164e82afc105659f8a47e45d0"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/evidence/inline_prologue_6144_calls_review.json",
+      "bytes": 203719,
+      "sha256": "978cac17b3bec17a6ce7d9d7f38dad41e62d2c9308fc6474b09f3df46c1af734"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/evidence/sentinel_original_vs_corrected_review.json",
+      "bytes": 136120,
+      "sha256": "5c8ab76b5b8b571e5348a91a0757a22b0d9ad998e14665d9598e97c3f4353375"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/evidence/current_vs_corrected_DW.json",
+      "bytes": 31923,
+      "sha256": "7764e9a84abaa5a89a6fdbf92574cbe78d99f87acb56092fb4fa5fe3fda5613e"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_fix_liveout_supplement_v1/README.md",
+      "bytes": 6322,
+      "sha256": "ac0a42d9dc608d809d00b4a8ad1b28de25c639f65a39ffc13d693ab3cbcd09eb"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_fix_liveout_supplement_v1/LIVEOUT_REVIEW.json",
+      "bytes": 13929,
+      "sha256": "ecb7c0d7a03928135a765032541d38528e6ca3a854d7642a6559ccbd75922a67"
+    }
+  ],
+  "reviewed_ticket_snapshot": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_reviewer_questions_v1/TICKET_REVIEWED.md",
+    "bytes": 9588,
+    "sha256": "7a6442533478c462f92dd3091d691b78ef1e85af031fe4e11336c3220a1945ba"
+  },
+  "entry_route": {
+    "normal_entry": {
+      "pc": 0,
+      "word": "bfa00001",
+      "target": 8
+    },
+    "non_wave_start": {
+      "pc": 24,
+      "word": "bfa10008",
+      "target": 60
+    },
+    "original_restore_entry": {
+      "pc": 4,
+      "word": "bfa003f1",
+      "target": 4044
+    },
+    "corrected_restore_entry": {
+      "pc": 4,
+      "word": "bfa003f5",
+      "target": 4060
+    },
+    "wave_start_return_pc": 56,
+    "prologue_start": 60,
+    "original_prologue_end": 108,
+    "corrected_prologue_end": 124,
+    "original_prologue": [
+      {
+        "pc": 60,
+        "bytes": 4,
+        "instruction": "s_mov_b32 ttmp14, exec_lo"
+      },
+      {
+        "pc": 64,
+        "bytes": 4,
+        "instruction": "s_mov_b32 exec_lo, 1"
+      },
+      {
+        "pc": 68,
+        "bytes": 8,
+        "instruction": "v_readlane_b32 ttmp15, v1, 0"
+      },
+      {
+        "pc": 76,
+        "bytes": 4,
+        "instruction": "s_mov_b64 ttmp[2:3], 0"
+      },
+      {
+        "pc": 80,
+        "bytes": 4,
+        "instruction": "v_mov_b32_e32 v1, 0"
+      },
+      {
+        "pc": 84,
+        "bytes": 12,
+        "instruction": "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE"
+      },
+      {
+        "pc": 96,
+        "bytes": 8,
+        "instruction": "v_writelane_b32 v1, ttmp15, 0"
+      },
+      {
+        "pc": 104,
+        "bytes": 4,
+        "instruction": "s_mov_b32 exec_lo, ttmp14"
+      }
+    ],
+    "corrected_prologue": [
+      {
+        "pc": 60,
+        "bytes": 4,
+        "instruction": "s_getreg_b32 ttmp2, hwreg(HW_REG_WAVE_MODE, 12, 6)"
+      },
+      {
+        "pc": 64,
+        "bytes": 4,
+        "instruction": "s_mov_b32 ttmp3, 0"
+      },
+      {
+        "pc": 68,
+        "bytes": 4,
+        "instruction": "s_setreg_b32 hwreg(HW_REG_WAVE_MODE, 12, 6), ttmp3"
+      },
+      {
+        "pc": 72,
+        "bytes": 4,
+        "instruction": "s_mov_b32 ttmp14, exec_lo"
+      },
+      {
+        "pc": 76,
+        "bytes": 4,
+        "instruction": "s_mov_b32 exec_lo, 1"
+      },
+      {
+        "pc": 80,
+        "bytes": 8,
+        "instruction": "v_readlane_b32 ttmp15, v1, 0"
+      },
+      {
+        "pc": 88,
+        "bytes": 8,
+        "instruction": "v_sub_nc_u32_e64 v1, 63, ttmp2"
+      },
+      {
+        "pc": 96,
+        "bytes": 12,
+        "instruction": "global_prefetch_b8 v1, ttmp[2:3] offset:-63 scope:SCOPE_SE"
+      },
+      {
+        "pc": 108,
+        "bytes": 8,
+        "instruction": "v_writelane_b32 v1, ttmp15, 0"
+      },
+      {
+        "pc": 116,
+        "bytes": 4,
+        "instruction": "s_setreg_b32 hwreg(HW_REG_WAVE_MODE, 12, 6), ttmp2"
+      },
+      {
+        "pc": 120,
+        "bytes": 4,
+        "instruction": "s_mov_b32 exec_lo, ttmp14"
+      }
+    ],
+    "conclusion": "For entry at byte 0 with WAVE_START clear, the straight-line prologue executes before subsequent trap/save classification. Byte-4 context-restore entry and WAVE_START path are separate."
+  },
+  "prefetch": {
+    "original_pc": 84,
+    "corrected_pc": 96,
+    "original_words": [
+      "ee17406e",
+      "00040000",
+      "00000001"
+    ],
+    "corrected_words": [
+      "ee17406e",
+      "00040000",
+      "ffffc101"
+    ],
+    "first_two_words_identical": true,
+    "encoded_vector_address_operand": 1,
+    "corrected_signed_offset": -63,
+    "interpretation": "Same global_prefetch_b8 opcode, scalar base operands, scope and cache-policy encoding; only encoded address offset differs. Corrected sequence supplies k and 63-k to retain intended address zero."
+  },
+  "limitations": [
+    "Conditional code-route proof; not a trace of a hardware-selected TBA or historical training interrupt.",
+    "Prefetch byte equivalence and address algebra do not prove undocumented workaround timing or special-register hazards.",
+    "No additional GPU run, privileged assembly validation, module read or module rebuild."
+  ],
+  "original_SP3_assembler_tested": false,
+  "GPU_actions": false,
+  "module_reads": false,
+  "module_mutations": false,
+  "frozen_package_changed": false
+}

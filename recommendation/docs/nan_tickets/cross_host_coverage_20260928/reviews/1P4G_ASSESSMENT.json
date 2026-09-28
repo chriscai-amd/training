@@ -1,0 +1,448 @@
+{
+  "status": "PASS_SOURCE_BASED_CROSS_HOST_1P4G_ASSESSMENT",
+  "repo_HEAD": "8cf681dead52574301cc68bdfa37442626d333b9",
+  "sources": [
+    {
+      "relative": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+      "path": "/home/chcai/training/recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+      "bytes": 76537,
+      "sha256": "def8105036927689d25ea9a049e50a40a131aad81063c11360e6b0f78c21f6c2",
+      "git_blob": "9e6b32c03389a6aa9c8ee948894b6b74b2eecd7f",
+      "working_file_matches_pulled_HEAD": true
+    },
+    {
+      "relative": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md",
+      "path": "/home/chcai/training/recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md",
+      "bytes": 56666,
+      "sha256": "92549227b4f27b9d359d2005809d20751176d488700ebf6bf28b2f5c325a40b3",
+      "git_blob": "a959591d8c1219c6c28f32e10cec2c2253aeebea",
+      "working_file_matches_pulled_HEAD": true
+    },
+    {
+      "relative": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/performance_analysis.md",
+      "path": "/home/chcai/training/recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/performance_analysis.md",
+      "bytes": 40388,
+      "sha256": "67e7f8a1d1a269ae3b30e715812ea4559c1aff3aa621c3b742eb0fa16d64dd49",
+      "git_blob": "51c9406c907e93033c52eb5ceffeb1a3f031b712",
+      "working_file_matches_pulled_HEAD": true
+    },
+    {
+      "relative": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/hipBLASLt/dlrmv4_gemm_component_map.md",
+      "path": "/home/chcai/training/recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/hipBLASLt/dlrmv4_gemm_component_map.md",
+      "bytes": 8355,
+      "sha256": "04cae14d4a45d241e384e2bc24765c244b6c159a814a76103452bdfeac45d991",
+      "git_blob": "50e06cd9271238d74be40fb4f7bd077cb3905638",
+      "working_file_matches_pulled_HEAD": true
+    },
+    {
+      "relative": "recommendation/docs/mi450_rck_spur/tools/cwsr_fix/build_corrected_module.sh",
+      "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/build_corrected_module.sh",
+      "bytes": 2355,
+      "sha256": "d213086bc039257dc9aeef510eed2c3a27e01055635b596b010dd147a1106b81",
+      "git_blob": "72ae32f5dd4d010b465d468931b78d234f64a3d6",
+      "working_file_matches_pulled_HEAD": true
+    },
+    {
+      "relative": "recommendation/docs/nan_tickets/session_20260928_driver_ticket_v1/TICKET.md",
+      "path": "/home/chcai/training/recommendation/docs/nan_tickets/session_20260928_driver_ticket_v1/TICKET.md",
+      "bytes": 10684,
+      "sha256": "fdad197fe9a82f8db1d66775850989040b2bd9aa99175f5c2c0c08d5f5708efa"
+    },
+    {
+      "relative": "recommendation/docs/nan_tickets/session_20260928_driver_ticket_v1/reproducer/README.md",
+      "path": "/home/chcai/training/recommendation/docs/nan_tickets/session_20260928_driver_ticket_v1/reproducer/README.md",
+      "bytes": 7388,
+      "sha256": "dd89d79659e6e7083c1c679933aaa1daa7400d6164e82afc105659f8a47e45d0"
+    }
+  ],
+  "issues": [
+    {
+      "id": "a37_1_component",
+      "classification": "REPORTED_MATCHING_FAULTY_COMPONENT",
+      "conclusion": "The host document reports the same 5656-byte original CWSR handler signature and vulnerable offsets, with installed-module srcversion matching the loaded driver. This supports applicability of the component ticket; no module or raw extraction receipt from that host was read in this review.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 1164,
+          "end_line": 1174
+        },
+        {
+          "path": "recommendation/docs/nan_tickets/session_20260928_driver_ticket_v1/TICKET.md",
+          "start_line": 19,
+          "end_line": 27
+        }
+      ]
+    },
+    {
+      "id": "a37_1_attention_faults",
+      "classification": "STRONG_CANDIDATE_NOT_CAUSALLY_CLOSED",
+      "conclusion": "Three late-uptime BLOCK_N128 runs faulted; two named _hstu_attn_bwd, and a matching configuration also passed earlier. Compaction-to-queue-quiesce stacks are reported, but corrected-handler control, passing-run exposure and fault-client reconciliation are absent.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 870,
+          "end_line": 889
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 918,
+          "end_line": 928
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 949,
+          "end_line": 974
+        }
+      ]
+    },
+    {
+      "id": "a37_2_convergence",
+      "classification": "SUCCESSFUL_RUN_WITH_UNMEASURED_HANDLER_AND_EXPOSURE",
+      "conclusion": "The 14000-step AUC0.7514703274 run establishes successful finite-loss convergence during warmup. It does not establish handler immunity or repair; the handler hash and compaction/eviction exposure were not recorded. More RAM/fresh boot are candidate exposure modifiers.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md",
+          "start_line": 11,
+          "end_line": 35
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md",
+          "start_line": 392,
+          "end_line": 420
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 1006,
+          "end_line": 1029
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md",
+          "start_line": 938,
+          "end_line": 942
+        }
+      ]
+    },
+    {
+      "id": "a37_1_halt",
+      "classification": "UNPROVED_CWSR_INITIATOR_AND_SEPARATE_DRIVER_FAULT_PATH",
+      "conclusion": "At local2304 a garbage GPU pointer preceded a kernel oops and host halt. Neither near-full-HBM eviction nor CWSR address-copy causation was captured. The handler correction cannot be claimed to repair the kernel fault path, kdump or panic policy.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 774,
+          "end_line": 820
+        }
+      ]
+    },
+    {
+      "id": "buffer_operations",
+      "classification": "OUTSIDE_DEMONSTRATED_TICKET_REPAIR",
+      "conclusion": "Buffer-ops enablement with a hybrid-kernel guard still produced a MES hang. No corrected-CWSR control isolates this failure, and the record assigns a compiler/runtime follow-up.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/performance_analysis.md",
+          "start_line": 186,
+          "end_line": 186
+        }
+      ]
+    },
+    {
+      "id": "row_offset_overflow",
+      "classification": "INDEPENDENT_ESTABLISHED_ARITHMETIC_DEFECT",
+      "conclusion": "32-bit row-times-stride wrap produced predicted wrong-address writes and was prevented by 64-bit arithmetic. Bank normalization does not repair arithmetic overflow; retain the int64 offsets.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/performance_analysis.md",
+          "start_line": 187,
+          "end_line": 187
+        }
+      ]
+    },
+    {
+      "id": "allocator_capacity_scratch_mes_fabric",
+      "classification": "SEPARATE_OR_UNRESOLVED_FAILURES",
+      "conclusion": "Expandable-segment startup failure, actual large-allocation OOMs, scratch-reclaim stalls, MES TLB failures and direct-fabric failures have no demonstrated CWSR repair. Five local2048 attempts include an intentional zero-step stop, not five identical fault reproductions.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/performance_analysis.md",
+          "start_line": 191,
+          "end_line": 191
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md",
+          "start_line": 477,
+          "end_line": 498
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 114,
+          "end_line": 115
+        }
+      ]
+    },
+    {
+      "id": "performance",
+      "classification": "MEASURED_ORIGINAL_DRIVER_PERFORMANCE_NOT_FIX_BENEFIT",
+      "conclusion": "BLOCK_N128 reduced measured attention-backward time283.1\u2192155.8ms and wall time~7%, but these are original-driver measurements. The correction may enable this configuration reliably; that benefit still requires exposure-matched correctness/stability and performance runs. GEMM-layout, input-copy, RCCL and pipelining gaps remain distinct.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/performance_analysis.md",
+          "start_line": 42,
+          "end_line": 54
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/performance_analysis.md",
+          "start_line": 185,
+          "end_line": 185
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/performance_analysis.md",
+          "start_line": 202,
+          "end_line": 202
+        }
+      ]
+    }
+  ],
+  "missing_regressions": [
+    {
+      "id": "host_specific_build",
+      "need": "Capture full original module/handler/source/build/boot/firmware identity on each target; build original and corrected from the same host source/toolchain, then audit all changes and bind the actual loaded build. a37-1 uses 7.1.0 el10/fbk5/MES0x7e, unlike A0 7.1.1 Ubuntu/MES0x7b. a37-2 needs its own handler measurement first.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 312,
+          "end_line": 335
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 1164,
+          "end_line": 1187
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md",
+          "start_line": 78,
+          "end_line": 110
+        },
+        {
+          "path": "recommendation/docs/nan_tickets/session_20260928_driver_ticket_v1/TICKET.md",
+          "start_line": 7,
+          "end_line": 17
+        }
+      ]
+    },
+    {
+      "id": "component_regression",
+      "need": "Run the existing portable 14-case S_TRAP3 sentinel on stock and corrected target builds, retaining full packet/native/runtime/driver identities. The fresh portable-adapter corrected run is pending even on A0; saved corrected exact host/shader results already exist. The new kit closes the old need to invent a portable explicit-trap reproducer.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/nan_tickets/session_20260928_driver_ticket_v1/reproducer/README.md",
+          "start_line": 3,
+          "end_line": 42
+        },
+        {
+          "path": "recommendation/docs/nan_tickets/session_20260928_driver_ticket_v1/TICKET.md",
+          "start_line": 29,
+          "end_line": 46
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 1096,
+          "end_line": 1105
+        }
+      ]
+    },
+    {
+      "id": "compaction_real_save",
+      "need": "If proving this host trigger, add a controlled compaction/queue-eviction experiment with equal/unequal banks and trigger-off/on on both handlers. Correlate per-process quiesce and actual wave/save evidence with native-PC/tag observations. A long timestamp gap alone is not unique proof of the CWSR save path.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 1223,
+          "end_line": 1254
+        },
+        {
+          "path": "recommendation/docs/nan_tickets/session_20260928_driver_ticket_v1/TICKET.md",
+          "start_line": 27,
+          "end_line": 27
+        }
+      ]
+    },
+    {
+      "id": "fault_counterfactual",
+      "need": "Repeat identical local1024/BLOCK_N128/image/code/settings on corrected and stock builds with comparable measured compaction/eviction exposure. Retain all finite/nonfinite/intermediate checks, actual termination and kernel fault records. Several 600-step runs plus thousands-of-steps or full-convergence soak and standalone500+iterations are the stated host goals; a fresh-boot pass or uptime alone is insufficient.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 1202,
+          "end_line": 1221
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/performance_analysis.md",
+          "start_line": 202,
+          "end_line": 202
+        }
+      ]
+    },
+    {
+      "id": "block_size_discriminator",
+      "need": "Alternate BLOCK_N64/128 at comparable measured exposure with exact compiled kernel/native/vgpr metadata. The host record says64 VGPR count unmeasured, while the performance report gives production654; bind those observations to the same shape/code before quoting an exact count. Keep the reference arithmetic/input identities.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 978,
+          "end_line": 1004
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/performance_analysis.md",
+          "start_line": 194,
+          "end_line": 194
+        }
+      ]
+    },
+    {
+      "id": "fault_client",
+      "need": "Resolve or retain the SDMA0/TCP latched-client versus ROCr _hstu_attn_bwd attribution discrepancy; collect complete kernel/fault context before core dumping can alter memory pressure. Reported largest-burst timing does not settle whether compaction preceded the fault.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 918,
+          "end_line": 928
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 956,
+          "end_line": 962
+        }
+      ]
+    },
+    {
+      "id": "assembler_production",
+      "need": "Validate source patch with the vendor SP3 build, regenerate the selected header, and review ABI/MODE-write hazards/workaround timing/nested-trap behavior. The frozen source/native/common-entry/liveout proof improves coverage but does not establish production timing or make an A0 .ko portable.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/nan_tickets/session_20260928_driver_ticket_v1/TICKET.md",
+          "start_line": 60,
+          "end_line": 66
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 1106,
+          "end_line": 1112
+        }
+      ]
+    }
+  ],
+  "documentation_caveats": [
+    {
+      "id": "overstrong_host_headline",
+      "detail": "a37-1 lines10,109 and853\u2013855 state the faults are caused by the CWSR defect, while lines956\u2013962 and1088\u20131094 correctly classify its role as supporting evidence. Use the latter qualification.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 10,
+          "end_line": 27
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 109,
+          "end_line": 109
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 850,
+          "end_line": 855
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 956,
+          "end_line": 962
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 1088,
+          "end_line": 1094
+        }
+      ]
+    },
+    {
+      "id": "stale_portable_gap",
+      "detail": "a37-1 portable-kit gaps predate the frozen A0 ticket now present under docs/nan_tickets. Explicit first-level trap validation is available; the separate forced-compaction/save experiment remains pending.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 1096,
+          "end_line": 1105
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 1223,
+          "end_line": 1254
+        },
+        {
+          "path": "recommendation/docs/nan_tickets/session_20260928_driver_ticket_v1/reproducer/README.md",
+          "start_line": 3,
+          "end_line": 42
+        }
+      ]
+    },
+    {
+      "id": "a37_2_version_not_native_proof",
+      "detail": "Same public driver version does not prove the a37-2 handler identity. a37-1 was reprovisioned to a different kernel/el10 package; the comparison table saying same version/settings is not an exact-native or complete-environment comparison.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 309,
+          "end_line": 327
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 1011,
+          "end_line": 1026
+        }
+      ]
+    },
+    {
+      "id": "limits_on_extended_banks",
+      "detail": "High VGPR count alone is not sufficient: this defect needs an entry while source/destination bank selectors differ and a victim value is live. BLOCK_N64 and solution103 can still expose the same mechanism. A solution index/name match does not substitute for exact native/layout/input identity.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/nan_tickets/session_20260928_driver_ticket_v1/TICKET.md",
+          "start_line": 19,
+          "end_line": 27
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 978,
+          "end_line": 1004
+        },
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/hipBLASLt/dlrmv4_gemm_component_map.md",
+          "start_line": 37,
+          "end_line": 42
+        }
+      ]
+    },
+    {
+      "id": "first_fault_logged_step_inconsistency",
+      "detail": "a37-1 ledger line878 puts the first evict aperture fault before a step50 log; lines882\u2013884 claim all three failures logged identical step50/100 losses. Two later named-attention faults have step100 entries. Do not claim all three matched both losses without raw logs.",
+      "evidence": [
+        {
+          "path": "recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+          "start_line": 878,
+          "end_line": 884
+        }
+      ]
+    }
+  ],
+  "scope": "Read-only review of pulled repository host/performance records and frozen ticket. No remote host or original remote trace/module/raw training artifact was accessed. Reported remote outcomes retain that evidence level.",
+  "GPU_actions": false,
+  "driver_actions": false,
+  "remote_actions": false,
+  "trace_bulk_reads": false,
+  "repo_or_frozen_package_edits": false,
+  "assessment": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_cross_host_1P4G_peer_v1/1P4G_ASSESSMENT.md",
+    "bytes": 11857,
+    "sha256": "f40919a292d684451440cf598911b678e78427e0b3e8b85be67f21a213b87d22"
+  }
+}

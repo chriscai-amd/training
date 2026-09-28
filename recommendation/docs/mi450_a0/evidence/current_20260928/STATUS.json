@@ -1,0 +1,446 @@
+{
+  "schema": "MI450_A0_CURRENT_EVIDENCE_INDEX_V1",
+  "updated_utc": "2026-09-28T07:56:24.712968+00:00",
+  "state": "STOPPED_AT_USER_REQUEST_REAPED_IDLE_REVIEW_COMPLETE_AUC_TARGET_NOT_REACHED",
+  "scope": "Documentation index of accepted saved evidence. Receipt/source bytes were rehashed for this index; no new GPU action, live observation, bulk tensor scan or journal decompression was performed.",
+  "corrected_stack": {
+    "boot_id": "7f2b0149-e2e0-4843-a779-a5981d8f7ddb",
+    "amdgpu_version": "7.1.1.31300009",
+    "srcversion": "AD83C153B9701570F12964E",
+    "candidate_sha256": "78de19854e38e298f6418bddcfa39f44a797f811f0f4b9c585482f4c4dc2b2b4",
+    "CWSR_enabled": true,
+    "MES": "0x7b",
+    "MES_KIQ": "0x7b"
+  },
+  "prerequisite_receipt_index": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_convergence_lr_and_a0_note_v1/ACCEPTED_RECEIPT_INDEX.json",
+    "bytes": 8920,
+    "sha256": "085db329d6a493a0ffb00c2d2e839fdd4d10ac225ce338382edccfb8bd24daa7"
+  },
+  "prerequisite_reviews": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/ACTUAL_FIRST_LOAD_REVIEW.json",
+      "bytes": 2245,
+      "sha256": "347059aa04d10a24d5cbf03428089e0d32c292ea330c0e67fb198baab79cdd54",
+      "status": "PASS_INDEPENDENT_ACTUAL_CORRECTED_FIRST_LOAD_IDENTITY_REVIEW_PENDING_POSTLOAD_GATES",
+      "results": {
+        "boot_id": "7f2b0149-e2e0-4843-a779-a5981d8f7ddb",
+        "loaded_driver": {
+          "version": "7.1.1.31300009",
+          "srcversion": "AD83C153B9701570F12964E"
+        },
+        "insertions_completed_and_reaped": 17,
+        "all_parameters_exact": true
+      }
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/ACTUAL_POSTLOAD_REVIEW.json",
+      "bytes": 2150,
+      "sha256": "99be5d172ed073e9c5a44999dede602c4f701c3c959e5dbd5b53138e7f9abd49",
+      "status": "PASS_INDEPENDENT_ACTUAL_FIRST_LOAD_KERNEL_FIRMWARE_IDLE_REVIEW",
+      "results": {
+        "boot_id": "7f2b0149-e2e0-4843-a779-a5981d8f7ddb",
+        "pre_insertion_MC60": 0,
+        "insertion_MC60": 0,
+        "post_insertion_MC60": 0,
+        "cached_firmware_devices": {
+          "/sys/bus/pci/devices/0001:01:00.0/fw_version": {
+            "mes_fw_version": "0x0000007b",
+            "mes_kiq_fw_version": "0x0000007b"
+          }
+        },
+        "strict_rejection_preserved": true,
+        "only_classified_line": "[  754.518167] amdgpu 0001:01:00.0:   [0] id=4 (VM_PAGE_FAULT) size=0x1000 start=0x16bf5fff000",
+        "platform_health_cleared": false
+      }
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/HEALTH_RESULT_REVIEW.json",
+      "bytes": 2629,
+      "sha256": "20dae1731bf87bfab79f2680700226bcebea51b785fe146174305324c81ec2f7",
+      "status": "PASS_INDEPENDENT_CORRECTED_HEALTH_RESULT_REVIEW",
+      "results": {
+        "exact_checks": 4000,
+        "arms": 4,
+        "checks_per_arm": 1000,
+        "source_initial_and_final_readback_exact": true,
+        "new_MC60_records": 1,
+        "producer_exit0_reaped": true
+      }
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/SENTINEL_RESULT_REVIEW.json",
+      "bytes": 3532,
+      "sha256": "6dcb7496877bef7190e4493686a65f8935a58fc939c3516febd7005b4c4c2ce9",
+      "status": "PASS_INDEPENDENT_CORRECTED_SENTINEL_RESULT_REVIEW",
+      "results": {
+        "HIP_calls": 94,
+        "packets": 14,
+        "full_raw_words_independently_decoded": 560,
+        "unchanged_tag_packets": 14,
+        "MODE_EXEC_packets": 14,
+        "exact_full64_return_PCs": 7,
+        "new_MC60_records": 0,
+        "producer_exit0_reaped": true
+      }
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/DW_RESULT_REVIEW.json",
+      "bytes": 13723,
+      "sha256": "5fb62d04bc71da95f99b38ef4e292053fd1e58a95a71ab2d2de3cb7a1633fd59",
+      "status": "PASS_INDEPENDENT_CORRECTED_DW_QUARTET_RESULT_REVIEW",
+      "results": {
+        "saved_kernel_gates_recomputed": 20,
+        "full_retained_input_bytes_rehashed": 14280812544,
+        "full_output_words_compared": 2097152,
+        "full_prefill_words_compared": 2097152,
+        "full_172byte_packets_decoded": 16,
+        "all16_outputs_equal_healthy_reference": true,
+        "all_producers_reaped": true,
+        "all_controllers_reaped_from_root_drained_sessions": true,
+        "all_GPU_device_owners_absent": true
+      }
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/DW_RAW_REVIEW.json",
+      "bytes": 17129,
+      "sha256": "4ef168d7306651b7db1d74b5ec8c17a360acd6bf0a8e14e427aa814fcc0582bf",
+      "status": "PASS_INDEPENDENT_CORRECTED_DW_RAW_BYTES_AND_PACKETS",
+      "results": {
+        "four_complete_outputs_and_prefills_per_arm": [
+          {
+            "arm": "sink_control_nop",
+            "exact": true
+          },
+          {
+            "arm": "sink_candidate_nop",
+            "exact": true
+          },
+          {
+            "arm": "sink_control_trap",
+            "exact": true
+          },
+          {
+            "arm": "sink_candidate_trap",
+            "exact": true
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_corrected_DW_archive_result_peer_v1/ARCHIVE_RESULT_REVIEW.json",
+      "bytes": 28620,
+      "sha256": "b17c3559d025d6528b43c95d7b7351d37c592da8988ce0d8f6096268d3317d25",
+      "status": "PASS_CORRECTED_DW_ARCHIVE_RESULT_METADATA_STATS_AND_GATES_REVIEW",
+      "results": {
+        "summary": {
+          "raw_files": 44,
+          "raw_tensor_bytes": 14289201152,
+          "all16_outputs_equal_healthy_baseline": true,
+          "total_raw_bytes": 14290728878,
+          "unique_blobs": 8,
+          "external_input_blobs": 2,
+          "new_blobs": 6,
+          "actual_archive_usage": {
+            "allocated": 413696,
+            "logical": 370734
+          },
+          "new_archive_cap_bytes": 1073741824,
+          "home_allocation_cap_bytes": 1000000000000,
+          "unique_decompressed_bytes": 3572255150,
+          "all44_paths_joined_to_reviewed_native_pins": true,
+          "all_raw_and_blob_stat_snapshots_unchanged": true,
+          "archiver_full_raw_hash_and_complete_unique_blob_decompression_receipts_verified": true,
+          "peer_production_raw_or_archive_payload_bytes_reread": 0,
+          "raw_files_retained": true,
+          "admitted_MC60_before_archive": 2,
+          "admitted_MC60_during_archive": 0
+        },
+        "production_payload_reads": false,
+        "limits": [
+          "The root-reviewed archiver performed bulk hashes and complete unique-blob decompression; this result review authenticates metadata, roles, process chronology, current stat identities and saved gates without another bulk read.",
+          "The two pinned external compressed input blobs remain archive dependencies. All44 raw files remain retained.",
+          "This review covers byte preservation and controlled DW evidence; it does not establish long-run training convergence or platform-health clearance."
+        ]
+      }
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/STU1_RESULT_REVIEW.json",
+      "bytes": 376578,
+      "sha256": "8cb09c6291dfd56ae8728d5f7e217cd7e14f973c96b04953703147a68d24275e",
+      "status": "PASS_INDEPENDENT_CURRENT_STU1_POSTBACK_1000_RESULT_REVIEW",
+      "results": {
+        "completed_optimizer_steps": 1000,
+        "observed_backward_completions": 1000,
+        "complete_journal_checks": 541010,
+        "full_deferred_flushes": 1000,
+        "full_operation_endpoints": 42000,
+        "full_finite_summaries": 367000,
+        "trace": {
+          "entries": 1990,
+          "evictions": 107,
+          "restores": 106,
+          "eviction_causes": {
+            "numa_protection_scan": 88,
+            "fork": 2,
+            "numa_fault_folio_migration": 16,
+            "exit": 1
+          },
+          "combined_NUMA_evictions": 104,
+          "complete_CPU_counts": true,
+          "all_target_eviction_stacks_checked": true,
+          "probe_misses_zero": true,
+          "physical_CWSR_proven": false
+        },
+        "full_endpoint_raw_audit": false,
+        "completed_E2E_evaluation_AUC_proven": false,
+        "platform_health_clearance": false,
+        "independent_projection_bounds": {
+          "checks": 9000,
+          "conditional_violations": [],
+          "exact_real_exceedances": []
+        }
+      }
+    }
+  ],
+  "stopped_run": {
+    "results": {
+      "complete_training_steps": 2305,
+      "incomplete_last_attempt": null,
+      "complete_evaluations": 1,
+      "first_eval_step": 2238,
+      "first_eval_batches": 2009,
+      "first_eval_auc": 0.5027790069580078,
+      "auc_threshold": 0.75,
+      "full_finite_summaries": 845935,
+      "full_operation_endpoints": 96810,
+      "conditional_projection_checks": 20745,
+      "complete_trace_retained_no_loss": true,
+      "all_actual_processes_saved_absent": true,
+      "convergence_certified": false,
+      "successful_run_stop": false,
+      "conditional_projection_violations": [],
+      "evaluation_metric": "metric/window_auc/listen_plus",
+      "evaluation_anchors": 2057216,
+      "evaluation_remainder_anchors": 988,
+      "evaluation_start_utc": "2026-09-28T07:09:19.118Z",
+      "evaluation_end_utc": "2026-09-28T07:32:52.629Z",
+      "evaluation_duration_ms": 1413185.8,
+      "last_sampled_loss": {
+        "training_step": 2300,
+        "loss": 0.132194384932518
+      },
+      "journals_uncompressed_bytes": 1052782785,
+      "journals_records": 163658,
+      "trace": {
+        "records": 4409,
+        "evictions": 912,
+        "restores": 911,
+        "recorded_losses": 0,
+        "probe_misses": 0,
+        "numa_evictions": 897,
+        "eviction_causes": {
+          "numa_protection_scan": 811,
+          "numa_fault_folio_migration": 86,
+          "fork": 3,
+          "other": 11,
+          "exit": 1
+        },
+        "physical_CWSR_proven": false
+      },
+      "kernel_policy_replay": {
+        "execution_intervals": 267,
+        "consumer_intervals": 1,
+        "policy": "Unchanged authorized corrected-MC60 policy; not platform-health clearance."
+      }
+    },
+    "shutdown": {
+      "reason": "user_requested_cooperative_stop",
+      "boundary": "before_training_attempt",
+      "execution_session": 85159,
+      "execution_returncode": 1,
+      "consumer_session": 29990,
+      "consumer_returncode": 1,
+      "both_sessions_exited_and_drained": true,
+      "saved_absent_pids": {
+        "worker": 110660,
+        "launcher": 110652,
+        "controller": 110492,
+        "docker_exec": 110629
+      },
+      "final_idle_scan_utc": "2026-09-28T07:39:38Z",
+      "fd_tables_scanned": 3450,
+      "device_owners": [],
+      "scan_errors": [],
+      "idle": true,
+      "signals_used": false,
+      "GPU_reset_or_driver_reload": false,
+      "workload_retry": false,
+      "private_trace_resources_removed": true,
+      "source_and_global_trace_unchanged": true,
+      "status_interpretation": "Nonzero controller and consumer statuses preserve the requested stop, not a numerical NaN or convergence pass.",
+      "restart_scheduled": false
+    },
+    "recipe_context": {
+      "seed": 1,
+      "GPUs": 1,
+      "vocabulary_fraction": 0.25,
+      "dense_base_learning_rate": 1e-06,
+      "sparse_base_learning_rate": 1e-06,
+      "sparse_optimizer": "RowWiseAdagrad",
+      "warmup_steps": 24000,
+      "warmup_start_lr": 0.0,
+      "first_eval_percent_of_warmup": 9.325,
+      "first_eval_approx_percent_of_configured_training_anchors": 0.100038,
+      "evaluation_window": 299,
+      "disjoint_user_holdout": false,
+      "checkpoints_enabled": false
+    },
+    "accepted_independent_review": {
+      "review_status": "PASS_INDEPENDENT_STOPPED_CORRECTED_DRIVER_LONGRUN_EVIDENCE_REVIEW",
+      "closure_status": "PASS_INDEPENDENT_STOPPED_CORRECTED_DRIVER_LONGRUN_EVIDENCE_CLOSURE",
+      "control_supplement_status": "PASS_INDEPENDENT_STOPPED_LONGRUN_SAVED_CONTROL_SUPPLEMENT",
+      "saved_control_checks": 15,
+      "unresolved_review_findings": [],
+      "acceptance_requires": "Complete stopped-run review AND separate saved-control supplement; do not substitute the success-only r2 reviewer.",
+      "supersedes": "The independent_stopped_numerical_review_pending flag in the earlier root stop closure."
+    },
+    "receipts": {
+      "contract": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_convergence_root_source_v3/CONTRACT.json",
+        "bytes": 1000492,
+        "sha256": "b97e250c626108549f65e6d850b7c72bbed03e48532ca2286568fc898fe0f2d3"
+      },
+      "staging_receipt": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_convergence_runtime_v3/staging_receipt.json",
+        "bytes": 10388,
+        "sha256": "6919fb701497895d47d1387bf9ca2e85d03454636509329453daec66d448f967"
+      },
+      "execution_terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_convergence_execution_v3/execution_terminal.json",
+        "bytes": 92518,
+        "sha256": "c6f511a10b5da84e7511be1f3e9215eeb54ed9c2d93749f133114dbf6f2a1f96"
+      },
+      "trace_terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_convergence_execution_v3/trace/terminal.json",
+        "bytes": 11834,
+        "sha256": "3780a38518ec871a45277d76c983df80e1064895bdd0a78049e6e8a35e05981c"
+      },
+      "consumer_terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_convergence_execution_v3/consume/terminal.json",
+        "bytes": 535338,
+        "sha256": "2fd55a273c7b28c17e1b53d5561d1d9efa96899c7a352f867642c072fbcae1f1"
+      },
+      "training_outcome": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_convergence_runtime_v3/corrected_auc075_training/outcome.json",
+        "bytes": 6700,
+        "sha256": "dad39636865b0768e3a9506fb2b69a6c0b009fa6209bfcac60c5513222668d81"
+      },
+      "stop_request": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_convergence_runtime_v3/corrected_auc075_gate/process_stop.json",
+        "bytes": 402,
+        "sha256": "88c68f9d49713c6beff150a1dfc6ac1b82c399cd96dcece5233b8e34d2c34207"
+      },
+      "worker_terminal": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_convergence_runtime_v3/corrected_auc075_gate/worker_terminal.json",
+        "bytes": 2497,
+        "sha256": "afec60f4d3b225564dfa2d6875e8bf4b2bdf4f5ed35d01f33a36fba73802ee20"
+      },
+      "final_gate": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_convergence_execution_v3/consume/failure_final_gate/gate.json",
+        "bytes": 5528,
+        "sha256": "9e0a32c6edde0bba2e1a5017a5cd2ca3a8f46ca706b6b5e5cb1cb8e9e2d8fbf1"
+      },
+      "final_idle": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_convergence_execution_v3/consume/failure_final_gate/idle.json",
+        "bytes": 1445,
+        "sha256": "edf73cb756b4df45ed4a3cc539c5dc5957a964cdb5899491f486c878f91922e6"
+      },
+      "stopped_review": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/CONVERGENCE_STOPPED_V3_REVIEW.json",
+        "bytes": 2182117,
+        "sha256": "52c317ccf99bb1360dc6072043a5d5fed80570c1ed1c53671179dede74b071f7"
+      },
+      "stopped_closure": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/CONVERGENCE_STOPPED_V3_CLOSURE.json",
+        "bytes": 3786,
+        "sha256": "a8600724192fdd8ee4092f30230d2168d9cc1e9c6ef6253bfd99e95453b05c36"
+      },
+      "control_supplement": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/CONVERGENCE_STOPPED_V3_CONTROL_SUPPLEMENT.json",
+        "bytes": 8764,
+        "sha256": "a6383a8aac8a2e95a5045e63e4de408bb5dd6579cd23b7dd6092b9f64c872a1d"
+      },
+      "stopped_reviewer_source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/review_convergence_stopped_v3.py",
+        "bytes": 29821,
+        "sha256": "7120559ee6648a47814d82db4e5d69cf8c7d2ab166b87644d393bc1ce781fcd4"
+      },
+      "evaluation_reviewer_source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/stopped_eval_v1.py",
+        "bytes": 12391,
+        "sha256": "33f23445ab2d20237256d45d0406c4ff8492ef0cb4d92e5054210b7f746fda89"
+      },
+      "control_supplement_source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_postreboot_firstload_peer_v1/review_convergence_stopped_v3_controls.py",
+        "bytes": 7698,
+        "sha256": "df82f30bd613d9c85b7826b32c6fe29e0630f021ac6f9966f229b1bd7bddb10f"
+      },
+      "root_stop_closure_before_peer_review": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_convergence_root_review_v3/USER_STOP_ROOT_CLOSURE.json",
+        "bytes": 9738,
+        "sha256": "94b629ad6428081eb66d2d18f5dcb60aba2593d473337d3dafe12490646041eb"
+      },
+      "consumer_argument_preflight_rejection": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_convergence_root_review_v3/CONSUMER_ARGUMENT_PREFLIGHT_REJECTION.json",
+        "bytes": 512,
+        "sha256": "3e794adf33eb8756e3d6a201ab087a1568b2c8ec0564ab76ed0c67bf42cd9734"
+      }
+    },
+    "closed_journals_as_verified_by_stopped_review": [
+      {
+        "status": "PASS_COMPLETE_SINGLE_GZIP_JSONL_MEMBER",
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_convergence_runtime_v3/corrected_auc075_training/boundaries/events.jsonl.gz",
+        "bytes": 40877786,
+        "sha256": "c1d915c1de8b6d9e9270ad3fdb91aa37f8aaa4a96a5362173001b3105940ffdd",
+        "uncompressed_bytes": 637341598,
+        "uncompressed_sha256": "dd0345bba4d5c1896b425b8175505f032b61fd191dd52b43dc2e91dacc33a86b",
+        "records": 64542,
+        "max_record_bytes": 2097152,
+        "gzip_footer_crc_and_isize_verified": true,
+        "full_eof_verified": true,
+        "training_success_asserted": false
+      },
+      {
+        "status": "PASS_COMPLETE_SINGLE_GZIP_JSONL_MEMBER",
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_convergence_runtime_v3/corrected_auc075_training/boundaries/hstu/boundaries.jsonl.gz",
+        "bytes": 16422979,
+        "sha256": "fc23e09e316f79f6beff14e59620e699e83273584f55a2a77b8f1147935b8eaa",
+        "uncompressed_bytes": 415441187,
+        "uncompressed_sha256": "5f8a89bcd5297ead55dac23699d98e3d82dbf57a59a001552375fff481409a51",
+        "records": 99116,
+        "max_record_bytes": 2097152,
+        "gzip_footer_crc_and_isize_verified": true,
+        "full_eof_verified": true,
+        "training_success_asserted": false
+      }
+    ]
+  },
+  "limits": [
+    "AUC 0.5027790069580078 is below 0.75. One early full evaluation does not establish eventual convergence or time to target; no successful run_stop or convergence certificate exists.",
+    "Finite scalar summaries and conditional projection bounds do not prove endpoint tensor equality or exact consumed operand bytes. No full endpoint tensor audit was scheduled.",
+    "Host queue eviction/restore records do not prove physical CWSR completion, exact trapped PCs or register banks.",
+    "Historical STU1 step-583 DX inconsistency remains unresolved; its raw operands/output were not retained. Fresh passing witnesses do not reconstruct it.",
+    "Numerical passes and the narrowly authorized corrected-MC60 policy do not clear platform health or explain all historical NaNs and stalls.",
+    "No anomaly payload or STU1 violation witness was produced in the stopped run. Checkpoints were disabled, so future training requires a fresh trajectory.",
+    "The DW archive peer authenticated hash/decompression receipts and metadata without repeating the bulk payload scan. Raw files and two external compressed input dependencies remain retained.",
+    "Paths are exact local evidence locations; historical and frozen artifacts were not rewritten by this documentation refresh."
+  ],
+  "ticket_owner": "AMDGPU/KFD kernel-driver maintainers responsible for the gfx1250 CWSR trap handler; trap-ABI/architecture and SP3 assembler reviewers.",
+  "documents": {
+    "main": "../../mi450_a0.md",
+    "focused": "../../cwsr_bank_corruption_fix.md",
+    "prior_main_status": "../../../nan_tickets/history/history_20260928_prior_status.md",
+    "prior_focused_status": "../../../nan_tickets/history/history_20260923_cwsr_status.md"
+  }
+}

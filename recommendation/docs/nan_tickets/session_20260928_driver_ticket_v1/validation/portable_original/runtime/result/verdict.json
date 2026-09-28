@@ -1,0 +1,372 @@
+{
+  "status": "PASS_EXPECTED_ORIGINAL_SENTINEL",
+  "expectation": "original",
+  "cases": [
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 0,
+        "trap": false,
+        "symbol": "sentinel_00_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128145068077704,
+      "returned_TTMP": 131445153976372
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 0,
+        "trap": true,
+        "symbol": "sentinel_00_1"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128145068079240,
+      "returned_TTMP": 128145068079240
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 65,
+        "trap": false,
+        "symbol": "sentinel_41_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128145068080780,
+      "returned_TTMP": 131445153976640
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 65,
+        "trap": true,
+        "symbol": "sentinel_41_1"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128145068082316,
+      "returned_TTMP": 128145068082316
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 69,
+        "trap": false,
+        "symbol": "sentinel_45_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128145068083852,
+      "returned_TTMP": 131445153976672
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 69,
+        "trap": true,
+        "symbol": "sentinel_45_1"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128145068085388,
+      "returned_TTMP": 128145068085388
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 130,
+        "trap": false,
+        "symbol": "sentinel_82_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128145068086924,
+      "returned_TTMP": 131445153977852
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 130,
+        "trap": true,
+        "symbol": "sentinel_82_1"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128145068088460,
+      "returned_TTMP": 128145068088460
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 5,
+        "trap": false,
+        "symbol": "sentinel_05_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128145068089992,
+      "returned_TTMP": 131445153976380
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 5,
+        "trap": true,
+        "symbol": "sentinel_05_1"
+      },
+      "expected_classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "changed_tags": [
+        {
+          "vgpr": 1,
+          "lane": 0,
+          "before": "0x11000000",
+          "after": "0x22000000"
+        }
+      ],
+      "intended_return_PC": 128145068091528,
+      "returned_TTMP": 128145068091528
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 129,
+        "trap": false,
+        "symbol": "sentinel_81_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128145068093068,
+      "returned_TTMP": 131445153976640
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 129,
+        "trap": true,
+        "symbol": "sentinel_81_1"
+      },
+      "expected_classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "changed_tags": [
+        {
+          "vgpr": 513,
+          "lane": 0,
+          "before": "0x33000000",
+          "after": "0x22000000"
+        }
+      ],
+      "intended_return_PC": 128145068094604,
+      "returned_TTMP": 128145068094604
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 133,
+        "trap": false,
+        "symbol": "sentinel_85_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128145068096140,
+      "returned_TTMP": 131445153976672
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 133,
+        "trap": true,
+        "symbol": "sentinel_85_1"
+      },
+      "expected_classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+      "changed_tags": [
+        {
+          "vgpr": 513,
+          "lane": 0,
+          "before": "0x33000000",
+          "after": "0x22000000"
+        }
+      ],
+      "intended_return_PC": 128145068097676,
+      "returned_TTMP": 128145068097676
+    }
+  ],
+  "all_14_complete": true,
+  "changed_cases": 3,
+  "module_load_bias": 128145068064768,
+  "transport_result": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/result.json",
+    "bytes": 124739,
+    "sha256": "c3cbbd0eecc31804ea9fdadf070ca2efce8961d64a7e42ca698d55c72d49fa09"
+  },
+  "process_scope": "Caller must retain this process exit and reap it; no timeout/recovery is implemented in this adapter."
+}

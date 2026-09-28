@@ -1,0 +1,120 @@
+{
+  "original": [
+    {
+      "pc": 60,
+      "instruction": "s_mov_b32 ttmp14, exec_lo",
+      "hex": "7e00fabe",
+      "native_words": "BEFA007E"
+    },
+    {
+      "pc": 64,
+      "instruction": "s_mov_b32 exec_lo, 1",
+      "hex": "8100febe",
+      "native_words": "BEFE0081"
+    },
+    {
+      "pc": 68,
+      "instruction": "v_readlane_b32 ttmp15, v1, 0",
+      "hex": "7b0060d701010100",
+      "native_words": "D760007B 00010101"
+    },
+    {
+      "pc": 76,
+      "instruction": "s_mov_b64 ttmp[2:3], 0",
+      "hex": "8001eebe",
+      "native_words": "BEEE0180"
+    },
+    {
+      "pc": 80,
+      "instruction": "v_mov_b32_e32 v1, 0",
+      "hex": "8002027e",
+      "native_words": "7E020280"
+    },
+    {
+      "pc": 84,
+      "instruction": "global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE",
+      "hex": "6e4017ee0000040001000000",
+      "native_words": "EE17406E 00040000 00000001"
+    },
+    {
+      "pc": 96,
+      "instruction": "v_writelane_b32 v1, ttmp15, 0",
+      "hex": "010061d77b000100",
+      "native_words": "D7610001 0001007B"
+    },
+    {
+      "pc": 104,
+      "instruction": "s_mov_b32 exec_lo, ttmp14",
+      "hex": "7a00febe",
+      "native_words": "BEFE007A"
+    }
+  ],
+  "corrected": [
+    {
+      "pc": 60,
+      "instruction": "s_getreg_b32 ttmp2, hwreg(HW_REG_WAVE_MODE, 12, 6)",
+      "hex": "012beeb8",
+      "native_words": "B8EE2B01"
+    },
+    {
+      "pc": 64,
+      "instruction": "s_mov_b32 ttmp3, 0",
+      "hex": "8000efbe",
+      "native_words": "BEEF0080"
+    },
+    {
+      "pc": 68,
+      "instruction": "s_setreg_b32 hwreg(HW_REG_WAVE_MODE, 12, 6), ttmp3",
+      "hex": "012b6fb9",
+      "native_words": "B96F2B01"
+    },
+    {
+      "pc": 72,
+      "instruction": "s_mov_b32 ttmp14, exec_lo",
+      "hex": "7e00fabe",
+      "native_words": "BEFA007E"
+    },
+    {
+      "pc": 76,
+      "instruction": "s_mov_b32 exec_lo, 1",
+      "hex": "8100febe",
+      "native_words": "BEFE0081"
+    },
+    {
+      "pc": 80,
+      "instruction": "v_readlane_b32 ttmp15, v1, 0",
+      "hex": "7b0060d701010100",
+      "native_words": "D760007B 00010101"
+    },
+    {
+      "pc": 88,
+      "instruction": "v_sub_nc_u32_e64 v1, 63, ttmp2",
+      "hex": "010026d5bfdc0002",
+      "native_words": "D5260001 0200DCBF"
+    },
+    {
+      "pc": 96,
+      "instruction": "global_prefetch_b8 v1, ttmp[2:3] offset:-63 scope:SCOPE_SE",
+      "hex": "6e4017ee0000040001c1ffff",
+      "native_words": "EE17406E 00040000 FFFFC101"
+    },
+    {
+      "pc": 108,
+      "instruction": "v_writelane_b32 v1, ttmp15, 0",
+      "hex": "010061d77b000100",
+      "native_words": "D7610001 0001007B"
+    },
+    {
+      "pc": 116,
+      "instruction": "s_setreg_b32 hwreg(HW_REG_WAVE_MODE, 12, 6), ttmp2",
+      "hex": "012b6eb9",
+      "native_words": "B96E2B01"
+    },
+    {
+      "pc": 120,
+      "instruction": "s_mov_b32 exec_lo, ttmp14",
+      "hex": "7a00febe",
+      "native_words": "BEFE007A"
+    }
+  ]
+}

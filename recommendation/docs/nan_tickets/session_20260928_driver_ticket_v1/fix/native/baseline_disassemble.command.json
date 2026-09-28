@@ -1,0 +1,9 @@
+{
+  "argv": [
+    "/opt/rocm/lib/llvm/bin/llvm-objdump",
+    "-d",
+    "--mcpu=gfx1250",
+    "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_llvm_roundtrip_v2/baseline.o"
+  ],
+  "exit_code": 0
+}

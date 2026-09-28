@@ -1,0 +1,89 @@
+{
+  "status": "PASS_INDEPENDENT_CROSS_HOST_SYNTHESIS_SCOPE_AND_CLAIMS_REVIEW",
+  "utc": "2026-09-28T01:41:52.825253+00:00",
+  "reviewed_readme": {
+    "path": "/home/chcai/training/recommendation/docs/nan_tickets/cross_host_coverage_20260928/README.md",
+    "bytes": 14533,
+    "sha256": "22be0a0ccf7c8218b80eec9e02e6eacdfd1434234560ce8bc49ec2ac21543406"
+  },
+  "inputs": [
+    {
+      "path": "/home/chcai/training/recommendation/docs/nan_tickets/cross_host_coverage_20260928/SOURCES.json",
+      "bytes": 40252,
+      "sha256": "26ece9811b2cd196a6a83bfcabc203ea7a83d6e9bac98cbb8e0a619b3073fd49"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/nan_tickets/cross_host_coverage_20260928/reviews/B0_ASSESSMENT.md",
+      "bytes": 10065,
+      "sha256": "29db4665af527a07ef2fa27da12d8363da88fb06be331b03dea44aa521668002"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/nan_tickets/cross_host_coverage_20260928/reviews/B0_ASSESSMENT.json",
+      "bytes": 17640,
+      "sha256": "9abbbc256202afedb921726195ee537ba29b67c712398c7212e5fe29d1159f94"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/nan_tickets/cross_host_coverage_20260928/reviews/1P4G_ASSESSMENT.md",
+      "bytes": 11857,
+      "sha256": "f40919a292d684451440cf598911b678e78427e0b3e8b85be67f21a213b87d22"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/nan_tickets/cross_host_coverage_20260928/reviews/1P4G_ASSESSMENT.json",
+      "bytes": 20390,
+      "sha256": "9a094122f152ab41162264bb6a4297e13da1612cba6f979fe27594524a6eb00d"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/nan_tickets/cross_host_coverage_20260928/reviews/CLUSTER_ASSESSMENT.md",
+      "bytes": 15274,
+      "sha256": "7b5584e18ce5d2cded2e579c7cedf8ef309ddbebd2579c700bcf3d6b4d0a4313"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/nan_tickets/cross_host_coverage_20260928/reviews/CLUSTER_ASSESSMENT.json",
+      "bytes": 47683,
+      "sha256": "3073ffdc57bdbc02837f78a58bf0295a7ac1e39a781d48ce0c558ceee5bf5cb1"
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/nan_tickets/cross_host_coverage_20260928/reviews/A0_RECORDED_SCOPE.json",
+      "bytes": 1551,
+      "sha256": "164836d41c8e4d26fc08fd977ca12bc89e7eb7d375aa771383e734e0fcc99dc2"
+    }
+  ],
+  "checks": [
+    "Shared exact original-handler component applicability is separated from attribution of every numerical fault/hang.",
+    "A0 controlled original/corrected mechanism and complete DW evidence remain distinguished from missing historical interrupt and STU1 evidence.",
+    "B0 numerical bridge correctly describes NaN copied into a live zero-DY register; later earlier-X-load corrected counterfactual is explicitly A0 execution of B0-published native text.",
+    "B0 unexecuted privileged correction and distinct 5736-byte staged candidate are distinguished from tested 5672-byte A0/cluster handler.",
+    "a37-1 matching reported component is distinguished from its unproved three faults, first-fault ledger inconsistency, exposure uncertainty and fault-client ambiguity.",
+    "a37-2 successful convergence does not establish measured handler identity or immunity.",
+    "Cluster 2089 raw finite / 2108 later status / 2128 document-only checkpoints are explicit; no completed/current remote-run claim.",
+    "Cluster host/boot/FBGEMM-build-label and binding differences prevent a single-variable training claim; saved module audit versus independently reconstructed handler scopes remain explicit.",
+    "Cluster telemetry rates and summed device durations are correctly distinguished from matched exposure or CWSR interrupt counts.",
+    "Cluster step123 localized-gradient summary is distinguished from loss rows and absent per-rank raw coordinates.",
+    "MES/halt, allocator, buffer-op, fabric, int32, and STU1 issues retain separate unproved or established mechanisms as appropriate.",
+    "VM_PAGE_FAULT reserved-memory labels are not presented as runtime faults.",
+    "Next acceptance tests retain target-specific module builds, original/corrected validation, exposure controls and vendor generation/ABI/hazard limits."
+  ],
+  "source_inventory_metadata_check": {
+    "files": 75,
+    "bytes": 1592689,
+    "file_existence_and_sizes_checked": true,
+    "raw_payload_hashing_repeated": false
+  },
+  "relative_links_checked": 10,
+  "copied_cluster_assessments_byte_exact": true,
+  "findings": [],
+  "limitations": [
+    "Bounded synthesis consistency review against independently scoped peer assessments; no repeat of numerical/raw/module audits.",
+    "B0/1P4G runtime outcomes remain reported by retained host documents and the cited peer assessment; no new remote or GPU observations.",
+    "Root owns final package hash/archive/freeze validation."
+  ],
+  "actions": {
+    "GPU": false,
+    "remote": false,
+    "module": false,
+    "supplied_scripts_executed": false,
+    "bulk_raw_audit_repeated": false,
+    "frozen_edits": false,
+    "git_commits_or_pushes": false
+  }
+}

@@ -1,0 +1,3494 @@
+{
+  "status": "PASS_COMPLETE_CORRECTED_DRIVER_HISTORICAL_DW_QUARTET",
+  "execution": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/terminal.json",
+    "bytes": 18775,
+    "sha256": "54c06225b1700e67eb50809aa11eface6b5db41c384c6feb1ec00447c97f7f8b"
+  },
+  "contract": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_v1/CONTRACT.json",
+    "bytes": 28295,
+    "sha256": "199659592dac03b81ead164d80694084c241bee07260a95c975db7dab6dde5a1"
+  },
+  "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+  "arms": [
+    "sink_control_nop",
+    "sink_candidate_nop",
+    "sink_control_trap",
+    "sink_candidate_trap"
+  ],
+  "calls": 16,
+  "native_dispatches": 16,
+  "full_output_bytes_compared": 4194304,
+  "full_retained_input_bytes_rehashed": 14280812544,
+  "arm_audits": [
+    {
+      "status": "PASS_CORRECTED_DW_BASELINE_FOUR_CALLS_COMPLETE_AUDIT",
+      "arm": "sink_control_nop",
+      "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+      "contract": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_v1/CONTRACT.json",
+        "bytes": 28295,
+        "sha256": "199659592dac03b81ead164d80694084c241bee07260a95c975db7dab6dde5a1"
+      },
+      "lifecycle": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_control_nop/lifecycle.json",
+        "bytes": 5816,
+        "sha256": "fa3a5bfb3f9e91c148cd75fe364ae3dc7a76fe9ed89fb5f9d3cad6bb5633aba3"
+      },
+      "auditor": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_v1/audit_completed.py",
+        "bytes": 17058,
+        "sha256": "8b49eac65a1da7d45d32af1fb2c6279f07687091aa7251584d8a04773776f91a"
+      },
+      "policy": {
+        "schema": "MI450_DOWNSTREAM_EXPLICIT_MC60_POLICY_ADAPTER_V1",
+        "adapter": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_mc60_permitted_downstream_v1/adapt_downstream.py",
+          "bytes": 15485,
+          "sha256": "83967267747ceee01ea5b8987dd6680ffaf2c77592e6b3bc079c2afb5b4d18f6"
+        },
+        "policy": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_mc60_permitted_v1/mc60_policy.py",
+          "bytes": 6615,
+          "sha256": "938d59b48bb559a7d3fd8cff099c81fe041b8de830956f4f0d8dd0f01ec49a5c"
+        },
+        "authorization": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_gpu_validation_root_v1/AUTHORIZATION.json",
+          "bytes": 1437,
+          "sha256": "eb8f2c36e1ecddeaa9e077fafa9d888d4c8d4ea4361751da6d83fec7f01f49e6"
+        },
+        "platform_health_clearance": false,
+        "compatibility_status_scope": "Original PASS status names indicate numerical and lifecycle success under this diagnostic MC60 exception, not a fault-free platform",
+        "original_sources": {
+          "component-prerequisite": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_driver_components_v1/check_prerequisite.py",
+            "bytes": 7216,
+            "sha256": "53fc1ffc41d0d86a5898adf8039dbe6db286e0741c4d5d67b31880fb6cbcc487"
+          },
+          "components": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_components_root_integration_review_v2/supervise.py",
+            "bytes": 20559,
+            "sha256": "493b1cbaeea76e6ca3fcdedbe30bb4a482a159d26053fa0e409ffad9dc9838d6"
+          },
+          "component-consumer": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_components_root_integration_review_v2/validate_completed.py",
+            "bytes": 11507,
+            "sha256": "d867d45933dec3212222251e962a1c20e4db47f06a7d562c83aa1660d75cca26"
+          },
+          "attention": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_corrected_package_v2/supervise_full.py",
+            "bytes": 21748,
+            "sha256": "b2bb93c71d8196e91e0c5479c984ee0988df2052424e009ac98043fc0f06f4c2"
+          },
+          "attention-prerequisite": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_corrected_package_v2/check_prerequisite.py",
+            "bytes": 9138,
+            "sha256": "09cc77ef3f113f2116f7f309983c3fb19123b7f332cea78e8ff80cde27aca238"
+          },
+          "e2e": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/supervise.py",
+            "bytes": 24377,
+            "sha256": "63e9fa6540b0912cd5c55f1b02a75ed242221513db96205f3511757af9088aa5"
+          },
+          "e2e-auditor": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/audit_completed.py",
+            "bytes": 24837,
+            "sha256": "abfd18eefb2644ffb1e64c4a231e87d3f8501987ad38f7c8d939aee10d0948b1"
+          },
+          "e2e-policy-contract": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/policy_contract.py",
+            "bytes": 10515,
+            "sha256": "9c89cc2036e870ab982c6528e5396c58b1ea1612c4d755c124cd7e7efc0a6558"
+          }
+        },
+        "scope": "Only complete records admitted by the pinned shared corrected-MC60 policy; all other fault and original evidence checks retained",
+        "original_sources_modified": false,
+        "current_driver_binding": {
+          "adapter": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/run_downstream.py",
+            "bytes": 13249,
+            "sha256": "e66d789eb43944f4ad279a32ab965e64b3ec073664996b0d65db0de53d3ac5b1"
+          },
+          "derivation": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/DOWNSTREAM_DERIVATION.json",
+            "bytes": 24715,
+            "sha256": "20abbc25e050a49ccf7893a10eb24bde3d5e8702f0f2a35ffff868c35f37d0e7"
+          },
+          "expected_boot": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+          "module_audit": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_audit_v1/REVIEW.json",
+            "bytes": 9810,
+            "sha256": "df6b21da005286a79048a95e1028f1f65b0584c69e95543cbcf1b509944cf3d1"
+          },
+          "health_terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/health/terminal.json",
+            "bytes": 15461,
+            "sha256": "292012919a0567f63747fade3f597112751938ce76a5eddfc0d91f30626aed0b"
+          },
+          "adjudication": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/activation_adjudication/terminal.json",
+            "bytes": 2321,
+            "sha256": "8eeb4a0fbfd74c751940adeafb51e0f580a95c4edd5d78c9ee2555425c5d2e1e"
+          },
+          "numerical_native_environment_lifecycle_changes": false,
+          "changes": [
+            "Current-source candidate and installed baseline; all prior boots excluded.",
+            "Current health handoff and actual activation adjudication.",
+            "Fresh runtimes and re-pinned current-driver producer configurations.",
+            "Attention idle driver literal and E2E shared component gate driver globals."
+          ],
+          "full_E2E_package_ready": false
+        }
+      },
+      "original_native_audit": {
+        "status": "PASS_INDEPENDENT_SINK_QUARTET_TERMINAL_NATIVE_FULL_WORDS_CONTROLS_LIBRARIES",
+        "arm": "sink_control_nop",
+        "injection": "sink_quartet",
+        "producer_status": "PASS",
+        "calls": 4,
+        "prospective_mismatch_calls": [],
+        "frozen_review": {
+          "manifest": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/launch_manifest_output_v1.json",
+            "bytes": 68877,
+            "sha256": "b7f2b59b6b270ed32bbb83b96db878727d68809945dcbdd02232706a50c9c223"
+          },
+          "source_freeze": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/sources.sha256",
+            "bytes": 33698,
+            "sha256": "9ef3e580ab778445cf3097854bb9bb243b9044ca7e4e87f23b7b45b81217cf7d"
+          },
+          "archive": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/sources_and_artifacts_sink_v1.tar.gz",
+            "bytes": 5569982,
+            "sha256": "918d3c04558fc1024ac210803743bff62a7a26daf8d30308fc2dce98391517c0"
+          },
+          "source_count": 184,
+          "all_source_and_archive_bytes_checked": true,
+          "runtime_inputs": [
+            {
+              "path": "/workspace/recommendation/scripts/replay_additional_linear_capture.py",
+              "bytes": 37139,
+              "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/replay_backward_boundary.py",
+              "bytes": 47094,
+              "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/replay_hstu_output_boundary.py",
+              "bytes": 31162,
+              "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/stress_addmm_backward_boundary.py",
+              "bytes": 37705,
+              "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/stress_hstu_output_boundary.py",
+              "bytes": 24294,
+              "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/nan_backward_boundaries.py",
+              "bytes": 31280,
+              "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/audit_training_arithmetic_bounds.py",
+              "bytes": 16614,
+              "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/audit_training_gradient_flow.py",
+              "bytes": 25133,
+              "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/trace_projection_hip_launches_v2.cpp",
+              "bytes": 10647,
+              "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+              "bytes": 7068,
+              "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+              "bytes": 94391,
+              "sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+              "bytes": 60748,
+              "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib",
+              "bytes": 2687,
+              "sha256": "8ac6594e0e67b351b853ee679d815acbf79f3fb138c789ce7d225ce9f67e5d59"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_lazy_gfx1250.dat.zlib",
+              "bytes": 4746,
+              "sha256": "908c9fb056975e44f27aa675238e7a5751943f50f1bb0312c05f33337f5fa402"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLiteLibrary_lazy_gfx1250_Mapping.dat.zlib",
+              "bytes": 1588,
+              "sha256": "139f25bb1441ed65f381ce5ded3c45ec0586b2e75e375552dc4b83bc443f46eb"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+              "bytes": 3570835225,
+              "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/experiment_manifest.json",
+              "bytes": 7599,
+              "sha256": "48cae5be6477362701e2bc4ac0fc60dc4f3fa792c1b260b33105a7754a540d7a"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/CPU_tests/replace_linear_dw_bank_equal_elf_v1.so",
+              "bytes": 139296,
+              "sha256": "85d593b9d148a2ac9862dec2ba1334e2449e6497aa841f46bdf252b0b02cf036"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_kernel_metadata.json",
+              "bytes": 7099,
+              "sha256": "2ac8b368d5020fd8ca9f437831f38c885e2b637e1b6e7373b1fb2dc6ecfdb084"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_candidate_nop.elf",
+              "bytes": 352664,
+              "sha256": "50b6e419a84e8196061efd2926efedbe4f302c9c1c19724a4273c62d8e2fe700"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_candidate_trap.elf",
+              "bytes": 352664,
+              "sha256": "e1f13829baa8a299e87ae4eb01356840a4da358a6e4c9768823727156e91f88c"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_control_nop.elf",
+              "bytes": 352664,
+              "sha256": "6bcd85133ac3cb4e52c2ed854f3de303dfde3aee4f2332fdbf34cc25b8faf9e2"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_control_trap.elf",
+              "bytes": 352664,
+              "sha256": "6b7851fa757704d276d4a87530052f8d7c240b0f98b29b32a85e2141a264a4e7"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_oracle.py",
+              "bytes": 4083,
+              "sha256": "d70e2666ad5fd6fe38bec6d3699c7d922955239918ed791fd1398b145ce92b17"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_DW_native_Nmajor.bf16.bin",
+              "bytes": 262144,
+              "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_block_M0_8_N128_256.bf16",
+              "bytes": 2048,
+              "sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/run_original_witness.py",
+              "bytes": 16702,
+              "sha256": "d697c9d80cf34af394659348edca9263b7870575ab88c892aa8dfe66193f823f"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/runtime_sparse.py",
+              "bytes": 2784,
+              "sha256": "196c27354596a2bd41a635b21aedadfd649432dd5d070e9280f2665c0b957eed"
+            }
+          ],
+          "configuration": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/configuration_sparse.json",
+            "bytes": 16484,
+            "sha256": "4d5b003f3e5b2ebc6133a25d0de0fee3d3e33d4d638a7f5eac5373749e946169"
+          },
+          "container_catalog_baseline": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_full_BF16_sparse_runtime_v1/configuration_sparse.json",
+            "bytes": 11545,
+            "sha256": "28ebe905ff7de83a75086ae63b23ba58f71929a3313493ab4ce6bd736550c1b8"
+          },
+          "four_container_catalog_identities": [
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+              "bytes": 60748,
+              "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib",
+              "bytes": 2687,
+              "sha256": "8ac6594e0e67b351b853ee679d815acbf79f3fb138c789ce7d225ce9f67e5d59"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_lazy_gfx1250.dat.zlib",
+              "bytes": 4746,
+              "sha256": "908c9fb056975e44f27aa675238e7a5751943f50f1bb0312c05f33337f5fa402"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLiteLibrary_lazy_gfx1250_Mapping.dat.zlib",
+              "bytes": 1588,
+              "sha256": "139f25bb1441ed65f381ce5ded3c45ec0586b2e75e375552dc4b83bc443f46eb"
+            }
+          ],
+          "owned_ELF_layout_audit": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/independent_elf_layout_audit.json",
+            "bytes": 88276,
+            "sha256": "90cebaaf219453d09511b255c7bb04ff2543a222600f2b421c4ec8085dbecf11"
+          },
+          "experiment_manifest": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/experiment_manifest.json",
+            "bytes": 7599,
+            "sha256": "48cae5be6477362701e2bc4ac0fc60dc4f3fa792c1b260b33105a7754a540d7a"
+          },
+          "target": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_block_M0_8_N128_256.bf16",
+            "bytes": 2048,
+            "sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+          },
+          "criteria": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/prospective_sink_criteria.json",
+            "bytes": 8735,
+            "sha256": "e298ce9226ee82c211042ad2d13f064679827c278709967abcf41eaf534e8e88"
+          }
+        },
+        "auditor": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_audit_v1/audit_sink_terminal.py",
+          "bytes": 32658,
+          "sha256": "c09cc568cd7b4e3dcac062c1b5794a4f0736b00e01ff4095854263007732aca7"
+        },
+        "terminal": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_control_nop/lifecycle.json",
+          "bytes": 5816,
+          "sha256": "fa3a5bfb3f9e91c148cd75fe364ae3dc7a76fe9ed89fb5f9d3cad6bb5633aba3"
+        },
+        "launch": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_control_nop/launch.json",
+          "bytes": 2964,
+          "sha256": "c639d4e362422014a9098706293fd8c2689fdaa19d480d3ec371099ca4e65c7c"
+        },
+        "report": {
+          "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_nop/report.json",
+          "bytes": 381881,
+          "sha256": "bc9ddd478e2e1cb3de184cc08bf9d03c857146218d3b2317f11e9dc93229e494"
+        },
+        "process": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_control_nop/process/spawned.json",
+          "bytes": 4470,
+          "sha256": "a6b8a493530de7b60ad5c30dfe3e6d2c3bb3b739e523230b6efb7c487b585706"
+        },
+        "post_idle": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_control_nop/after/checked_gate.json",
+          "bytes": 448894,
+          "sha256": "bd7ded3a6ba1712ffc64a6df642355bcca98207324a21dfeee84f3f7bff0940b"
+        },
+        "provenance": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_DW_runtime_v1/sink_control_nop_environment.json",
+          "bytes": 22788,
+          "sha256": "60ad0456efee349f64827a166006ab7e657e8557a3e4ab92ddb758daef65c3a2"
+        },
+        "libraries": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_DW_runtime_v1/sink_control_nop_libraries.json",
+          "bytes": 2014,
+          "sha256": "9dcbc850048a2c352c8ba350733bfd9dc81fe3c6cee6f9dd08477aa03a192009"
+        },
+        "mapped_libraries": [
+          {
+            "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/CPU_tests/replace_linear_dw_bank_equal_elf_v1.so",
+            "bytes": 139296,
+            "sha256": "85d593b9d148a2ac9862dec2ba1334e2449e6497aa841f46bdf252b0b02cf036"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+            "bytes": 28048929,
+            "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+            "bytes": 4887073,
+            "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/Kernels.so-000-gfx1250.hsaco",
+            "bytes": 9155640,
+            "sha256": "58b6378c3e32a9e0452f2ff06f295c4c63c9e4110a9c216d61e68f95b8d2d3ca"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+            "bytes": 60748,
+            "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblas.so.3",
+            "bytes": 1176113,
+            "sha256": "6200e50325b06b81bd5689e52a130f825f8f6e39388f5466a983989b1611d114"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblaslt.so.1",
+            "bytes": 8406320,
+            "sha256": "88b273588dd7374065569efa72b6ccbcdd92c1ceaf599d0600c93e91a64aacd4"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/librocblas.so.5",
+            "bytes": 27842897,
+            "sha256": "4dae8974205c74e73d96770b8f045320c6798863108f06c2242b20987abdb6ac"
+          }
+        ],
+        "trace_sha256": "a4c63c9a6989934d6fee45ae481a84415ea8e60a5347cb8839b3a60b04140f85",
+        "event_counts": {
+          "get_function_return": 2,
+          "native_override_original_lookup_error": 1,
+          "native_override_image_verified": 1,
+          "native_override_module_load_return": 1,
+          "native_override_GetFunction_return": 1,
+          "native_override_function_return": 1,
+          "launch_begin": 4,
+          "launch_return": 4
+        },
+        "owned_ELF_sha256": "6bcd85133ac3cb4e52c2ed854f3de303dfde3aee4f2332fdbf34cc25b8faf9e2",
+        "target": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+        "all_172_packet_bytes_expected": true,
+        "all_packets": [
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x70f8d2c00000",
+            "B": "0x70f919aefe00",
+            "C": "0x707f36600000",
+            "D": "0x707f36600000"
+          },
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x70f8d2c00000",
+            "B": "0x70f919aefe00",
+            "C": "0x707f36640400",
+            "D": "0x707f36640400"
+          },
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x70f8d2c00000",
+            "B": "0x70f919aefe00",
+            "C": "0x707f36600000",
+            "D": "0x707f36600000"
+          },
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x70f8d2c00000",
+            "B": "0x70f919aefe00",
+            "C": "0x707f36640400",
+            "D": "0x707f36640400"
+          }
+        ],
+        "outputs": [
+          {
+            "iteration": 1,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_nop/call_01_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_nop/call_01_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          },
+          {
+            "iteration": 2,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_nop/call_02_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_nop/call_02_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          },
+          {
+            "iteration": 3,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_nop/call_03_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_nop/call_03_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          },
+          {
+            "iteration": 4,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_nop/call_04_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_nop/call_04_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          }
+        ],
+        "retained_inputs": {
+          "x": {
+            "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_nop/x_final_backing.bin",
+            "bytes": 1190067712,
+            "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "complete_backing_bytes_hashed": true,
+            "original_backing_hash_matches": true
+          },
+          "dy": {
+            "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_nop/dy_final_backing.bin",
+            "bytes": 2380135424,
+            "sha256": "8982a8bba7aa6ae843a589a2ff671d3b62adb2a9359609c1988e8cfcdf1cecea",
+            "complete_backing_bytes_hashed": true,
+            "original_backing_hash_matches": true
+          }
+        },
+        "original_experiment_manifest": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/experiment_manifest.json",
+          "bytes": 7599,
+          "sha256": "48cae5be6477362701e2bc4ac0fc60dc4f3fa792c1b260b33105a7754a540d7a"
+        },
+        "independent_target_sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807",
+        "exact_controls_and_libraries": {
+          "historical_metadata_report": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v513_control_v1.json",
+            "bytes": 392284,
+            "sha256": "d1d2b1b30522c5b1fea245efa25d32f20cdefe8bc52dd3ddf5ed88b4a5bcfa49"
+          },
+          "entire_metadata_canonical_sha256": "a9251d9f059343c732a3759bb2a2af49ffbf13a54ea12d012e8642b0d5493673",
+          "all_calls_exact_captured_controls_and_BLAS": true,
+          "baseline_libraries": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_gated_DW_trap_bank82_equal_v1_libraries.json",
+            "bytes": 2108,
+            "sha256": "12a54336d03a494d2d342ddcd9ad95fbae188ae9fc33a4d70776eaf4148071fb"
+          },
+          "identical_seven_runtime_libraries": [
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+              "bytes": 28048929,
+              "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+              "bytes": 4887073,
+              "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/Kernels.so-000-gfx1250.hsaco",
+              "bytes": 9155640,
+              "sha256": "58b6378c3e32a9e0452f2ff06f295c4c63c9e4110a9c216d61e68f95b8d2d3ca"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+              "bytes": 60748,
+              "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblas.so.3",
+              "bytes": 1176113,
+              "sha256": "6200e50325b06b81bd5689e52a130f825f8f6e39388f5466a983989b1611d114"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblaslt.so.1",
+              "bytes": 8406320,
+              "sha256": "88b273588dd7374065569efa72b6ccbcdd92c1ceaf599d0600c93e91a64aacd4"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/librocblas.so.5",
+              "bytes": 27842897,
+              "sha256": "4dae8974205c74e73d96770b8f045320c6798863108f06c2242b20987abdb6ac"
+            }
+          ]
+        },
+        "launch_capture_identity": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+          "bytes": 3570835225,
+          "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+        },
+        "limits": [
+          "All seven runtime library records match the retained baseline; current container files are not freshly rehashed by this auditor.",
+          "No on-device instruction-fetch identity observation.",
+          "Complete boundary input observations do not exclude transient changes between boundaries.",
+          "Four original-input calls and the separate matrix comparison do not establish training stability.",
+          "Static native proof selects seven forced events; no runtime trap-count observer is added."
+        ]
+      },
+      "corrected_producer_provenance": {
+        "adapter": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260923_current_DW_runtime_v1/producer_adapter.py",
+          "bytes": 4429,
+          "sha256": "eff65374f39f8cdba2b4f5c02421207a375775e409dda45bb91ee8d99b171ad5"
+        },
+        "original_implementation": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/run_original_witness.py",
+          "bytes": 16702,
+          "sha256": "d697c9d80cf34af394659348edca9263b7870575ab88c892aa8dfe66193f823f"
+        },
+        "baseline": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+          "bytes": 262144,
+          "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+        },
+        "historical": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_DW_native_Nmajor.bf16.bin",
+          "bytes": 262144,
+          "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+        },
+        "expectation": "All four arms require ordinary full-baseline equality",
+        "original_native_ELFs_modified": false,
+        "platform_health_clearance": false
+      },
+      "platform_health_clearance": false,
+      "complete_retained_input_backings_freshly_rehashed": true,
+      "all_131072_output_words_independently_compared": true
+    },
+    {
+      "status": "PASS_CORRECTED_DW_BASELINE_FOUR_CALLS_COMPLETE_AUDIT",
+      "arm": "sink_candidate_nop",
+      "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+      "contract": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_v1/CONTRACT.json",
+        "bytes": 28295,
+        "sha256": "199659592dac03b81ead164d80694084c241bee07260a95c975db7dab6dde5a1"
+      },
+      "lifecycle": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_candidate_nop/lifecycle.json",
+        "bytes": 5850,
+        "sha256": "a84e2b8a8c5dbb9a262438c8ca93da84d51db06c7936869f0808cbb487cbe605"
+      },
+      "auditor": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_v1/audit_completed.py",
+        "bytes": 17058,
+        "sha256": "8b49eac65a1da7d45d32af1fb2c6279f07687091aa7251584d8a04773776f91a"
+      },
+      "policy": {
+        "schema": "MI450_DOWNSTREAM_EXPLICIT_MC60_POLICY_ADAPTER_V1",
+        "adapter": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_mc60_permitted_downstream_v1/adapt_downstream.py",
+          "bytes": 15485,
+          "sha256": "83967267747ceee01ea5b8987dd6680ffaf2c77592e6b3bc079c2afb5b4d18f6"
+        },
+        "policy": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_mc60_permitted_v1/mc60_policy.py",
+          "bytes": 6615,
+          "sha256": "938d59b48bb559a7d3fd8cff099c81fe041b8de830956f4f0d8dd0f01ec49a5c"
+        },
+        "authorization": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_gpu_validation_root_v1/AUTHORIZATION.json",
+          "bytes": 1437,
+          "sha256": "eb8f2c36e1ecddeaa9e077fafa9d888d4c8d4ea4361751da6d83fec7f01f49e6"
+        },
+        "platform_health_clearance": false,
+        "compatibility_status_scope": "Original PASS status names indicate numerical and lifecycle success under this diagnostic MC60 exception, not a fault-free platform",
+        "original_sources": {
+          "component-prerequisite": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_driver_components_v1/check_prerequisite.py",
+            "bytes": 7216,
+            "sha256": "53fc1ffc41d0d86a5898adf8039dbe6db286e0741c4d5d67b31880fb6cbcc487"
+          },
+          "components": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_components_root_integration_review_v2/supervise.py",
+            "bytes": 20559,
+            "sha256": "493b1cbaeea76e6ca3fcdedbe30bb4a482a159d26053fa0e409ffad9dc9838d6"
+          },
+          "component-consumer": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_components_root_integration_review_v2/validate_completed.py",
+            "bytes": 11507,
+            "sha256": "d867d45933dec3212222251e962a1c20e4db47f06a7d562c83aa1660d75cca26"
+          },
+          "attention": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_corrected_package_v2/supervise_full.py",
+            "bytes": 21748,
+            "sha256": "b2bb93c71d8196e91e0c5479c984ee0988df2052424e009ac98043fc0f06f4c2"
+          },
+          "attention-prerequisite": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_corrected_package_v2/check_prerequisite.py",
+            "bytes": 9138,
+            "sha256": "09cc77ef3f113f2116f7f309983c3fb19123b7f332cea78e8ff80cde27aca238"
+          },
+          "e2e": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/supervise.py",
+            "bytes": 24377,
+            "sha256": "63e9fa6540b0912cd5c55f1b02a75ed242221513db96205f3511757af9088aa5"
+          },
+          "e2e-auditor": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/audit_completed.py",
+            "bytes": 24837,
+            "sha256": "abfd18eefb2644ffb1e64c4a231e87d3f8501987ad38f7c8d939aee10d0948b1"
+          },
+          "e2e-policy-contract": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/policy_contract.py",
+            "bytes": 10515,
+            "sha256": "9c89cc2036e870ab982c6528e5396c58b1ea1612c4d755c124cd7e7efc0a6558"
+          }
+        },
+        "scope": "Only complete records admitted by the pinned shared corrected-MC60 policy; all other fault and original evidence checks retained",
+        "original_sources_modified": false,
+        "current_driver_binding": {
+          "adapter": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/run_downstream.py",
+            "bytes": 13249,
+            "sha256": "e66d789eb43944f4ad279a32ab965e64b3ec073664996b0d65db0de53d3ac5b1"
+          },
+          "derivation": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/DOWNSTREAM_DERIVATION.json",
+            "bytes": 24715,
+            "sha256": "20abbc25e050a49ccf7893a10eb24bde3d5e8702f0f2a35ffff868c35f37d0e7"
+          },
+          "expected_boot": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+          "module_audit": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_audit_v1/REVIEW.json",
+            "bytes": 9810,
+            "sha256": "df6b21da005286a79048a95e1028f1f65b0584c69e95543cbcf1b509944cf3d1"
+          },
+          "health_terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/health/terminal.json",
+            "bytes": 15461,
+            "sha256": "292012919a0567f63747fade3f597112751938ce76a5eddfc0d91f30626aed0b"
+          },
+          "adjudication": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/activation_adjudication/terminal.json",
+            "bytes": 2321,
+            "sha256": "8eeb4a0fbfd74c751940adeafb51e0f580a95c4edd5d78c9ee2555425c5d2e1e"
+          },
+          "numerical_native_environment_lifecycle_changes": false,
+          "changes": [
+            "Current-source candidate and installed baseline; all prior boots excluded.",
+            "Current health handoff and actual activation adjudication.",
+            "Fresh runtimes and re-pinned current-driver producer configurations.",
+            "Attention idle driver literal and E2E shared component gate driver globals."
+          ],
+          "full_E2E_package_ready": false
+        }
+      },
+      "original_native_audit": {
+        "status": "PASS_INDEPENDENT_SINK_QUARTET_TERMINAL_NATIVE_FULL_WORDS_CONTROLS_LIBRARIES",
+        "arm": "sink_candidate_nop",
+        "injection": "sink_quartet",
+        "producer_status": "PASS",
+        "calls": 4,
+        "prospective_mismatch_calls": [],
+        "frozen_review": {
+          "manifest": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/launch_manifest_output_v1.json",
+            "bytes": 68877,
+            "sha256": "b7f2b59b6b270ed32bbb83b96db878727d68809945dcbdd02232706a50c9c223"
+          },
+          "source_freeze": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/sources.sha256",
+            "bytes": 33698,
+            "sha256": "9ef3e580ab778445cf3097854bb9bb243b9044ca7e4e87f23b7b45b81217cf7d"
+          },
+          "archive": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/sources_and_artifacts_sink_v1.tar.gz",
+            "bytes": 5569982,
+            "sha256": "918d3c04558fc1024ac210803743bff62a7a26daf8d30308fc2dce98391517c0"
+          },
+          "source_count": 184,
+          "all_source_and_archive_bytes_checked": true,
+          "runtime_inputs": [
+            {
+              "path": "/workspace/recommendation/scripts/replay_additional_linear_capture.py",
+              "bytes": 37139,
+              "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/replay_backward_boundary.py",
+              "bytes": 47094,
+              "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/replay_hstu_output_boundary.py",
+              "bytes": 31162,
+              "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/stress_addmm_backward_boundary.py",
+              "bytes": 37705,
+              "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/stress_hstu_output_boundary.py",
+              "bytes": 24294,
+              "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/nan_backward_boundaries.py",
+              "bytes": 31280,
+              "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/audit_training_arithmetic_bounds.py",
+              "bytes": 16614,
+              "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/audit_training_gradient_flow.py",
+              "bytes": 25133,
+              "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/trace_projection_hip_launches_v2.cpp",
+              "bytes": 10647,
+              "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+              "bytes": 7068,
+              "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+              "bytes": 94391,
+              "sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+              "bytes": 60748,
+              "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib",
+              "bytes": 2687,
+              "sha256": "8ac6594e0e67b351b853ee679d815acbf79f3fb138c789ce7d225ce9f67e5d59"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_lazy_gfx1250.dat.zlib",
+              "bytes": 4746,
+              "sha256": "908c9fb056975e44f27aa675238e7a5751943f50f1bb0312c05f33337f5fa402"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLiteLibrary_lazy_gfx1250_Mapping.dat.zlib",
+              "bytes": 1588,
+              "sha256": "139f25bb1441ed65f381ce5ded3c45ec0586b2e75e375552dc4b83bc443f46eb"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+              "bytes": 3570835225,
+              "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/experiment_manifest.json",
+              "bytes": 7599,
+              "sha256": "48cae5be6477362701e2bc4ac0fc60dc4f3fa792c1b260b33105a7754a540d7a"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/CPU_tests/replace_linear_dw_bank_equal_elf_v1.so",
+              "bytes": 139296,
+              "sha256": "85d593b9d148a2ac9862dec2ba1334e2449e6497aa841f46bdf252b0b02cf036"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_kernel_metadata.json",
+              "bytes": 7099,
+              "sha256": "2ac8b368d5020fd8ca9f437831f38c885e2b637e1b6e7373b1fb2dc6ecfdb084"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_candidate_nop.elf",
+              "bytes": 352664,
+              "sha256": "50b6e419a84e8196061efd2926efedbe4f302c9c1c19724a4273c62d8e2fe700"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_candidate_trap.elf",
+              "bytes": 352664,
+              "sha256": "e1f13829baa8a299e87ae4eb01356840a4da358a6e4c9768823727156e91f88c"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_control_nop.elf",
+              "bytes": 352664,
+              "sha256": "6bcd85133ac3cb4e52c2ed854f3de303dfde3aee4f2332fdbf34cc25b8faf9e2"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_control_trap.elf",
+              "bytes": 352664,
+              "sha256": "6b7851fa757704d276d4a87530052f8d7c240b0f98b29b32a85e2141a264a4e7"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_oracle.py",
+              "bytes": 4083,
+              "sha256": "d70e2666ad5fd6fe38bec6d3699c7d922955239918ed791fd1398b145ce92b17"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_DW_native_Nmajor.bf16.bin",
+              "bytes": 262144,
+              "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_block_M0_8_N128_256.bf16",
+              "bytes": 2048,
+              "sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/run_original_witness.py",
+              "bytes": 16702,
+              "sha256": "d697c9d80cf34af394659348edca9263b7870575ab88c892aa8dfe66193f823f"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/runtime_sparse.py",
+              "bytes": 2784,
+              "sha256": "196c27354596a2bd41a635b21aedadfd649432dd5d070e9280f2665c0b957eed"
+            }
+          ],
+          "configuration": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/configuration_sparse.json",
+            "bytes": 16484,
+            "sha256": "4d5b003f3e5b2ebc6133a25d0de0fee3d3e33d4d638a7f5eac5373749e946169"
+          },
+          "container_catalog_baseline": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_full_BF16_sparse_runtime_v1/configuration_sparse.json",
+            "bytes": 11545,
+            "sha256": "28ebe905ff7de83a75086ae63b23ba58f71929a3313493ab4ce6bd736550c1b8"
+          },
+          "four_container_catalog_identities": [
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+              "bytes": 60748,
+              "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib",
+              "bytes": 2687,
+              "sha256": "8ac6594e0e67b351b853ee679d815acbf79f3fb138c789ce7d225ce9f67e5d59"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_lazy_gfx1250.dat.zlib",
+              "bytes": 4746,
+              "sha256": "908c9fb056975e44f27aa675238e7a5751943f50f1bb0312c05f33337f5fa402"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLiteLibrary_lazy_gfx1250_Mapping.dat.zlib",
+              "bytes": 1588,
+              "sha256": "139f25bb1441ed65f381ce5ded3c45ec0586b2e75e375552dc4b83bc443f46eb"
+            }
+          ],
+          "owned_ELF_layout_audit": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/independent_elf_layout_audit.json",
+            "bytes": 88276,
+            "sha256": "90cebaaf219453d09511b255c7bb04ff2543a222600f2b421c4ec8085dbecf11"
+          },
+          "experiment_manifest": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/experiment_manifest.json",
+            "bytes": 7599,
+            "sha256": "48cae5be6477362701e2bc4ac0fc60dc4f3fa792c1b260b33105a7754a540d7a"
+          },
+          "target": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_block_M0_8_N128_256.bf16",
+            "bytes": 2048,
+            "sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+          },
+          "criteria": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/prospective_sink_criteria.json",
+            "bytes": 8735,
+            "sha256": "e298ce9226ee82c211042ad2d13f064679827c278709967abcf41eaf534e8e88"
+          }
+        },
+        "auditor": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_audit_v1/audit_sink_terminal.py",
+          "bytes": 32658,
+          "sha256": "c09cc568cd7b4e3dcac062c1b5794a4f0736b00e01ff4095854263007732aca7"
+        },
+        "terminal": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_candidate_nop/lifecycle.json",
+          "bytes": 5850,
+          "sha256": "a84e2b8a8c5dbb9a262438c8ca93da84d51db06c7936869f0808cbb487cbe605"
+        },
+        "launch": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_candidate_nop/launch.json",
+          "bytes": 2976,
+          "sha256": "16be3a5b4fe6954de68b337e7f5caf9794aba3be6325ddc6fbaf36c3fc0752a0"
+        },
+        "report": {
+          "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_nop/report.json",
+          "bytes": 381911,
+          "sha256": "cd734bd28b2cb54baca336ff5145c224e8542442aa4936bb580a9eb738354e63"
+        },
+        "process": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_candidate_nop/process/spawned.json",
+          "bytes": 4480,
+          "sha256": "1ec853ad38826fa6482366779ba81813d513d8d099a13d8bdc3781209676161c"
+        },
+        "post_idle": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_candidate_nop/after/checked_gate.json",
+          "bytes": 448910,
+          "sha256": "c26f0a60abb9e08ff4f3739f91414423275270e8155e3b1ef716996aeab52f21"
+        },
+        "provenance": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_DW_runtime_v1/sink_candidate_nop_environment.json",
+          "bytes": 22802,
+          "sha256": "493ee8ac08c7c77f65a44fc8e7ad7f062d87fc91f89391c5f11633a27350e835"
+        },
+        "libraries": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_DW_runtime_v1/sink_candidate_nop_libraries.json",
+          "bytes": 2014,
+          "sha256": "9ebe3293666bb5cfe622bf5b097aae40f69934c70bb2df56f019592d97fa6df6"
+        },
+        "mapped_libraries": [
+          {
+            "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/CPU_tests/replace_linear_dw_bank_equal_elf_v1.so",
+            "bytes": 139296,
+            "sha256": "85d593b9d148a2ac9862dec2ba1334e2449e6497aa841f46bdf252b0b02cf036"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+            "bytes": 28048929,
+            "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+            "bytes": 4887073,
+            "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/Kernels.so-000-gfx1250.hsaco",
+            "bytes": 9155640,
+            "sha256": "58b6378c3e32a9e0452f2ff06f295c4c63c9e4110a9c216d61e68f95b8d2d3ca"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+            "bytes": 60748,
+            "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblas.so.3",
+            "bytes": 1176113,
+            "sha256": "6200e50325b06b81bd5689e52a130f825f8f6e39388f5466a983989b1611d114"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblaslt.so.1",
+            "bytes": 8406320,
+            "sha256": "88b273588dd7374065569efa72b6ccbcdd92c1ceaf599d0600c93e91a64aacd4"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/librocblas.so.5",
+            "bytes": 27842897,
+            "sha256": "4dae8974205c74e73d96770b8f045320c6798863108f06c2242b20987abdb6ac"
+          }
+        ],
+        "trace_sha256": "c2d3592b1896b8d260a52d9a5c068d8c0085a194816344d1e39ffbef97a5bdfb",
+        "event_counts": {
+          "get_function_return": 2,
+          "native_override_original_lookup_error": 1,
+          "native_override_image_verified": 1,
+          "native_override_module_load_return": 1,
+          "native_override_GetFunction_return": 1,
+          "native_override_function_return": 1,
+          "launch_begin": 4,
+          "launch_return": 4
+        },
+        "owned_ELF_sha256": "50b6e419a84e8196061efd2926efedbe4f302c9c1c19724a4273c62d8e2fe700",
+        "target": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+        "all_172_packet_bytes_expected": true,
+        "all_packets": [
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x7653d6c00000",
+            "B": "0x76541daefe00",
+            "C": "0x75da3a600000",
+            "D": "0x75da3a600000"
+          },
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x7653d6c00000",
+            "B": "0x76541daefe00",
+            "C": "0x75da3a640400",
+            "D": "0x75da3a640400"
+          },
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x7653d6c00000",
+            "B": "0x76541daefe00",
+            "C": "0x75da3a600000",
+            "D": "0x75da3a600000"
+          },
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x7653d6c00000",
+            "B": "0x76541daefe00",
+            "C": "0x75da3a640400",
+            "D": "0x75da3a640400"
+          }
+        ],
+        "outputs": [
+          {
+            "iteration": 1,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_nop/call_01_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_nop/call_01_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          },
+          {
+            "iteration": 2,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_nop/call_02_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_nop/call_02_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          },
+          {
+            "iteration": 3,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_nop/call_03_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_nop/call_03_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          },
+          {
+            "iteration": 4,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_nop/call_04_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_nop/call_04_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          }
+        ],
+        "retained_inputs": {
+          "x": {
+            "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_nop/x_final_backing.bin",
+            "bytes": 1190067712,
+            "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "complete_backing_bytes_hashed": true,
+            "original_backing_hash_matches": true
+          },
+          "dy": {
+            "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_nop/dy_final_backing.bin",
+            "bytes": 2380135424,
+            "sha256": "8982a8bba7aa6ae843a589a2ff671d3b62adb2a9359609c1988e8cfcdf1cecea",
+            "complete_backing_bytes_hashed": true,
+            "original_backing_hash_matches": true
+          }
+        },
+        "original_experiment_manifest": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/experiment_manifest.json",
+          "bytes": 7599,
+          "sha256": "48cae5be6477362701e2bc4ac0fc60dc4f3fa792c1b260b33105a7754a540d7a"
+        },
+        "independent_target_sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807",
+        "exact_controls_and_libraries": {
+          "historical_metadata_report": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v513_control_v1.json",
+            "bytes": 392284,
+            "sha256": "d1d2b1b30522c5b1fea245efa25d32f20cdefe8bc52dd3ddf5ed88b4a5bcfa49"
+          },
+          "entire_metadata_canonical_sha256": "a9251d9f059343c732a3759bb2a2af49ffbf13a54ea12d012e8642b0d5493673",
+          "all_calls_exact_captured_controls_and_BLAS": true,
+          "baseline_libraries": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_gated_DW_trap_bank82_equal_v1_libraries.json",
+            "bytes": 2108,
+            "sha256": "12a54336d03a494d2d342ddcd9ad95fbae188ae9fc33a4d70776eaf4148071fb"
+          },
+          "identical_seven_runtime_libraries": [
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+              "bytes": 28048929,
+              "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+              "bytes": 4887073,
+              "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/Kernels.so-000-gfx1250.hsaco",
+              "bytes": 9155640,
+              "sha256": "58b6378c3e32a9e0452f2ff06f295c4c63c9e4110a9c216d61e68f95b8d2d3ca"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+              "bytes": 60748,
+              "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblas.so.3",
+              "bytes": 1176113,
+              "sha256": "6200e50325b06b81bd5689e52a130f825f8f6e39388f5466a983989b1611d114"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblaslt.so.1",
+              "bytes": 8406320,
+              "sha256": "88b273588dd7374065569efa72b6ccbcdd92c1ceaf599d0600c93e91a64aacd4"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/librocblas.so.5",
+              "bytes": 27842897,
+              "sha256": "4dae8974205c74e73d96770b8f045320c6798863108f06c2242b20987abdb6ac"
+            }
+          ]
+        },
+        "launch_capture_identity": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+          "bytes": 3570835225,
+          "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+        },
+        "limits": [
+          "All seven runtime library records match the retained baseline; current container files are not freshly rehashed by this auditor.",
+          "No on-device instruction-fetch identity observation.",
+          "Complete boundary input observations do not exclude transient changes between boundaries.",
+          "Four original-input calls and the separate matrix comparison do not establish training stability.",
+          "Static native proof selects seven forced events; no runtime trap-count observer is added."
+        ]
+      },
+      "corrected_producer_provenance": {
+        "adapter": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260923_current_DW_runtime_v1/producer_adapter.py",
+          "bytes": 4429,
+          "sha256": "eff65374f39f8cdba2b4f5c02421207a375775e409dda45bb91ee8d99b171ad5"
+        },
+        "original_implementation": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/run_original_witness.py",
+          "bytes": 16702,
+          "sha256": "d697c9d80cf34af394659348edca9263b7870575ab88c892aa8dfe66193f823f"
+        },
+        "baseline": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+          "bytes": 262144,
+          "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+        },
+        "historical": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_DW_native_Nmajor.bf16.bin",
+          "bytes": 262144,
+          "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+        },
+        "expectation": "All four arms require ordinary full-baseline equality",
+        "original_native_ELFs_modified": false,
+        "platform_health_clearance": false
+      },
+      "platform_health_clearance": false,
+      "complete_retained_input_backings_freshly_rehashed": true,
+      "all_131072_output_words_independently_compared": true
+    },
+    {
+      "status": "PASS_CORRECTED_DW_BASELINE_FOUR_CALLS_COMPLETE_AUDIT",
+      "arm": "sink_control_trap",
+      "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+      "contract": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_v1/CONTRACT.json",
+        "bytes": 28295,
+        "sha256": "199659592dac03b81ead164d80694084c241bee07260a95c975db7dab6dde5a1"
+      },
+      "lifecycle": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_control_trap/lifecycle.json",
+        "bytes": 5833,
+        "sha256": "e3fb7f3173c1b18b91f234b231e204c00f0e585c29657b33d634677777c8671f"
+      },
+      "auditor": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_v1/audit_completed.py",
+        "bytes": 17058,
+        "sha256": "8b49eac65a1da7d45d32af1fb2c6279f07687091aa7251584d8a04773776f91a"
+      },
+      "policy": {
+        "schema": "MI450_DOWNSTREAM_EXPLICIT_MC60_POLICY_ADAPTER_V1",
+        "adapter": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_mc60_permitted_downstream_v1/adapt_downstream.py",
+          "bytes": 15485,
+          "sha256": "83967267747ceee01ea5b8987dd6680ffaf2c77592e6b3bc079c2afb5b4d18f6"
+        },
+        "policy": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_mc60_permitted_v1/mc60_policy.py",
+          "bytes": 6615,
+          "sha256": "938d59b48bb559a7d3fd8cff099c81fe041b8de830956f4f0d8dd0f01ec49a5c"
+        },
+        "authorization": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_gpu_validation_root_v1/AUTHORIZATION.json",
+          "bytes": 1437,
+          "sha256": "eb8f2c36e1ecddeaa9e077fafa9d888d4c8d4ea4361751da6d83fec7f01f49e6"
+        },
+        "platform_health_clearance": false,
+        "compatibility_status_scope": "Original PASS status names indicate numerical and lifecycle success under this diagnostic MC60 exception, not a fault-free platform",
+        "original_sources": {
+          "component-prerequisite": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_driver_components_v1/check_prerequisite.py",
+            "bytes": 7216,
+            "sha256": "53fc1ffc41d0d86a5898adf8039dbe6db286e0741c4d5d67b31880fb6cbcc487"
+          },
+          "components": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_components_root_integration_review_v2/supervise.py",
+            "bytes": 20559,
+            "sha256": "493b1cbaeea76e6ca3fcdedbe30bb4a482a159d26053fa0e409ffad9dc9838d6"
+          },
+          "component-consumer": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_components_root_integration_review_v2/validate_completed.py",
+            "bytes": 11507,
+            "sha256": "d867d45933dec3212222251e962a1c20e4db47f06a7d562c83aa1660d75cca26"
+          },
+          "attention": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_corrected_package_v2/supervise_full.py",
+            "bytes": 21748,
+            "sha256": "b2bb93c71d8196e91e0c5479c984ee0988df2052424e009ac98043fc0f06f4c2"
+          },
+          "attention-prerequisite": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_corrected_package_v2/check_prerequisite.py",
+            "bytes": 9138,
+            "sha256": "09cc77ef3f113f2116f7f309983c3fb19123b7f332cea78e8ff80cde27aca238"
+          },
+          "e2e": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/supervise.py",
+            "bytes": 24377,
+            "sha256": "63e9fa6540b0912cd5c55f1b02a75ed242221513db96205f3511757af9088aa5"
+          },
+          "e2e-auditor": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/audit_completed.py",
+            "bytes": 24837,
+            "sha256": "abfd18eefb2644ffb1e64c4a231e87d3f8501987ad38f7c8d939aee10d0948b1"
+          },
+          "e2e-policy-contract": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/policy_contract.py",
+            "bytes": 10515,
+            "sha256": "9c89cc2036e870ab982c6528e5396c58b1ea1612c4d755c124cd7e7efc0a6558"
+          }
+        },
+        "scope": "Only complete records admitted by the pinned shared corrected-MC60 policy; all other fault and original evidence checks retained",
+        "original_sources_modified": false,
+        "current_driver_binding": {
+          "adapter": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/run_downstream.py",
+            "bytes": 13249,
+            "sha256": "e66d789eb43944f4ad279a32ab965e64b3ec073664996b0d65db0de53d3ac5b1"
+          },
+          "derivation": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/DOWNSTREAM_DERIVATION.json",
+            "bytes": 24715,
+            "sha256": "20abbc25e050a49ccf7893a10eb24bde3d5e8702f0f2a35ffff868c35f37d0e7"
+          },
+          "expected_boot": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+          "module_audit": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_audit_v1/REVIEW.json",
+            "bytes": 9810,
+            "sha256": "df6b21da005286a79048a95e1028f1f65b0584c69e95543cbcf1b509944cf3d1"
+          },
+          "health_terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/health/terminal.json",
+            "bytes": 15461,
+            "sha256": "292012919a0567f63747fade3f597112751938ce76a5eddfc0d91f30626aed0b"
+          },
+          "adjudication": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/activation_adjudication/terminal.json",
+            "bytes": 2321,
+            "sha256": "8eeb4a0fbfd74c751940adeafb51e0f580a95c4edd5d78c9ee2555425c5d2e1e"
+          },
+          "numerical_native_environment_lifecycle_changes": false,
+          "changes": [
+            "Current-source candidate and installed baseline; all prior boots excluded.",
+            "Current health handoff and actual activation adjudication.",
+            "Fresh runtimes and re-pinned current-driver producer configurations.",
+            "Attention idle driver literal and E2E shared component gate driver globals."
+          ],
+          "full_E2E_package_ready": false
+        }
+      },
+      "original_native_audit": {
+        "status": "PASS_INDEPENDENT_SINK_QUARTET_TERMINAL_NATIVE_FULL_WORDS_CONTROLS_LIBRARIES",
+        "arm": "sink_control_trap",
+        "injection": "sink_quartet",
+        "producer_status": "PASS",
+        "calls": 4,
+        "prospective_mismatch_calls": [],
+        "frozen_review": {
+          "manifest": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/launch_manifest_output_v1.json",
+            "bytes": 68877,
+            "sha256": "b7f2b59b6b270ed32bbb83b96db878727d68809945dcbdd02232706a50c9c223"
+          },
+          "source_freeze": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/sources.sha256",
+            "bytes": 33698,
+            "sha256": "9ef3e580ab778445cf3097854bb9bb243b9044ca7e4e87f23b7b45b81217cf7d"
+          },
+          "archive": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/sources_and_artifacts_sink_v1.tar.gz",
+            "bytes": 5569982,
+            "sha256": "918d3c04558fc1024ac210803743bff62a7a26daf8d30308fc2dce98391517c0"
+          },
+          "source_count": 184,
+          "all_source_and_archive_bytes_checked": true,
+          "runtime_inputs": [
+            {
+              "path": "/workspace/recommendation/scripts/replay_additional_linear_capture.py",
+              "bytes": 37139,
+              "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/replay_backward_boundary.py",
+              "bytes": 47094,
+              "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/replay_hstu_output_boundary.py",
+              "bytes": 31162,
+              "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/stress_addmm_backward_boundary.py",
+              "bytes": 37705,
+              "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/stress_hstu_output_boundary.py",
+              "bytes": 24294,
+              "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/nan_backward_boundaries.py",
+              "bytes": 31280,
+              "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/audit_training_arithmetic_bounds.py",
+              "bytes": 16614,
+              "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/audit_training_gradient_flow.py",
+              "bytes": 25133,
+              "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/trace_projection_hip_launches_v2.cpp",
+              "bytes": 10647,
+              "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+              "bytes": 7068,
+              "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+              "bytes": 94391,
+              "sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+              "bytes": 60748,
+              "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib",
+              "bytes": 2687,
+              "sha256": "8ac6594e0e67b351b853ee679d815acbf79f3fb138c789ce7d225ce9f67e5d59"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_lazy_gfx1250.dat.zlib",
+              "bytes": 4746,
+              "sha256": "908c9fb056975e44f27aa675238e7a5751943f50f1bb0312c05f33337f5fa402"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLiteLibrary_lazy_gfx1250_Mapping.dat.zlib",
+              "bytes": 1588,
+              "sha256": "139f25bb1441ed65f381ce5ded3c45ec0586b2e75e375552dc4b83bc443f46eb"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+              "bytes": 3570835225,
+              "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/experiment_manifest.json",
+              "bytes": 7599,
+              "sha256": "48cae5be6477362701e2bc4ac0fc60dc4f3fa792c1b260b33105a7754a540d7a"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/CPU_tests/replace_linear_dw_bank_equal_elf_v1.so",
+              "bytes": 139296,
+              "sha256": "85d593b9d148a2ac9862dec2ba1334e2449e6497aa841f46bdf252b0b02cf036"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_kernel_metadata.json",
+              "bytes": 7099,
+              "sha256": "2ac8b368d5020fd8ca9f437831f38c885e2b637e1b6e7373b1fb2dc6ecfdb084"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_candidate_nop.elf",
+              "bytes": 352664,
+              "sha256": "50b6e419a84e8196061efd2926efedbe4f302c9c1c19724a4273c62d8e2fe700"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_candidate_trap.elf",
+              "bytes": 352664,
+              "sha256": "e1f13829baa8a299e87ae4eb01356840a4da358a6e4c9768823727156e91f88c"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_control_nop.elf",
+              "bytes": 352664,
+              "sha256": "6bcd85133ac3cb4e52c2ed854f3de303dfde3aee4f2332fdbf34cc25b8faf9e2"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_control_trap.elf",
+              "bytes": 352664,
+              "sha256": "6b7851fa757704d276d4a87530052f8d7c240b0f98b29b32a85e2141a264a4e7"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_oracle.py",
+              "bytes": 4083,
+              "sha256": "d70e2666ad5fd6fe38bec6d3699c7d922955239918ed791fd1398b145ce92b17"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_DW_native_Nmajor.bf16.bin",
+              "bytes": 262144,
+              "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_block_M0_8_N128_256.bf16",
+              "bytes": 2048,
+              "sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/run_original_witness.py",
+              "bytes": 16702,
+              "sha256": "d697c9d80cf34af394659348edca9263b7870575ab88c892aa8dfe66193f823f"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/runtime_sparse.py",
+              "bytes": 2784,
+              "sha256": "196c27354596a2bd41a635b21aedadfd649432dd5d070e9280f2665c0b957eed"
+            }
+          ],
+          "configuration": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/configuration_sparse.json",
+            "bytes": 16484,
+            "sha256": "4d5b003f3e5b2ebc6133a25d0de0fee3d3e33d4d638a7f5eac5373749e946169"
+          },
+          "container_catalog_baseline": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_full_BF16_sparse_runtime_v1/configuration_sparse.json",
+            "bytes": 11545,
+            "sha256": "28ebe905ff7de83a75086ae63b23ba58f71929a3313493ab4ce6bd736550c1b8"
+          },
+          "four_container_catalog_identities": [
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+              "bytes": 60748,
+              "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib",
+              "bytes": 2687,
+              "sha256": "8ac6594e0e67b351b853ee679d815acbf79f3fb138c789ce7d225ce9f67e5d59"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_lazy_gfx1250.dat.zlib",
+              "bytes": 4746,
+              "sha256": "908c9fb056975e44f27aa675238e7a5751943f50f1bb0312c05f33337f5fa402"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLiteLibrary_lazy_gfx1250_Mapping.dat.zlib",
+              "bytes": 1588,
+              "sha256": "139f25bb1441ed65f381ce5ded3c45ec0586b2e75e375552dc4b83bc443f46eb"
+            }
+          ],
+          "owned_ELF_layout_audit": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/independent_elf_layout_audit.json",
+            "bytes": 88276,
+            "sha256": "90cebaaf219453d09511b255c7bb04ff2543a222600f2b421c4ec8085dbecf11"
+          },
+          "experiment_manifest": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/experiment_manifest.json",
+            "bytes": 7599,
+            "sha256": "48cae5be6477362701e2bc4ac0fc60dc4f3fa792c1b260b33105a7754a540d7a"
+          },
+          "target": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_block_M0_8_N128_256.bf16",
+            "bytes": 2048,
+            "sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+          },
+          "criteria": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/prospective_sink_criteria.json",
+            "bytes": 8735,
+            "sha256": "e298ce9226ee82c211042ad2d13f064679827c278709967abcf41eaf534e8e88"
+          }
+        },
+        "auditor": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_audit_v1/audit_sink_terminal.py",
+          "bytes": 32658,
+          "sha256": "c09cc568cd7b4e3dcac062c1b5794a4f0736b00e01ff4095854263007732aca7"
+        },
+        "terminal": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_control_trap/lifecycle.json",
+          "bytes": 5833,
+          "sha256": "e3fb7f3173c1b18b91f234b231e204c00f0e585c29657b33d634677777c8671f"
+        },
+        "launch": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_control_trap/launch.json",
+          "bytes": 2970,
+          "sha256": "bc15c80d976b616100b29e1e768d28aa2beefc893e14fd2f3760f76cf35279f2"
+        },
+        "report": {
+          "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_trap/report.json",
+          "bytes": 381897,
+          "sha256": "cccfa5d831dfc750412b1d847ee2d221c11fba12d863d192c20a07bfdf8c5b9f"
+        },
+        "process": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_control_trap/process/spawned.json",
+          "bytes": 4475,
+          "sha256": "c806f543c52c34b7afcf1a5e4f7efca148bcf5b321092c4530c70311f7c00de1"
+        },
+        "post_idle": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_control_trap/after/checked_gate.json",
+          "bytes": 448902,
+          "sha256": "1a1ea0370c48eda79581bdff5b7f07f55346bef3a256582c37a16b90b1800a6a"
+        },
+        "provenance": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_DW_runtime_v1/sink_control_trap_environment.json",
+          "bytes": 22795,
+          "sha256": "1e5aca4c44ecbebb5a7f6585446faf1bc2df906fa2c1bea4a5f31fddb33e398b"
+        },
+        "libraries": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_DW_runtime_v1/sink_control_trap_libraries.json",
+          "bytes": 2014,
+          "sha256": "775b25ddf6bd5a2a9cf3a1dd5bea67b6f326047a1f8ff9228702e03693158deb"
+        },
+        "mapped_libraries": [
+          {
+            "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/CPU_tests/replace_linear_dw_bank_equal_elf_v1.so",
+            "bytes": 139296,
+            "sha256": "85d593b9d148a2ac9862dec2ba1334e2449e6497aa841f46bdf252b0b02cf036"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+            "bytes": 28048929,
+            "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+            "bytes": 4887073,
+            "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/Kernels.so-000-gfx1250.hsaco",
+            "bytes": 9155640,
+            "sha256": "58b6378c3e32a9e0452f2ff06f295c4c63c9e4110a9c216d61e68f95b8d2d3ca"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+            "bytes": 60748,
+            "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblas.so.3",
+            "bytes": 1176113,
+            "sha256": "6200e50325b06b81bd5689e52a130f825f8f6e39388f5466a983989b1611d114"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblaslt.so.1",
+            "bytes": 8406320,
+            "sha256": "88b273588dd7374065569efa72b6ccbcdd92c1ceaf599d0600c93e91a64aacd4"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/librocblas.so.5",
+            "bytes": 27842897,
+            "sha256": "4dae8974205c74e73d96770b8f045320c6798863108f06c2242b20987abdb6ac"
+          }
+        ],
+        "trace_sha256": "1ea7c9ee2d60190286f7db8ceddd924cd9ccb190b222f53c83bf0cc15b11d843",
+        "event_counts": {
+          "get_function_return": 2,
+          "native_override_original_lookup_error": 1,
+          "native_override_image_verified": 1,
+          "native_override_module_load_return": 1,
+          "native_override_GetFunction_return": 1,
+          "native_override_function_return": 1,
+          "launch_begin": 4,
+          "launch_return": 4
+        },
+        "owned_ELF_sha256": "6b7851fa757704d276d4a87530052f8d7c240b0f98b29b32a85e2141a264a4e7",
+        "target": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+        "all_172_packet_bytes_expected": true,
+        "all_packets": [
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x772f9ac00000",
+            "B": "0x772fe1aefe00",
+            "C": "0x76b5fe600000",
+            "D": "0x76b5fe600000"
+          },
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x772f9ac00000",
+            "B": "0x772fe1aefe00",
+            "C": "0x76b5fe640400",
+            "D": "0x76b5fe640400"
+          },
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x772f9ac00000",
+            "B": "0x772fe1aefe00",
+            "C": "0x76b5fe600000",
+            "D": "0x76b5fe600000"
+          },
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x772f9ac00000",
+            "B": "0x772fe1aefe00",
+            "C": "0x76b5fe640400",
+            "D": "0x76b5fe640400"
+          }
+        ],
+        "outputs": [
+          {
+            "iteration": 1,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_trap/call_01_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_trap/call_01_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          },
+          {
+            "iteration": 2,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_trap/call_02_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_trap/call_02_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          },
+          {
+            "iteration": 3,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_trap/call_03_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_trap/call_03_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          },
+          {
+            "iteration": 4,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_trap/call_04_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_trap/call_04_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          }
+        ],
+        "retained_inputs": {
+          "x": {
+            "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_trap/x_final_backing.bin",
+            "bytes": 1190067712,
+            "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "complete_backing_bytes_hashed": true,
+            "original_backing_hash_matches": true
+          },
+          "dy": {
+            "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_control_trap/dy_final_backing.bin",
+            "bytes": 2380135424,
+            "sha256": "8982a8bba7aa6ae843a589a2ff671d3b62adb2a9359609c1988e8cfcdf1cecea",
+            "complete_backing_bytes_hashed": true,
+            "original_backing_hash_matches": true
+          }
+        },
+        "original_experiment_manifest": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/experiment_manifest.json",
+          "bytes": 7599,
+          "sha256": "48cae5be6477362701e2bc4ac0fc60dc4f3fa792c1b260b33105a7754a540d7a"
+        },
+        "independent_target_sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807",
+        "exact_controls_and_libraries": {
+          "historical_metadata_report": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v513_control_v1.json",
+            "bytes": 392284,
+            "sha256": "d1d2b1b30522c5b1fea245efa25d32f20cdefe8bc52dd3ddf5ed88b4a5bcfa49"
+          },
+          "entire_metadata_canonical_sha256": "a9251d9f059343c732a3759bb2a2af49ffbf13a54ea12d012e8642b0d5493673",
+          "all_calls_exact_captured_controls_and_BLAS": true,
+          "baseline_libraries": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_gated_DW_trap_bank82_equal_v1_libraries.json",
+            "bytes": 2108,
+            "sha256": "12a54336d03a494d2d342ddcd9ad95fbae188ae9fc33a4d70776eaf4148071fb"
+          },
+          "identical_seven_runtime_libraries": [
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+              "bytes": 28048929,
+              "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+              "bytes": 4887073,
+              "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/Kernels.so-000-gfx1250.hsaco",
+              "bytes": 9155640,
+              "sha256": "58b6378c3e32a9e0452f2ff06f295c4c63c9e4110a9c216d61e68f95b8d2d3ca"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+              "bytes": 60748,
+              "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblas.so.3",
+              "bytes": 1176113,
+              "sha256": "6200e50325b06b81bd5689e52a130f825f8f6e39388f5466a983989b1611d114"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblaslt.so.1",
+              "bytes": 8406320,
+              "sha256": "88b273588dd7374065569efa72b6ccbcdd92c1ceaf599d0600c93e91a64aacd4"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/librocblas.so.5",
+              "bytes": 27842897,
+              "sha256": "4dae8974205c74e73d96770b8f045320c6798863108f06c2242b20987abdb6ac"
+            }
+          ]
+        },
+        "launch_capture_identity": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+          "bytes": 3570835225,
+          "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+        },
+        "limits": [
+          "All seven runtime library records match the retained baseline; current container files are not freshly rehashed by this auditor.",
+          "No on-device instruction-fetch identity observation.",
+          "Complete boundary input observations do not exclude transient changes between boundaries.",
+          "Four original-input calls and the separate matrix comparison do not establish training stability.",
+          "Static native proof selects seven forced events; no runtime trap-count observer is added."
+        ]
+      },
+      "corrected_producer_provenance": {
+        "adapter": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260923_current_DW_runtime_v1/producer_adapter.py",
+          "bytes": 4429,
+          "sha256": "eff65374f39f8cdba2b4f5c02421207a375775e409dda45bb91ee8d99b171ad5"
+        },
+        "original_implementation": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/run_original_witness.py",
+          "bytes": 16702,
+          "sha256": "d697c9d80cf34af394659348edca9263b7870575ab88c892aa8dfe66193f823f"
+        },
+        "baseline": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+          "bytes": 262144,
+          "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+        },
+        "historical": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_DW_native_Nmajor.bf16.bin",
+          "bytes": 262144,
+          "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+        },
+        "expectation": "All four arms require ordinary full-baseline equality",
+        "original_native_ELFs_modified": false,
+        "platform_health_clearance": false
+      },
+      "platform_health_clearance": false,
+      "complete_retained_input_backings_freshly_rehashed": true,
+      "all_131072_output_words_independently_compared": true
+    },
+    {
+      "status": "PASS_CORRECTED_DW_BASELINE_FOUR_CALLS_COMPLETE_AUDIT",
+      "arm": "sink_candidate_trap",
+      "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+      "contract": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_v1/CONTRACT.json",
+        "bytes": 28295,
+        "sha256": "199659592dac03b81ead164d80694084c241bee07260a95c975db7dab6dde5a1"
+      },
+      "lifecycle": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_candidate_trap/lifecycle.json",
+        "bytes": 5867,
+        "sha256": "65722f95d9a59ff0b50ce4a5ecb85363be100f9324e6de594cb01fb59d5f9858"
+      },
+      "auditor": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_v1/audit_completed.py",
+        "bytes": 17058,
+        "sha256": "8b49eac65a1da7d45d32af1fb2c6279f07687091aa7251584d8a04773776f91a"
+      },
+      "policy": {
+        "schema": "MI450_DOWNSTREAM_EXPLICIT_MC60_POLICY_ADAPTER_V1",
+        "adapter": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_mc60_permitted_downstream_v1/adapt_downstream.py",
+          "bytes": 15485,
+          "sha256": "83967267747ceee01ea5b8987dd6680ffaf2c77592e6b3bc079c2afb5b4d18f6"
+        },
+        "policy": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_mc60_permitted_v1/mc60_policy.py",
+          "bytes": 6615,
+          "sha256": "938d59b48bb559a7d3fd8cff099c81fe041b8de830956f4f0d8dd0f01ec49a5c"
+        },
+        "authorization": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_gpu_validation_root_v1/AUTHORIZATION.json",
+          "bytes": 1437,
+          "sha256": "eb8f2c36e1ecddeaa9e077fafa9d888d4c8d4ea4361751da6d83fec7f01f49e6"
+        },
+        "platform_health_clearance": false,
+        "compatibility_status_scope": "Original PASS status names indicate numerical and lifecycle success under this diagnostic MC60 exception, not a fault-free platform",
+        "original_sources": {
+          "component-prerequisite": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_driver_components_v1/check_prerequisite.py",
+            "bytes": 7216,
+            "sha256": "53fc1ffc41d0d86a5898adf8039dbe6db286e0741c4d5d67b31880fb6cbcc487"
+          },
+          "components": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_components_root_integration_review_v2/supervise.py",
+            "bytes": 20559,
+            "sha256": "493b1cbaeea76e6ca3fcdedbe30bb4a482a159d26053fa0e409ffad9dc9838d6"
+          },
+          "component-consumer": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_components_root_integration_review_v2/validate_completed.py",
+            "bytes": 11507,
+            "sha256": "d867d45933dec3212222251e962a1c20e4db47f06a7d562c83aa1660d75cca26"
+          },
+          "attention": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_corrected_package_v2/supervise_full.py",
+            "bytes": 21748,
+            "sha256": "b2bb93c71d8196e91e0c5479c984ee0988df2052424e009ac98043fc0f06f4c2"
+          },
+          "attention-prerequisite": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_corrected_package_v2/check_prerequisite.py",
+            "bytes": 9138,
+            "sha256": "09cc77ef3f113f2116f7f309983c3fb19123b7f332cea78e8ff80cde27aca238"
+          },
+          "e2e": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/supervise.py",
+            "bytes": 24377,
+            "sha256": "63e9fa6540b0912cd5c55f1b02a75ed242221513db96205f3511757af9088aa5"
+          },
+          "e2e-auditor": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/audit_completed.py",
+            "bytes": 24837,
+            "sha256": "abfd18eefb2644ffb1e64c4a231e87d3f8501987ad38f7c8d939aee10d0948b1"
+          },
+          "e2e-policy-contract": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/policy_contract.py",
+            "bytes": 10515,
+            "sha256": "9c89cc2036e870ab982c6528e5396c58b1ea1612c4d755c124cd7e7efc0a6558"
+          }
+        },
+        "scope": "Only complete records admitted by the pinned shared corrected-MC60 policy; all other fault and original evidence checks retained",
+        "original_sources_modified": false,
+        "current_driver_binding": {
+          "adapter": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/run_downstream.py",
+            "bytes": 13249,
+            "sha256": "e66d789eb43944f4ad279a32ab965e64b3ec073664996b0d65db0de53d3ac5b1"
+          },
+          "derivation": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/DOWNSTREAM_DERIVATION.json",
+            "bytes": 24715,
+            "sha256": "20abbc25e050a49ccf7893a10eb24bde3d5e8702f0f2a35ffff868c35f37d0e7"
+          },
+          "expected_boot": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+          "module_audit": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_audit_v1/REVIEW.json",
+            "bytes": 9810,
+            "sha256": "df6b21da005286a79048a95e1028f1f65b0584c69e95543cbcf1b509944cf3d1"
+          },
+          "health_terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/health/terminal.json",
+            "bytes": 15461,
+            "sha256": "292012919a0567f63747fade3f597112751938ce76a5eddfc0d91f30626aed0b"
+          },
+          "adjudication": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/activation_adjudication/terminal.json",
+            "bytes": 2321,
+            "sha256": "8eeb4a0fbfd74c751940adeafb51e0f580a95c4edd5d78c9ee2555425c5d2e1e"
+          },
+          "numerical_native_environment_lifecycle_changes": false,
+          "changes": [
+            "Current-source candidate and installed baseline; all prior boots excluded.",
+            "Current health handoff and actual activation adjudication.",
+            "Fresh runtimes and re-pinned current-driver producer configurations.",
+            "Attention idle driver literal and E2E shared component gate driver globals."
+          ],
+          "full_E2E_package_ready": false
+        }
+      },
+      "original_native_audit": {
+        "status": "PASS_INDEPENDENT_SINK_QUARTET_TERMINAL_NATIVE_FULL_WORDS_CONTROLS_LIBRARIES",
+        "arm": "sink_candidate_trap",
+        "injection": "sink_quartet",
+        "producer_status": "PASS",
+        "calls": 4,
+        "prospective_mismatch_calls": [],
+        "frozen_review": {
+          "manifest": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/launch_manifest_output_v1.json",
+            "bytes": 68877,
+            "sha256": "b7f2b59b6b270ed32bbb83b96db878727d68809945dcbdd02232706a50c9c223"
+          },
+          "source_freeze": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/sources.sha256",
+            "bytes": 33698,
+            "sha256": "9ef3e580ab778445cf3097854bb9bb243b9044ca7e4e87f23b7b45b81217cf7d"
+          },
+          "archive": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/sources_and_artifacts_sink_v1.tar.gz",
+            "bytes": 5569982,
+            "sha256": "918d3c04558fc1024ac210803743bff62a7a26daf8d30308fc2dce98391517c0"
+          },
+          "source_count": 184,
+          "all_source_and_archive_bytes_checked": true,
+          "runtime_inputs": [
+            {
+              "path": "/workspace/recommendation/scripts/replay_additional_linear_capture.py",
+              "bytes": 37139,
+              "sha256": "d7f84fb69cf15489f4480ab22c5f519cb8b0a21759b9952ce876302b7ad24c6f"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/replay_backward_boundary.py",
+              "bytes": 47094,
+              "sha256": "abe85c4fd49ea1c0f33f90cc8e9c19f5a14be442345906b900b7358007cb4970"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/replay_hstu_output_boundary.py",
+              "bytes": 31162,
+              "sha256": "adb68986d7331dffe5e34dfcea9f7cf40ff34df3528fcbdc7148c93b91efca01"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/stress_addmm_backward_boundary.py",
+              "bytes": 37705,
+              "sha256": "c49f9251968019727a47c11803b96968696363a89730d0aee08052da091d2ffb"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/stress_hstu_output_boundary.py",
+              "bytes": 24294,
+              "sha256": "aafb6641ca30c85cd077776e37413d0e57cfc5479a25bdcf6483a26413bd0d12"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/nan_backward_boundaries.py",
+              "bytes": 31280,
+              "sha256": "68947ef9b59ae4aa7c0776bf77825242678ed363a2ce4100b235c84c47009e44"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/audit_training_arithmetic_bounds.py",
+              "bytes": 16614,
+              "sha256": "39e29e60bab031a97c1819406118a4ae25a94db359299f94ac0f35936824d4a5"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/audit_training_gradient_flow.py",
+              "bytes": 25133,
+              "sha256": "e3ff8ee0d18d1cc4707e423aeaf6e4056aecc28f88722ec0de3aecaac6191e4c"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/trace_projection_hip_launches_v2.cpp",
+              "bytes": 10647,
+              "sha256": "07d962f71ad7dc1b4f996fc029b21ba2e1133951bb0701e25ef2da9ca9866195"
+            },
+            {
+              "path": "/workspace/recommendation/scripts/repro_linear_dw_saved_orientation.py",
+              "bytes": 7068,
+              "sha256": "81e9abc221ea926bf597c4bf049e98d66137f48a44b95a4e53a14718cbd0e331"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/train_linear_projection_diagnostics_cap256_bn1_workspace1_start0_1000_v1/context.json",
+              "bytes": 94391,
+              "sha256": "9875c037a5ad68daf77d1824e7205b3c483b7a0e6bd7faba3a062e2774c8182d"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+              "bytes": 60748,
+              "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib",
+              "bytes": 2687,
+              "sha256": "8ac6594e0e67b351b853ee679d815acbf79f3fb138c789ce7d225ce9f67e5d59"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_lazy_gfx1250.dat.zlib",
+              "bytes": 4746,
+              "sha256": "908c9fb056975e44f27aa675238e7a5751943f50f1bb0312c05f33337f5fa402"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLiteLibrary_lazy_gfx1250_Mapping.dat.zlib",
+              "bytes": 1588,
+              "sha256": "139f25bb1441ed65f381ce5ded3c45ec0586b2e75e375552dc4b83bc443f46eb"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+              "bytes": 3570835225,
+              "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/experiment_manifest.json",
+              "bytes": 7599,
+              "sha256": "48cae5be6477362701e2bc4ac0fc60dc4f3fa792c1b260b33105a7754a540d7a"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/CPU_tests/replace_linear_dw_bank_equal_elf_v1.so",
+              "bytes": 139296,
+              "sha256": "85d593b9d148a2ac9862dec2ba1334e2449e6497aa841f46bdf252b0b02cf036"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_kernel_metadata.json",
+              "bytes": 7099,
+              "sha256": "2ac8b368d5020fd8ca9f437831f38c885e2b637e1b6e7373b1fb2dc6ecfdb084"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_candidate_nop.elf",
+              "bytes": 352664,
+              "sha256": "50b6e419a84e8196061efd2926efedbe4f302c9c1c19724a4273c62d8e2fe700"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_candidate_trap.elf",
+              "bytes": 352664,
+              "sha256": "e1f13829baa8a299e87ae4eb01356840a4da358a6e4c9768823727156e91f88c"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_control_nop.elf",
+              "bytes": 352664,
+              "sha256": "6bcd85133ac3cb4e52c2ed854f3de303dfde3aee4f2332fdbf34cc25b8faf9e2"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/artifacts/DW_sink_control_trap.elf",
+              "bytes": 352664,
+              "sha256": "6b7851fa757704d276d4a87530052f8d7c240b0f98b29b32a85e2141a264a4e7"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_oracle.py",
+              "bytes": 4083,
+              "sha256": "d70e2666ad5fd6fe38bec6d3699c7d922955239918ed791fd1398b145ce92b17"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_DW_native_Nmajor.bf16.bin",
+              "bytes": 262144,
+              "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_block_M0_8_N128_256.bf16",
+              "bytes": 2048,
+              "sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/run_original_witness.py",
+              "bytes": 16702,
+              "sha256": "d697c9d80cf34af394659348edca9263b7870575ab88c892aa8dfe66193f823f"
+            },
+            {
+              "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/runtime_sparse.py",
+              "bytes": 2784,
+              "sha256": "196c27354596a2bd41a635b21aedadfd649432dd5d070e9280f2665c0b957eed"
+            }
+          ],
+          "configuration": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/configuration_sparse.json",
+            "bytes": 16484,
+            "sha256": "4d5b003f3e5b2ebc6133a25d0de0fee3d3e33d4d638a7f5eac5373749e946169"
+          },
+          "container_catalog_baseline": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_full_BF16_sparse_runtime_v1/configuration_sparse.json",
+            "bytes": 11545,
+            "sha256": "28ebe905ff7de83a75086ae63b23ba58f71929a3313493ab4ce6bd736550c1b8"
+          },
+          "four_container_catalog_identities": [
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+              "bytes": 60748,
+              "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib",
+              "bytes": 2687,
+              "sha256": "8ac6594e0e67b351b853ee679d815acbf79f3fb138c789ce7d225ce9f67e5d59"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_lazy_gfx1250.dat.zlib",
+              "bytes": 4746,
+              "sha256": "908c9fb056975e44f27aa675238e7a5751943f50f1bb0312c05f33337f5fa402"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLiteLibrary_lazy_gfx1250_Mapping.dat.zlib",
+              "bytes": 1588,
+              "sha256": "139f25bb1441ed65f381ce5ded3c45ec0586b2e75e375552dc4b83bc443f46eb"
+            }
+          ],
+          "owned_ELF_layout_audit": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_audit_v1/independent_elf_layout_audit.json",
+            "bytes": 88276,
+            "sha256": "90cebaaf219453d09511b255c7bb04ff2543a222600f2b421c4ec8085dbecf11"
+          },
+          "experiment_manifest": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/experiment_manifest.json",
+            "bytes": 7599,
+            "sha256": "48cae5be6477362701e2bc4ac0fc60dc4f3fa792c1b260b33105a7754a540d7a"
+          },
+          "target": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_block_M0_8_N128_256.bf16",
+            "bytes": 2048,
+            "sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807"
+          },
+          "criteria": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_package_v1/prospective_sink_criteria.json",
+            "bytes": 8735,
+            "sha256": "e298ce9226ee82c211042ad2d13f064679827c278709967abcf41eaf534e8e88"
+          }
+        },
+        "auditor": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_audit_v1/audit_sink_terminal.py",
+          "bytes": 32658,
+          "sha256": "c09cc568cd7b4e3dcac062c1b5794a4f0736b00e01ff4095854263007732aca7"
+        },
+        "terminal": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_candidate_trap/lifecycle.json",
+          "bytes": 5867,
+          "sha256": "65722f95d9a59ff0b50ce4a5ecb85363be100f9324e6de594cb01fb59d5f9858"
+        },
+        "launch": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_candidate_trap/launch.json",
+          "bytes": 2982,
+          "sha256": "4f5c9ffc8dcfd17eb1eb29cdd8c0ca622357a52e01a631e61de4ad3d7e245b58"
+        },
+        "report": {
+          "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_trap/report.json",
+          "bytes": 381926,
+          "sha256": "5c4ca9f2b54bc01ca966aeed2f22394e70edec129436924589083bbeb3436670"
+        },
+        "process": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_candidate_trap/process/spawned.json",
+          "bytes": 4485,
+          "sha256": "dbd4eff3438585510a0d54059d2cc9d4010e3daab2a0bffa8136a0987dae665d"
+        },
+        "post_idle": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_candidate_trap/after/checked_gate.json",
+          "bytes": 467810,
+          "sha256": "b3d5c054fc5a8ec84ccdfbf5b815d628ade9e90fa3ff0091da0e53034fece201"
+        },
+        "provenance": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_DW_runtime_v1/sink_candidate_trap_environment.json",
+          "bytes": 22809,
+          "sha256": "61a0dfa7ff4f96030979800a4bd0a89595f175af2e115c2c58d6759ae560254c"
+        },
+        "libraries": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260923_current_DW_runtime_v1/sink_candidate_trap_libraries.json",
+          "bytes": 2014,
+          "sha256": "5072bad1af51c65950b660d4ad6186186bdd9716bc11061e7321051c013dfd6e"
+        },
+        "mapped_libraries": [
+          {
+            "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/loader/CPU_tests/replace_linear_dw_bank_equal_elf_v1.so",
+            "bytes": 139296,
+            "sha256": "85d593b9d148a2ac9862dec2ba1334e2449e6497aa841f46bdf252b0b02cf036"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+            "bytes": 28048929,
+            "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+            "bytes": 4887073,
+            "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/Kernels.so-000-gfx1250.hsaco",
+            "bytes": 9155640,
+            "sha256": "58b6378c3e32a9e0452f2ff06f295c4c63c9e4110a9c216d61e68f95b8d2d3ca"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+            "bytes": 60748,
+            "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblas.so.3",
+            "bytes": 1176113,
+            "sha256": "6200e50325b06b81bd5689e52a130f825f8f6e39388f5466a983989b1611d114"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblaslt.so.1",
+            "bytes": 8406320,
+            "sha256": "88b273588dd7374065569efa72b6ccbcdd92c1ceaf599d0600c93e91a64aacd4"
+          },
+          {
+            "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/librocblas.so.5",
+            "bytes": 27842897,
+            "sha256": "4dae8974205c74e73d96770b8f045320c6798863108f06c2242b20987abdb6ac"
+          }
+        ],
+        "trace_sha256": "cdd20e0622524630be544cd8ef18bf13a66cd52c7d0a059c4b46bbbf0a51dd25",
+        "event_counts": {
+          "get_function_return": 2,
+          "native_override_original_lookup_error": 1,
+          "native_override_image_verified": 1,
+          "native_override_module_load_return": 1,
+          "native_override_GetFunction_return": 1,
+          "native_override_function_return": 1,
+          "launch_begin": 4,
+          "launch_return": 4
+        },
+        "owned_ELF_sha256": "e1f13829baa8a299e87ae4eb01356840a4da358a6e4c9768823727156e91f88c",
+        "target": "Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN_LDSB1_AFC1_AG0_AGGSUA0_AGNTAB0_AFEM1_AFEM1_ASEM1_BL1_BS1_CD1_1_CLR1_CLS0_CADS0_DTLA0_DTLB0_DTLM0_DTVA0_DTVB0_DTVMXSA0_DTVMXSB0_DTVSM0_DPLB0_EPS0_ELFLR0_EMLLn1_FDSI0_GRPM1_GRVWA8_GRVWB8_GSUAMB_GLS0_HPLR0_ISA1250_ICIW1_IU1_K1_LDSSI0_LDSTI0_LBSPPA0_LBSPPB0_LBSPPMXSA0_LBSPPMXSB0_LBSPPM0_LPA0_LPB0_LPMXSA0_LPMXSB0_LPM0_LRVW8_LWPMn1_MIAV1_MIWT8_4_MXLIBL_MXSFNS_MO40_MGRIPM1_NTn1_NTA0_NTB0_NTC0_NTD0_NTE0_NTMXSA0_NTMXSB0_NTM0_NTWS0_NVn1_NVA0_NVB0_NVC0_NVD0_NVE0_NVMXSA0_NVMXSB0_NVM0_NVWS0_NEPBS0_NLCA1_NLCB1_ONLL1_PAP0_PGL0_PGR2_PLR1_PKA1_SGROB0_SIA3_SS0_SPO0_SRVW0_SSO0_SVW8_SK0_SKFTR0_SKFDPO0_SKWS0_SKXCCM0_SNLL0_SIP1_SGRO0_TDMI0_TDMIM0_TDMLWS0_TDMPLB0_TDMS0_TIN0_THn1_THA0_THB0_THC0_THD0_THE0_THMXSA0_THMXSB0_THM0_THWS0_TLDS0_TLDSM1_ULSGRO0_USL1_USLMX0_UDFMAC0_UIOFGRO0_UPLRP0_USFGROn1_USI0_VSn1_VWA8_VWB4_WSGRA0_WSGRB0_WS32_WG32_4_1_WGMXCC1",
+        "all_172_packet_bytes_expected": true,
+        "all_packets": [
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x785426c00000",
+            "B": "0x78546daefe00",
+            "C": "0x77da8a600000",
+            "D": "0x77da8a600000"
+          },
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x785426c00000",
+            "B": "0x78546daefe00",
+            "C": "0x77da8a640400",
+            "D": "0x77da8a640400"
+          },
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x785426c00000",
+            "B": "0x78546daefe00",
+            "C": "0x77da8a600000",
+            "D": "0x77da8a600000"
+          },
+          {
+            "Gemm info": 1,
+            "kernel info0": 18874369,
+            "kernel info1": 1073807368,
+            "numWG": 4,
+            "SizesFree0": 256,
+            "SizesFree1": 512,
+            "SizesFree2": 1,
+            "SizesSum0": 2324351,
+            "strideD0": 256,
+            "strideD1": 0,
+            "strideC0": 256,
+            "strideC1": 0,
+            "strideA0": 256,
+            "strideA1": 0,
+            "strideB0": 512,
+            "strideB1": 0,
+            "alpha": 1.0,
+            "beta": 0.0,
+            "AddressScaleAlphaVec": "0x0",
+            "bias": "0x0",
+            "biasType": 0,
+            "StrideBias": 0,
+            "activationAlpha": 0.0,
+            "activationBeta": 0.0,
+            "activationType": 0,
+            "batchOffsetD": 0,
+            "batchOffsetC": 0,
+            "batchOffsetA": 0,
+            "batchOffsetB": 0,
+            "A": "0x785426c00000",
+            "B": "0x78546daefe00",
+            "C": "0x77da8a640400",
+            "D": "0x77da8a640400"
+          }
+        ],
+        "outputs": [
+          {
+            "iteration": 1,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_trap/call_01_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_trap/call_01_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          },
+          {
+            "iteration": 2,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_trap/call_02_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_trap/call_02_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          },
+          {
+            "iteration": 3,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_trap/call_03_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_trap/call_03_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          },
+          {
+            "iteration": 4,
+            "prefill": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_trap/call_04_prefill.bf16.bin",
+              "bytes": 262144,
+              "sha256": "8c36195dda52ac5ea702c0b20b66068e252c62741d314f778001dd6cc992e7b1"
+            },
+            "output": {
+              "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_trap/call_04_output.bf16.bin",
+              "bytes": 262144,
+              "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+            },
+            "independent_full_output_check": {
+              "prospective_predicate_matches": true,
+              "expected_corruption": false,
+              "checked_BF16_words": 131072,
+              "finite_words": 131072,
+              "NaN_words": 0,
+              "Inf_words": 0,
+              "finite_words_above20": 0,
+              "maximum_absolute_finite": 2.0623207092285156e-05,
+              "outside_block_nonfinite_or_above20": 0,
+              "target_finite_exact_matches": 0,
+              "target_NaN_class_matches": 0,
+              "target_raw_word_matches": 0,
+              "all1024_target_raw_words_match": false,
+              "output_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "target_block_observed_sha256": "633e73571ffc778cd8c8426bac7d33247bc9f131eea99a42b0ff4bca7a514de4",
+              "full_baseline_exact": true,
+              "baseline_sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e",
+              "baseline_mismatching_word_indices": [],
+              "historical_full_exact": false,
+              "historical_sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+            }
+          }
+        ],
+        "retained_inputs": {
+          "x": {
+            "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_trap/x_final_backing.bin",
+            "bytes": 1190067712,
+            "sha256": "b9327e115895714123eafcdaecb68681c78ea2c2af342ce928eb5f523b0a3225",
+            "complete_backing_bytes_hashed": true,
+            "original_backing_hash_matches": true
+          },
+          "dy": {
+            "path": "/dev/shm/mi450_20260923_current_DW_v1/results_sink_candidate_trap/dy_final_backing.bin",
+            "bytes": 2380135424,
+            "sha256": "8982a8bba7aa6ae843a589a2ff671d3b62adb2a9359609c1988e8cfcdf1cecea",
+            "complete_backing_bytes_hashed": true,
+            "original_backing_hash_matches": true
+          }
+        },
+        "original_experiment_manifest": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/experiment_manifest.json",
+          "bytes": 7599,
+          "sha256": "48cae5be6477362701e2bc4ac0fc60dc4f3fa792c1b260b33105a7754a540d7a"
+        },
+        "independent_target_sha256": "e9759d86f2318bd36fae6752c9550377e2ec16b491d448d56a38000951010807",
+        "exact_controls_and_libraries": {
+          "historical_metadata_report": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_continue_DW_v514_sparse_witness_v513_control_v1.json",
+            "bytes": 392284,
+            "sha256": "d1d2b1b30522c5b1fea245efa25d32f20cdefe8bc52dd3ddf5ed88b4a5bcfa49"
+          },
+          "entire_metadata_canonical_sha256": "a9251d9f059343c732a3759bb2a2af49ffbf13a54ea12d012e8642b0d5493673",
+          "all_calls_exact_captured_controls_and_BLAS": true,
+          "baseline_libraries": {
+            "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_gated_DW_trap_bank82_equal_v1_libraries.json",
+            "bytes": 2108,
+            "sha256": "12a54336d03a494d2d342ddcd9ad95fbae188ae9fc33a4d70776eaf4148071fb"
+          },
+          "identical_seven_runtime_libraries": [
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+              "bytes": 28048929,
+              "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+              "bytes": 4887073,
+              "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/Kernels.so-000-gfx1250.hsaco",
+              "bytes": 9155640,
+              "sha256": "58b6378c3e32a9e0452f2ff06f295c4c63c9e4110a9c216d61e68f95b8d2d3ca"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co",
+              "bytes": 60748,
+              "sha256": "c231a1cc39e7a361104ae0a16785f794db174ab0d238602b9e1a4fbbc723d448"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblas.so.3",
+              "bytes": 1176113,
+              "sha256": "6200e50325b06b81bd5689e52a130f825f8f6e39388f5466a983989b1611d114"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/libhipblaslt.so.1",
+              "bytes": 8406320,
+              "sha256": "88b273588dd7374065569efa72b6ccbcdd92c1ceaf599d0600c93e91a64aacd4"
+            },
+            {
+              "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries_gfx1250/lib/librocblas.so.5",
+              "bytes": 27842897,
+              "sha256": "4dae8974205c74e73d96770b8f045320c6798863108f06c2242b20987abdb6ac"
+            }
+          ]
+        },
+        "launch_capture_identity": {
+          "path": "/home/chcai/dlrm_data/root_cause_20260919/step405_linear_saved_operands_root_v1.pt",
+          "bytes": 3570835225,
+          "sha256": "cc6c966297fd7ad537adc574c470ac9fba70d3891b27773ee3df3a8487a8ce1a"
+        },
+        "limits": [
+          "All seven runtime library records match the retained baseline; current container files are not freshly rehashed by this auditor.",
+          "No on-device instruction-fetch identity observation.",
+          "Complete boundary input observations do not exclude transient changes between boundaries.",
+          "Four original-input calls and the separate matrix comparison do not establish training stability.",
+          "Static native proof selects seven forced events; no runtime trap-count observer is added."
+        ]
+      },
+      "corrected_producer_provenance": {
+        "adapter": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260923_current_DW_runtime_v1/producer_adapter.py",
+          "bytes": 4429,
+          "sha256": "eff65374f39f8cdba2b4f5c02421207a375775e409dda45bb91ee8d99b171ad5"
+        },
+        "original_implementation": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/run_original_witness.py",
+          "bytes": 16702,
+          "sha256": "d697c9d80cf34af394659348edca9263b7870575ab88c892aa8dfe66193f823f"
+        },
+        "baseline": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+          "bytes": 262144,
+          "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+        },
+        "historical": {
+          "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_DW_native_Nmajor.bf16.bin",
+          "bytes": 262144,
+          "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+        },
+        "expectation": "All four arms require ordinary full-baseline equality",
+        "original_native_ELFs_modified": false,
+        "platform_health_clearance": false
+      },
+      "platform_health_clearance": false,
+      "complete_retained_input_backings_freshly_rehashed": true,
+      "all_131072_output_words_independently_compared": true
+    }
+  ],
+  "final_kernel_capture": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/sink_candidate_trap/final/dmesg.log",
+    "bytes": 165604,
+    "sha256": "8a862ed278016a04c58d472c8c5d6e9d58e106ae0adcf6957f3ce39ea0d16d27"
+  },
+  "auditor": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_v1/audit_completed.py",
+    "bytes": 17058,
+    "sha256": "8b49eac65a1da7d45d32af1fb2c6279f07687091aa7251584d8a04773776f91a"
+  },
+  "policy": {
+    "schema": "MI450_DOWNSTREAM_EXPLICIT_MC60_POLICY_ADAPTER_V1",
+    "adapter": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_mc60_permitted_downstream_v1/adapt_downstream.py",
+      "bytes": 15485,
+      "sha256": "83967267747ceee01ea5b8987dd6680ffaf2c77592e6b3bc079c2afb5b4d18f6"
+    },
+    "policy": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_mc60_permitted_v1/mc60_policy.py",
+      "bytes": 6615,
+      "sha256": "938d59b48bb559a7d3fd8cff099c81fe041b8de830956f4f0d8dd0f01ec49a5c"
+    },
+    "authorization": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_gpu_validation_root_v1/AUTHORIZATION.json",
+      "bytes": 1437,
+      "sha256": "eb8f2c36e1ecddeaa9e077fafa9d888d4c8d4ea4361751da6d83fec7f01f49e6"
+    },
+    "platform_health_clearance": false,
+    "compatibility_status_scope": "Original PASS status names indicate numerical and lifecycle success under this diagnostic MC60 exception, not a fault-free platform",
+    "original_sources": {
+      "component-prerequisite": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_driver_components_v1/check_prerequisite.py",
+        "bytes": 7216,
+        "sha256": "53fc1ffc41d0d86a5898adf8039dbe6db286e0741c4d5d67b31880fb6cbcc487"
+      },
+      "components": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_components_root_integration_review_v2/supervise.py",
+        "bytes": 20559,
+        "sha256": "493b1cbaeea76e6ca3fcdedbe30bb4a482a159d26053fa0e409ffad9dc9838d6"
+      },
+      "component-consumer": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_corrected_components_root_integration_review_v2/validate_completed.py",
+        "bytes": 11507,
+        "sha256": "d867d45933dec3212222251e962a1c20e4db47f06a7d562c83aa1660d75cca26"
+      },
+      "attention": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_corrected_package_v2/supervise_full.py",
+        "bytes": 21748,
+        "sha256": "b2bb93c71d8196e91e0c5479c984ee0988df2052424e009ac98043fc0f06f4c2"
+      },
+      "attention-prerequisite": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_attention_FAIL131_corrected_package_v2/check_prerequisite.py",
+        "bytes": 9138,
+        "sha256": "09cc77ef3f113f2116f7f309983c3fb19123b7f332cea78e8ff80cde27aca238"
+      },
+      "e2e": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/supervise.py",
+        "bytes": 24377,
+        "sha256": "63e9fa6540b0912cd5c55f1b02a75ed242221513db96205f3511757af9088aa5"
+      },
+      "e2e-auditor": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/audit_completed.py",
+        "bytes": 24837,
+        "sha256": "abfd18eefb2644ffb1e64c4a231e87d3f8501987ad38f7c8d939aee10d0948b1"
+      },
+      "e2e-policy-contract": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_candidate_E2E_root_integration_v1/policy_contract.py",
+        "bytes": 10515,
+        "sha256": "9c89cc2036e870ab982c6528e5396c58b1ea1612c4d755c124cd7e7efc0a6558"
+      }
+    },
+    "scope": "Only complete records admitted by the pinned shared corrected-MC60 policy; all other fault and original evidence checks retained",
+    "original_sources_modified": false,
+    "current_driver_binding": {
+      "adapter": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/run_downstream.py",
+        "bytes": 13249,
+        "sha256": "e66d789eb43944f4ad279a32ab965e64b3ec073664996b0d65db0de53d3ac5b1"
+      },
+      "derivation": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/DOWNSTREAM_DERIVATION.json",
+        "bytes": 24715,
+        "sha256": "20abbc25e050a49ccf7893a10eb24bde3d5e8702f0f2a35ffff868c35f37d0e7"
+      },
+      "expected_boot": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+      "module_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_CWSR_build_audit_v1/REVIEW.json",
+        "bytes": 9810,
+        "sha256": "df6b21da005286a79048a95e1028f1f65b0584c69e95543cbcf1b509944cf3d1"
+      },
+      "health_terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_prerequisites_v1/health/terminal.json",
+        "bytes": 15461,
+        "sha256": "292012919a0567f63747fade3f597112751938ce76a5eddfc0d91f30626aed0b"
+      },
+      "adjudication": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_resume_root_v1/activation_adjudication/terminal.json",
+        "bytes": 2321,
+        "sha256": "8eeb4a0fbfd74c751940adeafb51e0f580a95c4edd5d78c9ee2555425c5d2e1e"
+      },
+      "numerical_native_environment_lifecycle_changes": false,
+      "changes": [
+        "Current-source candidate and installed baseline; all prior boots excluded.",
+        "Current health handoff and actual activation adjudication.",
+        "Fresh runtimes and re-pinned current-driver producer configurations.",
+        "Attention idle driver literal and E2E shared component gate driver globals."
+      ],
+      "full_E2E_package_ready": false
+    }
+  },
+  "platform_health_clearance": false,
+  "scope": "Current-source CWSR candidate with identified MES0x7b; unchanged original-DY four-ELF witness, not E2E stability or isolated firmware-fix attribution"
+}

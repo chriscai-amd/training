@@ -1,0 +1,1258 @@
+{
+  "status": "PASS_COMPACT_VALIDATION_COPIES",
+  "files": [
+    {
+      "relative": "validation/portable_original/controller/controller.py",
+      "bytes": 17706,
+      "sha256": "174500aeb6870f0c9adea5daa8f11ce5108b65880591017795cbba613a2c7013",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/controller.py",
+        "bytes": 17706,
+        "sha256": "174500aeb6870f0c9adea5daa8f11ce5108b65880591017795cbba613a2c7013"
+      }
+    },
+    {
+      "relative": "validation/portable_original/controller/SOURCE.json",
+      "bytes": 1140,
+      "sha256": "14ea9d1ab30fd8bb60997c3ee6a5c4eda6bb3e8169228e3d5a77a55463d5fc2f",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/SOURCE.json",
+        "bytes": 1140,
+        "sha256": "14ea9d1ab30fd8bb60997c3ee6a5c4eda6bb3e8169228e3d5a77a55463d5fc2f"
+      }
+    },
+    {
+      "relative": "validation/portable_original/controller/RELEASE.json",
+      "bytes": 745,
+      "sha256": "8ec7243eec5833e7d624868d7fa17805f7378393add8843e30525ae53703ec79",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/RELEASE.json",
+        "bytes": 745,
+        "sha256": "8ec7243eec5833e7d624868d7fa17805f7378393add8843e30525ae53703ec79"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/CPU_preflight/spawned.json",
+      "bytes": 3474,
+      "sha256": "9d3d26df38e0c84f7cb567457a332a32199b09086a16c35db9db3d3a802bb02d",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/CPU_preflight/spawned.json",
+        "bytes": 3474,
+        "sha256": "9d3d26df38e0c84f7cb567457a332a32199b09086a16c35db9db3d3a802bb02d"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/CPU_preflight/start.json",
+      "bytes": 3627,
+      "sha256": "fced2355c842cf146bd1baaf413dc1d16f2d6113c1fedf57e06367e275aae3db",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/CPU_preflight/start.json",
+        "bytes": 3627,
+        "sha256": "fced2355c842cf146bd1baaf413dc1d16f2d6113c1fedf57e06367e275aae3db"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/CPU_preflight/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/CPU_preflight/stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/CPU_preflight/stdout.log",
+      "bytes": 472,
+      "sha256": "cf4c4aa6f8fc9f2d84f32552850a89628c9c5acd09d294056ee989589fc6c9e1",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/CPU_preflight/stdout.log",
+        "bytes": 472,
+        "sha256": "cf4c4aa6f8fc9f2d84f32552850a89628c9c5acd09d294056ee989589fc6c9e1"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/CPU_preflight/terminal.json",
+      "bytes": 1640,
+      "sha256": "07134aaa5c3b101a56bd86d938778d8053317fb819e44dddf00434c12fbe35d6",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/CPU_preflight/terminal.json",
+        "bytes": 1640,
+        "sha256": "07134aaa5c3b101a56bd86d938778d8053317fb819e44dddf00434c12fbe35d6"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/START.json",
+      "bytes": 943,
+      "sha256": "2269912108bfbf33100df64bee7e4ca7eafefd1b9842ab43c5e2ccd220b339db",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/START.json",
+        "bytes": 943,
+        "sha256": "2269912108bfbf33100df64bee7e4ca7eafefd1b9842ab43c5e2ccd220b339db"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/after_producer_gate/gate.json",
+      "bytes": 4894,
+      "sha256": "94c0dcc8b3b3d0effa864bafe0e2fa55db1111c204544f2040bc8b3752565bd7",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/after_producer_gate/gate.json",
+        "bytes": 4894,
+        "sha256": "94c0dcc8b3b3d0effa864bafe0e2fa55db1111c204544f2040bc8b3752565bd7"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/after_producer_gate/idle.json",
+      "bytes": 1674,
+      "sha256": "75c7eaefe0ad9a9e42cca460b7a9b6e7c98a0bef13a866075488dca20e2f6dea",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/after_producer_gate/idle.json",
+        "bytes": 1674,
+        "sha256": "75c7eaefe0ad9a9e42cca460b7a9b6e7c98a0bef13a866075488dca20e2f6dea"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/after_producer_gate/kernel/gate.json",
+      "bytes": 1138,
+      "sha256": "4f5db4ffc82c3aba4715393864b65d5477175f9b073074b07f8598f895aef141",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/after_producer_gate/kernel/gate.json",
+        "bytes": 1138,
+        "sha256": "4f5db4ffc82c3aba4715393864b65d5477175f9b073074b07f8598f895aef141"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/after_producer_gate/kernel/state.json",
+      "bytes": 39991,
+      "sha256": "754c0de778fc98603d9235307c420d79fcf685d8d0891edb4798f661d22c12da",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/after_producer_gate/kernel/state.json",
+        "bytes": 39991,
+        "sha256": "754c0de778fc98603d9235307c420d79fcf685d8d0891edb4798f661d22c12da"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/final_gate/gate.json",
+      "bytes": 4888,
+      "sha256": "76e6111164b78996a73cc308961cf842a8020030ed4dfa42c1805d3a9d12b403",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/final_gate/gate.json",
+        "bytes": 4888,
+        "sha256": "76e6111164b78996a73cc308961cf842a8020030ed4dfa42c1805d3a9d12b403"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/final_gate/idle.json",
+      "bytes": 1674,
+      "sha256": "f6019147a1b9228c086e44fc9492f8bc079c645fa4652d12e74a39d06d87582f",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/final_gate/idle.json",
+        "bytes": 1674,
+        "sha256": "f6019147a1b9228c086e44fc9492f8bc079c645fa4652d12e74a39d06d87582f"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/final_gate/kernel/gate.json",
+      "bytes": 1141,
+      "sha256": "28865105a2bdaa46fe6872f243b537c74741e268e3708e1de5bfed6219af7a21",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/final_gate/kernel/gate.json",
+        "bytes": 1141,
+        "sha256": "28865105a2bdaa46fe6872f243b537c74741e268e3708e1de5bfed6219af7a21"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/final_gate/kernel/state.json",
+      "bytes": 39967,
+      "sha256": "6474c82ae6632e7e99f011b53122f135bd4dcdf640fdf3503d21e244cf3f984a",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/final_gate/kernel/state.json",
+        "bytes": 39967,
+        "sha256": "6474c82ae6632e7e99f011b53122f135bd4dcdf640fdf3503d21e244cf3f984a"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/initial_gate/gate.json",
+      "bytes": 4878,
+      "sha256": "07be43d3f87470b2aef809aab0d1e9e378d99a8992b4e8a1ef6c57860e72a89e",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/initial_gate/gate.json",
+        "bytes": 4878,
+        "sha256": "07be43d3f87470b2aef809aab0d1e9e378d99a8992b4e8a1ef6c57860e72a89e"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/initial_gate/idle.json",
+      "bytes": 1674,
+      "sha256": "29ee1ce0cece7b8f740f153d6e245071b9f14b60e3937aae319a0c74b5151ee4",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/initial_gate/idle.json",
+        "bytes": 1674,
+        "sha256": "29ee1ce0cece7b8f740f153d6e245071b9f14b60e3937aae319a0c74b5151ee4"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/initial_gate/kernel/gate.json",
+      "bytes": 1129,
+      "sha256": "f9335fe7b38e59e5bb9cb89ec030fbd4a7edb49270644476224870b4cafbb6cb",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/initial_gate/kernel/gate.json",
+        "bytes": 1129,
+        "sha256": "f9335fe7b38e59e5bb9cb89ec030fbd4a7edb49270644476224870b4cafbb6cb"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/initial_gate/kernel/state.json",
+      "bytes": 39961,
+      "sha256": "eb9acb67ddfb5120375829473fbfbd6f98d60364983bc13373122dd310c5294e",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/initial_gate/kernel/state.json",
+        "bytes": 39961,
+        "sha256": "eb9acb67ddfb5120375829473fbfbd6f98d60364983bc13373122dd310c5294e"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/libraries/container.json",
+      "bytes": 1057,
+      "sha256": "a5bc677ff74bbad9537808ad8cddd6186e051e14217c2b96626ffd369655f687",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/libraries/container.json",
+        "bytes": 1057,
+        "sha256": "a5bc677ff74bbad9537808ad8cddd6186e051e14217c2b96626ffd369655f687"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/producer/spawned.json",
+      "bytes": 4246,
+      "sha256": "c0fc3018a9f3129805620edb386c294631b75d002e1ebf74b6245b0eb374c544",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/producer/spawned.json",
+        "bytes": 4246,
+        "sha256": "c0fc3018a9f3129805620edb386c294631b75d002e1ebf74b6245b0eb374c544"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/producer/start.json",
+      "bytes": 4361,
+      "sha256": "dd9b4aff796a6b99ce417713e77b612d54ae8ea26f30175f378e3e8497c101db",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/producer/start.json",
+        "bytes": 4361,
+        "sha256": "dd9b4aff796a6b99ce417713e77b612d54ae8ea26f30175f378e3e8497c101db"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/producer/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/producer/stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/producer/stdout.log",
+      "bytes": 337,
+      "sha256": "4ff79ac5902bc67ec3de8520a3593f0510ebdeb2aaad4cbad5d5046f1dc680dc",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/producer/stdout.log",
+        "bytes": 337,
+        "sha256": "4ff79ac5902bc67ec3de8520a3593f0510ebdeb2aaad4cbad5d5046f1dc680dc"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/producer/terminal.json",
+      "bytes": 2374,
+      "sha256": "f28b9939e4f5fc0230bcfcf24052e6b39af90a80fc54ef0bca50f3dad45aa4ce",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/producer/terminal.json",
+        "bytes": 2374,
+        "sha256": "f28b9939e4f5fc0230bcfcf24052e6b39af90a80fc54ef0bca50f3dad45aa4ce"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/producer_liveness.json",
+      "bytes": 380,
+      "sha256": "a3a1ffa065dc090de0c6145c9c07571e8e06823392d77eeba54174b0d5961d67",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/producer_liveness.json",
+        "bytes": 380,
+        "sha256": "a3a1ffa065dc090de0c6145c9c07571e8e06823392d77eeba54174b0d5961d67"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/release_gate/gate.json",
+      "bytes": 4879,
+      "sha256": "0f122c6ffc4db1c3ed3f7ce078b082e2a3f7a6d5bd6fe48dbfa3c504377d67b9",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/release_gate/gate.json",
+        "bytes": 4879,
+        "sha256": "0f122c6ffc4db1c3ed3f7ce078b082e2a3f7a6d5bd6fe48dbfa3c504377d67b9"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/release_gate/idle.json",
+      "bytes": 1674,
+      "sha256": "8a1b78f880381c87bb5d857b44982e08f8ba45195d58637e10e00319dcfe8f4d",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/release_gate/idle.json",
+        "bytes": 1674,
+        "sha256": "8a1b78f880381c87bb5d857b44982e08f8ba45195d58637e10e00319dcfe8f4d"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/release_gate/kernel/gate.json",
+      "bytes": 1130,
+      "sha256": "9591b778b530b7108a209cc3dfa7e5b9fee7f600867421dc451829093df99b6d",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/release_gate/kernel/gate.json",
+        "bytes": 1130,
+        "sha256": "9591b778b530b7108a209cc3dfa7e5b9fee7f600867421dc451829093df99b6d"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/release_gate/kernel/state.json",
+      "bytes": 39962,
+      "sha256": "51df662158db1b808aee9d8fe582ab45dd8574370e0f4ddcc522c0f6e9016811",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/release_gate/kernel/state.json",
+        "bytes": 39962,
+        "sha256": "51df662158db1b808aee9d8fe582ab45dd8574370e0f4ddcc522c0f6e9016811"
+      }
+    },
+    {
+      "relative": "validation/portable_original/execution/terminal.json",
+      "bytes": 24180,
+      "sha256": "c60fe39c88cdb792d392bff203406630be0e737e7ea206442f95c2edebaaa6c4",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/terminal.json",
+        "bytes": 24180,
+        "sha256": "c60fe39c88cdb792d392bff203406630be0e737e7ea206442f95c2edebaaa6c4"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/adapter.json",
+      "bytes": 1696,
+      "sha256": "6c75bac4160a01f252c8846d2cd3a3e0fc1416394f3af8524f177948c275a3c9",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/adapter.json",
+        "bytes": 1696,
+        "sha256": "6c75bac4160a01f252c8846d2cd3a3e0fc1416394f3af8524f177948c275a3c9"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/portable_configuration.json",
+      "bytes": 4912,
+      "sha256": "b5fe1c3f748964b72d99495027c11e217973969ac69906030cba8e054a61999b",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/portable_configuration.json",
+        "bytes": 4912,
+        "sha256": "b5fe1c3f748964b72d99495027c11e217973969ac69906030cba8e054a61999b"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/after_init.maps.txt",
+      "bytes": 32892,
+      "sha256": "ca85cedd8822094ab05c146e368b5b7cf21f2c371ca392df2936d5beaf3a3034",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/after_init.maps.txt",
+        "bytes": 32892,
+        "sha256": "ca85cedd8822094ab05c146e368b5b7cf21f2c371ca392df2936d5beaf3a3034"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_00_00_0/output.bin",
+      "bytes": 160,
+      "sha256": "c6989b161d85449454f3d9b2648219895c260cda93772f20e2f812bf1bfe1c40",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/output.bin",
+        "bytes": 160,
+        "sha256": "c6989b161d85449454f3d9b2648219895c260cda93772f20e2f812bf1bfe1c40"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_00_00_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_00_00_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_00_00_0/result.json",
+      "bytes": 6041,
+      "sha256": "5dd229e7839aeb8637fe3e93fa6f59bd7863ccc40819370d74eac21529a53a22",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/result.json",
+        "bytes": 6041,
+        "sha256": "5dd229e7839aeb8637fe3e93fa6f59bd7863ccc40819370d74eac21529a53a22"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_00_00_0/start.json",
+      "bytes": 265,
+      "sha256": "5bc5d29a771ea9ce85ed90b3df1c7d3cf3988aedec424603abe79c8f38303ebe",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/start.json",
+        "bytes": 265,
+        "sha256": "5bc5d29a771ea9ce85ed90b3df1c7d3cf3988aedec424603abe79c8f38303ebe"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_01_00_1/output.bin",
+      "bytes": 160,
+      "sha256": "5dc02a36ffd93f621f5e13c005e0fba0da89351fd2752b697a4ed9bc066af02f",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/output.bin",
+        "bytes": 160,
+        "sha256": "5dc02a36ffd93f621f5e13c005e0fba0da89351fd2752b697a4ed9bc066af02f"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_01_00_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_01_00_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_01_00_1/result.json",
+      "bytes": 6042,
+      "sha256": "42325adc81cdc1873dc3f3ebca7851cfa031b26cbbf397956a70571603c0c566",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/result.json",
+        "bytes": 6042,
+        "sha256": "42325adc81cdc1873dc3f3ebca7851cfa031b26cbbf397956a70571603c0c566"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_01_00_1/start.json",
+      "bytes": 265,
+      "sha256": "49a547e810fae0053956e14e8b9d03d162ad709fde9b5fddc25abef79dd787c6",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/start.json",
+        "bytes": 265,
+        "sha256": "49a547e810fae0053956e14e8b9d03d162ad709fde9b5fddc25abef79dd787c6"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_02_41_0/output.bin",
+      "bytes": 160,
+      "sha256": "f4e9ba633694481a806b0ff5559e0dd753972255a786fa6c365e6590a731a2bd",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/output.bin",
+        "bytes": 160,
+        "sha256": "f4e9ba633694481a806b0ff5559e0dd753972255a786fa6c365e6590a731a2bd"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_02_41_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_02_41_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_02_41_0/result.json",
+      "bytes": 6045,
+      "sha256": "c44826f071b2f1c7c1ee82147e290665a72588ea3f87c4b4c2dac7a1507819ee",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/result.json",
+        "bytes": 6045,
+        "sha256": "c44826f071b2f1c7c1ee82147e290665a72588ea3f87c4b4c2dac7a1507819ee"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_02_41_0/start.json",
+      "bytes": 267,
+      "sha256": "38e3048ccd41c704dce26408450e1cf0429d050b0b6121bc98b41981f5fa4dd5",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/start.json",
+        "bytes": 267,
+        "sha256": "38e3048ccd41c704dce26408450e1cf0429d050b0b6121bc98b41981f5fa4dd5"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_03_41_1/output.bin",
+      "bytes": 160,
+      "sha256": "9c28100808e2fadc8a00ebb6d93820b4186063b3e4d61378e522598413a972b5",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/output.bin",
+        "bytes": 160,
+        "sha256": "9c28100808e2fadc8a00ebb6d93820b4186063b3e4d61378e522598413a972b5"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_03_41_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_03_41_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_03_41_1/result.json",
+      "bytes": 6043,
+      "sha256": "3374784d3805728719a36db207e90fe6438da420ab88bd855428abd3f81020f6",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/result.json",
+        "bytes": 6043,
+        "sha256": "3374784d3805728719a36db207e90fe6438da420ab88bd855428abd3f81020f6"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_03_41_1/start.json",
+      "bytes": 266,
+      "sha256": "3f29cd242035d597ca8ca382cf28298aa68ba9ac0b93686d9b198b1a0f54bfa0",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/start.json",
+        "bytes": 266,
+        "sha256": "3f29cd242035d597ca8ca382cf28298aa68ba9ac0b93686d9b198b1a0f54bfa0"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_04_45_0/output.bin",
+      "bytes": 160,
+      "sha256": "646314ef818772a3fb19af2587e1f39070bf56d9381cf4e6746ca5be2c35ff90",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/output.bin",
+        "bytes": 160,
+        "sha256": "646314ef818772a3fb19af2587e1f39070bf56d9381cf4e6746ca5be2c35ff90"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_04_45_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_04_45_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_04_45_0/result.json",
+      "bytes": 6045,
+      "sha256": "afaf48855c35bc3589149a451cbe4c5b3336b6bff4a8972100ba31fa281bcab4",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/result.json",
+        "bytes": 6045,
+        "sha256": "afaf48855c35bc3589149a451cbe4c5b3336b6bff4a8972100ba31fa281bcab4"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_04_45_0/start.json",
+      "bytes": 267,
+      "sha256": "e50bcdb8e079a7203c7d8f6a96b477d3b0776ac75187e74e769c880bf650c604",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/start.json",
+        "bytes": 267,
+        "sha256": "e50bcdb8e079a7203c7d8f6a96b477d3b0776ac75187e74e769c880bf650c604"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_05_45_1/output.bin",
+      "bytes": 160,
+      "sha256": "63e571ab2c5bc9acaa9cca9b7b7418df9547f5e5bacb61690be58d0127735818",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/output.bin",
+        "bytes": 160,
+        "sha256": "63e571ab2c5bc9acaa9cca9b7b7418df9547f5e5bacb61690be58d0127735818"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_05_45_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_05_45_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_05_45_1/result.json",
+      "bytes": 6043,
+      "sha256": "43268f12bd6a3147c42e769ebb1e27892f2da5891a12a44e0c64cc2c845ef153",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/result.json",
+        "bytes": 6043,
+        "sha256": "43268f12bd6a3147c42e769ebb1e27892f2da5891a12a44e0c64cc2c845ef153"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_05_45_1/start.json",
+      "bytes": 266,
+      "sha256": "a25c7cc5fb8fb7f28f20e072d38136770286493dfbe476ef6da8c37ffa908315",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/start.json",
+        "bytes": 266,
+        "sha256": "a25c7cc5fb8fb7f28f20e072d38136770286493dfbe476ef6da8c37ffa908315"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_06_82_0/output.bin",
+      "bytes": 160,
+      "sha256": "69f108aa9c69f54a28f9f567ca704001910c4328c5a73da86711b47042c969f1",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/output.bin",
+        "bytes": 160,
+        "sha256": "69f108aa9c69f54a28f9f567ca704001910c4328c5a73da86711b47042c969f1"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_06_82_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_06_82_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_06_82_0/result.json",
+      "bytes": 6046,
+      "sha256": "eded9fbf61f43ee7313772b167d9d8f9fe9e560c06c62270fe5e16ebefbd6d39",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/result.json",
+        "bytes": 6046,
+        "sha256": "eded9fbf61f43ee7313772b167d9d8f9fe9e560c06c62270fe5e16ebefbd6d39"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_06_82_0/start.json",
+      "bytes": 268,
+      "sha256": "5ddcff8f49e9f0187552b1adc27737518c0c654d3d8bb637455179285c957af4",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/start.json",
+        "bytes": 268,
+        "sha256": "5ddcff8f49e9f0187552b1adc27737518c0c654d3d8bb637455179285c957af4"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_07_82_1/output.bin",
+      "bytes": 160,
+      "sha256": "2db18a67d09774834d75f8e0c462373521edbe57dd48c915dc758ea6887cdc29",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/output.bin",
+        "bytes": 160,
+        "sha256": "2db18a67d09774834d75f8e0c462373521edbe57dd48c915dc758ea6887cdc29"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_07_82_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_07_82_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_07_82_1/result.json",
+      "bytes": 6044,
+      "sha256": "42c6201508a87f908dfafd91b902376a6df69385fa9c1d2a5f0191f37152d127",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/result.json",
+        "bytes": 6044,
+        "sha256": "42c6201508a87f908dfafd91b902376a6df69385fa9c1d2a5f0191f37152d127"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_07_82_1/start.json",
+      "bytes": 267,
+      "sha256": "9cfce76f6f758b7e618ca4e031d187046e39477f9cfc2aa2951dc7ad0e811445",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/start.json",
+        "bytes": 267,
+        "sha256": "9cfce76f6f758b7e618ca4e031d187046e39477f9cfc2aa2951dc7ad0e811445"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_08_05_0/output.bin",
+      "bytes": 160,
+      "sha256": "6ea59daf5ac10a6de0246aaebede6374579a3e51872269bea23ade98a9f5be2a",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/output.bin",
+        "bytes": 160,
+        "sha256": "6ea59daf5ac10a6de0246aaebede6374579a3e51872269bea23ade98a9f5be2a"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_08_05_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_08_05_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_08_05_0/result.json",
+      "bytes": 6044,
+      "sha256": "cfb5849d1c3e8bb4f085de0126eae1abe9ffbe3e5a42857f48036e0c743cc6d5",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/result.json",
+        "bytes": 6044,
+        "sha256": "cfb5849d1c3e8bb4f085de0126eae1abe9ffbe3e5a42857f48036e0c743cc6d5"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_08_05_0/start.json",
+      "bytes": 266,
+      "sha256": "6c47a3504bd0f5f66986841379c7966e735eb79e9ef42f8ae9a79515ec4fcf80",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/start.json",
+        "bytes": 266,
+        "sha256": "6c47a3504bd0f5f66986841379c7966e735eb79e9ef42f8ae9a79515ec4fcf80"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_09_05_1/output.bin",
+      "bytes": 160,
+      "sha256": "df2c8c96b85743303496d1b0017b193009940480d6370c0de581824865a0d7b1",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/output.bin",
+        "bytes": 160,
+        "sha256": "df2c8c96b85743303496d1b0017b193009940480d6370c0de581824865a0d7b1"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_09_05_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_09_05_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_09_05_1/result.json",
+      "bytes": 6185,
+      "sha256": "fec966fcc4e6cdc02c1082697156d72e5e5646f3aa02de62620aa7658833d384",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/result.json",
+        "bytes": 6185,
+        "sha256": "fec966fcc4e6cdc02c1082697156d72e5e5646f3aa02de62620aa7658833d384"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_09_05_1/start.json",
+      "bytes": 265,
+      "sha256": "ae3d9f73e820d6e0e2a866f4397b82d1f82e666bccacf5957a551549bee48623",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/start.json",
+        "bytes": 265,
+        "sha256": "ae3d9f73e820d6e0e2a866f4397b82d1f82e666bccacf5957a551549bee48623"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_10_81_0/output.bin",
+      "bytes": 160,
+      "sha256": "b84e9b154a403570277a955c4067e2dad0d97c5d758e8c2e1d795927bc220efb",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/output.bin",
+        "bytes": 160,
+        "sha256": "b84e9b154a403570277a955c4067e2dad0d97c5d758e8c2e1d795927bc220efb"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_10_81_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_10_81_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_10_81_0/result.json",
+      "bytes": 6053,
+      "sha256": "f2a3637891c9b0e5400acc9c2539e4ae803ab3d659227af8167714af30bda0e2",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/result.json",
+        "bytes": 6053,
+        "sha256": "f2a3637891c9b0e5400acc9c2539e4ae803ab3d659227af8167714af30bda0e2"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_10_81_0/start.json",
+      "bytes": 269,
+      "sha256": "332cc1795b19c12ab3eec99b68d6841865fa9216a867cd86b610f892edf3c467",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/start.json",
+        "bytes": 269,
+        "sha256": "332cc1795b19c12ab3eec99b68d6841865fa9216a867cd86b610f892edf3c467"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_11_81_1/output.bin",
+      "bytes": 160,
+      "sha256": "79663e6f62a70ebceda9dc3c24e6c8e404270618579d7f9eac83482753bb9aff",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/output.bin",
+        "bytes": 160,
+        "sha256": "79663e6f62a70ebceda9dc3c24e6c8e404270618579d7f9eac83482753bb9aff"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_11_81_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_11_81_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_11_81_1/result.json",
+      "bytes": 6196,
+      "sha256": "dc6b3b1c880dc75272f1d8e0b8093e8374f37930503bcf0c09cf4701acea9354",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/result.json",
+        "bytes": 6196,
+        "sha256": "dc6b3b1c880dc75272f1d8e0b8093e8374f37930503bcf0c09cf4701acea9354"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_11_81_1/start.json",
+      "bytes": 268,
+      "sha256": "95c5dd542617fd996324cff3fabd2e2e03a7429a3ddfea9532e1d67bef1bdf20",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/start.json",
+        "bytes": 268,
+        "sha256": "95c5dd542617fd996324cff3fabd2e2e03a7429a3ddfea9532e1d67bef1bdf20"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_12_85_0/output.bin",
+      "bytes": 160,
+      "sha256": "836c47f09559abf90055278dc2b23deeec97364068b98b931a8de786e0ce0d96",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/output.bin",
+        "bytes": 160,
+        "sha256": "836c47f09559abf90055278dc2b23deeec97364068b98b931a8de786e0ce0d96"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_12_85_0/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_12_85_0/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_12_85_0/result.json",
+      "bytes": 6053,
+      "sha256": "b9fd677568aa99b2ddd533e6c1b82e6a4e91c5c1a6cd9fd0b39b30e9cfc55a0f",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/result.json",
+        "bytes": 6053,
+        "sha256": "b9fd677568aa99b2ddd533e6c1b82e6a4e91c5c1a6cd9fd0b39b30e9cfc55a0f"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_12_85_0/start.json",
+      "bytes": 269,
+      "sha256": "1804419fd47ffab81e666eca67723421475b11a420ee58919ff22410e5808542",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/start.json",
+        "bytes": 269,
+        "sha256": "1804419fd47ffab81e666eca67723421475b11a420ee58919ff22410e5808542"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_13_85_1/output.bin",
+      "bytes": 160,
+      "sha256": "d419cac7c4e1d986a264eb59c184fdb85094d5aec83e7c45face59fcd8413965",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/output.bin",
+        "bytes": 160,
+        "sha256": "d419cac7c4e1d986a264eb59c184fdb85094d5aec83e7c45face59fcd8413965"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_13_85_1/prefill_actual.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_13_85_1/prefill_expected.bin",
+      "bytes": 160,
+      "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_13_85_1/result.json",
+      "bytes": 6196,
+      "sha256": "137996d52ca1d9799a35b60f251f0d8baab3ab821b0516b62aecc3ff5d5ec993",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/result.json",
+        "bytes": 6196,
+        "sha256": "137996d52ca1d9799a35b60f251f0d8baab3ab821b0516b62aecc3ff5d5ec993"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/case_13_85_1/start.json",
+      "bytes": 268,
+      "sha256": "834f9ff2c4da86c39f0e3ecb11974a9d5fc6991650fc9fdf0fe23b5f3ac141ce",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/start.json",
+        "bytes": 268,
+        "sha256": "834f9ff2c4da86c39f0e3ecb11974a9d5fc6991650fc9fdf0fe23b5f3ac141ce"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/hip_calls.jsonl",
+      "bytes": 30678,
+      "sha256": "ff4a4f0acea65adb2ab85a23ba438af1ee962eeaac0f14f2673379d935015424",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/hip_calls.jsonl",
+        "bytes": 30678,
+        "sha256": "ff4a4f0acea65adb2ab85a23ba438af1ee962eeaac0f14f2673379d935015424"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/result.json",
+      "bytes": 124739,
+      "sha256": "c3cbbd0eecc31804ea9fdadf070ca2efce8961d64a7e42ca698d55c72d49fa09",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/result.json",
+        "bytes": 124739,
+        "sha256": "c3cbbd0eecc31804ea9fdadf070ca2efce8961d64a7e42ca698d55c72d49fa09"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/start.json",
+      "bytes": 753,
+      "sha256": "807aa82f8c271af70d71c9da716d2f8188cfd2ac8a7ce4e636e9a2b7620cec97",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/start.json",
+        "bytes": 753,
+        "sha256": "807aa82f8c271af70d71c9da716d2f8188cfd2ac8a7ce4e636e9a2b7620cec97"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/transport/terminal.maps.txt",
+      "bytes": 34702,
+      "sha256": "3bd1ef006322175c030cb30dc9392bcba27cb7251ea4bc982af2d4d007cce4a6",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/terminal.maps.txt",
+        "bytes": 34702,
+        "sha256": "3bd1ef006322175c030cb30dc9392bcba27cb7251ea4bc982af2d4d007cce4a6"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/result/verdict.json",
+      "bytes": 11256,
+      "sha256": "91ca5d3800e98ec93bcfec940faaf6b16d61e9672b12d2986e088b30e4fc5fe9",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/verdict.json",
+        "bytes": 11256,
+        "sha256": "91ca5d3800e98ec93bcfec940faaf6b16d61e9672b12d2986e088b30e4fc5fe9"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/STAGE.json",
+      "bytes": 24322,
+      "sha256": "ba2953430cbb08e9ec73b7e8973765b3d3a384cce79b9daaba36c88f02db3454",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/STAGE.json",
+        "bytes": 24322,
+        "sha256": "ba2953430cbb08e9ec73b7e8973765b3d3a384cce79b9daaba36c88f02db3454"
+      }
+    },
+    {
+      "relative": "validation/portable_original/runtime/producer_process.json",
+      "bytes": 8385,
+      "sha256": "f2cfc04dda05559c8150a2a043b92565b9085545ef04444899ccce8049af77d4",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/producer_process.json",
+        "bytes": 8385,
+        "sha256": "f2cfc04dda05559c8150a2a043b92565b9085545ef04444899ccce8049af77d4"
+      }
+    },
+    {
+      "relative": "reviews/REPRODUCER_REVIEW.json",
+      "bytes": 15732,
+      "sha256": "302754824556fa1269de12b2a3146f187324fde2520664c11b3b39a8ed86aba6",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/REPRODUCER_REVIEW.json",
+        "bytes": 15732,
+        "sha256": "302754824556fa1269de12b2a3146f187324fde2520664c11b3b39a8ed86aba6"
+      }
+    },
+    {
+      "relative": "reviews/FIX_REVIEW.json",
+      "bytes": 18466,
+      "sha256": "52ba2241e7bfc429f65f0a726f89d86b59aab15344d53eb71964b5213901df3d",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/FIX_REVIEW.json",
+        "bytes": 18466,
+        "sha256": "52ba2241e7bfc429f65f0a726f89d86b59aab15344d53eb71964b5213901df3d"
+      }
+    },
+    {
+      "relative": "reviews/CONTROLLER_REVIEW.json",
+      "bytes": 8281,
+      "sha256": "4f8536be92cd99f7a4284fa2fc6f5097a3839622dd530e90637e5bed5ecd927b",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/CONTROLLER_REVIEW.json",
+        "bytes": 8281,
+        "sha256": "4f8536be92cd99f7a4284fa2fc6f5097a3839622dd530e90637e5bed5ecd927b"
+      }
+    },
+    {
+      "relative": "reviews/LIVEOUT_REVIEW.json",
+      "bytes": 8926,
+      "sha256": "a9a0a13c82bab2839a51e0f64aea93eaadc28ffd87df6c3648a240c802ba7e20",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/LIVEOUT_REVIEW.json",
+        "bytes": 8926,
+        "sha256": "a9a0a13c82bab2839a51e0f64aea93eaadc28ffd87df6c3648a240c802ba7e20"
+      }
+    },
+    {
+      "relative": "reviews/PORTABLE_RESULT_REVIEW.json",
+      "bytes": 38967,
+      "sha256": "9863adecafaccea61553ec5bb3fd38d8f442ea4bbedefa7737cf771086781221",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/PORTABLE_RESULT_REVIEW.json",
+        "bytes": 38967,
+        "sha256": "9863adecafaccea61553ec5bb3fd38d8f442ea4bbedefa7737cf771086781221"
+      }
+    },
+    {
+      "relative": "reviews/TICKET_CLAIMS_ASSERTIONS.json",
+      "bytes": 5822,
+      "sha256": "a783a361a1ae614c250fff27aa68d17ccc6901fc2d7d240f8677f85700cdef57",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/TICKET_CLAIMS_ASSERTIONS.json",
+        "bytes": 5822,
+        "sha256": "a783a361a1ae614c250fff27aa68d17ccc6901fc2d7d240f8677f85700cdef57"
+      }
+    },
+    {
+      "relative": "reviews/TICKET_SUFFICIENCY_REVIEW.json",
+      "bytes": 10764,
+      "sha256": "fa3b97b00cf4d43c166517a703b99a91e6afd3f4e792299450c60cc7a325dd3b",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/TICKET_SUFFICIENCY_REVIEW.json",
+        "bytes": 10764,
+        "sha256": "fa3b97b00cf4d43c166517a703b99a91e6afd3f4e792299450c60cc7a325dd3b"
+      }
+    },
+    {
+      "relative": "reviews/EVIDENCE_VERIFIER_REVIEW.json",
+      "bytes": 4461,
+      "sha256": "bf8753e7a297780210a02341e5a183a8d5380d7999ac5d1a68041230f75efe08",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_usability_peer_v1/EVIDENCE_VERIFIER_REVIEW.json",
+        "bytes": 4461,
+        "sha256": "bf8753e7a297780210a02341e5a183a8d5380d7999ac5d1a68041230f75efe08"
+      }
+    },
+    {
+      "relative": "validation/liveout/LIVEOUT_REVIEW.json",
+      "bytes": 13929,
+      "sha256": "ecb7c0d7a03928135a765032541d38528e6ca3a854d7642a6559ccbd75922a67",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_fix_liveout_supplement_v1/LIVEOUT_REVIEW.json",
+        "bytes": 13929,
+        "sha256": "ecb7c0d7a03928135a765032541d38528e6ca3a854d7642a6559ccbd75922a67"
+      }
+    },
+    {
+      "relative": "validation/liveout/analyze_liveout.py",
+      "bytes": 10237,
+      "sha256": "f98d9b0f4c95be4e5854e004be546c387f4b1ccab50b04b64570be8b05387408",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_fix_liveout_supplement_v1/analyze_liveout.py",
+        "bytes": 10237,
+        "sha256": "f98d9b0f4c95be4e5854e004be546c387f4b1ccab50b04b64570be8b05387408"
+      }
+    },
+    {
+      "relative": "validation/driver_review/DRIVER_REVIEWER_QUESTIONS.md",
+      "bytes": 7434,
+      "sha256": "18fbae59bbf91b2e92134b8f6c66f4cf682ad6e8daa7e92a22cc86b1d4d7d81b",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_reviewer_questions_v1/DRIVER_REVIEWER_QUESTIONS.md",
+        "bytes": 7434,
+        "sha256": "18fbae59bbf91b2e92134b8f6c66f4cf682ad6e8daa7e92a22cc86b1d4d7d81b"
+      }
+    },
+    {
+      "relative": "validation/driver_review/PROVENANCE.json",
+      "bytes": 8743,
+      "sha256": "490629d3ab68a8815ef62a5b91b0b31ceb443eb248cba7213a073a6bfaef9786",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_reviewer_questions_v1/PROVENANCE.json",
+        "bytes": 8743,
+        "sha256": "490629d3ab68a8815ef62a5b91b0b31ceb443eb248cba7213a073a6bfaef9786"
+      }
+    }
+  ],
+  "copied_bytes": 778965,
+  "GPU_actions": false,
+  "omitted": "Large kernel captures/policies and training archives are retained on A0; source paths in copied records are provenance."
+}

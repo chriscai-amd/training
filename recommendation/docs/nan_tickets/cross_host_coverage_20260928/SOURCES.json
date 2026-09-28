@@ -1,0 +1,895 @@
+{
+  "status": "PASS_CROSS_HOST_SOURCE_EVIDENCE_COPIES",
+  "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+  "files": [
+    {
+      "relative": "sources/a0_record.md.txt",
+      "bytes": 244929,
+      "sha256": "38cd8faaf0414cb93659480413be04dbf2d0529123ef377d786b79a0a2347da0",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_a0/mi450_a0.md",
+        "bytes": 244929,
+        "sha256": "38cd8faaf0414cb93659480413be04dbf2d0529123ef377d786b79a0a2347da0",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": false
+      }
+    },
+    {
+      "relative": "sources/b0_record.md.txt",
+      "bytes": 195936,
+      "sha256": "57a932d4b0079fa634c4cc6d3991e1ac30e042c8029eb91203d16f55feb1a8e0",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_b0/mi450_b0.md",
+        "bytes": 195936,
+        "sha256": "57a932d4b0079fa634c4cc6d3991e1ac30e042c8029eb91203d16f55feb1a8e0",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "sources/a37_1_record.md.txt",
+      "bytes": 76537,
+      "sha256": "def8105036927689d25ea9a049e50a40a131aad81063c11360e6b0f78c21f6c2",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/ctheliosp-1b112-a37-1.md",
+        "bytes": 76537,
+        "sha256": "def8105036927689d25ea9a049e50a40a131aad81063c11360e6b0f78c21f6c2",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "sources/a37_1_performance.md.txt",
+      "bytes": 40388,
+      "sha256": "67e7f8a1d1a269ae3b30e715812ea4559c1aff3aa621c3b742eb0fa16d64dd49",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/performance_analysis.md",
+        "bytes": 40388,
+        "sha256": "67e7f8a1d1a269ae3b30e715812ea4559c1aff3aa621c3b742eb0fa16d64dd49",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "sources/a37_1_gemm_map.md.txt",
+      "bytes": 8355,
+      "sha256": "04cae14d4a45d241e384e2bc24765c244b6c159a814a76103452bdfeac45d991",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/hipBLASLt/dlrmv4_gemm_component_map.md",
+        "bytes": 8355,
+        "sha256": "04cae14d4a45d241e384e2bc24765c244b6c159a814a76103452bdfeac45d991",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "sources/a37_2_record.md.txt",
+      "bytes": 56666,
+      "sha256": "92549227b4f27b9d359d2005809d20751176d488700ebf6bf28b2f5c325a40b3",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md",
+        "bytes": 56666,
+        "sha256": "92549227b4f27b9d359d2005809d20751176d488700ebf6bf28b2f5c325a40b3",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "sources/cluster_record.md.txt",
+      "bytes": 50154,
+      "sha256": "ee484166e8831b1a73887c8f479818c63a56c233e227e221c7e06ffac305f997",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/mi450_rck_spur.md",
+        "bytes": 50154,
+        "sha256": "ee484166e8831b1a73887c8f479818c63a56c233e227e221c7e06ffac305f997",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "sources/cluster_candidate_builder.py.txt",
+      "bytes": 6385,
+      "sha256": "144680f0f61a61537a8db6ee78ae5d99fbc6250817a9752f80cbd5be30053efa",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/tools/cwsr_fix/make_candidate_handler.py",
+        "bytes": 6385,
+        "sha256": "144680f0f61a61537a8db6ee78ae5d99fbc6250817a9752f80cbd5be30053efa",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/h21-15/cwsr_handlers.txt",
+      "bytes": 298,
+      "sha256": "d9d280c352ab2b34304dd41a2ea4097ac7b5b65ea1e41390bfd9f89d7cfb7810",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/h21-15/cwsr_handlers.txt",
+        "bytes": 298,
+        "sha256": "d9d280c352ab2b34304dd41a2ea4097ac7b5b65ea1e41390bfd9f89d7cfb7810",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/control_default/NONFINITE_STOP.json",
+      "bytes": 681,
+      "sha256": "d6f917c6443aee44c9d1572a2d2b34e1081653b6d0860817e59f146c261972ff",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/NONFINITE_STOP.json",
+        "bytes": 681,
+        "sha256": "d6f917c6443aee44c9d1572a2d2b34e1081653b6d0860817e59f146c261972ff",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/control_default/command.txt",
+      "bytes": 109,
+      "sha256": "dcac87251fb2dc9d98fa7f5c795cdf303e46552c25c99f3c82840930dc322429",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/command.txt",
+        "bytes": 109,
+        "sha256": "dcac87251fb2dc9d98fa7f5c795cdf303e46552c25c99f3c82840930dc322429",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/control_default/end_utc.txt",
+      "bytes": 25,
+      "sha256": "6e39a207e4979394e5acd111dfe901a9cea9fe7b0e5dcc5030ae628a1e282922",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/end_utc.txt",
+        "bytes": 25,
+        "sha256": "6e39a207e4979394e5acd111dfe901a9cea9fe7b0e5dcc5030ae628a1e282922",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/control_default/launch_utc.txt",
+      "bytes": 25,
+      "sha256": "f8088fa1825758ef219298fe8a9900ac56c06c65ee564dd9001675123e469c3a",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/launch_utc.txt",
+        "bytes": 25,
+        "sha256": "f8088fa1825758ef219298fe8a9900ac56c06c65ee564dd9001675123e469c3a",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/control_default/loss.csv",
+      "bytes": 4626,
+      "sha256": "7d1857f41af0363de7412d0decf66b64c4c8d456c276f19a0cbf75edd7532e6d",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/loss.csv",
+        "bytes": 4626,
+        "sha256": "7d1857f41af0363de7412d0decf66b64c4c8d456c276f19a0cbf75edd7532e6d",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/control_default/platform.txt",
+      "bytes": 920,
+      "sha256": "6a4d391a09f9aa071664d7cee69accddbc06db7bfe589b64ba3d43ae527f7abf",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/platform.txt",
+        "bytes": 920,
+        "sha256": "6a4d391a09f9aa071664d7cee69accddbc06db7bfe589b64ba3d43ae527f7abf",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/control_default/telemetry.jsonl",
+      "bytes": 24108,
+      "sha256": "f621f7685eb47f17668e283ba65d966387fcbb667c52a297abf131aff91177cd",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/control_default/telemetry.jsonl",
+        "bytes": 24108,
+        "sha256": "f621f7685eb47f17668e283ba65d966387fcbb667c52a297abf131aff91177cd",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/corrected_module_audit.txt",
+      "bytes": 1449,
+      "sha256": "9afc4a4f6620f0c0454358aca4794815e3e9e7b245498d534d3526323e9d44f5",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/corrected_module_audit.txt",
+        "bytes": 1449,
+        "sha256": "9afc4a4f6620f0c0454358aca4794815e3e9e7b245498d534d3526323e9d44f5",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/cwsr_handlers.txt",
+      "bytes": 1796,
+      "sha256": "f6026ab35c36da3f5979e197ff17a0719e756fcf8bcc92028368199a68e928fc",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/cwsr_handlers.txt",
+        "bytes": 1796,
+        "sha256": "f6026ab35c36da3f5979e197ff17a0719e756fcf8bcc92028368199a68e928fc",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/host_inventory_20260925T024916Z.txt",
+      "bytes": 21515,
+      "sha256": "f47f3b4928ad51f2791385b1d443f4a619218278a53c98fef38eda3a089ee732",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/host_inventory_20260925T024916Z.txt",
+        "bytes": 21515,
+        "sha256": "f47f3b4928ad51f2791385b1d443f4a619218278a53c98fef38eda3a089ee732",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/numabind/command.txt",
+      "bytes": 131,
+      "sha256": "079b697af536ac1226c1ef5919ea52588e05e63f8664ea8514542518c21cf2b0",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/numabind/command.txt",
+        "bytes": 131,
+        "sha256": "079b697af536ac1226c1ef5919ea52588e05e63f8664ea8514542518c21cf2b0",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/numabind/launch_utc.txt",
+      "bytes": 25,
+      "sha256": "5d2ec6a2b2d14319a532cac099f401183ff6ce5d4f8904dc81cdcc71a18154b3",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/numabind/launch_utc.txt",
+        "bytes": 25,
+        "sha256": "5d2ec6a2b2d14319a532cac099f401183ff6ce5d4f8904dc81cdcc71a18154b3",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/numabind/loss.csv",
+      "bytes": 80120,
+      "sha256": "9da34cb8db4e559bf423640d9a45eaaf5fb6a20f4d1bd8aec2894c7361d633e8",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/numabind/loss.csv",
+        "bytes": 80120,
+        "sha256": "9da34cb8db4e559bf423640d9a45eaaf5fb6a20f4d1bd8aec2894c7361d633e8",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/numabind/platform.txt",
+      "bytes": 928,
+      "sha256": "dc4ea4c985f50b7b0aaee96ddecf8455c0bcf38620d0b104ad2e96f75e896485",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/numabind/platform.txt",
+        "bytes": 928,
+        "sha256": "dc4ea4c985f50b7b0aaee96ddecf8455c0bcf38620d0b104ad2e96f75e896485",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/numabind/status.json",
+      "bytes": 508,
+      "sha256": "b767ae6c53c82936e3c09e9652265e821260fe42dab7c46969c039c0b3d8365e",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/numabind/status.json",
+        "bytes": 508,
+        "sha256": "b767ae6c53c82936e3c09e9652265e821260fe42dab7c46969c039c0b3d8365e",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/numabind/telemetry.jsonl",
+      "bytes": 99343,
+      "sha256": "e26de85394066fc08b90367d3cd13cde3e29be0b35f6706a2b1b77f20f468565",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/numabind/telemetry.jsonl",
+        "bytes": 99343,
+        "sha256": "e26de85394066fc08b90367d3cd13cde3e29be0b35f6706a2b1b77f20f468565",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/oneshot_custom.cfg",
+      "bytes": 882,
+      "sha256": "6535011dc8ddd40d363e39d879a9c21a0129ca0b46291cd6389ad7808681a427",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/oneshot_custom.cfg",
+        "bytes": 882,
+        "sha256": "6535011dc8ddd40d363e39d879a9c21a0129ca0b46291cd6389ad7808681a427",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/oneshot_install.txt",
+      "bytes": 1742,
+      "sha256": "6953c3e5400eb7af1b2482d4e80779cdb77c26414f5689ffc3a275d5e450a7e4",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/oneshot_install.txt",
+        "bytes": 1742,
+        "sha256": "6953c3e5400eb7af1b2482d4e80779cdb77c26414f5689ffc3a275d5e450a7e4",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-1/reboot_request.txt",
+      "bytes": 102,
+      "sha256": "23496d13e2cb9298526ca57c72c6c97c2b18680e238c9bd7d7ce35b667a3b777",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-1/reboot_request.txt",
+        "bytes": 102,
+        "sha256": "23496d13e2cb9298526ca57c72c6c97c2b18680e238c9bd7d7ce35b667a3b777",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-11/cwsr_handlers.txt",
+      "bytes": 442,
+      "sha256": "d89f94e49f77afb0cb5f81aba9d138c8a79b835ffa59b81d5f4babee21d9643c",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/cwsr_handlers.txt",
+        "bytes": 442,
+        "sha256": "d89f94e49f77afb0cb5f81aba9d138c8a79b835ffa59b81d5f4babee21d9643c",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-11/reboot_request.txt",
+      "bytes": 375,
+      "sha256": "24669aeea5944d50704794384422f7e33e3f307cad97609aaa31900c0353905f",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reboot_request.txt",
+        "bytes": 375,
+        "sha256": "24669aeea5944d50704794384422f7e33e3f307cad97609aaa31900c0353905f",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-11/reproA/loss.csv",
+      "bytes": 5016,
+      "sha256": "92c44ccf9c8a57220346c8ca0472100f58a3aba0e7eca32ab3049bacd15a60b3",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproA/loss.csv",
+        "bytes": 5016,
+        "sha256": "92c44ccf9c8a57220346c8ca0472100f58a3aba0e7eca32ab3049bacd15a60b3",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-11/reproA/platform.txt",
+      "bytes": 1134,
+      "sha256": "9cba9f32d1747f756ea9ee81726acec2bfefc1362fa486da018e21d7dd3d8aa5",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproA/platform.txt",
+        "bytes": 1134,
+        "sha256": "9cba9f32d1747f756ea9ee81726acec2bfefc1362fa486da018e21d7dd3d8aa5",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-11/reproA/status.json",
+      "bytes": 1303,
+      "sha256": "f91210107e8d982d0fe82f7dde394bb79795762ae12af7b5ef711e816ac7c830",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproA/status.json",
+        "bytes": 1303,
+        "sha256": "f91210107e8d982d0fe82f7dde394bb79795762ae12af7b5ef711e816ac7c830",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-11/reproA/tripwire_summary.json",
+      "bytes": 393,
+      "sha256": "d01fae97e4bdfbc7c2a6aa3dac59e600e2707f4fb2d4e7e759ab27c4d978ecae",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproA/tripwire_summary.json",
+        "bytes": 393,
+        "sha256": "d01fae97e4bdfbc7c2a6aa3dac59e600e2707f4fb2d4e7e759ab27c4d978ecae",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-11/reproB/loss.csv",
+      "bytes": 240,
+      "sha256": "c186d84370833f16c8fb69c97492186618b9d8d686356231b37c0dc2489cdd17",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproB/loss.csv",
+        "bytes": 240,
+        "sha256": "c186d84370833f16c8fb69c97492186618b9d8d686356231b37c0dc2489cdd17",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-11/reproB/platform.txt",
+      "bytes": 1059,
+      "sha256": "749fed87661a304415d743f4b44fb99020e5e3b8ed73b5acbe11e8312987d2d5",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproB/platform.txt",
+        "bytes": 1059,
+        "sha256": "749fed87661a304415d743f4b44fb99020e5e3b8ed73b5acbe11e8312987d2d5",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-11/reproB/status.json",
+      "bytes": 520,
+      "sha256": "77be899d6fbca04b3937028e228d630ae44d257d43892464fc879daaea5945f2",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-11/reproB/status.json",
+        "bytes": 520,
+        "sha256": "77be899d6fbca04b3937028e228d630ae44d257d43892464fc879daaea5945f2",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/armed_install.txt",
+      "bytes": 996,
+      "sha256": "48358564325be8802b2441384ea9f6fa5a2fcf35e371d9e74b147da5df436ebc",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/armed_install.txt",
+        "bytes": 996,
+        "sha256": "48358564325be8802b2441384ea9f6fa5a2fcf35e371d9e74b147da5df436ebc",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/corrected_boot/dmesg_excerpt.txt",
+      "bytes": 1199,
+      "sha256": "97ec83e6ca890ec9ec9a4717417babe47f0e53ccc32c9d7047555c7b8fd9e162",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_boot/dmesg_excerpt.txt",
+        "bytes": 1199,
+        "sha256": "97ec83e6ca890ec9ec9a4717417babe47f0e53ccc32c9d7047555c7b8fd9e162",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/corrected_boot/load_log.txt",
+      "bytes": 4646,
+      "sha256": "415729715244187fd97e3ee0b1f3a4739f8b588d3299dadcb886ddb7e6c6ce67",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_boot/load_log.txt",
+        "bytes": 4646,
+        "sha256": "415729715244187fd97e3ee0b1f3a4739f8b588d3299dadcb886ddb7e6c6ce67",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/corrected_boot/lsmod_before_insmod.txt",
+      "bytes": 4197,
+      "sha256": "3bfcf130f35e69e6fe1e08ee518d8931e09c1048ba49bb0503e511406c2ed895",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_boot/lsmod_before_insmod.txt",
+        "bytes": 4197,
+        "sha256": "3bfcf130f35e69e6fe1e08ee518d8931e09c1048ba49bb0503e511406c2ed895",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/corrected_boot/post_boot_inspect.txt",
+      "bytes": 6230,
+      "sha256": "3b34e3fd2a7795c8b7f898149a32608a56133e538c7e4f9ac1d1342c92cf90fb",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_boot/post_boot_inspect.txt",
+        "bytes": 6230,
+        "sha256": "3b34e3fd2a7795c8b7f898149a32608a56133e538c7e4f9ac1d1342c92cf90fb",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/corrected_default/command.txt",
+      "bytes": 109,
+      "sha256": "dcac87251fb2dc9d98fa7f5c795cdf303e46552c25c99f3c82840930dc322429",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_default/command.txt",
+        "bytes": 109,
+        "sha256": "dcac87251fb2dc9d98fa7f5c795cdf303e46552c25c99f3c82840930dc322429",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/corrected_default/launch_utc.txt",
+      "bytes": 25,
+      "sha256": "8625f5bd0594cfd461c770b9b26157ebb48956b643e3a3d6f7d079271bfa8cf7",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_default/launch_utc.txt",
+        "bytes": 25,
+        "sha256": "8625f5bd0594cfd461c770b9b26157ebb48956b643e3a3d6f7d079271bfa8cf7",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/corrected_default/loss.csv",
+      "bytes": 88720,
+      "sha256": "68c7583869267bd8f32d2783e5b032260fea30c68ba4c8ae406c10a5240f5031",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_default/loss.csv",
+        "bytes": 88720,
+        "sha256": "68c7583869267bd8f32d2783e5b032260fea30c68ba4c8ae406c10a5240f5031",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/corrected_default/platform.txt",
+      "bytes": 1058,
+      "sha256": "744859e6d4d310c213c5a4525508590f211c42e0cb26cf6e54bc188273f8977c",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_default/platform.txt",
+        "bytes": 1058,
+        "sha256": "744859e6d4d310c213c5a4525508590f211c42e0cb26cf6e54bc188273f8977c",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/corrected_default/status.json",
+      "bytes": 527,
+      "sha256": "9a95805c2dbcda039c4894d13aa7c50a86f043ebf1511864290542b061a767e9",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_default/status.json",
+        "bytes": 527,
+        "sha256": "9a95805c2dbcda039c4894d13aa7c50a86f043ebf1511864290542b061a767e9",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/corrected_default/telemetry.jsonl",
+      "bytes": 168295,
+      "sha256": "c01a77a5740a7d8b267a0482d54851d1cf6371aa1d6b132be240521126607708",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_default/telemetry.jsonl",
+        "bytes": 168295,
+        "sha256": "c01a77a5740a7d8b267a0482d54851d1cf6371aa1d6b132be240521126607708",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/corrected_module_audit.txt",
+      "bytes": 2036,
+      "sha256": "bf5152bc503443347e3ad97b6c24ca5693e3c926195239d498b3ed964c2d3cc5",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/corrected_module_audit.txt",
+        "bytes": 2036,
+        "sha256": "bf5152bc503443347e3ad97b6c24ca5693e3c926195239d498b3ed964c2d3cc5",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/dmesg_wedge_excerpt.txt",
+      "bytes": 12429,
+      "sha256": "e526b0027fb47ae09fb8bae8d77c16e9315d6e89898ba8f41ccf968c8776bc81",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/dmesg_wedge_excerpt.txt",
+        "bytes": 12429,
+        "sha256": "e526b0027fb47ae09fb8bae8d77c16e9315d6e89898ba8f41ccf968c8776bc81",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/halt_clear_observation.txt",
+      "bytes": 1139,
+      "sha256": "dad2e3562a06d3916f1b76b9ffa7652b147a130f036b7b57fc8c8b30fb83cbd9",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/halt_clear_observation.txt",
+        "bytes": 1139,
+        "sha256": "dad2e3562a06d3916f1b76b9ffa7652b147a130f036b7b57fc8c8b30fb83cbd9",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/host_first_look.txt",
+      "bytes": 1219,
+      "sha256": "1f426cb8893520c44d3135693bbae37dfec68c59f88b3331b9eac254f22b0d5f",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/host_first_look.txt",
+        "bytes": 1219,
+        "sha256": "1f426cb8893520c44d3135693bbae37dfec68c59f88b3331b9eac254f22b0d5f",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/long_numabind/NONFINITE_STOP.json",
+      "bytes": 706,
+      "sha256": "44b7bc9261f7c8e943e9d0bee9561a8bb6aa645473639cc60b9d32ac183c9286",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/long_numabind/NONFINITE_STOP.json",
+        "bytes": 706,
+        "sha256": "44b7bc9261f7c8e943e9d0bee9561a8bb6aa645473639cc60b9d32ac183c9286",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/long_numabind/command.txt",
+      "bytes": 131,
+      "sha256": "079b697af536ac1226c1ef5919ea52588e05e63f8664ea8514542518c21cf2b0",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/long_numabind/command.txt",
+        "bytes": 131,
+        "sha256": "079b697af536ac1226c1ef5919ea52588e05e63f8664ea8514542518c21cf2b0",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/long_numabind/launch_utc.txt",
+      "bytes": 25,
+      "sha256": "fdb8bda11957d20f2dc383a81be8b752261ed7b10eff61507528ac063dbf5edc",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/long_numabind/launch_utc.txt",
+        "bytes": 25,
+        "sha256": "fdb8bda11957d20f2dc383a81be8b752261ed7b10eff61507528ac063dbf5edc",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/long_numabind/loss.csv",
+      "bytes": 14832,
+      "sha256": "215a971f6f4369196f772fa16a78acc1964a72a06354845512e4a13bc0e429f8",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/long_numabind/loss.csv",
+        "bytes": 14832,
+        "sha256": "215a971f6f4369196f772fa16a78acc1964a72a06354845512e4a13bc0e429f8",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/long_numabind/platform.txt",
+      "bytes": 1053,
+      "sha256": "854d4cbaa2de04e374937500a94bc308766d78db258c8da7ba170c17a7bcf7b8",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/long_numabind/platform.txt",
+        "bytes": 1053,
+        "sha256": "854d4cbaa2de04e374937500a94bc308766d78db258c8da7ba170c17a7bcf7b8",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/long_numabind/telemetry.jsonl",
+      "bytes": 53465,
+      "sha256": "936b43916adfbb7724ad5bc71c7a0a38e8bf6ba14837146eb53b3c8bed51351c",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/long_numabind/telemetry.jsonl",
+        "bytes": 53465,
+        "sha256": "936b43916adfbb7724ad5bc71c7a0a38e8bf6ba14837146eb53b3c8bed51351c",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/tripwire_numabind_wedge/command.txt",
+      "bytes": 131,
+      "sha256": "079b697af536ac1226c1ef5919ea52588e05e63f8664ea8514542518c21cf2b0",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/tripwire_numabind_wedge/command.txt",
+        "bytes": 131,
+        "sha256": "079b697af536ac1226c1ef5919ea52588e05e63f8664ea8514542518c21cf2b0",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/tripwire_numabind_wedge/launch_utc.txt",
+      "bytes": 25,
+      "sha256": "73a35408a438dffe36902f31c40d870802ef44d90c1cc17aa4278f4d2c185b7d",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/tripwire_numabind_wedge/launch_utc.txt",
+        "bytes": 25,
+        "sha256": "73a35408a438dffe36902f31c40d870802ef44d90c1cc17aa4278f4d2c185b7d",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/tripwire_numabind_wedge/platform.txt",
+      "bytes": 1128,
+      "sha256": "597cdf2c7c80a950bb9ab8171768f71f560cf7a768db9cc5a5101e090f427800",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/tripwire_numabind_wedge/platform.txt",
+        "bytes": 1128,
+        "sha256": "597cdf2c7c80a950bb9ab8171768f71f560cf7a768db9cc5a5101e090f427800",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/tripwire_numabind_wedge/telemetry.jsonl",
+      "bytes": 121501,
+      "sha256": "7a20c7fe2a641dac703f4feec110748f9f71afd2cc3a3eff6784490c4d1712dd",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/tripwire_numabind_wedge/telemetry.jsonl",
+        "bytes": 121501,
+        "sha256": "7a20c7fe2a641dac703f4feec110748f9f71afd2cc3a3eff6784490c4d1712dd",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "cluster_evidence/j19-9/tripwire_numabind_wedge/train_log_tail.txt",
+      "bytes": 4000,
+      "sha256": "98102cd5b5d39783d0c7e31d3d9a739ec93121428294e28110d068d3a1b25331",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_rck_spur/evidence/j19-9/tripwire_numabind_wedge/train_log_tail.txt",
+        "bytes": 4000,
+        "sha256": "98102cd5b5d39783d0c7e31d3d9a739ec93121428294e28110d068d3a1b25331",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "reviews/B0_ASSESSMENT.md",
+      "bytes": 10065,
+      "sha256": "29db4665af527a07ef2fa27da12d8363da88fb06be331b03dea44aa521668002",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_cross_host_B0_peer_v1/B0_ASSESSMENT.md",
+        "bytes": 10065,
+        "sha256": "29db4665af527a07ef2fa27da12d8363da88fb06be331b03dea44aa521668002"
+      }
+    },
+    {
+      "relative": "reviews/B0_ASSESSMENT.json",
+      "bytes": 17640,
+      "sha256": "9abbbc256202afedb921726195ee537ba29b67c712398c7212e5fe29d1159f94",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_cross_host_B0_peer_v1/B0_ASSESSMENT.json",
+        "bytes": 17640,
+        "sha256": "9abbbc256202afedb921726195ee537ba29b67c712398c7212e5fe29d1159f94"
+      }
+    },
+    {
+      "relative": "reviews/1P4G_ASSESSMENT.md",
+      "bytes": 11857,
+      "sha256": "f40919a292d684451440cf598911b678e78427e0b3e8b85be67f21a213b87d22",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_cross_host_1P4G_peer_v1/1P4G_ASSESSMENT.md",
+        "bytes": 11857,
+        "sha256": "f40919a292d684451440cf598911b678e78427e0b3e8b85be67f21a213b87d22"
+      }
+    },
+    {
+      "relative": "reviews/1P4G_ASSESSMENT.json",
+      "bytes": 20390,
+      "sha256": "9a094122f152ab41162264bb6a4297e13da1612cba6f979fe27594524a6eb00d",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_cross_host_1P4G_peer_v1/1P4G_ASSESSMENT.json",
+        "bytes": 20390,
+        "sha256": "9a094122f152ab41162264bb6a4297e13da1612cba6f979fe27594524a6eb00d"
+      }
+    },
+    {
+      "relative": "reviews/CLUSTER_ASSESSMENT.md",
+      "bytes": 15274,
+      "sha256": "7b5584e18ce5d2cded2e579c7cedf8ef309ddbebd2579c700bcf3d6b4d0a4313",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_cross_host_cluster_peer_v1/CLUSTER_ASSESSMENT.md",
+        "bytes": 15274,
+        "sha256": "7b5584e18ce5d2cded2e579c7cedf8ef309ddbebd2579c700bcf3d6b4d0a4313"
+      }
+    },
+    {
+      "relative": "reviews/CLUSTER_ASSESSMENT.json",
+      "bytes": 47683,
+      "sha256": "3073ffdc57bdbc02837f78a58bf0295a7ac1e39a781d48ce0c558ceee5bf5cb1",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_cross_host_cluster_peer_v1/CLUSTER_ASSESSMENT.json",
+        "bytes": 47683,
+        "sha256": "3073ffdc57bdbc02837f78a58bf0295a7ac1e39a781d48ce0c558ceee5bf5cb1"
+      }
+    },
+    {
+      "relative": "reviews/PULL.json",
+      "bytes": 561,
+      "sha256": "e05562b9543bc3ef0dcda1516ba7609fa1cbab92415822036eb32db3090179dd",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_cross_host_review_v1/PULL.json",
+        "bytes": 561,
+        "sha256": "e05562b9543bc3ef0dcda1516ba7609fa1cbab92415822036eb32db3090179dd"
+      }
+    },
+    {
+      "relative": "reviews/A0_RECORDED_SCOPE.json",
+      "bytes": 1551,
+      "sha256": "164836d41c8e4d26fc08fd977ca12bc89e7eb7d375aa771383e734e0fcc99dc2",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_cross_host_review_v1/A0_RECORDED_SCOPE.json",
+        "bytes": 1551,
+        "sha256": "164836d41c8e4d26fc08fd977ca12bc89e7eb7d375aa771383e734e0fcc99dc2"
+      }
+    },
+    {
+      "relative": "a0_evidence/current_natural_DW.json",
+      "bytes": 4120,
+      "sha256": "fc3313fda9328324d1790e8459921f0f9abd43a2fff908203b4fb23c6b8df330",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_natural_DW.json",
+        "bytes": 4120,
+        "sha256": "fc3313fda9328324d1790e8459921f0f9abd43a2fff908203b4fb23c6b8df330",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "a0_evidence/current_natural_nonzero_DW.json",
+      "bytes": 4313,
+      "sha256": "8a1d447889ec99316252b69c2764048b7fba2e4a2c6d14a00c240a50f71bafc4",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_natural_nonzero_DW.json",
+        "bytes": 4313,
+        "sha256": "8a1d447889ec99316252b69c2764048b7fba2e4a2c6d14a00c240a50f71bafc4",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "a0_evidence/current_plateau400.json",
+      "bytes": 12805,
+      "sha256": "fd66f45e9dbe700792539f7b108f85b3ae4581fffa624d6f86d5cb6469980bd5",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_plateau400.json",
+        "bytes": 12805,
+        "sha256": "fd66f45e9dbe700792539f7b108f85b3ae4581fffa624d6f86d5cb6469980bd5",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    },
+    {
+      "relative": "a0_evidence/current_STU1_DX583.json",
+      "bytes": 27443,
+      "sha256": "65a86a592b8ad191cfed832d40ff9dfb4915652f5ef515dcf31238ae7bf6dff7",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260923/current_STU1_DX583.json",
+        "bytes": 27443,
+        "sha256": "65a86a592b8ad191cfed832d40ff9dfb4915652f5ef515dcf31238ae7bf6dff7",
+        "repository_revision": "8cf681dead52574301cc68bdfa37442626d333b9",
+        "matches_revision": true
+      }
+    }
+  ],
+  "bytes": 1592689,
+  "GPU_actions": false,
+  "remote_actions": false,
+  "original_ticket_modified": false,
+  "note": "The A0 document snapshot includes preserved local updates. Other tracked sources match the pulled revision."
+}

@@ -1,0 +1,23 @@
+{
+  "status": "FAIL_PORTABLE_REPRO_EVIDENCE_PRESERVED",
+  "release": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/RELEASE.json",
+    "bytes": 745,
+    "sha256": "8ec7243eec5833e7d624868d7fa17805f7378393add8843e30525ae53703ec79"
+  },
+  "controller": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/controller.py",
+    "bytes": 17706,
+    "sha256": "174500aeb6870f0c9adea5daa8f11ce5108b65880591017795cbba613a2c7013"
+  },
+  "previous_kernel_state": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_original_DW_archive_root_v1/execution/final_gate/kernel/state.json",
+    "bytes": 39758,
+    "sha256": "0d69b311b923188539819189a5ed388812236db8dcee4a5922bc6be3ae76867c"
+  },
+  "GPU_actions": false,
+  "driver_actions": false,
+  "producer_may_be_alive": false,
+  "process_signal_sent": false,
+  "raw_files_removed": false
+}

@@ -1,0 +1,12 @@
+{
+  "ordinal": 6,
+  "case": {
+    "mode_low_byte": 130,
+    "trap": false,
+    "symbol": "sentinel_82_0"
+  },
+  "started_utc": "2026-09-28T00:54:57.672756+00:00",
+  "transport_status": "STARTED",
+  "call_index_begin": 44,
+  "output_device_pointer": "0x747c00600000"
+}

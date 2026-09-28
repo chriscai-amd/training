@@ -1,0 +1,57 @@
+{
+  "status": "PASS_CPU_SHADER_REBUILD_NATIVE_BYTES_MATCH",
+  "commands": [
+    {
+      "command": [
+        "/opt/rocm/llvm/bin/llvm-mc",
+        "--triple=amdgcn-amd-amdhsa",
+        "--mcpu=gfx1250",
+        "--filetype=obj",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/exact/sentinel_shader_root_v2.s",
+        "-o",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/CPU_BUILD_v2/sentinel.o"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/opt/rocm/llvm/bin/ld.lld",
+        "-shared",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/CPU_BUILD_v2/sentinel.o",
+        "-o",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/CPU_BUILD_v2/sentinel.hsaco"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/opt/rocm/llvm/bin/llvm-objdump",
+        "-d",
+        "--mcpu=gfx1250",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/CPU_BUILD_v2/sentinel.hsaco"
+      ],
+      "returncode": 0
+    }
+  ],
+  "LLVM_version": "AMD LLVM version 23.0.0git\n  Optimized build.\n\n  Registered Targets:\n    amdgcn  - AMD GCN GPUs\n    r600    - AMD GPUs HD2XXX-HD6XXX\n    spirv   - SPIR-V Logical\n    spirv32 - SPIR-V 32-bit\n    spirv64 - SPIR-V 64-bit\n    x86     - 32-bit X86: Pentium-Pro and above\n    x86-64  - 64-bit X86: EM64T and AMD64\n",
+  "shader_source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/exact/sentinel_shader_root_v2.s",
+    "bytes": 100058,
+    "sha256": "5172641877ade249d232cd5c721aed1e404b98921afe367043ad905784417a00"
+  },
+  "executed_image": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/exact/sentinel_shader_root_v2.hsaco",
+    "bytes": 32152,
+    "sha256": "4f840df38a5d815abe50824f37dedbde4bf48fffdec6ca84530cd631f69e5484"
+  },
+  "rebuilt_image": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/CPU_BUILD_v2/sentinel.hsaco",
+    "bytes": 32152,
+    "sha256": "67af1f5175502f4c9515a5405ee5dff4c954a8f656308bbf6b1bac1ce782c677"
+  },
+  "whole_ELF_byte_identical": false,
+  "all_14_kernel_bytes_and_return_sites_equal": true,
+  "all_text_rodata_metadata_sections_equal": true,
+  "GPU_actions": false,
+  "driver_actions": false
+}

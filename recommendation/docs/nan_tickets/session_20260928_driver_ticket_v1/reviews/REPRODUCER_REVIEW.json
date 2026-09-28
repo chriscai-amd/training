@@ -1,0 +1,652 @@
+{
+  "status": "PASS_INDEPENDENT_PORTABLE_SENTINEL_CPU_SOURCE_AND_ORACLE_REVIEW",
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/run_repro.py",
+    "bytes": 12376,
+    "sha256": "521999790d358dc8a4507d29b291a77cd5c1dcc9fe03f8c7bf5565d8fce71262"
+  },
+  "builder": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/build_repro.py",
+    "bytes": 2430,
+    "sha256": "25433c7d2937e667256aba9d1d368054f6e499f67fe84fc2ff0ad812afe211e0"
+  },
+  "reviewer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_peer_v1/review_reproducer.py",
+    "bytes": 7666,
+    "sha256": "0a24d0715200469cab79f351c5ea57cea16f506d733a65c74c9cdd0eec32abb9"
+  },
+  "cases": 142,
+  "checks": [
+    {
+      "name": "original_all_14_exact_nominal_cases",
+      "status": "PASS"
+    },
+    {
+      "name": "original_exact_changed_cases",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_00_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_00_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_41_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_41_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_45_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_45_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_82_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_82_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_05_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_05_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_81_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_81_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_85_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_sentinel_85_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "original_cannot_pass_opposite_oracle",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_0_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_1_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_2_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_3_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_4_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_5_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_6_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_7_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_8_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_9_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_10_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_11_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_12_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_13_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_14_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_15_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_16_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_17_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_18_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_19_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_20_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_21_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_22_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_23_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_24_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_25_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_26_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_27_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_28_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_29_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_30_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_31_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_32_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_33_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_34_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_35_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_36_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_37_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_38_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_mutated_word_39_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_missing_case_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_duplicate_case_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_reordered_cases_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_extra_case_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_size_0_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_size_156_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_size_159_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_size_161_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_size_164_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_self_consistent_wrong_native_PC_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "original_module_relocation_4096",
+      "status": "PASS"
+    },
+    {
+      "name": "original_module_relocation_1",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_all_14_exact_nominal_cases",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_exact_changed_cases",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_00_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_00_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_41_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_41_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_45_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_45_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_82_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_82_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_05_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_05_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_81_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_81_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_85_0_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_sentinel_85_1_nominal_packet",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_cannot_pass_opposite_oracle",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_0_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_1_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_2_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_3_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_4_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_5_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_6_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_7_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_8_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_9_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_10_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_11_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_12_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_13_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_14_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_15_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_16_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_17_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_18_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_19_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_20_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_21_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_22_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_23_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_24_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_25_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_26_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_27_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_28_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_29_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_30_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_31_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_32_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_33_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_34_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_35_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_36_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_37_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_38_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_mutated_word_39_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_missing_case_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_duplicate_case_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_reordered_cases_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_extra_case_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_size_0_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_size_156_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_size_159_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_size_161_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_size_164_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_self_consistent_wrong_native_PC_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_module_relocation_4096",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_module_relocation_1",
+      "status": "PASS"
+    },
+    {
+      "name": "check_only_entrypoint_returns_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "check_only_entrypoint_no_CDLL",
+      "status": "PASS"
+    },
+    {
+      "name": "saved_original_witness_has_three_changes",
+      "status": "PASS"
+    },
+    {
+      "name": "saved_corrected_witness_has_zero_changes",
+      "status": "PASS"
+    }
+  ],
+  "exact_assets": {
+    "status": "EXACT_ORIGINAL_EXECUTED_SENTINEL_SOURCE_AND_NATIVE_ASSETS",
+    "files": [
+      {
+        "source_path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/run_sentinel_host_v1.py",
+        "package_path": "exact/run_sentinel_host_v1.py",
+        "bytes": 21231,
+        "sha256": "be1582e96b7dad21991a562a6d4aec2664d331bd30ae64e1117cbd2d045ace89"
+      },
+      {
+        "source_path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/sentinel_shader_root_v2.s",
+        "package_path": "exact/sentinel_shader_root_v2.s",
+        "bytes": 100058,
+        "sha256": "5172641877ade249d232cd5c721aed1e404b98921afe367043ad905784417a00"
+      },
+      {
+        "source_path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/sentinel_shader_root_v2.hsaco",
+        "package_path": "exact/sentinel_shader_root_v2.hsaco",
+        "bytes": 32152,
+        "sha256": "4f840df38a5d815abe50824f37dedbde4bf48fffdec6ca84530cd631f69e5484"
+      },
+      {
+        "source_path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/sentinel_host_configuration_v2.json",
+        "package_path": "exact/sentinel_host_configuration_v2.json",
+        "bytes": 4898,
+        "sha256": "4a7fd0b589959eec2f3c1f73fd86afacca18affb732d122df624bf0f7e4f2554"
+      }
+    ]
+  },
+  "cpu_check_only": {
+    "status": "PASS_CPU_ONLY_PORTABLE_SENTINEL_CHECK",
+    "exact_native_sha256": "4f840df38a5d815abe50824f37dedbde4bf48fffdec6ca84530cd631f69e5484",
+    "native_functions": 14,
+    "explicit_traps": 7,
+    "cases": 14,
+    "packet_bytes": 160,
+    "observed_witnesses": {
+      "original": {
+        "status": "PASS_EXPECTED_ORIGINAL_SENTINEL",
+        "cases": 14,
+        "changed_cases": 3
+      },
+      "fixed": {
+        "status": "PASS_EXPECTED_FIXED_SENTINEL",
+        "cases": 14,
+        "changed_cases": 0
+      }
+    },
+    "CDLL_called": false,
+    "HIP_initialized": false
+  },
+  "GPU_actions": false,
+  "driver_actions": false,
+  "CDLL_calls": [],
+  "production_training_tensor_or_archive_payloads_read": false,
+  "tiny_packaged_sentinel_witness_bytes_read": 4480,
+  "unresolved_findings": [],
+  "limits": [
+    "Portable runtime adapter has not been exercised on GPU by this independent CPU review.",
+    "The exact original host and native shader are previously executed; explicit runtime paths and empty training environment contract are adapter changes.",
+    "Caller owns process timeout, exit/reaping, kernel/device gates and fresh driver epochs.",
+    "No complete-training fix or causal attribution for STU1 follows from the sentinel."
+  ]
+}

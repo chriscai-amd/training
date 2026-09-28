@@ -1,0 +1,33 @@
+{
+  "container_id": "345f3d4609b852505bf66834b811388bdf1a7f7177ca7dab27215672bed8d13a",
+  "image_id": "sha256:7dcd1177dac976c9af2da3e1eeaa9e2d119827879c1873c2dda97ac3b0b287d7",
+  "state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 1103272,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-09-28T00:00:08.75718255Z",
+    "FinishedAt": "2026-09-23T07:12:06.800079881Z"
+  },
+  "restart_policy": {
+    "Name": "no",
+    "MaximumRetryCount": 0
+  },
+  "installed_libraries": [
+    {
+      "path": "/proc/1103272/root/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+      "bytes": 28048929,
+      "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+    },
+    {
+      "path": "/proc/1103272/root/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+      "bytes": 4887073,
+      "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+    }
+  ]
+}

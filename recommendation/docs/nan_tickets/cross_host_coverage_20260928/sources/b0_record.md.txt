@@ -1,0 +1,2518 @@
+# Bring-up on MI450 B0, host `heliosr-1b112-a30-4` (gfx1250, single GPU)
+
+## Current status: trap defect produces LayerNorm NaNs; training attribution still open
+
+Updated **September 21, 2026**, after the **04:32 UTC** stock-GEMM validation,
+**04:20 UTC** compiled-LayerNorm experiment and **04:17 UTC** training abort. The [September 21 record](nan_triage_resume_20260921.md) supersedes the
+September 20 next-action and stopped-state summaries.
+
+**The trap-entry defect now reproduces NaNs in a real compiled LayerNorm
+kernel.** In the exact historical 576-VGPR DX kernel, a four-byte explicit-trap
+insertion at either of two predicted unequal-bank windows produces NaNs only
+in column **263** of the FP32 weight/bias partial gradients. All **15 cases**
+match prediction: six unequal-bank trap cases corrupt that column, while nine
+original, wait-only and equal-bank trap controls return exact zeros. An
+independent audit checks all **270 complete buffers** and **723 HIP API records**.
+The instruction-level donor is a temporary NaN from division scaling
+that the installed trap entry copies into a live zero-DY register. This is an
+explicit-injection arithmetic reproducer, not a captured natural training event.
+
+The earlier tagged-register sentinel independently established the controlled
+B0 register-preservation defect. With distinct tags in banked VGPRs, explicit
+`s_trap 3` copies historical **v257 lane 0 into v1 or v513 lane 0** under the
+predicted unequal-bank settings. All seven no-explicit-trap cases and four
+equal-bank trap cases preserve the sampled tags. The independent CPU audit
+passes **445 checks across 14 cases**, including all seven trap-return PCs.
+The installed handler's entry workaround reads and writes encoded `v1` before
+clearing the bank fields, matching the observed cross-bank copy.
+
+**This is not yet a demonstrated cause or fix for the training NaN.** No B0
+training capture joins the original bad output to this trap event. A candidate
+handler repair now passes the **512-case userspace comparison**: all 192
+original unequal-bank copies are absent in the corresponding fixed cases,
+and all 256 candidate settings preserve the sampled registers. The full
+handler was built offline, with unchanged code outside the entry and one
+affected branch. It has not been installed or validated as a live privileged
+handler. The existing attention cap256 and LayerNorm BN1 controls previously
+failed training, and high register count alone does not identify a cause.
+
+| Latest completed evidence | Finding | Limit |
+|---|---|---|
+| **Compiled LN arithmetic bridge** | All **15 cases** complete at **04:20:41 UTC**. Six unequal-bank trap cases have only the predicted partial DW/DB column-263 NaNs; nine original/wait/equal-bank controls are zero. All 757 raw audit checks pass. | Explicit traps and tiny 8/16/32-row inputs; DX stays zero. Original training causality and the historical column-5/DX corruption remain unresolved. |
+| **Fresh original training capture** | Aborts at **04:17:42 UTC** with illegal memory access/SIGABRT after **83 finite sampled losses through step 830**. Ten kernel page faults name the worker; no tensor payload. | Did not complete the 1,000-step bound. Asynchronous error stack and fault records do not identify the producing kernel. |
+| **Native DW103 stock arithmetic** | Five sparse cases pass at **04:32:41 UTC**. Independent audit passes **241 checks**, including all 655,360 output values and launch packets. Matched bank-rewrite variants pass complete static review. | Only the stock kernel ran. The matched control/equal variants are GPU-unrun; complete input bodies were hashed but not retained. |
+| **Controlled B0 trap sentinel** | Modes `0x05`, `0x81`, and `0x85` reproduce the predicted lane-0 bank copy. Remaining sampled tags and guard words are preserved. | Establishes the controlled mechanism; nine register/lane tags are sampled. Original training causality remains open. |
+| **Candidate entry-sequence repair** | All **512 cases** complete at **03:21:10 UTC**: original 192 predicted copies/64 preserved; candidate all 256 preserved. Independent raw-buffer audit passes 30 aggregate checks. Full handler rebuild reproduces installed original bytes. | Ordinary SGPRs substitute trap temporaries; no explicit trap in this comparison. Live privileged entry and original training causality still require validation. |
+| **Ordered DB → DW → DX helper** | Five calls pass. All ten native GEMM launches pass the **220-check** symbol/ABI/geometry audit: DW matches disk candidate 102 at 2,048 workgroups; DX matches disk candidate 172 at 460 workgroups. | Zero DZ, synthetic finite X, real B0 W; no failing original operands or first corrupting writer. The former “GPU-unrun” status is obsolete. |
+| **BN8 LayerNorm with cap256** | Five calls pass. A **124-check** compiled-artifact audit confirms 256 VGPRs, 1,144 private bytes and zero bank setters; the reduction is unchanged relative to the matching historical helper. | Capping also changes spills and scheduling. This short pass is not a validated mitigation. |
+| **Fresh unchanged BN8 helper** | The September 21 run finishes at **03:08:11 UTC**, exit 0, reporting **1,000 calls passed**, all 100 checkpoints and 600 input byte flags clean. A **49-check** CPU comparison confirms both complete compiled-launch objects match the historical positive, including its 576-VGPR, zero-spill `eae3693f…` DX. | This is another nonreproduction by the original helper, not a failing control for the capped arm. The CPU audit validates archived reports and lifecycle, not full original tensor bytes. |
+| **Uninstrumented training baseline** | September 20 timestamp-zero training completed all **3,000 optimizer steps**, all 300 logged losses finite, final loss **0.14524586498737335**. | The same production code with attention cap256/LN BN1 previously NaNed at 60/70. No new repair explains this pass. |
+
+**The original training boundary remains unresolved.** At attempted step 51,
+the output-gradient GEMM receives already-huge finite `dout` and matches an
+independent CPU reference. The preceding observed output backward is bounded.
+The intervening HSTU preprocess path, projection/input-LN boundaries and
+possible later writes remain the localization target. The row fingerprint is
+consistent with LayerNorm spreading a spike, but original projection DX, norm
+inputs/statistics and raw norm parameter gradients were not retained.
+
+**The driver candidate is built and staged.** Its embedded handler matches
+the certified bytes; complete imported/exported symbol CRCs match the
+installed driver. A compressed deployment artifact and original-module
+rollback copy are preserved. The installed driver remains unchanged.
+
+**Wrap-up:** all GPU sessions are terminal and drained; the final direct
+owner scan is complete and empty. Experiments are stopped at the user's
+request. The native DW103 matched bank comparison and the LN same-site
+bank intervention have not run. Resume those reviewed controls before
+interpreting a clean arm as suppression of a natural failure. Original
+training attribution and a complete repair remain open. The staged driver
+candidate has not been installed; privileged-path testing and renewed
+3,000-step training after a causal repair remain outstanding.
+
+**Execution and publication rules.** Preserve the required September 10 image,
+exact Triton `7ff97e310935b4a79794878dbc911f9af25d38d9`, and the runtime
+precautions in [§1](#1-the-machine-and-the-software-stack). Use the direct
+all-process/all-thread device-FD scan by device number before and after GPU
+work: earlier `fuser`/`amd-smi` checks missed a known live container worker.
+Snapshots do not establish continuous exclusivity. The user explicitly
+authorized publication of this B0 documentation update. Driver installation,
+reset/reboot, container restart and changes to `mi450_c` remain outside that
+authorization.
+
+The [September 21 experiment record](nan_triage_resume_20260921.md) links the authoritative
+reports, terminal audits, completed controls and remaining work.
+[September 20's record](nan_triage_resume_20260920.md) retains the training and earlier
+component evidence. [A0's evidence](../mi450_a0/mi450_a0.md#strongest-evidence) supplies a separate matched
+bank-intervention lead and must not be substituted for a B0 training capture.
+
+<details>
+<summary>Previous introduction and experiment index — historical checkpoint</summary>
+
+The current status above supersedes the older running/validation status below.
+
+Updated **2026-09-20 after the 04:32 UTC verified 3,000-step pass**.
+**Uninstrumented training passed 3,000 optimizer steps; the original NaN
+culprit and causal fix remain unresolved.**
+Run `e2e_bn1_3000_20260920T031436710808Z/` completed
+**04:32:45.582339 UTC**, controller exit0, root session **1890 drained**.
+All **300 sampled losses, 10..3000**, are finite; final full-precision loss
+**0.14524586498737335**. Exact global-step3000 and worker-exit42 markers are
+present; raw outer exit1 is the expected multiprocessing result. The independent
+terminal audit confirms the bound, all143 source hashes, GIN, required stack,
+effective environment, unchanged boot, empty GPU owners and no new GPU fault.
+
+Settings were timestamp zero, batch1024, seed1, attention cap256 and weighted-LN
+BN1, with all diagnostic probes and preload tracing off. All60 common production
+Python files match the earlier cap256/BN1 run that produced NaNs at60/70. This
+bounded pass does not identify a new repair or explain prior intermittent faults.
+
+The subsequent real-B0-weight projection DX shape-cycle control passes
+**1,000/1,000**, all11 input guards, exit0 at **04:40:46 UTC**; session17072
+drained. All native launches join; the same MT128x256 symbol uses256 workgroups
+at four shapes and31,460 at one. The queued reducer control also passes
+**1,000 calls /40 phases**, including493 recorded input-allocation reuses.
+A5-call fixed-grid460 selector passes but still selects MT128x256, so it does
+not cover A0's failing MT128x240 kernel. All GPU jobs are drained; the private
+exact-candidate comparison is in CPU preparation. See the
+[completed E2E and component controls](nan_triage_resume_20260920.md#completed-uninstrumented-3000-step-training).
+
+The preceding finer timestamp-zero training capture hard-faulted.
+Run `preprocess_stages_bn1_20260920_20260920T023107Z/` ended
+**02:57:08.297 UTC**, launcher/wrapper exit **1**; root session **96316 is drained**.
+All **95** sampled losses from **10 through 950** are finite, last
+**0.1375616043806076**. The watchdog detected illegal GPU memory access and
+the worker aborted with **SIGABRT**, saving **no capture payload**.
+Ten printed read-side GPU page-fault records identify the worker, without a
+kernel symbol or instruction. The watchdog stack is an asynchronous detection
+site; the exact faulting step and component are unknown. That capture **did not pass its 1,000-step diagnostic bound**; the later
+uninstrumented 3,000-step pass is a separate run.
+
+The completed run used attention cap256, weighted-LN BN1, both fused classes,
+preprocess stages enabled, output internal stages disabled and a **42 GiB**
+capture cap. All **143** archived source hashes match the expected and loaded
+manifests. Boot is unchanged, final device owners are empty, and no GPU reset
+appears in the saved delta. This completed capture is separate from the
+subsequently completed uninstrumented E2E test.
+
+After the fault, the original and independent CPU health controls each pass
+another **4 × 1,000**, exit **0**, completed **02:58:34** and **03:00:38 UTC**.
+Both have unchanged boot and no new normalized kernel messages. These
+postfault passes do not identify the faulty training component.
+The ordinary BN8 backward helper also passes another **1,000**, exit0 at
+**03:01:46.989 UTC**, with the same **576-register** DX/full HSACO as the
+earlier positive standalone failure; all six input guards pass at 100 checkpoints.
+
+Native projection DX at the **B0 step-51 shape**,
+`resume_20260920/projection_dx_b0shape_postfault_20260920T030256944702Z/`,
+completed **1,000 exact-zero calls**, **11** input guards, exit0 at
+**03:10:20.911 UTC**; session **69292 drained**. The traced kernel remains
+`MT128x256x128`/SK3, **256 workgroups**. The standalone fused checker then
+passes **100 zero + 100 sparse-sentinel calls** at `[2468813,2048]`, including
+indices across `2**31` and `2**32`; all four complete input guards pass.
+Its actual `Numel` argument is **i64**, kernel **154 registers**, zero spills;
+session **29050 drained**, exit0 at **03:13:42.089 UTC**. Neither synthetic
+control identifies the training culprit or establishes a repair.
+
+On the current boot, original and independent CPU health controls each pass
+**4 × 1,000**. Three zero-input LN forward controls, ordinary BN8 backward,
+partials-before-reduction backward, synthetic native Linear DW and synthetic
+projection DX each pass **1,000**. The DX control ended **02:30:11 UTC**, exit
+**0**, using `MT128x256x128` and **256 workgroups**, different from A0's positive
+`MT128x240`/460-workgroup case. The passing BN8 backward uses the earlier
+positive portable kernel's full HSACO. These results do not establish a fix,
+explain the historical width-16 health failure, or clear the original A0 cases.
+
+New CPU analysis of the original step-51 `dout` finds one dominant negative
+at row **388482**, column **26**, and **511** nearly cancelling positive values.
+Their mean is approximately **1/511** of the dominant magnitude. This is
+consistent with a spike expanded by LN centering, but the actual input-LN
+DY/X/statistics and raw parameter gradients were not retained. The missing
+residual input also prevents reconstructing those original forward values.
+The pattern guides the next capture; it does not identify the writer or
+explain the separate later BN1 training failure.
+
+The required image, Torch/HIP, exact Triton commit and all **143** frozen
+diagnostic source hashes are verified. Old stalled workers are gone after
+a later host boot; no manual investigator reboot was issued. See
+[§7](#7-if-gather-corruption-returns-the-ac-power-cycle) and the
+[September 20 continuation](nan_triage_resume_20260920.md) for evidence,
+limitations and the next experiments. **Do not commit or push further
+changes until the user explicitly instructs it.**
+
+The following checkpoint describes the investigation through **September 19, 05:24 UTC**;
+its live-process and recovery status is superseded by that continuation.
+**Training NaN remains unresolved; 3,000 optimizer steps have not passed.**
+The targeted timestamp-zero run ended at **03:28:25.689 UTC**, exit **1**, after
+saving a **MagnitudeError at attempted step 51**, timestamp window **13**, batch
+index **2**. The selected output gradient GEMM already receives a finite `dout`
+above 1e20; it is not established as the producer of that anomaly.
+The subsequent two-class run ended with illegal GPU memory access after finite
+sampled **step 640**, saving no new payload. The resumed work used boot
+`1fab65ea-ba0d-4b09-878b-c01872bfe249`. A later, unattributed host reboot
+interrupted finer capture after finite sampled **340**; that boot was
+`677a2df1-7c98-4785-92ea-9c8d559b05d4`. This investigation issued no manual reboot/reset.
+The resumed finer capture then stalled at **attempted step 195**, after
+**194 completed optimizer iterations**. Its last sampled loss at **190** is
+finite, but no payload or 1,000-step pass exists. The host waits for backward
+diagnostic flags to copy from GPU to CPU; this synchronization site does not
+identify the originating kernel. A later investigator read of KFD `hqds`
+triggered a separate driver diagnostic-path kernel oops at **05:09:49 UTC**;
+the original training stall predates that read. During the later ROCgdb
+attach, automatic recovery attempted a mode-2 GPU reset and failed with
+**-62**; the debugger and worker remained present at the historical checkpoint.
+No manual reset/reboot or successful recovery had occurred at that checkpoint.
+
+We have a positive standalone attention-backward corruption reproducer and a
+cap256 control, but the cap does not fix training. Two later real captures move
+the remaining investigation upstream: step-353 LN infinities are explained by
+huge incoming DY, and the step-496 split copies its already-huge input exactly.
+The new capture narrows the search to the unobserved interval between the
+previous output backward (forward order **2**), whose checked inputs/outputs
+are finite and bounded, and the next output backward's `dout` (forward order
+**1**), which is already huge. The training producer remains unconfirmed. A new synthetic full-size zero-DY
+control independently reproduces impossible input-LN gradients with `BLOCK_N=8`: it
+fails at iteration **115**, `BLOCK_N=1` passes **1,000/1,000**, and restoring
+`BLOCK_N=8` fails again at **212**. However, uninstrumented training with
+input-LN BN1 plus attention cap256 still reports **NaN at steps 60/70**, after
+finite step 50. This combination does not fix the training blocker.
+Healthy full-backward and original norm-stage replays pass independent CPU
+comparisons; those controls validate the diagnostics without proving that the
+failing execution is numerically correct.
+
+Read [§2.2, current evidence and next experiment](#22-current-evidence-and-next-experiment)
+for the capture inventory, what each result establishes, and how to identify the
+producer. [§2.1](#21-september-18-real-capture-isolates-incorrect-q-gradients)
+retains the experiment detail; §3 preserves historical stress probes and their
+validity limits. [§1](#1-the-machine-and-the-software-stack) describes the host
+and required stack settings.
+
+For the merged code and explicit host settings, see
+[current A0 controls and evidence](../mi450_a0/mi450_a0.md#stack-and-controls).
+
+---
+
+## Start here
+
+| | |
+|---|---|
+| **The blocker** | `train_loss=nan`, batch 1024: historical window-150 reference first reports it at **step 1370**; latest start-zero test at **step 60**. Neither has a corresponding GPU fault. → [§2](#2-the-open-blocker-train_lossnan-at-step-1370) |
+| **Baseline, September 18** | **NaN reproduced** with September 10 image + exact Triton `7ff97e310935b4a79794878dbc911f9af25d38d9`, **`START_TS=0`**: step 50 finite, steps **60/70/80 NaN**. GPU remained responsive and post-run gather checks passed. → [§1.2](#september-18-requested-combination-starting-at-timestamp-zero) |
+| **Latest candidate, September 18** | Limiting attention backward to **256 VGPRs** gives **25/25 exact captured input and UVQK weight/bias gradients**, a controlled component repair. **It is insufficient to fix training NaN:** the first capped launch fails at sampled step **510**, window **23**; the next fails at **230**, window **19**, before its tripwire starts at 450. Both were stopped. The failure step varies; a fixed dataset/window trigger is not established. → [§2.1](#21-september-18-real-capture-isolates-incorrect-q-gradients) |
+| **Latest captured failure, September 19** | **MagnitudeError at attempted step 51**, window **13**, batch index **2**. Selected `gradient_mm` event **7**, forward order **1**, already receives finite `dout` above 1e20 with bounded weight; its DY is finite and huge. Previous output backward, forward order **2**, has finite/bounded checked inputs and outputs. The source lies upstream of the selected GEMM's input boundary. → [§2.2](#22-current-evidence-and-next-experiment) |
+| **New step-51 CPU fingerprint** | Row **388482** has dominant column **26 = -9.973638e25**, **511 positive** columns and near-zero sum. Tail mean/peak≈**1/511**, with **0.9633%** variation; pure centering alone differs at **325/512** BF16 values. Consistent with an LN-expanded spike, but actual input-LN operands/raw DW/DB are absent; no producer attribution. → [row fingerprint](nan_triage_resume_20260920.md#step-51-row-fingerprint) |
+| **Previous split capture** | Sentinel run captures **MagnitudeError at attempted step 496**, window **23**, batch index **53**, in concat backward. The input already contains **1,638,018 finite elements above 1e20**. CPU comparison finds **zero byte mismatches across all 1,030,875,136 split-output elements**, no residual NaNs, and sufficient sequence bound **3650**. Launcher **1 at 07:15:20 UTC** follows the capture; no GPU fault/reset. The corrupting producer remains upstream. → [§2.1](#21-september-18-real-capture-isolates-incorrect-q-gradients) |
+| **Previous LN capture** | At attempted **step 353**, LN DX has three infinities explained by ordinary overflow from huge finite DY. The **7.42 GiB payload** and **36,533-byte CPU proof** are saved. LN is not established as the corrupting operation. → [§2.1](#21-september-18-real-capture-isolates-incorrect-q-gradients) |
+| **Previous training hard fault** | Magnitude tripwire **hard-faults after finite sampled step 730**, saving **no capture**. All 73 sampled losses finite; worker SIGABRT, launcher **1 at 06:58:02 UTC**. Stack names `SetDevice` / ATen `abs` / `isfinite`, a detection site only. Ten logged read-side GPU page-fault records; no recorded reset. Training and monitor sessions have ended. **No 1000-step pass.** → [§2.1](#21-september-18-real-capture-isolates-incorrect-q-gradients) |
+| **Previous instrumented fault** | Tripwire active from step 1: all sampled losses finite through **step 400**, then **illegal memory access at 05:54:09 UTC**, worker SIGABRT and launcher exit **1**. No operation payload saved. The runtime names an ATen Boolean reduction; it is a detection site, not an established root cause. Kernel logs contain read-side GPU page faults. → [§2.1](#21-september-18-real-capture-isolates-incorrect-q-gradients) |
+| **Component isolation** | The uncapped real step-55 replay produces **incorrect Q gradients at history rows whose Q gradients must be zero**, despite verified DQ initialization. Re-enabling the original configuration after the 25 capped replays produces corruption again in **1/3 calls**. |
+| **Compact positive reproducer** | A **165 MB**, **32-sequence** attention-only artifact now reproduces impossible history DQ at **iteration 13**, reported by the check through iteration 20 (**0.7502 s**). The same compact input passes **1000/1000** capped iterations (**31.87 s**). This reproduces the uncapped component defect; capped training remains unresolved. → [§2.1](#21-september-18-real-capture-isolates-incorrect-q-gradients) |
+| **Historical stress reproduction** | `gr repro_gfx1250_fast_fault.py --rows 400000 --streams 2` produced a hard fault in 24–31 s, 3/3. These faults remain observations of a different workload; historical backward PASS claims have validity defects. → [§3.1](#31-what-the-reproducer-shows) |
+| **What remains unresolved** | The producer of the huge finite `dout` before the step-51 output gradient GEMM. The preceding observed output backward is bounded; the intervening operations were not observed. A named model-module attribution and a demonstrated incorrect operation remain missing. Relations to the step-496 split, earlier NaNs, memory faults and uncapped attention corruption remain unresolved. |
+| **Previous failure without capture** | September 18 upstream magnitude run: finite sampled **750**, then illegal memory access, SIGABRT/exit 1, **no capture**. Four post-fault gather/index-select arms passed 0/1000 bad; no reset. Both training and monitor ended. |
+| **September 19 diagnostics** | Integrated optional checker: **60 CPU tests** and **3 GPU integration cases** pass. Stage/capture/replay checks total **105 relevant passing tests across corrected runs**. Requested healthy full backward: **10/10 GEMM and 10/10 norm replays**, both with full CPU FP64 comparisons. Separate original norm-stage replay also passes **10/10**, exactly matches all five captured outputs and passes the CPU reference. These results validate healthy diagnostics, not the failure mechanism. → [§2.2](#22-current-evidence-and-next-experiment) |
+| **Latest captured training run** | `output_stages_20260919T032618Z/` ran **03:26:18–03:28:25.689 UTC**, then exited **1** after saving the step-51 magnitude capture, **21,511,453,752 storage bytes**. Session **98154** is drained. Neither its 1,000-step diagnostic bound nor the 3,000-step target passed. → [§2.2](#22-current-evidence-and-next-experiment) |
+| **Latest health controls, September 20** | Original GPU comparison and independent CPU mapping control each pass **4 × 1,000** at widths 16/4. CPU control checks complete source before/after, index stability and all output columns. Both exit **0**. Timing and boot differ from the earlier failure; recovery cause remains unestablished. → [September 20 continuation](nan_triage_resume_20260920.md) |
+| **Prior health failure, September 19 07:11 UTC** | Width-16 `index_select` **241/1,000** and `gather` **251/1,000** unequal iterations; width-4 both **0/1,000**. Exit **1**, unchanged boot and byte-identical kernel logs. No payload or CPU validation; primitive, training and benchmark causality remain unestablished. → [§7](#7-if-gather-corruption-returns-the-ac-power-cycle) |
+| **Latest forward controls, September 20** | Full-size zero-input weighted-LN **saved/recompute each pass 1,000**, then explicit **saved BN8/2-warps passes 1,000**. Final register counts 42/125/57 respectively; all checkpoint input guards true, exit **0**. Matching row/warp configuration is now covered for zero inputs, not nonzero training inputs. → [September 20 continuation](nan_triage_resume_20260920.md) |
+| **Latest backward controls, September 20** | Ordinary uncapped BN8 helper and partials-before-reduction arm each **pass 1,000**, exit **0**. Same 576-register DX kernel/full HSACO as the portable failure; all six input guards true at 100 checkpoints, all 1,000 partial observations clean. Boot and raw kernel logs unchanged. This is no longer a positive control and does not identify a fix. → [September 20 continuation](nan_triage_resume_20260920.md) |
+| **Latest Linear DW control, September 20** | Synthetic `torch.mm(DY.T, X).T` with zero DY passes **1,000** CPU bit checks, **11** full input guards, exit **0**. All native launches use one full symbol matching A0 DW196, `MT256x128x64`, 4 workgroups × 128 threads; all 33 declared argument fields match except data pointers. B0 catalog index and loaded ELF bytes were not measured. → [September 20 continuation](nan_triage_resume_20260920.md) |
+| **Latest projection DX control, September 20** | Synthetic `torch.mm(DZ, W.T)` with zero DZ passes **1,000** CPU bit checks, exit **0** at **02:30:11.351 UTC**. Actual `MT128x256x128`, **256 workgroups**, differs from A0's `MT128x240`/460-workgroup positive. It does not clear the original A0 operands or the B0 training interval. → [September 20 continuation](nan_triage_resume_20260920.md) |
+| **Latest finer training capture** | Ended **02:57:08.297 UTC**, exit **1**, session **96316 drained**. All **95** sampled losses **10..950** finite, then illegal GPU memory access/SIGABRT; no payload. Ten printed read-side fault records, no kernel attribution or recorded reset. Same **143** source hashes, cap256/BN1, preprocess stages on, **42 GiB** capture cap. **No 1,000-step pass.** → [completed capture](nan_triage_resume_20260920.md#completed-finer-training-capture-hard-fault) |
+| **Latest B0-shape projection/checker controls** | B0-shape native DX passes **1,000**, 11 input guards, exit0 at **03:10:20.911 UTC**. Fused checker passes **100 zero + 100 sparse-sentinel calls** across 32-bit boundaries, all four full input guards; actual Numel i64, 154 registers, exit0 at **03:13:42.089 UTC**. Both sessions drained. Synthetic controls do not identify a training fix. → [latest continuation](nan_triage_resume_20260920.md) |
+| **Current investigation** | Verified uninstrumented **3,000-step pass**, all300 samples finite; session1890 drained. Real-B0-W shape-cycle DX **1,000 pass**, queued reducer **1,000 pass**, fixed-grid460 selector **5 pass** but retains B0 kernel. All jobs drained; exact-candidate comparison in CPU preparation. Culprit/fix unresolved. → [latest continuation](nan_triage_resume_20260920.md) |
+| **Shared code** | Remote branch is **`chcai/mi450`**. This revision adds original preprocess-stage diagnostics, portable weighted-LN zero-DY replay and opt-in `WEIGHTED_LN_BWD_BLOCK_N`. B0 candidate uses **`HSTU_BWD_MAX_VGPR=256` + `WEIGHTED_LN_BWD_BLOCK_N=1`**; unset/0 preserves A0 baseline. A0 hardware validation remains outstanding. |
+| **Before you run anything** | Three flags are mandatory and one of them wedges the node if you get it wrong → [§1.3](#13-mandatory-flags-and-boot-procedure) |
+| **Earlier resolved issues** | The int32 address wrap, allocator limit and prior gather-corruption incident have fixes or workarounds in §§5–7. The latest instrumented memory fault remains open. |
+
+**Historical hypothesis, separate from the current capture evidence.** A wild GPU store can behave
+differently depending on how much memory the process has mapped. In a small
+probe it can land in unmapped memory and **fault loudly**; in the ~150 GB
+training process it can hit a live allocation and **silently poison it**.
+This offers a mechanism linking the small reproducer's memory fault to the
+historical e2e NaN, but that link remains circumstantial ([§3.2](#32-what-we-conclude)).
+The September 18 timestamp-13 NaN has not been attributed to that mechanism.
+A clean `dmesg` does not rule out a memory bug, and matching symptoms alone
+do not establish a shared cause.
+
+---
+
+</details>
+
+The dated sections below preserve the investigation history. Current run status
+and next actions are stated at the top and in the September 20 record.
+
+## Contents
+
+- [1. The machine and the software stack](#1-the-machine-and-the-software-stack)
+  - [1.1 Host, GPU, firmware](#11-host-gpu-firmware)
+  - [1.2 Container images and Docker versions tested](#12-container-images-and-docker-versions-tested)
+  - [1.3 Mandatory flags and boot procedure](#13-mandatory-flags-and-boot-procedure)
+- [2. The open blocker: `train_loss=nan` at step 1370](#2-the-open-blocker-train_lossnan-at-step-1370)
+  - [2.1 September 18: real capture isolates incorrect Q gradients](#21-september-18-real-capture-isolates-incorrect-q-gradients)
+  - [2.2 Current evidence and next experiment](#22-current-evidence-and-next-experiment)
+- [3. Reproducing the `nan`](#3-reproducing-the-nan)
+  - [3.1 What the reproducer shows](#31-what-the-reproducer-shows)
+  - [3.2 What we conclude](#32-what-we-conclude)
+  - [3.3 Suspicious root causes, ranked by confidence](#33-suspicious-root-causes-ranked-by-confidence)
+  - [3.4 Next steps](#34-next-steps)
+  - [3.5 Ruled out for the 1370 `nan`](#35-ruled-out-for-the-1370-nan)
+  - [3.6 The contention bug found alongside](#36-the-contention-bug-found-alongside--real-but-not-the-nan)
+  - [3.7 The other reproducers, and what they are still for](#37-the-other-reproducers-and-what-they-are-still-for)
+  - [3.8 Register pressure in `_hstu_attn_bwd`: measured, and not the mechanism](#38-register-pressure-in-_hstu_attn_bwd-measured-and-not-the-mechanism)
+- [4. Changes required to run the e2e on b0](#4-changes-required-to-run-the-e2e-on-b0)
+  - [4.1 What is still not established](#41-what-is-still-not-established)
+- [5. Fixed: an int32 address wrap in `triton_layer_norm.py` (`[b3]`)](#5-fixed-an-int32-address-wrap-in-triton_layer_normpy-b3)
+- [6. Worked around: `expandable_segments:True` caps VRAM at 19 GiB](#6-worked-around-expandable_segmentstrue-caps-vram-at-19-gib)
+- [7. If gather corruption returns: the AC power cycle](#7-if-gather-corruption-returns-the-ac-power-cycle)
+- [8. Artifacts](#8-artifacts)
+
+---
+
+## 1. The machine and the software stack
+
+### 1.1 Host, GPU, firmware
+
+| Item | Value | Note |
+|---|---|---|
+| **Hostname** | **`heliosr-1b112-a30-4`** | the **b0** host |
+| GPU | 1× MI450, `gfx1250`, PCI `1002:75c1`, **device rev `0x00`** | 256 WGPs, ~432 GiB HBM, wave32 |
+| VBIOS | `113-M4500001-650D` (was `640D` before the 2026-09-15 firmware update) | SKU `M4500001` — same SKU string as a0 |
+| Kernel | `6.14.0-37-generic` | same as a0 |
+| Kernel cmdline | `modprobe.blacklist=amdgpu,device_dax,dax_hmem pci=realloc=off iommu=pt` | Same blacklist as a0. `pci=realloc=off` and `iommu=pt` are b0-only |
+| Firmware | IFWI `650D` (build 2026/09/02), MEC `2380`, MES `0x7a`, RLC `30`, SDMA `8612843`, PM `00.125.49.129`, TA RAS `1B.44.00.03`, VCN `0x0910c008` | **Updated 2026-09-15** from IFWI `640D` / PM `00.125.48.195` / TA_RAS `27.68.00.03`. **`mi450_a0.md` records no firmware or VBIOS values, so no a0-vs-b0 firmware comparison is possible** |
+| Software | Identical to [`mi450_a0.md` §2.1](../mi450_a0/mi450_a0.md#21-pins) | Triton `7ff97e3109`, torch `2.11.0+rocm7.14.0a20260625`, ROCm 7.14, amdgpu DKMS 7.1.1 |
+| **Docker** | **`29.7.2`** (client and server), containerd `aad11006`, runc `v1.4.3` | **a0 records Docker `29.6.1`** ([`mi450_a0.md` §2.1](../mi450_a0/mi450_a0.md#21-pins)) — see [§1.2](#12-container-images-and-docker-versions-tested) |
+
+> **b0 and a0 cannot be told apart from software.** They are
+> indistinguishable through PCI and VBIOS. Both read device rev **`0x00`** and
+> SKU **`M4500001`** ([`mi450_a0.md` §8.1](../mi450_a0/mi450_a0.md#81-hardware-and-recovery)),
+> so whatever separates the two boards is not exposed through those interfaces
+> and cannot be read off either host. Consequently **"different stepping" is not
+> something this investigation can invoke as an explanation** — it can only be
+> established out of band, from the board or tray records. Firmware would be the
+> next place to look, and a0's is unrecorded ([§1.1](#11-host-gpu-firmware) table above).
+
+### 1.2 Container images and Docker versions tested
+
+The historical image comparison below tested the **old gather-corruption
+incident** (§7). It did **not** establish whether the residual training NaN
+reproduces with the September 10 image plus Triton `7ff97e3109`.
+
+| Image | Contents | Docker | Historical gather-corruption result on b0 |
+|---|---|---|---|
+| `recommendation-amdprimus0815:gfx1250` (local build `5a9c6ae1a9db`, 2026-09-10) with Triton rebuilt to `7ff97e3109` | torch `2.11.0+rocm7.14.0a20260625`, **Triton `3.8.0`** (the `7ff97e3109` build) | `29.7.2` | **Fails** — this is a0's exact recipe ([§7](#7-if-gather-corruption-returns-the-ac-power-cycle)) |
+| `amdprimus/amdprimus:gfx1250-20260910` (`6e656de79e6c`) — **historical stock-image test; current A0 uses a custom image with a September 10 base** | torch `2.11.0+rocm7.14.0a20260625`, **stock Triton `3.6.0`** | `29.7.2` | **Fails** — gather corruption reproduces |
+
+The newer image did not clear that gather incident: its **ATen arms use no
+Triton**, and still corrupted before the AC-cycle recovery. This result does
+not rule out an image effect on the later NaN. Docker `29.7.2` here versus
+a0's `29.6.1` is recorded for stack comparison; these experiments did not
+independently isolate Docker's effect on the residual NaN.
+
+One caveat stated for completeness: the `:gfx1250` image here is a **local build**
+of [`Dockerfile.amdprimus0815`](../../Dockerfile.amdprimus0815), not a pulled
+digest, so it is not provably bit-identical to the image a0 ran. Its torch,
+Triton, ROCm and Python versions all match a0's recorded pins.
+
+#### September 18: requested combination, starting at timestamp zero
+
+**Final result: NaN reproduced from `START_TS=0`.** After host recovery,
+the baseline reported finite loss at step 50, then NaN at steps **60, 70 and
+80**. It was stopped after confirmation. The first attempt described below
+had stalled before a loss report and was inconclusive on its own.
+
+The requested spelling `gfx1250-202600910` has no Docker Hub manifest.
+The test used the available September 10 tag
+**`amdprimus/amdprimus:gfx1250-20260910`**, with this correction stated before
+launch, and the exact requested Triton commit
+**`7ff97e310935b4a79794878dbc911f9af25d38d9`**.
+
+| Item | Verified configuration |
+|---|---|
+| Container | Fresh `mi450-b0-0910-7ff-start0` |
+| Base image digest | `sha256:6e656de79e6c8d7f3b3db3690606c3e6cb0536ec871f0521735746015297c9a1` |
+| Triton | Fresh source build, reports `3.8.0`; imports `/opt/triton-custom/python/triton/__init__.py`; full SHA verified and source tree clean |
+| Native torch / HIP | `2.11.0+rocm7.14.0a20260625` / `7.14.60850`; retained from September 10 base |
+| Training | `START_TS=0`, `NUM_TRAIN_TS=299`, batch 1024, seed 1, table scale 0.25; production history/min-history 4086, sequence limit 4096, three HSTU layers |
+| Cold start / bound | Empty `CKPT_PATH`; uncapped batches per window; `DIE_AT_STEP=3000` bounds cumulative optimizer steps and intentionally exits worker code 42 |
+| Execution | Buffer ops off; allocator configuration empty; coredumps off; serialization and NaN hooks off; existing kernel fixes retained |
+| Initial-attempt gather health | Idle GPU, host uptime 11 h 7 min; `index_select` and `gather`, D=16 and D=4: **0/1000 bad in each arm**; post-reboot checks are recorded below |
+| Host difference | Loaded driver's `gpu_recovery=-1` (automatic), versus §1.3's boot command specifying 0; unchanged across attempts. The intervening host reboot is recorded below |
+| Initial-attempt evidence | `/home/chcai/runs/mi450_b0_0910_7ff_start0_20260918/`: `launch.sh`, `effective_training_env.json`, `verified_stack.json`, `triton_build_final.log`, `gather_probe.log`, `train.log` |
+
+The September 10 base was augmented with the existing patched gfx1250 FBGEMM
+addon and required recommendation packages. Python, torch git revision
+`f55dda6ca78b73027840c1bc4014fe703d4f5473`, HIP and C++ ABI match the old
+environment. FBGEMM shared-library hashes match; cached runtime additions were
+checked against their installation records. Triton was compiled afresh from
+the pinned checkout, using cached compiler dependencies.
+
+**Original stalled attempt, 2026-09-18 UTC:**
+
+| Time | Evidence |
+|---|---|
+| 03:02:00 | Training launcher started. |
+| 03:08:47 | Dataset counting completed: 2,290,835,423 training anchors over 299 windows. |
+| 03:08:50 | Window 0 entered; `train_batch_idx=0` and warmup `gstep=0` logged. Window 0 has 3411 anchors, enough for three full batches of 1024. |
+| 03:09:53 | Last log update: informational FBGEMM backward warning about non-CDNA hardware. No subsequent loss or window-transition report. |
+| 03:13:40 | Investigator stopped the stalled container with `docker stop --time 10`. GFX activity had remained 100%, UMC activity 0%, with no active compiler or new Triton cache output. No GPU fault appeared in the pre-stop kernel log. |
+| 03:13:52 | Launcher exited **137 following the stop**; this was not the planned step-3000 exit. |
+| 03:13:54–03:14:39 | Automatic driver recovery failed queue removal, suspension and reset; mode-2 GPU reset then failed with **error `-62`**. See `dmesg.after.txt`. |
+
+The native stack in `first_batch_gdb.txt` waits through
+`hsa_signal_wait_scacquire` / `hipMemcpyWithStream` /
+`_local_scalar_dense_cuda`: the host is waiting for a GPU scalar read. This
+**does not identify the stalled kernel**, and neither does the last FBGEMM
+warning. Logging was every ten steps; the initial `gstep=0` message does not
+establish the exact global step at which execution stopped. No completed
+global step is established by the loss logs.
+
+**Post-reboot follow-up, September 18.** The host subsequently rebooted at
+03:29:53 UTC, before the investigation resumed in a new Codex session. The
+loaded driver still used `gpu_recovery=-1`. GPU 0 was idle and responsive;
+the exact stack checks and all four 1000-iteration gather arms passed again.
+
+The serialized diagnostic ran from **03:46:43 to 03:54:11 UTC**, with
+`AMD_SERIALIZE_KERNEL=3`, `AMD_LOG_LEVEL=3`, per-step metrics and
+`DIE_AT_STEP=1`. It completed **step 1 at timestamp 0**, with finite loss
+**`0.15267324447631836`**, and emitted the intended `die_at_step=1` /
+`global_step=1` marker. Worker exit 42 and wrapper exit 1 were intentional.
+The GPU returned to idle. The kernel-log delta contained a CPU workqueue
+duration warning and repeated NIC warnings, with no GPU fault or reset.
+This establishes one completed update under the diagnostic settings;
+serialization, logging and cache warmup prevent attributing the earlier
+stall or clearing the NaN from this result alone.
+
+A separate **3000-step baseline replay started at 03:54:59 UTC**, with
+serialization and AMD debug logging disabled, metrics every ten steps,
+`START_TS=0`, and the same model/source pins. **NaN reproduced.** Its fresh
+gather checks passed, all six recorded source hashes matched the original,
+and its complete dataset count matched: 2,290,835,423 training anchors.
+
+| UTC | Global step | MLLOG training loss | Observation |
+|---|---:|---:|---|
+| 04:03:11.211 | 50 | `0.1382172554731369` | Last finite logged loss |
+| 04:03:24.167 | 60 | `NaN` | First nonfinite report; 61,440 trained samples; timestamp window 13 |
+| 04:03:34.886 | 70 | `NaN` | Persistent nonfinite loss |
+| 04:03:43 | — | — | Monitor requested stop after two nonfinite reports |
+| 04:03:44.883 | 80 | `NaN` | Further report during stop grace period |
+| 04:03:53 | — | — | Container stopped; launcher exit 137 due to monitor stop |
+
+Metrics are sampled every ten steps: step 60 is the **first observed**
+NaN, not an exact first-corruption step. The transition in sampled losses
+is bounded by steps 50 and 60. Window 13 follows from the chronological
+batch counts; prefetched `window_indices(14/15)` messages are not the
+active training window. There was no GPU fault or reset in the kernel-log
+delta. GPU 0 returned to idle and remained responsive, and all four
+post-run gather/index-select arms again returned **0/1000 bad**.
+The run did not need to reach 3000 steps to establish a positive reproduction.
+
+Evidence is under the original run directory in
+`retry_serialized_20260918T034640Z/` and
+`retry_baseline_20260918T035457Z/`; each has its own live environment and
+logs. The baseline also has `outcome.json`, `monitor_stop.json`,
+`dmesg.delta.txt`, and `gather_probe_after.log`. `continuation.md` records
+the recovered session and completed retry.
+
+**Comparison scope:** the reference `b1024_a30_i64fix_0916_0455` trained
+**window 150**, with `expandable_segments:True`. This run starts at **window
+0**, with the allocator setting cleared. It tests reproducibility under this
+combination and start point; it does not isolate the image's effect. The smoke
+runner normally forces `START_TS=150`; trailing Docker environment overrides
+were used and the running process's effective environment was verified.
+`NUM_TRAIN_BATCHES` is a per-window limit, so 3000 completed updates must be
+established from the global step counter.
+
+### 1.3 Mandatory flags and boot procedure
+
+**Three settings are not optional.** Full rationale and the rest of the change
+list are in [§4](#4-changes-required-to-run-the-e2e-on-b0); this is the minimum
+to not break the host.
+
+| | Why |
+|---|---|
+| **`AMDGCN_USE_BUFFER_OPS=0`** | `1` **wedges the whole node** and costs a reboot. Inherited from a0 `[1]`. The runner scripts already default it |
+| **`PYTORCH_CUDA_ALLOC_CONF=`** (empty) | `expandable_segments:True` caps the torch allocator at **19 GiB of a 432 GiB card** → [§6](#6-worked-around-expandable_segmentstrue-caps-vram-at-19-gib) |
+| **`amd-smi`, never `rocm-smi`** | `rocm-smi` is broken here — `NameError: SMI_HASH` |
+
+**Loading the driver.** The kernel cmdline blacklists `amdgpu`, so nothing loads
+it automatically. After every boot or power cycle, by hand:
+
+```bash
+sudo modprobe amdgpu gpu_recovery=0      # verify: cat /sys/module/amdgpu/initstate -> live
+```
+
+> **Never run `/opt/amd-apps/fw-bringup/scripts/setup/post-reboot-gpu.sh` on this
+> host.** Its Step 1 (DF Venice toollib) crashes the *subsequent* driver load — a
+> NULL deref in `gfx_v12_1_xcc_cp_resume` inside `amdgpu_pci_probe`, reproduced 3×
+> on 2026-09-16 — and all its SMN writes read back zero, i.e. it is not
+> functioning here. The host is **not in `fw-bringup/config/machines.yaml` at
+> all**; the procedure was never meant for it.
+>
+> If a load does oops, the module sticks in `MODULE_STATE_COMING` with **no
+> in-band recovery** (`CONFIG_MODULE_FORCE_UNLOAD` is unset, there is no
+> `bind`/`unbind`), and only a reboot clears it. `modprobe -r amdgpu` on a live
+> driver after the toollib has altered IP state wedges the board **past warm
+> reset**.
+
+**Running the e2e.** Container `triton-7ff97e-test`:
+
+```bash
+SMOKE=1 SMOKE_BATCHES=600 scripts/run_prod_convergence_1gpu.sh <logfile>
+```
+
+Recipe details in [`mi450_a0.md` §2.2](../mi450_a0/mi450_a0.md).
+
+
+---
+
+## 2. The open blocker: `train_loss=nan` at step 1370
+
+**The reference symptom (September 16, training window 150).** With the source
+fixes in [§4](#4-changes-required-to-run-the-e2e-on-b0) applied and
+`expandable_segments:True` retained, the batch-1024 e2e trains normally to
+**step 1370 of 3000** and then
+reports `train_loss=nan`, and stays `nan` for the rest of the run. There is no
+memory fault, no Python traceback and nothing in `dmesg`.
+
+**September 18 reproduces NaN with the requested combination.** After an
+initial stall and host reboot, the verified September 10 image plus the
+exact requested Triton commit, starting at timestamp zero with allocator
+settings cleared, logged finite loss at step 50 and **NaN at steps 60/70/80**.
+The first observed NaN was in timestamp window 13. This confirms the symptom
+under this configuration; it does not establish that its cause is identical
+to the historical window-150 failure or isolate the image's effect.
+The reproduction and earlier failed automatic recovery are recorded in
+[§1.2](#september-18-requested-combination-starting-at-timestamp-zero).
+
+**It is a second, distinct defect from the int32 wrap.** `[b3]`
+([§5](#5-fixed-an-int32-address-wrap-in-triton_layer_normpy-b3)) was a real bug
+and its fix is load-bearing — but it **moved the failure rather than removing
+it**. Run `b1024_a30_i64fix_0916_0455` (SEED=1, batch 1024,
+`expandable_segments:True` left on):
+
+| | pre-fix (int32) | post-fix (int64) |
+|---|---|---|
+| first `train_loss=nan` | step 300 | **step 1370** |
+| persists to end | yes | yes (1380, 1390, 1400 …) |
+| fault / traceback / `dmesg` | none | none |
+
+Throughput was flat at 555.0 samples/s across the transition, so nothing stalled
+or fell back — the arithmetic simply went non-finite.
+
+**What has been ruled out.** A static audit of every
+`<var>[:, None] * stride_*` in `ops/triton/` found 26 sites outside the two
+already-widened files. The two highest-risk were read directly —
+`triton_jagged.py:329` (`_jagged_dense_bmm`) and `triton_position.py:112` — and
+**both use the correct idiom**: the base pointer is advanced by an `int64`
+offset (`Jagged += (seq_start + start_m) * stride_jm`, `SeqEmb +=
+seq_start.to(tl.int64) * stride_sn`) and the surviving tile offsets are bounded
+by `BLOCK_M` or by `seq_len ≤ MAX_SEQ_LEN = 4096`. So they cannot reach 2³¹.
+**A third wrap of [b3]'s form is not obviously present.** The remaining 24 sites
+are unread.
+
+**Readings, none yet distinguished:**
+
+1. **A fourth int32 site of a *different* shape** — not row-major `rows * stride`,
+   so the audit's pattern would miss it. A smaller stride wraps at a *higher*
+   row, which fits an onset that moved later rather than disappearing.
+2. **The wild-store / allocator-accident class**, still live. a0 records the
+   onset *wandering* under an identical seed (step 91 vs ~190), so 300 → 1370
+   may be partly allocator layout rather than the fix.
+3. **A non-addressing defect** — numerics, atomics, or a miscompile.
+
+**A matched rerun can test whether the onset moves:** retain `SEED=1` and the
+same execution settings. A changing failure step would show run-to-run
+variation, but would not by itself distinguish address corruption, atomics,
+numerical instability or a compiler defect. Even a fixed sampled onset would
+need operation-level evidence to identify its cause. The September 18 capped
+launches below fail at different sampled steps, under different tripwire
+registration settings; they do not establish a deterministic window trigger.
+
+For a matched follow-up to that reference, [b4] remains useful: the 19 GiB arena
+([§6](#6-worked-around-expandable_segmentstrue-caps-vram-at-19-gib)) shapes
+*where* a wild store lands, so unsetting it is both a fix on its own merits and
+a perturbation of reading (2).
+
+### 2.1 September 18: real capture isolates incorrect Q gradients
+
+**A register-limit workaround repairs the controlled captured component in
+25 replays, but fails end-to-end:** one capped training run reports NaN at
+steps **510/520/530**; the next reports NaN at **230/240/250**, before its
+tripwire activation at step 450. The cap is insufficient to fix training NaN.
+The previous run, with tripwire active from step 1, instead aborts on illegal
+memory access after its last finite sampled loss at step 400; no operation
+payload was saved. The chunked-tripwire run captures nonfinite LN DX with
+finite checked inputs at attempted step **353**. CPU analysis explains its
+three infinities as ordinary overflow from huge finite DY. The subsequent
+magnitude-triggered run hard-faults after finite sampled step **730** without
+saving a payload, leaving the earlier corruption unresolved.
+The next sentinel capture at attempted step **496** has an already-huge input
+and byte-exact split outputs; observations are now moving upstream.
+The changing onset is consistent with nondeterministic execution, but these
+runs do not identify its cause or establish a deterministic window trigger.
+No precise hardware/compiler cause is established. This evidence is separate
+from the historical stress-probe interpretations in §3.
+
+The tested B0 candidate adds `llvm_fn_attrs="amdgpu-num-vgpr=256"` to the pinned
+attention-backward configuration. Two real-capture replay arms, **5 + 20 =
+25 calls**, reproduce the captured **input gradient and all U/V/Q/K projection
+weight and bias gradients exactly**, with zero history-row DQ. These arms did
+**not** compare normalization weight/bias gradients, so this is not a claim
+that all five backward outputs were checked. Restoring the original uncapped
+configuration afterward produces incorrect history DQ again in **1/3 calls**.
+
+The actual compiled candidate uses **256 VGPRs**, has **zero `s_set_vgpr_msb`
+instructions**, and requires **1432 bytes of private scratch**. All **24 LDS
+transpose instructions remain**. The register limit avoids extended VGPR use
+and forces spilling; these observations do not isolate which resulting
+instruction, allocation or scheduling change suppresses the failure.
+
+The production change is confined to `_get_bw_pinned_configs` in
+`generative_recommenders/ops/triton/triton_hstu_attention.py`: **HIP gfx1250
+with Triton >= 3.8**, pinned path only. Other architectures and older Triton
+keep their existing configuration. `HSTU_BWD_BLOCK_N` remains available.
+In the shared A0/B0 reconciliation, the cap is **opt-in**: set
+**`HSTU_BWD_MAX_VGPR=256`** to reproduce the B0 workaround arm. Unset or `0`
+preserves the uncapped A0 baseline; both steppings report `gfx1250`. Earlier
+B0 snapshots defaulted to 256, so an old log with this variable absent does
+not determine its effective register cap: check the recorded kernel config.
+Set the variable **before importing** the attention module, since its
+decorator constructs the configs at import time. **`TRITON_FULL_AUTOTUNE=1`
+bypasses this pinned-path workaround.**
+
+The uninstrumented timestamp-zero candidate run
+`debug_nan/vgpr256_e2e3000_20260918T051300Z/` **failed the 3000-update bar**:
+
+| UTC | Global step | Samples | MLLOG loss | Active timestamp window |
+|---|---:|---:|---:|---:|
+| 05:25:51.985 | 500 | 512,000 | `0.1390329897403717` | 23 |
+| 05:26:08.415 | 510 | 522,240 | `NaN` | 23 |
+| 05:26:24.148 | 520 | 532,480 | `NaN` | 23 |
+| 05:26:37.827 | 530 | 542,720 | `NaN` | 24 |
+
+Step 510 is the first **sampled** NaN, not an exact first-corruption step.
+The active window is **23**: windows 0–22 contain 442 complete batches, and
+window 23 contributes 80 batches, covering global steps **443–522**. Step 510
+is its 68th batch (zero-based index 67). The preceding log line labelled
+`[boundary] train_ts=22 train first-batch data-wait` reports the wait measured
+for the **completed** window 22; `_run_train_window` emits it after its batch
+loop. It is not an entry marker. Prefetched window-index scans likewise do
+not identify the active window.
+
+After NaN at steps 510 and 520, the monitor requested a stop at
+**05:26:33 UTC** and completed it at **05:26:44 UTC**. Step 530 appeared during
+the grace period. Launcher exit **137** follows that deliberate stop; it is
+not the planned step-3000 exit 42. The kernel-log delta has **no GPU
+fault/reset messages**. `outcome.json` records the exact losses, window
+derivation and stop evidence; the later capped-run NaN is still unexplained.
+
+The next capped attempt,
+`debug_nan/capped_tripwire450_650_20260918T053332Z/`, installed 21 operation
+wrappers with checks and payload retention enabled only for steps **450–650**.
+It failed **before that range** and produced **no operation capture**:
+
+| UTC | Global step | Samples | MLLOG loss | Active timestamp window |
+|---|---:|---:|---:|---:|
+| 05:39:21.603 | 220 | 225,280 | `0.13835367560386658` | 19 |
+| 05:39:35.450 | 230 | 235,520 | `NaN` | 19 |
+| 05:39:49.363 | 240 | 245,760 | `NaN` | 19 |
+| 05:40:03.152 | 250 | 256,000 | `NaN` | 19 |
+
+Window 19 has 53,447 anchors and 52 full batches, spanning global steps
+**204–255** after 203 completed updates in windows 0–18. Step 230 is its
+27th batch (zero-based index 26). The monitor requested a stop at
+**05:39:58 UTC** and completed it at **05:40:08 UTC**; step 250 appeared in
+the grace period, and launcher exit **137** is deliberate. The **34 new
+kernel-log lines** contain no GPU fault/reset. One host PCI warning reports
+`python: Unexpected write to kernel-exclusive config offset e0`; its relation
+to training is not established. Exact records are in this run's
+`outcome.json` and `dmesg.delta.txt`.
+
+The sampled failure moves from step 510/window 23 to step 230/window 19.
+Both launches use the register limit, but the second installs inactive
+tripwire wrappers before its capture range, so this is not an identical
+instrumentation comparison. The observations do not establish a dataset,
+window or cadence trigger, identify the first corrupt tensor, or prove a
+shared mechanism with the uncapped attention-backward defect.
+
+**All-step tripwire attempt: fatal memory access, no capture.**
+`debug_nan/capped_tripwire_all_20260918T054234Z/` enabled checks from **step 1
+through 1000**, retaining payloads with `defer_steps=1`, forward-phase host
+checking off and a **48 GiB** capture cap. All **40 sampled losses** are
+finite; the last is **step 400**, **409,600 samples**, loss
+**`0.13783295452594757`** at **05:54:03.482 UTC**. That report is window **22**,
+batch **21** (zero-based index 20); the exact failing update is unknown.
+
+At **05:54:09.421598179 UTC**, the process-group watchdog reports illegal
+memory access. The runtime fault report names
+`at::native::reduce_kernel<... bool ... and_kernel_cuda ...>` and address
+`0x7537bee51000`. This Boolean reduction is the reported fault/detection
+site; the logs do not establish it as the source of the original corruption.
+The worker aborts with **SIGABRT**, and the launcher exits **1 at 05:54:15
+UTC**, without a monitor stop or a saved tripwire payload.
+
+The **180-line kernel-log delta** includes **ten no-retry GPU page-fault
+records** for Python PID 133182, beginning at **05:54:11.989687 UTC**. They
+report `GC_UTCL2`, client `TCP (0x8)`, permission faults `0x3` and **`RW=0x0`**
+(read), including the runtime-reported address. Fence fallback and IH ring
+overflow also appear; no GPU reset is recorded in the saved delta. This is
+a hard failure of the instrumented run, with no newly captured first-bad
+tensor or established causal link to the earlier NaN-only runs. Exact
+evidence is in this run's `outcome.json` and `dmesg.delta.txt`.
+The subsequent `gather_probe_after.log` reports **0/1000 bad** for each of
+`index_select` and `gather` at dimensions 16 and 4, without a reset. This
+checks the earlier gather-corruption symptom; it does not clear the training
+defect.
+
+**First nonfinite-gradient capture:** `capped_tripwire_chunked_20260918T060315Z/` was
+launched at **06:03:16 UTC**, with attention capped at 256 VGPRs and tripwire
+active for steps **1–1000**. It retained payloads, checked after the forward
+phase, and split finite scans into chunks of at most **16,777,216 elements**;
+`DEFER_STEPS=1` and the capture limit is **48 GiB**. Root reports **34 passing
+CPU tests** plus GPU strided-infinity/smoke checks for the diagnostic change.
+At attempted **step 353**, **window 21**, batch index **33** (34th batch),
+the first recorded nonfinite backward event is **36**,
+**`LayerNormFunction.backward`**. All six checked inputs are finite;
+**DX is nonfinite**, while that operation's dweight/dbias remain finite.
+Earlier recorded backward events **26–35** have finite checked values.
+Later LN events **39 and 41** also show finite inputs and nonfinite DX,
+followed by nonfinite downstream SwishLayerNorm gradients.
+
+The selected operation has contiguous **BF16 dy/x/DX [2,585,404, 512]**, but
+**FP32 normalization weight/bias and their gradients [512]**; mean/rstd are
+FP32. All selected version counters remain unchanged. Its actual inputs and
+outputs are saved in
+`tripwire/step000353_backward_rank0_pid4790.pt`, **7,963,117,768 bytes
+(7.42 GiB)**, with adjacent JSON metadata. Finite inputs do not establish
+correct input values, and unchanged versions do not exclude untracked writes.
+
+**CPU analysis explains the LN infinities without an LN defect.** The captured
+DY contains **549,956 finite elements above 1e20**, in exactly **1,343 rows,
+2,016,237–2,017,579 inclusive**. Their magnitudes range from
+**1.33170734816924e24** to **6.945216277976185e37**; every other DY element is
+at most **2.9355287551879883e-6** in magnitude. DX has just three nonfinite
+elements, at **(2017449,474), (2017576,468), (2017578,450)**. The CPU FP64 LN
+reference gives about **−1.9513e39, −2.8111e39, +5.7034e39** there, which cast
+to the captured two negative and one positive BF16 infinity; FP32 reference
+arithmetic also overflows. The compact proof
+`ln353_overflow_badrows_cpu.pt` is **36,533 bytes**, with exact CPU reference
+agreement after save/load. `ln353_cpu_analysis.json` and
+`ln353_huge_dy_cpu.pt` retain the analysis and huge-value coordinates. This
+analysis did not initialize CUDA. LN is the first recorded nonfinite
+boundary, not an established source of the earlier finite corruption.
+The adjacent **`repro_ln353_overflow_cpu.py`**, CPU-validated by root, needs
+only PyTorch and the compact artifact. It loads with `weights_only=True`,
+uses the FP64 formula followed by BF16 conversion, reproduces all three
+signed infinities, and asserts CUDA is uninitialized. Its scope is the
+overflow symptom, not the origin of the corrupted DY.
+
+The DY storage shared by LN events **36/39/41** is output **[2]** of preceding
+`_Concat2DJaggedFunction.backward` event **35**. The split only copies values.
+Static audit found int64 row addressing and disjoint input/output storage,
+with no concrete defect at this shape. The body uses `torch.empty`; complete
+coverage requires `max_seq_len >= 8 + max(body lengths)`. Both callers add
+the eight prefix rows, but actual event-35 offsets/context were not retained
+in the selected LN payload. That capture therefore cannot distinguish huge
+input values inherited by the split, an incorrect or incomplete split
+output, or an untracked write. The earlier passing `ln8_1000.json` control
+used BF16 parameters and different inputs; neither that control nor replay
+of ordinary overflow identifies the original corrupting operation.
+
+All **35 sampled losses** stayed finite, last **step 350**, loss
+**`0.13938169181346893`** at **06:15:03.245 UTC**. The backward tripwire saved
+the operation and raised `NonFiniteError` before dense optimizer update 353.
+Launcher exit **1 at 06:15:15 UTC** is this diagnostic stop, with no monitor
+container stop or hard GPU fault. Fused sparse updates may already have run
+during backward; this operation payload is not a complete-step checkpoint.
+CPU monitor **12384** recorded completion at **06:15:18 UTC**, exited **0**,
+and was drained. The **20 new kernel-log lines** contain only NIC/container
+messages, no GPU fault/reset. Old log timestamps shifted by −1 microsecond;
+the saved delta removes their verified message-body prefix. The run's
+`outcome.json` records the exact evidence and update boundary. Full training
+validation remains outstanding.
+
+**Magnitude capture attempt failed:** `capped_tripwire_magnitude_20260918T062453Z/`
+added **`NAN_TRIPWIRE_MAX_ABS=1e20`** to the preceding run's cap256, steps1–1000,
+retained-payload, deferred, forward-check, 16,777,216-element chunk and
+48 GiB capture settings. Separate magnitude flags leave finite flags
+unchanged. Selection captures the earliest bad output, falling back to an
+input-only failure. Diagnostics reports **40 passing CPU tests**, including
+six magnitude-specific cases, and root ran the GPU BF16 magnitude smoke check.
+Live trainer PID **7221** environment was saved at **06:27:36 UTC**, along with
+source hashes and the exact untracked `nan_tripwire.py` snapshot. Its SHA256
+is `15261f3f4b6e664ba49513195105dd65068de8c70c21fd66048da49fd23bec23`.
+All **73 sampled losses** stayed finite; last **step 730**, **747,520 samples**,
+loss **`0.1369127780199051`** at **06:56:06.143 UTC**. This is window **25**,
+batch **107** (index **106**), from 623 complete batches in windows 0–24 and
+window 25's step range 624–751. The exact failing update is unrecorded.
+The worker then reported illegal memory access and exited itself with
+**SIGABRT**; launcher **1 at 06:58:02 UTC**. The C++ exception is raised from
+`c10::cuda::SetDevice`, with ATen `abs` and `isfinite` in the autograd-backward
+stack. This identifies a reported detection site; asynchronous error reporting
+does not establish it as the source of the original corruption. **No tripwire
+payload was saved.** Neither root nor the monitor issued a stop.
+
+Root drained training session **43716**. CPU monitor **92238 / PID 168489**
+recorded launcher completion at **06:58:07 UTC**, exited **0**, and was drained
+without parse errors. Both sessions have ended. `dmesg.delta.txt` contains
+**208 new lines**, removing an exact **2,623-line** prefix from
+`dmesg.after.txt`. Ten logged **read-side GC_UTCL2/TCP page-fault records** for Python PID
+**166583** start at **06:56:22.322440 UTC**, with `RW=0x0` and permission faults
+`0x3`; no GPU reset is recorded. A preceding **3,681 callbacks suppressed**
+line and `MORE_FAULTS=1` mean the ten records do not establish a total fault
+count or exact onset. `dmesg.fault.delta.txt` preserves the second
+snapshot's same faults plus one later NIC line, **209 new lines**. Exact
+evidence is in `outcome.json` and the monitor metadata.
+
+Root reports the GPU idle at 167 MB, ECC0 and unchanged boot afterward.
+`gather_probe_after.log` passes all four index_select/gather D16/D4 arms,
+**0/1000 bad each**; these controls do not validate the training path.
+This run **did not pass 1000 steps**, and full 3000-step validation remains
+outstanding. Root applied the separately reviewed `poison_contextual_split_b/`
+diagnostic overlay **after this run exited**. The prepared `jagged_capture_audit.py`
+passed 17 CPU fixture tests before auditing the real step-496 capture below.
+
+**Completed contextual split sentinel:** `contextual_split_sentinel_20260918T070109Z/`
+captured attempted **step 496**, **window 23**, **batch_idx 53** (54th batch),
+then raised **MagnitudeError**. Selected event **8** is
+`_Concat2DJaggedFunction.backward`; its checked input and both outputs are
+finite, but all three exceed the 1e20 bound. The payload
+`tripwire/step000496_backward_rank0_pid10651.pt` is **4,123,542,553 bytes**.
+The adjacent JSON records **496 matching prefill calls** and unchanged
+selected version counters.
+
+`jagged_audit.json` reports a CPU **PASS**: input already contains **1,638,018
+finite elements above 1e20**, maximum magnitude **1.0019510344203925e34**.
+All **1,030,875,136 elements** of A and B compare **byte for byte** against an
+independent split mapping, with **zero mismatches** and **no residual NaNs**.
+The BF16 shapes are input `[2013428,512]`, A `[8192,512]`, B `[2005236,512]`.
+Declared and actual maximum sequence lengths both equal **3650**; no rows
+are unlaunched for any audited BLOCK_N candidate. The selected runtime config
+is unknown. `gradient_profile_cpu.json` places huge values in **4,106 rows**
+of zero-based sequences **944 and 951**, source row runs **[1789964,1792305)**
+and **[1809515,1811280)**. Values below the threshold still reach **9.97e19**.
+Both analyses report CUDA uninitialized. The source is already huge and the
+captured split mapping is exact; this does not identify its writing kernel.
+
+All **49 sampled losses** stayed finite, last **step 490**, loss
+**`0.1385720819234848`** at **07:15:06.668 UTC**. Launcher exit **1 at 07:15:20 UTC**
+follows the diagnostic exception after saving the capture. Monitor **28315 /
+PID 186341** recorded completion at **07:15:26 UTC**, with no monitor stop;
+its session drain and exit code are unverified. The four new kernel-log lines are NIC
+messages only, with no GPU fault/reset. Training session **30162** has ended.
+No 1000-step or 3000-step training pass occurred. Exact evidence is in
+`outcome.json`, `dmesg.delta.txt`, the capture JSON and CPU reports.
+
+The sentinel run preserved cap256, steps1–1000, retained payloads, defer1, forward-check1,
+16,777,216-element chunks, maxabs1e20 and capture48GiB. It narrows observations
+to **`NAN_TRIPWIRE_FUNCTIONS='_Concat2DJaggedFunction$'`** and enables
+**`NAN_TRIPWIRE_POISON_CONTEXTUAL_SPLIT_B=1`**. The log confirms two concat
+classes instrumented and first B-output prefill at **step 1**.
+
+Before launch, root tested the actual split fixed at **BLOCK_N=32**:
+**max_seq_len108** produced exact outputs, while deliberately short
+**max_seq_len8** left **76×512 NaNs**, detected by the checker. Hook restoration
+passed. The overlay had **52 passing CPU tests** before application.
+Live trainer PID **10322** environment and exact `nan_tripwire.py` snapshot
+were saved at **07:02:36 UTC**, SHA256
+`4f096d0d1ea97cd5cd318a45202725eea8b989a7db6349cb55cc56b6eb07dd91`.
+The source manifest also hashes the jagged kernel source. Earlier run
+snapshots remain unchanged.
+
+The hook fills only floating B output for dense A/jagged B with
+`max_len_a=8` and `n_prefix_to_B=0`, before calling the original split. Matching
+split-forward calls receive the same prefill; the observation regex does not
+restrict helper-hook scope. Residual NaNs require comparison with captured
+source values and actual offsets. Cold autotune candidates can overwrite
+sentinels before the winner; changed traffic/timing can also alter the fault.
+The controlled test validates the diagnostic in its tested configuration,
+not production coverage or a NaN fix. No completed training pass is claimed.
+
+**September 18 upstream magnitude run: hard fault after finite step750.**
+
+`upstream_magnitude_20260918T071941Z/` ended with illegal GPU memory access,
+worker SIGABRT, launcher exit **1**, and **no tripwire capture**. All 75 sampled
+losses were finite; last **step 750 = 0.14135634899139404 at 07:48:48.431 UTC**.
+The last printed boundary was window25/batch0; the exact failing update is unknown.
+The reported C++ stack contains `c10::cuda::SetDevice` and ATen `all` during
+backward. This is an asynchronous detection site, not a culprit attribution.
+
+Root drained training session **82946** (exit1) and monitor **44033** (exit0).
+The monitor recorded completion at **07:49:15 UTC** and issued no stop. The exact
+2,842-line kernel-log prefix leaves **89 new lines**, including **two logged
+read-side GC_UTCL2/TCP fault records**, first logged at **07:49:10.473831 UTC**,
+for PID195011/page0x00000001fc9b1000. **454 callbacks were suppressed**; two is
+not the total fault count or proof of the onset. No reset was recorded or issued.
+Afterward GPU was idle,167MB used,ECC0,boot unchanged; all four gather/index-select
+arms passed **0/1000 bad**. See `outcome.json`, logs and health artifacts.
+
+This run used cap256, batch1024/world1/start0, 299 windows, no checkpoint,
+a planned1000-step bound, retained payloads, forward checks, chunk16777216,
+maxabs1e20, and seven upstream custom-op classes. Sentinel was disabled.
+Neither1000 nor3000 training steps passed. That training process and its monitor ended.
+The code/capture/environment handoff is under `wrapup_20260918/`. Subsequent
+work reconciled the pushed A0 diagnostics and validated the merged source; see
+[§2.2](#22-current-evidence-and-next-experiment), including the subsequent
+September 19 requested healthy captures.
+
+
+All five sampled losses through step 50 are close to the baseline but differ;
+the maximum absolute delta is **5.453824996948242e-6**, and the corresponding
+logged learning rates match. Steps 60/70/80 remain finite where the baseline
+reported NaN. Across steps 51–80, timestamp differences give **1391.97
+ms/step** for the candidate versus **1122.4 ms/step** for the reference,
+approximately **24% more time per step**. This is a rough throughput comparison
+because the reference is already nonfinite in that interval. Startup timing
+is not comparable after replacing the repeated anchor scans.
+
+The evidence under `debug_nan/` includes
+`capture55_20260918T043851Z/replay_vgpr256.json`,
+`replay_vgpr256_repeat20.json`, `replay_uncapped_after25.json`, the actual
+binary and assembly under `compiler_audit/vgpr256_replay/`, and the candidate's
+`outcome.json`, `dmesg.delta.txt` and `reference_loss_comparison.json` with its
+rerunnable `compare_reference_losses.py`. **18 CPU tests passed** in
+`cpu_tests_final.log`. The new general replay `--compare-original` mode has
+CPU coverage for numerical comparisons and reference aliasing. A subsequent
+`strict_all_outputs_capped.json` arm passes **5/5 exact comparisons of all
+five returned gradient tensors**, including normalization weight/bias. This
+arm left the old capture's absent runtime bucket at standalone default;
+the earlier 25 replay calls restored `[4096]`. The explicitly restored
+`[4096]` uncapped arm, `strict_all_outputs_uncapped.json`, has **1/3 calls
+with mismatches in all five tensors**. These scopes are recorded separately.
+Use `--rtol 0 --atol 0` for exact captured-value validation.
+
+**Earlier component isolation, retained for context.**
+
+Three diagnostic training runs reached 160 finite steps: checks after each
+phase; checks after backward with no retained payload; and checks deferred
+to existing ten-step metric boundaries. These probes still change execution
+timing or allocation lifetimes. They neither clear the baseline failure nor
+meet the 3000-step validation bar.
+
+A deliberately requested **finite** capture at step **55**, timestamp **13**,
+batch index **6**, records the last HSTU layer's
+`_HSTUPreprocessAndAttentionFunction.backward`: 2,571,872 rows, dimension 512,
+four 128-dimensional heads, sequence lengths 2477–2768 and one target per
+sequence. Its 9.9 GiB snapshot preserves real incoming gradients, saved
+tensors, context and layouts. All checked inputs and outputs were finite;
+the capture was not the first bad training tensor.
+
+| Completed control | Evidence and implication |
+|---|---|
+| CPU reference from the saved tensors | U bias gradient matches exactly; U weight relative L2 error is 3.53e-5. An additional blockwise bf16 reference matches input gradients for three sequences to relative L2 2.9e-6–3.9e-5. These support the captured reference values. |
+| Replay with training's static length 4096 restored | Three calls produce Q weight-gradient maxima **0.539–2.656**, versus captured **3.8147e-5**. U is elementwise exact; V/K maximum differences are at most 1.2e-7 in this arm. An earlier repeated replay also had one trial with matching reported maxima, so the corruption is intermittent. |
+| DQ measured immediately after its initialization hook | **Zero nonzero elements before the attention launch in all three calls.** After the call, **1, 2 and 2 history rows** have Q-gradient maxima **0.203125, 0.76953125 and 0.119140625**. Target-row maximum remains **7.8231e-8**. |
+| Separate contiguous DQ allocation | Corruption remains in **3/3 calls**, at 5, 5 and 1 history rows after verified zero initialization. The interleaved output layout alone does not explain it. |
+
+For this capture, attention receives output gradients only at target rows.
+Each history query's Q gradient must therefore be **exactly zero**; history
+K/V gradients may be nonzero because the target attends to them. The large,
+varying history-row Q values identify corruption inside the
+`triton_hstu_attention_bwd` boundary, which launches `_hstu_attn_bwd`.
+They are not ordinary accumulation-order differences. The faulty instruction
+or runtime mechanism remains open. A separate strided `zero_()` probe also
+passes all 12 checks, including the full captured row count.
+
+The standalone replay currently reproduces **finite gradient corruption**.
+It has not reproduced the training loss becoming NaN, and the baseline's
+first corrupted update remains uncaptured. Snapshots are copied at a phase
+boundary; unchanged version counters do not exclude untracked writes.
+The later all-step tripwire run also produced no payload: it aborted on the
+memory fault described above. The controlled register-limit repair neither
+completes the 3000-update validation nor identifies the faulty instruction.
+
+Evidence and exact replay controls are under
+`/home/chcai/runs/mi450_b0_0910_7ff_start0_20260918/debug_nan/README.md` and
+`capture55_20260918T043851Z/`: `replay_static4096_blocks.json`,
+`replay_hook_check.json`, `replay_contiguous_dq.json`,
+`cpu_capture_fidelity.json`, and `cpu_sequence_reference.json`.
+
+The new `scripts/repro_hstu_attention_capture.py` runner reconstructs the real
+attention inputs once, then replays attention backward without the model or
+training loop. `attention_only_uncapped.json` fails its history-DQ oracle at
+**iteration 10**; `attention_only_capped100.json` passes **100/100 iterations
+in 27.58 seconds**, with training's static bucket `[4096]`. These checks
+establish a standalone component reproduction and a capped control. They
+check exact-zero history DQ and finite gradients; the oracle alone does not
+validate nonzero gradients numerically or establish a training NaN fix.
+
+**Compact positive reproduction.** `attention_prefix32.pt` preserves the
+first **32 sequences**, **79,264 rows**, and production strides from the
+captured attention inputs in **165,077,378 bytes**. Although all selected
+sequences have length 2477, the original attention normalization length
+**2768** and static bucket **4096** are retained. In
+`attention_prefix32_uncapped1000.json`, the uncapped kernel uses **654 VGPRs**
+and produces impossible history DQ at **iteration 13**, reported after
+iteration **20 at 0.7502 seconds**. The corresponding
+`attention_prefix32_capped1000.json` uses **256 VGPRs** and passes
+**1000/1000 iterations in 31.87 seconds**. The compact file therefore carries
+a positive component reproduction, with a capped control, without loading
+the dataset, embeddings or full model. It is not a reproduction of the
+later capped training NaN or hard fault.
+The smaller **1-sequence** and **8-sequence** crops each pass **1000/1000
+uncapped checks**, in **7.0016** and **7.1126 seconds** respectively
+(`attention_prefix1_uncapped1000.json`, `attention_prefix8_uncapped1000.json`).
+Only the 32-sequence crop reproduced among these tested compact sizes; this
+does not prove a minimum reproducing size or guarantee smaller cases safe.
+
+**Separate LN control.** `ln8_1000.json` prepares real LN inputs by requiring
+all five full-replay outputs to match the capture exactly, using capped
+attention and LN `BLOCK_N=8`. It then runs isolated LN backward **1000 times
+in 11.0957 seconds**, with exact DX and finite-output checks passing. The
+compiled LN DX variant uses **566 VGPRs**, one warp and no spills. This
+fixed-input control does not clear every LN shape or execution context;
+it shows that high register count alone does not establish failure. The
+1000-call loop does not repeatedly compare LN weight/bias values numerically.
+
+
+---
+
+### 2.2 Current evidence and next experiment
+
+**Latest status, September 20 after 05:03 UTC:** uninstrumented timestamp-zero
+training completed **3,000 optimizer steps**, with all **300 logged losses
+finite**. Session **1890** is drained. The same production code and cap256/BN1
+settings previously produced NaNs at 60/70; no causal fix is established.
+The finer diagnostic run ended after finite sampled 950 with illegal GPU
+memory access and no payload. Its watchdog stack does not name the producer.
+
+Completed follow-ups include real-B0-weight projection DX across five shapes
+(**1,000 calls**), queued status reduction (**1,000 calls**), and now exact
+candidate-172/fixed-460 projection DX (**1,000 calls**, session **42100 drained**).
+All pass their numerical checks. The final native control verifies every exact
+MT128x240 symbol, argument packet and pointer join, with all eleven full input
+guards unchanged. The ordered DB→DW→DX follow-up has **20 passing CPU tests**
+and independent source review, but remains **GPU-unrun** at the user's wrap-up.
+
+The new process/thread FD scan verifies no current GPU owner. Earlier empty
+`fuser`/`amd-smi` outputs missed a live container worker and cannot establish
+exclusivity. Boot/source/catalog checks pass; the ownership-tool correction does
+not identify the training culprit. Detailed evidence and the next bounded
+control are in the [September 20 continuation](nan_triage_resume_20260920.md).
+The user authorized committing and pushing this documentation update only.
+
+**Where we are.** The uncapped attention component is positively reproduced,
+but the producer of the huge gradients in capped training is still unknown.
+Neither the LN overflow nor the exact split is an evidenced code fix target.
+The September 19 stage probe now captures an anomaly at attempted step 51:
+the selected output gradient GEMM's incoming `dout` is already huge. The
+previous observed output backward is bounded, moving the search to the
+unobserved producer interval between those boundaries. Healthy validation is
+complete for full backward and original norm-stage captures; numerical
+attribution of the failure remains outstanding.
+
+All paths in this section are relative to the host directory
+`/home/chcai/runs/mi450_b0_0910_7ff_start0_20260918/debug_nan/` unless stated
+otherwise. The original captures remain in place; hashes and sizes for the
+five essential payloads are in `wrapup_20260918/capture_manifest.json`.
+
+| Completed experiment | Result | What it establishes / leaves open |
+|---|---|---|
+| Real step-55 attention backward, full capture | **10,559,284,194 bytes**; uncapped replay corrupts history DQ after verified zero initialization. Cap256 gives **25/25 exact input and UVQK projection gradients** in the matched replay arms. | A defect exists inside the attention-backward boundary for these saved inputs. The faulty instruction/mechanism and relation to later capped training failures remain unknown. |
+| Compact attention prefix | **165,077,378 bytes**, 32 sequences: uncapped fails at iteration **13**; cap256 passes **1000/1000**. The reconciled source passes another **25/25** capped calls. | A positive standalone component reproducer and a useful capped control. The compact oracle checks exact-zero history DQ and finite gradients; it does not validate every nonzero gradient or training convergence. |
+| Capped timestamp-zero training | Sampled NaN at **510**, then at **230** in a separate run; another instrumented run faults after finite sampled **400**. | The attention cap is insufficient. Onset varies; a deterministic step/window trigger is not established. |
+| Step-353 LN backward capture | **7,963,117,768 bytes**. CPU FP64 reference accounts for exactly **three BF16 infinities** from huge finite incoming DY. Compact CPU proof is **36,533 bytes**. | This invocation overflows as expected from its inputs. It identifies a downstream symptom, not the producer of the huge DY. |
+| Magnitude instrumentation | Hard fault after finite sampled **730**; no payload. | ATen `abs`/`isfinite` stack is a detection site; it does not attribute the offending write. |
+| Step-496 contextual split capture | **4,123,542,553 bytes**; input already has **1,638,018** elements above 1e20, max **1.001951e34**. **1,030,875,136** output elements match the CPU split mapping byte for byte. No residual sentinel; declared/actual max length **3650**. | The captured split copies the large values it receives. Their source remains upstream. This does not clear other invocations or exclude untracked writes before capture. |
+| September 18 upstream magnitude instrumentation | Last finite sampled **750**, loss **0.14135634899139404**; illegal memory access, SIGABRT, launcher exit **1**, no payload. | No new culprit capture. The first logged GPU fault is **07:49:10.473831 UTC**; its asynchronous reporting does not identify the corrupting kernel or exact update. |
+| September 19 healthy full output backward | Requested **step 3**, timestamp **0**, batch index **2**; **9,705,820,343-byte** payload. All observed floating inputs/outputs are finite and within 1e20. Isolated GEMM and norm each pass **10/10** calls plus full CPU FP64 references. | Validates the staged runner on a healthy invocation. Norm DY is regenerated by the preparation replay, not recovered from the original invocation. |
+| September 19 healthy original norm stage | Requested **step 3**, timestamp **0**, batch index **2**; **20,275,483,293-byte** payload, including original norm inputs/outputs and parent backward context. All observed inputs/outputs are finite and within 1e20. Direct norm replay passes **10/10**, exactly matches all five captured outputs and passes the CPU FP64 reference. | Validates the original-stage capture/replay path without running a preparation backward. Retained bytes are copied at the phase boundary, so later untracked writes remain possible. |
+| September 19 step-51 output gradient GEMM capture | **21,511,528,290-byte** payload; selected `gradient_mm` event **7**, forward order **1**. Both inputs are finite, but `dout` already exceeds 1e20; weight is bounded. DY is finite and above 1e20. Previous observed output backward (forward order **2**, events **4–6**) is finite/bounded. | Narrows the search upstream of the selected GEMM's input boundary. It does not identify the intervening producer or establish an incorrect GEMM/norm output. |
+
+The full and compact attention payloads are under
+`capture55_20260918T043851Z/`. The LN payload, CPU proof and
+`repro_ln353_overflow_cpu.py` are under
+`capped_tripwire_chunked_20260918T060315Z/`. The split payload and
+`jagged_audit.json`, `gradient_profile_cpu.json`, and
+`dense_gradient_boundary.json` are under
+`contextual_split_sentinel_20260918T070109Z/`. September 18 run outcome, fault delta
+and health checks are under `upstream_magnitude_20260918T071941Z/`.
+
+**The current lead.** The step-51 capture places the first observed magnitude
+anomaly at the output backward with forward order **1**, whose incoming `dout`
+is already above 1e20 before `gradient_mm` executes. The prior observed output
+backward, forward order **2**, has bounded inputs and outputs through its GEMM,
+norm and parent events. The intervening operations are not covered by this
+probe. Trace that incoming gradient's producer and add observations within
+that interval; the selected GEMM and subsequent norm are not established as
+the first corrupting operations. Forward order and weight-storage identity
+are recorded, but a named model-module path still requires a separate trace.
+
+**The preceding lead, retained for context.** The step-496 dense-gradient profile shows all layer-2
+parameter gradients within 1e20. Layer-1 `output_weight` is also within the
+bound, while its output-normalization weight/bias gradients and earlier-layer
+gradients are huge. This motivated the output-backward gradient-GEMM and
+normalization/multiply/dropout probe. It was a boundary localization lead,
+not proof that either operation was corrupting data. A
+bounded parameter gradient does not guarantee every intermediate tensor was
+bounded, and an arbitrary magnitude threshold requires numerical confirmation.
+
+Static review found no concrete source bug in the active D512 output-normalization
+path. Matching cached RNG-backward variants use 104 VGPRs; cache presence does
+not identify the exact failing invocation, and stages=2 metadata alone does not
+show software pipelining. Preserve `hstu_output_backward_static_audit.md`; do
+not treat stages or register count alone as an attribution.
+
+**September 19 stack and controls.** The resumed container is
+`mi450-b0-0910-7ff-start0`, retaining the exact September 10 image digest
+`sha256:6e656de79e6c8d7f3b3db3690606c3e6cb0536ec871f0521735746015297c9a1`,
+Triton `7ff97e310935b4a79794878dbc911f9af25d38d9` and torch
+`2.11.0+rocm7.14.0a20260625`. Boot ID is
+`1fab65ea-ba0d-4b09-878b-c01872bfe249`; the investigator issued no reboot.
+Postboot controls pass **25/25 cap256 compact attention calls** and all four
+1000-iteration `index_select`/`gather` arms at D16/D4, **0 bad each**. These
+controls validate the selected probes, not training stability.
+
+**Integrated diagnostics and healthy validation.** The diagnostic source now
+includes default-off **`NAN_TRIPWIRE_FUSED_VALUE_CHECK=1`** and
+**`NAN_TRIPWIRE_OUTPUT_BACKWARD_STAGES=1`**, plus
+[`scripts/repro_output_backward_stages.py`](../../scripts/repro_output_backward_stages.py).
+The checker uses one status byte per 4096 supported GPU elements, with the
+existing Torch checks as a fallback. This reduces temporary diagnostic storage;
+it does not establish that the older instrumentation caused the faults.
+
+| Completed validation | Result and scope |
+|---|---|
+| Checker/tripwire integration | **60 CPU tests** pass in the exact container. GPU integration passes **finite**, **magnitude-trigger**, and **NaN-trigger** cases, including expected payload capture. Evidence: `resume_20260919/checker_cpu_tests.log`, `resume_20260919/checker_gpu_integration/results.json`. |
+| Stage observation and replay integration | The combined invocation ran **89 passing tests and one loader error** caused by a slash in a dotted test-module name. The omitted replay suite was rerun correctly with **16/16 passing**: **105 relevant passes across the corrected runs**, not a claim that the initial invocation passed. Evidence: `resume_20260919/stage_integration_cpu_tests.log`, `resume_20260919/stage_replay_cpu_tests_corrected.log`. These counts overlap the checker tests. |
+| Exception-path hook review | The reviewed fix for capture-hook handling when backward raises passes **66 focused CPU tests in the exact container**. This suite overlaps the earlier tests; its count is not added to 105 as unique coverage. Evidence: `resume_20260919/stage_exception_container_tests.log`. |
+| Healthy full output-backward capture | `healthy_output_20260919T031216Z/`: requested step 3 capture, all checked tensors finite/bounded, followed by expected **`CaptureComplete` / launcher exit 1**. GEMM and norm each pass **10/10** isolated repetitions with unchanged-input checks. The full preparation replay also matches all six captured backward outputs exactly. |
+| Independent comparison of the healthy full capture | GEMM compares all **2,642,411,520 DY elements** to CPU FP64, with zero mismatches at the configured tolerances and max absolute difference **2.33e-10**. Norm compares all five named outputs (`dattn`, `du`, `d_norm_weight`, `d_norm_bias`, `y`) over their full extents, also with zero mismatches at those tolerances. Both use **rtol 0.01, atol 1e-6**; these are numerical comparisons, not byte-exact equality to FP64. The norm reference uses saved forward mean/rstd and dropout mask, so it does not independently validate those inputs. Evidence: `replay_mm.json`, `replay_norm.json`. |
+| Healthy original norm-stage capture and direct replay | `healthy_original_norm_20260919T031901Z/`: original norm stage saved at requested step 3, all checked inputs/outputs finite and within 1e20, followed by expected **`CaptureComplete` / launcher exit 1**. Direct replay passes **10/10 / exit 0**, with **zero exact differences in all five captured outputs** and **all eight input byte checks unchanged**. The full CPU FP64 reference passes for all five outputs at **rtol 0.01, atol 1e-6**. Its DY provenance is `original_invocation_norm_input`; no preparation backward executes. Evidence: `replay_norm.json`. |
+
+The original norm capture retains **20,275,405,776 storage bytes**; the larger
+file size above includes serialization metadata. Both healthy `.pt` controls
+are now stored losslessly as **`.pt.zst` files in their run directories**,
+with compressed sizes **3,000,943,284** and **7,181,648,339 bytes**, respectively.
+Full decompression matched each original SHA256 before removing the uncompressed
+copies; archive copies were also hash-verified and synced to disk. See
+`resume_20260919/healthy_control_archives.persisted.json` for paths and hashes.
+Decompress to a writable temporary `.pt` before replay. The step-51 failure
+capture remains uncompressed. The original norm replay left the
+GPU idle. Kernel-log comparison after removing shifting ISO timestamps finds
+four new messages: two NIC warnings and two `svm_range_restore_work` CPU-duration
+warnings, with no GPU fault/reset. The full healthy backward capture had no new
+kernel-log lines. These healthy controls do not supply a training-failure result.
+
+The original-stage observer records `gradient_mm` output flags immediately
+after `torch.mm(dout, output_weight.t())`, before normalization. It records
+the five named norm outputs before the output-weight gradient GEMM. Events
+carry forward order, observed weight ordinal and storage identity; these are
+**not a guaranteed named model-module path**. The requested original norm
+capture records forward order **2** and observed weight ordinal **5**; those
+values alone do not identify the suspected middle layer.
+
+For a full backward payload, the staged runner first executes the full
+backward and retains the DY produced by that new preparation replay. It must
+not be described as the original training invocation's internal DY. An
+original-stage payload instead supplies the recorded stage tensors directly
+and skips preparation. In both capture modes, tensor references survive until
+storage is copied at the phase boundary. Scalar flags describe the earlier
+observation; unchanged version counters cannot exclude later untracked writes
+to the retained storage. Healthy exact repetition and reference agreement do
+not exclude intermittent corruption under a different execution history.
+
+The September 18 preparation artifacts remain under the step-496 directory.
+They record **5 preparation mocks + 19 runner/dispatch CPU checks** and the
+earlier checker proposal's **55 CPU tests**, **84 standard GPU cases**, and
+**85 expanded GPU cases** (overlapping suites), including 33,555,456 physical
+elements and 2,147,581,953 logical broadcast elements. Its initial compilation
+failure and corrected reverse `tl.static_range` implementation are preserved
+in `fused_value_checker/`, including `*.before_gpu_compile_fix`. September 19
+integration and capture records above supersede its old unapplied status.
+
+**Completed targeted run: magnitude capture at attempted step 51.**
+`output_stages_20260919T032618Z/` launched on **September 19 at 03:26:18 UTC**,
+from the reviewed source snapshot
+`/tmp/mi450-b0-stages-reviewed-20260919/recommendation` via `PYTHONPATH`.
+It ended at **03:28:25.689 UTC**, launcher exit **1**, following **MagnitudeError
+at attempted step 51**, timestamp **13**, batch index **2**. Session **98154**
+is drained. The run started at **timestamp zero**, batch 1024, with no checkpoint
+and a **1,000-step diagnostic bound**. The source review and 66-test
+exception-path check above completed before launch.
+
+The saved payload is
+`tripwire/step000051_backward_rank0_pid6728.pt`, with
+**21,511,453,752 retained storage bytes** and **21,511,528,290 file bytes**.
+The adjacent JSON is the authoritative record of the original stage flags:
+
+| Event | Original boundary observation |
+|---|---|
+| **4 / 5 / 6**, forward order **2** | Gradient GEMM, norm and complete parent output backward: all checked inputs and outputs finite and within 1e20. |
+| **7**, forward order **1**, selected `gradient_mm` | `dout` and output weight are finite. **`dout` already exceeds 1e20 before GEMM**; weight is bounded. Resulting DY is finite and above 1e20. |
+| **8**, same invocation's norm stage | DY is already huge; the other checked floating inputs are finite/bounded. The four gradient outputs exceed 1e20, while reconstructed `y` remains bounded; all are finite. |
+
+The report selects event 7's bad output, but its input flags already record
+huge `dout`. Selection does not establish that GEMM introduced the anomaly.
+The prior bounded observation and the incoming huge gradient bracket an
+unobserved interval; they do not identify its writing kernel. Original tensor
+references are copied at the phase boundary, so the retained-storage caveat
+above still applies. The last sampled loss was **step 50 =
+0.1382175236940384**. Normalized kernel-log comparison adds one NIC warning
+and one `svm_range_restore_work` CPU-duration warning, with no GPU fault/reset.
+See `outcome.json` and `dmesg.new_messages.txt`.
+
+CPU profiling finds the anomaly confined to **zero-based row 388482**:
+
+| Original tensor | Elements above 1e20 | Maximum absolute value | Maximum outside that row |
+|---|---:|---:|---:|
+| `dout`, `[2468813,512]` | **512**, every column of row 388482 | **9.973638e25** | **9.220093e-8** |
+| DY, `[2468813,1536]` | **1,536**, every column of the same row | **5.553503e24** | **7.636845e-8** |
+| Output weight, `[1536,512]` | **0** | **0.05419921875** | — |
+
+Every scanned element is finite. An independent CPU FP64 GEMM comparison on
+rows **0, 388481, 388482, 388483 and 2468812** finds **zero mismatches among
+all 7,680 sampled DY values after rounding the reference to BF16**. It also
+passes scale-sensitive tolerances on the tiny healthy rows. This checks five
+rows, not the full GEMM output, and confirms expected propagation of the huge
+input row in that sample. CPU-only scripts/reports are
+`gradient_mm_input_profile_cpu.*` and `gradient_mm_sampled_fp64_cpu.*`;
+CUDA remained uninitialized.
+
+The final gradient flags add a lead: layer-2 UVQK weight/bias gradients are
+bounded, while its input-norm weight/bias gradients exceed 1e20. The actual
+fused backward path is attention and SiLU backward, input-projection backward
+(bias reduction and two GEMMs), weighted input-LN backward, then residual
+addition before the middle output backward receives `dout`. These parameter
+flags do not establish the health of the intervening original tensors.
+
+The run observed `HSTUComputeOutputFunction` and its original gradient-GEMM/norm
+stages from step 1, retained payloads, enabled the fused checker, and triggered
+on nonfinite values or magnitude >1e20. It kept **`HSTU_BWD_MAX_VGPR=256`**,
+`TRITON_FULL_AUTOTUNE=0`, buffer ops 0, empty allocator overrides, coredumps 0
+and the contextual-split sentinel off. The requested environment, source
+snapshot/manifest, launch command and completed state/log are saved in its
+directory. **Neither 1,000 nor 3,000 training steps passed.**
+
+**Two-class follow-up: illegal access after finite sampled step 640.**
+`preprocess_boundary_20260919T033128Z/` ran **03:31:28–03:49:25.072 UTC** with
+both `HSTUComputeOutputFunction` and `_HSTUPreprocessAndAttentionFunction`
+observed, retaining the output-stage hooks. It used the same reviewed source,
+cap256 and timestamp-zero settings, a **1,000-step bound**, and a **28 GiB
+capture cap**. All **64 sampled losses were finite**, last **640 =
+0.13912327587604523**. The worker then aborted with illegal memory access,
+launcher **exit 1**, saving **no payload**. Session **10178** is drained.
+The `copy_`/`_to_copy`/`SetDevice` stack is an asynchronous detection site.
+
+The ordered kernel-log delta contains **137 new lines**, including **10 logged
+read-side fault records** beginning at **03:49:23.656886 UTC**, with one callback
+reported suppressed. These counts do not identify the onset or total faults.
+No reset is recorded or issued; boot ID is unchanged. Post-fault `index_select`
+and `gather`, at D16 and D4, each pass **0/1000 bad**, checking every output
+feature against its integer row index. See `outcome.json`,
+`dmesg.delta_ordered.txt` and `gather_health_after.log`. This run did not pass
+1,000 or 3,000 steps.
+
+**Finer original preprocess stages are validated.** New default-off
+`NAN_TRIPWIRE_PREPROCESS_BACKWARD_STAGES=1` observes `input_projection`
+(the bias reduction and two GEMMs in `triton_addmm_bwd`) and `input_norm`
+(weighted input-LN backward), using their original tensors. The norm capture
+records actual DX and parameter-reduction launch configurations, compiled
+identities, registers and spills. The standalone
+[`repro_preprocess_backward_stages.py`](../../scripts/repro_preprocess_backward_stages.py)
+decodes only stage inputs/outputs and runs no parent preparation. It defaults
+to captured norm configurations; overrides are explicit.
+
+The exact container passes **102 CPU integration tests**, plus a **28-test
+focused rerun** after adding register/spill reporting (overlapping coverage).
+A real small fused forward/backward, **129 rows × 512 features**, saves both
+requested original stages. Each direct replay passes **25/25** iterations,
+all original-output comparisons exactly, input-byte guards, and full CPU FP64
+comparisons over all three named outputs at **rtol 0.01, atol 1e-6**. The norm
+replay also passes **25/25** with `BLOCK_N=8`, including the same exact output
+and CPU-reference checks. Actual DX kernels report **124 VGPRs / 0 spills**
+for `BLOCK_N=1`, and **576 / 0** for `BLOCK_N=8`; register count alone does not
+establish a defect. Evidence is under `resume_20260919/preprocess_gpu_integration/`,
+with source archive, captures, commands, reports and logs. A subsequent
+shared reentrant lock serializes overlapping launch-observation scopes;
+**54 focused CPU tests** pass in the exact container after this change, the
+new opt-in configuration selector and standalone runner tests, including
+exception cleanup, poison/write checks, compact evidence and A0-default
+preservation.
+
+The validated snapshot is
+`/tmp/mi450-b0-preprocess-stages-20260919/recommendation`. For the next stage
+capture, keep both class boundaries, switch output stage observations off and
+preprocess stages on, retaining the fused checker. This exchanges retained
+intermediates between the stage families instead of stacking both families.
+**Full-size zero-DY control positively reproduces weighted input-LN failure.**
+The production helper runs at **2,468,813 × 512 BF16**, with random bounded X,
+actual forward mean/rstd, unit weight, zero bias and exactly zero DY. Setup
+checks bound saved statistics so FP32 normalized X cannot overflow. All three
+gradients must equal zero. Every output element is checked each iteration;
+all six inputs are compared byte-for-byte with initial snapshots every ten
+iterations. Each arm runs in a fresh process on the same boot and exact stack.
+
+| Arm, in execution order | Result | Full input checks | Actual DX registers/spills |
+|---|---|---|---|
+| `BLOCK_N=8`, `weighted_ln_zero_dy_bn8_20260919T040308Z/` | **FAIL at 115**, reported through 120: 1,024 failing DX elements; dweight columns 5/263 and dbias column 263 contain NaNs | All pass | 576 / 0 |
+| `BLOCK_N=1`, `weighted_ln_zero_dy_bn1_20260919T040422Z/` | **PASS 1,000/1,000**, all three outputs zero | All pass | 124 / 0 |
+| Restored `BLOCK_N=8`, `weighted_ln_zero_dy_bn8_20260919T040547Z/` | **FAIL at 212**, reported through 220: dweight/dbias column 263 contain NaNs; DX zero checks pass for that iteration | All pass | 576 / 0 |
+
+Artifacts live under `resume_20260919/`; the summary is
+`weighted_ln_zero_dy_summary.json`. The first compact payload is **28,278 bytes**;
+CPU inspection confirms all **512 elements of the stored DX row 261123 are NaN**
+and verifies both complete parameter-gradient vectors. The full reported 1,024
+failing DX elements were counted on GPU; only the first row was preserved.
+Sampled inputs match snapshots, and independent CPU FP64 arithmetic yields
+exact zero gradients. The restored failure payload is **18,681 bytes**. All
+three arms have **zero new kernel-log lines**, unchanged boot IDs, and no reset.
+
+This is an impossible zero-gradient result in the isolated weighted-LN helper.
+Its first kernel, `_weighted_layer_norm_bwd_dx`, writes DX and both parameter
+partials, making it the leading common suspect. The reduction normally writes
+only the two parameter vectors. Direct first-kernel isolation is next; the
+current observations occur after both kernels. Input bytes are checked at
+checkpoints, so transient corruption between checks is not excluded. The
+production helper does not poison output buffers, so a passing zero run does
+not prove complete writes. These synthetic controls do not yet establish a
+training fix or an underlying compiler/hardware mechanism.
+
+A portable, capture-free
+[`repro_weighted_layer_norm_zero_dy.py`](../../scripts/repro_weighted_layer_norm_zero_dy.py)
+now provides `--stage helper` and direct `--stage dx`, with output/partial
+NaN-prefill and the same zero oracle. On the new source snapshot, the full-size
+**helper BN8 fails at iteration 90**, while **helper BN1 passes 1,000/1,000**.
+Direct DX/partial checks for BN8 pass 1,000/1,000; the same compiled DX hash
+`eae3693fabb2660493dcae5c19ddffa4c994f39d0ec835166df62d032dea3ae2` is
+used in that direct pass and the helper failure. The direct arm changes
+allocation lifetimes and omits the reduction, so it does not clear the first
+kernel. A smaller **262,144-row helper BN8** arm also passes 1,000/1,000.
+The full-size failure remains the positive portable case. Adding
+`--check-before-reduction` passes 1,000/1,000 with both immediate DX/partial
+and final-output checks. Restoring the ordinary helper also passes 1,000/1,000
+in the next process. The failure is intermittent; these passes do not establish
+that the extra observation is a repair. All six portable runs have unchanged
+input-byte checkpoints, empty kernel-log deltas and unchanged boot IDs; see
+`resume_20260919/weighted_ln_standalone_summary.json`.
+
+The old and new DX compiled hashes differ because the source path and line
+numbers changed. A CPU ELF audit confirms byte-identical executable `.text`
+(**22,528 bytes**, SHA256
+`77a9a6b4dbc5a08fe188d589ec1cebb302835819a74462f055629bd14181b11e`),
+kernel descriptors, and all allocated ELF sections; only debug sections differ.
+See `resume_20260919/ln_compiler_identity/`.
+
+`WEIGHTED_LN_BWD_BLOCK_N=1` is an opt-in candidate that limits only weighted
+input-LN backward DX autotuning to the passing configuration. Unset/0 retains
+the original A0 configuration policy; explicit 1/8 overrides full autotuning
+for this kernel only. The candidate has not yet passed 3,000 training steps. A real small fused
+capture verifies the opt-in DX configuration is 1; its original norm replay
+passes **25/25**, with exact original outputs, full CPU FP64 references over
+all three outputs, and unchanged input bytes. See
+`resume_20260919/ln_pin_gpu_integration/`.
+
+**Uninstrumented training rejects the combined candidate.**
+`ln_bn1_e2e3000_20260919T041619Z/` ran **04:16:19–04:18:45.623 UTC** from
+timestamp zero with `WEIGHTED_LN_BWD_BLOCK_N=1`, attention cap256 and all
+tripwire/A0 capture/probe paths disabled. Step **50 = 0.1382175236940384** was
+finite, then **60 and 70 were NaN**. The scoped host monitor sent SIGTERM to
+that training process group, launcher **143**; it did not stop the container or
+reset the GPU. Session **63006** is drained. Effective environment confirms
+both candidate settings. The only new kernel-log line is an Ionic NIC warning;
+there is no GPU fault/reset record, and the boot ID is unchanged.
+
+The source archive/manifest, requested and effective environment, command,
+training-process identity, state, progress, log, monitor action and
+`outcome.json` are preserved. **This did not pass 3,000 steps.** Passing the
+zero-DY component controls does not fix the full training failure.
+
+**Finer capture interrupted by host reboot.**
+`preprocess_stages_bn1_20260919T042027Z/` launched at **04:20:27 UTC**,
+retaining cap256 + BN1 and both class boundaries, with preprocess internal
+stages enabled and output internal stages disabled. All **34 sampled losses
+were finite**, last **340 = 0.13867247104644775**, then persisted logging stops
+with a NUL tail and no payload. At **04:52 UTC**, session **39808** and its
+launcher processes were absent, the container was stopped (observed code **255**),
+and the host boot ID had changed. The stale `state.json` is preserved separately
+and replaced with the observed terminal interruption. **Neither 1,000 nor
+3,000 steps passed.**
+
+The preceding boot's persisted journal has no GPU fault, OOM, watchdog, panic,
+or explicit reboot command in the run interval. The new boot reports an
+unclean journal and filesystem shutdown. These records do not establish the
+initiator, cause, or exact termination time; Docker's recovered `FinishedAt`
+is not a verified training-stop timestamp. This investigation issued no
+reboot/reset. See `outcome.json`, `interruption_observed.json`, and
+`reboot_audit/`.
+
+The original container was restarted at **04:53 UTC**. Its image, Torch/HIP,
+exact Triton commit and all **140 source hashes** matched the saved run. That
+boot was `677a2df1-7c98-4785-92ea-9c8d559b05d4`. Each post-reboot D16/D4
+`index_select`/`gather` arm passes **0/1000 bad**, checking every output feature.
+Evidence is under `resume_20260919/reboot_0452_health/`. The other container is
+untouched.
+
+**Historical 05:24 UTC checkpoint: capture stalled at attempted step 195.**
+`preprocess_stages_bn1_reboot_20260919T045640Z/`
+launched **04:56:40 UTC** on the verified new boot. It uses the same immutable
+source, cap256 + BN1, finer preprocess-stage observations, a 1,000-step bound,
+and 32 GiB capture cap. Last sampled **step 190 = 0.13864581286907196** is
+finite. The log last changed at **05:02:05.609709 UTC** and had stopped
+progressing for several minutes before debugger inspection. Session **32736**
+and training worker host PID **29316** remained live at that checkpoint. There was
+**no capture, no 1,000-step diagnostic pass, and no 3,000-step training pass**.
+By **06:52:19 UTC**, a later host reboot had removed the old worker and
+debugger. The run is now annotated `interrupted_host_reboot`, preserving its
+previous state and evidence. The stack analysis below describes the original
+stall and later diagnostic faults; it does not describe currently live jobs.
+
+Saved Python locals place the stall at **attempted step 195**, timestamp
+window **18**, batch index **29**, `gstep=194`, `phase="backward"`.
+The immutable source calls `tripwire.check("backward")` at `utils.py:2717`;
+`nan_tripwire.py:724` executes
+`torch.stack(flags).to(device="cpu").tolist()`. Native threads corroborate
+the transfer wait: `rocr::core::BusyWaitSignal` → `hipMemcpyWithStream` →
+`c10::cuda::memcpy_and_sync` → Torch `copy_` / `_to_copy`.
+Python backward has returned, while its GPU work can still be asynchronous.
+This step's observed forward/loss checks completed; clipping and the dense
+optimizer have not run. Fused embedding updates can occur within backward.
+Pending backward flag results have not reached host inspection, explaining
+the absence of a capture without implying those tensors are finite.
+
+The synchronization boundary leaves backward compute, diagnostic scans and
+reductions, and queue/transfer/signal completion among the possibilities.
+It does not identify a training kernel or establish that the checker caused
+the stall. In particular, preprocess backward can recompute weighted-LN
+**forward** and projection before attention; the BN1 backward option does not
+cover those operations. Pre-inspection GPU telemetry reports **100% graphics
+activity** and approximately **392,575 / 442,368 MB VRAM**. `amd-smi process`
+reports no processes despite the live worker; that report alone is not an
+idle-GPU check. The saved pre-diagnostic kernel log has no new GPU fault/reset
+record attributable to the stall.
+
+Evidence is under the run's `stall_190/` directory, named for the last sampled
+loss rather than the exact pending step: `native_threads.txt`,
+`python_threads.txt`, `python_locals.txt`, `source_audit.md`, GPU telemetry,
+worker status and kernel logs. Native GDB detached successfully after its
+thread inventory. Initial native/Python stacks and telemetry precede the
+diagnostic oops below; the exact Python locals were saved at **05:09:57 UTC**,
+after that oops and before the privileged debugger attempt.
+The first matched ROCgdb attach inside ordinary Docker exec
+failed ptrace permission checks. A privileged attach also failed to produce
+queue/dispatch evidence: its wrapper ran **05:10:48.965968–05:11:45.994286 UTC**,
+exited **137** after timeout, and saved an empty debugger log. The actual
+ROCgdb process, host PID **43301**, remains in uninterruptible **D** state in
+`__flush_work` → `suspend_queues` → `kfd_ioctl_set_debug_trap`.
+Training worker **29316** is now in **t** tracing-stop state with
+`TracerPid=43301`. The debugger timeout did not terminate the worker or
+complete an attach/detach; no active-kernel attribution or queue inventory
+was obtained. This debugger-induced state follows the original stall and the
+KFD diagnostic oops. Preserve that chronology and verify both processes
+before a next action.
+
+**Automatic reset attempts during debugger attach.**
+`stall_190/dmesg_after_debugger_timeout.txt` records MES `REMOVE_QUEUE`
+timeout at **05:11:01 UTC**, then suspend/user-queue reset failures at
+**05:11:03 UTC**. An automatic GPU reset begins at **05:11:03.148202 UTC**,
+`Source: 3`; mode-2 reset fails with **-62**, ending at
+**05:11:50.289719 UTC**. SDMA ring reset failures and further reset retries
+follow. These are post-attach observations, after the original stall and
+the KFD diagnostic oops; they do not identify the original stalled kernel.
+As of **05:12:58 UTC**, saved process/stack files still show debugger **43301**
+in **D** and worker **29316** in tracing stop. No successful GPU/host recovery
+has been verified. **No manual reset or reboot was issued**, but automatic
+reset attempts did occur.
+
+**Separate investigator-triggered diagnostic driver fault.** At **05:09:46 UTC**,
+reading `/sys/kernel/debug/kfd/mqds` succeeded and saved **451,565 bytes** in
+`stall_190/kfd_mqds_pre_debugger.txt`. A subsequent read of
+`/sys/kernel/debug/kfd/hqds` triggered a **NULL pointer dereference at
+05:09:49 UTC** in `hqd_sdma_dump_v12_1+0x7a/0x1e0 [amdgpu]`, through
+`dqm_debugfs_hqds`, `kfd_debugfs_hqds_by_device` and `seq_read_iter`.
+The reader, `cat` PID **41766**, exited **-9** and produced zero dump bytes;
+the log also reports it exited with interrupts disabled. See
+`pre_debugger_meta.json` and `dmesg_pre_debugger.txt` for the read and oops.
+This diagnostic-path fault occurred minutes after training had already
+stalled; it is not evidence for the original stall's cause. **Do not read
+KFD `hqds` again on this boot**, and distinguish subsequent observations from
+the pre-oops evidence. This investigation has not terminated this training run
+or issued a manual reset/reboot at this update; the later automatic reset
+attempts above failed.
+
+Offline analysis of the saved MQD and matching installed driver/module is in
+`stall_190/mqd_analysis.md`. The five compute descriptors and one SDMA
+descriptor are unrefreshed memory snapshots; their equal saved read/write
+pointers cannot establish that live queues were idle. Matching disassembly
+localizes the separate `hqds` crash to a NULL SDMA1 register-offset-table
+pointer during diagnostic engine-1/queue-0 enumeration. The normal SDMA path
+uses a different GC/XCC register mapping. This identifies a diagnostic driver
+defect for maintainer review, without attributing the earlier training stall.
+After the stuck attach, broad process-command-line inventories can also block
+in `get_mm_cmdline`; use targeted `/proc/PID/status` and `/proc/PID/stack` reads.
+
+The CPU adapter `resume_20260919/analyze_preprocess_stage_cpu.py` reads original
+stage views without parent preparation, separates bad packed DU/DV/DQ/DK,
+and applies captured autocast to independent FP64 references. It is validated
+on both healthy stages and synthetic corruption cases. Sampled parameter
+references are contributions only; complete parameter gradients require all rows.
+
+**Continuation, in order:**
+
+1. The old stall and failed-debugger evidence is preserved; old processes
+   are absent after the later reboot. Both September 20 health controls
+   pass. The traced synthetic native Linear DW control also passes 1,000.
+   The synthetic projection DX control also passes 1,000, using a different
+   native tile/grid from A0's positive. Finer training then hard-faulted after
+   finite sampled 950, with no payload; session 96316 is drained. Both
+   postfault health controls pass another 4 × 1,000, and the ordinary BN8
+   backward helper passes another 1,000. The B0 captured projection-DX shape
+   passes 1,000, and the full-size fused checker passes 100 zero/100 sentinel
+   calls across 32-bit index boundaries. Uninstrumented E2E session1890 has
+   now passed all 3,000 optimizer steps and is drained. Candidate172/fixed460
+   also passed 1,000 calls; the ordered DB→DW→DX control remains GPU-unrun.
+   Both LN backward controls currently pass; a new failing observation is
+   needed to localize their historical anomaly.
+   Preserve actual dispatch identity and original input/output bytes.
+   Keep GPU work serial and do not repeat the faulting KFD `hqds` read.
+   If a health alarm recurs, preserve a failing source/index/output and
+   validate the exact mapping on CPU before assigning the faulty primitive.
+   A later finer training capture still needs an original failing payload.
+   A positive isolated weighted-LN defect is established, but the BN1/cap256
+   training failure still requires its own original tensors and attribution.
+2. Compare original input-projection and weighted input-LN inputs/outputs
+   independently. Bad projection `dz` requires checking recomputed UVQK and
+   then following attention/SiLU upstream; bad `normed_x` requires checking
+   the forward normalization with saved statistics. Bounded fused outputs followed by huge middle
+   `dout` require inspecting residual addition or later writes. Parameter
+   flags and regenerated intermediates alone cannot identify the writer.
+   A prepared zero-input weighted-LN forward diagnostic,
+   [`repro_weighted_layer_norm_zero_x.py`](../../scripts/repro_weighted_layer_norm_zero_x.py), has now passed **1,000 GPU calls per statistics mode**.
+   It tests the production forward
+   helper's exact zero-output/mean oracle at full shape. Its new
+   `--statistics-mode saved` uses supplied FP32 mean=0/rstd=1000, as HSTU
+   backward does when recomputing normalized X. The returned statistics must
+   be fresh copies with exact values; only Y is poisoned, because the JIT
+   reads those statistic copies. All five supplied inputs have byte guards.
+   Default `recompute` mode retains the rsqrt tolerance and poisons all
+   three outputs. Both modes record and verify the actual kernel branch;
+   default autotuning and poisoning can change the selected configuration
+   and timing. The saved run selected BN8/4 warps; recompute selected
+   BN8/2 warps. A subsequent explicit saved BN8/2-warps arm also passes
+   1,000, closing that zero-input configuration gap. Original nonzero
+   training inputs and their producer interval still require capture.
+3. If an operation receives valid inputs but returns incorrect outputs, replay
+   it in isolation and distinguish expected arithmetic growth/overflow from
+   a numerical defect. Exact repetition alone is insufficient, because
+   corruption can be repeatable and instrumentation can suppress it.
+4. Reduce a confirmed failing stage to the smallest positive standalone case,
+   then test an evidenced fix with failing control, corrected output and
+   restored original configuration. Keep the existing attention cap/uncapped
+   case as a separate regression. Only then run uninstrumented timestamp-zero
+   training for **all 3,000 optimizer steps**, with finite logged losses
+   and no GPU fault; a short clean instrumented run does not meet that bar.
+   Keep all tripwire diagnostics disabled for that baseline validation.
+
+The forward control can be repeated from `recommendation/` in the required container,
+with the mandatory environment settings from §1.3:
+
+```bash
+python scripts/repro_weighted_layer_norm_zero_x.py \
+  --source-root . --statistics-mode saved \
+  --report /tmp/weighted-ln-zero-x-saved.json
+```
+
+This defaults to **2,468,813 rows × 512 BF16 features**, **1,000 repetitions**,
+and the original forward autotuning policy. Optional `--block-n 1|8` and
+`--num-warps 1|2|4|8` select controlled arms. This command is prepared, not a
+record of a completed GPU experiment.
+
+The saved-statistics branch is established from both runs' verified source
+archives: `dlrm_hstu.py` explicitly enables normalized-X and UVQK recomputation,
+and preprocess backward passes both saved mean and rstd to the forward helper.
+The step-51 capture itself contains no preprocess context. See the CPU source
+audit `resume_20260919/weighted_ln_forward_matching_path_audit.md` for the
+constructor chain, matching source hashes and the helper's copy semantics.
+This verifies the kernel branch, not a matched training autotune winner:
+the autotune key contains `BLOCK_D` and tensor dtypes but omits statistics
+mode. Training can reuse the configuration chosen by its earlier ordinary
+forward, while a fresh saved-mode probe tunes that branch independently.
+Record the actual configuration and use explicit block/warp controls for
+matched comparisons; poisoning can also change the selected configuration.
+
+Six focused host-CPU tests pass for the saved-statistics extension, executing
+the actual public helper with only its JIT launch replaced. They verify fresh
+copies before launch, correct poisoning, both statistic branches, missing-write
+detection, rejection before poisoning, restoration after errors, and compact
+evidence for mutated statistic rows. CUDA initialization is blocked during
+these tests. The result is recorded in
+`resume_20260919/weighted_ln_saved_stats_cpu_tests.log`; it provides no GPU
+correctness or end-to-end training result.
+
+**What A0 adds.** The pushed A0 investigation captured full pre-step states
+100/101, with finite forward outputs and 38 nonfinite gradients at step 101.
+Four post-AC direct replays were finite. One pair had a **12,841×** difference
+in incoming layer-1 `duvqk` before GEMM/LN; a later, more heavily verified pair
+had byte-exact GEMM tensors, and isolated LN replays matched. This supports
+examining incoming gradients and execution history, but establishes no common
+culprit with B0. See [the preserved A0 historical evidence](../mi450_a0/mi450_a0.md#evidence-and-session-recovery).
+Its full-state capture alone includes **150,042,474,496 embedding bytes**;
+B0's approximately 79 GiB free disk at reconciliation time is insufficient
+for that strategy without additional storage.
+
+**Shared repository and handoff.** The shared remote branch for both hosts is
+**`chcai/mi450`**. The earlier output diagnostics are published in
+**`49a4b78`**, and step-51 localization in **`82e3d1c`**. Original preprocess
+stages, weighted-LN standalone isolation and opt-in BN1 are published in
+**`8bee1a2`**; reboot interruption/recovery documentation is published in
+**`4c92637`**. The remote rename to `chcai/mi450` is verified, and the old
+`chcai/mi450_a0` remote branch is deleted.
+All local worktrees track
+the renamed remote branch. The reconciliation worktree remains
+`/home/chcai/training-mi450-reconcile`, branch
+`chcai/mi450-a0-b0-reconcile-20260918`. September 19 diagnostic work is in
+`/home/chcai/training-mi450-nan-20260919`, branch
+`chcai/mi450-b0-nan-20260919`; all checker/stage options default off.
+Component validation passes for BN1, but the combined training candidate failed.
+It retains both diagnostic families, checks before clipping, and uses
+checkout-relative script imports. The shared default leaves attention uncapped
+for A0; B0 must explicitly select 256. Old A0 captures still enforce source
+hashes and need their captured source for baseline replay. See the
+[current A0 configuration and diagnostic controls](../mi450_a0/mi450_a0.md#stack-and-controls).
+
+Validation on the reconciled source: **3 full-state replay + 40 operation
+capture/replay + 21 compatibility + 20 existing trainer CPU tests passed**.
+On B0, **25/25 compact cap256 GPU replays passed**, and an actual module import
+with the cap unset confirmed `BLOCK_N=64` and no VGPR attribute. Evidence is
+under `reconcile_20260918/`. This validates the integration and selected
+component control, not A0 hardware behavior or the long-run training outcome.
+
+`wrapup_20260918/` preserves the original B0 checkout's patch,
+12 source snapshots, capture manifest and continuation notes. Four native
+archives are fully decompressed/hash-verified (**660,230,402 compressed bytes**),
+including exact libtriton and installed native distributions; restoration is
+still untested and they are not a complete portable container image.
+
+---
+
+## 3. Reproducing the `nan`
+
+**The blocker, in three lines.** The batch-1024 e2e trains normally to **step 1370
+of 3000** and then reports `train_loss=nan` for the rest of the run
+([§2](#2-the-open-blocker-train_lossnan-at-step-1370)). There is no fault, no
+traceback, nothing in `dmesg`, and throughput is flat across the transition. All of
+that says *silent memory corruption*, not a numerical blow-up.
+
+**Pick your reproducer.** Both drive **one HSTU layer** at production shapes — no
+dataset, no torchrec, no embedding tables, no distributed init. Define this once and
+the `Command` column is copy-pasteable as written:
+
+```bash
+gr() {                          # $EXTRA prepends env vars, e.g. EXTRA=AMD_SERIALIZE_KERNEL=3
+  docker exec -e AMDGCN_USE_BUFFER_OPS=0 -e PYTORCH_CUDA_ALLOC_CONF= triton-7ff97e-test \
+    bash -lc "cd /workspace/recommendation; $EXTRA python scripts/$*"
+}
+```
+
+| Reproducer | Command | Time to fault | Regime | Use it for | Do **not** use it for |
+|---|---|---|---|---|---|
+| **`repro_gfx1250_nondeterminism.py`** — feeds byte-identical input repeatedly and checks the answer never changes | `gr repro_gfx1250_nondeterminism.py --rows 2800000 --path triton --repeats 400 --backward` | median **~5 min**; **budget ~20 min**. 509 s buys 400 fwd + 400 bwd repeats → ~0.75 s/repeat, at ~1 fault/300 | **Single stream, single process — the same regime as the e2e** | **Every claim in [§3.1](#31-what-the-reproducer-shows)–[§3.2](#32-what-we-conclude).** The only arm whose result is evidence about the 1370 `nan` | A quick health check. It is Poisson — a clean 400 has a **~1-in-4 chance of being luck**, and a pass proves nothing |
+| **`repro_gfx1250_fast_fault.py`** — two independent fwd+bwd loops, one per stream, sharing nothing but the GPU | `gr repro_gfx1250_fast_fault.py --rows 400000 --streams 2` | **24–31 s, 3/3 runs** (~500× faster) | **Two streams.** The e2e is single-stream (`use_pipeline=False`) | Handing a vendor a 25-second repro. Produces the **same wild-store signature**: `GC_UTCL2` / `TCP (0x8)` / `RW: 0x1` | Evidence about the 1370 `nan`. Same signature, **unproven same defect** — and neither available control can settle it: `AMD_SERIALIZE_KERNEL=3` and a per-thread `torch.cuda.synchronize()` both still fault, because two threads overlap across separate HSA queues |
+
+**Three things you must get right — for either script:**
+
+- `AMDGCN_USE_BUFFER_OPS=0` is **mandatory** — `1` wedges the whole node.
+- `PYTORCH_CUDA_ALLOC_CONF` must be **empty** ([§6](#6-worked-around-expandable_segmentstrue-caps-vram-at-19-gib)).
+- **Run on an otherwise idle GPU.** A concurrent GPU job corrupts the result on its
+  own ([§3.6](#36-the-contention-bug-found-alongside--real-but-not-the-nan)).
+  Several earlier measurements in this investigation were taken alongside a live
+  training process and are worth nothing.
+
+**Failure** is a hard `HSA_STATUS_ERROR_MEMORY_APERTURE_VIOLATION`, naming
+`kernel: _hstu_attn_fwd` in the single-stream arm. **Success** is `RESULT: PASS`,
+one distinct output hash, `dx` bit-exact — which, per the table, means little on its own.
+
+**Can the fast arm be made single-stream?** Asked directly, because the two-stream
+arm deviates from the e2e (`use_pipeline=False`). **Answer: not yet.** Single-stream
+faults *can* be produced at **1.2 M rows** — lower than the 2.8 M plain arm, and new
+— but at ~**1 fault per 1810 iterations** (2 faults in ~3620 cumulative iterations,
+0.28 s/iter) that is ~**500 s per fault**, which is *no better* than the existing
+2.8 M arm's ~370 s. There is currently **no single-stream reproducer faster than
+[§3.1](#31-what-the-reproducer-shows) arm 4**, and the 25 s arm's two-stream
+deviation stands.
+
+**Read the "clean" rows below as underpowered, not as passes.** At ~1 fault/1810
+iterations, the probability a genuinely-affected config still shows zero faults is
+high, and is given per row. Only the 4986-iteration arm is even marginal.
+
+| Single-stream arm | Command (see `gr` above) | `max_seq_len` | Iterations | Result | P(zero faults) if affected |
+|---|---|---|---|---|---|
+| 1.2 M rows, batch 1024 | `gr repro_gfx1250_fast_fault.py --rows 1200000 --batch 1024 --streams 1 --seconds 240` | 2156 | ~3620 over 5 runs | **FAULT, 2 of 5** — at ~40 iters (25 s) and ~650 iters, in `_hstu_attn_bwd` | — |
+| 2.8 M rows, batch 1024 | arm 4, [§3.1](#31-what-the-reproducer-shows) | 4096 | ~350/fault | **FAULT** — the reference arm | — |
+| 400 k rows | `... --rows 400000 --streams 1` | 718 | 4986 / 319 s | clean | **0.06** — marginal |
+| 900 k rows | `... --rows 900000 --streams 1` | 1617 | 1838 / 337 s | clean | 0.37 |
+| 400 k rows, batch 128 | `... --rows 400000 --batch 128 --streams 1` | 4096 | 1270 / 232 s | clean | 0.50 |
+| 1.2 M rows, batch 2048 | `... --rows 1200000 --batch 2048 --streams 1` | 1138 | 979 / 204 s | clean | 0.58 |
+| 1.06 M rows | `... --rows 1060000 --streams 1` | 1905 | 890 / 207 s | clean | 0.61 |
+| 1.6 M rows | `... --rows 1600000 --streams 1` | 2875 | 460 | clean | 0.77 |
+| 2.4 M rows, batch 2048 | `... --rows 2400000 --batch 2048 --streams 1` | 2149 | 334 | clean | 0.83 |
+| 400 k rows + 8 GiB dead ballast | `... --rows 400000 --streams 1 --ballast 8` | 718 | 4039 / 259 s | clean | 0.11 — **the defect is not footprint-sensitive**; argues against a plain `[b3]`-shape int32 wrap |
+
+**A tempting pattern that does not survive the arithmetic.** Both faulting arms have
+`max_seq_len > 2048` and every clean arm at batch 1024 is below it, which looks like
+a sharp threshold. It is not established: the sub-2048 arms are exactly the
+underpowered ones above, and the `AUTOTUNE_MAX_SEQ_LEN` bucket does **not** even
+select a different binary — a cold-cache census shows one `_hstu_attn_bwd` build
+serving buckets 1024, 2048 and 4096 alike ([§3.8](#38-register-pressure-in-_hstu_attn_bwd-measured-and-not-the-mechanism)).
+Do not cite a sequence-length threshold as a finding.
+
+### 3.1 What the reproducer shows
+
+**September 18 validity audit — this qualification applies to the historical
+probe tables and conclusions throughout §3.** The recorded GPU faults and
+forward-output observations remain observations of the workloads that ran.
+The passes do not establish production gradient correctness or attribute
+either training NaN to a kernel, overlap mechanism, or compiler defect:
+
+- `repro_gfx1250_nondeterminism.py` created a differentiable input clone
+  `xg`, but its backward call used the original `x`. Consequently
+  `xg.grad` remained `None`, the comparison was empty, and historical
+  **“dx bit-exact” / backward PASS claims are invalid**. The call now
+  passes `_x=xg` and rejects a missing gradient; old results are not
+  retroactively validated by that repair.
+- That script and `repro_gfx1250_hstu_layer.py` unpacked
+  `hstu_preprocess_and_attention` as `(attn, u, ...)`, whereas its return
+  order is `(u, attn_output, ...)`. They also used different output
+  concatenation/projection, activation, dropout, recomputation, target
+  masking and length-sorting settings from the production `STULayer`.
+  Production-sized dimensions alone therefore do not make them faithful
+  training replays.
+- The explanation that weight-gradient differences were harmless atomic
+  reordering cited RMSNorm and group-norm kernels, but those are not the
+  weighted layer-norm/private-partial-reduction paths exercised here.
+  That explanation and the claimed input-gradient agreement do not rule
+  out a gradient defect; the actual dispatched reductions must be checked.
+
+The historical measurements below are retained for traceability. Their
+“what it establishes” entries must be read subject to this audit; a
+fault-free or repeated-output stress run does not identify the cause of
+the timestamp-13 or timestamp-150 training failure.
+
+Every arm below: idle GPU, single process, single stream, seed 1, N = 2,800,000
+(`max_seq_len` 4096) unless the row says otherwise. Measured 2026-09-16.
+
+**The commands are exact.** Define this once, then the `Command` column is
+copy-pasteable as written:
+
+```bash
+repro() { gr repro_gfx1250_nondeterminism.py --rows 2800000 --path triton --seed 1 "$@"; }
+```
+
+| # | Arm | What it changes vs. the plain run | Repeats | Command | Result | What it establishes |
+|---|---|---|---|---|---|---|
+| 1 | Forward only | No backward pass at all | 500, then 300, then **1500** | `repro --repeats 500`, then `--repeats 300`, then `--repeats 1500` | **PASS** — one bit-identical output every time | **The forward path is clean** over 2,300 repeats. Whatever fails needs the backward pass present |
+| 2 | Forward only, N sweep | N = 1.4M / 2.1M / 2.8M | 3 each | `repro --rows 1400000 --repeats 3`, then `--rows 2100000`, then `--rows 2800000` (the trailing `--rows` overrides the one in the prefix) | PASS, all | **Weak evidence only** — 3 repeats is ~100× below the ~300 needed to see the fault, so this arm cannot clear any N |
+| 3 | Forward + backward | — (this *is* the plain run) | 3 | `repro --repeats 3 --backward` | PASS | **Short runs look healthy.** This is why the e2e reached step 1370 |
+| 4 | Forward + backward | — | 300 | `repro --repeats 300 --backward` | **FAULT** — `HSA_STATUS_ERROR_MEMORY_APERTURE_VIOLATION` | The defect is real and reachable in ~5 min (300 backward repeats at ~0.75 s each, plus startup) |
+| 5 | Forward + backward | — | 400 | `repro --repeats 400 --backward` | **FAULT** — `kernel: _hstu_attn_fwd` | **Names the kernel** — but see §3.2 conclusion 7, it is probably the victim |
+| 6 | `AMD_SERIALIZE_KERNEL=3` | Serializes **every** kernel, device-wide | 400 | `EXTRA=AMD_SERIALIZE_KERNEL=3 repro --repeats 400 --backward` | **PASS** | **Kernel overlap is required.** But too blunt to attribute: it changes the thing under test |
+| 7 | **`--sync-between`** | One `torch.cuda.synchronize()` between fwd and bwd **only** — nothing inside either is serialized | 400 | `repro --repeats 400 --backward --sync-between` | **PASS** — `dx` bit-exact, 1 distinct hash | Narrows it to **forward/backward overlap** specifically. **But at ~1 fault per 300 repeats, a clean 400 is ~1-in-4 luck — evidence, not proof** |
+| 8 | **`--sync-between`** | same as 7 | **1500** | `repro --repeats 1500 --backward --sync-between` | **PASS** — `dx` bit-exact every repeat, 1 distinct hash, 0 faults | **Decisive.** 1500 clean is 5× the mean fault interval; the plain arm faults twice in 700. **Forward/backward overlap is required**, and one `synchronize()` in the right place suppresses the defect entirely |
+
+**Rate:** roughly **1 fault per ~300 backward repeats**. Rows 3 and 2 are short
+enough that a PASS there means nothing; only rows 6–8 are long enough to carry a
+negative result, and only row 8 is long enough to carry it confidently.
+
+**Reading the fault signature.** Rows 4 and 5 produce this in `dmesg`:
+
+```
+[gfxhub0] no-retry page fault (src_id:0 ring:40 vmid:3 pasid:61)
+  in page starting at address 0x0000705707600000 from IH client 27 (GC_UTCL2)
+  Faulty UTCL2 client ID: TCP (0x8)
+  PERMISSION_FAULTS: 0x5      RW: 0x1      MAPPING_ERROR: 0x0   WALKER_ERROR: 0x0
+```
+
+| Field | Value | What it means |
+|---|---|---|
+| IH client | `27 (GC_UTCL2)` | The graphics L2 translation unit raised it — a shader memory access, not DMA or display |
+| UTCL2 client ID | `TCP (0x8)` | The vector/texture data cache — i.e. a **vector memory instruction in a kernel** |
+| **`RW`** | **`0x1`** | **A write.** This is the single most diagnostic field: the kernel stored somewhere it should not have |
+| `MAPPING_ERROR` / `WALKER_ERROR` | `0x0` / `0x0` | The address **translated fine**; the page simply is not writable by this process. So it is a plausible-looking but wrong address, not garbage |
+| `PERMISSION_FAULTS` | `0x5` | Write to a page without write permission |
+
+**`GC_UTCL2` / `TCP (0x8)` / `RW: 0x1` is the same triple** as the original step-212
+e2e fault and as the `_weighted_layer_norm_fwd` int32 wrap in
+[§5](#5-fixed-an-int32-address-wrap-in-triton_layer_normpy-b3) — both confirmed wild
+stores. That is the basis for calling this one a wild store too.
+
+### 3.2 What we conclude
+
+Ranked by confidence, highest first. "From" cites the arm numbers in
+[§3.1](#31-what-the-reproducer-shows); "#" is a stable id — other sections cite
+these numbers, so they do not renumber when the ranking changes.
+
+| Confidence | # | Conclusion | Component implicated / cleared | From | Why we are this confident | Why it matters |
+|---|---|---|---|---|---|---|
+| **High** | 1 | **It is a memory-safety defect — a wild store**, not a numerical blow-up | **Triton codegen / LLVM — or gfx1250 silicon.** Excludes the model math, PyTorch eager, and TorchRec: none of those can emit a raw store to a wrong address | 4, 5 | The hardware says so directly: `RW: 0x1` in the fault record is a *write*, and `MAPPING_ERROR`/`WALKER_ERROR` are both `0x0`, so the address translated fine — a plausible wrong address, not garbage. Same signature as two *confirmed* wild stores on this host (`[b3]`, §3.6) | Sets the whole search: look for an address computation, not for overflow/underflow in the math |
+| **High** | 2 | **The backward pass is required** | **The Triton backward kernels in `ops/triton/`.** Same tree as `[b3]`. Excludes the forward kernels and everything above Triton | 1 vs 4 | Forward-only is clean over 2,300 cumulative repeats (arms 1–3) at the same shapes where fwd+bwd faults at 300–400 (arms 4–5). That is ~8× the mean fault interval with zero events | Halves the search space — forward-only kernels can be deprioritised |
+| **High** | 3 | **Forward/backward overlap is required** | **gfx1250 silicon + the ROCm/HSA dispatch path**, not Triton source. Triton decides *what* each kernel addresses; the runtime and hardware decide *what runs alongside it* | 6, 7, 8 | **Settled by arm 8.** Arm 6 (`AMD_SERIALIZE_KERNEL=3`) suppressed it but was too blunt to attribute. Arm 7 (`--sync-between`, one `synchronize()` between fwd and bwd) passed 400, which had a ~1-in-4 chance of being luck — so arm 8 ran it to **1500 clean**, 5× the mean fault interval, against a plain arm that faults twice in 700. A single well-placed `synchronize()` suppresses the defect | The culprit is the **interaction**, not any one kernel — which is why §3.3 ranks a defect class above any call site. It also gives a **workaround** and the fastest known lever for shortening the repro ([§3](#3-reproducing-the-nan)) |
+| **High** | 4 | **Intermittent, ~1 fault per 300 repeats** | **Not a component — a timing property.** A deterministic source-level bug fires every time; a rate of ~1/300 points at the ROCm scheduler / gfx1250, below Triton | 3 vs 4 | Two independent faults landed at 300 and 400 repeats; 3 repeats is clean. The rate is an order-of-magnitude estimate from n=2, not a measured rate | **Any negative result under ~300 repeats is meaningless.** Explains why short runs look healthy and why the e2e reached step 1370 before failing |
+| **High** | 6 | **It is *not* an addressing bug in `_hstu_attn_fwd`** | **Clears `generative_recommenders/ops/triton/triton_hstu_attention.py` (forward).** Does not clear the rest of `ops/triton/` | source audit | Line-by-line audit of every address computation in the kernel, not an inference: `:551-553` widen to int64, `:450`/`:503`/`:587`/`:710` use the correct int64-base idiom, the only stores are `:705`/`:713`, and the `.to(tl.int32)` TMA narrowings are dead code on HIP. Source audits do not depend on a sample size | Rules out the `[b3]`-class explanation for the kernel the fault names. **Do not re-audit this kernel** |
+| **Medium** | 5 | **This explains the e2e's silent `nan`** | **PyTorch caching allocator** (`expandable_segments:True`) as the amplifier, not the culprit. It decides whether the store lands in unmapped memory (fault) or a live tensor (silent `nan`) | 4, 5 + §2 | The mechanism is sound and the asymmetry is well-evidenced, but the link is circumstantial: nobody has caught the e2e in the act. A wild store in a 2-min probe hits unmapped memory and faults; the same store in the ~150 GB training process hits a live allocation and poisons it quietly | **The asymmetry is the single most important idea in this document.** It is also why the e2e cannot be debugged by waiting for it to fault |
+| **Medium** | 7 | **The named kernel is probably the *victim*, not the culprit** | **ROCm fault attribution** (`dmesg` / HSA) is the unreliable part here, not the kernel it names. The record identifies the resident dispatch, not the writer | 5 + 6 + §3.6 | Consistent with conclusion 6 (that kernel is clean) and directly demonstrated in §3.6, where a *different* kernel (`_hstu_attn_bwd`) gets named under the two-stream test while the aggressor runs untouched. Still an inference — no PC-level attribution yet (§3.4 step 1) | Stops the investigation from converging on whichever name appears in `dmesg`. The name identifies who was resident, not who wrote |
+
+| **Medium-high** | 8 | **Register pressure is not the mechanism** | **Partially clears Triton's gfx1250 register allocator.** Does not clear Triton codegen generally | §3.8 | Dropping `_hstu_attn_bwd` from 917 to 760 VGPRs (0 spills, occupancy 1 in both) leaves the two-stream fault at 2/2. Behavioural, not inferred — but measured on the two-stream arm, so it transfers to the 1370 `nan` only as far as the two share a mechanism | Removes the most obvious candidate fix, and weakens the "high-VGPR" half of a0 defect **[7]**. The existing `BLOCK_N=64` pin in `triton_hstu_attention.py` is **not** a fix for this |
+
+**Two earlier claims are withdrawn.** Recorded so nobody rebuilds on them:
+
+| Withdrawn claim | Why it was wrong |
+|---|---|
+| "The fault needs **no concurrency at all**" | Arm 6 — serializing kernels suppresses it, so kernel overlap is required |
+| "`_hstu_attn_fwd` contains a `[b3]`-class int32 wrap" | Conclusion 6 — its addressing audits clean, and the int32 narrowings in it are dead code on HIP |
+
+**One consequence worth flagging.** [§3.5](#35-ruled-out-for-the-1370-nan) rules out
+the §3.6 contention bug for the 1370 `nan` because the e2e is single-stream
+(`use_pipeline=False`). That argument excludes **concurrent streams** — and that is
+all it excludes. The fault here is suppressed by serialization in a reproducer that
+is *itself* single-stream, so a **same-stream** variant of the defect exists, and
+that variant **is** available in the e2e. Read §3.5's verdict with that caveat.
+
+### 3.3 Suspicious root causes, ranked by confidence
+
+Ranked most-likely first. "Confidence" is confidence that this is the **root cause**
+of the 1370 `nan` — not confidence that the component is involved at all.
+
+| Rank | Suspect | Confidence it is the root cause | Why that confidence — what supports it, and what is missing | What would move it | Status |
+|---|---|---|---|---|---|
+| 1 | **Kernel overlap / concurrent execution on gfx1250** — a0 defect **[7]**, but the *concurrency* half only; see §3.8 | **High** that overlap is *necessary*; **Medium** that defect [7] is the *mechanism* (was Medium-high, cut by §3.8) | **For:** arm 8 settles necessity — 1500 repeats clean with one `synchronize()` between fwd and bwd, against a plain arm that faults twice in 700. §3.6 shows concurrent high-VGPR work on this host corrupts *unrelated* GPU work at up to 35 % of calls, on a0 too. **Missing:** necessary is not sufficient — still no mechanism and no attribution to a code site, and the e2e is single-stream, so the same-stream variant is inferred rather than shown. **The high-VGPR half of [7] is now measured and does not hold on its own:** 917 → 760 VGPRs leaves the fault at 2/2 ([§3.8](#38-register-pressure-in-_hstu_attn_bwd-measured-and-not-the-mechanism)) | PC attribution (§3.4 step 1) landing inside an overlap window; an e2e run that survives with fwd/bwd serialized | **Leading.** Has a rate, a reproducer, and now a suppressor |
+| 2 | **The backward kernel sequence** (`_hstu_attn_bwd` and its neighbours) | **Medium** | **For:** the fault only ever appears once backward work is in flight (conclusion 2, **High**), so the culprit is almost certainly *in* this set. **Missing:** which member. `_hstu_attn_bwd`'s own addressing audits **clean** (`:2528-2529`, `:2557-2563` use the correct int64-base idiom), so if it is the culprit it is not via a wrap | Auditing the remaining kernels in the backward sequence; PC attribution naming one | **Open.** Narrowed to a set, not a member |
+| 3 | **The 24 unread `<var>[:, None] * stride_*` sites in `ops/triton/`** | **Low-medium** | **For:** `[b3]` proves this exact bug class is live in this tree; a wrap of a *different* shape than `[b3]`'s would be missed by the audit pattern, and a smaller stride wraps at a higher row — which fits an onset that moved later rather than vanishing. **Missing:** entirely unaudited, and the 2 highest-risk sites were read and are clean, which is weak evidence against | Auditing the remaining 24 sites — cheap, mechanical, and the only item here with no dependencies | **Unaudited** |
+| 4 | **Allocator layout** (`expandable_segments:True`, the 19 GiB arena) | **Low — as a cause** | Not a candidate for the wild store itself, and ranked here only because it is a *modifier*: it shapes **where** a wild store lands and therefore whether it faults loudly or poisons silently. Cannot be the root cause; can be why the e2e is silent | `[b4]` (unset `PYTORCH_CUDA_ALLOC_CONF`) changing the failure *mode* rather than the rate | **Hypothesis, untested** |
+| 5 | **`_hstu_attn_fwd`** | **Very low** | Kept in the table only because it is the kernel named in the fault, and readers arriving from `dmesg` will look for it. Addressing audit is complete and **clean** (conclusion 6, **High**), and conclusion 7 explains the naming without it being at fault | Only a PC attribution landing inside it — nothing else should revive this | **Largely cleared.** Do not re-audit |
+
+### 3.4 Next steps
+
+**The current executable plan is in [§2.2](#22-current-evidence-and-next-experiment).**
+Capture the first unexpectedly large finite value as well as nonfinite values
+in the actual timestamp-zero training trajectory,
+preserve its inputs, weights, RNG state and upstream gradient, and replay
+that operation on one stream before reducing it or testing a fix. Preserve
+the production dtype and operator flags. The historical probe-validity
+audit in [§3.1](#31-what-the-reproducer-shows) prevents using its passes to
+exclude a component or justify attribution. The table below records the
+earlier fault-investigation plan; its PC-attribution work remains useful
+for those recorded faults.
+
+| # | Step | How | Cost | What it decides | Blocked by |
+|---|---|---|---|---|---|
+| 1 | **Attribute the fault to a PC** | `HSA_COREDUMP_PATTERN`, or bisect by disabling kernels. **Not `AMD_SERIALIZE_KERNEL`** — it changes the thing under test | hours | **Culprit vs victim.** The highest-value step: it unblocks 3 and 6 | — |
+| 2 | **Audit the remaining 24 `<var>[:, None] * stride_*` sites** in `ops/triton/` | static read, as for `[b3]` | ~1 h | Whether a **third wrap of a different shape** exists. A smaller stride wraps at a higher row, which fits an onset that moved later rather than vanishing | cheaper after 2 |
+| 3 | **Re-run the e2e at the same `SEED=1`** | change nothing else | ~45 min to onset | Whether the 1370 onset is **fixed or wanders**. Fixed → a deterministic cause to find. Wanders → the wild-store class is still live | — |
+| 4 | **Apply `[b4]`** — unset `PYTORCH_CUDA_ALLOC_CONF` | [§4](#4-changes-required-to-run-the-e2e-on-b0) | minutes | Worth doing **on its own merits**; also perturbs *where* a wild store lands, so it probes conclusion 5 | — |
+| 5 | **Reduce the reproducer to torch-only** | drop the `generative_recommenders` import | — | Makes it **handable to AMD without the repo**. §3.6 looks reducible already, since PyTorch was the *worse* victim there | 2 |
+
+### 3.5 Ruled out for the 1370 `nan`
+
+| Hypothesis | Verdict |
+|---|---|
+| The forward path | **Clean** — 800 repeats, bit-identical |
+| The `uvqk` stride-2048 int32 wrap | **Refuted.** `uvqk` is `N x 2048`, wrapping at `2**31/2048 = 1,048,576`, and production N is 2.7x past it — an attractive fit. N = 1,048,576 **and** 1,048,577 both pass fwd+bwd |
+| `_hstu_attn_bwd`'s own addressing | **Safe**, despite a concurrent run naming it. `:2528-2529` widen `off_h`/`seq_start` to int64, `:2557-2563` advance every base by them, inner offsets are tile-bounded (`<= max_seq_len`). Under §3.6's contention it was the **victim**, not the culprit |
+| Triton autotuner picking a bad config | **Refuted** — output varied *within* one process, where the config is fixed after the first call |
+| Weight-gradient divergence across repeats | **Unresolved; earlier exclusion withdrawn.** The cited atomic-add sites belong to RMSNorm/group-norm paths, not the weighted layer-norm/private-partial reductions exercised here. Historical `dx` PASS claims used an unconnected clone and performed no input-gradient comparison. See the [September 18 validity audit](#31-what-the-reproducer-shows); check the actual dispatched kernels before classifying drift as benign. |
+| Recurrence of the §7 gather corruption | **No** — `probe.py` clean 0/2000. But see the caveat in §3.6 |
+| LR/gradient blowup, OOB indices, hardware fault | Ruled out in [§5.1](#51-what-it-is-not) |
+
+### 3.6 The contention bug found alongside — real, but not the `nan`
+
+A second, genuine defect surfaced while chasing this, and it is **not** the `nan`:
+**concurrent high-VGPR GPU work corrupts or faults other GPU work on this host.**
+
+| Aggressor | GFX | Victim: distinct outputs / 20 identical calls | Worst error |
+|---|---|---|---|
+| none (idle) | 0 % | **1** — 120/120 clean, 3 procs, both paths | — |
+| bf16 GEMM + gather, 150 GiB | 100 % | ~1 event in 420 calls | 1.3e-05 |
+| **Triton HSTU fwd+bwd, separate process** | 100 % | **7, 9, 7 → ~35 % of calls wrong** | **1.8e-01** |
+| **Triton HSTU, same process, 2nd stream** | 100 % | **hard fault** in `_hstu_attn_bwd` | — |
+| none again, straight after | 0 % | **1, byte-identical to the idle row** | — |
+
+- **Not "the GPU is busy"** — both aggressors pin GFX at 100 %; only the high-VGPR
+  one corrupts, 175x more often. This is a0 defect **[7] high-VGPR + concurrent
+  streams**, now with a rate and a reproducer.
+- **Not a Triton bug** — under the HSTU aggressor **PyTorch is the worse victim**.
+  The victim path is incidental.
+- **Not latched** — it clears the moment the aggressor stops, and the correct
+  answer is bit-identical before and after. **Do not AC power-cycle for this one**;
+  that was [§7](#7-if-gather-corruption-returns-the-ac-power-cycle), a
+  different bug.
+- **Why it is not the 1370 `nan`:** the e2e is single-stream.
+  `train_loop()` takes `use_pipeline: bool = False`
+  ([`train/utils.py:1720`](../../generative_recommenders/dlrm_v4/train/utils.py)),
+  `train_ranker.py:387` does not pass it, and nothing else sets it — so TorchRec's
+  overlap pipeline is off, and on 1 GPU there is no a2a either.
+  **Caveat, added after the `_hstu_attn_fwd` audit:** this argument excludes
+  *concurrent streams*, and that is all it excludes. `AMD_SERIALIZE_KERNEL=3`
+  suppresses the §3.1 fault in a reproducer that is itself single-stream, so a
+  **same-stream** variant of this defect exists and *is* available in the e2e.
+  See the end of [§3.1](#31-what-the-reproducer-shows).
+
+**Consequence for this whole investigation:** any number taken on this host while
+another GPU job was running is suspect, **including `probe.py` runs used to declare
+the host healthy**. A clean `probe.py` is necessary, not sufficient. Re-take
+anything that matters on an idle GPU.
+
+Aggressor script:
+[`scripts/repro_gfx1250_contention_load.py`](../../scripts/repro_gfx1250_contention_load.py)
+(21 lines, pure torch, no repo imports).
+
+### 3.7 The other reproducers, and what they are still for
+
+| Script | Still for |
+|---|---|
+| [`repro_gfx1250_layernorm_i32.py`](../../scripts/repro_gfx1250_layernorm_i32.py) | `[b3]`, the **fixed** int32 wrap. Regression test: N=4,194,305 faulted before the fix, passes after. **a0 is still exposed** — see [§4.1](#41-what-is-still-not-established) |
+| [`repro_gfx1250_hstu_layer.py`](../../scripts/repro_gfx1250_hstu_layer.py) | Long soaks at production shapes with `nan` checks and a canary buffer; also the high-VGPR aggressor in §3.6 |
+| [`repro_gfx1250_contention_load.py`](../../scripts/repro_gfx1250_contention_load.py) | The §3.6 aggressor, torch-only |
+| [`repro_gfx1250_twostream_fault.py`](../../scripts/repro_gfx1250_twostream_fault.py) | The §3.6 same-process two-stream fault. `AGGRESSOR=0` is the control |
+| `runs/docker_env_probe/probe.py` | The §7 gather check — **necessary, not sufficient** (see §3.6) |
+
+---
+
+### 3.8 Register pressure in `_hstu_attn_bwd`: measured, and not the mechanism
+
+`ops/triton/triton_hstu_attention.py` already carries a gfx1250 workaround, and its
+comment describes our exact symptom:
+
+> `BLOCK_N=128 reaches the 1024-VGPR ceiling and intermittently corrupts a store address. 64 uses 758 VGPRs without spilling.`
+
+So somebody had already tied a wild store in this kernel to register pressure, and
+pinned `BLOCK_N=64`. We still fault with that pin in place. Measured with
+[`scripts/probe_gfx1250_bwd_vgpr.py`](../../scripts/probe_gfx1250_bwd_vgpr.py),
+which reads `.vgpr_count` / `.vgpr_spill_count` / `Occupancy` out of the cached
+AMDGCN assembly (Triton's `.json` metadata carries no register counts):
+
+| `BLOCK_N` | VGPRs | VGPR spills | SGPR spills | Occupancy | Two-stream 400 k arm |
+|---|---|---|---|---|---|
+| 64 (the current pin) | **917** | 0 | 0 | 1 | **FAULT**, 3/3 in ~25 s; 2/2 again here |
+| 32 | **760** | 0 | 0 | 1 | **FAULT**, 2/2 within 600 s |
+
+Two things follow, and they point in opposite directions.
+
+**The pin looks one step short of its own intent.** On this toolchain `BLOCK_N=64`
+compiles to **917** VGPRs — 90 % of the 1024 ceiling — not 758. The config that
+actually lands on ~758 is `BLOCK_N=32`, at **760**. Whoever wrote that comment
+appears to have measured 32 and pinned 64.
+
+**But fixing that does not fix the bug.** `BLOCK_N=32` still faults 2/2. Cutting
+register pressure 917 → 760, with zero spills and unchanged occupancy in both cases,
+does **not** suppress the corruption. So **register pressure alone is not the
+mechanism**, the existing workaround is not a fix for this defect, and the
+"high-VGPR" half of a0 defect **[7]** is weakened as an explanation — concurrency,
+not register count, is carrying the effect ([§3.2](#32-what-we-conclude)
+conclusion 3).
+
+`HSTU_BWD_BLOCK_N` was added to that file as an env override so the sweep can be
+repeated without editing source:
+
+```bash
+EXTRA=HSTU_BWD_BLOCK_N=32 gr repro_gfx1250_fast_fault.py --rows 400000 --streams 2
+```
+
+**A trap worth knowing.** A GPU fault here can write a coredump the size of the
+process. One of these runs filled the host filesystem. Pass
+`-e HSA_ENABLE_COREDUMP=0` unless you specifically want the dump.
+
+## 4. Changes required to run the e2e on b0
+
+**One table, and it is the only place a b0-specific change is described.** Same
+shape as [`mi450_a0.md` §4](../mi450_a0/mi450_a0.md#4-changes-applied-to-master),
+and it sits **on top of** that table rather than replacing it: a0's rows 1–15 are
+the baseline this branch already carries, and everything below is what b0 needs
+*in addition*. Bracketed ids `[b1]`–`[b7]` are stable — cite those, not row
+numbers.
+
+Rows `[b1]`–`[b2]` are host state and must be done before any run. `[b3]` is the
+only **source** change, and the only entry here that is a true fix rather than a
+configuration dodge or a recovery step. `[b4]` was **not applied to the
+September 16 A/B**. `[b5]`–`[b7]` are inherited or operational.
+
+**Scope of the historical `[b4]` status below:** the September 18 test did
+clear the allocator setting, but changed the image and start timestamp as
+well. Its initial-window stall leaves the effect on NaN unassessed; the
+“not applied / untested” entries describe the September 16 comparison.
+
+| # | Change (where) | Motivation | Perf impact | Potential downside | Status / follow-up |
+|---|---|---|---|---|---|
+| **[b1]** | **Full AC power cycle** of the host — out-of-band via BMC `10.5.217.131` (`ipmitool chassis power cycle`) or at the rack | **§§2–5's silent gather corruption.** `index_select` returned wrong rows at 82–95 % (D=16) with dense GEMM provably clean in the same process. Nothing in software fixed it: four container images across two different LLVMs corrupted identically, and it survived **8+ warm reboots**. Only removing AC power cleared it ([§7](#7-if-gather-corruption-returns-the-ac-power-cycle)) | **None, by construction** — it restores correct behaviour rather than trading for it. Throughput before the cycle is not a meaningful baseline: the run died at step 212 | Costs the host. **Mechanism unknown**, so this is a known-working *recovery for an open defect*, not a root-cause fix — present it that way to the driver/hardware team. **n=1 and unattributable**: two cycles happened on 2026-09-16 and the GPU could not be measured between them | **Applied 2026-09-16, verified** 0/2000 probe, 0/600 on all 14 reproducer arms. **Recurrence is plausible** — rates grew with uptime (14.67 %→82–95 %). **Re-run `probe.py` before trusting any long run, and record host uptime with each measurement** |
+| **[b2]** | **`sudo modprobe amdgpu gpu_recovery=0`** — by hand after every boot. **Never** `/opt/amd-apps/fw-bringup/scripts/setup/post-reboot-gpu.sh` | The kernel cmdline carries `modprobe.blacklist=amdgpu,device_dax,dax_hmem`, so **nothing loads the driver automatically**. The bring-up script's Step 1 (DF Venice toollib) crashes the *subsequent* load — NULL deref in `gfx_v12_1_xcc_cp_resume` inside `amdgpu_pci_probe`, reproduced 3× on 2026-09-16 — and all its SMN writes read back zero, i.e. it is not functioning here | **None, unmeasured — expected exactly zero.** The working config is essentially stock (`discovery=-1`, `ip_block_mask=0xffffffff`); `gpu_recovery=0` only changes what happens *after* a hang | If a load oopses the module sticks in `MODULE_STATE_COMING` with **no in-band recovery** (`CONFIG_MODULE_FORCE_UNLOAD` unset, no `bind`/`unbind`), and only a reboot clears it. `modprobe -r amdgpu` on a live driver after the toollib has altered IP state wedges the board **past warm reset** | **Standing procedure.** Verify `cat /sys/module/amdgpu/initstate` → `live`. The host is **not in `fw-bringup/config/machines.yaml` at all** — the script was never meant for it; worth flagging to whoever owns the fleet config |
+| **[b3]** | **`rows` widened to `int64` in `triton_layer_norm.py`** — `rows_i64 = rows.to(tl.int64)` defined once per kernel immediately after `row_mask`, used by **all 13 strided loads and stores across 5 kernels** (`_layer_norm_fwd`, `_weighted_layer_norm_fwd`, `_weighted_layer_norm_bwd_dx`, `_weighted_rms_norm_fwd`, `_weighted_rms_norm_bwd_dx`). No raw `rows[:, None] * stride_*` survives in the file | **The `train_loss=nan` at step ~295 — the one genuine source bug found on b0.** Same defect class as a0 `[3]`, in a file a0's fix never touched.<br>• **Mechanism:** `rows * stride_x` overflows int32 past 2³¹ elements and wraps negative, while `row_mask = rows < N` is computed on the *unwrapped* row id — so the wild access proceeds **under a passing mask**. A bounds check and an address computed from different values, exactly a0 `[3]`'s pattern.<br>• **At `D = 512` the wrap row is `2**31/512 = 4,194,304`.**<br>• **Verified on hardware, to the row and to the byte:** `N=4,194,304` PASS, `N=4,194,305` **memory fault** in `_weighted_layer_norm_fwd`, faulting address **8.004 GiB** below `Y` against `2**31 × 4 B = 8 GiB`. `dmesg`: `GC_UTCL2`, client `TCP (0x8)`, `RW: 0x1` — the **same signature as §2's original step-212 e2e fault**.<br>• **Why b0 saw it and a0 did not:** a0's `[3]` kernel has `stride = 3*D = 1536`, wrapping at row **1,398,102**, i.e. on essentially every batch at `N ≈ 2.74M`. These kernels wrap only above **4,194,304**, so they trip only on unusually large batches ([§5.4b](#54b-why-a0s-3-fix-did-not-already-cover-this)).<br>• Full detail: [§5](#5-fixed-an-int32-address-wrap-in-triton_layer_normpy-b3). Reproducer: `scripts/repro_gfx1250_layernorm_i32.py` | **Measured 2026-09-16: none.** Matched-step A/B over steps 100–290, the window where the patched and unpatched runs are bit-identical in loss: **560.5 samples/s patched vs 560.4 unpatched** (sd 14.0 / 14.2, n=20 each) — **+0.02 %**, Welch `t = 0.02`, i.e. indistinguishable from run-to-run noise. Step time 1828.1 ms vs 1828.5 ms. Over the patched run's full healthy range (steps 100–1110, n=102) throughput is **555.4 ± 12.2** samples/s, range 532.5–587.0. Expected to be free: it is address arithmetic on a `BLOCK_N`-sized vector once per tile, not per element | **None.** A strict widening, matching what `:265–:267`, `:410–:411` and `:865–:867` in the same file already did. `Mean + rows` / `Rstd + rows` are deliberately untouched (element stride 1, cannot reach 2³¹ before `N` does), and `row_mask` deliberately stays on the narrow `rows` | **Applied 2026-09-16 — NECESSARY BUT NOT SUFFICIENT.** The widening is correct and load-bearing: the reproducer is clean past two full wraps (`N=8,388,609`), `rms_norm` too, and the e2e cleared step 300 with **0.13873 where the unpatched run was `nan`** from a bit-identical trajectory. **But the run then went `nan` at step 1370 and stayed there** (`b1024_a30_i64fix_0916_0455`, 2026-09-16). The fix **delays the failure 4.6× (300 → 1370); it does not eliminate it.** No fault, no traceback, `dmesg` clean — the same silent signature. **Fails a0's ≥3000-step bar** ([§5.6](#56-bar-for-calling-this-fixed)). Keep it and **still upstream it** — it is a genuine defect a0 is exposed to — but **a second defect remains open**; see [§2](#2-the-open-blocker-train_lossnan-at-step-1370) |
+| **[b4]** | **Unset `PYTORCH_CUDA_ALLOC_CONF`** — currently `expandable_segments:True` at [`scripts/run_prod_convergence_1gpu.sh:93`](../../scripts/run_prod_convergence_1gpu.sh#L93), `Dockerfile:90`, `Dockerfile.amdprimus0815:137`, `scripts/run_smoke_shrink_1gpu.sh:43`, `scripts/launch_local.sh:73`, `scripts/launch_slurm.sh:610` | On this stack the flag **caps the torch caching allocator at 19 GiB of a 432 GiB card** — ~5 %. Measured A/B with 1 GiB chunks: `True` → OOM at 19 GiB; unset → **392 GiB OK**, peak reserved 399 GiB. Not contention and not partitioning — `mem_get_info` reports 431.7 GiB free in *both* cases and 256 CUs are visible ([§6](#6-worked-around-expandable_segmentstrue-caps-vram-at-19-gib)) | **Unmeasured, expected small either way — and untested at batch 1024.** It removes a cap the run does not currently hit, since fbgemm TBE allocates the ~150 GB of tables outside the caching allocator. Direction is genuinely unknown: expandable segments trade allocator fragmentation against mapping cost | Loses whatever fragmentation benefit expandable segments were added for — unquantified here | **NOT APPLIED — deliberately.** Left on so [b3] is the only variable in the current A/B. **Remove it next, on its own merits.** Whether the 19 GiB arena contributed to [b3] presenting as silent poisoning rather than a fault is a **hypothesis, untested** |
+| **[b5]** | **`AMDGCN_USE_BUFFER_OPS=0`** — inherited from [`mi450_a0.md` §4 row 1](../mi450_a0/mi450_a0.md#4-changes-applied-to-master) | a0 `[1]`: the buffer-op pass group wedges the **whole node**. Unchanged on b0 | **Unmeasured, on b0 as on a0.** Not a free choice in any case — the alternative wedges the node, so there is no baseline to measure against | As on a0 | **Mandatory, and it costs a reboot to get wrong.** Already defaulted by the runner scripts |
+| **[b6]** | **a0 §4 rows 1–15 in full** — the branch baseline | Every a0 workaround still applies on b0; none were found unnecessary here | See a0 §4 | See a0 §4 | **Inherited unchanged.** Note a0 row 15 (`[3]`) is present and verified in the bind-mounted source — it is **not** the b0 NaN ([§5.1](#51-what-it-is-not)) |
+| **[b7]** | **Use `amd-smi`, not `rocm-smi`** | `rocm-smi` is broken on this host (`NameError: SMI_HASH`) | **None — not a perf knob.** Diagnostic tooling only; it touches nothing in the training process | Also makes `post-reboot-gpu.sh` exit 1 at its final cosmetic step — irrelevant, since [b2] says never run it | Operational only |
+
+### 4.1 What is still not established
+
+- **[b3] FAILED a0's ≥3000-step bar** — `nan` at step 1370, see [§2](#2-the-open-blocker-train_lossnan-at-step-1370). What follows was written when it had only reached step 300:
+- **[b3] has not cleared a0's ≥3000-step bar.** Clearing step 300 is strong
+  evidence — the unpatched run died there from a bit-identical trajectory — but
+  a0 records Triton 3.7.1 looking fixed at 250 steps and dying at 2200.
+- **[b1]'s mechanism is unknown, and recurrence is plausible.** Nothing here
+  predicts when the corruption comes back.
+- **[b4] does not eliminate NaN in the September 18 combination:** the
+  post-reboot start-zero baseline reproduced it at logged step 60 with the
+  allocator settings cleared. A matched allocator-only comparison remains absent.
+- **Jagged `N`'s actual distribution has never been read from a live kernel** —
+  a0's `N ≈ 2.74M` is a corpus *average*. [b3] working proves the **maximum**
+  exceeds 4,194,304; the distribution is still unmeasured
+  ([§5.4](#54-what-the-reproducer-does-not-establish)).
+- **The 1e-5 loss divergences at steps 270/280** between the pre- and post-fix
+  runs are unexplained ([§5.5](#55-the-fix)).
+
+---
+
+
+---
+
+## 5. Fixed: an int32 address wrap in `triton_layer_norm.py` (`[b3]`)
+
+With the corruption gone, the batch-1024 e2e (`b1024_a30_postfix_0916_0419`,
+2026-09-16) **cleared the old step-212 blocker** — and then:
+
+```
+Step 290 train_loss=0.13945      <- last finite
+Step 300 train_loss=nan          <- and nan for every step through 600
+```
+
+Loss was flat in **0.13763–0.14014** through step 290, matching
+[`mi450_a0.md` §3.1](../mi450_a0/mi450_a0.md#31-the-confirming-runs)'s post-fix
+reference range almost exactly, then NaN forever. Logging is every 10 steps, so
+the true onset is in `(290, 300]`. The run completed to step 600 and exited 0
+with `run_stop status="aborted"`.
+
+**Throughput over the healthy window (steps 110–270, n=17):**
+
+| Metric | Value |
+|---|---|
+| `local_sps` | **559.4 samples/s** (min 536.7, max 586.4) |
+| `step_ms` | 1831.7 ms |
+| MFU | 5.62 % |
+| 8-GPU projection | **~4,475 samples/s** — *linear scaling, an upper bound; no multi-GPU run has been measured on this host* |
+
+### 5.1 What it is not
+
+Each tested, not assumed:
+
+| Hypothesis | Why it is out |
+|---|---|
+| The [§7](#7-if-gather-corruption-returns-the-ac-power-cycle) gather corruption | `probe.py` run **concurrently with the NaN'ing process** gave **0/2000 bad** |
+| LR or gradient blowup | LR at the NaN is `1.25e-08`, and gradient clipping is **on** at `max_norm=1` |
+| Hardware fault | `dmesg` clean since driver load; no page fault, no FED, no XGMI event |
+| Bad embedding indices | `bounds_check_mode=WARNING` logged **zero** OOB indices for the whole run |
+| a0 defect **[3]** | Its `rows_i64 = rows.to(tl.int64)` fix **is** present in `generative_recommenders/ops/triton/triton_hstu_linear.py:186`, used by the X/U loads (`:189`, `:194`), the mask (`:236`) and all eight Y stores (`:272`–`:310`). Verified in the **bind-mounted** source, not just the repo |
+
+### 5.2 What it is: the same class as [3], in a different file
+
+`generative_recommenders/ops/triton/triton_layer_norm.py` computes row addresses
+in **int32**. The pattern, verbatim from `_weighted_rms_norm_fwd`:
+
+```python
+rows = start_row + tl.arange(0, BLOCK_N)     # int32
+row_mask = rows < N                          # bounds check on the UNWRAPPED id
+x_block = tl.load(
+    X + rows[:, None] * stride_x + cols[None, :],   # address from the WRAPPED product
+    mask=mask_2d, other=0.0,
+)
+```
+
+This is [3]'s exact signature: **the bounds check and the address are computed
+from different values.** `rows < N` passes, while `rows * stride_x` has already
+wrapped negative, so the masked access is *enabled* and lands ~8 GiB below the
+tensor.
+
+**Thirteen un-widened sites, while the same file widens elsewhere** — [3]'s
+"neighbours widen, this one doesn't" tell:
+
+| Kernel | Un-widened `rows[:, None] * stride_*` | Note |
+|---|---|---|
+| `_layer_norm_fwd` (:109) | `:134`, `:164` | |
+| **`_weighted_layer_norm_fwd`** (:175) | **`:208`, `:242`** | **on the HSTU path** (`ops/hstu_compute.py:106`); **reproduced below** |
+| `_weighted_layer_norm_bwd_dx` (:297) | `:342`, `:347`, `:385`, `:398` | |
+| **`_weighted_rms_norm_fwd`** (:790) | **`:817`, `:839`** | a0 flagged this one **by name** as unprotected |
+| `_weighted_rms_norm_bwd_dx` (:846) | `:954`, `:959`, `:988` | |
+
+Already widened in the same file: `row.to(tl.int64)` at `:265`–`:267`, `:865`–`:867`,
+and `pid.to(tl.int64)` at `:410`–`:411`.
+
+### 5.3 The reproducer — confirmed, to the row and to the byte
+
+[`scripts/repro_gfx1250_layernorm_i32.py`](../../scripts/repro_gfx1250_layernorm_i32.py).
+`torch` plus the repo's public `layer_norm` / `rms_norm` wrappers — no dataset, no
+fbgemm, no TorchRec, no training loop.
+
+At `D = 512` the wrap row is `2**31 / 512 = 4,194,304`:
+
+```
+N=1,000,000   bad_rows=0  canary_bad=0   PASS
+N=2,740,000   bad_rows=0  canary_bad=0   PASS     <- a0's estimate of production jagged N
+N=4,194,303   bad_rows=0  canary_bad=0   PASS
+N=4,194,304   bad_rows=0  canary_bad=0   PASS     <- max offset 2,147,483,136, just under 2**31-1
+N=4,194,305   MEMORY FAULT in _weighted_layer_norm_fwd
+```
+
+**Predicted to the row**, and the fault address confirms the mechanism to the byte:
+
+| | |
+|---|---|
+| `y` base | `0x705907a00000` |
+| faulting address | `0x705707600000` |
+| delta | **8,594,128,896 B = 8.004 GiB** |
+| `2**31` elements × 4 B | **8 GiB** |
+
+An int32 offset wrapping negative, exactly. `dmesg`:
+
+```
+page starting at address 0x0000705707600000 from IH client 27 (GC_UTCL2)
+Faulty UTCL2 client ID: TCP (0x8)     RW: 0x1 (write)
+PERMISSION_FAULTS: 0x5   MORE_FAULTS: 0x0   FED: 0x0   die AID0.XCD0
+```
+
+> **Note the `GC_UTCL2` / `TCP` signature is the same one §7's original step-212
+> e2e fault carried.** That points at this software defect rather than at
+> silicon. Suggestive, not proof — `TCP` is where the symptom surfaces, not proof
+> of where the cause lives.
+
+The GPU survived cleanly: `initstate=live`, VRAM back to 167 MB, matmul finite,
+no wedge.
+
+Run it with:
+
+```bash
+docker exec -e AMDGCN_USE_BUFFER_OPS=0 -e PYTORCH_CUDA_ALLOC_CONF= triton-7ff97e-test \
+  bash -lc 'python /workspace/recommendation/scripts/repro_gfx1250_layernorm_i32.py'
+```
+
+`PYTORCH_CUDA_ALLOC_CONF` must be **empty** — see
+[§6](#6-worked-around-expandable_segmentstrue-caps-vram-at-19-gib).
+
+### 5.4 What the reproducer does *not* establish
+
+Stated plainly, because it is the one gap between this defect and the NaN:
+
+- **Whether production reaches `N > 4,194,304` was the open question — and the
+  e2e A/B in [§5.5](#55-the-fix) now says it does.** An int64 widening is a
+  *no-op* unless something exceeds int32, and it changed the outcome at step 300,
+  so something did. The reconciliation with a0's `N ≈ 2.74M` is that **jagged `N`
+  varies per batch**: sequence lengths differ, so `total_rows` is not fixed, and a
+  corpus *average* says nothing about the tail. The wrap fires on whichever batch
+  first exceeds 4,194,304 rows.
+
+  This also explains the **wandering onset** (a0 saw step 91 vs ~190 under an
+  identical seed) better than the allocator-accident story does: it is which
+  *batch* is large enough, not which tensor happens to sit below `Y`.
+
+  Still worth measuring `N` directly — but for its **maximum and distribution**,
+  not its mean. `N` is known by step 1, so a ~5-step instrumented run answers it.
+- **A tempting coincidence that does *not* hold up:** `1024 × 4096 × 512 = 2**31`
+  exactly, i.e. `BATCH_SIZE × MAX_SEQ_LEN` *is* the wrap row. But there is **no
+  `jagged_to_padded` conversion on the HSTU path** — `layer_norm` receives the
+  jagged `[total_rows, D]` tensor, with 1.53× margin. This was the leading
+  candidate and the arithmetic does not support it.
+- **The reproducer faults; production NaNs.** Not a contradiction — it faults only
+  because in a small probe the memory 8 GiB below `y` is unmapped. In the
+  training process, holding ~150 GB, that address lands in **live allocations**,
+  so the wild store poisons rather than faults. That silent-poisoning asymmetry
+  is [3]'s recorded signature.
+- The 6 GiB canary was too small to catch an 8 GiB-below access. Catching the
+  silent case needs a canary **> 8 GiB allocated *below* `y`** — and this
+  allocator hands out *descending* addresses, so the canary must be allocated
+  *after* `y`, which means driving the Triton kernel directly instead of through
+  the wrapper.
+- **`rms_norm` and `N = WRAP + 100_000` were never run** — the script aborted at
+  the first fault.
+
+### 5.4b Why a0's [3] fix did not already cover this
+
+a0 fixed this **defect class** and the fix **is** in the repo — commit `1a3dcd6`,
+*"Fix int32 row-offset overflow in `_ln_mul_dropout_fwd_rng` (gfx1250 nan)"*. But
+`git show --name-only 1a3dcd6` lists exactly one file:
+`generative_recommenders/ops/triton/triton_hstu_linear.py`. **It never touched
+`triton_layer_norm.py`.**
+
+The commit states its audit was complete — *"The backward kernels were audited …
+so the forward was the only defect"* — and that is true **within that file**. The
+audit never crossed into `triton_layer_norm.py`, which carries the identical
+pattern in five kernels.
+
+**Why a0's run passed anyway: the wrap rows differ by 3×.**
+
+| | kernel | stride | wrap row |
+|---|---|---|---|
+| a0 fixed (`1a3dcd6`) | `_ln_mul_dropout_fwd_rng` | `3*D` = 1536 | **1,398,102** |
+| fixed here ([§5.5](#55-the-fix)) | `_weighted_layer_norm_fwd` | `D` = 512 | **4,194,304** |
+
+At jagged `N ≈ 2.74M`, a0's kernel wrapped on **essentially every batch** — hence
+NaN by step ~190, 2/2. `triton_layer_norm.py` needs `N > 4.19M`, so it trips only
+on unusually large batches. **a0's 600 clean steps were not evidence that file was
+safe; they were the rarer trip not yet happening.** This is a0's own reasoning
+from the same commit — *"Batch size enters only by scaling N past the wrap row,
+which is why this presents as batch-gated while being a pure row-count bug"* —
+simply never applied to the second file.
+
+> **Consequences worth acting on:**
+> - The [§5.5](#55-the-fix) fix is **new work, not a re-application**, and
+>   belongs upstream. **a0 is exposed to it today** and has only been lucky.
+> - a0's `600/600` batch-1024 result does **not** clear `triton_layer_norm.py`,
+>   and a0's own ≥3000-step bar was never met for these kernels.
+> - a0's doc mentions `_weighted_rms_norm_fwd` repeatedly, but always as a
+>   **`clamp_num_stages` coverage gap** (defect [4] — it uses a raw
+>   `@triton.autotune`), never as an int32 risk. The two were never connected.
+
+### 5.5 The fix
+
+Widen the row index once per kernel and use it for every load and store — the
+same shape as [3]'s fix in `triton_hstu_linear.py:186`:
+
+```diff
+     rows = start_row + tl.arange(0, BLOCK_N)
+     row_mask = rows < N
++    rows_i64 = rows.to(tl.int64)
+     mask_2d = row_mask[:, None] & col_mask[None, :]
+     x_block = tl.load(
+-        X + rows[:, None] * stride_x + cols[None, :],
++        X + rows_i64[:, None] * stride_x + cols[None, :],
+         mask=mask_2d, other=0.0,
+     ).to(tl.float32)
+```
+
+Apply to all 13 sites in the §5.2 table. Keep `row_mask` on the **narrow**
+`rows` — widening the comparison is unnecessary and widening only the address is
+the entire point.
+
+Cost is negligible: it is address arithmetic on a `BLOCK_N`-sized vector, once per
+tile, not per element.
+
+**APPLIED 2026-09-16** to all 13 sites across all 5 kernels (`rows_i64` is defined
+once per kernel, immediately after `row_mask`, and used by every strided load and
+store; `row_mask` itself stays on the narrow `rows`).
+
+**Verified against the §5.3 reproducer — the fault is gone:**
+
+| `N` | before | after |
+|---|---|---|
+| 4,194,303 | PASS | PASS |
+| 4,194,304 | PASS | PASS |
+| **4,194,305** | **MEMORY FAULT** | **PASS** |
+| 4,294,304 | *(never reached)* | PASS |
+| **8,388,609** | *(never reached)* | **PASS** — two full wraps |
+
+`bad_rows=0`, `nonfinite=0`, `canary_bad=0` at every size, against a `torch`
+reference. **`rms_norm` passes the same sweep** — `_weighted_rms_norm_fwd` is the
+kernel a0 flagged by name and it had never been exercised past the wrap before.
+
+**Verified end to end** (`b1024_a30_i64fix_0916_0455`, same `SEED=1`, same
+container, `expandable_segments:True` deliberately left in place so the fix is
+the only variable):
+
+| Step | pre-fix `b1024_a30_postfix_0916_0419` | post-fix |
+|---|---|---|
+| 260 | 0.13939 | 0.13939 |
+| 270 | 0.13846 | 0.1384**7** |
+| 280 | 0.13763 | 0.1376**4** |
+| 290 | 0.13945 | 0.13945 |
+| **300** | **`nan`** | **0.13873** |
+| **310** | **`nan`** | **0.13898** |
+
+Bit-identical trajectory up to the cliff, then the pre-fix run NaNs forever and
+the patched run continues in band. That is the signature wanted from an
+*addressing* fix: it changed which bytes are touched, not what the math computes.
+Throughput is unchanged — 550.7 vs a pre-fix mean of 559.4 samples/s, inside the
+536.7–586.4 run-to-run spread.
+
+> **The 1e-5 divergences at steps 270 and 280 are not explained.** The benign
+> reading — and the likelier one, since step 290 snaps back to an exact match —
+> is atomic accumulation order in the `dw`/`db` reduction surfacing in the last
+> printed digit. The uncomfortable reading is early silent poisoning in the
+> pre-fix run. **Nothing in this data separates them.**
+
+> **Do NOT reach for `DEBUG_NAN_HOOKS` to chase this.**
+> [`mi450_a0.md`](../mi450_a0/mi450_a0.md) item 12 records that the hooks are
+> unusable on Triton 3.8.0 — they fault at `gstep=0` — and this is that stack.
+> `DEBUG_NAN_HOOKS=2` has itself wedged the GPU.
+
+### 5.6 Bar for calling this fixed
+
+a0's bar is **≥3000 steps**, and it is there for a reason: AMD Triton 3.7.1 once
+looked fixed at 250 steps and went NaN at 2200. **600 clean steps does not close
+this class of defect**, and neither does clearing step 300.
+
+`b1024_a30_i64fix_0916_0455` was the run against this bar. **VERDICT, 2026-09-16:
+it FAILED.** Clean through step 1360, `nan` at **1370**, and `nan` at every logged
+step after (1380 … 1450+). Throughput was flat at 555.0 samples/s across the
+transition, with no fault, no traceback and a clean `dmesg`.
+
+Passing step 300 was strong evidence for the widening — the unpatched run died
+there from a bit-identical trajectory — but it was **one cliff, not the bar**,
+and the bar is what caught this. The gap between the two is the whole reason a0
+set it at 3000. Full analysis in [§2](#2-the-open-blocker-train_lossnan-at-step-1370).
+
+Two things that remain true whatever that run does:
+
+- The fix is correct on its own terms regardless of the e2e outcome — §5.3's
+  reproducer faults without it and passes with it, and that is independent of
+  whatever else this host does.
+- **The `expandable_segments:True` bug in [§6](#6-worked-around-expandable_segmentstrue-caps-vram-at-19-gib)
+  is still present in this run**, deliberately, to keep the fix the only variable.
+  It should be removed next, on its own merits.
+
+The allocator statement above describes the **September 16 reference run**.
+The September 18 start-zero test cleared it; after an initial stall and host
+reboot, the baseline **reproduced NaN at logged step 60**. It therefore
+also **failed the 3000-step bar**
+([§1.2](#september-18-requested-combination-starting-at-timestamp-zero)).
+
+
+---
+
+## 6. Worked around: `expandable_segments:True` caps VRAM at 19 GiB
+
+Unrelated to §§5 and 7, found while building the §5 reproducer, and it affects
+runs retaining this allocator setting.
+
+Measured by allocating 1 GiB fp32 tensors in a loop inside `triton-7ff97e-test`
+(torch `2.11.0+rocm7.14.0a20260625`, gfx1250):
+
+| `PYTORCH_CUDA_ALLOC_CONF` | Result | Peak reserved |
+|---|---|---|
+| `expandable_segments:True` | **OOM at 19 GiB** | 19.004 GiB |
+| *(unset)* | **392 GiB OK** | **399.0 GiB** |
+
+**That is ~5 % of the card.** It is not contention and not partitioning:
+`torch.cuda.mem_get_info` reports free = 431.7 GiB / total = 432.0 GiB in *both*
+cases, `amd-smi` shows `USED_VRAM: 167 MB` with "No running processes detected"
+and no KFD clients, and 256 CUs are visible (so not an XCP slice).
+
+The flag is set in **five** places, including the one the e2e uses:
+
+| Location | |
+|---|---|
+| [`scripts/run_prod_convergence_1gpu.sh:93`](../../scripts/run_prod_convergence_1gpu.sh#L93) | **the e2e path** |
+| `Dockerfile:90`, `Dockerfile.amdprimus0815:137` | container-wide `ENV` |
+| `scripts/run_smoke_shrink_1gpu.sh:43`, `scripts/launch_local.sh:73`, `scripts/launch_slurm.sh:610` | |
+
+The e2e trains anyway because fbgemm TBE allocates the ~150 GB of embedding
+tables outside the PyTorch caching allocator. But **every torch tensor in the run
+is confined to a ~19 GiB arena** — which is also precisely the kind of dense,
+fully-live region an 8 GiB-negative wild store would land in. Consistent with
+§5's silent-poisoning mechanism; **not evidence for it.**
+
+**Recommended:** re-run the e2e with `PYTORCH_CUDA_ALLOC_CONF` unset. It is a
+one-variable change that both removes a demonstrably broken setting and tests
+whether the allocator layout is implicated in the NaN.
+
+**September 18 update:** both allocator settings were cleared for the
+new-image, start-zero test. The post-reboot baseline still reproduced NaN
+at logged step 60, so clearing this setting does not prevent NaN under that
+combination. A matched allocator comparison against the September 16
+reference is still absent.
+
+---
+
+
+---
+
+## 7. If gather corruption returns: the AC power cycle
+
+**September 20 update: both health controls pass on the current boot.**
+The original GPU comparison passes all four 1,000-iteration arms at
+**02:11 UTC**, exit **0**. Its before/after kernel messages are identical
+after timestamp normalization, and the boot ID is unchanged. The new
+CPU-reference control passes the same four arms at **02:14 UTC**, exit **0**,
+including complete source checks before/after each arm and every output
+column on every iteration. It uses the same GPU source/random-index
+construction; D2H copies and CPU checks change the workload's timing.
+
+Current boot is `05c3c692-9f81-44ce-98cb-5bed8231635b`, with observed driver
+`gpu_recovery=-1` and `halt_if_hws_hang=0`, left unchanged. This differs from
+the boot of the 07:11 failure, so the passing checks do not isolate a recovery
+mechanism. Artifacts are
+`continue_20260919T065146Z/health_20260920T021123727786Z/` and
+`resume_20260920/health_cpu_20260920T021444Z/` under the §2.2 run root.
+The [September 20 continuation](nan_triage_resume_20260920.md) records the
+subsequent forward controls; none establishes a training fix.
+
+**September 19 failure: preserved historical observation; cause open.**
+After the unrelated host `tensile_client` benchmark had exited, the
+investigation ran `gather_health.py` at **07:11:01–07:11:02.449157 UTC** in
+`mi450-b0-0910-7ff-start0`, using Torch `2.11.0+rocm7.14.0a20260625`, HIP
+`7.14.60850`, and `gfx1250`. The script uses seed 11, 2,347,656 source rows,
+float32 source values equal to each row's integer index, and 16,384 sampled
+indices per iteration. Every output column must equal its selected row index.
+
+| Arm, execution order | Unequal iterations | Total iterations |
+|---|---:|---:|
+| `index_select`, width 16 | **241** | 1,000 |
+| `gather`, width 16 | **251** | 1,000 |
+| `index_select`, width 4 | **0** | 1,000 |
+| `gather`, width 4 | **0** | 1,000 |
+
+The script exits **1** at its final assertion. Counts are iterations with
+at least one unequal element, not bad-element, row or NaN counts. All integer
+indices fit exactly in float32, so no numerical tolerance is required by
+the intended oracle. Changing width also changes allocation sizes and each
+arm creates fresh source/indices; vectorization is not independently isolated.
+
+Privileged `/dev/kfd` and render-node ownership checks are empty immediately
+before and after the run. They do not establish continuous exclusivity.
+The two kernel-log snapshots are **byte-identical**, with zero new lines;
+boot stays `5769c84c-01bc-4bc4-88fb-d86335f24270`. This investigation issued
+no reset/reboot and did not terminate the benchmark. Its precise completion
+time and initiator are unknown; it was absent by the 07:10:39 ownership check.
+
+**Attribution limit:** source generation, random indices, expected outputs
+and equality checking all execute on GPU. No failing source/index/output
+payload was saved or independently validated on CPU. The failures therefore
+do not isolate `index_select`, `gather`, source construction, the checker,
+or an underlying compiler/driver/hardware mechanism. A link to the historical
+gather incident, current training NaN, or preceding benchmark is unproven.
+At that checkpoint, the next control needed failing tensors and CPU mapping
+validation before attribution. The September 20 CPU control now supplies
+that diagnostic path and passes; it has not captured a recurrence.
+
+Artifacts:
+`continue_20260919T065146Z/health_20260919T071101021851Z/`
+under the §2.2 run root, including `run.log`, `command.json`, completed
+`state.json`, `outcome.json`, ownership snapshots, boot IDs, and identical
+before/after kernel logs. The ordered kernel-log delta is empty.
+The compact [outcome and artifact hashes](evidence/health_20260919T071101Z/outcome.json)
+and [exact probe output](evidence/health_20260919T071101Z/run.log) are checked in.
+
+**Historical September 12–16 incident.** This host previously returned wrong
+gather data, then passed the controls after an AC-cycle recovery. The findings
+below preserve that incident's symptom and recovery; they do not establish
+the cause or recovery of the new September 19 failure.
+
+**What it looked like.** `torch.index_select` returned wrong rows — 82–95 % of
+trials bad at `D=16`, 26 % at `D=4` — while **dense GEMM in the same process was
+provably clean**. It was not a numerics problem: the values returned were other
+rows, verbatim. The e2e died at step 212 with a page fault whose `dmesg`
+signature was `GC_UTCL2` / client `TCP (0x8)` / `RW: 0x1`.
+
+**Historical stack comparisons.** It survived **8+ warm reboots**. Four independent
+container images corrupted identically, including one carrying a *different LLVM
+entirely* (ROCm 7.15 + torch 2.10.0). No image, Triton pin, LLVM or driver
+package tested then made a difference. These comparisons did not isolate a
+root cause or exclude all shared software/platform components.
+
+**What fixed it: a full AC power cycle**, with the software stack completely
+untouched — out-of-band via BMC `10.5.217.131` (`ipmitool chassis power cycle`),
+or at the rack. Before: 82–95 % bad. After: **0/2000**, **0/1000**, and 0/600 on
+all 14 arms of the original reproducer. Remember to reload the driver by hand
+afterwards ([§1.3](#13-mandatory-flags-and-boot-procedure)).
+
+> **Do not present the AC cycle as a root-cause fix.** "Latched platform state"
+> names the behaviour, not a cause — candidates include UTCL2/TCP translation
+> state, a DF/fabric configuration register, an SMU artifact, or a soft error in
+> a register outside the warm-reset domain. It is a known-working *recovery for
+> an open defect*, and that is the form it should take when handed to the
+> driver/hardware team. It is also **n=1 and not cleanly attributable**: two
+> cycles happened on 2026-09-16 and the GPU could not be measured between them.
+
+**How to tell whether it is back, and why you should check.** The corruption
+rates **grew with uptime** — 14.67 % on 2026-09-12 → 82–95 % by 2026-09-16 —
+which suggests accumulation rather than a single upset. So:
+
+```bash
+docker exec -e PROBE_ITERS=1000 <container> bash -lc 'cd /tmp && python probe.py'
+```
+
+**Run this before trusting any long e2e run, and record host uptime with the
+measurement.** A clean `probe.py` is **necessary but not sufficient** — see
+[§3.6](#36-the-contention-bug-found-alongside--real-but-not-the-nan), which shows
+that a concurrent GPU job on this host can corrupt results on its own. Take the
+probe on an **idle** GPU.
+
+**Relationship to training remains unresolved.** The historical step-1370 `nan`
+([§2](#2-the-open-blocker-train_lossnan-at-step-1370)) appeared *after* the AC
+cycle, on a host whose gather control then read 0/2000 clean. That record does
+not establish AC cycling as a remedy for the training NaN. The new September
+19 mismatch also does not establish that the prior contention observation
+in §3.6, the historical gather incident and the training failure share a cause.
+
+
+---
+
+## 8. Artifacts
+
+| File | Contents |
+|---|---|
+| `/home/chcai/runs/mi450_b0_0910_7ff_start0_20260918/summary.md` | September 18 final result: **NaN reproduced at logged step 60 from timestamp zero** after recovery; original stalled attempt retained separately |
+| Same directory: `launch.sh`, `effective_training_env.json`, `verified_stack.json`, `triton_build_final.log`, `gather_probe.log` | Exact launch, effective flags, image/Triton/addon provenance and pre-run health evidence |
+| Same directory: `train.log`, `launcher.log`, `status.json`, `first_batch_gdb.txt`, `gpu_metric_first_batch.txt`, `dmesg.first_stall.txt`, `dmesg.after.txt` | Training/stall evidence, investigator-stop exit 137, native wait stack and failed automatic mode-2 reset (`-62`) |
+| Same directory: `retry_after_recovery.sh` | Executed follow-up launches: serialized one-step diagnostic, then baseline with a 3000-step limit |
+| Same directory: `retry_serialized_20260918T034640Z/` | Finite step-1 diagnostic and intentional exit 42; exact stack, live environment and dispatch log |
+| Same directory: `retry_baseline_20260918T035457Z/` | NaN at steps 60/70/80, finite step 50, monitor-requested stop, outcome and kernel-log delta, passing pre/post gather checks |
+| Same directory: `debug_nan/README.md`, `debug_nan/capture55_20260918T043851Z/` | Investigation journal, finite real-operation capture, CPU references and standalone replay isolating incorrect history-row Q gradients after verified initialization. **Training-NaN link and fix remain open** ([§2.1](#21-september-18-real-capture-isolates-incorrect-q-gradients)). |
+| Same directory: `debug_nan/resume_20260919/` | Postboot attention/gather controls, integrated checker CPU/GPU results, original-stage integration tests and corrected replay-suite test invocation |
+| Same directory: `debug_nan/healthy_output_20260919T031216Z/` | Requested healthy full output-backward capture at step 3; `replay_mm.json` and `replay_norm.json` record 10/10 isolated replays and full CPU FP64 comparisons. Norm uses DY regenerated by preparation. Includes source snapshot/manifest, requested environment, outcome and kernel logs |
+| Same directory: `debug_nan/healthy_original_norm_20260919T031901Z/` | Requested healthy original norm-stage capture at step 3; direct replay 10/10 with original DY, exact match to all five saved outputs, full CPU FP64 reference and eight unchanged-input byte checks. Includes parent context, source snapshot/manifest, outcome and normalized kernel-log delta |
+| Same directory: `debug_nan/output_stages_20260919T032618Z/` | Completed step-51 magnitude capture, September 19 03:26:18–03:28:25.689 UTC, launcher exit 1. Selected original `gradient_mm` already receives huge finite `dout`; preceding output-backward boundaries are bounded. Includes `tripwire/step000051_backward_rank0_pid6728.pt` and authoritative JSON flags, launch/source/environment and final log/state |
+| Same directory: `debug_nan/preprocess_boundary_20260919T033128Z/` | Two-class tripwire run: finite sampled 640, illegal memory access / exit 1 / no capture, ordered fault delta and passing post-fault gather controls |
+| Same directory: `debug_nan/resume_20260919/preprocess_gpu_integration/` | Real small original input-projection/input-norm captures; both direct replays 25/25 with exact original outputs and full CPU references; norm BLOCK_N=8 control also 25/25 |
+| Same directory: `debug_nan/resume_20260919/weighted_ln_zero_dy_summary.json` | Full-size zero-DY production-helper control: BN8 fails 115, BN1 passes 1000/1000, restored BN8 fails 212; compact failure evidence, input guards and empty kernel-log deltas |
+| [`scripts/repro_weighted_layer_norm_zero_dy.py`](../../scripts/repro_weighted_layer_norm_zero_dy.py) | Capture-free weighted input-LN reproducer: poisoned helper or direct DX/partials, optional pre-reduction check, exact zero-DY oracle and compact failure artifacts |
+| Same directory: `debug_nan/ln_bn1_e2e3000_20260919T041619Z/` | Combined candidate rejected: finite **50** then NaN **60/70**; scoped SIGTERM/143, no GPU fault/reset, no 3000-step pass |
+| Same directory: `debug_nan/preprocess_stages_bn1_20260919T042027Z/` | Finer cap256 + BN1 capture interrupted by unattributed host reboot after finite sampled **340**; no payload, journal audit and recovered terminal state |
+| Same directory: `debug_nan/preprocess_stages_bn1_reboot_20260919T045640Z/stall_190/` | Resumed run stalled at attempted **195**, last sampled **190** finite: native/Python stacks and locals establish backward-flags D2H wait; no payload. Preserves pre-oops evidence, distinct KFD `hqds` diagnostic oops, hung ROCgdb attach and automatic mode-2 reset failure **-62** |
+| [`scripts/repro_weighted_layer_norm_zero_x.py`](../../scripts/repro_weighted_layer_norm_zero_x.py) | Prepared full-size weighted-LN forward zero-input oracle, with production autotuning or pinned arms, poisoned outputs and input-byte guards. CPU-validated and reviewed; **not GPU-run** at this checkpoint |
+| [`scripts/repro_preprocess_backward_stages.py`](../../scripts/repro_preprocess_backward_stages.py) | Direct original projection/input-LN replay; captured norm launch configurations, full chunked CPU reference and input-byte guards |
+| [`scripts/repro_output_backward_stages.py`](../../scripts/repro_output_backward_stages.py) | Isolates output-backward gradient GEMM or norm/multiply/dropout. Original-stage captures skip preparation; full backward captures regenerate norm DY. Optional full CPU FP64 reference and input-byte checks make the replay's scope explicit |
+| [`scripts/repro_gfx1250_nondeterminism.py`](../../scripts/repro_gfx1250_nondeterminism.py) | **the `nan` reproducer** — one HSTU layer at production shapes, no dataset, no torchrec, no embeddings ([§3](#3-reproducing-the-nan)) |
+| [`scripts/repro_gfx1250_fast_fault.py`](../../scripts/repro_gfx1250_fast_fault.py) | **fastest repro, ~25 s, 3/3** — two HSTU fwd+bwd loops on two streams. Same wild-store signature, **different regime** (two-stream); scope caveat in its docstring and in [§3](#3-reproducing-the-nan) |
+| [`scripts/repro_gfx1250_layernorm_i32.py`](../../scripts/repro_gfx1250_layernorm_i32.py) | the `[b3]` int32-wrap reproducer and regression test ([§5](#5-fixed-an-int32-address-wrap-in-triton_layer_normpy-b3)) |
+| [`scripts/repro_gfx1250_hstu_layer.py`](../../scripts/repro_gfx1250_hstu_layer.py) | long soaks at production shapes with `nan` checks and a canary buffer; also the high-VGPR aggressor in [§3.6](#36-the-contention-bug-found-alongside--real-but-not-the-nan) |
+| [`scripts/repro_gfx1250_contention_load.py`](../../scripts/repro_gfx1250_contention_load.py) | the §3.6 aggressor — 21 lines, **pure torch, no repo imports** |
+| [`scripts/repro_gfx1250_twostream_fault.py`](../../scripts/repro_gfx1250_twostream_fault.py) | the §3.6 **same-process two-stream** fault — shows the contention needs only two streams, not two processes. `AGGRESSOR=0` is the control |
+| `/home/chcai/runs/docker_env_probe/probe.py` | fast gather A/B probe, the [§7](#7-if-gather-corruption-returns-the-ac-power-cycle) health check; `PROBE_ITERS` sets trials/arm |
+| `/home/chcai/runs/docker_env_probe/findings.txt` | running incident log: cross-image table, AC-cycle timeline, the §5 reproduction, the §6 A/B |
+| `b1024_a30_i64fix_0916_0455` (repo root) | September 16 reference, window 150, expandable segments enabled — clears step 300, `nan` at **step 1370** ([§2](#2-the-open-blocker-train_lossnan-at-step-1370)) |
+| `b1024_a30_postfix_0916_0419` (repo root) | the pre-`[b3]` e2e — clears step 212, `nan` at ~295 |
+
+---
+
+<sub>**Numbering changed on 2026-09-16.** This document was reorganised so the
+open defect and the machine setup lead. Old → new: §1 → §1.1/§1.2, §§2–8 →
+condensed into §7, §9 → §7, §10 → §5, §11 → §6, §12 → §4, §12.2 → §2, §13 → §3.
+Bracketed change ids `[b1]`–`[b7]` are unchanged and remain the stable way to
+cite a change.</sub>

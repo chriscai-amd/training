@@ -1,0 +1,930 @@
+{
+  "status": "PASS_COMPLETE_CURRENT_ORIGINAL_DRIVER_DW_QUARTET",
+  "source": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_original_DW_complete_source_v1/complete_quartet.py",
+    "bytes": 24210,
+    "sha256": "6c0d90f97ce5364592b740acf3cb99d9d1c3bc7cb378ff09fdbfedf4e13e87ef"
+  },
+  "root_binding": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_root_v1/BINDING_v2.json",
+    "bytes": 7717,
+    "sha256": "7ee26fa55b342f08bb86691cab18d415cfb6b60c1dcbdb2f2fae572b1fbdc8c8"
+  },
+  "runtime_release": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_root_v1/RUNTIME_RELEASE.json",
+    "bytes": 56609,
+    "sha256": "b8b1cbbe0730e12906ad261fdc4e66fd15313cc7c6086d2c10e56a8e5b4eb075"
+  },
+  "plan": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_source_v1/PLAN.json",
+    "bytes": 33651,
+    "sha256": "068cc6ff80c21c9b9cf2f6a1efbcf343162a6622c1fe30066fe0994dfd957b2f"
+  },
+  "GPU_actions": false,
+  "driver_actions": false,
+  "raw_files_removed": false,
+  "limits": [
+    "Controlled injected DW regression; original interrupt history and all-training stability are not established.",
+    "Candidate arm denotes native register relocation; the loaded driver remains the faulty original.",
+    "Approved MC60 exception permits numerical testing and does not certify hardware health."
+  ],
+  "arms": [
+    {
+      "arm": "sink_control_nop",
+      "controller_terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/controller_terminal.json",
+        "bytes": 7775,
+        "sha256": "a8a47c1e924e61d35d5ff86cebf50327ab711c0b4a35b0246531828df07af195"
+      },
+      "native_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/native_full_audit.json",
+        "bytes": 30783,
+        "sha256": "0176c5c7cffb6034f36563bab979f1631f053377441e6d0a2164a07d9024ed16"
+      },
+      "full_reference": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/full_reference.json",
+        "bytes": 4518,
+        "sha256": "8b41591dd812ded303f315d4bd09c30ab4098d7fbb72136ea5df2f0cac08eab8"
+      },
+      "steps": {
+        "preflight": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/CPU_preflight/start.json",
+            "bytes": 3907,
+            "sha256": "33ea94480c16bcaf8350883d480e8b317a47eeaa54a5612c18b25816f4138860"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/CPU_preflight/spawned.json",
+            "bytes": 3608,
+            "sha256": "2fe9ae5c58320a0bb38b4f209e1fed53b47b860bf61b1c08e1408d5db331a125"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/CPU_preflight/terminal.json",
+            "bytes": 1770,
+            "sha256": "8d54c3759bab7a753e07cffd2427488ca257dca3df2da6d0923b58884217e3c2"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/CPU_preflight/stdout.log",
+            "bytes": 987,
+            "sha256": "0098afcaae3d32dd4cdac0f17d0740d4a72c1fe5af9bbf6ec0aa03c86dd6e336"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/CPU_preflight/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "producer": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/supervisor/start.json",
+            "bytes": 2533,
+            "sha256": "3ea441f20039b37b972386f94670177ac2cd3184031be4a5af644107250ecee2"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/supervisor/spawned.json",
+            "bytes": 2110,
+            "sha256": "9298261ec80377f4cafa87345d0adb296e1a2f65192d551d35edf77593680614"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/supervisor/terminal.json",
+            "bytes": 395,
+            "sha256": "ccaf2b5849c93cdac3027181f758b7bc76d2a651dca2ea4f4138e2347223b55c"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/supervisor/stdout.log",
+            "bytes": 362,
+            "sha256": "d1de0bf08f34ea3249bfc11513a3c9fdcec9e109623d67ee3af851fcbfb3d8e2"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/supervisor/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "native": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/native_consumer/start.json",
+            "bytes": 3196,
+            "sha256": "2d7cc34e0e26edfd43b368e955ff1faa461b4b61a3f994fb64b9679ac08d3127"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/native_consumer/spawned.json",
+            "bytes": 2795,
+            "sha256": "1cd90377bae709a9a6a3275b3b7ca5ba61006747e80bb9282cd459899d49e578"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/native_consumer/terminal.json",
+            "bytes": 1058,
+            "sha256": "1ca68528f57e7bbc986e823772d02aa7a6f6b7f3be72358cb90381fe65f17c67"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/native_consumer/stdout.log",
+            "bytes": 332,
+            "sha256": "8a12ffb3ec05bccf89f75115b244b9594d53f195fe74224046290b160df2f2cf"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/native_consumer/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "reference": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/reference_consumer/start.json",
+            "bytes": 2946,
+            "sha256": "4a470ba0a77e6c7424de75ae6d9aff4f8442940a80d73b864053cd880a695d50"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/reference_consumer/spawned.json",
+            "bytes": 2537,
+            "sha256": "29d305ace7a52c46eb7da40c010c7740f36b3e8562ae39346cc8352c026361a5"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/reference_consumer/terminal.json",
+            "bytes": 808,
+            "sha256": "33fffba487b2e45886c73efa18a2674292413c43a5ffceca79bb8740ba4609dd"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/reference_consumer/stdout.log",
+            "bytes": 288,
+            "sha256": "a515d5737b965205cb7c85ebbd164e502cb3e1811de78c245765d395a9a81c70"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/reference_consumer/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      "gates": {
+        "initial_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/initial_gate/gate.json",
+          "bytes": 4895,
+          "sha256": "5318de7da95f9ac18adcecf414b492f9a6d3dd19169f47058d3d4087f7bba863"
+        },
+        "release_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/release_gate/gate.json",
+          "bytes": 4925,
+          "sha256": "c80d3fb8a273c4d09db95bc488a9d91548c7778efbb4d9534f5e7238b35e1e21"
+        },
+        "after_producer_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/after_producer_gate/gate.json",
+          "bytes": 4940,
+          "sha256": "d79c96e7deef4724389584ca1a8b3d160ed3071421a486289d5e33d74e541998"
+        },
+        "final_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/final_gate/gate.json",
+          "bytes": 4922,
+          "sha256": "d6dc22f5c0480b7fdf1850a9bb5d09e454268298b46b3ee7b5891a6e50e58a04"
+        }
+      },
+      "chronological_UTC": [
+        "2026-09-28T00:07:33.225055+00:00",
+        "2026-09-28T00:11:15.476111+00:00",
+        "2026-09-28T00:11:15.484504+00:00",
+        "2026-09-28T00:11:19.856930+00:00",
+        "2026-09-28T00:11:20.626087+00:00",
+        "2026-09-28T00:11:20.658054+00:00",
+        "2026-09-28T00:12:09.565585+00:00",
+        "2026-09-28T00:12:10.468569+00:00",
+        "2026-09-28T00:12:10.476101+00:00",
+        "2026-09-28T00:12:14.647624+00:00",
+        "2026-09-28T00:12:14.648680+00:00",
+        "2026-09-28T00:12:14.764261+00:00",
+        "2026-09-28T00:12:15.521894+00:00"
+      ],
+      "previous_kernel_state": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_root_v1/stage/final_gate/kernel/state.json",
+        "bytes": 39432,
+        "sha256": "00ff7a1e71ead303754d084028da05379301e2db72b40a962d07d41f203610c7"
+      },
+      "final_kernel_state": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/final_gate/kernel/state.json",
+        "bytes": 39555,
+        "sha256": "dba993d5a4980f6f24908b0872e155e103335d4adc7b504058268ee68175aa30"
+      }
+    },
+    {
+      "arm": "sink_candidate_nop",
+      "controller_terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/controller_terminal.json",
+        "bytes": 7823,
+        "sha256": "559e0447ac6aec6be0676bed2092cfe873115e0f52940c7bbf0a0b111ddbf0c6"
+      },
+      "native_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/native_full_audit.json",
+        "bytes": 30819,
+        "sha256": "ca301752fb60e38b0ff2baa0a7965e5b636584da7d58cbc5871def160aefce47"
+      },
+      "full_reference": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/full_reference.json",
+        "bytes": 4538,
+        "sha256": "2c5f984133c3d0422a1ac43d7f48d852ae98520811a915afef78d5f90ad2ee3e"
+      },
+      "steps": {
+        "preflight": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/CPU_preflight/start.json",
+            "bytes": 3911,
+            "sha256": "d7609bb636e38666b0636f85e654c390dce5c952287726c77b201f411fecaefa"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/CPU_preflight/spawned.json",
+            "bytes": 3610,
+            "sha256": "460d9c2bf8f0b56f9afdbfba0c1847fa56beef0132933ae6c68d56ba0094feb1"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/CPU_preflight/terminal.json",
+            "bytes": 1772,
+            "sha256": "6731ad1e3ac0ac2fd33e0bd7d94dbc39f013ab54239734f9828b7ab7ad314153"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/CPU_preflight/stdout.log",
+            "bytes": 989,
+            "sha256": "16ebd9ac5d03b92503eb8246f1da7ee426badfe2c477978260697cb6d36789df"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/CPU_preflight/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "producer": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/supervisor/start.json",
+            "bytes": 2537,
+            "sha256": "11b8977a7b403b8ecfd74e72dfd7ac7c0c503cabc38bc64dbf8202892004161f"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/supervisor/spawned.json",
+            "bytes": 2112,
+            "sha256": "ab902ee720220000ce87cf58cefc375b5f377a62a84e69b58014d6c5fc03175a"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/supervisor/terminal.json",
+            "bytes": 397,
+            "sha256": "bb3124000b3940f674edd98276e291cc0dcffda73e061f00369b1d8ceb9a4ee2"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/supervisor/stdout.log",
+            "bytes": 370,
+            "sha256": "27efc9ebb20229e3c324e64d90edaf03894ce444758ab1a40b6c782a576d6fa9"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/supervisor/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "native": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/native_consumer/start.json",
+            "bytes": 3202,
+            "sha256": "e223e03b6804f866dfbe98655e2aaf08a0a630ace96b0d0243d1901bbca70fc9"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/native_consumer/spawned.json",
+            "bytes": 2799,
+            "sha256": "b3bfb900f3c5bf7a067ac83b94b9aabe2843e46c62d501362b4a39cad761a4a3"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/native_consumer/terminal.json",
+            "bytes": 1062,
+            "sha256": "413d1cc2ed6c765417adf3aefc9486cee32abbae63cbd8a93f979df103e99d19"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/native_consumer/stdout.log",
+            "bytes": 334,
+            "sha256": "31af4ade501b36cfe388b5961a5324c3ea4257b56e91ab82128e851ecf718c70"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/native_consumer/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "reference": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/reference_consumer/start.json",
+            "bytes": 2954,
+            "sha256": "9ab8da32ff80c7726d4b2b845f2b6d42f734b459a631401aa4b5f8ee676c5cd3"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/reference_consumer/spawned.json",
+            "bytes": 2543,
+            "sha256": "8449bc58df09f21aafec55242dc98d87e3470208cd32974aa61366a398e19c5e"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/reference_consumer/terminal.json",
+            "bytes": 814,
+            "sha256": "46d10d7a25418e64617ae1640070bf12dc890204b8c22b55817f086a04a84e3a"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/reference_consumer/stdout.log",
+            "bytes": 290,
+            "sha256": "f17e160ed95aaca60cdceed17fc9ed3a917bd57273a973eda8be5abccd7f7cd0"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/reference_consumer/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      "gates": {
+        "initial_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/initial_gate/gate.json",
+          "bytes": 4919,
+          "sha256": "fa1dfc06af39b1a43b61ae4c928ccc2b2a029f1bd2ff348da544a6fc767d0516"
+        },
+        "release_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/release_gate/gate.json",
+          "bytes": 4935,
+          "sha256": "995188edcbe6c0ecefe278adacedcc65c585dbe27daabc032389ac8b8551d4ce"
+        },
+        "after_producer_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/after_producer_gate/gate.json",
+          "bytes": 4950,
+          "sha256": "ab1d9326aedaf1b1afcf45f2a9e81fe2d49a83d27d28bb31484ce714683a9e2e"
+        },
+        "final_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/final_gate/gate.json",
+          "bytes": 4932,
+          "sha256": "79ab6cde9678f512ceee2c7329781e71f911359df7e98354e3632d4d8fdb38ff"
+        }
+      },
+      "chronological_UTC": [
+        "2026-09-28T00:12:15.521894+00:00",
+        "2026-09-28T00:12:37.187422+00:00",
+        "2026-09-28T00:12:37.196331+00:00",
+        "2026-09-28T00:12:41.217506+00:00",
+        "2026-09-28T00:12:41.991345+00:00",
+        "2026-09-28T00:12:42.023316+00:00",
+        "2026-09-28T00:13:30.179507+00:00",
+        "2026-09-28T00:13:31.046963+00:00",
+        "2026-09-28T00:13:31.054489+00:00",
+        "2026-09-28T00:13:35.225973+00:00",
+        "2026-09-28T00:13:35.227040+00:00",
+        "2026-09-28T00:13:35.342538+00:00",
+        "2026-09-28T00:13:36.106371+00:00"
+      ],
+      "previous_kernel_state": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/final_gate/kernel/state.json",
+        "bytes": 39555,
+        "sha256": "dba993d5a4980f6f24908b0872e155e103335d4adc7b504058268ee68175aa30"
+      },
+      "final_kernel_state": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/final_gate/kernel/state.json",
+        "bytes": 39569,
+        "sha256": "2cc1d608ad1b137ac5144a969489f72d029b9d2936a74cf8f4420c5ef9aee5ba"
+      }
+    },
+    {
+      "arm": "sink_control_trap",
+      "controller_terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/controller_terminal.json",
+        "bytes": 7809,
+        "sha256": "903e8f00fb25b3bb27027018532cec56d2468a4c319ecc4bd652a73bb329dca2"
+      },
+      "native_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/native_full_audit.json",
+        "bytes": 30829,
+        "sha256": "20e60eec24abf679fbeb1fb2aa02cde2d04fe7eb0d60de4c37f35f0d2290e44a"
+      },
+      "full_reference": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/full_reference.json",
+        "bytes": 4545,
+        "sha256": "19819920f4939eab186d4e599387c60687986ff9ab39e3f69db303f5656e1efa"
+      },
+      "steps": {
+        "preflight": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/CPU_preflight/start.json",
+            "bytes": 3909,
+            "sha256": "2b5a9a61114d41692e885f38585520b5553d5024f300c598d0799537d98c8f87"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/CPU_preflight/spawned.json",
+            "bytes": 3609,
+            "sha256": "bebf4f79d30b39ddcb928d208277696e4bc53ac42acb884d8543d217d88e3d4c"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/CPU_preflight/terminal.json",
+            "bytes": 1771,
+            "sha256": "52709c9049a2164de8e79fde5b6c707e86714a182435a05d11bb3d2f9120a88c"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/CPU_preflight/stdout.log",
+            "bytes": 988,
+            "sha256": "1f73b4851f0e4592e3d94d9799651a1aaa4a3337d1cc0aa4d39f48a8f39ca269"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/CPU_preflight/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "producer": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/supervisor/start.json",
+            "bytes": 2535,
+            "sha256": "72f77fd3eb0b897ec86ddf9b27619a7a5dbb07cf46ff0b662e7a0f1312579fc0"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/supervisor/spawned.json",
+            "bytes": 2111,
+            "sha256": "fd8cdc4720326a6e847b921be9d9f58e935bab1381e6683f5bfaf9f8728d2a78"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/supervisor/terminal.json",
+            "bytes": 396,
+            "sha256": "7fea0249602cbb10a713ef464b077e4c77249409ec21ab946f60746f1bf333da"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/supervisor/stdout.log",
+            "bytes": 366,
+            "sha256": "4bb8bdb754ff882b715763baf14a5c98abfc7c2aec837574005c7916587c805f"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/supervisor/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "native": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/native_consumer/start.json",
+            "bytes": 3199,
+            "sha256": "c5ddc247d4764185dfc4e85a9f0822fa8af1283b4248e519cdf23bfa2e25ff34"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/native_consumer/spawned.json",
+            "bytes": 2797,
+            "sha256": "bc2331cd61e119a5f9099fab7dc04ebb2896efc74f054fbb69ff77dabd41ffd0"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/native_consumer/terminal.json",
+            "bytes": 1060,
+            "sha256": "d6effd2f28ad298c151742179ccfc443daa2806b886b93f24dda45a3ee678609"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/native_consumer/stdout.log",
+            "bytes": 333,
+            "sha256": "b439aae830ee944256b3b7f69d7b603a82e14c89e5c58d4558b229fd4536c288"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/native_consumer/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "reference": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/reference_consumer/start.json",
+            "bytes": 2950,
+            "sha256": "fc482cd0e323b2e08004e9e32651bd4bfa814226cf2462ec7b911caefad81d0a"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/reference_consumer/spawned.json",
+            "bytes": 2540,
+            "sha256": "062d141f827bca26c955ee5444b1d8d2a2a02503b49f2298f10e50a0c35a5eae"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/reference_consumer/terminal.json",
+            "bytes": 811,
+            "sha256": "12bb68e58a5d1a407791ccfd87f6d757f828829c4d4df505fa7a90046b4b3d2e"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/reference_consumer/stdout.log",
+            "bytes": 289,
+            "sha256": "fa78967a5c16934fb5d0986163d982e6d497075ac59647dbd4cb3bc333b570e8"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/reference_consumer/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      "gates": {
+        "initial_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/initial_gate/gate.json",
+          "bytes": 4917,
+          "sha256": "7484c1e3b475f6f2ed694cbcc6ee4aa84614568d0b28cde5be2bf91d8a7f06c9"
+        },
+        "release_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/release_gate/gate.json",
+          "bytes": 4930,
+          "sha256": "d22e2f978ac9407b6ff0885a21f01463a75fad08814e1c6394143daf3c2b9d74"
+        },
+        "after_producer_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/after_producer_gate/gate.json",
+          "bytes": 4945,
+          "sha256": "26436b8567e38547f207c8d68aa3172701e96b090618592c7df718396602356d"
+        },
+        "final_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/final_gate/gate.json",
+          "bytes": 4927,
+          "sha256": "932dd82c6e8cc9c72126d665f400367a74d1b416c506ff83556417c64971f07e"
+        }
+      },
+      "chronological_UTC": [
+        "2026-09-28T00:13:36.106371+00:00",
+        "2026-09-28T00:14:03.987284+00:00",
+        "2026-09-28T00:14:03.995693+00:00",
+        "2026-09-28T00:14:08.017087+00:00",
+        "2026-09-28T00:14:08.781615+00:00",
+        "2026-09-28T00:14:08.813366+00:00",
+        "2026-09-28T00:14:57.220257+00:00",
+        "2026-09-28T00:14:58.086826+00:00",
+        "2026-09-28T00:14:58.095178+00:00",
+        "2026-09-28T00:15:02.266712+00:00",
+        "2026-09-28T00:15:02.267711+00:00",
+        "2026-09-28T00:15:02.383377+00:00",
+        "2026-09-28T00:15:03.154132+00:00"
+      ],
+      "previous_kernel_state": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/final_gate/kernel/state.json",
+        "bytes": 39569,
+        "sha256": "2cc1d608ad1b137ac5144a969489f72d029b9d2936a74cf8f4420c5ef9aee5ba"
+      },
+      "final_kernel_state": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/final_gate/kernel/state.json",
+        "bytes": 39562,
+        "sha256": "8302d19b08f0a0ce3b81c4052f980241501d1dce6982bd8ca738e762ac2b0fb9"
+      }
+    },
+    {
+      "arm": "sink_candidate_trap",
+      "controller_terminal": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/controller_terminal.json",
+        "bytes": 7840,
+        "sha256": "7d66c0b66a82c8a6a583e21a4a18bfa2e88a77f4f3cfc1176a1aa0736d2a2914"
+      },
+      "native_audit": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/native_full_audit.json",
+        "bytes": 30837,
+        "sha256": "41a3921152eeb6c105bee70c098acff53e6017d0c5d591ccbab483d3221c00e2"
+      },
+      "full_reference": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/full_reference.json",
+        "bytes": 4548,
+        "sha256": "2e896d054c57a976182e247a7394b01cce1e146f9e1894b3df8e4a35b3c743f4"
+      },
+      "steps": {
+        "preflight": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/CPU_preflight/start.json",
+            "bytes": 3913,
+            "sha256": "23f58d590834369cc387ab270c82d7473f69e35110332c000f0f5d6e512e4fe2"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/CPU_preflight/spawned.json",
+            "bytes": 3611,
+            "sha256": "09ae4d236954a89caa98d6888f809196bf7e21039782b6a70db7ef66d88c9b39"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/CPU_preflight/terminal.json",
+            "bytes": 1773,
+            "sha256": "725a5bf2b362aabbf263b919f21602817a095551d840c2c67db906c43d215187"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/CPU_preflight/stdout.log",
+            "bytes": 990,
+            "sha256": "859a08edbcbf3d8ff373309c4748b387cde0cbaec3feb14e9be2217fda1aaf5a"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/CPU_preflight/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "producer": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/supervisor/start.json",
+            "bytes": 2539,
+            "sha256": "b5fa7eb976d9f312d2f047daae75811974f670f1571cd02965f388f9cee4d80a"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/supervisor/spawned.json",
+            "bytes": 2113,
+            "sha256": "fbe8710368d6225fcc298e3b74487ae4199967a9f6f111ba6fa56f1296514c82"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/supervisor/terminal.json",
+            "bytes": 398,
+            "sha256": "c3dd2f4bec910a3dcca69931f9ee4ba4f8db2733eb1c3b78dd6bdad56b123df6"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/supervisor/stdout.log",
+            "bytes": 374,
+            "sha256": "e934fbde1cc097662faf01b9ef58d5ce4483132994ff28a3917575c2ae1cd079"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/supervisor/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "native": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/native_consumer/start.json",
+            "bytes": 3205,
+            "sha256": "1d40443196c9a7932c8729c2ddaa0cbf6ca93633bde49a9e69bc142f27f514df"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/native_consumer/spawned.json",
+            "bytes": 2801,
+            "sha256": "25aa7eaff4c73f5f13d85b59bb86af0546eb77d813b38499d12e17d80926c296"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/native_consumer/terminal.json",
+            "bytes": 1064,
+            "sha256": "535b15fef2d7554f60cbf02e13f967cb7536b1c379c1e414440ee27c0bef1a17"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/native_consumer/stdout.log",
+            "bytes": 335,
+            "sha256": "af196d70cff9ab3e6ef7125b586b5665fc964e1ffd74e8d879fe817aae39b422"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/native_consumer/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "reference": {
+          "start": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/reference_consumer/start.json",
+            "bytes": 2958,
+            "sha256": "33cd2dea8b44cd8c2769cb12b4ef7f49a8b801e4c2029eb04a5c6f7f96ed049f"
+          },
+          "spawned": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/reference_consumer/spawned.json",
+            "bytes": 2546,
+            "sha256": "740134c330f208206c5999e9d39764e311646227c700bb397f27b9802ad96f22"
+          },
+          "terminal": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/reference_consumer/terminal.json",
+            "bytes": 817,
+            "sha256": "56f6766b55d0656324b5f57602683b5f9ce6c4c293e448a478f90a62411a9bae"
+          },
+          "stdout": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/reference_consumer/stdout.log",
+            "bytes": 291,
+            "sha256": "3c1edf62ad4be13e6488afc3112e8fbe3884edd004265382b7044887c12a939c"
+          },
+          "stderr": {
+            "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/reference_consumer/stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      "gates": {
+        "initial_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/initial_gate/gate.json",
+          "bytes": 4924,
+          "sha256": "182de68d7cc9195b5a18aaedc3f1b92d41ecdf46622692c0b1a6469d49c27984"
+        },
+        "release_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/release_gate/gate.json",
+          "bytes": 4940,
+          "sha256": "f65a564e4dee2b2afbe4990d42997d79de86964a1848532ad449f6df38774ef7"
+        },
+        "after_producer_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/after_producer_gate/gate.json",
+          "bytes": 4955,
+          "sha256": "03e82365f1f448251de6354571d390fe383c95bd83596115481e32ec00fcbeba"
+        },
+        "final_gate": {
+          "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/final_gate/gate.json",
+          "bytes": 4937,
+          "sha256": "c243490ebd64bb60a780618f79c2add7ff9b4e7fcc03798277695fddb427317b"
+        }
+      },
+      "chronological_UTC": [
+        "2026-09-28T00:15:03.154132+00:00",
+        "2026-09-28T00:15:27.453746+00:00",
+        "2026-09-28T00:15:27.462153+00:00",
+        "2026-09-28T00:15:31.534296+00:00",
+        "2026-09-28T00:15:32.302965+00:00",
+        "2026-09-28T00:15:32.335103+00:00",
+        "2026-09-28T00:16:20.492025+00:00",
+        "2026-09-28T00:16:21.370632+00:00",
+        "2026-09-28T00:16:21.379415+00:00",
+        "2026-09-28T00:16:25.550958+00:00",
+        "2026-09-28T00:16:25.552025+00:00",
+        "2026-09-28T00:16:25.667463+00:00",
+        "2026-09-28T00:16:26.440459+00:00"
+      ],
+      "previous_kernel_state": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/final_gate/kernel/state.json",
+        "bytes": 39562,
+        "sha256": "8302d19b08f0a0ce3b81c4052f980241501d1dce6982bd8ca738e762ac2b0fb9"
+      },
+      "final_kernel_state": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/final_gate/kernel/state.json",
+        "bytes": 39576,
+        "sha256": "ba39eaedf92e6b42bd6ef5dcd60d9145b4235c132808c677baef66f48da550ae"
+      }
+    }
+  ],
+  "initial_matrix_gate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/initial_matrix_gate/gate.json",
+    "bytes": 4928,
+    "sha256": "abdf012f788330148b5ed667a7c4a725f64a8c14dfc049b218154e2b471db687"
+  },
+  "initial_storage": {
+    "home": {
+      "allocated_bytes": 993662570496,
+      "reserve_bytes": 1073741824,
+      "limit_bytes": 1000000000000,
+      "durable_free_bytes": 846358847488
+    },
+    "tmpfs_free": 120652431360,
+    "IPC": "host",
+    "container_pid": 1103272
+  },
+  "matrix_process": {
+    "command": [
+      "python3",
+      "-B",
+      "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_restore_sink_quartet_audit_v1/audit_sink_matrix.py",
+      "--primary-nop46-terminal",
+      "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_resume_j9415_native_review_v1/nop_bank46_control_terminal_audit.json",
+      "--primary-nop46-terminal-sha256",
+      "64c49dc030e910a660cb9ade17d6e4976bb3b7d189d4bf462e36126d1590944d",
+      "--terminals-manifest",
+      "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/runtime_terminals_manifest.json",
+      "--terminals-manifest-sha256",
+      "b53046707e319eaa93137506922a382d146e40d81afda37e8532a5a6094cc92d",
+      "--output",
+      "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/quartet_matrix.json"
+    ],
+    "status": "EXITED",
+    "returncode": 0,
+    "process_wait_completed": true,
+    "finished": {
+      "utc": "2026-09-28T00:24:49.502931+00:00",
+      "boot_ns": 198361285763515,
+      "monotonic_ns": 198361285764685
+    }
+  },
+  "matrix": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/quartet_matrix.json",
+    "bytes": 35872,
+    "sha256": "9021be10fdcfbc7ea8ea3654a96d3260fcb1fcca70d0e379fca6ca1499b3454d"
+  },
+  "matrix_input_manifest": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/runtime_terminals_manifest.json",
+    "bytes": 1208,
+    "sha256": "b53046707e319eaa93137506922a382d146e40d81afda37e8532a5a6094cc92d"
+  },
+  "matrix_process_receipts": {
+    "start": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/matrix_process/start.json",
+      "bytes": 3102,
+      "sha256": "aa39b5f17a235ea003bdbe9ba2a5007fb14638f0db1a9c74da2d92d94bbed8e6"
+    },
+    "spawned": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/matrix_process/spawned.json",
+      "bytes": 2799,
+      "sha256": "13a251ce57314994e2147181f47b5069717ab714c12232e665be80d6cbfbd703"
+    },
+    "terminal": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/matrix_process/terminal.json",
+      "bytes": 1066,
+      "sha256": "52458c85935cfc50797c2128d6873b355e28da80b5112b5e20c2472337b5061a"
+    },
+    "stdout": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/matrix_process/stdout.log",
+      "bytes": 312,
+      "sha256": "6f36ed70771213e1f5bc3a7dd36196447323059fa35e9367b0599f8513fa9475"
+    },
+    "stderr": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/matrix_process/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "final_gate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/final_gate/gate.json",
+    "bytes": 4901,
+    "sha256": "5a28790587dc2d1062387a6f5ebb166501cdac991582dc0deaef3ec8e7ee153a"
+  },
+  "last_kernel_state": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/final_gate/kernel/state.json",
+    "bytes": 39524,
+    "sha256": "cfb6702cae2a4567476da890fc3efad758b1164c28584a57e082cb7fa91d9051"
+  },
+  "final_kernel_state": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/final_gate/kernel/state.json",
+    "bytes": 39524,
+    "sha256": "cfb6702cae2a4567476da890fc3efad758b1164c28584a57e082cb7fa91d9051"
+  },
+  "storage": {
+    "home": {
+      "allocated_bytes": 993669074944,
+      "reserve_bytes": 1073741824,
+      "limit_bytes": 1000000000000,
+      "durable_free_bytes": 846352338944
+    },
+    "tmpfs_free": 120652431360,
+    "IPC": "host",
+    "container_pid": 1103272
+  },
+  "required_receipts": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/controller_terminal.json",
+      "bytes": 7775,
+      "sha256": "a8a47c1e924e61d35d5ff86cebf50327ab711c0b4a35b0246531828df07af195",
+      "expected_status": "PASS_ORIGINAL_DW_ARM_COMPLETE"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/native_full_audit.json",
+      "bytes": 30783,
+      "sha256": "0176c5c7cffb6034f36563bab979f1631f053377441e6d0a2164a07d9024ed16",
+      "expected_status": "PASS_INDEPENDENT_SINK_QUARTET_TERMINAL_NATIVE_FULL_WORDS_CONTROLS_LIBRARIES"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_nop/full_reference.json",
+      "bytes": 4518,
+      "sha256": "8b41591dd812ded303f315d4bd09c30ab4098d7fbb72136ea5df2f0cac08eab8",
+      "expected_status": "PASS_ORIGINAL_DW_ARM_FULL_REFERENCE"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/controller_terminal.json",
+      "bytes": 7823,
+      "sha256": "559e0447ac6aec6be0676bed2092cfe873115e0f52940c7bbf0a0b111ddbf0c6",
+      "expected_status": "PASS_ORIGINAL_DW_ARM_COMPLETE"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/native_full_audit.json",
+      "bytes": 30819,
+      "sha256": "ca301752fb60e38b0ff2baa0a7965e5b636584da7d58cbc5871def160aefce47",
+      "expected_status": "PASS_INDEPENDENT_SINK_QUARTET_TERMINAL_NATIVE_FULL_WORDS_CONTROLS_LIBRARIES"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_nop/full_reference.json",
+      "bytes": 4538,
+      "sha256": "2c5f984133c3d0422a1ac43d7f48d852ae98520811a915afef78d5f90ad2ee3e",
+      "expected_status": "PASS_ORIGINAL_DW_ARM_FULL_REFERENCE"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/controller_terminal.json",
+      "bytes": 7809,
+      "sha256": "903e8f00fb25b3bb27027018532cec56d2468a4c319ecc4bd652a73bb329dca2",
+      "expected_status": "PASS_ORIGINAL_DW_ARM_COMPLETE"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/native_full_audit.json",
+      "bytes": 30829,
+      "sha256": "20e60eec24abf679fbeb1fb2aa02cde2d04fe7eb0d60de4c37f35f0d2290e44a",
+      "expected_status": "PASS_INDEPENDENT_SINK_QUARTET_TERMINAL_NATIVE_FULL_WORDS_CONTROLS_LIBRARIES"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_control_trap/full_reference.json",
+      "bytes": 4545,
+      "sha256": "19819920f4939eab186d4e599387c60687986ff9ab39e3f69db303f5656e1efa",
+      "expected_status": "PASS_ORIGINAL_DW_ARM_FULL_REFERENCE"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/controller_terminal.json",
+      "bytes": 7840,
+      "sha256": "7d66c0b66a82c8a6a583e21a4a18bfa2e88a77f4f3cfc1176a1aa0736d2a2914",
+      "expected_status": "PASS_ORIGINAL_DW_ARM_COMPLETE"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/native_full_audit.json",
+      "bytes": 30837,
+      "sha256": "41a3921152eeb6c105bee70c098acff53e6017d0c5d591ccbab483d3221c00e2",
+      "expected_status": "PASS_INDEPENDENT_SINK_QUARTET_TERMINAL_NATIVE_FULL_WORDS_CONTROLS_LIBRARIES"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/sink_candidate_trap/full_reference.json",
+      "bytes": 4548,
+      "sha256": "2e896d054c57a976182e247a7394b01cce1e146f9e1894b3df8e4a35b3c743f4",
+      "expected_status": "PASS_ORIGINAL_DW_ARM_FULL_REFERENCE"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/quartet_matrix.json",
+      "bytes": 35872,
+      "sha256": "9021be10fdcfbc7ea8ea3654a96d3260fcb1fcca70d0e379fca6ca1499b3454d",
+      "expected_status": "PASS_SINK_QUARTET_CONTROL_REPRODUCTION_AND_CANDIDATE_PREVENTION"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/final_gate/gate.json",
+      "bytes": 4901,
+      "sha256": "5a28790587dc2d1062387a6f5ebb166501cdac991582dc0deaef3ec8e7ee153a",
+      "expected_status": "PASS_LIVE_LOADED_BASELINE_GATE"
+    }
+  ],
+  "all_four_current_driver_arm_joins": true,
+  "all_16_complete_output_and_prefill_comparisons": true,
+  "all_gate_kernel_deltas_reconsumed": true,
+  "producer_reaped": true,
+  "live_producer_possible": false,
+  "full_output_words_compared": 2097152,
+  "full_prefill_words_compared": 2097152
+}

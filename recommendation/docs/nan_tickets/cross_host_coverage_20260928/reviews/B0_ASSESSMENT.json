@@ -1,0 +1,415 @@
+{
+  "status": "B0_COMPONENT_COVERED_B0_LIVE_FIX_AND_TRAINING_ATTRIBUTION_UNPROVED",
+  "recorded_utc": "2026-09-28T01:29:57.359522+00:00",
+  "repo": "/home/chcai/training",
+  "HEAD": "8cf681dead52574301cc68bdfa37442626d333b9",
+  "repo_inputs": [
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_b0/mi450_b0.md",
+      "bytes": 195936,
+      "sha256": "57a932d4b0079fa634c4cc6d3991e1ac30e042c8029eb91203d16f55feb1a8e0",
+      "repo_path": "recommendation/docs/mi450_b0/mi450_b0.md",
+      "HEAD_blob_sha256": "57a932d4b0079fa634c4cc6d3991e1ac30e042c8029eb91203d16f55feb1a8e0",
+      "working_copy_equals_HEAD": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_b0/nan_triage_resume_20260921.md",
+      "bytes": 27224,
+      "sha256": "7d8bf18eb1906c7b4e626840cd61c094ad6878f61d5e4868b87c5d214f242543",
+      "repo_path": "recommendation/docs/mi450_b0/nan_triage_resume_20260921.md",
+      "HEAD_blob_sha256": "7d8bf18eb1906c7b4e626840cd61c094ad6878f61d5e4868b87c5d214f242543",
+      "working_copy_equals_HEAD": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_b0/nan_triage_resume_20260920.md",
+      "bytes": 56282,
+      "sha256": "ad0d12a451cb4446647a44465d252e40adc28ac775a4e307c194645332127249",
+      "repo_path": "recommendation/docs/mi450_b0/nan_triage_resume_20260920.md",
+      "HEAD_blob_sha256": "ad0d12a451cb4446647a44465d252e40adc28ac775a4e307c194645332127249",
+      "working_copy_equals_HEAD": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_b0/nan_triage_resume_20260919.md",
+      "bytes": 12255,
+      "sha256": "2676d220d81f4523b4cfc0a9429ea1830e01039e2d7e5b5829661a5664ca9473",
+      "repo_path": "recommendation/docs/mi450_b0/nan_triage_resume_20260919.md",
+      "HEAD_blob_sha256": "2676d220d81f4523b4cfc0a9429ea1830e01039e2d7e5b5829661a5664ca9473",
+      "working_copy_equals_HEAD": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_b0/patches/README.md",
+      "bytes": 2834,
+      "sha256": "cb42de4aab6c349bc4a3d61ed2d7c89c7d5c01358f1ac796fc5e3f93d2ad4713",
+      "repo_path": "recommendation/docs/mi450_b0/patches/README.md",
+      "HEAD_blob_sha256": "cb42de4aab6c349bc4a3d61ed2d7c89c7d5c01358f1ac796fc5e3f93d2ad4713",
+      "working_copy_equals_HEAD": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_b0/patches/cwsr_gfx1250_entry_bank_fix.patch",
+      "bytes": 2592,
+      "sha256": "eea1556000417d48fad867de22c531e2c560fad38934cfceef9afb94e3df64e2",
+      "repo_path": "recommendation/docs/mi450_b0/patches/cwsr_gfx1250_entry_bank_fix.patch",
+      "HEAD_blob_sha256": "eea1556000417d48fad867de22c531e2c560fad38934cfceef9afb94e3df64e2",
+      "working_copy_equals_HEAD": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_a0/mi450_a0.md",
+      "bytes": 244929,
+      "sha256": "38cd8faaf0414cb93659480413be04dbf2d0529123ef377d786b79a0a2347da0",
+      "repo_path": "recommendation/docs/mi450_a0/mi450_a0.md",
+      "HEAD_blob_sha256": "eb7ac7729c6f622d029367be4f74f1d36d81c460ee008f2ee480519a7cc54bfe",
+      "working_copy_equals_HEAD": false
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/CWSR_LN20_controlled_20260922_resume.json",
+      "bytes": 804699,
+      "sha256": "95e9af9a8fabe7263a29d42dbcb35237ca1b00831fc0031c9c98077e57ca3edb",
+      "repo_path": "recommendation/docs/mi450_a0/evidence/current_20260919/CWSR_LN20_controlled_20260922_resume.json",
+      "HEAD_blob_sha256": "95e9af9a8fabe7263a29d42dbcb35237ca1b00831fc0031c9c98077e57ca3edb",
+      "working_copy_equals_HEAD": true
+    },
+    {
+      "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/CWSR_candidate_AC2_validated_20260922.json",
+      "bytes": 10936,
+      "sha256": "9a791fd0000390083bb3307ffbd1c965721675b70ba2b5024bf10144ef0bb047",
+      "repo_path": "recommendation/docs/mi450_a0/evidence/current_20260919/CWSR_candidate_AC2_validated_20260922.json",
+      "HEAD_blob_sha256": "9a791fd0000390083bb3307ffbd1c965721675b70ba2b5024bf10144ef0bb047",
+      "working_copy_equals_HEAD": true
+    }
+  ],
+  "local_evidence_inputs": [
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_b0_historical_recovery_v1/README.md",
+      "bytes": 2514,
+      "sha256": "3aa27d3e402ab16318254619fec400b9565936a70a7db0eeed0716019b72d3b4"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_b0_historical_recovery_v1/review.json",
+      "bytes": 7899,
+      "sha256": "0e72232773e7163704ae5da46990b032f61603bb770d17539d618bedb838a1a8"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_b0_ln_residual_review_v1/README.md",
+      "bytes": 7942,
+      "sha256": "9584aa7bb4cba393f5eb3f14a10d1e26fefecb9f48bb6a0fce3e99a206f24bba"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_b0_ln_residual_review_v1/evidence_inventory.json",
+      "bytes": 5995,
+      "sha256": "c730fb8b9ff4b50c85f7a87dda1a5e68d81794e5c89afc292ecf579ace846201"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_b0_ln_independent_review_v1/README.md",
+      "bytes": 3531,
+      "sha256": "b649185075e3c204cffad684839dd2cf85cced1457e66ff2cde3ec7e540e0952"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_b0_ln_independent_review_v1/review.json",
+      "bytes": 1426,
+      "sha256": "cebbd26934efd6578adb50b9767dbd0d10619a7d43827425acf491fe8edb1342"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_results_peer_v1/health_components_review.json",
+      "bytes": 4961,
+      "sha256": "7845987b4ceef81468c599a1c03a3140e6505b120834965855d37004f0e0c913"
+    },
+    {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260922_ac2_prerequisites_v1/components/downstream_consumption.json",
+      "bytes": 8832,
+      "sha256": "955966ace1b2d209158cb899411e0ef00d2bf11daeaef9919801d08376396487"
+    }
+  ],
+  "B0_host_documented": "heliosr-1b112-a30-4",
+  "B0_hardware_documented": "MI450 B0, gfx1250, single GPU",
+  "assessment_scope": "Read-only local CPU/documentation and small source-derived candidate check; no new B0 runtime observation",
+  "cpu_patch_check": {
+    "command": [
+      "patch",
+      "--batch",
+      "--forward",
+      "-p1",
+      "-i",
+      "/home/chcai/training/recommendation/docs/mi450_b0/patches/cwsr_gfx1250_entry_bank_fix.patch"
+    ],
+    "returncode": 0,
+    "stdout": "patching file amd/amdkfd/cwsr_trap_handler_gfx12.asm\npatching file amd/amdkfd/cwsr_trap_handler.h\n",
+    "stderr": "",
+    "applied_only_in_private_temporary_directory": true,
+    "original_assembly": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/original/cwsr_trap_handler_gfx12.asm",
+      "bytes": 69197,
+      "sha256": "5e0e339cb988120d99fbccf2869bfab29e0a143bd110ce6f00cfdc495d5bf69d"
+    },
+    "original_header": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/source/original/cwsr_trap_handler.h",
+      "bytes": 135221,
+      "sha256": "006a44ea767d581ecc84913ec8bdcd68476471510a1ccd9923b00efc3b8463ef"
+    },
+    "patch": {
+      "path": "/home/chcai/training/recommendation/docs/mi450_b0/patches/cwsr_gfx1250_entry_bank_fix.patch",
+      "bytes": 2592,
+      "sha256": "eea1556000417d48fad867de22c531e2c560fad38934cfceef9afb94e3df64e2"
+    },
+    "derived_candidate_assembly": {
+      "path": "/tmp/b0_source_assessment_fgj5kw_o/amd/amdkfd/cwsr_trap_handler_gfx12.asm",
+      "bytes": 70155,
+      "sha256": "acaf6c622ffd8415d0c51d3da646946b9c57626494fa1e41be0ddd53e3ff1369"
+    },
+    "derived_candidate_header": {
+      "path": "/tmp/b0_source_assessment_fgj5kw_o/amd/amdkfd/cwsr_trap_handler.h",
+      "bytes": 135471,
+      "sha256": "1dbe3010c4d94905f6a8939c55102d0ca830e01c01e057057e9c27446c420571"
+    },
+    "original_handler": {
+      "bytes": 5656,
+      "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+    },
+    "B0_candidate_handler": {
+      "bytes": 5736,
+      "sha256": "1fda473155dc0a850039d2a018378facbb789cc0488891b26cdf18bbefef80b0"
+    },
+    "A0_ticket_candidate_handler": {
+      "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/corrected.bin",
+      "bytes": 5672,
+      "sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80"
+    },
+    "B0_candidate_equals_A0_candidate": false,
+    "only_B0_prologue_and_entry_branch_change": true,
+    "B0_original_prologue": [
+      60,
+      108
+    ],
+    "B0_candidate_prologue": [
+      60,
+      188
+    ],
+    "B0_original_restore_target": 4044,
+    "B0_candidate_restore_target": 4124,
+    "method": "Applied checked-in B0 patch to exact A0 frozen source/header whose SHA256 values equal B0 documented original pins; extracted little-endian embedded handler words. This does not read or authenticate a B0 loaded module."
+  },
+  "coverage": [
+    {
+      "topic": "Original CWSR non-wave-start bank-copy component",
+      "classification": "HIGH_CONFIDENCE_APPLICABLE_TO_B0",
+      "basis": "Same documented original source/header and 5656-byte handler; B0 explicit-trap 14-case sentinel reproduces the identical three predicted bank copies. Local CPU patch-preimage check confirms source-level compatibility.",
+      "citations": [
+        {
+          "repo_path": "recommendation/docs/mi450_b0/nan_triage_resume_20260921.md",
+          "lines": [
+            39,
+            41,
+            47,
+            59,
+            65,
+            72
+          ]
+        },
+        {
+          "repo_path": "recommendation/docs/mi450_b0/patches/README.md",
+          "lines": [
+            32,
+            34,
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "B0 constructed late LN column-263 NaNs",
+      "classification": "CONTROLLED_B0_ARITHMETIC_MECHANISM_REPRODUCED",
+      "basis": "15 cases, six unequal-bank positives and nine original/wait/equal controls; zero DY and finite inputs; exact historical 576-VGPR DX kernel; donor temporary NaN copied from v1 to v257 at setter0x40. DX stays zero.",
+      "citations": [
+        {
+          "repo_path": "recommendation/docs/mi450_b0/nan_triage_resume_20260921.md",
+          "lines": [
+            312,
+            314,
+            321,
+            329,
+            338,
+            348
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "B0 original helper DX/column-5 residual class",
+      "classification": "CONTROLLED_MECHANISM_AND_CORRECTED_COUNTERFACTUAL_ON_A0_ONLY",
+      "basis": "A0 native text matches published B0 text hash 77a9a6b4dbc5a08fe188d589ec1cebb302835819a74462f055629bd14181b11e. Earlier X-load injection reproduces whole-row DX/partial DW-column5 NaNs; corrected A0 driver removes 3584 DX plus2 partial-DW NaNs. Original B0 whole-ELF/raw historical coordinates were not recovered.",
+      "citations": [
+        {
+          "repo_path": "recommendation/docs/mi450_a0/mi450_a0.md",
+          "lines": [
+            603,
+            816,
+            817,
+            818,
+            823,
+            825,
+            827
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "B0 corrected privileged driver",
+      "classification": "NOT_VALIDATED_ON_B0",
+      "basis": "B0 candidate is different 5736-byte DST=SRC0-with-NOP/wait design; 512 ordinary-shader cases and CPU module build completed, but installed driver remained unchanged and no live privileged fix test ran.",
+      "citations": [
+        {
+          "repo_path": "recommendation/docs/mi450_b0/nan_triage_resume_20260921.md",
+          "lines": [
+            229,
+            238,
+            242,
+            256,
+            262,
+            267,
+            288,
+            293
+          ]
+        },
+        {
+          "repo_path": "recommendation/docs/mi450_b0/patches/README.md",
+          "lines": [
+            16,
+            20,
+            24,
+            28,
+            36,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Original B0 training NaN and later faults",
+      "classification": "NOT_CAUSALLY_COVERED_OR_FIXED",
+      "basis": "At step51 output-gradient GEMM receives huge finite dout and matches CPU; producing preprocess/projection/input-LN interval missing. Same settings have both prior NaNs60/70 and a 3000-step finite pass. Sept21 capture aborts after finite830 with no tensor payload or producing shader PC.",
+      "citations": [
+        {
+          "repo_path": "recommendation/docs/mi450_b0/mi450_b0.md",
+          "lines": [
+            29,
+            49,
+            51,
+            68
+          ]
+        },
+        {
+          "repo_path": "recommendation/docs/mi450_b0/nan_triage_resume_20260921.md",
+          "lines": [
+            163,
+            167,
+            169,
+            369,
+            378
+          ]
+        },
+        {
+          "repo_path": "recommendation/docs/mi450_b0/nan_triage_resume_20260920.md",
+          "lines": [
+            249
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Other established B0 defects / mitigation requirements",
+      "classification": "SEPARATE_UNLESS_A_MATCHED_BRIDGE_IS_ADDED",
+      "basis": "The independent int32 row-stride overflow fix, intermittent health/copy failures, attention/overlap/wild-address observations and platform faults cannot be declared fixed from CWSR component evidence alone.",
+      "citations": [
+        {
+          "repo_path": "recommendation/docs/mi450_b0/mi450_b0.md",
+          "lines": [
+            1979,
+            2391,
+            2408,
+            2466
+          ]
+        }
+      ]
+    }
+  ],
+  "A0_corrected_bridge_summary": {
+    "processes": 24,
+    "dispatches": 36,
+    "raw_files_verified": 856,
+    "raw_bytes_verified": 7366528,
+    "native_pins_verified": 1024,
+    "exact_unique_inventory_verified": true,
+    "same_original_native_ELFs_geometry_scalars": true,
+    "byte_identical_prefill_bytes": 3683264,
+    "original_LN_N16_G1_DX_NaNs": 512,
+    "original_LN_N16_G1_nan_rows": [
+      11
+    ],
+    "original_LN_N56_G1_DX_NaNs": 3072,
+    "original_LN_N56_G1_nan_rows": [
+      11,
+      19,
+      27,
+      35,
+      43,
+      51
+    ],
+    "original_LN_partial_DW_column5_NaNs": 2,
+    "corrected_LN_NaNs": 0,
+    "original_tiny_attention_wrong_finite_DQ_words_per_unequal_trap_call": 128,
+    "original_tiny_attention_wrong_finite_DQ_words_across_four_calls": 512,
+    "corrected_tiny_attention_wrong_DQ_words": 0,
+    "controls_unchanged": true
+  },
+  "A0_bridge_module_identity": {
+    "version": "7.1.1.31300009",
+    "srcversion": "8336BBB74E6C4D53275A4E5",
+    "cwsr_enable": 1,
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260921_CWSR_driver_build_v1/candidate_amdgpu.stripped.ko",
+    "sha256": "7e9a2985cb07838caf44793751ff6ce0149b61062e39bf0a4d72716c7289e8ab",
+    "activation": "Single first load on fresh boot with AMDGPU previously absent throughout boot",
+    "installed_original_preserved": true,
+    "installed_original_srcversion": "654C1DDE7A9A3E129BA9553"
+  },
+  "A0_component_peer_status": "PASS_INDEPENDENT_AC2_HEALTH_COMPONENT_ORIGINAL_COMPARISON",
+  "A0_component_peer_counts": {
+    "original_LN_DX_nan_elements": 3584,
+    "original_LN_partial_DW_nan_elements": 2,
+    "ac2_LN_nan_elements": 0
+  },
+  "B0_raw_evidence_availability_checked": [
+    {
+      "path": "/home/chcai/runs/mi450_b0_0910_7ff_start0_20260918/debug_nan/resume_20260921/b0_cwsr_installed_identity_cpu_20260921.json",
+      "exists_on_this_A0_host": false
+    },
+    {
+      "path": "/home/chcai/runs/mi450_b0_0910_7ff_start0_20260918/debug_nan/resume_20260921/b0_cwsr_controlled_20260921T022905021210Z/cpu_terminal_certificate/certificate.json",
+      "exists_on_this_A0_host": false
+    },
+    {
+      "path": "/home/chcai/runs/mi450_b0_0910_7ff_start0_20260918/debug_nan/resume_20260921/cwsr_entry_fix_candidate/full_handler_build_audit.json",
+      "exists_on_this_A0_host": false
+    },
+    {
+      "path": "/home/chcai/runs/mi450_b0_0910_7ff_start0_20260918/debug_nan/resume_20260921/ln_trap_arithmetic_20260921T042040470947Z/independent_raw_cpu_audit.json",
+      "exists_on_this_A0_host": false
+    },
+    {
+      "path": "/home/chcai/runs/mi450_b0_0910_7ff_start0_20260918/debug_nan/resume_20260921/ln_arithmetic_trap_bridge/arithmetic_evidence.json",
+      "exists_on_this_A0_host": false
+    }
+  ],
+  "limitations": [
+    "B0 runtime findings are attributed to checked-in terminal documentation and its cited audits; the linked B0 raw certificates are not locally present and were not independently re-read in this review.",
+    "A0 reconciliation receipts were read/pinned, but their raw tensor/native scans were not repeated.",
+    "A0 corrected native payload and B0 staged candidate are different fixes of the same component; neither code applicability nor A0 execution establishes a B0 loaded-driver or training result.",
+    "A0 B0-native-text comparison relies on the published B0 executable hash; the original B0 full ELF and historical full coordinates remain unrecovered.",
+    "SP3 compatibility on B0 is reported by B0 documentation; no B0 tool binary was accessed here.",
+    "No host-wide or all-training fix claim follows."
+  ],
+  "GPU_actions": false,
+  "remote_host_actions": false,
+  "module_actions": false,
+  "bulk_tensor_reads": false,
+  "frozen_package_edits": false,
+  "git_commits_or_pushes": false
+}

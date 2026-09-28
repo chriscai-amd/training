@@ -1,0 +1,12 @@
+{
+  "status": "PASS_FAST_FORWARD_PULL_WITH_LOCAL_A0_EDITS_PRESERVED",
+  "before_head": "402f7d0a83252bb4d8c32c01b599b1010bb9f109",
+  "fetched_head": "8cf681dead52574301cc68bdfa37442626d333b9",
+  "after_head": "8cf681dead52574301cc68bdfa37442626d333b9",
+  "pull_returncode": 0,
+  "merge_returncode": 0,
+  "local_before_sha256": "cd9bdce6d499c7c62f87c1ae2d388b0adf5b59babf9c75314c66478d7eaf6c41",
+  "merged_sha256": "38cd8faaf0414cb93659480413be04dbf2d0529123ef377d786b79a0a2347da0",
+  "local_ticket_directory_untouched": true,
+  "Git_commits_or_pushes": false
+}

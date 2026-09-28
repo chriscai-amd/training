@@ -1,0 +1,15 @@
+[20:04:32] candidate stripped: 40295376 bytes
+[20:04:33] building unchanged baseline
+[20:04:55] baseline stripped: 40295376 bytes
+installed srcversion=ECD716E95BE41CD5A13F14E vermagic="6.14.0-37-generic SMP preempt mod_unload modversions " sha256=b1a1eef14e313d1f
+baseline  srcversion=ECD716E95BE41CD5A13F14E vermagic="6.14.0-37-generic SMP preempt mod_unload modversions " sha256=75fc93ee567b11f3
+candidate srcversion=D0FD14A94CA9A71E8CE9BB4 vermagic="6.14.0-37-generic SMP preempt mod_unload modversions " sha256=d224829e40dd7590
+[20:04:55] audit installed -> baseline
+ handlers: {'bytes': 5656, 'sha256': '0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290'} {'bytes': 5656, 'sha256': '0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290'}
+ differing allocated sections: [('.note.gnu.build-id', 20, 36, 36)]
+ functions checked: 34004 changed: []
+[20:05:40] audit baseline -> candidate
+ handlers: {'bytes': 5656, 'sha256': '0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290'} {'bytes': 5672, 'sha256': '68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80'}
+ differing allocated sections: [('.modinfo', 21, 50142, 50142), ('.note.gnu.build-id', 20, 36, 36), ('.rodata', 528176, 1947600, 1947632), ('.text', 2, 10889831, 10889831)]
+ functions checked: 34004 changed: [('kgd2kfd_device_init', 2, [3442, 3448])]
+ whole-file differing bytes installed(unsigned part) vs baseline: 20

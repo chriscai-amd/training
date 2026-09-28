@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "manifest_files_checked": 33,
+  "complete_disassembly_instruction_counts": {
+    "baseline": 1061,
+    "corrected": 1064
+  },
+  "patch_applied_in_private_temporary_directory": true,
+  "patch_output_matches_packaged_source": true,
+  "header_contains_exact_tested_native_bytes": true,
+  "only_prologue_and_branch_changed": true,
+  "native_llvm_reassembly_checked": true,
+  "native_pins": {
+    "baseline": {
+      "bytes": 5656,
+      "sha256": "0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290"
+    },
+    "corrected": {
+      "bytes": 5672,
+      "sha256": "68c31ab204bdfe99551213b1716fb8b9944cd0fc315adb0b7ea8d9661e398b80"
+    }
+  },
+  "commands": [
+    {
+      "argv": [
+        "patch",
+        "--batch",
+        "--forward",
+        "-p1",
+        "-i",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/proposed_fix.patch"
+      ],
+      "returncode": 0,
+      "stdout": "patching file drivers/gpu/drm/amd/amdkfd/cwsr_trap_handler_gfx12.asm\npatching file drivers/gpu/drm/amd/amdkfd/cwsr_trap_handler.h\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/rocm/lib/llvm/bin/llvm-mc",
+        "--triple=amdgcn-amd-amdhsa",
+        "--mcpu=gfx1250",
+        "--filetype=obj",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/baseline.s",
+        "-o",
+        "/tmp/verify_cwsr_fix_a1rv2c0h/baseline.o"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/rocm/lib/llvm/bin/llvm-objcopy",
+        "--dump-section",
+        ".text=/tmp/verify_cwsr_fix_a1rv2c0h/baseline.bin",
+        "/tmp/verify_cwsr_fix_a1rv2c0h/baseline.o"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/rocm/lib/llvm/bin/llvm-mc",
+        "--triple=amdgcn-amd-amdhsa",
+        "--mcpu=gfx1250",
+        "--filetype=obj",
+        "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/fix/native/corrected.s",
+        "-o",
+        "/tmp/verify_cwsr_fix_a1rv2c0h/corrected.o"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/rocm/lib/llvm/bin/llvm-objcopy",
+        "--dump-section",
+        ".text=/tmp/verify_cwsr_fix_a1rv2c0h/corrected.bin",
+        "/tmp/verify_cwsr_fix_a1rv2c0h/corrected.o"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "original_SP3_assembler_tested": false,
+  "module_rebuilt": false,
+  "GPU_actions": false
+}

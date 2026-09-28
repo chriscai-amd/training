@@ -1,0 +1,224 @@
+{
+  "ordinal": 5,
+  "case": {
+    "mode_low_byte": 69,
+    "trap": true,
+    "symbol": "sentinel_45_1"
+  },
+  "started_utc": "2026-09-28T00:54:57.671292+00:00",
+  "transport_status": "PASS",
+  "call_index_begin": 38,
+  "output_device_pointer": "0x747c00600000",
+  "function_handle": "0xd76d3d0",
+  "prefill_expected": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/prefill_expected.bin",
+    "bytes": 160,
+    "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+  },
+  "prefill_actual": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/prefill_actual.bin",
+    "bytes": 160,
+    "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+  },
+  "kernarg_output_pointer_bytes": "000060007c740000",
+  "output": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/output.bin",
+    "bytes": 160,
+    "sha256": "63e571ab2c5bc9acaa9cca9b7b7418df9547f5e5bacb61690be58d0127735818"
+  },
+  "observation": {
+    "classification": "UNCHANGED",
+    "raw_words": [
+      "0x53545250",
+      "0x00000001",
+      "0x00000045",
+      "0x00000001",
+      "0x020150f0",
+      "0x020150f0",
+      "0x00010040",
+      "0x00010040",
+      "0x11000000",
+      "0x11000001",
+      "0x11000010",
+      "0x22000000",
+      "0x22000001",
+      "0x22000010",
+      "0x33000000",
+      "0x33000001",
+      "0x33000010",
+      "0x11000000",
+      "0x11000001",
+      "0x11000010",
+      "0x22000000",
+      "0x22000001",
+      "0x22000010",
+      "0x33000000",
+      "0x33000001",
+      "0x33000010",
+      "0x1943508c",
+      "0x0000748c",
+      "0x1943508c",
+      "0x0000748c",
+      "0xffffffff",
+      "0xffffffff",
+      "0x434f4d50",
+      "0xa5a5a5a5",
+      "0xa5a5a5a5",
+      "0xa5a5a5a5",
+      "0xa5a5a5a5",
+      "0xa5a5a5a5",
+      "0xa5a5a5a5",
+      "0xa5a5a5a5"
+    ],
+    "packet_structure_valid": true,
+    "constant_word_checks": [
+      {
+        "word": 0,
+        "role": "magic",
+        "expected": "0x53545250",
+        "observed": "0x53545250",
+        "equal": true
+      },
+      {
+        "word": 1,
+        "role": "version",
+        "expected": "0x00000001",
+        "observed": "0x00000001",
+        "equal": true
+      },
+      {
+        "word": 32,
+        "role": "completion",
+        "expected": "0x434f4d50",
+        "observed": "0x434f4d50",
+        "equal": true
+      },
+      {
+        "word": 33,
+        "role": "reserved",
+        "expected": "0xa5a5a5a5",
+        "observed": "0xa5a5a5a5",
+        "equal": true
+      },
+      {
+        "word": 34,
+        "role": "reserved",
+        "expected": "0xa5a5a5a5",
+        "observed": "0xa5a5a5a5",
+        "equal": true
+      },
+      {
+        "word": 35,
+        "role": "reserved",
+        "expected": "0xa5a5a5a5",
+        "observed": "0xa5a5a5a5",
+        "equal": true
+      },
+      {
+        "word": 36,
+        "role": "reserved",
+        "expected": "0xa5a5a5a5",
+        "observed": "0xa5a5a5a5",
+        "equal": true
+      },
+      {
+        "word": 37,
+        "role": "reserved",
+        "expected": "0xa5a5a5a5",
+        "observed": "0xa5a5a5a5",
+        "equal": true
+      },
+      {
+        "word": 38,
+        "role": "reserved",
+        "expected": "0xa5a5a5a5",
+        "observed": "0xa5a5a5a5",
+        "equal": true
+      },
+      {
+        "word": 39,
+        "role": "reserved",
+        "expected": "0xa5a5a5a5",
+        "observed": "0xa5a5a5a5",
+        "equal": true
+      }
+    ],
+    "packet_case_fields_match": true,
+    "intended_return_PC": "0x0000748c1943508c",
+    "returned_TTMP0": "0x1943508c",
+    "returned_TTMP1": "0x0000748c",
+    "EXEC_before": "0xffffffff",
+    "EXEC_after": "0xffffffff",
+    "EXEC_preserved": true,
+    "EXEC_both_full_wave32": true,
+    "initialization_valid": true,
+    "before_tags_equal_expected": true,
+    "requested_MODE_19_12": "0x15",
+    "observed_MODE_19_12_before": "0x15",
+    "observed_MODE_19_12_after": "0x15",
+    "MODE_bank_field_restored": true,
+    "trap_enabled_before": true,
+    "trap_enabled_after": true,
+    "changed_tags": [],
+    "explicit_shader_trap_requested": true,
+    "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+  },
+  "finished_utc": "2026-09-28T00:54:57.672521+00:00",
+  "call_index_end_exclusive": 44,
+  "calls": [
+    {
+      "phase": "end",
+      "index": 38,
+      "function": "hipModuleGetFunction",
+      "context": 5,
+      "started_utc": "2026-09-28T00:54:57.671420+00:00",
+      "finished_utc": "2026-09-28T00:54:57.671483+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 39,
+      "function": "hipMemcpy",
+      "context": 5,
+      "started_utc": "2026-09-28T00:54:57.671652+00:00",
+      "finished_utc": "2026-09-28T00:54:57.671732+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 40,
+      "function": "hipMemcpy",
+      "context": 5,
+      "started_utc": "2026-09-28T00:54:57.671786+00:00",
+      "finished_utc": "2026-09-28T00:54:57.671857+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 41,
+      "function": "hipModuleLaunchKernel",
+      "context": 5,
+      "started_utc": "2026-09-28T00:54:57.672026+00:00",
+      "finished_utc": "2026-09-28T00:54:57.672088+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 42,
+      "function": "hipDeviceSynchronize",
+      "context": 5,
+      "started_utc": "2026-09-28T00:54:57.672140+00:00",
+      "finished_utc": "2026-09-28T00:54:57.672202+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 43,
+      "function": "hipMemcpy",
+      "context": 5,
+      "started_utc": "2026-09-28T00:54:57.672257+00:00",
+      "finished_utc": "2026-09-28T00:54:57.672327+00:00",
+      "result_code": 0
+    }
+  ]
+}

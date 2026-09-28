@@ -1,0 +1,108 @@
+{
+  "status": "BOUNDED_CLEAN_WITH_RELEVANT_SVM_EXPOSURE",
+  "complete_consumer": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_nonzero_DW_execution_v1/complete_consumer.json",
+    "bytes": 1069164,
+    "sha256": "1522f0e5b4e3b98da8d48aa713c998aca635dfe7db6c239f2b117dbc4a1f7c1b"
+  },
+  "independent_complete_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_nonzero_DW_result_peer_v1/REVIEW.json",
+    "bytes": 15769,
+    "sha256": "5eb677acf2b1ebba9edc91916ee9b80c752de401f038816868d6bd1fd6f21fff"
+  },
+  "contract": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_nonzero_DW_source_v1/CONTRACT.json",
+    "bytes": 58470,
+    "sha256": "52958c8d401363bd8694137ae8a78b5f102ea560bf6fea9b25ef47c7109b3aa8"
+  },
+  "execution": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_nonzero_DW_execution_v1/terminal.json",
+    "bytes": 19237,
+    "sha256": "836c18c9ebf76faad6dfc77b07c61479a9c9124b2353748d9cf254aaf613463c"
+  },
+  "calls": 1000,
+  "all_output_words_checked": 131072000,
+  "all_outputs_exact": true,
+  "original_nonzero_DY": true,
+  "baseline": {
+    "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+    "bytes": 262144,
+    "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+  },
+  "complete_input_storage_bytes": 3570465280,
+  "complete_output_bytes": 262144000,
+  "complete_prefill_bytes": 262144000,
+  "native_argument_bytes_per_call": 172,
+  "exposure": {
+    "event_counts": {
+      "queue_eviction": 366,
+      "queue_restore": 365
+    },
+    "relevant_pairs": 14,
+    "distinct_exposed_calls": [
+      6,
+      47,
+      67,
+      88,
+      108,
+      129,
+      270,
+      314,
+      337,
+      361,
+      761,
+      818,
+      881,
+      915
+    ],
+    "breadth_target_met": true,
+    "trace_losses": 0,
+    "own_kprobe_misses": 0,
+    "limits": [
+      "The envelope includes queueing/readback time; it does not prove GPU execution at the eviction timestamp.",
+      "Queue helper entry is an attempt, not hardware CWSR acknowledgement.",
+      "Neither interrupted PC nor inherited bank fields are observed.",
+      "The breadth target is descriptive bounded coverage, not statistical proof of eliminated risk."
+    ]
+  },
+  "complete_pair_count": 365,
+  "unpaired_count": 1,
+  "platform": {
+    "boot_id": "b685ba14-e2ad-4751-b755-2e7bba3b58fa",
+    "driver_srcversion": "AD83C153B9701570F12964E",
+    "MES": "0x0000007b",
+    "official_0x7e_test": false
+  },
+  "archive_status": "PASS_NATURAL_DW_TRIAL_ARCHIVE_AND_RAW_RELEASE",
+  "preserved_archive_v1_failure": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_nonzero_DW_execution_v1/archive_release_v1/terminal.json",
+    "bytes": 1607,
+    "sha256": "36c4719b4397b7b94428c9c016612b7d420a451766ce121801bede58a7498ca0"
+  },
+  "platform_health_clearance": false,
+  "physical_CWSR_or_unique_historical_cause_proven": false,
+  "archive_release": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_nonzero_DW_execution_v1/archive_release_v2/terminal.json",
+    "bytes": 42278,
+    "sha256": "98105b4bae647b956e6219f7a6c172faed6b27ace890b6d4e0d0011458a4b735"
+  },
+  "archive_adapter": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_nonzero_DW_archive_adapter_v2/SOURCE.json",
+    "bytes": 5025,
+    "sha256": "9249d2de22db9d0f61fb2f4f64983b219db15ecd84e111ed8c806193554a0d81"
+  },
+  "independent_archive_adapter_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_nonzero_DW_archive_adapter_peer_v2/REVIEW.json",
+    "bytes": 6490,
+    "sha256": "c293db02f1a442b67b2a3b5c0b6c483322d3f4b89dcb38308d8712bda20b25b9"
+  },
+  "raw_bytes_losslessly_archived": 4094753280,
+  "archive_bytes": 2287259685,
+  "raw_paths_absent": true,
+  "complete_decompression_verified": true,
+  "final_gate": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_natural_nonzero_DW_execution_v1/archive_release_v2/final_gate/gate.json",
+    "bytes": 951961,
+    "sha256": "a64df9d80693ea830c2a36e15763bb5b3668a1af740c1b499d0e1839adfecbd3"
+  }
+}

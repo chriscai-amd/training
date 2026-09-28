@@ -1,0 +1,18 @@
+run=reproB_numabind_ctheliosr-rck-g02-j19-11_20260925T152003Z start=2026-09-25T15:20:03Z host=ctheliosr-rck-g02-j19-11 boot_id=b4ecf5cc-c74b-4cb1-8339-d28309d06f2c
+amdgpu version=7.1.1.31300009 srcversion=ECD716E95BE41CD5A13F14E
+amdgpu.cwsr_enable=1
+amdgpu.noretry=1
+amdgpu.gpu_recovery=0
+amdgpu.halt_if_hws_hang=1
+amdgpu.mes_log_enable=1
+amdgpu.uni_mes=1
+amdgpu.sched_policy=0
+amdgpu.ip_block_mask=4294967295
+kernel.numa_balancing=1 uname=6.14.0-37-generic
+0001:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a
+0003:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a
+0004:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a
+0002:01:00.0 vbios=113-M4500001-0660 mes=0x0000007b mec=0x0000096a
+NUMA_BIND=0,1 NCCL_NET=default TRIGGER_CLEAR_REFS_S=none TRIPWIRE_DIR=none PROTECT_KERNELS=0 TRITON_AMD_TARGET_FEATURES=none DIE_AT_STEP=1500
+402f7d0a83252bb4d8c32c01b599b1010bb9f109
+torch 2.11.0+rocm7.14.0a20260625 7.14.60850 | triton 3.8.0 /opt/triton-custom/python/triton/__init__.py | fbgemm 2026.9.25 | torchrec 1.7.0a0+bf55480

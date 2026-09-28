@@ -1,0 +1,29 @@
+{
+  "status": "EXACT_ORIGINAL_EXECUTED_SENTINEL_SOURCE_AND_NATIVE_ASSETS",
+  "files": [
+    {
+      "source_path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/run_sentinel_host_v1.py",
+      "package_path": "exact/run_sentinel_host_v1.py",
+      "bytes": 21231,
+      "sha256": "be1582e96b7dad21991a562a6d4aec2664d331bd30ae64e1117cbd2d045ace89"
+    },
+    {
+      "source_path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/sentinel_shader_root_v2.s",
+      "package_path": "exact/sentinel_shader_root_v2.s",
+      "bytes": 100058,
+      "sha256": "5172641877ade249d232cd5c721aed1e404b98921afe367043ad905784417a00"
+    },
+    {
+      "source_path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/sentinel_shader_root_v2.hsaco",
+      "package_path": "exact/sentinel_shader_root_v2.hsaco",
+      "bytes": 32152,
+      "sha256": "4f840df38a5d815abe50824f37dedbde4bf48fffdec6ca84530cd631f69e5484"
+    },
+    {
+      "source_path": "/home/chcai/mi450_logs/root_cause_20260919/session_continue_DW_CWSR_sentinel_design_v1/sentinel_host_configuration_v2.json",
+      "package_path": "exact/sentinel_host_configuration_v2.json",
+      "bytes": 4898,
+      "sha256": "4a7fd0b589959eec2f3c1f73fd86afacca18affb732d122df624bf0f7e4f2554"
+    }
+  ]
+}

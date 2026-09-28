@@ -1,0 +1,142 @@
+{
+  "status": "PASS_COMPACT_EVIDENCE_COPIES",
+  "files": [
+    {
+      "relative": "evidence/current_vs_corrected_DW.json",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_original_DW_result_peer_v1/CORRECTED_COMPARISON.json",
+        "bytes": 31923,
+        "sha256": "7764e9a84abaa5a89a6fdbf92574cbe78d99f87acb56092fb4fa5fe3fda5613e"
+      },
+      "bytes": 31923,
+      "sha256": "7764e9a84abaa5a89a6fdbf92574cbe78d99f87acb56092fb4fa5fe3fda5613e"
+    },
+    {
+      "relative": "evidence/native_causal_audit.json",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_causal_audit_v1/AUDIT.json",
+        "bytes": 75215,
+        "sha256": "80c370560fe86454640df4f05109da69d4ea387989b5281595e3ecc403da2368"
+      },
+      "bytes": 75215,
+      "sha256": "80c370560fe86454640df4f05109da69d4ea387989b5281595e3ecc403da2368"
+    },
+    {
+      "relative": "evidence/saved_DW_full_output_review.json",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_DW_full_output_peer_v1/REVIEW.json",
+        "bytes": 80125,
+        "sha256": "696bfcbeae3af07b589370c7cee94f4806c903c9aa5c96f9968df834c97a55bd"
+      },
+      "bytes": 80125,
+      "sha256": "696bfcbeae3af07b589370c7cee94f4806c903c9aa5c96f9968df834c97a55bd"
+    },
+    {
+      "relative": "evidence/saved_corrected_DW_complete.json",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260923_current_DW_execution_v1/complete_consumer.json",
+        "bytes": 181286,
+        "sha256": "da92bf28bd6907cbbbc3b4cdbc30db3f2542d9085c14feba57a068865ee197fd"
+      },
+      "bytes": 181286,
+      "sha256": "da92bf28bd6907cbbbc3b4cdbc30db3f2542d9085c14feba57a068865ee197fd"
+    },
+    {
+      "relative": "evidence/sentinel_original_vs_corrected_review.json",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_loaded_baseline_result_peer_v1/REVIEW.json",
+        "bytes": 136120,
+        "sha256": "5c8ab76b5b8b571e5348a91a0757a22b0d9ad998e14665d9598e97c3f4353375"
+      },
+      "bytes": 136120,
+      "sha256": "5c8ab76b5b8b571e5348a91a0757a22b0d9ad998e14665d9598e97c3f4353375"
+    },
+    {
+      "relative": "evidence/DW_all_1030_differences.json",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_DW_full_output_peer_v1/ALL_1030_DIFFERENCES.json",
+        "bytes": 258480,
+        "sha256": "4d02a38bf8e0d80340fdd525d2cd2c2470b2bdedd176bc64c3942eec36ab4fb3"
+      },
+      "bytes": 258480,
+      "sha256": "4d02a38bf8e0d80340fdd525d2cd2c2470b2bdedd176bc64c3942eec36ab4fb3"
+    },
+    {
+      "relative": "evidence/DW_healthy_reference.bf16.bin",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/primary_nop46_call_01_output.bf16.bin",
+        "bytes": 262144,
+        "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+      },
+      "bytes": 262144,
+      "sha256": "da3cc5656e1b105fc638d5556399233140fd2e5542ef822b5d7e9b4d8275d11e"
+    },
+    {
+      "relative": "evidence/DW_historical_corrupt_reference.bf16.bin",
+      "source": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260921_restore_sink_quartet_runtime_v1/original_training405_DW_native_Nmajor.bf16.bin",
+        "bytes": 262144,
+        "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+      },
+      "bytes": 262144,
+      "sha256": "7131a70208bc8432aca19688eb96e75e04779ab81b265adc120758b197a233d9"
+    },
+    {
+      "relative": "evidence/current_DW_complete.json",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/complete_consumer.json",
+        "bytes": 49423,
+        "sha256": "fab72bcc4b87e52d08da5f22fdb540c0be842c37283520d005f65dff45ccf093"
+      },
+      "bytes": 49423,
+      "sha256": "fab72bcc4b87e52d08da5f22fdb540c0be842c37283520d005f65dff45ccf093"
+    },
+    {
+      "relative": "evidence/current_DW_matrix.json",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_original_DW_execution_v1/complete_v1/quartet_matrix.json",
+        "bytes": 35872,
+        "sha256": "9021be10fdcfbc7ea8ea3654a96d3260fcb1fcca70d0e379fca6ca1499b3454d"
+      },
+      "bytes": 35872,
+      "sha256": "9021be10fdcfbc7ea8ea3654a96d3260fcb1fcca70d0e379fca6ca1499b3454d"
+    },
+    {
+      "relative": "evidence/current_DW_independent_review.json",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_original_DW_result_peer_v1/COMPLETE_RESULT_REVIEW.json",
+        "bytes": 40552,
+        "sha256": "6a855bc631d08b61be0f4b1534425bea5c28771c6e7d789c0eeeca1839bb4fea"
+      },
+      "bytes": 40552,
+      "sha256": "6a855bc631d08b61be0f4b1534425bea5c28771c6e7d789c0eeeca1839bb4fea"
+    },
+    {
+      "relative": "evidence/current_DW_archive_review.json",
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_original_DW_result_peer_v1/ARCHIVE_RESULT_REVIEW.json",
+        "bytes": 20732,
+        "sha256": "fe62963c0c48ee87c4c0961f930e97d17276681a3d02f3278113412df826b64f"
+      },
+      "bytes": 20732,
+      "sha256": "fe62963c0c48ee87c4c0961f930e97d17276681a3d02f3278113412df826b64f"
+    },
+    {
+      "relative": "evidence/inline_prologue_6144_calls_review.json",
+      "source": {
+        "path": "/home/chcai/training/recommendation/docs/mi450_a0/evidence/current_20260919/CWSR_inline_correction_20260921_evening.json",
+        "bytes": 203719,
+        "sha256": "978cac17b3bec17a6ce7d9d7f38dad41e62d2c9308fc6474b09f3df46c1af734"
+      },
+      "bytes": 203719,
+      "sha256": "978cac17b3bec17a6ce7d9d7f38dad41e62d2c9308fc6474b09f3df46c1af734"
+    }
+  ],
+  "GPU_actions": false,
+  "training_operands_included": false,
+  "notes": [
+    "Original audit bytes are preserved, including their local provenance paths.",
+    "Large training inputs and module binaries remain local evidence dependencies.",
+    "The standalone register reproducer does not need those training inputs."
+  ]
+}

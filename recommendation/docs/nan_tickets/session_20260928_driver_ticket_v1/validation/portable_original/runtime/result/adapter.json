@@ -1,0 +1,38 @@
+{
+  "status": "PORTABLE_WRAPPER_WITH_EXACT_EXECUTED_HOST_AND_SHADER",
+  "wrapper": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/run_repro.py",
+    "bytes": 12376,
+    "sha256": "521999790d358dc8a4507d29b291a77cd5c1dcc9fe03f8c7bf5565d8fce71262"
+  },
+  "original_host": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/exact/run_sentinel_host_v1.py",
+    "bytes": 21231,
+    "sha256": "be1582e96b7dad21991a562a6d4aec2664d331bd30ae64e1117cbd2d045ace89"
+  },
+  "native": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/exact/sentinel_shader_root_v2.hsaco",
+    "bytes": 32152,
+    "sha256": "4f840df38a5d815abe50824f37dedbde4bf48fffdec6ca84530cd631f69e5484"
+  },
+  "libraries": {
+    "hip": {
+      "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+      "bytes": 28048929,
+      "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+    },
+    "hsa": {
+      "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+      "bytes": 4887073,
+      "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+    }
+  },
+  "expectation": "original",
+  "portability_changes": [
+    "Host library pins supplied from explicit local runtime paths.",
+    "Unused training-specific REQUIRED_ENV changed to empty.",
+    "Configuration module path and selected device rebound; all cases/ABI/native bytes unchanged."
+  ],
+  "kernel_release": "6.14.0-37-generic",
+  "boot_id": "f268e253-8b79-4be6-ae3c-0d8e8b2dfd4e"
+}

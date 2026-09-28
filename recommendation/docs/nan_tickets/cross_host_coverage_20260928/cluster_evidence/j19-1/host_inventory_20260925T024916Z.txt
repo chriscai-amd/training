@@ -1,0 +1,483 @@
+
+===== host =====
+2026-09-25T02:49:16Z
+ctheliosr-rck-g02-j19-1
+Linux ctheliosr-rck-g02-j19-1 6.14.0-37-generic #37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+boot_id=c4dfb7f9-9584-485c-a400-42a7cfcd9081
+ 02:49:16 up 15:45,  0 user,  load average: 5.72, 5.63, 5.62
+PRETTY_NAME="Ubuntu 24.04.4 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.4 LTS (Noble Numbat)"
+
+===== cmdline =====
+BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic root=UUID=4c8a0bce-9d2d-46e7-b424-981fb6fb8c98 ro panic=0 nowatchdog msr.allow_writes=on nokaslr amdgpu.noretry=1 pci=realloc=off modprobe.blacklist=device_dax,dax_hmem iommu=pt console=tty0 console=ttyS1,115200n8 preempt=full rcu_nocbs=all
+
+===== cpu_numa =====
+CPU(s):                                  256
+On-line CPU(s) list:                     0-255
+Model name:                              AMD Eng Sample: 100-000001046-04
+Thread(s) per core:                      2
+Core(s) per socket:                      128
+Socket(s):                               1
+CPU(s) scaling MHz:                      59%
+NUMA node(s):                            38
+NUMA node0 CPU(s):                       0-63,128-191
+NUMA node1 CPU(s):                       64-127,192-255
+NUMA node2 CPU(s):                       
+NUMA node3 CPU(s):                       
+NUMA node4 CPU(s):                       
+NUMA node5 CPU(s):                       
+NUMA node6 CPU(s):                       
+NUMA node7 CPU(s):                       
+NUMA node8 CPU(s):                       
+NUMA node9 CPU(s):                       
+NUMA node10 CPU(s):                      
+NUMA node11 CPU(s):                      
+NUMA node12 CPU(s):                      
+NUMA node13 CPU(s):                      
+NUMA node14 CPU(s):                      
+NUMA node15 CPU(s):                      
+NUMA node16 CPU(s):                      
+NUMA node17 CPU(s):                      
+NUMA node18 CPU(s):                      
+NUMA node19 CPU(s):                      
+NUMA node20 CPU(s):                      
+NUMA node21 CPU(s):                      
+NUMA node22 CPU(s):                      
+NUMA node23 CPU(s):                      
+NUMA node24 CPU(s):                      
+NUMA node25 CPU(s):                      
+NUMA node26 CPU(s):                      
+NUMA node27 CPU(s):                      
+NUMA node28 CPU(s):                      
+NUMA node29 CPU(s):                      
+NUMA node30 CPU(s):                      
+NUMA node31 CPU(s):                      
+NUMA node32 CPU(s):                      
+NUMA node33 CPU(s):                      
+NUMA node34 CPU(s):                      
+NUMA node35 CPU(s):                      
+NUMA node36 CPU(s):                      
+NUMA node37 CPU(s):                      
+available: 38 nodes (0-37)
+node 0 cpus: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191
+node 0 size: 257657 MB
+node 0 free: 254993 MB
+node 1 cpus: 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255
+node 1 size: 257806 MB
+node 1 free: 227034 MB
+node 2 cpus:
+kernel.numa_balancing=1
+transparent_hugepage=always [madvise] never
+               total        used        free      shared  buff/cache   available
+Mem:             503          33         470           0           1         469
+
+===== amdgpu_module =====
+version=7.1.1.31300009
+srcversion=ECD716E95BE41CD5A13F14E
+initstate=live
+refcnt=0
+modinfo.filename=/lib/modules/6.14.0-37-generic/updates/dkms/amdgpu.ko.zst
+version:        7.1.1.31300009
+srcversion:     ECD716E95BE41CD5A13F14E
+vermagic:       6.14.0-37-generic SMP preempt mod_unload modversions 
+signer:         ctheliosr-rck-g02-j19-1 Secure Boot Module Signature key
+sig_key:        2A:BA:64:A4:80:28:60:7C:7C:B0:E2:45:D4:93:74:03:5C:04:A9:71
+sig_hashalgo:   sha512
+d1d658398d7168fe22605f68f24e03698f0a67a12077bee85bc1a811721988cd  /lib/modules/6.14.0-37-generic/updates/dkms/amdgpu.ko.zst
+-rw-r--r-- 1 root root 6098238 Sep 10 03:34 /lib/modules/6.14.0-37-generic/updates/dkms/amdgpu.ko.zst
+total 6552
+drwxr-xr-x 2 root root    4096 Sep 10 03:34 .
+drwxr-xr-x 3 root root    4096 Aug 14 13:15 ..
+-rw-r--r-- 1 root root   24054 Sep 10 03:34 amd-sched.ko.zst
+-rw-r--r-- 1 root root   12277 Sep 10 03:34 amddrm_buddy.ko.zst
+-rw-r--r-- 1 root root    3997 Sep 10 03:34 amddrm_exec.ko.zst
+-rw-r--r-- 1 root root    6960 Sep 10 03:34 amddrm_suballoc_helper.ko.zst
+-rw-r--r-- 1 root root    2986 Sep 10 03:34 amddrm_ttm_helper.ko.zst
+-rw-r--r-- 1 root root 6098238 Sep 10 03:34 amdgpu.ko.zst
+-rw-r--r-- 1 root root   14358 Sep 10 03:34 amdkcl.ko.zst
+-rw-r--r-- 1 root root   51429 Sep 10 03:34 amdttm.ko.zst
+-rw-r--r-- 1 root root    3585 Sep 10 03:34 amdxcp.ko.zst
+-rw-r--r-- 1 root root    6586 Sep 10 03:18 fwctl.ko.zst
+-rw-r--r-- 1 root root    7800 Sep 10 03:18 ib_peer_mem.ko.zst
+-rw-r--r-- 1 root root   48085 Sep 10 03:32 ifoe-cfg.ko.zst
+-rw-r--r-- 1 root root    4140 Sep 10 03:32 ifoe-cmd.ko.zst
+-rw-r--r-- 1 root root   14126 Sep 10 03:32 ifoe-net.ko.zst
+-rw-r--r-- 1 root root   33070 Sep 10 03:32 ifoe.ko.zst
+-rw-r--r-- 1 root root  121847 Sep 10 03:18 ionic.ko.zst
+-rw-r--r-- 1 root root  100192 Sep 10 03:18 ionic_rdma.ko.zst
+-rw-r--r-- 1 root root   18889 Sep 10 03:18 pds-vfio-pci.ko.zst
+-rw-r--r-- 1 root root   35461 Sep 10 03:18 pds_core.ko.zst
+-rw-r--r-- 1 root root    8988 Sep 10 03:18 pds_fwctl.ko.zst
+-rw-r--r-- 1 root root   52247 Sep 10 03:37 tawk_ipc.ko.zst
+
+===== amdgpu_params =====
+abmlevel=-1 
+agp=-1 
+aspm=-1 
+async_gfx_ring=1 
+audio=-1 
+backlight=-1 
+bad_page_threshold=-1 
+bapm=-1 
+cg_mask=18446744073709551615 
+cik_support=-1 
+compute_multipipe=-1 
+cwsr_enable=1 
+damageclips=-1 
+dc=-1 
+dcdebugmask=0 
+dcfeaturemask=2 
+debug_evictions=N 
+debug_mask=0 
+deep_color=0 
+disable_cu=(null) 
+discovery=-1 
+disp_priority=0 
+dpm=-1 
+emu_mode=0 
+enforce_isolation=-1 
+exp_hw_support=0 
+force_asic_type=-1 
+forcelongtraining=0 
+freesync_video=0 
+fw_load_type=-1 
+gartsize=
+gpu_recovery=0 
+gttsize=
+halt_if_hws_hang=1 
+hdmi_hpd_debounce_delay_ms=0 
+hw_i2c=0 
+hws_gws_support=N 
+hws_max_conc_proc=-1 
+ip_block_mask=4294967295 
+keep_idle_process_evicted=N 
+lbpw=-1 
+lockup_timeout= 
+max_num_of_queues_per_device=4096 
+mcbp=-1 
+mes_log_enable=1 
+modeset=-1 
+moverate=
+msi=-1 
+mtype_local=-1 
+mtype_remote=-1 
+no_evict=0 
+no_queue_eviction_on_vm_fault=0 
+no_system_mem_limit=N 
+noretry=1 
+num_kcq=-1 
+pcie_gen2=-1 
+pcie_gen_cap=0 
+pcie_lane_cap=0 
+pcie_p2p=Y 
+pg_mask=4294967295 
+ppfeaturemask=0xfff7bfff 
+priv_cp_queues=0 
+ptl=-1 
+queue_preemption_timeout_ms=9000 
+ras_enable=-1 
+ras_mask=18446744073709551615 
+rebar=-1 
+reset_method=-1 
+runpm=-1 
+sched_hw_submission=2 
+sched_jobs=32 
+sched_policy=0 
+sdma_phase_quantum=32 
+seamless=-1 
+send_sigterm=0 
+sg_display=-1 
+si_support=-1 
+smu_debug_msg_log=0 
+smu_memory_pool_size=0 
+smu_pptable_id=-1 
+svm_default_granularity=9 
+timeout_fatal_disable=N 
+timeout_period=0 
+tmz=-1 
+umsch_mm=0 
+umsch_mm_fwlog=0 
+uni_mes=1 
+use_xgmi_p2p=1 
+user_partt_mode=4294967294 
+user_queue=-1 
+vcnfw_log=0 
+virtual_display=(null) 
+vis_vramlimit=0 
+visualconfirm=0 
+vm_block_size=-1 
+vm_fault_stop=0 
+vm_fragment_size=-1 
+vm_size=-1 
+vm_update_mode=-1 
+vramlimit=
+wbrf=-1 
+xcc_mask=-1 
+
+===== modprobe_conf =====
+/etc/modprobe.d/amdgpu.conf:# AMDGPU boot loading enabled for completed RC1 installation.
+/etc/modprobe.d/amdgpu-j19-6-shape.conf:options amdgpu mes_log_enable=1 halt_if_hws_hang=1 gpu_recovery=0
+
+===== dkms_src =====
+/usr/src/amdgpu-7.1.1-2398876.24.04
+--- /usr/src/amdgpu-7.1.1-2398876.24.04/amd/amdkfd/cwsr_trap_handler_gfx12.asm
+5e0e339cb988120d99fbccf2869bfab29e0a143bd110ce6f00cfdc495d5bf69d  /usr/src/amdgpu-7.1.1-2398876.24.04/amd/amdkfd/cwsr_trap_handler_gfx12.asm
+261: L_NOT_WAVE_START:
+262: 	s_mov_b32	ttmp14, exec_lo
+263: 	s_mov_b32	exec_lo, 1
+264: 	v_readlane_b32	ttmp15, v1, 0
+265: 
+266: 	s_mov_b64	[ttmp2, ttmp3], 0
+267: 	v_mov_b32	v1, 0
+268: 	global_prefetch_b8	v1, [ttmp2, ttmp3] scope:SCOPE_SE th:TH_LOAD_RT
+269: 
+270: 	v_writelane_b32	v1, ttmp15, 0
+271: 	s_mov_b32	exec_lo, ttmp14
+272: #endif
+273: 
+274: #if RELAXED_SCHEDULING_IN_TRAP
+275: 	// Assume most relaxed scheduling mode is set. Save and revert to normal mode.
+276: 	s_getreg_b32	ttmp2, hwreg(HW_REG_WAVE_SCHED_MODE)
+277: 	s_wait_alu	0
+278: 	s_setreg_imm32_b32	hwreg(HW_REG_WAVE_SCHED_MODE, \
+279: 		SQ_WAVE_SCHED_MODE_DEP_MODE_SHIFT, SQ_WAVE_SCHED_MODE_DEP_MODE_SIZE), 0
+280: #endif
+281: 
+282: #if RELAXED_SCHEDULING_IN_TRAP
+283: 	// Save SCHED_MODE[1:0] into ttmp11[27:26].
+284: 	s_andn2_b32	ttmp11, ttmp11, TTMP11_SCHED_MODE_MASK
+285: 	s_lshl_b32	ttmp2, ttmp2, TTMP11_SCHED_MODE_SHIFT
+286: 	s_or_b32	ttmp11, ttmp11, ttmp2
+006a44ea767d581ecc84913ec8bdcd68476471510a1ccd9923b00efc3b8463ef  /usr/src/amdgpu-7.1.1-2398876.24.04/amd/amdkfd/cwsr_trap_handler.h
+23:static const uint32_t cwsr_trap_gfx8_hex[] = {
+276:static const uint32_t cwsr_trap_gfx9_hex[] = {
+692:static const uint32_t cwsr_trap_nv1x_hex[] = {
+1316:static const uint32_t cwsr_trap_arcturus_hex[] = {
+1808:static const uint32_t cwsr_trap_aldebaran_hex[] = {
+2312:static const uint32_t cwsr_trap_gfx10_hex[] = {
+2746:static const uint32_t cwsr_trap_gfx11_hex[] = {
+3190:static const uint32_t cwsr_trap_gfx9_4_3_hex[] = {
+3705:static const uint32_t cwsr_trap_gfx12_hex[] = {
+4178:static const uint32_t cwsr_trap_gfx9_5_0_hex[] = {
+4687:static const uint32_t cwsr_trap_gfx12_1_0_hex[] = {
+
+===== packages =====
+ii amd64-microcode 3.20251202.1ubuntu0.24.04.1
+ii amdgpu-dkms 1:7.1.1.31300009-2398876.24.04
+ii amdgpu-dkms-firmware 1:31.30.0.9.31300009-2398876.24.04
+ii amdgpu-insecure-instinct-udev-rules 31.30.0.9-2389086.24.04
+ii firmware-sof-signed 2023.12.1-1ubuntu1.11
+ii fwupd 2.0.20-1ubuntu2~24.04.2
+ii fwupd-signed 1.52+1.4-1
+ii intel-microcode 3.20260210.0ubuntu0.24.04.1
+ii libamd-comgr2:amd64 6.0+git20231212.4510c28+dfsg-3build2
+ii libdrm-amdgpu1:amd64 2.4.125-1ubuntu0.1~24.04.2
+ii libfwupd3:amd64 2.0.20-1ubuntu2~24.04.2
+ii libhsa-runtime64-1 5.7.1-2build1
+ii libhsakmt1:amd64 5.7.0-1build1
+ii linux-firmware 20240318.git3b128b60-0ubuntu2.29
+ii linux-image-6.14.0-37-generic 6.14.0-37.37~24.04.1
+rc linux-image-6.8.0-134-generic 6.8.0-134.134
+rc linux-image-6.8.0-136-generic 6.8.0-136.136
+rc linux-image-6.8.0-137-generic 6.8.0-137.137
+rc linux-image-6.8.0-138-generic 6.8.0-138.138
+ii linux-image-6.8.0-139-generic 6.8.0-139.139
+ii rocsift 16.5.0-noble
+ii rocsift-tools 16.5.0-noble
+
+===== firmware_files =====
+-rw-r--r-- 1 root root 218240 Sep  2 17:12 gc_11_0_0_mes1.bin
+-rw-r--r-- 1 root root 260624 Sep  2 17:12 gc_11_0_0_mes_2.bin
+-rw-r--r-- 1 root root 235344 Sep  2 17:12 gc_11_0_1_mes1.bin
+-rw-r--r-- 1 root root 258368 Sep  2 17:12 gc_11_0_1_mes_2.bin
+-rw-r--r-- 1 root root 218560 Sep  2 17:12 gc_11_0_2_mes1.bin
+-rw-r--r-- 1 root root 260624 Sep  2 17:12 gc_11_0_2_mes_2.bin
+-rw-r--r-- 1 root root 220544 Sep  2 17:12 gc_11_0_3_mes1.bin
+-rw-r--r-- 1 root root 260688 Sep  2 17:12 gc_11_0_3_mes_2.bin
+-rw-r--r-- 1 root root 234640 Sep  2 17:12 gc_11_0_4_mes1.bin
+-rw-r--r-- 1 root root 257760 Sep  2 17:12 gc_11_0_4_mes_2.bin
+-rw-r--r-- 1 root root 238128 Sep  2 17:12 gc_11_5_0_mes1.bin
+-rw-r--r-- 1 root root 258208 Sep  2 17:12 gc_11_5_0_mes_2.bin
+-rw-r--r-- 1 root root 238320 Sep  2 17:12 gc_11_5_1_mes1.bin
+-rw-r--r-- 1 root root 258496 Sep  2 17:12 gc_11_5_1_mes_2.bin
+-rw-r--r-- 1 root root 237776 Sep  2 17:12 gc_11_5_2_mes1.bin
+-rw-r--r-- 1 root root 260560 Sep  2 17:12 gc_11_5_2_mes_2.bin
+-rw-r--r-- 1 root root 237776 Sep  2 17:12 gc_11_5_3_mes1.bin
+-rw-r--r-- 1 root root 260560 Sep  2 17:12 gc_11_5_3_mes_2.bin
+-rw-r--r-- 1 root root 636048 Sep  2 17:12 gc_12_0_0_mes.bin
+-rw-r--r-- 1 root root 609840 Sep  2 17:12 gc_12_0_0_mes1.bin
+-rw-r--r-- 1 root root 727680 Sep  2 17:12 gc_12_0_0_uni_mes.bin
+-rw-r--r-- 1 root root 643536 Sep  2 17:12 gc_12_0_1_mes.bin
+-rw-r--r-- 1 root root 611920 Sep  2 17:12 gc_12_0_1_mes1.bin
+-rw-r--r-- 1 root root 727680 Sep  2 17:12 gc_12_0_1_uni_mes.bin
+-rw-r--r-- 1 root root 305120 Sep  2 17:12 gc_12_1_0_mec.bin
+-rw-r--r-- 1 root root 305120 Sep  2 17:12 gc_12_1_0_mec_1.bin
+-rw-r--r-- 1 root root 636620 Sep  2 17:12 gc_12_1_0_mes.bin
+-rw-r--r-- 1 root root 617536 Sep  2 17:12 gc_12_1_0_mes1.bin
+-rw-r--r-- 1 root root 253344 Sep  2 17:12 gc_12_1_0_rlc.bin
+-rw-r--r-- 1 root root 253328 Sep  2 17:12 gc_12_1_0_rlc_1.bin
+-rw-r--r-- 1 root root 333504 Sep  2 17:12 gc_12_1_0_uni_mes.bin
+-rw-r--r-- 1 root root  12424 Sep  2 17:12 psp_15_0_8_rl.bin
+-rw-r--r-- 1 root root  17201 Sep  2 17:12 psp_15_0_8_ta.bin
+-rw-r--r-- 1 root root   2816 Sep  2 17:12 psp_15_0_8_toc.bin
+-rw-r--r-- 1 root root   2816 Sep  2 17:12 psp_15_0_8_toc_1.bin
+-rw-r--r-- 1 root root  47872 Sep  2 17:12 sdma_7_0_0.bin
+-rw-r--r-- 1 root root  47104 Sep  2 17:12 sdma_7_0_1.bin
+-rw-r--r-- 1 root root  44032 Sep  2 17:12 sdma_7_1_0.bin
+-rw-r--r-- 1 root root 105424 Sep  2 17:12 sienna_cichlid_mes.bin
+-rw-r--r--   1 root root   33243 Jul 13 07:54 gc_11_0_0_mes.bin.zst
+-rw-r--r--   1 root root   36101 Jul 13 07:54 gc_11_0_0_mes1.bin.zst
+-rw-r--r--   1 root root   54986 Jul 13 07:54 gc_11_0_0_mes_2.bin.zst
+-rw-r--r--   1 root root   33572 Jul 13 07:54 gc_11_0_1_mes.bin.zst
+-rw-r--r--   1 root root   45770 Jul 13 07:54 gc_11_0_1_mes1.bin.zst
+-rw-r--r--   1 root root   57879 Jul 13 07:54 gc_11_0_1_mes_2.bin.zst
+-rw-r--r--   1 root root   33229 Jul 13 07:54 gc_11_0_2_mes.bin.zst
+-rw-r--r--   1 root root   35413 Jul 13 07:54 gc_11_0_2_mes1.bin.zst
+-rw-r--r--   1 root root   48056 Jul 13 07:54 gc_11_0_2_mes_2.bin.zst
+-rw-r--r--   1 root root   35023 Jul 13 07:54 gc_11_0_3_mes1.bin.zst
+-rw-r--r--   1 root root   48101 Jul 13 07:54 gc_11_0_3_mes_2.bin.zst
+lrwxrwxrwx   1 root root      21 Jul 13 07:54 gc_11_0_4_mes.bin.zst -> gc_11_0_1_mes.bin.zst
+-rw-r--r--   1 root root   44714 Jul 13 07:54 gc_11_0_4_mes1.bin.zst
+-rw-r--r--   1 root root   54436 Jul 13 07:54 gc_11_0_4_mes_2.bin.zst
+-rw-r--r--   1 root root   46372 Jul 13 07:54 gc_11_5_0_mes1.bin.zst
+-rw-r--r--   1 root root   54357 Jul 13 07:54 gc_11_5_0_mes_2.bin.zst
+-rw-r--r--   1 root root   48212 Jul 13 07:54 gc_11_5_1_mes1.bin.zst
+-rw-r--r--   1 root root   55066 Jul 13 07:54 gc_11_5_1_mes_2.bin.zst
+-rw-r--r--   1 root root   47890 Jul 13 07:54 gc_11_5_2_mes1.bin.zst
+-rw-r--r--   1 root root   55601 Jul 13 07:54 gc_11_5_2_mes_2.bin.zst
+lrwxrwxrwx   1 root root      22 Jul 13 07:54 gc_11_5_3_mes1.bin.zst -> gc_11_5_2_mes1.bin.zst
+lrwxrwxrwx   1 root root      23 Jul 13 07:54 gc_11_5_3_mes_2.bin.zst -> gc_11_5_2_mes_2.bin.zst
+-rw-r--r--   1 root root   46479 Jul 13 07:54 gc_12_0_0_mes.bin.zst
+-rw-r--r--   1 root root   34075 Jul 13 07:54 gc_12_0_0_mes1.bin.zst
+-rw-r--r--   1 root root   91698 Jul 13 07:54 gc_12_0_0_uni_mes.bin.zst
+-rw-r--r--   1 root root   49996 Jul 13 07:54 gc_12_0_1_mes.bin.zst
+-rw-r--r--   1 root root   34763 Jul 13 07:54 gc_12_0_1_mes1.bin.zst
+lrwxrwxrwx   1 root root      25 Jul 13 07:54 gc_12_0_1_uni_mes.bin.zst -> gc_12_0_0_uni_mes.bin.zst
+d93a2d404bce004dc57d0cf835654f7dc1c7648ed44cb9da8393f3f98239255f  /lib/firmware/updates/amdgpu/gc_12_1_0_uni_mes.bin
+
+===== gpu_sysfs =====
+--- card1 0001:01:00.0 devid=0x75c1 rev=0x00 subsys=0x75c1 vbios=113-M4500001-0660
+  product_name= 
+  product_number= 
+  serial_number= 
+  unique_id=852fa0eefc4fc081 
+  board_info=type : unknown 
+  mec_fw_version=0x0000096a   mes_fw_version=0x0000007b   mes_kiq_fw_version=0x0000007b   rlc_fw_version=0x0000001f   sdma2_fw_version=0x00893547   sdma_fw_version=0x00893547   smc_fw_version=0x027d0a03   ta_ras_fw_version=0x1b440004   vcn_fw_version=0x0910d008 
+--- card17 0003:01:00.0 devid=0x75c1 rev=0x00 subsys=0x75c1 vbios=113-M4500001-0660
+  product_name= 
+  product_number= 
+  serial_number= 
+  unique_id=e86560d8fda52dbd 
+  board_info=type : unknown 
+  mec_fw_version=0x0000096a   mes_fw_version=0x0000007b   mes_kiq_fw_version=0x0000007b   rlc_fw_version=0x0000001f   sdma2_fw_version=0x00893547   sdma_fw_version=0x00893547   smc_fw_version=0x027d0a03   ta_ras_fw_version=0x1b440004   vcn_fw_version=0x0910d008 
+--- card25 0004:01:00.0 devid=0x75c1 rev=0x00 subsys=0x75c1 vbios=113-M4500001-0660
+  product_name= 
+  product_number= 
+  serial_number= 
+  unique_id=6a8eed87bffcf5b6 
+  board_info=type : unknown 
+  mec_fw_version=0x0000096a   mes_fw_version=0x0000007b   mes_kiq_fw_version=0x0000007b   rlc_fw_version=0x0000001f   sdma2_fw_version=0x00893547   sdma_fw_version=0x00893547   smc_fw_version=0x027d0a03   ta_ras_fw_version=0x1b440004   vcn_fw_version=0x0910d008 
+--- card9 0002:01:00.0 devid=0x75c1 rev=0x00 subsys=0x75c1 vbios=113-M4500001-0660
+  product_name= 
+  product_number= 
+  serial_number= 
+  unique_id=ba9b889b135db14a 
+  board_info=type : unknown 
+  mec_fw_version=0x0000096a   mes_fw_version=0x0000007b   mes_kiq_fw_version=0x0000007b   rlc_fw_version=0x0000001f   sdma2_fw_version=0x00893547   sdma_fw_version=0x00893547   smc_fw_version=0x027d0a03   ta_ras_fw_version=0x1b440004   vcn_fw_version=0x0910d008 
+crw-rw-rw- 1 root render 226, 128 Sep 24 11:04 /dev/dri/renderD128
+crw-rw-rw- 1 root render 226, 129 Sep 24 11:04 /dev/dri/renderD129
+crw-rw-rw- 1 root render 226, 130 Sep 24 11:04 /dev/dri/renderD130
+crw-rw-rw- 1 root render 226, 131 Sep 24 11:04 /dev/dri/renderD131
+crw-rw-rw- 1 root render 226, 132 Sep 24 11:04 /dev/dri/renderD132
+crw-rw-rw- 1 root render 226, 133 Sep 24 11:04 /dev/dri/renderD133
+crw-rw-rw- 1 root render 226, 134 Sep 24 11:04 /dev/dri/renderD134
+crw-rw-rw- 1 root render 226, 135 Sep 24 11:04 /dev/dri/renderD135
+crw-rw-rw- 1 root render 226, 136 Sep 24 11:04 /dev/dri/renderD136
+crw-rw-rw- 1 root render 226, 137 Sep 24 11:04 /dev/dri/renderD137
+crw-rw-rw- 1 root render 226, 138 Sep 24 11:04 /dev/dri/renderD138
+crw-rw-rw- 1 root render 226, 139 Sep 24 11:04 /dev/dri/renderD139
+
+===== kfd_topology =====
+awk: fatal: error reading input file `/sys/class/kfd/kfd/topology/nodes/2/properties': Operation not permitted
+grep: /sys/class/kfd/kfd/topology/nodes/2/properties: Operation not permitted
+2: 
+awk: fatal: error reading input file `/sys/class/kfd/kfd/topology/nodes/3/properties': Operation not permitted
+grep: /sys/class/kfd/kfd/topology/nodes/3/properties: Operation not permitted
+3: 
+awk: fatal: error reading input file `/sys/class/kfd/kfd/topology/nodes/4/properties': Operation not permitted
+grep: /sys/class/kfd/kfd/topology/nodes/4/properties: Operation not permitted
+4: 
+awk: fatal: error reading input file `/sys/class/kfd/kfd/topology/nodes/5/properties': Operation not permitted
+grep: /sys/class/kfd/kfd/topology/nodes/5/properties: Operation not permitted
+5: 
+
+===== rocm_host =====
+/opt/rocm
+/opt/rocm-10.1.0a20260811
+/opt/rocm-10.1.0a20260811+bkc.20260818
+/opt/rocm-10.1.0a20260811-bkc.20260820
+/opt/rocm-10.1.0a20260812
+/opt/rocm-A0-0715
+/opt/rocm-artifacts
+/opt/rocm-default-backup-20260819T051228Z
+/opt/rocm-pr891-34205166812-166c2660147f
+/opt/rocm-tests
+/opt/rocm-tests-10.1.0a20260811+bkc.20260818
+/opt/rocm-tests-10.1.0a20260811-bkc.20260820
+/opt/rocm-tests-pr891-34205166812-166c2660147f
+/opt/rocm-10.1.0a20260811+bkc.20260818/.info/version: 10.1.0
+/opt/rocm-10.1.0a20260811-bkc.20260820/.info/version: 10.1.0
+/opt/rocm-10.1.0a20260811/.info/version: 10.1.0
+/opt/rocm-10.1.0a20260812/.info/version: 10.1.0
+/opt/rocm-A0-0715/.info/version: 7.15.0
+/opt/rocm-pr891-34205166812-166c2660147f/.info/version: 10.1.0
+/opt/rocm-tests-10.1.0a20260811+bkc.20260818/.info/version: 10.1.0
+/opt/rocm-tests-10.1.0a20260811-bkc.20260820/.info/version: 10.1.0
+/opt/rocm-tests-pr891-34205166812-166c2660147f/.info/version: 10.1.0
+/opt/rocm-tests/.info/version: 10.1.0
+/opt/rocm/.info/version: 10.1.0
+/shared/chcai/mi450_a0_newcluster/inspect_node.sh: line 79: amd-smi: command not found
+/shared/chcai/mi450_a0_newcluster/inspect_node.sh: line 81: amd-smi: command not found
+
+===== containers =====
+/usr/bin/docker
+
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+misc
+source
+
+===== bkc =====
+drwxr-xr-x   3 root root        4096 Sep 10 03:03 amd
+-rw-r--r--   1 root root          26 Feb  6  2026 issue
+-rw-r--r--   1 root root          19 Feb  6  2026 issue.net
+-rw-r--r--   1 root root         104 Feb  6  2026 lsb-release
+lrwxrwxrwx   1 root root          21 Feb  6  2026 os-release -> ../usr/lib/os-release
+drwxr-xr-x   2 root root        4096 Aug 13 22:18 update-motd.d
+AMD
+agt-4.1.158.0E
+amdtools
+arc-1.6.0-rc2
+containerd
+crd-v18-artifacts
+rocm
+rocm-10.1.0a20260811
+rocm-10.1.0a20260811+bkc.20260818
+rocm-10.1.0a20260811-bkc.20260820
+rocm-10.1.0a20260812
+rocm-A0-0715
+rocm-artifacts
+rocm-default-backup-20260819T051228Z
+rocm-pr891-34205166812-166c2660147f
+rocm-tests
+rocm-tests-10.1.0a20260811+bkc.20260818
+rocm-tests-10.1.0a20260811-bkc.20260820
+rocm-tests-pr891-34205166812-166c2660147f
+
+===== kernel_log_access =====
+1
+dmesg: read kernel buffer failed: Operation not permitted
+
+DONE

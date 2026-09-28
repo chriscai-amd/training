@@ -1,0 +1,16 @@
+== verification
+installed: d224829e40dd759028f6ec36573ffedbdb79ee3aae215e014106517b8f23ea18  /var/lib/chcai-cwsrfix/candidate_amdgpu.ko
+expected:  d224829e40dd759028f6ec36573ffedbdb79ee3aae215e014106517b8f23ea18
+-rw-r--r-- 1 root root  565 Sep 27 01:11 /etc/systemd/system/chcai-cwsrfix-load.service
+lrwxrwxrwx 1 root root   46 Sep 27 01:11 /etc/systemd/system/multi-user.target.wants/chcai-cwsrfix-load.service -> /etc/systemd/system/chcai-cwsrfix-load.service
+
+/var/lib/chcai-cwsrfix:
+total 39372
+drwxr-xr-x  3 root root     4096 Sep 27 01:11 .
+drwxr-xr-x 54 root root     4096 Sep 27 01:11 ..
+-rw-r--r--  1 root root        0 Sep 27 01:11 ARMED
+-rw-r--r--  1 root root     1037 Sep 27 01:11 README.txt
+-rw-r--r--  1 root root 40295376 Sep 27 01:11 candidate_amdgpu.ko
+-rwxr-xr-x  1 root root     1621 Sep 27 01:11 load.sh
+drwxr-xr-x  2 root root     4096 Sep 27 01:11 receipts
+armed: next boot loads the corrected amdgpu once (pre boot_id 964bbe1c-0c9b-4422-90c3-c549415b3b28)

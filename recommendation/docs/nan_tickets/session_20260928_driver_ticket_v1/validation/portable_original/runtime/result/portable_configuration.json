@@ -1,0 +1,242 @@
+{
+  "schema": "MI450-CWSR-SENTINEL-HOST-v1",
+  "libraries": {
+    "hip": {
+      "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+      "bytes": 28048929,
+      "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+    },
+    "hsa": {
+      "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+      "bytes": 4887073,
+      "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+    }
+  },
+  "module": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/exact/sentinel_shader_root_v2.hsaco",
+    "bytes": 32152,
+    "sha256": "4f840df38a5d815abe50824f37dedbde4bf48fffdec6ca84530cd631f69e5484"
+  },
+  "cases": [
+    {
+      "mode_low_byte": 0,
+      "trap": false,
+      "symbol": "sentinel_00_0"
+    },
+    {
+      "mode_low_byte": 0,
+      "trap": true,
+      "symbol": "sentinel_00_1"
+    },
+    {
+      "mode_low_byte": 65,
+      "trap": false,
+      "symbol": "sentinel_41_0"
+    },
+    {
+      "mode_low_byte": 65,
+      "trap": true,
+      "symbol": "sentinel_41_1"
+    },
+    {
+      "mode_low_byte": 69,
+      "trap": false,
+      "symbol": "sentinel_45_0"
+    },
+    {
+      "mode_low_byte": 69,
+      "trap": true,
+      "symbol": "sentinel_45_1"
+    },
+    {
+      "mode_low_byte": 130,
+      "trap": false,
+      "symbol": "sentinel_82_0"
+    },
+    {
+      "mode_low_byte": 130,
+      "trap": true,
+      "symbol": "sentinel_82_1"
+    },
+    {
+      "mode_low_byte": 5,
+      "trap": false,
+      "symbol": "sentinel_05_0"
+    },
+    {
+      "mode_low_byte": 5,
+      "trap": true,
+      "symbol": "sentinel_05_1"
+    },
+    {
+      "mode_low_byte": 129,
+      "trap": false,
+      "symbol": "sentinel_81_0"
+    },
+    {
+      "mode_low_byte": 129,
+      "trap": true,
+      "symbol": "sentinel_81_1"
+    },
+    {
+      "mode_low_byte": 133,
+      "trap": false,
+      "symbol": "sentinel_85_0"
+    },
+    {
+      "mode_low_byte": 133,
+      "trap": true,
+      "symbol": "sentinel_85_1"
+    }
+  ],
+  "grid": [
+    1,
+    1,
+    1
+  ],
+  "block": [
+    32,
+    1,
+    1
+  ],
+  "shared_bytes": 0,
+  "kernarg_bytes": 8,
+  "device": 0,
+  "packet_words": 40,
+  "prefill_byte": 165,
+  "layout": {
+    "mode_before": 4,
+    "mode_after": 5,
+    "status_before": 6,
+    "status_after": 7,
+    "case_mode": 2,
+    "case_trap": 3,
+    "intended_return_pc": [
+      26,
+      27
+    ],
+    "returned_ttmp": [
+      28,
+      29
+    ],
+    "exec_before": 30,
+    "exec_after": 31,
+    "tags": [
+      {
+        "vgpr": 1,
+        "lane": 0,
+        "before_word": 8,
+        "after_word": 17,
+        "expected_bits": 285212672
+      },
+      {
+        "vgpr": 1,
+        "lane": 1,
+        "before_word": 9,
+        "after_word": 18,
+        "expected_bits": 285212673
+      },
+      {
+        "vgpr": 1,
+        "lane": 16,
+        "before_word": 10,
+        "after_word": 19,
+        "expected_bits": 285212688
+      },
+      {
+        "vgpr": 257,
+        "lane": 0,
+        "before_word": 11,
+        "after_word": 20,
+        "expected_bits": 570425344
+      },
+      {
+        "vgpr": 257,
+        "lane": 1,
+        "before_word": 12,
+        "after_word": 21,
+        "expected_bits": 570425345
+      },
+      {
+        "vgpr": 257,
+        "lane": 16,
+        "before_word": 13,
+        "after_word": 22,
+        "expected_bits": 570425360
+      },
+      {
+        "vgpr": 513,
+        "lane": 0,
+        "before_word": 14,
+        "after_word": 23,
+        "expected_bits": 855638016
+      },
+      {
+        "vgpr": 513,
+        "lane": 1,
+        "before_word": 15,
+        "after_word": 24,
+        "expected_bits": 855638017
+      },
+      {
+        "vgpr": 513,
+        "lane": 16,
+        "before_word": 16,
+        "after_word": 25,
+        "expected_bits": 855638032
+      }
+    ],
+    "constant_words": [
+      {
+        "word": 0,
+        "role": "magic",
+        "expected_bits": 1398035024
+      },
+      {
+        "word": 1,
+        "role": "version",
+        "expected_bits": 1
+      },
+      {
+        "word": 32,
+        "role": "completion",
+        "expected_bits": 1129270608
+      },
+      {
+        "word": 33,
+        "role": "reserved",
+        "expected_bits": 2779096485
+      },
+      {
+        "word": 34,
+        "role": "reserved",
+        "expected_bits": 2779096485
+      },
+      {
+        "word": 35,
+        "role": "reserved",
+        "expected_bits": 2779096485
+      },
+      {
+        "word": 36,
+        "role": "reserved",
+        "expected_bits": 2779096485
+      },
+      {
+        "word": 37,
+        "role": "reserved",
+        "expected_bits": 2779096485
+      },
+      {
+        "word": 38,
+        "role": "reserved",
+        "expected_bits": 2779096485
+      },
+      {
+        "word": 39,
+        "role": "reserved",
+        "expected_bits": 2779096485
+      }
+    ]
+  }
+}

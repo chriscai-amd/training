@@ -1,0 +1,4098 @@
+{
+  "schema": "MI450-CWSR-SENTINEL-RESULT-v1",
+  "started_utc": "2026-09-28T00:54:57.571576+00:00",
+  "configuration": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/portable_configuration.json",
+    "bytes": 4912,
+    "sha256": "b5fe1c3f748964b72d99495027c11e217973969ac69906030cba8e054a61999b"
+  },
+  "host_source": {
+    "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/exact/run_sentinel_host_v1.py",
+    "bytes": 21231,
+    "sha256": "be1582e96b7dad21991a562a6d4aec2664d331bd30ae64e1117cbd2d045ace89"
+  },
+  "cases": [
+    {
+      "ordinal": 0,
+      "case": {
+        "mode_low_byte": 0,
+        "trap": false,
+        "symbol": "sentinel_00_0"
+      },
+      "started_utc": "2026-09-28T00:54:57.646111+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 8,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd631770",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_00_00_0/output.bin",
+        "bytes": 160,
+        "sha256": "c6989b161d85449454f3d9b2648219895c260cda93772f20e2f812bf1bfe1c40"
+      },
+      "observation": {
+        "classification": "UNCHANGED",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000000",
+          "0x00000000",
+          "0x020000f0",
+          "0x020000f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x19433288",
+          "0x0000748c",
+          "0x75b5d034",
+          "0x0000778c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c19433288",
+        "returned_TTMP0": "0x75b5d034",
+        "returned_TTMP1": "0x0000778c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x00",
+        "observed_MODE_19_12_before": "0x00",
+        "observed_MODE_19_12_after": "0x00",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [],
+        "explicit_shader_trap_requested": false,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.664429+00:00",
+      "call_index_end_exclusive": 14,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 8,
+          "function": "hipModuleGetFunction",
+          "context": 0,
+          "started_utc": "2026-09-28T00:54:57.646355+00:00",
+          "finished_utc": "2026-09-28T00:54:57.646441+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 9,
+          "function": "hipMemcpy",
+          "context": 0,
+          "started_utc": "2026-09-28T00:54:57.646711+00:00",
+          "finished_utc": "2026-09-28T00:54:57.663123+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 10,
+          "function": "hipMemcpy",
+          "context": 0,
+          "started_utc": "2026-09-28T00:54:57.663323+00:00",
+          "finished_utc": "2026-09-28T00:54:57.663427+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 11,
+          "function": "hipModuleLaunchKernel",
+          "context": 0,
+          "started_utc": "2026-09-28T00:54:57.663746+00:00",
+          "finished_utc": "2026-09-28T00:54:57.663826+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 12,
+          "function": "hipDeviceSynchronize",
+          "context": 0,
+          "started_utc": "2026-09-28T00:54:57.663939+00:00",
+          "finished_utc": "2026-09-28T00:54:57.664021+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 13,
+          "function": "hipMemcpy",
+          "context": 0,
+          "started_utc": "2026-09-28T00:54:57.664082+00:00",
+          "finished_utc": "2026-09-28T00:54:57.664164+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 1,
+      "case": {
+        "mode_low_byte": 0,
+        "trap": true,
+        "symbol": "sentinel_00_1"
+      },
+      "started_utc": "2026-09-28T00:54:57.664703+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 14,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd7694a0",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_01_00_1/output.bin",
+        "bytes": 160,
+        "sha256": "5dc02a36ffd93f621f5e13c005e0fba0da89351fd2752b697a4ed9bc066af02f"
+      },
+      "observation": {
+        "classification": "UNCHANGED",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000000",
+          "0x00000001",
+          "0x020000f0",
+          "0x020000f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x19433888",
+          "0x0000748c",
+          "0x19433888",
+          "0x0000748c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c19433888",
+        "returned_TTMP0": "0x19433888",
+        "returned_TTMP1": "0x0000748c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x00",
+        "observed_MODE_19_12_before": "0x00",
+        "observed_MODE_19_12_after": "0x00",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [],
+        "explicit_shader_trap_requested": true,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.666389+00:00",
+      "call_index_end_exclusive": 20,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 14,
+          "function": "hipModuleGetFunction",
+          "context": 1,
+          "started_utc": "2026-09-28T00:54:57.664934+00:00",
+          "finished_utc": "2026-09-28T00:54:57.665012+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 15,
+          "function": "hipMemcpy",
+          "context": 1,
+          "started_utc": "2026-09-28T00:54:57.665221+00:00",
+          "finished_utc": "2026-09-28T00:54:57.665321+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 16,
+          "function": "hipMemcpy",
+          "context": 1,
+          "started_utc": "2026-09-28T00:54:57.665414+00:00",
+          "finished_utc": "2026-09-28T00:54:57.665507+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 17,
+          "function": "hipModuleLaunchKernel",
+          "context": 1,
+          "started_utc": "2026-09-28T00:54:57.665734+00:00",
+          "finished_utc": "2026-09-28T00:54:57.665819+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 18,
+          "function": "hipDeviceSynchronize",
+          "context": 1,
+          "started_utc": "2026-09-28T00:54:57.665904+00:00",
+          "finished_utc": "2026-09-28T00:54:57.665989+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 19,
+          "function": "hipMemcpy",
+          "context": 1,
+          "started_utc": "2026-09-28T00:54:57.666061+00:00",
+          "finished_utc": "2026-09-28T00:54:57.666139+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 2,
+      "case": {
+        "mode_low_byte": 65,
+        "trap": false,
+        "symbol": "sentinel_41_0"
+      },
+      "started_utc": "2026-09-28T00:54:57.666652+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 20,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd59c970",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_02_41_0/output.bin",
+        "bytes": 160,
+        "sha256": "f4e9ba633694481a806b0ff5559e0dd753972255a786fa6c365e6590a731a2bd"
+      },
+      "observation": {
+        "classification": "UNCHANGED",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000041",
+          "0x00000000",
+          "0x020050f0",
+          "0x020050f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x19433e8c",
+          "0x0000748c",
+          "0x75b5d140",
+          "0x0000778c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c19433e8c",
+        "returned_TTMP0": "0x75b5d140",
+        "returned_TTMP1": "0x0000778c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x05",
+        "observed_MODE_19_12_before": "0x05",
+        "observed_MODE_19_12_after": "0x05",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [],
+        "explicit_shader_trap_requested": false,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.668069+00:00",
+      "call_index_end_exclusive": 26,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 20,
+          "function": "hipModuleGetFunction",
+          "context": 2,
+          "started_utc": "2026-09-28T00:54:57.666809+00:00",
+          "finished_utc": "2026-09-28T00:54:57.666899+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 21,
+          "function": "hipMemcpy",
+          "context": 2,
+          "started_utc": "2026-09-28T00:54:57.667111+00:00",
+          "finished_utc": "2026-09-28T00:54:57.667206+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 22,
+          "function": "hipMemcpy",
+          "context": 2,
+          "started_utc": "2026-09-28T00:54:57.667292+00:00",
+          "finished_utc": "2026-09-28T00:54:57.667360+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 23,
+          "function": "hipModuleLaunchKernel",
+          "context": 2,
+          "started_utc": "2026-09-28T00:54:57.667545+00:00",
+          "finished_utc": "2026-09-28T00:54:57.667611+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 24,
+          "function": "hipDeviceSynchronize",
+          "context": 2,
+          "started_utc": "2026-09-28T00:54:57.667664+00:00",
+          "finished_utc": "2026-09-28T00:54:57.667729+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 25,
+          "function": "hipMemcpy",
+          "context": 2,
+          "started_utc": "2026-09-28T00:54:57.667803+00:00",
+          "finished_utc": "2026-09-28T00:54:57.667873+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 3,
+      "case": {
+        "mode_low_byte": 65,
+        "trap": true,
+        "symbol": "sentinel_41_1"
+      },
+      "started_utc": "2026-09-28T00:54:57.668307+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 26,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd7fd480",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_03_41_1/output.bin",
+        "bytes": 160,
+        "sha256": "9c28100808e2fadc8a00ebb6d93820b4186063b3e4d61378e522598413a972b5"
+      },
+      "observation": {
+        "classification": "UNCHANGED",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000041",
+          "0x00000001",
+          "0x020050f0",
+          "0x020050f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x1943448c",
+          "0x0000748c",
+          "0x1943448c",
+          "0x0000748c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c1943448c",
+        "returned_TTMP0": "0x1943448c",
+        "returned_TTMP1": "0x0000748c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x05",
+        "observed_MODE_19_12_before": "0x05",
+        "observed_MODE_19_12_after": "0x05",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [],
+        "explicit_shader_trap_requested": true,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.669551+00:00",
+      "call_index_end_exclusive": 32,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 26,
+          "function": "hipModuleGetFunction",
+          "context": 3,
+          "started_utc": "2026-09-28T00:54:57.668439+00:00",
+          "finished_utc": "2026-09-28T00:54:57.668508+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 27,
+          "function": "hipMemcpy",
+          "context": 3,
+          "started_utc": "2026-09-28T00:54:57.668679+00:00",
+          "finished_utc": "2026-09-28T00:54:57.668757+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 28,
+          "function": "hipMemcpy",
+          "context": 3,
+          "started_utc": "2026-09-28T00:54:57.668810+00:00",
+          "finished_utc": "2026-09-28T00:54:57.668878+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 29,
+          "function": "hipModuleLaunchKernel",
+          "context": 3,
+          "started_utc": "2026-09-28T00:54:57.669049+00:00",
+          "finished_utc": "2026-09-28T00:54:57.669110+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 30,
+          "function": "hipDeviceSynchronize",
+          "context": 3,
+          "started_utc": "2026-09-28T00:54:57.669161+00:00",
+          "finished_utc": "2026-09-28T00:54:57.669230+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 31,
+          "function": "hipMemcpy",
+          "context": 3,
+          "started_utc": "2026-09-28T00:54:57.669283+00:00",
+          "finished_utc": "2026-09-28T00:54:57.669352+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 4,
+      "case": {
+        "mode_low_byte": 69,
+        "trap": false,
+        "symbol": "sentinel_45_0"
+      },
+      "started_utc": "2026-09-28T00:54:57.669782+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 32,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd775a40",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_04_45_0/output.bin",
+        "bytes": 160,
+        "sha256": "646314ef818772a3fb19af2587e1f39070bf56d9381cf4e6746ca5be2c35ff90"
+      },
+      "observation": {
+        "classification": "UNCHANGED",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000045",
+          "0x00000000",
+          "0x020150f0",
+          "0x020150f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x19434a8c",
+          "0x0000748c",
+          "0x75b5d160",
+          "0x0000778c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c19434a8c",
+        "returned_TTMP0": "0x75b5d160",
+        "returned_TTMP1": "0x0000778c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x15",
+        "observed_MODE_19_12_before": "0x15",
+        "observed_MODE_19_12_after": "0x15",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [],
+        "explicit_shader_trap_requested": false,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.671057+00:00",
+      "call_index_end_exclusive": 38,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 32,
+          "function": "hipModuleGetFunction",
+          "context": 4,
+          "started_utc": "2026-09-28T00:54:57.669918+00:00",
+          "finished_utc": "2026-09-28T00:54:57.669982+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 33,
+          "function": "hipMemcpy",
+          "context": 4,
+          "started_utc": "2026-09-28T00:54:57.670150+00:00",
+          "finished_utc": "2026-09-28T00:54:57.670238+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 34,
+          "function": "hipMemcpy",
+          "context": 4,
+          "started_utc": "2026-09-28T00:54:57.670298+00:00",
+          "finished_utc": "2026-09-28T00:54:57.670367+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 35,
+          "function": "hipModuleLaunchKernel",
+          "context": 4,
+          "started_utc": "2026-09-28T00:54:57.670546+00:00",
+          "finished_utc": "2026-09-28T00:54:57.670609+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 36,
+          "function": "hipDeviceSynchronize",
+          "context": 4,
+          "started_utc": "2026-09-28T00:54:57.670659+00:00",
+          "finished_utc": "2026-09-28T00:54:57.670719+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 37,
+          "function": "hipMemcpy",
+          "context": 4,
+          "started_utc": "2026-09-28T00:54:57.670771+00:00",
+          "finished_utc": "2026-09-28T00:54:57.670862+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 5,
+      "case": {
+        "mode_low_byte": 69,
+        "trap": true,
+        "symbol": "sentinel_45_1"
+      },
+      "started_utc": "2026-09-28T00:54:57.671292+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 38,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd76d3d0",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_05_45_1/output.bin",
+        "bytes": 160,
+        "sha256": "63e571ab2c5bc9acaa9cca9b7b7418df9547f5e5bacb61690be58d0127735818"
+      },
+      "observation": {
+        "classification": "UNCHANGED",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000045",
+          "0x00000001",
+          "0x020150f0",
+          "0x020150f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x1943508c",
+          "0x0000748c",
+          "0x1943508c",
+          "0x0000748c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c1943508c",
+        "returned_TTMP0": "0x1943508c",
+        "returned_TTMP1": "0x0000748c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x15",
+        "observed_MODE_19_12_before": "0x15",
+        "observed_MODE_19_12_after": "0x15",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [],
+        "explicit_shader_trap_requested": true,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.672521+00:00",
+      "call_index_end_exclusive": 44,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 38,
+          "function": "hipModuleGetFunction",
+          "context": 5,
+          "started_utc": "2026-09-28T00:54:57.671420+00:00",
+          "finished_utc": "2026-09-28T00:54:57.671483+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 39,
+          "function": "hipMemcpy",
+          "context": 5,
+          "started_utc": "2026-09-28T00:54:57.671652+00:00",
+          "finished_utc": "2026-09-28T00:54:57.671732+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 40,
+          "function": "hipMemcpy",
+          "context": 5,
+          "started_utc": "2026-09-28T00:54:57.671786+00:00",
+          "finished_utc": "2026-09-28T00:54:57.671857+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 41,
+          "function": "hipModuleLaunchKernel",
+          "context": 5,
+          "started_utc": "2026-09-28T00:54:57.672026+00:00",
+          "finished_utc": "2026-09-28T00:54:57.672088+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 42,
+          "function": "hipDeviceSynchronize",
+          "context": 5,
+          "started_utc": "2026-09-28T00:54:57.672140+00:00",
+          "finished_utc": "2026-09-28T00:54:57.672202+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 43,
+          "function": "hipMemcpy",
+          "context": 5,
+          "started_utc": "2026-09-28T00:54:57.672257+00:00",
+          "finished_utc": "2026-09-28T00:54:57.672327+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 6,
+      "case": {
+        "mode_low_byte": 130,
+        "trap": false,
+        "symbol": "sentinel_82_0"
+      },
+      "started_utc": "2026-09-28T00:54:57.672756+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 44,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd5afe80",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_06_82_0/output.bin",
+        "bytes": 160,
+        "sha256": "69f108aa9c69f54a28f9f567ca704001910c4328c5a73da86711b47042c969f1"
+      },
+      "observation": {
+        "classification": "UNCHANGED",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000082",
+          "0x00000000",
+          "0x0200a0f0",
+          "0x0200a0f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x1943568c",
+          "0x0000748c",
+          "0x75b5d5fc",
+          "0x0000778c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c1943568c",
+        "returned_TTMP0": "0x75b5d5fc",
+        "returned_TTMP1": "0x0000778c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x0a",
+        "observed_MODE_19_12_before": "0x0a",
+        "observed_MODE_19_12_after": "0x0a",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [],
+        "explicit_shader_trap_requested": false,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.674059+00:00",
+      "call_index_end_exclusive": 50,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 44,
+          "function": "hipModuleGetFunction",
+          "context": 6,
+          "started_utc": "2026-09-28T00:54:57.672886+00:00",
+          "finished_utc": "2026-09-28T00:54:57.672947+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 45,
+          "function": "hipMemcpy",
+          "context": 6,
+          "started_utc": "2026-09-28T00:54:57.673118+00:00",
+          "finished_utc": "2026-09-28T00:54:57.673193+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 46,
+          "function": "hipMemcpy",
+          "context": 6,
+          "started_utc": "2026-09-28T00:54:57.673258+00:00",
+          "finished_utc": "2026-09-28T00:54:57.673325+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 47,
+          "function": "hipModuleLaunchKernel",
+          "context": 6,
+          "started_utc": "2026-09-28T00:54:57.673509+00:00",
+          "finished_utc": "2026-09-28T00:54:57.673573+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 48,
+          "function": "hipDeviceSynchronize",
+          "context": 6,
+          "started_utc": "2026-09-28T00:54:57.673623+00:00",
+          "finished_utc": "2026-09-28T00:54:57.673682+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 49,
+          "function": "hipMemcpy",
+          "context": 6,
+          "started_utc": "2026-09-28T00:54:57.673733+00:00",
+          "finished_utc": "2026-09-28T00:54:57.673802+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 7,
+      "case": {
+        "mode_low_byte": 130,
+        "trap": true,
+        "symbol": "sentinel_82_1"
+      },
+      "started_utc": "2026-09-28T00:54:57.674288+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 50,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd7dc980",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_07_82_1/output.bin",
+        "bytes": 160,
+        "sha256": "2db18a67d09774834d75f8e0c462373521edbe57dd48c915dc758ea6887cdc29"
+      },
+      "observation": {
+        "classification": "UNCHANGED",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000082",
+          "0x00000001",
+          "0x0200a0f0",
+          "0x0200a0f0",
+          "0x00010040",
+          "0x00010440",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x19435c8c",
+          "0x0000748c",
+          "0x19435c8c",
+          "0x0000748c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c19435c8c",
+        "returned_TTMP0": "0x19435c8c",
+        "returned_TTMP1": "0x0000748c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x0a",
+        "observed_MODE_19_12_before": "0x0a",
+        "observed_MODE_19_12_after": "0x0a",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [],
+        "explicit_shader_trap_requested": true,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.675590+00:00",
+      "call_index_end_exclusive": 56,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 50,
+          "function": "hipModuleGetFunction",
+          "context": 7,
+          "started_utc": "2026-09-28T00:54:57.674417+00:00",
+          "finished_utc": "2026-09-28T00:54:57.674490+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 51,
+          "function": "hipMemcpy",
+          "context": 7,
+          "started_utc": "2026-09-28T00:54:57.674671+00:00",
+          "finished_utc": "2026-09-28T00:54:57.674751+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 52,
+          "function": "hipMemcpy",
+          "context": 7,
+          "started_utc": "2026-09-28T00:54:57.674806+00:00",
+          "finished_utc": "2026-09-28T00:54:57.674873+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 53,
+          "function": "hipModuleLaunchKernel",
+          "context": 7,
+          "started_utc": "2026-09-28T00:54:57.675059+00:00",
+          "finished_utc": "2026-09-28T00:54:57.675122+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 54,
+          "function": "hipDeviceSynchronize",
+          "context": 7,
+          "started_utc": "2026-09-28T00:54:57.675178+00:00",
+          "finished_utc": "2026-09-28T00:54:57.675244+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 55,
+          "function": "hipMemcpy",
+          "context": 7,
+          "started_utc": "2026-09-28T00:54:57.675297+00:00",
+          "finished_utc": "2026-09-28T00:54:57.675366+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 8,
+      "case": {
+        "mode_low_byte": 5,
+        "trap": false,
+        "symbol": "sentinel_05_0"
+      },
+      "started_utc": "2026-09-28T00:54:57.675823+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 56,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd7611e0",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_08_05_0/output.bin",
+        "bytes": 160,
+        "sha256": "6ea59daf5ac10a6de0246aaebede6374579a3e51872269bea23ade98a9f5be2a"
+      },
+      "observation": {
+        "classification": "UNCHANGED",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000005",
+          "0x00000000",
+          "0x020140f0",
+          "0x020140f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x19436288",
+          "0x0000748c",
+          "0x75b5d03c",
+          "0x0000778c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c19436288",
+        "returned_TTMP0": "0x75b5d03c",
+        "returned_TTMP1": "0x0000778c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x14",
+        "observed_MODE_19_12_before": "0x14",
+        "observed_MODE_19_12_after": "0x14",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [],
+        "explicit_shader_trap_requested": false,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.677061+00:00",
+      "call_index_end_exclusive": 62,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 56,
+          "function": "hipModuleGetFunction",
+          "context": 8,
+          "started_utc": "2026-09-28T00:54:57.675956+00:00",
+          "finished_utc": "2026-09-28T00:54:57.676027+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 57,
+          "function": "hipMemcpy",
+          "context": 8,
+          "started_utc": "2026-09-28T00:54:57.676207+00:00",
+          "finished_utc": "2026-09-28T00:54:57.676293+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 58,
+          "function": "hipMemcpy",
+          "context": 8,
+          "started_utc": "2026-09-28T00:54:57.676348+00:00",
+          "finished_utc": "2026-09-28T00:54:57.676412+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 59,
+          "function": "hipModuleLaunchKernel",
+          "context": 8,
+          "started_utc": "2026-09-28T00:54:57.676587+00:00",
+          "finished_utc": "2026-09-28T00:54:57.676646+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 60,
+          "function": "hipDeviceSynchronize",
+          "context": 8,
+          "started_utc": "2026-09-28T00:54:57.676699+00:00",
+          "finished_utc": "2026-09-28T00:54:57.676760+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 61,
+          "function": "hipMemcpy",
+          "context": 8,
+          "started_utc": "2026-09-28T00:54:57.676811+00:00",
+          "finished_utc": "2026-09-28T00:54:57.676875+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 9,
+      "case": {
+        "mode_low_byte": 5,
+        "trap": true,
+        "symbol": "sentinel_05_1"
+      },
+      "started_utc": "2026-09-28T00:54:57.677332+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 62,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd558c50",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_09_05_1/output.bin",
+        "bytes": 160,
+        "sha256": "df2c8c96b85743303496d1b0017b193009940480d6370c0de581824865a0d7b1"
+      },
+      "observation": {
+        "classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000005",
+          "0x00000001",
+          "0x020140f0",
+          "0x020140f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x22000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x19436888",
+          "0x0000748c",
+          "0x19436888",
+          "0x0000748c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c19436888",
+        "returned_TTMP0": "0x19436888",
+        "returned_TTMP1": "0x0000748c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x14",
+        "observed_MODE_19_12_before": "0x14",
+        "observed_MODE_19_12_after": "0x14",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [
+          {
+            "vgpr": 1,
+            "lane": 0,
+            "before": "0x11000000",
+            "after": "0x22000000"
+          }
+        ],
+        "explicit_shader_trap_requested": true,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.678583+00:00",
+      "call_index_end_exclusive": 68,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 62,
+          "function": "hipModuleGetFunction",
+          "context": 9,
+          "started_utc": "2026-09-28T00:54:57.677476+00:00",
+          "finished_utc": "2026-09-28T00:54:57.677542+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 63,
+          "function": "hipMemcpy",
+          "context": 9,
+          "started_utc": "2026-09-28T00:54:57.677738+00:00",
+          "finished_utc": "2026-09-28T00:54:57.677812+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 64,
+          "function": "hipMemcpy",
+          "context": 9,
+          "started_utc": "2026-09-28T00:54:57.677865+00:00",
+          "finished_utc": "2026-09-28T00:54:57.677929+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 65,
+          "function": "hipModuleLaunchKernel",
+          "context": 9,
+          "started_utc": "2026-09-28T00:54:57.678100+00:00",
+          "finished_utc": "2026-09-28T00:54:57.678161+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 66,
+          "function": "hipDeviceSynchronize",
+          "context": 9,
+          "started_utc": "2026-09-28T00:54:57.678215+00:00",
+          "finished_utc": "2026-09-28T00:54:57.678277+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 67,
+          "function": "hipMemcpy",
+          "context": 9,
+          "started_utc": "2026-09-28T00:54:57.678326+00:00",
+          "finished_utc": "2026-09-28T00:54:57.678388+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 10,
+      "case": {
+        "mode_low_byte": 129,
+        "trap": false,
+        "symbol": "sentinel_81_0"
+      },
+      "started_utc": "2026-09-28T00:54:57.678811+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 68,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd765980",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_10_81_0/output.bin",
+        "bytes": 160,
+        "sha256": "b84e9b154a403570277a955c4067e2dad0d97c5d758e8c2e1d795927bc220efb"
+      },
+      "observation": {
+        "classification": "UNCHANGED",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000081",
+          "0x00000000",
+          "0x020060f0",
+          "0x020060f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x19436e8c",
+          "0x0000748c",
+          "0x75b5d140",
+          "0x0000778c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c19436e8c",
+        "returned_TTMP0": "0x75b5d140",
+        "returned_TTMP1": "0x0000778c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x06",
+        "observed_MODE_19_12_before": "0x06",
+        "observed_MODE_19_12_after": "0x06",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [],
+        "explicit_shader_trap_requested": false,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.680023+00:00",
+      "call_index_end_exclusive": 74,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 68,
+          "function": "hipModuleGetFunction",
+          "context": 10,
+          "started_utc": "2026-09-28T00:54:57.678942+00:00",
+          "finished_utc": "2026-09-28T00:54:57.679005+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 69,
+          "function": "hipMemcpy",
+          "context": 10,
+          "started_utc": "2026-09-28T00:54:57.679181+00:00",
+          "finished_utc": "2026-09-28T00:54:57.679260+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 70,
+          "function": "hipMemcpy",
+          "context": 10,
+          "started_utc": "2026-09-28T00:54:57.679315+00:00",
+          "finished_utc": "2026-09-28T00:54:57.679378+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 71,
+          "function": "hipModuleLaunchKernel",
+          "context": 10,
+          "started_utc": "2026-09-28T00:54:57.679548+00:00",
+          "finished_utc": "2026-09-28T00:54:57.679609+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 72,
+          "function": "hipDeviceSynchronize",
+          "context": 10,
+          "started_utc": "2026-09-28T00:54:57.679660+00:00",
+          "finished_utc": "2026-09-28T00:54:57.679722+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 73,
+          "function": "hipMemcpy",
+          "context": 10,
+          "started_utc": "2026-09-28T00:54:57.679773+00:00",
+          "finished_utc": "2026-09-28T00:54:57.679837+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 11,
+      "case": {
+        "mode_low_byte": 129,
+        "trap": true,
+        "symbol": "sentinel_81_1"
+      },
+      "started_utc": "2026-09-28T00:54:57.680251+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 74,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd7b1ca0",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_11_81_1/output.bin",
+        "bytes": 160,
+        "sha256": "79663e6f62a70ebceda9dc3c24e6c8e404270618579d7f9eac83482753bb9aff"
+      },
+      "observation": {
+        "classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000081",
+          "0x00000001",
+          "0x020060f0",
+          "0x020060f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x22000000",
+          "0x33000001",
+          "0x33000010",
+          "0x1943748c",
+          "0x0000748c",
+          "0x1943748c",
+          "0x0000748c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c1943748c",
+        "returned_TTMP0": "0x1943748c",
+        "returned_TTMP1": "0x0000748c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x06",
+        "observed_MODE_19_12_before": "0x06",
+        "observed_MODE_19_12_after": "0x06",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [
+          {
+            "vgpr": 513,
+            "lane": 0,
+            "before": "0x33000000",
+            "after": "0x22000000"
+          }
+        ],
+        "explicit_shader_trap_requested": true,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.681462+00:00",
+      "call_index_end_exclusive": 80,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 74,
+          "function": "hipModuleGetFunction",
+          "context": 11,
+          "started_utc": "2026-09-28T00:54:57.680385+00:00",
+          "finished_utc": "2026-09-28T00:54:57.680446+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 75,
+          "function": "hipMemcpy",
+          "context": 11,
+          "started_utc": "2026-09-28T00:54:57.680607+00:00",
+          "finished_utc": "2026-09-28T00:54:57.680699+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 76,
+          "function": "hipMemcpy",
+          "context": 11,
+          "started_utc": "2026-09-28T00:54:57.680753+00:00",
+          "finished_utc": "2026-09-28T00:54:57.680815+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 77,
+          "function": "hipModuleLaunchKernel",
+          "context": 11,
+          "started_utc": "2026-09-28T00:54:57.680978+00:00",
+          "finished_utc": "2026-09-28T00:54:57.681037+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 78,
+          "function": "hipDeviceSynchronize",
+          "context": 11,
+          "started_utc": "2026-09-28T00:54:57.681090+00:00",
+          "finished_utc": "2026-09-28T00:54:57.681151+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 79,
+          "function": "hipMemcpy",
+          "context": 11,
+          "started_utc": "2026-09-28T00:54:57.681207+00:00",
+          "finished_utc": "2026-09-28T00:54:57.681271+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 12,
+      "case": {
+        "mode_low_byte": 133,
+        "trap": false,
+        "symbol": "sentinel_85_0"
+      },
+      "started_utc": "2026-09-28T00:54:57.681690+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 80,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd59e4f0",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_12_85_0/output.bin",
+        "bytes": 160,
+        "sha256": "836c47f09559abf90055278dc2b23deeec97364068b98b931a8de786e0ce0d96"
+      },
+      "observation": {
+        "classification": "UNCHANGED",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000085",
+          "0x00000000",
+          "0x020160f0",
+          "0x020160f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x19437a8c",
+          "0x0000748c",
+          "0x75b5d160",
+          "0x0000778c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c19437a8c",
+        "returned_TTMP0": "0x75b5d160",
+        "returned_TTMP1": "0x0000778c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x16",
+        "observed_MODE_19_12_before": "0x16",
+        "observed_MODE_19_12_after": "0x16",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [],
+        "explicit_shader_trap_requested": false,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.682911+00:00",
+      "call_index_end_exclusive": 86,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 80,
+          "function": "hipModuleGetFunction",
+          "context": 12,
+          "started_utc": "2026-09-28T00:54:57.681817+00:00",
+          "finished_utc": "2026-09-28T00:54:57.681878+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 81,
+          "function": "hipMemcpy",
+          "context": 12,
+          "started_utc": "2026-09-28T00:54:57.682044+00:00",
+          "finished_utc": "2026-09-28T00:54:57.682129+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 82,
+          "function": "hipMemcpy",
+          "context": 12,
+          "started_utc": "2026-09-28T00:54:57.682183+00:00",
+          "finished_utc": "2026-09-28T00:54:57.682261+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 83,
+          "function": "hipModuleLaunchKernel",
+          "context": 12,
+          "started_utc": "2026-09-28T00:54:57.682430+00:00",
+          "finished_utc": "2026-09-28T00:54:57.682490+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 84,
+          "function": "hipDeviceSynchronize",
+          "context": 12,
+          "started_utc": "2026-09-28T00:54:57.682543+00:00",
+          "finished_utc": "2026-09-28T00:54:57.682604+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 85,
+          "function": "hipMemcpy",
+          "context": 12,
+          "started_utc": "2026-09-28T00:54:57.682656+00:00",
+          "finished_utc": "2026-09-28T00:54:57.682720+00:00",
+          "result_code": 0
+        }
+      ]
+    },
+    {
+      "ordinal": 13,
+      "case": {
+        "mode_low_byte": 133,
+        "trap": true,
+        "symbol": "sentinel_85_1"
+      },
+      "started_utc": "2026-09-28T00:54:57.683133+00:00",
+      "transport_status": "PASS",
+      "call_index_begin": 86,
+      "output_device_pointer": "0x747c00600000",
+      "function_handle": "0xd5a03d0",
+      "prefill_expected": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/prefill_expected.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "prefill_actual": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/prefill_actual.bin",
+        "bytes": 160,
+        "sha256": "e9564c1e0bbddaac111b7c92610b0c1e1ffd53ea701da162ed9881942900f13c"
+      },
+      "kernarg_output_pointer_bytes": "000060007c740000",
+      "output": {
+        "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/case_13_85_1/output.bin",
+        "bytes": 160,
+        "sha256": "d419cac7c4e1d986a264eb59c184fdb85094d5aec83e7c45face59fcd8413965"
+      },
+      "observation": {
+        "classification": "PREDICTED_LANE0_CROSS_BANK_COPY",
+        "raw_words": [
+          "0x53545250",
+          "0x00000001",
+          "0x00000085",
+          "0x00000001",
+          "0x020160f0",
+          "0x020160f0",
+          "0x00010040",
+          "0x00010040",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x33000000",
+          "0x33000001",
+          "0x33000010",
+          "0x11000000",
+          "0x11000001",
+          "0x11000010",
+          "0x22000000",
+          "0x22000001",
+          "0x22000010",
+          "0x22000000",
+          "0x33000001",
+          "0x33000010",
+          "0x1943808c",
+          "0x0000748c",
+          "0x1943808c",
+          "0x0000748c",
+          "0xffffffff",
+          "0xffffffff",
+          "0x434f4d50",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5",
+          "0xa5a5a5a5"
+        ],
+        "packet_structure_valid": true,
+        "constant_word_checks": [
+          {
+            "word": 0,
+            "role": "magic",
+            "expected": "0x53545250",
+            "observed": "0x53545250",
+            "equal": true
+          },
+          {
+            "word": 1,
+            "role": "version",
+            "expected": "0x00000001",
+            "observed": "0x00000001",
+            "equal": true
+          },
+          {
+            "word": 32,
+            "role": "completion",
+            "expected": "0x434f4d50",
+            "observed": "0x434f4d50",
+            "equal": true
+          },
+          {
+            "word": 33,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 34,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 35,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 36,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 37,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 38,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          },
+          {
+            "word": 39,
+            "role": "reserved",
+            "expected": "0xa5a5a5a5",
+            "observed": "0xa5a5a5a5",
+            "equal": true
+          }
+        ],
+        "packet_case_fields_match": true,
+        "intended_return_PC": "0x0000748c1943808c",
+        "returned_TTMP0": "0x1943808c",
+        "returned_TTMP1": "0x0000748c",
+        "EXEC_before": "0xffffffff",
+        "EXEC_after": "0xffffffff",
+        "EXEC_preserved": true,
+        "EXEC_both_full_wave32": true,
+        "initialization_valid": true,
+        "before_tags_equal_expected": true,
+        "requested_MODE_19_12": "0x16",
+        "observed_MODE_19_12_before": "0x16",
+        "observed_MODE_19_12_after": "0x16",
+        "MODE_bank_field_restored": true,
+        "trap_enabled_before": true,
+        "trap_enabled_after": true,
+        "changed_tags": [
+          {
+            "vgpr": 513,
+            "lane": 0,
+            "before": "0x33000000",
+            "after": "0x22000000"
+          }
+        ],
+        "explicit_shader_trap_requested": true,
+        "interpretation": "Tag classification is independent of HIP transport success. No-trap cases can still receive asynchronous traps."
+      },
+      "finished_utc": "2026-09-28T00:54:57.684372+00:00",
+      "call_index_end_exclusive": 92,
+      "calls": [
+        {
+          "phase": "end",
+          "index": 86,
+          "function": "hipModuleGetFunction",
+          "context": 13,
+          "started_utc": "2026-09-28T00:54:57.683266+00:00",
+          "finished_utc": "2026-09-28T00:54:57.683333+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 87,
+          "function": "hipMemcpy",
+          "context": 13,
+          "started_utc": "2026-09-28T00:54:57.683500+00:00",
+          "finished_utc": "2026-09-28T00:54:57.683572+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 88,
+          "function": "hipMemcpy",
+          "context": 13,
+          "started_utc": "2026-09-28T00:54:57.683651+00:00",
+          "finished_utc": "2026-09-28T00:54:57.683714+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 89,
+          "function": "hipModuleLaunchKernel",
+          "context": 13,
+          "started_utc": "2026-09-28T00:54:57.683885+00:00",
+          "finished_utc": "2026-09-28T00:54:57.683945+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 90,
+          "function": "hipDeviceSynchronize",
+          "context": 13,
+          "started_utc": "2026-09-28T00:54:57.683998+00:00",
+          "finished_utc": "2026-09-28T00:54:57.684059+00:00",
+          "result_code": 0
+        },
+        {
+          "phase": "end",
+          "index": 91,
+          "function": "hipMemcpy",
+          "context": 13,
+          "started_utc": "2026-09-28T00:54:57.684111+00:00",
+          "finished_utc": "2026-09-28T00:54:57.684173+00:00",
+          "result_code": 0
+        }
+      ]
+    }
+  ],
+  "runtime_initialized": true,
+  "transport_status": "COMPLETE_ALL_14_CASES",
+  "required_environment": {},
+  "pid": 1793,
+  "maps_after_init": {
+    "maps": {
+      "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/after_init.maps.txt",
+      "bytes": 32892,
+      "sha256": "ca85cedd8822094ab05c146e368b5b7cf21f2c371ca392df2936d5beaf3a3034"
+    },
+    "libraries": {
+      "hip": {
+        "mapped_path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+        "pinned_file": {
+          "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+          "bytes": 28048929,
+          "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+        }
+      },
+      "hsa": {
+        "mapped_path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+        "pinned_file": {
+          "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+          "bytes": 4887073,
+          "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+        }
+      }
+    }
+  },
+  "device": {
+    "ordinal": 0,
+    "count": 1,
+    "name": "AMD Radeon Graphics",
+    "runtime_version": 71460850,
+    "driver_version": 71460850
+  },
+  "module_handle": "0xd633d30",
+  "output_device_pointer": "0x747c00600000",
+  "cleanup": [
+    {
+      "function": "hipFree",
+      "result": 0
+    },
+    {
+      "function": "hipModuleUnload",
+      "result": 0
+    }
+  ],
+  "maps_at_terminal": {
+    "maps": {
+      "path": "/data/mlperf_dlrm_v4/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/result/transport/terminal.maps.txt",
+      "bytes": 34702,
+      "sha256": "3bd1ef006322175c030cb30dc9392bcba27cb7251ea4bc982af2d4d007cce4a6"
+    },
+    "libraries": {
+      "hip": {
+        "mapped_path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+        "pinned_file": {
+          "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libamdhip64.so.7",
+          "bytes": 28048929,
+          "sha256": "df1330b0dcd594904beebf991b98dd8121be38a3ed975c8ce74986df8e330394"
+        }
+      },
+      "hsa": {
+        "mapped_path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+        "pinned_file": {
+          "path": "/opt/venv/lib/python3.12/site-packages/_rocm_sdk_core/lib/libhsa-runtime64.so.1",
+          "bytes": 4887073,
+          "sha256": "4abe49f88ef391128610ab0f6e699d44cadd001df5937a00adb9c5655c9cbf86"
+        }
+      }
+    }
+  },
+  "hip_calls": [
+    {
+      "phase": "end",
+      "index": 0,
+      "function": "hipInit",
+      "context": "initialization",
+      "started_utc": "2026-09-28T00:54:57.590268+00:00",
+      "finished_utc": "2026-09-28T00:54:57.616363+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 1,
+      "function": "hipGetDeviceCount",
+      "context": "initialization",
+      "started_utc": "2026-09-28T00:54:57.635380+00:00",
+      "finished_utc": "2026-09-28T00:54:57.635510+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 2,
+      "function": "hipSetDevice",
+      "context": "initialization",
+      "started_utc": "2026-09-28T00:54:57.635580+00:00",
+      "finished_utc": "2026-09-28T00:54:57.635656+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 3,
+      "function": "hipRuntimeGetVersion",
+      "context": "initialization",
+      "started_utc": "2026-09-28T00:54:57.635717+00:00",
+      "finished_utc": "2026-09-28T00:54:57.635778+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 4,
+      "function": "hipDriverGetVersion",
+      "context": "initialization",
+      "started_utc": "2026-09-28T00:54:57.635846+00:00",
+      "finished_utc": "2026-09-28T00:54:57.635909+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 5,
+      "function": "hipDeviceGetName",
+      "context": "initialization",
+      "started_utc": "2026-09-28T00:54:57.635993+00:00",
+      "finished_utc": "2026-09-28T00:54:57.636064+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 6,
+      "function": "hipModuleLoadData",
+      "context": "module_load",
+      "started_utc": "2026-09-28T00:54:57.636141+00:00",
+      "finished_utc": "2026-09-28T00:54:57.645702+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 7,
+      "function": "hipMalloc",
+      "context": "output_allocation",
+      "started_utc": "2026-09-28T00:54:57.645853+00:00",
+      "finished_utc": "2026-09-28T00:54:57.645975+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 8,
+      "function": "hipModuleGetFunction",
+      "context": 0,
+      "started_utc": "2026-09-28T00:54:57.646355+00:00",
+      "finished_utc": "2026-09-28T00:54:57.646441+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 9,
+      "function": "hipMemcpy",
+      "context": 0,
+      "started_utc": "2026-09-28T00:54:57.646711+00:00",
+      "finished_utc": "2026-09-28T00:54:57.663123+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 10,
+      "function": "hipMemcpy",
+      "context": 0,
+      "started_utc": "2026-09-28T00:54:57.663323+00:00",
+      "finished_utc": "2026-09-28T00:54:57.663427+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 11,
+      "function": "hipModuleLaunchKernel",
+      "context": 0,
+      "started_utc": "2026-09-28T00:54:57.663746+00:00",
+      "finished_utc": "2026-09-28T00:54:57.663826+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 12,
+      "function": "hipDeviceSynchronize",
+      "context": 0,
+      "started_utc": "2026-09-28T00:54:57.663939+00:00",
+      "finished_utc": "2026-09-28T00:54:57.664021+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 13,
+      "function": "hipMemcpy",
+      "context": 0,
+      "started_utc": "2026-09-28T00:54:57.664082+00:00",
+      "finished_utc": "2026-09-28T00:54:57.664164+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 14,
+      "function": "hipModuleGetFunction",
+      "context": 1,
+      "started_utc": "2026-09-28T00:54:57.664934+00:00",
+      "finished_utc": "2026-09-28T00:54:57.665012+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 15,
+      "function": "hipMemcpy",
+      "context": 1,
+      "started_utc": "2026-09-28T00:54:57.665221+00:00",
+      "finished_utc": "2026-09-28T00:54:57.665321+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 16,
+      "function": "hipMemcpy",
+      "context": 1,
+      "started_utc": "2026-09-28T00:54:57.665414+00:00",
+      "finished_utc": "2026-09-28T00:54:57.665507+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 17,
+      "function": "hipModuleLaunchKernel",
+      "context": 1,
+      "started_utc": "2026-09-28T00:54:57.665734+00:00",
+      "finished_utc": "2026-09-28T00:54:57.665819+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 18,
+      "function": "hipDeviceSynchronize",
+      "context": 1,
+      "started_utc": "2026-09-28T00:54:57.665904+00:00",
+      "finished_utc": "2026-09-28T00:54:57.665989+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 19,
+      "function": "hipMemcpy",
+      "context": 1,
+      "started_utc": "2026-09-28T00:54:57.666061+00:00",
+      "finished_utc": "2026-09-28T00:54:57.666139+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 20,
+      "function": "hipModuleGetFunction",
+      "context": 2,
+      "started_utc": "2026-09-28T00:54:57.666809+00:00",
+      "finished_utc": "2026-09-28T00:54:57.666899+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 21,
+      "function": "hipMemcpy",
+      "context": 2,
+      "started_utc": "2026-09-28T00:54:57.667111+00:00",
+      "finished_utc": "2026-09-28T00:54:57.667206+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 22,
+      "function": "hipMemcpy",
+      "context": 2,
+      "started_utc": "2026-09-28T00:54:57.667292+00:00",
+      "finished_utc": "2026-09-28T00:54:57.667360+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 23,
+      "function": "hipModuleLaunchKernel",
+      "context": 2,
+      "started_utc": "2026-09-28T00:54:57.667545+00:00",
+      "finished_utc": "2026-09-28T00:54:57.667611+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 24,
+      "function": "hipDeviceSynchronize",
+      "context": 2,
+      "started_utc": "2026-09-28T00:54:57.667664+00:00",
+      "finished_utc": "2026-09-28T00:54:57.667729+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 25,
+      "function": "hipMemcpy",
+      "context": 2,
+      "started_utc": "2026-09-28T00:54:57.667803+00:00",
+      "finished_utc": "2026-09-28T00:54:57.667873+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 26,
+      "function": "hipModuleGetFunction",
+      "context": 3,
+      "started_utc": "2026-09-28T00:54:57.668439+00:00",
+      "finished_utc": "2026-09-28T00:54:57.668508+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 27,
+      "function": "hipMemcpy",
+      "context": 3,
+      "started_utc": "2026-09-28T00:54:57.668679+00:00",
+      "finished_utc": "2026-09-28T00:54:57.668757+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 28,
+      "function": "hipMemcpy",
+      "context": 3,
+      "started_utc": "2026-09-28T00:54:57.668810+00:00",
+      "finished_utc": "2026-09-28T00:54:57.668878+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 29,
+      "function": "hipModuleLaunchKernel",
+      "context": 3,
+      "started_utc": "2026-09-28T00:54:57.669049+00:00",
+      "finished_utc": "2026-09-28T00:54:57.669110+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 30,
+      "function": "hipDeviceSynchronize",
+      "context": 3,
+      "started_utc": "2026-09-28T00:54:57.669161+00:00",
+      "finished_utc": "2026-09-28T00:54:57.669230+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 31,
+      "function": "hipMemcpy",
+      "context": 3,
+      "started_utc": "2026-09-28T00:54:57.669283+00:00",
+      "finished_utc": "2026-09-28T00:54:57.669352+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 32,
+      "function": "hipModuleGetFunction",
+      "context": 4,
+      "started_utc": "2026-09-28T00:54:57.669918+00:00",
+      "finished_utc": "2026-09-28T00:54:57.669982+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 33,
+      "function": "hipMemcpy",
+      "context": 4,
+      "started_utc": "2026-09-28T00:54:57.670150+00:00",
+      "finished_utc": "2026-09-28T00:54:57.670238+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 34,
+      "function": "hipMemcpy",
+      "context": 4,
+      "started_utc": "2026-09-28T00:54:57.670298+00:00",
+      "finished_utc": "2026-09-28T00:54:57.670367+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 35,
+      "function": "hipModuleLaunchKernel",
+      "context": 4,
+      "started_utc": "2026-09-28T00:54:57.670546+00:00",
+      "finished_utc": "2026-09-28T00:54:57.670609+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 36,
+      "function": "hipDeviceSynchronize",
+      "context": 4,
+      "started_utc": "2026-09-28T00:54:57.670659+00:00",
+      "finished_utc": "2026-09-28T00:54:57.670719+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 37,
+      "function": "hipMemcpy",
+      "context": 4,
+      "started_utc": "2026-09-28T00:54:57.670771+00:00",
+      "finished_utc": "2026-09-28T00:54:57.670862+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 38,
+      "function": "hipModuleGetFunction",
+      "context": 5,
+      "started_utc": "2026-09-28T00:54:57.671420+00:00",
+      "finished_utc": "2026-09-28T00:54:57.671483+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 39,
+      "function": "hipMemcpy",
+      "context": 5,
+      "started_utc": "2026-09-28T00:54:57.671652+00:00",
+      "finished_utc": "2026-09-28T00:54:57.671732+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 40,
+      "function": "hipMemcpy",
+      "context": 5,
+      "started_utc": "2026-09-28T00:54:57.671786+00:00",
+      "finished_utc": "2026-09-28T00:54:57.671857+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 41,
+      "function": "hipModuleLaunchKernel",
+      "context": 5,
+      "started_utc": "2026-09-28T00:54:57.672026+00:00",
+      "finished_utc": "2026-09-28T00:54:57.672088+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 42,
+      "function": "hipDeviceSynchronize",
+      "context": 5,
+      "started_utc": "2026-09-28T00:54:57.672140+00:00",
+      "finished_utc": "2026-09-28T00:54:57.672202+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 43,
+      "function": "hipMemcpy",
+      "context": 5,
+      "started_utc": "2026-09-28T00:54:57.672257+00:00",
+      "finished_utc": "2026-09-28T00:54:57.672327+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 44,
+      "function": "hipModuleGetFunction",
+      "context": 6,
+      "started_utc": "2026-09-28T00:54:57.672886+00:00",
+      "finished_utc": "2026-09-28T00:54:57.672947+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 45,
+      "function": "hipMemcpy",
+      "context": 6,
+      "started_utc": "2026-09-28T00:54:57.673118+00:00",
+      "finished_utc": "2026-09-28T00:54:57.673193+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 46,
+      "function": "hipMemcpy",
+      "context": 6,
+      "started_utc": "2026-09-28T00:54:57.673258+00:00",
+      "finished_utc": "2026-09-28T00:54:57.673325+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 47,
+      "function": "hipModuleLaunchKernel",
+      "context": 6,
+      "started_utc": "2026-09-28T00:54:57.673509+00:00",
+      "finished_utc": "2026-09-28T00:54:57.673573+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 48,
+      "function": "hipDeviceSynchronize",
+      "context": 6,
+      "started_utc": "2026-09-28T00:54:57.673623+00:00",
+      "finished_utc": "2026-09-28T00:54:57.673682+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 49,
+      "function": "hipMemcpy",
+      "context": 6,
+      "started_utc": "2026-09-28T00:54:57.673733+00:00",
+      "finished_utc": "2026-09-28T00:54:57.673802+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 50,
+      "function": "hipModuleGetFunction",
+      "context": 7,
+      "started_utc": "2026-09-28T00:54:57.674417+00:00",
+      "finished_utc": "2026-09-28T00:54:57.674490+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 51,
+      "function": "hipMemcpy",
+      "context": 7,
+      "started_utc": "2026-09-28T00:54:57.674671+00:00",
+      "finished_utc": "2026-09-28T00:54:57.674751+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 52,
+      "function": "hipMemcpy",
+      "context": 7,
+      "started_utc": "2026-09-28T00:54:57.674806+00:00",
+      "finished_utc": "2026-09-28T00:54:57.674873+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 53,
+      "function": "hipModuleLaunchKernel",
+      "context": 7,
+      "started_utc": "2026-09-28T00:54:57.675059+00:00",
+      "finished_utc": "2026-09-28T00:54:57.675122+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 54,
+      "function": "hipDeviceSynchronize",
+      "context": 7,
+      "started_utc": "2026-09-28T00:54:57.675178+00:00",
+      "finished_utc": "2026-09-28T00:54:57.675244+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 55,
+      "function": "hipMemcpy",
+      "context": 7,
+      "started_utc": "2026-09-28T00:54:57.675297+00:00",
+      "finished_utc": "2026-09-28T00:54:57.675366+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 56,
+      "function": "hipModuleGetFunction",
+      "context": 8,
+      "started_utc": "2026-09-28T00:54:57.675956+00:00",
+      "finished_utc": "2026-09-28T00:54:57.676027+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 57,
+      "function": "hipMemcpy",
+      "context": 8,
+      "started_utc": "2026-09-28T00:54:57.676207+00:00",
+      "finished_utc": "2026-09-28T00:54:57.676293+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 58,
+      "function": "hipMemcpy",
+      "context": 8,
+      "started_utc": "2026-09-28T00:54:57.676348+00:00",
+      "finished_utc": "2026-09-28T00:54:57.676412+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 59,
+      "function": "hipModuleLaunchKernel",
+      "context": 8,
+      "started_utc": "2026-09-28T00:54:57.676587+00:00",
+      "finished_utc": "2026-09-28T00:54:57.676646+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 60,
+      "function": "hipDeviceSynchronize",
+      "context": 8,
+      "started_utc": "2026-09-28T00:54:57.676699+00:00",
+      "finished_utc": "2026-09-28T00:54:57.676760+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 61,
+      "function": "hipMemcpy",
+      "context": 8,
+      "started_utc": "2026-09-28T00:54:57.676811+00:00",
+      "finished_utc": "2026-09-28T00:54:57.676875+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 62,
+      "function": "hipModuleGetFunction",
+      "context": 9,
+      "started_utc": "2026-09-28T00:54:57.677476+00:00",
+      "finished_utc": "2026-09-28T00:54:57.677542+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 63,
+      "function": "hipMemcpy",
+      "context": 9,
+      "started_utc": "2026-09-28T00:54:57.677738+00:00",
+      "finished_utc": "2026-09-28T00:54:57.677812+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 64,
+      "function": "hipMemcpy",
+      "context": 9,
+      "started_utc": "2026-09-28T00:54:57.677865+00:00",
+      "finished_utc": "2026-09-28T00:54:57.677929+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 65,
+      "function": "hipModuleLaunchKernel",
+      "context": 9,
+      "started_utc": "2026-09-28T00:54:57.678100+00:00",
+      "finished_utc": "2026-09-28T00:54:57.678161+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 66,
+      "function": "hipDeviceSynchronize",
+      "context": 9,
+      "started_utc": "2026-09-28T00:54:57.678215+00:00",
+      "finished_utc": "2026-09-28T00:54:57.678277+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 67,
+      "function": "hipMemcpy",
+      "context": 9,
+      "started_utc": "2026-09-28T00:54:57.678326+00:00",
+      "finished_utc": "2026-09-28T00:54:57.678388+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 68,
+      "function": "hipModuleGetFunction",
+      "context": 10,
+      "started_utc": "2026-09-28T00:54:57.678942+00:00",
+      "finished_utc": "2026-09-28T00:54:57.679005+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 69,
+      "function": "hipMemcpy",
+      "context": 10,
+      "started_utc": "2026-09-28T00:54:57.679181+00:00",
+      "finished_utc": "2026-09-28T00:54:57.679260+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 70,
+      "function": "hipMemcpy",
+      "context": 10,
+      "started_utc": "2026-09-28T00:54:57.679315+00:00",
+      "finished_utc": "2026-09-28T00:54:57.679378+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 71,
+      "function": "hipModuleLaunchKernel",
+      "context": 10,
+      "started_utc": "2026-09-28T00:54:57.679548+00:00",
+      "finished_utc": "2026-09-28T00:54:57.679609+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 72,
+      "function": "hipDeviceSynchronize",
+      "context": 10,
+      "started_utc": "2026-09-28T00:54:57.679660+00:00",
+      "finished_utc": "2026-09-28T00:54:57.679722+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 73,
+      "function": "hipMemcpy",
+      "context": 10,
+      "started_utc": "2026-09-28T00:54:57.679773+00:00",
+      "finished_utc": "2026-09-28T00:54:57.679837+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 74,
+      "function": "hipModuleGetFunction",
+      "context": 11,
+      "started_utc": "2026-09-28T00:54:57.680385+00:00",
+      "finished_utc": "2026-09-28T00:54:57.680446+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 75,
+      "function": "hipMemcpy",
+      "context": 11,
+      "started_utc": "2026-09-28T00:54:57.680607+00:00",
+      "finished_utc": "2026-09-28T00:54:57.680699+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 76,
+      "function": "hipMemcpy",
+      "context": 11,
+      "started_utc": "2026-09-28T00:54:57.680753+00:00",
+      "finished_utc": "2026-09-28T00:54:57.680815+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 77,
+      "function": "hipModuleLaunchKernel",
+      "context": 11,
+      "started_utc": "2026-09-28T00:54:57.680978+00:00",
+      "finished_utc": "2026-09-28T00:54:57.681037+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 78,
+      "function": "hipDeviceSynchronize",
+      "context": 11,
+      "started_utc": "2026-09-28T00:54:57.681090+00:00",
+      "finished_utc": "2026-09-28T00:54:57.681151+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 79,
+      "function": "hipMemcpy",
+      "context": 11,
+      "started_utc": "2026-09-28T00:54:57.681207+00:00",
+      "finished_utc": "2026-09-28T00:54:57.681271+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 80,
+      "function": "hipModuleGetFunction",
+      "context": 12,
+      "started_utc": "2026-09-28T00:54:57.681817+00:00",
+      "finished_utc": "2026-09-28T00:54:57.681878+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 81,
+      "function": "hipMemcpy",
+      "context": 12,
+      "started_utc": "2026-09-28T00:54:57.682044+00:00",
+      "finished_utc": "2026-09-28T00:54:57.682129+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 82,
+      "function": "hipMemcpy",
+      "context": 12,
+      "started_utc": "2026-09-28T00:54:57.682183+00:00",
+      "finished_utc": "2026-09-28T00:54:57.682261+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 83,
+      "function": "hipModuleLaunchKernel",
+      "context": 12,
+      "started_utc": "2026-09-28T00:54:57.682430+00:00",
+      "finished_utc": "2026-09-28T00:54:57.682490+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 84,
+      "function": "hipDeviceSynchronize",
+      "context": 12,
+      "started_utc": "2026-09-28T00:54:57.682543+00:00",
+      "finished_utc": "2026-09-28T00:54:57.682604+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 85,
+      "function": "hipMemcpy",
+      "context": 12,
+      "started_utc": "2026-09-28T00:54:57.682656+00:00",
+      "finished_utc": "2026-09-28T00:54:57.682720+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 86,
+      "function": "hipModuleGetFunction",
+      "context": 13,
+      "started_utc": "2026-09-28T00:54:57.683266+00:00",
+      "finished_utc": "2026-09-28T00:54:57.683333+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 87,
+      "function": "hipMemcpy",
+      "context": 13,
+      "started_utc": "2026-09-28T00:54:57.683500+00:00",
+      "finished_utc": "2026-09-28T00:54:57.683572+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 88,
+      "function": "hipMemcpy",
+      "context": 13,
+      "started_utc": "2026-09-28T00:54:57.683651+00:00",
+      "finished_utc": "2026-09-28T00:54:57.683714+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 89,
+      "function": "hipModuleLaunchKernel",
+      "context": 13,
+      "started_utc": "2026-09-28T00:54:57.683885+00:00",
+      "finished_utc": "2026-09-28T00:54:57.683945+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 90,
+      "function": "hipDeviceSynchronize",
+      "context": 13,
+      "started_utc": "2026-09-28T00:54:57.683998+00:00",
+      "finished_utc": "2026-09-28T00:54:57.684059+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 91,
+      "function": "hipMemcpy",
+      "context": 13,
+      "started_utc": "2026-09-28T00:54:57.684111+00:00",
+      "finished_utc": "2026-09-28T00:54:57.684173+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 92,
+      "function": "hipFree",
+      "context": "cleanup",
+      "started_utc": "2026-09-28T00:54:57.684582+00:00",
+      "finished_utc": "2026-09-28T00:54:57.684656+00:00",
+      "result_code": 0
+    },
+    {
+      "phase": "end",
+      "index": 93,
+      "function": "hipModuleUnload",
+      "context": "cleanup",
+      "started_utc": "2026-09-28T00:54:57.684714+00:00",
+      "finished_utc": "2026-09-28T00:54:57.685002+00:00",
+      "result_code": 0
+    }
+  ],
+  "finished_utc": "2026-09-28T00:54:57.703707+00:00",
+  "host_exit_code": 0,
+  "completed_transport_cases": 14,
+  "process_wait_scope": "Only the external root wrapper can certify process exit and reaping."
+}

@@ -1,0 +1,514 @@
+{
+  "status": "PASS_EXACT_42_FILE_STAGE",
+  "package": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/SOURCE.json",
+    "bytes": 13663,
+    "sha256": "04265d023cc6d924e5724c40ab9ae4f78abf50fb4c7eeda29a17a4ce35314dd1"
+  },
+  "files": [
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/run_repro.py",
+        "bytes": 12376,
+        "sha256": "521999790d358dc8a4507d29b291a77cd5c1dcc9fe03f8c7bf5565d8fce71262"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/run_repro.py",
+        "bytes": 12376,
+        "sha256": "521999790d358dc8a4507d29b291a77cd5c1dcc9fe03f8c7bf5565d8fce71262"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/build_repro.py",
+        "bytes": 2430,
+        "sha256": "25433c7d2937e667256aba9d1d368054f6e499f67fe84fc2ff0ad812afe211e0"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/build_repro.py",
+        "bytes": 2430,
+        "sha256": "25433c7d2937e667256aba9d1d368054f6e499f67fe84fc2ff0ad812afe211e0"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/README.md",
+        "bytes": 7388,
+        "sha256": "dd89d79659e6e7083c1c679933aaa1daa7400d6164e82afc105659f8a47e45d0"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/README.md",
+        "bytes": 7388,
+        "sha256": "dd89d79659e6e7083c1c679933aaa1daa7400d6164e82afc105659f8a47e45d0"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/EXACT_ASSETS.json",
+        "bytes": 1365,
+        "sha256": "616ea79877ad91a51a368cec9fbbd674b773d48380af69bd1e2989a7a0ae3c1f"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/EXACT_ASSETS.json",
+        "bytes": 1365,
+        "sha256": "616ea79877ad91a51a368cec9fbbd674b773d48380af69bd1e2989a7a0ae3c1f"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/CPU_VERIFICATION.json",
+        "bytes": 8048,
+        "sha256": "c78c3d2a94f91df4d2fb244023e67d3210b76bc656ff8259034cbe749676a969"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/CPU_VERIFICATION.json",
+        "bytes": 8048,
+        "sha256": "c78c3d2a94f91df4d2fb244023e67d3210b76bc656ff8259034cbe749676a969"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/CPU_BUILD_v2/BUILD_RESULT.json",
+        "bytes": 2515,
+        "sha256": "5ca820190cdf97158387d394a6d3b76afc4cc7727010d77a93191bd96646b3a8"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/CPU_BUILD_v2/BUILD_RESULT.json",
+        "bytes": 2515,
+        "sha256": "5ca820190cdf97158387d394a6d3b76afc4cc7727010d77a93191bd96646b3a8"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/CPU_BUILD_v2/LINKER_COMMENT_DELTA.json",
+        "bytes": 986,
+        "sha256": "bd548e27e63a15a82c71c9c93db97718b9c1a07109d356172aca0b518f5a7ea6"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/CPU_BUILD_v2/LINKER_COMMENT_DELTA.json",
+        "bytes": 986,
+        "sha256": "bd548e27e63a15a82c71c9c93db97718b9c1a07109d356172aca0b518f5a7ea6"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/exact/run_sentinel_host_v1.py",
+        "bytes": 21231,
+        "sha256": "be1582e96b7dad21991a562a6d4aec2664d331bd30ae64e1117cbd2d045ace89"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/exact/run_sentinel_host_v1.py",
+        "bytes": 21231,
+        "sha256": "be1582e96b7dad21991a562a6d4aec2664d331bd30ae64e1117cbd2d045ace89"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/exact/sentinel_host_configuration_v2.json",
+        "bytes": 4898,
+        "sha256": "4a7fd0b589959eec2f3c1f73fd86afacca18affb732d122df624bf0f7e4f2554"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/exact/sentinel_host_configuration_v2.json",
+        "bytes": 4898,
+        "sha256": "4a7fd0b589959eec2f3c1f73fd86afacca18affb732d122df624bf0f7e4f2554"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/exact/sentinel_shader_root_v2.hsaco",
+        "bytes": 32152,
+        "sha256": "4f840df38a5d815abe50824f37dedbde4bf48fffdec6ca84530cd631f69e5484"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/exact/sentinel_shader_root_v2.hsaco",
+        "bytes": 32152,
+        "sha256": "4f840df38a5d815abe50824f37dedbde4bf48fffdec6ca84530cd631f69e5484"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/exact/sentinel_shader_root_v2.s",
+        "bytes": 100058,
+        "sha256": "5172641877ade249d232cd5c721aed1e404b98921afe367043ad905784417a00"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/exact/sentinel_shader_root_v2.s",
+        "bytes": 100058,
+        "sha256": "5172641877ade249d232cd5c721aed1e404b98921afe367043ad905784417a00"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/provenance/final_sentinel_shader_instruction_ABI_independent_review_v1.json",
+        "bytes": 15283,
+        "sha256": "e61c855fe35d6aba5473c616b59909fc315e7467ff8d8b6073a9a2b7f33ac389"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/provenance/final_sentinel_shader_instruction_ABI_independent_review_v1.json",
+        "bytes": 15283,
+        "sha256": "e61c855fe35d6aba5473c616b59909fc315e7467ff8d8b6073a9a2b7f33ac389"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_00_0.bin",
+        "bytes": 160,
+        "sha256": "27de1c901c64c14864e1377b9617b0f5f161d58fcf8193fced3a5a993813663e"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_00_0.bin",
+        "bytes": 160,
+        "sha256": "27de1c901c64c14864e1377b9617b0f5f161d58fcf8193fced3a5a993813663e"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_00_1.bin",
+        "bytes": 160,
+        "sha256": "3e1bc14fbdce6543a7de2a5d98155213135aac91e16919b5ca9339fe00868ef8"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_00_1.bin",
+        "bytes": 160,
+        "sha256": "3e1bc14fbdce6543a7de2a5d98155213135aac91e16919b5ca9339fe00868ef8"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_05_0.bin",
+        "bytes": 160,
+        "sha256": "f2e274fa6c273867093d5fb04a03f854043f68496962f007f7f4552957772456"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_05_0.bin",
+        "bytes": 160,
+        "sha256": "f2e274fa6c273867093d5fb04a03f854043f68496962f007f7f4552957772456"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_05_1.bin",
+        "bytes": 160,
+        "sha256": "b010c7772cd598347981331123db9f60076900a1645d3ff030c00a905326d606"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_05_1.bin",
+        "bytes": 160,
+        "sha256": "b010c7772cd598347981331123db9f60076900a1645d3ff030c00a905326d606"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_41_0.bin",
+        "bytes": 160,
+        "sha256": "fec4a9eba54799486caa8c1093423b8090011440a8f07cd9e5426c6cf21f4f38"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_41_0.bin",
+        "bytes": 160,
+        "sha256": "fec4a9eba54799486caa8c1093423b8090011440a8f07cd9e5426c6cf21f4f38"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_41_1.bin",
+        "bytes": 160,
+        "sha256": "60ed0a4402bb9328a4710f691f60e8a46f052f08a821299154526939384ae537"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_41_1.bin",
+        "bytes": 160,
+        "sha256": "60ed0a4402bb9328a4710f691f60e8a46f052f08a821299154526939384ae537"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_45_0.bin",
+        "bytes": 160,
+        "sha256": "fa9274b8b723a7e97ed088d832748a4b1cf653b2702c7b412d8e4a11de9a9b43"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_45_0.bin",
+        "bytes": 160,
+        "sha256": "fa9274b8b723a7e97ed088d832748a4b1cf653b2702c7b412d8e4a11de9a9b43"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_45_1.bin",
+        "bytes": 160,
+        "sha256": "a38c0e682bfe702270427703f34668312f9f32456977c77965cc64ca490eb296"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_45_1.bin",
+        "bytes": 160,
+        "sha256": "a38c0e682bfe702270427703f34668312f9f32456977c77965cc64ca490eb296"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_81_0.bin",
+        "bytes": 160,
+        "sha256": "6955a0c250666a7c9737a321ac00af6c3e8dea9ed04aa6d6edf03f3d7f5924f2"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_81_0.bin",
+        "bytes": 160,
+        "sha256": "6955a0c250666a7c9737a321ac00af6c3e8dea9ed04aa6d6edf03f3d7f5924f2"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_81_1.bin",
+        "bytes": 160,
+        "sha256": "e7bce530abe58685ab1ae2dbbba90538f5d5f4221e6d9774e94be12b29f29d8b"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_81_1.bin",
+        "bytes": 160,
+        "sha256": "e7bce530abe58685ab1ae2dbbba90538f5d5f4221e6d9774e94be12b29f29d8b"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_82_0.bin",
+        "bytes": 160,
+        "sha256": "3c7105ec20b3f9ee6fc8afda3ac27875e1524b1353fab5114f191e649d646e3e"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_82_0.bin",
+        "bytes": 160,
+        "sha256": "3c7105ec20b3f9ee6fc8afda3ac27875e1524b1353fab5114f191e649d646e3e"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_82_1.bin",
+        "bytes": 160,
+        "sha256": "bc8c982e791f089852d20b6a67ece6f170692866d457d45fc48a72a9f0a15b6d"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_82_1.bin",
+        "bytes": 160,
+        "sha256": "bc8c982e791f089852d20b6a67ece6f170692866d457d45fc48a72a9f0a15b6d"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_85_0.bin",
+        "bytes": 160,
+        "sha256": "f574792fb5bd6da49fe8f3bd5c8dd26c1b43e4d744e5e6c7b9023d46b8b231db"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_85_0.bin",
+        "bytes": 160,
+        "sha256": "f574792fb5bd6da49fe8f3bd5c8dd26c1b43e4d744e5e6c7b9023d46b8b231db"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/fixed/sentinel_85_1.bin",
+        "bytes": 160,
+        "sha256": "32229b40a238a95a8004dc06a76278aa50cda04688170173c93a46d6d54bfbbe"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/fixed/sentinel_85_1.bin",
+        "bytes": 160,
+        "sha256": "32229b40a238a95a8004dc06a76278aa50cda04688170173c93a46d6d54bfbbe"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_00_0.bin",
+        "bytes": 160,
+        "sha256": "4cb96484c701a58ab5cd26139249213d7ba1bcfbe853fb3e81083056eb012b2a"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_00_0.bin",
+        "bytes": 160,
+        "sha256": "4cb96484c701a58ab5cd26139249213d7ba1bcfbe853fb3e81083056eb012b2a"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_00_1.bin",
+        "bytes": 160,
+        "sha256": "a95b12a71bbc049a6dc1a0d66accba95d51d9e122a45e89472aefc1b13e74772"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_00_1.bin",
+        "bytes": 160,
+        "sha256": "a95b12a71bbc049a6dc1a0d66accba95d51d9e122a45e89472aefc1b13e74772"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_05_0.bin",
+        "bytes": 160,
+        "sha256": "3bfd03a826210d419b5c341e400007cc14971a57d88fd71f801ca9841ca0e09f"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_05_0.bin",
+        "bytes": 160,
+        "sha256": "3bfd03a826210d419b5c341e400007cc14971a57d88fd71f801ca9841ca0e09f"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_05_1.bin",
+        "bytes": 160,
+        "sha256": "acfbcfc55f634cef79056cbb3f378001999fd6fbec2dd83f0c84a49ec4ce56ec"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_05_1.bin",
+        "bytes": 160,
+        "sha256": "acfbcfc55f634cef79056cbb3f378001999fd6fbec2dd83f0c84a49ec4ce56ec"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_41_0.bin",
+        "bytes": 160,
+        "sha256": "5a6b1805f3f921b9b3f89710d3facad86bb18228d6000d69d818bc8870fd0f16"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_41_0.bin",
+        "bytes": 160,
+        "sha256": "5a6b1805f3f921b9b3f89710d3facad86bb18228d6000d69d818bc8870fd0f16"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_41_1.bin",
+        "bytes": 160,
+        "sha256": "53c0a20809f3a676cdf26b532e0b83fdcd781393446e9f909808ed9bdf9a217e"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_41_1.bin",
+        "bytes": 160,
+        "sha256": "53c0a20809f3a676cdf26b532e0b83fdcd781393446e9f909808ed9bdf9a217e"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_45_0.bin",
+        "bytes": 160,
+        "sha256": "5975adeb669c30ec96886406b5f02a8a4306f8b3d72b61212ef3cd0b505aa6a4"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_45_0.bin",
+        "bytes": 160,
+        "sha256": "5975adeb669c30ec96886406b5f02a8a4306f8b3d72b61212ef3cd0b505aa6a4"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_45_1.bin",
+        "bytes": 160,
+        "sha256": "cb03434756dac57413bd56ec086ad643cab1c9d50495754052113115674bc760"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_45_1.bin",
+        "bytes": 160,
+        "sha256": "cb03434756dac57413bd56ec086ad643cab1c9d50495754052113115674bc760"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_81_0.bin",
+        "bytes": 160,
+        "sha256": "412057d5964768c69d7819ff9520418c507851dafe798ec327a318993854c264"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_81_0.bin",
+        "bytes": 160,
+        "sha256": "412057d5964768c69d7819ff9520418c507851dafe798ec327a318993854c264"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_81_1.bin",
+        "bytes": 160,
+        "sha256": "0e518be5b44438584a362a406d60bf92438a9a88e6ba2b6c9b15b7fa0db65303"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_81_1.bin",
+        "bytes": 160,
+        "sha256": "0e518be5b44438584a362a406d60bf92438a9a88e6ba2b6c9b15b7fa0db65303"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_82_0.bin",
+        "bytes": 160,
+        "sha256": "2665e3cb6436fa3effbe46361838586adfc022212169d727f762b0c1904de052"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_82_0.bin",
+        "bytes": 160,
+        "sha256": "2665e3cb6436fa3effbe46361838586adfc022212169d727f762b0c1904de052"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_82_1.bin",
+        "bytes": 160,
+        "sha256": "c9b84f00ad9c1d83f4eddf0448216004ff079a48d09d011e256341f056e390f0"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_82_1.bin",
+        "bytes": 160,
+        "sha256": "c9b84f00ad9c1d83f4eddf0448216004ff079a48d09d011e256341f056e390f0"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_85_0.bin",
+        "bytes": 160,
+        "sha256": "b075507e44abc402226ac4fddc3a24f68871d74e712b7056d2b2bc7ab50c3f96"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_85_0.bin",
+        "bytes": 160,
+        "sha256": "b075507e44abc402226ac4fddc3a24f68871d74e712b7056d2b2bc7ab50c3f96"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/original/sentinel_85_1.bin",
+        "bytes": 160,
+        "sha256": "a493ec752482d9019de4f94d885edfb7bb878a754d173e480834e30a22be141c"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/original/sentinel_85_1.bin",
+        "bytes": 160,
+        "sha256": "a493ec752482d9019de4f94d885edfb7bb878a754d173e480834e30a22be141c"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/evidence/witnesses.json",
+        "bytes": 22687,
+        "sha256": "3c6442e19978d2e09d9489df5dea5855e06336896f3925b9d50ea8f651ef044c"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/evidence/witnesses.json",
+        "bytes": 22687,
+        "sha256": "3c6442e19978d2e09d9489df5dea5855e06336896f3925b9d50ea8f651ef044c"
+      }
+    },
+    {
+      "source": {
+        "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_driver_ticket_v1/reproducer/SOURCE.json",
+        "bytes": 13663,
+        "sha256": "04265d023cc6d924e5724c40ab9ae4f78abf50fb4c7eeda29a17a4ce35314dd1"
+      },
+      "destination": {
+        "path": "/home/chcai/dlrm_data/root_cause_20260919/session_20260928_driver_ticket_runtime_v1/reproducer/SOURCE.json",
+        "bytes": 13663,
+        "sha256": "04265d023cc6d924e5724c40ab9ae4f78abf50fb4c7eeda29a17a4ce35314dd1"
+      }
+    }
+  ]
+}

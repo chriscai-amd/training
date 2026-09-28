@@ -1,0 +1,22 @@
+ORIGINAL: byte offset; instruction; native 32-bit words
+0x003c: s_mov_b32 ttmp14, exec_lo // BEFA007E
+0x0040: s_mov_b32 exec_lo, 1 // BEFE0081
+0x0044: v_readlane_b32 ttmp15, v1, 0 // D760007B 00010101
+0x004c: s_mov_b64 ttmp[2:3], 0 // BEEE0180
+0x0050: v_mov_b32_e32 v1, 0 // 7E020280
+0x0054: global_prefetch_b8 v1, ttmp[2:3] scope:SCOPE_SE // EE17406E 00040000 00000001
+0x0060: v_writelane_b32 v1, ttmp15, 0 // D7610001 0001007B
+0x0068: s_mov_b32 exec_lo, ttmp14 // BEFE007A
+
+CORRECTED: byte offset; instruction; native 32-bit words
+0x003c: s_getreg_b32 ttmp2, hwreg(HW_REG_WAVE_MODE, 12, 6) // B8EE2B01
+0x0040: s_mov_b32 ttmp3, 0 // BEEF0080
+0x0044: s_setreg_b32 hwreg(HW_REG_WAVE_MODE, 12, 6), ttmp3 // B96F2B01
+0x0048: s_mov_b32 ttmp14, exec_lo // BEFA007E
+0x004c: s_mov_b32 exec_lo, 1 // BEFE0081
+0x0050: v_readlane_b32 ttmp15, v1, 0 // D760007B 00010101
+0x0058: v_sub_nc_u32_e64 v1, 63, ttmp2 // D5260001 0200DCBF
+0x0060: global_prefetch_b8 v1, ttmp[2:3] offset:-63 scope:SCOPE_SE // EE17406E 00040000 FFFFC101
+0x006c: v_writelane_b32 v1, ttmp15, 0 // D7610001 0001007B
+0x0074: s_setreg_b32 hwreg(HW_REG_WAVE_MODE, 12, 6), ttmp2 // B96E2B01
+0x0078: s_mov_b32 exec_lo, ttmp14 // BEFE007A

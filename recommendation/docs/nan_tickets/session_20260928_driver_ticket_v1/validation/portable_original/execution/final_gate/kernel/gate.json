@@ -1,0 +1,24 @@
+{
+  "status": "PASS_CURRENT_KERNEL_CONTINUITY",
+  "previous_state": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/after_producer_gate/kernel/state.json",
+    "bytes": 39991,
+    "sha256": "754c0de778fc98603d9235307c420d79fcf685d8d0891edb4798f661d22c12da"
+  },
+  "kernel_state": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/final_gate/kernel/state.json",
+    "bytes": 39967,
+    "sha256": "6474c82ae6632e7e99f011b53122f135bd4dcdf640fdf3503d21e244cf3f984a"
+  },
+  "kernel_policy": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260927_mc60_authorized_v1/mc60_policy.py",
+    "bytes": 3847,
+    "sha256": "e11d75e814186a3fd3eb14c7900b5a135bf9d064f24d94c17a7f4a55396901f0"
+  },
+  "policy_review": {
+    "path": "/home/chcai/mi450_logs/root_cause_20260919/session_20260928_ticket_repro_root_v1/execution/final_gate/kernel/policy.json",
+    "bytes": 1488636,
+    "sha256": "0fc65c9a1b6111526f1f369a39f5f6fa47dfda50211fbfc0ecc3ac003ea39973"
+  },
+  "label": "after complete portable sentinel consumption"
+}

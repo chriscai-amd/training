@@ -34,8 +34,9 @@ Updated **2026-09-28**.
 > - **Driver-team report.** The handler defect and its fix are proven at
 >   component level on A0, and RCK adds an end-to-end A/B. Filing can start
 >   now. The gaps are a portable minimal reproducer, a source-level fix in the
->   driver team's build flow and the final RCK result
->   ([§8.5](#85-readiness-for-a-driver-team-report)).
+>   driver team's build flow and the final RCK result. The owner is the
+>   amdgpu KFD team. The six to-dos for this host are listed in
+>   [§8.5](#85-readiness-for-a-driver-team-report).
 > - **The corrected-driver comparison on this host is planned, not run.**
 >   Loading the rebuilt driver needs someone who can power-cycle the host
 >   ([§8.6](#86-corrected-driver-comparison-on-this-host-plan-not-run)).
@@ -1055,6 +1056,43 @@ Assessed on 2026-09-28 against the A0 and RCK records.
 Suggested filing: a confirmed handler defect plus a validated fix candidate.
 Send the mechanism, the instruction-level matrix, the byte-exact replay A/B,
 the trigger stacks and the RCK A/B, and list the gaps above.
+
+**Owner:** the amdgpu KFD (compute kernel driver) team. The fix changes
+`amd/amdkfd/cwsr_trap_handler_gfx12.asm` and the `cwsr_trap_gfx12_1_0_hex`
+array regenerated from it. Two other teams should review it:
+
+- the gfx1250 shader (SQ) architecture team, for the MODE bank-bit semantics
+  and any `s_setreg` hazard;
+- the ROCm debugger team, which co-maintains the trap handler.
+
+**To-dos on this host before filing (none started as of 2026-09-28):**
+
+1. **Build the corrected module.**
+   - Use the 7.1.0 DKMS source with the `68c31ab2…` handler.
+   - Adapt the RCK tool paths.
+   - Audit against a baseline rebuild: only the handler array should differ.
+2. **Load it safely.**
+   - Do a first load after a power cycle with
+     `noretry=0 gpu_recovery=0 ip_block_mask=0xcff`, not a live reload.
+   - Have someone ready to power-cycle the host by hand.
+3. **Run the comparison.**
+   - Run `BLOCK_N=128`, local 1,024, 600 steps, several times on the
+     corrected driver at 15 h or more of uptime.
+   - Run one stock control at a similar host state.
+   - Log `compact_stall` and `evicted_ms` in every run.
+4. **Build a minimal reproducer.**
+   - Use a single kernel with unequal VGPR banks and tagged v1/v257/v513, and
+     force a queue eviction while it runs.
+   - Tags should be copied on the stock handler and preserved on the
+     corrected one.
+5. **Explain the `SDMA0` attribution**, or state it as an open question in
+   the ticket.
+6. **Package the ticket.** Include:
+   - the driver identity: version and srcversion, handler hash, and the
+     faulty-instruction offsets (68 and 96);
+   - the run ledger and eviction traces;
+   - the corrected-vs-stock results;
+   - a source patch against the 7.1.0 tree.
 
 ### 8.6 Corrected-driver comparison on this host (plan, not run)
 

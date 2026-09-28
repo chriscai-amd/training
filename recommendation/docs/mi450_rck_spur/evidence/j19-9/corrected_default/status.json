@@ -2,18 +2,58 @@
  "run": "/shared/chcai/mi450_a0_newcluster/runs/corrected_default_ctheliosr-rck-g02-j19-9_20260927T013250Z",
  "trainer_pid": 2620,
  "started": "2026-09-27T01:32:54.783+00:00",
- "last_step": 2108,
- "last_loss": "0.13855",
- "last_step_utc": "2026-09-27T02:34:49.434+00:00",
- "steps_seen": 2108,
+ "last_step": 14000,
+ "last_loss": "0.10447",
+ "last_step_utc": "2026-09-27T07:45:36.132+00:00",
+ "steps_seen": 14000,
  "nonfinite_steps": [],
  "first_nonfinite": null,
- "evals": [],
+ "evals": [
+  {
+   "value": 0.7316823601722717,
+   "meta": {
+    "file": "/workspace/recommendation/generative_recommenders/dlrm_v4/train/mlperf_logging_utils.py",
+    "lineno": 384,
+    "samples_count": 52756480,
+    "epoch_num": 0.023029362768850464
+   },
+   "utc": "2026-09-27T07:12:58.066+00:00"
+  },
+  {
+   "value": 0.7476744651794434,
+   "meta": {
+    "file": "/workspace/recommendation/generative_recommenders/dlrm_v4/train/mlperf_logging_utils.py",
+    "lineno": 384,
+    "samples_count": 55050240,
+    "epoch_num": 0.024030639410974396
+   },
+   "utc": "2026-09-27T07:31:09.760+00:00"
+  },
+  {
+   "value": 0.7562554478645325,
+   "meta": {
+    "file": "/workspace/recommendation/generative_recommenders/dlrm_v4/train/mlperf_logging_utils.py",
+    "lineno": 384,
+    "samples_count": 57344000,
+    "epoch_num": 0.02503191605309833
+   },
+   "utc": "2026-09-27T07:49:21.521+00:00"
+  }
+ ],
  "in_eval": false,
- "run_stop": null,
+ "run_stop": {
+  "meta": {
+   "file": "/workspace/recommendation/generative_recommenders/dlrm_v4/train/mlperf_logging_utils.py",
+   "lineno": 368,
+   "status": "success",
+   "samples_count": 57344000,
+   "epoch_num": 0.02503191605309833
+  },
+  "utc": "2026-09-27T07:49:21.521+00:00"
+ },
  "errors": [],
  "stall": false,
  "stopped_by_monitor": null,
- "trainer_alive": true,
- "updated": "2026-09-27T02:34:49.434+00:00"
+ "trainer_alive": false,
+ "updated": "2026-09-27T07:49:36.545+00:00"
 }

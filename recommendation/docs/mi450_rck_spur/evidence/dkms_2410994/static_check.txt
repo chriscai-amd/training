@@ -1,0 +1,30 @@
+# Static check of amdgpu-dkms 2410994 vs installed 2398876 (2026-09-28T20:02:52Z)
+Source: https://mkmartifactory.amd.com/artifactory/amdgpu-deb-local-new/pool/<build>/noble/a/
+f3d37debe8f254c086d6ae7b2a1a9ba5b81ec55335358a412b9e13dabe225546  amdgpu-dkms-firmware_31.30.0.9.31300009-2398876.24.04_all.deb
+1739a889e6fa808a5e5b86abeff4e7f83e05f696c59aa1701b93c2b8cd92b5bf  amdgpu-dkms-firmware_31.30.0.9.31300009-2410994.24.04_all.deb
+16419bee15b23a17835b232e9d6e855f2da6f2dca443a019b64bc34ae4b0289f  amdgpu-dkms_7.1.0.31300009-2410994.24.04_all.deb
+9fe27aa08f386f0a5430219bdfa001632f156396b82e86608e3e97ae47a03d68  amdgpu-dkms_7.1.1.31300009-2398876.24.04_all.deb
+
+## gfx12.1 CWSR handler arrays (cwsr_trap_handler.h)
+2398876 cwsr_trap_gfx12_hex 3760 ab5ac126b32d309affcfb34c1bfdbe7704907851aa46936890a146cc3d171786
+2398876 cwsr_trap_gfx12_1_0_hex 5656 0f718b5eae143bad8625658be139f6e636263e1bd09510f2653f96f62e19b290
+2410994 cwsr_trap_gfx12_hex 3760 ab5ac126b32d309affcfb34c1bfdbe7704907851aa46936890a146cc3d171786
+2410994 cwsr_trap_gfx12_1_0_hex 5592 3bc22f603800341177a31d44796036ed746da207fc0d67dd0c195e49b46af58a
+
+## asm source sha256
+5e0e339cb988120d99fbccf2869bfab29e0a143bd110ce6f00cfdc495d5bf69d  old/usr/src/amdgpu-7.1.1-2398876.24.04/amd/amdkfd/cwsr_trap_handler_gfx12.asm
+d1834df1f6351ea44fdc44797710aa4484a9c27cb4d473c961f8d72508131419  x/usr/src/amdgpu-7.1.0-2410994.24.04/amd/amdkfd/cwsr_trap_handler_gfx12.asm
+
+## firmware gc_12_1_0
+78491e73f8560f4bd57e2d47b42a066997efc3d1a677895d784de5c6359c783c  oldfw/lib/firmware/updates/amdgpu/gc_12_1_0_mec.bin
+587b5248a1973803882d660d8939476e7d6754d622934a4fa35c75f696471f1f  oldfw/lib/firmware/updates/amdgpu/gc_12_1_0_mec_1.bin
+3f13a4f6d5b0a42c03e1622fbdb3cd4e5755b1401071b656079eb7a8b32f405a  oldfw/lib/firmware/updates/amdgpu/gc_12_1_0_mes.bin
+830d047d4037d8b52bb9088d7ee884838d5c841e10d2ce4ee6dc04adacc62f57  oldfw/lib/firmware/updates/amdgpu/gc_12_1_0_mes1.bin
+df2fdb7a47547821ab298ea263933a11f5880b2545e9aabefcd9172f67fe82da  oldfw/lib/firmware/updates/amdgpu/gc_12_1_0_rlc.bin
+e1c44e932e1861a92bd722e771da685604f1d0ca7458d1b8c281e40356013c58  oldfw/lib/firmware/updates/amdgpu/gc_12_1_0_rlc_1.bin
+d93a2d404bce004dc57d0cf835654f7dc1c7648ed44cb9da8393f3f98239255f  oldfw/lib/firmware/updates/amdgpu/gc_12_1_0_uni_mes.bin
+8445148f7b880dad7cb95528eb2c2558288d5ae32552f455b17c1234c47a392d  fw/lib/firmware/updates/amdgpu/gc_12_1_0_mec.bin
+57c6b6a14a2b14f26b8623399bbfa292c90072a864b8d9c93accc23552c77aec  fw/lib/firmware/updates/amdgpu/gc_12_1_0_mec_1.bin
+36a976cbe5739064ae3c1e0187765e5d3da9b1a123cd6ae4ac1a35a5eba752e0  fw/lib/firmware/updates/amdgpu/gc_12_1_0_rlc.bin
+ef252011a0fbec7289d8bdaec00211cbc8633e345b7257eb7c9d52a5cbf65e6d  fw/lib/firmware/updates/amdgpu/gc_12_1_0_rlc_1.bin
+96fd08e1a1b3c52a21f4b009f0b56fdb30725bd57d8a926693d8d7b0f3ee29c1  fw/lib/firmware/updates/amdgpu/gc_12_1_0_uni_mes.bin

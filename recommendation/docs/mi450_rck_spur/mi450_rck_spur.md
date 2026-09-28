@@ -1,7 +1,6 @@
 # MI450 A0 on the RCK spur cluster (gfx1250, four GPUs, full model)
 
-Updated **2026-09-27, 02:35 UTC** (all times UTC), while the corrected-driver
-run is still in progress.
+Updated **2026-09-28, 20:10 UTC** (all times UTC).
 
 This cluster (hosts `ctheliosr-rck-g02-j19-*` and `ctheliosp-rck-g02-h21-*`,
 scheduled by ROCm spur) was new to this investigation on September 24. The
@@ -14,25 +13,40 @@ which component produces the NaN. Companion records:
 [1P4G a37-2](../mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md), whose configuration
 every run here reuses.
 
-## Current status: corrected driver clean past 2,000 steps with the trigger active
+## Current status: corrected driver trained to AUC 0.75; KFD build 2410994 carries a handler fix
 
-**On the corrected CWSR handler, the default configuration has run 2,128 finite
-steps and is still going.** The run started at 01:32:50 on September 27 on
-`j19-9`, with AutoNUMA on and no memory binding. On the stock driver, the same
-configuration went NaN at **step 111** (`j19-1`) and **step 123** (`j19-11`).
-The trigger is fully present: AutoNUMA averaged **2.2 million page-table
-updates per minute** over the first 50 training minutes (2.5 million in the
-stock `j19-1` run), and KFD queue evictions, each of which saves the running
-waves through the handler, added 18.5 seconds of evicted time across the four
-ranks. The run continues toward AUC 0.75 as the several-hour end-to-end run
+**On the corrected CWSR handler, the default configuration trained end to end
+without a NaN.** The run on `j19-9` (launched 01:32:50 on September 27,
+AutoNUMA on, no memory binding) completed **14,000 finite steps** and reached
+**AUC 0.7563** at the third evaluation, 07:49:21, where MLPerf logged
+`run_stop` with status `success`. The trainer exited 0. That is about six hours
+of training, the same step count at which the 1P4G a37-2 reference reached
+0.75. On the stock driver, the same configuration went NaN at **step 111**
+(`j19-1`) and **step 123** (`j19-11`). The trigger stayed present for the whole
+run: AutoNUMA made **1.35 million page-table updates per minute** on average
+over the six training hours (0.7–2.2 million in each hour), and KFD queue
+evictions, each of which saves the running waves through the handler, added
+90.5 seconds of evicted time across the four ranks
 ([§5.2](#52-corrected-driver-run-on-j19-9)).
 
-**This is the strongest evidence so far that the handler is the culprit, but it
-is one run and still in progress.** Hardware, firmware, software stack,
-configuration and trigger are the same as in the stock runs; only the handler
-and its two size bytes changed ([§7](#7-corrected-cwsr-driver)). Both stock
-default runs failed by step 123. A stock run with memory binding once reached
-1,912 steps, so run length alone is not conclusive.
+**This is the strongest evidence that the handler is the culprit, but it is
+one run.** Hardware, firmware, software stack, configuration and trigger are
+the same as in the stock runs; only the handler and its two size bytes changed
+([§7](#7-corrected-cwsr-driver)). Both stock default runs failed by step 123,
+the stock bound runs at step 354 and (node lost) after 1,912, and the corrected
+run went 14,000 steps.
+
+**KFD's suggested build 2410994 removes the faulty sequence** (static check
+only; not yet run on a GPU). KFD asked to try DKMS build 2410994 in place of
+2397345 (the A0 host's build; the `j19` nodes run 2398876, which embeds the same
+faulty handler). In 2410994 the only change to `cwsr_trap_handler_gfx12.asm`
+is the trap-entry workaround: the `v1` lane-0 read, zero write and write-back
+are gone, and the prefetch now reads `v0` against a `0xFFFFFFFF_xxxxxxxx` base
+without writing any VGPR. The embedded gfx12.1 handler is 5,592 bytes, SHA-256
+`3bc22f60…`. The build also changes much more than the handler (driver
+version 7.1.0, KFD SVM/queue manager/MES code, MEC `0x97e`, RLC `0x20`, a new
+uni-MES image), so a GPU pass would validate the build, not the handler alone
+([§7.6](#76-kfd-build-2410994)).
 
 **Memory binding is not a mitigation.** A `numactl --membind=0,1` run on the
 stock driver on `j19-9` went NaN at **step 354**, with zero AutoNUMA page-table
@@ -50,7 +64,8 @@ halts forever by design, so queue restores and other KFD work piled up, the
 ranks could not exit and one GPU read 100% busy for four hours. Clearing the
 parameter at runtime released four of the five stuck processes; about two
 minutes later the node went dark with a firmware-recorded hardware error and
-reset itself ([§8.2](#82-mes-non-response-and-halt_if_hws_hang)).
+reset itself ([§8.2](#82-mes-non-response-and-halt_if_hws_hang)). The
+`halt_if_hws_hang` wait loops are still present in 2410994.
 
 **The first non-finite tensor is the one the A0 investigation identified.** On
 `j19-11` the NaN tripwire found every input finite and exactly one non-finite
@@ -68,30 +83,31 @@ cross-bank lane-0 copy. The corrected handler (`68c31ab2…`) is not in this BKC
 |---|---|
 | Does the NaN reproduce on this cluster? | **Yes, on the stock driver**: default runs at steps 111 and 123, and a `numactl`-bound run at step 354. |
 | Was the model shrunk? | **No.** `EMBEDDING_ROW_SCALE=1.0` on four GPUs with the a37-2 settings. |
-| Which component? | **The gfx1250 CWSR trap handler in amdgpu (KFD).** The corrected-driver default run is clean past 2,128 steps with the trigger active; it is still running ([§6](#6-nan-triage-component-trigger-and-mechanism)). |
+| Which component? | **The gfx1250 CWSR trap handler in amdgpu (KFD).** The corrected-driver default run trained 14,000 finite steps with the trigger active ([§6](#6-nan-triage-component-trigger-and-mechanism)). |
 | What triggers it? | KFD queue evictions, which save running waves through the handler. AutoNUMA is the largest source here; evictions continue without it. |
 | Is there a mitigation short of the fix? | **No.** `numactl --membind=0,1` still went NaN at step 354. |
-| Several-hour end-to-end run? | **In progress** on the corrected driver: 2,128 steps (about 50 minutes of training) at 02:35. |
+| Several-hour end-to-end run? | **Yes, on the corrected driver**: 14,000 steps, AUC 0.7563, MLPerf `run_stop` success at 07:49:21 on September 27. |
+| Does KFD build 2410994 fix it? | **Statically yes**: the faulty lane-0 copy is removed from source and binary. Not yet run on a GPU ([§7.6](#76-kfd-build-2410994)). |
 | Why do nodes stall and fail to reboot? | MES `0x7b` stops responding and `halt_if_hws_hang=1` freezes the driver, observed directly on `j19-9`. |
 
-### Node status at 02:35 UTC, September 27
+### Node status at 20:10 UTC, September 28
 
 | Node | GPUs | State | Needs |
 |---|---|---|---|
-| `ctheliosr-rck-g02-j19-9` (`10.190.178.96`) | 4 × `1002:75c1` | Running the corrected-driver validation (job 11120) on the one-boot corrected load from 01:27 | Remove the one-shot files after the test ([§7.4](#74-removal)) |
-| `ctheliosr-rck-g02-j19-1` (`10.190.178.47`) | 4 × `1002:75c1` | Hung in shutdown since 20:30 on September 25; absent from `sinfo` | BMC power cycle. It should then boot the corrected driver once ([§7.3](#73-activation-on-j19-1)) |
-| `ctheliosr-rck-g02-j19-11` (`10.190.178.179`) | 4 × `1002:75c1` | Hung in shutdown since 18:50 on September 25; absent from `sinfo` | BMC power cycle; `/nfs_spur` export |
+| `ctheliosr-rck-g02-j19-9` (`10.190.178.96`) | 4 × `1002:75c1` | `down`, "Not responding", after the corrected-driver run completed | Recovery; then remove the one-shot files ([§7.4](#74-removal)) |
+| `ctheliosr-rck-g02-j19-1` (`10.190.178.47`) | 4 × `1002:75c1` | Back in the scheduler (`mix`), running another user's CI job (`geomin12`) with a long queue behind it. Which amdgpu it booted was not checked; the GRUB one-shot may have loaded the corrected driver | Check `/proc/cmdline` and srcversion ([§7.3](#73-activation-on-j19-1)); remove the one-shot files ([§7.4](#74-removal)) |
+| `ctheliosr-rck-g02-j19-11` (`10.190.178.179`) | 4 × `1002:75c1` | Absent from `sinfo` (hung in shutdown since 18:50 on September 25) | BMC power cycle; `/nfs_spur` export |
 | `ctheliosr-rck-g02-j19-7` (`10.190.178.15`) | 4 × `1002:75c1` | `drain` | TheRock CI ran on its GPUs outside the scheduler ([§8.4](#84-ci-workloads-outside-the-scheduler)) |
-| `ctheliosp-rck-g02-h21-15` (`10.190.178.90`) | 4 × `1002:75c1` | `down`; sshd up, node agent dead since 11:22:34 on September 25 | spurd restart; `/nfs_spur` export |
-| `ctheliosr-rck-g02-j19-16` | not inspected | `idle`, but a job did not start within 90 s | — |
+| `ctheliosp-rck-g02-h21-15` (`10.190.178.90`) | 4 × `1002:75c1` | `down`; node agent dead since 11:22:34 on September 25 | spurd restart; `/nfs_spur` export |
+| `ctheliosr-rck-g02-j19-16` | not inspected | `down` | — |
 | `ctheliosp-rck-g02-h21-7` | — | `down`; reserved for other users | — |
 | `ctheliosp-rck-g02-h21-13`, `ctheliosp-rck-g02-h21-14` | `h21-14`: `1002:75c7` | Other users' jobs | — |
 | `ctheliosp-rck-g02-h21-12`, `ctheliosp-rck-g02-h21-16` | `h21-16`: `1002:75c7` | `idle`; no `/shared`, no `unsquashfs` | Not A0-equivalent |
 
 ### Needed from admins
 
-1. Power-cycle `j19-1` and `j19-11` through the BMC. Both hung after a systemd
-   reboot request: the kernel answers ping, but sshd and spurd have stopped.
+1. Recover `j19-9` (down, not responding) and power-cycle `j19-11` through the
+   BMC.
 2. Add `10.190.178.179` (`j19-11`) and `10.190.178.90` (`h21-15`) to the
    `/nfs_spur` export on `10.210.2.150` ([§8.3](#83-nfs-export-gap)).
 3. Restart spurd on `h21-15`.
@@ -104,15 +120,19 @@ cross-bank lane-0 copy. The corrected handler (`68c31ab2…`) is not in this BKC
    `/dev/kfd`, so after any reboot the node stays out of the scheduler until
    amdgpu is loaded ([§8.6](#86-spurd-needs-devkfd)).
 7. Check the flood of corrected PCIe errors on `j19-1` ([§8.5](#85-pcie-aer-flood-on-j19-1)).
+8. Agree how 2410994 may be installed on a `j19` node for the validation run
+   ([§7.6](#76-kfd-build-2410994)).
 
 ### Next steps
 
-1. Let the corrected-driver run continue toward AUC 0.75, checking that
-   AutoNUMA activity and queue evictions stay present.
-2. If it goes NaN, localize the first non-finite tensor on the corrected
-   driver; that would mean the handler is not the whole story.
-3. After the run, remove the one-shot files on `j19-9` ([§7.4](#74-removal));
-   its `ARMED` flag is already consumed, so later boots behave as before.
+1. Run KFD build 2410994 with its own firmware on a `j19` node in the default
+   configuration (AutoNUMA on, no binding) to AUC 0.75. The stock driver failed
+   by step 123 in this configuration, so a few hundred clean steps are already
+   informative. This needs a free node and an install decision
+   ([§7.6](#76-kfd-build-2410994)).
+2. Remove the one-shot files on `j19-9` and `j19-1` ([§7.4](#74-removal)).
+3. A second corrected-driver run would move the handler result beyond one
+   sample.
 
 ## Contents
 
@@ -335,14 +355,23 @@ after a hardware reset ([§7.5](#75-activation-on-j19-9)). `kernel.numa_balancin
 | Step 507 | 01:55:45 | Finite; past the stock bound failure at 354 |
 | Step 1,007 | 02:07:45 | Finite |
 | Step 2,026 | 02:32:46 | Finite; past the 1,912-step bound run on `j19-1` |
-| Step 2,128 | 02:35:19 | Finite, no stall, no evaluation yet; run continuing |
+| Step 2,128 | 02:35:19 | Finite, no stall |
+| First evaluation | 07:12:58 | AUC 0.7317 |
+| Second evaluation | 07:31:09 | AUC 0.7477 |
+| Step 14,000 | 07:45:36 | Finite; loss 0.10447; 0 non-finite steps, no stall |
+| Third evaluation | 07:49:21 | **AUC 0.7563**; MLPerf `run_stop` status `success` (57,344,000 samples) |
+| Trainer exit | 07:49:34 | Exit code 0 |
 
-| Trigger during the first 50 training minutes (01:44–02:34) | Value |
-|---|---:|
-| `numa_pte_updates` per minute | 2,232,011 |
-| `numa_hint_faults` per minute | 1,368,619 |
-| `numa_pages_migrated` per minute | 196,153 |
-| KFD evicted time added, all ranks | 18.5 s (9.3–14.7 s per rank since launch) |
+| Trigger | First 50 training minutes (01:44–02:34) | Whole training (01:44–07:45) |
+|---|---:|---:|
+| `numa_pte_updates` per minute | 2,232,011 | 1,345,489 |
+| `numa_hint_faults` per minute | 1,368,619 | 741,886 |
+| `numa_pages_migrated` per minute | 196,153 | 33,128 |
+| KFD evicted time added, all ranks | 18.5 s | 90.5 s (20.7–34.5 s per rank since launch) |
+
+AutoNUMA page-table updates per minute in each training hour were 2.04,
+0.72, 0.82, 1.06, 1.27 and 2.17 million, so the trigger never went away.
+The eviction counters rose on all four ranks through the whole run.
 
 ## 6. NaN triage: component, trigger and mechanism
 
@@ -370,8 +399,8 @@ handler embedded in amdgpu's KFD, the component the A0 record corrected:
 - **The event that runs the handler is frequent.** KFD queue evictions save
   the running waves through the handler, and they occur throughout training,
   from AutoNUMA and from other sources ([§6.3](#63-trigger)).
-- **Changing only the handler has removed the NaN so far.** The
-  corrected-driver default run is finite past 2,128 steps with the trigger
+- **Changing only the handler removed the NaN.** The corrected-driver
+  default run trained 14,000 finite steps to AUC 0.7563 with the trigger
   active, where the stock driver failed by step 123 in the same configuration
   ([§5.2](#52-corrected-driver-run-on-j19-9)).
 - **A0's controlled tests establish the mechanism.** On the A0 host the
@@ -431,7 +460,8 @@ does not make training safe; only the handler fix removes the defect.
 
 ### 6.5 What is not established
 
-- The corrected-driver evidence is one run, still in progress.
+- The corrected-driver evidence is one run (14,000 finite steps).
+- KFD build 2410994 has only been checked statically.
 - The first non-finite tensor under binding was not localized: the bound
   tripwire run wedged in its first iteration.
 - The non-AutoNUMA eviction sources were not traced.
@@ -589,6 +619,80 @@ GPUs bound to the corrected module
 `VM_PAGE_FAULT` lines in that boot's log are entries of the
 `MEM_RESERVED_INFO` table that every amdgpu load prints, with the same
 addresses on the stock load of September 24, not faults.
+
+### 7.6 KFD build 2410994
+
+On September 28 KFD suggested trying DKMS build 2410994 instead of 2397345.
+The packages come from the internal artifactory
+(`https://mkmartifactory.amd.com/artifactory/amdgpu-deb-local-new/pool/<build>/noble/a/`)
+and are staged in `/shared/chcai/mi450_a0_newcluster/dkms_2410994/`, extracted
+next to the installed 2398876 packages for comparison. The check is static;
+2410994 has not been built or loaded on a GPU node
+([evidence/dkms_2410994/](evidence/dkms_2410994/)).
+
+| Item | 2398876 (installed on `j19`) | 2410994 |
+|---|---|---|
+| Package | `amdgpu-dkms 7.1.1.31300009-2398876.24.04` | `amdgpu-dkms 7.1.0.31300009-2410994.24.04`, SHA-256 `16419bee…`; source dated September 27 |
+| `cwsr_trap_handler_gfx12.asm` | SHA-256 `5e0e339c…` (faulty, as recorded in [§2.2](#22-driver-firmware-packages-and-boot-configuration)) | SHA-256 `d1834df1…` |
+| `cwsr_trap_gfx12_1_0_hex` | 5,656 B, `0f718b5e…` (faulty) | 5,592 B, `3bc22f60…` |
+| `cwsr_trap_gfx12_hex` (other gfx12) | 3,760 B, `ab5ac126…` | unchanged |
+| MEC / RLC firmware | `0x96a` / `0x1f` | `0x97e` / `0x20` |
+| uni-MES firmware | `d93a2d40…` | `96fd08e1…` (same size; header differs only in CRC; loaded version not yet read) |
+| Separate `gc_12_1_0_mes.bin`, `mes1.bin` | Present | Dropped; `mes_v12_1.c` now requests only uni-MES |
+
+**Handler change.** The asm diff touches only the `VMEM_ON_TRAP_ENTRY_WA`
+block at trap entry ([handler_asm.diff](evidence/dkms_2410994/handler_asm.diff)):
+
+```text
+-	v_readlane_b32	ttmp15, v1, 0
+-	s_mov_b64	[ttmp2, ttmp3], 0
+-	v_mov_b32	v1, 0
+-	global_prefetch_b8	v1, [ttmp2, ttmp3] scope:SCOPE_SE th:TH_LOAD_RT
+-	v_writelane_b32	v1, ttmp15, 0
++	// No-op prefetch to random address 0xFFFFFFFFxxxxxxxx.
++	s_mov_b32	ttmp2, 0
++	s_mov_b32	ttmp3, 0xFFFFFFFF
++	global_prefetch_b8	v0, [ttmp2, ttmp3] scope:SCOPE_SE th:TH_LOAD_RT
+```
+
+The separate wave-start path (`WAVE_START` flag check, prefetch and `s_rfe`)
+is also removed. The handler no longer writes any VGPR before it normalizes
+the MODE bank selectors, which removes the cross-bank lane-0 copy described in
+[§6.2](#62-component). Reading `v0` under a nonzero SRC0 bank reads another
+physical register, but only as the offset of a prefetch to a high address with
+no destination register. This is a different fix from the A0 candidate, which
+kept the copy and saved and restored the bank bits around it.
+
+**Binary check.** Hashing the header arrays confirms the installed 2398876
+array is the faulty `0f718b5e…` image. In the 2410994 array, neither faulty
+encoding (`v_readlane_b32 ttmp15, v1, 0` and `v_writelane_b32 v1, ttmp15, 0`)
+occurs anywhere, and the first instructions decode by hand to the new source:
+`s_mov_b32 ttmp14, exec_lo; s_mov_b32 exec_lo, 1; s_mov_b32 ttmp2, 0;
+s_mov_b32 ttmp3, -1; global_prefetch_b8 v0, ttmp[2:3]; s_mov_b32 exec_lo, ttmp14`.
+No `llvm-mc` was available on the login node for a full disassembly.
+
+**Other changes.** 833 files differ between the two source trees, including
+`kfd_svm.c`, `kfd_device_queue_manager.c`, the gfx12.1 MQD manager and
+interrupt handling, `mes_v12_1.c` and `gfx_v12_1.c` (which gains a cleaner
+shader). A clean run would therefore validate the build, not the handler
+alone; the handler-only evidence is the corrected-driver run in
+[§5.2](#52-corrected-driver-run-on-j19-9). The `while (halt_if_hws_hang)`
+loops remain in `mes_v12_1.c` and `kfd_device_queue_manager.c`.
+
+**Installing it.** 7.1.0 sorts below the installed 7.1.1, so `apt` treats it
+as a downgrade (`--allow-downgrades`). The DKMS tree builds nine modules
+(`amdgpu`, `amdttm`, `amdkcl`, `amd-sched`, `amddrm_ttm_helper`,
+`amddrm_buddy`, `amddrm_exec`, `amdxcp`, `amddrm_suballoc_helper`), so the
+one-shot loader in [§7.3](#73-activation-on-j19-1), which loads the stock
+dependencies with `modprobe`, cannot be reused unchanged. Two options:
+
+1. Install both packages with `apt`, rebuild the initramfs and reboot through
+   the BMC. This is how KFD would deploy the build; it persists until 2398876
+   is reinstalled.
+2. Build the nine modules from the 2410994 tree in a scratch directory, load
+   them with `insmod` in dependency order from an armed one-shot loader on a
+   boot without amdgpu, and point `firmware_class.path` at the 2410994
+   firmware. Nothing persists past that boot.
 
 ## 8. Cluster reliability
 
@@ -785,7 +889,8 @@ Files in this folder:
 | [evidence/j19-9/tripwire_numabind_wedge/](evidence/j19-9/tripwire_numabind_wedge/), [evidence/j19-9/dmesg_wedge_excerpt.txt](evidence/j19-9/dmesg_wedge_excerpt.txt) | The wedged tripwire run (telemetry through 21:31) and the kernel log of the MES non-response |
 | [evidence/j19-9/halt_clear_observation.txt](evidence/j19-9/halt_clear_observation.txt) | Clearing `halt_if_hws_hang` at runtime, the reset and the return |
 | [evidence/j19-9/corrected_module_audit.txt](evidence/j19-9/corrected_module_audit.txt), [evidence/j19-9/armed_install.txt](evidence/j19-9/armed_install.txt), [evidence/j19-9/corrected_boot/](evidence/j19-9/corrected_boot/) | `j19-9` module build and audit, arming, and the corrected-driver load receipt |
-| [evidence/j19-9/corrected_default/](evidence/j19-9/corrected_default/) | Corrected-driver default run: platform, command, loss, telemetry and status as of 02:35 on September 27 (run in progress) |
+| [evidence/j19-9/corrected_default/](evidence/j19-9/corrected_default/) | Corrected-driver default run: platform, command, loss, telemetry, final status, exit code, and the MLPerf evaluation and `run_stop` lines |
+| [evidence/dkms_2410994/](evidence/dkms_2410994/) | Static check of KFD build 2410994 against 2398876: package, handler and firmware hashes, handler source diff, header-array hashing script |
 | [tools/cwsr_fix/](tools/cwsr_fix/) | Handler extraction, candidate generation, module build, audit, GRUB one-shot and armed-loader scripts |
 
 Full run directories, training logs and MLPerf logs are under
@@ -796,11 +901,12 @@ build tree are on `j19-1` and `j19-9` under `/var/tmp/chcai/cwsrmod` and
 
 Limits:
 
-- The corrected-driver result is one run, still in progress. It is compared
-  with two stock default runs (NaN at 111 and 123) and two stock bound runs
-  (NaN at 354; finite to 1,912 until the node was lost).
-- None of the stock runs, and not yet the corrected run, ran for several
-  hours.
+- The corrected-driver result is one run (14,000 finite steps to AUC
+  0.7563). It is compared with two stock default runs (NaN at 111 and 123)
+  and two stock bound runs (NaN at 354; finite to 1,912 until the node was
+  lost). None of the stock runs ran for several hours.
+- KFD build 2410994 was checked statically only; it has not been built or
+  run on a GPU node.
 - The non-AutoNUMA eviction sources were not traced, and the first non-finite
   tensor under binding was not localized.
 - The wedge mechanism is observed directly on `j19-9`. The hung reboots of

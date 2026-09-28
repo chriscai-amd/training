@@ -36,10 +36,16 @@ Updated **2026-09-28**.
 >   now. The gaps are a portable minimal reproducer, a source-level fix in the
 >   driver team's build flow and the final RCK result. The owner is the
 >   amdgpu KFD team. The six to-dos for this host are listed in
->   [§8.5](#85-readiness-for-a-driver-team-report).
+>   [§8.6](#86-readiness-for-a-driver-team-report).
 > - **The corrected-driver comparison on this host is planned, not run.**
 >   Loading the rebuilt driver needs someone who can power-cycle the host
->   ([§8.6](#86-corrected-driver-comparison-on-this-host-plan-not-run)).
+>   ([§8.7](#87-corrected-driver-comparison-on-this-host-plan-not-run)).
+>   The component reproducer plan is in
+>   [§8.8](#88-component-reproducer-on-this-host-plan-not-built).
+> - **Exposure factors.** Whether `BLOCK_N=128` raises the fault rate is not
+>   shown. The a37-2 convergence run was a low-exposure pass: `BLOCK_N=64`,
+>   fresh boot and twice the RAM
+>   ([§8.4](#84-exposure-factors-block_n-and-the-a37-2-convergence-run)).
 
 This document is split into two parts:
 
@@ -101,8 +107,8 @@ are stored next to this document in
 | Does the full model fit? | **Yes at local batch 1,024 on four GPUs.** All rows and all 512 columns are allocated; embedding weights total **558.95 GiB**. |
 | Did NaN loss reproduce? | **No NaN.** On 2026-09-19 one run finished with **3,000/3,000 finite console and MLPerf losses**. An earlier interrupted run recorded 1,530 finite steps. The 2026-09-26 perf run's 200 losses are finite, and so is every 2026-09-27 loss up to each run's last logged step ([§8](#8-2026-09-27-nan--fault-repro-r1-faults-and-cwsr-exposure)). |
 | Does the A0 CWSR defect affect this host? | **Yes, as GPU memory faults.** At `BLOCK_N=128`, 3 of 3 runs launched 15–16 h after boot faulted, and the two with a named kernel named `_hstu_attn_bwd`. The same config passed 600 steps twice at 6–7 h. The faulty handler is loaded, and memory compaction evicts the GPU queues even with AutoNUMA off and XNACK on ([§8](#8-2026-09-27-nan--fault-repro-r1-faults-and-cwsr-exposure)). |
-| Is `BLOCK_N=128` (R1) safe here? | **Not until the handler is fixed.** Its losses match `BLOCK_N=64`, and the perf gain holds, but whether it survives depends on the host's memory state. |
-| Is there enough evidence for the driver team? | **Yes for the handler defect and fix, at component level** (A0 replays plus the RCK A/B). This host adds supporting evidence only. Gaps are listed in [§8.5](#85-readiness-for-a-driver-team-report); the corrected-driver comparison here is planned, not run ([§8.6](#86-corrected-driver-comparison-on-this-host-plan-not-run)). |
+| Is `BLOCK_N=128` (R1) safe here? | **Not until the handler is fixed.** Its losses match `BLOCK_N=64`, and the perf gain holds, but whether it survives depends on the host's memory state. Whether it faults more often than `BLOCK_N=64` is not shown ([§8.4](#84-exposure-factors-block_n-and-the-a37-2-convergence-run)). |
+| Is there enough evidence for the driver team? | **Yes for the handler defect and fix, at component level** (A0 replays plus the RCK A/B). This host adds supporting evidence only. Gaps are listed in [§8.6](#86-readiness-for-a-driver-team-report); the corrected-driver comparison here is planned, not run ([§8.7](#87-corrected-driver-comparison-on-this-host-plan-not-run)). |
 | Was the model shrunk? | **No.** `EMBEDDING_ROW_SCALE=1.0`, full tables, three HSTU layers, sequence limit 4096. |
 | Which attention arm ran? | **Uncapped**, `HSTU_BWD_MAX_VGPR=0`, exact Triton `7ff97e310935b4a79794878dbc911f9af25d38d9`. |
 | What unblocked four-GPU training? | **Host-staged NET/Socket**, with P2P/SHM and direct fabric paths disabled. |
@@ -833,7 +839,7 @@ kernel fault ([§1](#1-200-step-full-model-perf-run-2026-09-26)).
 
 - Stay at local 1,024 until the CWSR handler is fixed.
 - Until then, run `BLOCK_N=128` only on a freshly booted host
-  ([§8.4](#84-guidance)).
+  ([§8.5](#85-guidance)).
 - Keep a live `dmesg -w` capture running, because the journal can lose the
   final lines.
 - Ask the host owner to fix kdump, or set `kernel.panic>0`, so an oops reboots
@@ -967,7 +973,62 @@ eviction counters were not sampled during the earlier passing runs.
     old stack, and 200 steps on 09-26.
   - `BLOCK_N=64` has not been run in the high-compaction state.
 
-### 8.4 Guidance
+### 8.4 Exposure factors: `BLOCK_N` and the a37-2 convergence run
+
+**Does `BLOCK_N=128` make the fault more reproducible? Plausibly yes, but it
+is not shown.**
+
+- **Why it is not shown.** Uptime changed together with `BLOCK_N`. All three
+  faulting runs were at `BLOCK_N=128` and 15–16 h uptime. `BLOCK_N=64` has
+  never run at that uptime: its clean runs were 3,000 steps on 09-19 and 200
+  steps on 09-26, both early in uptime.
+- **Why it is plausible.**
+  - At `BLOCK_N=128`, `_hstu_attn_bwd` uses 986 VGPRs. That puts more live
+    values, including address registers, in the extended banks the faulty
+    handler can cross-copy. A corrupted address fits the wild-address faults.
+  - Each attention-backward dispatch runs longer, so an eviction is more
+    likely to land while it is resident.
+- **Why it is not the whole story.**
+  - The uncapped `BLOCK_N=64` kernel most likely also exceeds 256 VGPRs:
+    A0 needed a 256-VGPR cap on attention as a workaround. Its exact count on
+    this host was not checked.
+  - hipBLASLt solution 103 (676 VGPRs), A0's NaN source, runs at either block
+    size.
+  - The defect is in the handler. `BLOCK_N` changes how often an eviction
+    hits something that faults.
+- **To settle it.**
+  - Run `BLOCK_N=64` and `BLOCK_N=128` alternately at 15 h+ uptime, logging
+    exposure with `hoststate_probe.sh`.
+  - Read `BLOCK_N=64`'s `.vgpr_count` from the compiled kernel.
+  - If `BLOCK_N=64` stays clean over comparable eviction counts, the block
+    size matters. If it also faults, host state is the main factor.
+
+**The a37-2 convergence run: a low-exposure pass, not evidence of immunity.**
+[a37-2](../ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md#55-completed-4k-holdout-convergence-run)
+reached holdout AUC 0.7515 at step 14,000 with finite losses. It differs from
+the faulting runs here in every exposure factor:
+
+| Factor | a37-2 convergence run (2026-09-19/20) | a37-1 faulting runs (2026-09-27) |
+|---|---|---|
+| Attention block size | `BLOCK_N=64`, uncapped | `BLOCK_N=128` (986 VGPRs) |
+| Uptime during the run | 0–9 h: amdgpu loaded at 22:56:54 after an AC cycle, launch about a minute later, run of about 9.2 h | Launched 15–16 h after boot |
+| Host RAM | 502.7 GiB | 250 GiB, with 5 of 7 GiB swap in use |
+| Driver | 7.1.0.31300009, `noretry=0` | Same version and settings |
+| Result | 14,000 finite steps | 3 of 3 runs hit GPU memory faults |
+
+- **What it shows.** `BLOCK_N=64` on a freshly booted host with twice the RAM
+  survives a full convergence run. hipBLASLt solution 103 produced no NaN
+  there.
+- **What it does not show.**
+  - The handler hash was not recorded. With the same driver version it is very
+    likely the faulty `0f718b5e…`; check with `extract_cwsr.py`.
+  - Eviction and compaction counters were not sampled. The lower exposure
+    (fresh boot, more RAM) is an inference.
+  - It is one run.
+- **Use.** Cite it in the ticket as a low-exposure pass. Record the handler
+  hash and sample `evicted_ms` and `compact_stall` in any future a37-2 run.
+
+### 8.5 Guidance
 
 - **Install the corrected CWSR handler (`68c31ab2…`) before any long or
   convergence run.** The A0 conclusion applies to this host.
@@ -984,7 +1045,7 @@ eviction counters were not sampled during the earlier passing runs.
   [performance_analysis.md](performance_analysis.md) stands. Its
   numerics match `BLOCK_N=64`, but its stability depends on the handler fix.
 
-### 8.5 Readiness for a driver-team report
+### 8.6 Readiness for a driver-team report
 
 Assessed on 2026-09-28 against the A0 and RCK records.
 
@@ -1034,7 +1095,7 @@ Assessed on 2026-09-28 against the A0 and RCK records.
 
 **Gaps to close alongside the report:**
 
-1. **A portable minimal reproducer.**
+1. **A portable minimal reproducer** ([§8.8](#88-component-reproducer-on-this-host-plan-not-built)).
    - A single kernel tags v1/v257/v513 with unequal banks and spins while a
      queue eviction is forced, then checks the tags.
    - Expected result: tags copied on `0f718b5e…`, preserved on `68c31ab2…`.
@@ -1051,7 +1112,7 @@ Assessed on 2026-09-28 against the A0 and RCK records.
      `s_setreg` of MODE needs a delay before the next VGPR access.
 3. **The final RCK corrected-run result**, ideally with a second
    corrected-driver run.
-4. **A corrected-driver comparison on this host** ([§8.6](#86-corrected-driver-comparison-on-this-host-plan-not-run)).
+4. **A corrected-driver comparison on this host** ([§8.7](#87-corrected-driver-comparison-on-this-host-plan-not-run)).
 
 Suggested filing: a confirmed handler defect plus a validated fix candidate.
 Send the mechanism, the instruction-level matrix, the byte-exact replay A/B,
@@ -1080,7 +1141,7 @@ array regenerated from it. Two other teams should review it:
      corrected driver at 15 h or more of uptime.
    - Run one stock control at a similar host state.
    - Log `compact_stall` and `evicted_ms` in every run.
-4. **Build a minimal reproducer.**
+4. **Build a minimal reproducer** ([§8.8](#88-component-reproducer-on-this-host-plan-not-built)).
    - Use a single kernel with unequal VGPR banks and tagged v1/v257/v513, and
      force a queue eviction while it runs.
    - Tags should be copied on the stock handler and preserved on the
@@ -1094,7 +1155,7 @@ array regenerated from it. Two other teams should review it:
    - the corrected-vs-stock results;
    - a source patch against the 7.1.0 tree.
 
-### 8.6 Corrected-driver comparison on this host (plan, not run)
+### 8.7 Corrected-driver comparison on this host (plan, not run)
 
 **Status: not run.** No driver has been rebuilt, loaded or unloaded on this
 host for this comparison. It needs someone who can power-cycle a37-1 by hand
@@ -1158,6 +1219,46 @@ if it goes wrong.
   page faults on this host are tied to the handler, on a second host with a
   different trigger.
 - It would not explain the `SDMA0` attribution.
+
+### 8.8 Component reproducer on this host (plan, not built)
+
+**Status: not built or run.** This is the staged plan for the to-do "Build a
+minimal reproducer" in [§8.6](#86-readiness-for-a-driver-team-report).
+
+1. **Start from the A0 designs.**
+   - The closest prior work is the A0 instruction-level matrix and the
+     long-plateau probe
+     ([cwsr_bank_corruption_fix.md](../../mi450_a0/cwsr_bank_corruption_fix.md)).
+   - Their source packages were on the A0 host under
+     `/home/chcai/mi450_logs/…` and are not on this host. Copy them over or
+     get them from the A0 owner.
+2. **Choose a controllable trigger and verify it before any GPU test.**
+   - On this host the evictions come from memory compaction hitting pinned
+     host-memory and unified-memory buffers
+     ([§8.2](#82-what-evicts-the-gpu-queues-on-this-host)).
+   - First confirm that the trigger raises KFD `evicted_ms` and hits the
+     kernel probes in `evict_trace.sh`.
+3. **Confirm each save.** The kernel records timestamps so that a pause shows
+   the wave was descheduled. This proves a save happened during the window,
+   which A0's probes could not show.
+4. **Run a matrix on the stock driver.**
+   - Banks: equal (control) versus the three unequal cases A0 characterised.
+   - Trigger: off versus on.
+   - Expected: tags change only with unequal banks and the trigger on, in
+     A0's copy pattern.
+5. **Repeat on the corrected driver** after the module to-dos in
+   [§8.6](#86-readiness-for-a-driver-team-report). Unchanged tags show the fix
+   at component level with real hardware saves, on a second host with a
+   different trigger.
+6. **Package it as a portable kit** with a README, build and run commands,
+   the expected output for each handler, and the trigger check from step 2.
+
+**Safety.**
+
+- The kernel only corrupts its own tag registers, so a failing run is harmless
+  by itself.
+- The trigger acts on host memory management, and this host halts on an oops.
+  Run it only with someone available to power-cycle the host.
 
 ## 9. Reproduction and analysis commands
 

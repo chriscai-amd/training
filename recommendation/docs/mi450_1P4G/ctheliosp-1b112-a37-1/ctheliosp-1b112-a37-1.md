@@ -31,6 +31,14 @@ Updated **2026-09-28**.
 >     passed 3,200 steps, but not in the high-compaction state.
 >   - Stay at local 1,024 ([§7](#7-2026-09-26-host-halt-at-local-2304--gbs-9216)).
 >   - Keep `AMDGCN_USE_BUFFER_OPS=0`.
+> - **Driver-team report.** The handler defect and its fix are proven at
+>   component level on A0, and RCK adds an end-to-end A/B. Filing can start
+>   now. The gaps are a portable minimal reproducer, a source-level fix in the
+>   driver team's build flow and the final RCK result
+>   ([§8.5](#85-readiness-for-a-driver-team-report)).
+> - **The corrected-driver comparison on this host is planned, not run.**
+>   Loading the rebuilt driver needs someone who can power-cycle the host
+>   ([§8.6](#86-corrected-driver-comparison-on-this-host-plan-not-run)).
 
 This document is split into two parts:
 
@@ -93,6 +101,7 @@ are stored next to this document in
 | Did NaN loss reproduce? | **No NaN.** On 2026-09-19 one run finished with **3,000/3,000 finite console and MLPerf losses**. An earlier interrupted run recorded 1,530 finite steps. The 2026-09-26 perf run's 200 losses are finite, and so is every 2026-09-27 loss up to each run's last logged step ([§8](#8-2026-09-27-nan--fault-repro-r1-faults-and-cwsr-exposure)). |
 | Does the A0 CWSR defect affect this host? | **Yes, as GPU memory faults.** At `BLOCK_N=128`, 3 of 3 runs launched 15–16 h after boot faulted, and the two with a named kernel named `_hstu_attn_bwd`. The same config passed 600 steps twice at 6–7 h. The faulty handler is loaded, and memory compaction evicts the GPU queues even with AutoNUMA off and XNACK on ([§8](#8-2026-09-27-nan--fault-repro-r1-faults-and-cwsr-exposure)). |
 | Is `BLOCK_N=128` (R1) safe here? | **Not until the handler is fixed.** Its losses match `BLOCK_N=64`, and the perf gain holds, but whether it survives depends on the host's memory state. |
+| Is there enough evidence for the driver team? | **Yes for the handler defect and fix, at component level** (A0 replays plus the RCK A/B). This host adds supporting evidence only. Gaps are listed in [§8.5](#85-readiness-for-a-driver-team-report); the corrected-driver comparison here is planned, not run ([§8.6](#86-corrected-driver-comparison-on-this-host-plan-not-run)). |
 | Was the model shrunk? | **No.** `EMBEDDING_ROW_SCALE=1.0`, full tables, three HSTU layers, sequence limit 4096. |
 | Which attention arm ran? | **Uncapped**, `HSTU_BWD_MAX_VGPR=0`, exact Triton `7ff97e310935b4a79794878dbc911f9af25d38d9`. |
 | What unblocked four-GPU training? | **Host-staged NET/Socket**, with P2P/SHM and direct fabric paths disabled. |
@@ -973,6 +982,144 @@ eviction counters were not sampled during the earlier passing runs.
 - The R1 performance result in
   [performance_analysis.md](performance_analysis.md) stands. Its
   numerics match `BLOCK_N=64`, but its stability depends on the handler fix.
+
+### 8.5 Readiness for a driver-team report
+
+Assessed on 2026-09-28 against the A0 and RCK records.
+
+**Is the handler defect proven? Yes, at component level.** The evidence is in
+[cwsr_bank_corruption_fix.md](../../mi450_a0/cwsr_bank_corruption_fix.md):
+
+- **Mechanism.** At `L_NOT_WAVE_START`, the handler runs
+  `v_readlane`/`v_writelane v1` before it resets the MODE VGPR-bank bits. With
+  unequal banks, lane 0 is copied between physical registers: v257→v1,
+  v257→v513 or v513→v257.
+- **Instruction-level matrix.** It covers all 256 MODE bank bytes × 8 EXEC
+  masks, 6,144 calls in total. The original prologue produces exactly the
+  1,536 predicted copies. The corrected prologue and a no-prologue control
+  preserve every tag.
+- **Byte-exact replays.** Controlled traps reproduce four historical failures
+  byte for byte, and the equal-bank and NOP controls stay clean:
+  - the step-405 DW gradient: all 1,030 differences, including 640 NaNs;
+  - attention FAIL131;
+  - the LayerNorm NaN rows;
+  - projection DX.
+- **Trigger.** The traced chain is AutoNUMA →
+  `svm_range_cpu_invalidate_pagetables` → `kgd2kfd_quiesce_mm`. A
+  process-policy counterfactual switches the copies off and on.
+
+**Is the fix proven? Yes at handler level; end to end is thinner.**
+
+- **Handler level.**
+  - The corrected handler `68c31ab2…` saves and clears the DST/SRC0/SRC1 bank
+    bits with `S_SETREG_B32` before touching v1, then restores them.
+  - It passes every replay above, the 400 long-plateau probes and 1,000
+    natural DW calls with eviction exposure.
+- **End to end.**
+  - RCK has the cleanest A/B. The corrected driver ran past 2,000 steps with
+    AutoNUMA active, while the stock driver went NaN at steps 111, 123 and 354
+    ([RCK](../../mi450_rck_spur/mi450_rck_spur.md#current-status-corrected-driver-clean-past-2000-steps-with-the-trigger-active)).
+    That is one run, and its final outcome is not yet recorded.
+  - A0's corrected-driver 1,000-step pass had other driver-source, boot and
+    prewarm changes at the same time.
+
+**This host's role: supporting evidence, not proof.**
+
+- It adds a third eviction source: memory compaction, with XNACK on
+  ([§8.2](#82-what-evicts-the-gpu-queues-on-this-host)).
+- Its failures are page faults, not NaN, and the kernel log's `SDMA0`
+  attribution is unexplained ([§8.3](#83-interpretation)).
+- There is no corrected-handler control run here yet.
+
+**Gaps to close alongside the report:**
+
+1. **A portable minimal reproducer.**
+   - A single kernel tags v1/v257/v513 with unequal banks and spins while a
+     queue eviction is forced, then checks the tags.
+   - Expected result: tags copied on `0f718b5e…`, preserved on `68c31ab2…`.
+   - The A0 matrix used SGPR stand-ins and no privileged trap entry. The
+     plateau probes rely on AutoNUMA with a low hit rate. The retained A0
+     packages are hash-pinned to session paths and must be re-derived before
+     reuse.
+2. **A source-level fix in the driver team's build flow.**
+   - `68c31ab2…` was built from disassembly-derived LLVM assembly.
+   - Nobody has tested whether the SP3 assembler accepts
+     [the patch](../../mi450_a0/cwsr_gfx1250_bank_fix.patch).
+   - An audit of all handler paths is still needed. It should cover every
+     VGPR access made while the inherited bank bits are live, and whether
+     `s_setreg` of MODE needs a delay before the next VGPR access.
+3. **The final RCK corrected-run result**, ideally with a second
+   corrected-driver run.
+4. **A corrected-driver comparison on this host** ([§8.6](#86-corrected-driver-comparison-on-this-host-plan-not-run)).
+
+Suggested filing: a confirmed handler defect plus a validated fix candidate.
+Send the mechanism, the instruction-level matrix, the byte-exact replay A/B,
+the trigger stacks and the RCK A/B, and list the gaps above.
+
+### 8.6 Corrected-driver comparison on this host (plan, not run)
+
+**Status: not run.** No driver has been rebuilt, loaded or unloaded on this
+host for this comparison. It needs someone who can power-cycle a37-1 by hand
+if it goes wrong.
+
+**What is already in place (checked 2026-09-28):**
+
+- The loaded module is `/lib/modules/6.16.1-0_fbk5_npi_brcmrdma9_85_g5d3047c748bd/extra/amdgpu.ko`:
+  - version `7.1.0.31300009`, srcversion `892370C5AB08A22771F1DC5`;
+  - the loaded srcversion matches `modinfo`.
+- Its `cwsr_trap_gfx12_1_0_hex` is the faulty 5,656-byte `0f718b5e…` image,
+  with `v_readlane_b32 ttmp15, v1, 0` at byte 68 and
+  `v_writelane_b32 v1, ttmp15, 0` at byte 96.
+- The DKMS source `/usr/src/amdgpu-7.1.0-2404163.el10` is installed, and its
+  `cwsr_trap_handler_gfx12.asm` still has the unpatched `L_NOT_WAVE_START`
+  sequence. Kernel build headers are present.
+
+**Build.**
+
+- The RCK tools in
+  [`mi450_rck_spur/tools/cwsr_fix/`](../../mi450_rck_spur/tools/cwsr_fix/)
+  build the corrected module by swapping in the `68c31ab2…` handler.
+- They refuse to write anything unless the input handler is `0f718b5e…` and
+  the output hashes to `68c31ab2…`.
+- They are written for 7.1.1. Two paths must change for this host: the source
+  tree becomes `/usr/src/amdgpu-7.1.0-2404163.el10`, and the installed module
+  becomes `extra/amdgpu.ko` instead of `updates/dkms/amdgpu.ko.zst`.
+- Audit the result against a baseline rebuild. The only differences should be
+  the handler array and the layout shifts that follow from it.
+
+**How to load it:**
+
+- **First load after a power cycle (preferred).**
+  - This host already loads amdgpu by hand after boot
+    ([§7](#7-2026-09-26-host-halt-at-local-2304--gbs-9216)).
+  - Load the corrected `.ko` at that point with the same parameters:
+    `noretry=0 gpu_recovery=0 ip_block_mask=0xcff`.
+  - This avoids unloading a live driver. A0's one live reload ended in an
+    unexplained reboot with BERT errors.
+- **Live reload (riskier).**
+  - It keeps the current high-compaction host state.
+  - If it oopses, the host stays down until someone power-cycles it.
+
+**Test design.**
+
+- **The catch.** The stock driver faulted only at 15–16 h uptime (3 of 3 runs)
+  and passed at 6–7 h. So after a fresh boot, a clean corrected run counts only
+  once the host has reached comparable compaction.
+- **Record exposure in every run** with the `hoststate_probe.sh` sampler:
+  `compact_stall` and KFD `evicted_ms`.
+- **Corrected runs.** Use the same `BLOCK_N=128`, local-1,024, 600-step
+  config, several times at high uptime.
+- **Stock control.** Run one stock run at a similar state to confirm the
+  trigger is still present.
+- **One clean run is weak evidence.** The stock driver also passed at lower
+  exposure.
+
+**What it would show.**
+
+- If the corrected driver runs clean where the stock driver faults, the
+  page faults on this host are tied to the handler, on a second host with a
+  different trigger.
+- It would not explain the `SDMA0` attribution.
 
 ## 9. Reproduction and analysis commands
 

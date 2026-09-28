@@ -1,6 +1,38 @@
 # MI450 1P4G, host `ctheliosp-1b112-a37-1` (gfx1250, full model)
 
-Updated **2026-09-26**. This document is split into two parts:
+Updated **2026-09-28**.
+
+> **Latest status (2026-09-28): NaN / fault repro**
+>
+> - **No NaN loss so far.** Every logged loss on this host is finite:
+>   3,000 steps (2026-09-19), 200 steps (2026-09-26) and every 2026-09-27 run
+>   up to its last logged step.
+> - **The A0 CWSR defect reproduces here as GPU memory faults, not as NaN.**
+>   - With the attention backward at `HSTU_BWD_BLOCK_N=128` (R1), **3 of 3**
+>     runs launched 15–16 h after boot died on a GPU memory fault. The two
+>     that named the kernel named `_hstu_attn_bwd`, shortly after step 100.
+>   - The same config passed 600 steps **twice** 6–7 h after an earlier boot.
+>   - Losses at steps 50 and 100 are bit-identical in the passing and failing
+>     runs, so the fault is intermittent and timing-dependent. The computed
+>     values are unchanged.
+>   - The only difference found is the host's memory state
+>     ([§8](#8-2026-09-27-nan--fault-repro-r1-faults-and-cwsr-exposure)).
+> - **This host needs the CWSR handler fix, as A0 does.**
+>   - It loads the known-faulty handler `0f718b5e…`.
+>   - The A0/RCK trigger is absent: AutoNUMA is off, and XNACK is on
+>     (`noretry=0`).
+>   - Kernel memory compaction still forces KFD queue evictions: in one traced
+>     run, **1,569 of 1,580** evictions came from compaction.
+>   - Faults coincided with compaction bursts. Every eviction saves and
+>     restores the running waves through the faulty handler.
+> - **Current guidance:**
+>   - Until the corrected handler `68c31ab2…` is installed, run R1 only on a
+>     freshly booted host, or keep the default `BLOCK_N=64`. `BLOCK_N=64`
+>     passed 3,200 steps, but not in the high-compaction state.
+>   - Stay at local 1,024 ([§7](#7-2026-09-26-host-halt-at-local-2304--gbs-9216)).
+>   - Keep `AMDGCN_USE_BUFFER_OPS=0`.
+
+This document is split into two parts:
 
 - **[Part A, Performance](#part-a-performance)**: the 2026-09-26 200-step
   full-model perf run, local batch **1,024** / global **4,096**. It measured
@@ -15,6 +47,8 @@ Updated **2026-09-26**. This document is split into two parts:
     workaround;
   - the 2026-09-26 **host halt (kernel oops)** in an attempt at local 2,304 /
     GBS 9,216, which needed a manual power cycle;
+  - the 2026-09-27 **NaN / fault repro**: `BLOCK_N=128` GPU faults and the
+    compaction-driven queue evictions behind them;
   - fabric registration findings;
   - reproduction steps and the evidence inventory.
 
@@ -32,6 +66,8 @@ Source commits:
 - The 2026-09-19 runs used repository commit
   **`082e3849dd9588ee5fbfd61eeae8c0754311d05b`** on `chcai/mi450`.
 - The 2026-09-26 runs used **`d07045dfe3e39d5d744af5c748febd00742d243a`**.
+- The 2026-09-27 runs used **`b29310e3…`**, and the last one used
+  **`f6f5fd6f…`**. Outside `docs/` their code matches `d07045d`.
 
 Companion records: [the other 1P4G host](../ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md),
 [A0](../../mi450_a0/mi450_a0.md),
@@ -39,7 +75,7 @@ Companion records: [the other 1P4G host](../ctheliosp-1b112-a37-2/ctheliosr-1b11
 [current A0 controls and evidence](../../mi450_a0/mi450_a0.md#stack-and-controls), and
 [RCK spur / CWSR handler](../../mi450_rck_spur/mi450_rck_spur.md).
 
-Host-local artifact roots are listed in [§10](#10-evidence-inventory-and-limits).
+Host-local artifact roots are listed in [§11](#11-evidence-inventory-and-limits).
 The 2026-09-19 root no longer exists on the host. The traces of the perf run
 are stored next to this document in
 [`traces/trace_step52.json.gz`](traces/trace_step52.json.gz).
@@ -54,11 +90,13 @@ are stored next to this document in
 | Largest optimization lead? | HSTU linear-layer GEMMs run on a **32×16×32 macro tile**. The two top kernels take about 1.04 s/step ([§1.6](#16-optimization-leads)). |
 | Can the batch be raised to fill HBM? | **Not safely on this host.** Local 2,304 / GBS 9,216 halted the host with a kernel oops ([§7](#7-2026-09-26-host-halt-at-local-2304--gbs-9216)). Stay at local 1,024. |
 | Does the full model fit? | **Yes at local batch 1,024 on four GPUs.** All rows and all 512 columns are allocated; embedding weights total **558.95 GiB**. |
-| Did NaN loss reproduce? | **No.** On 2026-09-19 one run finished with **3,000/3,000 finite console and MLPerf losses**. An earlier interrupted run recorded 1,530 finite steps. The 2026-09-26 perf run's 200 losses are finite. |
+| Did NaN loss reproduce? | **No NaN.** On 2026-09-19 one run finished with **3,000/3,000 finite console and MLPerf losses**. An earlier interrupted run recorded 1,530 finite steps. The 2026-09-26 perf run's 200 losses are finite, and so is every 2026-09-27 loss up to each run's last logged step ([§8](#8-2026-09-27-nan--fault-repro-r1-faults-and-cwsr-exposure)). |
+| Does the A0 CWSR defect affect this host? | **Yes, as GPU memory faults.** At `BLOCK_N=128`, 3 of 3 runs launched 15–16 h after boot faulted, and the two with a named kernel named `_hstu_attn_bwd`. The same config passed 600 steps twice at 6–7 h. The faulty handler is loaded, and memory compaction evicts the GPU queues even with AutoNUMA off and XNACK on ([§8](#8-2026-09-27-nan--fault-repro-r1-faults-and-cwsr-exposure)). |
+| Is `BLOCK_N=128` (R1) safe here? | **Not until the handler is fixed.** Its losses match `BLOCK_N=64`, and the perf gain holds, but whether it survives depends on the host's memory state. |
 | Was the model shrunk? | **No.** `EMBEDDING_ROW_SCALE=1.0`, full tables, three HSTU layers, sequence limit 4096. |
 | Which attention arm ran? | **Uncapped**, `HSTU_BWD_MAX_VGPR=0`, exact Triton `7ff97e310935b4a79794878dbc911f9af25d38d9`. |
 | What unblocked four-GPU training? | **Host-staged NET/Socket**, with P2P/SHM and direct fabric paths disabled. |
-| Is the fabric fixed? | **No** as of 2026-09-19 (§9). Not rechecked after the reprovisioning. |
+| Is the fabric fixed? | **No** as of 2026-09-19 ([§10](#10-fabric-registration-and-recovery-limits)). Not rechecked after the reprovisioning. |
 | Was convergence measured? | **No** on this host. Evaluation was disabled or not reached, and every step recorded here is inside the 24,000-step warmup. |
 
 ## Contents
@@ -75,9 +113,10 @@ are stored next to this document in
 5. [2026-09-19 experiment record](#5-2026-09-19-experiment-record)
 6. [2026-09-19 results and comparison](#6-2026-09-19-results-and-comparison)
 7. [2026-09-26 host halt at local 2,304 / GBS 9,216](#7-2026-09-26-host-halt-at-local-2304--gbs-9216)
-8. [Reproduction and analysis commands](#8-reproduction-and-analysis-commands)
-9. [Fabric registration and recovery limits](#9-fabric-registration-and-recovery-limits)
-10. [Evidence inventory and limits](#10-evidence-inventory-and-limits)
+8. [2026-09-27 NaN / fault repro: R1 faults and CWSR exposure](#8-2026-09-27-nan--fault-repro-r1-faults-and-cwsr-exposure)
+9. [Reproduction and analysis commands](#9-reproduction-and-analysis-commands)
+10. [Fabric registration and recovery limits](#10-fabric-registration-and-recovery-limits)
+11. [Evidence inventory and limits](#11-evidence-inventory-and-limits)
 
 ---
 
@@ -747,7 +786,9 @@ extracted with
 According to the [RCK spur doc](../../mi450_rck_spur/mi450_rck_spur.md), this
 handler can copy lane-0 VGPRs across banks during save/restore and corrupt a
 load address. `numa_balancing=0` here, so the AutoNUMA trigger identified in
-that doc is not active.
+that doc is not active. Queue evictions still happen through kernel memory
+compaction. On 2026-09-27 they coincided with GPU faults at `BLOCK_N=128`
+([§8](#8-2026-09-27-nan--fault-repro-r1-faults-and-cwsr-exposure)).
 
 ### 7.3 Hypothesis and comparison
 
@@ -781,14 +822,161 @@ kernel fault ([§1](#1-200-step-full-model-perf-run-2026-09-26)).
 **Operating guidance for this host:**
 
 - Stay at local 1,024 until the CWSR handler is fixed.
+- Until then, run `BLOCK_N=128` only on a freshly booted host
+  ([§8.4](#84-guidance)).
 - Keep a live `dmesg -w` capture running, because the journal can lose the
   final lines.
 - Ask the host owner to fix kdump, or set `kernel.panic>0`, so an oops reboots
   the host and leaves evidence.
 
-## 8. Reproduction and analysis commands
+## 8. 2026-09-27 NaN / fault repro: R1 faults and CWSR exposure
 
-### 8.1 2026-09-26 perf run
+The question was why this host had finished runs without NaN when the A0
+record ([CWSR bank-corruption fix](../../mi450_a0/cwsr_bank_corruption_fix.md))
+says the driver handler fix is needed for a NaN-free end-to-end run. The
+answer is that this host is **not** immune. It has lower exposure: the
+defect is present, and it did cause failures once the host's memory state
+changed.
+
+### 8.1 Run ledger
+
+Common setup for every row:
+
+- 4 GPUs, local batch 1,024 / GBS 4,096, full model;
+- uncapped attention (`HSTU_BWD_MAX_VGPR=0`), `AMDGCN_USE_BUFFER_OPS=0`
+  unless noted, both allocator variables empty;
+- image `recommendation-gfx1250-20260910:triton-7ff97e`, the same code.
+
+Uptime is measured from boot `78b316ae…` at about 21:31 on 09-26, and from boot
+`de975fa0…` at 06:20:50 on 09-27. Run folders are under
+`/home/chcai/mi450_perf_20260926/`.
+
+| Run folder | Boot, uptime at launch | Differences | Result |
+|---|---|---|---|
+| `perf_gbs4096_s200_20260926T214509Z` | `78b316ae`, 0.2 h | `BLOCK_N=64` (default), `OUTPUT_TRACE=1` | 200 steps, finite, 0.13895 at step 200 |
+| `bn128_gbs4096_s600_20260927T034620Z` | `78b316ae`, 6.3 h | **R1** `BLOCK_N=128`, `OUTPUT_TRACE=1` | **600 steps**, finite, 0.13791 at step 600 |
+| `rv_pipe_gbs4096_s600_20260927T043037Z` | `78b316ae`, 7.0 h | R1 + `TRITON_ALLOW_PIPELINING=1` | **600 steps**, finite, 0.13791 |
+| `rv_bufops_gbs4096_s600_20260927T050103Z` | `78b316ae`, 7.5 h | R1 + buffer ops on | MES hang on GPUs 0/1 before any step was logged; reboot (new boot `de975fa0`) |
+| `rv_alloc_gbs4096_s600_20260927T064634Z` | `de975fa0`, 0.4 h | R1 + `expandable_segments:True` | OOM at start-up (64.85 GiB allocation); no training |
+| `gemmcap_gbs4096_s12_20260927T070447Z` | `de975fa0`, 0.7 h | R1 + hipBLASLt log capture | 12 steps, finite |
+| `evict_gbs4096_s300_20260927T211855Z` | `de975fa0`, **15.0 h** | R1, `OUTPUT_TRACE=0`, eviction sampler | **Fault** at 21:31:56 on rank 0, before the step-50 log line: `HSA_STATUS_ERROR_MEMORY_APERTURE_VIOLATION`. ROCr did not name the kernel; the dispatch was 4,096 × 128-thread workgroups with 32 KiB LDS. |
+| `evtrace_gbs4096_s300_20260927T213717Z` | `de975fa0`, **15.3 h** | as above + kprobe eviction trace | Step 100 finite (0.13918). **Fault** at about 21:52:15–17: GPU indices 2, 3 and 1, all within 0.2 s, each "Page not present" in `_hstu_attn_bwd` at a wild address. |
+| `hoststate_gbs4096_s600_20260927T222021Z` | `de975fa0`, **16.0 h** | **exact `bn128` config** (`OUTPUT_TRACE=1`) + eviction/compaction sampler | Step 100 finite (0.13918). **Fault** at 22:35:37: GPU index 1, "Page not present" in `_hstu_attn_bwd` at `0x7e0c34443000`. |
+
+**No NaN appeared.** All three R1 runs that failed had logged exactly the
+same losses as the passing R1 runs up to that point: **0.13883 at step 50** and
+**0.13918 at step 100**. The kernel log shows no oops in any of them, and the
+host recovered without a reboot.
+
+The `hoststate` run rules out `OUTPUT_TRACE=0` as the cause. With the image,
+environment and code identical, the passing R1 config faulted at 16 h
+uptime.
+
+### 8.2 What evicts the GPU queues on this host
+
+A0 and RCK found the following trigger:
+
+1. AutoNUMA page-table scans with XNACK off.
+2. `svm_range_evict` then quiesces the KFD queues.
+3. The CWSR save/restore runs through the faulty handler.
+
+This host lacks both parts of that trigger:
+
+- `numa_balancing=0`: `numa_pte_updates` stayed at **0** throughout.
+- amdgpu `noretry=0`, so `kfd_process_xnack_mode` returns true for GC 12.1.0.
+  The process reports **`xnack_enabled=1`**, queried with
+  `AMDKFD_IOC_SET_XNACK_MODE(-1)` in `xnack_probe/probe.py`.
+- With XNACK on, `svm_range_evict` (`kfd_svm.c`) **unmaps** SVM ranges
+  instead of quiescing the queues. `GPU_ALWAYS_MAPPED` ranges are the
+  exception.
+
+Two paths still quiesce the queues:
+
+- userptr invalidation (`amdgpu_amdkfd_evict_userptr`), which does not
+  check XNACK;
+- always-mapped SVM ranges.
+
+Both fire when kernel memory compaction migrates the pages behind those
+buffers.
+
+Kprobes on `kgd2kfd_quiesce_mm` and `kfd_process_evict_queues`, with stack
+traces, recorded the following for the `evtrace` run
+(`kfd_evict_trace.txt`, 27,060 events, 0 lost):
+
+| Measure | Value |
+|---|---|
+| Queue quiesces | **1,580**: userptr 943, SVM 637, TTM 0 |
+| Initiator | **memory compaction 1,569** (direct `compact_zone` 1,138, `kcompactd` 431); `svm_migrate_vram_to_ram` 7; `exit_mmap` 4 |
+| Before the fault | 490 quiesces in about 5.6 min after the first eviction |
+| KFD `evicted_ms` per rank at the fault | about 800–1,050 ms (`evict`: 600–690 ms within about 3 min) |
+| Timing | The largest burst (76 quiesces in one second) coincides with the faults within clock uncertainty. Which came first is not resolved: the GPU core dump could itself drive compaction. |
+
+The `hoststate` sampler lined up compaction stalls, evictions and the fault
+(`evicted_ms` shown for GPU `30548` on two ranks):
+
+| UTC | `compact_stall` | `evicted_ms`, rank 1 / rank 2 |
+|---|---|---|
+| 22:29:49 (warm-up) | 158,500 | 0 / 0 |
+| 22:30:04 | 164,350 | 95 / 164 |
+| 22:34:51 | 166,418 | 418 / 467 |
+| **22:35:36** | **168,144** | 589 / 662; fault logged at 22:35:37 |
+
+Host memory at about 22:00 on 09-27:
+
+- 250 GiB RAM, 96 GiB of it page cache;
+- 5 of 7 GiB swap in use (`pswpout` 174,223);
+- transparent huge pages set to `madvise`.
+
+Compaction stalls climb in bursts. This memory state develops with uptime;
+eviction counters were not sampled during the earlier passing runs.
+
+### 8.3 Interpretation
+
+- **Consistent with the A0 CWSR mechanism.** A queue eviction saves and
+  restores the running `_hstu_attn_bwd` waves through the faulty handler. At
+  `BLOCK_N=128` those waves hold 986 VGPRs, including extended ones. At
+  `L_NOT_WAVE_START` the handler copies lane 0 across VGPR banks, corrupting
+  an address register, and the kernel then faults at a wild address.
+- **Not proven.** Three things are missing:
+  - no control run with the corrected handler;
+  - no eviction measurements for the passing runs;
+  - an unexplained difference in fault attribution. For the `hoststate` and
+    `evtrace` faults, the kernel log names `SDMA0` as the UTCL2 client of the
+    latched fault, and one `evtrace` fault also lists `TCP`. ROCr names
+    `_hstu_attn_bwd` in both runs.
+- **Why no NaN so far is not explained.** A0's NaN came from hipBLASLt
+  solution 103 (MT256x128x64, 676 VGPRs) in the 256 × 512 × T preprocessor
+  wgrad. That kernel runs in every config on this host
+  ([GEMM map](hipBLASLt/dlrmv4_gemm_component_map.md)).
+  - One hypothesis: compaction evicts in bursts, while AutoNUMA evicts at a
+    steady rate.
+  - This is untested.
+- **The finite-loss history here reflects lower exposure, not immunity.**
+  - With AutoNUMA off and XNACK on, the main A0/RCK trigger is gone.
+  - The long clean runs were at `BLOCK_N=64`: 3,000 steps on 09-19 on the
+    old stack, and 200 steps on 09-26.
+  - `BLOCK_N=64` has not been run in the high-compaction state.
+
+### 8.4 Guidance
+
+- **Install the corrected CWSR handler (`68c31ab2…`) before any long or
+  convergence run.** The A0 conclusion applies to this host.
+- Until then, choose one of the following for R1 (`BLOCK_N=128`) runs:
+  - run them only on a freshly booted host;
+  - reduce compaction first. Ask the host owner, for example, about
+    `vm.compaction_proactiveness=0` and THP defrag off, or run
+    `echo 1 > /proc/sys/vm/compact_memory` before launch. This lowers
+    exposure; it does not fix the defect.
+  - fall back to `BLOCK_N=64`.
+- Sample `evicted_ms` in every run (`evict_probe.sh` pattern), so the
+  exposure is recorded with the result.
+- The R1 performance result in
+  [performance_analysis.md](performance_analysis.md) stands. Its
+  numerics match `BLOCK_N=64`, but its stability depends on the handler fix.
+
+## 9. Reproduction and analysis commands
+
+### 9.1 2026-09-26 perf run
 
 The host-local kit is `/home/chcai/mi450_perf_20260926/`. After the driver-load
 command in [§2.1](#21-host-cpu-gpus-and-firmware):
@@ -818,7 +1006,7 @@ in `recommendation/results/<RUN_NAME>/`. Stitch them with the command in
 The launcher's default `BATCH_SIZE` is 2,304, the value that halted the host.
 **Always pass `BATCH_SIZE=1024`.**
 
-### 8.2 Recheck the 2026-09-19 evidence without GPU work
+### 9.2 Recheck the 2026-09-19 evidence without GPU work
 
 ```bash
 python3 /home/chcai/mi450_fullmodel_20260919/verify_full_run.py \
@@ -836,10 +1024,10 @@ final synced-byte coverage and kernel evidence. The saved result is that run's
 `final-verification.json`.
 
 **The 2026-09-19 root is no longer on the host**
-([§10](#10-evidence-inventory-and-limits)), so this command and §8.3 are
+([§11](#11-evidence-inventory-and-limits)), so this command and §9.3 are
 historical records.
 
-### 8.3 Recorded 2026-09-19 preflight and launch procedure
+### 9.3 Recorded 2026-09-19 preflight and launch procedure
 
 ```bash
 bash /home/chcai/mi450_fullmodel_20260919/retry_preflight_after_recovery.sh \
@@ -865,7 +1053,7 @@ NET/Socket.
 To repeat the recorded source exactly, use an isolated checkout at `082e384`
 and a launcher whose `ROOT` points to it.
 
-## 9. Fabric registration and recovery limits
+## 10. Fabric registration and recovery limits
 
 The disagreement was captured on multiple boots. One capture is a
 before/after provisioning sequence on boot
@@ -901,9 +1089,9 @@ A successful Socket run establishes a usable workload configuration. It does
 not show that the fabric mismatch is repaired, or that an already-wedged
 scheduler can recover without a host reboot.
 
-## 10. Evidence inventory and limits
+## 11. Evidence inventory and limits
 
-### 10.1 2026-09-26 (host-local root `/home/chcai/mi450_perf_20260926/`)
+### 11.1 2026-09-26 (host-local root `/home/chcai/mi450_perf_20260926/`)
 
 | Artifact | Purpose |
 |---|---|
@@ -913,13 +1101,19 @@ scheduler can recover without a host reboot.
 | `preflight_postreboot/` | Passing preflight on boot `78b316ae…` |
 | `perf_gbs4096_s200_20260926T214509Z/` | Perf run: `train.log`, `mlperf.log`, `vram.log`, `environment.txt`, `collective.env`, `dmesg.{before,live,after}.txt`, `repo-commit.txt`, `repo-status.txt`, `image-id.txt`, `boot-id.txt`, `exit-status.txt` |
 | `perf_gbs9216_s200_20260926T204346Z/` | Halted run: logs, `vram.log`, `RETRO.md`, `kernel.prevboot.tail.txt`, `kernel.prevboot.gpu-faults.txt`, `cwsr_extract/` (handler extraction output) |
+| `run_perf_4gpu_bn128.sh`, `run_revert_e2e.sh` | R1 and revert-check launchers (2026-09-27) |
+| `bn128_…T034620Z/`, `rv_pipe_…T043037Z/`, `rv_bufops_…T050103Z/`, `rv_alloc_…T064634Z/`, `gemmcap_…T070447Z/` | 2026-09-27 R1 and revert-check runs ([§8.1](#81-run-ledger)); same file set as the perf run |
+| `xnack_probe/probe.py` | KFD XNACK-mode query (`AMDKFD_IOC_SET_XNACK_MODE(-1)`) |
+| `evict_probe.sh` → `evict_gbs4096_s300_20260927T211855Z/` | R1 run with 5 s KFD `evicted_ms` sampler (`kfd_evicted.log`) |
+| `evict_trace.sh` → `evtrace_gbs4096_s300_20260927T213717Z/` | Same, plus kprobe/stacktrace eviction trace (`kfd_evict_trace.txt`, 19.8 MB) |
+| `hoststate_probe.sh` → `hoststate_gbs4096_s600_20260927T222021Z/` | Exact `bn128` config with eviction + compaction/swap sampler, `vmstat.{before,after}.txt`, `meminfo.before.txt` |
 | In repo: [`traces/trace_step52.json.gz`](traces/trace_step52.json.gz) | Stitched 4-rank trace of steps 52–56 ([§1.4](#14-trace-capture)) |
 
-### 10.2 2026-09-19 (former root `/home/chcai/mi450_fullmodel_20260919/`)
+### 11.2 2026-09-19 (former root `/home/chcai/mi450_fullmodel_20260919/`)
 
 **This directory no longer exists on the host.** The home directory was reset
 before 2026-09-26. The table records what the original report cited. The
-facts in Part B §2–§6 and §9 are taken from that report and could not be
+facts in Part B §2–§6 and §10 are taken from that report and could not be
 re-verified against the files.
 
 | Artifact | Purpose |
@@ -942,7 +1136,7 @@ re-verified against the files.
 | `COMPARISON_WITH_A0_B0.md` | Detailed comparison with the A0/B0 evidence available during execution |
 | `run_full_4gpu.sh`, `verify_full_run.py`, `collect_kernel_log.py` | Recorded launch, independent saved-evidence verifier and durable kernel collector |
 
-### 10.3 Limits
+### 11.3 Limits
 
 - No post-run GPU diagnostic workload was run.
 - No continuous ECC-counter survey was done.
@@ -950,5 +1144,9 @@ re-verified against the files.
   performed on this host.
 - The 2026-09-26 halt hypothesis ([§7.3](#73-hypothesis-and-comparison)) was
   not tested with a fixed CWSR handler.
+- The 2026-09-27 fault mechanism
+  ([§8.3](#83-interpretation)) was not tested with a fixed CWSR handler.
+  Eviction counters were not sampled during the passing R1 runs.
+  `BLOCK_N=64` was not run in the high-compaction state.
 
 Do not import any of those results from the companion host report.

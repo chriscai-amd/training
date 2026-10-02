@@ -1,0 +1,5 @@
+[prod-b1024] SMOKE container=mi450-b0-0910-7ff-start0 run=b1024_kfd2412954_start0_20261002T033543Z port=29919
+[prod-b1024] scale=0.25 batch=1024 log=/home/chcai/runs/kfd2412954_e2e_start0_20261002T033543Z/train.log
+[prod-b1024] start 2026-10-02T03:35:47+00:00
+[prod-b1024] EXIT=143 2026-10-02T03:56:12+00:00 -> /home/chcai/runs/kfd2412954_e2e_start0_20261002T033543Z/train.log
+?? did not complete: INFO:utils:train - Step 820 perf: local_sps=659.1 global_sps=659.1 step_ms=1553.52 elapsed_sec=1204.0 total_samples=839680 wall_step_ms=1553.52 eval_ms=0.0 ckpt_ms=0.0 tflops_algo/gpu=208.1 mfu=6.6% tflops_real/gpu=72.1 hfu=2.3% fill=34.7% INFO:generative_recommenders.dlrm_v4.train.utils:[lr-warmup]

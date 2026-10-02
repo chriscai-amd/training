@@ -1,0 +1,31 @@
+# Static check of installed amdgpu-dkms 7.1.0.31300009-2412954 on heliosr-1b112-a30-4 (2026-10-02T04:01:06Z)
+## packages
+amdgpu-dkms 1:7.1.0.31300009-2412954.24.04
+amdgpu-dkms-firmware 1:31.30.0.9.31300009-2412954.24.04
+amdgpu-install-internal 7.3-24.04-2265704.24.04
+## gfx12 handler asm
+d1834df1f6351ea44fdc44797710aa4484a9c27cb4d473c961f8d72508131419  /usr/src/amdgpu-7.1.0-2412954.24.04/amd/amdkfd/cwsr_trap_handler_gfx12.asm
+## header arrays (hdr_hash.py)
+cwsr_trap_gfx12_hex 3760 ab5ac126b32d309affcfb34c1bfdbe7704907851aa46936890a146cc3d171786
+cwsr_trap_gfx12_1_0_hex 5592 3bc22f603800341177a31d44796036ed746da207fc0d67dd0c195e49b46af58a
+## faulty-sequence grep in asm (expect 0 / absent)
+v_readlane_b32 ttmp15, v1: 0
+v_writelane_b32 v1, ttmp15: 0
+L_NOT_WAVE_START: 0
+## trap-entry workaround block
+#if VMEM_ON_TRAP_ENTRY_WA
+	s_mov_b32	ttmp14, exec_lo
+	s_mov_b32	exec_lo, 1
+
+	// No-op prefetch to random address 0xFFFFFFFFxxxxxxxx.
+	// Avoids user allocations which may be functionally affected by prefetch.
+	s_mov_b32	ttmp2, 0
+	s_mov_b32	ttmp3, 0xFFFFFFFF
+	global_prefetch_b8	v0, [ttmp2, ttmp3] scope:SCOPE_SE th:TH_LOAD_RT
+
+	s_mov_b32	exec_lo, ttmp14
+#endif
+## loaded module
+file /lib/modules/6.14.0-37-generic/updates/dkms/amdgpu.ko.zst srcversion C192EBA02718929C32ABF01, loaded srcversion C192EBA02718929C32ABF01
+uncompressed .ko sha256 3a0c4adcc2e800730f3a1271e30594be42677e57d07a4a1d977ccc1bfc50acbc
+fixed 5592-byte gfx12_1_0 array (sha256 3bc22f60...) occurrences in loaded .ko: 1

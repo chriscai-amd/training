@@ -1,0 +1,108 @@
+### captured 2026-10-02T03:58:58Z on heliosr-1b112-a30-4
+## dpkg installs/upgrades since 2026-10-01
+2026-10-02 02:25:30 install amdgpu-install-internal:all <none> 7.3-24.04-2265704.24.04
+2026-10-02 02:25:30 install dialog:amd64 <none> 1.3-20240101-1
+2026-10-02 02:27:55 install amdgpu-dkms-firmware:all <none> 1:31.30.0.9.31300009-2412954.24.04
+2026-10-02 02:27:55 install amdgpu-dkms:all <none> 1:7.1.0.31300009-2412954.24.04
+## apt history (Oct)
+Start-Date: 2026-10-02  02:25:30
+Commandline: apt-get install ./amdgpu-install-internal_7.3-24.04-1_all.deb
+Requested-By: asierrag (8266)
+Install: dialog:amd64 (1.3-20240101-1, automatic), amdgpu-install-internal:amd64 (7.3-24.04-2265704.24.04)
+End-Date: 2026-10-02  02:25:31
+
+Start-Date: 2026-10-02  02:27:23
+Commandline: apt-get purge amdgpu-dkms amdgpu-dkms-firmware
+Requested-By: asierrag (8266)
+Purge: amdgpu-dkms:amd64 (1:7.1.1.31300009-2398876.24.04), amdgpu-dkms-firmware:amd64 (1:31.30.0.9.31300009-2398876.24.04)
+End-Date: 2026-10-02  02:27:34
+
+Start-Date: 2026-10-02  02:27:55
+Commandline: apt-get install amdgpu-dkms linux-headers-6.14.0-37-generic linux-headers-6.8.0-142-generic
+Requested-By: asierrag (8266)
+Install: amdgpu-dkms:amd64 (1:7.1.0.31300009-2412954.24.04), amdgpu-dkms-firmware:amd64 (1:31.30.0.9.31300009-2412954.24.04, automatic)
+End-Date: 2026-10-02  02:28:40
+## /opt/rocm
+/opt/rocm-10.1-20260917
+lrwxrwxrwx  1 root root   22 2026-09-19 14:15:36.639257527 +0000 /opt/rocm -> /etc/alternatives/rocm
+drwxr-xr-x 10 root root 4096 2026-08-17 20:07:27.833398158 +0000 /opt/rocm-10.0.0
+drwxr-xr-x 10 root root 4096 2026-09-01 02:24:12.011657786 +0000 /opt/rocm-10.1.0a20260811%2Bbkc.20260820
+drwxr-xr-x  2 root root 4096 2026-09-22 18:18:31.871356826 +0000 /opt/rocm-10.1.0a20260825%2Bbkc.20260831
+drwxr-xr-x 14 root root 4096 2026-09-23 03:02:48.892048317 +0000 /opt/rocm-10.1-20260917
+drwxr-xr-x 13 root root 4096 2026-08-28 02:33:57.508557098 +0000 /opt/rocm-7.15.0.dev0+2B5283cd05bea124b9593f25ea878b816b3dfc256f
+drwxr-xr-x 10 root root 4096 2026-07-11 03:00:07.000000000 +0000 /opt/rocm-7.15.0.dev0+370429039ae3ad08ee784a6df273414920522178_bk
+drwxrwxrwx 10 root root 4096 2026-07-02 00:11:11.000000000 +0000 /opt/rocm-7.15.0.dev0+56d0f45687adc35a59ba3df7364234b96ddc1779_bk
+10.1.0
+## boot
+2026-10-02 02:05:51
+651dc6e2-be7b-4325-8719-a40cf46b638a
+BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic root=UUID=65019592-7333-4338-8513-ef3f6dc28e84 ro modprobe.blacklist=amdgpu pci=realloc=off iommu=pt modprobe.blacklist=amdgpu,device_dax,dax_hmem iommu=pt console=tty0 console=ttyS1,115200n8 preempt=full rcu_nocbs=all
+## amdgpu module
+7.1.0.31300009
+C192EBA02718929C32ABF01
+/sys/module/amdgpu/parameters/ip_block_mask:4294967295
+/sys/module/amdgpu/parameters/discovery:-1
+/sys/module/amdgpu/parameters/mtype_local:-1
+/sys/module/amdgpu/parameters/gpu_recovery:0
+/sys/module/amdgpu/parameters/cwsr_enable:1
+/sys/module/amdgpu/parameters/halt_if_hws_hang:1
+## load time
+Oct 02 02:30:55 heliosr-1b112-a30-4 sudo[43036]: asierrag : TTY=pts/0 ; PWD=/home/asierrag ; USER=root ; COMMAND=/usr/sbin/modprobe amdgpu gpu_recovery=0 halt_if_hws_hang=1
+Oct 02 02:30:57 heliosr-1b112-a30-4 kernel: amdgpu 0001:01:00.0: Fetched VBIOS from ROM
+Oct 02 02:30:57 heliosr-1b112-a30-4 kernel: amdgpu 0001:01:00.0: [drm] ATOM BIOS: 113-M4500001-700E, build: 00204667, ver: 025.040.000.009.000001, 2026/09/25
+Oct 02 02:31:01 heliosr-1b112-a30-4 kernel: [drm] Initialized amdgpu 3.65.0 for 0001:01:00.0 on minor 1
+Oct 02 02:31:01 heliosr-1b112-a30-4 kernel: [drm] Initialized amdgpu 3.65.0 for amdgpu_xcp_0 on minor 2
+Oct 02 02:31:01 heliosr-1b112-a30-4 kernel: [drm] Initialized amdgpu 3.65.0 for amdgpu_xcp_1 on minor 3
+Oct 02 02:31:01 heliosr-1b112-a30-4 kernel: [drm] Initialized amdgpu 3.65.0 for amdgpu_xcp_2 on minor 4
+Oct 02 02:31:01 heliosr-1b112-a30-4 kernel: [drm] Initialized amdgpu 3.65.0 for amdgpu_xcp_3 on minor 5
+## dkms
+amdgpu/7.1.0-2412954.24.04, 6.14.0-37-generic, x86_64: installed
+## amd-smi static/firmware
+GPU: 0
+    BUS:
+        BDF: 0001:01:00.0
+        MAX_PCIE_WIDTH: 16
+        MAX_PCIE_SPEED: 32 GT/s
+        PCIE_LEVELS: N/A
+        PCIE_INTERFACE_VERSION: Gen 5
+        SLOT_TYPE: UNKNOWN
+    DRIVER:
+        NAME: amdgpu
+        VERSION: 7.1.0.31300009
+        OS_KERNEL_VERSION: 6.14.0-37-generic
+    VRAM:
+        TYPE: UNKNOWN
+        VENDOR: UNKNOWN
+        SIZE: 442368 MB
+        BIT_WIDTH: 24576
+        MAX_BANDWIDTH: 23347 GB/s
+
+GPU: 0
+    FW_LIST:
+        FW 0:
+            FW_ID: CP_MEC1
+            FW_VERSION: 2440
+        FW 1:
+            FW_ID: RLC
+            FW_VERSION: 32
+        FW 2:
+            FW_ID: SDMA0
+            FW_VERSION: 8992071
+        FW 3:
+            FW_ID: SDMA1
+            FW_VERSION: 8992071
+        FW 4:
+            FW_ID: VCN
+            FW_VERSION: 09.10.D0.1A
+        FW 5:
+            FW_ID: TA_RAS
+            FW_VERSION: 1B.44.00.07
+        FW 6:
+            FW_ID: PM
+            FW_VERSION: 02.125.12.00
+
+## system BIOS
+WHEV6902N_RC1_1G
+09/17/2026
+## numa_balancing
+1

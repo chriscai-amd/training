@@ -1,0 +1,351 @@
+{
+  "status": "PASS_EXPECTED_FIXED_SENTINEL",
+  "expectation": "fixed",
+  "cases": [
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 0,
+        "trap": false,
+        "symbol": "sentinel_00_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686781064,
+      "returned_TTMP": 0
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 0,
+        "trap": true,
+        "symbol": "sentinel_00_1"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686782600,
+      "returned_TTMP": 128160686782600
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 65,
+        "trap": false,
+        "symbol": "sentinel_41_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686784140,
+      "returned_TTMP": 0
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 65,
+        "trap": true,
+        "symbol": "sentinel_41_1"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686785676,
+      "returned_TTMP": 128160686785676
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 69,
+        "trap": false,
+        "symbol": "sentinel_45_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686787212,
+      "returned_TTMP": 0
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 69,
+        "trap": true,
+        "symbol": "sentinel_45_1"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686788748,
+      "returned_TTMP": 128160686788748
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 130,
+        "trap": false,
+        "symbol": "sentinel_82_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686790284,
+      "returned_TTMP": 0
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 130,
+        "trap": true,
+        "symbol": "sentinel_82_1"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686791820,
+      "returned_TTMP": 128160686791820
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 5,
+        "trap": false,
+        "symbol": "sentinel_05_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686793352,
+      "returned_TTMP": 0
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 5,
+        "trap": true,
+        "symbol": "sentinel_05_1"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686794888,
+      "returned_TTMP": 128160686794888
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 129,
+        "trap": false,
+        "symbol": "sentinel_81_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686796428,
+      "returned_TTMP": 0
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 129,
+        "trap": true,
+        "symbol": "sentinel_81_1"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686797964,
+      "returned_TTMP": 128160686797964
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 133,
+        "trap": false,
+        "symbol": "sentinel_85_0"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686799500,
+      "returned_TTMP": 0
+    },
+    {
+      "pass_all": true,
+      "checks": {
+        "header_and_case": true,
+        "completion_and_reserved": true,
+        "all_nine_initial_tags": true,
+        "all_nine_final_tags": true,
+        "requested_MODE_bank_fields": true,
+        "full_MODE_preserved": true,
+        "full_wave_EXEC_preserved": true,
+        "trap_enabled_before_and_after": true,
+        "full64_trap_return_PC": true,
+        "native_return_PC_target": true
+      },
+      "case": {
+        "mode_low_byte": 133,
+        "trap": true,
+        "symbol": "sentinel_85_1"
+      },
+      "expected_classification": "UNCHANGED",
+      "changed_tags": [],
+      "intended_return_PC": 128160686801036,
+      "returned_TTMP": 128160686801036
+    }
+  ],
+  "all_14_complete": true,
+  "changed_cases": 0,
+  "module_load_bias": 128160686768128,
+  "transport_result": {
+    "path": "/home/chcai/runs/kfd_2412954_validation/sentinel_fixed_run4/transport/result.json",
+    "bytes": 122740,
+    "sha256": "30f1cc084c5f43764cf3afea30f03387ad0b27b29eeda18059c3b2b9962ee51f"
+  },
+  "process_scope": "Caller must retain this process exit and reap it; no timeout/recovery is implemented in this adapter."
+}

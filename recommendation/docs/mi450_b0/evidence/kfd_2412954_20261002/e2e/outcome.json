@@ -1,0 +1,69 @@
+{
+ "run_dir": "/home/chcai/runs/kfd2412954_e2e_start0_20261002T033543Z",
+ "console_samples": 82,
+ "first_step": 10,
+ "last_step": 820,
+ "all_finite": true,
+ "min": 0.12963,
+ "max": 0.14568,
+ "last_loss": "0.13876",
+ "mllog_samples": 82,
+ "first_mllog_utc": "2026-10-02T03:36:52.760000+00:00",
+ "last_mllog": {
+  "step": 820,
+  "value": 0.13875655829906464,
+  "utc": "2026-10-02T03:55:58.357000+00:00"
+ },
+ "vs_sep18_mllog": [
+  {
+   "step": 10,
+   "sep18": 0.1359041929244995,
+   "now": 0.13590966165065765,
+   "bit_equal": false
+  },
+  {
+   "step": 20,
+   "sep18": 0.1304243803024292,
+   "now": 0.1304231435060501,
+   "bit_equal": false
+  },
+  {
+   "step": 30,
+   "sep18": 0.1387900859117508,
+   "now": 0.13878920674324036,
+   "bit_equal": false
+  },
+  {
+   "step": 40,
+   "sep18": 0.139783576130867,
+   "now": 0.1397835612297058,
+   "bit_equal": false
+  },
+  {
+   "step": 50,
+   "sep18": 0.1382172554731369,
+   "now": 0.13821738958358765,
+   "bit_equal": false
+  },
+  {
+   "step": 60,
+   "sep18": "nan",
+   "now": 0.13898706436157227,
+   "bit_equal": false
+  },
+  {
+   "step": 70,
+   "sep18": "nan",
+   "now": 0.13981591165065765,
+   "bit_equal": false
+  },
+  {
+   "step": 80,
+   "sep18": "nan",
+   "now": 0.12963424623012543,
+   "bit_equal": false
+  }
+ ],
+ "stop": "investigator SIGTERM at user request; launcher exit 143",
+ "reached_3000": false
+}

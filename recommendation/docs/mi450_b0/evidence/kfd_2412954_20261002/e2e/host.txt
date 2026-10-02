@@ -1,0 +1,9 @@
+6.14.0-37-generic
+BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic root=UUID=65019592-7333-4338-8513-ef3f6dc28e84 ro modprobe.blacklist=amdgpu pci=realloc=off iommu=pt modprobe.blacklist=amdgpu,device_dax,dax_hmem iommu=pt console=tty0 console=ttyS1,115200n8 preempt=full rcu_nocbs=all
+7.1.0.31300009
+C192EBA02718929C32ABF01
+ii  amdgpu-dkms          1:7.1.0.31300009-2412954.24.04     all          amdgpu driver in DKMS format.
+ii  amdgpu-dkms-firmware 1:31.30.0.9.31300009-2412954.24.04 all          firmware blobs used by amdgpu driver in DKMS format
+1
+4c3a2f8a2e6602b16149ade2b97f2db9da3b65f2
+651dc6e2-be7b-4325-8719-a40cf46b638a

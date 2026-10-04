@@ -1,9 +1,69 @@
 {
-  "_note": "Roadmap L5, NT wgrads -> TN. Model patch: generative_recommenders/ops/triton/triton_addmm.py triton_addmm_bwd (G20, UVQK wgrad: dw = mm(x.t().contiguous(), dz.t().contiguous().t())) and ops/triton/triton_hstu_linear.py backward (G19, output-projection wgrad via tn_wgrad_mm(y, dout)). Both token-major operands are transposed per call (no producer writes them feature-major yet), so both copies are declared at the original call count. HSTU_TN_WGRAD=0 restores NT. UNVERIFIED until an E2 LOG_MASK=32 recapture of the patched testbed.",
-  "G20": {"gemms": [{"transA": "T", "transB": "N", "lda": "2097152", "ldb": "2097152"}],
-          "copies": [{"rows": 2097152, "cols": 512,  "dtype": "bf16_r"},
-                     {"rows": 2097152, "cols": 2048, "dtype": "bf16_r"}]},
-  "G19": {"gemms": [{"transA": "T", "transB": "N", "lda": "2097152", "ldb": "2097152"}],
-          "copies": [{"rows": 2097152, "cols": 1536, "dtype": "bf16_r"},
-                     {"rows": 2097152, "cols": 512,  "dtype": "bf16_r"}]}
+  "_note": "Roadmap L5, NT wgrads -> TN. Model patch: generative_recommenders/ops/triton/triton_addmm.py triton_addmm_bwd (G20, UVQK wgrad: dw = mm(x.t().contiguous(), dz.t().contiguous().t())) and ops/triton/triton_hstu_linear.py backward (G19, output-projection wgrad via tn_wgrad_mm(y, dout)). Both token-major operands are transposed per call (no producer writes them feature-major yet), so both copies are declared at the original call count. HSTU_TN_WGRAD=0 restores NT. UNVERIFIED until an E2 LOG_MASK=32 recapture of the patched testbed. G25 (preprocessor 256->512 output-Linear wgrad, x3: content/additional/action MLPs): modules/preprocessors.py uses ops/triton/triton_addmm.py TNWgradLinear, whose backward calls tn_wgrad_mm(dy, x) -> TN M=256 N=512 K=T; both token-major operands ([T,256] input, [T,512] grad) are transposed per call and declared as copies. Forward (F.linear, TN) and dgrad (dy.mm(w), NN, = G24) are the calls aten's nn.Linear issues, unchanged. tuning_override.csv pins G25's TN key to sol 1409 (MT256x256x128 SK3, the kernel already proven on G20.r0).",
+  "G20": {
+    "gemms": [
+      {
+        "transA": "T",
+        "transB": "N",
+        "lda": "2097152",
+        "ldb": "2097152"
+      }
+    ],
+    "copies": [
+      {
+        "rows": 2097152,
+        "cols": 512,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 2097152,
+        "cols": 2048,
+        "dtype": "bf16_r"
+      }
+    ]
+  },
+  "G19": {
+    "gemms": [
+      {
+        "transA": "T",
+        "transB": "N",
+        "lda": "2097152",
+        "ldb": "2097152"
+      }
+    ],
+    "copies": [
+      {
+        "rows": 2097152,
+        "cols": 1536,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 2097152,
+        "cols": 512,
+        "dtype": "bf16_r"
+      }
+    ]
+  },
+  "G25": {
+    "gemms": [
+      {
+        "transA": "T",
+        "transB": "N",
+        "lda": "2097152",
+        "ldb": "2097152"
+      }
+    ],
+    "copies": [
+      {
+        "rows": 2097152,
+        "cols": 256,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 2097152,
+        "cols": 512,
+        "dtype": "bf16_r"
+      }
+    ]
+  }
 }

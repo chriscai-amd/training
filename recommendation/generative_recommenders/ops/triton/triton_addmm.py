@@ -1647,6 +1647,63 @@ def tn_wgrad_mm(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
     return torch.mm(a.t(), b)
 
 
+class _TNWgradLinearFn(torch.autograd.Function):
+    """y = x @ w.t() + b with the weight gradient issued TN (tn_wgrad_mm).
+
+    Forward and dgrad are the calls aten's nn.Linear issues (F.linear -> TN;
+    dx = dy.mm(w) -> NN). Only dW changes: aten's dy.t().mm(x) is NT
+    (Cijk_Ailk_Bjlk, K = T); here it is TN on feature-major copies. Inputs
+    arrive already cast (autocast is handled by TNWgradLinear.forward).
+    """
+
+    @staticmethod
+    # pyre-ignore[14]
+    def forward(
+        ctx, x: torch.Tensor, w: torch.Tensor, b: Optional[torch.Tensor]
+    ) -> torch.Tensor:
+        ctx.save_for_backward(x, w)
+        ctx.has_bias = b is not None
+        return torch.nn.functional.linear(x, w, b)
+
+    @staticmethod
+    # pyre-ignore[14]
+    def backward(ctx, dy: torch.Tensor):
+        x, w = ctx.saved_tensors
+        x2 = x.reshape(-1, x.shape[-1])
+        dy2 = dy.reshape(-1, dy.shape[-1])
+        dx = dw = db = None
+        if ctx.needs_input_grad[0]:
+            dx = dy2.mm(w).view(x.shape)
+        if ctx.needs_input_grad[1]:
+            dw = tn_wgrad_mm(dy2, x2)
+        if ctx.has_bias and ctx.needs_input_grad[2]:
+            db = dy2.sum(0)
+        return dx, dw, db
+
+
+class TNWgradLinear(torch.nn.Linear):
+    """nn.Linear whose weight gradient is TN on ROCm (roadmap L5, G25).
+
+    Same parameters / state dict as nn.Linear (isinstance-compatible for
+    init_mlp_weights_optional_bias). On ROCm CUDA tensors with HSTU_TN_WGRAD
+    != 0 the autocast cast is done with tracked .to() (as autocast does), so
+    fp32 parameter grads come back through the cast; otherwise it is exactly
+    nn.Linear.
+    """
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        if not (_HSTU_TN_WGRAD and x.is_cuda):
+            return super().forward(x)
+        if torch.is_autocast_enabled("cuda"):
+            dtype = torch.get_autocast_dtype("cuda")
+        else:
+            dtype = x.dtype
+        w = self.weight.to(dtype)
+        b = self.bias.to(dtype) if self.bias is not None else None
+        with torch.autocast("cuda", enabled=False):
+            return _TNWgradLinearFn.apply(x.to(dtype), w, b)
+
+
 def triton_addmm_bwd(
     x: torch.Tensor,
     w: torch.Tensor,

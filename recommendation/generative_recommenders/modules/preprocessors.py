@@ -30,6 +30,8 @@ from generative_recommenders.common import (
 from generative_recommenders.modules.action_encoder import ActionEncoder
 from generative_recommenders.ops.jagged_tensors import concat_2D_jagged
 from generative_recommenders.ops.layer_norm import LayerNorm, SwishLayerNorm
+# Roadmap L5 (G25): the 256->512 output Linears' wgrad is issued TN on ROCm.
+from generative_recommenders.ops.triton.triton_addmm import TNWgradLinear
 
 
 class InputPreprocessor(HammerModule):
@@ -161,7 +163,7 @@ class ContextualPreprocessor(InputPreprocessor):
                 out_features=self._hidden_dim,
             ),
             SwishLayerNorm(self._hidden_dim),
-            torch.nn.Linear(
+            TNWgradLinear(
                 in_features=self._hidden_dim,
                 out_features=self._output_embedding_dim,
             ),
@@ -175,7 +177,7 @@ class ContextualPreprocessor(InputPreprocessor):
                 out_features=self._hidden_dim,
             ),
             SwishLayerNorm(self._hidden_dim),
-            torch.nn.Linear(
+            TNWgradLinear(
                 in_features=self._hidden_dim,
                 out_features=self._output_embedding_dim,
             ),
@@ -197,7 +199,7 @@ class ContextualPreprocessor(InputPreprocessor):
                     out_features=self._hidden_dim,
                 ),
                 SwishLayerNorm(self._hidden_dim),
-                torch.nn.Linear(
+                TNWgradLinear(
                     in_features=self._hidden_dim,
                     out_features=self._output_embedding_dim,
                 ),

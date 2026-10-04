@@ -7,6 +7,7 @@ platform stands now, and each optimization applied to get there. Companion to
 (stack, hazards, TODOs).
 
 - **[Latest evaluation](#latest-evaluation)**: current measured end-to-end status.
+- **[Blocked](#blocked-risky-operations-and-who-can-fix-them)**: the risky operations that block the next ~40 % of the step, and the likely fix owners.
 - **[Optimization log](#optimization-log)**: one self-contained row per incremental optimization,
   each with its own A/B and the gin switch that turns it on.
 
@@ -31,6 +32,30 @@ One row per hardware × node count, latest only.
 | date | commit | hardware / host | nodes / GPUs | software stack | run config | throughput (median steps 20–200) | trace | notes |
 |---|---|---|---|---|---|---|---|---|
 | 2026-10-04 | [`be2d249`](https://github.com/chriscai-amd/training/commit/be2d249) on `chcai/mi450_hipblaslt_opt` (trunk [`e4c612f`](https://github.com/chriscai-amd/training/commit/e4c612f) + gin-guarded MI450 opts) | 4× **MI450** (gfx1250, 256 CUs, 432 GiB HBM each, one XGMI hive)<br>host `ctheliosp-1b112-a37-2`<br>firmware **BKC 26.11.08**, VBIOS `113-M4500001-700E`<br>amdgpu-dkms `7.1.0-2413386.el10`, kernel `6.16.1-0_fbk5`<br>amdgpu loaded with `noretry=0 gpu_recovery=0 ip_block_mask=0xcff` | 1 / 4 | image `recommendation-gfx1250-20260910:triton-7ff97e` (`ea5cee73`, rebuilt 2026-10-04)<br>torch `2.11.0+rocm7.14.0a20260625`, triton `3.8.0+git7ff97e31`, torchrec `1.7.0a0+bf55480`, fbgemm_gpu nightly `2026.10.4`<br>stock hipBLASLt: `rocm-sdk-libraries-gfx1250 7.14.0a20260625`<br>**M1 hipBLASLt: ROCm 10.2 nightly `10.2.0a20260929`** `libhipblaslt.so.1.5`, NN Origami pool, NT catalog filtered to the stock stub | yambda-5b, MLPerf gin defaults, full model (11 tables, 3 HSTU layers, seq 4096)<br>local batch 1,024 / global 4,096, `START_TS=0`, 200 steps, seed 1<br>`HSTU_BWD_MAX_VGPR=0`, `AMDGCN_USE_BUFFER_OPS=0`, `TRITON_FULL_AUTOTUNE=0`, allocator vars empty, eval off<br>gin overlay **`m1_lib.gin`** (M1 on, M2–M4 off) | **2,841.1 global_sps, 1,441.7 ms/step**<br>vs **2,092.4 / 1,957.5** with all opts off (same host, boot, image, data)<br>**+35.8 % throughput, −26.3 % step time** | **pending**: the cumulative trace (`OUTPUT_TRACE=1`, 5 steps from step 52) needs a host power cycle first, because GPU 1 has been unusable since the M3 fault at 09:02 | Safe cumulative stack = **M1** (+M2, which is inert in training). M3/M4 are **unsafe in training** (GPU fault; see the log). One run per arm, not yet ABBA-repeated; the repeat was cut short by the M3 fault. Final loss at step 200 is identical across M0/M1/M2 (`0.13897`). |
+
+---
+
+## Blocked: risky operations and who can fix them
+
+After M1, **~625 ms/step (91 %) of the remaining hipBLASLt time** is six tall-K weight-gradient
+GEMMs (K = T ≈ 2 M): G20, G19, G25, G29, G31, G27. That is **~40 % of the 1,442 ms step**, and
+their combined lower bound is ~18 ms. Every route to speed them up on this stack has faulted a GPU.
+Details and dmesg are in the host record:
+[§0.3](mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md#03-risky-operations-on-this-host)
+and [§9](mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md#9-hipblaslt-gemm-work-and-the-2026-10-04-host-hang).
+
+| Blocked optimization | Risky operation | What happened (2026-10-04, a37-2) | Likely fix owner | Unblocks when |
+|---|---|---|---|---|
+| Tuned NT weight-gradient kernels (the direct fix for the 625 ms) | ROCm 10.2 **NT** stream-K kernel on K = T | MES hang; the GPU reset then hung in SMU, and the **whole host wedged** (reboot) | **hipBLASLt / TensileLite** (kernel fault); **SMU firmware / amdgpu (BFD)** (reset hang) | Fixed tall-K NT kernels in a gfx1250 hipBLASLt build |
+| NT → NN re-expression of the weight gradients | 10.2 **NN** kernel on K = T | Page fault + MES `REMOVE_QUEUE` failure; GPU lost until power cycle | **hipBLASLt / TensileLite** | Same fix as above |
+| **M3 / M4**: NT → TN re-expression (bench 1.08–1.15× each) | 10.2 **TN** tall-K kernels under jagged training T | Clean in the bench at fixed T, but **faulted GPU 1 in step 1 of training**: page fault, MES failures, kworkers in D state | **hipBLASLt / TensileLite** | Same fix; then also remove the transpose copies (287 ms/step in the bench) |
+| Tuning sweeps, stream-K / split-K / GSU knobs on these shapes | Any run that selects a 10.2 tall-K kernel | The same fault class: a sweep has to execute the faulting kernels | **hipBLASLt / TensileLite** | Same fix |
+| Fast iteration on any of the above | Recovering a faulted GPU without a reboot | The reset is hive-wide (all 4 GPUs, one XGMI hive) through the SMU mode-2 path that hung; **each fault costs a host power cycle** | **SMU firmware / amdgpu driver (BFD)** | A working per-GPU or hive reset |
+
+Our side meanwhile (host record TODOs T1–T3):
+1. Send minimal repros, the single-GEMM command plus dmesg, to hipBLASLt and to BFD.
+2. Keep M3/M4 gin-off.
+3. Work on the transpose-free weight-gradient path in model code.
 
 ---
 

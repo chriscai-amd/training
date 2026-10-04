@@ -1,5 +1,5 @@
 {
-  "_note": "Roadmap L5, NT wgrads -> TN. Model patch: generative_recommenders/ops/triton/triton_addmm.py triton_addmm_bwd (G20, UVQK wgrad: dw = mm(x.t().contiguous(), dz.t().contiguous().t())) and ops/triton/triton_hstu_linear.py backward (G19, output-projection wgrad via tn_wgrad_mm(y, dout)). Both token-major operands are transposed per call (no producer writes them feature-major yet), so both copies are declared at the original call count. HSTU_TN_WGRAD=0 restores NT. UNVERIFIED until an E2 LOG_MASK=32 recapture of the patched testbed. G25 (preprocessor 256->512 output-Linear wgrad, x3: content/additional/action MLPs): modules/preprocessors.py uses ops/triton/triton_addmm.py TNWgradLinear, whose backward calls tn_wgrad_mm(dy, x) -> TN M=256 N=512 K=T; both token-major operands ([T,256] input, [T,512] grad) are transposed per call and declared as copies. Forward (F.linear, TN) and dgrad (dy.mm(w), NN, = G24) are the calls aten's nn.Linear issues, unchanged. tuning_override.csv pins G25's TN key to sol 1409 (MT256x256x128 SK3, the kernel already proven on G20.r0). G29/G31/G27 (preprocessor input-layer wgrads 1024/512/24->256, x1 each: additional/content/action MLPs): the same TNWgradLinear replaces the first nn.Linear of each MLP; wgrad = tn_wgrad_mm(dy [T,256], x [T,in]) -> TN M=in N=256 K=T; both operands transposed per call and declared as copies; dgrad (NN, = G28/G30/G26) and forward (TN, = G05/G03/G06) unchanged. tuning_override.csv pins the three TN keys to sol 1409.",
+  "_note": "Roadmap L5, NT wgrads -> TN. Model patch: generative_recommenders/ops/triton/triton_addmm.py triton_addmm_bwd (G20, UVQK wgrad: dw = mm(x.t().contiguous(), dz.t().contiguous().t())) and ops/triton/triton_hstu_linear.py backward (G19, output-projection wgrad via tn_wgrad_mm(y, dout)). Both token-major operands are transposed per call (no producer writes them feature-major yet), so both copies are declared at the original call count. HSTU_TN_WGRAD=0 restores NT. UNVERIFIED until an E2 LOG_MASK=32 recapture of the patched testbed. G25 (preprocessor 256->512 output-Linear wgrad, x3: content/additional/action MLPs): modules/preprocessors.py uses ops/triton/triton_addmm.py TNWgradLinear, whose backward calls tn_wgrad_mm(dy, x) -> TN M=256 N=512 K=T; both token-major operands ([T,256] input, [T,512] grad) are transposed per call and declared as copies. Forward (F.linear, TN) and dgrad (dy.mm(w), NN, = G24) are the calls aten's nn.Linear issues, unchanged. tuning_override.csv pins G25's TN key to sol 1409 (MT256x256x128 SK3, the kernel already proven on G20.r0). G29/G31/G27 (preprocessor input-layer wgrads 1024/512/24->256, x1 each: additional/content/action MLPs): the same TNWgradLinear replaces the first nn.Linear of each MLP; wgrad = tn_wgrad_mm(dy [T,256], x [T,in]) -> TN M=in N=256 K=T; both operands transposed per call and declared as copies; dgrad (NN, = G28/G30/G26) and forward (TN, = G05/G03/G06) unchanged. tuning_override.csv pins the three TN keys to sol 1409. ITER 13: every [T,256]/[T,512]/[T,1024] feature-major copy is now done by ops/triton/triton_addmm.py feature_major() as k narrow 2-D transposes (one per factor in _FM_FACTORS: 256=(8,8,4), 512=(8,8,8), 1024=(8,8,8,2)); pass i is a.view(T*C/f_i, f_i).t().contiguous(), declared here as a copy {rows: T*C/f_i, cols: f_i}, in execution order (last factor first). Bit-identical to a.t().contiguous() for any T. [T,1536], [T,2048] and [T,24] stay one direct transpose. HSTU_FM_SPLIT=0 restores single transposes. Falls back to a single transpose if the operand is not contiguous.",
   "G20": {
     "gemms": [
       {
@@ -11,8 +11,18 @@
     ],
     "copies": [
       {
-        "rows": 2097152,
-        "cols": 512,
+        "rows": 134217728,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 134217728,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 134217728,
+        "cols": 8,
         "dtype": "bf16_r"
       },
       {
@@ -38,8 +48,18 @@
         "dtype": "bf16_r"
       },
       {
-        "rows": 2097152,
-        "cols": 512,
+        "rows": 134217728,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 134217728,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 134217728,
+        "cols": 8,
         "dtype": "bf16_r"
       }
     ]
@@ -55,13 +75,33 @@
     ],
     "copies": [
       {
-        "rows": 2097152,
-        "cols": 256,
+        "rows": 134217728,
+        "cols": 4,
         "dtype": "bf16_r"
       },
       {
-        "rows": 2097152,
-        "cols": 512,
+        "rows": 67108864,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 67108864,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 134217728,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 134217728,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 134217728,
+        "cols": 8,
         "dtype": "bf16_r"
       }
     ]
@@ -77,13 +117,38 @@
     ],
     "copies": [
       {
-        "rows": 2097152,
-        "cols": 1024,
+        "rows": 1073741824,
+        "cols": 2,
         "dtype": "bf16_r"
       },
       {
-        "rows": 2097152,
-        "cols": 256,
+        "rows": 268435456,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 268435456,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 268435456,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 134217728,
+        "cols": 4,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 67108864,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 67108864,
+        "cols": 8,
         "dtype": "bf16_r"
       }
     ]
@@ -99,13 +164,33 @@
     ],
     "copies": [
       {
-        "rows": 2097152,
-        "cols": 512,
+        "rows": 134217728,
+        "cols": 8,
         "dtype": "bf16_r"
       },
       {
-        "rows": 2097152,
-        "cols": 256,
+        "rows": 134217728,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 134217728,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 134217728,
+        "cols": 4,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 67108864,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 67108864,
+        "cols": 8,
         "dtype": "bf16_r"
       }
     ]
@@ -126,8 +211,18 @@
         "dtype": "bf16_r"
       },
       {
-        "rows": 2097152,
-        "cols": 256,
+        "rows": 134217728,
+        "cols": 4,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 67108864,
+        "cols": 8,
+        "dtype": "bf16_r"
+      },
+      {
+        "rows": 67108864,
+        "cols": 8,
         "dtype": "bf16_r"
       }
     ]

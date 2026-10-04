@@ -43,6 +43,10 @@ apply_env_bootstrap.TRITON_FULL_AUTOTUNE = False
 # =============================================================================
 apply_launch_env.hipblaslt_lib_dir = None
 apply_hipblaslt_opts.tuning_override_file = None
+# !! M3 / M4 ARE UNSAFE IN TRAINING on a37-2 (BKC 26.11.08, ROCm 10.2 nightly):
+# !! 2026-10-04 09:02 M3 faulted GPU 1 in its FIRST training step (page fault ->
+# !! MES REMOVE_QUEUE / INVALIDATE_TLBS failures; GPU unusable until power cycle).
+# !! Keep them False until hipBLASLt fixes the tall-K fault (docs/mi450_perf_opt.md).
 apply_hipblaslt_opts.tn_wgrad_hstu = False
 apply_hipblaslt_opts.tn_wgrad_preproc = False
 

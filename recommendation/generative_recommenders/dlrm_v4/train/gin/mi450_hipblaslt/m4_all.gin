@@ -1,3 +1,4 @@
+# !! UNSAFE IN TRAINING: M3 faulted GPU 1 on 2026-10-04 09:02 (see yambda_5b.gin). Do not run.
 # Overlay for docs/mi450_perf_opt.md (parsed after yambda_5b.gin via $DLRM_GIN_OVERLAY).
 # Container paths: /armlibs = /home/chcai/training_mi450_arbor/arbor_libs (ro), /opt/rocm-10.2 mounted (ro).
 # M4: M3 + TN weight gradients, preprocessor MLP Linears = cumulative stack

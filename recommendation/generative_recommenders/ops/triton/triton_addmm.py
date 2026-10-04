@@ -1630,19 +1630,24 @@ def triton_addmm_fwd_fake(
 # kernel pool has no split-K/stream-K tile for K = T, while the same math with
 # both operands materialised feature-major is TN (Cijk_Alik_Bljk), served by the
 # tuned pool. HSTU_TN_WGRAD=0 restores the original NT call (E1 A/B switch).
-_HSTU_TN_WGRAD: bool = (
-    torch.version.hip is not None and os.environ.get("HSTU_TN_WGRAD", "1") != "0"
-)
+# HSTU_TN_WGRAD scopes (for per-optimization E2E A/B): "1"/"all" (default) =
+# every re-expressed wgrad; "hstu" = only the HSTU UVQK/output projections
+# (G20, G19); "preproc" = only the preprocessor MLP Linears (G25, G27/G29/G31);
+# "0" = original NT calls everywhere.
+_TN_MODE: str = os.environ.get("HSTU_TN_WGRAD", "1").strip().lower()
+_HSTU_TN_WGRAD: bool = torch.version.hip is not None and _TN_MODE != "0"
+_TN_HSTU: bool = _HSTU_TN_WGRAD and _TN_MODE in ("1", "all", "hstu")
+_TN_PREPROC: bool = _HSTU_TN_WGRAD and _TN_MODE in ("1", "all", "preproc")
 
 
-def tn_wgrad_mm(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
+def tn_wgrad_mm(a: torch.Tensor, b: torch.Tensor, enabled: bool = True) -> torch.Tensor:
     """a.t() @ b for token-major a [T, D], b [T, O] -> [D, O].
 
     TN path: aT = a.t().contiguous() [D, T], bT = b.t().contiguous() [O, T];
     torch.mm(aT, bT.t()) issues hipBLASLt transA=T transB=N, M=O, N=D, K=T,
     lda = ldb = T. Same fp32-accumulated math, different reduction order.
     """
-    if _HSTU_TN_WGRAD and a.is_cuda:
+    if enabled and _HSTU_TN_WGRAD and a.is_cuda:
         return torch.mm(a.t().contiguous(), b.t().contiguous().t())
     return torch.mm(a.t(), b)
 
@@ -1692,7 +1697,7 @@ class TNWgradLinear(torch.nn.Linear):
     """
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        if not (_HSTU_TN_WGRAD and x.is_cuda):
+        if not (_TN_PREPROC and x.is_cuda):
             return super().forward(x)
         if torch.is_autocast_enabled("cuda"):
             dtype = torch.get_autocast_dtype("cuda")
@@ -1714,7 +1719,7 @@ def triton_addmm_bwd(
         dy = torch.sum(dz, dim=0)
     else:
         dy = dz
-    if globals().get("_HSTU_TN_WGRAD", False) and dz.is_cuda:
+    if globals().get("_TN_HSTU", False) and dz.is_cuda:
         # L5: TN wgrad (see tn_wgrad_mm); inline so the body stays self-contained.
         dw = torch.mm(x.t().contiguous(), dz.t().contiguous().t())
     else:

@@ -31,6 +31,7 @@ from generative_recommenders.common import (
     triton_autotune,
 )
 from generative_recommenders.ops.triton.triton_addmm import (
+    _TN_HSTU,
     maybe_triton_addmm_fwd,
     tn_wgrad_mm,
 )
@@ -2381,7 +2382,7 @@ class HSTUComputeOutputFunction(torch.autograd.Function):
         if not ctx.recompute_y_in_backward:
             y = saved_y
         # L5 (reexpress.json G19): TN instead of NT on ROCm.
-        d_output_weight = tn_wgrad_mm(y, dout)
+        d_output_weight = tn_wgrad_mm(y, dout, enabled=_TN_HSTU)
         return (
             dattn,
             du,

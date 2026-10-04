@@ -1627,33 +1627,22 @@ def triton_addmm_fwd_fake(
 
 # Roadmap L5 (arbor_hipblaslt/reexpress.json G20, G19): on ROCm gfx1250 the
 # token-major wgrad `x.t() @ dz` is an NT hipBLASLt call (Cijk_Ailk_Bjlk) whose
-# kernel pool has no split-K/stream-K tile for K = T. Materialising ONLY the
-# operand that lands on the N side feature-major makes the same math NN
-# (Cijk_Ailk_Bljk: the M-side token-major operand is already M-contiguous),
-# served by the populated NN pool -- one transpose copy per call instead of the
-# two a TN form needs. HSTU_TN_WGRAD: "0" restores the original NT call (E1 A/B
-# switch), "tn" selects the two-copy TN form, anything else (default) the
-# one-copy NN form.
-_HSTU_WGRAD_MODE: str = (
-    "nt"
-    if torch.version.hip is None or os.environ.get("HSTU_TN_WGRAD", "1") == "0"
-    else ("tn" if os.environ.get("HSTU_TN_WGRAD", "1").lower() == "tn" else "nn")
+# kernel pool has no split-K/stream-K tile for K = T, while the same math with
+# both operands materialised feature-major is TN (Cijk_Alik_Bljk), served by the
+# tuned pool. HSTU_TN_WGRAD=0 restores the original NT call (E1 A/B switch).
+_HSTU_TN_WGRAD: bool = (
+    torch.version.hip is not None and os.environ.get("HSTU_TN_WGRAD", "1") != "0"
 )
-_HSTU_TN_WGRAD: bool = _HSTU_WGRAD_MODE != "nt"
 
 
 def tn_wgrad_mm(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
     """a.t() @ b for token-major a [T, D], b [T, O] -> [D, O].
 
-    NN path (default): torch.mm(a.t().contiguous(), b) issues hipBLASLt
-    transA=N transB=N, M=O, N=D, K=T, lda=O, ldb=T (one copy of a).
-    TN path: torch.mm(a.t().contiguous(), b.t().contiguous().t()) issues
-    transA=T transB=N, lda = ldb = T (two copies).
-    Same fp32-accumulated math, different reduction order.
+    TN path: aT = a.t().contiguous() [D, T], bT = b.t().contiguous() [O, T];
+    torch.mm(aT, bT.t()) issues hipBLASLt transA=T transB=N, M=O, N=D, K=T,
+    lda = ldb = T. Same fp32-accumulated math, different reduction order.
     """
-    if _HSTU_WGRAD_MODE == "nn" and a.is_cuda:
-        return torch.mm(a.t().contiguous(), b)
-    if _HSTU_WGRAD_MODE == "tn" and a.is_cuda:
+    if _HSTU_TN_WGRAD and a.is_cuda:
         return torch.mm(a.t().contiguous(), b.t().contiguous().t())
     return torch.mm(a.t(), b)
 
@@ -1668,12 +1657,8 @@ def triton_addmm_bwd(
         dy = torch.sum(dz, dim=0)
     else:
         dy = dz
-    _wgrad_mode = globals().get("_HSTU_WGRAD_MODE", "nt")
-    if _wgrad_mode == "nn" and dz.is_cuda:
-        # L5: NN wgrad, one copy (see tn_wgrad_mm); inline so the body stays
-        # self-contained.
-        dw = torch.mm(x.t().contiguous(), dz)
-    elif _wgrad_mode == "tn" and dz.is_cuda:
+    if globals().get("_HSTU_TN_WGRAD", False) and dz.is_cuda:
+        # L5: TN wgrad (see tn_wgrad_mm); inline so the body stays self-contained.
         dw = torch.mm(x.t().contiguous(), dz.t().contiguous().t())
     else:
         dw = torch.mm(x.t(), dz)

@@ -1,7 +1,9 @@
 {
-  "_note": "Roadmap L5, NT wgrads -> NN with ONE copy (iter 8; iter 7 used TN with two copies). Model patch: generative_recommenders/ops/triton/triton_addmm.py triton_addmm_bwd (G20, UVQK wgrad: dw = mm(x.t().contiguous(), dz) -> NN, M=2048 from token-major dz, N=512 from feature-major x) and ops/triton/triton_hstu_linear.py backward (G19, output-projection wgrad via tn_wgrad_mm(y, dout) = mm(y.t().contiguous(), dout) -> NN, M=512 from dout, N=1536 from feature-major y). Only the N-side token-major operand is transposed per call (no producer writes it feature-major yet), so one copy per call is declared at the original call count. HSTU_TN_WGRAD=0 restores NT, HSTU_TN_WGRAD=tn the two-copy TN form. UNVERIFIED until an E2 LOG_MASK=32 recapture of the patched testbed.",
-  "G20": {"gemms": [{"transA": "N", "transB": "N", "lda": "2048", "ldb": "2097152"}],
-          "copies": [{"rows": 2097152, "cols": 512, "dtype": "bf16_r"}]},
-  "G19": {"gemms": [{"transA": "N", "transB": "N", "lda": "512", "ldb": "2097152"}],
-          "copies": [{"rows": 2097152, "cols": 1536, "dtype": "bf16_r"}]}
+  "_note": "Roadmap L5, NT wgrads -> TN. Model patch: generative_recommenders/ops/triton/triton_addmm.py triton_addmm_bwd (G20, UVQK wgrad: dw = mm(x.t().contiguous(), dz.t().contiguous().t())) and ops/triton/triton_hstu_linear.py backward (G19, output-projection wgrad via tn_wgrad_mm(y, dout)). Both token-major operands are transposed per call (no producer writes them feature-major yet), so both copies are declared at the original call count. HSTU_TN_WGRAD=0 restores NT. UNVERIFIED until an E2 LOG_MASK=32 recapture of the patched testbed.",
+  "G20": {"gemms": [{"transA": "T", "transB": "N", "lda": "2097152", "ldb": "2097152"}],
+          "copies": [{"rows": 2097152, "cols": 512,  "dtype": "bf16_r"},
+                     {"rows": 2097152, "cols": 2048, "dtype": "bf16_r"}]},
+  "G19": {"gemms": [{"transA": "T", "transB": "N", "lda": "2097152", "ldb": "2097152"}],
+          "copies": [{"rows": 2097152, "cols": 1536, "dtype": "bf16_r"},
+                     {"rows": 2097152, "cols": 512,  "dtype": "bf16_r"}]}
 }

@@ -30,7 +30,8 @@ from generative_recommenders.common import (
 from generative_recommenders.modules.action_encoder import ActionEncoder
 from generative_recommenders.ops.jagged_tensors import concat_2D_jagged
 from generative_recommenders.ops.layer_norm import LayerNorm, SwishLayerNorm
-# Roadmap L5 (G25): the 256->512 output Linears' wgrad is issued TN on ROCm.
+# Roadmap L5: the preprocessor MLP Linears' wgrad is issued TN on ROCm
+# (G25: 256->512 output layers; G31/G29/G27: 512/1024/24->256 input layers).
 from generative_recommenders.ops.triton.triton_addmm import TNWgradLinear
 
 
@@ -158,7 +159,7 @@ class ContextualPreprocessor(InputPreprocessor):
                 )
             )
         self._content_embedding_mlp: torch.nn.Module = torch.nn.Sequential(
-            torch.nn.Linear(
+            TNWgradLinear(
                 in_features=self._input_embedding_dim,
                 out_features=self._hidden_dim,
             ),
@@ -171,7 +172,7 @@ class ContextualPreprocessor(InputPreprocessor):
         ).apply(init_mlp_weights_optional_bias)
         self._additional_embedding_features: List[str] = additional_embedding_features
         self._additional_embedding_mlp: torch.nn.Module = torch.nn.Sequential(
-            torch.nn.Linear(
+            TNWgradLinear(
                 in_features=self._input_embedding_dim
                 * len(additional_embedding_features),
                 out_features=self._hidden_dim,
@@ -194,7 +195,7 @@ class ContextualPreprocessor(InputPreprocessor):
                 is_inference=is_inference,
             )
             self._action_embedding_mlp: torch.nn.Module = torch.nn.Sequential(
-                torch.nn.Linear(
+                TNWgradLinear(
                     in_features=self._action_encoder.output_embedding_dim,
                     out_features=self._hidden_dim,
                 ),

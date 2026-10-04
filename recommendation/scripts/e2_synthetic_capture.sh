@@ -46,6 +46,7 @@ docker run --rm --name "$CNAME" \
   -e HSTU_HAMMER_KERNEL=TRITON -e AMDGCN_USE_BUFFER_OPS=0 -e HSTU_BWD_MAX_VGPR=0 \
   -e TRITON_FULL_AUTOTUNE=0 -e HSTU_BWD_BLOCK_N=64 \
   -e STEPS="$STEPS" -e BATCH_SIZE="${BATCH_SIZE:-1024}" \
+  -e HSTU_TN_WGRAD="${HSTU_TN_WGRAD:-all}" \
   -v "$REPO":/workspace/recommendation:ro -v "$OUT":/out \
   -w /workspace/recommendation "$IMAGE" \
   python3 scripts/e2_synthetic_capture.py --out /out/summary.json \

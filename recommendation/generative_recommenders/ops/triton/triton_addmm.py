@@ -1630,11 +1630,12 @@ def triton_addmm_fwd_fake(
 # kernel pool has no split-K/stream-K tile for K = T, while the same math with
 # both operands materialised feature-major is TN (Cijk_Alik_Bljk), served by the
 # tuned pool. HSTU_TN_WGRAD=0 restores the original NT call (E1 A/B switch).
-# HSTU_TN_WGRAD scopes (for per-optimization E2E A/B): "1"/"all" (default) =
+# HSTU_TN_WGRAD scopes (set from gin by _env_bootstrap.apply_hipblaslt_opts,
+# opts M3/M4): "1"/"all" =
 # every re-expressed wgrad; "hstu" = only the HSTU UVQK/output projections
 # (G20, G19); "preproc" = only the preprocessor MLP Linears (G25, G27/G29/G31);
-# "0" = original NT calls everywhere.
-_TN_MODE: str = os.environ.get("HSTU_TN_WGRAD", "1").strip().lower()
+# "0" (default when unset) = original NT calls everywhere.
+_TN_MODE: str = os.environ.get("HSTU_TN_WGRAD", "0").strip().lower()
 _HSTU_TN_WGRAD: bool = torch.version.hip is not None and _TN_MODE != "0"
 _TN_HSTU: bool = _HSTU_TN_WGRAD and _TN_MODE in ("1", "all", "hstu")
 _TN_PREPROC: bool = _HSTU_TN_WGRAD and _TN_MODE in ("1", "all", "preproc")

@@ -1,61 +1,71 @@
 # MI450 1P4G, host `ctheliosp-1b112-a37-2` (gfx1250, full model)
 
-Updated **2026-09-20** after verified holdout convergence and finalization of
-the post-AC-cycle run at **08:07:53 UTC**.
+Updated **2026-10-04** (October status: firmware BKC 26.11.08, hipBLASLt GEMM work, two GPU-fault events). The September convergence/NaN record is archived in [§10](#10-archive-september-2026-convergence-and-nan-status).
 The requested filename is `ctheliosr-1b112-a37-2.md`; the hostname captured in
 every experiment is **`ctheliosp-1b112-a37-2.mnb.dcgpu`**. This document retains
 that distinction so the artifacts can be matched to the correct machine.
 All experiment and capture times below are **UTC**. Firmware build dates are
 quoted as reported; their source does not specify a timezone.
 
-**The full-model run reached holdout AUC 0.7514703274 at step 14,000 on
-2026-09-20 at 08:07:17 UTC.** MLPerf recorded `run_stop: success`; the trainer
-and controller exited 0, with no owned processes remaining. All **14,000
-unique logged training losses were finite**, covering **57,344,000 training
-samples**. Launch-to-target time was **9h 9m 37.875s**.
+## 0. Current status (2026-10-04)
 
-This fresh run used **local batch 1024, global batch 4096, seed 1, dense and
-sparse base LR 5e-7, and 24,000 warmup steps**. It retained **11 full embedding
-tables, 293,051,712 logical rows, width 512 and 600,169,906,176 FP32 weight
-bytes**. The three holdout readings were **0.7236417 → 0.7416119 → 0.7514703**.
-See [§5.5](#55-completed-4k-holdout-convergence-run) for measured timings,
-losses, memory and hardware observations.
+### 0.1 Host and stack now
 
-The earlier two 3,000-step runs used base LR 1e-6 and disabled holdout
-evaluation. Five subsequent local-2048/global-8192 attempts ended in OOM,
-stall, an intentional initialization stop or driver failure. After the user
-reported an AC cycle, the successful 4K run started from scratch on a new
-boot; it did not resume any earlier trajectory. The historical local-2048
-projection in [§7](#7-auc-075-projection-at-local-batch-2048) never became a
-measured convergence result at that batch size.
-
-**The A0/B0 NaN root cause remains unresolved.** This run establishes finite
-logged loss and holdout convergence for its recorded configuration; it does
-not certify every intermediate tensor or post-warmup behavior. Step 14,000
-is still inside the 24,000-step warmup. Baseline settings and comparisons
-below are explicitly separated from the latest run.
-
-Companion investigations:
-[MI450 A0](../../mi450_a0/mi450_a0.md),
-[MI450 B0](../../mi450_b0/mi450_b0.md), and
-[current A0 controls and evidence](../../mi450_a0/mi450_a0.md#stack-and-controls).
-
-## Start here
-
-| Question | Recorded answer |
+| Item | Value |
 |---|---|
-| Does the full model fit? | **Yes at local batch 1024 on four GPUs.** The converged run retained all embedding rows and peaked at approximately **427.81 GiB on one 432 GiB GPU**; see the telemetry-unit convention in §5.5. |
-| Did NaN loss reproduce? | **No in the completed 4K runs:** two earlier 3,000-step checks and the latest **14,000-step** convergence run had finite logged losses throughout. |
-| Was the model shrunk? | **No.** `EMBEDDING_ROW_SCALE=1.0`, full 512-wide tables, three HSTU layers and sequence limit 4096. Column sharding retains every vocabulary row. |
-| Which attention arm ran? | **Uncapped baseline**, `HSTU_BWD_MAX_VGPR=0`, exact upstream Triton `7ff97e310935b4a79794878dbc911f9af25d38d9`; no cap256 training comparison. |
-| Was training resumed? | **No.** Empty checkpoint path and fresh trainer processes in each launch. |
-| What is the longest completed trajectory? | **14,000 steps in the latest fresh run.** The two earlier 3,000-step checks are separate trajectories. |
-| Was holdout AUC 0.75 measured? | **Yes: 0.7514703274 at 08:07:17 UTC on September 20**, with MLPerf success and clean termination. |
-| What happened at local batch 2048? | Five attempts on September 19; none reached holdout evaluation. See [§4.4](#44-local-2048global-8192-attempts). |
-| What was the host state at completion? | No surviving owned trainer tasks; all four GPUs returned to sampled driver-used VRAM of **165 tool-reported MB**. Available total GPU ECC counters stayed zero; corrected CPU reports are recorded separately. |
+| Firmware | **BKC 26.11.08** (BFD team upgrade); VBIOS `113-M4500001-700E` (built 2026/09/25) |
+| Driver | amdgpu-dkms **`7.1.0-2413386.el10`**, module `7.1.0.31300009`, kernel `6.16.1-0_fbk5_npi_brcmrdma9_85_g5d3047c748bd`, CentOS Stream 10 |
+| Driver load (every boot) | amdgpu is blacklisted at boot. Load it by hand with **`modprobe amdgpu noretry=0 gpu_recovery=0 ip_block_mask=0xcff`**, then `systemctl start docker`. |
+| GPUs | 4 × MI450 gfx1250, one XGMI hive (hive 16), perf level `auto`. All four recovered after the 07:48 power cycle (each passed a watched GEMM test). **GPU 1 (`0002:04:00.0`) has been unusable since 09:02**: the M3 training-run fault; `kfd_process_wq` kworkers are stuck in D state. **Needs a power cycle before any 4-GPU run.** |
+| Image | `recommendation-gfx1250-20260910:triton-7ff97e`, rebuilt 2026-10-04 (`ea5cee7308df`) from `amdprimus/amdprimus:gfx1250-20260910` (needs `docker login`, account `amdprimus`). torch `2.11.0+rocm7.14.0a20260625`, hipBLASLt from `rocm-sdk-libraries-gfx1250 7.14.0a20260625`. FBGEMM drifted to nightly `2026.10.4`. |
+| Dataset | Wiped by the October reprovision. Re-downloaded 2026-10-04 (MLCommons Option A, md5-verified) to `/home/chcai/data/mlperf_dlrm_v4`. |
+| NaN | **Expected to be mitigated** by the BKC/driver update. Not yet re-verified by a long run; the September record is archived in [§10](#10-archive-september-2026-convergence-and-nan-status). |
+
+### 0.2 hipBLASLt findings
+
+hipBLASLt was two-thirds of the 1,735 ms step (measured on a37-1). The full analysis is in the
+[a37-1 hipBLASLt folder](../ctheliosp-1b112-a37-1/hipBLASLt/README.md); the campaign and incidents
+are in [§9](#9-hipblaslt-gemm-work-and-the-2026-10-04-host-hang).
+
+| # | Finding | Evidence | Status |
+|---|---|---|---|
+| H1 | **The NN/NT slowness is a missing kernel pool, not a bad heuristic.** gfx1250 bf16 NN (`Ailk_Bljk`) and NT (`Ailk_Bjlk`) have only a 2-kernel stub in the 7.14 / 10.1 libraries. That is where `MT32x16x32` and solutions 102–105 come from. | Library catalog decode; upstream source census | Confirmed |
+| H2 | **Upstream added the tuned gfx1250 NN/NT pools on 2026-09-21** (rocm-libraries #12271, "Origami", ~425 stream-K kernels per layout). They are in the 10.2 BKC branch, not in 7.14 or 10.1. | Pinned source commits | Confirmed |
+| H3 | **With 10.2 the NN GEMMs are 6.7–19× faster.** UVQK fwd 2048×T×512: 34.8 → 5.2 ms; out-proj fwd 512×T×1536: 25.8 → 2.2 ms. In the paired bench, the NN group fell from 500 to 35 ms/step. | Host-native bench; Arbor iteration 5 | Measured (bench) |
+| H4 | **10.2 NN/NT kernels on tall-K problems (K = T ≈ 2 M) fault the GPU** (page fault, then MES failure). 10.2 **TN** tall-K kernels (sol 1397/1409) ran cleanly in every arm. | §9.2, §9.4 | Open. Possible 32-bit offset overflow (hypothesis) |
+| H5 | **Weight gradients can be re-expressed as TN** (transpose both operands, then call the tuned TN pool). The GEMMs drop to ~18 ms/step, but the **transpose copies cost 287 ms/step**, now the largest remaining item. | Arbor iterations 7/10/11/12 | Measured (bench) |
+| H6 | **The image runtime runs the same kernel ~1.6× slower than the host-native ROCm 10.1 runtime** (G08 sol 104: 57.8 vs 34.8 ms). Swapping only libhipblaslt into the image changes nothing. | Arbor iteration 4 vs host-native probe | Open (roadmap L11) |
+| H7 | **The packaging trap.** `_rocm_sdk_devel/bin/hipblaslt-bench`, and the image's `LD_LIBRARY_PATH`, resolve the devel libhipblaslt, which lacks the tuned gfx1250 kernels. Without the gfx1250 library, TN reads 82 instead of ~1,300 TFLOP/s. | a37-1 README "ask 3" | Workaround: `LD_PRELOAD` / `HIPBLASLT_TENSILE_LIBPATH` |
+| H8 | **Result so far.** Bench: hipBLASLt **1,154.1 → 364.6 ms/step (3.16×)** with M1–M4. **End-to-end, the safe stack (M1, 10.2 NN library): 1,957.5 → 1,441.7 ms/step (−26.3 %), 2,092 → 2,841 global_sps (+35.8 %)**, 200 steps, final loss identical. M2 is inert in training (exact-shape override). M3/M4 fault the GPU in training. See [`docs/mi450_perf_opt.md`](../../mi450_perf_opt.md). | Arbor campaign; e2e runs `1004_M0a/M1/M2/M3` | E2E measured (M1); M3/M4 unsafe |
+
+### 0.3 Risky operations on this host
+
+| Operation | What happened / can happen | Seen | Mitigation now | Likely owner of the fix |
+|---|---|---|---|---|
+| A **10.2 hipBLASLt NT kernel on K = T** (G19 512×1536×T) | CPC page faults, then MES `REMOVE_QUEUE`/`SUSPEND`/`RESET` failures. With default `gpu_recovery`, the mode-2 reset hung in SMU, leading to soft lockups and systemd in D state. **The whole host wedged; it needed a reboot.** | 2026-10-04 01:05 | Forbidden in the pack; driver loaded with `gpu_recovery=0` | **hipBLASLt / TensileLite** (kernel fault); **SMU firmware / amdgpu reset** (reset hang) |
+| A **10.2 NN kernel on K = T** (the same math re-expressed) | Page fault and MES failure. No reset (`gpu_recovery=0`), host stayed up, but **GPU 0 stopped executing work** until the power cycle. | 2026-10-04 03:18 | Forbidden; the live kernel-log watch kills the arm | **hipBLASLt / TensileLite**; **MES firmware** (unrecoverable queue) |
+| **TN weight-gradient re-expression (M3/M4) in real training**: 10.2 TN tall-K kernels under jagged T | No-retry page faults in the **first training step**, MES `REMOVE_QUEUE`/`INVALIDATE_TLBS` failures, "Memory access fault by GPU". GPU 1 unusable; kworkers stuck in D state; host up. (The same kernels ran cleanly in the bench at T = 2,097,152.) | 2026-10-04 09:02 | Gin default off, marked unsafe in `yambda_5b.gin`; e2e launcher kills on the first fault line | **hipBLASLt / TensileLite** |
+| **GPU reset of any kind** (`gpu_recovery`, debugfs `amdgpu_gpu_recover`, driver reload) | All 4 GPUs share one XGMI hive, so a reset is hive-wide and goes through the SMU mode-2 path that hung. | 2026-10-04 01:06 | Do not reset; recover by power cycle | **SMU firmware / amdgpu driver (BFD)** |
+| amdgpu loaded with **default options** | The 01:05 hang happened in this state, because GPU recovery is enabled by default. | 2026-10-04 | Harness refuses unless `noretry=0 gpu_recovery=0 ip_block_mask=0xcff` | Host bring-up (us) |
+| **Sharing a GPU** with another user's experiment | Another process faulted on GPU 0 seconds before the first hang. Whether that is a cause is unknown. | 2026-10-04 01:04 | One owner per GPU; check KFD processes before every run | Us / host scheduling |
+| An **oops anywhere** (`panic_on_oops=1`, kdump broken) | Halts the host until someone power-cycles it. | standing | Avoid driver unload/reload on a live host | Host admin (BFD) |
+
+### 0.4 TODO
+
+| # | Item | Owner |
+|---|---|---|
+| T1 | Send a minimal repro of the 10.2 tall-K NN/NT fault (single GEMM command line + dmesg) to the hipBLASLt team | us → hipBLASLt |
+| T2 | Report the SMU mode-2 reset hang (01:06, `smu_v15_0_8_mode2_reset`) with the dmesg excerpt | us → BFD / SMU firmware |
+| T3 | Remove the 287 ms/step of transpose copies: the forward pass writes K-major activations, or the wgrad kernel transposes in LDS | us (model code) |
+| T4 | Root-cause the 1.6× image-vs-host-native runtime gap (H6); it may affect every kernel, not only GEMMs | us, then ROCm runtime if confirmed |
+| T5 | Ship path: a derived image with a newer `_rocm_sdk_libraries_gfx1250` wheel that carries #12271, instead of an `LD_PRELOAD` of the 10.2 nightly | us + TheRock packaging |
+| T8 | Power-cycle a37-2 (GPU 1 dead since 09:02), then capture the cumulative M1 trace (`OUTPUT_TRACE=1`, steps 52–56) and the M0/M1 ABBA repeat | us |
+| T6 | Re-verify NaN mitigation with a long (≥ 3,000-step) run on the October stack | us |
+| T7 | Recapture (E2) the patched model's GEMM list to make the TN re-expressions claimable | us |
 
 ## Contents
 
+0. [Current status (2026-10-04)](#0-current-status-2026-10-04)
 1. [Host and software stack](#1-host-and-software-stack)
 2. [Dataset and full model](#2-dataset-and-full-model)
 3. [Exact training settings](#3-exact-training-settings)
@@ -64,6 +74,8 @@ Companion investigations:
 6. [Reproduction and analysis commands](#6-reproduction-and-analysis-commands)
 7. [AUC 0.75 projection at local batch 2048](#7-auc-075-projection-at-local-batch-2048)
 8. [Evidence inventory and limits](#8-evidence-inventory-and-limits)
+9. [hipBLASLt GEMM work and the 2026-10-04 host hang](#9-hipblaslt-gemm-work-and-the-2026-10-04-host-hang)
+10. [Archive: September 2026 convergence and NaN status](#10-archive-september-2026-convergence-and-nan-status)
 
 ## 1. Host and software stack
 
@@ -93,6 +105,8 @@ under the setup directory listed in [§8](#8-evidence-inventory-and-limits).
 | Recovery during the two morning baseline runs | No reboot, AC cycle, driver reload or GPU reset |
 | Boot ID for the converged post-AC run | `6ef5adda-fa87-4225-9fa2-99f733c74604` |
 | Post-AC driver recovery | AMDGPU loaded at **22:56:54 UTC September 19** with `noretry=0 gpu_recovery=0 ip_block_mask=0xcff`; four GPUs enumerated in SPX/NPS1 |
+| **October 2026 stack** (read 2026-10-04) | Firmware **BKC 26.11.08** (BFD upgrade, reported by the operator); VBIOS `113-M4500001-700E` (built 2026/09/25); amdgpu-dkms **`7.1.0-2413386.el10`**, module version `7.1.0.31300009`; kernel `6.16.1-0_fbk5_npi_brcmrdma9_85_g5d3047c748bd`, CentOS Stream 10 userspace (`el10`). The table rows above describe the September stack. |
+| October boots | 2026-10-03 ~15:54: amdgpu loaded by hand at 16:10 with **default** options (`noretry=-1 gpu_recovery=-1 ip_block_mask=0xffffffff`). That is the state the 2026-10-04 hang happened in (§9.2). 2026-10-04 01:48: reboot after the hang; amdgpu reloaded at 01:53 with `noretry=0 gpu_recovery=0 ip_block_mask=0xcff`. |
 
 Saved boot messages independently report one CPU package and CPU255's
 invalid-APIC-ID bring-up failure. The nominal 256-thread topology must not be
@@ -940,3 +954,205 @@ finite; A0 previously captured bad gradients with a finite forward loss. The
 latest run establishes convergence **during warmup** at global batch 4096.
 No full-state multi-rank replay, post-warmup run, successful global-8192
 convergence run or controlled A0/B0 root-cause comparison was performed.
+
+## 9. hipBLASLt GEMM work and the 2026-10-04 host hang
+
+This section records the October move to GEMM performance work. The
+companion analysis of the 33 hipBLASLt GEMMs, all measured on **a37-1**, is in
+[`../ctheliosp-1b112-a37-1/hipBLASLt/`](../ctheliosp-1b112-a37-1/hipBLASLt/README.md).
+The optimization campaign is the Arbor pack `packs/mi450/hipblaslt`. Raw
+artifacts for this section are in `/home/chcai/runs/a37-2_hipblaslt_20261004/`.
+
+### 9.1 What was measured before the hang
+
+GPU 0, host-native `hipblaslt-bench`, no container (the Docker image store was
+empty after the reprovision). `cold_iters 3`, `iters 10`, `rotating 512`,
+T = 2,097,152, one GEMM per process. "10.1" is `/opt/rocm-2407757`
+(`/opt/rocm` points at it); "10.2" is the nightly `/opt/rocm-10.2.0a20260929`.
+Neither is the image's `_rocm_sdk_libraries_gfx1250` library that training uses.
+
+| GEMM | Layout | ms/call, 10.1 (solution) | ms/call, 10.2 (solution) | Speedup |
+|---|---|---:|---:|---:|
+| 2048 × T × 512 + bias, UVQK fwd | NN | 34.78 (104, MT32x16x32) | **5.19** (951, MT256x256x64, SK3) | **6.7×** |
+| 512 × T × 1536, beta = 1, out-proj fwd | NN | 25.75 (104) | **2.19** (952, MT256x256x128) | **11.8×** |
+| 1536 × T × 512, out-proj dgrad | TN | 3.63 | 3.67 | 1.0× |
+| 512 × T × 256, preproc fwd | TN | 1.15 | 1.15 | 1.0× |
+| 2048 × 512 × T, UVQK wgrad | NT | 52.05 (102) | not reached | — |
+| 512 × 1536 × T, out-proj wgrad | NT | 32.02 (102) | **hung the GPU** | — |
+
+- **All 33 GEMMs on 10.1:** 742.0 ms/step weighted by calls/step. The a37-1
+  documents give 1,155 ms/step for the image's library on the September stack.
+  Part of that gap may be the October firmware or driver, part the library or
+  host. The two numbers are not a controlled comparison.
+- **10.2 reached 18 of 33 GEMMs** before the hang (G01–G18). Every NT
+  weight-gradient GEMM is unmeasured on 10.2.
+- **Where the gain comes from.** The 10.2 library carries the gfx1250 bf16
+  NN/NT tuned (Origami) kernel pools added upstream on 2026-09-21
+  (rocm-libraries#12271). 10.1 and 7.14 have only a 2-kernel placeholder for
+  those layouts.
+
+### 9.2 The hang
+
+Times are from `incident_dmesg_20261004.txt`. The driver had been loaded with
+**default options** (`gpu_recovery=-1`).
+
+1. **01:04:10–01:05:01:** another user's `bigtile_bench` on GPU 0 took CPC
+   (UTCL2 client 5) no-retry permission page faults.
+2. **01:04:22 and 01:04:30:** two `hipblaslt-bench --yaml` runs on the 10.2
+   library also page-faulted. MES failed `REMOVE_QUEUE` and `SUSPEND`. Each
+   ended with "device wedged, but recovered through reset", and the
+   processes aborted.
+3. **01:05:57:** the per-GEMM probe reached G19 (512 × 1536 × T NT, 10.2).
+   MES failed `REMOVE_QUEUE`, `SUSPEND`, `RESET` and `RESUME`, then logged
+   "MES might be in unrecoverable state". The GPU reset began at 01:06:06,
+   and the mode-2 reset stuck in `smu_msg_v1_wait_response`.
+4. **From 01:06:47:** RCU stall, then soft lockups on CPU 137 in
+   `amdgpu_amdkfd_reset_work`. systemd, NetworkManager, iptables and the
+   cgroup kworkers went into D state, and load average passed 84. The
+   benchmark process stayed in D state and could not be killed.
+   `softlockup_panic=0`, so the host degraded instead of panicking.
+5. **01:48:** reboot. amdgpu was reloaded at 01:53 with
+   `noretry=0 gpu_recovery=0 ip_block_mask=0xcff`.
+
+**The root cause is open.** Either the 10.2 kernels (page faults even in the
+`--yaml` runs; G19 is a stream-K NT kernel) are unsafe on this
+firmware/driver, or GPU 0 was already damaged by the other process's faults
+seconds earlier. The NN 10.2 kernels ran cleanly in an isolated single-GEMM
+run at 01:03.
+
+### 9.3 Rules for GPU work on this host from now on
+
+- **Load amdgpu with the documented options.**
+  `noretry=0 gpu_recovery=0 ip_block_mask=0xcff`. After every boot, check
+  `/sys/module/amdgpu/parameters/`.
+- **One GPU, one owner.** Before every run, list the KFD processes
+  (`/sys/class/kfd/kfd/proc`) and refuse to start if another process is on
+  the target GPU. Do not share a GPU with another user's experiment.
+- **Treat a new GPU library or kernel set as able to take the whole host
+  down.** That includes a new hipBLASLt build, a tuning override, or a
+  stream-K or split-K setting. Run it first alone, one GEMM per process, on
+  an otherwise idle GPU, and watch `dmesg` for `no-retry page fault` /
+  `MES ... failed to respond`. Stop at the first such line, before the next
+  GEMM.
+- **The host does not panic on a soft lockup.** A wedged reset leaves it
+  degraded until someone reboots it. Do not reload amdgpu or reboot a shared
+  host without its owner's agreement.
+- **Docker state did not survive the October reprovision.** The base image
+  `amdprimus/amdprimus:gfx1250-20260910` needs `docker login` (account
+  `amdprimus`) and must be pulled and rebuilt (§6.1).
+
+### 9.4 Second fault, 2026-10-04 03:18, and campaign progress
+
+The driver was loaded with the documented options (`gpu_recovery=0`).
+
+- **Campaign progress before the fault.** Arbor iterations 5–7 brought the
+  33-GEMM hipBLASLt time from **1,154.1 to 465.4 ms/step** (2.48×). All three
+  were measured inside the image through the paired bench on GPU 0, and both
+  rounds agreed every time.
+  - Iteration 5 (1.685×): the 10.2 library for NN only, with the NT catalog
+    filtered back to the stock kernels.
+  - Iteration 6 (1.362×): NT weight-gradient GEMMs pinned to the stock
+    MT256x128x64 kernel by a tuning override.
+  - Iteration 7 (1.080×): G19/G20 re-expressed as TN. This one is not yet
+    claimable, because no capture yet confirms the model actually issues
+    those calls.
+- **The fault.** Iteration 8 re-expressed G19/G20 as NN with K = T, which
+  runs them on the 10.2 tall-K stream-K kernels. Its first warm-up arm took
+  page faults on GPU 0, then "MES failed to respond to msg=REMOVE_QUEUE" and
+  "Failed to evict queue 2".
+- **What it did to the host.** With `gpu_recovery=0` no reset was attempted,
+  and the host stayed healthy. The arm hung for 34 minutes until it was
+  killed by hand.
+- **Conclusion.** The trigger is the 10.2 tall-K (K ≈ 2 M) stream-K kernels,
+  in any layout, not the NT layout as such.
+- **What changed afterwards.**
+  - The bench now also watches the kernel log *during* each arm and kills the
+    container at the first fault line.
+  - 10.2 kernels on K = T problems are forbidden until someone clears them.
+  - Iteration 8 was reverted.
+  - The campaign moved to GPU 1. GPU 0, after an MES failure with no reset,
+    is out of service until it is checked or the host reboots.
+
+### 9.5 Campaign paused for GPU 0 recovery, 2026-10-04 05:26
+
+- **Result at pause:** hipBLASLt time down to **364.6 ms/step** (from 1,154.1, 3.16×) in
+  the paired GEMM bench. Numerics unchanged (max relative error 1.66e-3).
+- **Where the remaining time goes:** the transpose copies the TN re-expressions add are
+  now **287 of 365 ms/step**.
+- **Not claimable yet:** the re-expressions (iterations 7, 10, 11) need a capture from the
+  patched model before they count.
+- **No end-to-end step time has been measured.** The estimate is 1,735 → about
+  950–1,270 ms per step.
+- **GPU 0** stopped executing work after the 03:18 fault. It enumerates, but a 1024³ GEMM
+  never completed (04:43). All four GPUs are in one XGMI hive (hive 16), so any driver
+  reset is hive-wide and goes through the SMU mode-2 path that hung at 01:06.
+- **Host state at pause:** nothing holds the GPU device nodes and the amdgpu refcount
+  is 0.
+- **Full record:** `/home/chcai/arbor_sessions/mi450-hipblaslt/WRAPUP_20261004.md`.
+
+### 9.6 End-to-end A/B and the third fault, 2026-10-04 08:38–09:02
+
+The A/B ran after the 07:48 power cycle and the dataset re-download, using launcher `/home/chcai/runs/mi450_e2e_ab/run_arm.sh` (the §3 settings, 200 steps, gin overlays). Results:
+
+| Arm | Gin overlay | Median global_sps | Median step_ms | vs M0 |
+|---|---|---:|---:|---:|
+| M0a | all off | 2,092.4 | 1,957.5 | — |
+| M1 | 10.2 NN library | 2,841.1 | 1,441.7 | +35.8 % / −26.3 % |
+| M2 | M1 + override | 2,819.8 | 1,452.6 | +34.8 % / −25.8 % |
+| M3 | M2 + TN wgrad (HSTU) | — | — | **GPU 1 fault in step 1** |
+
+The step-200 loss is 0.13897 in M0, M1 and M2. The baseline step here (1,958 ms) is slower than a37-1's September 1,735 ms. Different host, firmware and image build; the A/B is the matched comparison. The planned M4 and the repeat arms (M4b, M0b) and both trace arms did not run.
+
+## 10. Archive: September 2026 convergence and NaN status
+
+> Archived 2026-10-04. The NaN issue is expected to be mitigated by firmware BKC 26.11.08 + amdgpu-dkms 2413386, not yet re-verified by a long run on this stack (TODO T6 in [§0.4](#04-todo)). The text below is the September summary as written at the time.
+
+
+**The full-model run reached holdout AUC 0.7514703274 at step 14,000 on
+2026-09-20 at 08:07:17 UTC.** MLPerf recorded `run_stop: success`; the trainer
+and controller exited 0, with no owned processes remaining. All **14,000
+unique logged training losses were finite**, covering **57,344,000 training
+samples**. Launch-to-target time was **9h 9m 37.875s**.
+
+This fresh run used **local batch 1024, global batch 4096, seed 1, dense and
+sparse base LR 5e-7, and 24,000 warmup steps**. It retained **11 full embedding
+tables, 293,051,712 logical rows, width 512 and 600,169,906,176 FP32 weight
+bytes**. The three holdout readings were **0.7236417 → 0.7416119 → 0.7514703**.
+See [§5.5](#55-completed-4k-holdout-convergence-run) for measured timings,
+losses, memory and hardware observations.
+
+The earlier two 3,000-step runs used base LR 1e-6 and disabled holdout
+evaluation. Five subsequent local-2048/global-8192 attempts ended in OOM,
+stall, an intentional initialization stop or driver failure. After the user
+reported an AC cycle, the successful 4K run started from scratch on a new
+boot; it did not resume any earlier trajectory. The historical local-2048
+projection in [§7](#7-auc-075-projection-at-local-batch-2048) never became a
+measured convergence result at that batch size.
+
+**The A0/B0 NaN root cause remains unresolved.** This run establishes finite
+logged loss and holdout convergence for its recorded configuration; it does
+not certify every intermediate tensor or post-warmup behavior. Step 14,000
+is still inside the 24,000-step warmup. Baseline settings and comparisons
+below are explicitly separated from the latest run.
+
+Companion investigations:
+[MI450 A0](../../mi450_a0/mi450_a0.md),
+[MI450 B0](../../mi450_b0/mi450_b0.md), and
+[current A0 controls and evidence](../../mi450_a0/mi450_a0.md#stack-and-controls).
+
+
+### 10.1 September "Start here" table
+
+| Question | Recorded answer |
+|---|---|
+| Does the full model fit? | **Yes at local batch 1024 on four GPUs.** The converged run retained all embedding rows and peaked at approximately **427.81 GiB on one 432 GiB GPU**; see the telemetry-unit convention in §5.5. |
+| Did NaN loss reproduce? | **No in the completed 4K runs:** two earlier 3,000-step checks and the latest **14,000-step** convergence run had finite logged losses throughout. |
+| Was the model shrunk? | **No.** `EMBEDDING_ROW_SCALE=1.0`, full 512-wide tables, three HSTU layers and sequence limit 4096. Column sharding retains every vocabulary row. |
+| Which attention arm ran? | **Uncapped baseline**, `HSTU_BWD_MAX_VGPR=0`, exact upstream Triton `7ff97e310935b4a79794878dbc911f9af25d38d9`; no cap256 training comparison. |
+| Was training resumed? | **No.** Empty checkpoint path and fresh trainer processes in each launch. |
+| What is the longest completed trajectory? | **14,000 steps in the latest fresh run.** The two earlier 3,000-step checks are separate trajectories. |
+| Was holdout AUC 0.75 measured? | **Yes: 0.7514703274 at 08:07:17 UTC on September 20**, with MLPerf success and clean termination. |
+| What happened at local batch 2048? | Five attempts on September 19; none reached holdout evaluation. See [§4.4](#44-local-2048global-8192-attempts). |
+| What changed in October? | **Firmware BKC 26.11.08 + amdgpu-dkms 2413386** (NaN expected mitigated, not yet re-verified). A hipBLASLt 10.2 NT GEMM **hung GPU 0 and wedged the host on 2026-10-04**; see [§9](#9-hipblaslt-gemm-work-and-the-2026-10-04-host-hang). |
+| What was the host state at completion? | No surviving owned trainer tasks; all four GPUs returned to sampled driver-used VRAM of **165 tool-reported MB**. Available total GPU ECC counters stayed zero; corrected CPU reports are recorded separately. |
+

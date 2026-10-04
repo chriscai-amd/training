@@ -52,7 +52,7 @@ and [§9](mi450_1P4G/ctheliosp-1b112-a37-2/ctheliosr-1b112-a37-2.md#9-hipblaslt-
 | Tuning sweeps, stream-K / split-K / GSU knobs on these shapes | Any run that selects a 10.2 tall-K kernel | The same fault class: a sweep has to execute the faulting kernels | **hipBLASLt / TensileLite** | Same fix |
 | Fast iteration on any of the above | Recovering a faulted GPU without a reboot | The reset is hive-wide (all 4 GPUs, one XGMI hive) through the SMU mode-2 path that hung; **each fault costs a host power cycle** | **SMU firmware / amdgpu driver (BFD)** | A working per-GPU or hive reset |
 
-Our side meanwhile (host record TODOs T1–T3):
+Our side meanwhile (host record §0.4: T1–T3 go to the owning teams, T6–T7 are ours):
 1. Send minimal repros, the single-GEMM command plus dmesg, to hipBLASLt and to BFD.
 2. Keep M3/M4 gin-off.
 3. Work on the transpose-free weight-gradient path in model code.

@@ -52,16 +52,27 @@ are in [§9](#9-hipblaslt-gemm-work-and-the-2026-10-04-host-hang).
 
 ### 0.4 TODO
 
-| # | Item | Owner |
-|---|---|---|
-| T1 | Send a minimal repro of the 10.2 tall-K NN/NT fault (single GEMM command line + dmesg) to the hipBLASLt team | us → hipBLASLt |
-| T2 | Report the SMU mode-2 reset hang (01:06, `smu_v15_0_8_mode2_reset`) with the dmesg excerpt | us → BFD / SMU firmware |
-| T3 | Remove the 287 ms/step of transpose copies: the forward pass writes K-major activations, or the wgrad kernel transposes in LDS | us (model code) |
-| T4 | Root-cause the 1.6× image-vs-host-native runtime gap (H6); it may affect every kernel, not only GEMMs | us, then ROCm runtime if confirmed |
-| T5 | Ship path: a derived image with a newer `_rocm_sdk_libraries_gfx1250` wheel that carries #12271, instead of an `LD_PRELOAD` of the 10.2 nightly | us + TheRock packaging |
-| T8 | Power-cycle a37-2 (GPU 1 dead since 09:02), then capture the cumulative M1 trace (`OUTPUT_TRACE=1`, steps 52–56) and the M0/M1 ABBA repeat | us |
-| T6 | Re-verify NaN mitigation with a long (≥ 3,000-step) run on the October stack | us |
-| T7 | Recapture (E2) the patched model's GEMM list to make the TN re-expressions claimable | us |
+Status as of 2026-10-04 09:40 (host power-cycled at 09:37). The items in **A** unblock the remaining
+~625 ms/step of tall-K weight-gradient time (~40 % of the step; see the blocker table in
+[`docs/mi450_perf_opt.md`](../../mi450_perf_opt.md#blocked-risky-operations-and-who-can-fix-them)).
+
+| # | Item | Owner | Status / unblocks |
+|---|---|---|---|
+| **A** | **Fixes owned by other teams (blocking further optimization)** | | |
+| T1 | Minimal repros of the **10.2 tall-K kernel faults** (single-GEMM command + dmesg) for all three events: NT G19 (01:05, host wedged), NN K = T (03:18), TN under jagged training T (09:02, M3) | us → **hipBLASLt / TensileLite** | Not sent. Unblocks M3/M4, tuned NT kernels and tall-K tuning sweeps |
+| T2 | Report the **SMU mode-2 reset hang** (01:06, `smu_v15_0_8_mode2_reset` stuck in `smu_msg_v1_wait_response`); the reset is hive-wide | us → **BFD / SMU firmware, amdgpu** | Not sent. Unblocks recovering a faulted GPU without a power cycle |
+| T3 | Report the **unrecoverable MES queue** after a page fault (`REMOVE_QUEUE` / `INVALIDATE_TLBS` failures; the GPU runs no work afterwards) | us → **MES firmware / amdgpu** | Not sent |
+| **B** | **Our work** | | |
+| T4 | Bring the host back up: `modprobe amdgpu noretry=0 gpu_recovery=0 ip_block_mask=0xcff`, `systemctl start docker`, watched GEMM test on all 4 GPUs, clear `~/.arbor_mi450_host_hazard.lock` | us | **Next** (after the 09:37 power cycle) |
+| T5 | M0/M1 ABBA repeat (200 steps), and the cumulative **M1 trace plus baseline trace** (`OUTPUT_TRACE=1`, 5 steps from step 52); fill in the trace link in the perf doc | us | After T4, ~40 min, safe stack only |
+| T6 | **Keep M3/M4 gin-off**; only M1 (+ inert M2) may run in training until T1 is fixed | us | Standing rule |
+| T7 | Remove the **287 ms/step of transpose copies**: the forward pass writes K-major activations, or the wgrad kernel transposes in LDS (needed even after T1) | us (model code) | Open |
+| T8 | Move the M2 override into the library catalog by **size range**, so it applies to jagged T in training | us | Open (M2 is inert in training today) |
+| T9 | Root-cause the **1.6× image-vs-host-native runtime gap** (H6); it may affect every kernel, not only GEMMs | us → ROCm runtime if confirmed | Open |
+| T10 | **Ship path for M1:** a derived image with a newer `_rocm_sdk_libraries_gfx1250` wheel that carries #12271, instead of `LD_PRELOAD` of the 10.2 nightly | us + **TheRock packaging** | Open |
+| T11 | Recapture (E2) the patched model's GEMM list to make the TN re-expressions claimable in the Arbor campaign | us | Open (tool exists: `scripts/e2_synthetic_capture.sh`) |
+| T12 | Re-verify the **NaN mitigation** with a long (≥ 3,000-step) run on the October stack | us | Open |
+| T13 | Resume the Arbor campaign (GPU 1–3, screens on 2–3) on the safe levers only: T7, T8 | us | After T4 |
 
 ## Contents
 
@@ -1105,7 +1116,7 @@ The step-200 loss is 0.13897 in M0, M1 and M2. The baseline step here (1,958 ms)
 
 ## 10. Archive: September 2026 convergence and NaN status
 
-> Archived 2026-10-04. The NaN issue is expected to be mitigated by firmware BKC 26.11.08 + amdgpu-dkms 2413386, not yet re-verified by a long run on this stack (TODO T6 in [§0.4](#04-todo)). The text below is the September summary as written at the time.
+> Archived 2026-10-04. The NaN issue is expected to be mitigated by firmware BKC 26.11.08 + amdgpu-dkms 2413386, not yet re-verified by a long run on this stack (TODO T12 in [§0.4](#04-todo)). The text below is the September summary as written at the time.
 
 
 **The full-model run reached holdout AUC 0.7514703274 at step 14,000 on

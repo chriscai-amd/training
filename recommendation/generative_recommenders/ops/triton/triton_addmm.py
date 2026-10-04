@@ -18,6 +18,7 @@
 
 
 import math
+import os
 from typing import List, Optional, Tuple
 
 import torch
@@ -1624,6 +1625,28 @@ def triton_addmm_fwd_fake(
     return torch.empty((M, N), device=x.device, dtype=x.dtype)
 
 
+# Roadmap L5 (arbor_hipblaslt/reexpress.json G20, G19): on ROCm gfx1250 the
+# token-major wgrad `x.t() @ dz` is an NT hipBLASLt call (Cijk_Ailk_Bjlk) whose
+# kernel pool has no split-K/stream-K tile for K = T, while the same math with
+# both operands materialised feature-major is TN (Cijk_Alik_Bljk), served by the
+# tuned pool. HSTU_TN_WGRAD=0 restores the original NT call (E1 A/B switch).
+_HSTU_TN_WGRAD: bool = (
+    torch.version.hip is not None and os.environ.get("HSTU_TN_WGRAD", "1") != "0"
+)
+
+
+def tn_wgrad_mm(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
+    """a.t() @ b for token-major a [T, D], b [T, O] -> [D, O].
+
+    TN path: aT = a.t().contiguous() [D, T], bT = b.t().contiguous() [O, T];
+    torch.mm(aT, bT.t()) issues hipBLASLt transA=T transB=N, M=O, N=D, K=T,
+    lda = ldb = T. Same fp32-accumulated math, different reduction order.
+    """
+    if _HSTU_TN_WGRAD and a.is_cuda:
+        return torch.mm(a.t().contiguous(), b.t().contiguous().t())
+    return torch.mm(a.t(), b)
+
+
 def triton_addmm_bwd(
     x: torch.Tensor,
     w: torch.Tensor,
@@ -1634,7 +1657,11 @@ def triton_addmm_bwd(
         dy = torch.sum(dz, dim=0)
     else:
         dy = dz
-    dw = torch.mm(x.t(), dz)
+    if globals().get("_HSTU_TN_WGRAD", False) and dz.is_cuda:
+        # L5: TN wgrad (see tn_wgrad_mm); inline so the body stays self-contained.
+        dw = torch.mm(x.t().contiguous(), dz.t().contiguous().t())
+    else:
+        dw = torch.mm(x.t(), dz)
     dx = torch.mm(dz, w.t())
 
     return dx, dw, dy

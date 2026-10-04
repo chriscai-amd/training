@@ -30,7 +30,10 @@ from generative_recommenders.common import (
     switch_to_contiguous_if_needed,
     triton_autotune,
 )
-from generative_recommenders.ops.triton.triton_addmm import maybe_triton_addmm_fwd
+from generative_recommenders.ops.triton.triton_addmm import (
+    maybe_triton_addmm_fwd,
+    tn_wgrad_mm,
+)
 from generative_recommenders.ops.utils import maybe_register_custom_op
 
 
@@ -2377,7 +2380,8 @@ class HSTUComputeOutputFunction(torch.autograd.Function):
             })
         if not ctx.recompute_y_in_backward:
             y = saved_y
-        d_output_weight = torch.mm(y.t(), dout)
+        # L5 (reexpress.json G19): TN instead of NT on ROCm.
+        d_output_weight = tn_wgrad_mm(y, dout)
         return (
             dattn,
             du,

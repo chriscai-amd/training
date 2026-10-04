@@ -2380,7 +2380,7 @@ class HSTUComputeOutputFunction(torch.autograd.Function):
             })
         if not ctx.recompute_y_in_backward:
             y = saved_y
-        # L5 (reexpress.json G19): TN instead of NT on ROCm.
+        # L5 (reexpress.json G19): NN (one copy of y) instead of NT on ROCm.
         d_output_weight = tn_wgrad_mm(y, dout)
         return (
             dattn,

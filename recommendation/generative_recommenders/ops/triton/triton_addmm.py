@@ -19,7 +19,7 @@
 
 import math
 import os
-from typing import Dict, List, Optional, Tuple
+from typing import List, Optional, Tuple
 
 import torch
 
@@ -1635,48 +1635,15 @@ _HSTU_TN_WGRAD: bool = (
 )
 
 
-# Feature-major copy as k narrow 2-D transposes (arbor_hipblaslt/reexpress.json
-# declares exactly these passes). torch's .t().contiguous() of [R, d] runs at
-# ~3.2 TB/s for d = 8 but ~0.3 TB/s for d = 256..512 on gfx1250 (iter-13
-# screens), so [T, C] -> [C, T] is done as one pass per factor of C: with the
-# column index written as digits (f1, ..., fk), each pass moves the fastest
-# digit in front of everything else; after k passes the layout is (c, t).
-# Pure data movement: bit-identical to a.t().contiguous() for any T.
-# HSTU_FM_SPLIT=0 restores the single transpose.
-_HSTU_FM_SPLIT: bool = os.environ.get("HSTU_FM_SPLIT", "1") != "0"
-# Per-pass rates measured by iter-13 bench.sh screens (GPU 2/3, bf16, T = 2^21):
-# d = 2: 6.6 TB/s, 3: 5.5, 4: 4.5, 8: 3.25, 16: 1.5, 32: 0.66, 64: 0.41,
-# 256-512 direct: 0.3, 1536 direct: 0.9, 2048 direct: 1.0. 1536 / 2048 / 24
-# stay a single direct transpose (cheaper than any factorisation).
-_FM_FACTORS: Dict[int, Tuple[int, ...]] = {
-    256: (8, 8, 4),
-    512: (8, 8, 8),
-    1024: (8, 8, 8, 2),
-}
-
-
-def feature_major(a: torch.Tensor) -> torch.Tensor:
-    """a [T, C] -> a.t().contiguous() [C, T], via _FM_FACTORS[C] passes."""
-    T, C = a.shape
-    fs = _FM_FACTORS.get(C) if _HSTU_FM_SPLIT else None
-    if not fs or not a.is_contiguous():
-        return a.t().contiguous()
-    n = T * C
-    y = a
-    for d in reversed(fs):
-        y = y.view(n // d, d).t().contiguous()
-    return y.view(C, T)
-
-
 def tn_wgrad_mm(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
     """a.t() @ b for token-major a [T, D], b [T, O] -> [D, O].
 
-    TN path: aT = feature_major(a) [D, T], bT = feature_major(b) [O, T];
+    TN path: aT = a.t().contiguous() [D, T], bT = b.t().contiguous() [O, T];
     torch.mm(aT, bT.t()) issues hipBLASLt transA=T transB=N, M=O, N=D, K=T,
     lda = ldb = T. Same fp32-accumulated math, different reduction order.
     """
     if _HSTU_TN_WGRAD and a.is_cuda:
-        return torch.mm(feature_major(a), feature_major(b).t())
+        return torch.mm(a.t().contiguous(), b.t().contiguous().t())
     return torch.mm(a.t(), b)
 
 
@@ -1749,8 +1716,7 @@ def triton_addmm_bwd(
         dy = dz
     if globals().get("_HSTU_TN_WGRAD", False) and dz.is_cuda:
         # L5: TN wgrad (see tn_wgrad_mm); inline so the body stays self-contained.
-        fm = globals()["feature_major"]
-        dw = torch.mm(fm(x), fm(dz).t())
+        dw = torch.mm(x.t().contiguous(), dz.t().contiguous().t())
     else:
         dw = torch.mm(x.t(), dz)
     dx = torch.mm(dz, w.t())

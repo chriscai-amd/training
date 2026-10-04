@@ -1,0 +1,9 @@
+{
+  "server_env": {
+    "REPO": "/home/chcai/training_mi450_arbor/recommendation",
+    "GPU": "0",
+    "ROUNDS": "2",
+    "HOST_BKC": "26.11.08"
+  },
+  "server_flags": ""
+}

@@ -1,0 +1,20 @@
+# !! UNTESTED ON A GPU. Run only as a guarded <=200-step A/B after the M5 GPU check kit
+# !! (/home/chcai/m5_work/gpu_check: single GEMMs, then batched zero-DY) has passed.
+# Overlay for docs/mi450_perf_opt.md (parsed after yambda_5b.gin via $DLRM_GIN_OVERLAY).
+# Container paths: /armlibs = $LIBS of run_ab.sh (default /home/chcai/training_opt/arbor_libs, ro).
+# M5 (variant s102): M1 lib swap with the v3/s102 NT catalog (all six wgrad shapes -> sol 102
+# MT32x16x32, 252 VGPRs, at batch 1 and every s in 2..256; T8's 103 pins undone, so no NT
+# wgrad uses sol 103) + split-T NT weight gradients. M2/M3/M4 OFF.
+# Design: /home/chcai/m5_work/DESIGN.md.
+apply_launch_env.hipblaslt_lib_dir = "/armlibs/rocm-10.2_nnonly_v3/s102"
+apply_hipblaslt_opts.tuning_override_file = None
+apply_hipblaslt_opts.tn_wgrad_hstu = False
+apply_hipblaslt_opts.tn_wgrad_preproc = False
+apply_hipblaslt_opts.splitt_wgrad_hstu = True
+apply_hipblaslt_opts.splitt_wgrad_preproc = True
+# 102 already runs 1536 (G19) / 2048 (G20) workgroups at s=1: G19 stays unsplit, G20 s=4 is
+# estimated 57 -> ~43 ms. The others are filled to ~1024-1536 resident 102 workgroups.
+# Unmeasured estimates; the GPU bench picks the final values (any s in 2..256 selects 102).
+apply_hipblaslt_opts.splitt_wgrad_splits = {"2048x512": 4, "256x512": 4, "1024x256": 2, "512x256": 4, "24x256": 64}
+apply_hipblaslt_opts.splitt_min_rows = 4096
+apply_hipblaslt_opts.splitt_audit_every = 0

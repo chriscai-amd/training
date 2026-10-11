@@ -1,0 +1,1775 @@
+####################################################################################################
+# variant s103: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s103  (v2 = /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2)
+####################################################################################################
+
+== A. install check ==
+  OK   symlink set (name -> target) == v2 (405 links)
+  OK   symlink set == v1 except the NT catalog (v1 symlinks it to the filtered stub copy: regular file)
+  OK   regular files = NT .dat.zlib + README.txt + m5_splits.json (['README.txt', 'hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib', 'm5_splits.json'])
+  OK   every symlink resolves
+  OK   installed NT .dat == build/s103 (sha256 a76b0b66df7e7d76)
+  OK   differs from v2's NT .dat
+  OK   msgpack unpack->repack is byte-identical
+  OK   zlib round-trip
+  OK   solutions list identical to the input catalog
+  OK   row predicates/properties/distance unchanged (only the table differs)
+  OK   distance GridBased, table non-empty (121 entries)
+  OK   every key has 4 values
+  OK   keys are positive ints
+  OK   keys unique
+  OK   table sorted by key
+  OK   entry layout {key,index}
+  OK   no multi-batch last N group
+  OK   every referenced index [102, 103] is in solutions [102, 103]
+  OK   sol 102 kernel name in decompressed TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co: Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_L...
+  OK   sol 102 kernel + .kd descriptor are gfx1250 ELF symbols (llvm-readelf --syms)
+         sol 102 MT32x16x32 SK=0 GSU=1
+  OK   sol 103 kernel name in decompressed TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co: Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN...
+  OK   sol 103 kernel + .kd descriptor are gfx1250 ELF symbols (llvm-readelf --syms)
+         sol 103 MT256x128x64 SK=0 GSU=1
+
+== B. M5 batched problems (lda=m, ldb=n, K=T//s) ==
+  T values: [1000000, 1590000, 2097152, 2533005, 3200000, 1167793, 1230054, 2169930, 2417704, 2453800, 2502180, 3062975, 3079342]
+  G20 m=2048 n=512 (calls/step 3), mapped sol 103
+    s=1    key (2048,512)     v2=[103]   v3=[103]   WG/launch(v3)=32     OK
+    s=2    key (4096,512)     v2=[102]   v3=[103]   WG/launch(v3)=64     OK
+    s=4    key (8192,512)     v2=[102]   v3=[103]   WG/launch(v3)=128    OK
+    s=8    key (16384,512)    v2=[102]   v3=[103]   WG/launch(v3)=256    OK
+    s=16   key (32768,512)    v2=[102]   v3=[103]   WG/launch(v3)=512    OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 251 s: [3, 5, 6, 7, 9, 10] ... [254, 255, 256]
+    all s 2..256 @T=2097152: v2=102 v3=103 for 4 s: [2, 4, 8, 16]
+  G19 m=512 n=1536 (calls/step 3), mapped sol 103
+    s=1    key (512,1536)     v2=[103]   v3=[103]   WG/launch(v3)=24     OK
+    s=2    key (512,3072)     v2=[102]   v3=[103]   WG/launch(v3)=48     OK
+    s=4    key (512,6144)     v2=[102]   v3=[103]   WG/launch(v3)=96     OK
+    s=8    key (512,12288)    v2=[102]   v3=[103]   WG/launch(v3)=192    OK
+    s=10   key (512,15360)    v2=[102]   v3=[103]   WG/launch(v3)=240    OK
+    s=16   key (512,24576)    v2=[102]   v3=[103]   WG/launch(v3)=384    OK
+    s=20   key (512,30720)    v2=[102]   v3=[103]   WG/launch(v3)=480    OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 249 s: [3, 5, 6, 7, 9, 11] ... [254, 255, 256]
+    all s 2..256 @T=2097152: v2=102 v3=103 for 6 s: [2, 4, 8, 10, 16, 20]
+  G25 m=256 n=512 (calls/step 3), mapped sol 103
+    s=1    key (256,512)      v2=[103]   v3=[103]   WG/launch(v3)=4      OK
+    s=4    key (256,2048)     v2=[103]   v3=[103]   WG/launch(v3)=16     OK
+    s=8    key (256,4096)     v2=[103]   v3=[103]   WG/launch(v3)=32     OK
+    s=16   key (256,8192)     v2=[103]   v3=[103]   WG/launch(v3)=64     OK
+    s=32   key (256,16384)    v2=[103]   v3=[103]   WG/launch(v3)=128    OK
+    s=64   key (256,32768)    v2=[103]   v3=[103]   WG/launch(v3)=256    OK
+    s=128  key (256,65536)    v2=[103]   v3=[103]   WG/launch(v3)=512    OK
+    all s 2..256 @T=2097152: v2=103 v3=103 for 255 s: [2, 3, 4, 5, 6, 7] ... [254, 255, 256]
+  G29 m=1024 n=256 (calls/step 1), mapped sol 103
+    s=1    key (1024,256)     v2=[103]   v3=[103]   WG/launch(v3)=8      OK
+    s=2    key (2048,256)     v2=[102]   v3=[103]   WG/launch(v3)=16     OK
+    s=4    key (4096,256)     v2=[102]   v3=[103]   WG/launch(v3)=32     OK
+    s=8    key (8192,256)     v2=[102]   v3=[103]   WG/launch(v3)=64     OK
+    s=16   key (16384,256)    v2=[102]   v3=[103]   WG/launch(v3)=128    OK
+    s=32   key (32768,256)    v2=[102]   v3=[103]   WG/launch(v3)=256    OK
+    s=64   key (65536,256)    v2=[102]   v3=[103]   WG/launch(v3)=512    OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 249 s: [3, 5, 6, 7, 9, 10] ... [254, 255, 256]
+    all s 2..256 @T=2097152: v2=102 v3=103 for 6 s: [2, 4, 8, 16, 32, 64]
+  G31 m=512 n=256 (calls/step 1), mapped sol 103
+    s=1    key (512,256)      v2=[103]   v3=[103]   WG/launch(v3)=4      OK
+    s=4    key (2048,256)     v2=[102]   v3=[103]   WG/launch(v3)=16     OK
+    s=8    key (4096,256)     v2=[102]   v3=[103]   WG/launch(v3)=32     OK
+    s=16   key (8192,256)     v2=[102]   v3=[103]   WG/launch(v3)=64     OK
+    s=32   key (16384,256)    v2=[102]   v3=[103]   WG/launch(v3)=128    OK
+    s=64   key (32768,256)    v2=[102]   v3=[103]   WG/launch(v3)=256    OK
+    s=128  key (65536,256)    v2=[102]   v3=[103]   WG/launch(v3)=512    OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 248 s: [3, 5, 6, 7, 9, 10] ... [254, 255, 256]
+    all s 2..256 @T=2097152: v2=102 v3=103 for 6 s: [4, 8, 16, 32, 64, 128]
+    all s 2..256 @T=2097152: v2=103 v3=103 for 1 s: [2]
+  G27 m=24 n=256 (calls/step 1), mapped sol 103
+    s=1    key (24,256)       v2=[103]   v3=[103]   WG/launch(v3)=2      OK
+    s=16   key (24,4096)      v2=[102]   v3=[103]   WG/launch(v3)=32     OK
+    s=32   key (24,8192)      v2=[102]   v3=[103]   WG/launch(v3)=64     OK
+    s=64   key (24,16384)     v2=[102]   v3=[103]   WG/launch(v3)=128    OK
+    s=128  key (24,32768)     v2=[102]   v3=[103]   WG/launch(v3)=256    OK
+    s=256  key (24,65536)     v2=[102]   v3=[103]   WG/launch(v3)=512    OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 250 s: [2, 3, 4, 5, 6, 7] ... [253, 254, 255]
+    all s 2..256 @T=2097152: v2=102 v3=103 for 5 s: [16, 32, 64, 128, 256]
+  -> 0 unexpected
+
+== C. simulate.py (T8 generic simulation), v2 vs v3/s103 ==
+v2: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (54 table entries)
+v3: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s103/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (121 table entries)
+solutions: {102: 'MT32x16x32', 103: 'MT256x128x64'}
+matcher: gridmatch.py (rocm-libraries 5911365c GridBased binary path, default env: no KDTREE, batch flattening on); size predicates modelled by nt_size_accepts
+
+== 1. training NT wgrads (transA=N transB=T, batch 1, K=T jagged) ==
+  G20                      m=2048   n=512     b=1  k=1000000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1400000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1590000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1800000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2097152  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2300000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2530000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2800000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=3200000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1176916  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1697589  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1728240  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1977935  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2064334  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2078434  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2371473  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2381548  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2468809  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2496014  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2647198  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2683600  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1000000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1400000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1590000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1800000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2097152  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2300000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2530000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2800000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=3200000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1176916  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1697589  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1728240  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1977935  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2064334  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2078434  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2371473  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2381548  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2468809  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2496014  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2647198  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2683600  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=1000000  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=1400000  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=1590000  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=1800000  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=2097152  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=2300000  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=2530000  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=2800000  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=3200000  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=1176916  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=1697589  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=1728240  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=1977935  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=2064334  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=2078434  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=2371473  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=2381548  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=2468809  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=2496014  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=2647198  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=2683600  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=1000000  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=1400000  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=1590000  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=1800000  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=2097152  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=2300000  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=2530000  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=2800000  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=3200000  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=1176916  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=1697589  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=1728240  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=1977935  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=2064334  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=2078434  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=2371473  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=2381548  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=2468809  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=2496014  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=2647198  v2=103 v3=103
+  G31                      m=512    n=256     b=1  k=2683600  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=1000000  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=1400000  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=1590000  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=1800000  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=2097152  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=2300000  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=2530000  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=2800000  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=3200000  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=1176916  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=1697589  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=1728240  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=1977935  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=2064334  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=2078434  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=2371473  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=2381548  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=2468809  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=2496014  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=2647198  v2=103 v3=103
+  G27                      m=24     n=256     b=1  k=2683600  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=1000000  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=1400000  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=1590000  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=1800000  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=2097152  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=2300000  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=2530000  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=2800000  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=3200000  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=1176916  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=1697589  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=1728240  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=1977935  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=2064334  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=2078434  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=2371473  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=2381548  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=2468809  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=2496014  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=2647198  v2=103 v3=103
+  G25                      m=256    n=512     b=1  k=2683600  v2=103 v3=103
+  -> 126 (shape,K) points, 0 not on 103 in v3 (expected for s102)
+
+== 2. bf16 NT GEMMs in dlrmv4-BF16-allgemms-union.txt ==
+  union lda=516 ldb=512    m=516    n=512     b=1  k=1024     v2=102 v3=102
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=1000000  v2=103 v3=103
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=1590000  v2=103 v3=103
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=2097152  v2=103 v3=103
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=2530000  v2=103 v3=103
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=3200000  v2=103 v3=103
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=1000000  v2=103 v3=103
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=1590000  v2=103 v3=103
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=2097152  v2=103 v3=103
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=2530000  v2=103 v3=103
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=3200000  v2=103 v3=103
+  union lda=4096 ldb=4096  m=512    n=512     b=8  k=1024     v2=102 v3=102
+  union lda=256 ldb=512    m=256    n=512     b=1  k=1000000  v2=103 v3=103
+  union lda=256 ldb=512    m=256    n=512     b=1  k=1590000  v2=103 v3=103
+  union lda=256 ldb=512    m=256    n=512     b=1  k=2097152  v2=103 v3=103
+  union lda=256 ldb=512    m=256    n=512     b=1  k=2530000  v2=103 v3=103
+  union lda=256 ldb=512    m=256    n=512     b=1  k=3200000  v2=103 v3=103
+  union lda=24 ldb=256     m=24     n=256     b=1  k=1000000  v2=103 v3=103
+  union lda=24 ldb=256     m=24     n=256     b=1  k=1590000  v2=103 v3=103
+  union lda=24 ldb=256     m=24     n=256     b=1  k=2097152  v2=103 v3=103
+  union lda=24 ldb=256     m=24     n=256     b=1  k=2530000  v2=103 v3=103
+  union lda=24 ldb=256     m=24     n=256     b=1  k=3200000  v2=103 v3=103
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=1000000  v2=103 v3=103
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=1590000  v2=103 v3=103
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=2097152  v2=103 v3=103
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=2530000  v2=103 v3=103
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=3200000  v2=103 v3=103
+  union lda=512 ldb=256    m=512    n=256     b=1  k=1000000  v2=103 v3=103
+  union lda=512 ldb=256    m=512    n=256     b=1  k=1590000  v2=103 v3=103
+  union lda=512 ldb=256    m=512    n=256     b=1  k=2097152  v2=103 v3=103
+  union lda=512 ldb=256    m=512    n=256     b=1  k=2530000  v2=103 v3=103
+  union lda=512 ldb=256    m=512    n=256     b=1  k=3200000  v2=103 v3=103
+
+== 3. generic NT sweep (m,n in small/medium/large, batch 1/2/3/4/8, k in 1..4M) ==
+  m=24     n=512     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=1024    b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=1024    b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=2048    b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=2048    b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=2048    b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=4096    b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=4096    b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=4096    b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=4096    b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=8192    b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=8192    b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=8192    b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=8192    b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=16384   b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=16384   b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=16384   b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=65536   b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=256     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=256     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=768     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=768     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=1024    b=3  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=1536    b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=1536    b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=1536    b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=2048    b=3  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=3072    b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=3072    b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=3072    b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=3072    b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=4096    b=3  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=8192    b=3  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=1024   n=256     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=1024   n=256     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=1024   n=256     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=1024   n=512     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=1024   n=512     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=2048   n=256     b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=2048   n=256     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=2048   n=256     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=2048   n=256     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=2048   n=512     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=2048   n=512     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=2048   n=512     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=4096   n=256     b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=4096   n=256     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=4096   n=256     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=4096   n=256     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=4096   n=512     b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=4096   n=512     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=4096   n=512     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=4096   n=512     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=8192   n=256     b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=8192   n=256     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=8192   n=256     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=8192   n=256     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=8192   n=512     b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=8192   n=512     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=8192   n=512     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=16384  n=256     b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=16384  n=256     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=16384  n=256     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=16384  n=512     b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=16384  n=512     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=65536  n=256     b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  -> 132055 sweep points, 726 differ, 66 distinct (m,n,b)
+
+== 4. random sweep: 200k (m,n,b,k), m,n log-uniform 1..2^21 ==
+  -> 0 random points differ
+
+== 4b. per-step exposure (groups.json calls_per_step, K = T) ==
+  G17 m=516   n=512   b=1 k=1024    calls/step=1   logged={'102': 48}  v2=sol102/544WG  v3=sol102/544WG
+  G19 m=512   n=1536  b=1 k=T       calls/step=3   logged={'102': 144}  v2=sol103/24WG  v3=sol103/24WG
+  G20 m=2048  n=512   b=1 k=T       calls/step=3   logged={'102': 144}  v2=sol103/32WG  v3=sol103/32WG
+  G23 m=512   n=512   b=8 k=1024    calls/step=1   logged={'102': 48}  v2=sol102/4096WG  v3=sol102/4096WG
+  G25 m=256   n=512   b=1 k=T       calls/step=3   logged={'103': 144}  v2=sol103/4WG  v3=sol103/4WG
+  G27 m=24    n=256   b=1 k=T       calls/step=1   logged={'102': 48}  v2=sol103/2WG  v3=sol103/2WG
+  G29 m=1024  n=256   b=1 k=T       calls/step=1   logged={'102': 48}  v2=sol103/8WG  v3=sol103/8WG
+  G31 m=512   n=256   b=1 k=T       calls/step=1   logged={'102': 48}  v2=sol103/4WG  v3=sol103/4WG
+  v2 launches/step by sol: {102: 2.0, 103: 12.0}
+  v3 launches/step by sol: {102: 2.0, 103: 12.0}
+  NB sol 103 = MT256x128x64 SK0, 676 VGPRs (A0 DW-corruption kernel, mi450_a0.md L923-924); sol 102 = MT32x16x32, 252 VGPRs
+
+== 5. informational: v2 with TENSILE_GRIDBASED_KDTREE=1 (must stay UNSET) ==
+  G20  (2048, 512, 1, 2097152)  v2=103 v3=103
+  G19  (512, 1536, 1, 2097152)  v2=103 v3=103
+  G29  (1024, 256, 1, 2097152)  v2=103 v3=103
+  G31  (512, 256, 1, 2097152)  v2=103 v3=103
+  G27  (24, 256, 1, 2097152)  v2=103 v3=103
+  G25  (256, 512, 1, 2097152)  v2=102 v3=103
+  ---- (516, 512, 1, 1024)  v2=103 v3=103
+  ---- (512, 512, 8, 1024)  v2=102 v3=102
+
+TOTAL differing points v2 vs v3 (sections 1-4): 726
+
+== C2. classification of the simulate.py sweep changes: 66 changed (m,n,b) lines, 0 not explained by a pinned flattened key: []
+
+== D. make_v3.verify on the installed catalog (complete changed-(m,n) list) ==
+
+== 1. M5 problems (m, n, batch=s, K=T//s; lda=m, ldb=n): v2 vs v3, T in [1000000, 1590000, 2097152, 2533005, 3200000] ==
+  G20 m=2048 n=512 calls/step=3 | batch-1: v2 [103]  v3 [103] | WG/batch: 102=2048 103=32
+    s=2    flat key (4096,512)      K=T/s   500000.. 1600000  v2=[102]  v3=[103]  WG(v3 sol)=64     OK
+    s=4    flat key (8192,512)      K=T/s   250000..  800000  v2=[102]  v3=[103]  WG(v3 sol)=128    OK
+    s=8    flat key (16384,512)     K=T/s   125000..  400000  v2=[102]  v3=[103]  WG(v3 sol)=256    OK
+    s=16   flat key (32768,512)     K=T/s    62500..  200000  v2=[102]  v3=[103]  WG(v3 sol)=512    OK
+  G19 m=512 n=1536 calls/step=3 | batch-1: v2 [103]  v3 [103] | WG/batch: 102=1536 103=24
+    s=2    flat key (512,3072)      K=T/s   500000.. 1600000  v2=[102]  v3=[103]  WG(v3 sol)=48     OK
+    s=4    flat key (512,6144)      K=T/s   250000..  800000  v2=[102]  v3=[103]  WG(v3 sol)=96     OK
+    s=8    flat key (512,12288)     K=T/s   125000..  400000  v2=[102]  v3=[103]  WG(v3 sol)=192    OK
+    s=10   flat key (512,15360)     K=T/s   100000..  320000  v2=[102]  v3=[103]  WG(v3 sol)=240    OK
+    s=16   flat key (512,24576)     K=T/s    62500..  200000  v2=[102]  v3=[103]  WG(v3 sol)=384    OK
+    s=20   flat key (512,30720)     K=T/s    50000..  160000  v2=[102]  v3=[103]  WG(v3 sol)=480    OK
+  G25 m=256 n=512 calls/step=3 | batch-1: v2 [103]  v3 [103] | WG/batch: 102=256 103=4
+    s=4    flat key (256,2048)      K=T/s   250000..  800000  v2=[103]  v3=[103]  WG(v3 sol)=16     OK
+    s=8    flat key (256,4096)      K=T/s   125000..  400000  v2=[103]  v3=[103]  WG(v3 sol)=32     OK
+    s=16   flat key (256,8192)      K=T/s    62500..  200000  v2=[103]  v3=[103]  WG(v3 sol)=64     OK
+    s=32   flat key (256,16384)     K=T/s    31250..  100000  v2=[103]  v3=[103]  WG(v3 sol)=128    OK
+    s=64   flat key (256,32768)     K=T/s    15625..   50000  v2=[103]  v3=[103]  WG(v3 sol)=256    OK
+    s=128  flat key (256,65536)     K=T/s     7812..   25000  v2=[103]  v3=[103]  WG(v3 sol)=512    OK
+  G29 m=1024 n=256 calls/step=1 | batch-1: v2 [103]  v3 [103] | WG/batch: 102=512 103=8
+    s=2    flat key (2048,256)      K=T/s   500000.. 1600000  v2=[102]  v3=[103]  WG(v3 sol)=16     OK
+    s=4    flat key (4096,256)      K=T/s   250000..  800000  v2=[102]  v3=[103]  WG(v3 sol)=32     OK
+    s=8    flat key (8192,256)      K=T/s   125000..  400000  v2=[102]  v3=[103]  WG(v3 sol)=64     OK
+    s=16   flat key (16384,256)     K=T/s    62500..  200000  v2=[102]  v3=[103]  WG(v3 sol)=128    OK
+    s=32   flat key (32768,256)     K=T/s    31250..  100000  v2=[102]  v3=[103]  WG(v3 sol)=256    OK
+    s=64   flat key (65536,256)     K=T/s    15625..   50000  v2=[102]  v3=[103]  WG(v3 sol)=512    OK
+  G31 m=512 n=256 calls/step=1 | batch-1: v2 [103]  v3 [103] | WG/batch: 102=256 103=4
+    s=4    flat key (2048,256)      K=T/s   250000..  800000  v2=[102]  v3=[103]  WG(v3 sol)=16     OK
+    s=8    flat key (4096,256)      K=T/s   125000..  400000  v2=[102]  v3=[103]  WG(v3 sol)=32     OK
+    s=16   flat key (8192,256)      K=T/s    62500..  200000  v2=[102]  v3=[103]  WG(v3 sol)=64     OK
+    s=32   flat key (16384,256)     K=T/s    31250..  100000  v2=[102]  v3=[103]  WG(v3 sol)=128    OK
+    s=64   flat key (32768,256)     K=T/s    15625..   50000  v2=[102]  v3=[103]  WG(v3 sol)=256    OK
+    s=128  flat key (65536,256)     K=T/s     7812..   25000  v2=[102]  v3=[103]  WG(v3 sol)=512    OK
+  G27 m=24 n=256 calls/step=1 | batch-1: v2 [103]  v3 [103] | WG/batch: 102=16 103=2
+    s=16   flat key (24,4096)       K=T/s    62500..  200000  v2=[102]  v3=[103]  WG(v3 sol)=32     OK
+    s=32   flat key (24,8192)       K=T/s    31250..  100000  v2=[102]  v3=[103]  WG(v3 sol)=64     OK
+    s=64   flat key (24,16384)      K=T/s    15625..   50000  v2=[102]  v3=[103]  WG(v3 sol)=128    OK
+    s=128  flat key (24,32768)      K=T/s     7812..   25000  v2=[102]  v3=[103]  WG(v3 sol)=256    OK
+    s=256  flat key (24,65536)      K=T/s     3906..   12500  v2=[102]  v3=[103]  WG(v3 sol)=512    OK
+
+== 1b. every s in 2..256 (also non-candidates), T=2,097,152: sol selected in v3 ==
+  G20: sol 102 for s in 251 values (3..256); sol 103 for s in [2, 4, 8, 16]
+  G19: sol 102 for s in 249 values (3..256); sol 103 for s in [2, 4, 8, 10, 16, 20]
+  G25: sol 103 for s in 255 values (2..256)
+  G29: sol 102 for s in 249 values (3..256); sol 103 for s in [2, 4, 8, 16, 32, 64]
+  G31: sol 102 for s in 248 values (3..256); sol 103 for s in [2, 4, 8, 16, 32, 64, 128]
+  G27: sol 102 for s in 250 values (2..255); sol 103 for s in [16, 32, 64, 128, 256]
+
+== 2. bf16 NT GEMMs of the workload union file, v2 vs v3 ==
+  m=516   n=512   b=1 k=1024     v2=102 v3=102
+  m=512   n=1536  b=1 k=2097152  v2=103 v3=103
+  m=2048  n=512   b=1 k=2097152  v2=103 v3=103
+  m=512   n=512   b=8 k=1024     v2=102 v3=102
+  m=256   n=512   b=1 k=2097152  v2=103 v3=103
+  m=24    n=256   b=1 k=2097152  v2=103 v3=103
+  m=1024  n=256   b=1 k=2097152  v2=103 v3=103
+  m=512   n=256   b=1 k=2097152  v2=103 v3=103
+
+== 3. exhaustive boundary grid (batch 1; batched problems reduce to their flattened key) ==
+  151704 points (63 m x 86 n x 28 K); 21 (m,n) changed, all pinned keys: YES
+    (24,4096) [(102, 103)]  [G27]
+    (24,8192) [(102, 103)]  [G27]
+    (24,16384) [(102, 103)]  [G27]
+    (24,32768) [(102, 103)]  [G27]
+    (24,65536) [(102, 103)]  [G27]
+    (512,3072) [(102, 103)]  [G19]
+    (512,6144) [(102, 103)]  [G19]
+    (512,12288) [(102, 103)]  [G19]
+    (512,15360) [(102, 103)]  [G19]
+    (512,24576) [(102, 103)]  [G19]
+    (512,30720) [(102, 103)]  [G19]
+    (2048,256) [(102, 103)]  [G29,G31]
+    (4096,256) [(102, 103)]  [G29,G31]
+    (4096,512) [(102, 103)]  [G20]
+    (8192,256) [(102, 103)]  [G29,G31]
+    (8192,512) [(102, 103)]  [G20]
+    (16384,256) [(102, 103)]  [G29,G31]
+    (16384,512) [(102, 103)]  [G20]
+    (32768,256) [(102, 103)]  [G29,G31]
+    (32768,512) [(102, 103)]  [G20]
+    (65536,256) [(102, 103)]  [G29,G31]
+
+== 4. random sweep 300k (m,n log-uniform 1..2^21, b in 1,2,3,4,8,16,32,64,128,256, K 1..2^22) ==
+  0 differ; all explained by a pinned (flattened) key: True
+
+== 5. general rule check: every (m, n, b) whose flattened key is a pin, sampled ==
+  85 pre-images (m,n,b) of pinned keys all select the pinned sol: True
+
+== E. per-step wgrad launches with the overlay s (T=2,097,152) ==
+  G20 s=8   -> sol 103, 256 WG/launch, 3 launches/step
+  G19 s=10  -> sol 103, 240 WG/launch, 3 launches/step
+  G25 s=64  -> sol 103, 256 WG/launch, 3 launches/step
+  G29 s=32  -> sol 103, 256 WG/launch, 1 launches/step
+  G31 s=64  -> sol 103, 256 WG/launch, 1 launches/step
+  G27 s=128 -> sol 103, 256 WG/launch, 1 launches/step
+  wgrad launches/step by sol: {103: 12} (T8/v2 today: {103: 12})
+
+== F. m5_splits.json vs this simulation ==
+  variant/sha/solmap/sol_by_s (s=1..256, 6 shapes) consistent: True; overlay s all pinned: True
+
+VARIANT s103: PASS
+
+####################################################################################################
+# variant s102: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s102  (v2 = /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2)
+####################################################################################################
+
+== A. install check ==
+  OK   symlink set (name -> target) == v2 (405 links)
+  OK   symlink set == v1 except the NT catalog (v1 symlinks it to the filtered stub copy: regular file)
+  OK   regular files = NT .dat.zlib + README.txt + m5_splits.json (['README.txt', 'hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib', 'm5_splits.json'])
+  OK   every symlink resolves
+  OK   installed NT .dat == build/s102 (sha256 b205ef0051814da5)
+  OK   differs from v2's NT .dat
+  OK   msgpack unpack->repack is byte-identical
+  OK   zlib round-trip
+  OK   solutions list identical to the input catalog
+  OK   row predicates/properties/distance unchanged (only the table differs)
+  OK   distance GridBased, table non-empty (121 entries)
+  OK   every key has 4 values
+  OK   keys are positive ints
+  OK   keys unique
+  OK   table sorted by key
+  OK   entry layout {key,index}
+  OK   no multi-batch last N group
+  OK   every referenced index [102, 103] is in solutions [102, 103]
+  OK   sol 102 kernel name in decompressed TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co: Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_L...
+  OK   sol 102 kernel + .kd descriptor are gfx1250 ELF symbols (llvm-readelf --syms)
+         sol 102 MT32x16x32 SK=0 GSU=1
+  OK   sol 103 kernel name in decompressed TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co: Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN...
+  OK   sol 103 kernel + .kd descriptor are gfx1250 ELF symbols (llvm-readelf --syms)
+         sol 103 MT256x128x64 SK=0 GSU=1
+
+== B. M5 batched problems (lda=m, ldb=n, K=T//s) ==
+  T values: [1000000, 1590000, 2097152, 2533005, 3200000, 1167793, 1230054, 2169930, 2417704, 2453800, 2502180, 3062975, 3079342]
+  G20 m=2048 n=512 (calls/step 3), mapped sol 102
+    s=1    key (2048,512)     v2=[103]   v3=[102]   WG/launch(v3)=2048   OK
+    s=2    key (4096,512)     v2=[102]   v3=[102]   WG/launch(v3)=4096   OK
+    s=4    key (8192,512)     v2=[102]   v3=[102]   WG/launch(v3)=8192   OK
+    s=8    key (16384,512)    v2=[102]   v3=[102]   WG/launch(v3)=16384  OK
+    s=16   key (32768,512)    v2=[102]   v3=[102]   WG/launch(v3)=32768  OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 255 s: [2, 3, 4, 5, 6, 7] ... [254, 255, 256]
+  G19 m=512 n=1536 (calls/step 3), mapped sol 102
+    s=1    key (512,1536)     v2=[103]   v3=[102]   WG/launch(v3)=1536   OK
+    s=2    key (512,3072)     v2=[102]   v3=[102]   WG/launch(v3)=3072   OK
+    s=4    key (512,6144)     v2=[102]   v3=[102]   WG/launch(v3)=6144   OK
+    s=8    key (512,12288)    v2=[102]   v3=[102]   WG/launch(v3)=12288  OK
+    s=10   key (512,15360)    v2=[102]   v3=[102]   WG/launch(v3)=15360  OK
+    s=16   key (512,24576)    v2=[102]   v3=[102]   WG/launch(v3)=24576  OK
+    s=20   key (512,30720)    v2=[102]   v3=[102]   WG/launch(v3)=30720  OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 255 s: [2, 3, 4, 5, 6, 7] ... [254, 255, 256]
+  G25 m=256 n=512 (calls/step 3), mapped sol 102
+    s=1    key (256,512)      v2=[103]   v3=[102]   WG/launch(v3)=256    OK
+    s=4    key (256,2048)     v2=[103]   v3=[102]   WG/launch(v3)=1024   OK
+    s=8    key (256,4096)     v2=[103]   v3=[102]   WG/launch(v3)=2048   OK
+    s=16   key (256,8192)     v2=[103]   v3=[102]   WG/launch(v3)=4096   OK
+    s=32   key (256,16384)    v2=[103]   v3=[102]   WG/launch(v3)=8192   OK
+    s=64   key (256,32768)    v2=[103]   v3=[102]   WG/launch(v3)=16384  OK
+    s=128  key (256,65536)    v2=[103]   v3=[102]   WG/launch(v3)=32768  OK
+    all s 2..256 @T=2097152: v2=103 v3=102 for 255 s: [2, 3, 4, 5, 6, 7] ... [254, 255, 256]
+  G29 m=1024 n=256 (calls/step 1), mapped sol 102
+    s=1    key (1024,256)     v2=[103]   v3=[102]   WG/launch(v3)=512    OK
+    s=2    key (2048,256)     v2=[102]   v3=[102]   WG/launch(v3)=1024   OK
+    s=4    key (4096,256)     v2=[102]   v3=[102]   WG/launch(v3)=2048   OK
+    s=8    key (8192,256)     v2=[102]   v3=[102]   WG/launch(v3)=4096   OK
+    s=16   key (16384,256)    v2=[102]   v3=[102]   WG/launch(v3)=8192   OK
+    s=32   key (32768,256)    v2=[102]   v3=[102]   WG/launch(v3)=16384  OK
+    s=64   key (65536,256)    v2=[102]   v3=[102]   WG/launch(v3)=32768  OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 255 s: [2, 3, 4, 5, 6, 7] ... [254, 255, 256]
+  G31 m=512 n=256 (calls/step 1), mapped sol 102
+    s=1    key (512,256)      v2=[103]   v3=[102]   WG/launch(v3)=256    OK
+    s=4    key (2048,256)     v2=[102]   v3=[102]   WG/launch(v3)=1024   OK
+    s=8    key (4096,256)     v2=[102]   v3=[102]   WG/launch(v3)=2048   OK
+    s=16   key (8192,256)     v2=[102]   v3=[102]   WG/launch(v3)=4096   OK
+    s=32   key (16384,256)    v2=[102]   v3=[102]   WG/launch(v3)=8192   OK
+    s=64   key (32768,256)    v2=[102]   v3=[102]   WG/launch(v3)=16384  OK
+    s=128  key (65536,256)    v2=[102]   v3=[102]   WG/launch(v3)=32768  OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 254 s: [3, 4, 5, 6, 7, 8] ... [254, 255, 256]
+    all s 2..256 @T=2097152: v2=103 v3=102 for 1 s: [2]
+  G27 m=24 n=256 (calls/step 1), mapped sol 102
+    s=1    key (24,256)       v2=[103]   v3=[102]   WG/launch(v3)=16     OK
+    s=16   key (24,4096)      v2=[102]   v3=[102]   WG/launch(v3)=256    OK
+    s=32   key (24,8192)      v2=[102]   v3=[102]   WG/launch(v3)=512    OK
+    s=64   key (24,16384)     v2=[102]   v3=[102]   WG/launch(v3)=1024   OK
+    s=128  key (24,32768)     v2=[102]   v3=[102]   WG/launch(v3)=2048   OK
+    s=256  key (24,65536)     v2=[102]   v3=[102]   WG/launch(v3)=4096   OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 255 s: [2, 3, 4, 5, 6, 7] ... [254, 255, 256]
+  -> 0 unexpected
+
+== C. simulate.py (T8 generic simulation), v2 vs v3/s102 ==
+v2: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (54 table entries)
+v3: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s102/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (121 table entries)
+solutions: {102: 'MT32x16x32', 103: 'MT256x128x64'}
+matcher: gridmatch.py (rocm-libraries 5911365c GridBased binary path, default env: no KDTREE, batch flattening on); size predicates modelled by nt_size_accepts
+
+== 1. training NT wgrads (transA=N transB=T, batch 1, K=T jagged) ==
+  G20                      m=2048   n=512     b=1  k=1000000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=1400000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=1590000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=1800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=2097152  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=2300000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=2530000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=2800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=3200000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=1176916  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=1697589  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=1728240  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=1977935  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=2064334  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=2078434  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=2371473  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=2381548  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=2468809  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=2496014  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=2647198  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G20                      m=2048   n=512     b=1  k=2683600  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=1000000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=1400000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=1590000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=1800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=2097152  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=2300000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=2530000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=2800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=3200000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=1176916  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=1697589  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=1728240  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=1977935  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=2064334  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=2078434  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=2371473  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=2381548  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=2468809  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=2496014  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=2647198  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G19                      m=512    n=1536    b=1  k=2683600  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1000000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1400000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1590000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2097152  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2300000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2530000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=3200000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1176916  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1697589  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1728240  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1977935  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2064334  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2078434  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2371473  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2381548  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2468809  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2496014  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2647198  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2683600  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1000000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1400000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1590000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2097152  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2300000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2530000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=3200000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1176916  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1697589  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1728240  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1977935  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2064334  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2078434  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2371473  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2381548  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2468809  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2496014  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2647198  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2683600  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1000000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1400000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1590000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2097152  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2300000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2530000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=3200000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1176916  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1697589  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1728240  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1977935  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2064334  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2078434  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2371473  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2381548  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2468809  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2496014  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2647198  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2683600  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1000000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1400000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1590000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2097152  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2300000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2530000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=3200000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1176916  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1697589  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1728240  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1977935  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2064334  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2078434  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2371473  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2381548  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2468809  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2496014  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2647198  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2683600  v2=103 v3=102  <-- CHANGED  !! expected 103
+  -> 126 (shape,K) points, 126 not on 103 in v3 (expected for s102)
+
+== 2. bf16 NT GEMMs in dlrmv4-BF16-allgemms-union.txt ==
+  union lda=516 ldb=512    m=516    n=512     b=1  k=1024     v2=102 v3=102
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=1000000  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=1590000  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=2097152  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=2530000  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=3200000  v2=103 v3=102  <-- CHANGED
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=1000000  v2=103 v3=102  <-- CHANGED
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=1590000  v2=103 v3=102  <-- CHANGED
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=2097152  v2=103 v3=102  <-- CHANGED
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=2530000  v2=103 v3=102  <-- CHANGED
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=3200000  v2=103 v3=102  <-- CHANGED
+  union lda=4096 ldb=4096  m=512    n=512     b=8  k=1024     v2=102 v3=102
+  union lda=256 ldb=512    m=256    n=512     b=1  k=1000000  v2=103 v3=102  <-- CHANGED
+  union lda=256 ldb=512    m=256    n=512     b=1  k=1590000  v2=103 v3=102  <-- CHANGED
+  union lda=256 ldb=512    m=256    n=512     b=1  k=2097152  v2=103 v3=102  <-- CHANGED
+  union lda=256 ldb=512    m=256    n=512     b=1  k=2530000  v2=103 v3=102  <-- CHANGED
+  union lda=256 ldb=512    m=256    n=512     b=1  k=3200000  v2=103 v3=102  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=1000000  v2=103 v3=102  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=1590000  v2=103 v3=102  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=2097152  v2=103 v3=102  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=2530000  v2=103 v3=102  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=3200000  v2=103 v3=102  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=1000000  v2=103 v3=102  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=1590000  v2=103 v3=102  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=2097152  v2=103 v3=102  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=2530000  v2=103 v3=102  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=3200000  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=1000000  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=1590000  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=2097152  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=2530000  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=3200000  v2=103 v3=102  <-- CHANGED
+
+== 3. generic NT sweep (m,n in small/medium/large, batch 1/2/3/4/8, k in 1..4M) ==
+  m=24     n=32      b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=24     n=64      b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=24     n=128     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=24     n=256     b=1  v2=103 v3=102  at k=ALL  (target)
+  m=256    n=256     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=256     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=256     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=256     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=257     b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=257     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=257     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=257     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=257     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=384     b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=384     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=384     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=384     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=384     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=511     b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=511     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=511     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=511     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=511     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=512     b=1  v2=103 v3=102  at k=ALL  (target)
+  m=256    n=512     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=512     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=512     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=512     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=513     b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=513     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=513     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=513     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=513     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=516     b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=516     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=516     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=516     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=516     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=768     b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=768     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=768     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=768     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=768     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1000    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1000    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1000    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1000    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1000    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1023    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1023    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1023    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1023    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1023    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1024    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1024    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1024    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1024    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1024    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1025    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1025    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1025    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1025    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1025    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1535    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1535    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1535    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1535    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1535    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1536    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1536    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1536    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1536    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1536    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1537    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1537    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1537    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1537    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1537    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2047    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2047    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2047    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2047    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2047    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2048    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2048    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2048    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2048    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2048    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2049    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2049    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2049    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2049    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2049    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=3072    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=3072    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=3072    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=3072    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=3072    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=4096    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=4096    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=4096    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=4096    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=4096    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=8192    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=8192    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=8192    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=8192    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=8192    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=16384   b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=16384   b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=16384   b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=16384   b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=16384   b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=65536   b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=65536   b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=65536   b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=65536   b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=65536   b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048575 b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048575 b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048575 b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048575 b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048575 b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048576 b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048576 b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048576 b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048576 b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048576 b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048577 b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048577 b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048577 b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048577 b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048577 b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2097152 b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2097152 b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2097152 b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2097152 b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2097152 b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=512    n=256     b=1  v2=103 v3=102  at k=ALL  (target)
+  m=512    n=256     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=512    n=512     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=512    n=768     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=512    n=1536    b=1  v2=103 v3=102  at k=ALL  (target)
+  m=1024   n=256     b=1  v2=103 v3=102  at k=ALL  (target)
+  m=1024   n=512     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=2048   n=512     b=1  v2=103 v3=102  at k=ALL  (target)
+  -> 132055 sweep points, 1606 differ, 146 distinct (m,n,b)
+
+== 4. random sweep: 200k (m,n,b,k), m,n log-uniform 1..2^21 ==
+  m=256    n=545     b=8 v2=103 v3=102
+  m=256    n=559     b=4 v2=103 v3=102
+  m=256    n=569     b=2 v2=103 v3=102
+  m=256    n=1394    b=1 v2=103 v3=102
+  m=256    n=4016    b=1 v2=103 v3=102
+  m=256    n=5005    b=1 v2=103 v3=102
+  m=256    n=5257    b=8 v2=103 v3=102
+  m=256    n=10988   b=2 v2=103 v3=102
+  m=256    n=13140   b=1 v2=103 v3=102
+  m=256    n=15378   b=1 v2=103 v3=102
+  m=256    n=15490   b=1 v2=103 v3=102
+  m=256    n=30149   b=1 v2=103 v3=102
+  m=256    n=40725   b=1 v2=103 v3=102
+  m=256    n=221876  b=1 v2=103 v3=102
+  m=256    n=223782  b=2 v2=103 v3=102
+  m=256    n=226314  b=8 v2=103 v3=102
+  m=256    n=253611  b=1 v2=103 v3=102
+  m=256    n=289217  b=1 v2=103 v3=102
+  m=256    n=301029  b=8 v2=103 v3=102
+  m=256    n=348565  b=1 v2=103 v3=102
+  m=256    n=359751  b=1 v2=103 v3=102
+  m=256    n=370127  b=1 v2=103 v3=102
+  m=256    n=393377  b=1 v2=103 v3=102
+  m=256    n=493408  b=8 v2=103 v3=102
+  m=256    n=556695  b=2 v2=103 v3=102
+  m=256    n=588141  b=4 v2=103 v3=102
+  m=256    n=793318  b=2 v2=103 v3=102
+  m=256    n=1550017 b=2 v2=103 v3=102
+  m=256    n=1661914 b=2 v2=103 v3=102
+  m=256    n=1812685 b=1 v2=103 v3=102
+  m=256    n=1812946 b=1 v2=103 v3=102
+  -> 31 random points differ
+
+== 4b. per-step exposure (groups.json calls_per_step, K = T) ==
+  G17 m=516   n=512   b=1 k=1024    calls/step=1   logged={'102': 48}  v2=sol102/544WG  v3=sol102/544WG
+  G19 m=512   n=1536  b=1 k=T       calls/step=3   logged={'102': 144}  v2=sol103/24WG  v3=sol102/1536WG
+  G20 m=2048  n=512   b=1 k=T       calls/step=3   logged={'102': 144}  v2=sol103/32WG  v3=sol102/2048WG
+  G23 m=512   n=512   b=8 k=1024    calls/step=1   logged={'102': 48}  v2=sol102/4096WG  v3=sol102/4096WG
+  G25 m=256   n=512   b=1 k=T       calls/step=3   logged={'103': 144}  v2=sol103/4WG  v3=sol102/256WG
+  G27 m=24    n=256   b=1 k=T       calls/step=1   logged={'102': 48}  v2=sol103/2WG  v3=sol102/16WG
+  G29 m=1024  n=256   b=1 k=T       calls/step=1   logged={'102': 48}  v2=sol103/8WG  v3=sol102/512WG
+  G31 m=512   n=256   b=1 k=T       calls/step=1   logged={'102': 48}  v2=sol103/4WG  v3=sol102/256WG
+  v2 launches/step by sol: {102: 2.0, 103: 12.0}
+  v3 launches/step by sol: {102: 14.0}
+  NB sol 103 = MT256x128x64 SK0, 676 VGPRs (A0 DW-corruption kernel, mi450_a0.md L923-924); sol 102 = MT32x16x32, 252 VGPRs
+
+== 5. informational: v2 with TENSILE_GRIDBASED_KDTREE=1 (must stay UNSET) ==
+  G20  (2048, 512, 1, 2097152)  v2=103 v3=102
+  G19  (512, 1536, 1, 2097152)  v2=103 v3=102
+  G29  (1024, 256, 1, 2097152)  v2=103 v3=102
+  G31  (512, 256, 1, 2097152)  v2=103 v3=102
+  G27  (24, 256, 1, 2097152)  v2=103 v3=102
+  G25  (256, 512, 1, 2097152)  v2=102 v3=102
+  ---- (516, 512, 1, 1024)  v2=103 v3=102
+  ---- (512, 512, 8, 1024)  v2=102 v3=102
+
+TOTAL differing points v2 vs v3 (sections 1-4): 1793
+
+== C2. classification of the simulate.py sweep changes: 177 changed (m,n,b) lines, 0 not explained by a pinned flattened key or a 103->102 strict-region change: []
+
+== D. make_v3.verify on the installed catalog (complete changed-(m,n) list) ==
+
+== 1. M5 problems (m, n, batch=s, K=T//s; lda=m, ldb=n): v2 vs v3, T in [1000000, 1590000, 2097152, 2533005, 3200000] ==
+  G20 m=2048 n=512 calls/step=3 | batch-1: v2 [103]  v3 [102] | WG/batch: 102=2048 103=32
+    s=2    flat key (4096,512)      K=T/s   500000.. 1600000  v2=[102]  v3=[102]  WG(v3 sol)=4096   OK
+    s=4    flat key (8192,512)      K=T/s   250000..  800000  v2=[102]  v3=[102]  WG(v3 sol)=8192   OK
+    s=8    flat key (16384,512)     K=T/s   125000..  400000  v2=[102]  v3=[102]  WG(v3 sol)=16384  OK
+    s=16   flat key (32768,512)     K=T/s    62500..  200000  v2=[102]  v3=[102]  WG(v3 sol)=32768  OK
+  G19 m=512 n=1536 calls/step=3 | batch-1: v2 [103]  v3 [102] | WG/batch: 102=1536 103=24
+    s=2    flat key (512,3072)      K=T/s   500000.. 1600000  v2=[102]  v3=[102]  WG(v3 sol)=3072   OK
+    s=4    flat key (512,6144)      K=T/s   250000..  800000  v2=[102]  v3=[102]  WG(v3 sol)=6144   OK
+    s=8    flat key (512,12288)     K=T/s   125000..  400000  v2=[102]  v3=[102]  WG(v3 sol)=12288  OK
+    s=10   flat key (512,15360)     K=T/s   100000..  320000  v2=[102]  v3=[102]  WG(v3 sol)=15360  OK
+    s=16   flat key (512,24576)     K=T/s    62500..  200000  v2=[102]  v3=[102]  WG(v3 sol)=24576  OK
+    s=20   flat key (512,30720)     K=T/s    50000..  160000  v2=[102]  v3=[102]  WG(v3 sol)=30720  OK
+  G25 m=256 n=512 calls/step=3 | batch-1: v2 [103]  v3 [102] | WG/batch: 102=256 103=4
+    s=4    flat key (256,2048)      K=T/s   250000..  800000  v2=[103]  v3=[102]  WG(v3 sol)=1024   OK
+    s=8    flat key (256,4096)      K=T/s   125000..  400000  v2=[103]  v3=[102]  WG(v3 sol)=2048   OK
+    s=16   flat key (256,8192)      K=T/s    62500..  200000  v2=[103]  v3=[102]  WG(v3 sol)=4096   OK
+    s=32   flat key (256,16384)     K=T/s    31250..  100000  v2=[103]  v3=[102]  WG(v3 sol)=8192   OK
+    s=64   flat key (256,32768)     K=T/s    15625..   50000  v2=[103]  v3=[102]  WG(v3 sol)=16384  OK
+    s=128  flat key (256,65536)     K=T/s     7812..   25000  v2=[103]  v3=[102]  WG(v3 sol)=32768  OK
+  G29 m=1024 n=256 calls/step=1 | batch-1: v2 [103]  v3 [102] | WG/batch: 102=512 103=8
+    s=2    flat key (2048,256)      K=T/s   500000.. 1600000  v2=[102]  v3=[102]  WG(v3 sol)=1024   OK
+    s=4    flat key (4096,256)      K=T/s   250000..  800000  v2=[102]  v3=[102]  WG(v3 sol)=2048   OK
+    s=8    flat key (8192,256)      K=T/s   125000..  400000  v2=[102]  v3=[102]  WG(v3 sol)=4096   OK
+    s=16   flat key (16384,256)     K=T/s    62500..  200000  v2=[102]  v3=[102]  WG(v3 sol)=8192   OK
+    s=32   flat key (32768,256)     K=T/s    31250..  100000  v2=[102]  v3=[102]  WG(v3 sol)=16384  OK
+    s=64   flat key (65536,256)     K=T/s    15625..   50000  v2=[102]  v3=[102]  WG(v3 sol)=32768  OK
+  G31 m=512 n=256 calls/step=1 | batch-1: v2 [103]  v3 [102] | WG/batch: 102=256 103=4
+    s=4    flat key (2048,256)      K=T/s   250000..  800000  v2=[102]  v3=[102]  WG(v3 sol)=1024   OK
+    s=8    flat key (4096,256)      K=T/s   125000..  400000  v2=[102]  v3=[102]  WG(v3 sol)=2048   OK
+    s=16   flat key (8192,256)      K=T/s    62500..  200000  v2=[102]  v3=[102]  WG(v3 sol)=4096   OK
+    s=32   flat key (16384,256)     K=T/s    31250..  100000  v2=[102]  v3=[102]  WG(v3 sol)=8192   OK
+    s=64   flat key (32768,256)     K=T/s    15625..   50000  v2=[102]  v3=[102]  WG(v3 sol)=16384  OK
+    s=128  flat key (65536,256)     K=T/s     7812..   25000  v2=[102]  v3=[102]  WG(v3 sol)=32768  OK
+  G27 m=24 n=256 calls/step=1 | batch-1: v2 [103]  v3 [102] | WG/batch: 102=16 103=2
+    s=16   flat key (24,4096)       K=T/s    62500..  200000  v2=[102]  v3=[102]  WG(v3 sol)=256    OK
+    s=32   flat key (24,8192)       K=T/s    31250..  100000  v2=[102]  v3=[102]  WG(v3 sol)=512    OK
+    s=64   flat key (24,16384)      K=T/s    15625..   50000  v2=[102]  v3=[102]  WG(v3 sol)=1024   OK
+    s=128  flat key (24,32768)      K=T/s     7812..   25000  v2=[102]  v3=[102]  WG(v3 sol)=2048   OK
+    s=256  flat key (24,65536)      K=T/s     3906..   12500  v2=[102]  v3=[102]  WG(v3 sol)=4096   OK
+
+== 1b. every s in 2..256 (also non-candidates), T=2,097,152: sol selected in v3 ==
+  G20: sol 102 for s in 255 values (2..256)
+  G19: sol 102 for s in 255 values (2..256)
+  G25: sol 102 for s in 255 values (2..256)
+  G29: sol 102 for s in 255 values (2..256)
+  G31: sol 102 for s in 255 values (2..256)
+  G27: sol 102 for s in 255 values (2..256)
+
+== 2. bf16 NT GEMMs of the workload union file, v2 vs v3 ==
+  m=516   n=512   b=1 k=1024     v2=102 v3=102
+  m=512   n=1536  b=1 k=2097152  v2=103 v3=102  changed (intended: batch-1 pin)
+  m=2048  n=512   b=1 k=2097152  v2=103 v3=102  changed (intended: batch-1 pin)
+  m=512   n=512   b=8 k=1024     v2=102 v3=102
+  m=256   n=512   b=1 k=2097152  v2=103 v3=102  changed (intended: batch-1 pin)
+  m=24    n=256   b=1 k=2097152  v2=103 v3=102  changed (intended: batch-1 pin)
+  m=1024  n=256   b=1 k=2097152  v2=103 v3=102  changed (intended: batch-1 pin)
+  m=512   n=256   b=1 k=2097152  v2=103 v3=102  changed (intended: batch-1 pin)
+
+== 3. exhaustive boundary grid (batch 1; batched problems reduce to their flattened key) ==
+  151704 points (63 m x 86 n x 28 K); 70 (m,n) changed, all pinned keys: YES
+    (24,256) [(103, 102)]  [G27]
+    (256,257) [(103, 102)]  [?]
+    (256,258) [(103, 102)]  [?]
+    (256,510) [(103, 102)]  [?]
+    (256,511) [(103, 102)]  [?]
+    (256,512) [(103, 102)]  [G25]
+    (256,513) [(103, 102)]  [?]
+    (256,1023) [(103, 102)]  [?]
+    (256,1024) [(103, 102)]  [?]
+    (256,1025) [(103, 102)]  [?]
+    (256,1534) [(103, 102)]  [?]
+    (256,1535) [(103, 102)]  [?]
+    (256,1536) [(103, 102)]  [?]
+    (256,1537) [(103, 102)]  [?]
+    (256,2046) [(103, 102)]  [?]
+    (256,2047) [(103, 102)]  [?]
+    (256,2048) [(103, 102)]  [G25]
+    (256,2049) [(103, 102)]  [?]
+    (256,3070) [(103, 102)]  [?]
+    (256,3071) [(103, 102)]  [?]
+    (256,3072) [(103, 102)]  [?]
+    (256,3073) [(103, 102)]  [?]
+    (256,4094) [(103, 102)]  [?]
+    (256,4095) [(103, 102)]  [?]
+    (256,4096) [(103, 102)]  [G25]
+    (256,4097) [(103, 102)]  [?]
+    (256,6142) [(103, 102)]  [?]
+    (256,6143) [(103, 102)]  [?]
+    (256,6144) [(103, 102)]  [?]
+    (256,6145) [(103, 102)]  [?]
+    (256,8190) [(103, 102)]  [?]
+    (256,8191) [(103, 102)]  [?]
+    (256,8192) [(103, 102)]  [G25]
+    (256,8193) [(103, 102)]  [?]
+    (256,12286) [(103, 102)]  [?]
+    (256,12287) [(103, 102)]  [?]
+    (256,12288) [(103, 102)]  [?]
+    (256,12289) [(103, 102)]  [?]
+    (256,15358) [(103, 102)]  [?]
+    (256,15359) [(103, 102)]  [?]
+    (256,15360) [(103, 102)]  [?]
+    (256,15361) [(103, 102)]  [?]
+    (256,16382) [(103, 102)]  [?]
+    (256,16383) [(103, 102)]  [?]
+    (256,16384) [(103, 102)]  [G25]
+    (256,16385) [(103, 102)]  [?]
+    (256,24574) [(103, 102)]  [?]
+    (256,24575) [(103, 102)]  [?]
+    (256,24576) [(103, 102)]  [?]
+    (256,24577) [(103, 102)]  [?]
+    (256,30718) [(103, 102)]  [?]
+    (256,30719) [(103, 102)]  [?]
+    (256,30720) [(103, 102)]  [?]
+    (256,30721) [(103, 102)]  [?]
+    (256,32766) [(103, 102)]  [?]
+    (256,32767) [(103, 102)]  [?]
+    (256,32768) [(103, 102)]  [G25]
+    (256,32769) [(103, 102)]  [?]
+    (256,65534) [(103, 102)]  [?]
+    (256,65535) [(103, 102)]  [?]
+    (256,65536) [(103, 102)]  [G25]
+    (256,65537) [(103, 102)]  [?]
+    (256,1048575) [(103, 102)]  [?]
+    (256,1048576) [(103, 102)]  [?]
+    (256,1048577) [(103, 102)]  [?]
+    (256,1048583) [(103, 102)]  [?]
+    (512,256) [(103, 102)]  [G31]
+    (512,1536) [(103, 102)]  [G19]
+    (1024,256) [(103, 102)]  [G29]
+    (2048,512) [(103, 102)]  [G20]
+
+== 4. random sweep 300k (m,n log-uniform 1..2^21, b in 1,2,3,4,8,16,32,64,128,256, K 1..2^22) ==
+  38 differ; all explained by a pinned (flattened) key: True
+    m=256 n=220508 b=64 k=23 v2=103 v3=102 pinned=True
+    m=256 n=20817 b=3 k=1425240 v2=103 v3=102 pinned=True
+    m=256 n=3275 b=16 k=715594 v2=103 v3=102 pinned=True
+    m=256 n=77891 b=32 k=14 v2=103 v3=102 pinned=True
+    m=256 n=174647 b=1 k=43 v2=103 v3=102 pinned=True
+    m=256 n=3560 b=4 k=5080 v2=103 v3=102 pinned=True
+    m=256 n=20343 b=1 k=228458 v2=103 v3=102 pinned=True
+    m=256 n=32811 b=4 k=500631 v2=103 v3=102 pinned=True
+    m=256 n=29342 b=128 k=1556403 v2=103 v3=102 pinned=True
+    m=256 n=54413 b=256 k=54395 v2=103 v3=102 pinned=True
+    m=256 n=1040 b=16 k=24846 v2=103 v3=102 pinned=True
+    m=256 n=264 b=1 k=29597 v2=103 v3=102 pinned=True
+    m=256 n=6261 b=4 k=20259 v2=103 v3=102 pinned=True
+    m=256 n=3465 b=1 k=7291 v2=103 v3=102 pinned=True
+    m=256 n=2212 b=256 k=4320 v2=103 v3=102 pinned=True
+    m=256 n=60882 b=1 k=21670 v2=103 v3=102 pinned=True
+    m=256 n=1551541 b=3 k=1840637 v2=103 v3=102 pinned=True
+    m=256 n=238629 b=128 k=61 v2=103 v3=102 pinned=True
+    m=256 n=640835 b=2 k=3829 v2=103 v3=102 pinned=True
+    m=256 n=45498 b=16 k=7315 v2=103 v3=102 pinned=True
+
+== 5. general rule check: every (m, n, b) whose flattened key is a pin, sampled ==
+  85 pre-images (m,n,b) of pinned keys all select the pinned sol: True
+
+== E. per-step wgrad launches with the overlay s (T=2,097,152) ==
+  G20 s=4   -> sol 102, 8192 WG/launch, 3 launches/step
+  G19 s=1   -> sol 102, 1536 WG/launch, 3 launches/step
+  G25 s=4   -> sol 102, 1024 WG/launch, 3 launches/step
+  G29 s=2   -> sol 102, 1024 WG/launch, 1 launches/step
+  G31 s=4   -> sol 102, 1024 WG/launch, 1 launches/step
+  G27 s=64  -> sol 102, 1024 WG/launch, 1 launches/step
+  wgrad launches/step by sol: {102: 12} (T8/v2 today: {103: 12})
+
+== F. m5_splits.json vs this simulation ==
+  variant/sha/solmap/sol_by_s (s=1..256, 6 shapes) consistent: True; overlay s all pinned: True
+
+VARIANT s102: PASS
+
+####################################################################################################
+# variant mix: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/mix  (v2 = /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2)
+####################################################################################################
+
+== A. install check ==
+  OK   symlink set (name -> target) == v2 (405 links)
+  OK   symlink set == v1 except the NT catalog (v1 symlinks it to the filtered stub copy: regular file)
+  OK   regular files = NT .dat.zlib + README.txt + m5_splits.json (['README.txt', 'hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib', 'm5_splits.json'])
+  OK   every symlink resolves
+  OK   installed NT .dat == build/mix (sha256 32e7a28c427e6b04)
+  OK   differs from v2's NT .dat
+  OK   msgpack unpack->repack is byte-identical
+  OK   zlib round-trip
+  OK   solutions list identical to the input catalog
+  OK   row predicates/properties/distance unchanged (only the table differs)
+  OK   distance GridBased, table non-empty (121 entries)
+  OK   every key has 4 values
+  OK   keys are positive ints
+  OK   keys unique
+  OK   table sorted by key
+  OK   entry layout {key,index}
+  OK   no multi-batch last N group
+  OK   every referenced index [102, 103] is in solutions [102, 103]
+  OK   sol 102 kernel name in decompressed TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co: Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT32x16x32_MI16x16x1_SN_L...
+  OK   sol 102 kernel + .kd descriptor are gfx1250 ELF symbols (llvm-readelf --syms)
+         sol 102 MT32x16x32 SK=0 GSU=1
+  OK   sol 103 kernel name in decompressed TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.co: Cijk_Ailk_Bjlk_BBS_BH_Bias_HA_S_SAV_UserArgs_MT256x128x64_MI16x16x1_SN...
+  OK   sol 103 kernel + .kd descriptor are gfx1250 ELF symbols (llvm-readelf --syms)
+         sol 103 MT256x128x64 SK=0 GSU=1
+
+== B. M5 batched problems (lda=m, ldb=n, K=T//s) ==
+  T values: [1000000, 1590000, 2097152, 2533005, 3200000, 1167793, 1230054, 2169930, 2417704, 2453800, 2502180, 3062975, 3079342]
+  G20 m=2048 n=512 (calls/step 3), mapped sol 103
+    s=1    key (2048,512)     v2=[103]   v3=[103]   WG/launch(v3)=32     OK
+    s=2    key (4096,512)     v2=[102]   v3=[103]   WG/launch(v3)=64     OK
+    s=4    key (8192,512)     v2=[102]   v3=[103]   WG/launch(v3)=128    OK
+    s=8    key (16384,512)    v2=[102]   v3=[103]   WG/launch(v3)=256    OK
+    s=16   key (32768,512)    v2=[102]   v3=[103]   WG/launch(v3)=512    OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 251 s: [3, 5, 6, 7, 9, 10] ... [254, 255, 256]
+    all s 2..256 @T=2097152: v2=102 v3=103 for 4 s: [2, 4, 8, 16]
+  G19 m=512 n=1536 (calls/step 3), mapped sol 103
+    s=1    key (512,1536)     v2=[103]   v3=[103]   WG/launch(v3)=24     OK
+    s=2    key (512,3072)     v2=[102]   v3=[103]   WG/launch(v3)=48     OK
+    s=4    key (512,6144)     v2=[102]   v3=[103]   WG/launch(v3)=96     OK
+    s=8    key (512,12288)    v2=[102]   v3=[103]   WG/launch(v3)=192    OK
+    s=10   key (512,15360)    v2=[102]   v3=[103]   WG/launch(v3)=240    OK
+    s=16   key (512,24576)    v2=[102]   v3=[103]   WG/launch(v3)=384    OK
+    s=20   key (512,30720)    v2=[102]   v3=[103]   WG/launch(v3)=480    OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 249 s: [3, 5, 6, 7, 9, 11] ... [254, 255, 256]
+    all s 2..256 @T=2097152: v2=102 v3=103 for 6 s: [2, 4, 8, 10, 16, 20]
+  G25 m=256 n=512 (calls/step 3), mapped sol 102
+    s=1    key (256,512)      v2=[103]   v3=[102]   WG/launch(v3)=256    OK
+    s=4    key (256,2048)     v2=[103]   v3=[102]   WG/launch(v3)=1024   OK
+    s=8    key (256,4096)     v2=[103]   v3=[102]   WG/launch(v3)=2048   OK
+    s=16   key (256,8192)     v2=[103]   v3=[102]   WG/launch(v3)=4096   OK
+    s=32   key (256,16384)    v2=[103]   v3=[102]   WG/launch(v3)=8192   OK
+    s=64   key (256,32768)    v2=[103]   v3=[102]   WG/launch(v3)=16384  OK
+    s=128  key (256,65536)    v2=[103]   v3=[102]   WG/launch(v3)=32768  OK
+    all s 2..256 @T=2097152: v2=103 v3=102 for 255 s: [2, 3, 4, 5, 6, 7] ... [254, 255, 256]
+  G29 m=1024 n=256 (calls/step 1), mapped sol 102
+    s=1    key (1024,256)     v2=[103]   v3=[102]   WG/launch(v3)=512    OK
+    s=2    key (2048,256)     v2=[102]   v3=[102]   WG/launch(v3)=1024   OK
+    s=4    key (4096,256)     v2=[102]   v3=[102]   WG/launch(v3)=2048   OK
+    s=8    key (8192,256)     v2=[102]   v3=[102]   WG/launch(v3)=4096   OK
+    s=16   key (16384,256)    v2=[102]   v3=[102]   WG/launch(v3)=8192   OK
+    s=32   key (32768,256)    v2=[102]   v3=[102]   WG/launch(v3)=16384  OK
+    s=64   key (65536,256)    v2=[102]   v3=[102]   WG/launch(v3)=32768  OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 255 s: [2, 3, 4, 5, 6, 7] ... [254, 255, 256]
+  G31 m=512 n=256 (calls/step 1), mapped sol 102
+    s=1    key (512,256)      v2=[103]   v3=[102]   WG/launch(v3)=256    OK
+    s=4    key (2048,256)     v2=[102]   v3=[102]   WG/launch(v3)=1024   OK
+    s=8    key (4096,256)     v2=[102]   v3=[102]   WG/launch(v3)=2048   OK
+    s=16   key (8192,256)     v2=[102]   v3=[102]   WG/launch(v3)=4096   OK
+    s=32   key (16384,256)    v2=[102]   v3=[102]   WG/launch(v3)=8192   OK
+    s=64   key (32768,256)    v2=[102]   v3=[102]   WG/launch(v3)=16384  OK
+    s=128  key (65536,256)    v2=[102]   v3=[102]   WG/launch(v3)=32768  OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 254 s: [3, 4, 5, 6, 7, 8] ... [254, 255, 256]
+    all s 2..256 @T=2097152: v2=103 v3=102 for 1 s: [2]
+  G27 m=24 n=256 (calls/step 1), mapped sol 102
+    s=1    key (24,256)       v2=[103]   v3=[102]   WG/launch(v3)=16     OK
+    s=16   key (24,4096)      v2=[102]   v3=[102]   WG/launch(v3)=256    OK
+    s=32   key (24,8192)      v2=[102]   v3=[102]   WG/launch(v3)=512    OK
+    s=64   key (24,16384)     v2=[102]   v3=[102]   WG/launch(v3)=1024   OK
+    s=128  key (24,32768)     v2=[102]   v3=[102]   WG/launch(v3)=2048   OK
+    s=256  key (24,65536)     v2=[102]   v3=[102]   WG/launch(v3)=4096   OK
+    all s 2..256 @T=2097152: v2=102 v3=102 for 255 s: [2, 3, 4, 5, 6, 7] ... [254, 255, 256]
+  -> 0 unexpected
+
+== C. simulate.py (T8 generic simulation), v2 vs v3/mix ==
+v2: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (54 table entries)
+v3: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/mix/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (121 table entries)
+solutions: {102: 'MT32x16x32', 103: 'MT256x128x64'}
+matcher: gridmatch.py (rocm-libraries 5911365c GridBased binary path, default env: no KDTREE, batch flattening on); size predicates modelled by nt_size_accepts
+
+== 1. training NT wgrads (transA=N transB=T, batch 1, K=T jagged) ==
+  G20                      m=2048   n=512     b=1  k=1000000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1400000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1590000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1800000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2097152  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2300000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2530000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2800000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=3200000  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1176916  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1697589  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1728240  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=1977935  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2064334  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2078434  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2371473  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2381548  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2468809  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2496014  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2647198  v2=103 v3=103
+  G20                      m=2048   n=512     b=1  k=2683600  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1000000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1400000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1590000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1800000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2097152  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2300000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2530000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2800000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=3200000  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1176916  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1697589  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1728240  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=1977935  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2064334  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2078434  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2371473  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2381548  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2468809  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2496014  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2647198  v2=103 v3=103
+  G19                      m=512    n=1536    b=1  k=2683600  v2=103 v3=103
+  G29                      m=1024   n=256     b=1  k=1000000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1400000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1590000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2097152  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2300000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2530000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=3200000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1176916  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1697589  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1728240  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=1977935  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2064334  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2078434  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2371473  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2381548  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2468809  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2496014  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2647198  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G29                      m=1024   n=256     b=1  k=2683600  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1000000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1400000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1590000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2097152  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2300000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2530000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=3200000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1176916  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1697589  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1728240  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=1977935  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2064334  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2078434  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2371473  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2381548  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2468809  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2496014  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2647198  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G31                      m=512    n=256     b=1  k=2683600  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1000000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1400000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1590000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2097152  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2300000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2530000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=3200000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1176916  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1697589  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1728240  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=1977935  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2064334  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2078434  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2371473  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2381548  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2468809  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2496014  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2647198  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G27                      m=24     n=256     b=1  k=2683600  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1000000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1400000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1590000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2097152  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2300000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2530000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2800000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=3200000  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1176916  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1697589  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1728240  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=1977935  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2064334  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2078434  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2371473  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2381548  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2468809  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2496014  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2647198  v2=103 v3=102  <-- CHANGED  !! expected 103
+  G25                      m=256    n=512     b=1  k=2683600  v2=103 v3=102  <-- CHANGED  !! expected 103
+  -> 126 (shape,K) points, 84 not on 103 in v3 (expected for s102)
+
+== 2. bf16 NT GEMMs in dlrmv4-BF16-allgemms-union.txt ==
+  union lda=516 ldb=512    m=516    n=512     b=1  k=1024     v2=102 v3=102
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=1000000  v2=103 v3=103
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=1590000  v2=103 v3=103
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=2097152  v2=103 v3=103
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=2530000  v2=103 v3=103
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=3200000  v2=103 v3=103
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=1000000  v2=103 v3=103
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=1590000  v2=103 v3=103
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=2097152  v2=103 v3=103
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=2530000  v2=103 v3=103
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=3200000  v2=103 v3=103
+  union lda=4096 ldb=4096  m=512    n=512     b=8  k=1024     v2=102 v3=102
+  union lda=256 ldb=512    m=256    n=512     b=1  k=1000000  v2=103 v3=102  <-- CHANGED
+  union lda=256 ldb=512    m=256    n=512     b=1  k=1590000  v2=103 v3=102  <-- CHANGED
+  union lda=256 ldb=512    m=256    n=512     b=1  k=2097152  v2=103 v3=102  <-- CHANGED
+  union lda=256 ldb=512    m=256    n=512     b=1  k=2530000  v2=103 v3=102  <-- CHANGED
+  union lda=256 ldb=512    m=256    n=512     b=1  k=3200000  v2=103 v3=102  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=1000000  v2=103 v3=102  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=1590000  v2=103 v3=102  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=2097152  v2=103 v3=102  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=2530000  v2=103 v3=102  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=3200000  v2=103 v3=102  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=1000000  v2=103 v3=102  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=1590000  v2=103 v3=102  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=2097152  v2=103 v3=102  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=2530000  v2=103 v3=102  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=3200000  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=1000000  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=1590000  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=2097152  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=2530000  v2=103 v3=102  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=3200000  v2=103 v3=102  <-- CHANGED
+
+== 3. generic NT sweep (m,n in small/medium/large, batch 1/2/3/4/8, k in 1..4M) ==
+  m=24     n=32      b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=24     n=64      b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=24     n=128     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=24     n=256     b=1  v2=103 v3=102  at k=ALL  (target)
+  m=256    n=256     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=256     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=256     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=256     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=257     b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=257     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=257     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=257     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=257     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=384     b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=384     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=384     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=384     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=384     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=511     b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=511     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=511     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=511     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=511     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=512     b=1  v2=103 v3=102  at k=ALL  (target)
+  m=256    n=512     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=512     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=512     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=512     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=513     b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=513     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=513     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=513     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=513     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=516     b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=516     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=516     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=516     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=516     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=768     b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=768     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=768     b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=768     b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=768     b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1000    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1000    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1000    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1000    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1000    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1023    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1023    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1023    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1023    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1023    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1024    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1024    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1024    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1024    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1024    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1025    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1025    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1025    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1025    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1025    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1535    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1535    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1535    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1535    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1535    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1536    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1536    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1536    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1536    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1536    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1537    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1537    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1537    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1537    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1537    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2047    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2047    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2047    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2047    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2047    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2048    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2048    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2048    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2048    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2048    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2049    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2049    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2049    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2049    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2049    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=3072    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=3072    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=3072    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=3072    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=3072    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=4096    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=4096    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=4096    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=4096    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=4096    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=8192    b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=8192    b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=8192    b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=8192    b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=8192    b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=16384   b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=16384   b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=16384   b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=16384   b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=16384   b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=65536   b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=65536   b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=65536   b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=65536   b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=65536   b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048575 b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048575 b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048575 b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048575 b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048575 b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048576 b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048576 b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048576 b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048576 b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048576 b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048577 b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048577 b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048577 b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048577 b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=1048577 b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2097152 b=1  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2097152 b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2097152 b=3  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2097152 b=4  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=256    n=2097152 b=8  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=512    n=256     b=1  v2=103 v3=102  at k=ALL  (target)
+  m=512    n=256     b=2  v2=103 v3=102  at k=ALL  (batch-flattened onto a target)
+  m=512    n=768     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=768     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=1024    b=3  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=1536    b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=1536    b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=1536    b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=2048    b=3  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=3072    b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=3072    b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=3072    b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=3072    b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=4096    b=3  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=8192    b=3  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=1024   n=256     b=1  v2=103 v3=102  at k=ALL  (target)
+  m=1024   n=512     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=1024   n=512     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=2048   n=512     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=2048   n=512     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=2048   n=512     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=4096   n=512     b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=4096   n=512     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=4096   n=512     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=4096   n=512     b=8  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=8192   n=512     b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=8192   n=512     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=8192   n=512     b=4  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=16384  n=512     b=1  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  m=16384  n=512     b=2  v2=102 v3=103  at k=ALL  (batch-flattened onto a target)
+  -> 132055 sweep points, 1848 differ, 168 distinct (m,n,b)
+
+== 4. random sweep: 200k (m,n,b,k), m,n log-uniform 1..2^21 ==
+  m=256    n=545     b=8 v2=103 v3=102
+  m=256    n=559     b=4 v2=103 v3=102
+  m=256    n=569     b=2 v2=103 v3=102
+  m=256    n=1394    b=1 v2=103 v3=102
+  m=256    n=4016    b=1 v2=103 v3=102
+  m=256    n=5005    b=1 v2=103 v3=102
+  m=256    n=5257    b=8 v2=103 v3=102
+  m=256    n=10988   b=2 v2=103 v3=102
+  m=256    n=13140   b=1 v2=103 v3=102
+  m=256    n=15378   b=1 v2=103 v3=102
+  m=256    n=15490   b=1 v2=103 v3=102
+  m=256    n=30149   b=1 v2=103 v3=102
+  m=256    n=40725   b=1 v2=103 v3=102
+  m=256    n=221876  b=1 v2=103 v3=102
+  m=256    n=223782  b=2 v2=103 v3=102
+  m=256    n=226314  b=8 v2=103 v3=102
+  m=256    n=253611  b=1 v2=103 v3=102
+  m=256    n=289217  b=1 v2=103 v3=102
+  m=256    n=301029  b=8 v2=103 v3=102
+  m=256    n=348565  b=1 v2=103 v3=102
+  m=256    n=359751  b=1 v2=103 v3=102
+  m=256    n=370127  b=1 v2=103 v3=102
+  m=256    n=393377  b=1 v2=103 v3=102
+  m=256    n=493408  b=8 v2=103 v3=102
+  m=256    n=556695  b=2 v2=103 v3=102
+  m=256    n=588141  b=4 v2=103 v3=102
+  m=256    n=793318  b=2 v2=103 v3=102
+  m=256    n=1550017 b=2 v2=103 v3=102
+  m=256    n=1661914 b=2 v2=103 v3=102
+  m=256    n=1812685 b=1 v2=103 v3=102
+  m=256    n=1812946 b=1 v2=103 v3=102
+  -> 31 random points differ
+
+== 4b. per-step exposure (groups.json calls_per_step, K = T) ==
+  G17 m=516   n=512   b=1 k=1024    calls/step=1   logged={'102': 48}  v2=sol102/544WG  v3=sol102/544WG
+  G19 m=512   n=1536  b=1 k=T       calls/step=3   logged={'102': 144}  v2=sol103/24WG  v3=sol103/24WG
+  G20 m=2048  n=512   b=1 k=T       calls/step=3   logged={'102': 144}  v2=sol103/32WG  v3=sol103/32WG
+  G23 m=512   n=512   b=8 k=1024    calls/step=1   logged={'102': 48}  v2=sol102/4096WG  v3=sol102/4096WG
+  G25 m=256   n=512   b=1 k=T       calls/step=3   logged={'103': 144}  v2=sol103/4WG  v3=sol102/256WG
+  G27 m=24    n=256   b=1 k=T       calls/step=1   logged={'102': 48}  v2=sol103/2WG  v3=sol102/16WG
+  G29 m=1024  n=256   b=1 k=T       calls/step=1   logged={'102': 48}  v2=sol103/8WG  v3=sol102/512WG
+  G31 m=512   n=256   b=1 k=T       calls/step=1   logged={'102': 48}  v2=sol103/4WG  v3=sol102/256WG
+  v2 launches/step by sol: {102: 2.0, 103: 12.0}
+  v3 launches/step by sol: {102: 8.0, 103: 6.0}
+  NB sol 103 = MT256x128x64 SK0, 676 VGPRs (A0 DW-corruption kernel, mi450_a0.md L923-924); sol 102 = MT32x16x32, 252 VGPRs
+
+== 5. informational: v2 with TENSILE_GRIDBASED_KDTREE=1 (must stay UNSET) ==
+  G20  (2048, 512, 1, 2097152)  v2=103 v3=103
+  G19  (512, 1536, 1, 2097152)  v2=103 v3=103
+  G29  (1024, 256, 1, 2097152)  v2=103 v3=102
+  G31  (512, 256, 1, 2097152)  v2=103 v3=102
+  G27  (24, 256, 1, 2097152)  v2=103 v3=102
+  G25  (256, 512, 1, 2097152)  v2=102 v3=102
+  ---- (516, 512, 1, 1024)  v2=103 v3=103
+  ---- (512, 512, 8, 1024)  v2=102 v3=102
+
+TOTAL differing points v2 vs v3 (sections 1-4): 1983
+
+== C2. classification of the simulate.py sweep changes: 199 changed (m,n,b) lines, 0 not explained by a pinned flattened key or a 103->102 strict-region change: []
+
+== D. make_v3.verify on the installed catalog (complete changed-(m,n) list) ==
+
+== 1. M5 problems (m, n, batch=s, K=T//s; lda=m, ldb=n): v2 vs v3, T in [1000000, 1590000, 2097152, 2533005, 3200000] ==
+  G20 m=2048 n=512 calls/step=3 | batch-1: v2 [103]  v3 [103] | WG/batch: 102=2048 103=32
+    s=2    flat key (4096,512)      K=T/s   500000.. 1600000  v2=[102]  v3=[103]  WG(v3 sol)=64     OK
+    s=4    flat key (8192,512)      K=T/s   250000..  800000  v2=[102]  v3=[103]  WG(v3 sol)=128    OK
+    s=8    flat key (16384,512)     K=T/s   125000..  400000  v2=[102]  v3=[103]  WG(v3 sol)=256    OK
+    s=16   flat key (32768,512)     K=T/s    62500..  200000  v2=[102]  v3=[103]  WG(v3 sol)=512    OK
+  G19 m=512 n=1536 calls/step=3 | batch-1: v2 [103]  v3 [103] | WG/batch: 102=1536 103=24
+    s=2    flat key (512,3072)      K=T/s   500000.. 1600000  v2=[102]  v3=[103]  WG(v3 sol)=48     OK
+    s=4    flat key (512,6144)      K=T/s   250000..  800000  v2=[102]  v3=[103]  WG(v3 sol)=96     OK
+    s=8    flat key (512,12288)     K=T/s   125000..  400000  v2=[102]  v3=[103]  WG(v3 sol)=192    OK
+    s=10   flat key (512,15360)     K=T/s   100000..  320000  v2=[102]  v3=[103]  WG(v3 sol)=240    OK
+    s=16   flat key (512,24576)     K=T/s    62500..  200000  v2=[102]  v3=[103]  WG(v3 sol)=384    OK
+    s=20   flat key (512,30720)     K=T/s    50000..  160000  v2=[102]  v3=[103]  WG(v3 sol)=480    OK
+  G25 m=256 n=512 calls/step=3 | batch-1: v2 [103]  v3 [102] | WG/batch: 102=256 103=4
+    s=4    flat key (256,2048)      K=T/s   250000..  800000  v2=[103]  v3=[102]  WG(v3 sol)=1024   OK
+    s=8    flat key (256,4096)      K=T/s   125000..  400000  v2=[103]  v3=[102]  WG(v3 sol)=2048   OK
+    s=16   flat key (256,8192)      K=T/s    62500..  200000  v2=[103]  v3=[102]  WG(v3 sol)=4096   OK
+    s=32   flat key (256,16384)     K=T/s    31250..  100000  v2=[103]  v3=[102]  WG(v3 sol)=8192   OK
+    s=64   flat key (256,32768)     K=T/s    15625..   50000  v2=[103]  v3=[102]  WG(v3 sol)=16384  OK
+    s=128  flat key (256,65536)     K=T/s     7812..   25000  v2=[103]  v3=[102]  WG(v3 sol)=32768  OK
+  G29 m=1024 n=256 calls/step=1 | batch-1: v2 [103]  v3 [102] | WG/batch: 102=512 103=8
+    s=2    flat key (2048,256)      K=T/s   500000.. 1600000  v2=[102]  v3=[102]  WG(v3 sol)=1024   OK
+    s=4    flat key (4096,256)      K=T/s   250000..  800000  v2=[102]  v3=[102]  WG(v3 sol)=2048   OK
+    s=8    flat key (8192,256)      K=T/s   125000..  400000  v2=[102]  v3=[102]  WG(v3 sol)=4096   OK
+    s=16   flat key (16384,256)     K=T/s    62500..  200000  v2=[102]  v3=[102]  WG(v3 sol)=8192   OK
+    s=32   flat key (32768,256)     K=T/s    31250..  100000  v2=[102]  v3=[102]  WG(v3 sol)=16384  OK
+    s=64   flat key (65536,256)     K=T/s    15625..   50000  v2=[102]  v3=[102]  WG(v3 sol)=32768  OK
+  G31 m=512 n=256 calls/step=1 | batch-1: v2 [103]  v3 [102] | WG/batch: 102=256 103=4
+    s=4    flat key (2048,256)      K=T/s   250000..  800000  v2=[102]  v3=[102]  WG(v3 sol)=1024   OK
+    s=8    flat key (4096,256)      K=T/s   125000..  400000  v2=[102]  v3=[102]  WG(v3 sol)=2048   OK
+    s=16   flat key (8192,256)      K=T/s    62500..  200000  v2=[102]  v3=[102]  WG(v3 sol)=4096   OK
+    s=32   flat key (16384,256)     K=T/s    31250..  100000  v2=[102]  v3=[102]  WG(v3 sol)=8192   OK
+    s=64   flat key (32768,256)     K=T/s    15625..   50000  v2=[102]  v3=[102]  WG(v3 sol)=16384  OK
+    s=128  flat key (65536,256)     K=T/s     7812..   25000  v2=[102]  v3=[102]  WG(v3 sol)=32768  OK
+  G27 m=24 n=256 calls/step=1 | batch-1: v2 [103]  v3 [102] | WG/batch: 102=16 103=2
+    s=16   flat key (24,4096)       K=T/s    62500..  200000  v2=[102]  v3=[102]  WG(v3 sol)=256    OK
+    s=32   flat key (24,8192)       K=T/s    31250..  100000  v2=[102]  v3=[102]  WG(v3 sol)=512    OK
+    s=64   flat key (24,16384)      K=T/s    15625..   50000  v2=[102]  v3=[102]  WG(v3 sol)=1024   OK
+    s=128  flat key (24,32768)      K=T/s     7812..   25000  v2=[102]  v3=[102]  WG(v3 sol)=2048   OK
+    s=256  flat key (24,65536)      K=T/s     3906..   12500  v2=[102]  v3=[102]  WG(v3 sol)=4096   OK
+
+== 1b. every s in 2..256 (also non-candidates), T=2,097,152: sol selected in v3 ==
+  G20: sol 102 for s in 251 values (3..256); sol 103 for s in [2, 4, 8, 16]
+  G19: sol 102 for s in 249 values (3..256); sol 103 for s in [2, 4, 8, 10, 16, 20]
+  G25: sol 102 for s in 255 values (2..256)
+  G29: sol 102 for s in 255 values (2..256)
+  G31: sol 102 for s in 255 values (2..256)
+  G27: sol 102 for s in 255 values (2..256)
+
+== 2. bf16 NT GEMMs of the workload union file, v2 vs v3 ==
+  m=516   n=512   b=1 k=1024     v2=102 v3=102
+  m=512   n=1536  b=1 k=2097152  v2=103 v3=103
+  m=2048  n=512   b=1 k=2097152  v2=103 v3=103
+  m=512   n=512   b=8 k=1024     v2=102 v3=102
+  m=256   n=512   b=1 k=2097152  v2=103 v3=102  changed (intended: batch-1 pin)
+  m=24    n=256   b=1 k=2097152  v2=103 v3=102  changed (intended: batch-1 pin)
+  m=1024  n=256   b=1 k=2097152  v2=103 v3=102  changed (intended: batch-1 pin)
+  m=512   n=256   b=1 k=2097152  v2=103 v3=102  changed (intended: batch-1 pin)
+
+== 3. exhaustive boundary grid (batch 1; batched problems reduce to their flattened key) ==
+  151704 points (63 m x 86 n x 28 K); 78 (m,n) changed, all pinned keys: YES
+    (24,256) [(103, 102)]  [G27]
+    (256,257) [(103, 102)]  [?]
+    (256,258) [(103, 102)]  [?]
+    (256,510) [(103, 102)]  [?]
+    (256,511) [(103, 102)]  [?]
+    (256,512) [(103, 102)]  [G25]
+    (256,513) [(103, 102)]  [?]
+    (256,1023) [(103, 102)]  [?]
+    (256,1024) [(103, 102)]  [?]
+    (256,1025) [(103, 102)]  [?]
+    (256,1534) [(103, 102)]  [?]
+    (256,1535) [(103, 102)]  [?]
+    (256,1536) [(103, 102)]  [?]
+    (256,1537) [(103, 102)]  [?]
+    (256,2046) [(103, 102)]  [?]
+    (256,2047) [(103, 102)]  [?]
+    (256,2048) [(103, 102)]  [G25]
+    (256,2049) [(103, 102)]  [?]
+    (256,3070) [(103, 102)]  [?]
+    (256,3071) [(103, 102)]  [?]
+    (256,3072) [(103, 102)]  [?]
+    (256,3073) [(103, 102)]  [?]
+    (256,4094) [(103, 102)]  [?]
+    (256,4095) [(103, 102)]  [?]
+    (256,4096) [(103, 102)]  [G25]
+    (256,4097) [(103, 102)]  [?]
+    (256,6142) [(103, 102)]  [?]
+    (256,6143) [(103, 102)]  [?]
+    (256,6144) [(103, 102)]  [?]
+    (256,6145) [(103, 102)]  [?]
+    (256,8190) [(103, 102)]  [?]
+    (256,8191) [(103, 102)]  [?]
+    (256,8192) [(103, 102)]  [G25]
+    (256,8193) [(103, 102)]  [?]
+    (256,12286) [(103, 102)]  [?]
+    (256,12287) [(103, 102)]  [?]
+    (256,12288) [(103, 102)]  [?]
+    (256,12289) [(103, 102)]  [?]
+    (256,15358) [(103, 102)]  [?]
+    (256,15359) [(103, 102)]  [?]
+    (256,15360) [(103, 102)]  [?]
+    (256,15361) [(103, 102)]  [?]
+    (256,16382) [(103, 102)]  [?]
+    (256,16383) [(103, 102)]  [?]
+    (256,16384) [(103, 102)]  [G25]
+    (256,16385) [(103, 102)]  [?]
+    (256,24574) [(103, 102)]  [?]
+    (256,24575) [(103, 102)]  [?]
+    (256,24576) [(103, 102)]  [?]
+    (256,24577) [(103, 102)]  [?]
+    (256,30718) [(103, 102)]  [?]
+    (256,30719) [(103, 102)]  [?]
+    (256,30720) [(103, 102)]  [?]
+    (256,30721) [(103, 102)]  [?]
+    (256,32766) [(103, 102)]  [?]
+    (256,32767) [(103, 102)]  [?]
+    (256,32768) [(103, 102)]  [G25]
+    (256,32769) [(103, 102)]  [?]
+    (256,65534) [(103, 102)]  [?]
+    (256,65535) [(103, 102)]  [?]
+    (256,65536) [(103, 102)]  [G25]
+    (256,65537) [(103, 102)]  [?]
+    (256,1048575) [(103, 102)]  [?]
+    (256,1048576) [(103, 102)]  [?]
+    (256,1048577) [(103, 102)]  [?]
+    (256,1048583) [(103, 102)]  [?]
+    (512,256) [(103, 102)]  [G31]
+    (512,3072) [(102, 103)]  [G19]
+    (512,6144) [(102, 103)]  [G19]
+    (512,12288) [(102, 103)]  [G19]
+    (512,15360) [(102, 103)]  [G19]
+    (512,24576) [(102, 103)]  [G19]
+    (512,30720) [(102, 103)]  [G19]
+    (1024,256) [(103, 102)]  [G29]
+    (4096,512) [(102, 103)]  [G20]
+    (8192,512) [(102, 103)]  [G20]
+    (16384,512) [(102, 103)]  [G20]
+    (32768,512) [(102, 103)]  [G20]
+
+== 4. random sweep 300k (m,n log-uniform 1..2^21, b in 1,2,3,4,8,16,32,64,128,256, K 1..2^22) ==
+  38 differ; all explained by a pinned (flattened) key: True
+    m=256 n=220508 b=64 k=23 v2=103 v3=102 pinned=True
+    m=256 n=20817 b=3 k=1425240 v2=103 v3=102 pinned=True
+    m=256 n=3275 b=16 k=715594 v2=103 v3=102 pinned=True
+    m=256 n=77891 b=32 k=14 v2=103 v3=102 pinned=True
+    m=256 n=174647 b=1 k=43 v2=103 v3=102 pinned=True
+    m=256 n=3560 b=4 k=5080 v2=103 v3=102 pinned=True
+    m=256 n=20343 b=1 k=228458 v2=103 v3=102 pinned=True
+    m=256 n=32811 b=4 k=500631 v2=103 v3=102 pinned=True
+    m=256 n=29342 b=128 k=1556403 v2=103 v3=102 pinned=True
+    m=256 n=54413 b=256 k=54395 v2=103 v3=102 pinned=True
+    m=256 n=1040 b=16 k=24846 v2=103 v3=102 pinned=True
+    m=256 n=264 b=1 k=29597 v2=103 v3=102 pinned=True
+    m=256 n=6261 b=4 k=20259 v2=103 v3=102 pinned=True
+    m=256 n=3465 b=1 k=7291 v2=103 v3=102 pinned=True
+    m=256 n=2212 b=256 k=4320 v2=103 v3=102 pinned=True
+    m=256 n=60882 b=1 k=21670 v2=103 v3=102 pinned=True
+    m=256 n=1551541 b=3 k=1840637 v2=103 v3=102 pinned=True
+    m=256 n=238629 b=128 k=61 v2=103 v3=102 pinned=True
+    m=256 n=640835 b=2 k=3829 v2=103 v3=102 pinned=True
+    m=256 n=45498 b=16 k=7315 v2=103 v3=102 pinned=True
+
+== 5. general rule check: every (m, n, b) whose flattened key is a pin, sampled ==
+  85 pre-images (m,n,b) of pinned keys all select the pinned sol: True
+
+== E. per-step wgrad launches with the overlay s (T=2,097,152) ==
+  G20 s=8   -> sol 103, 256 WG/launch, 3 launches/step
+  G19 s=10  -> sol 103, 240 WG/launch, 3 launches/step
+  G25 s=4   -> sol 102, 1024 WG/launch, 3 launches/step
+  G29 s=2   -> sol 102, 1024 WG/launch, 1 launches/step
+  G31 s=4   -> sol 102, 1024 WG/launch, 1 launches/step
+  G27 s=64  -> sol 102, 1024 WG/launch, 1 launches/step
+  wgrad launches/step by sol: {102: 6, 103: 6} (T8/v2 today: {103: 12})
+
+== F. m5_splits.json vs this simulation ==
+  variant/sha/solmap/sol_by_s (s=1..256, 6 shapes) consistent: True; overlay s all pinned: True
+
+VARIANT mix: PASS
+
+RESULT: PASS

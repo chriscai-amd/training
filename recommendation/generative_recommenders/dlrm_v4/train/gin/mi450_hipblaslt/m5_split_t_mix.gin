@@ -1,0 +1,20 @@
+# !! UNTESTED ON A GPU. Run only as a guarded <=200-step A/B after the M5 GPU check kit
+# !! (/home/chcai/m5_work/gpu_check: single GEMMs, then batched zero-DY) has passed.
+# Overlay for docs/mi450_perf_opt.md (parsed after yambda_5b.gin via $DLRM_GIN_OVERLAY).
+# Container paths: /armlibs = $LIBS of run_ab.sh (default /home/chcai/training_opt/arbor_libs, ro).
+# M5 (variant mix): M1 lib swap with the v3/mix NT catalog: G20 / G19 (batch 1 and split) on
+# sol 103 MT256x128x64 (676 VGPRs, the A0 DW-corruption kernel), G25 / G29 / G31 / G27 on sol 102
+# MT32x16x32 (252 VGPRs) at batch 1 and every s in 2..256. Halves the sol-103 launches per step
+# (12 -> 6). M2/M3/M4 OFF. Design: /home/chcai/m5_work/DESIGN.md, report M5_REPORT.md.
+apply_launch_env.hipblaslt_lib_dir = "/armlibs/rocm-10.2_nnonly_v3/mix"
+apply_hipblaslt_opts.tuning_override_file = None
+apply_hipblaslt_opts.tn_wgrad_hstu = False
+apply_hipblaslt_opts.tn_wgrad_preproc = False
+apply_hipblaslt_opts.splitt_wgrad_hstu = True
+apply_hipblaslt_opts.splitt_wgrad_preproc = True
+# s must be pinned by the lib dir (checked at import against its m5_splits.json):
+# G20 {2,4,8,16} G19 {2,4,8,10,16,20} on 103; G25 / G29 / G31 / G27 any s in 2..256 on 102.
+# Unmeasured starting points (s103 values for G20/G19, s102 values for the rest).
+apply_hipblaslt_opts.splitt_wgrad_splits = {"2048x512": 8, "512x1536": 10, "256x512": 4, "1024x256": 2, "512x256": 4, "24x256": 64}
+apply_hipblaslt_opts.splitt_min_rows = 4096
+apply_hipblaslt_opts.splitt_audit_every = 0

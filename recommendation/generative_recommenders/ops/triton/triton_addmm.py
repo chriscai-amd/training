@@ -17,9 +17,10 @@
 #!/usr/bin/env python3
 
 
+import logging
 import math
 import os
-from typing import List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 
 import torch
 
@@ -1640,14 +1641,268 @@ _HSTU_TN_WGRAD: bool = torch.version.hip is not None and _TN_MODE != "0"
 _TN_HSTU: bool = _HSTU_TN_WGRAD and _TN_MODE in ("1", "all", "hstu")
 _TN_PREPROC: bool = _HSTU_TN_WGRAD and _TN_MODE in ("1", "all", "preproc")
 
+# OPT M5 -- split-T NT weight gradients (/home/chcai/m5_work/DESIGN.md). The
+# tall-K NT wgrad dW = a.t() @ b (a [T, D], b [T, O]; hipBLASLt m=O n=D K=T,
+# batch 1) gets only m*n/tile workgroups. Split-T views a/b as s contiguous
+# T-chunks and issues ONE strided-batched bmm (hipBLASLt NT m=O n=D batch=s
+# K=T//s; GridBased lookup key flattened to (O*s, D) if O > D else (O, D*s) --
+# the rocm-10.2_nnonly_v3 catalogs pin those keys), then sums the bf16 partials
+# in fp32; the r = T - s*(T//s) < s tail rows go through one fp32 addmm_.
+# HSTU_SPLITT_WGRAD scopes (set from gin by _env_bootstrap.apply_hipblaslt_opts):
+# "1"/"all", "hstu" (G20, G19), "preproc" (G25, G27, G29, G31), "0" (default
+# when unset) = original calls everywhere. HSTU_SPLITT_WGRAD_SPLITS = "MxN:s,..."
+# keyed on the hipBLASLt m x n (= width of b x width of a); shapes not listed
+# keep the original call. Exclusive with HSTU_TN_WGRAD in the same scope.
+_SPLITT_MODE: str = os.environ.get("HSTU_SPLITT_WGRAD", "0").strip().lower()
+if _SPLITT_MODE not in ("0", "1", "all", "hstu", "preproc"):
+    raise ValueError(f"HSTU_SPLITT_WGRAD={_SPLITT_MODE!r}: expected 0, 1, all, hstu or preproc")
+_SPLITT_ON: bool = torch.version.hip is not None and _SPLITT_MODE != "0"
+_SPLITT_HSTU: bool = _SPLITT_ON and _SPLITT_MODE in ("1", "all", "hstu")
+_SPLITT_PREPROC: bool = _SPLITT_ON and _SPLITT_MODE in ("1", "all", "preproc")
+if (_SPLITT_HSTU and _TN_HSTU) or (_SPLITT_PREPROC and _TN_PREPROC):
+    raise ValueError(
+        f"HSTU_SPLITT_WGRAD={_SPLITT_MODE!r} and HSTU_TN_WGRAD={_TN_MODE!r} overlap in scope"
+    )
 
-def tn_wgrad_mm(a: torch.Tensor, b: torch.Tensor, enabled: bool = True) -> torch.Tensor:
+
+def _parse_splitt(spec: str) -> Dict[Tuple[int, int], int]:
+    """ "2048x512:8, 256x512:64" -> {(2048, 512): 8, (256, 512): 64}."""
+    out: Dict[Tuple[int, int], int] = {}
+    for item in filter(None, (x.strip() for x in spec.split(","))):
+        try:
+            shape, s = item.split(":")
+            m, n = (int(v) for v in shape.strip().lower().split("x"))
+            sv = int(s)
+        except ValueError:
+            raise ValueError(f"HSTU_SPLITT_WGRAD_SPLITS entry {item!r}: expected MxN:s") from None
+        if m < 1 or n < 1 or not 1 <= sv <= 4096 or (m, n) in out:
+            raise ValueError(f"HSTU_SPLITT_WGRAD_SPLITS entry {item!r}")
+        out[(m, n)] = sv
+    return out
+
+
+_SPLITT_SPLITS: Dict[Tuple[int, int], int] = (
+    _parse_splitt(os.environ.get("HSTU_SPLITT_WGRAD_SPLITS", "")) if _SPLITT_ON else {}
+)
+_SPLITT_MIN_ROWS: int = (
+    int(os.environ.get("HSTU_SPLITT_MIN_ROWS", "4096")) if _SPLITT_ON else 4096
+)
+_SPLITT_SEEN: set = set()
+_splitt_logger: logging.Logger = logging.getLogger(__name__)
+# Diagnostic (off = 0): every N-th split call per shape also issues the original
+# batch-1 call and logs the split-vs-original difference and the chunk
+# cancellation q = ||sqrt(sum_i P_i^2)|| / ||sum_i P_i|| (see _splitt_audit).
+_SPLITT_AUDIT_EVERY: int = (
+    int(os.environ.get("HSTU_SPLITT_AUDIT_EVERY", "0")) if _SPLITT_ON else 0
+)
+_SPLITT_AUDIT_COUNT: Dict[Tuple[int, int], int] = {}
+
+# Catalog manifest written by /home/chcai/m5_work/make_v3.py next to the lib dir's
+# libhipblaslt.so.1: {"variant", "shapes": {"MxN": {"sol", "sol_by_s": {"s": sol}}}}
+# (GridBased selection of every batched problem (m, n, batch=s) per the installed
+# NT catalog). A configured s whose batched problem would NOT select the shape's
+# mapped sol (e.g. an s the s103 catalog has no pin for -> guard row -> sol 102)
+# is refused at import unless HSTU_SPLITT_ALLOW_UNPINNED=1 (then only logged).
+_SPLITT_MANIFEST_NAME = "m5_splits.json"
+_SPLITT_EXPECT: Dict[Tuple[int, int, int], int] = {}
+
+
+def _splitt_catalog_check(
+    splits: Dict[Tuple[int, int], int], tensile_libpath: Optional[str]
+) -> Tuple[Optional[str], Dict[Tuple[int, int, int], int], List[str]]:
+    """-> (variant or None, {(m, n, s): expected sol}, problems). No manifest
+    (stock / v1 / v2 lib dir) -> variant None and one 'unverified' problem."""
+    import json
+
+    if not tensile_libpath:
+        return None, {}, ["HIPBLASLT_TENSILE_LIBPATH unset (stock hipBLASLt): batched selection unverified"]
+    libdir = os.path.dirname(os.path.dirname(os.path.dirname(tensile_libpath.rstrip("/"))))
+    path = os.path.join(libdir, _SPLITT_MANIFEST_NAME)
+    if not os.path.isfile(path):
+        return None, {}, [f"no {_SPLITT_MANIFEST_NAME} in {libdir}: batched selection unverified"]
+    with open(path) as f:
+        man = json.load(f)
+    expect: Dict[Tuple[int, int, int], int] = {}
+    problems: List[str] = []
+    for (m, n), s in sorted(splits.items()):
+        if s <= 1:
+            continue
+        ent = man.get("shapes", {}).get(f"{m}x{n}")
+        if ent is None:
+            problems.append(f"{m}x{n}: shape not in the {man.get('variant')} catalog manifest")
+            continue
+        got = ent.get("sol_by_s", {}).get(str(s))
+        if got != ent.get("sol"):
+            problems.append(
+                f"{m}x{n} s={s}: catalog {man.get('variant')} selects sol {got} "
+                f"(mapped sol {ent.get('sol')}; pinned s: "
+                f"{sorted(int(k) for k, v in ent.get('sol_by_s', {}).items() if v == ent.get('sol') and k != '1')})"
+            )
+        else:
+            expect[(m, n, s)] = int(got)
+    return man.get("variant"), expect, problems
+
+
+if _SPLITT_ON:
+    if not _SPLITT_SPLITS:
+        _splitt_logger.warning(
+            "M5: HSTU_SPLITT_WGRAD=%s but HSTU_SPLITT_WGRAD_SPLITS is empty: nothing is split",
+            _SPLITT_MODE,
+        )
+    else:
+        _variant, _SPLITT_EXPECT, _problems = _splitt_catalog_check(
+            _SPLITT_SPLITS, os.environ.get("HIPBLASLT_TENSILE_LIBPATH")
+        )
+        if _variant is not None and _problems:
+            msg = "M5 split factors not pinned in the hipBLASLt catalog: " + "; ".join(_problems)
+            if os.environ.get("HSTU_SPLITT_ALLOW_UNPINNED", "0") != "1":
+                raise ValueError(msg + " (HSTU_SPLITT_ALLOW_UNPINNED=1 to run anyway)")
+            _splitt_logger.warning(msg)
+        elif _problems:
+            _splitt_logger.warning("M5: %s", "; ".join(_problems))
+        else:
+            _splitt_logger.info("M5: split factors %s verified against catalog %s",
+                                sorted(_SPLITT_SPLITS.items()), _variant)
+
+
+def splitt_wgrad_plan(
+    a: torch.Tensor, b: torch.Tensor, splits: Dict[Tuple[int, int], int], min_rows: int
+) -> int:
+    """Split factor s >= 2 for dW = a.t() @ b, or 0 = not applicable (caller
+    issues the original call). Device-agnostic (the CUDA check is the caller's)."""
+    if a.dim() != 2 or b.dim() != 2 or a.shape[0] != b.shape[0] or a.device != b.device:
+        return 0
+    T, D = a.shape
+    O = b.shape[1]
+    s = splits.get((O, D), 1)
+    if (
+        s <= 1
+        or a.dtype != torch.bfloat16
+        or b.dtype != torch.bfloat16
+        or a.stride() != (D, 1)
+        or b.stride() != (O, 1)
+        or D % 8
+        or O % 8
+        or a.data_ptr() % 16
+        or b.data_ptr() % 16
+    ):
+        return 0
+    L = T // s
+    # Batch strides L*D / L*O are u32 kernel arguments; keep 2^31 as margin.
+    if L < max(1, min_rows) or L * max(D, O) >= (1 << 31):
+        return 0
+    return s
+
+
+def _splitt_parts(a: torch.Tensor, b: torch.Tensor, s: int) -> Tuple[torch.Tensor, torch.Tensor]:
+    """-> (bf16 partials [s, D, O], fp32 sum of partials + tail [D, O])."""
+    T, D = a.shape
+    O = b.shape[1]
+    L = T // s
+    main = s * L
+    # zero-copy [s, L, D] / [s, L, O] views; transpose(1, 2) is transB=T (no copy)
+    part = torch.bmm(a[:main].view(s, L, D).transpose(1, 2), b[:main].view(s, L, O))
+    acc = part.sum(dim=0, dtype=torch.float32)
+    if main + 1 == T:
+        # one tail row: fp32 outer product (elementwise addr kernel, no GEMM; a
+        # [D, 1] operand has an ambiguous NN/NT layout for the BLAS dispatch)
+        acc.addr_(a[main].float(), b[main].float())
+    elif main < T:
+        # tail 2 <= r < s rows: fp32 NT GEMM (SS catalog), never the bf16 NT kernels
+        acc.addmm_(a[main:].t().float(), b[main:].float())
+    return part, acc
+
+
+def splitt_wgrad_compute(a: torch.Tensor, b: torch.Tensor, s: int) -> torch.Tensor:
+    """a.t() @ b as s T-chunk partials: one strided-batched bmm (bf16 out) +
+    fp32 sum + fp32 tail. Returns [D, O] contiguous in a.dtype (the contract of
+    torch.mm(a.t(), b)). a [T, D], b [T, O] row-major, 1 <= s <= T.
+    Numerics: each partial is rounded to bf16 at ITS magnitude, so the extra
+    rms error is ~u * ||sqrt(sum_i P_i^2)||, not u * ||sum_i P_i||: ~1.41x
+    today's for chunk-independent data, much more where chunk partials cancel
+    (/home/chcai/m5_work/M5_REPORT.md section 6)."""
+    return _splitt_parts(a, b, s)[1].to(a.dtype)
+
+
+def _splitt_device_ok(t: torch.Tensor) -> bool:
+    return t.is_cuda
+
+
+def splitt_wgrad_mm(a: torch.Tensor, b: torch.Tensor) -> Optional[torch.Tensor]:
+    """M5: a.t() @ b via split-T with the configured per-shape s, or None when
+    not applicable (shape not configured, layout/dtype/size guard, not CUDA)."""
+    if not (_splitt_device_ok(a) and _splitt_device_ok(b)):
+        return None
+    s = splitt_wgrad_plan(a, b, _SPLITT_SPLITS, _SPLITT_MIN_ROWS)
+    O, D = b.shape[-1], a.shape[-1]
+    if s < 2:
+        if _SPLITT_SPLITS.get((O, D), 1) > 1 and (O, D, 0) not in _SPLITT_SEEN:
+            _SPLITT_SEEN.add((O, D, 0))
+            _splitt_logger.info(
+                "M5 split-T wgrad m x n = %d x %d configured but not applied "
+                "(shapes %s/%s, dtypes %s/%s, strides %s/%s, min_rows %d); original call",
+                O, D, tuple(a.shape), tuple(b.shape), a.dtype, b.dtype, a.stride(), b.stride(),
+                _SPLITT_MIN_ROWS,
+            )
+        return None
+    if (O, D, s) not in _SPLITT_SEEN:
+        _SPLITT_SEEN.add((O, D, s))
+        try:
+            blas = str(torch.backends.cuda.preferred_blas_library())
+        except Exception as e:  # pragma: no cover - informational only
+            blas = f"? ({e})"
+        _splitt_logger.info(
+            "M5 split-T wgrad m x n = %d x %d, s=%d (T=%d, tail=%d); hipBLASLt GridBased key "
+            "(%d,%d) -> expected sol %s; preferred BLAS %s",
+            O, D, s, a.shape[0], a.shape[0] - s * (a.shape[0] // s),
+            *((O * s, D) if O > D else (O, D * s)), _SPLITT_EXPECT.get((O, D, s), "unverified"), blas,
+        )
+    if _SPLITT_AUDIT_EVERY > 0:
+        n = _SPLITT_AUDIT_COUNT.get((O, D), 0)
+        _SPLITT_AUDIT_COUNT[(O, D)] = n + 1
+        if n % _SPLITT_AUDIT_EVERY == 0:
+            return _splitt_audit(a, b, s, n)
+    return splitt_wgrad_compute(a, b, s)
+
+
+def _splitt_audit(a: torch.Tensor, b: torch.Tensor, s: int, n: int) -> torch.Tensor:
+    """Split result plus a logged comparison with the original call (diagnostic;
+    syncs the device, extra batch-1 GEMM; the returned tensor is unchanged)."""
+    part, acc = _splitt_parts(a, b, s)
+    out = acc.to(a.dtype)
+    base = torch.mm(a.t(), b).float()
+    # q = ||sqrt(sum_i P_i^2)|| / ||sum_i P_i||: ~1 for chunk-independent data
+    # (split error ~1.41x the original call's), >> 1 where chunk partials cancel
+    # (split error ~sqrt(1 + q^2)x; CPU study /home/chcai/m5_work/proto/numerics_patterns.out).
+    q = (part.float().square().sum(dim=0).sqrt().norm() / acc.norm().clamp_min(1e-30)).item()
+    d = out.float() - base
+    _splitt_logger.info(
+        "M5 audit m x n = %d x %d s=%d call %d: |split-orig|/|orig| %.3e, chunk cancellation "
+        "q %.2f (predicted error ratio vs orig %.2f), max |split-orig| %.3e, finite %s",
+        b.shape[1], a.shape[1], s, n, (d.norm() / base.norm().clamp_min(1e-30)).item(),
+        q, (1.0 + q * q) ** 0.5, d.abs().max().item(), bool(torch.isfinite(out).all().item()),
+    )
+    return out
+
+
+# triton_addmm_bwd looks this up via globals() (its body must stay self-contained).
+_splitt_wgrad_mm_hstu = splitt_wgrad_mm if _SPLITT_HSTU else None
+
+
+def tn_wgrad_mm(
+    a: torch.Tensor, b: torch.Tensor, enabled: bool = True, splitt: bool = False
+) -> torch.Tensor:
     """a.t() @ b for token-major a [T, D], b [T, O] -> [D, O].
 
     TN path: aT = a.t().contiguous() [D, T], bT = b.t().contiguous() [O, T];
     torch.mm(aT, bT.t()) issues hipBLASLt transA=T transB=N, M=O, N=D, K=T,
     lda = ldb = T. Same fp32-accumulated math, different reduction order.
+    splitt (M5): try splitt_wgrad_mm first; falls through when not applicable.
     """
+    if splitt:
+        dw = splitt_wgrad_mm(a, b)
+        if dw is not None:
+            return dw
     if enabled and _HSTU_TN_WGRAD and a.is_cuda:
         return torch.mm(a.t().contiguous(), b.t().contiguous().t())
     return torch.mm(a.t(), b)
@@ -1681,7 +1936,7 @@ class _TNWgradLinearFn(torch.autograd.Function):
         if ctx.needs_input_grad[0]:
             dx = dy2.mm(w).view(x.shape)
         if ctx.needs_input_grad[1]:
-            dw = tn_wgrad_mm(dy2, x2)
+            dw = tn_wgrad_mm(dy2, x2, enabled=_TN_PREPROC, splitt=_SPLITT_PREPROC)
         if ctx.has_bias and ctx.needs_input_grad[2]:
             db = dy2.sum(0)
         return dx, dw, db
@@ -1698,7 +1953,16 @@ class TNWgradLinear(torch.nn.Linear):
     """
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        if not (_TN_PREPROC and x.is_cuda):
+        # M5 only reroutes layers whose wgrad shape (hipBLASLt m x n = in x out)
+        # is configured; every other TNWgradLinear stays exactly nn.Linear.
+        if not (
+            (_TN_PREPROC and x.is_cuda)
+            or (
+                _SPLITT_PREPROC
+                and _splitt_device_ok(x)
+                and _SPLITT_SPLITS.get((self.in_features, self.out_features), 1) > 1
+            )
+        ):
             return super().forward(x)
         if torch.is_autocast_enabled("cuda"):
             dtype = torch.get_autocast_dtype("cuda")
@@ -1720,11 +1984,15 @@ def triton_addmm_bwd(
         dy = torch.sum(dz, dim=0)
     else:
         dy = dz
-    if globals().get("_TN_HSTU", False) and dz.is_cuda:
-        # L5: TN wgrad (see tn_wgrad_mm); inline so the body stays self-contained.
-        dw = torch.mm(x.t().contiguous(), dz.t().contiguous().t())
-    else:
-        dw = torch.mm(x.t(), dz)
+    # M5 split-T (see splitt_wgrad_mm); None when off or not applicable.
+    _splitt = globals().get("_splitt_wgrad_mm_hstu")
+    dw = _splitt(x, dz) if _splitt is not None else None
+    if dw is None:
+        if globals().get("_TN_HSTU", False) and dz.is_cuda:
+            # L5: TN wgrad (see tn_wgrad_mm); inline so the body stays self-contained.
+            dw = torch.mm(x.t().contiguous(), dz.t().contiguous().t())
+        else:
+            dw = torch.mm(x.t(), dz)
     dx = torch.mm(dz, w.t())
 
     return dx, dw, dy

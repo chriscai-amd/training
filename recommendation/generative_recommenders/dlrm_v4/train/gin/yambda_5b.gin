@@ -40,6 +40,9 @@ apply_env_bootstrap.TRITON_FULL_AUTOTUNE = False
 #   M2 hipBLASLt tuning override file (exact shapes)
 #   M3 TN weight gradients for HSTU UVQK / output projections
 #   M4 TN weight gradients for the preprocessor MLP Linears
+#   M5 split-T NT weight gradients (strided-batched bmm over T-chunks + fp32
+#      reduce; needs lib dir rocm-10.2_nnonly_v3/s103 or /s102, overlay
+#      gin/mi450_hipblaslt/m5_split_t*.gin)
 # =============================================================================
 apply_launch_env.hipblaslt_lib_dir = None
 apply_hipblaslt_opts.tuning_override_file = None
@@ -49,6 +52,13 @@ apply_hipblaslt_opts.tuning_override_file = None
 # !! Keep them False until hipBLASLt fixes the tall-K fault (docs/mi450_perf_opt.md).
 apply_hipblaslt_opts.tn_wgrad_hstu = False
 apply_hipblaslt_opts.tn_wgrad_preproc = False
+# M5 (OFF): split-T for G20/G19 (hstu) and G25/G27/G29/G31 (preproc).
+# splits: {"MxN": s} on the hipBLASLt m x n of the NT wgrad; {} = no split.
+apply_hipblaslt_opts.splitt_wgrad_hstu = False
+apply_hipblaslt_opts.splitt_wgrad_preproc = False
+apply_hipblaslt_opts.splitt_wgrad_splits = {}
+apply_hipblaslt_opts.splitt_min_rows = 4096
+apply_hipblaslt_opts.splitt_audit_every = 0
 
 # =============================================================================
 # $SEED — global RNG seed for reproducible MODEL INITIALIZATION.

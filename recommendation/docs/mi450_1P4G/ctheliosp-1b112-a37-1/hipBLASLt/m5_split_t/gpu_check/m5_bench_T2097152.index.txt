@@ -1,0 +1,42 @@
+# m5_bench_T2097152.yaml: T=2097152, 40 lines (gemm_watch.sh line numbers). Do NOT set T= (lines with a literal 2097152 in a stride: [40])
+1   G20 s=1   bf16 NT M=2048 N=512 K=2097152 batch=1  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 103
+--  G20 s=2 skipped: batch stride 2147483648 >= 2^31 (M5 helper falls back to torch.mm)
+2   G20 s=4   bf16 NT M=2048 N=512 K=524288 batch=4  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 103
+3   G20 s=8   bf16 NT M=2048 N=512 K=262144 batch=8  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 103
+4   G20 s=16  bf16 NT M=2048 N=512 K=131072 batch=16  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 103
+5   G19 s=1   bf16 NT M=512 N=1536 K=2097152 batch=1  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 103
+6   G19 s=2   bf16 NT M=512 N=1536 K=1048576 batch=2  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 103
+7   G19 s=4   bf16 NT M=512 N=1536 K=524288 batch=4  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 103
+8   G19 s=8   bf16 NT M=512 N=1536 K=262144 batch=8  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 103
+9   G19 s=10  bf16 NT M=512 N=1536 K=209715 batch=10  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 103
+10  G19 s=10  fp32 tail M=512 N=1536 K=2 beta=1  expect: SS NT catalog (sol 2821 MT32x32x16)
+11  G19 s=16  bf16 NT M=512 N=1536 K=131072 batch=16  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 103
+12  G19 s=20  bf16 NT M=512 N=1536 K=104857 batch=20  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 103
+13  G19 s=20  fp32 tail M=512 N=1536 K=12 beta=1  expect: SS NT catalog (sol 2821 MT32x32x16)
+14  G25 s=1   bf16 NT M=256 N=512 K=2097152 batch=1  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+15  G25 s=4   bf16 NT M=256 N=512 K=524288 batch=4  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+16  G25 s=8   bf16 NT M=256 N=512 K=262144 batch=8  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+17  G25 s=16  bf16 NT M=256 N=512 K=131072 batch=16  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+18  G25 s=32  bf16 NT M=256 N=512 K=65536 batch=32  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+19  G25 s=64  bf16 NT M=256 N=512 K=32768 batch=64  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+20  G25 s=128 bf16 NT M=256 N=512 K=16384 batch=128  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+21  G29 s=1   bf16 NT M=1024 N=256 K=2097152 batch=1  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+22  G29 s=2   bf16 NT M=1024 N=256 K=1048576 batch=2  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+23  G29 s=4   bf16 NT M=1024 N=256 K=524288 batch=4  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+24  G29 s=8   bf16 NT M=1024 N=256 K=262144 batch=8  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+25  G29 s=16  bf16 NT M=1024 N=256 K=131072 batch=16  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+26  G29 s=32  bf16 NT M=1024 N=256 K=65536 batch=32  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+27  G29 s=64  bf16 NT M=1024 N=256 K=32768 batch=64  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+28  G31 s=1   bf16 NT M=512 N=256 K=2097152 batch=1  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+29  G31 s=4   bf16 NT M=512 N=256 K=524288 batch=4  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+30  G31 s=8   bf16 NT M=512 N=256 K=262144 batch=8  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+31  G31 s=16  bf16 NT M=512 N=256 K=131072 batch=16  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+32  G31 s=32  bf16 NT M=512 N=256 K=65536 batch=32  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+33  G31 s=64  bf16 NT M=512 N=256 K=32768 batch=64  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+34  G31 s=128 bf16 NT M=512 N=256 K=16384 batch=128  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+35  G27 s=1   bf16 NT M=24 N=256 K=2097152 batch=1  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+36  G27 s=16  bf16 NT M=24 N=256 K=131072 batch=16  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+37  G27 s=32  bf16 NT M=24 N=256 K=65536 batch=32  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+38  G27 s=64  bf16 NT M=24 N=256 K=32768 batch=64  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+39  G27 s=128 bf16 NT M=24 N=256 K=16384 batch=128  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102
+40  G27 s=256 bf16 NT M=24 N=256 K=8192 batch=256  expect: v3/s103 MT256x128x64 (sol 103), v3/s102 MT32x16x32 (sol 102), v3/mix sol 102

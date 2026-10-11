@@ -12,7 +12,8 @@ bindings into `os.environ`, then does the heavy imports.
 
 import logging
 import os
-from typing import Optional
+import re
+from typing import Dict, Optional
 
 import gin
 
@@ -87,6 +88,11 @@ def apply_hipblaslt_opts(
     tuning_override_file: Optional[str] = None,
     tn_wgrad_hstu: bool = False,
     tn_wgrad_preproc: bool = False,
+    splitt_wgrad_hstu: bool = False,
+    splitt_wgrad_preproc: bool = False,
+    splitt_wgrad_splits: Optional[Dict[str, int]] = None,
+    splitt_min_rows: int = 4096,
+    splitt_audit_every: int = 0,
 ) -> None:
     """Per-rank, before the heavy imports (ops/triton/triton_addmm.py reads
     HSTU_TN_WGRAD at import; hipBLASLt reads the override file at handle init).
@@ -96,12 +102,47 @@ def apply_hipblaslt_opts(
     tn_wgrad_hstu        -- OPT M3: HSTU UVQK / output-projection weight
         gradients issued TN on feature-major copies (G20, G19).
     tn_wgrad_preproc     -- OPT M4: preprocessor MLP Linear weight gradients
-        issued TN (G25, G27, G29, G31)."""
+        issued TN (G25, G27, G29, G31).
+    splitt_wgrad_hstu    -- OPT M5: split-T NT weight gradients (one strided-
+        batched bmm over s T-chunks + fp32 reduce) for G20, G19. Needs the
+        lib dir rocm-10.2_nnonly_v3/s103 or /s102 (M1 swap) so the batched
+        problems select a known kernel. Exclusive with tn_wgrad_hstu.
+    splitt_wgrad_preproc -- OPT M5: same for G25, G27, G29, G31. Exclusive
+        with tn_wgrad_preproc.
+    splitt_wgrad_splits  -- OPT M5: {"MxN": s} keyed on the hipBLASLt m x n
+        of the NT wgrad (e.g. "2048x512" = G20); unlisted shapes keep s = 1
+        (original call).
+    splitt_min_rows      -- OPT M5: skip the split when T // s < this.
+    splitt_audit_every   -- OPT M5 diagnostic: every N-th split call per shape
+        also runs the original call and logs the difference and the chunk
+        cancellation factor (extra GEMM + device sync; 0 = off, keep 0 for
+        timed runs). The configured s are checked at import against the lib
+        dir's m5_splits.json (an s the catalog does not pin raises)."""
     if tuning_override_file:
         _set_env("HIPBLASLT_TUNING_OVERRIDE_FILE", tuning_override_file)
     mode = {(False, False): "0", (True, False): "hstu",
             (False, True): "preproc", (True, True): "all"}[(bool(tn_wgrad_hstu), bool(tn_wgrad_preproc))]
     _set_env("HSTU_TN_WGRAD", mode)
+    for scope, tn, st in (("hstu", tn_wgrad_hstu, splitt_wgrad_hstu),
+                          ("preproc", tn_wgrad_preproc, splitt_wgrad_preproc)):
+        if tn and st:
+            raise ValueError(
+                f"apply_hipblaslt_opts: tn_wgrad_{scope} and splitt_wgrad_{scope} are exclusive")
+    smode = {(False, False): "0", (True, False): "hstu", (False, True): "preproc",
+             (True, True): "all"}[(bool(splitt_wgrad_hstu), bool(splitt_wgrad_preproc))]
+    _set_env("HSTU_SPLITT_WGRAD", smode)
+    if smode != "0":
+        sp = dict(splitt_wgrad_splits or {})
+        for k, v in sp.items():
+            if not re.fullmatch(r"[1-9][0-9]*x[1-9][0-9]*", str(k)) or not 1 <= int(v) <= 4096:
+                raise ValueError(f"apply_hipblaslt_opts.splitt_wgrad_splits: bad entry {k!r}: {v!r}")
+        if int(splitt_min_rows) < 1:
+            raise ValueError(f"apply_hipblaslt_opts.splitt_min_rows={splitt_min_rows!r}")
+        _set_env("HSTU_SPLITT_WGRAD_SPLITS", ",".join(f"{k}:{int(v)}" for k, v in sorted(sp.items())))
+        _set_env("HSTU_SPLITT_MIN_ROWS", str(int(splitt_min_rows)))
+        if int(splitt_audit_every) < 0:
+            raise ValueError(f"apply_hipblaslt_opts.splitt_audit_every={splitt_audit_every!r}")
+        _set_env("HSTU_SPLITT_AUDIT_EVERY", str(int(splitt_audit_every)))
 
 
 def parse_gin(gin_file: str, skip_unknown: bool = False) -> None:

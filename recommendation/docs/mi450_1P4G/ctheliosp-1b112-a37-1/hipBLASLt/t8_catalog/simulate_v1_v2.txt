@@ -1,0 +1,210 @@
+v1: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v1/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (35 table entries)
+v2: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (54 table entries)
+solutions: {102: 'MT32x16x32', 103: 'MT256x128x64'}
+matcher: gridmatch.py (rocm-libraries 5911365c GridBased binary path, default env: no KDTREE, batch flattening on); size predicates modelled by nt_size_accepts
+
+== 1. training NT wgrads (transA=N transB=T, batch 1, K=T jagged) ==
+  G20                      m=2048   n=512     b=1  k=1000000  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=1400000  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=1590000  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=1800000  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=2097152  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=2300000  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=2530000  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=2800000  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=3200000  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=1176916  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=1697589  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=1728240  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=1977935  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=2064334  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=2078434  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=2371473  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=2381548  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=2468809  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=2496014  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=2647198  v1=102 v2=103  <-- CHANGED
+  G20                      m=2048   n=512     b=1  k=2683600  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=1000000  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=1400000  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=1590000  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=1800000  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=2097152  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=2300000  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=2530000  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=2800000  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=3200000  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=1176916  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=1697589  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=1728240  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=1977935  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=2064334  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=2078434  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=2371473  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=2381548  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=2468809  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=2496014  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=2647198  v1=102 v2=103  <-- CHANGED
+  G19                      m=512    n=1536    b=1  k=2683600  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=1000000  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=1400000  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=1590000  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=1800000  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=2097152  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=2300000  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=2530000  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=2800000  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=3200000  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=1176916  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=1697589  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=1728240  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=1977935  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=2064334  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=2078434  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=2371473  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=2381548  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=2468809  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=2496014  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=2647198  v1=102 v2=103  <-- CHANGED
+  G29                      m=1024   n=256     b=1  k=2683600  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=1000000  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=1400000  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=1590000  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=1800000  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=2097152  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=2300000  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=2530000  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=2800000  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=3200000  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=1176916  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=1697589  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=1728240  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=1977935  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=2064334  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=2078434  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=2371473  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=2381548  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=2468809  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=2496014  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=2647198  v1=102 v2=103  <-- CHANGED
+  G31                      m=512    n=256     b=1  k=2683600  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=1000000  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=1400000  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=1590000  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=1800000  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=2097152  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=2300000  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=2530000  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=2800000  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=3200000  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=1176916  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=1697589  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=1728240  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=1977935  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=2064334  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=2078434  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=2371473  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=2381548  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=2468809  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=2496014  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=2647198  v1=102 v2=103  <-- CHANGED
+  G27                      m=24     n=256     b=1  k=2683600  v1=102 v2=103  <-- CHANGED
+  G25                      m=256    n=512     b=1  k=1000000  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=1400000  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=1590000  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=1800000  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=2097152  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=2300000  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=2530000  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=2800000  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=3200000  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=1176916  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=1697589  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=1728240  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=1977935  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=2064334  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=2078434  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=2371473  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=2381548  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=2468809  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=2496014  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=2647198  v1=103 v2=103
+  G25                      m=256    n=512     b=1  k=2683600  v1=103 v2=103
+  -> 126 (shape,K) points, 0 not on 103 in v2
+
+== 2. bf16 NT GEMMs in dlrmv4-BF16-allgemms-union.txt ==
+  union lda=516 ldb=512    m=516    n=512     b=1  k=1024     v1=102 v2=102
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=1000000  v1=102 v2=103  <-- CHANGED
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=1590000  v1=102 v2=103  <-- CHANGED
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=2097152  v1=102 v2=103  <-- CHANGED
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=2530000  v1=102 v2=103  <-- CHANGED
+  union lda=512 ldb=1536   m=512    n=1536    b=1  k=3200000  v1=102 v2=103  <-- CHANGED
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=1000000  v1=102 v2=103  <-- CHANGED
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=1590000  v1=102 v2=103  <-- CHANGED
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=2097152  v1=102 v2=103  <-- CHANGED
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=2530000  v1=102 v2=103  <-- CHANGED
+  union lda=2048 ldb=512   m=2048   n=512     b=1  k=3200000  v1=102 v2=103  <-- CHANGED
+  union lda=4096 ldb=4096  m=512    n=512     b=8  k=1024     v1=102 v2=102
+  union lda=256 ldb=512    m=256    n=512     b=1  k=1000000  v1=103 v2=103
+  union lda=256 ldb=512    m=256    n=512     b=1  k=1590000  v1=103 v2=103
+  union lda=256 ldb=512    m=256    n=512     b=1  k=2097152  v1=103 v2=103
+  union lda=256 ldb=512    m=256    n=512     b=1  k=2530000  v1=103 v2=103
+  union lda=256 ldb=512    m=256    n=512     b=1  k=3200000  v1=103 v2=103
+  union lda=24 ldb=256     m=24     n=256     b=1  k=1000000  v1=102 v2=103  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=1590000  v1=102 v2=103  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=2097152  v1=102 v2=103  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=2530000  v1=102 v2=103  <-- CHANGED
+  union lda=24 ldb=256     m=24     n=256     b=1  k=3200000  v1=102 v2=103  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=1000000  v1=102 v2=103  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=1590000  v1=102 v2=103  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=2097152  v1=102 v2=103  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=2530000  v1=102 v2=103  <-- CHANGED
+  union lda=1024 ldb=256   m=1024   n=256     b=1  k=3200000  v1=102 v2=103  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=1000000  v1=102 v2=103  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=1590000  v1=102 v2=103  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=2097152  v1=102 v2=103  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=2530000  v1=102 v2=103  <-- CHANGED
+  union lda=512 ldb=256    m=512    n=256     b=1  k=3200000  v1=102 v2=103  <-- CHANGED
+
+== 3. generic NT sweep (m,n in small/medium/large, batch 1/2/3/4/8, k in 1..4M) ==
+  m=24     n=32      b=8  v1=102 v2=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=64      b=4  v1=102 v2=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=128     b=2  v1=102 v2=103  at k=ALL  (batch-flattened onto a target)
+  m=24     n=256     b=1  v1=102 v2=103  at k=ALL  (target)
+  m=512    n=256     b=1  v1=102 v2=103  at k=ALL  (target)
+  m=512    n=256     b=2  v1=102 v2=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=512     b=3  v1=102 v2=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=768     b=2  v1=102 v2=103  at k=ALL  (batch-flattened onto a target)
+  m=512    n=1536    b=1  v1=102 v2=103  at k=ALL  (target)
+  m=1024   n=256     b=1  v1=102 v2=103  at k=ALL  (target)
+  m=1024   n=512     b=2  v1=102 v2=103  at k=ALL  (batch-flattened onto a target)
+  m=2048   n=512     b=1  v1=102 v2=103  at k=ALL  (target)
+  -> 132055 sweep points, 132 differ, 12 distinct (m,n,b)
+
+== 4. random sweep: 200k (m,n,b,k), m,n log-uniform 1..2^21 ==
+  -> 0 random points differ
+
+== 4b. per-step exposure (groups.json calls_per_step, K = T) ==
+  G17 m=516   n=512   b=1 k=1024    calls/step=1   logged={'102': 48}  v1=sol102/544WG  v2=sol102/544WG
+  G19 m=512   n=1536  b=1 k=T       calls/step=3   logged={'102': 144}  v1=sol102/1536WG  v2=sol103/24WG
+  G20 m=2048  n=512   b=1 k=T       calls/step=3   logged={'102': 144}  v1=sol102/2048WG  v2=sol103/32WG
+  G23 m=512   n=512   b=8 k=1024    calls/step=1   logged={'102': 48}  v1=sol102/4096WG  v2=sol102/4096WG
+  G25 m=256   n=512   b=1 k=T       calls/step=3   logged={'103': 144}  v1=sol103/4WG  v2=sol103/4WG
+  G27 m=24    n=256   b=1 k=T       calls/step=1   logged={'102': 48}  v1=sol102/16WG  v2=sol103/2WG
+  G29 m=1024  n=256   b=1 k=T       calls/step=1   logged={'102': 48}  v1=sol102/512WG  v2=sol103/8WG
+  G31 m=512   n=256   b=1 k=T       calls/step=1   logged={'102': 48}  v1=sol102/256WG  v2=sol103/4WG
+  v1 launches/step by sol: {102: 11.0, 103: 3.0}
+  v2 launches/step by sol: {102: 2.0, 103: 12.0}
+  NB sol 103 = MT256x128x64 SK0, 676 VGPRs (A0 DW-corruption kernel, mi450_a0.md L923-924); sol 102 = MT32x16x32, 252 VGPRs
+
+== 5. informational: v2 with TENSILE_GRIDBASED_KDTREE=1 (must stay UNSET) ==
+  G20  (2048, 512, 1, 2097152)  v1=102 v2=103
+  G19  (512, 1536, 1, 2097152)  v1=102 v2=103
+  G29  (1024, 256, 1, 2097152)  v1=None v2=103
+  G31  (512, 256, 1, 2097152)  v1=None v2=103
+  G27  (24, 256, 1, 2097152)  v1=103 v2=103
+  G25  (256, 512, 1, 2097152)  v1=None v2=102
+  ---- (516, 512, 1, 1024)  v1=None v2=103
+  ---- (512, 512, 8, 1024)  v1=None v2=102
+
+TOTAL differing points v1 vs v2 (sections 1-4): 262

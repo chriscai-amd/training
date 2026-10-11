@@ -1,0 +1,9 @@
+# T8 overlay (NOT in the repo). Use with run_ab.sh as:
+#   run_ab.sh M1T8a /t8/m1_t8_lib.gin -v /home/chcai/t8_work/gpu_check:/t8:ro
+# = m1_lib.gin, but the lib dir's NT catalog pins the NT weight gradients to sol 103 by size
+# (see /home/chcai/t8_work/T8_REPORT.md). Only for guarded <=200-step A/Bs after the single-GEMM
+# checks pass: sol 103 (MT256x128x64, 676 VGPRs) is the A0 DW-corruption kernel.
+apply_launch_env.hipblaslt_lib_dir = "/armlibs/rocm-10.2_nnonly_v2"
+apply_hipblaslt_opts.tuning_override_file = None
+apply_hipblaslt_opts.tn_wgrad_hstu = False
+apply_hipblaslt_opts.tn_wgrad_preproc = False

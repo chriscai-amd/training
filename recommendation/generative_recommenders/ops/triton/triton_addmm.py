@@ -18,6 +18,7 @@
 
 
 import math
+import os
 from typing import List, Optional, Tuple
 
 import torch
@@ -1624,6 +1625,91 @@ def triton_addmm_fwd_fake(
     return torch.empty((M, N), device=x.device, dtype=x.dtype)
 
 
+# Roadmap L5 (arbor_hipblaslt/reexpress.json G20, G19): on ROCm gfx1250 the
+# token-major wgrad `x.t() @ dz` is an NT hipBLASLt call (Cijk_Ailk_Bjlk) whose
+# kernel pool has no split-K/stream-K tile for K = T, while the same math with
+# both operands materialised feature-major is TN (Cijk_Alik_Bljk), served by the
+# tuned pool. HSTU_TN_WGRAD=0 restores the original NT call (E1 A/B switch).
+# HSTU_TN_WGRAD scopes (set from gin by _env_bootstrap.apply_hipblaslt_opts,
+# opts M3/M4): "1"/"all" =
+# every re-expressed wgrad; "hstu" = only the HSTU UVQK/output projections
+# (G20, G19); "preproc" = only the preprocessor MLP Linears (G25, G27/G29/G31);
+# "0" (default when unset) = original NT calls everywhere.
+_TN_MODE: str = os.environ.get("HSTU_TN_WGRAD", "0").strip().lower()
+_HSTU_TN_WGRAD: bool = torch.version.hip is not None and _TN_MODE != "0"
+_TN_HSTU: bool = _HSTU_TN_WGRAD and _TN_MODE in ("1", "all", "hstu")
+_TN_PREPROC: bool = _HSTU_TN_WGRAD and _TN_MODE in ("1", "all", "preproc")
+
+
+def tn_wgrad_mm(a: torch.Tensor, b: torch.Tensor, enabled: bool = True) -> torch.Tensor:
+    """a.t() @ b for token-major a [T, D], b [T, O] -> [D, O].
+
+    TN path: aT = a.t().contiguous() [D, T], bT = b.t().contiguous() [O, T];
+    torch.mm(aT, bT.t()) issues hipBLASLt transA=T transB=N, M=O, N=D, K=T,
+    lda = ldb = T. Same fp32-accumulated math, different reduction order.
+    """
+    if enabled and _HSTU_TN_WGRAD and a.is_cuda:
+        return torch.mm(a.t().contiguous(), b.t().contiguous().t())
+    return torch.mm(a.t(), b)
+
+
+class _TNWgradLinearFn(torch.autograd.Function):
+    """y = x @ w.t() + b with the weight gradient issued TN (tn_wgrad_mm).
+
+    Forward and dgrad are the calls aten's nn.Linear issues (F.linear -> TN;
+    dx = dy.mm(w) -> NN). Only dW changes: aten's dy.t().mm(x) is NT
+    (Cijk_Ailk_Bjlk, K = T); here it is TN on feature-major copies. Inputs
+    arrive already cast (autocast is handled by TNWgradLinear.forward).
+    """
+
+    @staticmethod
+    # pyre-ignore[14]
+    def forward(
+        ctx, x: torch.Tensor, w: torch.Tensor, b: Optional[torch.Tensor]
+    ) -> torch.Tensor:
+        ctx.save_for_backward(x, w)
+        ctx.has_bias = b is not None
+        return torch.nn.functional.linear(x, w, b)
+
+    @staticmethod
+    # pyre-ignore[14]
+    def backward(ctx, dy: torch.Tensor):
+        x, w = ctx.saved_tensors
+        x2 = x.reshape(-1, x.shape[-1])
+        dy2 = dy.reshape(-1, dy.shape[-1])
+        dx = dw = db = None
+        if ctx.needs_input_grad[0]:
+            dx = dy2.mm(w).view(x.shape)
+        if ctx.needs_input_grad[1]:
+            dw = tn_wgrad_mm(dy2, x2)
+        if ctx.has_bias and ctx.needs_input_grad[2]:
+            db = dy2.sum(0)
+        return dx, dw, db
+
+
+class TNWgradLinear(torch.nn.Linear):
+    """nn.Linear whose weight gradient is TN on ROCm (roadmap L5, G25).
+
+    Same parameters / state dict as nn.Linear (isinstance-compatible for
+    init_mlp_weights_optional_bias). On ROCm CUDA tensors with HSTU_TN_WGRAD
+    != 0 the autocast cast is done with tracked .to() (as autocast does), so
+    fp32 parameter grads come back through the cast; otherwise it is exactly
+    nn.Linear.
+    """
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        if not (_TN_PREPROC and x.is_cuda):
+            return super().forward(x)
+        if torch.is_autocast_enabled("cuda"):
+            dtype = torch.get_autocast_dtype("cuda")
+        else:
+            dtype = x.dtype
+        w = self.weight.to(dtype)
+        b = self.bias.to(dtype) if self.bias is not None else None
+        with torch.autocast("cuda", enabled=False):
+            return _TNWgradLinearFn.apply(x.to(dtype), w, b)
+
+
 def triton_addmm_bwd(
     x: torch.Tensor,
     w: torch.Tensor,
@@ -1634,7 +1720,11 @@ def triton_addmm_bwd(
         dy = torch.sum(dz, dim=0)
     else:
         dy = dz
-    dw = torch.mm(x.t(), dz)
+    if globals().get("_TN_HSTU", False) and dz.is_cuda:
+        # L5: TN wgrad (see tn_wgrad_mm); inline so the body stays self-contained.
+        dw = torch.mm(x.t().contiguous(), dz.t().contiguous().t())
+    else:
+        dw = torch.mm(x.t(), dz)
     dx = torch.mm(dz, w.t())
 
     return dx, dw, dy

@@ -1,0 +1,7 @@
+# Overlay for docs/mi450_perf_opt.md (parsed after yambda_5b.gin via $DLRM_GIN_OVERLAY).
+# Container paths: /armlibs = /home/chcai/training_mi450_arbor/arbor_libs (ro), /opt/rocm-10.2 mounted (ro).
+# M0: all MI450 hipBLASLt optimizations OFF (same as yambda_5b.gin defaults)
+apply_launch_env.hipblaslt_lib_dir = None
+apply_hipblaslt_opts.tuning_override_file = None
+apply_hipblaslt_opts.tn_wgrad_hstu = False
+apply_hipblaslt_opts.tn_wgrad_preproc = False

@@ -33,6 +33,24 @@ make_model.hammer_kernel = "TRITON"
 apply_env_bootstrap.TRITON_FULL_AUTOTUNE = False
 
 # =============================================================================
+# MI450 (gfx1250) hipBLASLt optimizations -- docs/mi450_perf_opt.md.
+# ALL OFF by default. Turn on per run with a gin overlay named by
+# $DLRM_GIN_OVERLAY (e.g. gin/mi450_hipblaslt/m4_all.gin), parsed after this file.
+#   M1 hipBLASLt library swap (launcher process, before ranks spawn)
+#   M2 hipBLASLt tuning override file (exact shapes)
+#   M3 TN weight gradients for HSTU UVQK / output projections
+#   M4 TN weight gradients for the preprocessor MLP Linears
+# =============================================================================
+apply_launch_env.hipblaslt_lib_dir = None
+apply_hipblaslt_opts.tuning_override_file = None
+# !! M3 / M4 ARE UNSAFE IN TRAINING on a37-2 (BKC 26.11.08, ROCm 10.2 nightly):
+# !! 2026-10-04 09:02 M3 faulted GPU 1 in its FIRST training step (page fault ->
+# !! MES REMOVE_QUEUE / INVALIDATE_TLBS failures; GPU unusable until power cycle).
+# !! Keep them False until hipBLASLt fixes the tall-K fault (docs/mi450_perf_opt.md).
+apply_hipblaslt_opts.tn_wgrad_hstu = False
+apply_hipblaslt_opts.tn_wgrad_preproc = False
+
+# =============================================================================
 # $SEED — global RNG seed for reproducible MODEL INITIALIZATION.
 #
 # WHAT IT CONTROLS (all weight init is a deterministic function of $SEED):

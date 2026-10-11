@@ -223,14 +223,19 @@ def _main_func(
     # discovers itself. This is required because triton @triton.autotune
     # decorators in generative_recommenders.ops.triton.* read env vars at
     # module import time, and the heavy imports below pull those in.
-    from generative_recommenders.dlrm_v4.train._env_bootstrap import apply_env_bootstrap
+    from generative_recommenders.dlrm_v4.train._env_bootstrap import (
+        apply_env_bootstrap,
+        apply_hipblaslt_opts,
+        parse_gin,
+    )
     from generative_recommenders.dlrm_v4.train.mlperf_logging_utils import (
         get_mlperf_logger,
         mlperf_checkpoint_present,
     )
 
-    gin.parse_config_file(gin_file, skip_unknown=True)
+    parse_gin(gin_file, skip_unknown=True)
     apply_env_bootstrap()
+    apply_hipblaslt_opts()
 
     # Cold-start vs resume, decided from the on-disk checkpoint BEFORE setup so
     # the one-time INIT/RUN markers fire on a genuine cold start only and are NOT
@@ -285,7 +290,7 @@ def _main_func(
     # env-bootstrap binding, but bindings are idempotent so re-applying is
     # fine, and this pass is the one that actually wires up make_model,
     # make_train_test_dataloaders, etc.
-    gin.parse_config_file(gin_file)
+    parse_gin(gin_file)
 
     # Seed all RNGs (gin-configurable $SEED) BEFORE make_model() so weight init
     # is reproducible run-to-run. Must follow the full parse above so the binding
@@ -500,6 +505,16 @@ def main() -> None:
         f"gpus_per_node={GPUS_PER_NODE} world_size={WORLD_SIZE} "
         f"master={MASTER_ADDR}:{MASTER_PORT}"
     )
+
+    # OPT M1 (hipBLASLt library swap) must be in the environment BEFORE the
+    # ranks are spawned; spawned ranks inherit it. Gin-controlled like the rest.
+    from generative_recommenders.dlrm_v4.train._env_bootstrap import (
+        apply_launch_env,
+        parse_gin,
+    )
+
+    parse_gin(gin_path, skip_unknown=True)
+    apply_launch_env()
 
     mp.start_processes(
         _main_func,

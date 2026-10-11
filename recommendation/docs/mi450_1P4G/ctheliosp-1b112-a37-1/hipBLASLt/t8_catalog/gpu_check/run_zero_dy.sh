@@ -23,7 +23,7 @@ D=/armlibs/$LIB
 timeout --signal=KILL 1800 docker run --rm --name "$CNAME" \
   --device=/dev/kfd --device=/dev/dri --group-add video -e HIP_VISIBLE_DEVICES="$DEV" \
   --security-opt seccomp=unconfined --security-opt label=disable \
-  -v /home/chcai/training_opt/arbor_libs:/armlibs:ro -v /opt/rocm-10.2:/opt/rocm-10.2:ro \
+  -v /home/chcai/training/arbor_libs:/armlibs:ro -v /opt/rocm-10.2:/opt/rocm-10.2:ro \
   -v /home/chcai/t8_work/gpu_check:/t8:ro \
   -e LD_PRELOAD=$D/libhipblaslt.so.1 -e HIPBLASLT_TENSILE_LIBPATH=$D/hipblaslt/library/gfx1250 \
   -e AMDGCN_USE_BUFFER_OPS=0 -e HSA_ENABLE_COREDUMP=0 -e PYTHONUNBUFFERED=1 \

@@ -70,7 +70,7 @@ The first time a configured shape is refused, that is logged as "configured but 
 
 ## 3. Files
 
-**Repo worktree** `/home/chcai/training_opt/recommendation/generative_recommenders/`, uncommitted. The full patch, including new files, is `/home/chcai/m5_work/m5_code.diff` (1,186 lines).
+**Repo worktree** `/home/chcai/training/recommendation/generative_recommenders/`, uncommitted. The full patch, including new files, is `/home/chcai/m5_work/m5_code.diff` (1,186 lines).
 
 | File | Change |
 |---|---|
@@ -81,7 +81,7 @@ The first time a configured shape is refused, that is logged as "configured but 
 | `gin/mi450_hipblaslt/m5_split_t.gin`, `m5_split_t_s102.gin`, `m5_split_t_mix.gin` (new) | Overlays for the three variants |
 | `ops/tests/splitt_wgrad_test.py`, `dlrm_v4/train/tests/splitt_wgrad_bootstrap_test.py` (new) | CPU tests |
 
-**Catalogs** under `/home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/{s103,s102,mix}/`. v1 and v2 are untouched.
+**Catalogs** under `/home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/{s103,s102,mix}/`. v1 and v2 are untouched.
 
 **Work directory** `/home/chcai/m5_work/`:
 - `make_v3.py`: builder and verifier, with `--sol 102|103`, `--map`, `--install`, and the new `--manifest-only`;

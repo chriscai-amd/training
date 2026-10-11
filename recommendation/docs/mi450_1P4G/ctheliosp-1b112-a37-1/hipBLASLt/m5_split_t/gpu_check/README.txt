@@ -5,9 +5,9 @@ a37-1 rules: one GEMM / one shape per process, idle GPUs (no other KFD process -
 must be stopped first), preflight, live dmesg watch; stop everything on exit code 3 (fault).
 
 Lib dirs (host / container), each with m5_splits.json (per-shape sol for every s in 1..256):
-  /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s103 = /armlibs/rocm-10.2_nnonly_v3/s103  all six on sol 103
-  /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s102 = /armlibs/rocm-10.2_nnonly_v3/s102  all six on sol 102
-  /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/mix  = /armlibs/rocm-10.2_nnonly_v3/mix   G20/G19 103, rest 102
+  /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/s103 = /armlibs/rocm-10.2_nnonly_v3/s103  all six on sol 103
+  /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/s102 = /armlibs/rocm-10.2_nnonly_v3/s102  all six on sol 102
+  /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/mix  = /armlibs/rocm-10.2_nnonly_v3/mix   G20/G19 103, rest 102
 Overlays (repo gin/mi450_hipblaslt/): m5_split_t.gin (s103), m5_split_t_s102.gin, m5_split_t_mix.gin.
 
 == Stage 1: single GEMMs (hipblaslt-bench via gemm_watch.sh), per variant, per T ==
@@ -16,10 +16,10 @@ maps line -> shape, s, K, expected kernel per variant. Do NOT set T= (gemm_watch
 2097152, which also occurs inside a stride: T2097152 line 40, G27 s=256 stride_b). Generator: gen_bench.py.
 A 1-row tail (T % s == 1) is an elementwise fp32 addr_ in the helper -> no bench line (listed in the index).
   cd /home/chcai/a37-1_env
-  ./gemm_watch.sh /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s102 0 /home/chcai/m5_work/gpu_check/runs/bench_s102_T2097152 /home/chcai/m5_work/gpu_check/m5_bench_T2097152.yaml
-  ./gemm_watch.sh /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s102 0 /home/chcai/m5_work/gpu_check/runs/bench_s102_T2533005 /home/chcai/m5_work/gpu_check/m5_bench_T2533005.yaml
-  ./gemm_watch.sh /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s103 0 /home/chcai/m5_work/gpu_check/runs/bench_s103_T2097152 /home/chcai/m5_work/gpu_check/m5_bench_T2097152.yaml
-  ./gemm_watch.sh /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s103 0 /home/chcai/m5_work/gpu_check/runs/bench_s103_T2533005 /home/chcai/m5_work/gpu_check/m5_bench_T2533005.yaml
+  ./gemm_watch.sh /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/s102 0 /home/chcai/m5_work/gpu_check/runs/bench_s102_T2097152 /home/chcai/m5_work/gpu_check/m5_bench_T2097152.yaml
+  ./gemm_watch.sh /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/s102 0 /home/chcai/m5_work/gpu_check/runs/bench_s102_T2533005 /home/chcai/m5_work/gpu_check/m5_bench_T2533005.yaml
+  ./gemm_watch.sh /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/s103 0 /home/chcai/m5_work/gpu_check/runs/bench_s103_T2097152 /home/chcai/m5_work/gpu_check/m5_bench_T2097152.yaml
+  ./gemm_watch.sh /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/s103 0 /home/chcai/m5_work/gpu_check/runs/bench_s103_T2533005 /home/chcai/m5_work/gpu_check/m5_bench_T2533005.yaml
 (s102 first: it never runs sol 103. mix = s103 lines of G20/G19 + s102 lines of the rest: no own run.)
 Check in summary.txt: every bf16 line MT32x16x32 (s102) / MT256x128x64 (s103), fp32 tail lines MT32x32x16
 (SS catalog sol 2821); any other kernel = stop and re-check the catalog. The s=1 line of the s103 file is

@@ -10,7 +10,7 @@ set -uo pipefail
 DEV=$1 VAR=$2 SHAPE=$3 S=$4 T=$5 MODE=$6 CALLS=${7:-1000} PATTERN=${8:-iid}
 case $VAR in s103|s102|mix) ;; *) echo "variant must be s103|s102|mix"; exit 2;; esac
 ENV_DIR=/home/chcai/a37-1_env
-ROOT=${ROOT:-/home/chcai/training_opt/recommendation}
+ROOT=${ROOT:-/home/chcai/training/recommendation}
 IMAGE=${IMAGE:-recommendation-gfx1250-20260910:triton-7ff97e}
 LIB=rocm-10.2_nnonly_v3/$VAR
 OUT=/home/chcai/m5_work/gpu_check/runs/v3${VAR}_g${DEV}_${SHAPE}_s${S}_T${T}_${MODE}${PATTERN:+_$PATTERN}_$(date -u +%Y%m%dT%H%M%SZ)
@@ -36,7 +36,7 @@ D=/armlibs/$LIB
 timeout --signal=KILL 1800 docker run --rm --name "$CNAME" \
   --device=/dev/kfd --device=/dev/dri --group-add video -e HIP_VISIBLE_DEVICES="$DEV" \
   --security-opt seccomp=unconfined --security-opt label=disable \
-  -v /home/chcai/training_opt/arbor_libs:/armlibs:ro -v /opt/rocm-10.2:/opt/rocm-10.2:ro \
+  -v /home/chcai/training/arbor_libs:/armlibs:ro -v /opt/rocm-10.2:/opt/rocm-10.2:ro \
   -v "$ROOT":/workspace/recommendation:ro -v /home/chcai/m5_work/gpu_check:/m5chk:ro \
   -e LD_PRELOAD=$D/libhipblaslt.so.1 -e HIPBLASLT_TENSILE_LIBPATH=$D/hipblaslt/library/gfx1250 \
   -e AMDGCN_USE_BUFFER_OPS=0 -e HSA_ENABLE_LIGHTWEIGHT_COREDUMP=1 -e HIPBLASLT_LOG_MASK=32 -e HIPBLASLT_LOG_FILE=/tmp/hbl_%i.log -e PYTHONUNBUFFERED=1 -e PYTHONDONTWRITEBYTECODE=1 \

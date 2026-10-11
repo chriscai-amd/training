@@ -7,8 +7,8 @@
 set -uo pipefail
 ARM=$1 OVL=$2; shift 2
 ENV_DIR=/home/chcai/a37-1_env
-ROOT=${ROOT:-/home/chcai/training_opt/recommendation}
-LIBS=${LIBS:-/home/chcai/training_opt/arbor_libs}
+ROOT=${ROOT:-/home/chcai/training/recommendation}
+LIBS=${LIBS:-/home/chcai/training/arbor_libs}
 DATA=/home/chcai/dlrm_data
 IMAGE=${IMAGE:-recommendation-gfx1250-20260910:triton-7ff97e}
 STEPS=${STEPS:-200}

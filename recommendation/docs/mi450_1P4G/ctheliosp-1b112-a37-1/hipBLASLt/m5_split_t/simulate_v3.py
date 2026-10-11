@@ -32,7 +32,7 @@ import gridmatch as g  # noqa: E402
 import make_v2 as mv  # noqa: E402
 import make_v3 as m3  # noqa: E402
 
-V1 = "/home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v1"
+V1 = "/home/chcai/training/arbor_libs/rocm-10.2_nnonly_v1"
 V2 = m3.V2
 V3 = m3.V3
 OVERLAY_S = {   # from gin/mi450_hipblaslt/m5_split_t*.gin (hipBLASLt m x n -> s)

@@ -39,8 +39,8 @@ sys.path.insert(0, "/home/chcai/t8_work")
 import gridmatch as g  # noqa: E402
 import make_v2 as mv  # noqa: E402
 
-V2 = "/home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2"
-V3 = "/home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3"
+V2 = "/home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2"
+V3 = "/home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3"
 V2_DAT = os.path.join(V2, mv.GFX_REL, mv.NT_DAT)
 V1_DAT = os.path.join(mv.V1, mv.GFX_REL, mv.NT_DAT)
 BBSB_DAT = ("/opt/rocm-10.2/lib/hipblaslt/library/gfx1250/TensileLibrary_BB_SB_HA_Bias_SAV_UA_Type_BS_"

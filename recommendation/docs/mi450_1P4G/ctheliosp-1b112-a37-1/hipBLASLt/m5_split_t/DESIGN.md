@@ -34,7 +34,7 @@ fp32 `addr_` (no GEMM); (5) M5-preproc only reroutes configured `TNWgradLinear` 
 
 ## 1. Call sites: the six NT wgrads
 
-Paths are relative to `/home/chcai/training_opt/recommendation/generative_recommenders/`. Line numbers are at worktree HEAD be2d249.
+Paths are relative to `/home/chcai/training/recommendation/generative_recommenders/`. Line numbers are at worktree HEAD be2d249.
 
 In hipBLASLt terms, every one of these is `torch.mm(a.t(), b)` with:
 - `a` = [T, D] and `b` = [T, O], both bf16, dense row-major (`eval/eval_operand_layout.py`: lda/ldb = width);
@@ -309,7 +309,7 @@ Verification is in `verify_{s103,s102,mix}.txt`, and every report says PASS.
 - Workload union file: no unintended change. G17 (516×512×1024) and G23 (512×512, b8; flattens to (512,4096) → guard 102) stay 102.
 - In s103, any s not in the candidate list falls back to 102: slower, but correct. The exception is G25, which v2 already clamps to 103.
 
-**Lib dirs, installed.** `/home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/{s103,s102}/`. Each is a v2 copy: 405 symlinks into /opt/rocm-10.2, plus the new NT `.dat` and a README. In containers they are `/armlibs/rocm-10.2_nnonly_v3/sXXX` (run_ab.sh mounts `$LIBS` at /armlibs). Rebuild with `make_v3.py --sol N --install` after removing the dir.
+**Lib dirs, installed.** `/home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/{s103,s102}/`. Each is a v2 copy: 405 symlinks into /opt/rocm-10.2, plus the new NT `.dat` and a README. In containers they are `/armlibs/rocm-10.2_nnonly_v3/sXXX` (run_ab.sh mounts `$LIBS` at /armlibs). Rebuild with `make_v3.py --sol N --install` after removing the dir.
 - A per-shape mix needs `--map …` and a new name.
 - G29 at s and G31 at 2s share keys, so their sols must agree. The builder enforces this.
 
@@ -438,7 +438,7 @@ The memory note matters too: queue eviction by compaction is the trigger, and BL
 ## 9. GPU kit and bench plan (after the power cycle, a37-1 rules: one GEMM per process, live dmesg watch)
 
 1. **Single GEMM, both lib dirs.** Run
-   `gemm_watch.sh /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s103 <dev> <out> /home/chcai/m5_work/gpu_kit/m5_bench.yaml`
+   `gemm_watch.sh /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/s103 <dev> <out> /home/chcai/m5_work/gpu_kit/m5_bench.yaml`
    and the same with `/s102`. There are 44 lines (index in `m5_bench.index.txt`):
    - per shape: the s=1 baseline;
    - every candidate s as the exact strided-batched problem (M=O, N=D, K=T/s, stride_a=O·K, stride_b=D·K, stride_c=O·D, batch_count=s);
@@ -463,7 +463,7 @@ The memory note matters too: queue eviction by compaction is the trigger, and BL
 | `/home/chcai/m5_work/make_v3.py` | Catalog builder and verifier (`--sol 102\|103`, `--map`, `--install`) |
 | `/home/chcai/m5_work/verify_s103.txt`, `verify_s102.txt`, `verify_mix.txt` | Full edit lists, selections and sweeps |
 | `/home/chcai/m5_work/build/{s103,s102,mix}/…NT.dat.zlib` | Built catalogs |
-| `/home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/{s103,s102}/` | Installed lib dirs (README inside) |
+| `/home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/{s103,s102}/` | Installed lib dirs (README inside) |
 | `/home/chcai/m5_work/proto/test_splitt.py`, `test_splitt.out` | CPU prototype, contract tests, numerics study |
 | `/home/chcai/m5_work/gpu_kit/m5_bench.yaml`, `m5_bench.index.txt`, `gen_yaml.py` | hipblaslt-bench lines for gemm_watch.sh |
 | `/home/chcai/m5_work/gpu_kit/m5_s103.gin`, `m5_s102.gin` | Draft run_ab overlays |

@@ -5,7 +5,7 @@ One file per T, because gemm_watch.sh's T=<n> substitution only rewrites the lit
 cannot fix K = T//s or the batch strides:
   m5_bench_T2097152.yaml  m5_bench_T2533005.yaml   (+ .index.txt: line -> shape, s, expected sol)
 Run them WITHOUT setting T:
-  gemm_watch.sh /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s103 <dev> <out> m5_bench_T2097152.yaml
+  gemm_watch.sh /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/s103 <dev> <out> m5_bench_T2097152.yaml
 Lines per shape: s=1 baseline (batch 1, K=T); every candidate s as the exact strided-batched problem
 torch.bmm(a3.transpose(1,2), b3) issues (hipBLASLt NT, M=O, N=D, K=L=T//s, lda=M, ldb=N, ldc=ldd=M,
 stride_a=M*L, stride_b=N*L, stride_c=stride_d=M*N, batch_count=s, bf16 in/out, f32 compute); and,

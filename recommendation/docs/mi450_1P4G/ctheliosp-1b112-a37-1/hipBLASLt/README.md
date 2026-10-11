@@ -8,6 +8,12 @@ For the hipBLASLt team. This folder contains every hipBLASLt GEMM the MLPerf DLR
 | [`dlrmv4_gemm_component_map.md`](dlrmv4_gemm_component_map.md) | Which model component each GEMM belongs to, with calls per step, measured time, TFLOP/s, and the solution index and kernel used in training |
 | [`capture_to_yaml.py`](capture_to_yaml.py) | Script that turns `HIPBLASLT_LOG_MASK=32` logs into the YAML |
 | [`../performance_analysis.md`](../performance_analysis.md) | Full step-time analysis of this workload on MI450 (hipBLASLt is §4.1 A1–A3 and §4.2) |
+| [`t8_catalog/`](t8_catalog/) | **T8** (2026-10-11): NT catalog edit that pins the six tall-K weight-gradient GEMMs to stock sol 103 at any T; builder, GridBased matcher model, simulation, GPU checks, report |
+| [`m5_split_t/`](m5_split_t/) | **M5** (2026-10-11): split-T weight gradients (strided-batched NT on sol 103) and the v3 catalogs; design, report, bench/numerics kit |
+| [`a37-1_kit/`](a37-1_kit/) | Run kit used on a37-1: strict preflight, guarded single-GEMM runner, 200-step e2e A/B launcher with GPU-fault and MES-log capture, analysis scripts |
+
+Results of these optimizations on a37-1 (2.14× end to end with M1 + T8 + M5) are in
+[`../../../mi450_perf_opt.md`](../../../mi450_perf_opt.md#optimization-log).
 
 ## Summary
 

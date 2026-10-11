@@ -6,13 +6,13 @@ HIPBLASLT_TUNING_OVERRIDE_FILE (which never fires with jagged K).
 CPU-only. Never touches a GPU, /opt, or the v1 directory (read-only input).
 
 Modes
-  python -I make_v2.py                 build /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2
+  python -I make_v2.py                 build /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2
                                        (refuses if it exists; --force rebuilds it via a temp dir)
   python -I make_v2.py --stock         build /home/chcai/t8_work/stock_t8/ from the stock-image NT
                                        catalog copied to /home/chcai/t8_work/stock_catalog/gfx1250
                                        (catalog file + README only; not wired anywhere)
   python -I make_v2.py --check FILE.dat.zlib KERNELS.co   validate an existing edited catalog
-  python -I make_v2.py --drop 24x256 --out /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3
+  python -I make_v2.py --drop 24x256 --out /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3
                                        variant without some targets (e.g. if the single-GEMM check
                                        shows G27 (24,256) slower on 103); dropped shapes stay on 102
 
@@ -32,8 +32,8 @@ sys.path.insert(0, "/home/chcai/t8_work")
 import gridmatch as g  # noqa: E402
 import msgpack  # noqa: E402
 
-V1 = "/home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v1"
-V2 = "/home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2"
+V1 = "/home/chcai/training/arbor_libs/rocm-10.2_nnonly_v1"
+V2 = "/home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2"
 STOCK_SRC = "/home/chcai/t8_work/stock_catalog/gfx1250"
 STOCK_OUT = "/home/chcai/t8_work/stock_t8"
 GFX_REL = "hipblaslt/library/gfx1250"
@@ -50,7 +50,7 @@ ALL_TARGETS = [(2048, 512),   # G20
            (24, 256)]     # G27
 #          (256, 512)     # G25 -- already 103 via the stub's [256,256,1,512] entry
 TARGETS = list(ALL_TARGETS)   # narrowed by --drop
-LIBS = "/home/chcai/training_opt/arbor_libs"
+LIBS = "/home/chcai/training/arbor_libs"
 SLOW, FAST = 102, 103     # MT32x16x32 SK0 / MT256x128x64 SK0 (present in both v1 and stock)
 SENT = 1 << 20            # 1048576: "above anything real" guard value for M and N
 K_DESIGN = (1_000_000, 3_200_000)

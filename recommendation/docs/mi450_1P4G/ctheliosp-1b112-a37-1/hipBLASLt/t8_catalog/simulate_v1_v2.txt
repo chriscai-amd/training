@@ -1,5 +1,5 @@
-v1: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v1/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (35 table entries)
-v2: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (54 table entries)
+v1: /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v1/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (35 table entries)
+v2: /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (54 table entries)
 solutions: {102: 'MT32x16x32', 103: 'MT256x128x64'}
 matcher: gridmatch.py (rocm-libraries 5911365c GridBased binary path, default env: no KDTREE, batch flattening on); size predicates modelled by nt_size_accepts
 

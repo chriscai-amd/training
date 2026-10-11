@@ -1,8 +1,34 @@
 # MI450 1P4G, host `ctheliosp-1b112-a37-1` (gfx1250, full model)
 
-Updated **2026-09-28**.
+Updated **2026-10-11**.
 
-> **Latest status (2026-09-28): NaN / fault repro**
+> **Latest status (2026-10-11): hipBLASLt optimizations and reliability**
+>
+> - **Performance: 2.14× throughput over the stock stack on this host.**
+>   M1 (10.2 NN kernels) + T8 (NT catalog fix) + M5 (split-T weight
+>   gradients): **1,376 → 642 ms/step, 2,977 → 6,384 global samples/s**,
+>   each step A/B'd in ABBA order with matching loss and no faults
+>   ([§12.2](#122-performance-m1-t8-and-m5); rows in
+>   [`mi450_perf_opt.md`](../../mi450_perf_opt.md#optimization-log)).
+> - **Caveat: T8 and M5 run all six weight gradients on hipBLASLt sol 103**
+>   (676 VGPRs), the A0 DW-corruption kernel under the faulty CWSR handler this
+>   host still loads. Every numerics check passed, but use them only for
+>   guarded runs of 200 steps or fewer until a fixed driver is installed.
+> - **The fixed driver cannot be installed yet.** This host's firmware is
+>   VBIOS **900A**, not BKC 26.11.08; the CWSR-fixed dkms builds failed to load
+>   on it twice (2026-10-05, 2026-10-09). Needs BFD
+>   ([§12.1](#121-stack-and-driver-state)).
+> - **Reliability: two GPU faults on host (SVM) memory in plain M1 training**
+>   (2026-10-10 GPU 1 stuck after a queue reset, power cycle; 2026-10-11 a
+>   process memory-access fault). Then **0 faults in 17 runs** with the MES
+>   team's logging settings. MES ticket open, evidence sent
+>   ([§12.3](#123-reliability-events)).
+> - **Driver options now:** `ip_block_mask=0xcff mes_log_enable=1 dyndbg=+plmf`,
+>   `noretry` and `gpu_recovery` at defaults. **Do not use `noretry=0`**: it makes
+>   the long-K NT GEMMs up to 1.8× slower ([§12.4](#124-noretry0-slows-long-k-gemms)).
+> - **Follow-ups** are in [§12.6](#126-follow-ups).
+
+> **Previous status (2026-09-28): NaN / fault repro**
 >
 > - **No NaN loss so far.** Every logged loss on this host is finite:
 >   3,000 steps (2026-09-19), 200 steps (2026-09-26) and every 2026-09-27 run
@@ -54,7 +80,10 @@ This document is split into two parts:
   **2.004 s/step = 2,044 samples/s** over steps 50–200, and a Chrome trace of
   steps 52–56 was captured and stitched across the four ranks. GEMMs take
   **62%** of GPU time. Two hipBLASLt kernels with a 32×16×32 macro tile
-  account for about 55% of it.
+  account for about 55% of it. Those GEMMs were then optimized on this host
+  in 2026-10 (M1, T8, M5; **641.6 ms/step**): see
+  [§12.2](#122-performance-m1-t8-and-m5) and
+  [`mi450_perf_opt.md`](../../mi450_perf_opt.md).
 - **[Part B, Platform, functional and stability record](#part-b-platform-functional-and-stability-record)**:
   - the host stack, now reprovisioned (2026-09-24);
   - the full-model fit and sharding;
@@ -99,7 +128,11 @@ are stored next to this document in
 
 | Question | Recorded answer |
 |---|---|
-| What throughput does the full model reach? | **2.004 s/step, 2,044 global samples/s** (511 per GPU) over steps 50–200 at local 1,024 / GBS 4,096. The trainer logs MFU **5.0–5.2%** and HFU **1.6–2.0%** by its own definitions ([§1.2](#12-throughput)). |
+| **Latest throughput (2026-10-11)?** | **641.6 ms/step, 6,384 global samples/s** with M1 + T8 + M5 (overlay `m5_split_t.gin`), against 1,376 ms / 2,977 with all optimizations off: **2.14×** ([§12.2](#122-performance-m1-t8-and-m5)). |
+| Are T8 / M5 safe for long runs here? | **Not yet.** They put all six weight gradients on sol 103, the A0 corruption kernel under this host's faulty CWSR handler. All numerics checks passed; use ≤200-step guarded A/Bs until a fixed driver loads ([§12.1](#121-stack-and-driver-state)). |
+| How should amdgpu be loaded? | `/etc/modprobe.d/amdgpu-a37.conf`: `ip_block_mask=0xcff mes_log_enable=1 dyndbg=+plmf`; `noretry` and `gpu_recovery` at defaults (MES team request). Check with `a37-1_kit/preflight.sh` before every GPU job ([§12.1](#121-stack-and-driver-state)). |
+| Do plain training runs still fault? | **Occasionally.** Two faults on host (SVM) memory on 2026-10-10/11, then 0 in 17 runs ([§12.3](#123-reliability-events)). |
+| What throughput did the 2026-09-26 perf run reach? | **2.004 s/step, 2,044 global samples/s** (511 per GPU) over steps 50–200 at local 1,024 / GBS 4,096. The trainer logs MFU **5.0–5.2%** and HFU **1.6–2.0%** by its own definitions ([§1.2](#12-throughput)). |
 | Where does the step time go? | GEMM **62.4%**, HSTU attention **17.3%** (backward ≈ 6× forward), memcpy/memset **10.8%**, RCCL **4.0%**, of rank-0 GPU kernel time ([§1.5](#15-trace-breakdown)). |
 | Is there a trace? | **Yes.** A stitched 4-rank CPU+GPU trace of steps 52–56 (4.9 MB gz) ([§1.4](#14-trace-capture)). |
 | Largest optimization lead? | HSTU linear-layer GEMMs run on a **32×16×32 macro tile**. The two top kernels take about 1.04 s/step ([§1.6](#16-optimization-leads)). |
@@ -133,6 +166,7 @@ are stored next to this document in
 9. [Reproduction and analysis commands](#9-reproduction-and-analysis-commands)
 10. [Fabric registration and recovery limits](#10-fabric-registration-and-recovery-limits)
 11. [Evidence inventory and limits](#11-evidence-inventory-and-limits)
+12. [2026-10-10/11: hipBLASLt optimizations, driver state and reliability](#12-2026-1011-hipblaslt-optimizations-driver-state-and-reliability)
 
 ---
 
@@ -1436,3 +1470,121 @@ re-verified against the files.
   `BLOCK_N=64` was not run in the high-compaction state.
 
 Do not import any of those results from the companion host report.
+
+## 12. 2026-10-10/11: hipBLASLt optimizations, driver state and reliability
+
+Run kit, reports and check scripts are in [`hipBLASLt/`](hipBLASLt/):
+[`a37-1_kit/`](hipBLASLt/a37-1_kit/) (preflight, guarded single-GEMM runner, e2e A/B launcher with
+fault capture), [`t8_catalog/`](hipBLASLt/t8_catalog/) and [`m5_split_t/`](hipBLASLt/m5_split_t/).
+Code is on `chcai/mi450` (M1–M4 merged in `af6f033`, T8 `77c865f`, M5 `a646eb1`, overlays `7b53096`).
+
+### 12.1 Stack and driver state
+
+| Item | 2026-10-11 value | Notes |
+|---|---|---|
+| Firmware | VBIOS **`113-M4500001-900A`** (build 00204841, 2026/09/25), MES/KIQ `0x7e`, MEC `0x97e`, RLC `0x1f`, SDMA `0x00893547`, SMC `0x027d0d00` | Logged VBIOS history: `640C` (to 09-27), `650D` (09-29), `900A` (from 10-02). **BKC 26.11.08 (`700E`, as on a37-2 and B0) was never installed here.** |
+| Driver | amdgpu-dkms **`7.1.0.31300009-2404163.el10`** (srcversion `892370C5AB08A22771F1DC5`): **faulty CWSR handler** | The fixed builds were tried by another user and rolled back: 2413386 (10-05: PSP `ID_LOAD_TOC failed (0x11)`, `failed to load ucode` MEC/MES/RLC, `modprobe` soft lockup, reboot) and 2415424 (10-09: probe warning, `MES failed to respond`, `Timeout waiting for VM flush ACK`, host down). They need the matching firmware first. |
+| Driver load | amdgpu is blacklisted on the kernel command line; `amdgpu-load.service` (added 10-06 by another user) runs a plain `modprobe amdgpu` after boot. Options come from **`/etc/modprobe.d/amdgpu-a37.conf`**: `ip_block_mask=0xcff mes_log_enable=1 dyndbg=+plmf` | `0xcff` only disables VCN/JPEG. `noretry` and `gpu_recovery` stay at defaults at the MES team's request ("do not use `gpu_recovery=0`"). `dyndbg` makes the kernel ring buffer (2 MiB) wrap in ~30 min: runs stream a filtered `dmesg` to disk. |
+| hipBLASLt for M1/T8/M5 | host `/opt/rocm-10.2` (10.2.0, `libhipblaslt.so.1.5`, git `5911365c`, files 2026-09-25) through `arbor_libs/rocm-10.2_nnonly_v{1,2,3}` | Its bf16 NN/NT catalogs hold the Origami pools; the NT pool stays unreachable (filtered to the stock stub) because 10.2 tall-K kernels faulted on a37-2. |
+| Image | `recommendation-gfx1250-20260910:triton-7ff97e` `fc5040f7` (2026-09-26): torch `2.11.0+rocm7.14.0a20260625`, triton `3.8.0`, torchrec `1.7.0a0+bf55480`, fbgemm_gpu nightly `2026.9.26` | |
+| ROCr core dumps | ROCr in the image **ignores `HSA_ENABLE_COREDUMP=0`**; it reads `HSA_DISABLE_COREDUMP_ON_EXCEPTION`, `HSA_ENABLE_LIGHTWEIGHT_COREDUMP`, `HSA_COREDUMP_PATTERN` | On 10-11 a fault wrote a **357 GB** core into the working directory over 27 min. `run_ab.sh` now sets a lightweight dump into the run directory. |
+| Profiler | Since the 10-11 05:29 boot the torch profiler records **no or partial GPU kernel events** (CPU-side HIP calls only), even for a plain `torch.mm` | It worked on 10-10. Likely related to the new debug driver options; unverified. Training traces (`OUTPUT_TRACE=1`) are unreliable until fixed; the M5 kernel check uses hipBLASLt's call log (`HIPBLASLT_LOG_MASK=32`) instead. |
+
+### 12.2 Performance: M1, T8 and M5
+
+Settings: local batch 1,024 / global 4,096, `START_TS=0`, 200 steps, seed 1, `HSTU_BWD_BLOCK_N=64`,
+`HSTU_BWD_MAX_VGPR=0`, `AMDGCN_USE_BUFFER_OPS=0`, eval off, `METRIC_LOG_FREQ=1`. Median over steps
+20–200; every A/B is ABBA, back to back, with the live fault watch.
+
+| Step | Arms (step_ms) | Result | Loss at step 200 |
+|---|---|---|---|
+| M0 → **M1** (10.2 NN library swap) | M0 1,378.9 / 1,373.0; M1 1,065.7 / 1,068.5 (10-10) | **+28.9 %** samples/s | 0.138956 both |
+| M1 → **M1+T8** (NT catalog: tall-K wgrads on sol 103) | M1 1,096.5 / 1,098.0; T8 924.0 / 925.9 (10-11) | **+18.6 %** | 0.1389565 ± 1e-7 |
+| M1+T8 → **M1+T8+M5** (split-T, one strided-batched GEMM per wgrad) | A 923.4 / 922.5; B 640.2 / 642.9 (10-11) | **+43.8 %** | 0.1389564 ± 1e-7 |
+| **Cumulative** | 1,376 → **641.6** | **2.14×** | |
+
+The 10-10 and 10-11 M1 numbers differ by ~3 % (1,067 vs 1,097 ms): different boots and driver
+options; each A/B is within one boot.
+
+Before T8/M5 the six tall-K NT weight gradients (G20 2048×512, G19 512×1536, G25 256×512, G29
+1024×256, G31 512×256, G27 24×256; K = T = 1.59–2.53 M) took ~426 ms/step on sol 102. T8 moved them
+to sol 103 (~288 ms/step, 2–32 workgroups each); M5 splits T into s chunks so each call fills the
+GPU (~29 ms/step at the largest T). Per-call numbers, numerics checks and the in-training audit are
+in [`mi450_perf_opt.md`](../../mi450_perf_opt.md#optimization-log),
+[`T8_REPORT.md`](hipBLASLt/t8_catalog/T8_REPORT.md) and [`M5_REPORT.md`](hipBLASLt/m5_split_t/M5_REPORT.md).
+
+Remaining step (M1 trace, rank 0, 10-10): HSTU attention backward ~280 ms, forward ~47 ms, RCCL ~63
+ms (Socket transport), smaller non-GEMM kernels ~60 ms. The attention backward at `BLOCK_N=128` is
+faster but faulted on this host (§8) and waits for the handler fix.
+
+### 12.3 Reliability events
+
+| When (UTC) | Config | What happened | Recovery |
+|---|---|---|---|
+| 2026-10-10 19:28 | Plain M1 (5th M1 run of the day), default driver options | GPU `0002:04:00.0`: **no-retry page fault** at host address `0x7f8400069000` (TCP client, `PERMISSION_FAULTS 0x3`); +2 s `MES failed to respond to msg=REMOVE_QUEUE`, `SUSPEND`; +6 s queue reset, `device wedged, but recovered through reset`; `sq_intr` type 2 errors | **No mode reset.** GPU 1 then sat at **25 % busy with no process** until a cold power cycle. |
+| 2026-10-11 04:06 | Plain M1, `noretry=0`, MES logging on | GPU `0001:04:00.0`: **retry page faults** on host (SVM) addresses with `svm_range_restore_pages … already restored`, then ROCr `Memory access fault … 0x7ec695046000`; the process wrote a 357 GB GPU core for 27 min, then aborted | Clean teardown, no MES failure, no reset; GPUs recovered without a power cycle. |
+| 2026-10-11 05:29 onward | M1 / T8 / M5, MES-requested options (`noretry` default) | **0 faults in 17 runs** (8 repro + 9 A/B arms) | — |
+
+**Interpretation.** Both faults are GPU accesses to **host memory mapped by KFD (SVM)** that the
+driver had just invalidated, not wild addresses: normal training logs ~11
+`svm_range_cpu_invalidate_pagetables` per second. With `noretry` at default the access is a fatal
+no-retry fault; with `noretry=0` it retries, then fails. The trigger is unidentified (the
+2026-09-27 compaction mechanism of §8.2 was absent: `compact_stall` 0 on 10-10). The CWSR handler
+defect is a possible contributor and cannot be excluded on this driver.
+
+**MES team** (ticket open): REMOVE_QUEUE failing on a hung queue is expected; the driver should
+then reset the queue and escalate to a mode reset if that fails. They asked for `dyndbg=+plmf
+mes_log_enable=1`, recovery enabled, and dmesg plus `amdgpu_mes_event_log`. Sent: both
+occurrences, with MES event logs from all GPUs for the 10-11 one (bundle
+`/home/chcai/a37-1_env/mes_ticket_a37-1_combined.tgz` on the host). Open question for them: on 10-10
+the GPU stayed busy after the "recovered" queue reset, with no escalation. No MES fault is
+evidenced so far.
+
+### 12.4 `noretry=0` slows long-K GEMMs
+
+The a37-2 bring-up recipe (`noretry=0 gpu_recovery=0 ip_block_mask=0xcff`) was used here in
+September and briefly on 10-11. With `noretry=0` the latency-bound long-K NT GEMMs are slower; the
+wide NN/TN kernels are not:
+
+| GEMM, T = 2,097,152, GPU 0 | default `noretry` | `noretry=0` |
+|---|---|---|
+| G25 NT sol 103 | 23.7 ms | 37.1 ms (+56 %) |
+| G19 NT sol 102 | 31.6 ms | 57.5 ms (+81 %) |
+| G20 NT sol 102 | 57.0 ms | 61.8 ms (+8 %) |
+| G08 NN sol 951 / G21 TN sol 1409 | 4.09 / 2.59 ms | 4.09 / 2.58 ms |
+| M1 training step | ~1,090 ms | ~1,700 ms |
+
+This probably also explains part of the September 1,735–2,004 ms/step on this host.
+
+### 12.5 Run rules on this host (current)
+
+1. Run `a37-1_kit/preflight.sh` (strict) before GPU work: driver build, options, VBIOS/MES firmware,
+   no other GPU process, buffer ops off.
+2. New kernels or catalogs: one GEMM per process first (`gemm_watch.sh`), stop at the first fault line.
+3. Training A/Bs through `run_ab.sh`: live fault watch kills the run within ~1 s and captures dmesg,
+   MES event logs, MES rings and GPU state at the fault and 30 s later.
+4. `HSTU_BWD_BLOCK_N=64`, `AMDGCN_USE_BUFFER_OPS=0`, local batch 1,024, `noretry` default.
+5. T8/M5 (sol 103) only as ≤200-step guarded A/Bs until a CWSR-fixed driver is installed.
+
+### 12.6 Follow-ups
+
+| # | Item | Owner | Status |
+|---|---|---|---|
+| F1 | Flash BKC 26.11.08 (VBIOS 700E) or provide a CWSR-fixed driver that loads on 900A; then install a fixed amdgpu-dkms (e.g. 2413386) | **BFD**, then KFD | Not requested yet |
+| F2 | Report the host-memory (SVM) faults: GPU access to just-invalidated KFD SVM ranges in plain training, two occurrences | **KFD (SVM)** | Draft pending; evidence in the MES bundle |
+| F3 | MES ticket: confirm queue-reset → mode-reset escalation (10-10 GPU stuck at 25 % busy) | **MES / amdgpu** | Open; logs sent; capture stays on in all runs |
+| F4 | Long-run validation of M1+T8+M5 (≥3,000 steps, loss / grad-norm vs M0) | us | After F1 |
+| F5 | hipBLASLt tall-K kernel fault reports from a37-2 (T1–T3 in the a37-2 record) | us → hipBLASLt / BFD | Not sent |
+| F6 | Restore GPU-side profiling (check with `mes_log_enable`/`dyndbg` off), then capture the M1+T8+M5 trace | us | Open |
+| F7 | Next optimizations: HSTU attention backward (~280 ms/step) within `BLOCK_N=64`; non-GEMM kernels (~60 ms); RCCL call count (78/step) | us | Open |
+| F8 | Ship path: M1's 10.2 library via a newer `_rocm_sdk_libraries_gfx1250` wheel instead of `LD_PRELOAD`; T8/M5 catalogs into that build | us + TheRock packaging | Open |
+| F9 | Optional: overnight repro loop with MES settings at long uptime (`a37-1_kit/mes_repro_loop.sh`) | us | If no recurrence during normal runs |
+
+### 12.7 Evidence (host-local, `/home/chcai/a37-1_env/`)
+
+- `runs/`: every 2026-10-10/11 run (`M0a`…`M1T8M5_audit`, `mesrepro*`, single-GEMM benches), each
+  with `train.log`, `environment.txt`, `preflight.txt`, live dmesg and, from 10-11, MES captures.
+- `mes_ticket_20261010/`, `mes_ticket_20261011/`, `mes_ticket_a37-1_combined.tgz`: MES evidence.
+- `cores/gpucore.332_mesrepro3_20261011.gpu`: 357 GB GPU core from the 10-11 fault (wave state; for KFD).
+- `/home/chcai/t8_work/`, `/home/chcai/m5_work/`: T8/M5 build and check work trees (copies in
+  `hipBLASLt/`).

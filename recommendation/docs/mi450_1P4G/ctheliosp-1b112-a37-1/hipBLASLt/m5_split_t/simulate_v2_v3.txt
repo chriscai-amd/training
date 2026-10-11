@@ -1,5 +1,5 @@
 ####################################################################################################
-# variant s103: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s103  (v2 = /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2)
+# variant s103: /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/s103  (v2 = /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2)
 ####################################################################################################
 
 == A. install check ==
@@ -90,8 +90,8 @@
   -> 0 unexpected
 
 == C. simulate.py (T8 generic simulation), v2 vs v3/s103 ==
-v2: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (54 table entries)
-v3: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s103/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (121 table entries)
+v2: /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (54 table entries)
+v3: /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/s103/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (121 table entries)
 solutions: {102: 'MT32x16x32', 103: 'MT256x128x64'}
 matcher: gridmatch.py (rocm-libraries 5911365c GridBased binary path, default env: no KDTREE, batch flattening on); size predicates modelled by nt_size_accepts
 
@@ -463,7 +463,7 @@ TOTAL differing points v2 vs v3 (sections 1-4): 726
 VARIANT s103: PASS
 
 ####################################################################################################
-# variant s102: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s102  (v2 = /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2)
+# variant s102: /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/s102  (v2 = /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2)
 ####################################################################################################
 
 == A. install check ==
@@ -549,8 +549,8 @@ VARIANT s103: PASS
   -> 0 unexpected
 
 == C. simulate.py (T8 generic simulation), v2 vs v3/s102 ==
-v2: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (54 table entries)
-v3: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/s102/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (121 table entries)
+v2: /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (54 table entries)
+v3: /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/s102/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (121 table entries)
 solutions: {102: 'MT32x16x32', 103: 'MT256x128x64'}
 matcher: gridmatch.py (rocm-libraries 5911365c GridBased binary path, default env: no KDTREE, batch flattening on); size predicates modelled by nt_size_accepts
 
@@ -1102,7 +1102,7 @@ TOTAL differing points v2 vs v3 (sections 1-4): 1793
 VARIANT s102: PASS
 
 ####################################################################################################
-# variant mix: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/mix  (v2 = /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2)
+# variant mix: /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/mix  (v2 = /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2)
 ####################################################################################################
 
 == A. install check ==
@@ -1190,8 +1190,8 @@ VARIANT s102: PASS
   -> 0 unexpected
 
 == C. simulate.py (T8 generic simulation), v2 vs v3/mix ==
-v2: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (54 table entries)
-v3: /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3/mix/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (121 table entries)
+v2: /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (54 table entries)
+v3: /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3/mix/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib (121 table entries)
 solutions: {102: 'MT32x16x32', 103: 'MT256x128x64'}
 matcher: gridmatch.py (rocm-libraries 5911365c GridBased binary path, default env: no KDTREE, batch flattening on); size predicates modelled by nt_size_accepts
 

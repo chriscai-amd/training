@@ -7,7 +7,7 @@ the dispatch through the real hooks with the device gate / module flags patched.
 
 Run (no --device):
   docker run --rm --entrypoint python \
-    -v /home/chcai/training_opt/recommendation:/workspace/recommendation:ro \
+    -v /home/chcai/training/recommendation:/workspace/recommendation:ro \
     -w /workspace/recommendation <image> -m pytest -p no:cacheprovider -q \
     generative_recommenders/ops/tests/splitt_wgrad_test.py
 """

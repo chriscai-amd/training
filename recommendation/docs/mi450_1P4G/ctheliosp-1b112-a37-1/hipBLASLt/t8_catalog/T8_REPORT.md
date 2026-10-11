@@ -85,7 +85,7 @@ If any of these did reject 103 for a target, the walk would land on that M block
 Each new (M,N,1) group has exactly one entry, so K never affects the choice, at any K and not just 1.0M-3.2M.
 
 **Files.**
-- `/home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib`, sha256 `1053790f4c7ba8fe07b9f93b69baeaa02488035545b810168c828dc55630accc`. The rebuild gave a byte-identical catalog; only the README changed.
+- `/home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2/hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib`, sha256 `1053790f4c7ba8fe07b9f93b69baeaa02488035545b810168c828dc55630accc`. The rebuild gave a byte-identical catalog; only the README changed.
 - Stock version: `/home/chcai/t8_work/stock_t8/gfx1250/<same name>`, sha256 `df62e167b4792227842d864dbc1d2043953b34f16bbf264846791925d4c60738`, with an identical table.
 
 ## 3. Simulation
@@ -156,7 +156,7 @@ Sol 103 has no split-K. Each workgroup does a full 256×128 tile over all of K, 
 The total is the same order as the bench's 182 ms (on a37-2). **G27 is the marginal case.** If step 1 shows it no faster on 103, drop it:
 
 ```
-/home/chcai/.venv_tools/bin/python -I /home/chcai/t8_work/make_v2.py --drop 24x256 --out /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v3
+/home/chcai/.venv_tools/bin/python -I /home/chcai/t8_work/make_v2.py --drop 24x256 --out /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v3
 ```
 
 ## 6. Remaining risks
@@ -193,7 +193,7 @@ The union.yaml lines are 27 G27, 31 G31, 29 G29, 25 G25, 19 G19 and 20 G20 (the 
 ```
 cd /home/chcai/a37-1_env
 for T in 1600000 2097152 2533005; do
-  T=$T ./gemm_watch.sh /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2 0 \
+  T=$T ./gemm_watch.sh /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2 0 \
       /home/chcai/t8_work/gpu_check/runs/v2_gpu0_NT_T$T \
       /home/chcai/mi450_perf_20260926/hipblaslt_req/union.yaml 25 27 31 29 19 20 17 23 || break
 done
@@ -212,7 +212,7 @@ This uses `/home/chcai/t8_work/gpu_check/nt_verify.yaml`: the same six NT lines 
 
 ```
 cd /home/chcai/a37-1_env
-T=1600000 ./gemm_watch.sh /home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2 0 \
+T=1600000 ./gemm_watch.sh /home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2 0 \
     /home/chcai/t8_work/gpu_check/runs/v2_gpu0_verify_T1600000 \
     /home/chcai/t8_work/gpu_check/nt_verify.yaml 1 2 3 4 5 6
 ```
@@ -267,7 +267,7 @@ Check that:
 | `/home/chcai/t8_work/simulate.py` | Simulation; §4b is the exposure and workgroup table. |
 | `/home/chcai/t8_work/simulate_v1_v2.txt` | Simulation output, v1 vs v2. |
 | `/home/chcai/t8_work/simulate_stock_t8.txt` | Simulation output, stock vs stock_t8. |
-| `/home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2/` | The v2 lib dir. README updated with the risk text and kernel-provenance correction. |
+| `/home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2/` | The v2 lib dir. README updated with the risk text and kernel-provenance correction. |
 | `/home/chcai/t8_work/stock_t8/` | Stock-image catalog and README. Not wired anywhere. |
 | `/home/chcai/t8_work/gpu_check/nt_verify.yaml` | Step 2 input. |
 | `/home/chcai/t8_work/gpu_check/zero_dy_loop.py` | Step 3 script. |

@@ -11,8 +11,8 @@ sys.path.insert(0, "/home/chcai/t8_work")
 import gridmatch as g  # noqa: E402
 
 NT_DAT = "hipblaslt/library/gfx1250/TensileLibrary_BB_BB_HA_Bias_SAV_UA_Type_BB_HPA_Contraction_l_Ailk_Bjlk_Cijk_Dijk_gfx1250.dat.zlib"
-V1 = "/home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v1/" + NT_DAT
-V2 = "/home/chcai/training_opt/arbor_libs/rocm-10.2_nnonly_v2/" + NT_DAT
+V1 = "/home/chcai/training/arbor_libs/rocm-10.2_nnonly_v1/" + NT_DAT
+V2 = "/home/chcai/training/arbor_libs/rocm-10.2_nnonly_v2/" + NT_DAT
 UNION = ("/home/chcai/training/recommendation/docs/mi450_1P4G/ctheliosp-1b112-a37-1/hipBLASLt/"
          "dlrmv4-BF16-allgemms-union.txt")
 GROUPS = "/home/chcai/mi450_perf_20260926/hipblaslt_req/groups.json"

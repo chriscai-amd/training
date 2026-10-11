@@ -5,7 +5,7 @@
 # never assume the last check still holds.
 # Usage: preflight.sh [--allow-defaults]   (allow amdgpu default module options)
 set -u
-EXP_SRCVERSION=892370C5AB08A22771F1DC5      # amdgpu-dkms 2404163 (faulty CWSR handler; BLOCK_N=64 only)
+EXP_SRCVERSION=5E97B61A2D67C92B973CF3D      # amdgpu-dkms 2416495 (CWSR handler FIXED: gfx12.1 array 3bc22f60, verified 2026-10-11)
 EXP_VBIOS=113-M4500001-900A
 EXP_MES=0x0000007e
 EXP_PARAMS="noretry=-1 gpu_recovery=-1 ip_block_mask=3327 mes_log_enable=1"   # 0xcff; defaults for noretry/recovery + MES log per MES team (2026-10-11)

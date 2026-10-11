@@ -5,7 +5,7 @@
 # loaded with other options or another build, it stops and reports; fixing
 # that needs an unload (oops => panic) and is a manual, agreed decision.
 set -eu
-EXP_SRCVERSION=892370C5AB08A22771F1DC5
+EXP_SRCVERSION=5E97B61A2D67C92B973CF3D   # amdgpu-dkms 2416495 (fixed CWSR handler)
 OPTS="ip_block_mask=0xcff mes_log_enable=1 dyndbg=+plmf"   # MES team request: no gpu_recovery=0; noretry default
 here=$(dirname "$(readlink -f "$0")")
 

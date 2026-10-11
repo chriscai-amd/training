@@ -1,8 +1,8 @@
 # MI450 1P4G, host `ctheliosp-1b112-a37-1` (gfx1250, full model)
 
-Updated **2026-10-11**.
+Updated **2026-10-12**.
 
-> **Latest status (2026-10-11): hipBLASLt optimizations and reliability**
+> **Latest status (2026-10-12): CWSR-fixed driver, `BLOCK_N=128`, convergence test**
 >
 > - **Performance: 2.14× throughput over the stock stack on this host.**
 >   M1 (10.2 NN kernels) + T8 (NT catalog fix) + M5 (split-T weight
@@ -10,14 +10,21 @@ Updated **2026-10-11**.
 >   each step A/B'd in ABBA order with matching loss and no faults
 >   ([§12.2](#122-performance-m1-t8-and-m5); rows in
 >   [`mi450_perf_opt.md`](../../mi450_perf_opt.md#optimization-log)).
-> - **Caveat: T8 and M5 run all six weight gradients on hipBLASLt sol 103**
->   (676 VGPRs), the A0 DW-corruption kernel under the faulty CWSR handler this
->   host still loads. Every numerics check passed, but use them only for
->   guarded runs of 200 steps or fewer until a fixed driver is installed.
-> - **The fixed driver cannot be installed yet.** This host's firmware is
->   VBIOS **900A**, not BKC 26.11.08; the CWSR-fixed dkms builds failed to load
->   on it twice (2026-10-05, 2026-10-09). Needs BFD
->   ([§12.1](#121-stack-and-driver-state)).
+> - **CWSR-fixed driver installed (2026-10-11 17:11): amdgpu-dkms 2416495.**
+>   It loads cleanly on VBIOS 900A (the firmware package stayed at 2404163), and
+>   the loaded module carries the fixed gfx12.1 handler (`3bc22f60…`, as in
+>   2410994/2412954) and no copy of the faulty one
+>   ([§12.8](#128-cwsr-fixed-driver-2416495-and-the-first-convergence-attempt)).
+> - **First convergence run on the fixed driver** (M1+T8+M5 +
+>   `HSTU_BWD_BLOCK_N=128`, a37-2's AUC-0.75 recipe): **11,581 steps with no
+>   GPU fault and all losses finite**, on the configuration that used to fault
+>   3 of 3 times. Then the **host hard-crashed at 20:09:48 UTC**, 1 s after a fleet
+>   monitoring job (`amd_device_data.cli`, user `orch`, 08:09/20:09 daily) wrote a
+>   kernel-exclusive host-bridge PCI config register. No AUC reached yet.
+> - **`BLOCK_N=128` attention is usable again: +28.6 % throughput** on top of
+>   M1+T8+M5 (ABBA on the fixed driver: 625.8 → 486.8 ms/step). Latest:
+>   **~487 ms/step, ~8,416 global samples/s, 2.83× the stock stack** (1,376 ms;
+>   measured on the old driver) ([`mi450_perf_opt.md`](../../mi450_perf_opt.md#optimization-log)).
 > - **Reliability: two GPU faults on host (SVM) memory in plain M1 training**
 >   (2026-10-10 GPU 1 stuck after a queue reset, power cycle; 2026-10-11 a
 >   process memory-access fault). Then **0 faults in 17 runs** with the MES
@@ -128,8 +135,8 @@ are stored next to this document in
 
 | Question | Recorded answer |
 |---|---|
-| **Latest throughput (2026-10-11)?** | **641.6 ms/step, 6,384 global samples/s** with M1 + T8 + M5 (overlay `m5_split_t.gin`), against 1,376 ms / 2,977 with all optimizations off: **2.14×** ([§12.2](#122-performance-m1-t8-and-m5)). |
-| Are T8 / M5 safe for long runs here? | **Not yet.** They put all six weight gradients on sol 103, the A0 corruption kernel under this host's faulty CWSR handler. All numerics checks passed; use ≤200-step guarded A/Bs until a fixed driver loads ([§12.1](#121-stack-and-driver-state)). |
+| **Latest throughput (2026-10-11)?** | **~488 ms/step, ~8,400 global samples/s** with M1 + T8 + M5 + `HSTU_BWD_BLOCK_N=128` on the CWSR-fixed driver (ABBA 486.3 / 487.2 vs 624.0 / 627.5 ms with `BLOCK_N=64`: **+28.6 %**); 1,376 ms with all optimizations off ([§12.2](#122-performance-m1-t8-and-m5), [§12.8](#128-cwsr-fixed-driver-2416495-and-the-first-convergence-attempt)). |
+| Are T8 / M5 / `BLOCK_N=128` safe for long runs here? | **Being validated.** The CWSR-fixed driver 2416495 is installed (2026-10-11). The first convergence run went 11,581 steps without a GPU fault before an unrelated-looking host crash; a completed run to AUC 0.75 is still needed ([§12.8](#128-cwsr-fixed-driver-2416495-and-the-first-convergence-attempt)). |
 | How should amdgpu be loaded? | `/etc/modprobe.d/amdgpu-a37.conf`: `ip_block_mask=0xcff mes_log_enable=1 dyndbg=+plmf`; `noretry` and `gpu_recovery` at defaults (MES team request). Check with `a37-1_kit/preflight.sh` before every GPU job ([§12.1](#121-stack-and-driver-state)). |
 | Do plain training runs still fault? | **Occasionally.** Two faults on host (SVM) memory on 2026-10-10/11, then 0 in 17 runs ([§12.3](#123-reliability-events)). |
 | What throughput did the 2026-09-26 perf run reach? | **2.004 s/step, 2,044 global samples/s** (511 per GPU) over steps 50–200 at local 1,024 / GBS 4,096. The trainer logs MFU **5.0–5.2%** and HFU **1.6–2.0%** by its own definitions ([§1.2](#12-throughput)). |
@@ -1483,7 +1490,7 @@ Code is on `chcai/mi450` (M1–M4 merged in `af6f033`, T8 `77c865f`, M5 `a646eb1
 | Item | 2026-10-11 value | Notes |
 |---|---|---|
 | Firmware | VBIOS **`113-M4500001-900A`** (build 00204841, 2026/09/25), MES/KIQ `0x7e`, MEC `0x97e`, RLC `0x1f`, SDMA `0x00893547`, SMC `0x027d0d00` | Logged VBIOS history: `640C` (to 09-27), `650D` (09-29), `900A` (from 10-02). **BKC 26.11.08 (`700E`, as on a37-2 and B0) was never installed here.** |
-| Driver | amdgpu-dkms **`7.1.0.31300009-2404163.el10`** (srcversion `892370C5AB08A22771F1DC5`): **faulty CWSR handler** | The fixed builds were tried by another user and rolled back: 2413386 (10-05: PSP `ID_LOAD_TOC failed (0x11)`, `failed to load ucode` MEC/MES/RLC, `modprobe` soft lockup, reboot) and 2415424 (10-09: probe warning, `MES failed to respond`, `Timeout waiting for VM flush ACK`, host down). They need the matching firmware first. |
+| Driver | **Since 2026-10-11 17:11: amdgpu-dkms `7.1.0.31300009-2416495.el10`** (srcversion `5E97B61A2D67C92B973CF3D`), **fixed CWSR handler**, firmware package still `2404163`. Before: `2404163` (srcversion `892370C5AB08A22771F1DC5`), faulty handler. Results in §12.2–§12.4 were measured on 2404163. | The fixed builds were tried by another user and rolled back: 2413386 (10-05: PSP `ID_LOAD_TOC failed (0x11)`, `failed to load ucode` MEC/MES/RLC, `modprobe` soft lockup, reboot) and 2415424 (10-09: probe warning, `MES failed to respond`, `Timeout waiting for VM flush ACK`, host down). They need the matching firmware first. |
 | Driver load | amdgpu is blacklisted on the kernel command line; `amdgpu-load.service` (added 10-06 by another user) runs a plain `modprobe amdgpu` after boot. Options come from **`/etc/modprobe.d/amdgpu-a37.conf`**: `ip_block_mask=0xcff mes_log_enable=1 dyndbg=+plmf` | `0xcff` only disables VCN/JPEG. `noretry` and `gpu_recovery` stay at defaults at the MES team's request ("do not use `gpu_recovery=0`"). `dyndbg` makes the kernel ring buffer (2 MiB) wrap in ~30 min: runs stream a filtered `dmesg` to disk. |
 | hipBLASLt for M1/T8/M5 | host `/opt/rocm-10.2` (10.2.0, `libhipblaslt.so.1.5`, git `5911365c`, files 2026-09-25) through `arbor_libs/rocm-10.2_nnonly_v{1,2,3}` | Its bf16 NN/NT catalogs hold the Origami pools; the NT pool stays unreachable (filtered to the stock stub) because 10.2 tall-K kernels faulted on a37-2. |
 | Image | `recommendation-gfx1250-20260910:triton-7ff97e` `fc5040f7` (2026-09-26): torch `2.11.0+rocm7.14.0a20260625`, triton `3.8.0`, torchrec `1.7.0a0+bf55480`, fbgemm_gpu nightly `2026.9.26` | |
@@ -1598,22 +1605,25 @@ This probably also explains part of the September 1,735–2,004 ms/step on this 
 2. New kernels or catalogs: one GEMM per process first (`gemm_watch.sh`), stop at the first fault line.
 3. Training A/Bs through `run_ab.sh`: live fault watch kills the run within ~1 s and captures dmesg,
    MES event logs, MES rings and GPU state at the fault and 30 s later.
-4. `HSTU_BWD_BLOCK_N=64`, `AMDGCN_USE_BUFFER_OPS=0`, local batch 1,024, `noretry` default.
-5. T8/M5 (sol 103) only as ≤200-step guarded A/Bs until a CWSR-fixed driver is installed.
+4. `AMDGCN_USE_BUFFER_OPS=0`, local batch 1,024, `noretry` default. `HSTU_BWD_BLOCK_N=128` is allowed on the fixed driver (2416495).
+5. T8/M5 (sol 103) and `BLOCK_N=128` are cleared for long runs only once a convergence run completes on the fixed driver (§12.8); until then, watch every run with `run_ab.sh`.
+6. Avoid running across the fleet monitoring job at ~08:09 / ~20:09 UTC until F10 is resolved (§12.8).
 
 ### 12.6 Follow-ups
 
 | # | Item | Owner | Status |
 |---|---|---|---|
-| F1 | Flash BKC 26.11.08 (VBIOS 700E) or provide a CWSR-fixed driver that loads on 900A; then install a fixed amdgpu-dkms (e.g. 2413386) | **BFD**, then KFD | Not requested yet |
+| F1 | CWSR-fixed driver on a37-1 | BFD / KFD | **Done 2026-10-11:** amdgpu-dkms 2416495 loads on VBIOS 900A with the fixed handler (verified statically). A BKC 26.11.08 flash is no longer needed for the CWSR fix. |
 | F2 | Report the host-memory (SVM) faults: GPU access to just-invalidated KFD SVM ranges in plain training, two occurrences | **KFD (SVM)** | Draft pending; evidence in the MES bundle |
 | F3 | MES ticket: confirm queue-reset → mode-reset escalation (10-10 GPU stuck at 25 % busy) | **MES / amdgpu** | Open; logs sent; capture stays on in all runs |
-| F4 | Long-run validation of M1+T8+M5 (≥3,000 steps, loss / grad-norm vs M0) | us | After F1 |
+| F4 | Long-run validation of M1+T8+M5 + `BLOCK_N=128` on the fixed driver: convergence to AUC ≥ 0.75, repeated | us | **In progress.** Run 1 reached step 11,581 fault-free, then the host crashed (§12.8). Repeat with `a37-1_kit`-style `conv_loop.sh` |
 | F5 | hipBLASLt tall-K kernel fault reports from a37-2 (T1–T3 in the a37-2 record) | us → hipBLASLt / BFD | Not sent |
 | F6 | Restore GPU-side profiling (check with `mes_log_enable`/`dyndbg` off), then capture the M1+T8+M5 trace | us | Open |
 | F7 | Next optimizations: HSTU attention backward (~280 ms/step) within `BLOCK_N=64`; non-GEMM kernels (~60 ms); RCCL call count (78/step) | us | Open |
 | F8 | Ship path: M1's 10.2 library via a newer `_rocm_sdk_libraries_gfx1250` wheel instead of `LD_PRELOAD`; T8/M5 catalogs into that build | us + TheRock packaging | Open |
 | F9 | Optional: overnight repro loop with MES settings at long uptime (`a37-1_kit/mes_repro_loop.sh`) | us | If no recurrence during normal runs |
+| F10 | Report the host crash at 2026-10-11 20:09:48: 1 s after fleet monitor `amd_device_data.cli` (user `orch`) wrote host-bridge PCI config offset 0xE0 (`Unexpected write to kernel-exclusive config offset e0`), under full GPU load. Ask to pause it on a37-1 during tests or fix the access | us → fleet / `orch` owners | Open |
+| F11 | Make crashes leave evidence: kdump (`crashkernel` is reserved, but `/var/crash` was empty) and the BMC SEL (`ipmitool sel` returned nothing) | us / host admin | Open |
 
 ### 12.7 Evidence (host-local, `/home/chcai/a37-1_env/`)
 
@@ -1623,3 +1633,46 @@ This probably also explains part of the September 1,735–2,004 ms/step on this 
 - `cores/gpucore.332_mesrepro3_20261011.gpu`: 357 GB GPU core from the 10-11 fault (wave state; for KFD).
 - `/home/chcai/t8_work/`, `/home/chcai/m5_work/`: T8/M5 build and check work trees (copies in
   `hipBLASLt/`).
+
+### 12.8 CWSR-fixed driver 2416495 and the first convergence attempt
+
+**Driver.** amdgpu-dkms **2416495** was installed at 2026-10-11 17:11 (`dnf history` 33–34) and loaded
+at the 17:40 boot with this host's options. Unlike 2413386/2415424 it loads cleanly on VBIOS 900A
+(no PSP `ID_LOAD_TOC` error; SMU initialized; RAS ready); `amdgpu-dkms-firmware` stayed at 2404163.
+Static check, same method as for 2410994
+([RCK §7.6](../../mi450_rck_spur/mi450_rck_spur.md#76-kfd-build-2410994)):
+
+| Check | 2404163 (before) | 2416495 (now) |
+|---|---|---|
+| `cwsr_trap_gfx12_1_0_hex` in `cwsr_trap_handler.h` | 5,656 B, `0f718b5e…` (faulty) | **5,592 B, `3bc22f60…`** (= 2410994 / 2412954 fixed) |
+| `cwsr_trap_handler_gfx12.asm` sha256 | `5e0e339c…` | `d1834df1…` (= 2410994) |
+| Faulty `v_readlane_b32 ttmp15, v1` / `v_writelane_b32 v1, ttmp15` pair | present | **absent** |
+| Copies in the loaded `amdgpu.ko` (srcversion `5E97B61A…`) | — | **1 fixed, 0 faulty** |
+
+This checks the module file, not handler bytes in GPU memory.
+
+**Convergence run 1** (`CONV_M5_BN128_20261011T180912Z`, launched 18:09 UTC):
+
+| Setting | Value |
+|---|---|
+| Stack | M1 + T8 + M5 (overlay `m5_split_t.gin`) + **`HSTU_BWD_BLOCK_N=128`** |
+| Recipe (a37-2 §3.5) | local 1,024 / global 4,096, `DENSE_LR = SPARSE_LR = 5e-7`, warmup 24,000, `DIE_AT_STEP=-1`, `EVAL_EVERY_DATA_PCT=0.001` (every 560 steps), `SKIP_EVAL_EPOCH_PCT=0.022361844716419856` (first eval ≈ step 12,880), holdout window 299, `AUC_THRESHOLD=0.75`, `WEIGHTED_LN_BWD_BLOCK_N=0`, `NAN_TRIPWIRE=0`, seed 1 |
+| Result | **11,581 steps, all losses finite, no GPU fault line**, ~578 ms/step over steps 5,000–11,581 (487.6 median over 20–200). No evaluation reached. |
+| End | **Host hard crash at 20:09:48 UTC**; journal ends mid-second, no panic/oops, no kdump, no BMC SEL entry readable; auto-reboot 20:21 |
+
+**Crash correlation.** At 20:09:47 the fleet job `sudo timeout 60s /home/orch/sys-mon-venv/bin/python
+-B -m amd_device_data.cli` (user `orch`; runs at ~08:09 and ~20:09 UTC daily) started; at 20:09:48
+the kernel logged `pci 0000:00:00.0: python: Unexpected write to kernel-exclusive config offset e0`;
+the log ends in that second. The same warning appeared on 09-25, 09-27 (×2), 10-02 and 10-11 08:09
+without a crash, but those were not under full four-GPU training load. Correlation, not proof
+(F10, F11).
+
+**`BLOCK_N=128` performance.** Steps 20–200 of this run: **487.6 ms/step** vs 641.5 ms for M5 at
+`BLOCK_N=64` (the 2026-10-11 ABBA on driver 2404163), about **−24 %**. ABBA on the fixed driver
+(runs `M5BN64_A1`, `M5BN128_B1`, `M5BN128_B2`, `M5BN64_A2`, 200 steps, eval off):
+**624.0 / 627.5 → 486.3 / 487.2 ms/step, 6,564.0 / 6,527.3 → 8,423.2 / 8,407.6 global_sps
+(−22.2 % step time, +28.6 % throughput)**, loss at step 200 0.1389564 ± 1e-7, no faults. M5 at
+`BLOCK_N=64` itself ran 625.8 ms here vs 641.5 ms on driver 2404163 (different boots, not A/B'd).
+
+**Next.** Repeat the convergence run (loop `conv_loop.sh`, stop file `runs/STOP_CONV_LOOP`), avoiding
+the 08:09/20:09 window until F10 is settled; record each run's eval AUCs, fault status and end.

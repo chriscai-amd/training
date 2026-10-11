@@ -1540,6 +1540,41 @@ occurrences, with MES event logs from all GPUs for the 10-11 one (bundle
 the GPU stayed busy after the "recovered" queue reset, with no escalation. No MES fault is
 evidenced so far.
 
+**Next GPU fault: MES-requested settings and what to report.** Keep these in place for every run
+until the MES ticket is closed.
+
+1. **Driver settings (MES request).** `/etc/modprobe.d/amdgpu-a37.conf` must contain
+   `options amdgpu ip_block_mask=0xcff mes_log_enable=1 dyndbg=+plmf`.
+   - **Never `gpu_recovery=0`**: MES needs the driver's queue reset and mode reset to run.
+   - Leave `noretry` at its default (`-1`). The 10-10 `REMOVE_QUEUE` failure happened with it;
+     `noretry=0` changes the fault path (§12.4).
+   - The options apply at boot (`amdgpu-load.service`); do not reload amdgpu on a live host.
+2. **Verify after every boot** (strict `a37-1_kit/preflight.sh` checks the first two):
+   - `/sys/module/amdgpu/parameters/`: `mes_log_enable=1`, `gpu_recovery=-1`, `noretry=-1`;
+   - `/sys/kernel/debug/dri/<pci>/amdgpu_mes_event_log` exists for all four GPUs;
+   - amdgpu dynamic debug is on: `grep -c ' =p' /sys/kernel/debug/dynamic_debug/control` is in the
+     thousands.
+3. **Capture is automatic in `run_ab.sh` / `gemm_watch.sh`** (`fault_capture.sh`), into the run
+   directory:
+   - `mes_capture_baseline/`: MES event logs of all GPUs at run start;
+   - `mes_capture_fault_t0/`: within ~1 s of the first fault line: full kernel ring buffer,
+     `amdgpu_mes_event_log` ×4, MES ring dumps, fence info, GPU busy state, KFD processes;
+   - `mes_capture_fault_t30/`: the same 30 s later, after the driver's queue/mode reset attempt;
+   - `dmesg.live.txt`: the whole run's kernel log (per-ioctl/mapping chatter filtered out), on disk
+     even if the host wedges;
+   - a lightweight GPU core (`gpucore.<pid>`) in the run directory.
+   For a fault outside these launchers, run `a37-1_kit/fault_capture.sh <dir> fault_t0` at once
+   and again with tag `fault_t30` 30 s later.
+4. **Before any recovery action** (container kill aside, which the watch does): do not reboot,
+   power-cycle or reload amdgpu until the t0 and t30 captures exist. If the host is wedged, the
+   live log on disk is what survives; note how far recovery got.
+5. **Send to the MES team:** the run's `dmesg.live.txt` (trimmed to ±3,000 lines around the first
+   fault), `mes_capture_baseline/`, `mes_capture_fault_t0/`, `mes_capture_fault_t30/`, the stack
+   line from §12.1, the workload (run name, overlay, step) and whether the GPU recovered (busy
+   percentage, a follow-up single GEMM) or needed a power cycle.
+6. **Profiling caveat (F6):** if `mes_log_enable`/`dyndbg` are turned off to test the profiler,
+   restore them before the next long or risky run.
+
 ### 12.4 `noretry=0` slows long-K GEMMs
 
 The a37-2 bring-up recipe (`noretry=0 gpu_recovery=0 ip_block_mask=0xcff`) was used here in

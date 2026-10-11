@@ -1,11 +1,13 @@
-# !! UNTESTED ON A GPU. Run only as a guarded <=200-step A/B after the M5 GPU check kit
-# !! (/home/chcai/m5_work/gpu_check: single GEMMs, then batched zero-DY) has passed.
+# Tested on a37-1 2026-10-11 (driver 2404163, faulty CWSR handler): single-GEMM bench, 18/18 numerics
+# checks, 200-step ABBA (+43.8 % vs M1+T8). Sol 103 is the A0 DW-corruption kernel: keep runs on that
+# driver to guarded <=200-step A/Bs until a CWSR-fixed driver is installed. Kit and report:
+# docs/mi450_1P4G/ctheliosp-1b112-a37-1/hipBLASLt/m5_split_t/.
 # Overlay for docs/mi450_perf_opt.md (parsed after yambda_5b.gin via $DLRM_GIN_OVERLAY).
-# Container paths: /armlibs = $LIBS of run_ab.sh (default /home/chcai/training_opt/arbor_libs, ro).
+# Container paths: /armlibs = <repo>/arbor_libs (ro), /opt/rocm-10.2 mounted (ro).
 # M5 (variant s103): M1 lib swap with the v3 NT catalog (= T8 batch-1 pins + every M5 flattened
 # batched key -> sol 103 MT256x128x64, 676 VGPRs: the A0 DW-corruption kernel) + split-T NT
 # weight gradients for all six tall-K wgrads. M2/M3/M4 OFF (M3/M4 are exclusive with M5).
-# Design: /home/chcai/m5_work/DESIGN.md. NT wgrad sol-103 variant; the sol-102 variant is
+# Design: docs/mi450_1P4G/ctheliosp-1b112-a37-1/hipBLASLt/m5_split_t/DESIGN.md. NT wgrad sol-103 variant; the sol-102 variant is
 # m5_split_t_s102.gin.
 apply_launch_env.hipblaslt_lib_dir = "/armlibs/rocm-10.2_nnonly_v3/s103"
 apply_hipblaslt_opts.tuning_override_file = None
@@ -18,7 +20,7 @@ apply_hipblaslt_opts.splitt_wgrad_preproc = True
 # s must be one the s103 catalog pins (checked at import against the lib dir m5_splits.json; an
 # unpinned s would land on 102, so import raises unless HSTU_SPLITT_ALLOW_UNPINNED=1):
 # G20 {2,4,8,16} G19 {2,4,8,10,16,20} G25 {4..128} G29 {2..64} G31 {4..128} G27 {16..256}.
-# Starting point = ~256 sol-103 workgroups (one per CU); the GPU bench picks the final values.
-apply_hipblaslt_opts.splitt_wgrad_splits = {"2048x512": 8, "512x1536": 10, "256x512": 64, "1024x256": 32, "512x256": 64, "24x256": 128}
+# Values chosen by the a37-1 single-GEMM bench (fastest pinned s at T = 2,097,152 and 2,533,005).
+apply_hipblaslt_opts.splitt_wgrad_splits = {"2048x512": 16, "512x1536": 10, "256x512": 64, "1024x256": 64, "512x256": 64, "24x256": 128}
 apply_hipblaslt_opts.splitt_min_rows = 4096
 apply_hipblaslt_opts.splitt_audit_every = 0

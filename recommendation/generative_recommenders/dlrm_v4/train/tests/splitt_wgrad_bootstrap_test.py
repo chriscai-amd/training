@@ -87,7 +87,7 @@ class ApplyOptsTest(unittest.TestCase):
         gin.clear_config()
         self.assertEqual(self.gin_env("m5_split_t.gin"), {
             "HSTU_TN_WGRAD": "0", "HSTU_SPLITT_WGRAD": "all",
-            "HSTU_SPLITT_WGRAD_SPLITS": "1024x256:32,2048x512:8,24x256:128,256x512:64,512x1536:10,512x256:64",
+            "HSTU_SPLITT_WGRAD_SPLITS": "1024x256:64,2048x512:16,24x256:128,256x512:64,512x1536:10,512x256:64",
             "HSTU_SPLITT_MIN_ROWS": "4096", "lib": "/armlibs/rocm-10.2_nnonly_v3/s103"})
         gin.clear_config()
         self.assertEqual(self.gin_env("m5_split_t_s102.gin"), {
